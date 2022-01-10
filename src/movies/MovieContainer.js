@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { movies } from '../data/movies';
+import Movie from './Movie';
 import './movies.css';
 
 
@@ -25,11 +26,7 @@ const MovieContainer = () => {
       <h2>Movies</h2>
       <ul className ="movie-list">
         {movies.map(movie => (
-          <li key={movie.id} className="movie">
-            <img src={movie.poster} alt={movie.title} />
-            <p>{movie.title} by {movie.description} was released on {movie.year}</p>
-            <p>Rating: {movie.rating}</p>
-          </li>
+          <Movie movie={movie} key={movie.id} />
         ))}
       </ul>      
     </div>
