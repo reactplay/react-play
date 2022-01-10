@@ -6,12 +6,12 @@ const Movie = ({movie}) => {
     year,
     poster,
     rating,
-    description} = movie;
+    director} = movie;
 
   return (
     <li className="movie">
       <img src={poster} alt={title} />
-      <p>{title} by {description} was released on {year}</p>
+      <p>{title} by {director} was released on {year}</p>
       <p>Rating: {rating}</p>
     </li>
   );
