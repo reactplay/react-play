@@ -1,6 +1,7 @@
 # The `movie-app`
 
 <p align="center">
+  <a href="https://moviez.vercel.app/" target="_blank" style="font-size:50px">See Demo<a/>
   <img src="screens/data-load-style.gif" alt="movie-app" />
 </p>  
 
@@ -16,7 +17,12 @@ The `movie-app` is a React project to deomonstrate the well-known React patterns
 - [ ] State Hoisting 
 ... many more
 
-I'll be creating articles and/or videos on each of the above patterns using the code from this repository.
+I'll be creating articles ✍️ and/or videos 📹 on each of the above patterns using the code from this repository.
+  
+# Demo
+  
+You can access the app from here: [https://moviez.vercel.app/](https://moviez.vercel.app/)
+  
 
 # Who doesn't want motivation?
 
