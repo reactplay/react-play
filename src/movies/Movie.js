@@ -1,7 +1,6 @@
 
 const Movie = ({movie}) => {
   const {
-    id,
     title,
     year,
     poster,
