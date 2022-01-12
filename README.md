@@ -8,7 +8,7 @@
 The `movie-app` is a React project to deomonstrate the well-known React patterns like,
 
 
-- [X] Container Component Pattern
+- [X] [Container Component Pattern](https://github.com/atapas/movie-app/tree/release/openreplay-cc-pattern)
 - [ ] Higher-Order Component Pattern
 - [ ] Render prop
 - [ ] Proxy Component
@@ -19,19 +19,21 @@ The `movie-app` is a React project to deomonstrate the well-known React patterns
 
 I'll be creating articles ✍️ and/or videos 📹 on each of the above patterns using the code from this repository.
   
-# Demo
+# 🔥 The App Demo
   
 You can access the app from here: [https://moviez.vercel.app/](https://moviez.vercel.app/)
   
 
-# Who doesn't want motivation?
+# 🤲 Hey, wants to Motivate?
 
-You can motivate me and my work by supporing me. 
+Who doesn't want motivation and support?  
 
-You can support the work by giving the repository a ⭐ and/or sponsorong me using the `Sponsor` button at the top 😍.
+You can support my work by giving the repository a ⭐ and/or sponsorong me using the `Sponsor` button at the top 😍.
 
+[![Stargazers repo roster for @atapas/movie-app](https://reporoster.com/stars/atapas/movie-app)](https://github.com/atapas/movie-app/stargazers)  
+  
 
-# Getting Started with `movie-app`
+# 🏗️ Getting Started with `movie-app`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
