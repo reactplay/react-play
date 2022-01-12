@@ -16,6 +16,14 @@ The `movie-app` is a React project to deomonstrate the well-known React patterns
 - [ ] State Hoisting 
 ... many more
 
+I'll be creating articles and/or videos on each of the above patterns using the code from this repository.
+
+# Who doesn't want motivation?
+
+You can motivate me and my work by supporing me. 
+
+You can support the work by giving the repository a ⭐ and/or sponsorong me using the `Sponsor` button at the top 😍.
+
 
 # Getting Started with `movie-app`
 
