@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# The `movie-app`
+The `movie-app` is a React project to deomonstrate the well-known React patterns like,
+
+
+- [X] Container Component Pattern
+- [ ] Higher-Order Component Pattern
+- [ ] Render prop
+- [ ] Proxy Component
+- [ ] Event Switch
+- [ ] Layout Coponent
+- [ ] State Hoisting
+- ... many more
+
+
+# Getting Started with `movie-app`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
