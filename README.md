@@ -1,14 +1,14 @@
-# The `movie-app`
+# The `react-play`
 
 <p align="center">
   <a href="https://moviez.vercel.app/" target="_blank" style="font-size:50px">See Demo<a/>
-  <img src="screens/data-load-style.gif" alt="movie-app" />
+  <img src="screens/data-load-style.gif" alt="react-play" />
 </p>  
 
-The `movie-app` is a React project to deomonstrate the well-known React patterns like,
+The `react-play` is a React project to deomonstrate the well-known React patterns like,
 
 
-- [X] [Container Component Pattern](https://github.com/atapas/movie-app/tree/release/openreplay-cc-pattern)
+- [X] [Container Component Pattern](https://github.com/atapas/react-play/tree/release/openreplay-cc-pattern)
 - [ ] Higher-Order Component Pattern
 - [ ] Render prop
 - [ ] Proxy Component
@@ -30,10 +30,10 @@ Who doesn't want motivation and support?
 
 You can support my work by giving the repository a ⭐ and/or sponsorong me using the `Sponsor` button at the top 😍.
 
-[![Stargazers repo roster for @atapas/movie-app](https://reporoster.com/stars/atapas/movie-app)](https://github.com/atapas/movie-app/stargazers)  
+[![Stargazers repo roster for @atapas/react-play](https://reporoster.com/stars/atapas/react-play)](https://github.com/atapas/react-play/stargazers)  
   
 
-# 🏗️ Getting Started with `movie-app`
+# 🏗️ Getting Started with `react-play`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
