@@ -11,17 +11,18 @@ The `react-play` is a React project to deomonstrate the well-known React pattern
 - [X] [Container Component Pattern](https://github.com/atapas/react-play/tree/release/openreplay-cc-pattern)
 - [ ] Higher-Order Component Pattern
 - [ ] Render prop
-- [ ] Proxy Component
-- [ ] Event Switch
+- [ ] Custom Hooks
+- [ ] Conditional Rendering
 - [ ] Layout Coponent
-- [ ] State Hoisting 
-... many more
+- [ ] Controlled Components   
 
-I'll be creating articles ✍️ and/or videos 📹 on each of the above patterns using the code from this repository.
+... many more
   
+I'll be creating articles ✍️ and/or videos 📹 on each of the above patterns using the code from this repository.
+    
 # 🔥 The App Demo
   
-You can access the app from here: [https://moviez.vercel.app/](https://moviez.vercel.app/)
+You can access the app from here: [https://reactoplay.vercel.app/](https://reactoplay.vercel.app/)
   
 
 # 🤲 Hey, wants to Motivate?
