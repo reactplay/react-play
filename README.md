@@ -21,7 +21,7 @@ I'll be creating articles ✍️ and/or videos 📹 on each of the above pattern
   
 # 🔥 The App Demo
   
-You can access the app from here: [https://moviez.vercel.app/](https://moviez.vercel.app/)
+You can access the app from here: [https://reactoplay.vercel.app/](https://reactoplay.vercel.app/)
   
 
 # 🤲 Hey, wants to Motivate?
