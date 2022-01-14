@@ -8,7 +8,7 @@
 The `react-play` is a React project to deomonstrate the well-known React patterns like,
 
 
-- [X] [Container Component Pattern](https://github.com/atapas/react-play/tree/release/openreplay-cc-pattern)
+- [X] [Container Component Pattern](https://github.com/atapas/react-play/tree/release/openreplay-cc-pattern) ([Tutorial](https://blog.openreplay.com/understanding-the-container-component-pattern-with-react-hooks))
 - [ ] Higher-Order Component Pattern
 - [ ] Render prop
 - [ ] Custom Hooks
