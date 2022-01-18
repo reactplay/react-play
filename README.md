@@ -11,9 +11,10 @@ The `react-play` is a React project to deomonstrate the well-known React pattern
 - [X] [Container Component Pattern](https://github.com/atapas/react-play/tree/release/openreplay-cc-pattern) ([Tutorial](https://blog.openreplay.com/understanding-the-container-component-pattern-with-react-hooks))
 - [ ] Higher-Order Component Pattern
 - [ ] Render prop
-- [ ] Custom Hooks
+- [X] Custom Hooks
+  - [X] [CountDown Timer](https://github.com/atapas/react-play/tree/release/custom-hook-date-counter/src/date-time-counter)
 - [ ] Conditional Rendering
-- [ ] Layout Coponent
+- [ ] Layout Component
 - [ ] Controlled Components   
 
 ... many more
