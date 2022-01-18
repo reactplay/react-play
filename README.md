@@ -5,7 +5,7 @@
   <img src="screens/data-load-style.gif" alt="react-play" />
 </p>  
 
-The `react-play` is a React project to deomonstrate the well-known React patterns like,
+The `react-play` is a React project to demonstrate the well-known React patterns like,
 
 
 - [X] [Container Component Pattern](https://github.com/atapas/react-play/tree/release/openreplay-cc-pattern) ([Tutorial](https://blog.openreplay.com/understanding-the-container-component-pattern-with-react-hooks))
