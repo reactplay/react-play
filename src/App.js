@@ -5,11 +5,21 @@ function App() {
   return (
     <div className="App">
       <nav className="left-nav">
-        <Link to="/movies">Movies</Link>
-        <Link to="/clock">Clock</Link>
-        <Link to="/countdown">CountDown Timer</Link>
+        <ul className="link-list">
+          <li>
+            <Link to="/movies">Movies</Link>
+          </li>  
+          <li>
+            <Link to="/clock">Clock</Link>
+          </li>
+          <li>
+            <Link to="/countdown">CountDown Timer</Link>
+          </li>
+        </ul>
       </nav>
-      <Outlet />
+      <div className="plays">
+        <Outlet />
+      </div>
     </div>
   );
 }

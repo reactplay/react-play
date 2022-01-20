@@ -10,6 +10,17 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
+    <header className="app-header">
+        <span>React Play</span>
+        <ul className="header-links">
+          <li>
+            <a href="https://github.com/atapas/react-play" target="_blank">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.npmjs.com/package/react-play" target="_blank">NPM</a>
+          </li>
+        </ul>
+    </header> 
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
