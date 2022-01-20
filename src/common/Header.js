@@ -11,7 +11,7 @@ const Header = () => {
             <a href="https://github.com/atapas/react-play" target="_blank">GitHub</a>
           </li>
           <li>
-            <a href="https://www.npmjs.com/package/react-play" target="_blank">NPM</a>
+            <a href="https://twitter.com/tapasadhikary" target="_blank">Twitter</a>
           </li>
         </ul>
     </header>

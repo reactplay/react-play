@@ -7,10 +7,10 @@ function App() {
       <nav className="left-nav">
         <ul className="link-list">
           <li>
-            <Link to="/movies">Movies</Link>
-          </li>  
-          <li>
             <Link to="/clock">Clock</Link>
+          </li>
+          <li>
+            <Link to="/movies">Movies</Link>
           </li>
           <li>
             <Link to="/countdown">CountDown Timer</Link>
