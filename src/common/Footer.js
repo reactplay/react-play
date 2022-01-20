@@ -6,7 +6,10 @@ const Footer = () => {
     <footer className="footer">
       <p style={{textAlign: 'center'}}>
       <span>React Play</span> &copy; 2022 by {' '}
-        <a href="https://tapasadhikary.com" target="_blank">Tapas Adhikary</a>
+        <a 
+          href="https://tapasadhikary.com" 
+          target="_blank" 
+          rel="noopener noreferrer">Tapas Adhikary</a>
       </p>
     </footer>
   );
