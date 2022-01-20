@@ -1,7 +1,7 @@
 
 
 import { useEffect, useState } from 'react';
-import { movies } from '../data/movies';
+import { movies } from '../../data/movies';
 import Movie from './Movie';
 import './movies.css';
 

@@ -1,0 +1,23 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.app-header > span {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+}
+
+.header-links > li > a {
+  color: #fff;
+  margin-left: 1rem;
+}

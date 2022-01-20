@@ -13,6 +13,8 @@ li {
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
+  padding: 0px;
+  margin: 0px;
 }
 
 .movie {
