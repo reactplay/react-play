@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
+import { Footer, Header } from './common';
 import { CountDownTimer, CurrentTimer } from './date-time-counter';
 import "./index.css";
 import Movie from './movies/MovieContainer';
@@ -10,17 +11,7 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <header className="app-header">
-        <span>React Play</span>
-        <ul className="header-links">
-          <li>
-            <a href="https://github.com/atapas/react-play" target="_blank">GitHub</a>
-          </li>
-          <li>
-            <a href="https://www.npmjs.com/package/react-play" target="_blank">NPM</a>
-          </li>
-        </ul>
-    </header> 
+    <Header /> 
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
@@ -38,6 +29,7 @@ ReactDOM.render(
         </Route>
       </Routes>
     </BrowserRouter>
+    <Footer />
   </React.StrictMode>,
   document.getElementById("root")
 );
