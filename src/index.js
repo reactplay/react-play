@@ -2,7 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
-import { Footer, Header } from "./common";
+import {
+  Footer,
+  Header, Home, PageNotFound
+} from "./common";
 import "./index.css";
 import { getAllPlays } from './meta/play-meta';
 import reportWebVitals from "./reportWebVitals";
@@ -12,10 +15,20 @@ const Index = () => {
   const plays = getAllPlays();
   return (
     <React.StrictMode>
-      <Header />
+      
       <BrowserRouter>
+        <Header />
         <Routes>
-          <Route path="/" element={<App />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/plays" element={<App />}>
+            <Route
+              index
+              element={
+                <main style={{ padding: "1rem" }}>
+                  <p>Select a Play</p>
+                </main>
+              }
+            />
             {
               plays.map((play, index) => (
                 <Route
@@ -26,6 +39,7 @@ const Index = () => {
               ))
             }
           </Route>
+          <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
       <Footer />
