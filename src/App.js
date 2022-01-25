@@ -1,23 +1,22 @@
+import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import './App.css';
+import { getPlaysToInclude } from './meta/play-meta';
+
 
 function App() {
+  const [plays] = useState(getPlaysToInclude());
   return (
     <div className="App">
       <nav className="left-nav">
         <ul className="link-list">
-          <li>
-            <Link to="/clock">Clock</Link>
-          </li>
-          <li>
-            <Link to="/movies">Movies</Link>
-          </li>
-          <li>
-            <Link to="/countdown">CountDown Timer</Link>
-          </li>
-          <li>
-            <Link to="/why-react">Why React</Link>
-          </li>
+          {
+            plays.map((play, index) => (
+              <li key={index}>
+                <Link to={play.path}>{play.name}</Link>
+              </li>
+            ))
+          }
         </ul>
       </nav>
       <div className="plays">

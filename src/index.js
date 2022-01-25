@@ -4,11 +4,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import { Footer, Header } from "./common";
 import "./index.css";
-import { getPlays } from './meta/play-meta';
+import { getAllPlays } from './meta/play-meta';
 import reportWebVitals from "./reportWebVitals";
 
+
 const Index = () => {
-  const plays = getPlays();
+  const plays = getAllPlays();
   return (
     <React.StrictMode>
       <Header />

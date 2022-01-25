@@ -10,40 +10,55 @@ import {
 
 const plays = [
   {
-    name: 'CurrentTimer',
-    component: () => {return <CurrentTimer />},
-    path: '/clock',
+    name: 'Why React',
+    component: () => {return <WhyReact />},
+    path: '/why-react',
+    includeInMenu: true,
   },
   {
-    name: 'CountDownTimer',
+    name: 'Current Timer',
+    component: () => {return <CurrentTimer />},
+    path: '/clock',
+    includeInMenu: true,
+  },
+  {
+    name: 'Countdown Timer',
     component: () => {return <CountDownTimer targetDate = {'Jan 25, 2022 15:37:25'} />},
     path: '/countdown',
+    includeInMenu: true,
   },
   {
     name: 'Home',
     component: () => {return <Home />},
     path: '/',
     index: true,
+    includeInMenu: false,
   },
   {
-    name: 'MovieContainer',
+    name: 'Movies',
     component: () => {return <MovieContainer />},
     path: '/movies',
+    includeInMenu: true,
   },
   {
-    name: 'WhyReact',
-    component: () => {return <WhyReact />},
-    path: '/why-react',
-  },
-  {
-    name: 'PageNotFound',
+    name: 'Page Not Found',
     component: () => {return <PageNotFound />},
     path: '/*',
+    includeInMenu: false,
   },
 ];
 
-export const getPlays = () => {
+const getAllPlays = () => {
   return plays;
+};
+
+const getPlaysToInclude = () => {
+  return plays.filter(play => play.includeInMenu);
+}
+
+export {
+  getAllPlays,
+  getPlaysToInclude,
 };
 
 
