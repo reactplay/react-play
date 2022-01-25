@@ -15,6 +15,9 @@ function App() {
           <li>
             <Link to="/countdown">CountDown Timer</Link>
           </li>
+          <li>
+            <Link to="/why-react">Why React</Link>
+          </li>
         </ul>
       </nav>
       <div className="plays">

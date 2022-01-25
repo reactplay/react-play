@@ -4,7 +4,8 @@ import {
   CurrentTimer,
   Home,
   MovieContainer,
-  PageNotFound
+  PageNotFound,
+  WhyReact
 } from "../plays";
 
 const plays = [
@@ -28,6 +29,11 @@ const plays = [
     name: 'MovieContainer',
     component: () => {return <MovieContainer />},
     path: '/movies',
+  },
+  {
+    name: 'WhyReact',
+    component: () => {return <WhyReact />},
+    path: '/why-react',
   },
   {
     name: 'PageNotFound',
