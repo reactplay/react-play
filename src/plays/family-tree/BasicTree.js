@@ -1,25 +1,19 @@
 import React, { Fragment } from "react";
+import { Tree, TreeNode } from "react-organizational-chart";
 import { family } from '../../data/family';
 
 const Card = (props) => {
-
   return (
-    <ul>
-      {props.data.map((item,index) => (
+    <>
+      {
+        props.data.map((item,index) => (
         <Fragment key={item.name}>
-          <li>
-            <div className="card">
-              <div className="card-body">
-                <h4>{item.name}</h4>
-              </div>
-              
-              <div></div>
-            </div>
+          <TreeNode label={<div>{item.name}</div>}>
             {item.children?.length && <Card data={item.children} />}
-          </li>
+          </TreeNode>
         </Fragment>
       ))}
-    </ul>
+    </>
   );
 };
 
@@ -30,7 +24,9 @@ const BasicTree = () => {
       <p>
         This is a basic family tree. It shows the family tree. The family tree is a hierarchical data structure. It is a tree data
       </p>
-      <Card data={family} />
+      <Tree lineWidth={"2px"} label={<div>{family.name}</div>}>
+        <Card data={family.children} />
+      </Tree>
     </div>
   );
 };
