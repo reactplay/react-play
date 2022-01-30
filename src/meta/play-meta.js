@@ -1,6 +1,6 @@
 
 import {
-  CountDownTimer,
+  BasicTree, CountDownTimer,
   CurrentTimer,
   MovieContainer,
   WhyReact
@@ -22,7 +22,7 @@ const plays = [
   },
   {
     name: 'Countdown Timer',
-    component: () => {return <CountDownTimer targetDate = {'Jan 25, 2022 15:37:25'} />},
+    component: () => {return <CountDownTimer targetDate = {'Feb 25, 2022 15:37:25'} />},
     path: '/plays/countdown',
     includeInMenu: true,
   },
@@ -30,6 +30,12 @@ const plays = [
     name: 'Movies',
     component: () => {return <MovieContainer />},
     path: '/plays/movies',
+    includeInMenu: true,
+  },
+  {
+    name: 'Basic Family Tree',
+    component: () => {return <BasicTree />},
+    path: '/plays/basic-family-tree',
     includeInMenu: true,
   },
 ];
