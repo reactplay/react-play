@@ -35,7 +35,7 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
 const CountDownTimer = ({ targetDate }) => {
   const [days, hours, minutes, seconds] = useCountDown(targetDate);
 
-  if (days < 0) {
+  if (seconds <= 0) {
     return <ExpiredNotice />;
   } else {
     return (

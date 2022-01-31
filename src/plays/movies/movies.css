@@ -24,6 +24,10 @@ li {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .movie img {
