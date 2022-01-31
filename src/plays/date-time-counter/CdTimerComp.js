@@ -2,12 +2,11 @@ import { useState } from "react";
 import CountDownTimer from "./CountDownTimer";
 
 const CdTimerComp = () => {
-  const dateTimeAfterThreeDays = new Date().getTime() + 259200000;
+  const dateTimeAfterThreeDays = new Date().getTime() + 3 * 24 * 60 * 60 * 1000;
   const [targetDate, setTargetDate] = useState(
     new Date(dateTimeAfterThreeDays)
   );
 
- 
   const handleChange = (event) => {
     event.preventDefault();
     setTargetDate(new Date(event.target.value));
