@@ -12,6 +12,11 @@
   font-weight: bold;
 }
 
+.app-header > span > a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .header-links {
   display: flex;
   align-items: center;
