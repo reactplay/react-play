@@ -12,7 +12,7 @@ The `react-play` is a React project to demonstrate the well-known React patterns
 - [ ] Higher-Order Component Pattern
 - [ ] Render prop
 - [X] Custom Hooks
-  - [X] [CountDown Timer](https://github.com/atapas/react-play/tree/release/custom-hook-date-counter/src/date-time-counter)
+  - [X] [CountDown Timer](https://github.com/atapas/react-play/tree/main/src/date-time-counter)
 - [ ] Conditional Rendering
 - [ ] Layout Component
 - [ ] Controlled Components   
