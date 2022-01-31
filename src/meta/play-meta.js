@@ -1,6 +1,6 @@
 
 import {
-  BasicTree, CountDownTimer,
+  BasicTree, CdTimerComp,
   CurrentTimer,
   MovieContainer,
   WhyReact
@@ -22,7 +22,7 @@ const plays = [
   },
   {
     name: 'Countdown Timer',
-    component: () => {return <CountDownTimer targetDate = {'Feb 25, 2022 15:37:25'} />},
+    component: () => {return <CdTimerComp />},
     path: '/plays/countdown',
     includeInMenu: true,
   },
