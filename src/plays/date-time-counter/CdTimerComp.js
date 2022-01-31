@@ -17,7 +17,7 @@ const CdTimerComp = () => {
     <div className="countdown-container">
       <h2>Countdown Timer</h2>
       <form>
-        <label for="countdown-date-time">Select a Date and Time:</label>
+        <label htmlFor="countdown-date-time">Select a Date and Time:</label>
         <input
           type="datetime-local"
           id="countdown-date-time"
