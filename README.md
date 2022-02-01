@@ -1,7 +1,7 @@
 # The `react-play`
 
 <p align="center">
-  <a href="https://moviez.vercel.app/" target="_blank" style="font-size:50px">See Demo<a/>
+  <a href="https://reactoplay.vercel.app/" target="_blank" style="font-size:50px">See Demo<a/>
   <img src="screens/data-load-style.gif" alt="react-play" />
 </p>  
 
