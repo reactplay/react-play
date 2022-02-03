@@ -1,11 +1,19 @@
 import 'App.css';
-import { getAllPlays } from 'meta/play-meta';
-import { useState } from 'react';
+import { SearchContext } from 'common/search/search-context';
+import { getPlaysOnSearch } from 'meta/play-meta';
+import { useContext, useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-
 function App() {
-  const [plays] = useState(getAllPlays());
+  const { searchTerm } = useContext(SearchContext);
+  console.log(searchTerm);
+  const [plays, setPlays] = useState([]);
+
+  useEffect(() => {
+    const filteredPlays = getPlaysOnSearch(searchTerm);
+    setPlays(filteredPlays);
+  }, [searchTerm]);
+  
   return (
     <div className="App">
       <nav className="left-nav">

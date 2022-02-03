@@ -1,21 +1,23 @@
 import App from "App";
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   Footer,
   Header, Home, PageNotFound
-} from "./common";
-import "./index.css";
-import { getAllPlays } from './meta/play-meta';
-import reportWebVitals from "./reportWebVitals";
-
+} from "common";
+import { SearchContext } from 'common/search/search-context';
+import "index.css";
+import { getAllPlays } from 'meta/play-meta';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import reportWebVitals from "reportWebVitals";
 
 const Index = () => {
   const plays = getAllPlays();
+  const [searchTerm, setSearchTerm] = useState("");
+  const value = { searchTerm, setSearchTerm };
   return (
     <React.StrictMode>
-      
+      <SearchContext.Provider value={value}>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -42,6 +44,7 @@ const Index = () => {
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
+      </SearchContext.Provider>
       <Footer />
     </React.StrictMode>
   );

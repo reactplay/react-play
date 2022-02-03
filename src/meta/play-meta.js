@@ -49,8 +49,15 @@ const getAllPlays = () => {
   return plays;
 };
 
+const getPlaysOnSearch = searchTerm => {
+  return plays.filter(play => {
+    return play.name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+}
+
 export {
   getAllPlays,
+  getPlaysOnSearch
 };
 
 
