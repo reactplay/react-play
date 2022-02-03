@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import './App.css';
-import { getPlaysToInclude } from './meta/play-meta';
+import { getAllPlays } from './meta/play-meta';
 
 
 function App() {
-  const [plays] = useState(getPlaysToInclude());
+  const [plays] = useState(getAllPlays());
   return (
     <div className="App">
       <nav className="left-nav">

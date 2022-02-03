@@ -12,31 +12,36 @@ const plays = [
     component: () => {return <WhyReact />},
     path: '/plays/why-react',
     index: true,
-    includeInMenu: true,
+    level: 'Beginner',
+    tags: 'JSX',
   },
   {
     name: 'Current Timer',
     component: () => {return <CurrentTimer />},
     path: '/plays/clock',
-    includeInMenu: true,
+    level: 'Beginner',
+    tags: 'JSX, Schedule'
   },
   {
     name: 'Countdown Timer',
     component: () => {return <CdTimerComp />},
     path: '/plays/countdown',
-    includeInMenu: true,
+    level: 'Intermediate',
+    tags: 'Schedule, Component Structure, Hooks, Custom Hooks'
   },
   {
     name: 'Movies',
     component: () => {return <MovieContainer />},
     path: '/plays/movies',
-    includeInMenu: true,
+    level: 'Intermediate',
+    tags: 'Fetch Data, Hooks'
   },
   {
     name: 'Basic Family Tree',
     component: () => {return <BasicTree />},
     path: '/plays/basic-family-tree',
-    includeInMenu: true,
+    level: 'Intermediate',
+    tags: 'Recursion, Tree'
   },
 ];
 
@@ -44,13 +49,8 @@ const getAllPlays = () => {
   return plays;
 };
 
-const getPlaysToInclude = () => {
-  return plays.filter(play => play.includeInMenu);
-}
-
 export {
   getAllPlays,
-  getPlaysToInclude,
 };
 
 
