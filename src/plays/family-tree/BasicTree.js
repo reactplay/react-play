@@ -1,6 +1,6 @@
+import { family } from 'data/family';
 import React, { Fragment } from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
-import { family } from '../../data/family';
 
 const Card = (props) => {
   return (

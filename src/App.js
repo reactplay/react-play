@@ -1,7 +1,7 @@
+import 'App.css';
+import { getAllPlays } from 'meta/play-meta';
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import './App.css';
-import { getAllPlays } from './meta/play-meta';
 
 
 function App() {

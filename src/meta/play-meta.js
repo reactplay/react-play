@@ -4,7 +4,7 @@ import {
   CurrentTimer,
   MovieContainer,
   WhyReact
-} from "../plays";
+} from "plays";
 
 const plays = [
   {
