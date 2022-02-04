@@ -1,12 +1,11 @@
-import { Link } from 'react-router-dom';
+import SearchPlays from 'common/search/SearchPlays';
 import './header.css';
-import SearchPlays from './search/SearchPlays';
 
 const Header = () => {
 
   return (
     <header className="app-header">
-        <span><Link to="/">React Play</Link></span>
+        <span><a href="/">React Play</a></span>
         <ul className="header-links">
           <li>
             <SearchPlays />

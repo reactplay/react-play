@@ -10,7 +10,7 @@ const plays = [
   {
     name: 'Why React',
     component: () => {return <WhyReact />},
-    path: '/plays/play/why-react',
+    path: '/plays/why-react',
     index: true,
     level: 'Beginner',
     tags: 'JSX',
@@ -18,28 +18,28 @@ const plays = [
   {
     name: 'Current Timer',
     component: () => {return <CurrentTimer />},
-    path: '/plays/play/clock',
+    path: '/plays/clock',
     level: 'Beginner',
     tags: 'JSX, Schedule'
   },
   {
     name: 'Countdown Timer',
     component: () => {return <CdTimerComp />},
-    path: '/plays/play/countdown',
+    path: '/plays/countdown',
     level: 'Intermediate',
     tags: 'Schedule, Component Structure, Hooks, Custom Hooks'
   },
   {
     name: 'Movies',
     component: () => {return <MovieContainer />},
-    path: '/plays/play/movies',
+    path: '/plays/movies',
     level: 'Intermediate',
     tags: 'Fetch Data, Hooks'
   },
   {
     name: 'Basic Family Tree',
     component: () => {return <BasicTree />},
-    path: '/plays/play/basic-family-tree',
+    path: '/plays/basic-family-tree',
     level: 'Intermediate',
     tags: 'Recursion, Tree'
   },
