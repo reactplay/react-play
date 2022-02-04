@@ -8,6 +8,7 @@ import {
 
 const plays = [
   {
+    id: 'pl-0001',
     name: 'Why React',
     component: () => {return <WhyReact />},
     path: '/plays/why-react',
@@ -16,6 +17,7 @@ const plays = [
     tags: 'JSX',
   },
   {
+    id: 'pl-0002',
     name: 'Current Timer',
     component: () => {return <CurrentTimer />},
     path: '/plays/clock',
@@ -23,6 +25,7 @@ const plays = [
     tags: 'JSX, Schedule'
   },
   {
+    id: 'pl-0003',
     name: 'Countdown Timer',
     component: () => {return <CdTimerComp />},
     path: '/plays/countdown',
@@ -30,6 +33,7 @@ const plays = [
     tags: 'Schedule, Component Structure, Hooks, Custom Hooks'
   },
   {
+    id: 'pl-0004',
     name: 'Movies',
     component: () => {return <MovieContainer />},
     path: '/plays/movies',
@@ -37,6 +41,7 @@ const plays = [
     tags: 'Fetch Data, Hooks'
   },
   {
+    id: 'pl-0005',
     name: 'Basic Family Tree',
     component: () => {return <BasicTree />},
     path: '/plays/basic-family-tree',

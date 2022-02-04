@@ -1,4 +1,3 @@
-import { Footer, Header } from "common";
 import RouteDefs from "common/routing/RouteDefs";
 import { SearchContext } from "common/search/search-context";
 import "index.css";
@@ -11,10 +10,8 @@ const Index = () => {
   const value = { searchTerm, setSearchTerm };
   return (
     <React.StrictMode>
-      <SearchContext.Provider value={value}>  
-        <Header />
+      <SearchContext.Provider value={value}>
         <RouteDefs />
-        <Footer />
       </SearchContext.Provider>
     </React.StrictMode>
   );

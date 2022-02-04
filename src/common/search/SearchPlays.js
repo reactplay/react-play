@@ -1,22 +1,31 @@
 
 import { useContext } from 'react';
+import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from './search-context';
 import './search.css';
 
 const SearchPlays = () => {
-  
-  const {searchTerm, setSearchTerm} = useContext(SearchContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const {setSearchTerm} = useContext(SearchContext);
   const handleChange = (event) => {
-    setSearchTerm(event.target.value);
+    event.preventDefault();
+    if(event.key === 'Enter') {
+      setSearchTerm(event.target.value);
+      if(location !== '/plays') {
+        navigate('/plays', { replace: true});
+      }
+    }
   }
-
   return (
-    <input
-      className="search-text"
-      type="text"
-      placeholder="Search for a play..."
-      onChange={handleChange}
-    />
+    
+      <input
+        className="search-text"
+        type="text"
+        placeholder="Search for a play..."
+        onKeyUp={handleChange}
+      />
+    
   );
 };
 
