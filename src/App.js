@@ -2,7 +2,7 @@ import 'App.css';
 import { SearchContext } from 'common/search/search-context';
 import { getPlaysOnSearch } from 'meta/play-meta';
 import { useContext, useEffect, useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function App() {
   const { searchTerm } = useContext(SearchContext);
@@ -27,9 +27,6 @@ function App() {
           }
         </ul>
       </nav>
-      <div className="plays">
-        <Outlet />
-      </div>
     </div>
   );
 }

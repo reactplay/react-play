@@ -6,6 +6,7 @@ import {
 import { SearchContext } from 'common/search/search-context';
 import "index.css";
 import { getAllPlays } from 'meta/play-meta';
+import Playground from 'Playground';
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -22,7 +23,8 @@ const Index = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/plays" element={<App />}>
+          <Route path="/plays" element={<App />} />
+          <Route path="/plays/play" element={<Playground />}>
             <Route
               index
               element={

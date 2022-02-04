@@ -10,7 +10,7 @@ const plays = [
   {
     name: 'Why React',
     component: () => {return <WhyReact />},
-    path: '/plays/why-react',
+    path: '/plays/play/why-react',
     index: true,
     level: 'Beginner',
     tags: 'JSX',
@@ -18,28 +18,28 @@ const plays = [
   {
     name: 'Current Timer',
     component: () => {return <CurrentTimer />},
-    path: '/plays/clock',
+    path: '/plays/play/clock',
     level: 'Beginner',
     tags: 'JSX, Schedule'
   },
   {
     name: 'Countdown Timer',
     component: () => {return <CdTimerComp />},
-    path: '/plays/countdown',
+    path: '/plays/play/countdown',
     level: 'Intermediate',
     tags: 'Schedule, Component Structure, Hooks, Custom Hooks'
   },
   {
     name: 'Movies',
     component: () => {return <MovieContainer />},
-    path: '/plays/movies',
+    path: '/plays/play/movies',
     level: 'Intermediate',
     tags: 'Fetch Data, Hooks'
   },
   {
     name: 'Basic Family Tree',
     component: () => {return <BasicTree />},
-    path: '/plays/basic-family-tree',
+    path: '/plays/play/basic-family-tree',
     level: 'Intermediate',
     tags: 'Recursion, Tree'
   },
@@ -55,9 +55,37 @@ const getPlaysOnSearch = searchTerm => {
   });
 }
 
+const getBeginnerPlays = () => {
+  return plays.filter(play => {
+    return play.level === 'Beginner';
+  });
+}
+
+const getIntermediatePlays = () => {
+  return plays.filter(play => {
+    return play.level === 'Intermediate';
+  });
+}
+
+const getAdvancedPlays = () => {
+  return plays.filter(play => {
+    return play.level === 'Advanced';
+  });
+}
+
+const getPlaysByTags = tags => {
+  return plays.filter(play => {
+    return play.tags.includes(tags);
+  });
+}
+
 export {
   getAllPlays,
-  getPlaysOnSearch
+  getPlaysOnSearch,
+  getBeginnerPlays,
+  getIntermediatePlays,
+  getAdvancedPlays,
+  getPlaysByTags
 };
 
 
