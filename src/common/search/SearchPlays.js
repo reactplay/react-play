@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from './search-context';
 import './search.css';
 
+
 const SearchPlays = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -12,13 +13,13 @@ const SearchPlays = () => {
     event.preventDefault();
     if(event.key === 'Enter') {
       setSearchTerm(event.target.value);
-      if(location !== '/plays') {
+      if(location.pathname !== '/plays') {
         navigate('/plays', { replace: true});
       }
     }
   }
+ 
   return (
-    
       <input
         className="search-text"
         type="text"
