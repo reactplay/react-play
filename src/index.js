@@ -7,7 +7,13 @@ import reportWebVitals from "reportWebVitals";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const value = { searchTerm, setSearchTerm };
+  const [filterQuery, setFilterQuery] = useState({
+    level: "",
+    tags: [],
+    creator: ""
+  });
+
+  const value = { searchTerm, setSearchTerm, filterQuery, setFilterQuery };
   return (
     <React.StrictMode>
       <SearchContext.Provider value={value}>

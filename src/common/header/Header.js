@@ -1,3 +1,4 @@
+import FilterPlays from 'common/search/FilterPlays';
 import SearchPlays from 'common/search/SearchPlays';
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -22,9 +23,16 @@ const Header = () => {
         <span><Link to="/">React Play</Link></span>
         <ul className="header-links">
           {
-            showSearch && <li>
-              <SearchPlays />
-            </li>
+            showSearch && (
+              <>
+                <li>
+                  <SearchPlays />
+                </li>
+                <li>
+                  <FilterPlays />
+                </li>
+              </>
+              )
           }
           <li>
             <a href="https://github.com/atapas/react-play" target="_blank" rel="noopener noreferrer">GitHub</a>
