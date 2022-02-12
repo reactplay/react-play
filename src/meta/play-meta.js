@@ -90,21 +90,27 @@ const getPlaysByCreator = creator => {
 }
 
 const getAllTags = () => {
-  return plays.reduce((acc, play) => {
+  const tags = plays.reduce((acc, play) => {
     return acc.concat(play.tags);
   }, []);
+
+  return Array.from(new Set([...tags]));
 }
 
 const getAllCreators = () => {
-  return plays.reduce((acc, play) => {
+  const creators = plays.reduce((acc, play) => {
     return acc.concat(play.github);
   }, []);
+
+  return Array.from(new Set([...creators]));
 }
 
 const getAllLevels = () => {
-  return plays.reduce((acc, play) => {
+  const levels = plays.reduce((acc, play) => {
     return acc.concat(play.level);
   }, []);
+
+  return Array.from(new Set([...levels]));
 }
 
 export {

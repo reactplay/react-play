@@ -3,3 +3,15 @@
   border-radius: 4px;
   height: 1.5rem;
 }
+
+.modal-filter-plays {
+  position: absolute;
+  top: 55px;
+  right: 30px;
+  padding:0.5rem;
+  background: #ccc;
+  border-radius: 4px;
+  border: 1px solid #999;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
