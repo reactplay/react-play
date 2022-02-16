@@ -8,7 +8,7 @@ import './search.css';
 const SearchPlays = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const {setSearchTerm, setFilterQuery} = useContext(SearchContext);
+  const {setSearchTerm} = useContext(SearchContext);
   
   const handleSearch = (event) => {
     event.preventDefault();

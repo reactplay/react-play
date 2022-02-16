@@ -70,7 +70,7 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
 const FilterPlays = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { setFilterQuery, setSearchTerm, filterQuery } =
+  const { setFilterQuery, filterQuery } =
     useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
