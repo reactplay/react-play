@@ -2,11 +2,3 @@
   display: flex;
 }
 
-.left-nav {
-  flex: 1;
-}
-
-.plays {
-  flex: 5;
-  padding: 1rem;
-}
