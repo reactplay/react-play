@@ -57,7 +57,7 @@ const plays = [
     level: 'Intermediate',
     tags: 'Recursion, Tree',
     github: 'green-roots'
-  },
+  }, //replace new play item here
 ];
 
 const getAllPlays = () => {
