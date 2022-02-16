@@ -14,11 +14,6 @@ const SearchPlays = () => {
     event.preventDefault();
     if(event.key === 'Enter') {
       setSearchTerm(event.target.value);
-      setFilterQuery({
-        level: '',
-        tags: [],
-        creator: ''
-      });
       if(location.pathname !== '/plays') {
         navigate('/plays', { replace: true});
       }

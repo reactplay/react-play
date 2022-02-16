@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
 import "./search.css";
 
-const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
+const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
   const tags = getAllTags();
   const labels = getAllLevels();
   const creators = getAllCreators();
@@ -73,12 +73,17 @@ const FilterPlays = () => {
   const { setFilterQuery, setSearchTerm, filterQuery } =
     useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
+  const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
+    tags: [],
+    labels: [],
+    creators: [],
+  });
 
   const handleFilter = (event) => {
     event.preventDefault();
-    setSearchTerm("");
-    console.log(filterQuery);
-    setFilterQuery(filterQuery);
+    console.log('filterQuery', filterQuery);
+    console.log('modifiedFilterQuery', modifiedFilterQuery);
+    setFilterQuery(modifiedFilterQuery);
     if (location.pathname !== "/plays") {
       navigate("/plays", { replace: true });
     }
@@ -94,8 +99,8 @@ const FilterPlays = () => {
         cname="filter-plays"
         children={
           <FilterPlaysModalBody
-            filterQuery={filterQuery}
-            setFilterQuery={setFilterQuery}
+            filterQuery={modifiedFilterQuery}
+            setFilterQuery={setModifiedFilterQuery}
           />
         }
       />
