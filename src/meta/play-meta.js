@@ -3,7 +3,8 @@ import {
   BasicTree, CdTimerComp,
   CurrentTimer,
   MovieContainer,
-  WhyReact
+  WhyReact,
+  //import play here
 } from "plays";
 
 const plays = [

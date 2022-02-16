@@ -59,6 +59,23 @@ module.exports = plop => {
     ],
     actions: [
       {
+        type: 'add',
+        path: 'src/plays/{{folder}}/{{component}}.js',
+        templateFile: 'plop-templates/component.hbs',
+      },
+      {
+        type: 'modify',
+        path: 'src/plays/index.js',
+        pattern: /\/\/add export here/gi,
+        templateFile: 'plop-templates/exportPlay.hbs',
+      },
+      {
+        type: 'modify',
+        path: 'src/meta/play-meta.js',
+        pattern: /\/\/import play here/gi,
+        templateFile: 'plop-templates/importToMeta.hbs',
+      },
+      {
         type: 'modify',
         path: 'src/meta/play-meta.js',
         pattern: /\/\/replace new play item here/gi,
