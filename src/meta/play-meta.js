@@ -91,7 +91,7 @@ const getPlaysByCreator = creator => {
 
 const getAllTags = () => {
   const tags = plays.reduce((acc, play) => {
-    return acc.concat(play.tags);
+    return acc.concat(play.tags.split(', '));
   }, []);
 
   return Array.from(new Set([...tags]));
