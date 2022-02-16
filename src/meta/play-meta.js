@@ -3,7 +3,8 @@ import {
   BasicTree, CdTimerComp,
   CurrentTimer,
   MovieContainer,
-  WhyReact
+  WhyReact,
+  //import play here
 } from "plays";
 
 const plays = [
@@ -57,7 +58,7 @@ const plays = [
     level: 'Intermediate',
     tags: 'Recursion, Tree',
     github: 'green-roots'
-  },
+  }, //replace new play item here
 ];
 
 const getAllPlays = () => {
