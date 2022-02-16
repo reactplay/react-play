@@ -87,6 +87,7 @@ const FilterPlays = () => {
     if (location.pathname !== "/plays") {
       navigate("/plays", { replace: true });
     }
+    showModal && setShowModal(false);
   };
 
   return (
