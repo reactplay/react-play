@@ -1,11 +1,8 @@
 import { groupBy } from "../utils/ArrayUtil";
 
 const MovieAnalytics = ({ data }) => {
-  console.log("MovieAnalytics: data: ", data);
   const groupedMovies = groupBy(data, "director");
   const allDirectors = Reflect.ownKeys(groupedMovies);
-
-  console.log("MovieAnalytics: groupedMovies: ", groupedMovies);
 
   const directors = allDirectors.map((director) => {
     const movies = groupedMovies[director];

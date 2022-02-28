@@ -14,7 +14,6 @@ const withFetch = (WrappedComponent) => {
       fetch('https://json-faker.onrender.com/movies')
         .then((response) => response.json())
         .then(data => {
-          console.log('movies: ', data.movies);
           this.setState({ movies: data.movies });
       });
       
@@ -27,7 +26,7 @@ const withFetch = (WrappedComponent) => {
             this.state.movies.length > 0 && <WrappedComponent movies={this.state.movies} />
           }
         </>  
-        );
+      );
     }
   };
 }

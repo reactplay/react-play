@@ -2,8 +2,6 @@ import MovieAnalytics from '../movies/MovieAnalytics';
 import "../movies/movies.css";
 import withFetch from "./MovieWrapper";
 
-
-
 const MovieAnalyticsWithHOC = (props) => {
   const { movies } = props;
   return (
