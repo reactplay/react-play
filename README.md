@@ -9,11 +9,11 @@ The `react-play` is a React project to deomonstrate the well-known React pattern
 
 
 - [X] [Container Component Pattern](https://github.com/atapas/react-play/tree/release/openreplay-cc-pattern)
-- [ ] Higher-Order Component Pattern
+- [X] Higher-Order Component Pattern
 - [ ] Render prop
-- [ ] Custom Hooks
+- [X] Custom Hooks
 - [ ] Conditional Rendering
-- [ ] Layout Coponent
+- [ ] Layout Component
 - [ ] Controlled Components   
 
 ... many more
