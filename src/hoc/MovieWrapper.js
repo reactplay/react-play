@@ -1,10 +1,5 @@
 
 import React from "react";
-import { movies } from '../data/movies';
-
-const fetchMovies = () => {
-  return movies;
-};
 
 const withFetch = (WrappedComponent) => {
   return class extends React.Component {
@@ -16,13 +11,23 @@ const withFetch = (WrappedComponent) => {
     }
 
     componentDidMount() {
-      const movies = fetchMovies();
-      console.log('withFetch: componentDidMount: movies: ', movies);
-      this.setState({ movies: movies });
+      fetch('https://json-faker.onrender.com/movies')
+        .then((response) => response.json())
+        .then(data => {
+          console.log('movies: ', data.movies);
+          this.setState({ movies: data.movies });
+      });
+      
     }
 
     render() {
-      return <WrappedComponent movies={this.state.movies} />;
+      return (
+        <>
+          {
+            this.state.movies.length > 0 && <WrappedComponent movies={this.state.movies} />
+          }
+        </>  
+        );
     }
   };
 }

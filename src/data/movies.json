@@ -1,0 +1,13 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Matrix",
+      "year": 1999,
+      "director": "Lana Wachowski",
+      "rating": "R",
+      "runtime": 136,
+      "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+    }
+  ]
+}
