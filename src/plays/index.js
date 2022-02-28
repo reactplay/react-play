@@ -5,4 +5,5 @@ export { default as CdTimerComp } from 'plays/date-time-counter/CdTimerComp';
 export { default as BasicTree } from 'plays/family-tree/BasicTree';
 export { default as MovieContainer } from 'plays/movies/MovieContainer';
 export { default as WhyReact } from 'plays/why-react/WhyReact';
+export { default as CounterApp } from 'plays/Counter/CounterApp';
 //add export here

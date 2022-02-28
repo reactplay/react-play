@@ -4,7 +4,8 @@ import {
   CurrentTimer,
   MovieContainer,
   WhyReact,
-  //import play here
+  CounterApp,
+//import play here
 } from "plays";
 
 const plays = [
@@ -58,6 +59,17 @@ const plays = [
     level: 'Intermediate',
     tags: 'Recursion, Tree',
     github: 'green-roots'
+  }, {
+    id: 'pl-counter', 
+    name: 'Counter', 
+    description: 'A simple counter',
+    component: () => {return <CounterApp />},
+    path: '/plays/Counter',
+    level: 'Beginner',
+    tags: 'JSX, State, Props',
+    github: 'murtuzaalisurti',
+    blog: 'https://syntackle.vercel.app',
+    video: ''
   }, //replace new play item here
 ];
 
