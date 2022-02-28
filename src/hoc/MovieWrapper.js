@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const withFetch = (WrappedComponent) => {
@@ -11,24 +10,23 @@ const withFetch = (WrappedComponent) => {
     }
 
     componentDidMount() {
-      fetch('https://json-faker.onrender.com/movies')
+      fetch("https://json-faker.onrender.com/movies")
         .then((response) => response.json())
-        .then(data => {
+        .then((data) => {
           this.setState({ movies: data.movies });
-      });
-      
+        });
     }
 
     render() {
       return (
         <>
-          {
-            this.state.movies.length > 0 && <WrappedComponent movies={this.state.movies} />
-          }
-        </>  
+          {this.state.movies.length > 0 && (
+            <WrappedComponent movies={this.state.movies} />
+          )}
+        </>
       );
     }
   };
-}
+};
 
 export default withFetch;

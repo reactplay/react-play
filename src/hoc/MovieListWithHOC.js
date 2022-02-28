@@ -1,4 +1,4 @@
-import MovieContainer from '../movies/MovieContainer';
+import MovieContainer from "../movies/MovieContainer";
 import "../movies/movies.css";
 import withFetch from "./MovieWrapper";
 

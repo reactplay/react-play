@@ -1,4 +1,4 @@
-import MovieAnalytics from '../movies/MovieAnalytics';
+import MovieAnalytics from "../movies/MovieAnalytics";
 import "../movies/movies.css";
 import withFetch from "./MovieWrapper";
 
