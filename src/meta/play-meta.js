@@ -65,6 +65,10 @@ const getAllPlays = () => {
   return plays;
 };
 
+const getPlayById = id => {
+  return plays.find(play => play.id === id);
+};
+
 const getPlaysOnSearch = searchTerm => {
   return plays.filter(play => {
     return (play.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -116,6 +120,7 @@ const getAllLevels = () => {
 
 export {
   getAllPlays,
+  getPlayById,
   getPlaysOnSearch,
   getPlaysByLevel,
   getPlaysByTags,
