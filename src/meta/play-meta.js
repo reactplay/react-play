@@ -62,14 +62,12 @@ const plays = [
   }, {
     id: 'pl-counter', 
     name: 'Counter', 
-    description: 'A simple counter',
+    description: 'A simple counter which increments the value upto a certain limit!',
     component: () => {return <CounterApp />},
     path: '/plays/Counter',
     level: 'Beginner',
     tags: 'JSX, State, Props',
-    github: 'murtuzaalisurti',
-    blog: 'https://syntackle.vercel.app',
-    video: ''
+    github: 'murtuzaalisurti'
   }, //replace new play item here
 ];
 
