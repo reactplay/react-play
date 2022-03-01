@@ -4,7 +4,8 @@ import {
   CurrentTimer,
   MovieContainer,
   WhyReact,
-  //import play here
+  CounterApp,
+//import play here
 } from "plays";
 
 const plays = [
@@ -58,6 +59,15 @@ const plays = [
     level: 'Intermediate',
     tags: 'Recursion, Tree',
     github: 'green-roots'
+  }, {
+    id: 'pl-counter', 
+    name: 'Counter', 
+    description: 'A simple counter which increments the value upto a certain limit!',
+    component: () => {return <CounterApp />},
+    path: '/plays/Counter',
+    level: 'Beginner',
+    tags: 'JSX, State, Props',
+    github: 'murtuzaalisurti'
   }, //replace new play item here
 ];
 
