@@ -1,0 +1,133 @@
+.video {
+    width: 36%;
+    margin: 6rem auto 2rem auto;
+}
+
+.video-wrapper {
+    border-radius: 1rem;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-bottom: 48px;
+    background-color: #000;
+    overflow: hidden;
+}
+.video-wrapper .video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.pills-category {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 1rem;
+    justify-content: center;
+}
+
+.pills-category a {
+    display: inline-block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgba(13,12,34,0.7);
+}
+
+.pills-category a:hover,
+.pills-category a:focus {
+    background: rgba(13,12,34,0.07);
+    color: rgb(13,12,34);
+}
+
+.pills-category a.active {
+    background: rgb(98,106,255);
+    color: white;
+}
+
+.list-apps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 300px));
+    margin: 1rem 3rem;
+    grid-gap: 2rem;
+    justify-content: center;
+}
+
+.list-apps li {
+    display: block;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.list-apps a {
+    position: relative;
+    display: block;
+    background: rgba(13,12,34, 0.06);
+    padding: 1.6rem;
+    height: 180px;
+}
+
+.list-apps a * {
+    transition: all .1s ease-in-out;
+}
+
+.list-apps a figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+.list-apps a img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.list-apps a:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+.list-apps a:hover:after {
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+.list-apps a .list-app__title {
+    position: absolute;
+    bottom: 1.6rem;
+    color: white;
+    z-index: 1;
+}
+
+.list-apps a:hover .list-app__title {
+    position: absolute;
+    bottom: 2.4rem;
+    color: white;
+    z-index: 1;
+}
+
+
+.home-footer {
+    text-align: center;
+    font-size: 0.86rem;
+}

@@ -1,19 +1,25 @@
 .app-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000;
+  background: rgb(98,106,255);
+  background: -moz-linear-gradient(90deg, rgba(98,106,255,1) 0%, rgba(1,214,197,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(98,106,255,1) 0%, rgba(1,214,197,1) 100%);
+  background: linear-gradient(90deg, rgba(98,106,255,1) 0%, rgba(1,214,197,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#626aff",endColorstr="#01d6c5",GradientType=1);
   color: #fff;
-  padding: 0.5rem;
+  height: 64px;
+  padding: 0 1rem;
 }
 
-.app-header > span {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.app-header > span > a {
+.app-logo {
   text-decoration: none;
+  font-size: 1.5rem;
   color: #fff;
 }
 
