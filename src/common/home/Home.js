@@ -21,36 +21,36 @@ const Home = () => {
       </nav>
       <ul className="list-apps">
         <li>
-          <a>
+          <Link to="/plays">
             <figure>
-              <img src="https://www.planetware.com/wpimages/2020/04/iceland-best-waterfalls-seljalandsfoss.jpg" />
+              <img src="https://www.planetware.com/wpimages/2020/04/iceland-best-waterfalls-seljalandsfoss.jpg" alt="Thumbnail for Project Name" />
             </figure>
             <div className="list-app__title">Movile List App</div>
-          </a>
+          </Link>
         </li>
         <li>
-          <a>
+          <Link to="/plays">
             <figure>
-              <img src="https://www.planetware.com/wpimages/2020/04/iceland-best-waterfalls-seljalandsfoss.jpg" />
+              <img src="https://www.planetware.com/wpimages/2020/04/iceland-best-waterfalls-seljalandsfoss.jpg" alt="Thumbnail for Project Name" />
             </figure>
             <div className="list-app__title">Ultimate Countown</div>
-          </a>
+          </Link>
         </li>
         <li>
-          <a>
+          <Link to="/plays">
             <figure>
-              <img src="https://www.planetware.com/wpimages/2020/04/iceland-best-waterfalls-seljalandsfoss.jpg" />
+              <img src="https://www.planetware.com/wpimages/2020/04/iceland-best-waterfalls-seljalandsfoss.jpg" alt="Thumbnail for Project Name"/>
             </figure>
             <div className="list-app__title">Simplistic Timer</div>
-          </a>
+          </Link>
         </li>
         <li>
-          <a>
+          <Link to="/plays">
             <figure>
-              <img src="https://www.planetware.com/wpimages/2020/04/iceland-best-waterfalls-seljalandsfoss.jpg" />
+              <img src="https://www.planetware.com/wpimages/2020/04/iceland-best-waterfalls-seljalandsfoss.jpg" alt="Thumbnail for Project Name" />
             </figure>
             <div className="list-app__title">The Super Search</div>
-          </a>
+          </Link>
         </li>
       </ul>
       <p className="home-footer">
