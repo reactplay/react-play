@@ -4,12 +4,11 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <p style={{textAlign: 'center'}}>
-    <span>React Play</span> &copy; 2022 by {' '}
-        <a 
+      <p>
+        ReactPlay&copy; 2022 by {' '} is an open-source project developed by <a 
           href="https://tapasadhikary.com" 
           target="_blank" 
-          rel="noopener noreferrer">Tapas Adhikary</a>
+          rel="noopener noreferrer">Tapas Adhikary</a> and friends.
       </p>
     </footer>
   );
