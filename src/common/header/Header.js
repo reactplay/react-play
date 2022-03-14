@@ -22,20 +22,18 @@ const Header = () => {
   return (
     <header className="app-header">
         <span><Link to="/" className="app-logo"><span className="sr-only">React Play</span></Link></span>
-        <nav>
-          <ul className="header-links">
-            {
+        <div className="app-header-search">
+        {
               showSearch && (
-                <>
-                  <li>
-                    <SearchPlays />
-                  </li>
-                  <li>
-                    <FilterPlays />
-                  </li>
+                <>                
+                  <SearchPlays />
+                  <FilterPlays />
                 </>
                 )
             }
+        </div>
+        <nav>
+          <ul className="header-links">
             <li>
               <a href="https://github.com/atapas/react-play" target="_blank" rel="noopener noreferrer">
                 <BsGithub className="icon" size="24px" />

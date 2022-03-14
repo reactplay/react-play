@@ -3,7 +3,7 @@
 const Footer = () => {
 
   return (
-    <footer className="footer">
+    <footer className="app-footer">
       <p>
         ReactPlay&copy; 2022 by {' '} is an open-source project developed by <a 
           href="https://tapasadhikary.com" 

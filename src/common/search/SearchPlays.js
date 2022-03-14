@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from './search-context';
 import './search.css';
-
+import { BiSearch } from "react-icons/bi";
 
 const SearchPlays = () => {
   const location = useLocation();
@@ -21,12 +21,17 @@ const SearchPlays = () => {
   }
  
   return (
-    <input
-      className="search-text"
-      type="text"
-      placeholder="Search for a play..."
-      onKeyUp={ handleSearch }
-    />
+    <>
+    <div className="search-input">
+      <BiSearch className="search-input-icon" size="24px" />
+      <input
+        className="search-input-text"
+        type="text"
+        placeholder="Search for a play..."
+        onKeyUp={ handleSearch }
+      />
+    </div>
+    </>
   );
 };
 

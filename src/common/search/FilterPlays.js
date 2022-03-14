@@ -5,17 +5,19 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
 import "./search.css";
 
+import { RiFilterFill } from "react-icons/ri";
+
 const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
   const tags = getAllTags();
   const labels = getAllLevels();
   const creators = getAllCreators();
 
   return (
-    <div className="filter-plays-modal">
-      <div className="filter-plays-modal-row">
+    <div className="search-filter-modal">
+      <div className="search-filter-modal-row">
         <label>Level</label>
         <select
-          className="filter-plays-modal-select"
+          className="search-filter-modal-select"
           onChange={(event) =>
             setFilterQuery({ ...filterQuery, level: event.target.value })
           }
@@ -29,10 +31,10 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
           ))}
         </select>
       </div>
-      <div className="filter-plays-modal-row">
+      <div className="search-filter-modal-row">
         <label>Tags</label>
         <select
-          className="filter-plays-modal-select"
+          className="search-filter-modal-select"
           onChange={(event) =>
             setFilterQuery({ ...filterQuery, tags: [event.target.value] })
           }
@@ -46,10 +48,10 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
           ))}
         </select>
       </div>
-      <div className="filter-plays-modal-row">
+      <div className="search-filter-modal-row">
         <label>Creator</label>
         <select
-          className="filter-plays-modal-select"
+          className="search-filter-modal-select"
           onChange={(event) =>
             setFilterQuery({ ...filterQuery, creator: event.target.value })
           }
@@ -91,22 +93,25 @@ const FilterPlays = () => {
   };
 
   return (
-    <div className="filter-plays">
-      <Modal
-        title="Filter Plays"
-        onClose={() => setShowModal(false)}
-        onSubmit={handleFilter}
-        show={showModal}
-        cname="filter-plays"
-        children={
-          <FilterPlaysModalBody
-            filterQuery={modifiedFilterQuery}
-            setFilterQuery={setModifiedFilterQuery}
-          />
-        }
-      />
+    <div className="search-filter">
+        <Modal
+          title="Filter Plays"
+          onClose={() => setShowModal(false)}
+          onSubmit={handleFilter}
+          show={showModal}
+          cname="filter-plays"
+          children={
+            <FilterPlaysModalBody
+              filterQuery={modifiedFilterQuery}
+              setFilterQuery={setModifiedFilterQuery}
+            />
+          }
+        />
 
-      <button onClick={() => setShowModal(true)}>F</button>
+        <button onClick={() => setShowModal(true)} className="btn-filter">
+          <div className="badge">8</div>
+          <RiFilterFill className="icon" size="28px" color="var(--color-neutral-30" />
+        </button>
     </div>
   );
 };

@@ -48,7 +48,7 @@
   --fw-bold: 700;
 
   /* Font Sizes */
-  --fs-xs: 0.6rem;
+  --fs-xs: 0.7rem;
   --fs-sm: 0.8rem;
   --fs-rg: 0.9rem;
   --fs-md: 1.4rem;
@@ -72,20 +72,38 @@
   --screen-lg-min: 1172px;
   --screen-lg-max: 1200px;
   --screen-xl-max: 1400px;
+
+  /* Play */
+  --play-thumb-size: 180px;
 }
 
 html,
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   font-family: var(--ff-default);
   line-height: 1.6;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
 
 body * {
+  box-sizing: border-box;
   font-family: var(--ff-default);
+}
+
+.app-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 
@@ -120,4 +138,36 @@ body * {
     --fs-xl: 1.8rem;
     --fs-xxl: 2rem;
   }
+}
+
+/* App Body */
+.app-body {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* App Footer */
+.app-footer {
+  padding: 0 2rem;
+  text-align: center;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-light);
+  color: var(--color-neutral-50);
+  border-top: solid 1px var(--color-neutral-30);
+}
+
+.app-footer p {
+  margin: 0.4rem 0;
+}
+
+.app-footer a {
+  color: var(--color-neutral-80);
+}
+
+.app-footer a:hover,
+.app-footer a:focus {
+  color: var(--color-brand-primary-alt);
 }

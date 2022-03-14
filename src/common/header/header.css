@@ -1,5 +1,5 @@
 .app-header {
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   left: 0;
@@ -95,24 +95,3 @@
   }
 }
 
-
-.footer {
-  padding: 2rem;
-  text-align: center;
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-light);
-  color: var(--color-neutral-50);
-}
-
-.footer p {
-  margin: 1rem 0;
-}
-
-.footer a {
-  color: var(--color-neutral-80);
-}
-
-.footer a:hover,
-.footer a:focus {
-  color: var(--color-brand-primary-alt);
-}

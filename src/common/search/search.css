@@ -1,17 +1,95 @@
-
-.search-text {
-  border-radius: 4px;
-  height: 1.5rem;
+/* Search bar */
+.app-header-search {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  max-width: 600px;
+  align-items: center;
 }
 
-.modal-filter-plays {
+/* Search input */
+.search-input {
+  position: relative;
+  width: 100%;
+}
+
+.search-input .search-input-icon {
   position: absolute;
-  top: 55px;
-  right: 30px;
-  padding:0.5rem;
-  background: #ccc;
-  border-radius: 4px;
-  border: 1px solid #999;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  z-index: 1000;
+  left: 1rem;
+  top: 50%;
+  opacity: 0.6;
+  transform: translateY(-50%);
+}
+
+.search-input .search-input-text {
+  box-sizing: border-box;
+  width: 100%;
+  border: 0;
+  border-radius: 2rem;
+  padding: 0.8rem 1.6rem 0.8rem 3rem;
+  color: var(--color-neutral-20);
+  font-family: var(--ff-default);
+  font-size: var(--fs-rg);
+  background-color: rgba(var(--color-brand-primary-rgb), 0.20);
+}
+
+.search-input .search-input-text:focus,
+.search-input .search-input-text:focus-visible {
+  border: solid 1px var(--color-neutral-50);
+  box-shadow:  0 0 0 rgba(0,0,0,0);
+  outline: none;
+}
+
+.search-input .search-input-text::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--color-neutral-10);
+  opacity: 0.5; /* Firefox */
+}
+
+.search-input .search-input-text:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--color-neutral-10);
+}
+
+.search-input .search-input-text::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--color-neutral-10);
+}
+
+/* Filter */
+.search-filter {
+  height: 28px;
+}
+
+.btn-filter {
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-filter .icon {
+  fill: var(--color-neutral-30);
+}
+
+.btn-filter:hover,
+.btn-filter:focus {
+  outline: none;
+}
+
+.btn-filter:hover .icon,
+.btn-filter:focus .icon {
+  fill: var(--color-neutral-10);
+}
+
+.btn-filter .badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  border-radius: 18px;
+  color: var(--color-neutral-90);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xs);
+  line-height: 18px;
+  background-color: var(--color-brand-primary);
 }
