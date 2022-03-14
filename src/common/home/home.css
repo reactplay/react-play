@@ -18,6 +18,12 @@
     line-height: var(--lh-rg);
 }
 
+@media screen and (max-width: 768px) {
+    .app-home-body .body-title br {
+        display: none;
+    }
+}
+
 .app-home-body .body-title strong {
     font-family: var(--ff-accent);
     position: relative;
@@ -193,7 +199,8 @@
 /* Pills */
 
 .pills-category {
-    margin: 3rem 0;
+    margin: 3rem 1rem;
+    padding: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -215,6 +222,17 @@
     text-decoration: none;
     color: rgba(var(--color-neutral-90-rgb), 0.6);
     transition: all 0.16s ease-in-out;
+}
+
+@media screen and (max-width:768px) {
+    .pills-category {
+        margin: 3rem 1rem 1rem 1rem;
+    }
+
+    .pills-category a {
+        padding: 0.6rem 1.4rem;
+        font-size: var(--fs-sm);
+    }
 }
 
 .pills-category a:hover,
@@ -254,7 +272,7 @@
 @media screen and (max-width:568px) {
     .list-apps {
         margin: 1rem auto;
-        grid-template-columns: repeat(1, minmax(340px, 300px));
+        grid-template-columns: repeat(1, minmax(240px, 300px));
     }
 }
 
@@ -280,6 +298,12 @@
 .list-apps a:hover {
     transform: scale(1.12);
 } 
+
+@media screen and (max-width:568px) {
+    .list-apps a:hover {
+        transform: none;
+    }
+}
 
 .list-apps a * {
     transition: all .1s ease-in-out;
