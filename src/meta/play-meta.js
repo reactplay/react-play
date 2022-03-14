@@ -22,7 +22,7 @@ const plays = [
   },
   {
     id: 'pl-0002',
-    name: 'Current Timer',
+    name: 'Clock',
     description: 'This application shows the current time and it increases every second',
     component: () => {return <CurrentTimer />},
     path: '/plays/clock',
