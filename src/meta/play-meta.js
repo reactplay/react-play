@@ -28,7 +28,9 @@ const plays = [
     path: '/plays/clock',
     level: 'Beginner',
     tags: 'JSX, Schedule',
-    github: 'https://github.com/atapas'
+    github: 'https://github.com/atapas',
+    blog: 'https://blog.greenroots.info',
+    video: 'https://youtube.com/tapasadhikary'
   },
   {
     id: 'pl-0003',
