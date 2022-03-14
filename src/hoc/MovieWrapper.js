@@ -1,7 +1,7 @@
 import React from "react";
 
 const withFetch = (WrappedComponent) => {
-  return class extends React.Component {
+  class WithFetch extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -27,6 +27,10 @@ const withFetch = (WrappedComponent) => {
       );
     }
   };
+
+  WithFetch.displayName = `WithFetch(${WithFetch.name})`;
+
+  return WithFetch;
 };
 
 export default withFetch;
