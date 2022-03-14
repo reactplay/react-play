@@ -4,7 +4,8 @@ import {
   CurrentTimer,
   MovieContainer,
   WhyReact,
-  //import play here
+  CounterApp,
+//import play here
 } from "plays";
 
 const plays = [
@@ -17,17 +18,19 @@ const plays = [
     index: true,
     level: 'Beginner',
     tags: 'JSX',
-    github: 'atapas'
+    github: 'https://github.com/atapas'
   },
   {
     id: 'pl-0002',
-    name: 'Current Timer',
+    name: 'Clock',
     description: 'This application shows the current time and it increases every second',
     component: () => {return <CurrentTimer />},
     path: '/plays/clock',
     level: 'Beginner',
     tags: 'JSX, Schedule',
-    github: 'atapas'
+    github: 'https://github.com/atapas',
+    blog: 'https://blog.greenroots.info',
+    video: 'https://youtube.com/tapasadhikary'
   },
   {
     id: 'pl-0003',
@@ -37,7 +40,7 @@ const plays = [
     path: '/plays/countdown',
     level: 'Intermediate',
     tags: 'Schedule, Component Structure, Hooks, Custom Hooks',
-    github: 'atapas'
+    github: 'https://github.com/atapas'
   },
   {
     id: 'pl-0004',
@@ -47,7 +50,7 @@ const plays = [
     path: '/plays/movies',
     level: 'Intermediate',
     tags: 'Fetch Data, Hooks',
-    github: 'atapas'
+    github: 'https://github.com/atapas'
   },
   {
     id: 'pl-0005',
@@ -57,12 +60,25 @@ const plays = [
     path: '/plays/basic-family-tree',
     level: 'Intermediate',
     tags: 'Recursion, Tree',
-    github: 'green-roots'
+    github: 'https://github.com/green-roots'
+  }, {
+    id: 'pl-counter', 
+    name: 'Counter', 
+    description: 'A simple counter which increments the value upto a certain limit!',
+    component: () => {return <CounterApp />},
+    path: '/plays/Counter',
+    level: 'Beginner',
+    tags: 'JSX, State, Props',
+    github: 'https://github.com/murtuzaalisurti'
   }, //replace new play item here
 ];
 
 const getAllPlays = () => {
   return plays;
+};
+
+const getPlayById = id => {
+  return plays.find(play => play.id === id);
 };
 
 const getPlaysOnSearch = searchTerm => {
@@ -116,6 +132,7 @@ const getAllLevels = () => {
 
 export {
   getAllPlays,
+  getPlayById,
   getPlaysOnSearch,
   getPlaysByLevel,
   getPlaysByTags,

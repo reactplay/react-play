@@ -108,7 +108,6 @@ const PlayList = () => {
         </div>
       </div>
     </>
-  );
 };
 
 export default PlayList;
