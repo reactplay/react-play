@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getPlayById } from 'meta/play-meta';
 import { PlayLinks } from 'common';
-import { BsPlayFill, BsShareFill, BsGithub } from "react-icons/bs";
 
 const CurrentTimer = () => {
   // The following code is to fetch the current play from the URL
