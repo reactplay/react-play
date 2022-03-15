@@ -1,5 +1,6 @@
 /* Home Body content */
 .app-home-body {
+    position: relative;
     /* background-color: var(--color-neutral-90); */
     background: rgb(1,4,38);
     background: rgb(1,4,38);
@@ -8,6 +9,8 @@
     background: linear-gradient(180deg, rgba(1,4,38,1) 0%, rgba(76,91,94,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010426",endColorstr="#4c5b5e",GradientType=1);
     padding: 6rem 0 2rem 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .app-home-body .body-title {
@@ -449,3 +452,65 @@
     right: -0.4rem;
 }
 
+
+/* Home abstract graphics */
+.home-bg-graphics {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.home-bg-graphics-sm {
+    position: absolute;
+    top: 0%;
+    right: 25%;
+    opacity: 0.14;
+    transform: rotate(30deg) scale(0.6);
+    animation: flowerSpinSm 20s linear 0s infinite normal forwards ;
+}
+
+.home-bg-graphics-rg  {
+    position: absolute;
+    opacity: 0.08;
+    top: 35%;
+    transform: rotate(10deg) scale(1.4) translateX(-25%);
+    animation: flowerSpinRg 50s linear 0s infinite reverse forwards ;
+}
+
+.home-bg-graphics-lg {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    opacity: 0.04;
+    animation: flowerSpinLg 100s linear 0s infinite normal forwards ;
+}
+
+@keyframes flowerSpinSm {
+    from {
+        transform: rotate(360deg) scale(0.6);
+    }
+    to {
+        transform: rotate(0deg) scale(0.6);
+    }
+}
+
+@keyframes flowerSpinRg {
+    from {
+        transform: rotate(0deg) scale(1.4);
+    }
+    to {
+        transform: rotate(360deg) scale(1.4);
+    }
+}
+
+@keyframes flowerSpinLg {
+    from {
+        transform: rotate(0deg) scale(5);
+    }
+    to {
+        transform: rotate(360deg) scale(5);
+    }
+}

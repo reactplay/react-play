@@ -10,17 +10,20 @@ const Header = () => {
   const pathName = location.pathname;
   
   const [showSearch, setShowSearch] = useState(false);
+  const [headerStyle, setHeaderStyle] = useState(false);
 
   useEffect(() => {
     if (pathName === '/') {
+      setHeaderStyle(false);
       setShowSearch(false);
     } else {
+      setHeaderStyle(true);
       setShowSearch(true);
     }
   }, [pathName]);
 
   return (
-    <header className="app-header">
+    <header className={headerStyle ? "app-header c-header" : "app-header"}>
         <span><Link to="/" className="app-logo"><span className="sr-only">React Play</span></Link></span>
         <div className="app-header-search">
         {
@@ -57,5 +60,6 @@ const Header = () => {
     </header>
   );
 };
+
 
 export default Header;

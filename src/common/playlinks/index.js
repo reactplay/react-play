@@ -1,38 +1,41 @@
 import React from 'react';
+import { BsGithub } from "react-icons/bs";
+import { IoLogoYoutube } from "react-icons/io";
+import { MdRssFeed } from "react-icons/md";
 
 const PlayLinks = ({play}) => {
   console.log(play);
 
   return(
-    <ul className="play-links">
+    <>
       { play.path && 
-        <li>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://github.com/atapas/react-play/tree/main/src${play.path}`}>GitHub
+            href={`https://github.com/atapas/react-play/tree/main/src${play.path}`}>
+              <BsGithub className="icon" size="24px" />
+              <span className="sr-only">GitHub</span>
           </a>
-        </li> 
       }
       { play.blog && 
-        <li>
           <a
-            target="_blank"
-            rel="noopener noreferrer" 
-            href={play.blog}>Blog
+          target="_blank"
+          rel="noopener noreferrer" 
+          href={play.blog}>
+          <MdRssFeed className="icon" size="24px" />
+          <span className="sr-only">Blog</span>
           </a>
-        </li> 
       }
       { play.video && 
-        <li>
           <a
             target="_blank"
             rel="noopener noreferrer" 
-            href={play.video}>Video
+            href={play.video}>
+              <IoLogoYoutube className="icon" size="24px" />
+              <span className="sr-only">Video</span>
           </a>
-        </li> 
       }
-    </ul>  
+    </>  
   );
 };
 

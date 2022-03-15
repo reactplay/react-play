@@ -2,11 +2,17 @@ import { Link } from 'react-router-dom';
 import './home.css';
 import { RiSlideshow4Line } from "react-icons/ri";
 import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
+import { ReactComponent as Flower } from 'images/icon-flower.svg';
 
 const Home = () => {
   return (
     <div>
       <section className="app-home-body">
+        <div className="home-bg-graphics">
+          <Flower className="home-bg-graphics-sm" />
+          <Flower className="home-bg-graphics-rg" />
+          <Flower className="home-bg-graphics-lg" />  
+        </div>
         <h2 className="body-title">Start <strong>React Code</strong> Arena <br/>with ReactPlay</h2>
         <p className="body-desc">Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, quis tempor ligula. Quisque quis pharetra felis. Ut quis consequat orci, at consequat </p>
         <div className="video">
@@ -53,6 +59,7 @@ const Home = () => {
         <ul className="list-apps">
           <li>
             <Link to="/plays">
+              <img src="https://m.media-amazon.com/images/I/51fkB0mrDuL._SX679_.jpg" alt="Thumbnail of Play Name" />
               <div className="list-app__title">Movile List App</div>
               <div className="list-app__play">Start Playing</div>
             </Link>
