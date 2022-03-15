@@ -17,7 +17,7 @@ const Home = () => {
         <p className="body-desc">Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, quis tempor ligula. Quisque quis pharetra felis. Ut quis consequat orci, at consequat </p>
         <div className="video">
           <div className="video-wrapper">
-            <iframe className="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/D_cUdRtPG-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe className="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/D_cUdRtPG-M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
           </div>
         </div>
         <ul className="home-features">
