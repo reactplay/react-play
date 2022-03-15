@@ -2,8 +2,7 @@ import { useSearchFilter } from "common/search/hooks/useSearchFilter";
 import { Link } from "react-router-dom";
 import './playlist.css';
 
-import { GoPlay } from "react-icons/go";
-import { BsPlayFill, BsShareFill, BsGithub } from "react-icons/bs";
+import { BsPlayFill } from "react-icons/bs";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 
