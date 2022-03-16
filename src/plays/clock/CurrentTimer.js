@@ -1,10 +1,8 @@
+
+import PlayHeader from 'common/playlists/PlayHeader';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getPlayById } from 'meta/play-meta';
-
-import PlayHeader from 'common/playlists/PlayHeader';
-
-
 
 const CurrentTimer = () => {
   // The following code is to fetch the current play from the URL
@@ -33,7 +31,6 @@ const CurrentTimer = () => {
         </div>
       </div>
     </>
-    
   );
 }
 

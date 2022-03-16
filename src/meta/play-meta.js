@@ -18,7 +18,7 @@ const plays = [
     index: true,
     level: 'Beginner',
     tags: 'JSX',
-    github: 'https://github.com/atapas'
+    github: 'atapas'
   },
   {
     id: 'pl-0002',
@@ -28,7 +28,7 @@ const plays = [
     path: '/plays/clock',
     level: 'Beginner',
     tags: 'JSX, Schedule',
-    github: 'https://github.com/atapas',
+    github: 'atapas',
     blog: 'https://blog.greenroots.info',
     video: 'https://youtube.com/tapasadhikary'
   },
@@ -40,7 +40,7 @@ const plays = [
     path: '/plays/countdown',
     level: 'Intermediate',
     tags: 'Schedule, Component Structure, Hooks, Custom Hooks',
-    github: 'https://github.com/atapas'
+    github: 'atapas'
   },
   {
     id: 'pl-0004',
@@ -50,7 +50,7 @@ const plays = [
     path: '/plays/movies',
     level: 'Intermediate',
     tags: 'Fetch Data, Hooks',
-    github: 'https://github.com/atapas'
+    github: 'atapas'
   },
   {
     id: 'pl-0005',
@@ -60,16 +60,16 @@ const plays = [
     path: '/plays/basic-family-tree',
     level: 'Intermediate',
     tags: 'Recursion, Tree',
-    github: 'https://github.com/green-roots'
+    github: 'green-roots'
   }, {
     id: 'pl-counter', 
     name: 'Counter', 
     description: 'A simple counter which increments the value upto a certain limit!',
     component: () => {return <CounterApp />},
-    path: '/plays/Counter',
+    path: '/plays/counter',
     level: 'Beginner',
     tags: 'JSX, State, Props',
-    github: 'https://github.com/murtuzaalisurti'
+    github: 'murtuzaalisurti'
   }, //replace new play item here
 ];
 
