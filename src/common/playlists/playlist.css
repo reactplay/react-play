@@ -181,6 +181,95 @@
     -moz-box-shadow: 0px 4px 10px 0px rgba(var(--color-neutral-90-rgb),0.12);
 }
 
+.play-details .play-details-header .header-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: .6rem;
+}
+
+.play-level {
+    display: inline-flex;
+    align-items: center;
+    grid-gap: 0.2rem;
+    line-height: 1;
+    border-radius: 0.2rem;
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    background-color: rgba(var(--color-neutral-90-rgb),0.12);
+    padding: 0.3rem 0.4rem 0.24rem 0.4rem;
+    color: rgba(var(--color-neutral-90-rgb), 0.8);
+    text-decoration: none;
+    transition: all 0.12s ease-in-out;
+}
+
+.play-level.play-level-1 {
+    background-color: rgba(var(--color-play-level-1),0.12);
+    color: rgba(var(--color-play-level-1), 1);
+}
+.play-level.play-level-1:hover,
+.play-level.play-level-1:focus {
+    background-color: rgba(var(--color-play-level-1),1);
+    color: var(--color-neutral-10);
+}
+
+.play-level.play-level-2 {
+    color: rgba(var(--color-play-level-2), 1);
+    background-color: rgba(var(--color-play-level-2),0.12);
+}
+.play-level.play-level-2:hover,
+.play-level.play-level-2:focus {
+    background-color: rgba(var(--color-play-level-2),1);
+    color: var(--color-neutral-10);
+}
+
+.play-level.play-level-3 {
+    color: rgba(var(--color-play-level-3), 1);
+    background-color: rgba(var(--color-play-level-3),0.12);
+}
+.play-level.play-level-3:hover,
+.play-level.play-level-3:focus {
+    background-color: rgba(var(--color-play-level-3),1);
+    color: var(--color-neutral-10);
+}
+
+.play-details .play-details-header .header-secondary .header-author {
+    font-size: var(--fs-sm);
+}
+.play-details .play-details-header .header-secondary {
+    display: flex;
+    flex-direction: row;
+    grid-gap: .6rem;
+    align-items: center;
+}
+
+.play-details .play-details-header .list-tags {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+    grid-gap: .6rem;
+}
+
+.play-tag {
+    display: inline-flex;
+    line-height: 1;
+    border-radius: 0.2rem;
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    background-color: rgba(var(--color-neutral-90-rgb),0.08);
+    padding: 0.4rem 0.4rem 0.24rem 0.4rem;
+    color: rgba(var(--color-neutral-90-rgb), 0.8);
+    text-decoration: none;
+    transition: all 0.12s ease-in-out;
+}
+
+.play-tag:hover,
+.play-tag:focus {
+    background-color: var(--color-neutral-70);
+    color: var(--color-neutral-10);
+}
+
 .play-details .play-details-header .header-title {
     margin: 0;
     font-size: var(--fs-md);
