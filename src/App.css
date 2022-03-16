@@ -74,7 +74,7 @@
   --screen-xl-max: 1400px;
 
   /* Play */
-  --play-thumb-size: 180px;
+  --play-thumb-size: 268px;
 }
 
 html,
@@ -126,6 +126,7 @@ code {
     --fs-lg: 1.4rem;
     --fs-xl: 2rem;
     --fs-xxl: 2.8rem;
+    --play-thumb-size: 240px;
   }
 }
 
@@ -140,6 +141,13 @@ code {
   }
 }
 
+@media screen and (max-width: 480px) {
+  :root {
+    /* Font Sizes */
+    --play-thumb-size: 280px;
+  }
+}
+
 /* App Body */
 .app-body {
   position: relative;
@@ -147,6 +155,7 @@ code {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  background-color: var(--color-neutral-20);
 }
 
 /* App Footer */

@@ -1,58 +1,41 @@
 /* List of Plays Available */
 .list-plays {
-    padding: 0.4rem;
-    background-color: rgba(var(--color-brand-primary-rgb), 0.1);
-}
-
-.list-plays {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    grid-gap: 0.6rem;
-}
-
-.list-plays .btn-scroll {
-    border: 0;
-    padding-left: 0;
-    padding-right: 0;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.list-plays .btn-scroll .icon {
-    opacity: 0.6;
-    fill: var(--color-neutral-90);
-}
-
-.list-plays .btn-scroll:hover .icon,
-.list-plays .btn-scroll:focus .icon {
-    opacity: 1;
-    fill: var(--color-neutral-90);
-}
-
-.list-plays ul {
-    margin: 0 auto;
-    padding: 0.6rem 0.6rem 0.6rem 0;
+    margin: 0 1rem;
+    padding: 1.6rem 2rem;
     list-style: none;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    grid-gap: 1rem;
-    flex-grow: 1;
-    overflow-x: hidden;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--play-thumb-size), var(--play-thumb-size)));
+    grid-auto-rows: minmax(var(--play-thumb-size), var(--play-thumb-size));
+    grid-gap: 2rem;
+    justify-content: center;
 }
 
-.list-plays ul li a {
-    position: relative;
+.list-plays li a {
+    border: solid 0px transparent;
     display: block;
+    height: 100%;
+    position: relative;
     border-radius: 0.6rem;
     background-color: var(--color-neutral-10);
-    width: var(--play-thumb-size);
-    height: calc(var(--play-thumb-size) * 0.8);
+    /* width: var(--play-thumb-size);
+    height: calc(var(--play-thumb-size) * 0.8); */
     padding: 1.6rem;
-    box-shadow: 0px 0 10px 0px rgba(var(--color-neutral-90-rgb),0.12);
-    -webkit-box-shadow: 0px 0 10px 0px rgba(var(--color-neutral-90-rgb),0.12);
-    -moz-box-shadow: 0px 0 10px 0px rgba(var(--color-neutral-90-rgb),0.12);
+    box-shadow: 0px 0 6px 0px rgba(var(--color-neutral-90-rgb),0.10);
+    -webkit-box-shadow: 0px 0 6px 0px rgba(var(--color-neutral-90-rgb),0.10);
+    -moz-box-shadow: 0px 0 6px 0px rgba(var(--color-neutral-90-rgb),0.10);
     transition: all 0.16s ease-in-out;
+}
+
+.list-plays li a:hover,
+.list-plays li a:focus {
+    border: solid 2px var(--color-brand-primary);
+    transform: scale(1.06);
+    box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.10);
+    -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.10);
+    -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.10);
 }
 
 .list-plays a:after {
@@ -73,10 +56,10 @@
 
 .list-plays a:hover:after {
     background: rgb(0,0,0);
-    background: -moz-linear-gradient(180deg, rgba(var(--color-neutral-90-rgb),1) 0%, rgba(var(--color-neutral-90-rgb),1) 100%);
-    background: -webkit-linear-gradient(180deg, rgba(var(--color-neutral-90-rgb),1) 0%, rgba(var(--color-neutral-90-rgb),1) 100%);
-    background: linear-gradient(180deg, rgba(var(--color-neutral-90-rgb),1) 0%, rgba(var(--color-neutral-90-rgb),1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--color-neutral-90)",endColorstr="var(--color-neutral-90)",GradientType=1);
+    background: -moz-linear-gradient(180deg, rgba(var(--color-brand-primary-rgb),0.2) 0%, rgba(var(--color-brand-primary-rgb),0.2) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(var(--color-brand-primary-rgb),0.2) 0%, rgba(var(--color-brand-primary-rgb),0.2) 100%);
+    background: linear-gradient(180deg, rgba(var(--color-brand-primary-rgb),0.2) 0%, rgba(var(--color-brand-primary-rgb),0.2) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--color-brand-primary)",endColorstr="var(--color-brand-primary)",GradientType=1);
 }
 
 .list-plays a .play-title {
@@ -99,7 +82,7 @@
     top: 1.6rem;
     transform: translateY(0);
     padding-bottom: 0;
-    color: white;
+    color: var(--color-neutral-90);
     z-index: 1;
 }
 
@@ -118,7 +101,7 @@
     align-items: center;
     opacity: 1;
     bottom: 1.6rem;
-    color: var(--color-brand-primary);
+    color: var(--color-neutral-90);
     z-index: 1;
     grid-gap: 0.4rem;
     line-height: 1;
@@ -271,3 +254,14 @@
     border-color: var(--color-brand-primary);
     color: rgba(var(--color-neutral-90-rgb), 0.9);
 }
+
+.parent {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  }
+  
+  .child {
+    background-color: red;
+    padding: 64px;
+  }
