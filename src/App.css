@@ -73,6 +73,10 @@
   --screen-lg-max: 1200px;
   --screen-xl-max: 1400px;
 
+  /* Header */
+  --navbar-icon-size-rg: 24px;
+  --navbar-icon-size-sm: 16px;
+
   /* Play */
   --play-thumb-size: 268px;
 
@@ -143,6 +147,10 @@ code {
     --fs-lg: 1.4rem;
     --fs-xl: 1.8rem;
     --fs-xxl: 2rem;
+
+    /* Header */
+    --navbar-icon-size-rg: 20px;
+    --navbar-icon-size-sm: 14px;
   }
 }
 
@@ -167,7 +175,7 @@ code {
 .app-footer {
   padding: 0 2rem;
   text-align: center;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   font-weight: var(--fw-light);
   color: var(--color-neutral-50);
   border-top: solid 1px var(--color-neutral-30);
