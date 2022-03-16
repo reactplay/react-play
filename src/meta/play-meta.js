@@ -40,7 +40,8 @@ const plays = [
     path: '/plays/countdown',
     level: 'Intermediate',
     tags: 'Schedule, Component Structure, Hooks, Custom Hooks',
-    github: 'atapas'
+    github: 'atapas',
+    blog: 'https://blog.greenroots.info/how-to-create-a-countdown-timer-using-react-hooks',
   },
   {
     id: 'pl-0004',
