@@ -186,7 +186,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    grid-gap: .6rem;
+    grid-gap: .2rem .6rem;
+    flex-wrap: wrap;
 }
 
 .play-level {
@@ -240,7 +241,8 @@
 .play-details .play-details-header .header-secondary {
     display: flex;
     flex-direction: row;
-    grid-gap: .6rem;
+    flex-wrap: wrap;
+    grid-gap: .2rem .6rem;
     align-items: center;
 }
 
