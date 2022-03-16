@@ -23,7 +23,7 @@ const Header = () => {
   }, [pathName]);
 
   return (
-    <header className={headerStyle ? "app-header c-header" : "app-header"}>
+    <header className={headerStyle ? "app-header" : "app-header app-header-home"}>
         <span><Link to="/" className="app-logo"><span className="sr-only">React Play</span></Link></span>
         <div className="app-header-search">
         {
