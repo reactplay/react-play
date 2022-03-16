@@ -39,19 +39,19 @@ const Header = () => {
           <ul className="header-links">
             <li>
               <a href="https://github.com/atapas/react-play" target="_blank" rel="noopener noreferrer">
-                <BsGithub className="icon" size="24px" />
+                <BsGithub className="icon" />
                 <span className="sr-only">GitHub</span>
               </a>
             </li>
             <li>
               <a href="https://twitter.com/tapasadhikary" target="_blank" rel="noopener noreferrer">
-                <BsTwitter className="icon" size="24px" />
+                <BsTwitter className="icon" />
                 <span className="sr-only">Twitter</span>
               </a>
             </li>
             <li>
               <a href="https://github.com/atapas/react-play" target="_blank" rel="noopener noreferrer" className="app-header-btn">
-                <BsShareFill className="icon" size="16px" />
+                <BsShareFill className="icon" />
                 <span className="btn-label">Share</span>
               </a>
             </li>
