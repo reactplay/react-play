@@ -3,7 +3,7 @@ import { BsGithub } from "react-icons/bs";
 import { IoLogoYoutube } from "react-icons/io";
 import { MdRssFeed } from "react-icons/md";
 
-const PlayLinks = ({play}) => {
+const PlayHeaderActions = ({play}) => {
   console.log(play);
 
   return(
@@ -39,4 +39,4 @@ const PlayLinks = ({play}) => {
   );
 };
 
-export default React.memo(PlayLinks);
+export default PlayHeaderActions;
