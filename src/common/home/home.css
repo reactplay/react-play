@@ -22,6 +22,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .app-home-body .body-title {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
     .app-home-body .body-title br {
         display: none;
     }
@@ -465,8 +469,8 @@
 
 .home-bg-graphics-sm {
     position: absolute;
-    top: 0%;
-    right: 25%;
+    top: 5%;
+    right: 20%;
     opacity: 0.14;
     transform: rotate(30deg) scale(0.6);
     animation: flowerSpinSm 20s linear 0s infinite normal forwards ;
@@ -488,12 +492,39 @@
     animation: flowerSpinLg 100s linear 0s infinite normal forwards ;
 }
 
+@media screen and (max-width: 768px) {
+    .home-bg-graphics-sm {
+        top: 0%;
+    }
+
+    .home-bg-graphics-rg  {
+        left: -15%;
+        top: 35%;
+    }
+
+    .home-bg-graphics-lg {
+        top: 20%;
+        right: -15%;
+    }
+}
+
 @keyframes flowerSpinSm {
     from {
         transform: rotate(360deg) scale(0.6);
     }
     to {
         transform: rotate(0deg) scale(0.6);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    @keyframes flowerSpinSm {
+        from {
+            transform: rotate(360deg) scale(0.3);
+        }
+        to {
+            transform: rotate(0deg) scale(0.3);
+        }
     }
 }
 
@@ -506,11 +537,33 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    @keyframes flowerSpinRg {
+        from {
+            transform: rotate(0deg) scale(1);
+        }
+        to {
+            transform: rotate(360deg) scale(1);
+        }
+    }
+}
+
 @keyframes flowerSpinLg {
     from {
         transform: rotate(0deg) scale(5);
     }
     to {
         transform: rotate(360deg) scale(5);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    @keyframes flowerSpinLg {
+        from {
+            transform: rotate(0deg) scale(3);
+        }
+        to {
+            transform: rotate(360deg) scale(3);
+        }
     }
 }
