@@ -13,11 +13,11 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
   const creators = getAllCreators();
 
   return (
-    <div className="search-filter-modal">
-      <div className="search-filter-modal-row">
+    <>
+      <div className="form-group">
         <label>Level</label>
         <select
-          className="search-filter-modal-select"
+          className="form-control"
           onChange={(event) =>
             setFilterQuery({ ...filterQuery, level: event.target.value })
           }
@@ -31,10 +31,10 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
           ))}
         </select>
       </div>
-      <div className="search-filter-modal-row">
+      <div className="form-group">
         <label>Tags</label>
         <select
-          className="search-filter-modal-select"
+          className="form-control"
           onChange={(event) =>
             setFilterQuery({ ...filterQuery, tags: [event.target.value] })
           }
@@ -48,10 +48,10 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
           ))}
         </select>
       </div>
-      <div className="search-filter-modal-row">
+      <div className="form-group">
         <label>Creator</label>
         <select
-          className="search-filter-modal-select"
+          className="form-control"
           onChange={(event) =>
             setFilterQuery({ ...filterQuery, creator: event.target.value })
           }
@@ -65,7 +65,7 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
           ))}
         </select>
       </div>      
-    </div>
+    </>
   );
 };
 
@@ -99,7 +99,7 @@ const FilterPlays = () => {
           onClose={() => setShowModal(false)}
           onSubmit={handleFilter}
           show={showModal}
-          cname="filter-plays"
+          cname="filter"
           children={
             <FilterPlaysModalBody
               filterQuery={modifiedFilterQuery}
