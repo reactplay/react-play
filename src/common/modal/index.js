@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom";
 import { GoCheck, GoX } from "react-icons/go";
-import { IoCheckmark, IoClose } from "react-icons/io5";
 
 const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
   if (!show) return null;
