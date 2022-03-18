@@ -13,7 +13,7 @@ const Home = () => {
           <Flower className="home-bg-graphics-rg" />
           <Flower className="home-bg-graphics-lg" />  
         </div>
-        <h2 className="body-title">Start <strong>React Code</strong> Arena <br/>with React Play</h2>
+        <h2 className="body-title">Start <strong>React Code</strong> Arena <br/>with ReactPlay</h2>
         <p className="body-desc">
           React Play is an opensource application to learn, contribute and give back to 
           the React developer community. Do you want to know more on how it works? Please check out
