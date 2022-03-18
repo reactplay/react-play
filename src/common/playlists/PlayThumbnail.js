@@ -26,7 +26,7 @@ const PlayThumbnail = ({ play }) => {
       });
     }
     
-  }, [play.cover]);
+  }, [play]);
 
   return (
     <li key={play.id}>
