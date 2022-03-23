@@ -31,7 +31,7 @@ const PlayThumbnail = ({ play }) => {
   return (
     <li key={play.id}>
       <Link to={play.path} state={{ id: play.id }}>
-        <img src={cover} alt={play.id} />
+        <img src={cover} alt={play.id} className="play-thumb" />
         <div className="play-title">{play.name}</div>
         <div className="play-status">
           <BsPlayCircleFill size="18px" color="var(--color-neutral-80)" />

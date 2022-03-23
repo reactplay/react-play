@@ -21,12 +21,13 @@
     border-radius: 0.6rem;
     background-color: var(--color-neutral-10);
     /* width: var(--play-thumb-size);
-    height: calc(var(--play-thumb-size) * 0.8); */
-    padding: 1.6rem;
+    height: calc(var(--play-thumb-size) * 0.8); 
+    padding: 1.6rem; */
     box-shadow: 0px 0 6px 0px rgba(var(--color-neutral-90-rgb),0.10);
     -webkit-box-shadow: 0px 0 6px 0px rgba(var(--color-neutral-90-rgb),0.10);
     -moz-box-shadow: 0px 0 6px 0px rgba(var(--color-neutral-90-rgb),0.10);
     transition: all 0.16s ease-in-out;
+    overflow: hidden;
 }
 
 .list-plays li a:hover,
@@ -56,9 +57,9 @@
 
 .list-plays a:hover:after {
     background: rgb(0,0,0);
-    background: -moz-linear-gradient(180deg, rgba(var(--color-brand-primary-rgb),0.2) 0%, rgba(var(--color-brand-primary-rgb),0.2) 100%);
-    background: -webkit-linear-gradient(180deg, rgba(var(--color-brand-primary-rgb),0.2) 0%, rgba(var(--color-brand-primary-rgb),0.2) 100%);
-    background: linear-gradient(180deg, rgba(var(--color-brand-primary-rgb),0.2) 0%, rgba(var(--color-brand-primary-rgb),0.2) 100%);
+    background: -moz-linear-gradient(180deg, rgba(var(--color-brand-primary-rgb),0.6) 0%, rgba(var(--color-brand-primary-rgb),1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(var(--color-brand-primary-rgb),0.6) 0%, rgba(var(--color-brand-primary-rgb),1) 100%);
+    background: linear-gradient(180deg, rgba(var(--color-brand-primary-rgb),0.6) 0%, rgba(var(--color-brand-primary-rgb),1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--color-brand-primary)",endColorstr="var(--color-brand-primary)",GradientType=1);
 }
 
@@ -77,6 +78,15 @@
     transition: all 0.16s ease-in-out;
 }
 
+.list-plays a .play-thumb {    
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 100%;
+
+}
+
 .list-plays a:hover .play-title {    
     position: absolute;
     top: 1.6rem;
@@ -90,6 +100,7 @@
 .list-plays a .play-status {
     position: absolute;
     opacity: 0;
+    left: 1.6rem;
     bottom: 50%;
     font-size: var(--fs-rg);
     transition: all 0.16s ease-in-out;
@@ -287,6 +298,7 @@
 
 .play-details .play-details-body {
     flex-grow: 1;
+    padding: 1rem;
     overflow-y: auto;
 }
 
