@@ -51,6 +51,7 @@ const Author = ({github}) => {
           by <a 
               href={`https://github.com/${github}`}
               target="_blank"
+              className="play-anchor"
               rel="noopener noreferrer">
                 <strong>{data.name}</strong>
               </a>
@@ -77,15 +78,13 @@ const Tags = ({tags}) => {
 const PlayHeaderInfo = ({ play }) => {
    
   return (
-    <div>
-      <div className="header-wrapper">
+    <div className="header-leftcol">
+      <div className="header-primary">
         <h3 className="header-title">{play.name}</h3>
-        <LevelBadge level={play.level} />
+        <LevelBadge level={play.level} /> { play.tags && <Tags tags={play.tags.split(', ')} /> }
       </div>
-      <div>{play.description}</div>
       <div className="header-secondary">
         { play.github && <Author github={play.github} /> }
-        { play.tags && <Tags tags={play.tags.split(', ')} /> }
       </div>
     </div>
   );

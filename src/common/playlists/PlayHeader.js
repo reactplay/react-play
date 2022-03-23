@@ -6,8 +6,11 @@ const PlayHeader = ({ play }) => {
   return (
       <div className="play-details-header">
         <PlayHeaderInfo play={play} />
-        <div className="header-actions">
-          <PlayHeaderActions play={play} />
+        <div className="header-rightcol">
+          <div className="header-actions">
+            <PlayHeaderActions play={play} />
+          </div>
+          <small className="header-desc">{play.description}</small>
         </div>
       </div>
   );
