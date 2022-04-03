@@ -37,7 +37,7 @@ const plays = [
     name: 'Countdown Timer',
     description: 'It is a timer that fires every second and decreases the time',
     component: () => {return <CdTimerComp />},
-    path: '/plays/countdown',
+    path: '/plays/date-time-counter',
     level: 'Intermediate',
     tags: 'Schedule, Component Structure, Hooks, Custom Hooks',
     github: 'atapas',
@@ -58,7 +58,7 @@ const plays = [
     name: 'Basic Family Tree',
     description: 'A simple family tree',
     component: () => {return <BasicTree />},
-    path: '/plays/basic-family-tree',
+    path: '/plays/family-tree',
     level: 'Intermediate',
     tags: 'Recursion, Tree',
     github: 'green-roots'
