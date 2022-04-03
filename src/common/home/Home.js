@@ -4,6 +4,8 @@ import { RiSlideshow4Line } from "react-icons/ri";
 import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
 import { ReactComponent as Flower } from 'images/icon-flower.svg';
 
+import FeaturedPlays from 'common/playlists/FeaturedPlays';
+
 const Home = () => {
   return (
     <div>
@@ -58,7 +60,7 @@ const Home = () => {
       </section>
       <section className="home-plays">
         <h3 className="plays-title-primary">Trending <strong>Plays</strong></h3>
-        <nav>
+        {/*<nav>
           <ul className="pills-category">
             <li>
               <Link to="/plays" className="active">Popular</Link>
@@ -68,33 +70,10 @@ const Home = () => {
             <li><Link to="/plays">Linked List</Link></li>
           </ul>
         </nav>
-        <ul className="list-apps">
-          <li>
-            <Link to="/plays">
-              <img src="https://m.media-amazon.com/images/I/51fkB0mrDuL._SX679_.jpg" alt="Thumbnail of Play Name" />
-              <div className="list-app__title">Movile List App</div>
-              <div className="list-app__play">Start Playing</div>
-            </Link>
-          </li>
-          <li>
-            <Link to="/plays">
-              <div className="list-app__title">Ultimate Countown</div>
-              <div className="list-app__play">Start Playing</div>
-            </Link>
-          </li>
-          <li>
-            <Link to="/plays">
-              <div className="list-app__title">Simplistic Timer</div>
-              <div className="list-app__play">Start Playing</div>
-            </Link>
-          </li>
-          <li>
-            <Link to="/plays">
-              <div className="list-app__title">The Super Search</div>
-              <div className="list-app__play">Start Playing</div>
-            </Link>
-          </li>
-        </ul>
+        */}
+        
+        <FeaturedPlays />
+        
         <div className="home-plays-footer">
           <Link to="/plays" className="home-anchor"><span className="text">View all ReactPlays</span></Link>
         </div>

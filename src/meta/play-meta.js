@@ -51,7 +51,8 @@ const plays = [
     path: '/plays/movies',
     level: 'Intermediate',
     tags: 'Fetch Data, Hooks',
-    github: 'atapas'
+    github: 'atapas',
+    featured: true
   },
   {
     id: 'pl-0005',
@@ -61,7 +62,8 @@ const plays = [
     path: '/plays/family-tree',
     level: 'Intermediate',
     tags: 'Recursion, Tree',
-    github: 'green-roots'
+    github: 'green-roots',
+    featured: true
   }, {
     id: 'pl-counter', 
     name: 'Counter', 
@@ -70,7 +72,8 @@ const plays = [
     path: '/plays/counter',
     level: 'Beginner',
     tags: 'JSX, State, Props',
-    github: 'murtuzaalisurti'
+    github: 'murtuzaalisurti',
+    featured: true
   }, //replace new play item here
 ];
 
@@ -131,6 +134,13 @@ const getAllLevels = () => {
   return Array.from(new Set([...levels]));
 }
 
+const getFeaturedPlays = () => {
+  const featuredPlays = plays.filter(play => {
+    return play.featured;
+  });
+  return featuredPlays;
+}
+
 export {
   getAllPlays,
   getPlayById,
@@ -140,7 +150,8 @@ export {
   getPlaysByCreator,
   getAllTags,
   getAllCreators,
-  getAllLevels
+  getAllLevels,
+  getFeaturedPlays
 };
 
 
