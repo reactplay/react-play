@@ -1,7 +1,7 @@
 module.exports = plop => {
   // demo generator
   plop.setGenerator('play', {
-    description: 'add a new play',
+    description: 'Steps to add a new play',
     prompts: [
       {
         type: 'input',
@@ -29,6 +29,11 @@ module.exports = plop => {
         type: 'input',
         name: 'folder',
         message: 'Provide the folder name(Example: identity-card):',
+      },
+      {
+        type: 'input',
+        name: 'cover',
+        message: 'Please provide the path(URL) to cover image(When the image is hosted publicly):',
       },
       {
         type: 'list',
