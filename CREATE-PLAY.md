@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - [Steps to Create a Play](#steps-to-create-a-play)
-- [Submitting a Play for Review](submitting-a-play-for-review)
+- [Submitting a Play for Review](#submitting-a-play-for-review)
 - [Learn about the behind scenes](#learn-about-the-behind-scenes)
 - [Frequently Asked Questions](#faq)
 
