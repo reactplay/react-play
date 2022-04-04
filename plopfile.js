@@ -17,7 +17,7 @@ module.exports = plop => {
       {
         type: 'input',
         name: 'description',
-        message: 'Tell us more about the demo(Max 1024 characters):',
+        message: 'Tell us more about the play(Max 1024 characters):',
       },
       {
         type: 'input',
@@ -38,28 +38,28 @@ module.exports = plop => {
       {
         type: 'list',
         name: 'level',
-        message: 'What level is this play?(Example: Intermediate):',
+        message: 'What is the level of this play?(Example: Intermediate):',
         choices: ['Beginner', 'Intermediate', 'Advanced']
       },
       {
         type: 'input',
         name: 'tags',
-        message: 'Provide the tags(Example: JSX, Hooks):',
+        message: 'Provide maximum of 5 tags(Example: JSX, Hooks):',
       },
       {
         type: 'input',
         name: 'github',
-        message: 'Your github username(Example: atapas):',
+        message: 'Enter your github username(Example: atapas):',
       },
       {
         type: 'input',
         name: 'blog',
-        message: 'Your blog url(Example: https://blog.greenroots.info):',
+        message: 'Enter your blog url(Example: https://blog.greenroots.info):',
       },
       {
         type: 'input',
         name: 'video',
-        message: 'Your video url(Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ):',
+        message: 'Enter your video url(Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ):',
       },
     ],
     actions: [
