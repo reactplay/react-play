@@ -1,7 +1,6 @@
 import React from 'react';
 import { BsGithub } from "react-icons/bs";
 import { IoLogoYoutube } from "react-icons/io";
-import { MdOutlineChromeReaderMode } from "react-icons/md";
 import { AiOutlineRead } from "react-icons/ai";
 
 const PlayHeaderActions = ({play}) => {
