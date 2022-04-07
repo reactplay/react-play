@@ -75,14 +75,37 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: solid 2px var(--color-brand-primary);
+  border: solid 1px var(--color-brand-primary);
   border-radius: 2rem;
-  grid-gap: 0.6rem;
-  padding: 0.4rem 1.6rem;
+  grid-gap: 0.4rem;
+  padding: 0.4rem 1.2rem;
+  font-size: var(--fs-sm);
   text-decoration: none;
   width: unset;
   height: unset;
   transition: all 0.12s ease-in-out;
+}
+
+.header-links > li > a.app-header-btn--primary {
+  border: solid 2px var(--color-brand-primary);
+  background-color: var(--color-brand-primary);
+  color: var(--color-neutral-80);
+  grid-gap: 0.3rem;
+  margin-left: 0.4rem;
+}
+
+.header-links > li > a.app-header-btn.app-header-btn--primary:hover,
+.header-links > li > a.app-header-btn.app-header-btn--primary:focus {
+  border-color: var(--color-neutral-10);
+  background-color: var(--color-neutral-10);
+}
+
+.header-links > li.menu-spacer {
+  margin-right: 1rem;
+}
+
+.header-links > li > a.app-header-btn.app-header-btn--primary .icon {
+  fill: var(--color-neutral-70);
 }
 
 .header-links > li > a .icon {
@@ -102,16 +125,32 @@
 }
 
 .header-links > li > a.app-header-btn:hover .icon {
-  fill: var(--color-neutral-90);
+  fill: var(--color-neutral-10);
 }
 
 .header-links > li > a.app-header-btn .btn-label {
   font-size: var(--fs-sm);
 }
 
-.header-links > li > a.app-header-btn:hover {
-  background-color: var(--color-brand-primary);
-  color: var(--color-neutral-90);
+.header-links > li > a.app-header-btn:hover,
+.header-links > li > a.app-header-btn:focus {
+  background-color: rgba(var(--color-brand-primary-rgb), 0.3);
+}
+
+.header-links > li > a.app-header-btn.app-header-btn--secondary:hover,
+.header-links > li > a.app-header-btn.app-header-btn--secondary:focus {
+  border-color: var(--color-neutral-10);
+  background-color: var(--color-neutral-10);
+}
+
+.header-links > li > a.app-header-btn.app-header-btn--secondary {
+  border: solid 1px var(--color-neutral-60);
+  border-radius: 2rem;
+}
+
+.header-links > li > a.app-header-btn.app-header-btn--secondary:hover,
+.header-links > li > a.app-header-btn.app-header-btn--secondary:focus {
+  background-color: rgba(var(--color-neutral-10-rgb), 0.3);
 }
 
 @media screen and (max-width: 768px) {
