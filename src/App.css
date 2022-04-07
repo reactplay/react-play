@@ -78,7 +78,8 @@
   --navbar-icon-size-sm: 16px;
 
   /* Play */
-  --play-thumb-size: 268px;
+  --play-thumb-size-w: 260px;
+  --play-thumb-size-h: 146px;
 
   /* Play level */
   --color-play-level-1: 3, 169, 244;

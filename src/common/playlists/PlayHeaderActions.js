@@ -1,7 +1,8 @@
 import React from 'react';
 import { BsGithub } from "react-icons/bs";
 import { IoLogoYoutube } from "react-icons/io";
-import { MdRssFeed } from "react-icons/md";
+import { MdOutlineChromeReaderMode } from "react-icons/md";
+import { AiOutlineRead } from "react-icons/ai";
 
 const PlayHeaderActions = ({play}) => {
   console.log(play);
@@ -22,7 +23,7 @@ const PlayHeaderActions = ({play}) => {
           target="_blank"
           rel="noopener noreferrer" 
           href={play.blog}>
-          <MdRssFeed className="icon" size="24px" />
+          <AiOutlineRead className="icon" size="24px" />
           <span className="sr-only">Blog</span>
           </a>
       }
