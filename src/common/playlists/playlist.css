@@ -245,6 +245,11 @@
     fill: rgba(var(--color-neutral-90-rgb), 0.4);
 }
 
+.play-details .play-details-header .header-primary .action:hover .icon,
+.play-details .play-details-header .header-primary .action:focus .icon {
+    fill: rgba(var(--color-neutral-90-rgb), 0.8);
+}
+
 .play-level {
     display: inline-flex;
     align-items: center;
