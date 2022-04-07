@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { RiMedal2Fill } from "react-icons/ri";
-import { IoMdTrophy } from "react-icons/io";
+import { IoMdTrophy, IoMdArrowBack } from "react-icons/io";
 import { IoRibbon } from "react-icons/io5";
 
 import useGitHub from 'common/hooks/useGitHub';
@@ -80,6 +80,14 @@ const PlayHeaderInfo = ({ play }) => {
   return (
     <div className="header-leftcol">
       <div className="header-primary">
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="action"
+            href={`https://github.com/atapas/react-play/tree/main/src${play.path}`}>
+              <IoMdArrowBack className="icon" size="24px" />
+              <span className="sr-only">Back</span>
+        </a>
         <h3 className="header-title">{play.name}</h3>
         <LevelBadge level={play.level} /> { play.tags && <Tags tags={play.tags.split(', ')} /> }
       </div>
