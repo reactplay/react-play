@@ -115,12 +115,31 @@ Welcome developers! Here are some things you can do to get started with your `Pl
 ### Submitting a Play for Review
 After you done with coding for your `Play`, you can submit it for review. Submitting a `Play` for review is a two step process.
 
-- Create a Pull Request on the [react-play](https://github.com/atapas/react-play) repository with your changes.
+- Create a Pull Request on the [react-play](https://github.com/atapas/react-play) repository with your changes. Please add `atapas` as a reviewer.
 - Dedicate some time in a week to take care of the review comments.
 
 Once the Pull Request is approved and merged, we will notify you and add you as a `Contributor` to the [react-play](https://github.com/atapas/react-play) project.
 ### Learn about the behind scenes
 TBA
+
+`play-meta.js`
+
+```js
+{
+    id: 'pl-id-badge', 
+    name: 'Id Badge', 
+    description: 'This is an Identity Badge created using React',
+    component: () => {return <IdBadge />},
+    path: '/plays/id-badge',
+    level: 'Intermediate',
+    tags: 'JSX, Hooks, Forms, Event Handling',
+    github: 'atapas',
+    cover: 'https://res.cloudinary.com/atapas/image/upload/v1649060528/demos/id-card_pdvyvz.png',
+    blog: '',
+    video: ''
+  }
+```
+
 
 ### FAQ
 TBA
