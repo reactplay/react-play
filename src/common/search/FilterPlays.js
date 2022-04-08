@@ -108,8 +108,8 @@ const FilterPlays = () => {
           }
         />
 
-        <button onClick={() => setShowModal(true)} className="btn-filter">
-          <div className="badge">8</div>
+        <button onClick={() => setShowModal(true)} className="btn-filter" title="Filter Plays">
+          {/*<div className="badge">8</div>*/}
           <RiFilterFill className="icon" size="28px" color="var(--color-neutral-30" />
         </button>
     </div>

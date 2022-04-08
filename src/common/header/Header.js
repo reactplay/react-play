@@ -12,14 +12,17 @@ const Header = () => {
   
   const [showSearch, setShowSearch] = useState(false);
   const [headerStyle, setHeaderStyle] = useState(false);
+  const [showBrowse, setShowBrowse] = useState(false);
 
   useEffect(() => {
     if (pathName === '/') {
       setHeaderStyle(false);
       setShowSearch(false);
+      setShowBrowse(true);
     } else {
       setHeaderStyle(true);
       setShowSearch(true);
+      setShowBrowse(false);
     }
   }, [pathName]);
 
@@ -38,14 +41,16 @@ const Header = () => {
         </div>
         <nav>
           <ul className="header-links">
-            <li>
-              <a href="https://github.com/atapas/react-play" target="_blank" rel="noopener noreferrer" className="app-header-btn">
-                <IoSearch className="icon" />
-                <span className="btn-label">Browse</span>
-              </a>
-            </li>
+            { showBrowse && (
+              <li>
+                <Link to="/plays" className="app-header-btn">
+                  <IoSearch className="icon" />
+                  <span className="btn-label">Browse</span>
+                </Link>
+              </li>)
+            }
             <li className='menu-spacer'>
-              <a href="https://github.com/atapas/react-play" target="_blank" rel="noopener noreferrer" className="app-header-btn app-header-btn--primary">
+              <a href="https://github.com/atapas/react-play/blob/main/CREATE-PLAY.md" target="_blank" rel="noopener noreferrer" className="app-header-btn app-header-btn--primary">
                 <IoAddSharp className="icon" />
                 <span className="btn-label">Create</span>
               </a>
@@ -57,15 +62,15 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/tapasadhikary" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/reactplayio" target="_blank" rel="noopener noreferrer">
                 <BsTwitter className="icon" />
                 <span className="sr-only">Twitter</span>
               </a>
             </li>
             <li>
-              <a href="https://github.com/atapas/react-play" target="_blank" rel="noopener noreferrer" className="app-header-btn app-header-btn--secondary">
+              <a href="https://github.com/atapas/react-play" target="_blank" rel="noopener noreferrer">
                 <IoShareSocial className="icon" />
-                <span className="btn-label">Share</span>
+                <span className="sr-only">Share</span>
               </a>
             </li>
           </ul>
