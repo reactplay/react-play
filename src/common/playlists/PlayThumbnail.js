@@ -13,7 +13,7 @@ const Author = ({github}) => {
     } else {
       error && setName(github);
     }
-  }, [data, error]);
+  }, [data, error, github]);
 
   return (
     <>
