@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { BsTwitter, BsGithub } from 'react-icons/bs';
-import { IoSearch, IoAddSharp, IoShareSocial } from 'react-icons/io5';
+import { IoAddSharp, IoShareSocial } from 'react-icons/io5';
+import { MdManageSearch } from 'react-icons/md';
 import SocialShare from 'common/components/SocialShare';
 import { Modal } from "common";
 
@@ -22,8 +23,8 @@ const HeaderNav = ({ showBrowse }) => {
       <ul className="header-links">
         {showBrowse && (
           <li>
-            <Link to="/plays" className="app-header-btn">
-              <IoSearch className="icon" />
+            <Link to="/plays" className="app-header-btn app-header-btn--secondary">
+              <MdManageSearch className="icon" />
               <span className="btn-label">Browse</span>
             </Link>
           </li>
@@ -44,6 +45,7 @@ const HeaderNav = ({ showBrowse }) => {
             href="https://github.com/atapas/react-play"
             target="_blank"
             rel="noopener noreferrer"
+            className="app-header-btn app-header-btn--default"
           >
             <BsGithub className="icon" />
             <span className="sr-only">GitHub</span>
@@ -54,13 +56,14 @@ const HeaderNav = ({ showBrowse }) => {
             href="https://twitter.com/reactplayio"
             target="_blank"
             rel="noopener noreferrer"
+            className="app-header-btn app-header-btn--default"
           >
             <BsTwitter className="icon" />
             <span className="sr-only">Twitter</span>
           </a>
         </li>
         <li>
-          <button
+          <button className="app-header-btn app-header-btn--default"
             onClick={() => setShowSocial(true)}>
             <IoShareSocial className="icon" />
             <span className="sr-only">Share</span>

@@ -30,16 +30,16 @@ const SocialShare = () => {
     <div className="social-share">
       <div className="social-share-buttons">
         <a href={ postOnFB() } target="_blank" rel="noopener noreferrer" className="social-share-button">
-          <IoLogoFacebook />
+          <IoLogoFacebook size={48} className="icon" />
         </a>
         <a href={ tweetIt() } target="_blank" rel="noopener noreferrer" className="social-share-button">
-          <IoLogoTwitter />
+          <IoLogoTwitter  size={48} className="icon" />
         </a>
         <a href={ postOnLinkedIn() } target="_blank" rel="noopener noreferrer" className="social-share-button">
-          <IoLogoLinkedin />
+          <IoLogoLinkedin  size={48} className="icon" />
         </a>
         <a href={ postOnReddit() } target="_blank" rel="noopener noreferrer" className="social-share-button">
-          <IoLogoReddit />
+          <IoLogoReddit size={48} className="icon"  />
         </a>
       </div>
     </div>  
