@@ -5,6 +5,7 @@ import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
 import { ReactComponent as Flower } from 'images/icon-flower.svg';
 
 import FeaturedPlays from 'common/playlists/FeaturedPlays';
+import YouTubeEmbed from 'common/components/YouTubeEmbed';
 
 const Home = () => {
   return (
@@ -21,9 +22,7 @@ const Home = () => {
           the React developer community. Do you want to know more on how it works? Please check out
           the video below.</p>
         <div className="video">
-          <div className="video-wrapper">
-            <iframe className="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/D_cUdRtPG-M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-          </div>
+          <YouTubeEmbed videoId="D_cUdRtPG-M" title="What is ReactPlay?"/>
         </div>
         <ul className="home-features">
           <li className="home-features-item">
