@@ -14,6 +14,7 @@
 }
 
 .app-home-body .body-title {
+    margin-bottom: 1rem;
     font-family: var(--ff-accent);
     font-size: var(--fs-xxl);
     color: var(--color-neutral-10);
@@ -56,7 +57,7 @@
 }
 
 .app-home-body .body-desc {
-    margin: 1rem auto 4rem auto;
+    margin: .4rem auto 2rem auto;
     font-weight: var(--fw-light);
     font-size: var(--fs-md);
     color: var(--color-neutral-40);
@@ -64,6 +65,65 @@
     width: 80%;
     max-width: var(--screen-lg-max);
 }
+
+.app-home-body .body-c2a {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 1rem;
+    margin: 1rem auto 12rem auto;
+    justify-content: center;
+}
+
+.app-home-body .body-c2a .body-c2a-btn {
+    border: solid 1px var(--color-neutral-40);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 0.4rem;
+    padding: 0.8rem 1.6rem;
+    font-size: var(--fs-rg);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    width: unset;
+    height: unset;
+    transition: all 0.12s ease-in-out;
+    color: var(--color-neutral-10);
+    cursor: pointer;
+}
+
+.app-home-body .body-c2a .body-c2a-btn .icon {
+    width: var(--navbar-icon-size-rg);
+    height: var(--navbar-icon-size-rg);
+    fill: var(--color-brand-primary);
+    color: var(--color-brand-primary);
+}
+
+.app-home-body .body-c2a .body-c2a-btn:hover,
+.app-home-body .body-c2a .body-c2a-btn:focus {
+    border-color: var(--color-neutral-20);
+    background-color: var(--color-neutral-20);
+    color: var(--color-neutral-90);
+}
+
+.app-home-body .body-c2a .body-c2a-btn:hover .icon,
+.app-home-body .body-c2a .body-c2a-btn:focus .icon {
+    fill: var(--color-brand-primary);
+    color: var(--color-brand-primary);
+}
+
+.app-home-body .body-c2a .body-c2a-btn--primary {
+    border: solid 2px var(--color-brand-primary);
+    background-color: var(--color-brand-primary);
+    color: var(--color-neutral-80);
+}
+
+.app-home-body .body-c2a .body-c2a-btn--primary .icon {
+    fill: var(--color-neutral-90);
+}
+
+
 
 /* Video */
 .video {
@@ -491,6 +551,7 @@
     opacity: 0.04;
     animation: flowerSpinLg 100s linear 0s infinite normal forwards ;
 }
+
 
 @media screen and (max-width: 768px) {
     .home-bg-graphics-sm {
