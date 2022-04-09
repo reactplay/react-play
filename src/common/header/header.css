@@ -250,9 +250,6 @@
   justify-content: center;
   grid-gap: 1rem;
 }
-.social-share-buttons .social-share-button {
-
-}
 
 .social-share-buttons .social-share-button .icon {
   fill: var(--color-neutral-80);
