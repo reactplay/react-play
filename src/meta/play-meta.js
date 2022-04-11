@@ -120,7 +120,8 @@ const getAllTags = () => {
 
 const getAllCreators = () => {
   const creators = plays.reduce((acc, play) => {
-    return acc.concat(play.github);
+    play.github && acc.push(play.github);
+    return acc;
   }, []);
 
   return Array.from(new Set([...creators]));
