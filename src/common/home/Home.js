@@ -4,7 +4,7 @@ import { RiSlideshow4Line } from "react-icons/ri";
 import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
 import { ReactComponent as Flower } from 'images/icon-flower.svg';
 import { MdManageSearch } from 'react-icons/md';
-import { IoAddSharp } from 'react-icons/io5';
+import { IoPlayOutline } from 'react-icons/io5';
 
 import FeaturedPlays from 'common/playlists/FeaturedPlays';
 // import YouTubeEmbed from 'common/components/YouTubeEmbed';
@@ -24,24 +24,24 @@ const Home = () => {
           the React developer community. Do you want to know more on how it works? Please check out
           the video below.</p>
         <div className='body-c2a'>
-          <a
-            href="https://github.com/atapas/react-play/blob/main/CREATE-PLAY.md"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="body-c2a-btn"
-          >
-            <IoAddSharp className="icon" />
-            <span className="btn-label">Create</span>
-          </a>
           <Link to="/plays" className="body-c2a-btn body-c2a-btn--primary">
             <MdManageSearch className="icon" />
             <span className="btn-label">Browse</span>
           </Link>
+          <a
+            href="https://www.youtube.com/watch?v=rysTbzKOEO0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="body-c2a-btn"
+          >
+            <IoPlayOutline className="icon" />
+            <span className="btn-label">See how it works</span>
+          </a>
         </div>        
         <ul className="home-features">
           <li className="home-features-item">
             <div className="item-icon">
-              <RiSlideshow4Line className="icon" color='var(--color-neutral-90)' />
+              <RiSlideshow4Line className="icon" color='var(--color-neutral-10)' />
             </div>
             <h3 className="item-title">Learn </h3>
             <p className="item-desc">
@@ -51,7 +51,7 @@ const Home = () => {
           </li>
           <li className="home-features-item">
             <div className="item-icon">
-              <BiAddToQueue className="icon" color='var(--color-neutral-90)' />
+              <BiAddToQueue className="icon" color='var(--color-neutral-10)' />
             </div>
             <h3 className="item-title">Create </h3>
             <p className="item-desc">
@@ -61,7 +61,7 @@ const Home = () => {
           </li>
           <li className="home-features-item">
             <div className="item-icon">
-              <BiShareAlt className="icon" color='var(--color-neutral-90)' />
+              <BiShareAlt className="icon" color='var(--color-neutral-10)' />
             </div>
             <h3 className="item-title">Socialize </h3>
             <p className="item-desc">

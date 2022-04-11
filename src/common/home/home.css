@@ -96,8 +96,8 @@
 .app-home-body .body-c2a .body-c2a-btn .icon {
     width: var(--navbar-icon-size-rg);
     height: var(--navbar-icon-size-rg);
-    fill: var(--color-brand-primary);
-    color: var(--color-brand-primary);
+    fill: var(--color-brand-primary-dark);
+    color: var(--color-brand-primary-dark);
 }
 
 .app-home-body .body-c2a .body-c2a-btn:hover,
@@ -109,8 +109,8 @@
 
 .app-home-body .body-c2a .body-c2a-btn:hover .icon,
 .app-home-body .body-c2a .body-c2a-btn:focus .icon {
-    fill: var(--color-brand-primary);
-    color: var(--color-brand-primary);
+    fill: var(--color-brand-primary-dark);
+    color: var(--color-brand-primary-dark);
 }
 
 .app-home-body .body-c2a .body-c2a-btn--primary {
@@ -205,7 +205,8 @@
     justify-content: center;
     width: var(--home-features-icon-size);
     height: var(--home-features-icon-size);
-    background-color: var(--color-brand-primary);
+    background-color: rgba(var(--color-brand-primary-rgb), 0.1);
+    border: solid 2px var(--color-brand-primary);
     border-top-left-radius: calc(var(--home-features-icon-size)/2);
     border-bottom-left-radius: calc(var(--home-features-icon-size)/2);
     border-bottom-right-radius: calc(var(--home-features-icon-size)/2);
