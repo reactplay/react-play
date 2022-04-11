@@ -1,5 +1,6 @@
 module.exports = plop => {
   plop.setHelper('trim', str => str.trim());
+  plop.setHelper('removeAllSpaces', str => str.replaceAll(/\s/g,''));
 
   // demo generator
   plop.setGenerator('play', {

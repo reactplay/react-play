@@ -86,7 +86,7 @@ const PlayHeaderInfo = ({ play }) => {
           <span className="sr-only">Back</span>
         </Link>
         <h3 className="header-title">{play.name}</h3>
-        <LevelBadge level={play.level} /> { play.tags && <Tags tags={play.tags.split(', ')} /> }
+        <LevelBadge level={play.level} /> { play.tags && <Tags tags={play.tags.split(',')} /> }
       </div>
       <div className="header-secondary">
         { play.github && <Author github={play.github} /> }
