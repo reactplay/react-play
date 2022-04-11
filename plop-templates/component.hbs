@@ -4,7 +4,7 @@ import { getPlayById } from 'meta/play-meta';
 
 import PlayHeader from 'common/playlists/PlayHeader';
 
-function {{component}}() {
+function {{trim component}}() {
   // Do not remove the below lines. 
   // The following code is to fetch the current play from the URL
   const location = useLocation();
@@ -20,7 +20,7 @@ function {{component}}() {
         <div className="play-details-body">
         {/* Your Code Starts Here */}
           <div>
-            <h1>Play Details -  {{name}}</h1>
+            <h1>Play Details -  {{titleCase name}}</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Pellentesque euismod, urna eu tincidunt consectetur,
