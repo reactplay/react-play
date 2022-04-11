@@ -3,9 +3,11 @@ import './home.css';
 import { RiSlideshow4Line } from "react-icons/ri";
 import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
 import { ReactComponent as Flower } from 'images/icon-flower.svg';
+import { MdManageSearch } from 'react-icons/md';
+import { IoAddSharp } from 'react-icons/io5';
 
 import FeaturedPlays from 'common/playlists/FeaturedPlays';
-import YouTubeEmbed from 'common/components/YouTubeEmbed';
+// import YouTubeEmbed from 'common/components/YouTubeEmbed';
 
 const Home = () => {
   return (
@@ -21,9 +23,21 @@ const Home = () => {
           React Play is an opensource application to learn, contribute and give back to 
           the React developer community. Do you want to know more on how it works? Please check out
           the video below.</p>
-        <div className="video">
-          <YouTubeEmbed videoId="D_cUdRtPG-M" title="What is ReactPlay?"/>
-        </div>
+        <div className='body-c2a'>
+          <a
+            href="https://github.com/atapas/react-play/blob/main/CREATE-PLAY.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="body-c2a-btn"
+          >
+            <IoAddSharp className="icon" />
+            <span className="btn-label">Create</span>
+          </a>
+          <Link to="/plays" className="body-c2a-btn body-c2a-btn--primary">
+            <MdManageSearch className="icon" />
+            <span className="btn-label">Browse</span>
+          </Link>
+        </div>        
         <ul className="home-features">
           <li className="home-features-item">
             <div className="item-icon">
