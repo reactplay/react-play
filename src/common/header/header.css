@@ -46,9 +46,9 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
   .app-logo {
-    width: 50px;
+    width: 42px;
     height: 64px;
     margin-right: 0;
     background-position: center center;
@@ -159,7 +159,7 @@
 
 @media screen and (max-width: 768px) {
   .header-links > li > .app-header-btn {
-    padding: 0.4rem 1rem;
+    padding: 0.4rem;
   }
 
   .header-links > li > .app-header-btn .btn-label {
@@ -167,6 +167,15 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .header-links > li > .app-header-btn {
+    margin-left: 0;
+  }
+
+  .header-links > li:last-child > .app-header-btn {
+    margin-left: -.2rem;
+  }
+}
 
 
 /* searchs Modal */

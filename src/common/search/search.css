@@ -53,6 +53,18 @@
   color: var(--color-neutral-10);
 }
 
+@media screen and (max-width: 576px) {
+  .search-input .search-input-icon {
+    left: 0.6rem;
+    width: 20px;
+    height: 20px;
+  }
+
+  .search-input .search-input-text {
+    padding: 0.6rem 1.2rem 0.6rem 2rem;
+  }
+}
+
 /* Filter */
 .search-filter {
   height: 28px;
@@ -92,6 +104,16 @@
   font-size: var(--fs-xs);
   line-height: 18px;
   background-color: var(--color-brand-primary);
+}
+
+@media screen and (max-width: 576px) {
+  .btn-filter {
+    
+  }
+  .btn-filter .icon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* Filters Modal */
