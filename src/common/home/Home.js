@@ -99,47 +99,47 @@ const Home = () => {
         <h3 className="title-primary"><strong><span>Big Thanks</span></strong><br/> to All Contributors!</h3>
         <ul className='list-contributors'>
           <li className='contributor'>
-            <a href='#' className='contributor-anchor'>
+            <a href="www.github.com" target="_blank"  className='contributor-anchor'>
               <img src='https://plopjs.com/images/avatars/amwmedia.jpg' alt='Name' className='contributor-thumb' />
             </a>
           </li>
           <li className='contributor'>
-            <a href='#' className='contributor-anchor'>
+            <a href="www.github.com" target="_blank"  className='contributor-anchor'>
               <img src='https://plopjs.com/images/avatars/amwmedia.jpg' alt='Name' className='contributor-thumb' />
             </a>
           </li>
           <li className='contributor'>
-            <a href='#' className='contributor-anchor'>
+            <a href="www.github.com" target="_blank"  className='contributor-anchor'>
               <img src='https://plopjs.com/images/avatars/amwmedia.jpg' alt='Name' className='contributor-thumb' />
             </a>
           </li>
           <li className='contributor'>
-            <a href='#' className='contributor-anchor'>
+            <a href="www.github.com" target="_blank"  className='contributor-anchor'>
               <img src='https://plopjs.com/images/avatars/amwmedia.jpg' alt='Name' className='contributor-thumb' />
             </a>
           </li>
           <li className='contributor'>
-            <a href='#' className='contributor-anchor'>
+            <a href="www.github.com" target="_blank"  className='contributor-anchor'>
               <img src='https://plopjs.com/images/avatars/amwmedia.jpg' alt='Name' className='contributor-thumb' />
             </a>
           </li>
           <li className='contributor'>
-            <a href='#' className='contributor-anchor'>
+            <a href="www.github.com" target="_blank"  className='contributor-anchor'>
               <img src='https://plopjs.com/images/avatars/amwmedia.jpg' alt='Name' className='contributor-thumb' />
             </a>
           </li>
           <li className='contributor'>
-            <a href='#' className='contributor-anchor'>
+            <a href="www.github.com" target="_blank"  className='contributor-anchor'>
               <img src='https://plopjs.com/images/avatars/amwmedia.jpg' alt='Name' className='contributor-thumb' />
             </a>
           </li>
           <li className='contributor'>
-            <a href='#' className='contributor-anchor'>
+            <a href="www.github.com" target="_blank"  className='contributor-anchor'>
               <img src='https://plopjs.com/images/avatars/amwmedia.jpg' alt='Name' className='contributor-thumb' />
             </a>
           </li>
           <li className='contributor'>
-            <a href='#' className='contributor-anchor'>
+            <a href="www.github.com" target="_blank"  className='contributor-anchor'>
               <img src='https://plopjs.com/images/avatars/amwmedia.jpg' alt='Name' className='contributor-thumb' />
             </a>
           </li>
