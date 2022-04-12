@@ -65,7 +65,7 @@
 
 .header-links > li > a {
   color: #fff;
-  margin-left: 1rem;
+  margin-left: 0;
   display: block;
   width: var(--navbar-icon-size-rg);
   height: var(--navbar-icon-size-rg);
@@ -91,7 +91,6 @@
   background-color: transparent;
   color: var(--color-neutral-80);
   grid-gap: 0.3rem;
-  margin-left: 0.4rem;
   padding: 0.6rem;
 }
 

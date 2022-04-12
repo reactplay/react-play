@@ -261,11 +261,13 @@
     line-height: 1;
     border-radius: 0.2rem;
     font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
     text-transform: uppercase;
     background-color: rgba(var(--color-neutral-90-rgb),0.12);
     padding: 0.3rem 0.4rem 0.24rem 0.4rem;
     color: rgba(var(--color-neutral-90-rgb), 0.8);
     text-decoration: none;
+    letter-spacing: 0.04rem;
     transition: all 0.12s ease-in-out;
 }
 
@@ -333,14 +335,16 @@
 
 .play-tag {
     display: inline-flex;
-    line-height: 1;
+    line-height: 1.1;
     border-radius: 0.2rem;
     font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
     text-transform: uppercase;
     background-color: rgba(var(--color-neutral-90-rgb),0.08);
-    padding: 0.4rem 0.4rem 0.24rem 0.4rem;
-    color: rgba(var(--color-neutral-90-rgb), 0.8);
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    color: var(--color-neutral-60);
     text-decoration: none;
+    letter-spacing: 0.01rem;
     transition: all 0.12s ease-in-out;
 }
 

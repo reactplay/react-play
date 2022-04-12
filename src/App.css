@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Raleway:wght@900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Raleway:wght@900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@900&display=swap');
 
 .text-center {
   text-align: center;
@@ -39,14 +40,14 @@
   --color-neutral-100-rgb: 0, 0, 0;
 
   /* Font Family */
-  --ff-default: Inter, -apple-system, Roboto, Helvetica Neue, sans-serif;
+  --ff-default: Poppins, -apple-system, Roboto, Helvetica Neue, sans-serif;
   --ff-accent: Raleway, Inter, -apple-system, Roboto, Helvetica Neue, sans-serif;
 
   /* Font Weight */
   --fw-light: 300;
   --fw-regular: 400;
-  --fw-semibold: 600;
-  --fw-bold: 700;
+  --fw-semibold: 500;
+  --fw-bold: 600;
 
   /* Font Sizes */
   --fs-xs: 0.7rem;
