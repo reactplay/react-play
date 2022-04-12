@@ -1,4 +1,7 @@
 module.exports = plop => {
+  plop.setHelper('trim', str => str.trim());
+  plop.setHelper('removeAllSpaces', str => str.replaceAll(/\s/g,''));
+
   // demo generator
   plop.setGenerator('play', {
     description: 'Steps to add a new play',
@@ -65,7 +68,7 @@ module.exports = plop => {
     actions: [
       {
         type: 'add',
-        path: 'src/plays/{{folder}}/{{component}}.js',
+        path: 'src/plays/{{trim folder}}/{{trim component}}.js',
         templateFile: 'plop-templates/component.hbs',
       },
       {
