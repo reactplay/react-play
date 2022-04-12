@@ -1,6 +1,9 @@
 /* Home Body content */
 .app-home-body {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* background-color: var(--color-neutral-90); */
     background: rgb(1,4,38);
     background: rgb(1,4,38);
@@ -11,6 +14,11 @@
     padding: 6rem 0 2rem 0;
     width: 100%;
     overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.app-home-body .app-home-body-content {
+    margin-bottom: 4rem;
 }
 
 .app-home-body .body-title {
@@ -71,7 +79,7 @@
     display: flex;
     flex-direction: row;
     grid-gap: 1rem;
-    margin: 1rem auto 12rem auto;
+    margin: 1rem auto;
     justify-content: center;
 }
 
@@ -82,8 +90,8 @@
     flex-direction: row;
     align-items: center;
     grid-gap: 0.4rem;
-    padding: 0.8rem 1.6rem;
-    font-size: var(--fs-rg);
+    padding: 1rem 2rem;
+    font-size: var(--fs-rg)*1.2;
     font-weight: var(--fw-bold);
     text-decoration: none;
     width: unset;
@@ -172,8 +180,14 @@
     --home-features-icon-size: 120px;
 }
 .home-features {
+    position: relative;
+    padding: 8rem 0;
+}
+
+.list-home-features {
+    position: relative;
     list-style: none;
-    margin: 0 auto 6rem auto;
+    margin: 0 auto;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -183,67 +197,84 @@
 }
 
 @media screen and (max-width:1024px) {
-    .home-features {
+    .list-home-features {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width:568px) {
-    .home-features {
+    .list-home-features {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
-.home-features .home-features-item {
+.list-home-features .home-features-item {
     list-style: none;
     color: var(--color-neutral-10);
 }
-.home-features .home-features-item .item-icon {
+.list-home-features .home-features-item .item-icon {
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     width: var(--home-features-icon-size);
     height: var(--home-features-icon-size);
-    background-color: rgba(var(--color-brand-primary-rgb), 0.1);
+    background-color: var(--color-brand-primary);
     border: solid 2px var(--color-brand-primary);
     border-top-left-radius: calc(var(--home-features-icon-size)/2);
     border-bottom-left-radius: calc(var(--home-features-icon-size)/2);
     border-bottom-right-radius: calc(var(--home-features-icon-size)/2);
-    box-shadow: 0px -1px 26px 0px rgba(0,14,17,0.59);
+    /* box-shadow: 0px -1px 26px 0px rgba(0,14,17,0.59);
     -webkit-box-shadow: 0px -1px 26px 0px rgba(0,14,17,0.59);
-    -moz-box-shadow: 0px -1px 26px 0px rgba(0,14,17,0.59);
+    -moz-box-shadow: 0px -1px 26px 0px rgba(0,14,17,0.59); */
 }
 
-.home-features .home-features-item .item-icon .icon {
+.list-home-features .home-features-item .item-icon .icon {
     width: 48px;
     height: 48px;
 }
 
-.home-features .home-features-item .item-title {
+.list-home-features .home-features-item .item-title {
     margin: 1rem 0 0.6rem 0;
     font-family: var(--ff-accent);
     font-size: var(--fs-lg);
     text-align: center;
     letter-spacing: 0.02em;
+    color: var(--color-neutral-80);
 
 }
 
-.home-features .home-features-item .item-desc {
+.list-home-features .home-features-item .item-desc {
     margin: 0;
     font-size: var(--fs-rg);
     text-align: center;
-    color: var(--color-neutral-40);
+    color: var(--color-neutral-60);
 
 }
 
 /* Home Plays */
 .home-plays {
+    position: relative;
     padding: 5rem 0 6rem 0;
     background: rgba(var(--color-brand-primary-rgb), 0.1);
 }
 
+.home-plays:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-image: url("../../images/bg-spikes.webp");
+    mix-blend-mode: overlay;
+
+}
+
 .home-plays .plays-title-primary {
+    position: relative;
     margin: 0 0 3rem 0;
     font-family: var(--ff-accent);
     font-size: var(--fs-xxl);
@@ -263,6 +294,127 @@
     text-align: center;
 }
 
+
+/* Home Contributors */
+.home-contributors {
+    position: relative;
+    padding: 5rem 0 6rem 0;
+    background-color: var(--color-neutral-10);
+}
+
+.home-contributors .title-primary {
+    position: relative;
+    margin: 0 0 3rem 0;
+    font-family: var(--ff-accent);
+    font-size: var(--fs-xxl);
+    text-align: center;
+    color: var(--color-neutral-80);
+    line-height: 1.2;
+}
+
+.home-contributors .title-primary strong {
+    position: relative;
+    font-family: var(--ff-accent);
+    position: relative;
+}
+.home-contributors .title-primary strong span {
+    position: relative;
+    font-family: var(--ff-accent);
+}
+
+.home-contributors .title-primary strong:before {
+    content:"";
+    position: absolute;
+    height: 4px;
+    background-color: var(--color-brand-primary);
+    left: 0;
+    right: 0;
+    bottom: .4rem;
+    z-index: 0;
+}
+
+.list-contributors {
+    list-style: none;
+}
+
+
+
+.list-contributors {
+    position: relative;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap: 3rem; 
+    width: 80%;
+    max-width: var(--screen-lg-max);
+}
+
+
+.list-contributors .contributor-anchor {
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 160px;
+    overflow: hidden;
+    transition: all 0.16s ease-in-out;
+}
+
+.list-contributors .contributor-anchor:hover,
+.list-contributors .contributor-anchor:focus {
+    box-shadow: 0px -1px 26px 0px rgba(var(--color-brand-primary-rgb),0.59);
+    -webkit-box-shadow: 0px -1px 26px 0px rgba(var(--color-brand-primary-rgb),0.59);
+    -moz-box-shadow: 0px -1px 26px 0px rgba(var(--color-brand-primary-rgb),0.59);
+    transform: scale(1.2);
+}
+
+.list-contributors .contributor-anchor .contributor-thumb {
+    width: 160px;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+.list-contributors .contributor-anchor:hover .contributor-thumb,
+.list-contributors .contributor-anchor:focus .contributor-thumb {
+    filter: grayscale(0%);
+}
+
+@media screen and (max-width:1024px) {
+    .list-contributors {
+        grid-gap: 2rem;
+    }
+
+    .list-contributors .contributor-anchor {
+        width: 120px;
+        height: 120px;
+        border-radius: 120px;
+    }
+
+    .list-contributors .contributor-anchor .contributor-thumb {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width:568px) {
+    .list-contributors {
+        width: 100%;
+        grid-gap: 1rem;
+    }
+
+    .list-contributors .contributor-anchor {
+        width: 80px;
+        height: 80px;
+        border-radius: 80px;
+    }
+
+    .list-contributors .contributor-anchor .contributor-thumb {
+        width: 80px;
+    }
+}
 
 /* Pills */
 
