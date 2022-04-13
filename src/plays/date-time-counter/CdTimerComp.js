@@ -1,7 +1,7 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { getPlayById } from "meta/play-meta";
+import { getPlayById } from "meta/play-meta-util";
 import CountDownTimer from "./CountDownTimer";
 
 const CdTimerComp = () => {

@@ -1,6 +1,6 @@
 import PlayThumbnail from "./PlayThumbnail";
 
-import { getFeaturedPlays } from "meta/play-meta";
+import { getFeaturedPlays } from "meta/play-meta-util";
 
 const FeaturedPlays = () => {
   const plays = getFeaturedPlays();

@@ -1,7 +1,7 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { getPlayById } from "meta/play-meta";
+import { getPlayById } from "meta/play-meta-util";
 import { movies } from "data/movies";
 import Movie from "./Movie";
 import "./movies.css";
