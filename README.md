@@ -1,8 +1,8 @@
 # The `react-play`
 
 <p align="center">
-  <a href="https://reactoplay.vercel.app/" target="_blank" style="font-size:50px">See Demo<a/>
-  <img src="screens/data-load-style.gif" alt="react-play" />
+  <a href="https://reactoplay.io/" target="_blank" style="font-size:50px">See Demo<a/>
+  <img src="src/images/og-image.png" alt="react-play" />
 </p>  
 
 The `react-play` is a React project to demonstrate the well-known React patterns like,
