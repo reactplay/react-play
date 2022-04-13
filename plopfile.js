@@ -2,16 +2,14 @@ module.exports = plop => {
   plop.setHelper('trim', str => str.trim());
   plop.setHelper('removeAllSpaces', str => str.replaceAll(/\s/g,''));
 
+  plop.setHelper('generateId', str => `pl-${str.trim().replaceAll(/\s/g,'-').toLowerCase()}`);
+
+  plop.setHelper('generateFolderName', str => `${str.trim().replaceAll(/\s/g,'-').toLowerCase()}`);
+
   // demo generator
   plop.setGenerator('play', {
     description: 'Steps to add a new play',
     prompts: [
-      {
-        type: 'input',
-        name: 'id',
-        message:
-          'Give us a play id(Any string starts with pl and without a space(Example: pl-id-card ):',
-      },
       {
         type: 'input',
         name: 'name',
@@ -21,22 +19,6 @@ module.exports = plop => {
         type: 'input',
         name: 'description',
         message: 'Tell us more about the play(Max 1024 characters):',
-      },
-      {
-        type: 'input',
-        name: 'component',
-        message:
-          'Provide the React Component name(Example: IdentityCard):',
-      },
-      {
-        type: 'input',
-        name: 'folder',
-        message: 'Provide the folder name(Example: identity-card):',
-      },
-      {
-        type: 'input',
-        name: 'cover',
-        message: 'Please provide the path(URL) to cover image(When the image is hosted publicly):',
       },
       {
         type: 'list',
@@ -56,6 +38,11 @@ module.exports = plop => {
       },
       {
         type: 'input',
+        name: 'cover',
+        message: 'Please provide the path(URL) to cover image(When the image is hosted publicly):',
+      },
+      {
+        type: 'input',
         name: 'blog',
         message: 'Enter your blog url(Example: https://blog.greenroots.info):',
       },
@@ -68,7 +55,7 @@ module.exports = plop => {
     actions: [
       {
         type: 'add',
-        path: 'src/plays/{{trim folder}}/{{trim component}}.js',
+        path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.js',
         templateFile: 'plop-templates/component.hbs',
       },
       {
