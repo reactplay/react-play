@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getPlayById } from 'meta/play-meta-util';
 
+import "./clock.css";
+
 const CurrentTimer = () => {
   // The following code is to fetch the current play from the URL
   const location = useLocation();
@@ -26,7 +28,10 @@ const CurrentTimer = () => {
         <PlayHeader play={play} />
         <div className="play-details-body">
           <div className="counter">
-            Current Time: <h1>{date.toLocaleTimeString()}</h1>
+            <h2>Current Time</h2>
+            <div className="value">
+              <span>{date.toLocaleTimeString()}</span>
+            </div>
           </div>
         </div>
       </div>
