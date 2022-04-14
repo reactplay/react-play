@@ -55,7 +55,7 @@ module.exports = plop => {
     actions: [
       {
         type: 'add',
-        path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.js',
+        path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.jsx',
         templateFile: 'plop-templates/component.hbs',
       },
       {
