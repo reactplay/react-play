@@ -52,7 +52,8 @@ export const plays = [
     level: 'Intermediate',
     tags: 'Fetch Data, Hooks',
     github: 'atapas',
-    featured: true
+    featured: true,
+    blog: 'https://blog.openreplay.com/understanding-the-container-component-pattern-with-react-hooks'
   },
   {
     id: 'pl-0005',

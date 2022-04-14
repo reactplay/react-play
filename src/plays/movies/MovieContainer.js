@@ -2,13 +2,11 @@ import PlayHeader from "common/playlists/PlayHeader";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getPlayById } from "meta/play-meta-util";
-import { movies } from "data/movies";
 import Movie from "./Movie";
-import "./movies.css";
 
-const fetchMovies = () => {
-  return movies;
-};
+import useFetch from "common/hooks/useFetch";
+
+import "./movies.css";
 
 const MovieContainer = () => {
   // The following code is to fetch the current play from the URL
@@ -16,13 +14,16 @@ const MovieContainer = () => {
   const { id } = location.state;
   const play = getPlayById(id);
 
+  const MOVIE_API_URI = 'https://json-faker.onrender.com/movies';
+  const { data, loading, error } = useFetch(MOVIE_API_URI);
+
+  console.log("data", data);
+
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const movies = fetchMovies();
-    console.log("MovieContainer: useEffect: movies: ", movies);
-    setMovies(movies);
-  }, []);
+    setMovies(data.movies);
+  }, [data]);
 
   return (
     <>
@@ -30,11 +31,15 @@ const MovieContainer = () => {
         <PlayHeader play={play} />
         <div className="play-details-body">
           <div className="movie-container">
-            <ul className="movie-list">
+            {loading && <div>Loading...</div>}
+            {error && <div>Error: {error.message}</div>}
+            
+            {movies && (<ul className="movie-list">
               {movies.map((movie) => (
                 <Movie movie={movie} key={movie.id} />
               ))}
-            </ul>
+            </ul>)
+            }
           </div>
         </div>
       </div>
