@@ -44,6 +44,8 @@ const CdTimerComp = () => {
                 onChange={handleChange}
               />
             </form>
+            <p>Select a date and time in the past, present, and future
+                to see how the countdown timer will display.</p>
             <CountDownTimer targetDate={targetDate} />
           </div>
         </div>
