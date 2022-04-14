@@ -77,3 +77,14 @@
   font-size: 1.50rem;
   line-height: 2rem;
 }
+
+@media only screen and (max-width: 500px) {
+  .show-counter .countdown > span {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .show-counter .countdown-link { 
+    font-size: 1.5rem;
+  }
+}
