@@ -1,0 +1,19 @@
+.org-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-tree .about {
+  max-width: 40rem;
+}
+
+.org-tree .node {
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .org-tree .node {
+    font-size: 0.5rem;
+  }
+}
