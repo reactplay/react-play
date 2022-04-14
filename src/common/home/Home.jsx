@@ -25,8 +25,8 @@ const Home = () => {
           </h2>
           <p className="body-desc">
             React Play is an opensource application to learn, contribute and
-            give back to the React developer community. Do you want to know more
-            on how it works? Please check out the video below.
+            give back to the React developer community. Start by browsing the plays or do you want to know see 
+            how it works?
           </p>
           <div className="body-c2a">
             <Link to="/plays" className="body-c2a-btn body-c2a-btn--primary">
@@ -57,7 +57,7 @@ const Home = () => {
             <h3 className="item-title">Learn </h3>
             <p className="item-desc">
               Learn how to "Think in React" and build applications inspired by
-              several plays(examples and demos). Get to the source code of it,
+              several plays(source code & demos). Get to the source code of it,
               find related article, or even a YouTube video.
             </p>
           </li>
