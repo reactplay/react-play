@@ -1,9 +1,9 @@
 {
-    id: '{{dashCase id}}', 
+    id: '{{generateId name}}', 
     name: '{{titleCase name}}', 
     description: '{{description}}',
-    component: () => {return <{{trim component}} />},
-    path: '/plays/{{trim folder}}',
+    component: () => {return <{{pascalCase name}} />},
+    path: '/plays/{{generateFolderName name}}',
     level: '{{level}}',
     tags: '{{removeAllSpaces tags}}',
     github: '{{github}}',

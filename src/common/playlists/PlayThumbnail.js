@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { BsPlayCircleFill } from "react-icons/bs";
 import useGitHub from 'common/hooks/useGitHub';
+import thumbPlay from 'images/thumb-play.png';
 
 const Author = ({github}) => {
   const { data, error, isLoading } = useGitHub(github);
@@ -46,8 +47,8 @@ const PlayThumbnail = ({ play }) => {
         // if there is no cover image, set a default image
         console.warn(`Cover image not found for the play ${play.name}`);
         console.info('Setting the default cover image...');
-
-        // TODO:Set the default cover image
+        
+        setCover(thumbPlay);
       });
     }
     

@@ -12,7 +12,7 @@ const HeaderNav = ({ showBrowse }) => {
   return (
     <nav>
       <Modal
-        title="Share"
+        title="Share about ReactPlay"
         onClose={() => setShowSocial(false)}
         show={showSocial}
         cname="share"

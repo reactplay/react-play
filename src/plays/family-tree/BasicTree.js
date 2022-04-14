@@ -1,6 +1,6 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import { useLocation } from "react-router-dom";
-import { getPlayById } from "meta/play-meta";
+import { getPlayById } from "meta/play-meta-util";
 import { family } from "data/family";
 import React, { Fragment } from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
