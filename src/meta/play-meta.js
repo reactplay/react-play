@@ -57,10 +57,10 @@ export const plays = [
   },
   {
     id: 'pl-0005',
-    name: 'Basic Family Tree',
-    description: 'A simple family tree',
+    name: 'Organization Tree',
+    description: 'A simple org tree',
     component: () => {return <BasicTree />},
-    path: '/plays/family-tree',
+    path: '/plays/org-tree',
     level: 'Intermediate',
     tags: 'Recursion, Tree',
     github: 'green-roots',
