@@ -33,7 +33,6 @@ const MovieContainer = () => {
           <div className="movie-container">
             {loading && <div>Loading...</div>}
             {error && <div>Error: {error.message}</div>}
-            
             {movies && (<ul className="movie-list">
               {movies.map((movie) => (
                 <Movie movie={movie} key={movie.id} />

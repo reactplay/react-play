@@ -46,7 +46,7 @@ export const plays = [
   {
     id: 'pl-0004',
     name: 'Movies',
-    description: 'A list of movies from the local JSON data',
+    description: 'A list of movies from API call.',
     component: () => {return <MovieContainer />},
     path: '/plays/movies',
     level: 'Intermediate',
