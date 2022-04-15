@@ -9,6 +9,7 @@ import { Modal } from "common";
 
 const HeaderNav = ({ showBrowse }) => {
   const [showSocial, setShowSocial] = useState(false);
+  const [showToggleMenu, setShowToggleMenu] = useState(false);
   return (
     <nav>
       <Modal
@@ -20,13 +21,13 @@ const HeaderNav = ({ showBrowse }) => {
           <SocialShare />
         }
       />
-      <button class="navbar-toggler" type="button">
-        <span class="navbar-toggler-icon"></span>
+      <button className="navbar-toggler" type="button" onClick={() => setShowToggleMenu(true)}>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div className='navbar-collapse'>
+      <div className={showToggleMenu ? 'navbar-collapse show' : 'navbar-collapse'}>
         <ul className="header-links">
           <li className='menu-closer'>
-            <button class="navbar-closer" type="button">              
+            <button className="navbar-closer" type="button" onClick={() => setShowToggleMenu(false)}>              
               <MdClose className='navbar-closer-icon' />
               <span className='sr-only'>Close</span>
             </button>
