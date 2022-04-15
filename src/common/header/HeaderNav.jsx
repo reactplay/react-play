@@ -32,7 +32,7 @@ const HeaderNav = ({ showBrowse }) => {
               <span className='sr-only'>Close</span>
             </button>
           </li>
-          {showBrowse && (
+          {(showBrowse && !showToggleMenu) && (
             <li>
               <Link to="/plays" className="app-header-btn app-header-btn--secondary">
                 <MdManageSearch className="icon" />
