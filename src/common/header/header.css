@@ -302,6 +302,7 @@
 
 .menu-closer {
   display: none;
+  text-align: right;
 }
 
 .menu-closer .navbar-closer {
