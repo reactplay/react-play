@@ -28,7 +28,7 @@ const HeaderNav = ({ showBrowse }) => {
           <li className='menu-closer'>
             <button class="navbar-closer" type="button">              
               <MdClose className='navbar-closer-icon' />
-              <span className='sr-only'>Cplose</span>
+              <span className='sr-only'>Close</span>
             </button>
           </li>
           {showBrowse && (
