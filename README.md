@@ -22,7 +22,7 @@
 <a href="https://github.com/atapas/react-play/pulls" target="blank">
 <img src="https://img.shields.io/github/issues-pr/atapas/react-play?style=flat-square" alt="tryshape pull-requests"/>
 </a>
-<a href="https://twitter.com/intent/tweet?text=👋%20Check%20this%20amazing%20app%20https://tryshape.vercel.app/,%20created%20by%20@tapasadhikary%20and%20friends%0A%0A%23DEVCommunity%20%23100DaysOfCode%20%23tryshape"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2FTryShape%2Ftryshape"></a>
+<a href="https://twitter.com/intent/tweet?text=👋%20Check%20this%20amazing%20app%20https://reactplay.io/,%20created%20by%20@tapasadhikary%20and%20friends%0A%0A%23DEVCommunity%20%23100DaysOfCode%20@reactplayio"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fatapas%2Freact-play"></a>
 
 </p>
 
