@@ -1,15 +1,26 @@
+import { useState, useEffect } from "react";
+import useFetch from 'common/hooks/useFetch';
 import { Link } from "react-router-dom";
 import "./home.css";
 import { RiSlideshow4Line } from "react-icons/ri";
 import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
+import { BsGithub } from 'react-icons/bs';
+import { FiStar } from "react-icons/fi";
 import { ReactComponent as Flower } from "images/icon-flower.svg";
 import { MdManageSearch } from "react-icons/md";
-import { IoPlayOutline } from "react-icons/io5";
+// import { IoPlayOutline } from "react-icons/io5";
 
 import FeaturedPlays from "common/playlists/FeaturedPlays";
 import Contributors from "./Contributors";
 
 const Home = () => {
+  const [gitHubStars, setGitHubStars] = useState('...');
+  const { data } = useFetch('https://api.github.com/repos/atapas/react-play');
+  
+  useEffect(() => {
+    setGitHubStars(data.stargazers_count);
+  }, [data]);
+
   return (
     <div>
       <section className="app-home-body">
@@ -34,6 +45,15 @@ const Home = () => {
               <span className="btn-label">Browse</span>
             </Link>
             <a
+              href="https://github.com/atapas/react-play"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="body-c2a-btn"
+            >
+              <BsGithub className="icon" />
+              <span className="btn-label">GitHub | <FiStar /> {gitHubStars} </span>
+            </a>
+            {/*<a
               href="https://www.youtube.com/watch?v=rysTbzKOEO0"
               target="_blank"
               rel="noopener noreferrer"
@@ -42,6 +62,7 @@ const Home = () => {
               <IoPlayOutline className="icon" />
               <span className="btn-label">See how it works</span>
             </a>
+            */}
           </div>
         </div>
       </section>
