@@ -13,8 +13,14 @@ const useContributors = (sorted) => {
       try {
         const response = await fetch(`https://api.github.com/repos/atapas/react-play/contributors`);
         const responseData = await response.json();
-        sorted && responseData.sort((a, b) => b.contributions - a.contributions);
-        setData(responseData);
+        
+        // Remove the bots
+        const contributors = responseData.filter(contributor => contributor.type !== 'Bot');
+        
+        // Sort it by the contributions
+        sorted && contributors.sort((a, b) => b.contributions - a.contributions);
+        
+        setData(contributors);
         setIsLoading(false);
       } catch (error) {
         setError(error);
