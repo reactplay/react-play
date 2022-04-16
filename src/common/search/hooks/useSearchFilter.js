@@ -1,5 +1,5 @@
 import { SearchContext } from "common/search/search-context";
-import { getPlaysOnSearch } from "meta/play-meta";
+import { getPlaysOnSearch } from "meta/play-meta-util";
 import { useContext, useEffect, useState } from "react";
 
 const useSearchFilter = () => {

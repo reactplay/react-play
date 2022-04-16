@@ -8,7 +8,7 @@ import {
 //import play here
 } from "plays";
 
-const plays = [
+export const plays = [
   {
     id: 'pl-0001',
     name: 'Why React',
@@ -18,7 +18,7 @@ const plays = [
     index: true,
     level: 'Beginner',
     tags: 'JSX',
-    github: 'https://github.com/atapas'
+    github: 'atapas'
   },
   {
     id: 'pl-0002',
@@ -28,7 +28,7 @@ const plays = [
     path: '/plays/clock',
     level: 'Beginner',
     tags: 'JSX, Schedule',
-    github: 'https://github.com/atapas',
+    github: 'atapas',
     blog: 'https://blog.greenroots.info',
     video: 'https://youtube.com/tapasadhikary'
   },
@@ -37,110 +37,46 @@ const plays = [
     name: 'Countdown Timer',
     description: 'It is a timer that fires every second and decreases the time',
     component: () => {return <CdTimerComp />},
-    path: '/plays/countdown',
+    path: '/plays/date-time-counter',
     level: 'Intermediate',
     tags: 'Schedule, Component Structure, Hooks, Custom Hooks',
-    github: 'https://github.com/atapas'
+    github: 'atapas',
+    blog: 'https://blog.greenroots.info/how-to-create-a-countdown-timer-using-react-hooks',
   },
   {
     id: 'pl-0004',
     name: 'Movies',
-    description: 'A list of movies from the local JSON data',
+    description: 'A list of movies from API call.',
     component: () => {return <MovieContainer />},
     path: '/plays/movies',
     level: 'Intermediate',
     tags: 'Fetch Data, Hooks',
-    github: 'https://github.com/atapas'
+    github: 'atapas',
+    featured: true,
+    blog: 'https://blog.openreplay.com/understanding-the-container-component-pattern-with-react-hooks'
   },
   {
     id: 'pl-0005',
-    name: 'Basic Family Tree',
-    description: 'A simple family tree',
+    name: 'Organization Tree',
+    description: 'A simple org tree',
     component: () => {return <BasicTree />},
-    path: '/plays/basic-family-tree',
+    path: '/plays/org-tree',
     level: 'Intermediate',
     tags: 'Recursion, Tree',
-    github: 'https://github.com/green-roots'
+    github: 'green-roots',
+    featured: true
   }, {
     id: 'pl-counter', 
     name: 'Counter', 
     description: 'A simple counter which increments the value upto a certain limit!',
     component: () => {return <CounterApp />},
-    path: '/plays/Counter',
+    path: '/plays/counter',
     level: 'Beginner',
     tags: 'JSX, State, Props',
-    github: 'https://github.com/murtuzaalisurti'
+    github: 'murtuzaalisurti',
+    featured: true
   }, //replace new play item here
 ];
-
-const getAllPlays = () => {
-  return plays;
-};
-
-const getPlayById = id => {
-  return plays.find(play => play.id === id);
-};
-
-const getPlaysOnSearch = searchTerm => {
-  return plays.filter(play => {
-    return (play.name.toLowerCase().includes(searchTerm.toLowerCase())
-      || play.description.toLowerCase().includes(searchTerm.toLowerCase()));
-  });
-}
-
-const getPlaysByTags = tags => {
-  return plays.filter(play => {
-    return play.tags.includes(tags);
-  });
-}
-
-const getPlaysByLevel = level => {
-  return plays.filter(play => {
-    return play.level === level;
-  });
-}
-
-const getPlaysByCreator = creator => {
-  return plays.filter(play => {
-    return play.github === creator;
-  });
-}
-
-const getAllTags = () => {
-  const tags = plays.reduce((acc, play) => {
-    return acc.concat(play.tags.split(', '));
-  }, []);
-
-  return Array.from(new Set([...tags]));
-}
-
-const getAllCreators = () => {
-  const creators = plays.reduce((acc, play) => {
-    return acc.concat(play.github);
-  }, []);
-
-  return Array.from(new Set([...creators]));
-}
-
-const getAllLevels = () => {
-  const levels = plays.reduce((acc, play) => {
-    return acc.concat(play.level);
-  }, []);
-
-  return Array.from(new Set([...levels]));
-}
-
-export {
-  getAllPlays,
-  getPlayById,
-  getPlaysOnSearch,
-  getPlaysByLevel,
-  getPlaysByTags,
-  getPlaysByCreator,
-  getAllTags,
-  getAllCreators,
-  getAllLevels
-};
 
 
 

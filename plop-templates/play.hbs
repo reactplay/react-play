@@ -1,12 +1,13 @@
 {
-    id: '{{dashCase id}}', 
-    name: '{{name}}', 
+    id: '{{generateId name}}', 
+    name: '{{titleCase name}}', 
     description: '{{description}}',
-    component: () => {return <{{component}} />},
-    path: '/plays/{{folder}}',
+    component: () => {return <{{pascalCase name}} />},
+    path: '/plays/{{generateFolderName name}}',
     level: '{{level}}',
-    tags: '{{tags}}',
-    github: 'https://github.com/{{github}}',
+    tags: '{{removeAllSpaces tags}}',
+    github: '{{github}}',
+    cover: '{{cover}}',
     blog: '{{blog}}',
     video: '{{video}}'
   }, //replace new play item here

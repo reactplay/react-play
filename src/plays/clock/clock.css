@@ -1,0 +1,8 @@
+.counter .value {
+  background: #f7f705;
+  padding: 1rem;
+  font-size: 3.5rem;
+  border-radius: 5px;
+  text-shadow: 2px 2px 5px red;
+  box-shadow: 10px 10px #aea103;
+}

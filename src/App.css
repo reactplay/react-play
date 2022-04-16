@@ -1,4 +1,199 @@
-.App {
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Raleway:wght@900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@900&display=swap');
+
+.text-center {
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:root {
+  --color-brand-primary: #00f2fe;
+  --color-brand-primary-rgb: 0, 244, 252;
+  --color-brand-primary-alt: #61dafb;
+  --color-brand-primary-dark: #00aada;
+  
+  /* Neutral */
+  --color-neutral-10: #ffffff;
+  --color-neutral-20: #f6f6f9;
+  --color-neutral-30: #e0e0e6;
+  --color-neutral-40: #BDBDBD;
+  --color-neutral-50: #7F878A;
+  --color-neutral-60: #5C6C70;
+  --color-neutral-70: #3E5156;
+  --color-neutral-80: #242230;
+  --color-neutral-90: #010326;
+  --color-neutral-100: #000000;
+
+  --color-neutral-90-rgb: 1, 3, 38;
+  --color-neutral-10-rgb: 255, 255, 255;
+  --color-neutral-100-rgb: 0, 0, 0;
+
+  /* Font Family */
+  --ff-default: Poppins, -apple-system, Roboto, Helvetica Neue, sans-serif;
+  --ff-accent: Raleway, Inter, -apple-system, Roboto, Helvetica Neue, sans-serif;
+
+  /* Font Weight */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 500;
+  --fw-bold: 600;
+
+  /* Font Sizes */
+  --fs-xs: 0.7rem;
+  --fs-sm: 0.8rem;
+  --fs-rg: 0.9rem;
+  --fs-md: 1.4rem;
+  --fs-lg: 2rem;
+  --fs-xl: 3rem;
+  --fs-xxl: 4rem;
+  
+
+  /* Line Height */
+  --lh-xs: 0.8em;
+  --lh-sm: 1em;
+  --lh-rg: 1.2em;
+  --lh-md: 1.8em;
+  --lh-lg: 2.4em;
+  --lh-xl: 3em;
+
+  /* Responsive Breakpoints */
+  --screen-sm-min: 768px;
+  --screen-md-min: 992px;
+  --screen-md-max: 1024px;
+  --screen-lg-min: 1172px;
+  --screen-lg-max: 1200px;
+  --screen-xl-max: 1400px;
+
+  /* Header */
+  --navbar-icon-size-rg: 24px;
+  --navbar-icon-size-sm: 16px;
+
+  /* Play */
+  --play-thumb-size-w: 260px;
+  --play-thumb-size-h: 146px;
+
+  /* Play level */
+  --color-play-level-1: 3, 169, 244;
+  --color-play-level-2: 255, 111, 0;
+  --color-play-level-3: 229, 57, 53;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: var(--ff-default);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body * {
+  box-sizing: border-box;
+  font-family: var(--ff-default);
+}
+
+.app-container {
+  height: 100%;
   display: flex;
+  flex-direction: column;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+@media screen and (max-width: 1200px) {
+  :root {
+    /* Font Sizes */
+    --fs-rg: 0.8rem;
+    --fs-md: 1.2rem;
+    --fs-lg: 1.4rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 3.4rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    /* Font Sizes */
+    --fs-rg: 0.8rem;
+    --fs-md: 1.2rem;
+    --fs-lg: 1.4rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 2.8rem;
+    --play-thumb-size: 240px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    /* Font Sizes */
+    --fs-rg: 0.8rem;
+    --fs-md: 1rem;
+    --fs-lg: 1.4rem;
+    --fs-xl: 1.8rem;
+    --fs-xxl: 2rem;
+
+    /* Header */
+    --navbar-icon-size-rg: 20px;
+    --navbar-icon-size-sm: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    /* Font Sizes */
+    --play-thumb-size: 280px;
+  }
+}
+
+/* App Body */
+.app-body {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--color-neutral-20);
+}
+
+/* App Footer */
+.app-footer {
+  padding: 0 2rem;
+  text-align: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-light);
+  color: var(--color-neutral-50);
+  border-top: solid 1px var(--color-neutral-30);
+}
+
+.app-footer p {
+  margin: 0.4rem 0;
+}
+
+.app-footer a {
+  color: var(--color-neutral-80);
+}
+
+.app-footer a:hover,
+.app-footer a:focus {
+  color: var(--color-brand-primary-alt);
 }
 

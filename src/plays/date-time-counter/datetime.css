@@ -1,4 +1,9 @@
 .countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
   margin: 0.5rem
 }
 
@@ -7,7 +12,7 @@
 }
 
 .countdown-container > form > label {
-  margin-right: 0.09rem;
+  margin-right: 1rem;
 }
 
 .expired-notice {
@@ -16,6 +21,8 @@
   border: 1px solid #ebebeb;
   border-radius: 0.25rem;
   margin: 0.5rem;
+  background-color: #ececec;
+  box-shadow: 10px 10px #cfc9c9;
 }
 
 .expired-notice > span {
@@ -38,13 +45,15 @@
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   line-height: 1.75rem;
   padding: 0.5rem;
   border: 1px solid #ebebeb;
   border-radius: 0.25rem;
   text-decoration: none;
   color: #000;
+  background-color: #ececec;
+  box-shadow: 10px 10px #cfc9c9;
 }
 
 .show-counter .countdown {
@@ -65,6 +74,17 @@
 
 .show-counter .countdown > span {
   text-transform: uppercase;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 1.50rem;
+  line-height: 2rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .show-counter .countdown > span {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .show-counter .countdown-link { 
+    font-size: 1.5rem;
+  }
 }

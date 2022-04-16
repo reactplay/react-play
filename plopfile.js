@@ -1,14 +1,15 @@
 module.exports = plop => {
+  plop.setHelper('trim', str => str.trim());
+  plop.setHelper('removeAllSpaces', str => str.replaceAll(/\s/g,''));
+
+  plop.setHelper('generateId', str => `pl-${str.trim().replaceAll(/\s/g,'-').toLowerCase()}`);
+
+  plop.setHelper('generateFolderName', str => `${str.trim().replaceAll(/\s/g,'-').toLowerCase()}`);
+
   // demo generator
   plop.setGenerator('play', {
-    description: 'add a new play',
+    description: 'Steps to add a new play',
     prompts: [
-      {
-        type: 'input',
-        name: 'id',
-        message:
-          'Give us a play id(Any string starts with pl and without a space(Example: pl-id-card ):',
-      },
       {
         type: 'input',
         name: 'name',
@@ -17,50 +18,44 @@ module.exports = plop => {
       {
         type: 'input',
         name: 'description',
-        message: 'Tell us more about the demo(Max 1024 characters):',
-      },
-      {
-        type: 'input',
-        name: 'component',
-        message:
-          'Provide the React Component name(Example: IdentityCard):',
-      },
-      {
-        type: 'input',
-        name: 'folder',
-        message: 'Provide the folder name(Example: identity-card):',
+        message: 'Tell us more about the play(Max 1024 characters):',
       },
       {
         type: 'list',
         name: 'level',
-        message: 'What level is this play?(Example: Intermediate):',
+        message: 'What is the level of this play?(Example: Intermediate):',
         choices: ['Beginner', 'Intermediate', 'Advanced']
       },
       {
         type: 'input',
         name: 'tags',
-        message: 'Provide the tags(Example: JSX, Hooks):',
+        message: 'Provide maximum of 5 tags(Example: JSX, Hooks):',
       },
       {
         type: 'input',
         name: 'github',
-        message: 'Your github username(Example: atapas):',
+        message: 'Enter your github username(Example: atapas):',
+      },
+      {
+        type: 'input',
+        name: 'cover',
+        message: 'Please provide the path(URL) to cover image(When the image is hosted publicly):',
       },
       {
         type: 'input',
         name: 'blog',
-        message: 'Your blog url(Example: https://blog.greenroots.info):',
+        message: 'Enter your blog url(Example: https://blog.greenroots.info):',
       },
       {
         type: 'input',
         name: 'video',
-        message: 'Your video url(Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ):',
+        message: 'Enter your video url(Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ):',
       },
     ],
     actions: [
       {
         type: 'add',
-        path: 'src/plays/{{folder}}/{{component}}.js',
+        path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.jsx',
         templateFile: 'plop-templates/component.hbs',
       },
       {
