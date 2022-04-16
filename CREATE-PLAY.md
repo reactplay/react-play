@@ -1,21 +1,12 @@
 # Create a Play
-## Table of Contents
-- [Steps to Create a Play](#steps-to-create-a-play)
-- [Submitting a Play for Review](#submitting-a-play-for-review)
+This document helps you with the steps to `Create a play` in `react-play`. You will also find the details of how to submit a play for code review.
+## 🖥️ Steps to Create a Play
+Welcome developers! We are as excited as you are to know that you are going to create a new play. It is super easy to get started.
 
-### Steps to Create a Play
-Welcome developers! Here are some things you can do to get started with your `Play` creation.
-
-> **Note:** The steps below assumes that you have forked and cloned the [react-play](https://github.com/atapas/react-play) repository.
+> **Note:** The steps below assumes that you have forked and cloned the [react-play](https://github.com/atapas/react-play) repository. Also, you have installed the dependencies using the `npm install` or `yarn install` command. If you are new to forking, please watch this [YouTube Guide](https://www.youtube.com/watch?v=h8suY-Osn8Q) to get started.
 
 - Open a command prompt in your project folder.
 - Run the following command:
-  ```shell
-    yarn install
-    # or
-    npm install
-  ```
-- After the installation is complete, run the following command:
   ```shell
     yarn create-play
   ```
@@ -91,13 +82,17 @@ Welcome developers! Here are some things you can do to get started with your `Pl
     # or
     npm start
   ```
-- You can now see your play added to the [play board](http://localhost:3000/plays) page. You can click on the play thumbnail to see the details of the play.
+- You should now see your play added to the [play list](http://localhost:3000/plays) page. You can click on the play thumbnail to see the details of the play.
 
-- Now start coding yor `Play`!
-### Submitting a Play for Review
+- That's it. Now start coding yor `Play` using your favorite code editor!
+## 👀 Submitting a Play for Review
 After you done with coding for your `Play`, you can submit it for review. Submitting a `Play` for review is a two step process.
 
 - Create a Pull Request on the [react-play](https://github.com/atapas/react-play) repository with your changes. Please add `atapas` as a reviewer.
 - Dedicate some time in a week to take care of the review comments.
 
 Once the Pull Request is approved and merged, we will notify you and add you as a `Contributor` to the [react-play](https://github.com/atapas/react-play) project.
+
+## ✋ Need Help?
+
+You can reach out to us at [ReactPlay Twitter Handle | @ReactPlayIO](https://twitter.com/ReactPlayIO) with a DM. Additionally, feel free to open a [discussion](https://github.com/atapas/react-play/discussions) or [issue](https://github.com/atapas/react-play/issues) on the `react-play` repository.

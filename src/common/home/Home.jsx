@@ -89,7 +89,7 @@ const Home = () => {
         <FeaturedPlays />
         <div className="home-plays-footer">
           <Link to="/plays" className="home-anchor">
-            <span className="text">View all ReactPlays</span>
+            <span className="text">View all Plays</span>
           </Link>
         </div>
       </section>
