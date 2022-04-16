@@ -57,7 +57,7 @@ Welcome developers! We are as excited as you are to know that you are going to c
           <tr>
             <td>Please provide the path(URL) to cover image</td>
             <td>No</td>
-            <td>A cover image is used to show your play with a thumbnail in the play list page. Please provide a link a cover image that is publicly accessible using a URL, example:  https://res.cloudinary.com/atapas/image/upload/v1649060528/demos/id-card_pdvyvz.png.      Alternatively, you can have a cover.png file in the root of your play folder.
+            <td>A cover image is used to show your play with a thumbnail in the play list page. Please provide a link a cover image that is publicly accessible using a URL, example:  https://res.cloudinary.com/atapas/image/upload/v1649060528/demos/id-card_pdvyvz.png. Alternatively, you can have a cover.png file in the root of your play folder.
             If you don't have a cover image, the app will use the default cover image.</td>
           </tr>
           <tr>
