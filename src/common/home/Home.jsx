@@ -35,9 +35,8 @@ const Home = () => {
             with ReactPlay
           </h2>
           <p className="body-desc">
-            React Play is an opensource application to learn, contribute and
-            give back to the React developer community. Start by browsing the plays or do you want to know see 
-            how it works?
+            ReactPlay is an open-source application to learn, create and share ReactJS 
+            projects with the developer community. Start by browsing the plays or exploring the source code.
           </p>
           <div className="body-c2a">
             <Link to="/plays" className="body-c2a-btn body-c2a-btn--primary">
