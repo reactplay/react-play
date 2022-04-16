@@ -78,7 +78,8 @@ const Home = () => {
             <p className="item-desc">
               Learn how to "Think in React" and build applications inspired by
               several plays(source code & demos). Get to the source code of it,
-              find related article, or even a YouTube video.
+              find related article, or even a YouTube video. Learn from the expert 
+              code reviews.
             </p>
           </li>
           <li className="home-features-item">
@@ -87,9 +88,10 @@ const Home = () => {
             </div>
             <h3 className="item-title">Create </h3>
             <p className="item-desc">
-              Create your own play and own it by following a few simple steps.
+              Create your own plays and own them by following a few simple steps.
               Learned something new? Perfect to present as a play. You can also
-              contribute to the existing plays.
+              contribute to the existing plays. Your play will be reviewed by the
+              experts before being made public.
             </p>
           </li>
           <li className="home-features-item">
@@ -98,7 +100,8 @@ const Home = () => {
             </div>
             <h3 className="item-title">Socialize </h3>
             <p className="item-desc">
-              Share your plays with the community. You can share your plays on
+              Share your plays with the community. The best way of building in public
+              is by sharing the learning. You can share your plays on
               social media platforms like Facebook, Twitter, LinkedIn, to name a
               few, just with a single click.
             </p>
