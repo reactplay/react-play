@@ -5,6 +5,7 @@ import {
   MovieContainer,
   WhyReact,
   CounterApp,
+States,
 //import play here
 } from "plays";
 
@@ -75,6 +76,18 @@ export const plays = [
     tags: 'JSX, State, Props',
     github: 'murtuzaalisurti',
     featured: true
+  }, {
+    id: 'pl-states', 
+    name: 'States', 
+    description: 'States in Functional Components',
+    component: () => {return <States />},
+    path: '/plays/states',
+    level: 'Beginner',
+    tags: 'Hooks,State,JSX',
+    github: 'Abhishek-90',
+    cover: '',
+    blog: 'https://abhishek-90.github.io/My-Portfolio/',
+    video: ''
   }, //replace new play item here
 ];
 
