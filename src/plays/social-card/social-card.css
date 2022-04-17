@@ -1,8 +1,12 @@
 .social-card {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: center; 
   padding: 1rem; 
+}
+
+.social-card-form {
+  margin: 0 1rem 0 0;
 }
 
 .social-card-form .form-group {
@@ -33,7 +37,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 400px;
+  min-height: 312px;
   height: 100%;
   padding: 5px;
   border-radius: 5px;

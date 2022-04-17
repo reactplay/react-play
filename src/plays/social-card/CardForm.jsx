@@ -1,6 +1,5 @@
-
-import { useState, useContext, useEffect } from 'react';
-import { SocialContext } from './context/SocialContext';
+import { useState, useContext, useEffect } from "react";
+import { SocialContext } from "./context/SocialContext";
 
 const CardForm = () => {
   const [state, setState] = useState({
@@ -11,30 +10,24 @@ const CardForm = () => {
     website: "",
     twitter: "",
     linkedIn: "",
-    github: ""
+    github: "",
   });
 
   const { setSocial } = useContext(SocialContext);
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     const name = evt.target.name;
     const value =
-    evt.target.type === "file" ? evt.target.files : evt.target.value;
+      evt.target.type === "file" ? evt.target.files : evt.target.value;
     setState({
       ...state,
-      [name]: value
+      [name]: value,
     });
-  }
+  };
 
   useEffect(() => {
     setSocial(state);
-  }, [state]);
-
-  const handleSubmit = evt => {
-    evt.preventDefault();
-    console.log(state);
-    
-  }
+  }, [state, setSocial]);
 
   return (
     <form className="social-card-form">
@@ -47,19 +40,7 @@ const CardForm = () => {
           id="name"
           name="name"
           value={state.name}
-          onChange={ handleChange }
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="email"></label>
-        <input
-          type="email"
-          placeholder="Enter Email"
-          className="form-control"
-          id="email"
-          name="email"
-          value={state.email}
-          onChange={ handleChange }
+          onChange={handleChange}
         />
       </div>
       <div className="form-group">
@@ -70,30 +51,18 @@ const CardForm = () => {
           id="photo"
           name="photo"
           accept=".jpg, .jpeg, .png"
-          onChange={ handleChange }
+          onChange={handleChange}
         />
       </div>
       <div className="form-group">
         <label htmlFor="bio"></label>
         <textarea
-          placeholder="Enter Bio"     
+          placeholder="Enter Bio"
           className="form-control"
           id="bio"
           name="bio"
           value={state.bio}
-          onChange={ handleChange }
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="website"></label>
-        <input
-          type="text"
-          placeholder="Enter Website"
-          className="form-control"
-          id="website"
-          name="website"
-          value={state.website}
-          onChange={ handleChange }
+          onChange={handleChange}
         />
       </div>
       <div className="form-group">
@@ -105,7 +74,7 @@ const CardForm = () => {
           id="twitter"
           name="twitter"
           value={state.twitter}
-          onChange={ handleChange }
+          onChange={handleChange}
         />
       </div>
       <div className="form-group">
@@ -117,7 +86,7 @@ const CardForm = () => {
           id="linkedIn"
           name="linkedIn"
           value={state.linkedIn}
-          onChange={ handleChange }
+          onChange={handleChange}
         />
       </div>
       <div className="form-group">
@@ -129,10 +98,33 @@ const CardForm = () => {
           id="github"
           name="github"
           value={state.github}
-          onChange={ handleChange }
+          onChange={handleChange}
         />
       </div>
-      <button type="submit" className="form-group btn btn-primary" onClick={ handleSubmit }>Generate</button>
+      <div className="form-group">
+        <label htmlFor="website"></label>
+        <input
+          type="text"
+          placeholder="Enter Website"
+          className="form-control"
+          id="website"
+          name="website"
+          value={state.website}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="email"></label>
+        <input
+          type="email"
+          placeholder="Enter Email"
+          className="form-control"
+          id="email"
+          name="email"
+          value={state.email}
+          onChange={handleChange}
+        />
+      </div>
     </form>
   );
 };
