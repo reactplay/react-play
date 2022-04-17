@@ -54,7 +54,10 @@ const Home = () => {
             >
               <BsGithub className="icon" />
               <span className="btn-label">
-                GitHub | <FiStar /> {gitHubStars}{" "}
+                GitHub{" "}
+                <div className="label-info-more">
+                  <FiStar /> <div className="more-label">{gitHubStars}</div>
+                </div>{" "}
               </span>
             </a>
             {/*<a

@@ -80,16 +80,22 @@ const PlayHeaderInfo = ({ play }) => {
    
   return (
     <div className="header-leftcol">
-      <div className="header-primary">
+      <div className="header-leftcol-action">
         <Link to="/plays" className="action">
           <IoMdArrowBack className="icon" size="24px" />
           <span className="sr-only">Back</span>
         </Link>
-        <h3 className="header-title">{play.name}</h3>
-        <LevelBadge level={play.level} /> { play.tags && <Tags tags={play.tags.split(',')} /> }
       </div>
-      <div className="header-secondary">
-        { play.github && <Author github={play.github} /> }
+      <div className="header-leftcol-contents">
+        <div className="header-primary">
+          <h3 className="header-title">{play.name}</h3>
+          <div className="header-title-tags">
+            <LevelBadge level={play.level} /> { play.tags && <Tags tags={play.tags.split(',')} /> }
+          </div>
+        </div>
+        <div className="header-secondary">
+          { play.github && <Author github={play.github} /> }
+        </div>
       </div>
     </div>
   );
