@@ -1,5 +1,6 @@
 
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { SocialContext } from './context/SocialContext';
 
 const CardForm = () => {
   const [state, setState] = useState({
@@ -10,32 +11,38 @@ const CardForm = () => {
     website: "",
     twitter: "",
     linkedIn: "",
-    showwcase: "",
     github: ""
   });
 
+  const { setSocial } = useContext(SocialContext);
 
   const handleChange = evt => {
     const name = evt.target.name;
     const value =
-    evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
+    evt.target.type === "file" ? evt.target.files : evt.target.value;
     setState({
       ...state,
       [name]: value
     });
   }
 
+  useEffect(() => {
+    setSocial(state);
+  }, [state]);
+
   const handleSubmit = evt => {
     evt.preventDefault();
     console.log(state);
+    
   }
 
   return (
-    <form>
+    <form className="social-card-form">
       <div className="form-group">
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name"></label>
         <input
           type="text"
+          placeholder="Enter Name"
           className="form-control"
           id="name"
           name="name"
@@ -44,9 +51,10 @@ const CardForm = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email"></label>
         <input
           type="email"
+          placeholder="Enter Email"
           className="form-control"
           id="email"
           name="email"
@@ -55,19 +63,20 @@ const CardForm = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="photo">Photo</label>
+        <label htmlFor="photo"></label>
         <input
           type="file"
           className="form-control"
           id="photo"
           name="photo"
-          value={state.photo}
+          accept=".jpg, .jpeg, .png"
           onChange={ handleChange }
         />
       </div>
       <div className="form-group">
-        <label htmlFor="bio">Bio</label>
+        <label htmlFor="bio"></label>
         <textarea
+          placeholder="Enter Bio"     
           className="form-control"
           id="bio"
           name="bio"
@@ -76,9 +85,10 @@ const CardForm = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="website">Website</label>
+        <label htmlFor="website"></label>
         <input
           type="text"
+          placeholder="Enter Website"
           className="form-control"
           id="website"
           name="website"
@@ -87,9 +97,10 @@ const CardForm = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="twitter">Twitter</label>
+        <label htmlFor="twitter"></label>
         <input
           type="text"
+          placeholder="Enter Twitter URL"
           className="form-control"
           id="twitter"
           name="twitter"
@@ -98,9 +109,10 @@ const CardForm = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="linkedIn">LinkedIn</label>
+        <label htmlFor="linkedIn"></label>
         <input
           type="text"
+          placeholder="Enter LinkedIn URL"
           className="form-control"
           id="linkedIn"
           name="linkedIn"
@@ -109,20 +121,10 @@ const CardForm = () => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="showcase">Showwcase</label>
+        <label htmlFor="github"></label>
         <input
           type="text"
-          className="form-control"
-          id="showwcase"
-          name="showwcase"
-          value={state.showwcase}
-          onChange={ handleChange }
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="github">Github</label>
-        <input
-          type="text"
+          placeholder="Enter GitHub URL"
           className="form-control"
           id="github"
           name="github"
@@ -130,7 +132,7 @@ const CardForm = () => {
           onChange={ handleChange }
         />
       </div>
-      <button type="submit" className="btn btn-primary" onClick={ handleSubmit }>Submit</button>
+      <button type="submit" className="form-group btn btn-primary" onClick={ handleSubmit }>Generate</button>
     </form>
   );
 };

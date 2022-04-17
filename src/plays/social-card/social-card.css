@@ -1,0 +1,112 @@
+.social-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 1rem; 
+}
+
+.social-card-form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.social-card-form .form-group .form-control {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #333;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.card-details .card-details-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.card-details .card-details-header .card-details-header-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card-details .card-details-header .card-details-header-name h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.card-details .card-details-header .card-details-header-image img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.card-details .card-details-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.card-details .card-details-body .card-details-body-bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.card-details .card-details-body .card-details-body-bio p {
+  padding: 0;
+  margin: 0;
+}
+
+.card-details .card-details-body .card-details-body-social {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
