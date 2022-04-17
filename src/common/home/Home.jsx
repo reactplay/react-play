@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import useFetch from 'common/hooks/useFetch';
+import { useState, useEffect, useContext } from "react";
+import useFetch from "common/hooks/useFetch";
 import { Link } from "react-router-dom";
 import "./home.css";
 import { RiSlideshow4Line } from "react-icons/ri";
 import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
-import { BsGithub } from 'react-icons/bs';
+import { BsGithub } from "react-icons/bs";
 import { FiStar } from "react-icons/fi";
 import { ReactComponent as Flower } from "images/icon-flower.svg";
 import { MdManageSearch } from "react-icons/md";
@@ -12,14 +12,16 @@ import { MdManageSearch } from "react-icons/md";
 
 import FeaturedPlays from "common/playlists/FeaturedPlays";
 import Contributors from "./Contributors";
+import { SearchContext } from "common/search/search-context";
 
 const Home = () => {
-  const [gitHubStars, setGitHubStars] = useState('...');
-  const { data } = useFetch('https://api.github.com/repos/atapas/react-play');
-  
+  const [gitHubStars, setGitHubStars] = useState("...");
+  const { data } = useFetch("https://api.github.com/repos/atapas/react-play");
+  const { setSearchTerm, searchTerm } = useContext(SearchContext);
   useEffect(() => {
     setGitHubStars(data.stargazers_count);
-  }, [data]);
+    setSearchTerm("");
+  }, [data, setSearchTerm, searchTerm]);
 
   return (
     <div>
@@ -35,8 +37,9 @@ const Home = () => {
             with ReactPlay
           </h2>
           <p className="body-desc">
-            ReactPlay is an open-source application to learn, create and share ReactJS 
-            projects with the developer community. Start by browsing the plays or exploring the source code.
+            ReactPlay is an open-source application to learn, create and share
+            ReactJS projects with the developer community. Start by browsing the
+            plays or exploring the source code.
           </p>
           <div className="body-c2a">
             <Link to="/plays" className="body-c2a-btn body-c2a-btn--primary">
@@ -50,7 +53,9 @@ const Home = () => {
               className="body-c2a-btn"
             >
               <BsGithub className="icon" />
-              <span className="btn-label">GitHub | <FiStar /> {gitHubStars} </span>
+              <span className="btn-label">
+                GitHub | <FiStar /> {gitHubStars}{" "}
+              </span>
             </a>
             {/*<a
               href="https://www.youtube.com/watch?v=rysTbzKOEO0"
@@ -78,8 +83,8 @@ const Home = () => {
             <p className="item-desc">
               Learn how to "Think in React" and build applications inspired by
               several plays(source code & demos). Get to the source code of it,
-              find related article, or even a YouTube video. Learn from the expert 
-              code reviews.
+              find related article, or even a YouTube video. Learn from the
+              expert code reviews.
             </p>
           </li>
           <li className="home-features-item">
@@ -88,10 +93,10 @@ const Home = () => {
             </div>
             <h3 className="item-title">Create </h3>
             <p className="item-desc">
-              Create your own plays and own them by following a few simple steps.
-              Learned something new? Perfect to present as a play. You can also
-              contribute to the existing plays. Your play will be reviewed by the
-              experts before being made public.
+              Create your own plays and own them by following a few simple
+              steps. Learned something new? Perfect to present as a play. You
+              can also contribute to the existing plays. Your play will be
+              reviewed by the experts before being made public.
             </p>
           </li>
           <li className="home-features-item">
@@ -100,8 +105,8 @@ const Home = () => {
             </div>
             <h3 className="item-title">Socialize </h3>
             <p className="item-desc">
-              Share your plays with the community. The best way of building in public
-              is by sharing the learning. You can share your plays on
+              Share your plays with the community. The best way of building in
+              public is by sharing the learning. You can share your plays on
               social media platforms like Facebook, Twitter, LinkedIn, to name a
               few, just with a single click.
             </p>
