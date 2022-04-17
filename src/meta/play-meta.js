@@ -5,6 +5,7 @@ import {
   MovieContainer,
   WhyReact,
   CounterApp,
+SocialCard,
 //import play here
 } from "plays";
 
@@ -75,6 +76,18 @@ export const plays = [
     tags: 'JSX, State, Props',
     github: 'murtuzaalisurti',
     featured: true
+  }, {
+    id: 'pl-social-card', 
+    name: 'Social Card', 
+    description: 'The Social Card helps you telling who you are using photo, name, and other social footprints.',
+    component: () => {return <SocialCard />},
+    path: '/plays/social-card',
+    level: 'Intermediate',
+    tags: 'Form,Events,ComplexState',
+    github: 'atapas',
+    cover: '',
+    blog: '',
+    video: ''
   }, //replace new play item here
 ];
 
