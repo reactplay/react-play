@@ -13,6 +13,7 @@
     "react-organizational-chart": "^2.1.1",
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
+    "react-shimmer-effect": "^1.0.9",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
