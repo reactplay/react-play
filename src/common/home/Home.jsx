@@ -50,7 +50,7 @@ const Home = () => {
               className="body-c2a-btn"
             >
               <BsGithub className="icon" />
-              <span className="btn-label">GitHub | <FiStar /> {gitHubStars} </span>
+              <span className="btn-label">GitHub <div className="label-info-more"><FiStar /> <div className="more-label">{gitHubStars}</div></div> </span>
             </a>
             {/*<a
               href="https://www.youtube.com/watch?v=rysTbzKOEO0"

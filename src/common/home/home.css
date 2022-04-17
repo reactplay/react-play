@@ -121,6 +121,26 @@
     color: var(--color-brand-primary-dark);
 }
 
+.app-home-body .body-c2a .body-c2a-btn .btn-label {
+    display: flex;
+    align-items: center;
+    grid-gap: 1.2rem;
+}
+
+.app-home-body .body-c2a .body-c2a-btn .btn-label .label-info-more .more-label {
+    line-height: var(--lh-rg);
+    font-weight: var(--fw-regular);
+    /* font-size: var(--fs-rg); */
+    padding-top: 0.06rem;
+}
+
+.app-home-body .body-c2a .body-c2a-btn .btn-label .label-info-more {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 0.2rem;
+}
+
 .app-home-body .body-c2a .body-c2a-btn--primary {
     border: solid 2px var(--color-brand-primary);
     background-color: var(--color-brand-primary);
