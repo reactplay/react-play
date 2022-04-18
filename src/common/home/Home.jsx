@@ -17,10 +17,16 @@ import { SearchContext } from "common/search/search-context";
 const Home = () => {
   const [gitHubStars, setGitHubStars] = useState("...");
   const { data } = useFetch("https://api.github.com/repos/atapas/react-play");
-  const { setSearchTerm, searchTerm } = useContext(SearchContext);
+  const { setSearchTerm, searchTerm, setFilterQuery } =
+    useContext(SearchContext);
   useEffect(() => {
     setGitHubStars(data.stargazers_count);
     setSearchTerm("");
+    setFilterQuery({
+      level: "",
+      tags: [],
+      creator: "",
+    });
   }, [data, setSearchTerm, searchTerm]);
 
   return (

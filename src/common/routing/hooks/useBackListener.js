@@ -1,3 +1,6 @@
+//the code is inspired from
+//https://stackoverflow.com/questions/71369320/how-to-controling-browser-back-button-with-react-router-dom-v6
+
 import { useContext, useEffect } from "react";
 import { UNSAFE_NavigationContext } from "react-router-dom";
 
