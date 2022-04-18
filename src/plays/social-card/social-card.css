@@ -32,22 +32,61 @@
   box-shadow: none;
 }
 
-.card-details {
+.card-details-theme {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem;
+}
+
+.card-details-theme button {
+  border: none;
+  cursor: pointer;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0 0.3rem 0 0;
+  border-radius:5px;
+}
+
+.card-details-theme button.red {
+  background-color: #f44336;
+}
+
+.card-details-theme button.green {
+  background-color: #4caf50;
+}
+
+.card-details-theme button.blue {
+  background-color: #2196f3;
+}
+
+.card-details-theme button.yellow {
+  background-color: #ffeb3b;
+}
+
+.card-details-theme button.light {
+  background-color: #f2d6d6;
+}
+
+.card-details-theme button.dark {
+  background-color: #212121;
+}
+
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 400px;
-  min-height: 312px;
+  min-height: 275px;
   height: 100%;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  background-color: #fff;
+  background-color: #f2d6d6;
   box-shadow: none;
 }
 
-.card-details .card-details-header {
+.card .card-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +96,7 @@
   padding: 5px;
 }
 
-.card-details .card-details-header .card-details-header-name {
+.card .card-header .card-header-name {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,12 +105,12 @@
   height: 100%;
 }
 
-.card-details .card-details-header .card-details-header-name h3 {
+.card .card-header .card-header-name h3 {
   padding: 0;
   margin: 0;
 }
 
-.card-details .card-details-header .card-details-header-image img{
+.card .card-header .card-header-image img{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +121,7 @@
   border-radius: 50%;
 }
 
-.card-details .card-details-body {
+.card .card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +131,7 @@
   padding: 5px;
 }
 
-.card-details .card-details-body .card-details-body-bio {
+.card .card-body .card-body-bio {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,12 +141,12 @@
   padding: 5px;
 }
 
-.card-details .card-details-body .card-details-body-bio p {
+.card .card-body .card-body-bio p {
   padding: 0;
   margin: 0;
 }
 
-.card-details .card-details-body .card-details-body-social {
+.card .card-body .card-body-social {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
