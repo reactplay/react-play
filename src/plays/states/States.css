@@ -1,0 +1,31 @@
+.play-area, .play-area-result{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input {
+  margin-top: 1rem;
+  width: 15rem;
+  height: 2.5rem;
+  margin-left: 4rem;
+}
+
+.play-area-container {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.submit-button {
+  height: 2rem;
+  width: 6rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  background: rgb(108, 226, 252);
+  border: none;
+  outline: none;
+  margin-top: 1.2rem;
+  margin-left: 4rem;
+  border-radius: 1rem;
+}
