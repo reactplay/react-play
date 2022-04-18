@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
-import "./States.css";
+import "./states.css";
 
 function States() {
   // Do not remove the below lines.
