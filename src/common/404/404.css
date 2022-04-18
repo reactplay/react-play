@@ -33,10 +33,31 @@
 }
 
 .page-404-link {
-    color: var(--color-brand-primary);
+    position: relative;
+    color: var(--color-neutral-80);
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+    font-weight: var(--fw-semibold);
+}
+.page-404-link:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    height: 2px;
+    background-color: var(--color-brand-primary);
+    transition: all .1s ease-in-out;
 }
 
 .page-404-link:hover,
 .page-404-link:focus {
-    color: var(--color-brand-primary-dark);
+    color: var(--color-neutral-90);
+}
+
+.page-404-link:hover:after,
+.page-404-link:focus:after {
+    height: 5px;
+    bottom: 0;
+    /* background-color: var(--color-neutral-90); */
 }
