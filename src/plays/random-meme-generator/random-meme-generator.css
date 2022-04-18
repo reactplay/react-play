@@ -26,6 +26,8 @@
 }
 
 .generate-btn {
+    display: flex;
+    align-items: center;
     padding: 0.7rem 1.2rem;
     font-family: 'Quicksand', sans-serif;
     outline: none;
@@ -34,6 +36,10 @@
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
+}
+
+.generate-btn svg {
+    margin-left: 0.5rem;
 }
 
 .loading {

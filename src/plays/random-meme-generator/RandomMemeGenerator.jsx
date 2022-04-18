@@ -2,6 +2,7 @@
 import { useLocation } from 'react-router-dom';
 import { getPlayById } from 'meta/play-meta-util';
 import { useState, useEffect } from 'react';
+import { FaSyncAlt } from 'react-icons/fa';
 
 import PlayHeader from 'common/playlists/PlayHeader';
 import './random-meme-generator.css';
@@ -42,10 +43,6 @@ function RandomMemeGenerator() {
     getMeme();
   }, [])
 
-  function handleClick(e) {
-    e.target.classList.contains('generate-btn') && getMeme();
-  }
-
   return (
     <>
       <div className="play-details">
@@ -57,11 +54,11 @@ function RandomMemeGenerator() {
           </div>
 
           <div className="meme-container">
-            {meme.url === null || meme.url === undefined ? <i className={"fa-solid fa-rotate loading"}></i> : <img className="meme" src={meme.url} alt="meme" />}
+            {meme.url === null || meme.url === undefined ? <FaSyncAlt className={"loading"}></FaSyncAlt> : <img className="meme" src={meme.url} alt="meme" />}
           </div>
 
           <div className="generate">
-            <button className="btn generate-btn" onClick={handleClick}>Generate <i className={`fa-solid fa-rotate ${isLoading && 'loading'}`}></i></button>
+            <button className="btn generate-btn" onClick={() => getMeme()}>Generate <FaSyncAlt className={`${isLoading && 'loading'}`}></FaSyncAlt></button>
           </div>
           {/* Your Code Ends Here */}
         </div>
