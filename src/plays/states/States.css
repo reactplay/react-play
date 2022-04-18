@@ -1,8 +1,13 @@
 .play-area, .play-area-result{
   width: 100%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+}
+
+.play-area {
+  border-right-width: 0.1rem;
+  border-right-style: solid;
+  border-right-color: rgb(125, 117, 117);
 }
 
 .input {
@@ -14,6 +19,7 @@
 
 .play-area-container {
   display: flex;
+  flex-direction: row;
   margin-top: 3rem;
 }
 

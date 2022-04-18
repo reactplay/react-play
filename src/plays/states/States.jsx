@@ -17,6 +17,9 @@ function States() {
   const [duration, setDuration] = useState(0);
 
   const handleSubmit = () => {
+    if(!name && !duration) {
+      return
+    }
     setDisplay(true);
     setTimeout(() => {
       setDisplay(false);
@@ -49,8 +52,8 @@ function States() {
             </p>
             <div className="play-area-container">
               <div className="play-area">
-                Enter a Name and Duration in Seconds for which you want to
-                display a Message.
+                <p>Enter a Name and Duration in Seconds for which you want to
+                display a Message.</p>
                 <input
                   className="input nameInput"
                   type="text"
@@ -69,16 +72,22 @@ function States() {
                   onChange={handleDurationChange}
                   value={duration}
                 />
-                <button className="submit-button" type="submit" onClick={handleSubmit}>
+                <button
+                  className="submit-button"
+                  type="submit"
+                  onClick={handleSubmit}
+                >
                   Submit
                 </button>
               </div>
+              
               <div className="play-area-result">
-                {
-                  !display ? <p>Enter Details of the Message</p>:<h3>Welcome to State Play, {name} </h3>
-                }
+                {!display ? (
+                  <p style={{marginLeft: '2rem'}}>Enter Details of the Message</p>
+                ) : (
+                  <h3 style={{marginLeft: '2rem'}}>Welcome to State Play, {name} </h3>
+                )}
               </div>
-
             </div>
           </div>
           {/* Your Code Ends Here */}
