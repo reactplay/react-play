@@ -28,7 +28,10 @@ function SocialCard() {
         <PlayHeader play={play} />
         <div className="play-details-body">
         {/* Your Code Starts Here */}
-          <h2 style={{textAlign: 'center'}}>Create your Social Card</h2>
+          <div style={{textAlign: 'center'}}>
+            <h2>Create your Social Card</h2>
+            <p>Please fill the form below to create a Social Card for you.</p>
+          </div>
           <SocialContext.Provider value={value}>
             <div className="social-card">
               <CardForm />

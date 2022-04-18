@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import { SocialContext } from "./context/SocialContext";
 
 const CardForm = () => {
@@ -15,6 +15,8 @@ const CardForm = () => {
 
   const { setSocial } = useContext(SocialContext);
 
+  const nameInputRef = useRef(null);
+
   const handleChange = (evt) => {
     const name = evt.target.name;
     const value =
@@ -26,6 +28,10 @@ const CardForm = () => {
   };
 
   useEffect(() => {
+    nameInputRef.current.focus();
+  }, []);
+
+  useEffect(() => {
     setSocial(state);
   }, [state, setSocial]);
 
@@ -34,6 +40,7 @@ const CardForm = () => {
       <div className="form-group">
         <label htmlFor="name"></label>
         <input
+          ref = {nameInputRef}
           type="text"
           placeholder="Enter Name"
           className="form-control"

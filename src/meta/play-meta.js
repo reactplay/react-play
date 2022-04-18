@@ -83,7 +83,7 @@ export const plays = [
     component: () => {return <SocialCard />},
     path: '/plays/social-card',
     level: 'Intermediate',
-    tags: 'Form,Events,ComplexState',
+    tags: 'Form,Events,Complex State',
     github: 'atapas',
     cover: '',
     blog: '',

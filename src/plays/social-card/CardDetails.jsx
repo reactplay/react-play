@@ -27,9 +27,9 @@ const CardDetails = () => {
   }, [photo]);
 
   const applyTheme = theme => {
-    let bc = '#f2d6d6';
-    let fc = '#212121';
-    let link = '#000000';
+    let bc = '';
+    let fc = '';
+    let link = '';
     switch (theme) {
       case "dark":
         bc = '#212121';
