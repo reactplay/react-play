@@ -7,4 +7,5 @@ export { default as MovieContainer } from 'plays/movies/MovieContainer';
 export { default as WhyReact } from 'plays/why-react/WhyReact';
 export { default as CounterApp } from 'plays/counter/CounterApp';
 export { default as SocialCard } from 'plays/social-card/SocialCard';
+export { default as RandomMemeGenerator } from 'plays/random-meme-generator/RandomMemeGenerator';
 //add export here

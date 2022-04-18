@@ -6,6 +6,7 @@ import {
   WhyReact,
   CounterApp,
 SocialCard,
+RandomMemeGenerator,
 //import play here
 } from "plays";
 
@@ -87,6 +88,18 @@ export const plays = [
     github: 'atapas',
     cover: '',
     blog: 'https://blog.greenroots.info/how-to-create-react-form-with-a-single-change-event-handler',
+    video: ''
+  }, {
+    id: 'pl-random-meme-generator', 
+    name: 'Random Meme Generator', 
+    description: 'A project to demonstrate the use of API to fetch random memes! It also demonstrates how you can do event handling!',
+    component: () => {return <RandomMemeGenerator />},
+    path: '/plays/random-meme-generator',
+    level: 'Beginner',
+    tags: 'JSX,Hooks,API,EventHandling',
+    github: 'murtuzaalisurti',
+    cover: '',
+    blog: '',
     video: ''
   }, //replace new play item here
 ];
