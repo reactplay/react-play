@@ -86,7 +86,7 @@ export const plays = [
     tags: 'Form,Events,Complex State',
     github: 'atapas',
     cover: '',
-    blog: '',
+    blog: 'https://blog.greenroots.info/how-to-create-react-form-with-a-single-change-event-handler',
     video: ''
   }, //replace new play item here
 ];

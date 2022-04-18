@@ -12,13 +12,14 @@ import { SocialContext } from './context/SocialContext';
 import "./social-card.css";
 
 function SocialCard() {
-  // Do not remove the below lines. 
   // The following code is to fetch the current play from the URL
   const location = useLocation();
   const { id } = location.state;
   const play = getPlayById(id);
 
-  // Your Code Start below.
+  // The social state carry the information of the social
+  // in the context. This information is made available
+  // between the Card form and the Card details.
   const [social, setSocial] = useState({});
   const value = { social, setSocial };
 
@@ -27,7 +28,6 @@ function SocialCard() {
       <div className="play-details">
         <PlayHeader play={play} />
         <div className="play-details-body">
-        {/* Your Code Starts Here */}
           <div style={{textAlign: 'center'}}>
             <h2>Create your Social Card</h2>
             <p>Please fill the form below to create a Social Card for you.</p>
@@ -38,7 +38,6 @@ function SocialCard() {
               <CardDetails />
             </div>
           </SocialContext.Provider>
-        {/* Your Code Ends Here */}
         </div>
       </div>
     </>

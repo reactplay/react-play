@@ -2,6 +2,8 @@ import { useState, useContext, useEffect, useRef } from "react";
 import { SocialContext } from "./context/SocialContext";
 
 const CardForm = () => {
+  // Declaring the state value with an object that contains
+  // all the information of the social card.
   const [state, setState] = useState({
     name: "",
     email: "",
@@ -13,10 +15,18 @@ const CardForm = () => {
     github: "",
   });
 
+  // We get the updater function from the context.
+  // It will help us to set the user filled information as the context data
+  // so that, other component can access it.
   const { setSocial } = useContext(SocialContext);
 
+  // We create a reference to focus on the 
+  // first input field of the form.
   const nameInputRef = useRef(null);
 
+  // This method will be called for the value
+  // change of each of the form fields. Please
+  // note how we handle the file input differently.
   const handleChange = (evt) => {
     const name = evt.target.name;
     const value =
@@ -27,10 +37,13 @@ const CardForm = () => {
     });
   };
 
+  // We set the focus of the name input field.
   useEffect(() => {
     nameInputRef.current.focus();
   }, []);
 
+  // Whenever the state value changes, we set the value
+  // of the context data.
   useEffect(() => {
     setSocial(state);
   }, [state, setSocial]);
@@ -112,7 +125,7 @@ const CardForm = () => {
         <label htmlFor="website"></label>
         <input
           type="text"
-          placeholder="Enter Website"
+          placeholder="Enter Website URL"
           className="form-control"
           id="website"
           name="website"

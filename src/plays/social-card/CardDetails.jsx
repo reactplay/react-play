@@ -5,17 +5,28 @@ import { CgWebsite } from "react-icons/cg";
 import { AiOutlineMail } from "react-icons/ai";
 
 const CardDetails = () => {
+  // Get the user-filled values from the context
   const { social } = useContext(SocialContext);
+
+  // Destructure the values from the object.
   const { name, email, photo, bio, website, twitter, linkedIn, github } =
     social;
 
+  // We need a file reader to handle the photo uploaded by the user.
+  // We have to perform some computations and extract the actual picture
+  // from the file. So created a state variable to take care of this.  
   const [picture, setPicture] = useState();
+
+  // We have an option to set the theme of the social card.
+  // This state variable is the theme object.
   const [cardTheme, setCardTheme] = useState({
     bc: "#f2d6d6",
     fc: "#212121",
     link: "#000000",
   });
 
+  // Perform all calculations to get the profile photo
+  // from the file reader.
   useEffect(() => {
     if (photo) {
       const reader = new FileReader();
@@ -26,6 +37,7 @@ const CardDetails = () => {
     }
   }, [photo]);
 
+  // This method will be called when the user changes the theme
   const applyTheme = theme => {
     let bc = '';
     let fc = '';
