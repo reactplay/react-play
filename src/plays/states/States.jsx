@@ -16,7 +16,8 @@ function States() {
   const [display, setDisplay] = useState(false);
   const [duration, setDuration] = useState(0);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     if(!name && !duration) {
       return
     }
@@ -75,7 +76,7 @@ function States() {
                 <button
                   className="submit-button"
                   type="submit"
-                  onClick={handleSubmit}
+                  onClick={(e) => handleSubmit(e)}
                 >
                   Submit
                 </button>
