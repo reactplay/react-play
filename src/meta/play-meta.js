@@ -6,6 +6,7 @@ import {
   WhyReact,
   CounterApp,
 States,
+SocialCard,
 //import play here
 } from "plays";
 
@@ -86,7 +87,18 @@ export const plays = [
     tags: 'Hooks,State,JSX',
     github: 'Abhishek-90',
     cover: '',
-    blog: 'https://abhishek-90.github.io/My-Portfolio/',
+    blog: 'https://abhishek-90.github.io/My-Portfolio/'
+  }, {
+    id: 'pl-social-card', 
+    name: 'Social Card', 
+    description: 'The Social Card helps you telling who you are using photo, name, and other social footprints.',
+    component: () => {return <SocialCard />},
+    path: '/plays/social-card',
+    level: 'Intermediate',
+    tags: 'Form,Events,Complex State',
+    github: 'atapas',
+    cover: '',
+    blog: 'https://blog.greenroots.info/how-to-create-react-form-with-a-single-change-event-handler',
     video: ''
   }, //replace new play item here
 ];
