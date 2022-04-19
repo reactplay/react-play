@@ -114,18 +114,6 @@ export const plays = [
     cover: '',
     blog: '',
     video: ''
-  }, {
-    id: 'pl-sample', 
-    name: 'Sample', 
-    description: 'nothin',
-    component: () => {return <Sample />},
-    path: '/plays/sample',
-    level: 'Beginner',
-    tags: '',
-    github: '',
-    cover: '',
-    blog: '',
-    video: ''
   }, //replace new play item here
 ];
 
