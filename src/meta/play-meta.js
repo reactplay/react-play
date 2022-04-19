@@ -8,7 +8,6 @@ import {
 States,
 SocialCard,
 RandomMemeGenerator,
-Sample,
 //import play here
 } from "plays";
 
