@@ -7,6 +7,7 @@ import {
   CounterApp,
 SocialCard,
 RandomMemeGenerator,
+SamplePlay,
 //import play here
 } from "plays";
 
@@ -98,6 +99,18 @@ export const plays = [
     level: 'Beginner',
     tags: 'JSX,Hooks,API,EventHandling',
     github: 'murtuzaalisurti',
+    cover: '',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-sample-play', 
+    name: 'Sample-Play', 
+    description: 'just for testing that whether the readme is made or not',
+    component: () => {return <SamplePlay />},
+    path: '/plays/sample-play',
+    level: 'Beginner',
+    tags: 'nothing,none,none,none,none',
+    github: 'hasnainmakada-99',
     cover: '',
     blog: '',
     video: ''
