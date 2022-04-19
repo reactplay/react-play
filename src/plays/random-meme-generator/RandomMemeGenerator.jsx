@@ -1,7 +1,7 @@
 
 import { useLocation } from 'react-router-dom';
 import { getPlayById } from 'meta/play-meta-util';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { FaSyncAlt } from 'react-icons/fa';
 
 import PlayHeader from 'common/playlists/PlayHeader';
@@ -20,7 +20,7 @@ function RandomMemeGenerator() {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  function getMeme() {
+  const getMeme = useCallback(() => {
     setIsLoading(true);
     fetch('https://meme-api.herokuapp.com/gimme').then((res) => {
       return res.json();
@@ -37,11 +37,11 @@ function RandomMemeGenerator() {
     }).catch((err) => {
       console.error(err);
     })
-  }
+  }, [])
 
   useEffect(() => {
     getMeme();
-  }, [])
+  }, [getMeme])
 
   return (
     <>
