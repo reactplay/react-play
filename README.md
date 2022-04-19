@@ -55,7 +55,7 @@ Who doesn't want motivation and support? Many Thanks to all the Stargazers who h
 
 [![Stargazers repo roster for @atapas/react-play](https://reporoster.com/stars/atapas/react-play)](https://github.com/atapas/react-play/stargazers)
 
-Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on twitter [@reactplayio](https://twitter.com/reactplay).
+Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on twitter [@reactplayio](https://twitter.com/reactplayio).
 
 ## 🏗️ How to Set up `ReactPlay` for Development?
 
