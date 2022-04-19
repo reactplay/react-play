@@ -1,0 +1,36 @@
+.icon {
+  color: red;
+  font-size: 30px;
+}
+h1 {
+  color: black;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+}
+
+#button {
+  width: 125px;
+  height: 60px;
+  margin: 10px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  color: black;
+}
+
+.tic-tac-toe {
+  margin: 0 auto;
+}

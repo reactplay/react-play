@@ -8,6 +8,7 @@ import {
 States,
 SocialCard,
 RandomMemeGenerator,
+TicTacToe,
 //import play here
 } from "plays";
 
@@ -110,6 +111,18 @@ export const plays = [
     level: 'Beginner',
     tags: 'JSX,Hooks,API,EventHandling',
     github: 'murtuzaalisurti',
+    cover: '',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-tic-tac-toe', 
+    name: 'Tic Tac Toe', 
+    description: 'A two players Tic Tac Toe game',
+    component: () => {return <TicTacToe />},
+    path: '/plays/tic-tac-toe',
+    level: 'Beginner',
+    tags: 'useState,game',
+    github: 'joshi-kaushal',
     cover: '',
     blog: '',
     video: ''

@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.box {
+  width: auto;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 125px;
+  height: 60px;
+  margin: 10px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  color: black;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
