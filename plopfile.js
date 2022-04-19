@@ -59,6 +59,11 @@ module.exports = plop => {
         templateFile: 'plop-templates/component.hbs',
       },
       {
+        type: 'add',
+        path: 'src/plays/{{generateFolderName name}}/Readme.md',
+        templateFile: 'plop-templates/play-readme.hbs',
+      },
+      {
         type: 'modify',
         path: 'src/plays/index.js',
         pattern: /\/\/add export here/gi,
