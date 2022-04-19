@@ -9,8 +9,6 @@ import { FiStar } from "react-icons/fi";
 import { ReactComponent as Flower } from "images/icon-flower.svg";
 import { MdManageSearch } from "react-icons/md";
 import YoutubeVideoEmbed from 'common/components/YouTubeEmbed';
-// import { IoPlayOutline } from "react-icons/io5";
-
 import FeaturedPlays from "common/playlists/FeaturedPlays";
 import Contributors from "./Contributors";
 
@@ -55,7 +53,7 @@ const Home = () => {
             </a>
           </div>          
           <div className="video">
-            <YoutubeVideoEmbed videoId="XrWonrp296w" title="test" />
+            <YoutubeVideoEmbed videoId="XrWonrp296w" title="🤩 Introducing ReactPlay - An Opensource Platform to Create, Learn, and Share ReactJS Projects" />
           </div>
         </div>
       </section>
