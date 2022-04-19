@@ -8,6 +8,7 @@ import { BsGithub } from 'react-icons/bs';
 import { FiStar } from "react-icons/fi";
 import { ReactComponent as Flower } from "images/icon-flower.svg";
 import { MdManageSearch } from "react-icons/md";
+import YoutubeVideoEmbed from 'common/components/YouTubeEmbed';
 // import { IoPlayOutline } from "react-icons/io5";
 
 import FeaturedPlays from "common/playlists/FeaturedPlays";
@@ -52,11 +53,9 @@ const Home = () => {
               <BsGithub className="icon" />
               <span className="btn-label">GitHub <div className="label-info-more"><FiStar /> <div className="more-label">{gitHubStars}</div></div> </span>
             </a>
-          </div>
+          </div>          
           <div className="video">
-            <div className="video-wrapper">
-              <iframe width="560" height="315" className="video-iframe" src="https://www.youtube.com/embed/XrWonrp296w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+            <YoutubeVideoEmbed videoId="XrWonrp296w" title="test" />
           </div>
         </div>
       </section>
