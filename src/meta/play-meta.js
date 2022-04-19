@@ -8,6 +8,8 @@ import {
 SocialCard,
 RandomMemeGenerator,
 SamplePlay,
+Sample,
+Sample,
 //import play here
 } from "plays";
 
@@ -111,6 +113,30 @@ export const plays = [
     level: 'Beginner',
     tags: 'nothing,none,none,none,none',
     github: 'hasnainmakada-99',
+    cover: '',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-sample', 
+    name: 'Sample', 
+    description: '',
+    component: () => {return <Sample />},
+    path: '/plays/sample',
+    level: 'Beginner',
+    tags: '',
+    github: '',
+    cover: '',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-sample', 
+    name: 'Sample', 
+    description: '',
+    component: () => {return <Sample />},
+    path: '/plays/sample',
+    level: 'Beginner',
+    tags: '',
+    github: '',
     cover: '',
     blog: '',
     video: ''

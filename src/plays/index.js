@@ -9,4 +9,6 @@ export { default as CounterApp } from 'plays/counter/CounterApp';
 export { default as SocialCard } from 'plays/social-card/SocialCard';
 export { default as RandomMemeGenerator } from 'plays/random-meme-generator/RandomMemeGenerator';
 export { default as SamplePlay } from 'plays/sample-play/SamplePlay';
+export { default as Sample } from 'plays/sample/Sample';
+export { default as Sample } from 'plays/sample/Sample';
 //add export here

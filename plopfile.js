@@ -60,7 +60,7 @@ module.exports = plop => {
       },
       {
         type: 'add',
-        path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.md',
+        path: 'src/plays/{{generateFolderName name}}/Readme.md',
         templateFile: 'plop-templates/play-readme.hbs',
       },
       {
