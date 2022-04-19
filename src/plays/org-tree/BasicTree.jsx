@@ -1,5 +1,4 @@
 import PlayHeader from "common/playlists/PlayHeader";
-import { useLocation } from "react-router-dom";
 import { getPlayById } from "meta/play-meta-util";
 import { org } from "./org";
 import React, { Fragment } from "react";
@@ -21,10 +20,9 @@ const Card = (props) => {
   );
 };
 
-const BasicTree = () => {
+const BasicTree = (props) => {
   // The following code is to fetch the current play from the URL
-  const location = useLocation();
-  const { id } = location.state;
+  const { id } = props;
   const play = getPlayById(id);
   
   return (

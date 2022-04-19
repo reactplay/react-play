@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useLocation } from 'react-router-dom';
 import { getPlayById } from 'meta/play-meta-util';
 
 import PlayHeader from 'common/playlists/PlayHeader';
@@ -11,10 +10,9 @@ import { SocialContext } from './context/SocialContext';
 
 import "./social-card.css";
 
-function SocialCard() {
+function SocialCard(props) {
   // The following code is to fetch the current play from the URL
-  const location = useLocation();
-  const { id } = location.state;
+  const { id } = props;
   const play = getPlayById(id);
 
   // The social state carry the information of the social
