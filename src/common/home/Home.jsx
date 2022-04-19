@@ -52,16 +52,6 @@ const Home = () => {
               <BsGithub className="icon" />
               <span className="btn-label">GitHub <div className="label-info-more"><FiStar /> <div className="more-label">{gitHubStars}</div></div> </span>
             </a>
-            {/*<a
-              href="https://www.youtube.com/watch?v=rysTbzKOEO0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="body-c2a-btn"
-            >
-              <IoPlayOutline className="icon" />
-              <span className="btn-label">See how it works</span>
-            </a>
-            */}
           </div>
           <div className="video">
             <div className="video-wrapper">
