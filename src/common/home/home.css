@@ -31,6 +31,14 @@
 }
 
 @media screen and (max-width: 768px) {
+    .app-home-body {
+        min-height: unset;
+    }
+
+    .app-home-body .app-home-body-content {
+        margin-bottom: 0;
+    }
+
     .app-home-body .body-title {
         margin-left: 1rem;
         margin-right: 1rem;
@@ -173,14 +181,28 @@
 @media screen and (max-width: 1200px) {
     .video {
         width: 60%;
-        margin: 0 auto 8rem auto;
+        margin: 4rem auto 4rem auto;
     }   
 }
 
 @media screen and (max-width: 1024px) {
     .video {
         width: 80%;
-        margin: 0 auto 8rem auto;
+        margin: 4rem auto 0 auto;
+    }   
+}
+
+@media screen and (max-width: 768px) {
+    .video {
+        width: 80%;
+        margin: 2rem auto 0 auto;
+    }   
+}
+
+@media screen and (max-width: 600px) {
+    .video {
+        width: 90%;
+        margin: 4rem auto 0 auto;
     }   
 }
 
