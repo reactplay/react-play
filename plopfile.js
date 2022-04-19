@@ -1,3 +1,7 @@
+String.prototype.replaceAll = String.prototype.replaceAll || function(string, replaced) {
+  return this.replace(new RegExp(string, 'g'), replaced);
+};
+
 module.exports = plop => {
   plop.setHelper('trim', str => str.trim());
   plop.setHelper('removeAllSpaces', str => str.replaceAll(/\s/g,''));
