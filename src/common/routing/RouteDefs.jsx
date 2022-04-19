@@ -1,14 +1,14 @@
 import App from "App";
 import { Footer, Header, Home, PageNotFound } from "common";
-import PlayList from 'common/playlists/PlayList';
-import { getAllPlays } from 'meta/play-meta-util';
+import PlayList from "common/playlists/PlayList";
+import { getAllPlays } from "meta/play-meta-util";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const RouteDefs = () => {
   const plays = getAllPlays();
   return (
     <BrowserRouter>
-      <Header/>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/plays" element={<App />}>
@@ -19,7 +19,7 @@ const RouteDefs = () => {
         </Route>
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 };
