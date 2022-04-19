@@ -5,6 +5,9 @@ import {
   MovieContainer,
   WhyReact,
   CounterApp,
+States,
+SocialCard,
+RandomMemeGenerator,
 //import play here
 } from "plays";
 
@@ -75,6 +78,41 @@ export const plays = [
     tags: 'JSX, State, Props',
     github: 'murtuzaalisurti',
     featured: true
+  }, {
+    id: 'pl-states', 
+    name: 'States', 
+    description: 'States in Functional Components',
+    component: () => {return <States />},
+    path: '/plays/states',
+    level: 'Beginner',
+    tags: 'Hooks,State,JSX',
+    github: 'Abhishek-90',
+    cover: '',
+    blog: 'https://abhishek-90.github.io/My-Portfolio/'
+  }, {
+    id: 'pl-social-card', 
+    name: 'Social Card', 
+    description: 'The Social Card helps you telling who you are using photo, name, and other social footprints.',
+    component: () => {return <SocialCard />},
+    path: '/plays/social-card',
+    level: 'Intermediate',
+    tags: 'Form,Events,Complex State',
+    github: 'atapas',
+    cover: '',
+    blog: 'https://blog.greenroots.info/how-to-create-react-form-with-a-single-change-event-handler',
+    video: ''
+  }, {
+    id: 'pl-random-meme-generator', 
+    name: 'Random Meme Generator', 
+    description: 'A project to demonstrate the use of API to fetch random memes! It also demonstrates how you can do event handling!',
+    component: () => {return <RandomMemeGenerator />},
+    path: '/plays/random-meme-generator',
+    level: 'Beginner',
+    tags: 'JSX,Hooks,API,EventHandling',
+    github: 'murtuzaalisurti',
+    cover: '',
+    blog: '',
+    video: ''
   }, //replace new play item here
 ];
 
