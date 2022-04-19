@@ -67,6 +67,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "6km",
+      "name": "Mohammed Taha",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62352949?v=4",
+      "profile": "https://github.com/6km",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
