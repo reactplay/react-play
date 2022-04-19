@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BsPlayCircleFill } from "react-icons/bs";
 import useGitHub from 'common/hooks/useGitHub';
 import thumbPlay from 'images/thumb-play.png';
+import Shimmer from "react-shimmer-effect";
 
 const Author = ({github}) => {
   const { data, error, isLoading } = useGitHub(github);
@@ -58,7 +59,9 @@ const PlayThumbnail = ({ play }) => {
     <li key={play.id}>
       <Link to={play.path} state={{ id: play.id }}>
         <div className='play-thumb'>
-          <img src={cover} alt={play.id} className="play-thumb-img" />
+          <Shimmer>
+            <img src={cover} alt="" className="play-thumb-img" />
+          </Shimmer>
         </div>
         <div className="play-header">
           <div className="play-title">{play.name}</div>
