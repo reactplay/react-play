@@ -8,6 +8,7 @@ import {
 States,
 SocialCard,
 RandomMemeGenerator,
+Sample,
 //import play here
 } from "plays";
 
@@ -110,6 +111,18 @@ export const plays = [
     level: 'Beginner',
     tags: 'JSX,Hooks,API,EventHandling',
     github: 'murtuzaalisurti',
+    cover: '',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-sample', 
+    name: 'Sample', 
+    description: 'nothin',
+    component: () => {return <Sample />},
+    path: '/plays/sample',
+    level: 'Beginner',
+    tags: '',
+    github: '',
     cover: '',
     blog: '',
     video: ''
