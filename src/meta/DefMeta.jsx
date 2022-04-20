@@ -26,7 +26,7 @@ function DefMeta() {
       />
       <meta
         property="og:image"
-        content="https://www.reactplay.io/og-image.png"
+        content="/og-image.png" // React should default this to the public folder
         data-react-helmet="true"
       />
       <meta property="og:image:type" content="image/png" />
@@ -56,7 +56,7 @@ function DefMeta() {
       />
       <meta
         name="twitter:image"
-        content="https://www.reactplay.io/og-image.png"
+        content="/og-image.png" // React should default this to the public folder
         data-react-helmet="true"
       />
     </Helmet>
