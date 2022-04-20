@@ -19,7 +19,7 @@ const RouteDefs = () => {
             <Route
               key={index}
               path={play.path}
-              element={<PlayMeta {...play} />}
+              element={<PlayMeta {...play} />} // Put play data inside PlayMeta tag for dynamic meta tags
             />
           ))}
         </Route>
