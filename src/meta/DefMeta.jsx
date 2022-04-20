@@ -26,7 +26,7 @@ function DefMeta() {
       />
       <meta
         property="og:image"
-        content="%PUBLIC_URL%/og-image.png"
+        content="https://www.reactplay.io/og-image.png"
         data-react-helmet="true"
       />
       <meta property="og:image:type" content="image/png" />
@@ -54,7 +54,11 @@ function DefMeta() {
     share ReactJS projects with the developer community."
         data-react-helmet="true"
       />
-      <meta name="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+      <meta
+        name="twitter:image"
+        content="https://www.reactplay.io/og-image.png"
+        data-react-helmet="true"
+      />
     </Helmet>
   );
 }
