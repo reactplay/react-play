@@ -11,7 +11,9 @@ function PlayMeta({ id, name, description, cover, component }) {
   return (
     <>
       <Helmet>
-        <title>{name}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={name} />
+        <meta property="og:description" content={description} />
       </Helmet>
       {cloneElement(component(), { id })}
     </>
