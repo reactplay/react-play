@@ -8,7 +8,14 @@ function PlayMeta({ id, name, description, cover, component }) {
 
   // cloneElement(play.component(), { id: play.id });
 
-  return cloneElement(component(), { id });
+  return (
+    <>
+      <Helmet>
+        <title>{name}</title>
+      </Helmet>
+      {cloneElement(component(), { id })}
+    </>
+  );
 }
 
 export default PlayMeta;
