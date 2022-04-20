@@ -8,6 +8,7 @@ import {
 States,
 SocialCard,
 RandomMemeGenerator,
+Keeper,
 //import play here
 } from "plays";
 
@@ -111,6 +112,18 @@ export const plays = [
     tags: 'JSX,Hooks,API,EventHandling',
     github: 'murtuzaalisurti',
     cover: '',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-keeper', 
+    name: 'Keeper', 
+    description: 'Keeper is the clone of google keep where we can save and delete our notes',
+    component: () => {return <Keeper />},
+    path: '/plays/keeper',
+    level: 'Intermediate',
+    tags: 'JSX,Hooks,ReactDOM',
+    github: 'Shivam-Katare',
+    cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1650424093/thumbnail_xwxmwt.png',
     blog: '',
     video: ''
   }, //replace new play item here
