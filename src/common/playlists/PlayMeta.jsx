@@ -3,16 +3,25 @@ import { Helmet } from "react-helmet";
 
 function PlayMeta({ id, name, description, path, cover, component }) {
   const playFolder = path.split("/")[2];
-  const metaImage =
-    cover ||
-    `https://www.reactplay.io/${require(`../../plays/${playFolder}/cover.png`)}`;
+
+  let metaImage; // Initialize metaImage variable
+  if (cover) {
+    metaImage = cover; // If cover path is given, use that
+  } else {
+    try {
+      // If not, try finding the cover.png in the play's folder
+      const pathURL = require(`../../plays/${playFolder}/cover.png`);
+      metaImage = `https://www.reactplay.io/${pathURL}`;
+    } catch {
+      // If no image is available, cover stays as undefined
+      console.log("No cover available.");
+    }
+  }
 
   useEffect(() => {
     console.log("Play Meta in action!");
     console.log(metaImage);
   }, [name, metaImage]);
-
-  // cloneElement(play.component(), { id: play.id });
 
   return (
     <>
