@@ -1,9 +1,8 @@
 import App from "App";
-import { Footer, Header, Home, PageNotFound } from "common";
+import { Footer, Header, Home, PlayMeta, PageNotFound } from "common";
 import PlayList from "common/playlists/PlayList";
 import { getAllPlays } from "meta/play-meta-util";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { cloneElement } from 'react'
 
 const RouteDefs = () => {
   const plays = getAllPlays();
@@ -16,7 +15,11 @@ const RouteDefs = () => {
         <Route path="/plays" element={<App />}>
           <Route index element={<PlayList />} />
           {plays.map((play, index) => (
-            <Route key={index} path={play.path} element={cloneElement(play.component(), {id: play.id})}/>
+            <Route
+              key={index}
+              path={play.path}
+              element={<PlayMeta {...play} />}
+            />
           ))}
         </Route>
         <Route path="/*" element={<PageNotFound />} />
