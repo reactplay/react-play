@@ -31,6 +31,12 @@
       "react-app/jest"
     ]
   },
+  "reactSnap": {
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
