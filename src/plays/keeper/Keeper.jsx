@@ -3,8 +3,8 @@ import PlayHeader from 'common/playlists/PlayHeader';
 import './Keeper.css'
 import Header from './Header';
 import CreateArea from './CreateArea';
-import { useState, useEffect } from 'react';
 import Note from './Notes';
+import { useState, useEffect } from 'react';
 
 //Get the Local Storage
 const getLocalItems = () => {

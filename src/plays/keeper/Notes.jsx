@@ -1,4 +1,4 @@
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { FaTrashAlt } from 'react-icons/fa';
 function Note(props) {
     function handleClick() {
         props.onDelete(props.id);
@@ -7,7 +7,7 @@ function Note(props) {
         <div className="note">
             <h1 className='notesHeading'>{props.title}</h1>
             <p className='notesPara'>{props.content}</p>
-            <button className='notesButton' onClick={handleClick}><DeleteOutlineIcon /></button>
+            <button className='notesButton' onClick={handleClick}><FaTrashAlt /></button>
         </div>
     </>
 }
