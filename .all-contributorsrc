@@ -85,6 +85,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "erayalkis",
+      "name": "Eray Alkış",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80722863?v=4",
+      "profile": "http://erayalkis.netlify.app",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
