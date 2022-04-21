@@ -23,11 +23,13 @@ function PlayMeta({ id, name, description, path, cover, component }) {
         <meta name="description" content={description} />
         <meta property="og:title" content={name} />
         <meta property="og:description" content={description} />
-        <meta
-          property="og:image"
-          content={metaImage}
-          data-react-helmet="true"
-        />
+        {metaImage && (
+          <meta
+            property="og:image"
+            content={metaImage}
+            data-react-helmet="true"
+          />
+        )}
         <meta
           property="og:image:alt"
           content={description}
@@ -39,11 +41,13 @@ function PlayMeta({ id, name, description, path, cover, component }) {
           content={description}
           data-react-helmet="true"
         />
-        <meta
-          name="twitter:image"
-          content={metaImage}
-          data-react-helmet="true"
-        />
+        {metaImage && (
+          <meta
+            name="twitter:image"
+            content={metaImage}
+            data-react-helmet="true"
+          />
+        )}
       </Helmet>
       {cloneElement(component(), { id })}
     </>
