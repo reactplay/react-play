@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -176,6 +176,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/6km"><img src="https://avatars.githubusercontent.com/u/62352949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mohammed Taha</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=6km" title="Code">💻</a></td>
+    <td align="center"><a href="https://dalpatrathoredev.web.app"><img src="https://avatars.githubusercontent.com/u/69510006?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dalpat Rathore</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=DalpatRathore" title="Code">💻</a></td>
   </tr>
 </table>
 
