@@ -5,6 +5,13 @@ import './playlist.css';
 
 const PlayList = () => {
   const plays = useSearchFilter();
+  if(Object.keys(plays).length===0){
+    return(
+      <>
+        <h2>Play Not Found</h2>
+      </>
+    )
+  }
   return (
     <>
       <ol className="list-plays">
