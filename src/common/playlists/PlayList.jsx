@@ -5,10 +5,12 @@ import './playlist.css';
 
 const PlayList = () => {
   const plays = useSearchFilter();
-  if(Object.keys(plays).length===0){
+  if(plays.length===0){
     return(
       <>
+      <div className="play-not-found">
         <h2>Play Not Found</h2>
+      </div>
       </>
     )
   }
