@@ -1,4 +1,3 @@
-
 import { useContext } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from './search-context';
@@ -13,11 +12,12 @@ const SearchPlays = () => {
   const handleSearch = (event) => {
     event.preventDefault();
     if(event.key === 'Enter') {
-      setSearchTerm(event.target.value);
-      if(location.pathname !== '/plays') {
-        navigate('/plays', { replace: true});
+          setSearchTerm(event.target.value);
+          if(location.pathname !== '/plays') {
+              navigate('/plays', { replace: true});
+            }
       }
-    }
+
   }
  
   return (
@@ -33,6 +33,7 @@ const SearchPlays = () => {
     </div>
     </>
   );
+
 };
 
 export default SearchPlays;
