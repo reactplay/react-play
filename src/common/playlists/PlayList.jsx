@@ -1,18 +1,16 @@
 import { useSearchFilter } from "common/search/hooks/useSearchFilter";
 import PlayThumbnail from "./PlayThumbnail";
 
-import './playlist.css';
+import "./playlist.css";
 
 const PlayList = () => {
   const plays = useSearchFilter();
-  if(plays.length===0){
-    return(
-      <>
-      <div className="play-not-found">
-        <h2>Play Not Found</h2>
-      </div>
-      </>
-    )
+  if (plays.length === 0) {
+    return (
+        <div className="play-not-found">
+          <h2>Play Not Found</h2>
+        </div>
+    );
   }
   return (
     <>
@@ -22,6 +20,7 @@ const PlayList = () => {
         ))}
       </ol>
     </>
-  )};
+  );
+};
 
 export default PlayList;
