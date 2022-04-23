@@ -1,6 +1,6 @@
 import { Modal } from "common";
 import { getAllCreators, getAllLevels, getAllTags } from "meta/play-meta-util";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
 import "./search.css";
@@ -70,6 +70,35 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   );
 };
 
+const getAppliedFilter = (filterObject) => {
+  //for single filter to check whether filter has been applied
+  const noOfLevelsApplied =
+    filterObject?.level !== undefined && filterObject.level.trim() !== ""
+      ? 1
+      : 0;
+  const noOfcreatorsApplied =
+    filterObject.creator !== undefined && filterObject.creator.trim() !== ""
+      ? 1
+      : 0;
+  let totalTags = 0;
+  if (filterObject?.tags && filterObject?.labels && filterObject?.creators) {
+    totalTags =
+      noOfLevelsApplied +
+      noOfcreatorsApplied +
+      filterObject?.tags?.length +
+      filterObject?.labels?.length +
+      filterObject?.creators?.length;
+  }
+
+  console.log(totalTags, noOfLevelsApplied, noOfcreatorsApplied);
+  console.log(
+    filterObject?.tags?.length,
+    filterObject?.labels?.length,
+    filterObject?.creators?.length
+  );
+  return totalTags;
+};
+
 const FilterPlays = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -80,6 +109,11 @@ const FilterPlays = () => {
     labels: [],
     creators: [],
   });
+
+  useEffect(() => {
+    getAppliedFilter(0);
+  }, []);
+
   useBackListener(({ action }) => {
     if (action === "POP") {
       console.log("POP");
@@ -87,11 +121,15 @@ const FilterPlays = () => {
         level: "",
         tags: [],
         creator: "",
+        labels: [],
+        creators: [],
       });
       setFilterQuery({
         level: "",
         tags: [],
         creator: "",
+        labels: [],
+        creators: [],
       });
     }
     if (action === "PUSH") {
@@ -113,6 +151,7 @@ const FilterPlays = () => {
     console.log("filterQuery", filterQuery);
     console.log("modifiedFilterQuery", modifiedFilterQuery);
     setFilterQuery(modifiedFilterQuery);
+    getAppliedFilter(modifiedFilterQuery);
     if (location.pathname !== "/plays") {
       navigate("/plays", { replace: true });
     }
@@ -140,7 +179,7 @@ const FilterPlays = () => {
         className="btn-filter"
         title="Filter Plays"
       >
-        {/*<div className="badge">8</div>*/}
+        <div className="badge">8</div>
         <RiFilterFill
           className="icon"
           size="28px"
