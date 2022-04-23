@@ -28,7 +28,7 @@ function DefMeta() {
       />
       <meta
         property="og:image"
-        content="/og-image.png" // React should default these to public
+        content="https://reactplay.io/og-image.png" // React should default these to public
         data-react-helmet="true"
       />
       <meta
@@ -49,7 +49,7 @@ function DefMeta() {
       />
       <meta
         name="twitter:image"
-        content="/og-image.png" // React should default these to public
+        content="https://reactplay.io/og-image.png" // React should default these to public
         data-react-helmet="true"
       />
     </Helmet>
