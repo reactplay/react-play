@@ -5,8 +5,6 @@ import React, { useState } from "react";
 
 import { createRoot } from 'react-dom/client';
 
-import { createRoot } from "react-dom/client";
-
 import reportWebVitals from "reportWebVitals";
 
 const Index = () => {
