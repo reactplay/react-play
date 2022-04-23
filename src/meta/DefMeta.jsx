@@ -37,11 +37,6 @@ function DefMeta() {
         data-react-helmet="true"
       />
       <meta
-        name="twitter:site"
-        content="@ReactPlayIO"
-        data-react-helmet="true"
-      />
-      <meta
         name="twitter:title"
         content="ReactPlay - One app to learn, create, and share ReactJS projects."
         data-react-helmet="true"
