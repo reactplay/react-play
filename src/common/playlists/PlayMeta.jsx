@@ -10,7 +10,8 @@ function PlayMeta({ id, name, description, path, cover, component }) {
   } else {
     try {
       // If not, try finding the cover.png in the play's folder
-      metaImage = `https://reactplay.io${require(`../../plays/${playFolder}/cover.png`)}`;
+      metaImage = `https://reactplay.io${require(`../../plays/${playFolder}/cover.png`)}`; // It seems that
+      // some platforms such as Twitter need full, explicit URL's to display images correctly
     } catch {
       // If no image is available, cover stays as undefined
       console.log("No cover available.");
