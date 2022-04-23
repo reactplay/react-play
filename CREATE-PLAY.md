@@ -84,7 +84,7 @@ Welcome developers! We are as excited as you are to know that you are going to c
   ```
 - You should now see your play added to the [play list](http://localhost:3000/plays) page. You can click on the play thumbnail to see the details of the play.
 
-- That's it. Now start coding yor `Play` using your favorite code editor!
+- That's it. Now start coding your `Play` using your favorite code editor!
 ## 👀 Submitting a Play for Review
 After you done with coding for your `Play`, you can submit it for review. Submitting a `Play` for review is a two step process.
 
