@@ -5,8 +5,6 @@ import PlayHeader from "common/playlists/PlayHeader";
 import "./states.css";
 
 function States() {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
   const location = useLocation();
   const { id } = location.state;
   const play = getPlayById(id);
@@ -84,9 +82,9 @@ function States() {
               
               <div className="play-area-result">
                 {!display ? (
-                  <p style={{marginLeft: '2rem'}}>Enter Details of the Message</p>
+                  <p >Enter Details of the Message</p>
                 ) : (
-                  <h3 style={{marginLeft: '2rem'}}>Welcome to State Play, {name} </h3>
+                  <h3 >Welcome to State Play, {name} </h3>
                 )}
               </div>
             </div>
