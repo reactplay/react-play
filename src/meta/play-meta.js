@@ -8,6 +8,7 @@ import {
 States,
 SocialCard,
 RandomMemeGenerator,
+ReactTodoApp,
 //import play here
 } from "plays";
 
@@ -111,6 +112,18 @@ export const plays = [
     tags: 'JSX,Hooks,API,EventHandling',
     github: 'murtuzaalisurti',
     cover: '',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-react-todo-app', 
+    name: 'React Todo App', 
+    description: 'It is a simple Todo App which keeps track of your regular work',
+    component: () => {return <ReactTodoApp />},
+    path: '/plays/react-todo-app',
+    level: 'Beginner',
+    tags: 'ReactHooksJavaScriptCss',
+    github: 'nirban256',
+    cover: 'https://cdn.pixabay.com/photo/2016/03/31/19/50/checklist-1295319_960_720.png',
     blog: '',
     video: ''
   }, //replace new play item here
