@@ -123,7 +123,7 @@ export const plays = [
     level: 'Beginner',
     tags: 'ReactHooks, JavaScript, Css, React State',
     github: 'nirban256',
-    cover: 'https://cdn.pixabay.com/photo/2016/03/31/19/50/checklist-1295319_960_720.png',
+    cover: 'https://res.cloudinary.com/atapas/image/upload/v1650866465/demos/cover_y20bzk.png',
     blog: '',
     video: ''
   }, //replace new play item here
