@@ -9,10 +9,12 @@ const Input = ({ input, setInput, todos, setTodos, setStatus }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        setTodos([
-            ...todos, { text: input, completed: false, id: Math.random() * 1000 }
-        ]);
-        setInput('');
+        if (input.length > 0) {
+            setTodos([
+                ...todos, { text: input, completed: false, id: Math.random() * 1000 }
+            ]);
+            setInput('');
+        }
     }
 
     const statusHandler = (e) => {

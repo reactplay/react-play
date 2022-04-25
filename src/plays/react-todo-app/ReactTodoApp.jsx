@@ -26,21 +26,6 @@ function ReactTodoApp(props) {
 
   useEffect(() => {
 
-    const getTodos = () => {
-      if (localStorage.getItem("todos") === null) {
-        localStorage.setItem("todos", JSON.stringify([]));
-      }
-      else {
-        let localTodo = JSON.parse(localStorage.getItem("todos"));
-        setTodos(localTodo);
-      }
-    }
-
-    getTodos();
-  }, [])
-
-  useEffect(() => {
-
     const filterHandler = () => {
       switch (status) {
         case "completed":
@@ -55,13 +40,8 @@ function ReactTodoApp(props) {
       }
     }
 
-    const saveLocalTodos = () => {
-      localStorage.setItem("todos", JSON.stringify(todos));
-    }
-
     filterHandler();
-    saveLocalTodos();
-  }, [todos, status]);
+  }, [status, todos]);
 
   return (
     <>
@@ -69,11 +49,13 @@ function ReactTodoApp(props) {
         <PlayHeader play={play} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className="top">
-            <h1>Todo List</h1>
+          <div className="play-body">
+            <div className="top">
+              <h1>Todo List</h1>
+            </div>
+            <Input todos={todos} setTodos={setTodos} setInput={setInput} input={input} setStatus={setStatus} />
+            <TodoList todos={todos} setTodos={setTodos} filtered={filtered} />
           </div>
-          <Input todos={todos} setTodos={setTodos} setInput={setInput} input={input} setStatus={setStatus} />
-          <TodoList todos={todos} setTodos={setTodos} filtered={filtered} />
           {/* Your Code Ends Here */}
         </div>
       </div>
