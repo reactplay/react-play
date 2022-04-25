@@ -49,7 +49,7 @@ function ReactTodoApp(props) {
         <PlayHeader play={play} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className="play-body">
+          <div className="todo-play-body">
             <div className="top">
               <h1>Todo List</h1>
             </div>

@@ -1,14 +1,11 @@
-.play-body {
+.todo-play-body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.play-body {
     background-image: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
     color: white;
     font-family: "Poppins", sans-serif;
-    min-height: 100vh;
+    height: 100%;
 }
 
 .top {

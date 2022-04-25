@@ -121,7 +121,7 @@ export const plays = [
     component: () => { return <ReactTodoApp /> },
     path: '/plays/react-todo-app',
     level: 'Beginner',
-    tags: 'ReactHooks, JavaScript, Css, Local Storage',
+    tags: 'ReactHooks, JavaScript, Css, React State',
     github: 'nirban256',
     cover: 'https://cdn.pixabay.com/photo/2016/03/31/19/50/checklist-1295319_960_720.png',
     blog: '',
