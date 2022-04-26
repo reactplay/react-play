@@ -1,13 +1,10 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { getPlayById } from "meta/play-meta-util";
 import "./why-react.css";
 
-const WhyReact = () => {
+const WhyReact = ({ id }) => {
   // The following code is to fetch the current play from the URL
-  const location = useLocation();
-  const { id } = location.state;
   const play = getPlayById(id);
   const [reasons] = useState([
     "React is Declarative",
