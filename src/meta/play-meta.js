@@ -10,8 +10,6 @@ import {
   RandomMemeGenerator,
   ReactTodoApp,
   //import play here
-States,
-//import play here
 } from "plays";
 
 export const plays = [
@@ -82,11 +80,10 @@ export const plays = [
     github: 'murtuzaalisurti',
     featured: true
   }, {
-    id: 'pl-states', 
-    name: 'States', 
+    id: 'pl-states',
+    name: 'States',
     description: 'States in Functional Components',
-    component: () => {return <States />},
-
+    component: () => { return <States /> },
     path: '/plays/states',
     level: 'Beginner',
     tags: 'Hooks,State,JSX',
@@ -128,10 +125,8 @@ export const plays = [
     github: 'nirban256',
     cover: 'https://res.cloudinary.com/atapas/image/upload/v1650866465/demos/cover_y20bzk.png',
     blog: '',
-    blog: 'https://abhishek-90.github.io/My-Portfolio/',
     video: ''
   }, //replace new play item here
 ];
-
 
 
