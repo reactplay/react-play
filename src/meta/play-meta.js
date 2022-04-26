@@ -1,4 +1,3 @@
-
 import {
   BasicTree, CdTimerComp,
   CurrentTimer,
@@ -128,6 +127,5 @@ export const plays = [
     video: ''
   }, //replace new play item here
 ];
-
 
 
