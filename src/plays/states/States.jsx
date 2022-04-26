@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useLocation} from "react";
 import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 import "./states.css";
@@ -33,21 +33,6 @@ function States() {
   const handleDurationChange = (e) => {
     setDuration(e.target.value);
   };
-=======
-
-import { useLocation } from 'react-router-dom';
-import { getPlayById } from 'meta/play-meta-util';
-
-import PlayHeader from 'common/playlists/PlayHeader';
-
-function States() {
-  // Do not remove the below lines. 
-  // The following code is to fetch the current play from the URL
-  const location = useLocation();
-  const { id } = location.state;
-  const play = getPlayById(id);
-
-  // Your Code Start below.
 
   return (
     <>
