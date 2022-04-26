@@ -4,25 +4,21 @@ import './Keeper.css'
 import Header from './Header';
 import CreateArea from './CreateArea';
 import Note from './Notes';
-import { useState, useEffect } from 'react';
-
-//Get the Local Storage
-const getLocalItems = () => {
-  let lists = localStorage.getItem('list');
-  console.log('list');
-  if (lists) {
-    return JSON.parse(localStorage.getItem("list"));
-  } else {
-    return [];
-  }
-}
+import  useLocalStorage  from "../../common/hooks/useLocalStorage"
+ 
 function Keeper(props) {
   // Do not remove the below lines. 
   // The following code is to fetch the current play from the URL
   const { id } = props;
   const play = getPlayById(id);
   //code starts here
-  const [notes, setNotes] = useState(getLocalItems); //notes array
+  const [notes, setNotes] = useLocalStorage("notes", [
+    {
+      id: 0,
+      title: "Write Your Title",
+      content:"And, content here. :)"
+    }
+  ]);; //notes array
   //adding notes
   function addNote(newNote) {
     setNotes((prevNotes) => {
@@ -37,10 +33,6 @@ function Keeper(props) {
       })
     })
   }
-  //add data to local storage
-  useEffect(() => {
-    localStorage.setItem('list', JSON.stringify(notes))
-  }, [notes])
   return (
     <>
       <div className="play-details">
@@ -49,15 +41,15 @@ function Keeper(props) {
           {/* Your Code Starts Here */}
           <Header />
           <CreateArea onAdd={addNote} />
-          {notes.map((noteItem, index) => {
-            return <Note
-              key={index}
-              id={index}
-              title={noteItem.title}
-              content={noteItem.content}
-              onDelete={deleteNote}
-            />
-          })}
+      {notes.map((noteItem, index) => {
+        return <Note
+          key={index}
+          id = { index }
+          title={noteItem.title}
+          content={noteItem.content}
+          onDelete={deleteNote}
+        />
+      })}
         </div>
       </div>
       {/* Your Code Ends Here */}
