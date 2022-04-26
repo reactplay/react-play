@@ -126,6 +126,6 @@ export const plays = [
     blog: '',
     video: ''
   }, //replace new play item here
-]
+];
 
 
