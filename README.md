@@ -83,6 +83,14 @@ Or
 ```bash
 yarn install
 ```
+
+### Setup dependencies
+```bash
+npm install -g typescript
+npm install -g gulp
+npm link typescript
+```
+
 ### 🦄 Start the Development Mode
 Use the following command to start the app in the development mode:
 

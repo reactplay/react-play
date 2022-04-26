@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@types/react": "^18.0.6",
+    "@types/react-dom": "^18.0.2",
     "plop": "^3.0.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -15,6 +17,7 @@
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
+    "typescript": "^4.6.3",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -23,7 +26,8 @@
     "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "create-play": "plop"
+    "create-play": "plop",
+    "postinstall": "./node_modules/.bin/gulp build"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
     "react-snap": "^1.23.0"
   }
 }

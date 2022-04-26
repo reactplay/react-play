@@ -8,6 +8,7 @@ import {
 States,
 SocialCard,
 RandomMemeGenerator,
+TypeScriptSample,
 //import play here
 } from "plays";
 
@@ -113,6 +114,19 @@ export const plays = [
     cover: '',
     blog: '',
     video: ''
+  }, {
+    id: 'pl-typescript-sample', 
+    name: 'TypeScript Sample', 
+    description: 'TypeScript Sample',
+    component: () => {return <TypeScriptSample />},
+    path: '/plays/typescript-sample',
+    level: 'Beginner',
+    tags: 'TSX',
+    github: 'koustov',
+    cover: '',
+    blog: '',
+    video: '',
+    language: 'ts'
   }, //replace new play item here
 ];
 
