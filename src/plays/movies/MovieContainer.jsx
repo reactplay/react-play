@@ -1,6 +1,5 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { getPlayById } from "meta/play-meta-util";
 import Movie from "./Movie";
 
@@ -8,10 +7,9 @@ import useFetch from "common/hooks/useFetch";
 
 import "./movies.css";
 
-const MovieContainer = () => {
+const MovieContainer = (props) => {
   // The following code is to fetch the current play from the URL
-  const location = useLocation();
-  const { id } = location.state;
+  const { id } = props;
   const play = getPlayById(id);
 
   const MOVIE_API_URI = 'https://json-faker.onrender.com/movies';

@@ -1,3 +1,7 @@
+String.prototype.replaceAll = String.prototype.replaceAll || function(string, replaced) {
+  return this.replace(new RegExp(string, 'g'), replaced);
+};
+
 module.exports = plop => {
   plop.setHelper('trim', str => str.trim());
   plop.setHelper('removeAllSpaces', str => str.replaceAll(/\s/g,''));
@@ -57,6 +61,11 @@ module.exports = plop => {
         type: 'add',
         path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.jsx',
         templateFile: 'plop-templates/component.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/plays/{{generateFolderName name}}/Readme.md',
+        templateFile: 'plop-templates/play-readme.hbs',
       },
       {
         type: 'modify',

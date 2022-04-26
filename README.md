@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -55,7 +55,7 @@ Who doesn't want motivation and support? Many Thanks to all the Stargazers who h
 
 [![Stargazers repo roster for @atapas/react-play](https://reporoster.com/stars/atapas/react-play)](https://github.com/atapas/react-play/stargazers)
 
-Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on twitter [@reactplayio](https://twitter.com/reactplay).
+Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on twitter [@reactplayio](https://twitter.com/reactplayio).
 
 ## 🏗️ How to Set up `ReactPlay` for Development?
 
@@ -169,6 +169,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://tapasadhikary.com"><img src="https://avatars.githubusercontent.com/u/3633137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tapas Adhikary</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=atapas" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/nirmalkc"><img src="https://avatars.githubusercontent.com/u/6359059?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nirmal Kumar</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=nirmalkc" title="Code">💻</a></td>
     <td align="center"><a href="https://murtuzaali-surti.me"><img src="https://avatars.githubusercontent.com/u/68743212?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Murtuzaali Surti</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=murtuzaalisurti" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/abhishek-gogroup"><img src="https://avatars.githubusercontent.com/u/87639443?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abhishek Khatri</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=abhishek-gogroup" title="Code">💻</a></td>
+    <td align="center"><a href="https://abhishek-90.github.io/My-Portfolio/"><img src="https://avatars.githubusercontent.com/u/43419831?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abhishek Holani</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Abhishek-90" title="Code">💻</a></td>
+    <td align="center"><a href="http://hasnainmakada-99.github.io"><img src="https://avatars.githubusercontent.com/u/82728823?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hasnain Makada</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=hasnainmakada-99" title="Code">💻</a></td>
+    <td align="center"><a href="https://twitter.com/shrilakshmihg"><img src="https://avatars.githubusercontent.com/u/29778698?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shrilakshmi Shastry</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=shrilakshmishastry" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/6km"><img src="https://avatars.githubusercontent.com/u/62352949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mohammed Taha</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=6km" title="Code">💻</a></td>
+    <td align="center"><a href="https://dalpatrathoredev.web.app"><img src="https://avatars.githubusercontent.com/u/69510006?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dalpat Rathore</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=DalpatRathore" title="Code">💻</a></td>
+    <td align="center"><a href="http://erayalkis.netlify.app"><img src="https://avatars.githubusercontent.com/u/80722863?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eray Alkış</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=erayalkis" title="Code">💻</a></td>
+    <td align="center"><a href="https://nirban-chakraborty.netlify.app"><img src="https://avatars.githubusercontent.com/u/74231771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nirban Chakraborty</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=nirban256" title="Code">💻</a></td>
   </tr>
 </table>
 
