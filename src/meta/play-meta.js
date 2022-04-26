@@ -9,9 +9,6 @@ import {
   SocialCard,
   RandomMemeGenerator,
   ReactTodoApp,
-  //import play here
-States,
-//import play here
 } from "plays";
 
 export const plays = [
