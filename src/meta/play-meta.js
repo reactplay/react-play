@@ -8,7 +8,8 @@ import {
   SocialCard,
   RandomMemeGenerator,
   ReactTodoApp,
-  //import play here
+  ExpandingCards,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -123,6 +124,18 @@ export const plays = [
     tags: 'ReactHooks, JavaScript, Css, React State',
     github: 'nirban256',
     cover: 'https://res.cloudinary.com/atapas/image/upload/v1650866465/demos/cover_y20bzk.png',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-expanding-cards', 
+    name: 'Expanding-Cards', 
+    description: 'this project shows bunch of striped cards on screen if you want to show the card. you just have to click to expand it',
+    component: () => {return <ExpandingCards />},
+    path: '/plays/expanding-cards',
+    level: 'Beginner',
+    tags: '',
+    github: 'deepak8717',
+    cover: '',
     blog: '',
     video: ''
   }, //replace new play item here
