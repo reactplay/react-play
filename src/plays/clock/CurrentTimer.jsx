@@ -1,16 +1,15 @@
 
 import PlayHeader from 'common/playlists/PlayHeader';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { getPlayById } from 'meta/play-meta-util';
 
 import "./clock.css";
 
-const CurrentTimer = () => {
+const CurrentTimer = (props) => {
   // The following code is to fetch the current play from the URL
-  const location = useLocation();
-  const { id } = location.state;
+  const { id } = props;
   const play = getPlayById(id);
+
   // Create a real-time date time counter
   const [date, setDate] = useState(new Date());
 
