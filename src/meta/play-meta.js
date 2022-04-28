@@ -9,6 +9,7 @@ import {
   RandomMemeGenerator,
   ReactTodoApp,
   HooksInAction,
+QuoteGenerator,
 //import play here
 } from "plays";
 
@@ -136,6 +137,18 @@ export const plays = [
     tags: 'Hooks,Async/Await',
     github: 'Abhishek-90',
     cover: 'https://devdotcode.com/wp-content/uploads/2020/12/REACT-HOOKS-1-1024x576.png',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-quote-generator', 
+    name: 'Quote Generator', 
+    description: 'Randomly Generate quotes from 3rd Party API',
+    component: () => {return <QuoteGenerator />},
+    path: '/plays/quote-generator',
+    level: 'Intermediate',
+    tags: 'Hooks,API,Async/Await',
+    github: 'Abhishek-90',
+    cover: 'https://i0.wp.com/dariusforoux.com/wp-content/uploads/2015/08/motivational-quotes.png?fit&#x3D;2048%2C1536&amp;ssl&#x3D;1',
     blog: '',
     video: ''
   }, //replace new play item here
