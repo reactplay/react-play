@@ -8,7 +8,8 @@ import {
   SocialCard,
   RandomMemeGenerator,
   ReactTodoApp,
-  //import play here
+  HooksInAction,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -123,6 +124,18 @@ export const plays = [
     tags: 'ReactHooks, JavaScript, Css, React State',
     github: 'nirban256',
     cover: 'https://res.cloudinary.com/atapas/image/upload/v1650866465/demos/cover_y20bzk.png',
+    blog: '',
+    video: ''
+  }, {
+    id: 'pl-hooks-in-action', 
+    name: 'Hooks in Action', 
+    description: 'This play sees implementation of various hooks to play around with a random quote generator which fetches quotes from an API',
+    component: () => {return <HooksInAction />},
+    path: '/plays/hooks-in-action',
+    level: 'Intermediate',
+    tags: 'Hooks,Async/Await',
+    github: 'Abhishek-90',
+    cover: 'https://devdotcode.com/wp-content/uploads/2020/12/REACT-HOOKS-1-1024x576.png',
     blog: '',
     video: ''
   }, //replace new play item here
