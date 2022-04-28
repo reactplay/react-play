@@ -1,3 +1,13 @@
+.play-area {
+  /* background: antiquewhite; */
+  border: none;
+}
+
+.quote-area {
+  height: 15rem;
+  width: 100%;
+}
+
 .button-area {
   display: flex;
   flex-direction: row;
