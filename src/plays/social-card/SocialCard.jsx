@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getPlayById } from 'meta/play-meta-util';
-
+import Comment from 'common/components/Comment';
 import PlayHeader from 'common/playlists/PlayHeader';
 
 import CardForm from './CardForm';
@@ -36,6 +36,7 @@ function SocialCard(props) {
               <CardDetails />
             </div>
           </SocialContext.Provider>
+          <Comment />
         </div>
       </div>
     </>
