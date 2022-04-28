@@ -2,8 +2,9 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { BsTwitter, BsGithub } from 'react-icons/bs';
+import { FaLightbulb } from 'react-icons/fa';
 import { IoAddSharp, IoShareSocial } from 'react-icons/io5';
-import { MdManageSearch, MdClose } from 'react-icons/md';
+import { MdManageSearch, MdClose, MdLightbulb } from 'react-icons/md';
 import SocialShare from 'common/components/SocialShare';
 import { Modal } from "common";
 
@@ -49,6 +50,17 @@ const HeaderNav = ({ showBrowse }) => {
             >
               <IoAddSharp className="icon" />
               <span className="btn-label">Create</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/atapas/react-play"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="app-header-btn app-header-btn--default"
+            >
+              <FaLightbulb className="icon" />
+              <span className="btn-label">Idea</span>
             </a>
           </li>
           <li>
