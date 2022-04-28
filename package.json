@@ -1,6 +1,6 @@
 {
-  "name": "movie-app",
-  "version": "0.1.0",
+  "name": "react-play",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@giscus/react": "^2.0.3",
