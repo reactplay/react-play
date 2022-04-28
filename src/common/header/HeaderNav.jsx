@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { BsTwitter, BsGithub } from 'react-icons/bs';
 import { FaLightbulb } from 'react-icons/fa';
 import { IoAddSharp, IoShareSocial } from 'react-icons/io5';
-import { MdManageSearch, MdClose, MdLightbulb } from 'react-icons/md';
+import { MdManageSearch, MdClose } from 'react-icons/md';
 import SocialShare from 'common/components/SocialShare';
 import { Modal } from "common";
 

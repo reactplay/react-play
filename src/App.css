@@ -50,6 +50,7 @@
   --fw-bold: 600;
 
   /* Font Sizes */
+  --fs-xxs: 0.6rem;
   --fs-xs: 0.7rem;
   --fs-sm: 0.8rem;
   --fs-rg: 0.9rem;

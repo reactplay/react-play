@@ -4,6 +4,7 @@ import PlayHeaderActions from "./PlayHeaderActions";
 
 const PlayHeader = ({ play }) => {
   return (
+    <>
       <div className="play-details-header">
         <PlayHeaderInfo play={play} />
         <div className="header-rightcol">
@@ -13,6 +14,7 @@ const PlayHeader = ({ play }) => {
           <small className="header-desc">{play.description}</small>
         </div>
       </div>
+    </>
   );
 };
 
