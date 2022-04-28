@@ -53,15 +53,10 @@ const HeaderNav = ({ showBrowse }) => {
             </a>
           </li>
           <li>
-            <a
-              href="https://github.com/atapas/react-play"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="app-header-btn app-header-btn--default"
-            >
+            <Link to="/ideas" className="app-header-btn app-header-btn--default">
               <FaLightbulb className="icon" />
               <span className="btn-label">Idea</span>
-            </a>
+            </Link>
           </li>
           <li>
             <a
