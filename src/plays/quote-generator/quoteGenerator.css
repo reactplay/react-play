@@ -1,0 +1,27 @@
+.button-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+}
+
+.change-btn {
+  width: 4rem;
+  background: transparent;
+  display: flex;
+  align-content: center;
+  border:none;
+}
+
+.quote-generate {
+  display: flex;
+  align-content: center;
+}
+
+.quote-generate-btn {
+  width: 8rem;
+  border: none;
+  background: #00F2FE;
+  font-size: 1.12rem;
+  border-radius: 3rem;
+}
