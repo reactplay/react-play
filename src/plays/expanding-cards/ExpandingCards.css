@@ -15,14 +15,15 @@
   height: 400px;
   cursor: pointer;
   margin: 20px;
-  transition: width 1s;
   position: relative;
+  transition: width 1s;
+  -webkit-backface-visibility: hidden;
 }
 
 .active {
   width: 600px;
 }
-img {
+.Expanding-card-imgage {
   width: 100%;
   height: 400px;
   object-fit: cover;
@@ -36,7 +37,7 @@ img {
   color: #fff;
   font-size: 35px;
   font-weight: bold;
-  transition: opacity 1s;
+  transition: opacity 2s;
   background-color: rgba(27, 27, 27, 0.5);
   padding: 0 5%;
   border-radius: 10px;
@@ -54,14 +55,14 @@ img {
     height: 50px;
     transition: height 1s;
   }
-  .Expanding-card img {
+  .Expanding-card .Expanding-card-imgage {
     height: 50px;
     transition: height 1s;
   }
   .active {
     height: 250px;
   }
-  .active img {
+  .active .Expanding-card-imgage {
     height: 250px;
   }
   .info {
@@ -69,7 +70,7 @@ img {
     font-size: 25px;
     transition: opacity 1s;
   }
-  img {
+  .Expanding-card-imgage {
     border-radius: 30px;
   }
 }

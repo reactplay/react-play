@@ -41,7 +41,11 @@ function ExpandingCards(props) {
                     onClick={() => toggle(i)}
                   >
                     <div className="info">{item.title}</div>
-                    <img src={item.url} />
+                    <img
+                      src={item.url}
+                      className="Expanding-card-imgage"
+                      alt="Nature pics"
+                    />
                   </div>
                 );
               })}
