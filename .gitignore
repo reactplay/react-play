@@ -8,7 +8,7 @@
 # testing
 /coverage
 
-/src/plays/quizeo/src/data/movie.data.jsx
+/src/plays/quizeo/src/data
 
 # production
 /build
