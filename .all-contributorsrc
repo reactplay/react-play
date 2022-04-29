@@ -76,6 +76,42 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "DalpatRathore",
+      "name": "Dalpat Rathore",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69510006?v=4",
+      "profile": "https://dalpatrathoredev.web.app",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "erayalkis",
+      "name": "Eray Alkış",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80722863?v=4",
+      "profile": "http://erayalkis.netlify.app",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "nirban256",
+      "name": "Nirban Chakraborty",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74231771?v=4",
+      "profile": "https://nirban-chakraborty.netlify.app",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Deepak8717",
+      "name": "Deepak Pundir",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5671550?v=4",
+      "profile": "https://github.com/Deepak8717",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
