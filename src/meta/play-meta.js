@@ -8,6 +8,7 @@ import {
 States,
 SocialCard,
 RandomMemeGenerator,
+Quizeo,
 //import play here
 } from "plays";
 
@@ -112,6 +113,18 @@ export const plays = [
     github: 'murtuzaalisurti',
     cover: '',
     blog: '',
+    video: ''
+  }, {
+    id: 'pl-quizeo', 
+    name: 'Quizeo', 
+    description: 'Quizeo is a react project to play quiz of favourite movies and series.',
+    component: () => {return <Quizeo />},
+    path: '/plays/quizeo',
+    level: 'Intermediate',
+    tags: 'Hooks,react-redux,reselect,react-router',
+    github: 'vasantisuthar',
+    cover: '',
+    blog: '&#x27;/c/Users/vasanti suthar/Downloads/quizeo.png&#x27;',
     video: ''
   }, //replace new play item here
 ];
