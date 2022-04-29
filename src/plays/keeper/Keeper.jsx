@@ -4,8 +4,8 @@ import './Keeper.css'
 import Header from './Header';
 import CreateArea from './CreateArea';
 import Note from './Notes';
-import  useLocalStorage  from "./Hooks/useLocalStorage"
- 
+import useLocalStorage from './Hooks/useLocalStorage';
+
 function Keeper(props) {
   // Do not remove the below lines. 
   // The following code is to fetch the current play from the URL
