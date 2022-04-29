@@ -15,7 +15,7 @@ const Index = () => {
     creator: "",
   });
 
-  const value = { searchTerm, setSearchTerm, filterQuery, setFilterQuery };
+  const value = { searchTerm, setSearchTerm, filterQuery };
   return (
     <React.StrictMode>
       <SearchContext.Provider value={value}>
