@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 import "./states.css";
 
-function States() {
+function States(props) {
   // Do not remove the below lines.
   // The following code is to fetch the current play from the URL
-  const location = useLocation();
-  const { id } = location.state;
+  const { id } = props;
   const play = getPlayById(id);
 
   // Your Code Start below.
@@ -84,9 +82,9 @@ function States() {
               
               <div className="play-area-result">
                 {!display ? (
-                  <p style={{marginLeft: '2rem'}}>Enter Details of the Message</p>
+                  <p >Enter Details of the Message</p>
                 ) : (
-                  <h3 style={{marginLeft: '2rem'}}>Welcome to State Play, {name} </h3>
+                  <h3 >Welcome to State Play, {name} </h3>
                 )}
               </div>
             </div>

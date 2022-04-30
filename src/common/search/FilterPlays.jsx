@@ -6,8 +6,9 @@ import { SearchContext } from "./search-context";
 import "./search.css";
 
 import { RiFilterFill } from "react-icons/ri";
+import useBackListener from "common/routing/hooks/useBackListener";
 
-const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
+const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   const tags = getAllTags();
   const labels = getAllLevels();
   const creators = getAllCreators();
@@ -40,9 +41,9 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
           }
           value={filterQuery.tags[0]}
         >
-          <option value="">All</option> 
-         {tags.map(tag => (
-           <option key={tag} value={tag}>
+          <option value="">All</option>
+          {tags.map((tag) => (
+            <option key={tag} value={tag}>
               {tag}
             </option>
           ))}
@@ -64,7 +65,7 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
             </option>
           ))}
         </select>
-      </div>      
+      </div>
     </>
   );
 };
@@ -72,19 +73,45 @@ const FilterPlaysModalBody = ({filterQuery, setFilterQuery}) => {
 const FilterPlays = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { setFilterQuery, filterQuery } =
-    useContext(SearchContext);
+  const { setFilterQuery, filterQuery } = useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
     tags: [],
     labels: [],
     creators: [],
   });
-
+  useBackListener(({ action }) => {
+    if (action === "POP") {
+      console.log("POP");
+      setModifiedFilterQuery({
+        level: "",
+        tags: [],
+        creator: "",
+      });
+      setFilterQuery({
+        level: "",
+        tags: [],
+        creator: "",
+      });
+    }
+    if (action === "PUSH") {
+      console.log("PUSH");
+      setModifiedFilterQuery({
+        level: "",
+        tags: [],
+        creator: "",
+      });
+      setFilterQuery({
+        level: "",
+        tags: [],
+        creator: "",
+      });
+    }
+  });
   const handleFilter = (event) => {
     event.preventDefault();
-    console.log('filterQuery', filterQuery);
-    console.log('modifiedFilterQuery', modifiedFilterQuery);
+    console.log("filterQuery", filterQuery);
+    console.log("modifiedFilterQuery", modifiedFilterQuery);
     setFilterQuery(modifiedFilterQuery);
     if (location.pathname !== "/plays") {
       navigate("/plays", { replace: true });
@@ -94,24 +121,32 @@ const FilterPlays = () => {
 
   return (
     <div className="search-filter">
-        <Modal
-          title="Filter Plays"
-          onClose={() => setShowModal(false)}
-          onSubmit={handleFilter}
-          show={showModal}
-          cname="filter"
-          children={
-            <FilterPlaysModalBody
-              filterQuery={modifiedFilterQuery}
-              setFilterQuery={setModifiedFilterQuery}
-            />
-          }
-        />
+      <Modal
+        title="Filter Plays"
+        onClose={() => setShowModal(false)}
+        onSubmit={handleFilter}
+        show={showModal}
+        cname="filter"
+        children={
+          <FilterPlaysModalBody
+            filterQuery={modifiedFilterQuery}
+            setFilterQuery={setModifiedFilterQuery}
+          />
+        }
+      />
 
-        <button onClick={() => setShowModal(true)} className="btn-filter" title="Filter Plays">
-          {/*<div className="badge">8</div>*/}
-          <RiFilterFill className="icon" size="28px" color="var(--color-neutral-30" />
-        </button>
+      <button
+        onClick={() => setShowModal(true)}
+        className="btn-filter"
+        title="Filter Plays"
+      >
+        {/*<div className="badge">8</div>*/}
+        <RiFilterFill
+          className="icon"
+          size="28px"
+          color="var(--color-neutral-30"
+        />
+      </button>
     </div>
   );
 };

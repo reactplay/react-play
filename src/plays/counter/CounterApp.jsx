@@ -1,14 +1,12 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { getPlayById } from 'meta/play-meta-util';
 import Counter from "./Counter";
 import "./counter.css";
 
-function CounterApp() {
+function CounterApp(props) {
   // The following code is to fetch the current play from the URL
-  const location = useLocation();
-  const { id } = location.state;
+  const { id } = props;
   const play = getPlayById(id);
   
   const [input, setInput] = useState("");
