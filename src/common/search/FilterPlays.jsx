@@ -143,7 +143,6 @@ const FilterPlays = () => {
   });
   const handleFilter = (event) => {
     event.preventDefault();
-    console.log(modifiedFilterQuery + "hello");
     console.log("filterQuery", filterQuery);
     console.log("modifiedFilterQuery", modifiedFilterQuery);
     setFilterQuery(modifiedFilterQuery);
