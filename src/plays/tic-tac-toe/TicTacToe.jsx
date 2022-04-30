@@ -21,10 +21,7 @@ function TicTacToe() {
       <div className="play-details">
         <PlayHeader play={play} />
         <div className="play-details-body">
-          {/* Your Code Starts Here */}
-          <h1>Tic-Tac-Toe</h1>
           <Game />
-          {/* Your Code Ends Here */}
         </div>
       </div>
     </>

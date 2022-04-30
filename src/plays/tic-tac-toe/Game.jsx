@@ -1,22 +1,13 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {
-  Button,
-  Container,
-  Card,
-  CardBody,
-  Row,
-  Col,
-  ButtonGroup,
-} from "reactstrap";
-import "bootstrap/dist/css/bootstrap.css";
 
 import { FaTimes, FaRegCircle } from "react-icons/fa";
 import Icon from "./Icon";
 
 import "./Game.css";
 
+// Declaring an array to store the game state. Initializing it with 9 empty strings.
 const gameArray = new Array(9).fill("");
 
 const Game = () => {
@@ -28,8 +19,8 @@ const Game = () => {
   const PlayAgain = () => {
     return (
       <div className="center">
-        <Button
-          className="button"
+        <button
+          className="gameButton"
           onClick={() => {
             setIsCross(true);
             setWinMessage("");
@@ -37,7 +28,7 @@ const Game = () => {
           }}
         >
           Play Again!
-        </Button>
+        </button>
       </div>
     );
   };
@@ -126,22 +117,20 @@ const Game = () => {
 
   return (
     <>
-      <h3> Choose Your Side</h3>
-      <div className="buttonGroup">
-        <ButtonGroup>
-          <Button id="button" onClick={() => setIsCross(true)}>
-            <FaTimes className="icon" />
-          </Button>
-          <Button id="button" onClick={() => setIsCross(false)}>
-            <FaRegCircle className="icon" />
-          </Button>
-        </ButtonGroup>
-      </div>
+      <h2 className="text-center"> Choose Your Side</h2>
+      <section className="buttonGroup">
+        <button className="gameButton" onClick={() => setIsCross(true)}>
+          <FaTimes className="icon" />
+        </button>
+        <button className="gameButton" onClick={() => setIsCross(false)}>
+          <FaRegCircle className="icon" />
+        </button>
+      </section>
 
-      <Container className="p-3">
+      <section className="center">
         <ToastContainer position="bottom-center"> </ToastContainer>
-        <Row>
-          <Col md={6} className="offset-md-3">
+        <main>
+          <div>
             {winMessage ? (
               <div>
                 <h3 className="text-center">{winMessage}</h3>
@@ -153,16 +142,17 @@ const Game = () => {
 
             <div className="grid">
               {gameArray.map((value, index) => (
-                <Card onClick={() => changeItem(index)}>
-                  <CardBody className="box">
-                    <Icon choice={gameArray[index]} />
-                  </CardBody>
-                </Card>
+                <div
+                  className="gameCard center"
+                  onClick={() => changeItem(index)}
+                >
+                  <Icon choice={gameArray[index]} />
+                </div>
               ))}
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </main>
+      </section>
     </>
   );
 };

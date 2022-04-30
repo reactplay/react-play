@@ -5,20 +5,13 @@ import {
   MovieContainer,
   WhyReact,
   CounterApp,
-<<<<<<< HEAD
-States,
-SocialCard,
-RandomMemeGenerator,
-TicTacToe,
-//import play here
-=======
+  TicTacToe,
   States,
   SocialCard,
   RandomMemeGenerator,
   ReactTodoApp,
   ExpandingCards,
   //import play here
->>>>>>> 6429d87ff61767a73b5754d70426f831b88c192d
 } from "plays";
 
 export const plays = [
@@ -100,7 +93,7 @@ export const plays = [
     path: "/plays/counter",
     level: "Beginner",
     tags: "JSX, State, Props",
-    github: "murtuzaalisurti"
+    github: "murtuzaalisurti",
   },
   {
     id: "pl-states",
@@ -185,17 +178,19 @@ export const plays = [
     video: "",
   },
   {
-    id: 'pl-tic-tac-toe', 
-    name: 'Tic Tac Toe', 
-    description: 'A two players Tic Tac Toe game',
-    component: () => {return <TicTacToe />},
-    path: '/plays/tic-tac-toe',
-    level: 'Beginner',
-    tags: 'useState,game',
-    github: 'joshi-kaushal',
-    cover: '',
-    blog: '',
-    video: ''
-  }
+    id: "pl-tic-tac-toe",
+    name: "Tic Tac Toe",
+    description: "A two players Tic Tac Toe game",
+    component: () => {
+      return <TicTacToe />;
+    },
+    path: "/plays/tic-tac-toe",
+    level: "Beginner",
+    tags: "JSX, useState, game",
+    github: "joshi-kaushal",
+    cover: "",
+    blog: "",
+    video: "",
+  },
   //replace new play item here
 ];
