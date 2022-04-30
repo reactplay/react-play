@@ -11,4 +11,5 @@ export { default as SocialCard } from 'plays/social-card/SocialCard';
 export { default as RandomMemeGenerator } from 'plays/random-meme-generator/RandomMemeGenerator';
 export { default as ReactTodoApp } from 'plays/react-todo-app/ReactTodoApp';
 export { default as ExpandingCards } from 'plays/expanding-cards/ExpandingCards';
+export { default as AnalogClock } from 'plays/analog-clock/AnalogClock';
 //add export here
