@@ -1,6 +1,6 @@
 import { Modal } from "common";
 import { getAllCreators, getAllLevels, getAllTags } from "meta/play-meta-util";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
 import "./search.css";
