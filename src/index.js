@@ -5,8 +5,6 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "reportWebVitals";
 
-require('dotenv').config()
-
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterQuery, setFilterQuery] = useState({
