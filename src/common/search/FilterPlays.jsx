@@ -175,7 +175,7 @@ const FilterPlays = () => {
         title="Filter Plays"
       >{
           noOfAppliedFilter === 0 ?
-            <></>
+            null
             : <div className="badge">{noOfAppliedFilter}</div>
         }
 
