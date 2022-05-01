@@ -121,6 +121,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "AhnafAhamed",
+      "name": "Ahnaf Ahamed",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42427928?v=4",
+      "profile": "https://ahnaf.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
