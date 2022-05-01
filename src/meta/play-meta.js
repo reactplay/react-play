@@ -10,6 +10,7 @@ import {
   RandomMemeGenerator,
   ReactTodoApp,
   ExpandingCards,
+  AnalogClock,
   //import play here
 } from "plays";
 
@@ -66,7 +67,6 @@ export const plays = [
     level: "Intermediate",
     tags: "Fetch Data, Hooks",
     github: "atapas",
-    featured: true,
     blog: "https://blog.openreplay.com/understanding-the-container-component-pattern-with-react-hooks",
   },
   {
@@ -93,8 +93,7 @@ export const plays = [
     path: "/plays/counter",
     level: "Beginner",
     tags: "JSX, State, Props",
-    github: "murtuzaalisurti",
-    featured: true,
+    github: "murtuzaalisurti"
   },
   {
     id: "pl-states",
@@ -122,6 +121,7 @@ export const plays = [
     level: "Intermediate",
     tags: "Form,Events,Complex State",
     github: "atapas",
+    featured: true,
     cover: "",
     blog: "https://blog.greenroots.info/how-to-create-react-form-with-a-single-change-event-handler",
     video: "",
@@ -138,6 +138,7 @@ export const plays = [
     level: "Beginner",
     tags: "JSX,Hooks,API,EventHandling",
     github: "murtuzaalisurti",
+    featured: true,
     cover: "",
     blog: "",
     video: "",
@@ -170,6 +171,22 @@ export const plays = [
     path: "/plays/expanding-cards",
     level: "Beginner",
     tags: "Jsx, useState, hooks, toggle, React, css-transitions",
+    github: "Deepak8717",
+    featured: true,
+    cover: "",
+    blog: "",
+    video: "",
+  },
+  {
+    id: "pl-analog-clock",
+    name: "Analog-Clock",
+    description: "A beautiful wall clock",
+    component: () => {
+      return <AnalogClock />;
+    },
+    path: "/plays/analog-clock",
+    level: "Beginner",
+    tags: "useState, useEffect, Date, setInterval",
     github: "Deepak8717",
     cover: "",
     blog: "",
