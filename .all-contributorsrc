@@ -112,6 +112,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "vasantisuthar",
+      "name": "Vasanti Suthar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63599802?v=4",
+      "profile": "https://bio.link/vasantisuthar",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

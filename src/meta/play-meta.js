@@ -11,6 +11,7 @@ import {
   RandomMemeGenerator,
   ReactTodoApp,
   ExpandingCards,
+  AnalogClock,
   //import play here
 } from "plays";
 
@@ -192,5 +193,19 @@ export const plays = [
     blog: "",
     video: "",
   },
-  //replace new play item here
+  {
+    id: "pl-analog-clock",
+    name: "Analog-Clock",
+    description: "A beautiful wall clock",
+    component: () => {
+      return <AnalogClock />;
+    },
+    path: "/plays/analog-clock",
+    level: "Beginner",
+    tags: "useState, useEffect, Date, setInterval",
+    github: "Deepak8717",
+    cover: "",
+    blog: "",
+    video: "",
+  }, //replace new play item here
 ];
