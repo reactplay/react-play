@@ -16,18 +16,37 @@ function QuoteGenerator(props) {
 
   // Your Code Start below.
   const [quoteArray, setQuoteArray] = useState([]);
+  const [current, setCurrent] = useState(0);
 
-  const updateQuoteArray = (newState, stateUpdator) => {
+  const updateState = (newState, stateUpdator) => {
     return new Promise((resolve) => {
       return stateUpdator(newState, resolve());
     });
   };
 
+  const previousQuote = async () => {
+    console.log("Changing");
+    await updateState(current-1, setCurrent);
+    return ;
+  }
+
+  const nextQuote = async () => {
+    if(current < quoteArray.length-1) {
+      await updateState(current+1,setCurrent);
+      return ;
+    }
+    
+    const response = await (await fetchQuote()).json();
+    await updateState([...quoteArray,[response.content, response.author]],setQuoteArray)
+    await updateState(current+1,setCurrent);
+    return ;
+  }
+
   useEffect(() => {
     const fetcher = async () => {
       const response = await (await fetchQuote()).json();
       console.log(response);
-      await updateQuoteArray(
+      await updateState(
         [...quoteArray, [response.content, response.author]],
         setQuoteArray
       );
@@ -44,14 +63,11 @@ function QuoteGenerator(props) {
           {/* Your Code Starts Here */}
           <div>
             <h1>Quote Generator - Get Motivated Randomly.</h1>
-            <p>
-              Random Quote Generator for you to get motivated, inspired and also
-              learn the applications of various hooks in React.
-            </p>
+            
           </div>
           <div className="play-area">
             <div className="prev-btn">
-              <button className="change-btn">
+              <button className="change-btn" disabled={current === 1} onClick={previousQuote}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -71,19 +87,19 @@ function QuoteGenerator(props) {
             <div className="quote-area">
               <div className="quote">
                 {quoteArray.length > 0 && (
-                  <p>{quoteArray[quoteArray.length - 1][0]}</p>
+                  <p>{quoteArray[current][0]}</p>
                 )}
                 <span className="quote-author">
                   {quoteArray.length > 0 && (
                     <p className="author">
-                      - {quoteArray[quoteArray.length - 1][1]}
+                      - {quoteArray[current][1]}
                     </p>
                   )}
                 </span>
               </div>
             </div>
             <div className="next-btn">
-              <button className="change-btn">
+              <button className="change-btn" onClick={nextQuote}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
