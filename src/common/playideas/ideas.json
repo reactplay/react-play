@@ -1,0 +1,58 @@
+{ 
+  "ideas": [
+    {
+      "id": "idea-01",
+      "title": "Tic Tac Toe",
+      "description": "A simple tic tac toe game",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-02",
+      "title": "Code Snippets",
+      "description": "A collection of code snippets  which allows you to copy paste your code snippet and lets you to download it as an image to share!",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-03",
+      "title": "Weather App",
+      "description": "A simple weather app which shows the current weather and the forecast for the next 5 days",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-04",
+      "title": "Calculator",
+      "description": "A simple calculator which can perform basic arithmetic operations",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-05",
+      "title": "To Do List",
+      "description": "A simple to do list app which allows you to add, delete and edit your to do list",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-06",
+      "title": "Note Taker",
+      "description": "A simple note taker app which allows you to add, delete and edit your notes",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-07",
+      "title": "Calendar",
+      "description": "A simple calendar app which allows you to add, delete and edit your events",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-08",
+      "title": "Threads",
+      "description": "Build a react application for creating threads like in Twitter with a model, allowing multiple threads, tweet size constraints, and display them on the home page.",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-09",
+      "title": "Animations",
+      "description": "Build a react application for creating animations like in Twitter with a model, allowing multiple animations, animation size constraints, and display them on the home page.",
+      "level": "Intermediate"
+    }
+  ]
+}
