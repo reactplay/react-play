@@ -20,6 +20,7 @@ const Comment= () => {
             category={ discussionCategoryName }
             categoryId={ discussionCategoryId }
             mapping="pathname"
+            reactionsEnabled="0"
             emitMetadata="1"
             inputPosition="top"
             theme="light"
