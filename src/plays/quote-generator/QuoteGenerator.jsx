@@ -1,7 +1,7 @@
 import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 import "./quoteGenerator.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const fetchQuote = async () => {
   const response = await (await fetch('https://api.quotable.io/random')).json();
@@ -15,13 +15,15 @@ function QuoteGenerator(props) {
   const play = getPlayById(id);
 
   // Your Code Start below.
-
+  const [quoteArray, setQuoteArray] = useState(null)
+  
   useEffect(()=>{
     const fetcher = async () => {
       const response = await fetchQuote()
       console.log(response)
+      setQuoteArray(response)
+      console.log("Array\n",quoteArray)
     }
-
     fetcher()
   },[])
 
@@ -40,7 +42,11 @@ function QuoteGenerator(props) {
           </div>
           <div className="play-area">
             <div className="quote-area">
-
+              <div className="quote">
+                <p>
+                  {/* {(quoteArray[quoteArray.length-1]).content} */}
+                </p>
+              </div>
             </div>
             <div className="button-area">
               <div className="prev-btn">

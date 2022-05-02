@@ -37,7 +37,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <select
           className="form-control"
           onChange={(event) =>
-            setFilterQuery({ ...filterQuery, tags: [event.target.value] })
+            setFilterQuery({ ...filterQuery, tags: event.target.value !== "" ? [event.target.value] : [] })
           }
           value={filterQuery.tags[0]}
         >
@@ -70,6 +70,31 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   );
 };
 
+const getAppliedFilter = (filterObject) => {
+  //for single filter to check whether filter has been applied
+  const noOfLevelsApplied =
+    filterObject?.level !== undefined && filterObject.level.trim() !== ""
+      ? 1
+      : 0;
+  const noOfcreatorsApplied =
+    filterObject.creator !== undefined && filterObject.creator.trim() !== ""
+      ? 1
+      : 0;
+  let totalTags = noOfLevelsApplied +
+    noOfcreatorsApplied;
+
+  //if the appiled filter is an array form. Useful for handling multi filter
+
+  if (filterObject?.tags || filterObject?.labels || filterObject?.creators) {
+    totalTags +=
+      filterObject?.tags?.length ? filterObject.tags.length : 0 +
+        filterObject?.labels?.length ? filterObject.labels.length : 0 +
+          filterObject?.creators?.length ? filterObject.creators.length : 0;
+  }
+
+  return totalTags;
+};
+
 const FilterPlays = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -80,6 +105,8 @@ const FilterPlays = () => {
     labels: [],
     creators: [],
   });
+  const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
+
   useBackListener(({ action }) => {
     if (action === "POP") {
       console.log("POP");
@@ -87,12 +114,17 @@ const FilterPlays = () => {
         level: "",
         tags: [],
         creator: "",
+        labels: [],
+        creators: [],
       });
       setFilterQuery({
         level: "",
         tags: [],
         creator: "",
+        labels: [],
+        creators: [],
       });
+      setnoOfAppliedFilter(0);
     }
     if (action === "PUSH") {
       console.log("PUSH");
@@ -107,12 +139,14 @@ const FilterPlays = () => {
         creator: "",
       });
     }
+    setnoOfAppliedFilter(0);
   });
   const handleFilter = (event) => {
     event.preventDefault();
     console.log("filterQuery", filterQuery);
     console.log("modifiedFilterQuery", modifiedFilterQuery);
     setFilterQuery(modifiedFilterQuery);
+    setnoOfAppliedFilter(getAppliedFilter(modifiedFilterQuery));
     if (location.pathname !== "/plays") {
       navigate("/plays", { replace: true });
     }
@@ -139,8 +173,12 @@ const FilterPlays = () => {
         onClick={() => setShowModal(true)}
         className="btn-filter"
         title="Filter Plays"
-      >
-        {/*<div className="badge">8</div>*/}
+      >{
+          noOfAppliedFilter === 0 ?
+            null
+            : <div className="badge">{noOfAppliedFilter}</div>
+        }
+
         <RiFilterFill
           className="icon"
           size="28px"

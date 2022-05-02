@@ -6,6 +6,15 @@
 .quote-area {
   height: 15rem;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.quote{
+  /* background: brown; */
+  height: 100%;
+  width: 45%;
+  /* color:azure; */
 }
 
 .button-area {
