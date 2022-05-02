@@ -1,6 +1,8 @@
 .play-area {
   /* background: antiquewhite; */
   border: none;
+  display: flex;
+  flex-direction: row;
 }
 
 .quote-area {
@@ -11,10 +13,16 @@
 }
 
 .quote{
-  /* background: brown; */
   height: 100%;
   width: 45%;
-  /* color:azure; */
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.author {
+  float: right
 }
 
 .button-area {
@@ -26,10 +34,16 @@
 
 .change-btn {
   width: 4rem;
+  height: 100%;
   background: transparent;
   display: flex;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
   border:none;
+}
+
+.change-btn:hover {
+  background-color: rgb(193, 192, 192);
 }
 
 .quote-generate {

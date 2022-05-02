@@ -10,7 +10,6 @@ import {
   RandomMemeGenerator,
   ReactTodoApp,
 QuoteGenerator,
-//import play here
   ExpandingCards,
   AnalogClock,
   //import play here
