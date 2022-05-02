@@ -5,8 +5,6 @@ const Comment= () => {
   const discussionCategoryId = process.env.REACT_APP_GISCUS_DISCUSSION_CATEGORY_ID;
   const discussionCategoryName = process.env.REACT_APP_GISCUS_DISCUSSION_CATEGORY_NAME;
 
-  console.log(projectRepoId, discussionCategoryId, discussionCategoryName);
-
   return (
     <>
       <div className="play-details-comments">
