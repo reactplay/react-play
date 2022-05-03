@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
 import data from './ideas.json';
+import { IoRibbon } from "react-icons/io5";
+import "./playIdeas.css";
 
 
 const PlayIdeas = () => {
@@ -50,31 +52,56 @@ const PlayIdeas = () => {
   }
 
   return (
-    <div>
-      <h1>Heading</h1>
-      <p>Some text.</p>
-      <div className="ideas-levels">
-        Filter by level:
-        <input type="radio" name="level" value="" id="all-id" onChange={onValueChange} defaultChecked/>
-        <label htmlFor="all-id">All Levels</label>
-        <input type="radio" name="level" value="Beginner" id="beginner-id" onChange={onValueChange} />
-        <label htmlFor="beginner-id">Beginner</label>
-        <input type="radio" name="level" value="Intermediate" id="intermediate-id" onChange={onValueChange}/>
-        <label htmlFor="intermediate-id">Intermediate</label>
-        <input type="radio" name="level" value="Advanced" id="advanced-id" onChange={onValueChange}/>
-        <label htmlFor="advanced-id">Advanced</label>
-        
+    <div className='app-body app-body-overflow-hidden'>
+      <div className="playideas-container">
+        <div className="playideas-header">
+          <div>
+          <h3 className='header-title'>
+            Play Ideas
+            <span className='header-title-badge'>{filteredIdeas.length}</span>
+          </h3>
+          <p className='header-desc'>Some text.</p>
+          </div>
+          <div className="playideas-levels-pills">
+            <div className="levels-label">Filter by level:</div>
+            <div className="level-pill">
+              <input type="radio" name="level" value="" id="all-id" className='level-pill-control' onChange={onValueChange} defaultChecked/>
+              <label htmlFor="all-id" className='level-pill-label'>All</label>
+            </div>
+            <div className="level-pill">
+              <input type="radio" name="level" value="Beginner" id="beginner-id" className='level-pill-control' onChange={onValueChange} />
+              <label htmlFor="beginner-id" className='level-pill-label'>
+                Beginner</label>
+            </div>
+            <div className="level-pill">
+              <input type="radio" name="level" value="Intermediate" id="intermediate-id" className='level-pill-control' onChange={onValueChange}/>
+              <label htmlFor="intermediate-id" className='level-pill-label'>
+                Intermediate</label>
+            </div>
+            <div className="level-pill">
+              <input type="radio" name="level" value="Advanced" id="advanced-id" className='level-pill-control' onChange={onValueChange}/>
+              <label htmlFor="advanced-id" className='level-pill-label'>
+                Advanced</label>
+            </div>
+          </div>
+          
+        </div>
+        <div className="playideas-body">
+          <ul className='list-playideas'>
+            {filteredIdeas.map((idea) => (
+              <li className='list-playideas-item' key={idea.id}>
+                <h4 className='idea-title'>{idea.title}</h4>
+                <p className='idea-desc'>{idea.description}</p>
+                <p className='idea-level'>
+                  <span className="play-level play-level-1">
+                    <IoRibbon size="16px" /> {idea.level}
+                  </span>
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <ul>
-        <h2>Play Ideas({filteredIdeas.length})</h2>
-        {filteredIdeas.map((idea) => (
-          <li key={idea.id}>
-            <h2>{idea.title}</h2>
-            <p>{idea.description}</p>
-            <p>{idea.level}</p>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

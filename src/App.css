@@ -175,6 +175,11 @@ code {
   background-color: var(--color-neutral-20);
 }
 
+.app-body-overflow-hidden {
+  overflow-y: hidden;
+  height: 100%;
+}
+
 /* App Footer */
 .app-footer {
   padding: 0 2rem;
