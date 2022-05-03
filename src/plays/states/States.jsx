@@ -82,9 +82,9 @@ function States(props) {
               
               <div className="play-area-result">
                 {!display ? (
-                  <p style={{marginLeft: '2rem'}}>Enter Details of the Message</p>
+                  <p >Enter Details of the Message</p>
                 ) : (
-                  <h3 style={{marginLeft: '2rem'}}>Welcome to State Play, {name} </h3>
+                  <h3 >Welcome to State Play, {name} </h3>
                 )}
               </div>
             </div>

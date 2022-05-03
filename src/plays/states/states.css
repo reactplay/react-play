@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 
+.play-area-result {
+  margin-left: 2rem;
+}
+
 .play-area {
   border-right-width: 0.1rem;
   border-right-style: solid;
@@ -26,7 +30,6 @@
 .submit-button {
   height: 2rem;
   width: 6rem;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1rem;
   background: rgb(108, 226, 252);
   border: none;
@@ -34,4 +37,21 @@
   margin-top: 1.2rem;
   margin-left: 4rem;
   border-radius: 1rem;
+}
+
+@media only screen and (max-width: 760px)  {
+  .play-area-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .play-area {
+    border: none;
+  }
+
+  .play-area-result {
+    margin-left: 0.5rem;
+    margin-top: 1.5rem;
+  }
 }

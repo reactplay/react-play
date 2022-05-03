@@ -94,6 +94,42 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "nirban256",
+      "name": "Nirban Chakraborty",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74231771?v=4",
+      "profile": "https://nirban-chakraborty.netlify.app",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Deepak8717",
+      "name": "Deepak Pundir",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5671550?v=4",
+      "profile": "https://github.com/Deepak8717",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "vasantisuthar",
+      "name": "Vasanti Suthar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63599802?v=4",
+      "profile": "https://bio.link/vasantisuthar",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "AhnafAhamed",
+      "name": "Ahnaf Ahamed",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42427928?v=4",
+      "profile": "https://ahnaf.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
