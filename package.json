@@ -26,8 +26,7 @@
     "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "create-play": "plop",
-    "postinstall": "./node_modules/.bin/gulp build"
+    "create-play": "plop"
   },
   "eslintConfig": {
     "extends": [
@@ -54,7 +53,6 @@
     ]
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
     "react-snap": "^1.23.0"
   }
 }

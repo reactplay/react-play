@@ -86,9 +86,13 @@ yarn install
 
 ### Setup dependencies
 ```bash
-npm install -g typescript
-npm install -g gulp
-npm link typescript
+npm install typescript --save-dev
+```
+
+or 
+
+```bash
+yarn add typescript --dev
 ```
 
 ### 🦄 Start the Development Mode
