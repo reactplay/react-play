@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.play-details .play-details-body {
-  font-family: "Montserrat", sans-serif;
-}
-
 .head {
   background-color: #f5ba13;
   margin: auto -16px;
@@ -17,7 +13,6 @@
 
 .headsHeading {
   color: #fff;
-  font-family: "McLaren", cursive;
   font-weight: 200;
 }
 
@@ -72,7 +67,6 @@ form.create-note .create-text {
   padding: 4px;
   outline: none;
   font-size: 1.2em;
-  font-family: inherit;
   resize: none;
 }
 
