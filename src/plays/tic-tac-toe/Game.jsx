@@ -117,7 +117,7 @@ const Game = () => {
 
   return (
     <>
-      <h2 className="text-center"> Choose Your Side</h2>
+      <h2 className="text-center">Choose Your Side</h2>
       <section className="buttonGroup">
         <button className="gameButton" onClick={() => setIsCross(true)}>
           <FaTimes className="icon" />
