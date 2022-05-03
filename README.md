@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -180,6 +180,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://erayalkis.netlify.app"><img src="https://avatars.githubusercontent.com/u/80722863?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eray Alkış</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=erayalkis" title="Code">💻</a></td>
     <td align="center"><a href="https://nirban-chakraborty.netlify.app"><img src="https://avatars.githubusercontent.com/u/74231771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nirban Chakraborty</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=nirban256" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Deepak8717"><img src="https://avatars.githubusercontent.com/u/5671550?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Deepak Pundir</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Deepak8717" title="Code">💻</a></td>
+    <td align="center"><a href="https://bio.link/vasantisuthar"><img src="https://avatars.githubusercontent.com/u/63599802?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vasanti Suthar</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=vasantisuthar" title="Documentation">📖</a></td>
   </tr>
 </table>
 

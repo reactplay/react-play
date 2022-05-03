@@ -12,4 +12,4 @@ export { default as RandomMemeGenerator } from "plays/random-meme-generator/Rand
 export { default as TicTacToe } from "plays/tic-tac-toe/TicTacToe";
 export { default as ReactTodoApp } from "plays/react-todo-app/ReactTodoApp";
 export { default as ExpandingCards } from "plays/expanding-cards/ExpandingCards";
-//add export here
+export { default as AnalogClock } from 'plays/analog-clock/AnalogClock';

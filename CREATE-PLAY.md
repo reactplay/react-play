@@ -9,6 +9,8 @@ Welcome developers! We are as excited as you are to know that you are going to c
 - Run the following command:
   ```shell
     yarn create-play
+    # or
+    npm run create-play
   ```
 - This will ask a few questions about your `Play` and then perform required steps to create the play. The screen shot below shows the output of the command.
   <p align="center">
