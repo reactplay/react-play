@@ -3,33 +3,39 @@
   border: none;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  height: fit-content;
 }
 
 .quote-area {
-  height: 15rem;
+  min-height: 15rem;
+  height: fit-content;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .quote{
   height: 100%;
   width: 45%;
   font-size: 2rem;
-  display: flex;
-  flex-direction: column;
   justify-items: center;
+  margin-left: 30%;
+}
+
+.page-author {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-author{
+  margin-left: 30%;
 }
 
 .author {
-  float: right
-}
-
-.button-area {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: none;
+  float: right;
 }
 
 .change-btn {
@@ -42,19 +48,6 @@
   border:none;
 }
 
-.change-btn:hover {
+.change-btn:hover:enabled {
   background-color: rgb(193, 192, 192);
-}
-
-.quote-generate {
-  display: flex;
-  align-content: center;
-}
-
-.quote-generate-btn {
-  width: 8rem;
-  border: none;
-  background: #00F2FE;
-  font-size: 1.12rem;
-  border-radius: 3rem;
 }
