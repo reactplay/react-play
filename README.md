@@ -84,17 +84,6 @@ Or
 yarn install
 ```
 
-### Setup dependencies
-```bash
-npm install typescript --save-dev
-```
-
-or 
-
-```bash
-yarn add typescript --dev
-```
-
 ### 🦄 Start the Development Mode
 Use the following command to start the app in the development mode:
 
