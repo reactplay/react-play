@@ -16,9 +16,9 @@ function Keeper(props) {
     {
       id: 0,
       title: "Write Your Title",
-      content:"And, content here. :)"
+      content: "And, content here. :)"
     }
-  ]);; //notes array
+  ]); //notes array
   //adding notes
   function addNote(newNote) {
     setNotes((prevNotes) => {
@@ -41,15 +41,15 @@ function Keeper(props) {
           {/* Your Code Starts Here */}
           <Header />
           <CreateArea onAdd={addNote} />
-      {notes.map((noteItem, index) => {
-        return <Note
-          key={index}
-          id = { index }
-          title={noteItem.title}
-          content={noteItem.content}
-          onDelete={deleteNote}
-        />
-      })}
+          {notes.map((noteItem, index) => {
+            return <Note
+              key={index}
+              id={index}
+              title={noteItem.title}
+              content={noteItem.content}
+              onDelete={deleteNote}
+            />
+          })}
         </div>
       </div>
       {/* Your Code Ends Here */}
