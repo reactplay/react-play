@@ -2,15 +2,8 @@
   color: red;
   font-size: 30px;
 }
-h1 {
-  color: black;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-h3 {
+.center > h3 {
   color: black;
   display: flex;
   align-items: center;
