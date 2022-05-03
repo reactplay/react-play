@@ -1,4 +1,5 @@
 import Giscus from "@giscus/react";
+import { MdClose } from "react-icons/md";
 
 const Comment= () => {
   const projectRepoId = process.env.REACT_APP_GISCUS_PROJECT_REPO_ID;
@@ -10,6 +11,9 @@ const Comment= () => {
       <div className="play-details-comments">
         <div className="comments-header">
           <h3 className="header-title">Comments &amp; Reactions</h3>
+          <button className="header-action">
+            <MdClose size={24} className="icon" />
+          </button>
         </div>
         <div className="comments-body">
           <Giscus

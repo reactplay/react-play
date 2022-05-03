@@ -438,21 +438,24 @@
     overflow-y: auto;
 }
 
-.play-details .header-actions a {
+.play-details .header-actions .action {
     position: relative;
     width: 24px;
     height: 24px;
+    border: 0;
+    background: transparent;
+
 }
 
-.play-details .header-actions a.badged {
+.play-details .header-actions .action.badged {
     display: flex;
     width: auto;
     height: auto;
     text-decoration: none;
-    margin-right: -0.2rem;
+    margin-right: -0.6rem;
 }
 
-.play-details .header-actions a .badge-count {
+.play-details .header-actions .action.badged .badge-count {
     position: relative;
     top: -0.4rem;
     right: 0;
@@ -472,7 +475,7 @@
     background-color: var(--color-brand-primary);
 }
 
-.play-details .header-actions a .badge {
+.play-details .header-actions .action .badge {
     position: absolute;
     top: -2px;
     right: 0;
@@ -483,16 +486,16 @@
     background-color: var(--color-brand-primary);
 }
 
-.play-details .header-actions a .icon {
+.play-details .header-actions .action .icon {
     fill: rgba(var(--color-neutral-90-rgb), 0.4);
 }
 
-.play-details .header-actions a:hover .icon,
-.play-details .header-actions a:focus .icon {
+.play-details .header-actions .action:hover .icon,
+.play-details .header-actions .action:focus .icon {
     fill: rgba(var(--color-neutral-90-rgb), 0.8);
 }
 
-.play-details .header-actions a.badged:hover .badge-count {
+.play-details .header-actions .action.badged:hover .badge-count {
     background-color: var(--color-neutral-90);
     color: var(--color-neutral-10);
 }
@@ -530,8 +533,8 @@
 
 /* Play Comments */
 .play-details-comments {
-    position: absolute;
-    top: 50px;
+    position: fixed;
+    top: 64px;
     right: 0;
     width: 60%;
     max-width: 600px;
@@ -555,7 +558,27 @@
 .play-details-comments .comments-header {
     padding: 0 2rem;
     border-bottom: solid 1px var(--color-neutral-30);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+.play-details-comments .comments-header .header-action {
+    border: 0;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+}
+
+.play-details-comments .comments-header .header-action .icon {
+    fill: rgba(var(--color-neutral-90-rgb), 0.4);
+}
+
+.play-details-comments .comments-header .header-action:hover .icon,
+.play-details-comments .comments-header .header-action:focus .icon {
+    fill: rgba(var(--color-neutral-90-rgb), 0.8);
+}
+
 
 .play-details-comments .comments-body {
     padding: 1rem 2rem 0 2rem;

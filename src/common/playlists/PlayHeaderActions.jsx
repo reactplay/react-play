@@ -14,10 +14,10 @@ const PlayHeaderActions = ({play}) => {
     <>
       { 
         <button
-          className='badged'
+          className='action badged'
           onClick={() => setShowComment(true)}>
             <BiComment className="icon" size="24px" />
-            {/*<div className="badge-count">99</div>*/}
+            <div className="badge-count">99</div>
             <span className="sr-only">Comments</span>
          </button>
       }
@@ -25,6 +25,7 @@ const PlayHeaderActions = ({play}) => {
           <a
             target="_blank"
             rel="noopener noreferrer"
+            className='action'
             href={`https://github.com/atapas/react-play/tree/main/src${play.path}`}>
               <BsGithub className="icon" size="24px" />
               <span className="sr-only">GitHub</span>
@@ -34,6 +35,7 @@ const PlayHeaderActions = ({play}) => {
           <a
           target="_blank"
           rel="noopener noreferrer" 
+          className='action'
           href={play.blog}>
           <AiOutlineRead className="icon" size="24px" />
           <span className="sr-only">Blog</span>
@@ -43,6 +45,7 @@ const PlayHeaderActions = ({play}) => {
           <a
             target="_blank"
             rel="noopener noreferrer" 
+            className='action'
             href={play.video}>
               <IoLogoYoutube className="icon" size="24px" />
               <span className="sr-only">Video</span>
