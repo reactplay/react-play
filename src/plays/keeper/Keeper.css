@@ -85,12 +85,37 @@
 
 /* Media Query */
 
-@media(max-width: 511px) {
-  .head {
-    width: 32rem;
-  }
-
+@media(max-width: 514px) {
   .create-note {
     width: 21rem;
+  }
+}
+@media(max-width: 358px) {
+  .create-note {
+    width: 13rem;
+  }
+}
+@media(max-width: 304px) {
+  .create-note {
+    width: 12rem;
+  }
+  .note{
+    width:205px;
+  }
+}
+@media(max-width: 269px) {
+  .create-note {
+    width: 11rem;
+  }
+  .note{
+    width:182px;
+  }
+}
+@media(max-width: 269px) {
+  .create-note {
+    width: 9rem;
+  }
+  .note{
+    width:170px;
   }
 }
