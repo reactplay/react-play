@@ -5,14 +5,10 @@ import {
   MovieContainer,
   WhyReact,
   CounterApp,
-States,
-SocialCard,
-RandomMemeGenerator,
-Keeper,
-//import play here
   States,
   SocialCard,
   RandomMemeGenerator,
+  Keeper,
   ReactTodoApp,
   ExpandingCards,
   AnalogClock,
@@ -86,17 +82,6 @@ export const plays = [
     tags: "Recursion, Tree",
     github: "green-roots",
     featured: true,
-  },
-  {
-    id: 'pl-0005',
-    name: 'Organization Tree',
-    description: 'A simple org tree',
-    component: () => {return <BasicTree />},
-    path: '/plays/org-tree',
-    level: 'Intermediate',
-    tags: 'Recursion, Tree',
-    github: 'green-roots',
-    featured: true
   }, {
     id: 'pl-counter', 
     name: 'Counter', 
@@ -154,69 +139,7 @@ export const plays = [
     cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1650424093/thumbnail_xwxmwt.png',
     blog: '',
     video: ''
-  }, //replace new play item here
-];
-    id: "pl-counter",
-    name: "Counter",
-    description:
-      "A simple counter which increments the value upto a certain limit!",
-    component: () => {
-      return <CounterApp />;
-    },
-    path: "/plays/counter",
-    level: "Beginner",
-    tags: "JSX, State, Props",
-    github: "murtuzaalisurti"
-  },
-  {
-    id: "pl-states",
-    name: "States",
-    description: "States in Functional Components",
-    component: () => {
-      return <States />;
-    },
-    path: "/plays/states",
-    level: "Beginner",
-    tags: "Hooks,State,JSX",
-    github: "Abhishek-90",
-    cover: "",
-    blog: "https://abhishek-90.github.io/My-Portfolio/",
-  },
-  {
-    id: "pl-social-card",
-    name: "Social Card",
-    description:
-      "The Social Card helps you telling who you are using photo, name, and other social footprints.",
-    component: () => {
-      return <SocialCard />;
-    },
-    path: "/plays/social-card",
-    level: "Intermediate",
-    tags: "Form,Events,Complex State",
-    github: "atapas",
-    featured: true,
-    cover: "",
-    blog: "https://blog.greenroots.info/how-to-create-react-form-with-a-single-change-event-handler",
-    video: "",
-  },
-  {
-    id: "pl-random-meme-generator",
-    name: "Random Meme Generator",
-    description:
-      "A project to demonstrate the use of API to fetch random memes! It also demonstrates how you can do event handling!",
-    component: () => {
-      return <RandomMemeGenerator />;
-    },
-    path: "/plays/random-meme-generator",
-    level: "Beginner",
-    tags: "JSX,Hooks,API,EventHandling",
-    github: "murtuzaalisurti",
-    featured: true,
-    cover: "",
-    blog: "",
-    video: "",
-  },
-  {
+  }, {
     id: "pl-react-todo-app",
     name: "React Todo App",
     description:
@@ -232,8 +155,7 @@ export const plays = [
       "https://res.cloudinary.com/atapas/image/upload/v1650866465/demos/cover_y20bzk.png",
     blog: "",
     video: "",
-  },
-  {
+  }, {
     id: "pl-expanding-cards",
     name: "Expanding-Cards",
     description:
@@ -249,8 +171,7 @@ export const plays = [
     cover: "",
     blog: "",
     video: "",
-  },
-  {
+  }, {
     id: "pl-analog-clock",
     name: "Analog-Clock",
     description: "A beautiful wall clock",
