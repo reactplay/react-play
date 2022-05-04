@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 
 import data from './ideas.json';
-import { IoRibbon } from "react-icons/io5";
+import LevelBadge from 'common/components/LevelBadge';
 import "./playIdeas.css";
-
 
 const PlayIdeas = () => {
   const [ideas, setIdeas] = useState([]);
@@ -15,6 +14,7 @@ const PlayIdeas = () => {
   useEffect(() => {
     try {
       async function fetchData() {
+        // TODO: The idea list has to come from the DB
         //const response = await fetch('/api/ideas');
         //const json = await response.json();
         const json = data.ideas;
@@ -60,10 +60,12 @@ const PlayIdeas = () => {
             Play Ideas
             <span className='header-title-badge'>{filteredIdeas.length}</span>
           </h3>
-          <p className='header-desc'>Some text.</p>
+          <p className='header-desc'>Looking for project ideas to practice React? Great, you 
+            have landed on the right place. Here are some ideas to get you started.
+          </p>
           </div>
           <div className="playideas-levels-pills">
-            <div className="levels-label">Filter by level:</div>
+            
             <div className="level-pill">
               <input type="radio" name="level" value="" id="all-id" className='level-pill-control' onChange={onValueChange} defaultChecked/>
               <label htmlFor="all-id" className='level-pill-label'>All</label>
@@ -71,17 +73,17 @@ const PlayIdeas = () => {
             <div className="level-pill">
               <input type="radio" name="level" value="Beginner" id="beginner-id" className='level-pill-control' onChange={onValueChange} />
               <label htmlFor="beginner-id" className='level-pill-label'>
-                Beginner</label>
+                BEGINNER</label>
             </div>
             <div className="level-pill">
               <input type="radio" name="level" value="Intermediate" id="intermediate-id" className='level-pill-control' onChange={onValueChange}/>
               <label htmlFor="intermediate-id" className='level-pill-label'>
-                Intermediate</label>
+                INTERMEDIATE</label>
             </div>
             <div className="level-pill">
               <input type="radio" name="level" value="Advanced" id="advanced-id" className='level-pill-control' onChange={onValueChange}/>
               <label htmlFor="advanced-id" className='level-pill-label'>
-                Advanced</label>
+                ADVANCED</label>
             </div>
           </div>
           
@@ -93,9 +95,7 @@ const PlayIdeas = () => {
                 <h4 className='idea-title'>{idea.title}</h4>
                 <p className='idea-desc'>{idea.description}</p>
                 <p className='idea-level'>
-                  <span className="play-level play-level-1">
-                    <IoRibbon size="16px" /> {idea.level}
-                  </span>
+                  <LevelBadge level={idea.level} />
                 </p>
               </li>
             ))}

@@ -53,6 +53,24 @@
       "title": "Animations",
       "description": "Build a react application for creating animations like in Twitter with a model, allowing multiple animations, animation size constraints, and display them on the home page.",
       "level": "Intermediate"
+    },
+    {
+      "id": "idea-10",
+      "title": "React Editor",
+      "description": "Build an Editor for users to type texts and do formatting like bold, italic, underline, alignments, and strikethrough.",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-11",
+      "title": "Chatter",
+      "description": "Build a chat application for users to chat with each other. This project doesn't use any bots.",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-12",
+      "title": "GitHub User Search",
+      "description": "Build a react application for searching GitHub users.",
+      "level": "Beginner"
     }
   ]
 }
