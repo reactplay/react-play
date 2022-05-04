@@ -15,7 +15,7 @@ export const ScoreModel = () => {
                 <button className=" bg-cyan-500 shadow-lg shadow-cyan-500/50 ... my-7 mx-20 rounded-3xl p-3"
                     onClick={() => {
                         dispatch(showModel());
-                        navigate('/')
+                        navigate('/plays/quizeo')
                         dispatch(setScore());
                         dispatch(setQuestionNo());
                         }}>Play again</button>
