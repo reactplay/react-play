@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "debug": "^4.3.4",
     "plop": "^3.0.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -13,7 +12,6 @@
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
-    "react-tinder-card": "^1.4.5",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
