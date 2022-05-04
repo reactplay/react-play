@@ -1,5 +1,4 @@
 .play-area {
-  /* background: antiquewhite; */
   border: none;
   display: flex;
   flex-direction: row;
@@ -18,10 +17,10 @@
 
 .quote{
   height: 100%;
-  width: 45%;
+  width: 55%;
   font-size: 2rem;
   justify-items: center;
-  margin-left: 30%;
+  margin-left: 25%;
 }
 
 .page-author {
@@ -39,16 +38,68 @@
 }
 
 .change-btn {
-  width: 4rem;
+  width: 5rem;
   height: 100%;
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   border:none;
-  outline:none;
 }
 
 .change-btn:hover:enabled {
   background-color: rgb(193, 192, 192);
+}
+
+@media only screen and (max-width: 760px) {
+  body, html {
+    font-size: 0.9rem;
+    margin: 0;
+    padding:0;
+  }  
+
+  .quote {
+    font-size: 1rem;
+    width: 100%;
+    margin-left: 0;
+    padding: 0 10px 0 10px;
+  }
+
+  .change-btn {
+    width: 3rem;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+  }
+
+  .quote-area {
+    min-height: 10rem;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .play-area {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+    width: 100%;
+  }
+
+  .page-author{
+    margin-left: 0;
+    width: 100%;
+    padding: 0 10px 0 10px; 
+  }
+
+  .change-btn:active {
+    background-color: rgb(193, 192, 192);
+  }
 }
