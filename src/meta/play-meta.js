@@ -136,7 +136,7 @@ export const plays = [
     level: 'Intermediate',
     tags: 'JSX,Hooks,ReactDOM',
     github: 'Shivam-Katare',
-    cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1650424093/thumbnail_xwxmwt.png',
+    cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1651678725/keepicon_jsn5bh.png',
     blog: '',
     video: ''
   }, {
