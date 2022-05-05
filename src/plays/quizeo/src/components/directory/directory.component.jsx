@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectDirectorySection } from "../../redux/directory/directory-selectors";
 import MenuItem from "../menu-item/menuItem.component";
-
+import './directory.styles.css';
 const Directory = ({sections}) => {
     return ( 
-        <div className="directoryMenu flex flex-row justify-center m-12 items-center flex-wrap">
+        <div className="directoryMenu">
             {sections.map(({id, ...otherSectionComponent}) => (
                 <MenuItem key={id} {...otherSectionComponent}/>
             ))}

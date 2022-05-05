@@ -5,9 +5,9 @@ import './header.styles.css';
 const Header = () => {
     
     return ( 
-        <div className="headerContainer">
+        <div>
             <Link to="/plays/quizeo">
-            <h1 className="text-5xl font-bold mt-6 mb-14">Quizeo</h1>
+            <h1 className="header">Quizeo</h1>
             </Link>
         </div>
      );
