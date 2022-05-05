@@ -12,7 +12,6 @@ const config = {
   special: true,
   uppercase: true,
   lowercase: true,
-  // excludeSimilarCharacters: true,
 };
 
 function PasswordGenerator(props) {
@@ -59,7 +58,7 @@ function PasswordGenerator(props) {
 
   // Generate a random password
   const generatePassword = () => {
-    setError(false)
+    setError(false);
     const concated = arrangeData();
     let finalPassword = "";
     for (let i = 0; i < passwordConfig.length; i++) {
@@ -77,15 +76,15 @@ function PasswordGenerator(props) {
   // handling checkbox and updating the config
   const handleCheckedItem = (name, checked) => {
     const modifiedConfig = { ...passwordConfig };
-    delete modifiedConfig.length
-    delete modifiedConfig.excludeSimilarCharacters
+    delete modifiedConfig.length;
+    delete modifiedConfig.excludeSimilarCharacters;
     modifiedConfig[name] = checked;
-    const values = Object.values(modifiedConfig).filter(i => i === true);
+    const values = Object.values(modifiedConfig).filter((i) => i === true);
     if (values.length === 0) {
-      return setError(true)
+      return setError(true);
     }
     setPasswordConfig({ ...passwordConfig, [name]: checked });
-    setError(false)
+    setError(false);
   };
 
   // Copy the password to the clipboard
@@ -110,7 +109,7 @@ function PasswordGenerator(props) {
         {/* Your Code Starts Here */}
         <div className='main'>
           <h1 className='title'>Password Generator</h1>
-          <section>
+          <section className='section'>
             {error && <ErrorBox />}
             <div>
               <CheckBox
@@ -137,14 +136,19 @@ function PasswordGenerator(props) {
                 name='Numbers'
                 id='numbers'
               />
-              <div className='checkbox-comp'>
+              <div className='checkbox-comp '>
                 <label>Length</label>
                 <select
-                  onChange={e => handleCheckedItem("length", e.target.value)}
+                  className='select'
+                  onChange={(e) => handleCheckedItem("length", e.target.value)}
                   value={passwordConfig.length}
                 >
-                  {[12,14,16,20].map(num => {
-                    return <option key={num} value={num}>{num}</option>
+                  {[12, 14, 16, 20].map((num) => {
+                    return (
+                      <option key={num} value={num}>
+                        {num}
+                      </option>
+                    );
                   })}
                 </select>
               </div>
@@ -152,6 +156,7 @@ function PasswordGenerator(props) {
             <div>
               <input
                 type='text'
+                className='password-input'
                 value={password?.password}
                 onChange={null}
                 readOnly={true}
@@ -188,6 +193,7 @@ const CheckBox = ({ name, checked, getCheckedItem, id }) => {
       <label htmlFor={name}>{name}</label>
       <input
         checked={checked}
+        className='checkbox'
         onChange={checkboxChangeHandler(id)}
         id={name}
         type='checkbox'
