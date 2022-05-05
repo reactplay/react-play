@@ -120,7 +120,7 @@ export const plays = [
     description: 'Quizeo is a react project to play quiz of favourite movies and series.',
     component: () => {return <Quizeo />},
     path: '/plays/quizeo',
-    level: 'Intermediate',
+    level: 'Advanced',
     tags: 'Hooks,react-redux,reselect,react-router',
     github: 'vasantisuthar',
     cover: '',
