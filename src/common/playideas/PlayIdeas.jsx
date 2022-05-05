@@ -109,7 +109,7 @@ const PlayIdeas = () => {
                     <span className="btn-label">Create Play</span>
                   </a>
                   <a
-                    href="https://github.com/atapas/react-play/discussions/new?category=ideas"
+                    href={`https://github.com/atapas/react-play/discussions/new?category=ideas&title=${idea.title}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-default"

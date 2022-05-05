@@ -225,7 +225,9 @@
 .play-details .play-details-header .header-leftcol-action .action:focus .icon {
     fill: rgba(var(--color-neutral-90-rgb), 0.8);
 }
-
+.play-details .play-details-header .list-tags{
+    flex-wrap: wrap;
+}
 @media screen and (max-width: 1172px) {
     .play-details .play-details-header .header-leftcol-action {
         padding-top: .16rem;

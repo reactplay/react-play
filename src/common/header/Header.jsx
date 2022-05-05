@@ -14,7 +14,7 @@ const Header = () => {
   const [showBrowse, setShowBrowse] = useState(false);
 
   useEffect(() => {
-    if (pathName === '/') {
+    if (pathName === '/' || pathName === '/ideas') {
       setHeaderStyle(false);
       setShowSearch(false);
       setShowBrowse(true);
