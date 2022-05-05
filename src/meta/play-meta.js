@@ -12,7 +12,8 @@ import {
   ReactTodoApp,
   ExpandingCards,
   AnalogClock,
-  //import play here
+  PasswordGenerator,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -185,5 +186,17 @@ export const plays = [
     cover: "",
     blog: "",
     video: "",
+  }, {
+    id: 'pl-password-generator', 
+    name: 'Password Generator', 
+    description: 'Its a simple password generator built in react using what user can generate password and customize their requirements in choosing characters and number while generating a medium or strong level password.',
+    component: () => {return <PasswordGenerator />},
+    path: '/plays/password-generator',
+    level: 'Beginner',
+    tags: 'PasswordGenerator',
+    github: 'Angryman18',
+    cover: 'https://securityintelligence.com/wp-content/uploads/2018/10/si-eight-character-password-feature.jpg',
+    blog: '',
+    video: ''
   }, //replace new play item here
 ];
