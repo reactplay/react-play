@@ -26,7 +26,7 @@ const Home = () => {
       tags: [],
       creator: "",
     });
-  }, [data, setSearchTerm, searchTerm]);
+  }, [data, setSearchTerm, searchTerm, setFilterQuery]);
 
   return (
     <div>
