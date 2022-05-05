@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-
 import data from './ideas.json';
+import { IoAddSharp } from 'react-icons/io5';
+import { RiChatNewLine } from 'react-icons/ri';
 import LevelBadge from 'common/components/LevelBadge';
 import "./playIdeas.css";
 
@@ -97,6 +98,26 @@ const PlayIdeas = () => {
                 <p className='idea-level'>
                   <LevelBadge level={idea.level} />
                 </p>
+                <div className="idea-actions">
+                  <a
+                    href="https://github.com/atapas/react-play/blob/main/CREATE-PLAY.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    <IoAddSharp className="icon" />
+                    <span className="btn-label">Create Play</span>
+                  </a>
+                  <a
+                    href="https://github.com/atapas/react-play/discussions/new?category=ideas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-default"
+                  >
+                    <RiChatNewLine className="icon" />
+                    <span className="btn-label">Start discussion</span>
+                  </a>
+                </div>
               </li>
             ))}
           </ul>

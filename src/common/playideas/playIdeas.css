@@ -5,12 +5,13 @@
 }
 
 .playideas-header {
-    padding: .4rem 1rem;
+    padding: .6rem 1rem;
     border-bottom: solid 1px var(--color-neutral-30);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: var(--color-neutral-10);
 }
 
 .playideas-header .header-title {
@@ -31,7 +32,7 @@
 }
 
 .playideas-header .header-desc {
-    margin: 0;
+    margin: 0 0 .4rem 0;
     font-size: var(--fs-sm);
     color: var(--color-neutral-60);
 }
@@ -89,7 +90,7 @@
     grid-gap: 1rem;
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1400px) {
     .list-playideas {
         margin: 1rem 2rem;
         grid-template-columns: repeat(3, 1fr);
@@ -116,12 +117,15 @@
 
 
 .list-playideas .list-playideas-item {
+    position: relative;
     border-radius: 4px;
     padding: 1.6rem;
     background-color: var(--color-neutral-10);
     box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.03);
     -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.03);
     -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.03);
+    overflow: hidden;
+    transition: all 0.16s ease-in-out;
 }
 
 .list-playideas .list-playideas-item:hover {
@@ -153,6 +157,128 @@
     margin: 1rem 0 0 0;
 }
 
-.playideas-header .header-title {
+.list-playideas .list-playideas-item:hover,
+.list-playideas .list-playideas-item:focus  {
+    transform: scale(1.03);
+}
 
+.list-playideas .list-playideas-item:hover .idea-actions,
+.list-playideas .list-playideas-item:focus .idea-actions {
+    display: flex;
+}
+
+.list-playideas .list-playideas-item .idea-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+    grid-gap: 0.4rem;
+    background-color: rgba(var(--color-neutral-90-rgb),0.8);
+    z-index: 1;
+}
+
+@media screen and (max-width:1200px) {
+    .list-playideas .list-playideas-item .idea-actions {
+        padding: 0 2rem;
+    }
+}
+
+
+/* Buttons */
+.btn-default {
+    border: solid 1px var(--color-neutral-60);
+    border-radius: 2rem;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 0.4rem;
+    padding: .8rem 1.4rem;
+    font-size: var(--fs-rg);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    width: unset;
+    height: unset;
+    background: transparent;
+    transition: all 0.12s ease-in-out;
+    color: var(--color-neutral-10);
+    cursor: pointer;
+}
+
+.btn-default .icon {
+    width: var(--navbar-icon-size-rg);
+    height: var(--navbar-icon-size-rg);
+    fill: var(--color-brand-primary-dark);
+    color: var(--color-brand-primary-dark);
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    border-color: var(--color-neutral-20);
+    background-color: var(--color-neutral-20);
+    color: var(--color-neutral-90);
+}
+
+.btn-default:hover .icon,
+.btn-default:focus .icon {
+    fill: var(--color-brand-primary-dark);
+    color: var(--color-brand-primary-dark);
+}
+
+.btn-default .btn-label {
+    display: flex;
+    align-items: center;
+    grid-gap: 1.2rem;
+}
+
+
+.btn-primary {
+    border: solid 2px var(--color-brand-primary);
+    background-color: var(--color-brand-primary);
+    color: var(--color-neutral-80);
+
+    border-radius: 2rem;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 0.4rem;
+    padding: .8rem 1.4rem;
+    font-size: var(--fs-rg);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    width: unset;
+    height: unset;
+    transition: all 0.12s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-primary .icon {    
+    width: var(--navbar-icon-size-rg);
+    height: var(--navbar-icon-size-rg);
+    fill: var(--color-neutral-90);
+    color: var(--color-neutral-90);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    border-color: var(--color-neutral-20);
+    background-color: var(--color-neutral-20);
+    color: var(--color-neutral-90);
+}
+
+.btn-primary:hover .icon,
+.btn-primary:focus .icon {
+    fill: var(--color-brand-primary-dark);
+    color: var(--color-brand-primary-dark);
+}
+
+.btn-primary .btn-label {
+    display: flex;
+    align-items: center;
+    grid-gap: 1.2rem;
 }
