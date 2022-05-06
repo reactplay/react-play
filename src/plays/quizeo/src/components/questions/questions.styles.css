@@ -91,11 +91,12 @@
 }
 
 .option-button:active{
-    background-color: #312E81;
+    background-color: #2e2b77;
 }
 
 .option-button:focus{
     outline: 0;
+    background-color: #2e2b77;
     border : 2px solid #93C5FD; 
 }
 

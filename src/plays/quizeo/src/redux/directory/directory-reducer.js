@@ -3,7 +3,7 @@ const INITIAL_STATE = {
         {
             id:1,
             title:"Avengers",
-            imageUrl: "https://i.ibb.co/0Mp8GhT/avengers.jpg",
+            imageUrl: "https://i.ibb.co/XWP17ND/avengers-resize.jpg",
             linkUrl:'movie/avengers'
         },
         {

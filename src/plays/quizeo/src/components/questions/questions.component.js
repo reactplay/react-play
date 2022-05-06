@@ -7,7 +7,6 @@ import { increaseQuestionNo } from "../../redux/questions/questions-action";
 import './questions.styles.css';
 
 const Questions = (collection) => {
-   
     const counter = useSelector((state) => state.movie.questionNo);
     const hidden  = useSelector((state) => state.movie.hidden);
     const dispatch = useDispatch();
