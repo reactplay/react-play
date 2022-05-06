@@ -13,9 +13,6 @@ import {
   ExpandingCards,
   AnalogClock,
   PasswordGenerator,
-  States,
-  SocialCard,
-  RandomMemeGenerator,
   Quizeo,
 //import play here
 } from "plays";
