@@ -118,7 +118,7 @@ const Home = () => {
           <FaLightbulb className="icon" color="var(--color-brand-primary)" size='48px'/>
           <p className="ideas-lead">Not sure how to get started?</p>
           <p className="ideas-title">We have got lot of ideas</p>
-          <Link to="/plays" className="home-anchor">
+          <Link to="/ideas" className="home-anchor">
             <span className="text">Get started with some ideas</span>
           </Link>
         </div>
