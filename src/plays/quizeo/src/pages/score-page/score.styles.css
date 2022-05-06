@@ -18,12 +18,14 @@
 }
 
 .score-close{
+    border:none;
     position: absolute; 
     top: 1rem; 
     right: 2rem; 
     font-size: 1.875rem;
     line-height: 2.25rem; 
-    color: grey;
+    color: black;
+    background-color: white;
 }
 
 .score-section h1{
@@ -33,6 +35,8 @@
 }
 
 .play-button{
+    color:white;
+    border:none;
     padding: 0.75rem; 
     background-color: rgb(110, 216, 216);
     margin-top: 1.75rem;

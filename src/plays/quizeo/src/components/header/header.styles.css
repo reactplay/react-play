@@ -3,7 +3,7 @@
 h1{
     font-family: 'Roboto', sans-serif;
     color:#3D56B2;
-
+    text-decoration: none;
 }
 
 .header{
@@ -12,4 +12,5 @@ h1{
     font-size: 3rem;
     line-height: 1; 
     font-weight: 700; 
+    text-decoration: none;
 }

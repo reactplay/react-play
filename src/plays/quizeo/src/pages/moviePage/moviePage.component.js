@@ -8,7 +8,6 @@ import Header from "../../components/header/header.component";
 import '../../App.css';
 const MoviePage = () => {
     const param = useParams();
-    console.log(param.categoryId);
     const collection = useSelector(selectMovieDataSection(param.categoryId))
     return ( 
         <div className="App">

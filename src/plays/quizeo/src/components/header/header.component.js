@@ -7,10 +7,10 @@ const Header = () => {
     return ( 
         <div>
             <Link to="/plays/quizeo">
-            <h1 className="header">Quizeo</h1>
+                <h1 className="header">Quizeo</h1>
             </Link>
         </div>
-     );
+    );
 }
 
 export default Header;
