@@ -13,6 +13,7 @@ export { default as Keeper } from 'plays/keeper/Keeper';
 export { default as ReactTodoApp } from 'plays/react-todo-app/ReactTodoApp';
 export { default as ExpandingCards } from 'plays/expanding-cards/ExpandingCards';
 export { default as AnalogClock } from 'plays/analog-clock/AnalogClock';
-
 export { default as PasswordGenerator } from 'plays/password-generator/PasswordGenerator';
+export { default as Quizeo } from 'plays/quizeo/src/Quizeo';
+
 //add export here

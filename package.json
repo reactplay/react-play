@@ -4,15 +4,24 @@
   "private": true,
   "dependencies": {
     "@giscus/react": "^2.0.3",
+    "@reduxjs/toolkit": "^1.8.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
     "plop": "^3.0.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "react-organizational-chart": "^2.1.1",
+    "react-redux": "^8.0.1",
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "reselect": "^4.1.5",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -48,6 +57,9 @@
     ]
   },
   "devDependencies": {
-    "react-snap": "^1.23.0"
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.13",
+    "react-snap": "^1.23.0",
+    "tailwindcss": "^3.0.24"
   }
 }
