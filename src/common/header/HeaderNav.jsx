@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { BsTwitter, BsGithub } from 'react-icons/bs';
+import { FaLightbulb } from 'react-icons/fa';
 import { IoAddSharp, IoShareSocial } from 'react-icons/io5';
 import { MdManageSearch, MdClose } from 'react-icons/md';
 import SocialShare from 'common/components/SocialShare';
@@ -50,6 +51,12 @@ const HeaderNav = ({ showBrowse }) => {
               <IoAddSharp className="icon" />
               <span className="btn-label">Create</span>
             </a>
+          </li>
+          <li>
+            <Link to="/ideas" className="app-header-btn app-header-btn--default">
+              <FaLightbulb className="icon" />
+              <span className="btn-label">Idea</span>
+            </Link>
           </li>
           <li>
             <a
