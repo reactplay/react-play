@@ -1,0 +1,309 @@
+.playideas-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.playideas-header {
+    padding: .6rem 1rem;
+    border-bottom: solid 1px var(--color-neutral-30);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: var(--color-neutral-10);
+}
+
+.playideas-header .header-title {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 0.4rem;
+}
+
+.playideas-header .header-title .header-title-badge {
+    background: var(--color-brand-primary);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+    line-height: 1;
+    padding: .32rem .4rem;
+    border-radius: 1rem;
+}
+
+.playideas-header .header-desc {
+    margin: 0 0 .4rem 0;
+    font-size: var(--fs-sm);
+    color: var(--color-neutral-60);
+}
+
+.playideas-header .playideas-levels-pills {
+    margin: 0.4rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.playideas-header .playideas-levels-pills .levels-label {
+    margin-right: 0.6rem;
+    font-size: var(--fs-sm);
+    color: var(--color-neutral-70);
+}
+
+@media screen and (max-width:768px) {
+    .playideas-header .playideas-levels-pills .levels-label {
+        display: none;
+    }
+}
+
+.playideas-header .playideas-levels-pills .level-pill .level-pill-label {
+    display: block;
+    padding: 0.4rem .8rem;
+    font-size: var(--fs-sm);
+    color: var(--color-neutral-70);
+    cursor: pointer;
+    background: transparent;
+    border-radius: 1rem;
+}
+
+.playideas-header .playideas-levels-pills .level-pill .level-pill-control {
+    display: none;
+}
+
+.playideas-header .playideas-levels-pills .level-pill .level-pill-control:checked + .level-pill-label {
+    font-weight: var(--fw-bold);
+    color: var(--color-neutral-90);
+    background: rgba(var(--color-neutral-90-rgb),0.08);
+}
+
+.playideas-body {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.list-playideas {
+    margin: 1rem 1rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+
+@media screen and (max-width:1400px) {
+    .list-playideas {
+        margin: 1rem 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .list-playideas {
+        margin: 1rem 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+}
+
+@media screen and (max-width:560px) {
+    .list-playideas {
+        margin: 1rem 2rem;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
+}
+
+
+
+.list-playideas .list-playideas-item {
+    position: relative;
+    border-radius: 4px;
+    padding: 1.6rem;
+    background-color: var(--color-neutral-10);
+    box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.03);
+    -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.03);
+    -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.03);
+    overflow: hidden;
+    transition: all 0.16s ease-in-out;
+}
+
+.list-playideas .list-playideas-item:hover {
+    box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.12);
+    -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.12);
+    -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.12);
+}
+
+.list-playideas .list-playideas-item .idea-title {
+    margin: 0 0 0.2rem 0;
+    position: relative;
+    margin-bottom: 0.3rem;
+    font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
+    color: var(--color-neutral-90);
+    z-index: 1;
+    line-height: var(--lh-rg);
+    transition: all 0.16s ease-in-out;
+}
+
+.list-playideas .list-playideas-item .idea-desc {
+    margin: 0.8rem 0;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-light);
+    color: var(--color-neutral-50);
+}
+
+.list-playideas .list-playideas-item .idea-level {
+    margin: 1rem 0 0 0;
+}
+
+.list-playideas .list-playideas-item:hover,
+.list-playideas .list-playideas-item:focus  {
+    transform: scale(1.03);
+}
+
+.list-playideas .list-playideas-item:hover .idea-actions,
+.list-playideas .list-playideas-item:focus .idea-actions {
+    opacity: 1;
+    align-items: center;
+}
+
+.list-playideas .list-playideas-item .idea-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 4rem;
+    grid-gap: 0.4rem;
+    background-color: rgba(var(--color-neutral-90-rgb),0.8);
+    z-index: 1;
+    transition: all 0.14s ease-in-out;
+}
+
+.list-playideas .list-playideas-item .idea-actions .action-btn {
+    position: relative;
+    transform: translateX(-100%);
+    transition: all 0.1s ease-in-out;
+}
+
+.list-playideas .list-playideas-item .idea-actions .action-btn:nth-child(2) {
+    position: relative;
+    transform: translateX(100%);
+    transition: all 0.12s ease-in-out;
+}
+
+.list-playideas .list-playideas-item:hover .idea-actions .action-btn:nth-child(2),
+.list-playideas .list-playideas-item:focus .idea-actions .action-btn:nth-child(2) {
+    transform: translateX(0);
+}
+
+.list-playideas .list-playideas-item:hover .idea-actions .action-btn,
+.list-playideas .list-playideas-item:focus .idea-actions .action-btn {
+    transform: translateX(0);
+}
+
+@media screen and (max-width:1200px) {
+    .list-playideas .list-playideas-item .idea-actions {
+        padding: 0 2rem;
+    }
+}
+
+
+/* Buttons */
+.btn-default {
+    border: solid 1px var(--color-neutral-60);
+    border-radius: 2rem;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 0.4rem;
+    padding: .8rem 1.4rem;
+    font-size: var(--fs-rg);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    width: unset;
+    height: unset;
+    background: transparent;
+    transition: all 0.12s ease-in-out;
+    color: var(--color-neutral-10);
+    cursor: pointer;
+}
+
+.btn-default .icon {
+    width: var(--navbar-icon-size-rg);
+    height: var(--navbar-icon-size-rg);
+    fill: var(--color-brand-primary-dark);
+    color: var(--color-brand-primary-dark);
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    border-color: var(--color-neutral-20);
+    background-color: var(--color-neutral-20);
+    color: var(--color-neutral-90);
+}
+
+.btn-default:hover .icon,
+.btn-default:focus .icon {
+    fill: var(--color-brand-primary-dark);
+    color: var(--color-brand-primary-dark);
+}
+
+.btn-default .btn-label {
+    display: flex;
+    align-items: center;
+    grid-gap: 1.2rem;
+}
+
+
+.btn-primary {
+    border: solid 2px var(--color-brand-primary);
+    background-color: var(--color-brand-primary);
+    color: var(--color-neutral-80);
+
+    border-radius: 2rem;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 0.4rem;
+    padding: .8rem 1.4rem;
+    font-size: var(--fs-rg);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    width: unset;
+    height: unset;
+    transition: all 0.12s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-primary .icon {    
+    width: var(--navbar-icon-size-rg);
+    height: var(--navbar-icon-size-rg);
+    fill: var(--color-neutral-90);
+    color: var(--color-neutral-90);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    border-color: var(--color-neutral-20);
+    background-color: var(--color-neutral-20);
+    color: var(--color-neutral-90);
+}
+
+.btn-primary:hover .icon,
+.btn-primary:focus .icon {
+    fill: var(--color-brand-primary-dark);
+    color: var(--color-brand-primary-dark);
+}
+
+.btn-primary .btn-label {
+    display: flex;
+    align-items: center;
+    grid-gap: 1.2rem;
+}
