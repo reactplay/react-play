@@ -458,13 +458,44 @@
     overflow-y: auto;
 }
 
-.play-details .header-actions a {
+.play-details .header-actions .action {
     position: relative;
     width: 24px;
     height: 24px;
+    border: 0;
+    background: transparent;
+
 }
 
-.play-details .header-actions a .badge {
+.play-details .header-actions .action.badged {
+    display: flex;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    margin-right: -0.6rem;
+}
+
+.play-details .header-actions .action.badged .badge-count {
+    position: relative;
+    top: -0.4rem;
+    right: 0;
+    margin-left: -0.6rem;
+
+    text-decoration: none;
+    min-width: 0.6rem;
+    min-height: 0.6rem;
+    padding: 0.3rem 0.3rem 0.1rem 0.3rem;
+    height: 1.4rem;
+    font-size: var(--fs-xxs);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-rg);
+    color: var(--color-neutral-90);
+    border: solid 1px var(--color-neutral-10);
+    border-radius: 1rem;
+    background-color: var(--color-brand-primary);
+}
+
+.play-details .header-actions .action .badge {
     position: absolute;
     top: -2px;
     right: 0;
@@ -475,13 +506,18 @@
     background-color: var(--color-brand-primary);
 }
 
-.play-details .header-actions a .icon {
+.play-details .header-actions .action .icon {
     fill: rgba(var(--color-neutral-90-rgb), 0.4);
 }
 
-.play-details .header-actions a:hover .icon,
-.play-details .header-actions a:focus .icon {
+.play-details .header-actions .action:hover .icon,
+.play-details .header-actions .action:focus .icon {
     fill: rgba(var(--color-neutral-90-rgb), 0.8);
+}
+
+.play-details .header-actions .action.badged:hover .badge-count {
+    background-color: var(--color-neutral-90);
+    color: var(--color-neutral-10);
 }
 
 .play-details .header-actions .app-header-btn {
@@ -513,4 +549,69 @@
 .play-details .header-actions .app-header-btn:focus {
     border-color: var(--color-brand-primary);
     color: rgba(var(--color-neutral-90-rgb), 0.9);
+}
+
+/* Play Comments */
+.play-details-comments {
+    position: fixed;
+    top: 64px;
+    right: 0;
+    width: 60%;
+    max-width: 600px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-neutral-10);
+    padding: 1rem 0 0 0;
+    box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb),0.62);
+    -webkit-box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb),0.62);
+    -moz-box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb),0.62);
+    overflow: hidden;
+    z-index: 100;
+}
+
+@media screen and (max-width:768px) {
+    .play-details-comments {
+        width: 80%;
+    }
+}
+
+.play-details-comments .comments-header {
+    padding: 0 2rem;
+    border-bottom: solid 1px var(--color-neutral-30);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.play-details-comments .comments-header .header-action {
+    border: 0;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+}
+
+.play-details-comments .comments-header .header-action .icon {
+    fill: rgba(var(--color-neutral-90-rgb), 0.4);
+}
+
+.play-details-comments .comments-header .header-action:hover .icon,
+.play-details-comments .comments-header .header-action:focus .icon {
+    fill: rgba(var(--color-neutral-90-rgb), 0.8);
+}
+
+
+.play-details-comments .comments-body {
+    padding: 1rem 2rem 0 2rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.play-details-comments .comments-header .header-title {
+    margin: 0 0 .6rem 0;
+    padding: 0;
+    font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
+    color: var(--color-neutral-80);
+    
 }
