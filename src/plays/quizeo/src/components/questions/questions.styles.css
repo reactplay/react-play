@@ -68,6 +68,7 @@
 
 .option-button{
     padding-top: 0.75rem;
+    border:none;
     padding-bottom: 0.75rem; 
     margin: 1rem; 
     background-color: #3B82F6; 
@@ -93,13 +94,14 @@
 
 .option-button:focus{
     outline: 0;
-    border-width: 2px; 
-    border-color: #93C5FD; 
+    border : 2px solid #93C5FD; 
 }
 
 .submit-answer{
+    border:none;
     padding: 0.5rem;
     margin:4%;
+    color: #fff;
     background-color: #10B981; 
     font-weight: 500; 
     font-size: 1.2rem;
