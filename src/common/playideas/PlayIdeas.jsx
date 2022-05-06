@@ -103,7 +103,7 @@ const PlayIdeas = () => {
                     href="https://github.com/atapas/react-play/blob/main/CREATE-PLAY.md"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary"
+                    className="btn-primary action-btn"
                   >
                     <IoAddSharp className="icon" />
                     <span className="btn-label">Create Play</span>
@@ -112,7 +112,7 @@ const PlayIdeas = () => {
                     href={`https://github.com/atapas/react-play/discussions/new?category=ideas&title=${idea.title}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-default"
+                    className="btn-default action-btn"
                   >
                     <RiChatNewLine className="icon" />
                     <span className="btn-label">Start discussion</span>

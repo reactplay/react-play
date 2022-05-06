@@ -164,7 +164,8 @@
 
 .list-playideas .list-playideas-item:hover .idea-actions,
 .list-playideas .list-playideas-item:focus .idea-actions {
-    display: flex;
+    opacity: 1;
+    align-items: center;
 }
 
 .list-playideas .list-playideas-item .idea-actions {
@@ -173,14 +174,38 @@
     right: 0;
     bottom: 0;
     left: 0;
-    display: none;
+    opacity: 0;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 4rem;
     grid-gap: 0.4rem;
     background-color: rgba(var(--color-neutral-90-rgb),0.8);
     z-index: 1;
+    transition: all 0.14s ease-in-out;
+}
+
+.list-playideas .list-playideas-item .idea-actions .action-btn {
+    position: relative;
+    transform: translateX(-100%);
+    transition: all 0.1s ease-in-out;
+}
+
+.list-playideas .list-playideas-item .idea-actions .action-btn:nth-child(2) {
+    position: relative;
+    transform: translateX(100%);
+    transition: all 0.12s ease-in-out;
+}
+
+.list-playideas .list-playideas-item:hover .idea-actions .action-btn:nth-child(2),
+.list-playideas .list-playideas-item:focus .idea-actions .action-btn:nth-child(2) {
+    transform: translateX(0);
+}
+
+.list-playideas .list-playideas-item:hover .idea-actions .action-btn,
+.list-playideas .list-playideas-item:focus .idea-actions .action-btn {
+    transform: translateX(0);
 }
 
 @media screen and (max-width:1200px) {
