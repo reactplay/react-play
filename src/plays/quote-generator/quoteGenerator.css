@@ -51,13 +51,11 @@
   background-color: rgb(193, 192, 192);
 }
 
-@media only screen and (max-width: 760px) {
-  body, html {
-    font-size: 0.9rem;
-    margin: 0;
-    padding:0;
-  }  
-
+@media only screen and (max-width: 760px) {  
+  h1{
+    font-size: 1.4rem;
+  }
+  
   .quote {
     font-size: 1rem;
     width: 100%;
