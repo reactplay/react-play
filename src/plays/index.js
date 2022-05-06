@@ -9,8 +9,11 @@ export { default as CounterApp } from 'plays/counter/CounterApp';
 export { default as States } from 'plays/states/States';
 export { default as SocialCard } from 'plays/social-card/SocialCard';
 export { default as RandomMemeGenerator } from 'plays/random-meme-generator/RandomMemeGenerator';
+export { default as Keeper } from 'plays/keeper/Keeper';
 export { default as ReactTodoApp } from 'plays/react-todo-app/ReactTodoApp';
 export { default as QuoteGenerator } from 'plays/quote-generator/QuoteGenerator';
 export { default as ExpandingCards } from 'plays/expanding-cards/ExpandingCards';
 export { default as AnalogClock } from 'plays/analog-clock/AnalogClock';
+
+export { default as PasswordGenerator } from 'plays/password-generator/PasswordGenerator';
 //add export here

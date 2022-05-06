@@ -1,5 +1,5 @@
 import App from "App";
-import { Footer, Header, Home, PlayMeta, DefMeta, PageNotFound } from "common";
+import { Footer, Header, Home, PlayMeta, DefMeta, PageNotFound, PlayIdeas } from "common";
 import PlayList from "common/playlists/PlayList";
 import { getAllPlays } from "meta/play-meta-util";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -23,7 +23,9 @@ const RouteDefs = () => {
             />
           ))}
         </Route>
+        <Route path="/ideas" element={<PlayIdeas />} />
         <Route path="/*" element={<PageNotFound />} />
+        
       </Routes>
       <Footer />
     </BrowserRouter>

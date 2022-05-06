@@ -1,0 +1,124 @@
+{ 
+  "ideas": [
+    {
+      "id": "idea-01",
+      "title": "Tic Tac Toe",
+      "description": "A simple tic tac toe game in which two players seek in alternate turns to complete a row, a column, or a diagonal with either three O's or three X's drawn in the spaces of a grid of nine squares",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-02",
+      "title": "Code Snippets",
+      "description": "A collection of code snippets which allows you to copy paste your code snippet and lets you to download it as an image to share!",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-03",
+      "title": "Weather App",
+      "description": "A weather play which shows the current weather and the forecast for the next 5 days",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-04",
+      "title": "Calculator",
+      "description": "A simple calculator which can perform basic arithmetic operations",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-05",
+      "title": "To Do List",
+      "description": "A simple to do list play which allows you to add, delete and edit your to do list",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-06",
+      "title": "Note Taker",
+      "description": "A simple note taker play which allows you to add, delete and edit your notes",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-07",
+      "title": "Calendar",
+      "description": "A simple calendar play which allows you to add, delete and edit your events",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-08",
+      "title": "Threads",
+      "description": "Build a react application for creating threads like in Twitter with a model, allowing multiple threads, tweet size constraints, and display them on the home page.",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-09",
+      "title": "Animations",
+      "description": "Build a react application for creating animations like in Twitter with a model, allowing multiple animations, animation size constraints, and display them on the home page.",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-10",
+      "title": "React Editor",
+      "description": "Build an Editor for users to type texts and do formatting like bold, italic, underline, alignments, and strikethrough.",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-11",
+      "title": "Chatter",
+      "description": "Build a chat application for users to chat with each other. This project doesn't use any bots.",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-12",
+      "title": "GitHub User Search",
+      "description": "Build a react application for searching GitHub users.",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-13",
+      "title": "T-Rex Chrome dino game",
+      "description": "T-Rex Dinosaur - a replica of the hidden game from Chrome offline mode. Build the same using React.",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-14",
+      "title": "GitHub Issue Pages",
+      "description": "Build a React application to clone the GitHub issue page for a repository.",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-15",
+      "title": "Quiz App",
+      "description": "Build a React application for a quiz play. The quiz should have multiple questions and multiple answers.",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-16",
+      "title": "2048 Game",
+      "description": "2048 is a single-player sliding tile puzzle video game. Build the same using React.",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-17",
+      "title": "QA Site",
+      "description": "Build a Question/Answer site like StackOverflow, using React.",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-18",
+      "title": "Language translator",
+      "description": "Build a React application for translating text from one language to another. Please use an existing API.",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-19",
+      "title": "Infinite News Feed",
+      "description": "Build a play for infinite scrolling news feed.",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-20",
+      "title": "Expense Tracker",
+      "description": "Build a play for tracking expenses. Add, remove, edit expenses, categorize them",
+      "level": "Intermediate"
+    }
+  ]
+}
