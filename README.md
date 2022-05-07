@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -83,6 +83,7 @@ Or
 ```bash
 yarn install
 ```
+
 ### 🦄 Start the Development Mode
 Use the following command to start the app in the development mode:
 
@@ -180,6 +181,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://erayalkis.netlify.app"><img src="https://avatars.githubusercontent.com/u/80722863?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eray Alkış</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=erayalkis" title="Code">💻</a></td>
     <td align="center"><a href="https://nirban-chakraborty.netlify.app"><img src="https://avatars.githubusercontent.com/u/74231771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nirban Chakraborty</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=nirban256" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Deepak8717"><img src="https://avatars.githubusercontent.com/u/5671550?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Deepak Pundir</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Deepak8717" title="Code">💻</a></td>
+    <td align="center"><a href="https://bio.link/vasantisuthar"><img src="https://avatars.githubusercontent.com/u/63599802?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vasanti Suthar</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=vasantisuthar" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://ahnaf.dev"><img src="https://avatars.githubusercontent.com/u/42427928?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ahnaf Ahamed</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=AhnafAhamed" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.showwcase.com/shivam-katare"><img src="https://avatars.githubusercontent.com/u/91705825?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shivam Katare</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Shivam-Katare" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Angryman18"><img src="https://avatars.githubusercontent.com/u/63530626?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shyam Mahanta</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Angryman18" title="Code">💻</a></td>
+    <td align="center"><a href="http://koustov.com"><img src="https://avatars.githubusercontent.com/u/7145967?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Koustov</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=koustov" title="Code">💻</a></td>
   </tr>
 </table>
 
