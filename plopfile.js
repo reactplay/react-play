@@ -10,6 +10,9 @@ module.exports = plop => {
 
   plop.setHelper('generateFolderName', str => `${str.trim().replaceAll(/\s/g,'-').toLowerCase()}`);
 
+  const insertIf = (condition, ...elements) => (condition ? elements : []);
+
+
   // demo generator
   plop.setGenerator('play', {
     description: 'Steps to add a new play',
@@ -23,6 +26,12 @@ module.exports = plop => {
         type: 'input',
         name: 'description',
         message: 'Tell us more about the play(Max 1024 characters):',
+      },
+      {
+        type: 'list',
+        name: 'language',
+        message: 'Language to be used (javascript/typescript):',
+        choices: ['js', 'ts']
       },
       {
         type: 'list',
@@ -59,8 +68,8 @@ module.exports = plop => {
     actions: [
       {
         type: 'add',
-        path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.jsx',
-        templateFile: 'plop-templates/component.hbs',
+        path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.{{language}}x',
+        templateFile: 'plop-templates/component_{{language}}.hbs',
       },
       {
         type: 'add',

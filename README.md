@@ -83,6 +83,7 @@ Or
 ```bash
 yarn install
 ```
+
 ### 🦄 Start the Development Mode
 Use the following command to start the app in the development mode:
 

@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@types/react": "^18.0.6",
+    "@types/react-dom": "^18.0.2",
     "@giscus/react": "^2.0.3",
     "plop": "^3.0.5",
     "react": "^18.0.0",
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "typescript": "^4.6.4",
     "react-snap": "^1.23.0"
   }
 }
