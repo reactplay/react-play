@@ -307,3 +307,7 @@
     align-items: center;
     grid-gap: 1.2rem;
 }
+
+.btn-default.btn-cancel {
+    color: inherit;
+}
