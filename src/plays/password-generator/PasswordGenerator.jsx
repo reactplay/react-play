@@ -105,7 +105,7 @@ function PasswordGenerator(props) {
   return (
     <div className='play-details'>
       <PlayHeader play={play} />
-      <div className='play-details-body'>
+      <div className='play-details-body password-generator'>
         {/* Your Code Starts Here */}
         <div className='main'>
           <h1 className='title'>Password Generator</h1>
@@ -171,7 +171,7 @@ function PasswordGenerator(props) {
               </button>
             </div>
             <div>
-              <button onClick={generateHander} className='generate'>
+              <button onClick={generateHander} className='generate-pwd'>
                 Generate Password
               </button>
             </div>

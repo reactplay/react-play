@@ -50,7 +50,7 @@ function ReactTodoApp(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="todo-play-body">
-            <div className="top">
+            <div className="todo-top-banner">
               <h1>Todo List</h1>
             </div>
             <Input todos={todos} setTodos={setTodos} setInput={setInput} input={input} setStatus={setStatus} />
