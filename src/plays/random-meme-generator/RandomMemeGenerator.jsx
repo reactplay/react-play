@@ -54,7 +54,7 @@ function RandomMemeGenerator(props) {
             {meme.url === null || meme.url === undefined ? <FaSyncAlt className={"loading"}></FaSyncAlt> : <img className="meme" src={meme.url} alt="meme" />}
           </div>
 
-          <div className="generate">
+          <div className="generate-meme">
             <button className="btn generate-btn" onClick={() => getMeme()}>Generate <FaSyncAlt className={`${isLoading && 'loading'}`}></FaSyncAlt></button>
           </div>
           {/* Your Code Ends Here */}
