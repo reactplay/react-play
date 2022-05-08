@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-h1{
-    font-family: 'Roboto', sans-serif;
-    color:#3D56B2;
-    text-decoration: none;
-}
-
 .header{
     margin-top: 1.5rem; 
     margin-bottom: 3.5rem; 

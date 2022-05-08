@@ -3,7 +3,7 @@ import Directory from "../../components/directory/directory.component";
 import Header from "../../components/header/header.component";
 import { store } from "../../redux/store";
 import { setScore, setQuestionNo } from "../../redux/questions/questions-action";
-import '../../App.css';
+import '../../Quizeo-App.css';
 
 class QuizeoHome  extends React.Component{
     componentDidMount(){
@@ -13,7 +13,7 @@ class QuizeoHome  extends React.Component{
         
     render(){
         return ( 
-        <div className="App">
+        <div className="Quizeo_container">
             <Header/>
             <Directory/>
         </div>
