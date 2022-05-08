@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# quiz data
+/src/plays/quizeo/src/data
+
 # production
 /build
 

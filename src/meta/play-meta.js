@@ -13,6 +13,7 @@ import {
   ExpandingCards,
   AnalogClock,
   PasswordGenerator,
+  Quizeo,
 //import play here
 } from "plays";
 
@@ -198,5 +199,18 @@ export const plays = [
     cover: 'https://securityintelligence.com/wp-content/uploads/2018/10/si-eight-character-password-feature.jpg',
     blog: '',
     video: ''
+  }, {
+    id: 'pl-quizeo', 
+    name: 'Quizeo', 
+    description: 'Quizeo is a react app to play quiz about your favourite movies and series.',
+    component: () => {return <Quizeo />},
+    path: '/plays/quizeo',
+    level: 'Advanced',
+    tags: 'React-router,Hooks,react-redux,reselect',
+    github: 'vasantisuthar',
+    cover: '',
+    blog: 'https://vasantisuthar.hashnode.dev/',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];

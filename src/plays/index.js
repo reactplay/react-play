@@ -15,4 +15,5 @@ export { default as ExpandingCards } from 'plays/expanding-cards/ExpandingCards'
 export { default as AnalogClock } from 'plays/analog-clock/AnalogClock';
 
 export { default as PasswordGenerator } from 'plays/password-generator/PasswordGenerator';
+export { default as Quizeo } from 'plays/quizeo/src/Quizeo';
 //add export here

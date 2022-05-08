@@ -3,18 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@giscus/react": "^2.0.3",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
-    "@giscus/react": "^2.0.3",
     "plop": "^3.0.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "react-organizational-chart": "^2.1.1",
-    "react-router-dom": "6",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "reselect": "^4.1.5",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -50,7 +55,7 @@
     ]
   },
   "devDependencies": {
-    "typescript": "^4.6.4",
-    "react-snap": "^1.23.0"
+    "react-snap": "^1.23.0",
+    "typescript": "^4.6.4"
   }
 }
