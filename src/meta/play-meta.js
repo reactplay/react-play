@@ -214,13 +214,13 @@ export const plays = [
     video: '',
     language: 'ts'
   }, {
-    id: 'pl-netlify-card-game', 
-    name: 'Netlify Card Game', 
-    description: 'simple card game and memory testing game',
+    id: 'pl-memory-game', 
+    name: 'Memory Game', 
+    description: 'simple memory game or memory testing game build with ReactJS',
     component: () => {return <NetlifyCardGame />},
-    path: '/plays/netlify-card-game',
+    path: '/plays/memory-game',
     level: 'Advanced',
-    tags: 'CardGame',
+    tags: 'MemoryGame, CardGame, ReactJS',
     github: 'Angryman18',
     cover: 'https://cdn.pixabay.com/photo/2017/01/03/16/42/klee-1949946_960_720.jpg',
     blog: '',

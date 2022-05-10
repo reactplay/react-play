@@ -1,25 +1,20 @@
-$box-width: 50%;
-$box-height: 400px;
-$box-bg: rgba(255, 247, 247, 1);
+$memory-game-box-width: 50%;
 
-$single-box-width: 25%;
-$single-box-height: 100px;
+$memory-game-single-item-img: url("./question.png");
+$memory-game-single-item-bg: rgb(241, 239, 239);
 
-$single-item-img: url("./question.png");
-$single-item-bg: rgb(241, 239, 239);
+$memory-game-single-item-hover: rgba(59, 154, 156, 1);
+$memory-game-single-item-hover-bg: url("./question1.png");
 
-$single-item-hover: rgba(59, 154, 156, 1);
-$single-item-hover-bg: url("./question1.png");
-
-.container {
+.memory-game .container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.App {
+.memory-game .container .App {
   margin: 5px;
-  width: $box-width;
+  width: $memory-game-box-width;
   height: calc(90vh - 25px);
   display: grid;
   padding: 25px;
@@ -30,9 +25,9 @@ $single-item-hover-bg: url("./question1.png");
   .item {
     position: relative;
     width: 100%;
-    background: $single-item-bg;
+    background: $memory-game-single-item-bg;
     border-radius: 10px;
-    background-image: $single-item-img;
+    background-image: $memory-game-single-item-img;
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
@@ -71,8 +66,8 @@ $single-item-hover-bg: url("./question1.png");
     }
 
     &:hover {
-      background-color: $single-item-hover;
-      background-image: $single-item-hover-bg;
+      background-color: $memory-game-single-item-hover;
+      background-image: $memory-game-single-item-hover-bg;
       cursor: pointer;
     }
   }
@@ -97,7 +92,7 @@ $single-item-hover-bg: url("./question1.png");
 }
 
 @media screen and (max-width: 1366px) {
-  .App {
+  .memory-game .container .App {
     width: 80vh;
     margin: 5px;
     padding: 10px;
@@ -106,7 +101,7 @@ $single-item-hover-bg: url("./question1.png");
 }
 
 @media screen and (min-width: 1600px) {
-  .App {
+  .memory-game .container .App {
     width: 80vh;
     height: 70vh;
     margin: 5px;
@@ -116,9 +111,9 @@ $single-item-hover-bg: url("./question1.png");
 }
 
 @media screen and (max-width: 768px) {
-  .App {
+  .memory-game .container .App {
     margin: 5px;
-    width: calc(100% - 35px);
+    width: calc(100vh - 35px);
     height: auto;
 
     .item {

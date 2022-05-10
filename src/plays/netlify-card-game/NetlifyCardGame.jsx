@@ -44,6 +44,9 @@ function NetlifyCardGame(props) {
   // disabled click while updating state if taking time
   const disableClick = useRef(false);
 
+  // timer ref
+  const timer = useRef(null);
+
   // matched objects on the board
   const [matchedItems, setMatchedItems] = useState([]);
 
@@ -143,7 +146,7 @@ function NetlifyCardGame(props) {
     };
 
   const timeOutCall = (clickedItem, activeItem) => {
-    return setTimeout(() => {
+    return (timer.current = setTimeout(() => {
       clickedItem.show = false;
       if (activeItem) {
         activeItem.show = false; // for the first time when user clicks the current object can be undefined so have to check it
@@ -159,7 +162,8 @@ function NetlifyCardGame(props) {
       });
       disableClick.current = false;
       setNewImgArray(updatedArray);
-    }, 2000);
+      clearTimeout(timer.current);
+    }, 1500));
   };
 
   const resetHandler = () => {
@@ -169,11 +173,22 @@ function NetlifyCardGame(props) {
     shuffle();
   };
 
+  const calculateMerit = () => {
+    const time = Math.floor(boardStats?.elapsedTime);
+    if (time <= 40) {
+      return "Execelent";
+    } else if (time > 40 && time <= 60) {
+      return "Good";
+    } else {
+      return "Average";
+    }
+  };
+
   return (
     <>
       <div className='play-details'>
         <PlayHeader play={play} />
-        <div className='play-details-body'>
+        <div className='play-details-body memory-game'>
           {/* Your Code Starts Here */}
           <div className='container'>
             <div className='App'>
@@ -205,12 +220,7 @@ function NetlifyCardGame(props) {
                 </p>
                 {matchedItems.length === 8 && (
                   <p style={{ color: "green", fontWeight: "bold" }}>
-                    Congrats! Your Excellence Score:{" "}
-                    {Math.ceil(
-                      (boardStats?.moves * 100) /
-                        Math.floor(boardStats?.elapsedTime)
-                    )}
-                    %
+                    Congrats! {calculateMerit()} Performance
                   </p>
                 )}
                 <button className='reset' onClick={resetHandler}>
