@@ -20,6 +20,22 @@
   border-radius: 10px;
   animation: modalApear 0.3s ease-in-out;
 
+  .close-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 30px;
+    padding: 5px;
+    filter: brightness(0.1);
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      right: 1rem;
+      top: 1rem;
+      width: 30px;
+    }
+  }
+
   .content {
     margin: 0 2rem;
     padding-bottom: 1rem;

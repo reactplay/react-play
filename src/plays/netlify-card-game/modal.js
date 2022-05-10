@@ -8,6 +8,7 @@ import s1 from "./guideimages/s1.png";
 import s2 from "./guideimages/s2.png";
 import s3 from "./guideimages/s3.png";
 import s4 from "./guideimages/s4.png";
+import close from './close.png'
 
 const Modal = ({ showModal, toggle }) => {
   const [currState, setCurrentState] = useState(0);
@@ -44,6 +45,7 @@ const Modal = ({ showModal, toggle }) => {
   return (
     <Fragment>
       <div className='memory-game-modal'>
+        <img src={close} alt="clonse" className="close-icon" />
         <div className='content'>
           <h1 className='text'>How to Play!</h1>
           <p>{structuringData[currState].info}</p>
@@ -54,7 +56,9 @@ const Modal = ({ showModal, toggle }) => {
           />
           <div className='button-section'>
             {currState > 0 ? <button onClick={buttonHandler(-1)}>Prev</button> : <p></p>}
-            <button disabled={currState === 3} onClick={buttonHandler(1)}>Next</button>
+            <button onClick={currState === 3 ? toggle : buttonHandler(1)}>
+              {currState === 3 ? "Done" : "Next"}
+            </button>
           </div>
         </div>
       </div>
