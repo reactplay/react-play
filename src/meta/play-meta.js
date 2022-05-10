@@ -10,13 +10,14 @@ import {
   RandomMemeGenerator,
   Keeper,
   ReactTodoApp,
-QuoteGenerator,
+  QuoteGenerator,
   ExpandingCards,
   AnalogClock,
   PasswordGenerator,
-WhyTypescript,
-NetlifyCardGame,
-//import play here
+  WhyTypescript,
+  NetlifyCardGame,
+  RegistrationForm,
+  //import play here
 } from "plays";
 
 export const plays = [
@@ -86,89 +87,118 @@ export const plays = [
     tags: "Recursion, Tree",
     github: "green-roots",
     featured: false,
-  }, {
-    id: 'pl-counter', 
-    name: 'Counter', 
-    description: 'A simple counter which increments the value upto a certain limit!',
-    component: () => {return <CounterApp />},
-    path: '/plays/counter',
-    level: 'Beginner',
-    tags: 'JSX, State, Props',
-    github: 'murtuzaalisurti',
-    featured: false
-  }, {
-    id: 'pl-states', 
-    name: 'States', 
-    description: 'States in Functional Components',
-    component: () => {return <States />},
-    path: '/plays/states',
-    level: 'Beginner',
-    tags: 'Hooks,State,JSX',
-    github: 'Abhishek-90',
-    cover: '',
-    blog: 'https://abhishek-90.github.io/My-Portfolio/'
-  }, {
-    id: 'pl-social-card', 
-    name: 'Social Card', 
-    description: 'The Social Card helps you telling who you are using photo, name, and other social footprints.',
-    component: () => {return <SocialCard />},
-    path: '/plays/social-card',
-    level: 'Intermediate',
-    tags: 'Form,Events,Complex State',
-    github: 'atapas',
-    cover: '',
-    blog: 'https://blog.greenroots.info/how-to-create-react-form-with-a-single-change-event-handler',
-    video: ''
-  }, {
-    id: 'pl-random-meme-generator', 
-    name: 'Random Meme Generator', 
-    description: 'A project to demonstrate the use of API to fetch random memes! It also demonstrates how you can do event handling!',
-    component: () => {return <RandomMemeGenerator />},
-    path: '/plays/random-meme-generator',
-    level: 'Beginner',
-    tags: 'JSX,Hooks,API,EventHandling',
-    github: 'murtuzaalisurti',
-    cover: '',
-    blog: '',
-    video: ''
-  }, {
-    id: 'pl-react-todo-app',
-    name: 'React Todo App',
-    description: 'It is a simple Todo App which keeps track of your regular work',
-    component: () => { return <ReactTodoApp /> },
-    path: '/plays/react-todo-app',
-    level: 'Beginner',
-    tags: 'ReactHooks, JavaScript, Css, React State',
-    github: 'nirban256',
-    cover: 'https://res.cloudinary.com/atapas/image/upload/v1650866465/demos/cover_y20bzk.png',
-    blog: '',
-    video: ''
-  },{
-    id: 'pl-quote-generator', 
-    name: 'Random Quote Generator', 
-    description: 'Randomly Generate quotes from 3rd Party API',
-    component: () => {return <QuoteGenerator />},
-    path: '/plays/quote-generator',
-    level: 'Intermediate',
-    tags: 'Hooks,API,Async/Await',
-    github: 'Abhishek-90',
-    cover: 'https://i0.wp.com/dariusforoux.com/wp-content/uploads/2015/08/motivational-quotes.png?fit&#x3D;2048%2C1536&amp;ssl&#x3D;1',
-    blog: '',
-    video: ''
   },
   {
-    id: 'pl-keeper', 
-    name: 'Keeper', 
-    description: 'Keeper is the clone of google keep where we can save and delete our notes',
-    component: () => {return <Keeper />},
-    path: '/plays/keeper',
-    level: 'Intermediate',
-    tags: 'JSX,Hooks,ReactDOM',
-    github: 'Shivam-Katare',
-    cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1651678725/keepicon_jsn5bh.png',
-    blog: '',
-    video: ''
-  }, {
+    id: "pl-counter",
+    name: "Counter",
+    description:
+      "A simple counter which increments the value upto a certain limit!",
+    component: () => {
+      return <CounterApp />;
+    },
+    path: "/plays/counter",
+    level: "Beginner",
+    tags: "JSX, State, Props",
+    github: "murtuzaalisurti",
+    featured: false,
+  },
+  {
+    id: "pl-states",
+    name: "States",
+    description: "States in Functional Components",
+    component: () => {
+      return <States />;
+    },
+    path: "/plays/states",
+    level: "Beginner",
+    tags: "Hooks,State,JSX",
+    github: "Abhishek-90",
+    cover: "",
+    blog: "https://abhishek-90.github.io/My-Portfolio/",
+  },
+  {
+    id: "pl-social-card",
+    name: "Social Card",
+    description:
+      "The Social Card helps you telling who you are using photo, name, and other social footprints.",
+    component: () => {
+      return <SocialCard />;
+    },
+    path: "/plays/social-card",
+    level: "Intermediate",
+    tags: "Form,Events,Complex State",
+    github: "atapas",
+    cover: "",
+    blog: "https://blog.greenroots.info/how-to-create-react-form-with-a-single-change-event-handler",
+    video: "",
+  },
+  {
+    id: "pl-random-meme-generator",
+    name: "Random Meme Generator",
+    description:
+      "A project to demonstrate the use of API to fetch random memes! It also demonstrates how you can do event handling!",
+    component: () => {
+      return <RandomMemeGenerator />;
+    },
+    path: "/plays/random-meme-generator",
+    level: "Beginner",
+    tags: "JSX,Hooks,API,EventHandling",
+    github: "murtuzaalisurti",
+    cover: "",
+    blog: "",
+    video: "",
+  },
+  {
+    id: "pl-react-todo-app",
+    name: "React Todo App",
+    description:
+      "It is a simple Todo App which keeps track of your regular work",
+    component: () => {
+      return <ReactTodoApp />;
+    },
+    path: "/plays/react-todo-app",
+    level: "Beginner",
+    tags: "ReactHooks, JavaScript, Css, React State",
+    github: "nirban256",
+    cover:
+      "https://res.cloudinary.com/atapas/image/upload/v1650866465/demos/cover_y20bzk.png",
+    blog: "",
+    video: "",
+  },
+  {
+    id: "pl-quote-generator",
+    name: "Random Quote Generator",
+    description: "Randomly Generate quotes from 3rd Party API",
+    component: () => {
+      return <QuoteGenerator />;
+    },
+    path: "/plays/quote-generator",
+    level: "Intermediate",
+    tags: "Hooks,API,Async/Await",
+    github: "Abhishek-90",
+    cover:
+      "https://i0.wp.com/dariusforoux.com/wp-content/uploads/2015/08/motivational-quotes.png?fit&#x3D;2048%2C1536&amp;ssl&#x3D;1",
+    blog: "",
+    video: "",
+  },
+  {
+    id: "pl-keeper",
+    name: "Keeper",
+    description:
+      "Keeper is the clone of google keep where we can save and delete our notes",
+    component: () => {
+      return <Keeper />;
+    },
+    path: "/plays/keeper",
+    level: "Intermediate",
+    tags: "JSX,Hooks,ReactDOM",
+    github: "Shivam-Katare",
+    cover:
+      "https://res.cloudinary.com/dbjmy6wdu/image/upload/v1651678725/keepicon_jsn5bh.png",
+    blog: "",
+    video: "",
+  },
+  {
     id: "pl-expanding-cards",
     name: "Expanding-Cards",
     description:
@@ -184,7 +214,8 @@ export const plays = [
     cover: "",
     blog: "",
     video: "",
-  }, {
+  },
+  {
     id: "pl-analog-clock",
     name: "Analog-Clock",
     description: "A beautiful wall clock",
@@ -198,47 +229,77 @@ export const plays = [
     cover: "",
     blog: "",
     video: "",
-    featured: true,  
-  }, {
-    id: 'pl-password-generator', 
-    name: 'Password Generator', 
-    description: 'Its a simple password generator built in react using what user can generate password and customize their requirements in choosing characters and number while generating a medium or strong level password.',
-    component: () => {return <PasswordGenerator />},
-    path: '/plays/password-generator',
-    level: 'Beginner',
-    tags: 'PasswordGenerator',
-    github: 'Angryman18',
-    cover: 'https://securityintelligence.com/wp-content/uploads/2018/10/si-eight-character-password-feature.jpg',
-    blog: '',
-    video: '',
     featured: true,
-  }, {
-    id: 'pl-why-typescript', 
-    name: 'Why Typescript', 
-    description: 'A simplistic way of understanding the existence of TypeScript',
-    component: () => {return <WhyTypescript />},
-    path: '/plays/why-typescript',
-    level: 'Intermediate',
-    tags: 'TSX,TypeScript,Learning,KnowWhat',
-    github: 'koustov',
-    cover: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1651923177/ts_why_adazpf.png',
-    blog: '',
-    video: '',
-    language: 'ts',
+  },
+  {
+    id: "pl-password-generator",
+    name: "Password Generator",
+    description:
+      "Its a simple password generator built in react using what user can generate password and customize their requirements in choosing characters and number while generating a medium or strong level password.",
+    component: () => {
+      return <PasswordGenerator />;
+    },
+    path: "/plays/password-generator",
+    level: "Beginner",
+    tags: "PasswordGenerator",
+    github: "Angryman18",
+    cover:
+      "https://securityintelligence.com/wp-content/uploads/2018/10/si-eight-character-password-feature.jpg",
+    blog: "",
+    video: "",
     featured: true,
-  }, {
-    id: 'pl-memory-game', 
-    name: 'Memory Game', 
-    description: 'simple memory game or memory testing game build with ReactJS',
-    component: () => {return <NetlifyCardGame />},
-    path: '/plays/memory-game',
-    level: 'Advanced',
-    tags: 'MemoryGame, CardGame, ReactJS',
-    github: 'Angryman18',
-    cover: 'https://cdn.pixabay.com/photo/2017/01/03/16/42/klee-1949946_960_720.jpg',
-    blog: '',
-    video: '',
-    language: 'js',
+  },
+  {
+    id: "pl-why-typescript",
+    name: "Why Typescript",
+    description:
+      "A simplistic way of understanding the existence of TypeScript",
+    component: () => {
+      return <WhyTypescript />;
+    },
+    path: "/plays/why-typescript",
+    level: "Intermediate",
+    tags: "TSX,TypeScript,Learning,KnowWhat",
+    github: "koustov",
+    cover:
+      "https://res.cloudinary.com/dgtdljyul/image/upload/v1651923177/ts_why_adazpf.png",
+    blog: "",
+    video: "",
+    language: "ts",
     featured: true,
+  },
+  {
+    id: "pl-memory-game",
+    name: "Memory Game",
+    description: "simple memory game or memory testing game build with ReactJS",
+    component: () => {
+      return <NetlifyCardGame />;
+    },
+    path: "/plays/memory-game",
+    level: "Advanced",
+    tags: "MemoryGame, CardGame, ReactJS",
+    github: "Angryman18",
+    cover:
+      "https://cdn.pixabay.com/photo/2017/01/03/16/42/klee-1949946_960_720.jpg",
+    blog: "",
+    video: "",
+    language: "js",
+    featured: true,
+  },
+  {
+    id: "pl-registration-form",
+    name: "Registration-Form",
+    description: "Registration form with form validation without any liberary",
+    component: () => {
+      return <RegistrationForm />;
+    },
+    path: "/plays/registration-form",
+    level: "Beginner",
+    tags: "JSX,useState,Objects,map",
+    github: "Deepak8717",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "js",
   }, //replace new play item here
 ];
