@@ -1,0 +1,83 @@
+.memory-game-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.memory-game-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 50vw;
+  max-width: 800px;
+  z-index: 11;
+  border-radius: 10px;
+  animation: modalApear 0.3s ease-in-out;
+
+  .content {
+    margin: 0 2rem;
+    padding-bottom: 1rem;
+    .text {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+    .guide-image {
+      width: 70%;
+      display: block;
+      aspect-ratio: 16/9;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .button-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 32px;
+
+      button {
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        border-radius: 20px;
+        border: none;
+        background-color: rgba(81, 91, 212, 1);
+        outline: none;
+        color: #fff;
+        font-weight: bold;
+        &:disabled {
+          background-color: rgba(81, 91, 212, 0.5);
+          pointer-events: none;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        padding: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@keyframes modalApear {
+  0% {
+    opacity: 0;
+    top: 48%;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .memory-game-modal {
+    width: calc(100vw - 20px);
+  }
+}

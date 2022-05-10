@@ -12,6 +12,18 @@ $memory-game-single-item-hover-bg: url("./question1.png");
   align-items: center;
 }
 
+.memory-game .guide {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  color: #1f6ed4;
+
+  p {
+    cursor: pointer;
+    display: inline;
+  }
+}
+
 .memory-game .container .App {
   margin: 5px;
   width: $memory-game-box-width;

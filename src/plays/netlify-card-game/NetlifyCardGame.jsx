@@ -3,7 +3,11 @@ import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 import { useState, useEffect, useRef } from "react";
 
+// css
 import "./NetlifyCardGame.scss";
+
+// components
+import Modal from "./modal";
 
 import q1 from "./icons/q1.png";
 import q2 from "./icons/q2.png";
@@ -43,6 +47,13 @@ function NetlifyCardGame(props) {
 
   // disabled click while updating state if taking time
   const disableClick = useRef(false);
+
+  // show guidence modal
+  const [showModal, setShowModal] = useState(false);
+
+  const toggle = (e) => {
+    setShowModal(!showModal);
+  };
 
   // timer ref
   const timer = useRef(null);
@@ -190,6 +201,9 @@ function NetlifyCardGame(props) {
         <PlayHeader play={play} />
         <div className='play-details-body memory-game'>
           {/* Your Code Starts Here */}
+          <h2 className='guide'>
+            <p onClick={toggle}>How to Play?</p>
+          </h2>
           <div className='container'>
             <div className='App'>
               {newImgArray.map((item, idx) => {
@@ -232,6 +246,7 @@ function NetlifyCardGame(props) {
           {/* Your Code Ends Here */}
         </div>
       </div>
+      <Modal toggle={toggle} showModal={showModal} />
     </>
   );
 }
