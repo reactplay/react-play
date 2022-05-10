@@ -14,6 +14,7 @@ import {
   AnalogClock,
   PasswordGenerator,
   Quizeo,
+  WhyTypescript,
 //import play here
 } from "plays";
 
@@ -212,5 +213,18 @@ export const plays = [
     blog: 'https://vasantisuthar.hashnode.dev/',
     video: '',
     language: 'js'
+   }, {
+    id: 'pl-why-typescript', 
+    name: 'Why Typescript', 
+    description: 'A simplistic way of understanding the existence of TypeScript',
+    component: () => {return <WhyTypescript />},
+    path: '/plays/why-typescript',
+    level: 'Intermediate',
+    tags: 'TSX,TypeScript,Learning,KnowWhat',
+    github: 'koustov',
+    cover: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1651923177/ts_why_adazpf.png',
+    blog: '',
+    video: '',
+    language: 'ts'
   }, //replace new play item here
 ];
