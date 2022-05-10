@@ -16,4 +16,5 @@ export { default as AnalogClock } from 'plays/analog-clock/AnalogClock';
 
 export { default as PasswordGenerator } from 'plays/password-generator/PasswordGenerator';
 export { default as WhyTypescript } from 'plays/why-typescript/WhyTypescript';
+export { default as RegistrationForm } from 'plays/registration-form/RegistrationForm';
 //add export here
