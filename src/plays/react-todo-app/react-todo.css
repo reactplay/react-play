@@ -7,34 +7,34 @@
     font-family: "Poppins", sans-serif;
 }
 
-.top {
+.todo-top-banner {
     font-size: 2rem;
 }
 
-.top,
-.form {
+.todo-top-banner,
+.react-todo-form {
     min-height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.form input,
-.form button {
+.react-todo-form input,
+.react-todo-form button {
     padding: 0.5rem;
     font-size: 1.2rem;
     border: none;
     background: white;
 }
 
-.form button {
+.react-todo-form button {
     color: #ff6f47;
     background: #f7fffe;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.form button:hover {
+.react-todo-form button:hover {
     background: #ff6f47;
     color: white;
 }
@@ -103,7 +103,7 @@
 }
 
 /*CUSTOM SELECTOR */
-.options {
+.select-todo .options {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -112,29 +112,26 @@
     box-shadow: none;
     border: 0 !important;
     background-image: none;
-}
-
-/* Custom Select */
-.select {
-    margin: 1rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.options {
     color: #ff6f47;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
     width: 12rem;
 }
 
+/* Custom Select */
+.select-todo {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
 /* Arrow */
-.select::after {
+.select-todo::after {
     content: "\25BC";
     position: absolute;
     top: 0;
     right: 0;
-    padding: 1rem;
+    padding: 0.75rem;
     background: #ff6f47;
     cursor: pointer;
     pointer-events: none;

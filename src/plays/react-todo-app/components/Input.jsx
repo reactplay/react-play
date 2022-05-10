@@ -22,12 +22,12 @@ const Input = ({ input, setInput, todos, setTodos, setStatus }) => {
     }
 
     return (
-        <form className='form'>
+        <form className='react-todo-form'>
             <input onChange={inputHandler} value={input} type="text" className="todo-input" />
             <button onClick={submitHandler} className="todo-button" type="submit">
                 <FaPlusSquare />
             </button>
-            <div className="select">
+            <div className="select-todo">
                 <select onChange={statusHandler} name="todos" className="filter-todo options">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
