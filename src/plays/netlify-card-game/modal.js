@@ -45,7 +45,7 @@ const Modal = ({ showModal, toggle }) => {
   return (
     <Fragment>
       <div className='memory-game-modal'>
-        <img src={close} alt="clonse" className="close-icon" />
+        <img src={close} alt="clonse" onClick={toggle} className="close-icon" />
         <div className='content'>
           <h1 className='text'>How to Play!</h1>
           <p>{structuringData[currState].info}</p>
