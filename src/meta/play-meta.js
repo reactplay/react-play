@@ -14,6 +14,7 @@ import {
   AnalogClock,
   PasswordGenerator,
 WhyTypescript,
+NetlifyCardGame,
 //import play here
 } from "plays";
 
@@ -212,5 +213,18 @@ export const plays = [
     blog: '',
     video: '',
     language: 'ts'
+  }, {
+    id: 'pl-memory-game', 
+    name: 'Memory Game', 
+    description: 'simple memory game or memory testing game build with ReactJS',
+    component: () => {return <NetlifyCardGame />},
+    path: '/plays/memory-game',
+    level: 'Advanced',
+    tags: 'MemoryGame, CardGame, ReactJS',
+    github: 'Angryman18',
+    cover: 'https://cdn.pixabay.com/photo/2017/01/03/16/42/klee-1949946_960_720.jpg',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
