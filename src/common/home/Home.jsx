@@ -43,7 +43,7 @@ const Home = () => {
             with ReactPlay
           </h2>
           <p className="body-desc">
-            ReactPlay is an open-source application to learn, create and share
+            ReactPlay is an open-source platform to learn, create and share
             ReactJS projects with the developer community. Start by browsing the
             plays or exploring the source code.
           </p>
