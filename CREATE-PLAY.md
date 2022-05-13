@@ -13,7 +13,7 @@ Welcome developers! We are as excited as you are to know that you are going to c
     npm run create-play
   ```
 - This will ask a few questions about your `Play` and then perform required steps to create the play. The screen shot below shows the output of the command.
-   > **Script Language**: `react-play` is equiped with both `JavaScript` and `TypeScript`. So you can use either of it as base language for your play
+   > **Script Language**: `react-play` is equipped with both `JavaScript` and `TypeScript`. So you can use either of it as base language for your play
    
   <p align="center">
     <img src="./screens/plop-create.png" alt="plop create" />
