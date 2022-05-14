@@ -15,6 +15,7 @@ import {
   PasswordGenerator,
 WhyTypescript,
 NetlifyCardGame,
+GitHubFinder,
 //import play here
 } from "plays";
 
@@ -230,5 +231,18 @@ export const plays = [
     video: '',
     language: 'js',
     featured: true,
+  }, {
+    id: 'pl-github-finder', 
+    name: 'GitHub Finder', 
+    description: 'Your site to find programmers quickly and easily!',
+    component: () => {return <GitHubFinder />},
+    path: '/plays/github-finder',
+    level: 'Beginner',
+    tags: 'TSX,API,ReactJS,axios',
+    github: 'Programming-School-Pro-Coding',
+    cover: 'https://github.com/Programming-School-Pro-Coding/github-finder/raw/main/.github/lightLanding.png',
+    blog: 'https://programming-school.hashnode.dev/',
+    video: '',
+    language: 'ts'
   }, //replace new play item here
 ];
