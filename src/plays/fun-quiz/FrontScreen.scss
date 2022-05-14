@@ -1,0 +1,174 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.fun-quiz-main {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif;
+
+  .main-child {
+    width: 500px;
+
+    h1 {
+      margin-top: 20px;
+      display: inline-block;
+      margin-bottom: 40px;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+        border: 2px solid rgba(242,49,127,1);
+        border-radius: 20px;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: normal;
+      margin-top: -25px;
+      margin-bottom: 25px;
+      color: rgba(0, 154, 49, 1);
+      line-height: 1.5;
+    }
+
+    .selectable-options {
+      display: flex;
+      gap: 10px 15px;
+      width: 100%;
+      flex-wrap: wrap;
+
+      .single-selection {
+        background-color: rgba(242, 244, 246, 1);
+        box-shadow: inset 0px 0px 1px 1px rgba(218, 218, 218, 0.4);
+        padding: 8px 16px;
+        cursor: pointer;
+        border-radius: 20px;
+        color: #444444;
+        font-weight: bold;
+
+        &:hover {
+          background-color: #444444;
+          color: white;
+          box-shadow: none;
+          transition: 75ms ease-in;
+        }
+      }
+
+      .active-selected {
+        background-color: #444444;
+        color: white;
+        box-shadow: none;
+      }
+    }
+
+    .front-footer {
+      margin: 2rem 0;
+
+      button {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background: #444444;
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1rem;
+        color: white;
+        border-radius: 40px;
+        font-weight: bold;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        font-family: 'Quicksand', sans-serif;
+
+        &:hover {
+          background-color: #333333;
+        }
+      }
+    }
+
+    .congrats {
+      color: green;
+    }
+    .cheated {
+      color: red;
+    }
+
+    .circle-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .circle-correct {
+        width: 50px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: green;
+        color: #fff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+
+      .circle-incorrect {
+        width: 50px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: rgba(246,0,60,1);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+
+    }
+
+    .display-question {
+      margin: 1.5rem 0;
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      color: white;
+      position: relative;
+    }
+
+    .correct {
+      background-color: green;
+    }
+
+    .incorrect {
+      background-color: rgba(246,0,60,1);
+    }
+
+    .question-number {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background-color: #444444;
+      padding: 0 10px;
+      border-radius: 20px;
+      color: white;
+    }
+
+    .back {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #0a66c2;
+      cursor: pointer;
+    }
+
+  }
+
+  @media screen and (max-width: 600px) {
+    .main-child {
+      width: calc(100% - 2rem);
+    }
+  }
+}
+

@@ -15,6 +15,7 @@ import {
   PasswordGenerator,
 WhyTypescript,
 NetlifyCardGame,
+FunQuiz,
 //import play here
 } from "plays";
 
@@ -230,5 +231,18 @@ export const plays = [
     video: '',
     language: 'js',
     featured: true,
+  }, {
+    id: 'pl-fun-quiz', 
+    name: 'Fun Quiz', 
+    description: 'its a fun quiz app where people can take serious quiz or also do cheating as intended.',
+    component: () => {return <FunQuiz />},
+    path: '/plays/fun-quiz',
+    level: 'Intermediate',
+    tags: 'QuizApp,FunQuiz,API',
+    github: 'Angryman18',
+    cover: 'https://cdn.pixabay.com/photo/2019/05/22/22/28/brainstorm-4222728_960_720.jpg',
+    blog: 'https://hashnode.com/@imsmahanta',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
