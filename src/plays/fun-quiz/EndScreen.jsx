@@ -55,6 +55,7 @@ const EndScreen = ({ quizSummary, redirectHome }) => {
             {result.map((item, index) => {
               return (
                 <div
+                key={item.question+index}
                   className={
                     item.correct ? "circle-correct" : "circle-incorrect"
                   }
