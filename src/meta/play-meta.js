@@ -143,7 +143,7 @@ export const plays = [
     video: ''
   },{
     id: 'pl-quote-generator', 
-    name: 'Quote Generator', 
+    name: 'Random Quote Generator', 
     description: 'Randomly Generate quotes from 3rd Party API',
     component: () => {return <QuoteGenerator />},
     path: '/plays/quote-generator',
