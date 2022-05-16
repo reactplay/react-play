@@ -64,7 +64,7 @@ function QuoteGenerator(props) {
           <div>
             <h1>Quote Generator - Get Motivated Randomly.</h1>
           </div>
-          <div className="play-area">
+          <div className="rand-quote-gen">
             <div className="prev-btn">
               <button
                 className="change-btn"
