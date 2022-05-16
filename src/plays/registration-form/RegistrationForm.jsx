@@ -144,9 +144,6 @@ function RegistrationForm(props) {
       error.confirmPassword.isValidated === true
     ) {
       setField({ name: "", email: "", password: "", confirmPassword: "" });
-    } else {
-      console.log("sorry some field arent complete");
-      console.log(error);
     }
   };
   const handleOnChange = (e) => {
