@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { getPlayById } from 'meta/play-meta-util';
-import Input from './Input';
-import { ButtonSubmit } from './styles';
+import * as React from "react";
+import { getPlayById } from "meta/play-meta-util";
+import Input from "./Input";
+import { ButtonSubmit } from "./styles";
 
-import PlayHeader from 'common/playlists/PlayHeader';
+import PlayHeader from "common/playlists/PlayHeader";
 
-function GitHubFinder(props:any) {
-  // Do not remove the below lines. 
+function GitHubFinder(props: any) {
+  // Do not remove the below lines.
   // The following code is to fetch the current play from the URL
   const { id } = props;
   const play = getPlayById(id);
@@ -24,16 +24,13 @@ function GitHubFinder(props:any) {
             <h1>GitHub Finder</h1>
             <p>Your site to find programmers quickly and easily!</p>
           </div>
-          <Input
-            placeholder="ex: Programming-School-Pro-Coding"
-            value={username}
-            onChange={(event: {
-              target: { value: React.SetStateAction<string> };
-            }) => setUsername(event.target.value)}
-          />
-          <a href="https://github-finder-programming-school.vercel.app/">
-            <ButtonSubmit>Let's Go</ButtonSubmit>
-          </a>
+          <iframe
+            title="review"
+            src="https://github-finder-programming-school.vercel.app/"
+            width="100%"
+            height="900px"
+            style={{ border: 'none' }}
+          ></iframe>
           {/* Your Code Ends Here */}
         </div>
       </div>
