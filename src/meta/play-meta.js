@@ -15,6 +15,8 @@ import {
   PasswordGenerator,
   Quizeo,
   WhyTypescript,
+  NetlifyCardGame,
+
 //import play here
 } from "plays";
 
@@ -84,7 +86,7 @@ export const plays = [
     level: "Intermediate",
     tags: "Recursion, Tree",
     github: "green-roots",
-    featured: true,
+    featured: false,
   }, {
     id: 'pl-counter', 
     name: 'Counter', 
@@ -94,7 +96,7 @@ export const plays = [
     level: 'Beginner',
     tags: 'JSX, State, Props',
     github: 'murtuzaalisurti',
-    featured: true
+    featured: false
   }, {
     id: 'pl-states', 
     name: 'States', 
@@ -170,7 +172,7 @@ export const plays = [
     level: "Beginner",
     tags: "Jsx, useState, hooks, toggle, React, css-transitions",
     github: "Deepak8717",
-    featured: true,
+    featured: false,
     cover: "",
     blog: "",
     video: "",
@@ -188,6 +190,7 @@ export const plays = [
     cover: "",
     blog: "",
     video: "",
+    featured: true,  
   }, {
     id: 'pl-password-generator', 
     name: 'Password Generator', 
@@ -199,7 +202,8 @@ export const plays = [
     github: 'Angryman18',
     cover: 'https://securityintelligence.com/wp-content/uploads/2018/10/si-eight-character-password-feature.jpg',
     blog: '',
-    video: ''
+    video: '',
+    featured: true,
   }, {
     id: 'pl-quizeo', 
     name: 'Quizeo', 
@@ -225,6 +229,21 @@ export const plays = [
     cover: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1651923177/ts_why_adazpf.png',
     blog: '',
     video: '',
-    language: 'ts'
+    language: 'ts',
+    featured: true,
+  }, {
+    id: 'pl-memory-game', 
+    name: 'Memory Game', 
+    description: 'simple memory game or memory testing game build with ReactJS',
+    component: () => {return <NetlifyCardGame />},
+    path: '/plays/memory-game',
+    level: 'Advanced',
+    tags: 'MemoryGame, CardGame, ReactJS',
+    github: 'Angryman18',
+    cover: 'https://cdn.pixabay.com/photo/2017/01/03/16/42/klee-1949946_960_720.jpg',
+    blog: '',
+    video: '',
+    language: 'js',
+    featured: true,
   }, //replace new play item here
 ];
