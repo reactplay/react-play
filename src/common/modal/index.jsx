@@ -14,7 +14,7 @@ const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
           { children }
         </div>
         <div className={`modal-${cname}-footer`}>
-          <button className="btn-default" onClick={ onClose }><GoX size="16px" /> Cancel</button>
+          <button className="btn-default-light" onClick={ onClose }><GoX size="16px" /> Cancel</button>
           { onSubmit && <button className="btn-primary" onClick={ onSubmit }><GoCheck size="16px" /> Apply</button> }
         </div>
      </div>
