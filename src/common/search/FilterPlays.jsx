@@ -79,7 +79,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
           <option value="">All</option>
           {languages.map((language) => (
             <option key={language} value={language}>
-              {language}
+              {language === 'ts' ? 'TypeScript' : 'JavaScript'}
             </option>
           ))}
         </select>
@@ -171,7 +171,7 @@ const FilterPlays = () => {
   return (
     <div className="search-filter">
       <Modal
-        title="Filter Plays"
+        title="Filter Plays By"
         onClose={() => setShowModal(false)}
         onSubmit={handleFilter}
         show={showModal}
