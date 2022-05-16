@@ -26,6 +26,7 @@ const Home = () => {
       level: "",
       tags: [],
       creator: "",
+      language: ""
     });
   }, [data, setSearchTerm, searchTerm, setFilterQuery]);
 

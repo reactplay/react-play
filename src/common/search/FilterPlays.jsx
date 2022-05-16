@@ -1,5 +1,5 @@
 import { Modal } from "common";
-import { getAllCreators, getAllLevels, getAllTags } from "meta/play-meta-util";
+import { getAllCreators, getAllLevels, getAllTags, getAllLanguages } from "meta/play-meta-util";
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
@@ -12,6 +12,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   const tags = getAllTags();
   const labels = getAllLevels();
   const creators = getAllCreators();
+  const languages = getAllLanguages();
 
   return (
     <>
@@ -66,6 +67,23 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
           ))}
         </select>
       </div>
+      <div className="form-group">
+        <label>Language</label>
+        <select
+          className="form-control"
+          onChange={(event) =>
+            setFilterQuery({ ...filterQuery, language: event.target.value })
+          }
+          value={filterQuery.language}
+        >
+          <option value="">All</option>
+          {languages.map((language) => (
+            <option key={language} value={language}>
+              {language}
+            </option>
+          ))}
+        </select>
+      </div>
     </>
   );
 };
@@ -80,8 +98,11 @@ const getAppliedFilter = (filterObject) => {
     filterObject.creator !== undefined && filterObject.creator.trim() !== ""
       ? 1
       : 0;
+  const noOfLanguageApplied =
+    filterObject.language !== undefined && filterObject.language.trim() !== ""
+      ? 1 : 0;      
   let totalTags = noOfLevelsApplied +
-    noOfcreatorsApplied;
+    noOfcreatorsApplied + noOfLanguageApplied;
 
   //if the appiled filter is an array form. Useful for handling multi filter
 
@@ -104,6 +125,7 @@ const FilterPlays = () => {
     tags: [],
     labels: [],
     creators: [],
+    language: [],
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
@@ -116,6 +138,7 @@ const FilterPlays = () => {
         creator: "",
         labels: [],
         creators: [],
+        language: [],
       });
       setFilterQuery({
         level: "",
@@ -123,6 +146,7 @@ const FilterPlays = () => {
         creator: "",
         labels: [],
         creators: [],
+        language: [],
       });
       setnoOfAppliedFilter(0);
     }
@@ -132,11 +156,13 @@ const FilterPlays = () => {
         level: "",
         tags: [],
         creator: "",
+        language: ""
       });
       setFilterQuery({
         level: "",
         tags: [],
         creator: "",
+        language: ""
       });
     }
     setnoOfAppliedFilter(0);

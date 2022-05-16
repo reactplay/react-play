@@ -6,7 +6,8 @@ export const SearchContext = React.createContext({
   filterQuery: {
     level: '',
     tags: [],
-    creator: ''
+    creator: '',
+    language: ''
   }, 
   setSearchTerm: () => {},
   setFilterQuery: () => {}
