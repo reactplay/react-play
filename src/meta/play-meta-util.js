@@ -34,6 +34,13 @@ const getPlaysByCreator = creator => {
   });
 }
 
+const getPlaysByLanguage = language => {
+  return plays.filter(play => {
+    const lang = play.language || 'js';
+    return lang === language;
+  });
+}
+
 const getAllTags = () => {
   const tags = plays.reduce((acc, play) => {
     return acc.concat(play.tags.split(','));
@@ -59,6 +66,15 @@ const getAllLevels = () => {
   return Array.from(new Set([...levels]));
 }
 
+const getAllLanguages = () => {
+  const languages = plays.reduce((acc, play) => {
+    const lang = play.language || 'js';
+    return acc.concat(lang);
+  }, []);
+
+  return Array.from(new Set([...languages]));
+}
+
 const getFeaturedPlays = () => {
   const featuredPlays = plays.filter(play => {
     return play.featured;
@@ -72,9 +88,11 @@ export {
   getPlaysOnSearch,
   getPlaysByLevel,
   getPlaysByTags,
+  getPlaysByLanguage,
   getPlaysByCreator,
   getAllTags,
   getAllCreators,
   getAllLevels,
+  getAllLanguages,
   getFeaturedPlays
 };

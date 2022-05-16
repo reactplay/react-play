@@ -1,5 +1,5 @@
 import { Modal } from "common";
-import { getAllCreators, getAllLevels, getAllTags } from "meta/play-meta-util";
+import { getAllCreators, getAllLevels, getAllTags, getAllLanguages } from "meta/play-meta-util";
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
@@ -10,8 +10,9 @@ import useBackListener from "common/routing/hooks/useBackListener";
 
 const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   const tags = getAllTags();
-  const labels = getAllLevels();
+  const levels = getAllLevels();
   const creators = getAllCreators();
+  const languages = getAllLanguages();
 
   return (
     <>
@@ -25,9 +26,9 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
           value={filterQuery.level}
         >
           <option value="">All</option>
-          {labels.map((label) => (
-            <option key={label} value={label}>
-              {label}
+          {levels.map((level) => (
+            <option key={level} value={level}>
+              {level}
             </option>
           ))}
         </select>
@@ -66,6 +67,23 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
           ))}
         </select>
       </div>
+      <div className="form-group">
+        <label>Language</label>
+        <select
+          className="form-control"
+          onChange={(event) =>
+            setFilterQuery({ ...filterQuery, language: event.target.value })
+          }
+          value={filterQuery.language}
+        >
+          <option value="">All</option>
+          {languages.map((language) => (
+            <option key={language} value={language}>
+              {language === 'ts' ? 'TypeScript' : 'JavaScript'}
+            </option>
+          ))}
+        </select>
+      </div>
     </>
   );
 };
@@ -80,17 +98,13 @@ const getAppliedFilter = (filterObject) => {
     filterObject.creator !== undefined && filterObject.creator.trim() !== ""
       ? 1
       : 0;
+  const noOfLanguageApplied =
+    filterObject.language !== undefined && filterObject.language.trim() !== ""
+      ? 1 : 0;
+  const noOfTagsApplied =
+    filterObject?.tags?.length ? filterObject.tags.length : 0
   let totalTags = noOfLevelsApplied +
-    noOfcreatorsApplied;
-
-  //if the appiled filter is an array form. Useful for handling multi filter
-
-  if (filterObject?.tags || filterObject?.labels || filterObject?.creators) {
-    totalTags +=
-      filterObject?.tags?.length ? filterObject.tags.length : 0 +
-        filterObject?.labels?.length ? filterObject.labels.length : 0 +
-          filterObject?.creators?.length ? filterObject.creators.length : 0;
-  }
+    noOfcreatorsApplied + noOfLanguageApplied + noOfTagsApplied;
 
   return totalTags;
 };
@@ -101,9 +115,10 @@ const FilterPlays = () => {
   const { setFilterQuery, filterQuery } = useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
+    level: '',
     tags: [],
-    labels: [],
-    creators: [],
+    creator: '',
+    language: ''
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
@@ -111,32 +126,32 @@ const FilterPlays = () => {
     if (action === "POP") {
       console.log("POP");
       setModifiedFilterQuery({
-        level: "",
+        level: '',
         tags: [],
-        creator: "",
-        labels: [],
-        creators: [],
+        creator: '',
+        language: ''
       });
       setFilterQuery({
-        level: "",
+        level: '',
         tags: [],
-        creator: "",
-        labels: [],
-        creators: [],
+        creator: '',
+        language: ''
       });
       setnoOfAppliedFilter(0);
     }
     if (action === "PUSH") {
       console.log("PUSH");
       setModifiedFilterQuery({
-        level: "",
+        level: '',
         tags: [],
-        creator: "",
+        creator: '',
+        language: ''
       });
       setFilterQuery({
-        level: "",
+        level: '',
         tags: [],
-        creator: "",
+        creator: '',
+        language: ''
       });
     }
     setnoOfAppliedFilter(0);
@@ -156,7 +171,7 @@ const FilterPlays = () => {
   return (
     <div className="search-filter">
       <Modal
-        title="Filter Plays"
+        title="Filter Plays By"
         onClose={() => setShowModal(false)}
         onSubmit={handleFilter}
         show={showModal}
