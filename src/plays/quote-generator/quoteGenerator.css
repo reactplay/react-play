@@ -1,4 +1,4 @@
-.play-area {
+.rand-quote-gen {
   border: none;
   display: flex;
   flex-direction: row;
@@ -78,7 +78,7 @@
     justify-content: center;
   }
 
-  .play-area {
+  .rand-qutote-gen {
     border: none;
     display: flex;
     flex-direction: row;
