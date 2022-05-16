@@ -59,12 +59,12 @@ function QuoteGenerator(props) {
     <>
       <div className="play-details">
         <PlayHeader play={play} />
-        <div className="play-details-body">
+        <div className="play-details-body rand-qutote-gen">
           {/* Your Code Starts Here */}
           <div>
             <h1>Quote Generator - Get Motivated Randomly.</h1>
           </div>
-          <div className="rand-quote-gen">
+          <div className="play-area">
             <div className="prev-btn">
               <button
                 className="change-btn"
