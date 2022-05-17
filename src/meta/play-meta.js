@@ -16,6 +16,7 @@ QuoteGenerator,
   PasswordGenerator,
 WhyTypescript,
 NetlifyCardGame,
+YoutubeClone,
 //import play here
 } from "plays";
 
@@ -240,5 +241,18 @@ export const plays = [
     video: '',
     language: 'js',
     featured: true,
+  }, {
+    id: 'pl-youtube-clone', 
+    name: 'Youtube-Clone', 
+    description: 'Demonstrating the react concepts with a simple app',
+    component: () => {return <YoutubeClone />},
+    path: '/plays/youtube-clone',
+    level: 'Intermediate',
+    tags: 'JSX,Hooks,API,React,SemanticUI',
+    github: 'Srinu126',
+    cover: '',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
