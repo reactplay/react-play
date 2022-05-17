@@ -10,6 +10,7 @@ import {
   RandomMemeGenerator,
   Keeper,
   ReactTodoApp,
+QuoteGenerator,
   ExpandingCards,
   AnalogClock,
   PasswordGenerator,
@@ -131,6 +132,31 @@ export const plays = [
     blog: '',
     video: ''
   }, {
+    id: 'pl-react-todo-app',
+    name: 'React Todo App',
+    description: 'It is a simple Todo App which keeps track of your regular work',
+    component: () => { return <ReactTodoApp /> },
+    path: '/plays/react-todo-app',
+    level: 'Beginner',
+    tags: 'ReactHooks, JavaScript, Css, React State',
+    github: 'nirban256',
+    cover: 'https://res.cloudinary.com/atapas/image/upload/v1650866465/demos/cover_y20bzk.png',
+    blog: '',
+    video: ''
+  },{
+    id: 'pl-quote-generator', 
+    name: 'Random Quote Generator', 
+    description: 'Randomly Generate quotes from 3rd Party API',
+    component: () => {return <QuoteGenerator />},
+    path: '/plays/quote-generator',
+    level: 'Intermediate',
+    tags: 'Hooks,API,Async/Await',
+    github: 'Abhishek-90',
+    cover: 'https://i0.wp.com/dariusforoux.com/wp-content/uploads/2015/08/motivational-quotes.png?fit&#x3D;2048%2C1536&amp;ssl&#x3D;1',
+    blog: '',
+    video: ''
+  },
+  {
     id: 'pl-keeper', 
     name: 'Keeper', 
     description: 'Keeper is the clone of google keep where we can save and delete our notes',
@@ -142,22 +168,6 @@ export const plays = [
     cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1651678725/keepicon_jsn5bh.png',
     blog: '',
     video: ''
-  }, {
-    id: "pl-react-todo-app",
-    name: "React Todo App",
-    description:
-      "It is a simple Todo App which keeps track of your regular work",
-    component: () => {
-      return <ReactTodoApp />;
-    },
-    path: "/plays/react-todo-app",
-    level: "Beginner",
-    tags: "ReactHooks, JavaScript, Css, React State",
-    github: "nirban256",
-    cover:
-      "https://res.cloudinary.com/atapas/image/upload/v1650866465/demos/cover_y20bzk.png",
-    blog: "",
-    video: "",
   }, {
     id: "pl-expanding-cards",
     name: "Expanding-Cards",
