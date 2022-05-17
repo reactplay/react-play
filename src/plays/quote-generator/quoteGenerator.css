@@ -1,4 +1,4 @@
-.play-area {
+.rand-quote-gen .play-area {
   border: none;
   display: flex;
   flex-direction: row;
@@ -6,7 +6,7 @@
   height: fit-content;
 }
 
-.quote-area {
+.rand-quote-gen .play-area .quote-area {
   min-height: 15rem;
   height: fit-content;
   width: 100%;
@@ -15,7 +15,7 @@
   justify-content: center;
 }
 
-.quote{
+.rand-quote-gen .play-area .quote-area .quote{
   height: 100%;
   width: 55%;
   font-size: 2rem;
@@ -23,13 +23,13 @@
   margin-left: 25%;
 }
 
-.page-author {
+.rand-quote-gen .play-area .quote-area .page-author {
   width: 45%;
   display: flex;
   justify-content: space-between;
 }
 
-.page-author{
+.rand-quote-gen .play-area .quote-area .page-author{
   margin-left: 30%;
 }
 
@@ -37,7 +37,7 @@
   float: right;
 }
 
-.change-btn {
+.rand-quote-gen .play-area .change-btn {
   width: 5rem;
   height: 100%;
   background: transparent;
@@ -47,23 +47,19 @@
   border:none;
 }
 
-.change-btn:hover:enabled {
+.rand-quote-gen .play-area .change-btn:hover:enabled {
   background-color: rgb(193, 192, 192);
 }
 
-@media only screen and (max-width: 760px) {  
-  h1{
-    font-size: 1.4rem;
-  }
-  
-  .quote {
+@media only screen and (max-width: 760px) {
+  .rand-quote-gen .play-area .quote-area .quote {
     font-size: 1rem;
     width: 100%;
     margin-left: 0;
     padding: 0 10px 0 10px;
   }
 
-  .change-btn {
+  .rand-quote-gen .play-area .change-btn {
     width: 3rem;
     height: 100%;
     background: transparent;
@@ -73,7 +69,7 @@
     border:none;
   }
 
-  .quote-area {
+  .rand-quote-gen .play-area .quote-area {
     min-height: 10rem;
     height: fit-content;
     width: 100%;
@@ -82,7 +78,7 @@
     justify-content: center;
   }
 
-  .play-area {
+  .rand-qutote-gen .play-area {
     border: none;
     display: flex;
     flex-direction: row;
@@ -91,13 +87,13 @@
     width: 100%;
   }
 
-  .page-author{
+  .rand-quote-gen .play-area .quote-area .page-author{
     margin-left: 0;
     width: 100%;
     padding: 0 10px 0 10px; 
   }
 
-  .change-btn:active {
+  .rand-quote-gen .play-area .change-btn:hover {
     background-color: rgb(193, 192, 192);
   }
 }

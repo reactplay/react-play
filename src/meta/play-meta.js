@@ -8,11 +8,13 @@ import {
   States,
   SocialCard,
   RandomMemeGenerator,
+  Keeper,
   ReactTodoApp,
 QuoteGenerator,
   ExpandingCards,
   AnalogClock,
-  //import play here
+  PasswordGenerator,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -82,21 +84,21 @@ export const plays = [
     tags: "Recursion, Tree",
     github: "green-roots",
     featured: true,
-  },{
-    id: 'pl-counter',
-    name: 'Counter',
+  }, {
+    id: 'pl-counter', 
+    name: 'Counter', 
     description: 'A simple counter which increments the value upto a certain limit!',
-    component: () => { return <CounterApp /> },
+    component: () => {return <CounterApp />},
     path: '/plays/counter',
     level: 'Beginner',
     tags: 'JSX, State, Props',
     github: 'murtuzaalisurti',
     featured: true
   }, {
-    id: 'pl-states',
-    name: 'States',
+    id: 'pl-states', 
+    name: 'States', 
     description: 'States in Functional Components',
-    component: () => { return <States /> },
+    component: () => {return <States />},
     path: '/plays/states',
     level: 'Beginner',
     tags: 'Hooks,State,JSX',
@@ -104,10 +106,10 @@ export const plays = [
     cover: '',
     blog: 'https://abhishek-90.github.io/My-Portfolio/'
   }, {
-    id: 'pl-social-card',
-    name: 'Social Card',
+    id: 'pl-social-card', 
+    name: 'Social Card', 
     description: 'The Social Card helps you telling who you are using photo, name, and other social footprints.',
-    component: () => { return <SocialCard /> },
+    component: () => {return <SocialCard />},
     path: '/plays/social-card',
     level: 'Intermediate',
     tags: 'Form,Events,Complex State',
@@ -116,10 +118,10 @@ export const plays = [
     blog: 'https://blog.greenroots.info/how-to-create-react-form-with-a-single-change-event-handler',
     video: ''
   }, {
-    id: 'pl-random-meme-generator',
-    name: 'Random Meme Generator',
+    id: 'pl-random-meme-generator', 
+    name: 'Random Meme Generator', 
     description: 'A project to demonstrate the use of API to fetch random memes! It also demonstrates how you can do event handling!',
-    component: () => { return <RandomMemeGenerator /> },
+    component: () => {return <RandomMemeGenerator />},
     path: '/plays/random-meme-generator',
     level: 'Beginner',
     tags: 'JSX,Hooks,API,EventHandling',
@@ -141,7 +143,7 @@ export const plays = [
     video: ''
   },{
     id: 'pl-quote-generator', 
-    name: 'Quote Generator', 
+    name: 'Random Quote Generator', 
     description: 'Randomly Generate quotes from 3rd Party API',
     component: () => {return <QuoteGenerator />},
     path: '/plays/quote-generator',
@@ -153,6 +155,18 @@ export const plays = [
     video: ''
   },
   {
+    id: 'pl-keeper', 
+    name: 'Keeper', 
+    description: 'Keeper is the clone of google keep where we can save and delete our notes',
+    component: () => {return <Keeper />},
+    path: '/plays/keeper',
+    level: 'Intermediate',
+    tags: 'JSX,Hooks,ReactDOM',
+    github: 'Shivam-Katare',
+    cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1651678725/keepicon_jsn5bh.png',
+    blog: '',
+    video: ''
+  }, {
     id: "pl-expanding-cards",
     name: "Expanding-Cards",
     description:
@@ -168,8 +182,7 @@ export const plays = [
     cover: "",
     blog: "",
     video: "",
-  },
-  {
+  }, {
     id: "pl-analog-clock",
     name: "Analog-Clock",
     description: "A beautiful wall clock",
@@ -183,5 +196,17 @@ export const plays = [
     cover: "",
     blog: "",
     video: "",
+  }, {
+    id: 'pl-password-generator', 
+    name: 'Password Generator', 
+    description: 'Its a simple password generator built in react using what user can generate password and customize their requirements in choosing characters and number while generating a medium or strong level password.',
+    component: () => {return <PasswordGenerator />},
+    path: '/plays/password-generator',
+    level: 'Beginner',
+    tags: 'PasswordGenerator',
+    github: 'Angryman18',
+    cover: 'https://securityintelligence.com/wp-content/uploads/2018/10/si-eight-character-password-feature.jpg',
+    blog: '',
+    video: ''
   }, //replace new play item here
 ];

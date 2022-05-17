@@ -6,6 +6,7 @@ import { RiSlideshow4Line } from "react-icons/ri";
 import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { FiStar } from "react-icons/fi";
+import { FaLightbulb } from 'react-icons/fa';
 import { ReactComponent as Flower } from "images/icon-flower.svg";
 import { MdManageSearch } from "react-icons/md";
 import YoutubeVideoEmbed from 'common/components/YouTubeEmbed';
@@ -26,7 +27,7 @@ const Home = () => {
       tags: [],
       creator: "",
     });
-  }, [data, setSearchTerm, searchTerm]);
+  }, [data, setSearchTerm, searchTerm, setFilterQuery]);
 
   return (
     <div>
@@ -113,6 +114,14 @@ const Home = () => {
             </p>
           </li>
         </ul>
+        <div className="home-ideas">
+          <FaLightbulb className="icon" color="var(--color-brand-primary)" size='48px'/>
+          <p className="ideas-lead">Not sure how to get started?</p>
+          <p className="ideas-title">We have got lot of ideas</p>
+          <Link to="/ideas" className="home-anchor">
+            <span className="text">Get started with some ideas</span>
+          </Link>
+        </div>
       </section>
       <section className="home-plays">
         <FeaturedPlays />
