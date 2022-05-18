@@ -234,7 +234,7 @@ export const plays = [
   }, {
     id: 'pl-fun-quiz', 
     name: 'Fun Quiz', 
-    description: 'its a fun quiz app where people can take serious quiz or also do cheating as intended.',
+    description: 'Its a Fun Quiz app which lets player to choose desirable category to answer 20 unique question with 4 options and pick the correct one.',
     component: () => {return <FunQuiz />},
     path: '/plays/fun-quiz',
     level: 'Intermediate',

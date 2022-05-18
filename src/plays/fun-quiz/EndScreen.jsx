@@ -37,11 +37,10 @@ const EndScreen = ({ quizSummary, redirectHome }) => {
       <div className='fun-quiz-main'>
         <div className='main-child'>
           <h1>Quiz Summary</h1>
-          {!cheatedAnswers && <h2 className='congrats'>Congratulations!</h2>}
-          {!!cheatedAnswers && <h2 className='cheated'>You Cheated!</h2>}
+          {!cheatedAnswers ? <h2 className='congrats'>Congratulations!</h2> : <h2 className='cheated'>You Cheated!</h2>}
           <div className='quiz-summary'>
             <h4>
-              Correct Answer(s): {correctAnswers}{" "}
+              Correct Answer(s): {correctAnswers}
               {!!cheatedAnswers && (
                 <span className='cheated'>({cheatedAnswers} cheated)</span>
               )}
@@ -55,7 +54,7 @@ const EndScreen = ({ quizSummary, redirectHome }) => {
             {result.map((item, index) => {
               return (
                 <div
-                key={item.question+index}
+                key={`${item.question+index}`}
                   className={
                     item.correct ? "circle-correct" : "circle-incorrect"
                   }
@@ -69,7 +68,6 @@ const EndScreen = ({ quizSummary, redirectHome }) => {
           <ShowCurrentQuestionDetails currentQuestion={currentQuestion} />
         </div>
       </div>
-      <div></div>
     </Fragment>
   );
 };

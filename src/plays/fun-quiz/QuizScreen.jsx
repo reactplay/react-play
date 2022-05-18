@@ -18,7 +18,7 @@ function QuizScreen({ category, getQuizSummary }) {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [timer, setTimer] = useState(30);
 
-  const formatCategoryText = category !== "all" ? `&category=${category}` : "";
+  const formatCategoryText = !category ? "" : `&category=${category}`;
   const currentQuestion = quizData?.data?.[questionNumber];
 
   useEffect(() => {

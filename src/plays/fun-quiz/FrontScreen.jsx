@@ -2,69 +2,7 @@ import { useState } from "react";
 
 // css
 import "./FrontScreen.scss";
-
-const options = [
-  {
-    name: "All",
-    id: "all",
-  },
-  {
-    name: "Books",
-    id: 10,
-  },
-  {
-    name: "General Knwoledge",
-    id: 9,
-  },
-  {
-    name: "Film",
-    id: 11,
-  },
-  {
-    name: "Music",
-    id: 12,
-  },
-  {
-    name: "Television",
-    id: 14,
-  },
-  {
-    name: "Video Games",
-    id: 15,
-  },
-  {
-    name: "Computers",
-    id: 18,
-  },
-  {
-    name: "Mathematics",
-    id: 19,
-  },
-  {
-    name: "Sports",
-    id: 21,
-  },
-  {
-    name: "Geography",
-    id: 22,
-  },
-  {
-    name: "History",
-    id: 23,
-  },
-  {
-    name: "Politics",
-    id: 24,
-  },
-  {
-    name: "Celebrities",
-    id: 26,
-  },
-  {
-    name: "Science & Nature",
-    id: 17,
-  },
-];
+import options from './options.json'
 
 const CATEGORY_SELECTION = "CATEGORY_SELECTION";
 const RULES_DISPLAY = "RULES_DISPLAY";

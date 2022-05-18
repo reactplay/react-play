@@ -1,16 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap"); // russo one
 
-$text-color: rgba(32, 73, 105, 1);
+$quiz-app-text-color: rgba(32, 73, 105, 1);
+$quiz-app-black-color: #444444;
+$quiz-app-white-color: #ffffff;
+$quiz-app-green-color: rgba(0, 160, 62, 1);
+$quiz-app-light-gray: rgba(242, 244, 246, 1);
+$quiz-app-border-color: #ccc;
 
 .fun-quiz {
-  .fun-quiz-screen {
+  &-screen {
     margin-top: 4rem;
     width: 100%;
     overflow: hidden;
     position: relative;
     color: black;
     display: block;
-    font-family: "Quicksand", sans-serif;
     position: relative;
 
     @media screen and (max-width: 1366px) {
@@ -27,7 +31,7 @@ $text-color: rgba(32, 73, 105, 1);
     }
 
     .timer {
-      border: 1px solid #444444;
+      border: 1px solid $quiz-app-black-color;
       border-radius: 50%;
       width: 100px;
       aspect-ratio: 1/1;
@@ -35,7 +39,7 @@ $text-color: rgba(32, 73, 105, 1);
       place-items: center;
       font-family: "Russo One", sans-serif;
       font-size: 3rem;
-      color: #444444;
+      color: $quiz-app-black-color;
       margin-bottom: 2rem;
     }
 
@@ -60,8 +64,8 @@ $text-color: rgba(32, 73, 105, 1);
       flex-direction: column;
 
       .question-info {
-        background-color: #444444;
-        color: white;
+        background-color: $quiz-app-black-color;
+        color: $quiz-app-white-color;
         padding: 8px 1rem;
         margin: 1rem;
         border-radius: 30px;
@@ -75,12 +79,12 @@ $text-color: rgba(32, 73, 105, 1);
         background-color: rgba(255, 247, 247, 1);
         box-shadow: inset 0px 0px 10px 1px rgba(255, 247, 255, 1);
         border-radius: 20px;
-        border: 1px solid #ccc;
+        border: 1px solid $quiz-app-border-color;
 
 
         h1 {
           margin: 0.5rem 2rem;
-          color: $text-color;
+          color: $quiz-app-text-color;
           font-size: clamp(1rem, 5vw, 1.5rem);
         }
       }
@@ -116,36 +120,36 @@ $text-color: rgba(32, 73, 105, 1);
 
           &:hover {
             cursor: pointer;
-            background-color: rgba(0, 160, 62, 1);
-            color: white;
+            background-color: $quiz-app-green-color;
+            color: $quiz-app-white-color;
           }
         }
 
         .blinking-options {
           animation: blinker 0.2s linear infinite;
-          background-color: rgba(242, 244, 246, 1);
-          color: #444444;
+          background-color: $quiz-app-light-gray;
+          color: $quiz-app-black-color;
 
           @keyframes blinker {
             from {
-              background-color: rgba(242, 244, 246, 1);
-              color: #444444;
+              background-color: $quiz-app-light-gray;
+              color: $quiz-app-black-color;
             }
             50% {
-              background-color: rgba(0, 160, 62, 1);
-              color: white;
+              background-color: $quiz-app-green-color;
+              color: $quiz-app-white-color;
             }
             to {
-              background-color: rgba(242, 244, 246, 1);
-              color: #444444;
+              background-color: $quiz-app-light-gray;
+              color: $quiz-app-black-color;
             }
           }
         }
 
         .active-option {
-          background-color: rgba(0, 160, 62, 1);
+          background-color: $quiz-app-green-color;
           box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-          color: white;
+          color: $quiz-app-white-color;
         }
       }
 
@@ -157,7 +161,7 @@ $text-color: rgba(32, 73, 105, 1);
         cursor: pointer;
         border: none;
         border-radius: 30px;
-        color: white;
+        color: $quiz-app-white-color;
         color: #ffffff;
         font-weight: 600;
 
