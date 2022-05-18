@@ -8,6 +8,9 @@
         "target": "es5",
         "allowJs": true,
         "moduleResolution": "node",
+        "suppressImplicitAnyIndexErrors": false,
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true
     },
     "include": ["src/**/*"]
 }

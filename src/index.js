@@ -11,6 +11,7 @@ const Index = () => {
     level: "",
     tags: [],
     creator: "",
+    language: ""
   });
 
   const value = { searchTerm, setSearchTerm, filterQuery, setFilterQuery };
