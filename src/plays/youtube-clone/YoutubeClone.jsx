@@ -17,9 +17,7 @@ function YoutubeClone(props) {
         <PlayHeader play={play} />
         <div className="play-details-body">
         {/* Your Code Starts Here */}
-          <div>
              <VideoViewer />
-          </div>
         {/* Your Code Ends Here */}
         </div>
       </div>

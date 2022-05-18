@@ -24,8 +24,8 @@ class VideoViewer extends React.Component {
             <div className='ui container' style={{ marginTop: '10px' }}>
                 <SearchBar handleSearch={this.handleSearchValue} />
                 <div className='ui grid'>
-                    <div style={{display:'flex'}} className='ui row'>
-                        <div style={{height:'500px',marginTop:'10px'}} className='eleven wide column'>
+                    <div className='ui row'>
+                        <div className='eleven wide column'>
                             {this.state.selectedVideo ? <VideoDetail video={this.state.selectedVideo} /> : null}
                         </div>
                         <div className='five wide column'>
