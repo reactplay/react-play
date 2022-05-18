@@ -14,3 +14,10 @@ code {
     monospace;
 }
 
+.quizeo h1{
+    font-family: 'Roboto', sans-serif;
+    color:#3D56B2;
+    text-decoration: none;
+    text-align: center;
+}
+
