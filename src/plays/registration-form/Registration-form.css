@@ -58,7 +58,7 @@
   align-items: center;
 }
 .registration-form .entered-value-container .success {
-  margin: 10px;
+  margin: 50px auto 10px;
   font-size: 1.5em;
   color: rgb(43, 227, 43);
 }
@@ -83,5 +83,8 @@
   .registration-form .entered-value-container .entered-value-inner {
     flex-direction: column;
     width: 90%;
+  }
+  .registration-form .entered-value-container .success {
+    margin: 10px auto;
   }
 }

@@ -149,26 +149,6 @@ export const plays = [
     video: "",
   },
   {
-<<<<<<< HEAD
-=======
-    id: "pl-keeper",
-    name: "Keeper",
-    description:
-      "Keeper is the clone of google keep where we can save and delete our notes",
-    component: () => {
-      return <Keeper />;
-    },
-    path: "/plays/keeper",
-    level: "Intermediate",
-    tags: "JSX,Hooks,ReactDOM",
-    github: "Shivam-Katare",
-    cover:
-      "https://res.cloudinary.com/dbjmy6wdu/image/upload/v1651678725/keepicon_jsn5bh.png",
-    blog: "",
-    video: "",
-  },
-  {
->>>>>>> 3d5fef425937c15d366b23dc7d04f128088c65cc
     id: "pl-react-todo-app",
     name: "React Todo App",
     description:

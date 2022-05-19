@@ -67,7 +67,7 @@ function RegistrationForm(props) {
   //self explanatory
   const conmparePassword = (pass, confirmPass) => {
     // (pass and confirmPass) arrays containing name, value pair eg. ["password","xyz"] and ["confirmpassword","xyz"]
-    if (pass[0] == "password") {
+    if (pass[0] === "password") {
       if (values.confirmPassword !== "") {
         if (pass[1] !== confirmPass[1]) {
           //values don't match set error, return false
@@ -132,7 +132,7 @@ function RegistrationForm(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     let counter = 0;
-    Object.entries(values).map((value, i) => {
+    Object.entries(values).forEach((value, i) => {
       //validate each field, increase counter if validation passed.
       if (validate(value)) {
         counter = counter + 1;
@@ -176,7 +176,7 @@ function RegistrationForm(props) {
             <form className="form-inside " onSubmit={submitHandler}>
               {Object.entries(values).map((value, index) => {
                 return (
-                  <div className="user-input">
+                  <div className="user-input" key={index}>
                     <label
                       htmlFor="email"
                       className={`user-label  ${
@@ -217,9 +217,9 @@ function RegistrationForm(props) {
             >
               <span className="success">Form Submitted !</span>
               <div className="entered-value-inner">
-                {Object.entries(storedValues).map((storedValue) => {
+                {Object.entries(storedValues).map((storedValue, index) => {
                   return (
-                    <div className="entered-value-row">
+                    <div className="entered-value-row" key={index}>
                       <div className="heading">{storedValue[0]}</div>
                       <div>{storedValue[1]}</div>
                     </div>
