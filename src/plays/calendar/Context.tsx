@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import React, { useState, useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { orderBy } from 'lodash'
 
 export const Context = React.createContext<any>({
@@ -79,12 +79,12 @@ export const ContextProvider = ({ children }: any) => {
     return orderBy(events.filter(e => e.date === format(date, 'yyyy-MM-dd')), ['startTime'])
   }, [events])
 
-  const addEvent = useCallback((event: any) => {
+  const addEvent = (event: any) => {
     event.id = (new Date()).getTime().toString()
     setEvents(oldValue => ([...oldValue, event]))
-  }, [])
+  }
 
-  const updateEvent = useCallback((event: any) => {
+  const updateEvent = (event: any) => {
     setEvents(oldValue => {
       const newEvents = [...oldValue]
       const index = newEvents.findIndex(e => e.id === event.id)
@@ -95,9 +95,9 @@ export const ContextProvider = ({ children }: any) => {
 
       return newEvents
     })
-  }, [])
+  }
 
-  const deleteEvent = useCallback((event: any) => {
+  const deleteEvent = (event: any) => {
     setEvents(oldValue => {
       const newEvents = [...oldValue]
       const index = newEvents.findIndex(e => e.id === event.id)
@@ -108,7 +108,7 @@ export const ContextProvider = ({ children }: any) => {
 
       return newEvents
     })
-  }, [])
+  }
 
   const showModal = (content: React.ReactNode, title?: '') => {
     setModalTitle(title || '')
