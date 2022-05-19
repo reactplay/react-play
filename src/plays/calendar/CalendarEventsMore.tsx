@@ -9,9 +9,9 @@ interface Props {
 
 const CalendarEventsMore = ({ date, events }: Props) => {
   return (
-    <div className="calendar-events-more">
+    <div className="vincentBCP-calendar-events-more">
       <span>{events.length} more</span>
-      <div className="calendar-events-more-popup">
+      <div className="vincentBCP-calendar-events-more-popup">
         <div>
           <span>{format(date, "ccc")}</span>
           <span>{format(date, "dd")}</span>

@@ -8,7 +8,7 @@ interface Props {
 
 const CalendarEventInfo = ({ event, onEdit }: Props) => {
   return (
-    <div className='calendar-event-info'>
+    <div className='vincentBCP-calendar-event-info'>
       <p>{event.title}</p>
       <p>{format(new Date(`1990-01-01 ${event.startTime}`), 'h:mm a')} - {format(new Date(`1990-01-01 ${event.endTime}`), 'h:mm a')}</p>
       <div>

@@ -45,7 +45,7 @@ const CalendarGrid = () => {
         currentDate={currentDate}
         onDateChange={date => setCurrentDate(date)}
       />
-      <div className='calendar-body'>
+      <div className='vincentBCP-calendar-body'>
         { generateTiles() }
       </div>
     </div>

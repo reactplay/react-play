@@ -23,23 +23,23 @@ const CalendarNavigation = ({ currentDate, onDateChange }: Props) => {
   }
 
   return (
-    <div className='calendar-navigation'>
+    <div className='vincentBCP-calendar-navigation'>
       <button onClick={() => navigateTo(0)}>
         Today
       </button>
       <span
-        className='calendar-navigation-arrow'
+        className='vincentBCP-calendar-navigation-arrow'
         onClick={() => navigateTo(-1)}
       >
         &#x3c;
       </span>
       <span
-        className='calendar-navigation-arrow'
+        className='vincentBCP-calendar-navigation-arrow'
         onClick={() => navigateTo(1)}
       >
         &#x3e;
       </span>
-      <span className='calendar-navigation-current-date'>
+      <span className='vincentBCP-calendar-navigation-current-date'>
         {format(currentDate, 'MMMM yyyy')}
       </span>
     </div>

@@ -19,7 +19,7 @@ const CalendarEvents = ({ date }: Props) => {
   }, [date, getEvents])
 
   return (
-    <div className="calendar-events" onClick={(ev) => ev.stopPropagation()}>
+    <div className="vincentBCP-calendar-events" onClick={(ev) => ev.stopPropagation()}>
       {events
         .filter((e: any, index: number) => index < MAX_VISIBLE_ITEMS)
         .map((event: any) => (

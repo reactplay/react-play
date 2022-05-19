@@ -24,7 +24,7 @@ const CalendarEvent = ({ event }: Props) => {
   
   return (
     <div
-      className='calendar-event'
+      className='vincentBCP-calendar-event'
       onClick={handleClick}
     >
       <div />

@@ -1,14 +1,15 @@
-$calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+$vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
 
-.calendar {
+.vincentBCP-calendar {
   background-color: white;
   padding: 30px;
 }
 
-.calendar-navigation {
+.vincentBCP-calendar-navigation {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  user-select: none;
 
   button {
     background-color: transparent;
@@ -20,7 +21,7 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
     margin-right: 20px;
   }
 
-  .calendar-navigation-arrow {
+  .vincentBCP-calendar-navigation-arrow {
     width: 35px;
     height: 35px;
     display: inline-flex;
@@ -32,13 +33,13 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
     padding-top: 3px;
   }
 
-  .calendar-navigation-current-date {
+  .vincentBCP-calendar-navigation-current-date {
     font-size: 24px;
     margin-left: 20px;
   }
 
   button,
-  .calendar-navigation-arrow {
+  .vincentBCP-calendar-navigation-arrow {
     &:hover {
       background-color: rgba(0,0,0,0.05);
     }
@@ -49,34 +50,34 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 }
 
-.calendar-body {
+.vincentBCP-calendar-body {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   border-left: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
 }
 
-.calendar-day-tile {
+.vincentBCP-calendar-day-tile {
   height: 150px;
   border-right: 1px solid lightgray;
   border-top: 1px solid lightgray;
 
-  .calendar-week,
-  .calendar-day {
+  .vincentBCP-calendar-week,
+  .vincentBCP-calendar-day {
     display: inline-block;
     text-align: center;
     width: 100%;
     font-size: 12px;
   }
 
-  .calendar-week {
+  .vincentBCP-calendar-week {
     text-transform: uppercase;
     font-weight: 500;
     color: gray;
   }
 }
 
-.calendar-modal {
+.vincentBCP-calendar-modal {
   position: absolute;
   top: 0;
   left: 0;
@@ -85,13 +86,13 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   padding-top: 120px;
   z-index: 999;
 
-  .calendar-modal-content {
+  .vincentBCP-calendar-modal-content {
     width: 500px;
     margin: auto;
     background-color: white;
     padding: 30px 30px 30px 30px;
     border-radius: 5px;
-    box-shadow: $calendar-box-shadow;
+    box-shadow: $vincentBCP-calendar-box-shadow;
 
     & > div:first-of-type {
       display: flex;
@@ -104,10 +105,14 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
         margin-left: auto;
       }
     }
+
+    @media (max-width: 768px) {
+      max-width: 90%;
+    } 
   }
 }
 
-.calendar-event-form {
+.vincentBCP-calendar-event-form {
   input[name='title'] {
     width: 100%;
     border: none;
@@ -202,7 +207,7 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 }
 
-.calendar-event-info {
+.vincentBCP-calendar-event-info {
   p:first-of-type {
     font-size: 18px;
   }
@@ -230,12 +235,12 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 }
 
-.calendar-events {
+.vincentBCP-calendar-events {
   margin-top: 5px;
 }
 
-.calendar-events-more {
-  padding: 3px 10px;
+.vincentBCP-calendar-events-more {
+  padding: 0 10px;
   display: block;
   cursor: pointer;
   position: relative;
@@ -247,9 +252,10 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   & > span {
     font-weight: 600;
     font-size: 12px;
+    white-space: nowrap;
   }
 
-  .calendar-events-more-popup {
+  .vincentBCP-calendar-events-more-popup {
     display: none;
     position: absolute;
     left: -200px;
@@ -258,7 +264,7 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
     background-color: white;
     padding: 20px 10px;
     border-radius: 5px;
-    box-shadow: $calendar-box-shadow;
+    box-shadow: $vincentBCP-calendar-box-shadow;
     overflow: auto;
     max-height: 200px;
 
@@ -283,16 +289,22 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 
   &:hover {
-    .calendar-events-more-popup {
+    .vincentBCP-calendar-events-more-popup {
       display: block;
+    }
+  }
+
+  @media (max-width: 425px) {
+    span {
+      font-size: 10px;
     }
   }
 }
 
-.calendar-event {
+.vincentBCP-calendar-event {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
   overflow: hidden;
   cursor: pointer;
   padding: 3px 10px;
@@ -303,8 +315,8 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 
   div {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: #1a73e8;
     flex-shrink: 0;
@@ -319,6 +331,12 @@ $calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
       flex-grow: 1;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+  }
+
+  @media (max-width: 425px) {
+    span {
+      font-size: 10px;
     }
   }
 }

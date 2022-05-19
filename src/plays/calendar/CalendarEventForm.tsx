@@ -91,7 +91,7 @@ const CalendarEventForm = ({ date, event, onCancel }: Props) => {
 
   return (
     <div
-      className="calendar-event-form"
+      className="vincentBCP-calendar-event-form"
       onClick={(ev) => ev.stopPropagation()}
     >
       <input

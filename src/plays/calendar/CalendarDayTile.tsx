@@ -25,11 +25,11 @@ const CalendarDayTile = ({ date, showWeek }: Props) => {
 
   return (
     <div
-      className="calendar-day-tile"
+      className="vincentBCP-calendar-day-tile"
       onClick={handleClick}
     >
-      {showWeek && <span className='calendar-week'>{format(date, "EEE")}</span>}
-      <span className="calendar-day">
+      {showWeek && <span className='vincentBCP-calendar-week'>{format(date, "EEE")}</span>}
+      <span className="vincentBCP-calendar-day">
         {format(date, date.getDate() === 1 ? "MMM d" : "d")}
       </span>
       <CalendarEvents date={date} />
