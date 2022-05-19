@@ -1,4 +1,6 @@
+import { isBefore } from 'date-fns'
 import { format } from 'date-fns/esm'
+import { isEqual } from 'lodash'
 import React, { useState, useContext, useEffect } from 'react'
 import CalendarEventInfo from './CalendarEventInfo'
 import { Context } from './Context'
@@ -46,6 +48,13 @@ const CalendarEventForm = ({ date, event, onCancel }: Props) => {
 
     if (!data.endTime) {
       alert('Please provide end time')
+      return
+    }
+
+    const start = new Date(`1990-01-01 ${data.startTime}`)
+    const end = new Date(`1990-01-01 ${data.endTime}`)
+    if (isEqual(start, end) || isBefore(end, start)) {
+      alert('Invalid time values')
       return
     }
 
