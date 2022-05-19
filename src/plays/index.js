@@ -14,7 +14,6 @@ export { default as ReactTodoApp } from "plays/react-todo-app/ReactTodoApp";
 export { default as QuoteGenerator } from "plays/quote-generator/QuoteGenerator";
 export { default as ExpandingCards } from "plays/expanding-cards/ExpandingCards";
 export { default as AnalogClock } from "plays/analog-clock/AnalogClock";
-
 export { default as PasswordGenerator } from "plays/password-generator/PasswordGenerator";
 export { default as WhyTypescript } from "plays/why-typescript/WhyTypescript";
 export { default as NetlifyCardGame } from "plays/memory-game/NetlifyCardGame";
