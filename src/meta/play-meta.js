@@ -272,7 +272,7 @@ export const plays = [
   {
     id: "pl-registration-form",
     name: "Registration-Form",
-    description: "Registration form with form validation without any liberary",
+    description: "Registration form with form validation without any library",
     component: () => {
       return <RegistrationForm />;
     },

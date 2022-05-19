@@ -1,6 +1,6 @@
 # registration-form
 
-A Simple registration form with validation without any libery
+A Simple registration form with validation without any library
 
 ## What will you learn ?
 

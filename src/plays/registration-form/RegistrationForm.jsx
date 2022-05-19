@@ -2,7 +2,7 @@ import { getPlayById } from "meta/play-meta-util";
 
 import PlayHeader from "common/playlists/PlayHeader";
 import "./Registration-form.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function RegistrationForm(props) {
   // Do not remove the below lines.
@@ -11,243 +11,221 @@ function RegistrationForm(props) {
   const play = getPlayById(id);
 
   // Your Code Start below.
-  const [field, setField] = useState({
+
+  //for input values
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    errors: {
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
+
+  //input values after submit
+  const [storedValues, setStoredValues] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
-  const [error, setError] = useState({
-    name: {
-      isValidated: false,
-      error: "",
-    },
-    email: {
-      isValidated: false,
-      error: "",
-    },
-    password: {
-      isValidated: false,
-      error: "",
-    },
-    confirmPassword: {
-      isValidated: false,
-      error: "",
-    },
-  });
-  //function checks for all validation
-  const isValidated = (field) => {
-    if (field.name.trim() === "") {
-      setError((prevState) => {
-        prevState.name.error = "Field can't be empty";
-        return {
+
+  //self explanatory
+  const validateEmail = (emailvalue) => {
+    if (emailvalue[0] === "email") {
+      const regx = /\S+@\S+\.\S+/;
+      if (!regx.test(emailvalue[1])) {
+        //set error and return false
+        setValues((prevState) => ({
           ...prevState,
-        };
-      });
-    }
-    if (field.email.trim() === "") {
-      setError((prevState) => {
-        prevState.email.error = "Field can't be empty";
-        return {
-          ...prevState,
-        };
-      });
-    }
-    if (field.password.trim() === "") {
-      setError((prevState) => {
-        prevState.password.error = "Field can't be empty";
-        return {
-          ...prevState,
-        };
-      });
-    }
-    if (field.confirmPassword.trim() === "") {
-      setError((prevState) => {
-        prevState.confirmPassword.error = "Field can't be empty";
-        return {
-          ...prevState,
-        };
-      });
-    }
-    if (field.name.trim() !== "") {
-      setError((prevState) => {
-        prevState.name.isValidated = true;
-        prevState.name.error = "";
-        return {
-          ...prevState,
-        };
-      });
-    }
-    if (field.email.trim() !== "") {
-      if (isValidEmail(field)) {
-        setError((prevState) => {
-          prevState.email.isValidated = true;
-          prevState.email.error = "";
-          return {
-            ...prevState,
-          };
-        });
+          errors: {
+            ...prevState.errors,
+            email: `your email is not correct`,
+          },
+        }));
+        return false;
       } else {
-        setError((prevState) => {
-          prevState.email.isValidated = false;
-          prevState.email.error = "not valid email";
-          return {
-            ...prevState,
-          };
-        });
+        //if email is correct clear error msg and return true
+        setValues((prevState) => ({
+          ...prevState,
+          errors: {
+            ...prevState.errors,
+            email: ``,
+          },
+        }));
+        return true;
       }
     }
-    if (field.password.trim() !== "") {
-      setError((prevState) => {
-        prevState.password.isValidated = true;
-        prevState.password.error = "";
-        return {
-          ...prevState,
-        };
-      });
-    }
-    if (field.confirmPassword.trim() !== "") {
-      if (field.password.trim() === field.confirmPassword.trim()) {
-        setError((prevState) => {
-          prevState.confirmPassword.isValidated = true;
-          prevState.confirmPassword.error = "";
-          return {
+    //if other than email just return true
+    return true;
+  };
+
+  //self explanatory
+  const conmparePassword = (pass, confirmPass) => {
+    // (pass and confirmPass) arrays containing name, value pair eg. ["password","xyz"] and ["confirmpassword","xyz"]
+    if (pass[0] == "password") {
+      if (values.confirmPassword !== "") {
+        if (pass[1] !== confirmPass[1]) {
+          //values don't match set error, return false
+          setValues((prevState) => ({
             ...prevState,
-          };
-        });
-      } else {
-        setError((prevState) => {
-          prevState.confirmPassword.isValidated = false;
-          prevState.confirmPassword.error = "passwords aren't matching";
-          return {
+            errors: {
+              ...prevState.errors,
+              password: "Password doesn't match",
+              confirmPassword: "Password doesn't match",
+            },
+          }));
+          return false;
+        } else {
+          //if matches remove error msgs, return true
+          setValues((prevState) => ({
             ...prevState,
-          };
-        });
+            errors: {
+              ...prevState.errors,
+              password: "",
+              confirmPassword: "",
+            },
+          }));
+          return true;
+        }
       }
+      //return true in any other condition
+      return true;
+    }
+    //return true in any other condition
+    return true;
+  };
+
+  //final validation
+  const validate = (value) => {
+    //value is an array ex. ["name","deepak"]
+    if (value[1] === "") {
+      //if empty set error msg return false
+      setValues((prevState) => ({
+        ...prevState,
+        errors: {
+          ...prevState.errors,
+          [value[0]]: `Please fill the ${value[0]}`,
+        },
+      }));
+      return false;
+    } else {
+      //if not empty remove message return (validate email && compare password)
+      setValues((prevState) => ({
+        ...prevState,
+        errors: {
+          ...prevState.errors,
+          [value[0]]: ``,
+        },
+      }));
+      return (
+        validateEmail(value) &&
+        conmparePassword(value, Object.entries(values)[3])
+      );
     }
   };
 
-  const isValidEmail = (field) => {
-    let regEmail =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regEmail.test(field.email);
-  };
-
-  const handleSubmit = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    isValidated(field);
+    let counter = 0;
+    Object.entries(values).map((value, i) => {
+      //validate each field, increase counter if validation passed.
+      if (validate(value)) {
+        counter = counter + 1;
+      }
+    });
 
-    if (
-      error.name.isValidated === true &&
-      error.email.isValidated === true &&
-      error.password.isValidated === true &&
-      error.confirmPassword.isValidated === true
-    ) {
-      setField({ name: "", email: "", password: "", confirmPassword: "" });
+    //if all fields are validated succsfully store the values in new object and clear the input values
+    if (counter === 5) {
+      setStoredValues({
+        ...storedValues,
+        name: values.name,
+        email: values.email,
+        password: values.password,
+        confirmPassword: values.confirmPassword,
+      });
+      setValues({
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        errors: { name: "", email: "", password: "", confirmPassword: "" },
+      });
     }
   };
-  const handleOnChange = (e) => {
-    setField({ ...field, [e.target.name]: e.target.value });
+
+  const onChangeHandler = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
   };
+
   return (
     <>
       <div className="play-details">
         <PlayHeader play={play} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className="registration-form-container">
-            <h1>Registration Form</h1>
-            <p>A Simple registration form with validation without any libery</p>
-            <div className="registration-form">
-              <form onSubmit={handleSubmit}>
-                <div className="user-input">
-                  <label htmlFor="name">Name*</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    className={
-                      error.name.error === ""
-                        ? "registration-input"
-                        : "input-error registration-input"
-                    }
-                    value={field.name}
-                    onChange={handleOnChange}
-                  />
-                  <small
-                    className={error.name.isValidated ? "hidden" : "error"}
-                  >
-                    {error.name.error}
-                  </small>
-                </div>
-                <div className="user-input">
-                  <label htmlFor="email">Email*</label>
-                  <input
-                    type="text"
-                    name="email"
-                    placeholder="Email"
-                    className={
-                      error.email.error === ""
-                        ? "registration-input "
-                        : " input-error registration-input"
-                    }
-                    value={field.email}
-                    onChange={handleOnChange}
-                  />
-                  <small
-                    className={error.email.isValidated ? "hidden" : "error"}
-                  >
-                    {error.email.error}
-                  </small>
-                </div>
-                <div className="user-input">
-                  <label htmlFor="password">Password*</label>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    className={
-                      error.password.error === ""
-                        ? "registration-input"
-                        : "input-error registration-input"
-                    }
-                    value={field.password}
-                    onChange={handleOnChange}
-                  />
-                  <small
-                    className={error.password.isValidated ? "hidden" : "error"}
-                  >
-                    {error.password.error}
-                  </small>
-                </div>
-                <div className="user-input">
-                  <label htmlFor="confirmPassword">Confirm Password*</label>
-                  <input
-                    type="password"
-                    name="confirmPassword"
-                    placeholder=" Confirm Password"
-                    className={
-                      error.confirmPassword.error === ""
-                        ? "registration-input"
-                        : "input-error registration-input"
-                    }
-                    value={field.confirmPassword}
-                    onChange={handleOnChange}
-                  />
-                  <small
-                    className={
-                      error.confirmPassword.isValidated ? "hidden" : "error"
-                    }
-                  >
-                    {error.confirmPassword.error}
-                  </small>
-                </div>
-                <div className="user-btn">
-                  <button type="submit" className="btn">
-                    Submit
-                  </button>
-                </div>
-              </form>
+          <h3 className="registration-form-heading">
+            A Registration form validation without any library
+          </h3>
+          <div className="registration-form container ">
+            <form className="form-inside " onSubmit={submitHandler}>
+              {Object.entries(values).map((value, index) => {
+                return (
+                  <div className="user-input">
+                    <label
+                      htmlFor="email"
+                      className={`user-label  ${
+                        value[0] === "errors" ? "hidden" : ""
+                      }`}
+                    >
+                      {value[0]}*
+                    </label>
+                    <input
+                      key={index}
+                      type={
+                        value[0] === "name"
+                          ? "text"
+                          : value[0] === "email"
+                          ? "email"
+                          : "password"
+                      }
+                      name={value[0]}
+                      placeholder={`Enter ${value[0]}`}
+                      onChange={onChangeHandler}
+                      value={value[1]}
+                      className={`registration-input ${
+                        value[0] === "errors" ? "hidden" : ""
+                      }`}
+                    />
+                    <label className="error">{values.errors[value[0]]}</label>
+                  </div>
+                );
+              })}
+              <div className="user-btn">
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+            <div
+              className={` ${
+                storedValues.name === "" ? "hidden" : "entered-value-container"
+              }`}
+            >
+              <span className="success">Form Submitted !</span>
+              <div className="entered-value-inner">
+                {Object.entries(storedValues).map((storedValue) => {
+                  return (
+                    <div className="entered-value-row">
+                      <div className="heading">{storedValue[0]}</div>
+                      <div>{storedValue[1]}</div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
           {/* Your Code Ends Here */}
