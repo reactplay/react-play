@@ -16,6 +16,7 @@ QuoteGenerator,
   PasswordGenerator,
 WhyTypescript,
 NetlifyCardGame,
+Calendar,
 //import play here
 } from "plays";
 
@@ -240,5 +241,18 @@ export const plays = [
     video: '',
     language: 'js',
     featured: true,
+  }, {
+    id: 'pl-calendar', 
+    name: 'Calendar', 
+    description: 'Simple calendar app to manage events',
+    component: () => {return <Calendar />},
+    path: '/plays/calendar',
+    level: 'Intermediate',
+    tags: 'JSX,Hooks,Typescript',
+    github: 'vincentBCP',
+    cover: '',
+    blog: '',
+    video: '',
+    language: 'ts'
   }, //replace new play item here
 ];
