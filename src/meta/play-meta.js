@@ -16,6 +16,7 @@ QuoteGenerator,
   PasswordGenerator,
 WhyTypescript,
 NetlifyCardGame,
+TikTokGame,
 //import play here
 } from "plays";
 
@@ -240,5 +241,18 @@ export const plays = [
     video: '',
     language: 'js',
     featured: true,
+  }, {
+    id: 'pl-tik-tok-game', 
+    name: 'Tik Tok Game', 
+    description: 'This Game is built using React   and Vanilla   CSS   .',
+    component: () => {return <TikTokGame />},
+    path: '/plays/tik-tok-game',
+    level: 'Beginner',
+    tags: 'Hooks,Functions,CSS,ResetState,JSX',
+    github: 'tejinder-sharma',
+    cover: 'https://github.com/tejinder-sharma/logo/blob/main/TikTok.png?raw&#x3D;true',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
