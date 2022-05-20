@@ -16,6 +16,7 @@ QuoteGenerator,
   PasswordGenerator,
 WhyTypescript,
 NetlifyCardGame,
+TicTacToeGame,
 //import play here
 } from "plays";
 
@@ -240,5 +241,18 @@ export const plays = [
     video: '',
     language: 'js',
     featured: true,
+  }, {
+    id: 'pl-tic-tac-toe-game', 
+    name: 'Tic Tac Toe Game', 
+    description: 'This game is coded in ReactJS and VanillaCSS',
+    component: () => {return <TicTacToeGame />},
+    path: '/plays/tic-tac-toe-game',
+    level: 'Beginner',
+    tags: 'Hooks,JSX,Functions,ResetState,CSS',
+    github: 'tejinder-sharma',
+    cover: 'https://github.com/tejinder-sharma/logo/blob/main/cover.png?raw&#x3D;true',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
