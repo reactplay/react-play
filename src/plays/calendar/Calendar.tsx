@@ -20,7 +20,7 @@ function Calendar(props:any) {
     <>
       <div className="play-details">
         <PlayHeader play={play} />
-        <div className="play-details-body vincentBCP-calendar">
+        <div className="play-details-body calendar-play">
           <ContextProvider>
             <ModalContainer />
             <CalendarGrid />

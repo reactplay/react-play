@@ -8,14 +8,14 @@ const ModalContainer = () => {
   if (!modalContent) return null
 
   return (
-    <div className="vincentBCP-calendar-modal" onClick={hideModal}>
+    <div className="calendar-play-modal">
       <div
-        className="vincentBCP-calendar-modal-content"
+        className="calendar-play-modal-content"
         onClick={(ev) => ev.stopPropagation()}
       >
         <div>
           {Boolean(modalTitle) && (
-            <span className="vincentBCP-calendar-modal-title">{modalTitle}</span>
+            <span className="calendar-play-modal-title">{modalTitle}</span>
           )}
           <span onClick={hideModal}>&#x2715;</span>
         </div>

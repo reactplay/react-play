@@ -4,15 +4,16 @@ import { isEqual } from 'lodash'
 import React, { useState, useContext, useEffect } from 'react'
 import CalendarEventInfo from './CalendarEventInfo'
 import { Context } from './Context'
+import EventType from './EventType'
 
 interface Props {
   date: Date,
-  event?: any,
+  event?: EventType,
   onCancel: VoidFunction
 }
 
 const CalendarEventForm = ({ date, event, onCancel }: Props) => {
-  const [calendarEvent, setCalendarEvent] = useState<any>()
+  const [calendarEvent, setCalendarEvent] = useState<EventType>()
   const [data, setData] = useState<any>()
   const [editable, setEditable] = useState(false)
   const context = useContext(Context)
@@ -84,6 +85,7 @@ const CalendarEventForm = ({ date, event, onCancel }: Props) => {
   }
 
   const handleEdit = () => {
+    setData({...calendarEvent})
     setEditable(true)
   }
 
@@ -100,7 +102,7 @@ const CalendarEventForm = ({ date, event, onCancel }: Props) => {
 
   return (
     <div
-      className="vincentBCP-calendar-event-form"
+      className="calendar-play-event-form"
       onClick={(ev) => ev.stopPropagation()}
     >
       <input

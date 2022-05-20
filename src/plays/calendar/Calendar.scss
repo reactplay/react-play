@@ -1,11 +1,20 @@
-$vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+$calendar-play-box-shadow-dark:rgba(0,0,0,0.1);
+$calendar-play-box-shadow: 0px 0px 10px 5px $calendar-play-box-shadow-dark;
 
-.vincentBCP-calendar {
+$calendar-play-blue-500: #3182CE;
+$calendar-play-blue-400: #4299E1;
+$calendar-play-blue-300: #63B3ED;
+
+$calendar-play-red-500: #E53E3E;
+$calendar-play-red-200: #FEB2B2;
+$calendar-play-red-100: #FED7D7;
+
+.calendar-play {
   background-color: white;
   padding: 30px;
 }
 
-.vincentBCP-calendar-navigation {
+.calendar-play-navigation {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
@@ -21,7 +30,7 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
     margin-right: 20px;
   }
 
-  .vincentBCP-calendar-navigation-arrow {
+  .calendar-play-navigation-arrow {
     width: 35px;
     height: 35px;
     display: inline-flex;
@@ -33,13 +42,13 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
     padding-top: 3px;
   }
 
-  .vincentBCP-calendar-navigation-current-date {
+  .calendar-play-navigation-current-date {
     font-size: 24px;
     margin-left: 20px;
   }
 
   button,
-  .vincentBCP-calendar-navigation-arrow {
+  .calendar-play-navigation-arrow {
     &:hover {
       background-color: rgba(0,0,0,0.05);
     }
@@ -50,34 +59,53 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 }
 
-.vincentBCP-calendar-body {
+.calendar-play-body {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   border-left: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
 }
 
-.vincentBCP-calendar-day-tile {
+.calendar-play-day-tile {
   height: 150px;
   border-right: 1px solid lightgray;
   border-top: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
 
-  .vincentBCP-calendar-week,
-  .vincentBCP-calendar-day {
-    display: inline-block;
-    text-align: center;
+  .calendar-play-week {
+    font-size: 12px;
+  }
+
+  .calendar-play-day {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
     width: 100%;
     font-size: 12px;
   }
 
-  .vincentBCP-calendar-week {
+  .calendar-play-week {
     text-transform: uppercase;
     font-weight: 500;
     color: gray;
   }
+
+  &.today {
+    .calendar-play-day {
+      width: 25px;
+      font-weight: 700;
+      color: white;
+      background-color: $calendar-play-blue-500;
+      border-radius: 50%;
+    }
+  }
 }
 
-.vincentBCP-calendar-modal {
+.calendar-play-modal {
   position: absolute;
   top: 0;
   left: 0;
@@ -85,14 +113,15 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   height: 100%;
   padding-top: 120px;
   z-index: 999;
+  background-color: rgba(0,0,0,0.5);
 
-  .vincentBCP-calendar-modal-content {
+  .calendar-play-modal-content {
     width: 500px;
     margin: auto;
     background-color: white;
     padding: 30px 30px 30px 30px;
     border-radius: 5px;
-    box-shadow: $vincentBCP-calendar-box-shadow;
+    box-shadow: $calendar-play-box-shadow;
 
     & > div:first-of-type {
       display: flex;
@@ -112,7 +141,7 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 }
 
-.vincentBCP-calendar-event-form {
+.calendar-play-event-form {
   input[name='title'] {
     width: 100%;
     border: none;
@@ -164,18 +193,19 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
       border-radius: 5px;
       font-weight: 500;
       transition-duration: 0.3s;
+      border: 1px solid transparent;
 
       &.delete {
         background-color: transparent;
         margin-right: auto;
-        color: red;
+        color: $calendar-play-red-500;
 
         &:hover {
-          background-color: #ffe3e3;
+          border: 1px solid $calendar-play-red-500;
         }
 
         &:active {
-          background-color: #ffcaca;
+          background-color: $calendar-play-red-100;
         }
       }
 
@@ -193,21 +223,21 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
 
       &.save {
         color: white;
-        background-color: #1a73e8;
+        background-color: $calendar-play-blue-500;
 
         &:hover {
-          background-color: #1a84e8;
+          background-color: $calendar-play-blue-400;
         }
 
         &:active {
-          background-color: #1aa7e8;
+          background-color: $calendar-play-blue-300;
         }
       }
     }
   }
 }
 
-.vincentBCP-calendar-event-info {
+.calendar-play-event-info {
   p:first-of-type {
     font-size: 18px;
   }
@@ -235,11 +265,12 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 }
 
-.vincentBCP-calendar-events {
+.calendar-play-events {
   margin-top: 5px;
+  width: 100%;
 }
 
-.vincentBCP-calendar-events-more {
+.calendar-play-events-more {
   padding: 0 10px;
   display: block;
   cursor: pointer;
@@ -255,7 +286,7 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
     white-space: nowrap;
   }
 
-  .vincentBCP-calendar-events-more-popup {
+  .calendar-play-events-more-popup {
     display: none;
     position: absolute;
     left: -200px;
@@ -264,7 +295,7 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
     background-color: white;
     padding: 20px 10px;
     border-radius: 5px;
-    box-shadow: $vincentBCP-calendar-box-shadow;
+    box-shadow: $calendar-play-box-shadow;
     overflow: auto;
     max-height: 200px;
 
@@ -289,7 +320,7 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 
   &:hover {
-    .vincentBCP-calendar-events-more-popup {
+    .calendar-play-events-more-popup {
       display: block;
     }
   }
@@ -301,7 +332,7 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   }
 }
 
-.vincentBCP-calendar-event {
+.calendar-play-event {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -318,7 +349,7 @@ $vincentBCP-calendar-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #1a73e8;
+    background-color: $calendar-play-blue-500;
     flex-shrink: 0;
   }
 

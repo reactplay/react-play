@@ -2,9 +2,10 @@ import React, { useContext } from 'react'
 import { format } from 'date-fns'
 import CalendarEventForm from './CalendarEventForm'
 import { Context } from './Context'
+import EventType from './EventType'
 
 interface Props {
-  event: any
+  event: EventType
 }
 
 const CalendarEvent = ({ event }: Props) => {
@@ -24,7 +25,7 @@ const CalendarEvent = ({ event }: Props) => {
   
   return (
     <div
-      className='vincentBCP-calendar-event'
+      className='calendar-play-event'
       onClick={handleClick}
     >
       <div />

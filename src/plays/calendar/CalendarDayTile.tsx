@@ -6,10 +6,11 @@ import { Context } from './Context'
 
 interface Props {
   date: Date,
-  showWeek?: boolean
+  showWeek?: boolean,
+  isToday?: boolean
 }
 
-const CalendarDayTile = ({ date, showWeek }: Props) => {
+const CalendarDayTile = ({ date, showWeek, isToday }: Props) => {
   const context = useContext(Context)
   const { showModal, hideModal } = context
   
@@ -25,16 +26,18 @@ const CalendarDayTile = ({ date, showWeek }: Props) => {
 
   return (
     <div
-      className="vincentBCP-calendar-day-tile"
+      className={`calendar-play-day-tile ${isToday ? "today" : ""}`}
       onClick={handleClick}
     >
-      {showWeek && <span className='vincentBCP-calendar-week'>{format(date, "EEE")}</span>}
-      <span className="vincentBCP-calendar-day">
-        {format(date, date.getDate() === 1 ? "MMM d" : "d")}
+      {showWeek && (
+        <span className="calendar-play-week">{format(date, "EEE")}</span>
+      )}
+      <span className="calendar-play-day">
+        {format(date, date.getDate() === 1 && !isToday ? "MMM d" : "d")}
       </span>
       <CalendarEvents date={date} />
     </div>
-  )
+  );
 }
 
 export default CalendarDayTile

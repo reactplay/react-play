@@ -23,6 +23,7 @@ const CalendarGrid = () => {
           key={format(curDate, 'yyyy-MM-dd')}
           date={curDate}
           showWeek={tiles.length < 7}
+          isToday={format(new Date(), "yyyy-MM-dd") === format(curDate, "yyyy-MM-dd")}
         />
       )
 
@@ -45,7 +46,7 @@ const CalendarGrid = () => {
         currentDate={currentDate}
         onDateChange={date => setCurrentDate(date)}
       />
-      <div className='vincentBCP-calendar-body'>
+      <div className='calendar-play-body'>
         { generateTiles() }
       </div>
     </div>

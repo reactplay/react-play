@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import CalendarEvent from './CalendarEvent'
 import CalendarEventsMore from './CalendarEventsMore'
 import { Context } from './Context'
+import EventType from './EventType'
 
 interface Props {
   date: Date
@@ -10,7 +11,7 @@ interface Props {
 const MAX_VISIBLE_ITEMS = 3
 
 const CalendarEvents = ({ date }: Props) => {
-  const [events, setEvents] = useState<any>([])
+  const [events, setEvents] = useState<EventType[]>([])
   const context = useContext(Context)
   const { getEvents } = context
 
@@ -19,17 +20,17 @@ const CalendarEvents = ({ date }: Props) => {
   }, [date, getEvents])
 
   return (
-    <div className="vincentBCP-calendar-events" onClick={(ev) => ev.stopPropagation()}>
+    <div className="calendar-play-events" onClick={(ev) => ev.stopPropagation()}>
       {events
-        .filter((e: any, index: number) => index < MAX_VISIBLE_ITEMS)
-        .map((event: any) => (
+        .filter((e, index) => index < MAX_VISIBLE_ITEMS)
+        .map(event => (
           <CalendarEvent key={event.id} event={event} />
         ))}
       {events.length > MAX_VISIBLE_ITEMS && (
         <CalendarEventsMore
           date={date}
           events={events.filter(
-            (e: any, index: number) => index >= MAX_VISIBLE_ITEMS
+            (e, index) => index >= MAX_VISIBLE_ITEMS
           )}
         />
       )}
