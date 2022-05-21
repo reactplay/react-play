@@ -35,6 +35,12 @@ module.exports = plop => {
       },
       {
         type: 'list',
+        name: 'styling',
+        message: 'Styling to be used (css/scss):',
+        choices: ['css', 'scss']
+      },
+      {
+        type: 'list',
         name: 'level',
         message: 'What is the level of this play?(Example: Intermediate):',
         choices: ['Beginner', 'Intermediate', 'Advanced']
@@ -70,6 +76,11 @@ module.exports = plop => {
         type: 'add',
         path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.{{language}}x',
         templateFile: 'plop-templates/component_{{language}}.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.{{styling}}',
+        templateFile: 'plop-templates/style_{{styling}}.hbs',
       },
       {
         type: 'add',
