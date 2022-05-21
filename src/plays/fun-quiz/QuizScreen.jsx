@@ -12,7 +12,7 @@ const answerState = {
 };
 
 function QuizScreen({ category, getQuizSummary }) {
-  const [quizData, setQuizData] = useState({ loading: false, data: [] });
+  const [quizData, setQuizData] = useState({ loading: false, data: [], error: false });
   const [answer, setAnswer] = useState({ ...answerState });
   const [result, setResult] = useState([]);
   const [questionNumber, setQuestionNumber] = useState(0);
@@ -29,6 +29,8 @@ function QuizScreen({ category, getQuizSummary }) {
           `https://opentdb.com/api.php?amount=20${formatCategoryText}&type=multiple`
         );
         const { results } = await response.json();
+        // if there is no data coming from api but status 200 is returned then we want to end up in catch block
+        if (!results.length) throw new Error(); 
         const createOptions = results.map((result) => {
           const { incorrect_answers, correct_answer } = result;
           const options = [...incorrect_answers];
@@ -39,9 +41,9 @@ function QuizScreen({ category, getQuizSummary }) {
           );
           return { ...result, options };
         });
-        return setQuizData({ data: createOptions, loading: false });
+        return setQuizData({ data: createOptions, loading: false, error: false });
       } catch (err) {
-        setQuizData({ ...quizData, loading: false });
+        setQuizData({ ...quizData, loading: false, error: true });
       }
     })();
   }, []);
@@ -59,7 +61,6 @@ function QuizScreen({ category, getQuizSummary }) {
   const handleConfirm = useCallback(
     (skipped = false) => {
       const updateResult = () => {
-        console.log("skip status", skipped);
         const manageSkippedAnswer = !skipped ? answer.answer : "";
         setResult((pre) => [
           ...pre,
@@ -125,6 +126,11 @@ function QuizScreen({ category, getQuizSummary }) {
       return "option-button active-option";
     return "option-button";
   };
+
+  // if there is an no data we display this message.
+  if (quizData?.error) {
+    return (<div>We Apologize! Something Error Occured!</div>)
+  }
 
   return (
     <div className='fun-quiz-screen'>

@@ -8,11 +8,15 @@ const EndScreen = ({ quizSummary, redirectHome }) => {
   const { correctAnswers, cheatedAnswers, wrongAnswers, result } = quizSummary;
   const [currentQuestion, setCurrentQuestion] = useState({});
 
-  const ShowCurrentQuestionDetails = ({currentQuestion}) => {
+  const ShowCurrentQuestionDetails = ({ currentQuestion }) => {
     if (!Object.keys(currentQuestion).length) return false;
     return (
-      <div className={`display-question ${currentQuestion.correct ? 'correct' : 'incorrect'}`}>
-        <div className="question-number">Question: {currentQuestion?.qNo}</div>
+      <div
+        className={`display-question ${
+          currentQuestion.correct ? "correct" : "incorrect"
+        }`}
+      >
+        <div className='question-number'>Question: {currentQuestion?.qNo}</div>
         <li
           dangerouslySetInnerHTML={{
             __html: `${currentQuestion?.question}`,
@@ -37,15 +41,25 @@ const EndScreen = ({ quizSummary, redirectHome }) => {
       <div className='fun-quiz-main'>
         <div className='main-child'>
           <h1>Quiz Summary</h1>
-          {!cheatedAnswers ? <h2 className='congrats'>Congratulations!</h2> : <h2 className='cheated'>You Cheated!</h2>}
+          {!cheatedAnswers ? (
+            <h2 className='congrats'>Congratulations!</h2>
+          ) : (
+            <h2 className='cheated'>You Cheated!</h2>
+          )}
           <div className='quiz-summary'>
-            <h4>
-              Correct Answer(s): {correctAnswers}
+            <div>
+              <h4>
+                <span>{correctAnswers}</span>
+                <span>Correct Answers</span>
+              </h4>
               {!!cheatedAnswers && (
-                <span className='cheated'>({cheatedAnswers} cheated)</span>
+                <h4 className='cheated'>({cheatedAnswers} cheated)</h4>
               )}
-            </h4>
-            <h4>Wrong Answer(s): {wrongAnswers}</h4>
+            </div>
+            <div>
+              <span>{wrongAnswers}</span>
+              <span>Wrong Answers</span>
+            </div>
           </div>
           <div className='front-footer'>
             <button onClick={redirectHome}>Home</button>
@@ -54,11 +68,13 @@ const EndScreen = ({ quizSummary, redirectHome }) => {
             {result.map((item, index) => {
               return (
                 <div
-                key={`${item.question+index}`}
+                  key={`${item.question + index}`}
                   className={
                     item.correct ? "circle-correct" : "circle-incorrect"
                   }
-                  onClick={() => setCurrentQuestion({...item, qNo: index+1})}
+                  onClick={() =>
+                    setCurrentQuestion({ ...item, qNo: index + 1 })
+                  }
                 >
                   {index + 1}
                 </div>

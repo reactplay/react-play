@@ -37,7 +37,10 @@ const QuizSelectionScreen = ({ getSelectedCategory }) => {
           6. You will be given 30 seconds to answer each question and timeup is
           considered as an incorrect answer and next question will be displayed.
         </p>
-        <p>7. You can use cheats to cheat the answer.</p>
+        <p>
+          7. After selecting an option you can click on selected option to unselect it.
+        </p>
+        <p>8. You can use cheats to cheat the answer.</p>
         <div className='front-footer'>
           <button onClick={() => getSelectedCategory(selectedOption)}>
             Yes, Lets Start!
@@ -56,7 +59,7 @@ const QuizSelectionScreen = ({ getSelectedCategory }) => {
     return (
       <>
         <p>
-          The Quiz app reqires to have a specefic category in order to start
+          The Quiz app requires to have a specefic category in order to start
           with. Select one of the below options in which you have expertise in.
         </p>
         <div className='selectable-options'>
