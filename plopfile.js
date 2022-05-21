@@ -35,8 +35,8 @@ module.exports = plop => {
       },
       {
         type: 'list',
-        name: 'styling',
-        message: 'Styling to be used (css/scss):',
+        name: 'style',
+        message: 'Style to be used (css/scss):',
         choices: ['css', 'scss']
       },
       {
@@ -79,8 +79,8 @@ module.exports = plop => {
       },
       {
         type: 'add',
-        path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.{{styling}}',
-        templateFile: 'plop-templates/style_{{styling}}.hbs',
+        path: 'src/plays/{{generateFolderName name}}/{{camelCase name}}.{{style}}',
+        templateFile: 'plop-templates/style_{{style}}.hbs',
       },
       {
         type: 'add',
