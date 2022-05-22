@@ -49,6 +49,11 @@ Welcome developers! We are as excited as you are to know that you are going to c
             <td>Let the application know your choice of script. It supports both <b>JavaScript</b> and <b>TypeScript</b>. You can pick either of it.</td>
           </tr>
           <tr>
+            <td>Style to be used (css/scss)</td>
+            <td>Yes</td>
+            <td>Let the application know your choice of style. It supports both <b>css</b> and <b>scss</b>. You can pick either of it.</td>
+          </tr>
+          <tr>
             <td>What is the level of this play?</td>
             <td>Yes</td>
             <td>You will be asked to select one of the three levels, Beginner, Intermediate, or Advanced. Please select a level for the play. A level indicates the possible complexity of developing the play using React.</td>

@@ -157,6 +157,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Shriom-Trivedi",
+      "name": "Shri Om Trivedi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32411707?v=4",
+      "profile": "https://github.com/Shriom-Trivedi",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "naiknareshh",
+      "name": "Naresh Naik",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105363653?v=4",
+      "profile": "https://github.com/naiknareshh",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -19,4 +19,5 @@ export { default as PasswordGenerator } from 'plays/password-generator/PasswordG
 export { default as WhyTypescript } from 'plays/why-typescript/WhyTypescript';
 export { default as NetlifyCardGame } from 'plays/memory-game/NetlifyCardGame';
 export { default as Calendar } from 'plays/calendar/Calendar';
+export { default as FunQuiz } from 'plays/fun-quiz/FunQuiz';
 //add export here
