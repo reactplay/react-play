@@ -8,7 +8,7 @@ const INITIAL_STATE = {
     questionNo : 0,
     score:0,
     questionIndex : '',
-    setClicked: false
+    setClicked: false,  
 }
 
 const movieReducer = (state = INITIAL_STATE,action) =>{
