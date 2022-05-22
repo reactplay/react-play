@@ -16,7 +16,6 @@
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
-    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -52,7 +51,6 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.25",
     "typescript": "^4.6.4",
     "react-snap": "^1.23.0",
     "puppeteer": "^13.7.0"
