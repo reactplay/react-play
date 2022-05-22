@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Component  } from "react";
 
 // import "../styles/tic.css";
 
@@ -25,9 +25,11 @@ function Game() {
 
   const winner = calculateWinner(squares);
 
+
   function renderSquare(i) {
     return (
       <Square
+        key={i}
         value={squares[i]}
         onClick={() => {
           const nextSquares = squares.slice();
@@ -73,7 +75,7 @@ function Game() {
   }
 
   return (
-    <div class="container">
+    <div className="container">
         <header className="header">Tic Tac Toe Game</header>
         <div className="boardMain">
           {renderRow(0)}
