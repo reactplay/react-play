@@ -1,10 +1,10 @@
-import React, { useState, Component  } from "react";
+import React, { useState } from "react";
 
 // import "../styles/tic.css";
 
-function Square({ value, onClick}) {
+function Square({ index, value, onClick, winningSquare}) {
   return (
-    <button className={`squareButton`} onClick={onClick}>
+    <button className={`squareButton ${winningSquare?.includes(index) && "bg-yellow-500"}`} onClick={onClick}>
       {value}
     </button>
   );
@@ -30,6 +30,8 @@ function Game() {
     return (
       <Square
         key={i}
+        index={i}
+        winningSquare={winner ? winner.line : null}
         value={squares[i]}
         onClick={() => {
           const nextSquares = squares.slice();
@@ -45,7 +47,7 @@ function Game() {
   }
   function getStatus() {
     if (winner) {
-      return `Winner:   ${winner}`;
+      return `Winner:   ${winner.player}`;
     } else if (isBoardFull(squares)) {
       return "Draw!";
     } else {
@@ -102,7 +104,7 @@ function calculateWinner(squares) {
   for (let i = 0; i < possibleLines.length; i++) {
     const [a, b, c] = possibleLines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return  squares[a];
+      return  {player:squares[a], line:[a, b, c]};
     }
   }
   return null;

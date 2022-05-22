@@ -25,6 +25,9 @@
     border-radius: 4px;
     margin-top: 1rem;
 }
+.bg-yellow-500{
+    background-color: #f59e0b;
+}
 .jumpButton:hover{
     background-color: #EC4899;
 }
