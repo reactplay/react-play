@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import './header.styles.css';
+import { isClicked } from '../../redux/questions/questions-action';
 
 const Header = () => {
-    
+    let dispatch = useDispatch();
     return ( 
         <div>
-            <Link to="/plays/quizeo">
-                <h1 className="header">Quizeo</h1>
-            </Link>
+            <h1 className="header" onClick={() => dispatch(isClicked())}>Quizeo</h1>
         </div>
     );
 }

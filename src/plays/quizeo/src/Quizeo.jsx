@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { setScore, setQuestionNo } from "./redux/questions/questions-action";
 import Directory from "./components/directory/directory.component";
 import Header from "./components/header/header.component";
-import { Provider } from 'react-redux';
+import { Provider} from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import './quizeo.css'
 
@@ -18,6 +18,7 @@ function Quizeo(props) {
 
   // Your Code Start below.
   
+
   useEffect(() =>{
     store.dispatch(setScore());
     store.dispatch(setQuestionNo());
@@ -32,7 +33,7 @@ function Quizeo(props) {
           <PersistGate persistor={persistor}>
             <Header/>
             <Directory/>
-          </PersistGate>
+            </PersistGate>
         </Provider>
         {/* Your Code Ends Here */}
 

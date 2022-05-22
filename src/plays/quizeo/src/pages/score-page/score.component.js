@@ -1,12 +1,11 @@
 import React from "react"
 import { useSelector, useDispatch} from "react-redux"
-import { showModel,setScore, setQuestionNo } from "../../redux/questions/questions-action";
-import { useNavigate } from "react-router-dom";
+import { showModel,setScore, setQuestionNo, isClicked } from "../../redux/questions/questions-action";
+import { selectScore } from "../../redux/movie/movieSelector";
 import './score.styles.css';
 
 export const ScoreModel = () => {
-    var score = useSelector((state) => state.movie.score)
-    const navigate = useNavigate();
+    var score = useSelector(selectScore);
     const dispatch = useDispatch();
     return(
         <div className="score-container">
@@ -16,8 +15,8 @@ export const ScoreModel = () => {
                 <button className="play-button"
                     onClick={() => {
                         dispatch(showModel());
-                        navigate('/plays/quizeo')
                         dispatch(setScore());
+                        dispatch(isClicked());
                         dispatch(setQuestionNo());
                         }}>Play again</button>
                 </div>

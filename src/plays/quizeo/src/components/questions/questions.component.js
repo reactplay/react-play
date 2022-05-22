@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { ScoreModel } from "../../pages/score-page/score.component";
 import { addScore,showModel } from "../../redux/questions/questions-action";
 import { increaseQuestionNo } from "../../redux/questions/questions-action";
+import { selectQuestionNo, selectHiddenState } from "../../redux/movie/movieSelector";
 
 import './questions.styles.css';
 
 const Questions = (collection) => {
-    const counter = useSelector((state) => state.movie.questionNo);
-    const hidden  = useSelector((state) => state.movie.hidden);
+    const counter = useSelector(selectQuestionNo);
+    const hidden  = useSelector(selectHiddenState);
     const dispatch = useDispatch();
     let obj;
     return ( 

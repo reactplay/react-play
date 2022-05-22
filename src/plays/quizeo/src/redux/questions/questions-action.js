@@ -20,3 +20,12 @@ export const setScore = () => ({
 export const setQuestionNo = () => ({
     type:QuestionTypes.SET_QUESTION_NO
 })
+
+export const displayQuestionComponent = (linkUrl) =>({
+    type: QuestionTypes.DISPLAY_QUESTION_COMPONENT,
+    payload: linkUrl
+})
+
+export const isClicked = () => ({
+    type:QuestionTypes.IS_CLICKED
+})

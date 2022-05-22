@@ -1,11 +1,14 @@
 import movie_data from "../../data/movie.data";
 import { QuestionTypes } from "../questions/question-types";
 import { calculateScore } from "../questions/question.utils";
+
 const INITIAL_STATE = {
     collection:movie_data,
     hidden: true,
     questionNo : 0,
-    score:0
+    score:0,
+    questionIndex : '',
+    setClicked: false
 }
 
 const movieReducer = (state = INITIAL_STATE,action) =>{
@@ -34,6 +37,16 @@ const movieReducer = (state = INITIAL_STATE,action) =>{
             return{
                 ...state,
                 questionNo: 0
+            }
+        case QuestionTypes.DISPLAY_QUESTION_COMPONENT:
+            return{
+                ...state,
+                questionIndex: action.payload
+            }
+        case QuestionTypes.IS_CLICKED:
+            return{
+                ...state,
+                setClicked: !state.setClicked
             }
         default:
             return {...state}
