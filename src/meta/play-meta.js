@@ -250,7 +250,7 @@ export const plays = [
     level: 'Beginner',
     tags: 'Hooks,JSX,Functions,ResetState,CSS',
     github: 'tejinder-sharma',
-    cover: 'https://github.com/tejinder-sharma/logo/blob/main/cover.png?raw&#x3D;true',
+    cover: '',
     blog: '',
     video: '',
     language: 'js'
