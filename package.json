@@ -6,6 +6,7 @@
     "@giscus/react": "^2.0.3",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
+    "axios": "^0.27.2",
     "node-sass": "^7.0.1",
     "plop": "^3.0.5",
     "react": "^18.0.0",
@@ -51,8 +52,8 @@
     ]
   },
   "devDependencies": {
-    "typescript": "^4.6.4",
+    "puppeteer": "^13.7.0",
     "react-snap": "^1.23.0",
-    "puppeteer": "^13.7.0"
+    "typescript": "^4.6.4"
   }
 }
