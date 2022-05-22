@@ -31,7 +31,7 @@ const PlayHeaderActions = ({ play }) => {
       {
         <button className="action badged" onClick={() => setShowComment(true)}>
           <BiComment className="icon" size="24px" />
-          {/*<div className="badge-count">99</div>*/}
+          <div className="badge-count">{commentCount}</div>
           <span className="sr-only">Comments</span>
         </button>
       }
