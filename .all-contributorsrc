@@ -166,6 +166,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "naiknareshh",
+      "name": "Naresh Naik",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105363653?v=4",
+      "profile": "https://github.com/naiknareshh",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "vincentBCP",
+      "name": "Vincent Patoc",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18364292?v=4",
+      "profile": "https://github.com/vincentBCP",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

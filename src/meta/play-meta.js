@@ -17,6 +17,8 @@ import {
   WhyTypescript,
   NetlifyCardGame,
   RegistrationForm,
+  Calendar,
+  FunQuiz,
   //import play here
 } from "plays";
 
@@ -299,6 +301,40 @@ export const plays = [
     github: "Deepak8717",
     cover: "",
     blog: "",
+    video: "",
+    language: "js",
+  },
+  {
+    id: "pl-calendar",
+    name: "Calendar",
+    description: "Simple calendar app to manage events",
+    component: () => {
+      return <Calendar />;
+    },
+    path: "/plays/calendar",
+    level: "Intermediate",
+    tags: "JSX,Hooks,Typescript",
+    github: "vincentBCP",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "ts",
+  },
+  {
+    id: "pl-fun-quiz",
+    name: "Fun Quiz",
+    description:
+      "Its a Fun Quiz app which lets player to choose desirable category to answer 20 unique question with 4 options and pick the correct one.",
+    component: () => {
+      return <FunQuiz />;
+    },
+    path: "/plays/fun-quiz",
+    level: "Intermediate",
+    tags: "QuizApp,FunQuiz,API",
+    github: "Angryman18",
+    cover:
+      "https://cdn.pixabay.com/photo/2019/05/22/22/28/brainstorm-4222728_960_720.jpg",
+    blog: "https://hashnode.com/@imsmahanta",
     video: "",
     language: "js",
   }, //replace new play item here
