@@ -1,4 +1,4 @@
-.squareButton{
+.tic-tac-toe-tj .squareButton{
     width: 5rem;
     height: 5rem;
     margin: 1px;
@@ -13,13 +13,13 @@
     font-size: 32px;
     color: white;
 }
-.squareButton:hover{
+.tic-tac-toe-tj .squareButton:hover{
     background-color: #10B981;
 }
-.row{
+.tic-tac-toe-tj .row{
     display: flex;
 }
-.jumpButton{
+.tic-tac-toe-tj .jumpButton{
     padding: 0.5rem 1rem;
     background-color: #10B981;
 
@@ -33,20 +33,20 @@
     border-radius: 4px;
     margin-top: 1rem;
 }
-.bg-yellow-500{
+.tic-tac-toe-tj .bg-yellow-500{
     background-color: #f59e0b;
 }
-.jumpButton:hover{
+.tic-tac-toe-tj .jumpButton:hover{
     background-color: #EC4899;
 }
-.list{
+.tic-tac-toe-tj .list{
     margin-top: 1rem;
 }
-.status{
+.tic-tac-toe-tj .status{
     margin-top: 1rem;
     font-size: 24px;
 }
-.header{
+.tic-tac-toe-tj .header{
     width: 100%;
     padding: 16px 8px;
     color: white;
@@ -58,10 +58,10 @@
     background-color: #010326;
     margin-bottom: 2rem;
 }
-.container{
+.tic-tac-toe-tj .container{
     text-align: center;
 }
-.boardMain{
+.tic-tac-toe-tj .boardMain{
     display: grid;
     place-content: center;
 }

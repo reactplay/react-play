@@ -253,6 +253,6 @@ export const plays = [
     cover: '',
     blog: '',
     video: '',
-    language: 'js'
+    language: 'js',
   }, //replace new play item here
 ];

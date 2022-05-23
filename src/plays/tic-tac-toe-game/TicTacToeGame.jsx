@@ -6,7 +6,7 @@ import React from "react";
 
 import Game from "./components/Game.jsx"
 
-import "./styles/tic.css";
+import "./styles/tic-tac-toe-tj.css";
 
 function TicTacToeGame(props) {
   // Do not remove the below lines. 
@@ -19,7 +19,7 @@ function TicTacToeGame(props) {
     <>
       <div className="play-details">
         <PlayHeader play={play} />
-        <div className="play-details-body">
+        <div className="play-details-body tic-tac-toe-tj">
         {/* Your Code Starts Here */}
            <Game />
         {/* Your Code Ends Here */}

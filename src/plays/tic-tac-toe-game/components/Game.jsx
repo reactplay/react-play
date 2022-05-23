@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-// import "../styles/tic.css";
-
 function Square({ index, value, onClick, winningSquare}) {
   return (
     <button className={`squareButton ${winningSquare?.includes(index) && "bg-yellow-500"}`} onClick={onClick}>
