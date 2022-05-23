@@ -16,6 +16,7 @@ QuoteGenerator,
   PasswordGenerator,
 WhyTypescript,
 NetlifyCardGame,
+Calendar,
 FunQuiz,
 //import play here
 } from "plays";
@@ -242,6 +243,19 @@ export const plays = [
     language: 'js',
     featured: true,
   }, {
+    id: 'pl-calendar', 
+    name: 'Calendar', 
+    description: 'Simple calendar app to manage events',
+    component: () => {return <Calendar />},
+    path: '/plays/calendar',
+    level: 'Intermediate',
+    tags: 'JSX,Hooks,Typescript',
+    github: 'vincentBCP',
+    cover: '',
+    blog: '',
+    video: '',
+    language: 'ts'
+ }, {
     id: 'pl-fun-quiz', 
     name: 'Fun Quiz', 
     description: 'Its a Fun Quiz app which lets player to choose desirable category to answer 20 unique question with 4 options and pick the correct one.',
