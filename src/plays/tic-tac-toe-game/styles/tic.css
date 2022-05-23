@@ -3,7 +3,11 @@
     height: 5rem;
     margin: 1px;
     background-color: #EC4899;
-    display: inline-block;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
     border: none;
     font: bold;
     font-size: 32px;
@@ -18,7 +22,11 @@
 .jumpButton{
     padding: 0.5rem 1rem;
     background-color: #10B981;
-    display: inline-block;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
     border: none;
     color: white;
     font-size: 18px;
