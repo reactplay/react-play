@@ -5,7 +5,7 @@ It is a Tic Tac Toe Game to made with React.
 
 ## What will you learn?
 
-- Use of `useEffect` hook.
+- Functional Components
 - Event handling for user interaction.
 - Update of states.
 - How to reuse the components.(e.g we reused our game square button many times).
