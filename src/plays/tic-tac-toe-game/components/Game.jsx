@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-function Square({ index, value, onClick, winningSquare}) {
+function Square(props) {
   return (
-    <button className={`squareButton ${winningSquare?.includes(index) && "bg-yellow-500"}`} onClick={onClick}>
-      {value}
+    <button className={`squareButton ${props.winningSquare?.includes(props.index) && "bg-yellow-500"}`} onClick={props.onClick}>
+      {props.value}
     </button>
   );
 }

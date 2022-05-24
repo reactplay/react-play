@@ -1,3 +1,8 @@
+.tic-tac-toe-tj .container{
+    text-align: center;
+}
+
+
 .tic-tac-toe-tj .squareButton{
     width: 5rem;
     height: 5rem;
@@ -58,9 +63,7 @@
     background-color: #010326;
     margin-bottom: 2rem;
 }
-.tic-tac-toe-tj .container{
-    text-align: center;
-}
+
 .tic-tac-toe-tj .boardMain{
     display: grid;
     place-content: center;
