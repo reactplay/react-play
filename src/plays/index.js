@@ -20,4 +20,4 @@ export { default as NetlifyCardGame } from "plays/memory-game/NetlifyCardGame";
 export { default as RegistrationForm } from "plays/registration-form/RegistrationForm";
 export { default as Calendar } from "plays/calendar/Calendar";
 export { default as FunQuiz } from "plays/fun-quiz/FunQuiz";
-//add export here
+export { default as TicTacToeGame } from "plays/tic-tac-toe-game/TicTacToeGame";

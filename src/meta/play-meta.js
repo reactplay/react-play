@@ -19,6 +19,7 @@ import {
   RegistrationForm,
   Calendar,
   FunQuiz,
+  TicTacToeGame,
   //import play here
 } from "plays";
 
@@ -337,5 +338,22 @@ export const plays = [
     blog: "https://hashnode.com/@imsmahanta",
     video: "",
     language: "js",
-  }, //replace new play item here
+  },
+  {
+    id: "pl-tic-tac-toe-game",
+    name: "Tic Tac Toe Game",
+    description: "This game is coded in ReactJS and VanillaCSS",
+    component: () => {
+      return <TicTacToeGame />;
+    },
+    path: "/plays/tic-tac-toe-game",
+    level: "Beginner",
+    tags: "Hooks,JSX,Functions,ResetState,CSS",
+    github: "tejinder-sharma",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "js",
+  },
+  //replace new play item here
 ];
