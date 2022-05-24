@@ -13,7 +13,7 @@ const PlayList = () => {
           <ImageOops className="play-not-found-image" />
           <p className='page-404-lead'>Play not found</p>
           <p className='page-404-desc'>
-            Please change your search or adjust filters to find plays
+            Please change your search or adjust filters to find plays.
           </p>
         </div>
     );
