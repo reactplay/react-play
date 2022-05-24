@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -191,6 +191,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Shriom-Trivedi"><img src="https://avatars.githubusercontent.com/u/32411707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shri Om Trivedi</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Shriom-Trivedi" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/naiknareshh"><img src="https://avatars.githubusercontent.com/u/105363653?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Naresh Naik</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=naiknareshh" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/vincentBCP"><img src="https://avatars.githubusercontent.com/u/18364292?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vincent Patoc</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=vincentBCP" title="Code">💻</a></td>
+    <td align="center"><a href="https://sachinchaurasiya.dev"><img src="https://avatars.githubusercontent.com/u/59080942?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sachin Chaurasiya</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Sachin-chaurasiya" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/tejinder-sharma"><img src="https://avatars.githubusercontent.com/u/95734921?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tejinder Sharma</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=tejinder-sharma" title="Code">💻</a></td>
   </tr>
 </table>
 
