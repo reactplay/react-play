@@ -184,6 +184,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Sachin-chaurasiya",
+      "name": "Sachin Chaurasiya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59080942?v=4",
+      "profile": "https://sachinchaurasiya.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
