@@ -72,6 +72,8 @@ First, you need to fork the `react-play` repo. You can do this by clicking the `
 
 Once forked, you can clone the repo by clicking the `Clone or Download` button on the top right corner of forked repo.
 
+After cloning the repo open the terminal and type ```cd 'foldername'``` and you will be redirected to your forked repo.
+
 ### ⬇️ Install Dependencies
 Next, install the dependencies by running the following command in the `react-play` repo:
 
