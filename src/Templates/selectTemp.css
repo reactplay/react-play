@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #bdf1f6;
+}
+
+h1 {
+  font-family: "Anek Tamil", sans-serif;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.select {
+  margin-top: 2rem;
+  font-family: "Anek Tamil", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.select .temp1 {
+  margin-left: 2rem;
+}
+
+.select .temp1 img {
+  height: 250px;
+  width: 200px;
+  margin-top: 1rem;
+}
+
+.selectT {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.selectT a {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.main_div {
+  display: flex;
+  margin-top: 1rem;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media (max-width : 500px ){
+  .select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .select .temp1{
+    margin-left: 0;
+  }
+}
+
+.editable{
+  margin-bottom: 1rem;
+}
+
+.note{
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Anek Tamil", sans-serif;
+  font-weight: bold;
+}
+
+.inner_div{
+  height: auto;
+  width: 225mm;
+  background-color: white;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  overflow:visible;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  background-color: 	#8fbaf3;
+  padding: 1.8rem;
+  border-radius: 10px;
+  box-shadow: 6px 6px 5px rgb(105, 103, 103);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  width: auto;
+  height: fit-content;
+  margin-right: 4rem;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Anek Tamil', sans-serif;
+}
+
+.inputs label{
+  padding: 1rem;
+  padding-left: 0;
+}
+
+.inputs input{
+  width: 100%;
+  padding: 5px;
+  background-color: #8fbaf3;
+  border: none;
+  border-bottom: 2px solid black;
+  margin-bottom: 1rem;
+}
+
+.inputs input::placeholder{
+  color: black;
+}
+
+.inputs .lpn, 
+.inputs .persPortfolio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  
+}
+
+.inputs label{
+  text-align: start;
+}
+
+.main_inner_div{
+  display: flex;
+  flex-direction: row;
+}
+
+.main_inner_div .inner_div1{
+  display: flex;
+  flex-direction: column;
+}
+
+.inner_div1{
+  width: 40%;
+}
+
+.inner_div2{
+  width: 60%;
+}
+
+.main_inner_div .inner_div2{
+  display: flex;
+  flex-direction: column;
+}
+
+.main_input{
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+}
+
+.object,
+.sk,
+.wk,
+.edu,
+.projt{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.object input,
+.sk input,
+.wk input,
+.edu input,
+.projt input{
+  width: auto;
+  margin-top: 20px;
+}
+
+.object input{
+  margin-left: 7rem;
+}
+
+.sk input{
+  margin-left: 9rem;
+}
+
+.wk input{
+  margin-left: 6rem;
+}
+
+.edu input{
+  margin-left: 6.2rem;
+}
+
+.downloadBtn{
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.btn{
+  background-color: orange;
+  padding: 1rem;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (min-width : 300px) and (max-width : 470px){
+  .main_input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    flex-direction: column;
+  }
+
+  .inputs{
+    width: 90vw;
+    margin-right: 0;
+  }
+
+  .inner_div{
+    width: 100vw;
+    height: auto;
+  }
+
+
+}
+
+@media (min-width : 500px) and (max-width : 1300px){
+  .main_input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    flex-direction: column;
+  }
+
+  .inputs{
+    width: 90vw;
+    margin-right: 0;
+  }
+
+  .inner_div{
+    width: 100vw;
+    height: auto;
+  }
+
+
+}
+
+@media (max-width : 290px){
+  .main_input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    flex-direction: column;
+  }
+
+  .inputs{
+    width: 90vw;
+    margin-right: 0;
+  }
+
+  .inner_div{
+    width: 100vw;
+    height: auto;
+  }
+
+}
