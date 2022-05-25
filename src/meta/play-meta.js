@@ -217,7 +217,7 @@ export const plays = [
     blog: 'https://vasantisuthar.hashnode.dev/',
     video: '',
     language: 'js'
-   }, {
+  }, {
     id: 'pl-why-typescript', 
     name: 'Why Typescript', 
     description: 'A simplistic way of understanding the existence of TypeScript',

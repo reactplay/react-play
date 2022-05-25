@@ -12,13 +12,10 @@ import './quizeo.css'
 function Quizeo(props) {
   // Do not remove the below lines. 
   // The following code is to fetch the current play from the URL
-  
   const { id } = props;
   const play = getPlayById(id);
 
   // Your Code Start below.
-  
-
   useEffect(() =>{
     store.dispatch(setScore());
     store.dispatch(setQuestionNo());
@@ -36,7 +33,6 @@ function Quizeo(props) {
             </PersistGate>
         </Provider>
         {/* Your Code Ends Here */}
-
         </div>
       </div>
     </>

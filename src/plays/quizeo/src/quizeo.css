@@ -1,23 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body {
-  min-height: 100vh;
-  /* background-color: #A2D2FF; */
-  margin: 0;
-  font-family:'Roboto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .quizeo h1{
     font-family: 'Roboto', sans-serif;
     color:#3D56B2;
     text-decoration: none;
     text-align: center;
-}
-
+} 

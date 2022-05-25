@@ -18,7 +18,6 @@
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
     "redux": "^4.2.0",
-    "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.5",
     "web-vitals": "^2.1.0"
@@ -56,8 +55,8 @@
     ]
   },
   "devDependencies": {
+    "puppeteer": "^13.7.0",
     "react-snap": "^1.23.0",
-    "typescript": "^4.6.4",
-    "puppeteer": "^13.7.0"
+    "typescript": "^4.6.4"
   }
 }
