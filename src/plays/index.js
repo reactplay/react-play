@@ -21,3 +21,4 @@ export { default as RegistrationForm } from "plays/registration-form/Registratio
 export { default as Calendar } from "plays/calendar/Calendar";
 export { default as FunQuiz } from "plays/fun-quiz/FunQuiz";
 export { default as TicTacToeGame } from "plays/tic-tac-toe-game/TicTacToeGame";
+export { default as DynamicRoutes } from "plays/dynamic-routes/DynamicRoutes";
