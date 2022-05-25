@@ -51,10 +51,10 @@ function DynamicRoutes(props) {
               activeMenuHandler={activeMenuHandler} //a clickhandler that will reset the active menu
             />
             <div className="recipe-container">
-              {activeRecipes.map((recipe) => {
+              {activeRecipes.map((recipe, index) => {
                 //render the recipes based on active menu
                 return (
-                  <div className="recipe-card ">
+                  <div className="recipe-card " key={index}>
                     <div>
                       <h4>{recipe.name}</h4>
                     </div>
