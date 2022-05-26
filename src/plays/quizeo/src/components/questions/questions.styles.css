@@ -1,4 +1,4 @@
-.question-container{
+.quizeo .question-container{
     display: flex; 
     margin-left: 2.25rem;
     margin-right: 2.25rem; 
@@ -9,16 +9,16 @@
     align-items: center; 
 }
 
-.question-background{
+.quizeo .question-background{
     opacity: 0.5; 
 }
 
-.question-model{
+.quizeo .question-model{
     margin-top:-4%;
     width: 50%; 
 }
 
-.category-title{
+.quizeo .category-title{
     display: inline-block; 
     position: relative; 
     font-size: 2.25rem;
@@ -26,7 +26,7 @@
     text-align: center; 
 }
 
-.category-title::before{
+.quizeo .category-title::before{
     content:"";
     display:block;
     position: absolute;
@@ -39,19 +39,19 @@
 }
 
 
-.title{
+.quizeo .title{
     position: relative; 
     color: #ffffff; 
 }
 
-.questions-section{
+.quizeo .questions-section{
     background-color: #d8e2f7;
     margin-top: 2rem; 
     border-radius: 0.75rem; 
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
 }
 
-.question-title{
+.quizeo .question-title{
     padding-left: 0.75rem;
     padding-right: 0.75rem; 
     padding-top: 3rem;
@@ -62,19 +62,19 @@
     font-weight: 600; 
 }
 
-.options-section{
+.quizeo .options-section{
     margin-left: 1rem;
     margin-right: 1rem; 
     text-align: center; 
 }
 
-.option-button{
+.quizeo .option-button{
     padding-top: 0.75rem;
     border:none;
     padding-bottom: 0.75rem; 
     margin: 1rem; 
     background-color: #3B82F6; 
-    color: #ffffff; 
+    color: #ffffff;
     font-size: 1.125rem;
     line-height: 1.75rem; 
     font-weight: 500; 
@@ -86,21 +86,21 @@
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
 }
 
-.option-button:hover{
+.quizeo .option-button:hover{
     background-color: #2563EB; 
 }
 
-.option-button:active{
+.quizeo .option-button:active{
     background-color: #2e2b77;
 }
 
-.option-button:focus{
+.quizeo .option-button:focus{
     outline: 0;
     background-color: #2e2b77;
     border : 2px solid #93C5FD; 
 }
 
-.submit-answer{
+.quizeo .submit-answer{
     border:none;
     padding: 0.5rem;
     margin:4%;

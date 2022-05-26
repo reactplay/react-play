@@ -1,10 +1,10 @@
-.score-container{
+.quizeo .score-container{
     display: flex; 
     align-items: center;
     justify-content: center; 
 }
 
-.score-section{
+.quizeo .score-section{
     display: flex; 
     position: absolute; 
     top:25%; 
@@ -17,7 +17,7 @@
     border-radius: 1.5rem; 
 }
 
-.score-close{
+.quizeo .score-close{
     border:none;
     position: absolute; 
     top: 1rem; 
@@ -28,13 +28,13 @@
     background-color: white;
 }
 
-.score-section h1{
+.quizeo .score-section h1{
     font-size: 1.5rem;
     line-height: 2rem; 
     font-weight: 500; 
 }
 
-.play-button{
+.quizeo .play-button{
     color:white;
     border:none;
     padding: 0.75rem; 
