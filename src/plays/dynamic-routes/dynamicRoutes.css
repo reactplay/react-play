@@ -1,11 +1,13 @@
 /* enter stlyes here */
 .dynamic-routes-container {
-  width: 90%;
+  width: 100%;
   max-width: 700px;
   margin: 50px auto;
 }
+
 .dynamic-routes-container .heading,
-.dynamic-routes-container .sub-heading {
+.dynamic-routes-container .sub-heading,
+.dynamic-routes-container .navbar {
   text-align: center;
 }
 .dynamic-routes-container .navbar {
@@ -21,7 +23,8 @@
   margin: 50px auto;
 }
 .dynamic-routes-container .recipe-card {
-  width: 300px;
+  max-width: 300px;
+  width: 250px;
   background-color: rgb(228 228 231);
   margin: 20px;
   text-align: center;
@@ -61,4 +64,22 @@
 
 .dynamic-routes-container .dinner {
   background: #d7ca12;
+}
+.dynamic-routes-container .image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+@media screen and (max-width: 520px) {
+  .dynamic-routes-container .recipe-container {
+    flex-direction: column;
+  }
+  .dynamic-routes-container .recipe-card {
+    margin: 20px auto;
+  }
+  .dynamic-routes-container .image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
 }

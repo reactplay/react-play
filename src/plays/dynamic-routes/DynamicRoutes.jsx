@@ -41,23 +41,34 @@ function DynamicRoutes(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="dynamic-routes-container">
-            <h1 className="heading">React Dynamic Routes</h1>
-            <h3 className="sub-heading">
-              Click the navbar or chnage the url
-              <small className="example"> (e.g. &nbsp; url/breakfast)</small>
-            </h3>
-            <Navbar //passing unique meal type to render on the navbar
-              mealtype={uniqMealType}
-              activeMenuHandler={activeMenuHandler} //a clickhandler that will reset the active menu
-            />
+            <div className="header">
+              <h1 className="heading">React Dynamic Routes</h1>
+              <h3 className="sub-heading">
+                Click the navbar or chnage the url
+                <small className="example"> (e.g. &nbsp; url/breakfast)</small>
+              </h3>
+              <Navbar //passing unique meal type to render on the navbar
+                mealtype={uniqMealType}
+                activeMenuHandler={activeMenuHandler}
+                activeMenu={activeMenu} //a clickhandler that will reset the active menu
+              />
+            </div>
+
             <div className="recipe-container">
+              {activeRecipes.length <= 0 ? <>Sorry, check the url</> : ""}
               {activeRecipes.map((recipe, index) => {
                 //render the recipes based on active menu
+
                 return (
                   <div className="recipe-card " key={index}>
                     <div>
                       <h4>{recipe.name}</h4>
                     </div>
+                    <img
+                      className="image"
+                      src={recipe.image}
+                      alt={recipe.name}
+                    />
                     <div className={`symbol ${recipe.mealtype}`}>
                       {recipe.mealtype}
                     </div>
