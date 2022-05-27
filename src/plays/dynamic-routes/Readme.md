@@ -16,7 +16,7 @@ Video:
 
 ## Implementation Details
 
-to get the url input parameter value we need to tweak the path of the this project in the play-metas.js file to "/plays/dynamic-routes/:menu"
+to get the url input parameter value we need to tweak the path of the this project in the play-meta.js file to "/plays/dynamic-routes/:menu"
 we need to use useParams() hook to get the input value of url and pass to function that filter the data so we can fetch the recipes based input value. if our input matches the meal categories. we show the data on screen.
 
 ## Consideration
