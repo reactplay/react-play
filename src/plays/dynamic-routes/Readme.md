@@ -26,4 +26,4 @@ Update all considerations(if any)
 
 ## Resources
 
-Update external resources(if any)
+https://www.youtube.com/watch?v=0cSVuySEB0A
