@@ -21,6 +21,7 @@ const Comment = () => {
         theme="light"
         lang="en"
         loading="lazy"
+        crossorigin="anonymous"
       />
     </>
   );
