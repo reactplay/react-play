@@ -21,6 +21,7 @@ import {
   Calendar,
   FunQuiz,
   TicTacToeGame,
+  DynamicRoutes,
   //import play here
 } from "plays";
 
@@ -370,5 +371,21 @@ export const plays = [
     video: "",
     language: "js",
   },
-  //replace new play item here
+  {
+    id: "pl-dynamic-routes",
+    name: "Dynamic-Routes",
+    description:
+      "We will learn how to pass dynamic route/input in url and based on url the output on the screen changes",
+    component: () => {
+      return <DynamicRoutes />;
+    },
+    path: "/plays/dynamic-routes/:menu",
+    level: "Beginner",
+    tags: "react-router-v6,dynamic-routing,useParam-hook",
+    github: "Deepak8717",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "js",
+  }, //replace new play item here
 ];
