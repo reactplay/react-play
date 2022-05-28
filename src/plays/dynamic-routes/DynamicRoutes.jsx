@@ -44,7 +44,7 @@ function DynamicRoutes(props) {
             <div className="header">
               <h1 className="heading">React Dynamic Routes</h1>
               <h3 className="sub-heading">
-                Click the navbar or chnage the url
+                Click the navbar or change the url
                 <small className="example"> (e.g. &nbsp; url/breakfast)</small>
               </h3>
               <Navbar //passing unique meal type to render on the navbar
