@@ -22,7 +22,8 @@ import {
   FunQuiz,
   TicTacToeGame,
   DynamicRoutes,
-  //import play here
+  DrawIt,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -387,5 +388,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-drawit', 
+    name: 'DrawIt', 
+    description: 'A React based simple Drawing tool (Canvas)',
+    component: () => {return <DrawIt />},
+    path: '/plays/drawit',
+    level: 'Intermediate',
+    tags: 'Canvas',
+    github: 'adarsh-gupta101',
+    cover: 'https://pbs.twimg.com/media/FT8AWP_VEAAaxJ-?format&#x3D;jpg&amp;name&#x3D;l',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
