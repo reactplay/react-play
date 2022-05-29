@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 
+// Frequently asked question card
 const FaqsCard = (props) => {
 
     const answerElRef = useRef()
@@ -7,6 +8,7 @@ const FaqsCard = (props) => {
     const [answerH, setAnswerH] = useState('0px')
     const { faqsList, idx } = props
 
+    // Open answer when click on the question
     const handleOpenAnswer = () => {
         const answerElH = answerElRef.current.childNodes[0].offsetHeight
         setState(!state)
@@ -49,6 +51,7 @@ const FaqsCard = (props) => {
 
 export default () => {
 
+    // List of frequently asked questions
     const faqsList = [
         {
             q: "What are some random questions to ask?",

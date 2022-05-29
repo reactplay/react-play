@@ -5,6 +5,7 @@ export default () => {
 
     const [state, setState] = useState(false)
 
+    // Navigation links
   const navigation = [
       { title: "Customers", path: "/plays/landing-page" },
       { title: "Careers", path: "/plays/landing-page" },

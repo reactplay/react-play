@@ -1,5 +1,6 @@
 export default () => {
 
+    // Footer navigation links
     const footerNavs = [
         {
             label: "Company",
