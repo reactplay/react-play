@@ -397,7 +397,7 @@ export const plays = [
     level: 'Intermediate',
     tags: 'Canvas',
     github: 'adarsh-gupta101',
-    cover: 'https://pbs.twimg.com/media/FT8AWP_VEAAaxJ-?format&#x3D;jpg&amp;name&#x3D;l',
+    cover: 'https://pbs.twimg.com/media/FT8AWP_VEAAaxJ-?format=jpg&name=large',
     blog: '',
     video: '',
     language: 'js'

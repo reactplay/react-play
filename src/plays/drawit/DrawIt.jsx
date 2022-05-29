@@ -1,19 +1,17 @@
-import { getPlayById } from 'meta/play-meta-util';
+import { getPlayById } from "meta/play-meta-util";
 
-import PlayHeader from 'common/playlists/PlayHeader';
-import './drawIt.css';
-import { useEffect, useRef, useState } from 'react';
+import PlayHeader from "common/playlists/PlayHeader";
+import "./drawIt.css";
+import { useEffect, useRef, useState } from "react";
 
 function DrawIt(props) {
-
-
-  // Do not remove the below lines. 
+  // Do not remove the below lines.
   // The following code is to fetch the current play from the URL
   const { id } = props;
   const play = getPlayById(id);
 
   // Your Code Start below.
- let canvas, context;
+  let canvas, context;
   const canvasRef = useRef(null);
   const [color, setcolor] = useState("white");
   //   console.log(color);
@@ -48,7 +46,7 @@ function DrawIt(props) {
   var current = {
     // color: colorss.color,
   };
- 
+
   //  canvas.addEventListener('mousemove', onMouseDown,false)
   function onMouseDown(e) {
     drawing = true;
@@ -70,7 +68,6 @@ function DrawIt(props) {
     if (!emit) {
       return;
     }
-    
   }
 
   function throttle(callback, delay) {
@@ -118,36 +115,36 @@ function DrawIt(props) {
 
   return (
     <>
-      <div className="play-details">
+      <div className='play-details'>
         <PlayHeader play={play} />
-        <div className="play-details-body">
-        {/* Your Code Starts Here */}
+        <div className='play-details-body'>
+          {/* Your Code Starts Here */}
 
-        <div
-      className=''
-      style={{
-        height: "100vh",
-        width: "100%",
-        background: "whitesmoke",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        overflow: "hidden",
-      }}>
-     
-      <canvas
-        ref={canvasRef}
-        className='board' width={1024} height={622}
-        ></canvas>
-    </div>
+          <div
+            className=''
+            style={{
+              height: "100vh",
+              width: "100%",
+              background: "whitesmoke",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              overflow: "hidden",
+            }}>
+            <canvas
+              ref={canvasRef}
+              className='board'
+              width={1024}
+              height={622}></canvas>
+          </div>
           <div>
-            <h1>Play Details -  DrawIt</h1>
+            <h1>Play Details - DrawIt</h1>
             <p>
-             DrawIt is an react application which is like a paint tool.
-            You can draw in the canvas and be a an artist😉
+              DrawIt is an react application which is like a paint tool. You can
+              draw in the canvas and be an artist😉
             </p>
           </div>
-        {/* Your Code Ends Here */}
+          {/* Your Code Ends Here */}
         </div>
       </div>
     </>
