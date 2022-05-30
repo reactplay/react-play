@@ -1,1 +1,15 @@
 /* enter stlyes here */
+.board{
+    width: 100%; 
+    height: 100%; 
+    aspect-ratio: 2;
+}
+
+@media screen and (max-width:620px) {
+
+   .board{
+    width:109vw ;
+    height: 100%;
+    aspect-ratio: 2;
+    }
+   }

@@ -123,11 +123,9 @@ function DrawIt(props) {
           <div
             className=''
             style={{
-              height: "100vh",
-              width: "100%",
+             
               background: "whitesmoke",
-              display: "flex",
-              justifyContent: "center",
+              
               alignItems: "center",
               overflow: "hidden",
             }}>
@@ -141,7 +139,7 @@ function DrawIt(props) {
             <h1>Play Details - DrawIt</h1>
             <p>
               DrawIt is an react application which is like a paint tool. You can
-              draw in the canvas and be an artist😉
+              draw in the canvas and be an HTML artist😉
             </p>
           </div>
           {/* Your Code Ends Here */}
