@@ -25,7 +25,7 @@
 <a href="https://github.com/reactplay/react-play/pulls" target="blank">
 <img src="https://img.shields.io/github/issues-pr/reactplay/react-play?style=flat-square" alt="react-play pull-requests"/>
 </a>
-<a href="https://twitter.com/intent/tweet?text=👋%20Check%20this%20amazing%20app%20https://reactplay.io/,%20created%20by%20@tapasadhikary%20and%20friends%0A%0A%23DEVCommunity%20%23100DaysOfCode%20@reactplayio"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Freactplay%2Freact-play"></a>
+<a href="https://twitter.com/intent/tweet?text=👋%20Check%20this%20amazing%20app%20https://reactplayio.netlify.app,%20created%20by%20@tapasadhikary%20and%20friends%0A%0A%23DEVCommunity%20%23100DaysOfCode%20@reactplayio"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Freactplay%2Freact-play"></a>
 
 </p>
 
