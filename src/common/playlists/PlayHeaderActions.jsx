@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsGithub, BsFileEarmarkSpreadsheet } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 import { IoLogoYoutube } from "react-icons/io";
 import { AiOutlineRead } from "react-icons/ai";
 import { BiComment } from "react-icons/bi";
@@ -48,7 +48,7 @@ const PlayHeaderActions = ({ play }) => {
           className="action"
           href={`https://github.com/atapas/react-play/tree/main/src${play.path}/Readme.md`}
         >
-          <BsFileEarmarkSpreadsheet className="icon" size="24px" />
+          <AiOutlineRead className="icon" size="24px" />
           <span className="sr-only">README</span>
         </a>
       )}
