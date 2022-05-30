@@ -25,7 +25,7 @@ const PlayHeaderActions = ({ play }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="action"
-          href={`https://github.com/atapas/react-play/tree/main/src${play.path}`}
+          href={`https://github.com/reactplay/react-play/tree/main/src${play.path}`}
         >
           <BsGithub className="icon" size="24px" />
           <span className="sr-only">GitHub</span>

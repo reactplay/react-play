@@ -10,31 +10,31 @@
 <h4 align="center">Learn . Create . Share about your ReactJS Development Journey</h4>
 
 <p align="center">
-  <a href="https://github.com/atapas/react-play/blob/master/LICENSE" target="blank">
-<img src="https://img.shields.io/github/license/atapas/react-play?style=flat-square" alt="react-play licence" />
+  <a href="https://github.com/reactplay/react-play/blob/master/LICENSE" target="blank">
+<img src="https://img.shields.io/github/license/reactplay/react-play?style=flat-square" alt="react-play licence" />
 </a>
-<a href="https://github.com/atapas/react-play/fork" target="blank">
-<img src="https://img.shields.io/github/forks/atapas/react-play?style=flat-square" alt="react-play forks"/>
+<a href="https://github.com/reactplay/react-play/fork" target="blank">
+<img src="https://img.shields.io/github/forks/reactplay/react-play?style=flat-square" alt="react-play forks"/>
 </a>
-<a href="https://github.com/atapas/react-play/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/atapas/react-play?style=flat-square" alt="react-play stars"/>
+<a href="https://github.com/reactplay/react-play/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/reactplay/react-play?style=flat-square" alt="react-play stars"/>
 </a>
-<a href="https://github.com/atapas/react-play/issues" target="blank">
-<img src="https://img.shields.io/github/issues/atapas/react-play?style=flat-square" alt="react-play issues"/>
+<a href="https://github.com/reactplay/react-play/issues" target="blank">
+<img src="https://img.shields.io/github/issues/reactplay/react-play?style=flat-square" alt="react-play issues"/>
 </a>
-<a href="https://github.com/atapas/react-play/pulls" target="blank">
-<img src="https://img.shields.io/github/issues-pr/atapas/react-play?style=flat-square" alt="react-play pull-requests"/>
+<a href="https://github.com/reactplay/react-play/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/reactplay/react-play?style=flat-square" alt="react-play pull-requests"/>
 </a>
-<a href="https://twitter.com/intent/tweet?text=👋%20Check%20this%20amazing%20app%20https://reactplay.io/,%20created%20by%20@tapasadhikary%20and%20friends%0A%0A%23DEVCommunity%20%23100DaysOfCode%20@reactplayio"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fatapas%2Freact-play"></a>
+<a href="https://twitter.com/intent/tweet?text=👋%20Check%20this%20amazing%20app%20https://reactplay.io/,%20created%20by%20@tapasadhikary%20and%20friends%0A%0A%23DEVCommunity%20%23100DaysOfCode%20@reactplayio"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Freactplay%2Freact-play"></a>
 
 </p>
 
 <p align="center">
     <a href="https://reactplay.io/" target="blank">View Demo</a>
     ·
-    <a href="https://github.com/atapas/react-play/issues/new/choose">Report Bug</a>
+    <a href="https://github.com/reactplay/react-play/issues/new/choose">Report Bug</a>
     ·
-    <a href="https://github.com/atapas/react-play/issues/new/choose">Request Feature</a>
+    <a href="https://github.com/reactplay/react-play/issues/new/choose">Request Feature</a>
 </p>
 
 ## 👋 Introducing ReactPlay
@@ -53,7 +53,7 @@ Here is the link to the app. We hope you enjoy it.
   
 Who doesn't want motivation and support? Many Thanks to all the Stargazers who has supported this project with stars(⭐). You all are amazing!!!
 
-[![Stargazers repo roster for @atapas/react-play](https://reporoster.com/stars/atapas/react-play)](https://github.com/atapas/react-play/stargazers)
+[![Stargazers repo roster for @reactplay/react-play](https://reporoster.com/stars/reactplay/react-play)](https://github.com/reactplay/react-play/stargazers)
 
 Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on twitter [@reactplayio](https://twitter.com/reactplayio).
 
@@ -120,10 +120,10 @@ It builds the app for production to the `build` folder. It correctly bundles Rea
 
 You can deploy the app to `Vercel` or `Netlify` with a single click.
 
-<a href="https://vercel.com/new/project?template=https://github.com/atapas/react-play">
+<a href="https://vercel.com/new/project?template=https://github.com/reactplay/react-play">
 <img src="https://vercel.com/button" height="37.5px" />
 </a>
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/atapas/react-play">
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/reactplay/react-play">
 <img src="https://www.netlify.com/img/deploy/button.svg" height="37.5px" />
 </a>
 
@@ -169,35 +169,35 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://tapasadhikary.com"><img src="https://avatars.githubusercontent.com/u/3633137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tapas Adhikary</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=atapas" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/nirmalkc"><img src="https://avatars.githubusercontent.com/u/6359059?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nirmal Kumar</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=nirmalkc" title="Code">💻</a></td>
-    <td align="center"><a href="https://murtuzaali-surti.me"><img src="https://avatars.githubusercontent.com/u/68743212?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Murtuzaali Surti</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=murtuzaalisurti" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/abhishek-gogroup"><img src="https://avatars.githubusercontent.com/u/87639443?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abhishek Khatri</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=abhishek-gogroup" title="Code">💻</a></td>
-    <td align="center"><a href="https://abhishek-90.github.io/My-Portfolio/"><img src="https://avatars.githubusercontent.com/u/43419831?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abhishek Holani</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Abhishek-90" title="Code">💻</a></td>
-    <td align="center"><a href="http://hasnainmakada-99.github.io"><img src="https://avatars.githubusercontent.com/u/82728823?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hasnain Makada</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=hasnainmakada-99" title="Code">💻</a></td>
-    <td align="center"><a href="https://twitter.com/shrilakshmihg"><img src="https://avatars.githubusercontent.com/u/29778698?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shrilakshmi Shastry</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=shrilakshmishastry" title="Code">💻</a></td>
+    <td align="center"><a href="https://tapasadhikary.com"><img src="https://avatars.githubusercontent.com/u/3633137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tapas Adhikary</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=reactplay" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/nirmalkc"><img src="https://avatars.githubusercontent.com/u/6359059?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nirmal Kumar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=nirmalkc" title="Code">💻</a></td>
+    <td align="center"><a href="https://murtuzaali-surti.me"><img src="https://avatars.githubusercontent.com/u/68743212?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Murtuzaali Surti</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=murtuzaalisurti" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/abhishek-gogroup"><img src="https://avatars.githubusercontent.com/u/87639443?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abhishek Khatri</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=abhishek-gogroup" title="Code">💻</a></td>
+    <td align="center"><a href="https://abhishek-90.github.io/My-Portfolio/"><img src="https://avatars.githubusercontent.com/u/43419831?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abhishek Holani</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Abhishek-90" title="Code">💻</a></td>
+    <td align="center"><a href="http://hasnainmakada-99.github.io"><img src="https://avatars.githubusercontent.com/u/82728823?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hasnain Makada</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=hasnainmakada-99" title="Code">💻</a></td>
+    <td align="center"><a href="https://twitter.com/shrilakshmihg"><img src="https://avatars.githubusercontent.com/u/29778698?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shrilakshmi Shastry</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=shrilakshmishastry" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/6km"><img src="https://avatars.githubusercontent.com/u/62352949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mohammed Taha</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=6km" title="Code">💻</a></td>
-    <td align="center"><a href="https://dalpatrathoredev.web.app"><img src="https://avatars.githubusercontent.com/u/69510006?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dalpat Rathore</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=DalpatRathore" title="Code">💻</a></td>
-    <td align="center"><a href="http://erayalkis.netlify.app"><img src="https://avatars.githubusercontent.com/u/80722863?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eray Alkış</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=erayalkis" title="Code">💻</a></td>
-    <td align="center"><a href="https://nirban-chakraborty.netlify.app"><img src="https://avatars.githubusercontent.com/u/74231771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nirban Chakraborty</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=nirban256" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Deepak8717"><img src="https://avatars.githubusercontent.com/u/5671550?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Deepak Pundir</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Deepak8717" title="Code">💻</a></td>
-    <td align="center"><a href="https://bio.link/vasantisuthar"><img src="https://avatars.githubusercontent.com/u/63599802?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vasanti Suthar</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=vasantisuthar" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://ahnaf.dev"><img src="https://avatars.githubusercontent.com/u/42427928?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ahnaf Ahamed</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=AhnafAhamed" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/6km"><img src="https://avatars.githubusercontent.com/u/62352949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mohammed Taha</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=6km" title="Code">💻</a></td>
+    <td align="center"><a href="https://dalpatrathoredev.web.app"><img src="https://avatars.githubusercontent.com/u/69510006?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dalpat Rathore</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=DalpatRathore" title="Code">💻</a></td>
+    <td align="center"><a href="http://erayalkis.netlify.app"><img src="https://avatars.githubusercontent.com/u/80722863?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eray Alkış</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=erayalkis" title="Code">💻</a></td>
+    <td align="center"><a href="https://nirban-chakraborty.netlify.app"><img src="https://avatars.githubusercontent.com/u/74231771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nirban Chakraborty</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=nirban256" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Deepak8717"><img src="https://avatars.githubusercontent.com/u/5671550?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Deepak Pundir</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Deepak8717" title="Code">💻</a></td>
+    <td align="center"><a href="https://bio.link/vasantisuthar"><img src="https://avatars.githubusercontent.com/u/63599802?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vasanti Suthar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=vasantisuthar" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://ahnaf.dev"><img src="https://avatars.githubusercontent.com/u/42427928?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ahnaf Ahamed</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=AhnafAhamed" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://www.showwcase.com/shivam-katare"><img src="https://avatars.githubusercontent.com/u/91705825?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shivam Katare</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Shivam-Katare" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Angryman18"><img src="https://avatars.githubusercontent.com/u/63530626?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shyam Mahanta</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Angryman18" title="Code">💻</a></td>
-    <td align="center"><a href="http://koustov.com"><img src="https://avatars.githubusercontent.com/u/7145967?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Koustov</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=koustov" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Shriom-Trivedi"><img src="https://avatars.githubusercontent.com/u/32411707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shri Om Trivedi</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Shriom-Trivedi" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/naiknareshh"><img src="https://avatars.githubusercontent.com/u/105363653?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Naresh Naik</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=naiknareshh" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/vincentBCP"><img src="https://avatars.githubusercontent.com/u/18364292?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vincent Patoc</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=vincentBCP" title="Code">💻</a></td>
-    <td align="center"><a href="https://sachinchaurasiya.dev"><img src="https://avatars.githubusercontent.com/u/59080942?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sachin Chaurasiya</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=Sachin-chaurasiya" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.showwcase.com/shivam-katare"><img src="https://avatars.githubusercontent.com/u/91705825?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shivam Katare</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Shivam-Katare" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Angryman18"><img src="https://avatars.githubusercontent.com/u/63530626?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shyam Mahanta</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Angryman18" title="Code">💻</a></td>
+    <td align="center"><a href="http://koustov.com"><img src="https://avatars.githubusercontent.com/u/7145967?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Koustov</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=koustov" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Shriom-Trivedi"><img src="https://avatars.githubusercontent.com/u/32411707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shri Om Trivedi</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Shriom-Trivedi" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/naiknareshh"><img src="https://avatars.githubusercontent.com/u/105363653?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Naresh Naik</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=naiknareshh" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/vincentBCP"><img src="https://avatars.githubusercontent.com/u/18364292?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vincent Patoc</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=vincentBCP" title="Code">💻</a></td>
+    <td align="center"><a href="https://sachinchaurasiya.dev"><img src="https://avatars.githubusercontent.com/u/59080942?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sachin Chaurasiya</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Sachin-chaurasiya" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/tejinder-sharma"><img src="https://avatars.githubusercontent.com/u/95734921?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tejinder Sharma</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=tejinder-sharma" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/ishrarg"><img src="https://avatars.githubusercontent.com/u/3227841?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ishrar G</b></sub></a><br /><a href="https://github.com/atapas/react-play/commits?author=ishrarg" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/tejinder-sharma"><img src="https://avatars.githubusercontent.com/u/95734921?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tejinder Sharma</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=tejinder-sharma" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ishrarg"><img src="https://avatars.githubusercontent.com/u/3227841?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ishrar G</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ishrarg" title="Code">💻</a></td>
   </tr>
 </table>
 

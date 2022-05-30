@@ -10,7 +10,7 @@ const Comment = () => {
   return (
     <>
       <Giscus
-        repo="atapas/react-play"
+        repo="reactplay/react-play"
         repoId={projectRepoId}
         category={discussionCategoryName}
         categoryId={discussionCategoryId}
