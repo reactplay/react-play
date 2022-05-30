@@ -200,7 +200,7 @@
   font-size: var(--fs-rg);
 }
 
-.btn-default {
+.btn-default-light {
   border: 0;
   display: inline-flex;
   align-items: center;
@@ -214,8 +214,8 @@
   transition: all 0.16s ease-in-out;
 }
 
-.btn-default:hover,
-.btn-default:focus {
+.btn-default-light:hover,
+.btn-default-light:focus {
   background-color: rgba(var(--color-neutral-90-rgb),0.2);
   color: var(--color-neutral-90);
 }

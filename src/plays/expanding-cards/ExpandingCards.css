@@ -20,7 +20,7 @@
   -webkit-backface-visibility: hidden;
 }
 
-.active {
+.card-container .active {
   width: 600px;
 }
 .Expanding-card-imgage {
@@ -59,7 +59,7 @@
     height: 50px;
     transition: height 1s;
   }
-  .active {
+  .card-container .active {
     height: 250px;
   }
   .active .Expanding-card-imgage {
