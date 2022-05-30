@@ -4,7 +4,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
-  <a href="https://reactplayio.netlify.app" target="_blank" style="font-size:50px"><img src="src/images/twitter-thumb.png" alt="react-play" width="125" /></a>
+  <a href="https://reactplay.io" target="_blank" style="font-size:50px"><img src="src/images/twitter-thumb.png" alt="react-play" width="125" /></a>
 </p>
 
 <h4 align="center">Learn . Create . Share about your ReactJS Development Journey</h4>
@@ -30,7 +30,7 @@
 </p>
 
 <p align="center">
-    <a href="https://reactplayio.netlify.app" target="blank">View Demo</a>
+    <a href="https://reactplay.io" target="blank">View Demo</a>
     ·
     <a href="https://github.com/reactplay/react-play/issues/new/choose">Report Bug</a>
     ·
@@ -49,7 +49,7 @@ Is that all? Nope. You can also create your own projects and share them with the
 ## 🔥 Demo
 Here is the link to the app. We hope you enjoy it.
 
-> [The ReactPlay app Link](https://reactplayio.netlify.app/)
+> [The ReactPlay app Link](https://reactplay.io)
   
 Who doesn't want motivation and support? Many Thanks to all the Stargazers who has supported this project with stars(⭐). You all are amazing!!!
 
