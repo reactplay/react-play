@@ -119,6 +119,12 @@
       "title": "Expense Tracker",
       "description": "Build a play for tracking expenses. Add, remove, edit expenses, categorize them",
       "level": "Intermediate"
+    },
+    {
+      "id": "idea-21",
+      "title": "Animations Portfolio",
+      "description": "Build a Portfolio made with react and sanity by framer-motion. Projects, Portfolio Section, Skills & Experience, Companies you work in with carousel, and Contacts.",
+      "level": "Advanced"
     }
   ]
 }

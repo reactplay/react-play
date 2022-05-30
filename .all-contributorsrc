@@ -211,11 +211,20 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Programming-School-Pro-Coding",
+      "name": "Programming-School",
+      "avatar_url": "https://avatars.githubusercontent.com/u/96921717?v=4",
+      "profile": "https://mohamed-ehab-portfolio.vercel.app/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "react-play",
-  "projectOwner": "atapas",
+  "projectOwner": "reactplay",
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true

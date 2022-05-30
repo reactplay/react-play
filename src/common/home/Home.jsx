@@ -16,7 +16,7 @@ import { SearchContext } from "common/search/search-context";
 
 const Home = () => {
   const [gitHubStars, setGitHubStars] = useState("...");
-  const { data } = useFetch("https://api.github.com/repos/atapas/react-play");
+  const { data } = useFetch("https://api.github.com/repos/reactplay/react-play");
   const { setSearchTerm, searchTerm, setFilterQuery } =
     useContext(SearchContext);
   useEffect(() => {
@@ -54,7 +54,7 @@ const Home = () => {
               <span className="btn-label">Browse</span>
             </Link>
             <a
-              href="https://github.com/atapas/react-play"
+              href="https://github.com/reactplay/react-play"
               target="_blank"
               rel="noopener noreferrer"
               className="body-c2a-btn"

@@ -43,7 +43,7 @@ const HeaderNav = ({ showBrowse }) => {
           )}
           <li className="menu-spacer">
             <a
-              href="https://github.com/atapas/react-play/blob/main/CREATE-PLAY.md"
+              href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
               target="_blank"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--primary"
@@ -60,7 +60,7 @@ const HeaderNav = ({ showBrowse }) => {
           </li>
           <li>
             <a
-              href="https://github.com/atapas/react-play"
+              href="https://github.com/reactplay/react-play"
               target="_blank"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--default"
