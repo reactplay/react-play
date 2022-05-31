@@ -480,13 +480,24 @@
     margin: 1rem;
 }
 
-.play-details .play-details-body ul li {
-    list-style: disc;
-    margin-left: 1.4rem;
+.play-details .play-details-body img {
+    max-width: unset;
+    height: unset;
 }
+
+.play-details .play-details-body input[type="text"],
 .play-details .play-details-body input[type="datetime-local"] {
     border: solid 1px var(--color-neutral-50);
     padding: 0.4rem;
+}
+
+.play-details .play-details-body button, 
+.play-details .play-details-body [type='button'],
+.play-details .play-details-body [type='reset'],
+.play-details .play-details-body [type='submit'] {
+    background: unset;
+    background-color: inherit;
+    background-image: inherit;
 }
 
 .play-details .header-actions .action {
