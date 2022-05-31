@@ -22,7 +22,8 @@ import {
   FunQuiz,
   TicTacToeGame,
   DynamicRoutes,
-  //import play here
+  Calculator,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -387,5 +388,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-calculator', 
+    name: 'Calculator', 
+    description: 'A Simple Calculator using React',
+    component: () => {return <Calculator />},
+    path: '/plays/calculator',
+    level: 'Beginner',
+    tags: 'JSX,Hooks,Arithmetic',
+    github: 'Programming-School-Pro-Coding',
+    cover: 'https://i.imgur.com/XpeQSxa.jpeg',
+    blog: 'https://programming-school.hashnode.dev/',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
