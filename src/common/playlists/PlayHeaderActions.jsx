@@ -41,8 +41,7 @@ const PlayHeaderActions = ({ play }) => {
           <AiOutlineRead className="icon" size="24px" />
           <span className="sr-only">Blog</span>
         </a>
-      ) : (
-        <a
+      ) : <a
           target="_blank"
           rel="noopener noreferrer"
           className="action"
@@ -51,7 +50,7 @@ const PlayHeaderActions = ({ play }) => {
           <AiOutlineRead className="icon" size="24px" />
           <span className="sr-only">README</span>
         </a>
-      )}
+      }
       {play.video && (
         <a
           target="_blank"
