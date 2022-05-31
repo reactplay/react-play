@@ -15,6 +15,7 @@
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
+    "react-number-format": "^4.9.3",
     "react-organizational-chart": "^2.1.1",
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
