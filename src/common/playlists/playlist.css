@@ -491,15 +491,6 @@
     padding: 0.4rem;
 }
 
-.play-details .play-details-body button, 
-.play-details .play-details-body [type='button'],
-.play-details .play-details-body [type='reset'],
-.play-details .play-details-body [type='submit'] {
-    background: unset;
-    background-color: inherit;
-    background-image: inherit;
-}
-
 .play-details .header-actions .action {
     position: relative;
     width: 24px;
