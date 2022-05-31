@@ -484,6 +484,10 @@
     list-style: disc;
     margin-left: 1.4rem;
 }
+.play-details .play-details-body input[type="datetime-local"] {
+    border: solid 1px var(--color-neutral-50);
+    padding: 0.4rem;
+}
 
 .play-details .header-actions .action {
     position: relative;
