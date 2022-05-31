@@ -30,37 +30,26 @@ function PasswordGenerator(props) {
   const specialCharCheckBox = useRef(null)
   const passwordField = useRef(null)
 
-
   // generating lowercase characters
   data.lowercase = data?.uppercase?.map((i) => i.toLowerCase());
 
   // generate a random number within limit which is provided
   const randomNumberGenerator = (limit) => {
-
     let result = 0;
-
     while (limit) {
-
       result = Math.floor(Math.random() * Math.floor(Math.random() * 100));
-
       if (result < limit) return result;
-
       continue;
-
     }
-
   };
 
   // arrange data to feed the generatePassword function
   const arrangeData = () => {
-
     const { numbers, special, uppercase, lowercase } = passwordConfig;
-
     const parseData = (val, key) => {
       if (val) return data[key];
       return [];
     };
-
     const concated = [
       ...parseData(numbers, "numbers"),
       ...parseData(special, "special"),
@@ -72,95 +61,55 @@ function PasswordGenerator(props) {
 
   // Generate a random password
   const generatePassword = () => {
-
       setError(false);
-
       const concated = arrangeData();
-
       let finalPassword = "";
-
       for (let i = 0; i < passwordConfig.length; i++) {
-
         finalPassword += concated[randomNumberGenerator(concated.length)];
-
       }
-        
       return finalPassword;
   };
 
   // generate password button click handler
   const generateHander = () => {
-    
     const finalPassword = generatePassword();
-
     setPassword({ status: false, password: finalPassword });
-
     passwordField.current.value = finalPassword;
-
-
   };
-
 
   // Copy the password to the clipboard
   const onCopyClick = (e) => {
-
     e.preventDefault();
-
     navigator.clipboard.writeText(password.password);
-
     setPassword({ ...password, status: true });
-
   };
 
   const ErrorBox = () => {
     return <p className='error'>You cannot Uncheck All At Once.</p>;
-  };
+  }; 
 
   const checkhandler = (id, inputCheckbox) => (e) => {
-
     const modifiedConfig = { ...passwordConfig };
-    
     delete modifiedConfig.length;
-    
     delete modifiedConfig.excludeSimilarCharacters;
-    
     modifiedConfig[id] = inputCheckbox.current.checked;
-    
     const values = Object.values(modifiedConfig).filter((i) => i === true);
-    
     if (values.length === 0) {
-          
       return setError(true);
-      
     }
-    
     setPasswordConfig({ ...passwordConfig, [id]: inputCheckbox.current.checked });
-    
     setError(false);
-
     inputCheckbox.current.checked = !inputCheckbox.current.checked;
-
-
   };
-
 
   useEffect(() => {
-
     generateHander();
-
   }, []);
 
-
-
   const setLength = (value) => {
-
     setPasswordConfig({ ...passwordConfig, ['length']: value });
-
     setError(false);
-
   };
-
-
 
   return (
     <div className='play-details'>
@@ -227,11 +176,9 @@ function PasswordGenerator(props) {
             </div>
             <div className="block generate">
                 <div className="sub">
-
                     <input type="submit"  onClick={generateHander}  name="" className="generate" id="" value="Generate Password" />
                 </div>
             </div>
-
         </div>
       </div>
     </div>
