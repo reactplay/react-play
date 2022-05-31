@@ -1,5 +1,5 @@
 
-> First thing, PLEASE READ THIS: [ReactPlay Code Review Checklist](https://github.com/atapas/react-play/wiki/ReactPlay-Code-Review-Checklist)
+> First thing, PLEASE READ THIS: [ReactPlay Code Review Checklist](https://github.com/reactplay/react-play/wiki/ReactPlay-Code-Review-Checklist)
 
 # Description
 
