@@ -1,7 +1,7 @@
 import { getPlayById } from "meta/play-meta-util";
 
 import PlayHeader from "common/playlists/PlayHeader";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import "./password-generator-style.css";
 import data from "./data.json";
@@ -24,11 +24,6 @@ function PasswordGenerator(props) {
   const [password, setPassword] = useState({ status: false, password: "" });
   const [passwordConfig, setPasswordConfig] = useState({ ...config });
   const [error, setError] = useState(false);
-  const lowercaseCheckBox = useRef(null)
-  const uppercaseCheckBox = useRef(null)
-  const numberCheckBox = useRef(null)
-  const specialCharCheckBox = useRef(null)
-  const passwordField = useRef(null)
 
   // generating lowercase characters
   data.lowercase = data?.uppercase?.map((i) => i.toLowerCase());
@@ -74,7 +69,6 @@ function PasswordGenerator(props) {
   const generateHander = () => {
     const finalPassword = generatePassword();
     setPassword({ status: false, password: finalPassword });
-    passwordField.current.value = finalPassword;
   };
 
   // Copy the password to the clipboard
@@ -92,14 +86,13 @@ function PasswordGenerator(props) {
     const modifiedConfig = { ...passwordConfig };
     delete modifiedConfig.length;
     delete modifiedConfig.excludeSimilarCharacters;
-    modifiedConfig[id] = inputCheckbox.current.checked;
+    modifiedConfig[id] = !inputCheckbox;
     const values = Object.values(modifiedConfig).filter((i) => i === true);
     if (values.length === 0) {
       return setError(true);
     }
-    setPasswordConfig({ ...passwordConfig, [id]: inputCheckbox.current.checked });
+    setPasswordConfig({ ...passwordConfig, [id]: modifiedConfig[id] });
     setError(false);
-    inputCheckbox.current.checked = !inputCheckbox.current.checked;
   };
 
   useEffect(() => {
@@ -119,21 +112,21 @@ function PasswordGenerator(props) {
           <h1 className="title">Password Generator</h1>
           {error && <ErrorBox />}
             <div className="inputfield">
-                <input type="text" name="" className="text" id="" disabled  ref={passwordField}/>
+                <input type="text"  className="text"  disabled  value={password.password}/>
                 <button className="copy copybtn" onClick={onCopyClick}>
                    {password?.status ? "Copied" : "Copy"}
                 </button>
             </div>
             <div className="block">
-                    <input type="checkbox" name="lowercase" ref={lowercaseCheckBox} id="lowercaseToggle"  hidden check={passwordConfig.lowercase} />
-                <div className="select lowercase" id="lower" onClick={checkhandler('lowercase',  lowercaseCheckBox)}>
+                    <input type="checkbox" name="lowercase" id="lowercaseToggle" hidden  checked={passwordConfig.lowercase} />
+                <div className="select lowercase" id="lower" onClick={checkhandler('lowercase',  passwordConfig.lowercase)}>
                     <h3>Lowercase</h3>
                     <div className="bigCircle">
                         <div className="smallCircle"></div>
                     </div>
                 </div>
-                    <input type="checkbox" name=""  ref={uppercaseCheckBox}  id="uppercaseToggle" hidden  check={passwordConfig.uppercase} />
-                <div className="select uppercase"  onClick={checkhandler('uppercase',  uppercaseCheckBox)}>
+                    <input type="checkbox"   id="uppercaseToggle" hidden  checked={passwordConfig.uppercase} />
+                <div className="select uppercase"  onClick={checkhandler('uppercase',  passwordConfig.uppercase)}>
                     <h3>Uppercase</h3>
                     <div className="bigCircle">
                         <div className="smallCircle"></div>
@@ -141,15 +134,15 @@ function PasswordGenerator(props) {
                 </div>
             </div>
             <div className="block">
-                    <input type="checkbox" name=""  ref={numberCheckBox}  id="numberToggle" hidden  check={passwordConfig.numbers} />
-                <div className="select number"  onClick={checkhandler('numbers', numberCheckBox)}>
+                    <input type="checkbox"   id="numberToggle" hidden  checked={passwordConfig.numbers} />
+                <div className="select number"  onClick={checkhandler('numbers', passwordConfig.numbers)}>
                     <h3>Number</h3>
                     <div className="bigCircle">
                         <div className="smallCircle"></div>
                     </div>
                 </div>
-                    <input type="checkbox" name=""  ref={specialCharCheckBox}  id="specialCharToggle" hidden check={passwordConfig.special}  />
-                <div className="select specialchar"  onClick={checkhandler('special', specialCharCheckBox)}>
+                    <input type="checkbox" id="specialCharToggle" hidden checked={passwordConfig.special}  />
+                <div className="select specialchar"  onClick={checkhandler('special', passwordConfig.special)}>
                     <h3>Special Char</h3>
                     <div className="bigCircle">
                         <div className="smallCircle"></div>
@@ -176,7 +169,7 @@ function PasswordGenerator(props) {
             </div>
             <div className="block generate">
                 <div className="sub">
-                    <input type="submit"  onClick={generateHander}  name="" className="generate" id="" value="Generate Password" />
+                    <input type="submit" onClick={generateHander} className="generate" value="Generate Password" />
                 </div>
             </div>
         </div>
