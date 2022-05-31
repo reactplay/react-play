@@ -468,11 +468,21 @@
 .play-details .play-details-body h2 {
     font-size: var(--fs-md);
     font-weight: var(--fw-bold);
-    margin-bottom: .4rem;
+    margin-bottom: .6rem;
 }
 
 .play-details .play-details-body p {
+    margin: 1rem 0;
     font-size: var(--fs-rg);
+}
+
+.play-details .play-details-body ul {
+    margin: 1rem;
+}
+
+.play-details .play-details-body ul li {
+    list-style: disc;
+    margin-left: 1.4rem;
 }
 
 .play-details .header-actions .action {
