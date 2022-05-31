@@ -3,7 +3,7 @@ This document helps you with the steps to `Create a play` in `react-play`. You w
 ## 🖥️ Steps to Create a Play
 Welcome developers! We are as excited as you are to know that you are going to create a new play. It is super easy to get started.
 
-> **Note:** The steps below assumes that you have forked and cloned the [react-play](https://github.com/atapas/react-play) repository. Also, you have installed the dependencies using the `npm install` or `yarn install` command. If you are new to forking, please watch this [YouTube Guide](https://www.youtube.com/watch?v=h8suY-Osn8Q) to get started.
+> **Note:** The steps below assumes that you have forked and cloned the [react-play](https://github.com/reactplay/react-play) repository. Also, you have installed the dependencies using the `npm install` or `yarn install` command. If you are new to forking, please watch this [YouTube Guide](https://www.youtube.com/watch?v=h8suY-Osn8Q) to get started.
 
 - Open a command prompt in your project folder.
 - Run the following command:
@@ -49,6 +49,11 @@ Welcome developers! We are as excited as you are to know that you are going to c
             <td>Let the application know your choice of script. It supports both <b>JavaScript</b> and <b>TypeScript</b>. You can pick either of it.</td>
           </tr>
           <tr>
+            <td>Style to be used (css/scss)</td>
+            <td>Yes</td>
+            <td>Let the application know your choice of style. It supports both <b>css</b> and <b>scss</b>. You can pick either of it.</td>
+          </tr>
+          <tr>
             <td>What is the level of this play?</td>
             <td>Yes</td>
             <td>You will be asked to select one of the three levels, Beginner, Intermediate, or Advanced. Please select a level for the play. A level indicates the possible complexity of developing the play using React.</td>
@@ -66,7 +71,7 @@ Welcome developers! We are as excited as you are to know that you are going to c
           <tr>
             <td>Please provide the path(URL) to cover image</td>
             <td>No</td>
-            <td>A cover image is used to show your play with a thumbnail in the play list page. Please provide a link a cover image that is publicly accessible using a URL, example:  https://res.cloudinary.com/atapas/image/upload/v1649060528/demos/id-card_pdvyvz.png. Alternatively, you can have a cover.png file in the root of your play folder.
+            <td>A cover image is used to show your play with a thumbnail in the play list page. Please provide a link a cover image that is publicly accessible using a URL, example:  https://res.cloudinary.com/reactplay/image/upload/v1649060528/demos/id-card_pdvyvz.png. Alternatively, you can have a cover.png file in the root of your play folder.
             If you don't have a cover image, the app will use the default cover image.</td>
           </tr>
           <tr>
@@ -97,11 +102,11 @@ Welcome developers! We are as excited as you are to know that you are going to c
 ## 👀 Submitting a Play for Review
 After you done with coding for your `Play`, you can submit it for review. Submitting a `Play` for review is a two step process.
 
-- Create a Pull Request on the [react-play](https://github.com/atapas/react-play) repository with your changes. Please add `atapas` as a reviewer.
+- Create a Pull Request on the [react-play](https://github.com/reactplay/react-play) repository with your changes. Please add `atapas` as a reviewer.
 - Dedicate some time in a week to take care of the review comments.
 
-Once the Pull Request is approved and merged, we will notify you and add you as a `Contributor` to the [react-play](https://github.com/atapas/react-play) project.
+Once the Pull Request is approved and merged, we will notify you and add you as a `Contributor` to the [react-play](https://github.com/reactplay/react-play) project.
 
 ## ✋ Need Help?
 
-You can reach out to us at [ReactPlay Twitter Handle | @ReactPlayIO](https://twitter.com/ReactPlayIO) with a DM. Additionally, feel free to open a [discussion](https://github.com/atapas/react-play/discussions) or [issue](https://github.com/atapas/react-play/issues) on the `react-play` repository.
+You can reach out to us at [ReactPlay Twitter Handle | @ReactPlayIO](https://twitter.com/ReactPlayIO) with a DM. Additionally, feel free to open a [discussion](https://github.com/reactplay/react-play/discussions) or [issue](https://github.com/reactplay/react-play/issues) on the `react-play` repository.

@@ -20,7 +20,7 @@ const useSearchFilter = () => {
 
 const filterPlays = (searchTerm, filterQuery) => {
   let filteredPlays = [];
-  const { level, tags, creator } = filterQuery;
+  const { level, tags, creator, language } = filterQuery;
   
   const searchedPlays = getPlaysOnSearch(searchTerm);
 
@@ -34,6 +34,11 @@ const filterPlays = (searchTerm, filterQuery) => {
 
   filteredPlays = filteredPlays.filter(play => {
     return (play.tags.includes(tags[0]) || !tags[0]);
+  });
+
+  filteredPlays = filteredPlays.filter(play => {
+    const lang = play.language || 'js';
+    return (lang === language || !language);
   });
   
   

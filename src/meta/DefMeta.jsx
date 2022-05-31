@@ -6,8 +6,8 @@ function DefMeta() {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="ReactPlay" />
       <meta property="og:image:type" content="image/png" />
-      <meta property="og:image:width" content="400" />
-      <meta property="og:image:height" content="300" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="628" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="description"
@@ -34,6 +34,11 @@ function DefMeta() {
       <meta
         property="og:image:alt"
         content="Start React Code Arena with ReactPlay"
+        data-react-helmet="true"
+      />
+      <meta
+        property="og:url"
+        content="https://reactplay.io"
         data-react-helmet="true"
       />
       <meta
