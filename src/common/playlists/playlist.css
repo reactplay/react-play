@@ -422,6 +422,7 @@
 .play-details .play-details-header .header-title {
     margin: 0;
     font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
 }
 
 .play-details .play-details-header .header-desc {
@@ -458,6 +459,22 @@
     overflow-y: auto;
 }
 
+.play-details .play-details-body h1 {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    margin-bottom: .6rem;
+}
+
+.play-details .play-details-body h2 {
+    font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
+    margin-bottom: .4rem;
+}
+
+.play-details .play-details-body p {
+    font-size: var(--fs-rg);
+}
+
 .play-details .header-actions .action {
     position: relative;
     width: 24px;
@@ -472,7 +489,6 @@
     width: auto;
     height: auto;
     text-decoration: none;
-    margin-right: -0.6rem;
 }
 
 .play-details .header-actions .action.badged .badge-count {
