@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 15px;
 }
+
 .gameCard {
   width: 8rem;
   height: 8rem;

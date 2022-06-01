@@ -2,7 +2,6 @@ import { getPlayById } from "meta/play-meta-util";
 
 import PlayHeader from "common/playlists/PlayHeader";
 
-// importing Game component
 import Game from "./Game";
 import "./TicTacToe.css";
 

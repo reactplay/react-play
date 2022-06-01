@@ -8,7 +8,7 @@ const Icon = ({ choice }) => {
     case "circle":
       return <FaRegCircle className="icon" />;
     default:
-      return "";
+      return null;
   }
 };
 

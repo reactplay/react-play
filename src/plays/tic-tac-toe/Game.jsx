@@ -3,35 +3,21 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { FaTimes, FaRegCircle } from "react-icons/fa";
+import PlayAgainButton from "./PlayAgainButton";
 import Icon from "./Icon";
 
 import "./Game.css";
 
-// Declaring an array to store the game state. Initializing it with 9 empty strings.
+/*
+ * Declaring an array to store the game state.
+ * Initializing it with 9 empty strings.
+ */
 const gameArray = new Array(9).fill("");
 
 const Game = () => {
   let [isCross, setIsCross] = useState(true);
-  let [winMessage, setWinMessage] = useState("");
+  let [finalMessage, setFinalMessage] = useState("");
   let count = 0;
-
-  // New Game
-  const PlayAgain = () => {
-    return (
-      <div className="center">
-        <button
-          className="gameButton"
-          onClick={() => {
-            setIsCross(true);
-            setWinMessage("");
-            gameArray.fill("");
-          }}
-        >
-          Play Again!
-        </button>
-      </div>
-    );
-  };
 
   // Game Logic
   const findWinner = () => {
@@ -40,50 +26,57 @@ const Game = () => {
       gameArray[0] === gameArray[2] &&
       gameArray[0] !== ""
     ) {
-      setWinMessage(`${gameArray[0]} has won!`);
+      setFinalMessage(`${gameArray[0]} has won!`);
     } else if (
       gameArray[3] === gameArray[4] &&
       gameArray[3] === gameArray[5] &&
       gameArray[3] !== ""
     ) {
-      setWinMessage(`${gameArray[3]} has won!`);
+      setFinalMessage(`${gameArray[3]} has won!`);
     } else if (
       gameArray[6] === gameArray[7] &&
       gameArray[6] === gameArray[8] &&
       gameArray[6] !== ""
     ) {
-      setWinMessage(`${gameArray[6]} has won!`);
+      setFinalMessage(`${gameArray[6]} has won!`);
     } else if (
       gameArray[0] === gameArray[3] &&
       gameArray[0] === gameArray[6] &&
       gameArray[0] !== ""
     ) {
-      setWinMessage(`${gameArray[0]} has won!`);
+      setFinalMessage(`${gameArray[0]} has won!`);
     } else if (
       gameArray[1] === gameArray[4] &&
       gameArray[1] === gameArray[7] &&
       gameArray[1] !== ""
     ) {
-      setWinMessage(`${gameArray[1]} has won!`);
+      setFinalMessage(`${gameArray[1]} has won!`);
     } else if (
       gameArray[2] === gameArray[5] &&
       gameArray[2] === gameArray[8] &&
       gameArray[2] !== ""
     ) {
-      setWinMessage(`${gameArray[2]} has won!`);
+      setFinalMessage(`${gameArray[2]} has won!`);
     } else if (
       gameArray[0] === gameArray[4] &&
       gameArray[0] === gameArray[8] &&
       gameArray[0] !== ""
     ) {
-      setWinMessage(`${gameArray[0]} has won!`);
+      setFinalMessage(`${gameArray[0]} has won!`);
     } else if (
       gameArray[2] === gameArray[4] &&
       gameArray[2] === gameArray[6] &&
       gameArray[2] !== ""
     ) {
-      setWinMessage(`${gameArray[2]} has won!`);
+      setFinalMessage(`${gameArray[2]} has won!`);
     }
+  };
+
+  // Play Again button click event
+  const onPlayAgainClick = () => {
+    setIsCross(true);
+    setFinalMessage("");
+    gameArray.fill("");
   };
 
   // Draw
@@ -93,15 +86,18 @@ const Game = () => {
         count++;
       }
       if (count === 9) {
-        setWinMessage("Game Draw!");
+        setFinalMessage("Game Draw!");
       }
     });
-    <PlayAgain />;
+
+    <div className="center">
+      <PlayAgainButton onClick={onPlayAgainClick} />
+    </div>;
   };
 
   // Card on click
   const changeItem = (index) => {
-    if (winMessage) {
+    if (finalMessage) {
       return toast("Game is already finished!", { type: "success" });
     }
 
@@ -131,10 +127,12 @@ const Game = () => {
         <ToastContainer position="bottom-center"> </ToastContainer>
         <main>
           <div>
-            {winMessage ? (
+            {finalMessage ? (
               <div>
-                <h3 className="text-center">{winMessage}</h3>
-                <PlayAgain />
+                <h3 className="text-center">{finalMessage}</h3>
+                <div className="center">
+                  <PlayAgainButton onClick={onPlayAgainClick} />
+                </div>
               </div>
             ) : (
               <h3>{isCross ? "Turn : Cross" : "Turn : Circle"}</h3>
