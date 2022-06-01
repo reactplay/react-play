@@ -100,7 +100,7 @@ const PlayIdeas = () => {
                 </p>
                 <div className="idea-actions">
                   <a
-                    href="https://github.com/atapas/react-play/blob/main/CREATE-PLAY.md"
+                    href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary action-btn"
@@ -109,7 +109,7 @@ const PlayIdeas = () => {
                     <span className="btn-label">Create Play</span>
                   </a>
                   <a
-                    href={`https://github.com/atapas/react-play/discussions/new?category=ideas&title=${idea.title}`}
+                    href={`https://github.com/reactplay/react-play/discussions/new?category=ideas&title=${idea.title}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-default action-btn"

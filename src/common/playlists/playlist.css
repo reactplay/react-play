@@ -615,3 +615,24 @@
     color: var(--color-neutral-80);
     
 }
+/* Play not found */
+.play-not-found {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.play-not-found .play-not-found-image {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width:768px) {
+    .play-not-found .play-not-found-image {
+        max-width: 50%;
+        margin-bottom: 2rem;
+    }
+}
