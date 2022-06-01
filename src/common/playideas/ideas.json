@@ -123,7 +123,13 @@
     {
       "id": "idea-21",
       "title": "Animations Portfolio",
-      "description": "Build a Portfolio made with react and sanity by framer-motion. Projects, Portfolio Section, Skills & Experience, Companies you work in with carousel, and Contacts.",
+      "description": "Build a Portfolio made with react by framer-motion. Projects, Portfolio Section, Skills & Experience, Companies you work in with carousel, and Contacts.",
+      "level": "Advanced"
+    },
+    {
+      "id": "idea-22",
+      "title": "Full Stack Portfolio",
+      "description": "Build a Portfolio made with react and sanity by framer-motion or react-reveal. Projects, Portfolio Section, Skills & Experience, Companies you work in with carousel, and Contacts.",
       "level": "Advanced"
     }
   ]
