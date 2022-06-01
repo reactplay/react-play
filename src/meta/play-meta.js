@@ -22,7 +22,8 @@ import {
   FunQuiz,
   TicTacToeGame,
   DynamicRoutes,
-  //import play here
+  FlipCardEffect,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -387,5 +388,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-flip-card-effect', 
+    name: 'Flip-Card-Effect', 
+    description: '',
+    component: () => {return <FlipCardEffect />},
+    path: '/plays/flip-card-effect',
+    level: 'Beginner',
+    tags: '',
+    github: 'Deepak8717',
+    cover: '',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
