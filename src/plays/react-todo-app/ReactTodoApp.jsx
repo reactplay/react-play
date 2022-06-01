@@ -23,6 +23,8 @@ function ReactTodoApp(props) {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState('all');
   const [filtered, setFiltered] = useState([]);
+
+  //Set states for editHandler
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
 

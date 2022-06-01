@@ -19,6 +19,7 @@ const Input = ({
   const submitHandler = (e) => {
     e.preventDefault();
     if (!input) return;
+    //If editing, replace the old todo with the new one
     else if (input.length > 0 && isEditing === true) {
       setTodos(
         todos.map((item) => {
@@ -31,6 +32,7 @@ const Input = ({
       setIsEditing(false);
       setInput('');
     } else {
+      //If not editing, add new todo to the list
       setTodos([
         ...todos,
         { text: input, completed: false, id: Math.random() * 1000 },

@@ -31,6 +31,7 @@ const Todo = ({
     );
   };
 
+  //Edit Handler - set id of the edit item and set new input value
   const editHandler = () => {
     setIsEditing(true);
     const newId = todos.filter((item) => item.id === todo.id)[0].id;
