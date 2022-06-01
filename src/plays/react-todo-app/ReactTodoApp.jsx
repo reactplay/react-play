@@ -11,6 +11,11 @@ import './react-todo.css';
 import Input from './components/Input';
 import TodoList from './components/TodoList';
 
+function getLocalStorageTodos() {
+  const todos = localStorage.getItem('todos');
+  return todos ? JSON.parse(todos) : [];
+}
+
 function ReactTodoApp(props) {
   // Do not remove the below lines.
   // The following code is to fetch the current play from the URL
@@ -20,7 +25,7 @@ function ReactTodoApp(props) {
   // Your Code Start below.
 
   const [input, setInput] = useState('');
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(getLocalStorageTodos());
   const [status, setStatus] = useState('all');
   const [filtered, setFiltered] = useState([]);
 
@@ -45,6 +50,10 @@ function ReactTodoApp(props) {
 
     filterHandler();
   }, [status, todos]);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <>
