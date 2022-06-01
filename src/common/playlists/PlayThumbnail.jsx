@@ -66,6 +66,7 @@ const PlayThumbnail = ({ play }) => {
         <div className="play-header">
           <div className="play-title">{play.name}</div>
           { play.github && <Author github={play.github} /> }
+          <div className={`language language-${play.language || 'js'}`}></div>
         </div>
         <div className="play-status">
           <BsPlayCircleFill size="48px" />

@@ -1,0 +1,31 @@
+[{
+    "title": "General",
+    "details": [
+        "A powerful type system that includes generics.",
+        "TypeScript is nothing but JavaScript with some additional features.",
+        "It is Structural, rather than nominal way of processing"
+    ]
+},{
+    "title": "Power",
+    "details": [
+        "TypeScript provides highly productive development tools for JavaScript IDEs and practices, like static checking.",
+        "TypeScript makes code easier to read and understand.",
+        "TypeScript gives us all the benefits of ES6 (ECMAScript 6), plus more productivity."
+
+    ]
+},{
+    "title": "Friendlyness",
+    "details": [
+        "TypeScript can help us to avoid painful bugs that developers commonly run into when writing JavaScript by type checking the code",
+        "Typescript is aligned with ECMAScript for compatibility.",
+        "TypeScript code can be compiled as per ES5 and ES6 standards to support the latest browser."
+        
+    ]
+},{
+    "title": "Features",
+    "details": [
+        "TypeScript simplifies JavaScript code, making it easier to read and debug.",
+        "With TypeScript, we can make a huge improvement over plain JavaScript.",
+        "A feature rich language that supports static typing."
+    ]
+}]
