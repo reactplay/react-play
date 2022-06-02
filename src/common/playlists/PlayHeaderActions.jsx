@@ -38,7 +38,7 @@ const PlayHeaderActions = ({ play }) => {
         href={
           play.blog
             ? play.blog
-            : `https://github.com/atapas/react-play/tree/main/src${play.path}/Readme.md`
+            : `https://github.com/reactplay/react-play/tree/main/src${play.path}/Readme.md`
         }
       >
         <AiOutlineRead className="icon" size="24px" />
