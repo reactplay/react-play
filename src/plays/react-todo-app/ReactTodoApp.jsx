@@ -1,7 +1,7 @@
 import { getPlayById } from 'meta/play-meta-util';
 import PlayHeader from 'common/playlists/PlayHeader';
 import { useState, useEffect } from 'react';
-import useLocalStorage from '../../common/hooks/useLocalStorage';
+import useLocalStorage from 'common/hooks/useLocalStorage';
 
 // css file
 import './react-todo.css';

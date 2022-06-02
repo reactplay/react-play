@@ -4,7 +4,7 @@ import './Keeper.css';
 import Header from './Header';
 import CreateArea from './CreateArea';
 import Note from './Notes';
-import useLocalStorage from '../../common/hooks/useLocalStorage';
+import useLocalStorage from 'common/hooks/useLocalStorage';
 
 function Keeper(props) {
   // Do not remove the below lines.
