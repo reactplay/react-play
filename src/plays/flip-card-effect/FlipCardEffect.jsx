@@ -1,5 +1,4 @@
 import { getPlayById } from "meta/play-meta-util";
-
 import PlayHeader from "common/playlists/PlayHeader";
 import Card from "./Card";
 import "./FlipCardEffect.css";
@@ -32,7 +31,17 @@ function FlipCardEffect(props) {
               })}
             </div>
             <p className="sub-heading">
-              Inspired by <strong>"react-card-flip"</strong> library
+              Inspired by{" "}
+              <strong>
+                <a
+                  className="external-link"
+                  target="_blank"
+                  href="https://aaronccwong.github.io/react-card-flip/"
+                >
+                  react-card-flip
+                </a>
+              </strong>{" "}
+              library
             </p>
           </div>
           {/* Your Code Ends Here */}

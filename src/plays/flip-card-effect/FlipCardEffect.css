@@ -46,7 +46,6 @@
 .flip-card .back {
   z-index: 2;
   transform: rotateY(180deg);
-  /* background-color: chocolate; */
 }
 .flip-card .rotate-180 {
   transform: rotateY(180deg);
@@ -54,7 +53,9 @@
 .flip-card .rotate-360 {
   transform: rotateY(360deg);
 }
-
+.flip-card .external-link {
+  text-decoration: none;
+}
 @media screen and (max-width: 1024px) {
   .flip-card {
     max-width: 740px;
@@ -65,7 +66,7 @@
     justify-items: center;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 640px) {
   .flip-card .container {
     display: grid;
     grid-template-columns: 1fr;
