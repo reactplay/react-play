@@ -10,9 +10,6 @@ import './react-todo.css';
 import Input from './components/Input';
 import TodoList from './components/TodoList';
 
-import { v4 as uuidv4 } from 'uuid';
-const uniqueKey = uuidv4();
-
 function ReactTodoApp(props) {
   // Do not remove the below lines.
   // The following code is to fetch the current play from the URL

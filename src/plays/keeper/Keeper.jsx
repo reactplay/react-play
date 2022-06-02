@@ -5,9 +5,6 @@ import Header from './Header';
 import CreateArea from './CreateArea';
 import Note from './Notes';
 import useLocalStorage from '../../common/hooks/useLocalStorage';
-import { v4 as uuidv4 } from 'uuid';
-
-const uniqueKey = uuidv4();
 
 function Keeper(props) {
   // Do not remove the below lines.

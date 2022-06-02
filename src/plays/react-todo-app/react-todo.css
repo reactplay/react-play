@@ -1,13 +1,19 @@
+:root {
+  --color-primary: #243a73;
+  --color-secondary: #f2ebe9;
+}
+
 .todo-play-body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: linear-gradient(
+  background-color: var(--color-primary);
+  /* background-image: linear-gradient(
     0deg,
     rgba(34, 193, 195, 1) 0%,
     rgba(253, 187, 45, 1) 100%
-  );
-  color: white;
+  ); */
+  color: var(--color-secondary);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -17,7 +23,7 @@
 
 .todo-top-banner,
 .react-todo-form {
-  min-height: 20vh;
+  /* min-height: 20vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,25 +34,42 @@
   padding: 0.5rem;
   font-size: 1.2rem;
   border: none;
-  background: white;
+  background: var(--color-secondary);
+}
+
+.react-todo-form input {
+  color: var(--color-primary);
+}
+
+.react-todo-form input:focus {
+  outline: none;
+}
+
+.react-todo-input {
+  position: relative;
 }
 
 .react-todo-form button {
-  color: #ff6f47;
-  background: #f7fffe;
+  color: var(--color-secondary);
+  /* background: #f7fffe; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgb(9, 147, 113);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .react-todo-form button:hover {
   background: #ff6f47;
-  color: white;
+  color: var(--color-secondary);
 }
 
 .todo-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: -3rem;
 }
 
 .todo-list {
@@ -56,9 +79,9 @@
 
 .todo {
   margin: 0.5rem;
-  background: white;
+  padding: 0.5rem;
   font-size: 1.5rem;
-  color: black;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,7 +100,7 @@
 .complete-btn,
 .edit-btn {
   background: #ff6f47;
-  color: white;
+  color: var(--color-secondary);
   border: none;
   padding: 0.5rem;
   cursor: pointer;
@@ -85,11 +108,13 @@
 }
 
 .complete-btn {
-  background: rgb(11, 212, 162);
+  background: rgb(9, 147, 113);
 }
 
 .todo-item {
-  padding: 0rem 0.5rem;
+  padding: 0.5rem;
+  width: 350px;
+  word-wrap: break-word;
 }
 
 .edit-btn {
@@ -143,4 +168,28 @@
   background: #ff6f47;
   cursor: pointer;
   pointer-events: none;
+}
+
+@media screen and (max-width: 576px) {
+  .react-todo-form {
+    flex-direction: column;
+  }
+
+  .todo {
+    width: 80vw;
+  }
+
+  .todo-item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .react-todo-form input,
+  .react-todo-input {
+    width: 80vw;
+  }
+  .todo-top-banner {
+    font-size: 1.5rem;
+  }
 }

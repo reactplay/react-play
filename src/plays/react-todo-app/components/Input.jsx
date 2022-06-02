@@ -47,15 +47,17 @@ const Input = ({
 
   return (
     <form className='react-todo-form'>
-      <input
-        onChange={inputHandler}
-        value={input}
-        type='text'
-        className='todo-input'
-      />
-      <button onClick={submitHandler} className='todo-button' type='submit'>
-        <FaPlusSquare />
-      </button>
+      <div className='react-todo-input'>
+        <input
+          onChange={inputHandler}
+          value={input}
+          type='text'
+          className='todo-input'
+        />
+        <button onClick={submitHandler} className='todo-button' type='submit'>
+          <FaPlusSquare />
+        </button>
+      </div>
       <div className='select-todo'>
         <select
           onChange={statusHandler}
