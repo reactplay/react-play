@@ -1,8 +1,7 @@
 import { getPlayById } from 'meta/play-meta-util';
-
 import PlayHeader from 'common/playlists/PlayHeader';
-
 import { useState, useEffect } from 'react';
+import useLocalStorage from '../../common/hooks/useLocalStorage';
 
 // css file
 import './react-todo.css';
@@ -11,10 +10,8 @@ import './react-todo.css';
 import Input from './components/Input';
 import TodoList from './components/TodoList';
 
-function getLocalStorageTodos() {
-  const todos = localStorage.getItem('todos');
-  return todos ? JSON.parse(todos) : [];
-}
+import { v4 as uuidv4 } from 'uuid';
+const uniqueKey = uuidv4();
 
 function ReactTodoApp(props) {
   // Do not remove the below lines.
@@ -25,7 +22,7 @@ function ReactTodoApp(props) {
   // Your Code Start below.
 
   const [input, setInput] = useState('');
-  const [todos, setTodos] = useState(getLocalStorageTodos());
+  const [todos, setTodos] = useLocalStorage('react-todo-app/todos', []);
   const [status, setStatus] = useState('all');
   const [filtered, setFiltered] = useState([]);
 
@@ -50,10 +47,6 @@ function ReactTodoApp(props) {
 
     filterHandler();
   }, [status, todos]);
-
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
 
   return (
     <>
