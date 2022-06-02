@@ -36,11 +36,13 @@ function FlipCardEffect(props) {
                 <a
                   className="external-link"
                   target="_blank"
+                  rel="noopener noreferrer"
                   href="https://aaronccwong.github.io/react-card-flip/"
                 >
                   react-card-flip
                 </a>
-              </strong>{" "}
+                &nbsp;
+              </strong>
               library
             </p>
           </div>

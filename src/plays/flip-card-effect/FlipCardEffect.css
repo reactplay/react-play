@@ -13,6 +13,7 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
   margin: 50px auto 100px;
+  cursor: pointer;
 }
 .flip-card .card-container {
   width: 200px;
