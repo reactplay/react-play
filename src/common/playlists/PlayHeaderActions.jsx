@@ -31,21 +31,19 @@ const PlayHeaderActions = ({ play }) => {
           <span className="sr-only">GitHub</span>
         </a>
       )}
-      {play.blog || play.path &&
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="action"
-          href={
-            play.blog
-              ? play.blog
-              : `https://github.com/atapas/react-play/tree/main/src${play.path}/Readme.md`
-          }
-        >
-          <AiOutlineRead className="icon" size="24px" />
-          <span className="sr-only">Blog</span>
-        </a>
-      }
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="action"
+        href={
+          play.blog
+            ? play.blog
+            : `https://github.com/atapas/react-play/tree/main/src${play.path}/Readme.md`
+        }
+      >
+        <AiOutlineRead className="icon" size="24px" />
+        <span className="sr-only">Blog</span>
+      </a>
       {play.video && (
         <a
           target="_blank"
