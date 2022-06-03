@@ -1,0 +1,18 @@
+table:
+  name: plays
+  schema: public
+object_relationships:
+- name: level
+  using:
+    foreign_key_constraint_on: level_id
+- name: user
+  using:
+    foreign_key_constraint_on: owner_user_id
+array_relationships:
+- name: play_tags
+  using:
+    foreign_key_constraint_on:
+      column: play_id
+      table:
+        name: play_tags
+        schema: public

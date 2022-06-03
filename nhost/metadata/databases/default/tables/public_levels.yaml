@@ -1,0 +1,11 @@
+table:
+  name: levels
+  schema: public
+array_relationships:
+- name: plays
+  using:
+    foreign_key_constraint_on:
+      column: level_id
+      table:
+        name: plays
+        schema: public
