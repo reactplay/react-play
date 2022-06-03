@@ -1,10 +1,10 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-25-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
-  <a href="https://reactplayio.netlify.app" target="_blank" style="font-size:50px"><img src="src/images/twitter-thumb.png" alt="react-play" width="125" /></a>
+  <a href="https://reactplay.io" target="_blank" style="font-size:50px"><img src="src/images/twitter-thumb.png" alt="react-play" width="125" /></a>
 </p>
 
 <h4 align="center">Learn . Create . Share about your ReactJS Development Journey</h4>
@@ -30,7 +30,7 @@
 </p>
 
 <p align="center">
-    <a href="https://reactplayio.netlify.app" target="blank">View Demo</a>
+    <a href="https://reactplay.io" target="blank">View Demo</a>
     ·
     <a href="https://github.com/reactplay/react-play/issues/new/choose">Report Bug</a>
     ·
@@ -49,7 +49,7 @@ Is that all? Nope. You can also create your own projects and share them with the
 ## 🔥 Demo
 Here is the link to the app. We hope you enjoy it.
 
-> [The ReactPlay app Link](https://reactplayio.netlify.app/)
+> [The ReactPlay app Link](https://reactplay.io)
   
 Who doesn't want motivation and support? Many Thanks to all the Stargazers who has supported this project with stars(⭐). You all are amazing!!!
 
@@ -199,6 +199,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/tejinder-sharma"><img src="https://avatars.githubusercontent.com/u/95734921?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tejinder Sharma</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=tejinder-sharma" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/ishrarg"><img src="https://avatars.githubusercontent.com/u/3227841?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ishrar G</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ishrarg" title="Code">💻</a></td>
     <td align="center"><a href="https://mohamed-ehab-portfolio.vercel.app/"><img src="https://avatars.githubusercontent.com/u/96921717?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Programming-School</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Programming-School-Pro-Coding" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/valeshgopal"><img src="https://avatars.githubusercontent.com/u/89742622?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Valesh Gopal</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=valeshgopal" title="Code">💻</a></td>
   </tr>
 </table>
 

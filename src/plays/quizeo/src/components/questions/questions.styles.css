@@ -15,7 +15,6 @@
 
 .quizeo .question-model{
     margin-top:-4%;
-    width: 50%; 
 }
 
 .quizeo .category-title{
@@ -110,4 +109,10 @@
     font-size: 1.2rem;
     width: 9rem; 
     border-radius: 0.5rem; 
+}
+
+@media only screen and (min-width: 600px) {
+    .quizeo .question-model{
+        width: 50%;
+    }
 }
