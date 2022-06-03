@@ -31,7 +31,9 @@
     "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "create-play": "plop"
+    "create-play": "plop",
+    "lint": "eslint .",
+    "lint:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|scss|md|)\""
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +60,17 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.6.2",
     "puppeteer": "^13.7.0",
     "react-snap": "^1.23.0",
     "typescript": "^4.6.4"
