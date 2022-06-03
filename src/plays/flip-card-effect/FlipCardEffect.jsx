@@ -41,7 +41,6 @@ function FlipCardEffect(props) {
                 >
                   react-card-flip
                 </a>
-                &nbsp;
               </strong>
               library
             </p>
