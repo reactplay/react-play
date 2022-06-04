@@ -1,0 +1,10 @@
+table:
+  name: play_tags
+  schema: public
+object_relationships:
+- name: play
+  using:
+    foreign_key_constraint_on: play_id
+- name: tag
+  using:
+    foreign_key_constraint_on: tag_id
