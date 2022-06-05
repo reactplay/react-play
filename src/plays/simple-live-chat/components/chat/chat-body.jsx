@@ -14,7 +14,7 @@ const User = ({ photoURL, onClick }) => {
       src={defaultImage}
       alt='avatar'
       onClick={onClick}
-      className='user'
+      className='simple-live-chat-user'
       onError={() => setDefaultImage(userIcon)}
     />
   );
@@ -48,7 +48,7 @@ const ChatBody = ({ message, uid, loading }) => {
     const date = showDateHandler(message, idx);
     if (!date) return null;
     return (
-      <div className='date-display'>
+      <div className='simple-live-chat-date-display'>
         <p>{date}</p>
       </div>
     );
@@ -68,25 +68,25 @@ const ChatBody = ({ message, uid, loading }) => {
   const DisplayNameComponent = ({ displayName, sender, id }) => {
     if (!node.includes(id)) return null;
     return (
-      <div className={sender ? "text-right" : "text-left"}>{displayName}</div>
+      <div className={sender ? "simple-live-chat-text-right" : "simple-live-chat-text-left"}>{displayName}</div>
     );
   };
 
   if (loading) return null;
 
   return (
-    <div className='chat-body'>
+    <div className='simple-live-chat-body'>
       {!loading &&
         message.map((item, idx) => {
           if (item.uid === uid) {
             return (
               <Fragment key={`${item?.text.slice(0, 5)}${idx}`}>
                 <DateDisplayComp idx={idx} message={message} />
-                <div className='message message-sender'>
+                <div className='simple-live-chat-message simple-live-chat-message-sender'>
                   <div>
                     <span
                       onClick={displaySenderNameHandler(item?.id)}
-                      className='message-context message-sender-text'
+                      className='simple-live-chat-message-context simple-live-chat-message-sender-text'
                     >
                       {item?.text}
                       <span>{dateTimeFormatter(item?.createdAt)}</span>
@@ -104,7 +104,7 @@ const ChatBody = ({ message, uid, loading }) => {
             return (
               <Fragment key={`${item?.text.slice(0, 5)}${idx}`}>
                 <DateDisplayComp idx={idx} message={message} />
-                <div className='message message-receiver'>
+                <div className='simple-live-chat-message simple-live-chat-message-receiver'>
                   <User
                     photoURL={item?.photoURL}
                     onClick={displaySenderNameHandler(item?.id)}
@@ -112,7 +112,7 @@ const ChatBody = ({ message, uid, loading }) => {
                   <div>
                     <span
                       onClick={displaySenderNameHandler(item?.id)}
-                      className='message-context message-receiver-text'
+                      className='simple-live-chat-message-context simple-live-chat-message-receiver-text'
                     >
                       {item?.text}
                       <span>{dateTimeFormatter(item?.createdAt)}</span>

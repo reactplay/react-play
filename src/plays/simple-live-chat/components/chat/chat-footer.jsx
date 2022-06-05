@@ -48,15 +48,15 @@ const ChatFooter = ({ userImage: photoURL, uid, displayName, loading }) => {
   if (loading) return null;
 
   return (
-    <div className='chat-footer'>
-      <div className='footer-container'>
+    <div className='simple-live-chat-chat-footer'>
+      <div className='simple-live-chat-footer-container'>
         <textarea
           onKeyDown={handleKeyEvent}
           onChange={(e) => setMessage(e.target.value)}
           value={message}
           placeholder='Start typing . . .'
         ></textarea>
-        <div onClick={handleClickSend} className='absolute active:bg-gray-100 right-0 h-12 cursor-pointer rounded-r-full w-16 flex items-center justify-center'>
+        <div onClick={handleClickSend}>
           <svg width='40px' height='30px' viewBox='0 0 20 18' version='1.1'>
             <g
               id='Icons'

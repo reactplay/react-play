@@ -9,8 +9,6 @@ import {
 } from "firebase/firestore";
 import { getAuth, signOut } from "firebase/auth";
 
-import Storage from "../Storage";
-
 // components
 import ChatHeader from "./chat-header";
 import ChatFooter from "./chat-footer";
@@ -42,7 +40,7 @@ const DisplayChat = ({ user, setLoggedUser }) => {
     signOut(auth)
       .then(() => {
         setLoggedUser(null);
-        Storage.removeFromLocalStorage();
+        localStorage.removeItem("auth");
       })
       .catch((error) => {
         console.log(error);
@@ -63,7 +61,7 @@ const DisplayChat = ({ user, setLoggedUser }) => {
   };
 
   return (
-    <div className="main-chat">
+    <div className="simple-live-chat-main-chat">
       <LoadingComponent />
       <DisplayChat.ChatHeader {...info} />
       <DisplayChat.ChatBody {...info} />

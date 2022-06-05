@@ -5,8 +5,7 @@ import "./simpleLiveChat.scss";
 
 import { useState } from "react";
 import SignIn from "./components/signin-button";
-import StorageHandler from "./components/Storage";
-
+import useLocalStorage from "common/hooks/useLocalStorage";
 import DisplayChat from "./components/chat/chat";
 
 function SimpleLiveChat(props) {
@@ -17,8 +16,8 @@ function SimpleLiveChat(props) {
 
   // Your Code Start below.
 
-  const { user } = props;
-  const [LoggedUser, setLoggedUser] = useState(user);
+  const [value, setValue] = useLocalStorage("auth", null);
+  const [loggedUser, setLoggedUser] = useState(value);
 
   return (
     <>
@@ -27,10 +26,16 @@ function SimpleLiveChat(props) {
         <div className='play-details-body simple-live-chat'>
           {/* Your Code Starts Here */}
           <div className='main'>
-            {LoggedUser ? (
-              <DisplayChat user={LoggedUser} setLoggedUser={setLoggedUser} />
+            {loggedUser ? (
+              <DisplayChat
+                user={loggedUser}
+                setLoggedUser={setLoggedUser}
+              />
             ) : (
-              <SignIn getLoggedUser={(val) => setLoggedUser(val)} />
+              <SignIn
+                getLoggedUser={(val) => setLoggedUser(val)}
+                setValue={setValue}
+              />
             )}
           </div>
           {/* Your Code Ends Here */}
@@ -40,8 +45,4 @@ function SimpleLiveChat(props) {
   );
 }
 
-const Sync = (retrivalHandler) => (Component) => {
-  return (props) => <Component user={retrivalHandler()} {...props} />;
-};
-
-export default Sync(StorageHandler.retrieveFromLocalStorage)(SimpleLiveChat);
+export default SimpleLiveChat;

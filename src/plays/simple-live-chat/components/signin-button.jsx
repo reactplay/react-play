@@ -13,16 +13,13 @@ import {
 } from "firebase/auth";
 import { useState } from "react";
 
-// helpers
-import StorageHandler from "./Storage";
-
 // css
 import "./signin-button.scss";
 
 // credentials
 import { firebase } from "../firebase";
 
-const SignIn = ({ getLoggedUser }) => {
+const SignIn = ({ getLoggedUser, setValue }) => {
   const auth = getAuth(firebase);
   const [error, setError] = useState(null);
 
@@ -31,7 +28,8 @@ const SignIn = ({ getLoggedUser }) => {
     return signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
-        getLoggedUser(StorageHandler.saveLocalStorage(user));
+        getLoggedUser(user);
+        setValue(user);
       })
       .catch((error) => {
         setError(error?.message);
@@ -40,7 +38,7 @@ const SignIn = ({ getLoggedUser }) => {
 
   const SignInButton = ({ icon, text, handler }) => {
     return (
-      <div className='sign-in-button'>
+      <div className='simple-live-chat-sign-in-button'>
         <button onClick={handler}>
           <img src={icon} alt={text} />
           <span>{text}</span>
@@ -50,10 +48,10 @@ const SignIn = ({ getLoggedUser }) => {
   };
 
   return (
-    <div className="sign-in-container">
-      <div className='main-container'>
+    <div className="simple-live-chat-sign-in-container">
+      <div className='simple-live-chat-main-container'>
         <div>
-          {error && <p className="error">{error}</p>}
+          {error && <p className="simple-live-chat-error">{error}</p>}
           <SignInButton
             icon={googleIcon}
             text='Sign in With Google'

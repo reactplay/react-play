@@ -1,6 +1,6 @@
 @import "../variables";
 
-.sign-in-container {
+.simple-live-chat-sign-in-container {
   height: 50vh;
   width: 100%;
   display: flex;
@@ -9,7 +9,7 @@
   overflow-y: hidden;
 }
 
-.main-container {
+.simple-live-chat-main-container {
   display: grid;
   place-content: center;
   margin: auto;
@@ -23,7 +23,7 @@
   }
 }
 
-.sign-in-button {
+.simple-live-chat-sign-in-button {
   margin: 0 auto;
 
   button {
@@ -53,6 +53,6 @@
   }
 }
 
-.error {
+.simple-live-chat-error {
   color: $simple-error-color;
 }

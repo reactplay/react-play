@@ -7,19 +7,14 @@ const User = ({ userImage }) => {
 
   const [currImage, setCurrImage] = useState(userImage);
 
-  const onLoadHandler = (e) => {
-    console.log("loaded");
-  };
-
   const onErrorHandler = (e) => {
-    console.log("image display error");
+    console.error("simple-live-chat image display error");
     setCurrImage(user)
   };
 
   return (
-    <div className="user-img">
+    <div className="simple-live-chat-user-img">
       <img
-        onLoad={onLoadHandler}
         onError={onErrorHandler}
         src={currImage}
         alt='user'
