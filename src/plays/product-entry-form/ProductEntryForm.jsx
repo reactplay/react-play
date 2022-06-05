@@ -8,7 +8,6 @@ import ItemDateFilter from "./components/ItemDateFilter";
 import { useState } from "react";
 
 function ProductEntryForm(props) {
-	// Do not remove the below lines.
 	// The following code is to fetch the current play from the URL
 	const { id } = props;
 	const play = getPlayById(id);
