@@ -1,0 +1,166 @@
+:root {
+	--themeColor: #576e85;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+  background-color: #272727;
+}
+.productsMainWrap {
+	max-width: 950px;
+  width: calc(100% - 40px);
+	margin: 40px auto 0;	
+}
+.productsMainWrap .productsItems {
+	width: 60%;
+	float: left;
+}
+.productsItems,
+.productsEnteryWrapper {
+	background-color: #464646;
+	padding: 20px;
+	border-radius: 15px;
+	border: solid 2px #323232;
+}
+.productsEnteryWrapper {
+	width: calc(40% - 25px);
+	float: left;
+	margin-left: 25px;
+}
+.productsEnteryWrapper h2,
+.productsItems h2 {
+	margin: 0 0 20px;
+	color: #fff;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+	padding: 12px 15px;
+	width: 100%;
+	margin: 0 0 20px;
+	border: none;
+	background-color: #1f1f1f;
+	font-size: 14px;
+	font-family: "Poppins";
+	border-radius: 5px;
+  color: #eee;
+}
+.form-group input[type="submit"] {
+	margin: 0;
+	background-color: var(--themeColor);
+	color: #fff;
+	cursor: pointer;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+	outline: solid 1px var(--themeColor);
+}
+.productItemsWrapper .productItem{
+  background-color: #313131;
+  display: flex;
+  gap:22px;  
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 15px;
+  border: solid 1px #414141;
+  color: #eee;
+  line-height: 1.5;
+}
+
+.productItemsWrapper .productImage{
+  line-height: 1;
+}
+.productItemsWrapper .productImage img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;  
+  border-radius: 8px;
+}
+.productItemsWrapper .productDes,.productItemsWrapper .productDes .productTopBar,.productItemsWrapper .productDes .productBottomBar{
+  width: 100%;
+  float: left;
+}
+.productItemsWrapper .productDes .productTopBar{
+  display: flex;
+  justify-content: space-between;  
+}
+.productItemsWrapper .productDes .productBottomBar{
+  margin-top: 10px;
+}
+.productItemsWrapper .productDes .productBottomBar .price{
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 11px;
+  background-color: var(--themeColor);
+  padding: 4px 15px;
+  border-radius: 4px;
+}
+.productsMainWrap .productsItems .topBar h2 {
+    margin: 0;
+}
+.productsMainWrap .productsItems .topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.productsMainWrap .productsItems .topBar select {
+    color: #fff;
+    padding: 3px 25px;
+    font-size: 15px;
+    border-radius: 4px;
+    border: solid 1px #1f1f1f;
+    background-color: #1f1f1f;
+}
+.productsMainWrap .productsItems .topBar select:focus{
+	outline: none;
+}
+h2.noData {
+  text-align: center;
+  margin: 30px 0 10px;
+}
+.form-group.btnWrap{
+  display: flex;
+  gap: 20px;
+}
+input[type=button]{
+  margin: 0;
+  cursor: pointer;
+  background-color: #595959;
+}
+button.addNewBtn{
+  font-size: 14px;
+  font-family: "Poppins";
+  padding: 12px 15px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--themeColor);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+label{
+  color: #9d9d9d;
+  font-size: 14px;
+  margin-right: 10px;
+}
+@media screen and (max-width:767px){
+	.productsMainWrap {
+	    display: flex;
+	    flex-direction: column-reverse;
+	    gap: 20px;
+	    padding: 20px;
+	}
+	.productsMainWrap, .productsMainWrap .productsItems, .productsEnteryWrapper {
+	    width: 100%;
+	    margin: 0;
+	}
+	.productItemsWrapper .productItem {
+	    flex-direction: column;
+	}
+}
