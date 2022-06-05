@@ -1,0 +1,90 @@
+/* enter stlyes here */
+.flip-card {
+  max-width: 1020px;
+  margin: 50px auto;
+}
+
+.flip-card .heading {
+  text-align: center;
+}
+
+.flip-card .sub-heading {
+  text-align: center;
+}
+
+.flip-card .container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin: 50px auto 100px;
+  cursor: pointer;
+}
+
+.flip-card .card-container {
+  width: 200px;
+  height: 200px;
+  margin: 5px 10px;
+  position: relative;
+  perspective: 500px;
+  padding: 10px;
+  display: flex;
+}
+
+.flip-card .item {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  backface-visibility: hidden;
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgb(101, 100, 100);
+  text-transform: capitalize;
+}
+
+.flip-card .front {
+  background-image: url("https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2NlbmVyeXxlbnwwfHwwfHw%3D&w=1000&q=80");
+  background-size: contain;
+  z-index: 1;
+  transform: rotateY(0deg);
+  background-color: rgb(74, 74, 238);
+}
+
+.flip-card .back {
+  z-index: 2;
+  transform: rotateY(180deg);
+}
+
+.flip-card .rotate-180 {
+  transform: rotateY(180deg);
+}
+
+.flip-card .rotate-360 {
+  transform: rotateY(360deg);
+}
+
+.flip-card .external-link {
+  text-decoration: none;
+  margin: 0 2px;
+}
+
+@media screen and (max-width: 1024px) {
+  .flip-card {
+    max-width: 740px;
+  }
+
+  .flip-card .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .flip-card .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}

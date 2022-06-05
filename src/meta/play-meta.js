@@ -23,7 +23,7 @@ import {
   TicTacToeGame,
   DynamicRoutes,
   SimpleLiveChat,
-//import play here
+  FlipCardEffect,
 } from "plays";
 
 export const plays = [
@@ -236,22 +236,25 @@ export const plays = [
     blog: "",
     video: "",
     featured: true,
-
-  }, {
-    id: 'pl-quizeo', 
-    name: 'Quizeo', 
-    description: 'Quizeo is a react app to play quiz about your favourite movies and series.',
-    component: () => {return <Quizeo />},
-    path: '/plays/quizeo',
-    level: 'Advanced',
-    tags: 'React-router,Hooks,react-redux,reselect',
-    github: 'vasantisuthar',
-    cover: '',
-    blog: 'https://vasantisuthar.hashnode.dev/',
-    video: '',
-    language: 'js'
   },
-    {
+  {
+    id: "pl-quizeo",
+    name: "Quizeo",
+    description:
+      "Quizeo is a react app to play quiz about your favourite movies and series.",
+    component: () => {
+      return <Quizeo />;
+    },
+    path: "/plays/quizeo",
+    level: "Advanced",
+    tags: "React-router,Hooks,react-redux,reselect",
+    github: "vasantisuthar",
+    cover: "",
+    blog: "https://vasantisuthar.hashnode.dev/",
+    video: "",
+    language: "js",
+  },
+  {
     id: "pl-password-generator",
     name: "Password Generator",
     description:
@@ -401,5 +404,21 @@ export const plays = [
     blog: '',
     video: '',
     language: 'js'
+  },
+  {
+    id: "pl-flip-card-effect",
+    name: "Flip-Card-Effect",
+    description: "A play that flips the card on y axis when clicked on",
+    component: () => {
+      return <FlipCardEffect />;
+    },
+    path: "/plays/flip-card-effect",
+    level: "Beginner",
+    tags: "useState-hook, jsx, flip-card-effect, transform-rotate",
+    github: "Deepak8717",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "js",
   }, //replace new play item here
 ];
