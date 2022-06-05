@@ -7,10 +7,16 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .footer-secondary .footer-container {
   gap: 1.5rem;
   justify-content: space-between;
 }
+
+.footer-secondary .footer-container a {
+  @extend %a;
+}
+
 @media (min-width: 768px) {
   .footer-secondary .footer-container {
     display: flex;
@@ -46,7 +52,7 @@
 .footer-secondary .footer-container .newsletter .form .form-field input {
   width: 100%;
   padding: 0.625rem;
-  outline: none;
+  @extend %button;
 }
 .footer-secondary .footer-container .newsletter .form .form-field .btn {
   padding: 0.625rem;
@@ -54,7 +60,7 @@
   box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
   color: #FFF;
   background-color: #4f46e5;
-  outline: none;
+  @extend %button;
 }
 .footer-secondary .footer-container .newsletter .form .form-field .btn:focus {
   box-shadow: none;
@@ -86,6 +92,9 @@
     margin-top: 0px;
   }
 }
+.footer-secondary .footer-container .items-container .ul-list {
+  @extend %list;
+}
 .footer-secondary .footer-container .items-container .ul-list > * + * {
   margin-top: 1rem;
 }
@@ -112,6 +121,7 @@
 .footer-secondary .copyright-slmedia .sl-media .sl-media-list {
   display: flex;
   align-items: center;
+  @extend %list;
 }
 .footer-secondary .copyright-slmedia .sl-media .sl-media-list > * + * {
   margin-left: 1rem;
@@ -129,6 +139,9 @@
   width: 1.5rem;
   height: 1.5rem;
   color: black;
+  display: block;
+  /* 1 */
+  vertical-align: middle;
 }
 .footer-secondary .copyright-slmedia .sl-media .sl-media-list .sl-media-icon .svg-icon path, .footer-secondary .copyright-slmedia .sl-media .sl-media-list .sl-media-icon .svg-icon polygon, .footer-secondary .copyright-slmedia .sl-media .sl-media-list .sl-media-icon .svg-icon rect {
   fill: currentColor;
