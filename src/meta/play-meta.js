@@ -15,6 +15,7 @@ import {
   PasswordGenerator,
 WhyTypescript,
 NetlifyCardGame,
+ProductEntryForm,
 //import play here
 } from "plays";
 
@@ -230,5 +231,18 @@ export const plays = [
     video: '',
     language: 'js',
     featured: true,
+  }, {
+    id: 'pl-product-entry-form', 
+    name: 'Product Entry Form', 
+    description: 'It&#x27;s a simple product entry form with form inputs and after submitting the form the product will be added and can also filter the product list by year, added the  error popup message also for invalid value.',
+    component: () => {return <ProductEntryForm />},
+    path: '/plays/product-entry-form',
+    level: 'Beginner',
+    tags: 'Hooks,JSX,Form,Events,Props',
+    github: 'mohitdevelops',
+    cover: '',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
