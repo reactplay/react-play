@@ -21,6 +21,10 @@
   border-width: 0;
 }
 
+button, input, optgroup, select, textarea {
+  color: initial;
+}
+
 :root {
   --color-brand-primary: #00f2fe;
   --color-brand-primary-rgb: 0, 244, 252;

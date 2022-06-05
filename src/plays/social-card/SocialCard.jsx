@@ -26,16 +26,18 @@ function SocialCard(props) {
       <div className="play-details">
         <PlayHeader play={play} />
         <div className="play-details-body">
-          <div style={{textAlign: 'center'}}>
-            <h2>Create your Social Card</h2>
-            <p>Please fill the form below to create a Social Card for you.</p>
-          </div>
-          <SocialContext.Provider value={value}>
-            <div className="social-card">
-              <CardForm />
-              <CardDetails />
+          <div className="social-card-body">
+            <div style={{textAlign: 'center'}}>
+              <h2>Create your Social Card</h2>
+              <p>Please fill the form below to create a Social Card for you.</p>
             </div>
-          </SocialContext.Provider>
+            <SocialContext.Provider value={value}>
+              <div className="social-card">
+                <CardForm />
+                <CardDetails />
+              </div>
+            </SocialContext.Provider>
+          </div>
         </div>
       </div>
     </>
