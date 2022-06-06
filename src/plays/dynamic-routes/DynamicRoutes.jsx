@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./dynamicRoutes.css";
 import data from "./Data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function DynamicRoutes(props) {
   // Do not remove the below lines.
@@ -23,17 +23,23 @@ function DynamicRoutes(props) {
   const activeRecipes = data.filter((recipe) => {
     return recipe.mealtype === activeMenu; //filter reciepes based on active menu
   });
-
   const mealType = [];
   data.map((recipe) => {
     return mealType.push(recipe.mealtype); //push  meal categories to an array
   });
 
-  const uniqMealType = [...new Set(mealType)]; // eliminate duplicate categories so we can render a navbar of uniq categories
+  const uniqMealType = [...new Set(mealType)];
+  // eliminate duplicate categories so we can render a navbar of uniq categories
 
   const activeMenuHandler = (mealtype) => {
     setActiveMenu(mealtype);
   };
+
+  useEffect(() => {
+    //useEffect hook keep eye on url parameter whenever it changes so we can re-mount
+    setActiveMenu(menu === ":menu" ? "breakfast" : menu);
+  }, [menu]);
+
   return (
     <>
       <div className="play-details">
