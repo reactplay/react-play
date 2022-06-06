@@ -28,8 +28,8 @@ function DynamicRoutes(props) {
     return mealType.push(recipe.mealtype); //push  meal categories to an array
   });
 
-  const uniqMealType = [...new Set(mealType)];
   // eliminate duplicate categories so we can render a navbar of uniq categories
+  const uniqMealType = [...new Set(mealType)];
 
   const activeMenuHandler = (mealtype) => {
     setActiveMenu(mealtype);
