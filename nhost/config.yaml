@@ -116,7 +116,7 @@ auth:
     host: nhost_mailhog
     method: ""
     pass: password
-    port: 1894
+    port: 1895
     secure: false
     sender: hasura-auth@example.com
     user: user
