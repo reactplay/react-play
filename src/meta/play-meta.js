@@ -23,7 +23,8 @@ import {
   TicTacToeGame,
   DynamicRoutes,
   FlipCardEffect,
-  //import play here
+  ProductEntryForm,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -407,5 +408,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-product-entry-form', 
+    name: 'Product Entry Form', 
+    description: 'Its a simple product entry form using useState hook as a beginner.',
+    component: () => {return <ProductEntryForm />},
+    path: '/plays/product-entry-form',
+    level: 'Beginner',
+    tags: 'JSX,Hooks,Form,Input,Validation',
+    github: 'mohitdevelops',
+    cover: '',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
