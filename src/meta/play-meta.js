@@ -22,7 +22,7 @@ import {
   FunQuiz,
   TicTacToeGame,
   DynamicRoutes,
-  FlipCardEffect,
+  DrawIt,
   //import play here
 } from "plays";
 
