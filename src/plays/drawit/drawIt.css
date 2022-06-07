@@ -6,8 +6,7 @@
 }
 
 @media screen and (max-width:620px) {
-
-   .board{
+  .board{
     width:109vw ;
     height: 100%;
     aspect-ratio: 2;
