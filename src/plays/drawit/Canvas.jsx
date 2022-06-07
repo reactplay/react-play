@@ -6,7 +6,7 @@ function Canvas() {
   const w = window.innerWidth;
   let canvas, context;
   const canvasRef = useRef(null);
-  const [color, setcolor] = useState("white");
+  const [color, setColor] = useState("white");
 
   useEffect(() => {
     canvas = canvasRef.current;
