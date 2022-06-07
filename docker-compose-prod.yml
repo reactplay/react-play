@@ -1,0 +1,18 @@
+version: "3.3"
+
+networks:
+  react-play-network:
+
+services:
+  ### For production
+  web-prod:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.PROD
+    container_name: react-play-frontend-app-prod
+    image: react-play-frontend-app-prod:v1
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - react-play-network

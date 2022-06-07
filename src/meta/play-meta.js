@@ -22,8 +22,8 @@ import {
   FunQuiz,
   TicTacToeGame,
   DynamicRoutes,
-  DrawIt,
-//import play here
+  FlipCardEffect,
+  //import play here
 } from "plays";
 
 export const plays = [
@@ -236,22 +236,25 @@ export const plays = [
     blog: "",
     video: "",
     featured: true,
-
-  }, {
-    id: 'pl-quizeo', 
-    name: 'Quizeo', 
-    description: 'Quizeo is a react app to play quiz about your favourite movies and series.',
-    component: () => {return <Quizeo />},
-    path: '/plays/quizeo',
-    level: 'Advanced',
-    tags: 'React-router,Hooks,react-redux,reselect',
-    github: 'vasantisuthar',
-    cover: '',
-    blog: 'https://vasantisuthar.hashnode.dev/',
-    video: '',
-    language: 'js'
   },
-    {
+  {
+    id: "pl-quizeo",
+    name: "Quizeo",
+    description:
+      "Quizeo is a react app to play quiz about your favourite movies and series.",
+    component: () => {
+      return <Quizeo />;
+    },
+    path: "/plays/quizeo",
+    level: "Advanced",
+    tags: "React-router,Hooks,react-redux,reselect",
+    github: "vasantisuthar",
+    cover: "",
+    blog: "https://vasantisuthar.hashnode.dev/",
+    video: "",
+    language: "js",
+  },
+  {
     id: "pl-password-generator",
     name: "Password Generator",
     description:

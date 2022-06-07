@@ -17,7 +17,7 @@ function WhyTypescript(props: any) {
     <>
       <div className="play-details">
         <PlayHeader play={play} />
-        <div className="play-details-body">
+        <div className="play-details-body why-typescript">
           {/* Your Code Starts Here */}
           <div>
             <h1>Play Details - Why Typescript</h1>

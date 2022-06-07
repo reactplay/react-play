@@ -5,6 +5,14 @@ import React, { useState } from "react";
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from "reportWebVitals";
 
+/** removing console statement in react prod build */
+if (process.env.NODE_ENV !== "development") {
+  console.log = () => {};
+  console.debug = () => {};
+  console.info = () => {};
+  console.disableYellowBox = true;
+}
+
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterQuery, setFilterQuery] = useState({
