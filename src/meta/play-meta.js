@@ -23,6 +23,7 @@ import {
   TicTacToeGame,
   DynamicRoutes,
   FlipCardEffect,
+  LandingPage
   //import play here
 } from "plays";
 
@@ -408,4 +409,20 @@ export const plays = [
     video: "",
     language: "js",
   }, //replace new play item here
+  {
+    id: "landing-page",
+    name: "React Landing Page",
+    description: "Beautiful and responsive landing page built using Float UI components",
+    component: () => {
+      return <LandingPage />;
+    },
+    path: "/plays/landing-page",
+    level: "Beginner",
+    tags: "Hooks,JSX,Functions,Float UI,CSS",
+    github: "sidiDev",
+    cover: "https://i.ibb.co/LxTCZ0X/Screenshot-from-2022-05-29-19-15-05.png",
+    blog: "",
+    video: "",
+    language: "js",
+  },
 ];

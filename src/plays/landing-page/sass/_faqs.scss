@@ -1,0 +1,66 @@
+.faqs-secondary {
+  line-height: 1.625;
+  max-width: 1280px;
+  margin: 5rem auto 0 auto;
+  padding: 0 1rem 0 1rem;
+}
+@media (min-width: 1024px) {
+  .faqs-secondary {
+    padding: 0 2rem 0 2rem;
+  }
+}
+.faqs-secondary .faqs-header {
+  text-align: center;
+}
+.faqs-secondary .faqs-header > * + * {
+  margin-top: 0.75rem;
+}
+.faqs-secondary .faqs-header h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+.faqs-secondary .faqs-header p {
+  max-width: 32rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #4b5563;
+  margin-left: auto;
+  margin-right: auto;
+}
+.faqs-secondary .faqs-container {
+  margin: 3.5rem auto 0 auto;
+  max-width: 42rem;
+}
+.faqs-secondary .faqs-container .faqs-card {
+  overflow: hidden;
+  margin-top: 1.25rem;
+  border-bottom: solid 1px #e5e7eb;
+}
+.faqs-secondary .faqs-container .faqs-card > * + * {
+  margin-top: 0.75rem;
+}
+.faqs-secondary .faqs-container .faqs-card h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #374151;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  padding-bottom: 1.25rem;
+}
+.faqs-secondary .faqs-container .faqs-card h4 svg {
+  color: #6b7280;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.5rem;
+}
+.faqs-secondary .faqs-container .faqs-card .answer-container {
+  transition-duration: 300ms;
+}
+.faqs-secondary .faqs-container .faqs-card .answer-container p {
+  color: #6b7280;
+}

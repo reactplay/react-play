@@ -1,0 +1,134 @@
+.features-container {
+  margin: 5em 2em 0 2em;
+}
+
+.features-container .features-brand {
+  width: 480px;
+  text-align: center;
+  margin: auto;
+}
+
+.features-container .features-brand svg {
+  width: 3em;
+  height: 3em;
+  margin: auto;
+  color: #1D4ED8
+}
+
+.features-container .features-brand h1 {
+  margin-top: 10px
+}
+
+.features-container .features-brand p {
+  margin-top: 10px;
+  line-height: 25px;
+  color: #6B7280
+}
+
+.features-container .features {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  padding-bottom: 15px;
+  border: solid 1.4px #D1D5DB;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px #D1D5DB
+}
+
+.features-container .features .feature {
+  text-align: center;
+  margin-top: 10px;
+  padding: 4px;
+  width: 240px
+}
+
+.features-container .features .feature svg {
+  width: 2em;
+  height: 2em;
+  margin: auto;
+}
+
+.features-container .features .feature span {
+  display: block;
+  font-size: 14px;
+  color: #4B5563;
+  margin-top: 2px
+}
+
+.features-container .features .feature-1 {
+  color: #6B7280
+}
+
+.features-container .features .feature-2 {
+  color: #10B981
+}
+
+.features-container .features .feature-3 {
+  color: orange
+}
+
+.features-container .features .feature-4 {
+  color: #3B82F6
+}
+
+.features-container .features .feature-5 {
+  color: purple
+}
+
+.features-container .features-details {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap
+}
+
+.features-container .features-details .feature-details {
+  margin-top: 1em;
+  width: 400px
+}
+
+.features-container .features-details .feature-details span {
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  color: #1F2937
+}
+
+.features-container .features-details .feature-details p {
+  font-size: 15px;
+  color: #6B7280;
+  line-height: 24px;
+  margin-top: 5px;
+  padding-right: 5px
+}
+
+@media (max-width: 880px) {
+  .features-details .feature-details {
+    width: 281px !important
+  }
+}
+
+@media (max-width: 640px) {
+  .features-container .features-brand {
+    width: 100%
+  }
+
+  .features-details .feature-details {
+    width: 90% !important
+  }
+}
+
+@media (max-width: 560px) {
+  .features {
+    display: block
+  }
+
+  .features .feature {
+    margin-top: 1em !important;
+    width: 100% !important
+  }
+
+  .features-details .feature-details {
+    width: 100% !important
+  }
+}

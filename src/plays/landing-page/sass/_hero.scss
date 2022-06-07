@@ -1,0 +1,188 @@
+.hero-primary-header .hero-primary-nav {
+  align-items: center;
+  padding: 1.25rem 1rem 0 1rem;
+  margin: auto;
+  max-width: 1280px;
+}
+@media (min-width: 640px) {
+  .hero-primary-header .hero-primary-nav {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero-primary-header .hero-primary-nav {
+    display: flex;
+  }
+  .hero-primary-header .hero-primary-nav > * + * {
+    margin-left: 1.5rem;
+  }
+}
+.hero-primary-header .hero-primary-nav .nav-brand {
+  display: flex;
+  justify-content: space-between;
+}
+.hero-primary-header .hero-primary-nav .nav-brand .menu-btn {
+  color: #6b7280;
+  outline: none;
+}
+.hero-primary-header .hero-primary-nav .nav-brand .menu-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media (min-width: 768px) {
+  .hero-primary-header .hero-primary-nav .nav-brand .menu-btn {
+    display: none;
+  }
+}
+.hero-primary-header .hero-primary-nav .nav-items {
+  flex: 1;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .hero-primary-header .hero-primary-nav .nav-items {
+    display: flex;
+    margin-top: 0px;
+  }
+}
+.hero-primary-header .hero-primary-nav .nav-items .signin-li {
+  order: 2;
+  padding-bottom: 1.25rem;
+}
+@media (min-width: 768px) {
+  .hero-primary-header .hero-primary-nav .nav-items .signin-li {
+    padding-bottom: 0;
+  }
+}
+.hero-primary-header .hero-primary-nav .nav-items .signin-li a {
+  padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+  color: #FFF;
+  text-align: center;
+  background-color: #4f46e5;
+  display: block;
+}
+.hero-primary-header .hero-primary-nav .nav-items .signin-li a:focus {
+  box-shadow: none;
+}
+@media (min-width: 768px) {
+  .hero-primary-header .hero-primary-nav .nav-items .signin-li a {
+    display: inline;
+  }
+}
+.hero-primary-header .hero-primary-nav .nav-items .nav-items-li {
+  order: 1;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.hero-primary-header .hero-primary-nav .nav-items .nav-items-li > * + * {
+  margin-top: 1.25rem;
+}
+@media (min-width: 768px) {
+  .hero-primary-header .hero-primary-nav .nav-items .nav-items-li {
+    display: flex;
+  }
+  .hero-primary-header .hero-primary-nav .nav-items .nav-items-li > * + * {
+    margin-left: 1.5rem;
+  }
+  .hero-primary-header .hero-primary-nav .nav-items .nav-items-li > * + * {
+    margin-top: 0px;
+  }
+}
+.hero-primary-header .hero-primary-nav .nav-items .nav-items-li li {
+  color: #6b7280;
+}
+.hero-primary-header .hero-primary-nav .nav-items .nav-items-li li:hover {
+  color: #4f46e5;
+}
+
+.hero-primary {
+  margin: 6rem auto;
+  max-width: 1280px;
+  padding: 0 1rem;
+}
+@media (min-width: 640px) {
+  .hero-primary {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.hero-primary .hero-details {
+  text-align: center;
+}
+.hero-primary .hero-details > * + * {
+  margin-top: 1rem;
+}
+.hero-primary .hero-details h1 {
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.hero-primary .hero-details h1 span {
+  color: #4f46e5;
+}
+@media (min-width: 768px) {
+  .hero-primary .hero-details h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+.hero-primary .hero-details p {
+  color: #6b7280;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.625;
+}
+.hero-primary .hero-btns {
+  margin-top: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+.hero-primary .hero-btns > * + * {
+  margin-top: 0.75rem;
+}
+@media (min-width: 640px) {
+  .hero-primary .hero-btns {
+    display: flex;
+  }
+  .hero-primary .hero-btns > * + * {
+    margin-left: 1.5rem;
+  }
+  .hero-primary .hero-btns > * + * {
+    margin-top: 0px;
+  }
+}
+.hero-primary .hero-btns .btn-primary-hero, .hero-primary .hero-btns .btn-secondary {
+  padding: 0.775rem 2rem 0.775rem 2rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.375rem;
+  display: block;
+}
+.hero-primary .hero-btns .btn-primary-hero {
+  background-color: #4f46e5 !important;
+  color: #FFF;
+  box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+}
+.hero-primary .hero-btns .btn-secondary {
+  border: solid 1px #e5e7eb;
+  transition: 300ms;
+}
+.hero-primary .hero-btns .btn-secondary:hover {
+  box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
+}
+@media (min-width: 640px) {
+  .hero-primary .hero-btns .btn-primary-hero,
+  .hero-primary .hero-btns .btn-secondary {
+    width: auto;
+  }
+}
+
+.hide-nav {
+  display: none;
+}
