@@ -24,7 +24,6 @@
 }
 .hero-primary-header .hero-primary-nav .nav-brand .menu-btn {
   color: #6b7280;
-  @extend %button;
 }
 .hero-primary-header .hero-primary-nav .nav-brand .menu-btn svg {
   width: 1.5rem;
@@ -39,11 +38,6 @@
   flex: 1;
   justify-content: space-between;
   margin-top: 3rem;
-  @extend %list;
-}
-
-.hero-primary-header .hero-primary-nav .nav-items li a {
-  @extend %a;
 }
 
 @media (min-width: 768px) {
@@ -69,7 +63,6 @@
   text-align: center;
   background-color: #4f46e5;
   display: block;
-  @extend %a;
 }
 .hero-primary-header .hero-primary-nav .nav-items .signin-li a:focus {
   box-shadow: none;
@@ -149,10 +142,6 @@
   margin-top: 3rem;
   align-items: center;
   justify-content: center;
-}
-
-.hero-primary .hero-btns a {
-  @extend %a;
 }
 
 .hero-primary .hero-btns > * + * {
