@@ -27,8 +27,6 @@ const SearchPlays = () => {
     if (location.pathname !== "/plays") {
       navigate("/plays", { replace: true });
     }
-    // if (event.key === "Enter") {
-    // }
   };
 
   return (
