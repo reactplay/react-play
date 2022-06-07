@@ -1,21 +1,5 @@
-%a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-%button {
-  border: none;
-  outline: none;
-  background: inherit;
-}
-
-%list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 @import "./hero";
+@import "./base";
 @import "./faqs";
 @import "./footer";
 @import "./testimonial";
