@@ -128,9 +128,9 @@
     },
     {
       "id": "idea-22",
-      "title": "Full Stack Portfolio",
-      "description": "",
-      "level": "Advanced"
+      "title": "Personal Profile Card",
+      "description": "A Personal Profile Card have name, description, cover, profile photo and social links",
+      "level": "Intermediate"
     }
   ]
 }
