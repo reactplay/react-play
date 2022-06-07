@@ -201,8 +201,8 @@ function NetlifyCardGame(props) {
         <PlayHeader play={play} />
         <div className='play-details-body memory-game'>
           {/* Your Code Starts Here */}
-          <h2 className='guide'>
-            <p onClick={toggle}>How to Play?</p>
+          <h2 className='guide' onClick={toggle}>
+            How to Play?
           </h2>
           <div className='container'>
             <div className='App'>
