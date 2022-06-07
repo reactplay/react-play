@@ -22,6 +22,7 @@
 }
 
 .app-home-body .body-title {
+    margin-top: 3.2rem;
     margin-bottom: 1rem;
     font-family: var(--ff-accent);
     font-size: var(--fs-xxl);
@@ -40,6 +41,7 @@
     }
 
     .app-home-body .body-title {
+        margin-top: 1rem;
         margin-left: 1rem;
         margin-right: 1rem;
     }
@@ -308,6 +310,10 @@
     padding: 4rem 0 0 0;
     border-top: solid 1px var(--color-neutral-30);
     text-align: center;
+}
+
+.home-ideas .icon {
+    margin: 0 auto 1rem auto;
 }
 
 .home-ideas .ideas-title {

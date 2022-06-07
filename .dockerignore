@@ -1,0 +1,12 @@
+Dockerfile
+Dockerfile.DEV
+Dockerfile.PROD
+Dockerfile.prod
+.dockerignore
+node_modules
+yarn.lock
+package-lock.json
+npm-debug.log
+README.md
+.next
+build

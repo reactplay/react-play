@@ -20,11 +20,13 @@
     flex-direction: row;
     align-items: center;
     grid-gap: 0.4rem;
+    font-weight: var(--fw-bold);
+    font-size: calc(var(--fs-md) * .8);
 }
 
 .playideas-header .header-title .header-title-badge {
     background: var(--color-brand-primary);
-    font-size: var(--fs-sm);
+    font-size: var(--fs-xs);
     font-weight: var(--fw-bold);
     line-height: 1;
     padding: .32rem .4rem;
