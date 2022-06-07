@@ -1,3 +1,9 @@
+.social-card-body h2 {
+  margin: 1rem 0 1.4rem 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
 .social-card {
   display: flex;
   align-items: center;
@@ -30,6 +36,10 @@
   color: #333;
   background-color: #fff;
   box-shadow: none;
+}
+
+.social-card-form .form-group input[type="file"].form-control {
+  height: auto;
 }
 
 .card-details{

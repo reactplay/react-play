@@ -1,4 +1,6 @@
-.tic-tac-toe-tj .container{
+.tic-tac-toe-tj .container {
+    width: initial;
+    max-width: unset;
     text-align: center;
 }
 
