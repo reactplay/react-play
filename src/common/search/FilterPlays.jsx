@@ -1,5 +1,10 @@
 import { Modal } from "common";
-import { getAllCreators, getAllLevels, getAllTags, getAllLanguages } from "meta/play-meta-util";
+import {
+  getAllCreators,
+  getAllLevels,
+  getAllTags,
+  getAllLanguages,
+} from "meta/play-meta-util";
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
@@ -38,7 +43,10 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <select
           className="form-control"
           onChange={(event) =>
-            setFilterQuery({ ...filterQuery, tags: event.target.value !== "" ? [event.target.value] : [] })
+            setFilterQuery({
+              ...filterQuery,
+              tags: event.target.value !== "" ? [event.target.value] : [],
+            })
           }
           value={filterQuery.tags[0]}
         >
@@ -79,7 +87,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
           <option value="">All</option>
           {languages.map((language) => (
             <option key={language} value={language}>
-              {language === 'ts' ? 'TypeScript' : 'JavaScript'}
+              {language === "ts" ? "TypeScript" : "JavaScript"}
             </option>
           ))}
         </select>
@@ -100,11 +108,16 @@ const getAppliedFilter = (filterObject) => {
       : 0;
   const noOfLanguageApplied =
     filterObject.language !== undefined && filterObject.language.trim() !== ""
-      ? 1 : 0;
-  const noOfTagsApplied =
-    filterObject?.tags?.length ? filterObject.tags.length : 0
-  let totalTags = noOfLevelsApplied +
-    noOfcreatorsApplied + noOfLanguageApplied + noOfTagsApplied;
+      ? 1
+      : 0;
+  const noOfTagsApplied = filterObject?.tags?.length
+    ? filterObject.tags.length
+    : 0;
+  let totalTags =
+    noOfLevelsApplied +
+    noOfcreatorsApplied +
+    noOfLanguageApplied +
+    noOfTagsApplied;
 
   return totalTags;
 };
@@ -115,10 +128,10 @@ const FilterPlays = () => {
   const { setFilterQuery, filterQuery } = useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
-    level: '',
+    level: "",
     tags: [],
-    creator: '',
-    language: ''
+    creator: "",
+    language: "",
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
@@ -126,32 +139,32 @@ const FilterPlays = () => {
     if (action === "POP") {
       console.log("POP");
       setModifiedFilterQuery({
-        level: '',
+        level: "",
         tags: [],
-        creator: '',
-        language: ''
+        creator: "",
+        language: "",
       });
       setFilterQuery({
-        level: '',
+        level: "",
         tags: [],
-        creator: '',
-        language: ''
+        creator: "",
+        language: "",
       });
       setnoOfAppliedFilter(0);
     }
     if (action === "PUSH") {
       console.log("PUSH");
       setModifiedFilterQuery({
-        level: '',
+        level: "",
         tags: [],
-        creator: '',
-        language: ''
+        creator: "",
+        language: "",
       });
       setFilterQuery({
-        level: '',
+        level: "",
         tags: [],
-        creator: '',
-        language: ''
+        creator: "",
+        language: "",
       });
     }
     setnoOfAppliedFilter(0);
@@ -188,11 +201,10 @@ const FilterPlays = () => {
         onClick={() => setShowModal(true)}
         className="btn-filter"
         title="Filter Plays"
-      >{
-          noOfAppliedFilter === 0 ?
-            null
-            : <div className="badge">{noOfAppliedFilter}</div>
-        }
+      >
+        {noOfAppliedFilter === 0 ? null : (
+          <div className="badge">{noOfAppliedFilter}</div>
+        )}
 
         <RiFilterFill
           className="icon"

@@ -23,12 +23,12 @@ const SearchPlays = () => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    if (event.key === "Enter") {
-      setSearchTerm(event.target.value);
-      if (location.pathname !== "/plays") {
-        navigate("/plays", { replace: true });
-      }
+    setSearchTerm(event.target.value);
+    if (location.pathname !== "/plays") {
+      navigate("/plays", { replace: true });
     }
+    // if (event.key === "Enter") {
+    // }
   };
 
   return (

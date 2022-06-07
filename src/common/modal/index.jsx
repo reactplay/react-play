@@ -6,9 +6,10 @@ const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
   useEffect(() => {
     const close = (e) => {
       // e.keyCode is deprecated: developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode. So I've used e.key === 'Escape' instead, for better international keyboard support. 
-      if(e.key === 'Escape') {
-        onClose();
-      }
+      // if(e.key === 'Escape') {
+      //   onClose();
+      // }
+      onClose();
     }
     window.addEventListener('keydown', close)
     return () => window.removeEventListener('keydown', close)
