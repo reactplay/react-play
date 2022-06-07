@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-27-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -199,6 +199,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/tejinder-sharma"><img src="https://avatars.githubusercontent.com/u/95734921?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tejinder Sharma</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=tejinder-sharma" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/ishrarg"><img src="https://avatars.githubusercontent.com/u/3227841?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ishrar G</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ishrarg" title="Code">💻</a></td>
     <td align="center"><a href="https://mohamed-ehab-portfolio.vercel.app/"><img src="https://avatars.githubusercontent.com/u/96921717?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Programming-School</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Programming-School-Pro-Coding" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/valeshgopal"><img src="https://avatars.githubusercontent.com/u/89742622?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Valesh Gopal</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=valeshgopal" title="Code">💻</a></td>
+    <td align="center"><a href="https://rafat97.github.io/"><img src="https://avatars.githubusercontent.com/u/21246862?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Emdadul Haque</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Rafat97" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Asterisk-z"><img src="https://avatars.githubusercontent.com/u/56372709?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Olang Daniel</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Asterisk-z" title="Code">💻</a></td>
   </tr>
 </table>
 

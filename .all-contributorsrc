@@ -220,6 +220,33 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "valeshgopal",
+      "name": "Valesh Gopal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89742622?v=4",
+      "profile": "https://github.com/valeshgopal",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Rafat97",
+      "name": "Emdadul Haque",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21246862?v=4",
+      "profile": "https://rafat97.github.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Asterisk-z",
+      "name": "Olang Daniel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56372709?v=4",
+      "profile": "https://github.com/Asterisk-z",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
