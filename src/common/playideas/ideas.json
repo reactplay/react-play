@@ -128,9 +128,9 @@
     },
     {
       "id": "idea-22",
-      "title": "Personal Profile Card",
-      "description": "A Personal Profile Card have name, description, cover, profile photo and social links",
-      "level": "Intermediate"
+      "title": "Landing Page",
+      "description": "Build a Landing Page for a big organization like freeCodeCamp",
+      "level": "Advanced"
     }
   ]
 }
