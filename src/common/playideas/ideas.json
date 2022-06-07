@@ -131,6 +131,12 @@
       "title": "Personal Profile Card",
       "description": "A Personal Profile Card have name, description, cover, profile photo and social links",
       "level": "Intermediate"
+    },
+    {
+      "id": "idea-23",
+      "title": "Image Gallery",
+      "description": "Build a responsive image gallery with search functionality by using Unsplash free API.",
+      "level": "Intermediate"
     }
   ]
 }
