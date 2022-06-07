@@ -1,38 +1,27 @@
-import format from "date-fns/format";
+// vendors
 import { Fragment, useEffect, useRef, useState } from "react";
 
 // css
 import "./chat-body.scss";
 
-// assets
-import userIcon from "../../images/user_icon.png";
+// components
+import User from "./components/User";
 
-const User = ({ photoURL, onClick }) => {
-  const [defaultImage, setDefaultImage] = useState(photoURL);
-  return (
-    <img
-      src={defaultImage}
-      alt='avatar'
-      onClick={onClick}
-      className='simple-live-chat-user'
-      onError={() => setDefaultImage(userIcon)}
-    />
-  );
-};
+// hooks
+import useDateFormat from "./hooks/useDateFormat";
 
 const ChatBody = ({ message, uid, loading }) => {
-  const [node, setNode] = useState([]);
+  const [chatNode, setChatNode] = useState([]);
+  const [dateTimeFormatter] = useDateFormat();
+
   const scrollHandler = useRef();
 
-  const dateTimeFormatter = (val) => {
-    return format(new Date(val * 1000), "hh:mm bbb");
-  };
-
   const showDateHandler = (array = [], currIndex) => {
-    const formattedDate = format(
-      new Date(array[currIndex]?.createdAt?.seconds * 1000),
+    const formattedDate = dateTimeFormatter(
+      array[currIndex]?.createdAt?.seconds,
       "dd MMM yyyy"
     );
+
     if (currIndex === 0) return formattedDate;
     const prev = array[currIndex - 1];
     const prevDate = new Date(prev?.createdAt * 1000).getDate();
@@ -55,10 +44,10 @@ const ChatBody = ({ message, uid, loading }) => {
   };
 
   const displaySenderNameHandler = (val) => () => {
-    if (node.includes(val)) {
-      return setNode(node.filter((item) => item !== val));
+    if (chatNode.includes(val)) {
+      return setChatNode(chatNode.filter((item) => item !== val));
     }
-    return setNode([...node, val]);
+    return setChatNode([...chatNode, val]);
   };
 
   useEffect(() => {
@@ -66,9 +55,11 @@ const ChatBody = ({ message, uid, loading }) => {
   }, [message]);
 
   const DisplayNameComponent = ({ displayName, sender, id }) => {
-    if (!node.includes(id)) return null;
+    if (!chatNode.includes(id)) return null;
     return (
-      <div className={sender ? "simple-live-chat-text-right" : "simple-live-chat-text-left"}>{displayName}</div>
+      <div className={`simple-live-chat-text-${sender ? "right" : "left"}`}>
+        {displayName}
+      </div>
     );
   };
 
@@ -80,7 +71,7 @@ const ChatBody = ({ message, uid, loading }) => {
         message.map((item, idx) => {
           if (item.uid === uid) {
             return (
-              <Fragment key={`${item?.text.slice(0, 5)}${idx}`}>
+              <Fragment key={idx}>
                 <DateDisplayComp idx={idx} message={message} />
                 <div className='simple-live-chat-message simple-live-chat-message-sender'>
                   <div>
@@ -102,7 +93,7 @@ const ChatBody = ({ message, uid, loading }) => {
             );
           } else {
             return (
-              <Fragment key={`${item?.text.slice(0, 5)}${idx}`}>
+              <Fragment key={idx}>
                 <DateDisplayComp idx={idx} message={message} />
                 <div className='simple-live-chat-message simple-live-chat-message-receiver'>
                   <User

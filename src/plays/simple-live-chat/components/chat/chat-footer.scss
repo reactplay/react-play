@@ -2,7 +2,11 @@
 
 .simple-live-chat-chat-footer {
   position: sticky;
-  bottom: -10px;
+  bottom: -16px;
+  background-color: $simple-default-background-color;
+  height: 60px;
+  padding-top: 5px;
+  overflow: hidden;
 }
 
 .simple-live-chat-footer-container {
@@ -15,7 +19,7 @@
     width: 100%;
   }
 
-  textarea {
+  .simple-live-chat-footer-textarea {
     width: 100%;
     font-size: 1.2rem;
     border: 1px solid $simple-button-border-color;

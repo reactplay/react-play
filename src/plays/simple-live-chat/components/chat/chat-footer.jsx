@@ -8,7 +8,7 @@ import {
 import { useState } from "react";
 
 // css
-import './chat-footer.scss'
+import "./chat-footer.scss";
 
 const ChatFooter = ({ userImage: photoURL, uid, displayName, loading }) => {
   const [message, setMessage] = useState("");
@@ -38,12 +38,12 @@ const ChatFooter = ({ userImage: photoURL, uid, displayName, loading }) => {
     }
   };
 
-  const handleClickSend = e => {
+  const handleClickSend = (e) => {
     if (message.trim() !== "") {
       sendMessage();
       setMessage("");
     }
-  }
+  };
 
   if (loading) return null;
 
@@ -51,6 +51,7 @@ const ChatFooter = ({ userImage: photoURL, uid, displayName, loading }) => {
     <div className='simple-live-chat-chat-footer'>
       <div className='simple-live-chat-footer-container'>
         <textarea
+          className='simple-live-chat-footer-textarea'
           onKeyDown={handleKeyEvent}
           onChange={(e) => setMessage(e.target.value)}
           value={message}
