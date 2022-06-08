@@ -41,7 +41,7 @@ function States(props) {
         <PlayHeader play={play} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div>
+          <div className="states">
             <h1>States - Details about Component</h1>
             <p>
               State is an inbuilt object of React which stores data/information

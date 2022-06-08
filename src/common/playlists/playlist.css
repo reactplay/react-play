@@ -138,52 +138,6 @@
     transform: translateX(-50%);
 }
 
-/* 
-.list-plays .active a {
-    border: solid 2px rgba(var(--color-neutral-90-rgb), 0.3);
-    background-color: var(--color-brand-primary);
-}
-
-.list-plays .active a:after {
-    display: none;
-}
-
-.list-plays .active a .play-title {    
-    position: absolute;
-    top: 1.2rem;
-    transform: translateY(0);
-    padding-bottom: 0;
-    z-index: 1;
-}
-
-.list-plays .active a:hover {
-    cursor: default;
-}
-
-.list-plays .active a:hover .play-title {
-    color: var(--color-neutral-90);
-}
-
-.list-plays .active a .play-status {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    opacity: 1;
-    bottom: 1.6rem;
-    z-index: 1;
-    grid-gap: 0.4rem;
-    line-height: 1;
-    color: var(--color-neutral-90);
-}
-
-.list-plays .active a .play-status .icon {
-    display: none;
-}
-
-.list-plays .active a .play-status .default {
-    display: none;
-}
-*/
 .list-plays a .play-status .current {
     display: none;
 }
@@ -233,6 +187,7 @@
 
 .play-details .play-details-header .header-leftcol-action .action {
     display: block;
+    margin-top: 1px;
 }
 
 .play-details .play-details-header .header-leftcol-action .action .icon {
@@ -422,6 +377,7 @@
 .play-details .play-details-header .header-title {
     margin: 0;
     font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
 }
 
 .play-details .play-details-header .header-desc {
@@ -458,6 +414,45 @@
     overflow-y: auto;
 }
 
+/* .play-details .play-details-body h1 {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    margin-bottom: .6rem;
+} */
+
+/* .play-details .play-details-body h2 {
+    font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
+    margin-bottom: .6rem;
+} */
+
+/* .play-details .play-details-body p {
+    margin: 1rem 0;
+    font-size: var(--fs-rg);
+} */
+
+.play-details .play-details-body p a {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* .play-details .play-details-body ul {
+    margin: 0;
+} */
+
+/* .play-details .play-details-body img {
+    max-width: unset;
+    height: unset;
+} */
+
+.play-details .play-details-body input[type="text"],
+.play-details .play-details-body input[type="password"],
+.play-details .play-details-body input[type="email"],
+.play-details .play-details-body input[type="datetime-local"] {
+    border: solid 1px var(--color-neutral-50);
+    padding: 0.4rem;
+}
+
 .play-details .header-actions .action {
     position: relative;
     width: 24px;
@@ -472,7 +467,6 @@
     width: auto;
     height: auto;
     text-decoration: none;
-    margin-right: -0.6rem;
 }
 
 .play-details .header-actions .action.badged .badge-count {

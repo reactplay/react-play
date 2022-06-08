@@ -26,11 +26,12 @@
   width: 100%;
   border: 0;
   border-radius: 2rem;
-  padding: 0.8rem 1.6rem 0.8rem 3rem;
+  padding: 0.64rem 1.6rem 0.64rem 3rem;
+  background-color: rgba(var(--color-brand-primary-rgb), 0.20);
   color: var(--color-neutral-20);
   font-family: var(--ff-default);
   font-size: var(--fs-rg);
-  background-color: rgba(var(--color-brand-primary-rgb), 0.20);
+  line-height: 1;
 }
 
 .search-input .search-input-text:focus,
@@ -73,6 +74,7 @@
 .btn-filter {
   position: relative;
   border: 0;
+  padding: 0 .48rem;
   background-color: transparent;
   cursor: pointer;
 }
@@ -156,6 +158,7 @@
 .modal-filter .modal-filter-header .modal-title {
   margin: 0;
   font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
 }
 
 .modal-filter .modal-filter-body {
@@ -185,14 +188,16 @@
 }
 
 .modal-filter .form-group label {
+  margin: 0.2rem 0;
   color: var(--color-neutral-70);
   font-size: var(--fs-sm);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-regular);
 }
 
 .modal-filter .form-group .form-control {
+  border: solid 1px var(--color-neutral-40);
   font-size: var(--fs-rg);
-  padding: 0.4rem 0.2rem;
+  padding: 0.4rem 0.3rem;
 }
 
 .modal-filter .form-group .form-control option {
