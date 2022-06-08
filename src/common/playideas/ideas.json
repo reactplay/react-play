@@ -123,8 +123,20 @@
     {
       "id": "idea-21",
       "title": "Animations Portfolio",
-      "description": "Build a Portfolio made with react and sanity by framer-motion. Projects, Portfolio Section, Skills & Experience, Companies you work in with carousel, and Contacts.",
+      "description": "Build a Portfolio made with react by framer-motion. Projects, Portfolio Section, Skills & Experience, Companies you work in with carousel, and Contacts.",
       "level": "Advanced"
+    },
+    {
+      "id": "idea-22",
+      "title": "Personal Profile Card",
+      "description": "A Personal Profile Card have name, description, cover, profile photo and social links",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-23",
+      "title": "Image Gallery",
+      "description": "Build a responsive image gallery with search functionality by using Unsplash free API.",
+      "level": "Intermediate"
     }
   ]
 }

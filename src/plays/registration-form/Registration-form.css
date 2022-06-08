@@ -1,5 +1,11 @@
 .registration-form-heading {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  margin: 1rem 0 2rem 0;
   text-align: center;
+}
+.registration-form.container {
+  max-width: unset;
 }
 .registration-form .container {
   width: 90%;
