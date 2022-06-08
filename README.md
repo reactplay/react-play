@@ -43,25 +43,25 @@
   <img src="src/images/og-image.png" alt="name"/>
 </p>
 
-`react-play` is an `opensource` web app that helps you learn ReactJS faster with hands-on practice model. It is a collection of `ReactJS projects` that you can use to learn ReactJS.
+`react-play` is an `open-source` web app that helps you learn ReactJS faster with a hands-on practice model. It is a collection of `ReactJS projects` that you can use to learn ReactJS.
 
-Is that all? Nope. You can also create your own projects and share them with the world. The best part is that the ReactJS experts will `review` your project code before it gets part of the `ReactPlay` app. Isn't that a pure WIN-WIN?
+Is that all? Nope. You can also create your projects and share them with the world. The best part is that the ReactJS experts will `review` your project code before it gets part of the `ReactPlay` app. Isn't that a pure WIN-WIN?
 ## 🔥 Demo
 Here is the link to the app. We hope you enjoy it.
 
 > [The ReactPlay app Link](https://reactplay.io)
   
-Who doesn't want motivation and support? Many Thanks to all the Stargazers who has supported this project with stars(⭐). You all are amazing!!!
+Who doesn't want motivation and support? Many Thanks to all the Stargazers who have supported this project with stars(⭐). You all are amazing!!!
 
 [![Stargazers repo roster for @reactplay/react-play](https://reporoster.com/stars/reactplay/react-play)](https://github.com/reactplay/react-play/stargazers)
 
-Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on twitter [@reactplayio](https://twitter.com/reactplayio).
+Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on Twitter [@reactplayio](https://twitter.com/reactplayio).
 
 ## 🏗️ How to Set up `ReactPlay` for Development?
 
 You may want to set up the `react-play` repo for the following reasons:
 
-- You want to create a new play or want to edit an exiting play as a contributor. Please check the [Create a Play Guide](./CREATE-PLAY.md) for more details. Also, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
+- You want to create a new play or want to edit an existing play as a contributor. Please check the [Create a Play Guide](./CREATE-PLAY.md) for more details. Also, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
 - You want to contribute to the `react-play` repo in general. Please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
@@ -70,7 +70,7 @@ Here is a quick overview of the `react-play` repo setup:
 ### 🍴 Fork and Clone the Repo 
 First, you need to fork the `react-play` repo. You can do this by clicking the `Fork` button on the top right corner of the repo. If you are new to forking, please watch this [YouTube Guide](https://www.youtube.com/watch?v=h8suY-Osn8Q) to get started.
 
-Once forked, you can clone the repo by clicking the `Clone or Download` button on the top right corner of forked repo.
+Once forked, you can clone the repo by clicking the `Clone or Download` button on the top right corner of the forked repo.
 
 Please change the directory after cloning the repository using the `cd <folder-name>` command.
 
@@ -98,7 +98,7 @@ Or
 yarn start
 ```
 
-It runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes. You may also see any lint errors in the console.
 
@@ -128,15 +128,15 @@ You can deploy the app to `Vercel` or `Netlify` with a single click.
 </a>
 
 ## 🤝 Contributing to `ReactPlay`
-Any kind of positive contributions are welcome! Please help us to grow by contributing to the project.
+Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
 
 If you wish to contribute, you can,
 
 - Create a Play
 - Suggest a Feature
-- Test the app, help it improving.
+- Test the app, and help it improve.
 - Improve the app, fix bugs, etc.
-- Improve documentations.
+- Improve documentation.
 - Create content about ReactPlay and share it with the world.
 
 > Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
@@ -211,4 +211,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
