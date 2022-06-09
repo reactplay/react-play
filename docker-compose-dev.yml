@@ -1,0 +1,22 @@
+version: "3.3"
+
+networks:
+  react-play-network:
+
+services:
+  ### For development
+  web-dev:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.DEV
+    command: yarn run start
+    container_name: react-play-frontend-app-dev
+    image: react-play-frontend-app-dev:v1
+    restart: always
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - react-play-network

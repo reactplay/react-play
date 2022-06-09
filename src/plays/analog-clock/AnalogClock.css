@@ -1,5 +1,8 @@
 .clock-play-heading {
   text-align: center;
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
 }
 .clock {
   max-width: 375px;
