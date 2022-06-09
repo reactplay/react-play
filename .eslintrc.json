@@ -13,5 +13,26 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
-  "rules": {}
+  "rules": {
+    "react/jsx-pascal-case": [1, {}],
+    "react/jsx-sort-props": [
+      1,
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "ignoreCase": true,
+        "noSortAlphabetically": true,
+        "multiline": "last"
+      }
+    ],
+    "react/jsx-boolean-value": [1, "always"],
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/jsx-curly-brace-presence": [1, "always"]
+  }
 }
