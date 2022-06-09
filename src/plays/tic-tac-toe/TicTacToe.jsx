@@ -3,7 +3,6 @@ import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 
 import Game from "./Game";
-import "./TicTacToe.css";
 
 function TicTacToe(props) {
   // Do not remove the below lines.

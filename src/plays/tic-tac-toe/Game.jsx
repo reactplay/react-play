@@ -7,6 +7,7 @@ import PlayAgainButton from "./PlayAgainButton";
 import Icon from "./Icon";
 
 import "./Game.css";
+import "./TicTacToe.css";
 
 /*
  * Declaring an array to store the game state.
