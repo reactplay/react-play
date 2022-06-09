@@ -1,27 +1,14 @@
 # Product entry form
+The `Product entry form` is a project where you can add products or anything with the given 5 inputs(name, image url, description, price and date), the project will be added in the list and can filter by the date which you've entered.
 
-Its a simple product entry form using useState hook as a beginner.
+Concepts I used:-
 
-## Play Demographic
+- Form Handling.
+- Input Validation
+- Use of `useState` hook.
+- CSS modules for object based classes.
+- Array filter for filtering the list according to the year.
 
-- Language: js
-- Level: Beginner
+If there is an empty `input` or any `invalid` price value, it will show an error. We have error.
 
-## Creator Information
-
-- User: mohitdevelops
-- Gihub Link: https://github.com/mohitdevelops
-- Blog: 
-- Video: 
-
-## Implementation Details
-
-Update your implementation idea and details here
-
-## Consideration
-
-Update all considerations(if any)
-
-## Resources
-
-Update external resources(if any)
+Here the `ProductEntryForm.jsx` file responsible for the rendering of this app.

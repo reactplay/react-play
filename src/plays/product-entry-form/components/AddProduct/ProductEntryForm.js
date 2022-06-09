@@ -34,6 +34,8 @@ export default function ProductEntryForm(props) {
 			date: new Date(inputDate),
 			image: inputImage,
 		};
+
+		// Here are the sybmols which should not be in the price input
 		const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
 
 		if (
