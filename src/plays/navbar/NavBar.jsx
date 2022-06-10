@@ -54,7 +54,6 @@ function NavBar(props) {
                   </li>
                 ))}
               </ul>
-
             </div>
           </div>
           {/* Your Code Ends Here */}
