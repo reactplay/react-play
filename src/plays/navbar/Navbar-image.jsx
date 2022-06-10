@@ -22,7 +22,6 @@ const Menus = [
     title: "Settings",
     url: titleFour,
   },
-
   {
     title: "Search",
     url: titleFive,
