@@ -23,7 +23,8 @@ import {
   TicTacToeGame,
   DynamicRoutes,
   FlipCardEffect,
-  //import play here
+  NavBar,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -407,5 +408,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-navbar', 
+    name: 'NavBar', 
+    description: 'It is the responsive navbar made with tailwind',
+    component: () => {return <NavBar />},
+    path: '/plays/navbar',
+    level: 'Beginner',
+    tags: 'JSX, useState, Tailwind',
+    github: 'Shivam-Katare',
+    cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1654871439/myimage_140_60_px_260_146_px_dy0ipc.png',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
