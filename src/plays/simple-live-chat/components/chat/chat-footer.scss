@@ -1,0 +1,59 @@
+@import "../../variables";
+
+.simple-live-chat-chat-footer {
+  position: sticky;
+  bottom: -16px;
+  background-color: $simple-default-background-color;
+  height: 60px;
+  padding-top: 5px;
+  overflow: hidden;
+}
+
+.simple-live-chat-footer-container {
+  display: flex;
+  padding-bottom: 0;
+  justify-content: center;
+  width: 600px;
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+
+  .simple-live-chat-footer-textarea {
+    width: 100%;
+    font-size: 1.2rem;
+    border: 1px solid $simple-button-border-color;
+    outline: none;
+    border-radius: 9999px;
+    height: 3rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    overflow: hidden;
+    resize: none;
+
+    @media screen and (max-width: 640px) {
+      font-size: 1rem;
+      padding-top: 0.75rem;
+    }
+  }
+
+  div {
+    position: absolute;
+    right: 0;
+    height: 3rem;
+    cursor: pointer;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:active {
+      background-color: $simple-gray-color;
+    }
+  }
+}
