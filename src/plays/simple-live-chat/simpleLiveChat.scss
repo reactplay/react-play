@@ -1,0 +1,19 @@
+/* enter stlyes here */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&display=swap");
+
+@import "./variables";
+
+.simple-live-chat {
+  .main {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
+
+    * {
+      font-family: "Noto Sans", sans-serif !important;
+    }
+  }
+}

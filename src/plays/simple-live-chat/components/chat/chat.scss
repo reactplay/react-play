@@ -1,0 +1,17 @@
+@import "../../variables";
+
+.simple-live-chat-main-chat {
+  width: 600px;
+  transform: translateX(0);
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
+
+  .show-loading {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    color: $simple-text-color;
+  }
+}
