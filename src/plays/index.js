@@ -24,4 +24,5 @@ export { default as TicTacToeGame } from "plays/tic-tac-toe-game/TicTacToeGame";
 export { default as DynamicRoutes } from "plays/dynamic-routes/DynamicRoutes";
 export { default as Quizeo } from "plays/quizeo/src/Quizeo";
 export { default as FlipCardEffect } from 'plays/flip-card-effect/FlipCardEffect';
+export { default as NavBar } from 'plays/navbar/NavBar';
 //add export here
