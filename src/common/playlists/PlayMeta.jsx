@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 
 function PlayMeta({ id, name, description, path, cover, component }) {
   const playFolder = path.split("/")[2];
-
   let metaImage; // Initialize metaImage variable
   if (cover) {
     metaImage = cover; // If cover path is given, use that

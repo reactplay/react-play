@@ -6,25 +6,32 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const RouteDefs = () => {
   const plays = getAllPlays();
-
+  
   return (
     <BrowserRouter>
       <Header />
       <DefMeta />
       <Routes>
+        {/* <Route path="/*" element={<PageNotFound />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/plays" element={<App />}>
           <Route index element={<PlayList />} />
-          {plays.map((play, index) => (
+          {plays.map((play, route_index) => (
             <Route
-              key={index}
+              key={route_index}
               path={play.path}
               element={<PlayMeta {...play} />} // Put play data inside PlayMeta tag for dynamic meta tags
+            >
+              {/* For additonal paramters for routing. One can use optional route instead of child route */}
+            <Route
+              path=":param1"
+              element={<PlayMeta {...play} />} 
             />
+              </Route>
           ))}
         </Route>
+        
         <Route path="/ideas" element={<PlayIdeas />} />
-        <Route path="/*" element={<PageNotFound />} />
       
       </Routes>
       <Footer />
