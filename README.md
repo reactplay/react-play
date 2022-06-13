@@ -141,6 +141,15 @@ If you wish to contribute, you can,
 
 > Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
 
+## Launching reactplay Rewards
+ Contributed to reactplay? Here is a big thank you from our community to you.
+ Claim your badge and showcase them with pride.
+ Let us inspire more folks !
+
+ ![reactplay Badges](https://aviyel.com/assets/uploads/rewards/share/project/43/512/share.png)
+ 
+ ### **[Claim Now!](https://aviyel.com/projects/43/reactplay/rewards)**
+ 
 ## 🙏 Support
 
 We all need support and motivation. `ReactPlay` is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
