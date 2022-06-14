@@ -5,9 +5,9 @@ export const GitHubUserCard = ({username, avatar, link}) => {
       target="_blank"
       rel="noreferrer"
       style={{backgroundImage: `url(${avatar})`}}
-      className=" bg-cover bg-center h-[15rem] w-[15rem] flex rounded-lg"
+      className=" bg-cover bg-center h-[15rem] w-[15rem] rounded-lg flex flex-col justify-end"
     >
-      <h1 className="text-2xl p-2 w-full h-full text-white opacity-0 hover:opacity-80 hover:bg-black rounded-lg">
+      <h1 className="text-2xl text-center xs:bg-black p-2 w-full rounded-lg text-white lg:h-full lg:opacity-0 lg:hover:opacity-80 lg:hover:bg-black ">
         {username}
       </h1>
     </a>
