@@ -92,10 +92,10 @@ function GitHubUserSearch(props) {
             >
               Search
             </button>
-            {dataFetchStates.loading && <h2> L O A D I N G . . .</h2>}
             {!resData.remaining_searches < 1 && (
               <p>No. of searches remaining : {resData.remaining_searches}</p>
             )}
+            {dataFetchStates.loading && <h2> L O A D I N G . . .</h2>}
             {dataFetchStates.error && (
               <h2>
                 You have exhausted your search limit. Try again after{" "}
