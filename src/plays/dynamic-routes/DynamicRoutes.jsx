@@ -13,13 +13,12 @@ function DynamicRoutes(props) {
   const play = getPlayById(id);
 
   // Your Code Start below.
-  let { menu } = useParams(); // return the parameter of url
-  const [activeMenu, setActiveMenu] = useState(
-    menu === ":menu" ? "breakfast" : menu
-    //we take url input and set to our activeMenu state so we can fetch recipes based on active menu
-    //if its first laod then url parameter is ":menu" so we change the active menu to "breakfast" as default category
-  );
-
+  let { param } = useParams(); // return the parameter of url
+  const [activeMenu, setActiveMenu] = useState();
+  useEffect(() => {
+    //useEffect hook keep eye on url parameter whenever it changes so we can re-mount
+    setActiveMenu(param ? param : "breakfast");
+  }, [param]);
   const activeRecipes = data.filter((recipe) => {
     return recipe.mealtype === activeMenu; //filter reciepes based on active menu
   });
@@ -34,11 +33,6 @@ function DynamicRoutes(props) {
   const activeMenuHandler = (mealtype) => {
     setActiveMenu(mealtype);
   };
-
-  useEffect(() => {
-    //useEffect hook keep eye on url parameter whenever it changes so we can re-mount
-    setActiveMenu(menu === ":menu" ? "breakfast" : menu);
-  }, [menu]);
 
   return (
     <>

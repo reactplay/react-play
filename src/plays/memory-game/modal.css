@@ -1,0 +1,129 @@
+.memory-game-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.memory-game-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 50vw;
+  max-width: 800px;
+  z-index: 11;
+  border-radius: 10px;
+  -webkit-animation: modalApear 0.3s ease-in-out;
+          animation: modalApear 0.3s ease-in-out;
+}
+
+.memory-game-modal .close-icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  width: 30px;
+  padding: 5px;
+  -webkit-filter: brightness(0.1);
+          filter: brightness(0.1);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .memory-game-modal .close-icon {
+    right: 1rem;
+    top: 1rem;
+    width: 30px;
+  }
+}
+
+.memory-game-modal .content {
+  margin: 0 2rem;
+  padding-bottom: 1rem;
+}
+
+.memory-game-modal .content .text {
+  text-align: center;
+}
+
+.memory-game-modal .content p {
+  text-align: center;
+}
+
+.memory-game-modal .content .guide-image {
+  width: 70%;
+  display: block;
+  aspect-ratio: 16/9;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.memory-game-modal .content .button-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 32px;
+}
+
+.memory-game-modal .content .button-section button {
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #515bd4;
+  outline: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.memory-game-modal .content .button-section button:disabled {
+  background-color: rgba(81, 91, 212, 0.5);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .memory-game-modal .content .button-section {
+    padding: 0;
+    margin-top: 10px;
+  }
+}
+
+@-webkit-keyframes modalApear {
+  0% {
+    opacity: 0;
+    top: 48%;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
+@keyframes modalApear {
+  0% {
+    opacity: 0;
+    top: 48%;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .memory-game-modal {
+    width: calc(100vw - 20px);
+  }
+}
+/*# sourceMappingURL=modal.css.map */
