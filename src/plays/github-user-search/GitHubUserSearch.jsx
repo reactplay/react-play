@@ -15,6 +15,7 @@ function GitHubUserSearch(props) {
   // Your Code Start below.
   const [query, setQuery] = useState("");
   const [resData, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [resetData, setResetData] = useState({
     count: 0,
@@ -28,12 +29,15 @@ function GitHubUserSearch(props) {
 
   const getUsers = async () => {
     try {
+      setLoading(true);
       setError(false);
       const res = await axios.get(
         `https://api.github.com/search/users?q=${query}&per_page=20`
       );
+      setLoading(false);
       setData(res.data.items);
     } catch (error) {
+      setLoading(false);
       setError(true);
       setData(null);
     }
@@ -72,6 +76,7 @@ function GitHubUserSearch(props) {
             >
               Search
             </button>
+            {loading && <h2> L O A D I N G . . .</h2>}
             {!resetData.count < 1 && (
               <p>No. of searches remaining : {resetData.count}</p>
             )}
@@ -80,6 +85,11 @@ function GitHubUserSearch(props) {
                 You have exhausted your search limit. Please wait until{" "}
                 {resetData.time}
               </h2>
+            )}
+            {resData?.length === 0 && (
+              <h1 className="text-3xl text-center">
+                No matching GitHub User Profiles
+              </h1>
             )}
             {!error && (
               <div className="grid gap-2 grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] w-full place-items-center">
