@@ -5,11 +5,22 @@
   margin: 50px auto;
 }
 
+.dynamic-routes-container .heading {
+  font-size: 2rem;
+}
+
 .dynamic-routes-container .heading,
 .dynamic-routes-container .sub-heading,
 .dynamic-routes-container .navbar {
   text-align: center;
 }
+
+.dynamic-routes-container .sub-heading {
+  font-size: calc(var(--fs-md) * .8);
+  font-weight: var(--fw-bold);
+  margin: .8rem 0 1.6rem 0;
+}
+
 .dynamic-routes-container .navbar {
   display: flex;
   justify-content: center;
@@ -29,6 +40,11 @@
   margin: 20px;
   text-align: center;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: 1rem;
+  justify-content: space-between;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   text-transform: capitalize;
@@ -45,6 +61,7 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 1px 2px 5px #ccc;
+  color: blue;
 }
 
 .dynamic-routes-container .symbol {

@@ -38,19 +38,23 @@
 
   .content {
     margin: 0 2rem;
-    padding-bottom: 1rem;
+    padding: 2rem;
+
     .text {
+
       text-align: center;
+      font-size: 1.6rem;
+      font-weight: bold;
     }
     p {
+      margin: 0.6rem 0 1rem 0;
       text-align: center;
     }
     .guide-image {
-      width: 70%;
       display: block;
-      aspect-ratio: 16/9;
-      height: 100%;
       margin: 0 auto;
+      max-width: 100%;
+      height: auto;
     }
 
     .button-section {

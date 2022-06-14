@@ -1,0 +1,63 @@
+@import "../../variables";
+
+.simple-live-chat-chat-header {
+  position: sticky;
+  top: -16px;
+  z-index: 20;
+  width: 600px;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
+
+  div {
+    div {
+      display: flex;
+      border-radius: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $simple-header-color;
+      padding: 0.5rem 2rem;
+
+      @media screen and (max-width: 640px) {
+        padding: 0.25rem 0.5rem;
+      }
+
+      span {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+
+        @media screen and (max-width: 640px) {
+          gap: 0.25rem;
+        }
+
+        span {
+          font-weight: 500;
+          font-size: 1rem;
+
+          @media screen and (max-width: 640px) {
+            font-size: 0.85rem;
+          }
+        }
+      }
+
+      button {
+        background-color: $simple-message-color;
+        color: $simple-button-background-color;
+        font-weight: bold;
+        box-shadow: 1px 1px 2px 1px $simple-button-shadow-color;
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.75rem;
+        border: none;
+        outline: none;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+
+        @media screen and (max-width: 640px) {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
