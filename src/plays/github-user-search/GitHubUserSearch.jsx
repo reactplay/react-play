@@ -14,14 +14,14 @@ function GitHubUserSearch(props) {
 
   // Your Code Start below.
   const [query, setQuery] = useState("");
-  const [resData, setData] = useState(null);
+  const [resData, setData] = useState({
+    data: null,
+    remaining_searches: 0,
+    time_until_reset: undefined,
+  });
   const [dataFetchStates, setDataFetchStates] = useState({
     loading: false,
     error: false,
-  });
-  const [resetData, setResetData] = useState({
-    count: 0,
-    time: undefined,
   });
 
   const getResetTime = (time) => {
@@ -36,20 +36,20 @@ function GitHubUserSearch(props) {
         loading: true,
       }));
       const res = await axios.get(
-        `https://api.github.com/search/users?q=${query}&per_page=20`
+        `https://api.github.com/search/users?q=${query}&per_page=24`
       );
       setDataFetchStates((prev) => ({
         ...prev,
         loading: false,
       }));
-      setData(res.data.items);
+      setData((prev) => ({...prev, data: res.data.items}));
     } catch (error) {
       setDataFetchStates((prev) => ({
         ...prev,
         loading: false,
         error: true,
       }));
-      setData(null);
+      setData((prev) => ({...prev, data: null}));
     }
   };
 
@@ -63,7 +63,11 @@ function GitHubUserSearch(props) {
           ...prev,
           error: false,
         }));
-      setResetData((prev) => ({...prev, count: reset_count, time: reset_time}));
+      setData((prev) => ({
+        ...prev,
+        remaining_searches: reset_count,
+        time_until_reset: reset_time,
+      }));
     })();
   }, [query, resData]);
 
@@ -89,23 +93,23 @@ function GitHubUserSearch(props) {
               Search
             </button>
             {dataFetchStates.loading && <h2> L O A D I N G . . .</h2>}
-            {!resetData.count < 1 && (
-              <p>No. of searches remaining : {resetData.count}</p>
+            {!resData.remaining_searches < 1 && (
+              <p>No. of searches remaining : {resData.remaining_searches}</p>
             )}
             {dataFetchStates.error && (
               <h2>
                 You have exhausted your search limit. Try again after{" "}
-                {resetData.time}
+                {resData.time_until_reset}
               </h2>
             )}
-            {resData?.length === 0 && (
+            {resData?.data?.length === 0 && (
               <h1 className="text-3xl text-center">
                 No matching GitHub User Profiles
               </h1>
             )}
             {!dataFetchStates.error && (
-              <div className="grid gap-2 grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] w-full place-items-center">
-                {resData?.map(({id, login, avatar_url, html_url}) => (
+              <div className="grid gap-2 grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] w-full place-items-center">
+                {resData?.data?.map(({id, login, avatar_url, html_url}) => (
                   <GitHubUserCard
                     key={id}
                     username={login}
