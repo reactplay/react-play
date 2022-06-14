@@ -15,8 +15,10 @@ function GitHubUserSearch(props) {
   // Your Code Start below.
   const [query, setQuery] = useState("");
   const [resData, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [dataFetchStates, setDataFetchStates] = useState({
+    loading: false,
+    error: false,
+  });
   const [resetData, setResetData] = useState({
     count: 0,
     time: undefined,
@@ -29,16 +31,24 @@ function GitHubUserSearch(props) {
 
   const getUsers = async () => {
     try {
-      setLoading(true);
-      setError(false);
+      setDataFetchStates((prev) => ({
+        ...prev,
+        loading: true,
+      }));
       const res = await axios.get(
         `https://api.github.com/search/users?q=${query}&per_page=20`
       );
-      setLoading(false);
+      setDataFetchStates((prev) => ({
+        ...prev,
+        loading: false,
+      }));
       setData(res.data.items);
     } catch (error) {
-      setLoading(false);
-      setError(true);
+      setDataFetchStates((prev) => ({
+        ...prev,
+        loading: false,
+        error: true,
+      }));
       setData(null);
     }
   };
@@ -48,10 +58,12 @@ function GitHubUserSearch(props) {
       const rate_limit = await axios.get("https://api.github.com/rate_limit");
       const reset_time = getResetTime(rate_limit.data.resources.search.reset);
       const reset_count = rate_limit.data.resources.search.remaining;
-      if (reset_count > 1) setError(false);
-      setResetData((prev) => {
-        return {...prev, count: reset_count, time: reset_time};
-      });
+      if (reset_count > 1)
+        setDataFetchStates((prev) => ({
+          ...prev,
+          error: false,
+        }));
+      setResetData((prev) => ({...prev, count: reset_count, time: reset_time}));
     })();
   }, [query, resData]);
 
@@ -72,17 +84,17 @@ function GitHubUserSearch(props) {
             <button
               className="bg-[#00f2fe] p-2 rounded-xl disabled:text-gray-500 disabled:cursor-not-allowed disabled:bg-[#00bbc5]"
               onClick={getUsers}
-              disabled={query === "" || error ? true : false}
+              disabled={query === "" || dataFetchStates.error ? true : false}
             >
               Search
             </button>
-            {loading && <h2> L O A D I N G . . .</h2>}
+            {dataFetchStates.loading && <h2> L O A D I N G . . .</h2>}
             {!resetData.count < 1 && (
               <p>No. of searches remaining : {resetData.count}</p>
             )}
-            {error && (
+            {dataFetchStates.error && (
               <h2>
-                You have exhausted your search limit. Please wait until{" "}
+                You have exhausted your search limit. Try again after{" "}
                 {resetData.time}
               </h2>
             )}
@@ -91,7 +103,7 @@ function GitHubUserSearch(props) {
                 No matching GitHub User Profiles
               </h1>
             )}
-            {!error && (
+            {!dataFetchStates.error && (
               <div className="grid gap-2 grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] w-full place-items-center">
                 {resData?.map(({id, login, avatar_url, html_url}) => (
                   <GitHubUserCard
