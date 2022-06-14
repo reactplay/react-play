@@ -1,48 +1,58 @@
 import { SearchContext } from "common/search/search-context";
-import { getPlaysOnSearch } from "meta/play-meta-util";
 import { useContext, useEffect, useState } from "react";
+
+import useGetPlays from 'common/hooks/useGetPlays';
 
 const useSearchFilter = () => {
   const { searchTerm, filterQuery } = useContext(SearchContext);
-  
-  console.log('searchTerm', searchTerm);
-  console.log('filterQuery', filterQuery);
-  
+  const [loading, error, data] = useGetPlays();
   const [plays, setPlays] = useState([]);
 
   useEffect(() => {
-    const filteredPlays = filterPlays(searchTerm, filterQuery);
-    setPlays(filteredPlays);
-  }, [searchTerm, filterQuery]);
-
+    if (loading) {
+      console.log('loading');
+    } else {
+      console.log(data);
+      const filteredPlays = filterPlays(data, searchTerm, filterQuery);
+      setPlays(filteredPlays);
+    }
+  }, [searchTerm, filterQuery, loading]);
+  
   return plays;
 };
 
-const filterPlays = (searchTerm, filterQuery) => {
+const filterPlays = (data, searchTerm, filterQuery) => {
   let filteredPlays = [];
   const { level, tags, creator, language } = filterQuery;
   
-  const searchedPlays = getPlaysOnSearch(searchTerm);
+  const searchedPlays = getPlaysOnSearch(data, searchTerm);
+  console.log(searchedPlays);
 
   filteredPlays = searchedPlays.filter(play => {
     return (play.github === creator || !creator);
   });
 
   filteredPlays = filteredPlays.filter(play => {
-    return (play.level === level || !level);
+    return (play.level.name === level || !level);
   });
 
   filteredPlays = filteredPlays.filter(play => {
-    return (play.tags.includes(tags[0]) || !tags[0]);
+    return (play.play_tags.includes(tags[0]) || !tags[0]);
   });
 
   filteredPlays = filteredPlays.filter(play => {
     const lang = play.language || 'js';
     return (lang === language || !language);
   });
-  
-  
+    
   return filteredPlays;
+}
+
+const getPlaysOnSearch = (data, searchTerm) => {
+  return data.plays.filter(play => {
+    return (play.name.toLowerCase().includes(searchTerm.toLowerCase())
+      || play.description.toLowerCase().includes(searchTerm.toLowerCase()));
+  });
 }
 
 export { useSearchFilter };
