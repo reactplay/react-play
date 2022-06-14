@@ -17,7 +17,7 @@ function GitHubUserSearch(props) {
   const [resData, setData] = useState({
     data: null,
     remaining_searches: 0,
-    time_until_reset: undefined,
+    time_until_reset: null,
   });
   const [dataFetchStates, setDataFetchStates] = useState({
     loading: false,
