@@ -24,6 +24,7 @@ import {
   DynamicRoutes,
   SimpleLiveChat,
   FlipCardEffect,
+  GitHubUserSearch,
 } from "plays";
 
 export const plays = [
@@ -391,19 +392,24 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
-  }, {
-    id: 'pl-simple-live-chat', 
-    name: 'Simple Live Chat', 
-    description: 'Its a very simple live chat which is build using reactjs and firebase firestore',
-    component: () => {return <SimpleLiveChat />},
-    path: '/plays/simple-live-chat',
-    level: 'Intermediate',
-    tags: 'LiveChat,Firebase,React',
-    github: 'Angryman18',
-    cover: 'https://images.unsplash.com/photo-1522096823084-2d1aa8411c13?ixlib&#x3D;rb-1.2.1&amp;ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;870&amp;q&#x3D;80',
-    blog: '',
-    video: '',
-    language: 'js'
+  },
+  {
+    id: "pl-simple-live-chat",
+    name: "Simple Live Chat",
+    description:
+      "Its a very simple live chat which is build using reactjs and firebase firestore",
+    component: () => {
+      return <SimpleLiveChat />;
+    },
+    path: "/plays/simple-live-chat",
+    level: "Intermediate",
+    tags: "LiveChat,Firebase,React",
+    github: "Angryman18",
+    cover:
+      "https://images.unsplash.com/photo-1522096823084-2d1aa8411c13?ixlib&#x3D;rb-1.2.1&amp;ixid&#x3D;MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;870&amp;q&#x3D;80",
+    blog: "",
+    video: "",
+    language: "js",
   },
   {
     id: "pl-flip-card-effect",
@@ -416,6 +422,22 @@ export const plays = [
     level: "Beginner",
     tags: "useState-hook, jsx, flip-card-effect, transform-rotate",
     github: "Deepak8717",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "js",
+  },
+  {
+    id: "pl-github-user-search",
+    name: "GitHub User Search",
+    description: "A simple ReactJS application to search for GitHub users.",
+    component: () => {
+      return <GitHubUserSearch />;
+    },
+    path: "/plays/github-user-search",
+    level: "Beginner",
+    tags: "JSX,Tailwind,useState,Axios",
+    github: "TejasShekar",
     cover: "",
     blog: "",
     video: "",
