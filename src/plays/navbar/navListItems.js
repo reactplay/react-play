@@ -20,7 +20,7 @@ const NavListItems = (props) => {
              duration-500 h-screen p-5 pt-8 bg-slate-900 relative`}>
 
                     <img src={Collasp}
-                        alt=''
+                        alt='collasp'
                         className={`absolute cursor-pointer rounded-full -right-3 top-9 w-7 border-2 bg-cyan-500 ${!open && "rotate-180"}`}
                         onClick={handleOnClick} />
 
@@ -41,7 +41,7 @@ const NavListItems = (props) => {
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
 mt-2 `} >
-                                <img src={img1} alt="img" />
+                                <img src={img1} alt="dashboard" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     Dashboard
                                 </span>
@@ -53,7 +53,7 @@ mt-2 `} >
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
  mt-2 `} >
-                                <img src={img2} alt="img2" />
+                                <img src={img2} alt="ideas" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     <a href='google.com'>Ideas</a>
                                 </span>
@@ -65,7 +65,7 @@ mt-2 `} >
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
  mt-2 `} >
-                                <img src={img3} alt="img" />
+                                <img src={img3} alt="join" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     <a href='google.com'>Join</a>
                                 </span>
@@ -77,7 +77,7 @@ mt-2 `} >
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
   mt-9 `} >
-                                <img src={img4} alt="img" />
+                                <img src={img4} alt="build" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     <a href='google.com'>Build</a>
                                 </span>
@@ -89,7 +89,7 @@ mt-2 `} >
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
 mt-2  `} >
-                                <img src={img5} alt="img" href="http://localhost:3000/plays" />
+                                <img src={img5} alt="search" href="http://localhost:3000/plays" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     Search
                                 </span>
