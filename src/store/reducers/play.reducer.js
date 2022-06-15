@@ -6,10 +6,8 @@ const PlayReducer = (state = [], actions) => {
       if (actions.error) {
         return [];
       }
-      if (actions.payload) {
-        return [...actions.payload];
-      }
-      return state;
+      const data = actions.payload ?? []
+      return [...data];
     default:
       return state;
   }
