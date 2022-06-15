@@ -26,11 +26,13 @@ const Index = () => {
 
   const value = { searchTerm, setSearchTerm, filterQuery, setFilterQuery };
   return (
-    <Provider store={store}>
-      <SearchContext.Provider value={value}>
-        <RouteDefs />
-      </SearchContext.Provider>
-    </Provider>
+    <React.StrictMode>
+      <Provider store={store}>
+        <SearchContext.Provider value={value}>
+          <RouteDefs />
+        </SearchContext.Provider>
+      </Provider>
+    </React.StrictMode>
   );
 };
 const container = document.getElementById("root");

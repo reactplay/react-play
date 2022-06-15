@@ -31,7 +31,7 @@ const Tags = ({tags}) => {
       {tags.map((tag, index) => (
         <li key={index}>
           <span className="play-tag">
-            {tag}
+            {tag.tag.name}
           </span>
         </li>
       ))}
@@ -40,11 +40,6 @@ const Tags = ({tags}) => {
 };
 
 const PlayHeaderInfo = ({ play }) => {
-  
-  const structureTags = play?.play_tags.reduce((pre, next) => {
-    return pre.concat(next.tag.name)
-  }, [])
-
   return (
     <div className="header-leftcol">
       <div className="header-leftcol-action">
@@ -57,7 +52,7 @@ const PlayHeaderInfo = ({ play }) => {
         <div className="header-primary">
           <h3 className="header-title">{play.name}</h3>
           <div className="header-title-tags">
-            <LevelBadge level={play.level.name} /> { structureTags && <Tags tags={structureTags.toString().split(',')} /> }
+            <LevelBadge level={play.level.name} /> { !!play.play_tags.length && <Tags tags={play.play_tags} /> }
           </div>
         </div>
         <div className="header-secondary">
