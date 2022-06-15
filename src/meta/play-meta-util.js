@@ -1,12 +1,16 @@
 
 import { plays } from './play-meta';
+import { store } from '../store/store';
+
+
 
 const getAllPlays = () => {
   return plays;
 };
 
 const getPlayById = id => {
-  return plays.find(play => play.id === id);
+  const getAllPlays = store.getState().PlayReducer
+  return getAllPlays.find(play => play.id === id);
 };
 
 const getPlaysOnSearch = searchTerm => {

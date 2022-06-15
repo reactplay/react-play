@@ -1,8 +1,10 @@
 import { cloneElement } from "react";
 import { Helmet } from "react-helmet";
+import * as Plays from '../../plays'
 
 function PlayMeta({ id, name, description, path, cover, component }) {
   const playFolder = path.split("/")[2];
+  const RenderPlay = Plays[component]
 
   let metaImage; // Initialize metaImage variable
   if (cover) {
@@ -50,7 +52,7 @@ function PlayMeta({ id, name, description, path, cover, component }) {
           />
         )}
       </Helmet>
-      {cloneElement(component(), { id })}
+      {cloneElement(<RenderPlay />, { id })}
     </>
   );
 }
