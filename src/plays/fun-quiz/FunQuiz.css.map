@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAEA,AAAA,SAAS,CAAC;EACN,KAAK,EAAE,IAAI;EACX,QAAQ,EAAE,MAAM;CACnB",
-    "sources": [
-        "FunQuiz.scss"
-    ],
-    "names": [],
-    "file": "FunQuiz.css"
-}
