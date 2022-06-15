@@ -37,13 +37,17 @@ const ChildRoutes = (props) => {
         <Route path='/' element={<Home />} />
         <Route path='/plays' element={<App />}>
           <Route index element={<PlayList />} />
-          {!!plays.length && plays?.map((play, index) => (
-            <Route
-              key={index}
-              path={play?.path}
-              element={<PlayMeta key={index} {...play} />} // Put play data inside PlayMeta tag for dynamic meta tags
-            />
-          ))}
+          {!!plays.length &&
+            plays?.map((play, index) => (
+              <Route
+                key={index}
+                path={play?.path}
+                element={<PlayMeta key={index} {...play} />}
+                // Put play data inside PlayMeta tag for dynamic meta tags
+              >
+                <Route path=':param' element={<PlayMeta {...play} />} />
+              </Route>
+            ))}
         </Route>
         <Route path='/ideas' element={<PlayIdeas />} />
         <Route path='/*' element={<PageNotFound />} />
