@@ -35,7 +35,7 @@ function GitHubUserSearch(props) {
   const getRateLimitData = async () => {
     const rate_limit = await axios.get("https://api.github.com/rate_limit");
     const reset_time = getResetTime(rate_limit.data.resources.search.reset);
-    const reset_count = rate_limit.data.resources.search.remaining;
+    const reset_count = rate_limit.data.resources.search.remaining - 1;
     if (reset_count > 1)
       setDataFetchStates((prev) => ({
         ...prev,
@@ -77,8 +77,6 @@ function GitHubUserSearch(props) {
     }
   };
 
-  //add useEffect to listen to enter key that would do the same thing as the search button
-
   return (
     <>
       <div className="play-details">
@@ -107,7 +105,7 @@ function GitHubUserSearch(props) {
                 autoFocus
               />
               <label htmlFor="response_size">
-                How many matching user results can I show ?
+                Maximum number of results you want to see at once:
               </label>
               <input
                 id="response_size"
@@ -133,7 +131,7 @@ function GitHubUserSearch(props) {
                 Search
               </button>
             </form>
-            {resData.remaining_searches >= 1 && (
+            {resData.remaining_searches >= 0 && (
               <p>No. of searches remaining : {resData.remaining_searches}</p>
             )}
             {dataFetchStates.loading && <h2> L O A D I N G . . .</h2>}
