@@ -24,42 +24,46 @@ function GitHubUserSearch(props) {
     error: false,
   });
 
-  // const getRateLimitData = async () => {
-  //   const rate_limit = await axios.get("https://api.github.com/rate_limit");
-  //   const reset_time = getResetTime(rate_limit.data.resources.search.reset);
-  //   const reset_count = rate_limit.data.resources.search.remaining;
-  //   if (reset_count > 1)
-  //     setDataFetchStates((prev) => ({
-  //       ...prev,
-  //       error: false,
-  //     }));
-  //   setData((prev) => ({
-  //     ...prev,
-  //     remaining_searches: reset_count,
-  //     time_until_reset: reset_time,
-  //   }));
-  // };
+  const getResetTime = (time) => {
+    const newTime = new Date(time * 1000);
+    return newTime.toLocaleTimeString();
+  };
 
-  // const getResetTime = (time) => {
-  //   const newTime = new Date(time * 1000);
-  //   return newTime.toLocaleTimeString();
-  // };
+  const getRateLimitData = async () => {
+    const rate_limit = await axios.get("https://api.github.com/rate_limit");
+    const reset_time = getResetTime(rate_limit.data.resources.search.reset);
+    const reset_count = rate_limit.data.resources.search.remaining;
+    if (reset_count > 1)
+      setDataFetchStates((prev) => ({
+        ...prev,
+        error: false,
+      }));
+    setData((prev) => ({
+      ...prev,
+      remaining_searches: reset_count,
+      time_until_reset: reset_time,
+    }));
+  };
 
-  const getUsers = async () => {
+  const getUsersData = async () => {
+    const res = await axios.get(
+      `https://api.github.com/search/users?q=${query}&per_page=15`
+    );
+    setData((prev) => ({...prev, data: res.data.items}));
+  };
+
+  const getGitHubData = async () => {
     try {
       setDataFetchStates((prev) => ({
         ...prev,
         loading: true,
       }));
-      const res = await axios.get(
-        `https://api.github.com/search/users?q=${query}&per_page=15`
-      );
+      await getUsersData();
+      await getRateLimitData();
       setDataFetchStates((prev) => ({
         ...prev,
         loading: false,
       }));
-      setData((prev) => ({...prev, data: res.data.items}));
-      // getRateLimitData();
     } catch (error) {
       setDataFetchStates((prev) => ({
         ...prev,
@@ -69,10 +73,6 @@ function GitHubUserSearch(props) {
       setData((prev) => ({...prev, data: null}));
     }
   };
-
-  // useEffect(() => {
-  //   getRateLimitData();
-  // }, []);
 
   return (
     <>
@@ -90,21 +90,21 @@ function GitHubUserSearch(props) {
             />
             <button
               className="bg-[#00f2fe] p-2 rounded-xl disabled:text-gray-500 disabled:cursor-not-allowed disabled:bg-[#00bbc5]"
-              onClick={getUsers}
+              onClick={getGitHubData}
               disabled={query === "" || dataFetchStates.error ? true : false}
             >
               Search
             </button>
-            {/* {!resData.remaining_searches < 1 && (
+            {!resData.remaining_searches < 1 && (
               <p>No. of searches remaining : {resData.remaining_searches}</p>
-            )} */}
+            )}
             {dataFetchStates.loading && <h2> L O A D I N G . . .</h2>}
-            {/* {dataFetchStates.error && (
+            {dataFetchStates.error && (
               <h2>
                 You have exhausted your search limit. Try again after{" "}
                 {resData.time_until_reset}
               </h2>
-            )} */}
+            )}
             {resData?.data?.length === 0 && (
               <h1 className="text-3xl text-center">
                 No matching GitHub User Profiles
