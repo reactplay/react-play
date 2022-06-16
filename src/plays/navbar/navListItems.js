@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Collasp from '../navbar/assest/img.png'
 import LogoImage from '../navbar/assest/logo.png'
-import img1 from "./assest/Chart.png"
-import img2 from "./assest/Chat.png"
-import img3 from "./assest/User.png"
-import img4 from "./assest/Setting.png"
-import img5 from "./assest/Search.png"
+import ChartImg from "./assest/Chart.png"
+import ChatImg from "./assest/Chat.png"
+import UserImg from "./assest/User.png"
+import SettingImg from "./assest/Setting.png"
+import SearchImg from "./assest/Search.png"
 
 const NavListItems = (props) => {
     const [open, setOpen] = useState(true);
@@ -41,7 +41,7 @@ const NavListItems = (props) => {
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
 mt-2 `} >
-                                <img src={img1} alt="dashboard" />
+                                <img src={ChartImg} alt="dashboard" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     Dashboard
                                 </span>
@@ -53,7 +53,7 @@ mt-2 `} >
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
  mt-2 `} >
-                                <img src={img2} alt="ideas" />
+                                <img src={ChatImg} alt="ideas" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     <a href='google.com'>Ideas</a>
                                 </span>
@@ -65,7 +65,7 @@ mt-2 `} >
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
  mt-2 `} >
-                                <img src={img3} alt="join" />
+                                <img src={UserImg} alt="join" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     <a href='google.com'>Join</a>
                                 </span>
@@ -77,7 +77,7 @@ mt-2 `} >
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
   mt-9 `} >
-                                <img src={img4} alt="build" />
+                                <img src={SettingImg} alt="build" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     <a href='google.com'>Build</a>
                                 </span>
@@ -89,7 +89,7 @@ mt-2 `} >
                             <li
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
 mt-2  `} >
-                                <img src={img5} alt="search" href="http://localhost:3000/plays" />
+                                <img src={SearchImg} alt="search" href="http://localhost:3000/plays" />
                                 <span className={`${!open && "hidden"} origin-left duration-200`}>
                                     Search
                                 </span>
