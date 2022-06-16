@@ -120,7 +120,6 @@ function GitHubUserSearch(props) {
                 onChange={(e) =>
                   setInput((prev) => ({...prev, response_size: e.target.value}))
                 }
-                // required
               />
               <p className="text-xs text-neutral-500 text-center">
                 Default value is 30
@@ -130,7 +129,6 @@ function GitHubUserSearch(props) {
                 onClick={() => {
                   input.query !== "" && getGitHubData();
                 }}
-                disabled={dataFetchStates.error ? true : false}
               >
                 Search
               </button>
