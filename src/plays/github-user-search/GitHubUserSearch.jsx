@@ -61,8 +61,8 @@ function GitHubUserSearch(props) {
         ...prev,
         loading: true,
       }));
-      await getUsersData();
       await getRateLimitData();
+      await getUsersData();
       setDataFetchStates((prev) => ({
         ...prev,
         loading: false,
