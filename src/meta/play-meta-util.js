@@ -1,52 +1,49 @@
-
-import { plays } from './play-meta';
 import { store } from '../store/store';
 
-
+const plays = () => store.getState().PlayReducer
 
 const getAllPlays = () => {
-  return plays;
+  return plays();
 };
 
 const getPlayById = id => {
-  const getAllPlays = store.getState().PlayReducer
-  return getAllPlays.find(play => play.id === id);
+  return plays().find(play => play.id === id);
 };
 
 const getPlaysOnSearch = searchTerm => {
-  return plays.filter(play => {
+  return plays().filter(play => {
     return (play.name.toLowerCase().includes(searchTerm.toLowerCase())
       || play.description.toLowerCase().includes(searchTerm.toLowerCase()));
   });
 }
 
 const getPlaysByTags = tags => {
-  return plays.filter(play => {
+  return plays().filter(play => {
     return play.tags.includes(tags);
   });
 }
 
 const getPlaysByLevel = level => {
-  return plays.filter(play => {
+  return plays().filter(play => {
     return play.level === level;
   });
 }
 
 const getPlaysByCreator = creator => {
-  return plays.filter(play => {
+  return plays().filter(play => {
     return play.github === creator;
   });
 }
 
 const getPlaysByLanguage = language => {
-  return plays.filter(play => {
+  return plays().filter(play => {
     const lang = play.language || 'js';
     return lang === language;
   });
 }
 
 const getAllTags = () => {
-  const tags = plays.reduce((acc, play) => {
+  const tags = plays().reduce((acc, play) => {
     return acc.concat(play.tags.split(','));
   }, []);
 
@@ -54,7 +51,7 @@ const getAllTags = () => {
 }
 
 const getAllCreators = () => {
-  const creators = plays.reduce((acc, play) => {
+  const creators = plays().reduce((acc, play) => {
     play.github && acc.push(play.github);
     return acc;
   }, []);
@@ -63,7 +60,7 @@ const getAllCreators = () => {
 }
 
 const getAllLevels = () => {
-  const levels = plays.reduce((acc, play) => {
+  const levels = plays().reduce((acc, play) => {
     return acc.concat(play.level);
   }, []);
 
@@ -71,7 +68,7 @@ const getAllLevels = () => {
 }
 
 const getAllLanguages = () => {
-  const languages = plays.reduce((acc, play) => {
+  const languages = plays().reduce((acc, play) => {
     const lang = play.language || 'js';
     return acc.concat(lang);
   }, []);
@@ -80,7 +77,7 @@ const getAllLanguages = () => {
 }
 
 const getFeaturedPlays = () => {
-  const featuredPlays = plays.filter(play => {
+  const featuredPlays = plays().filter(play => {
     return play.featured;
   });
   return featuredPlays;
