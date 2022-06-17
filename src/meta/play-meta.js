@@ -25,6 +25,7 @@ import {
   SimpleLiveChat,
   FlipCardEffect,
   GitHubUserSearch,
+  //import play here
 } from "plays";
 
 export const plays = [
@@ -384,7 +385,7 @@ export const plays = [
     component: () => {
       return <DynamicRoutes />;
     },
-    path: "/plays/dynamic-routes/:menu",
+    path: "/plays/dynamic-routes/",
     level: "Beginner",
     tags: "react-router-v6,dynamic-routing,useParam-hook",
     github: "Deepak8717",
