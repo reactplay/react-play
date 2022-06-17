@@ -1,7 +1,6 @@
 import {getPlayById} from "meta/play-meta-util";
 
 import PlayHeader from "common/playlists/PlayHeader";
-import "./gitHubUserSearch.css";
 import {useState} from "react";
 import axios from "axios";
 import {GitHubUserCard} from "./GitHubUserCard";
