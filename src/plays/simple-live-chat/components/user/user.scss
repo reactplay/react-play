@@ -1,0 +1,10 @@
+@import "../../variables";
+
+.simple-live-chat-user-img {
+  img {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid $simple-user-border-color;
+    border-radius: 50%;
+  }
+}
