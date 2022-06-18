@@ -24,7 +24,8 @@ import {
   DynamicRoutes,
   SimpleLiveChat,
   FlipCardEffect,
-  //import play here
+  CryptocurrencyTracker,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -426,5 +427,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-cryptocurrency-tracker', 
+    name: 'Cryptocurrency Tracker', 
+    description: 'This app provides the user with real time market updates about all cryptocurrencies. The user can also search a cryptocurrency',
+    component: () => {return <CryptocurrencyTracker />},
+    path: '/plays/cryptocurrency-tracker',
+    level: 'Intermediate',
+    tags: 'JSX, Hooks, API',
+    github: 'Adit0507',
+    cover: "https://images.unsplash.com/photo-1655535088647-ed00776b2fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2040&q=80",
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
