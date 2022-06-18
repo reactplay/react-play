@@ -1,0 +1,58 @@
+@import "../variables";
+
+.simple-live-chat-sign-in-container {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.simple-live-chat-main-container {
+  display: grid;
+  place-content: center;
+  margin: auto;
+
+  div:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+.simple-live-chat-sign-in-button {
+  margin: 0 auto;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 1px 1px 3px 0px $simple-button-shadow-color;
+    border: 1px solid $simple-button-border-color;
+    border-radius: 0.375rem;
+    row-gap: 0.5rem;
+    background-color: $simple-button-background-color;
+
+    &:active {
+      background-color: $simple-button-active-color;
+    }
+
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    span {
+      font-size: 1.25rem;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.simple-live-chat-error {
+  color: $simple-error-color;
+}
