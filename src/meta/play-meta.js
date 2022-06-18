@@ -24,7 +24,8 @@ import {
   DynamicRoutes,
   SimpleLiveChat,
   FlipCardEffect,
-  //import play here
+  LoremGenerator,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -426,5 +427,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-lorem-generator', 
+    name: 'Lorem Generator', 
+    description: 'A basic Lorem Ipsum generator with copy functionality. Made with TailwindCSS and ReactJS',
+    component: () => {return <LoremGenerator />},
+    path: '/plays/lorem-generator',
+    level: 'Intermediate',
+    tags: 'Hooks,TailwindCSS,JSX,API',
+    github: 'madflows',
+    cover: '',
+    blog: 'https://madflows.dev',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
