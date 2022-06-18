@@ -25,8 +25,10 @@ const ChildRoutes = (props) => {
   const { dispatch, plays } = props;
   const [_, error, data] = useGetPlays();
 
+  console.log(data);
+
   useEffect(() => {
-    dispatch({ type: GET_ALL_PLAYS, payload: data?.plays, error });
+    dispatch({ type: GET_ALL_PLAYS, payload: data, error });
   }, [data]);
 
   return (
