@@ -8,12 +8,12 @@ const header = {
 };
 
 /**
- * Run GraphQL queries using Axios using simple JSON object
+ * Run GraphQL queries using Axios using multiple  JSON object
  * @param {object[]} requests           Mandatory.
  * @param {string}           url Optional.
  * @param {object}           reqheder Optional.
  */
-export const submit = (requests, url, reqheder) => {
+export const submit_multi = (requests, url, reqheder) => {
   const promises = [];
   let updatedHeader = header.headers;
   if (reqheder) {
@@ -21,39 +21,51 @@ export const submit = (requests, url, reqheder) => {
     header.headers = updatedHeader;
   }
   requests.forEach((config) => {
-    promises.push(postData(url, config, updatedHeader));
+    promises.push(submit(config, url, reqheder));
   });
-  let finaldata = [];
-  return Promise.all(promises)
-    .then((rdata) => {
-      rdata.forEach((res, ind) => {
-        let data;
-        try {
-          if (res.isAxiosError) {
-            data = { name: "Error" };
-            data.status = res.response.status;
-            data.message = res.message;
-          } else if (!res?.data) {
-            data = { name: "Error" };
-            data.status = 500;
-            data.message = res.message;
-          } else if (res.data.errors && res.data.errors.length) {
-            data = { name: "Error" };
-            data.status = 500;
-            data.message = res.data.errors[0].message;
-            if (requests[ind].callback) {
-              data = requests[ind].callback(data);
-            }
-          } else {
-            data =
-              res.data[requests[ind].function] === undefined
-                ? {}
-                : res.data[requests[ind].function];
+  return Promise.all(promises);
+};
+
+/**
+ * Run GraphQL queries using Axios using a simple JSON object
+ * @param {object} request           Mandatory.
+ * @param {string}           url Optional.
+ * @param {object}           reqheder Optional.
+ * @returns {Promise} single promise
+ */
+export const submit = (request, url, reqheder) => {
+  let updatedHeader = header.headers;
+  if (reqheder) {
+    updatedHeader = { ...updatedHeader, ...reqheder };
+    header.headers = updatedHeader;
+  }
+  return postData(url, request, updatedHeader)
+    .then((res) => {
+      let data;
+      try {
+        if (res.isAxiosError) {
+          data = { name: "Error" };
+          data.status = res.response.status;
+          data.message = res.message;
+        } else if (!res?.data) {
+          data = { name: "Error" };
+          data.status = 500;
+          data.message = res.message;
+        } else if (res.data.errors && res.data.errors.length) {
+          data = { name: "Error" };
+          data.status = 500;
+          data.message = res.data.errors[0].message;
+          if (request.callback) {
+            data = request.callback(data);
           }
-          finaldata.push(data);
-        } catch (err) {}
-      });
-      return finaldata;
+        } else {
+          data =
+            res.data[request.function] === undefined
+              ? {}
+              : res.data[request.function];
+        }
+        return data;
+      } catch (err) {}
     })
     .catch((error) => {
       return error;
