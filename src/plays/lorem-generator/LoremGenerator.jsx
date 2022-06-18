@@ -2,7 +2,7 @@ import { getPlayById } from 'meta/play-meta-util';
 
 import PlayHeader from 'common/playlists/PlayHeader';
 import './loremGenerator.css';
-import { Footer, Header, Main } from './components';
+import { Header, Main } from './components';
 
 function LoremGenerator(props) {
   // Do not remove the below lines. 
@@ -22,7 +22,6 @@ function LoremGenerator(props) {
             <div className="bg-slate-200 overflow-x-hidden min-h-screen scrollbar-hide">
               <Header />
               <Main />
-              <Footer />
             </div>
           </>
           {/* Your Code Ends Here */}
