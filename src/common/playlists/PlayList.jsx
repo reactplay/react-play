@@ -8,7 +8,7 @@ import "./playlist.css";
 const PlayList = ({key, plays}) => {
   // const plays = useSearchFilter();
 
-  if (plays.length === 0) {
+  if (plays?.length === 0) {
     return (
         <div className="play-not-found">
           <ImageOops className="play-not-found-image" />
@@ -22,7 +22,7 @@ const PlayList = ({key, plays}) => {
   return (
     <Fragment key={key}>
       <ol className="list-plays">
-        {plays.map((play, index) => (
+        {plays?.map((play, index) => (
           <PlayThumbnail key={play.id} play={play} />
         ))}
       </ol>

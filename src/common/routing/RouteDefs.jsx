@@ -19,6 +19,7 @@ const nhost = new NhostClient({
 
 const RouteDefs = () => {
   const [loading, error, plays] = useGetPlays();
+  const success = !loading && !error && !!plays.length;
   return (
     <NhostReactProvider nhost={nhost}>
       <BrowserRouter>
@@ -27,8 +28,8 @@ const RouteDefs = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/plays' element={<App />}>
-            <Route index element={<PlayList plays={plays} />} />
-            {!!plays.length &&
+            <Route index element={<PlayList plays={success ? plays : []} />} />
+            {success &&
               plays?.map((play, index) => (
                 <Route
                   key={index}
