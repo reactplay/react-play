@@ -1,5 +1,5 @@
 import { fetchFilterData } from "common/services/request/example/fetch-filter-data";
-import { submit } from "../../services/request";
+import { submit_multi } from "../../services/request";
 import { useEffect, useState } from "react";
 import { getAllTags as extractTags } from "meta/play-meta-util";
 
@@ -20,10 +20,10 @@ const useFetchFilterData = () => {
     (async () => {
       try {
         setLoading(true);
-        const response = await Promise.all([
-          submit(getAllTags),
-          submit(getAllLevels),
-          submit(getAllUsers),
+        const response = await submit_multi([
+          getAllTags,
+          getAllLevels,
+          getAllUsers,
         ]);
         setData(dataConstructor(response));
       } catch (err) {
