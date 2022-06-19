@@ -1,5 +1,3 @@
-import { getPlayById } from "meta/play-meta-util";
-
 import PlayHeader from "common/playlists/PlayHeader";
 import "./simpleLiveChat.scss";
 
@@ -9,10 +7,6 @@ import useLocalStorage from "common/hooks/useLocalStorage";
 import DisplayChat from "./components/chat/chat";
 
 function SimpleLiveChat(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
 
   // Your Code Start below.
 
@@ -22,7 +16,7 @@ function SimpleLiveChat(props) {
   return (
     <>
       <div className='play-details'>
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className='play-details-body simple-live-chat'>
           {/* Your Code Starts Here */}
           <div className='main'>
