@@ -1,5 +1,4 @@
 import { Modal } from "common";
-import { getAllCreators, getAllLevels, getAllTags, getAllLanguages } from "meta/play-meta-util";
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
@@ -7,79 +6,83 @@ import "./search.css";
 
 import { RiFilterFill } from "react-icons/ri";
 import useBackListener from "common/routing/hooks/useBackListener";
+import useFetchFilterData from "./hooks/usePlayFilter";
 
 const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
-  const tags = getAllTags();
-  const levels = getAllLevels();
-  const creators = getAllCreators();
-  const languages = getAllLanguages();
+  const [loading, error, data] = useFetchFilterData();
+  const {tags, levels, creators} = data
+
+  const languages = ["js", "ts"];
 
   return (
     <>
-      <div className="form-group">
+      <div className='form-group'>
         <label>Level</label>
         <select
-          className="form-control"
+          className='form-control'
           onChange={(event) =>
             setFilterQuery({ ...filterQuery, level: event.target.value })
           }
           value={filterQuery.level}
         >
-          <option value="">All</option>
-          {levels.map((level) => (
-            <option key={level} value={level}>
-              {level}
+          <option value=''>All</option>
+          {levels?.map((level) => (
+            <option key={level.level.name} value={level.level.id}>
+              {level.level.name}
             </option>
           ))}
         </select>
       </div>
-      <div className="form-group">
+      <div className='form-group'>
         <label>Tags</label>
         <select
-          className="form-control"
+          className='form-control'
           onChange={(event) =>
-            setFilterQuery({ ...filterQuery, tags: event.target.value !== "" ? [event.target.value] : [] })
+            setFilterQuery({
+              ...filterQuery,
+              tags: event.target.value !== "" ? [event.target.value] : [],
+            })
           }
           value={filterQuery.tags[0]}
         >
-          <option value="">All</option>
-          {tags.map((tag) => (
-            <option key={tag} value={tag}>
-              {tag}
+          <option value=''>All</option>
+          {tags?.map((tag) => (
+            <option key={tag.tag} value={tag.id}>
+              {tag.tag}
             </option>
           ))}
         </select>
       </div>
-      <div className="form-group">
+      <div className='form-group'>
         <label>Creator</label>
         <select
-          className="form-control"
+          className='form-control'
           onChange={(event) =>
             setFilterQuery({ ...filterQuery, creator: event.target.value })
           }
           value={filterQuery.creator}
         >
-          <option value="">All</option>
-          {creators.map((creator) => (
-            <option key={creator} value={creator}>
-              {creator}
+          <option value=''>All</option>
+          {creators?.map((creator) => (
+            <option key={creator.user.displayName} value={creator.user.id}>
+              {creator.user.displayName}
             </option>
           ))}
         </select>
       </div>
-      <div className="form-group">
+      <div className='form-group'>
         <label>Language</label>
         <select
-          className="form-control"
+          className='form-control'
           onChange={(event) =>
             setFilterQuery({ ...filterQuery, language: event.target.value })
           }
           value={filterQuery.language}
         >
-          <option value="">All</option>
+          <option value=''>All</option>
           {languages.map((language) => (
             <option key={language} value={language}>
-              {language === 'ts' ? 'TypeScript' : 'JavaScript'}
+              {language === "ts" ? "TypeScript" : "JavaScript"}
             </option>
           ))}
         </select>
@@ -100,11 +103,16 @@ const getAppliedFilter = (filterObject) => {
       : 0;
   const noOfLanguageApplied =
     filterObject.language !== undefined && filterObject.language.trim() !== ""
-      ? 1 : 0;
-  const noOfTagsApplied =
-    filterObject?.tags?.length ? filterObject.tags.length : 0
-  let totalTags = noOfLevelsApplied +
-    noOfcreatorsApplied + noOfLanguageApplied + noOfTagsApplied;
+      ? 1
+      : 0;
+  const noOfTagsApplied = filterObject?.tags?.length
+    ? filterObject.tags.length
+    : 0;
+  let totalTags =
+    noOfLevelsApplied +
+    noOfcreatorsApplied +
+    noOfLanguageApplied +
+    noOfTagsApplied;
 
   return totalTags;
 };
@@ -115,10 +123,10 @@ const FilterPlays = () => {
   const { setFilterQuery, filterQuery } = useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
-    level: '',
+    level: "",
     tags: [],
-    creator: '',
-    language: ''
+    creator: "",
+    language: "",
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
@@ -126,32 +134,32 @@ const FilterPlays = () => {
     if (action === "POP") {
       console.log("POP");
       setModifiedFilterQuery({
-        level: '',
+        level: "",
         tags: [],
-        creator: '',
-        language: ''
+        creator: "",
+        language: "",
       });
       setFilterQuery({
-        level: '',
+        level: "",
         tags: [],
-        creator: '',
-        language: ''
+        creator: "",
+        language: "",
       });
       setnoOfAppliedFilter(0);
     }
     if (action === "PUSH") {
       console.log("PUSH");
       setModifiedFilterQuery({
-        level: '',
+        level: "",
         tags: [],
-        creator: '',
-        language: ''
+        creator: "",
+        language: "",
       });
       setFilterQuery({
-        level: '',
+        level: "",
         tags: [],
-        creator: '',
-        language: ''
+        creator: "",
+        language: "",
       });
     }
     setnoOfAppliedFilter(0);
@@ -169,13 +177,13 @@ const FilterPlays = () => {
   };
 
   return (
-    <div className="search-filter">
+    <div className='search-filter'>
       <Modal
-        title="Filter Plays By"
+        title='Filter Plays By'
         onClose={() => setShowModal(false)}
         onSubmit={handleFilter}
         show={showModal}
-        cname="filter"
+        cname='filter'
         children={
           <FilterPlaysModalBody
             filterQuery={modifiedFilterQuery}
@@ -186,18 +194,17 @@ const FilterPlays = () => {
 
       <button
         onClick={() => setShowModal(true)}
-        className="btn-filter"
-        title="Filter Plays"
-      >{
-          noOfAppliedFilter === 0 ?
-            null
-            : <div className="badge">{noOfAppliedFilter}</div>
-        }
+        className='btn-filter'
+        title='Filter Plays'
+      >
+        {noOfAppliedFilter === 0 ? null : (
+          <div className='badge'>{noOfAppliedFilter}</div>
+        )}
 
         <RiFilterFill
-          className="icon"
-          size="28px"
-          color="var(--color-neutral-30"
+          className='icon'
+          size='28px'
+          color='var(--color-neutral-30'
         />
       </button>
     </div>
