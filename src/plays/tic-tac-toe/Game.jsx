@@ -22,55 +22,76 @@ const Game = () => {
 
   // Game Logic
   const findWinner = () => {
-    if (
-      gameArray[0] === gameArray[1] &&
-      gameArray[0] === gameArray[2] &&
-      gameArray[0] !== ""
-    ) {
-      setFinalMessage(`${gameArray[0]} has won!`);
-    } else if (
-      gameArray[3] === gameArray[4] &&
-      gameArray[3] === gameArray[5] &&
-      gameArray[3] !== ""
-    ) {
-      setFinalMessage(`${gameArray[3]} has won!`);
-    } else if (
-      gameArray[6] === gameArray[7] &&
-      gameArray[6] === gameArray[8] &&
-      gameArray[6] !== ""
-    ) {
-      setFinalMessage(`${gameArray[6]} has won!`);
-    } else if (
-      gameArray[0] === gameArray[3] &&
-      gameArray[0] === gameArray[6] &&
-      gameArray[0] !== ""
-    ) {
-      setFinalMessage(`${gameArray[0]} has won!`);
-    } else if (
-      gameArray[1] === gameArray[4] &&
-      gameArray[1] === gameArray[7] &&
-      gameArray[1] !== ""
-    ) {
-      setFinalMessage(`${gameArray[1]} has won!`);
-    } else if (
-      gameArray[2] === gameArray[5] &&
-      gameArray[2] === gameArray[8] &&
-      gameArray[2] !== ""
-    ) {
-      setFinalMessage(`${gameArray[2]} has won!`);
-    } else if (
-      gameArray[0] === gameArray[4] &&
-      gameArray[0] === gameArray[8] &&
-      gameArray[0] !== ""
-    ) {
-      setFinalMessage(`${gameArray[0]} has won!`);
-    } else if (
-      gameArray[2] === gameArray[4] &&
-      gameArray[2] === gameArray[6] &&
-      gameArray[2] !== ""
-    ) {
-      setFinalMessage(`${gameArray[2]} has won!`);
-    }
+    const WINNING_COMBINATION = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    WINNING_COMBINATION.forEach((combination) => {
+      if (
+        gameArray[combination[0]] === gameArray[combination[1]] &&
+        gameArray[combination[1]] === gameArray[combination[2]] &&
+        gameArray[combination[0]] !== ""
+      ) {
+        setFinalMessage(gameArray[combination[0]] + " is the winner!");
+      }
+    });
+
+    // if (
+    //   gameArray[0] === gameArray[1] &&
+    //   gameArray[0] === gameArray[2] &&
+    //   gameArray[0] !== ""
+    // ) {
+    //   setFinalMessage(`${gameArray[0]} has won!`);
+    // } else if (
+    //   gameArray[3] === gameArray[4] &&
+    //   gameArray[3] === gameArray[5] &&
+    //   gameArray[3] !== ""
+    // ) {
+    //   setFinalMessage(`${gameArray[3]} has won!`);
+    // } else if (
+    //   gameArray[6] === gameArray[7] &&
+    //   gameArray[6] === gameArray[8] &&
+    //   gameArray[6] !== ""
+    // ) {
+    //   setFinalMessage(`${gameArray[6]} has won!`);
+    // } else if (
+    //   gameArray[0] === gameArray[3] &&
+    //   gameArray[0] === gameArray[6] &&
+    //   gameArray[0] !== ""
+    // ) {
+    //   setFinalMessage(`${gameArray[0]} has won!`);
+    // } else if (
+    //   gameArray[1] === gameArray[4] &&
+    //   gameArray[1] === gameArray[7] &&
+    //   gameArray[1] !== ""
+    // ) {
+    //   setFinalMessage(`${gameArray[1]} has won!`);
+    // } else if (
+    //   gameArray[2] === gameArray[5] &&
+    //   gameArray[2] === gameArray[8] &&
+    //   gameArray[2] !== ""
+    // ) {
+    //   setFinalMessage(`${gameArray[2]} has won!`);
+    // } else if (
+    //   gameArray[0] === gameArray[4] &&
+    //   gameArray[0] === gameArray[8] &&
+    //   gameArray[0] !== ""
+    // ) {
+    //   setFinalMessage(`${gameArray[0]} has won!`);
+    // } else if (
+    //   gameArray[2] === gameArray[4] &&
+    //   gameArray[2] === gameArray[6] &&
+    //   gameArray[2] !== ""
+    // ) {
+    //   setFinalMessage(`${gameArray[2]} has won!`);
+    // }
   };
 
   // Play Again button click event
@@ -139,7 +160,7 @@ const Game = () => {
               <h3>{isCross ? "Turn : Cross" : "Turn : Circle"}</h3>
             )}
 
-            <div className="grid">
+            <div className="ttc_grid">
               {gameArray.map((value, index) => (
                 <div
                   className="game-card center"

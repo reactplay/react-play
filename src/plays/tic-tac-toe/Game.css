@@ -1,4 +1,4 @@
-.grid {
+.ttc_grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 15px;
@@ -22,6 +22,7 @@
   background-color: #00f2fe;
   border-radius: 10px;
   color: black;
+  cursor: pointer;
 }
 
 .center {
@@ -32,7 +33,7 @@
 
 .game-card:hover,
 .game-button:hover {
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 @media (max-width: 768px) {
