@@ -1,4 +1,4 @@
-import { fetchFilterData } from "common/services/request/example/fetch-filter-data";
+import { fetchFilterData } from "common/services/request/query/fetch-filter-data";
 import { submit_multi } from "../../services/request";
 import { useEffect, useState } from "react";
 import { getAllTags as extractTags } from "meta/play-meta-util";
