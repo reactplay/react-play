@@ -4,7 +4,7 @@
   grid-gap: 15px;
 }
 
-.gameCard {
+.game-card {
   width: 8rem;
   height: 8rem;
   background-color: #00f2fe;
@@ -12,7 +12,10 @@
   border-radius: 10px;
 }
 
-.gameButton {
+.game-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 125px;
   height: 60px;
   margin: 10px;
@@ -27,7 +30,18 @@
   align-items: center;
 }
 
-.gameCard:hover,
-.gameButton:hover {
+.game-card:hover,
+.game-button:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .game-card {
+    width: 6rem;
+    height: 6rem;
+  }
+  .game-button {
+    width: 100px;
+    height: 60px;
+  }
 }

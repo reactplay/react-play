@@ -115,11 +115,11 @@ const Game = () => {
   return (
     <>
       <h2 className="text-center">Choose Your Side</h2>
-      <section className="buttonGroup">
-        <button className="gameButton" onClick={() => setIsCross(true)}>
+      <section className="button-group">
+        <button className="game-button" onClick={() => setIsCross(true)}>
           <FaTimes className="icon" />
         </button>
-        <button className="gameButton" onClick={() => setIsCross(false)}>
+        <button className="game-button" onClick={() => setIsCross(false)}>
           <FaRegCircle className="icon" />
         </button>
       </section>
@@ -142,7 +142,7 @@ const Game = () => {
             <div className="grid">
               {gameArray.map((value, index) => (
                 <div
-                  className="gameCard center"
+                  className="game-card center"
                   onClick={() => changeItem(index)}
                 >
                   <Icon choice={gameArray[index]} />
