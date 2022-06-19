@@ -1,4 +1,3 @@
-import { useSearchFilter } from "common/search/hooks/useSearchFilter";
 import PlayThumbnail from "./PlayThumbnail";
 import { ReactComponent as ImageOops } from "images/img-oops.svg";
 import { Fragment } from "react";
@@ -6,7 +5,6 @@ import { Fragment } from "react";
 import "./playlist.css";
 
 const PlayList = ({key, plays}) => {
-  // const plays = useSearchFilter();
 
   if (plays?.length === 0) {
     return (
