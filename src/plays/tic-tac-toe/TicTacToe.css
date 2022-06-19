@@ -16,15 +16,6 @@
   justify-content: center;
 }
 
-#button {
-  width: 125px;
-  height: 60px;
-  margin: 10px;
-  background-color: aquamarine;
-  border-radius: 10px;
-  color: black;
-}
-
 .tic-tac-toe {
   margin: 0 auto;
 }

@@ -17,6 +17,7 @@ const gameArray = new Array(9).fill("");
 
 const Game = () => {
   let [isCross, setIsCross] = useState(true);
+  let [isFinished, setIsFinished] = useState(false);
   let [finalMessage, setFinalMessage] = useState("");
   let count = 0;
 
@@ -40,6 +41,7 @@ const Game = () => {
         gameArray[combination[0]] !== ""
       ) {
         setFinalMessage(gameArray[combination[0]] + " is the winner!");
+        setIsFinished(true);
       }
     });
   };
@@ -48,6 +50,7 @@ const Game = () => {
   const onPlayAgainClick = () => {
     setIsCross(true);
     setFinalMessage("");
+    setIsFinished(false);
     gameArray.fill("");
   };
 
@@ -57,8 +60,9 @@ const Game = () => {
       if (pos === "cross" || pos === "circle") {
         count++;
       }
-      if (count === 9) {
+      if (gameArray.length === 9 && gameArray.indexOf("") < 0) {
         setFinalMessage("Game Draw!");
+        setIsFinished(true);
       }
     });
 
@@ -69,7 +73,7 @@ const Game = () => {
 
   // Card on click
   const changeItem = (index) => {
-    if (finalMessage) {
+    if (isFinished) {
       return toast("Game is already finished!", { type: "success" });
     }
 
@@ -79,6 +83,7 @@ const Game = () => {
     } else {
       return toast("This place is already occupied!", { type: "error" });
     }
+
     findWinner();
     checkDraw();
   };
