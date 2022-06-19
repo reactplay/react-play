@@ -4,8 +4,6 @@ import "index.css";
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "reportWebVitals";
-import { Provider } from "react-redux";
-import { store } from "store/store";
 
 /** removing console statement in react prod build */
 if (process.env.NODE_ENV !== "development") {
@@ -27,11 +25,9 @@ const Index = () => {
   const value = { searchTerm, setSearchTerm, filterQuery, setFilterQuery };
   return (
     <React.StrictMode>
-      <Provider store={store}>
-        <SearchContext.Provider value={value}>
-          <RouteDefs />
-        </SearchContext.Provider>
-      </Provider>
+      <SearchContext.Provider value={value}>
+        <RouteDefs />
+      </SearchContext.Provider>
     </React.StrictMode>
   );
 };

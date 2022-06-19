@@ -1,6 +1,4 @@
-import { store } from '../store/store';
-
-const plays = () => store.getState().PlayReducer
+const plays = () => []
 
 const getAllPlays = () => {
   return plays();

@@ -5,8 +5,8 @@ import { Fragment } from "react";
 
 import "./playlist.css";
 
-const PlayList = ({key}) => {
-  const plays = useSearchFilter();
+const PlayList = ({key, plays}) => {
+  // const plays = useSearchFilter();
 
   if (plays.length === 0) {
     return (

@@ -36,7 +36,6 @@ const useGetPlays = () => {
       setLoading(true);
       try {
         const res = await submit(fetchPlayPayload);
-        console.log(res);
         setPlays(res);
       } catch (error) {
         setError(error);

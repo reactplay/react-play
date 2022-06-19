@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@apollo/client": "^3.6.8",
     "@giscus/react": "^2.0.3",
     "@nhost/react": "^0.8.0",
     "@nhost/react-apollo": "^4.3.0",

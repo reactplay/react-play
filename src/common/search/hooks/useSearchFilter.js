@@ -1,16 +1,15 @@
 import { SearchContext } from "common/search/search-context";
 import { useContext, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 const useSearchFilter = () => {
   const { searchTerm, filterQuery } = useContext(SearchContext);
-  const data = useSelector((state) => state?.PlayReducer);
+  const data = [];
   const [plays, setPlays] = useState([]);
 
   useEffect(() => {
     const filteredPlays = filterPlays(data, searchTerm, filterQuery);
     setPlays(filteredPlays);
-  }, [searchTerm, filterQuery, data]);
+  }, [searchTerm, filterQuery]);
   
   return plays;
 };
