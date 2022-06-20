@@ -122,6 +122,7 @@ function GitHubUserSearch(props) {
                 Default value is 30
               </p>
               <button
+                type="submit"
                 className="bg-[#00f2fe] p-2 rounded-xl disabled:text-gray-500 disabled:cursor-not-allowed disabled:bg-[#00bbc5]"
                 onClick={() => {
                   input.query !== "" && getGitHubData();
