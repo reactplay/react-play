@@ -1,5 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { SearchContext } from "common/search/search-context";
+import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
+import { FetchPlaysSimple } from "common/services/request/query/fetch-plays";
 
 import { submit } from "common/services/request";
 
@@ -8,14 +10,18 @@ const useGetPlays = () => {
   const [plays, setPlays] = useState([]);
   const [error, setError] = useState(null);
 
+  const { filterPlaysBySearchString, filterPlaysByMultiTagsLevelLang } =
+    FetchPlaysFilter;
+
   const { searchTerm, filterQuery } = useContext(SearchContext);
 
-  const hasSearchTerm = (searchTerm.length > 0);
-  const hasFilterQuery = ((filterQuery.level.length > 0) || (filterQuery.tags.length > 0)
-    || (filterQuery.creator.length > 0) || (filterQuery.language.length > 0));
-
-  console.log(hasSearchTerm, hasFilterQuery);    
-
+  const hasSearchTerm = searchTerm.length > 0;
+  const hasFilterQuery =
+    filterQuery.level.length > 0 ||
+    filterQuery.tags.length > 0 ||
+    filterQuery.creator.length > 0 ||
+    filterQuery.language.length > 0;
+  console.log(filterQuery)
   const fetchPlayPayload = {
     display: "Simple fetch play",
     name: "Fetch_Plays",
@@ -108,15 +114,9 @@ const useGetPlays = () => {
           class: "tag",
           clause: [
             {
-              field: "name",
+              field: "id",
               operator: "eq",
-              value: "JSX",
-              type: "string",
-            },
-            {
-              field: "name",
-              operator: "eq",
-              value: "Schedule",
+              value: "914e9491-b1f6-4b90-ad0f-727eabd5a41e",
               type: "string",
             },
           ],
@@ -151,17 +151,31 @@ const useGetPlays = () => {
     },
   };
 
+  const filterMultiTagsPayload = () => {
+    const { creator, language, level, tags } = filterQuery;
+    const buildFieldValueArr = [
+      { field: "owner_user_id", value: creator },
+      { field: "language", value: language },
+      { field: "level_id", value: level },
+    ];
+    const whereClause = buildFieldValueArr.filter(
+      (item) => !!item.value.length
+    );
+
+    return filterPlaysByMultiTagsLevelLang({ tags, whereClause });
+  };
+
   useEffect(() => {
     const fetchPlays = async () => {
       setLoading(true);
       try {
         let res = [];
-        if (hasSearchTerm) { 
-          res = await submit(searchPlayPayload);
+        if (hasSearchTerm) {
+          res = await submit(filterPlaysBySearchString({ name: searchTerm }));
         } else if (hasFilterQuery) {
-          res = await submit(filterPlayPayload);
+          res = await submit(filterMultiTagsPayload());
         } else {
-          res = await submit(fetchPlayPayload);
+          res = await submit(FetchPlaysSimple[0]);
         }
         setPlays(res);
       } catch (error) {

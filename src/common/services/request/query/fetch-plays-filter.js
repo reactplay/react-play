@@ -1,121 +1,127 @@
-export const FetchPlaysFilter = [
+export const FetchPlaysFilter = {
   // Filter all the featured plays
-  {
-    display: "Filter all the featured plays",
-    name: "Fetch_Plays",
-    function: "plays",
-    write: false,
-    params: [
-      "blog",
-      "component",
-      "cover",
-      "created_at",
-      "description",
-      "featured",
-      "github",
-      "id",
-      "language",
-      { level: ["name"] },
-      "name",
-      "path",
-      { play_tags: { tag: ["name"] } },
-      "updated_at",
-      { user: ["id", "displayName", "avatarUrl"] },
-      "video",
-    ],
-    where: {
-      operator: "",
-      clause: [
-        {
-          field: "featured",
-          operator: "eq",
-          value: true,
-          type: "boolean",
-        },
+  getAllFeaturedPlays: () => {
+    return {
+      display: "Filter all the featured plays",
+      name: "Fetch_Plays",
+      function: "plays",
+      write: false,
+      params: [
+        "blog",
+        "component",
+        "cover",
+        "created_at",
+        "description",
+        "featured",
+        "github",
+        "id",
+        "language",
+        { level: ["name"] },
+        "name",
+        "path",
+        { play_tags: { tag: ["name"] } },
+        "updated_at",
+        { user: ["id", "displayName", "avatarUrl"] },
+        "video",
       ],
-    },
+      where: {
+        operator: "",
+        clause: [
+          {
+            field: "featured",
+            operator: "eq",
+            value: true,
+            type: "boolean",
+          },
+        ],
+      },
+    };
   },
   // Filter Plays by a search string in name or description
-  {
-    display: "Filter Plays by a search string in name or description",
-    name: "Fetch_Plays",
-    function: "plays",
-    write: false,
-    params: [
-      "blog",
-      "component",
-      "cover",
-      "created_at",
-      "description",
-      "featured",
-      "github",
-      "id",
-      "language",
-      { level: ["name"] },
-      "name",
-      "path",
-      { play_tags: { tag: ["name"] } },
-      "updated_at",
-      { user: ["id", "displayName", "avatarUrl"] },
-      "video",
-    ],
-    where: {
-      operator: "or",
-      clause: [
-        {
-          field: "name",
-          operator: "iregex",
-          value: "why",
-          type: "string",
-        },
-        {
-          field: "description",
-          operator: "iregex",
-          value: "why",
-          type: "string",
-        },
+  filterPlaysBySearchString: (Obj) => {
+    return {
+      display: "Filter Plays by a search string in name or description",
+      name: "Fetch_Plays",
+      function: "plays",
+      write: false,
+      params: [
+        "blog",
+        "component",
+        "cover",
+        "created_at",
+        "description",
+        "featured",
+        "github",
+        "id",
+        "language",
+        { level: ["name"] },
+        "name",
+        "path",
+        { play_tags: { tag: ["name"] } },
+        "updated_at",
+        { user: ["id", "displayName", "avatarUrl"] },
+        "video",
       ],
-    },
+      where: {
+        operator: "or",
+        clause: [
+          {
+            field: "name",
+            operator: "iregex",
+            value: Obj.name,
+            type: "string",
+          },
+          {
+            field: "description",
+            operator: "iregex",
+            value: Obj.name,
+            type: "string",
+          },
+        ],
+      },
+    };
   },
   // Filter Plays by Level
-  {
-    display: "Filter Plays by Level",
-    name: "Fetch_Plays",
-    function: "plays",
-    write: false,
-    params: [
-      "blog",
-      "component",
-      "cover",
-      "created_at",
-      "description",
-      "featured",
-      "github",
-      "id",
-      "language",
-      { level: ["name"] },
-      "name",
-      "path",
-      { play_tags: { tag: ["name"] } },
-      "updated_at",
-      { user: ["id", "displayName", "avatarUrl"] },
-      "video",
-    ],
-    where: {
-      operator: "",
-      class: "level",
-      clause: [
-        {
-          field: "name",
-          operator: "eq",
-          value: "Advanced",
-          type: "string",
-        },
+  filterPlaysByLevels: () => {
+    return {
+      display: "Filter Plays by Level",
+      name: "Fetch_Plays",
+      function: "plays",
+      write: false,
+      params: [
+        "blog",
+        "component",
+        "cover",
+        "created_at",
+        "description",
+        "featured",
+        "github",
+        "id",
+        "language",
+        { level: ["name"] },
+        "name",
+        "path",
+        { play_tags: { tag: ["name"] } },
+        "updated_at",
+        { user: ["id", "displayName", "avatarUrl"] },
+        "video",
       ],
-    },
+      where: {
+        operator: "",
+        class: "level",
+        clause: [
+          {
+            field: "name",
+            operator: "eq",
+            value: "Advanced",
+            type: "string",
+          },
+        ],
+      },
+    };
   },
   // Alternatively using the id
-  {
+  filterPlayById: {
     display: "Alternatively using the id",
     name: "Fetch_Plays",
     function: "plays",
@@ -151,121 +157,109 @@ export const FetchPlaysFilter = [
     },
   },
   // Filter plays by level, user and language
-  {
-    display: "Filter plays by level, user and language",
-    name: "Fetch_Plays",
-    function: "plays",
-    write: false,
-    params: [
-      "blog",
-      "component",
-      "cover",
-      "created_at",
-      "description",
-      "featured",
-      "github",
-      "id",
-      "language",
-      { level: ["name"] },
-      "name",
-      "path",
-      {
-        play_tags: { tag: ["name"] },
-      },
-      "updated_at",
-      { user: ["id", "displayName", "avatarUrl"] },
-      "video",
-    ],
-    where: {
-      operator: "and",
-      clause: [
+  filterPlaysByLevelTagLang: (Obj) => {
+    return {
+      display: "Filter plays by level, user and language",
+      name: "Fetch_Plays",
+      function: "plays",
+      write: false,
+      params: [
+        "blog",
+        "component",
+        "cover",
+        "created_at",
+        "description",
+        "featured",
+        "github",
+        "id",
+        "language",
+        { level: ["name"] },
+        "name",
+        "path",
         {
-          field: "owner_user_id",
-          operator: "eq",
-          value: "0680f581-6584-4bc4-bbe9-aa7c97567e72",
-          type: "string",
+          play_tags: { tag: ["name"] },
         },
-        {
-          field: "level_id",
-          operator: "eq",
-          value: "4127ed16-bf37-4c34-bed0-282cd646cd53",
-          type: "string",
-        },
-        {
-          field: "language",
-          operator: "eq",
-          value: "js",
-          type: "string",
-        },
+        "updated_at",
+        { user: ["id", "displayName", "avatarUrl"] },
+        "video",
       ],
-    },
+      where: {
+        operator: "and",
+        clause: [
+          {
+            field: "owner_user_id",
+            operator: "eq",
+            value: Obj.owner_user_id,
+            type: "string",
+          },
+          {
+            field: "level_id",
+            operator: "eq",
+            value: Obj.level_id,
+            type: "string",
+          },
+          {
+            field: "language",
+            operator: "eq",
+            value: Obj.language,
+            type: "string",
+          },
+        ],
+      },
+    };
   },
   // Filter plays by level, user, language, and multiple tags
-  {
-    display: "Filter plays by level, user, language, and multiple tags",
-    name: "Fetch_Plays",
-    function: "plays",
-    write: false,
-    params: [
-      "blog",
-      "component",
-      "cover",
-      "created_at",
-      "description",
-      "featured",
-      "github",
-      "id",
-      "language",
-      { level: ["name"] },
-      "name",
-      "path",
-      {
-        play_tags: { tag: ["name"] },
-        where: {
-          operator: "or",
-          class: "tag",
-          clause: [
-            {
-              field: "name",
-              operator: "eq",
-              value: "JSX",
-              type: "string",
-            },
-            {
-              field: "name",
-              operator: "eq",
-              value: "Schedule",
-              type: "string",
-            },
-          ],
-        },
-      },
-      "updated_at",
-      { user: ["id", "displayName", "avatarUrl"] },
-      "video",
-    ],
-    where: {
-      operator: "and",
-      clause: [
-        {
-          field: "owner_user_id",
-          operator: "eq",
-          value: "0680f581-6584-4bc4-bbe9-aa7c97567e72",
-          type: "string",
-        },
-        {
-          field: "level_id",
-          operator: "eq",
-          value: "4127ed16-bf37-4c34-bed0-282cd646cd53",
-          type: "string",
-        },
-        {
-          field: "language",
-          operator: "eq",
-          value: "js",
-          type: "string",
-        },
+  filterPlaysByMultiTagsLevelLang: (Obj) => {
+    const payload = {
+      display: "Filter plays by level, user, language, and multiple tags",
+      name: "Fetch_Plays",
+      function: "plays",
+      write: false,
+      params: [
+        "blog",
+        "component",
+        "cover",
+        "created_at",
+        "description",
+        "featured",
+        "github",
+        "id",
+        "language",
+        { level: ["name"] },
+        "name",
+        "path",
+        !!Obj?.tags.length
+          ? {
+              play_tags: { tag: ["name"] },
+              where: {
+                operator: "or",
+                class: "tag",
+                clause: Obj?.tags?.map((item) => ({
+                  field: "id",
+                  operator: "eq",
+                  value: item,
+                  type: "string",
+                })),
+              },
+            }
+          : { play_tags: { tag: ["name"] } },
+        "updated_at",
+        { user: ["id", "displayName", "avatarUrl"] },
+        "video",
       ],
-    },
+    };
+
+    const clause = Obj?.whereClause.map((item) => ({
+      field: item.field,
+      operator: "eq",
+      value: item.value,
+      type: "string",
+    }));
+
+    const whereObj = new Object({ operator: "and" });
+    if (!!clause.length) {
+      payload.where = { ...whereObj, clause };
+    }
+    return payload;
   },
-];
+};
