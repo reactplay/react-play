@@ -1,14 +1,14 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from 'react';
 
-import "./QuizScreen.scss";
+import './QuizScreen.scss';
 
 // assets
-import confuseIcon from "./confuse.gif";
+import confuseIcon from './confuse.gif';
 
 const answerState = {
-  answer: "",
+  answer: '',
   cheat: false,
-  cheated: false,
+  cheated: false
 };
 
 function QuizScreen({ category, getQuizSummary }) {
@@ -18,7 +18,7 @@ function QuizScreen({ category, getQuizSummary }) {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [timer, setTimer] = useState(30);
 
-  const formatCategoryText = category === "all" ? "" : `&category=${category}`;
+  const formatCategoryText = category === 'all' ? '' : `&category=${category}`;
   const currentQuestion = quizData?.data?.[questionNumber];
 
   useEffect(() => {
@@ -30,15 +30,11 @@ function QuizScreen({ category, getQuizSummary }) {
         );
         const { results } = await response.json();
         // if there is no data coming from api but status 200 is returned then we want to end up in catch block
-        if (!results.length) throw new Error(); 
+        if (!results.length) throw new Error();
         const createOptions = results.map((result) => {
           const { incorrect_answers, correct_answer } = result;
           const options = [...incorrect_answers];
-          options?.splice(
-            Math.floor(Math.random() * (options.length + 1)),
-            0,
-            correct_answer
-          );
+          options?.splice(Math.floor(Math.random() * (options.length + 1)), 0, correct_answer);
           return { ...result, options };
         });
         return setQuizData({ data: createOptions, loading: false, error: false });
@@ -50,18 +46,14 @@ function QuizScreen({ category, getQuizSummary }) {
 
   // select and deselect the answer
   const handleAnswerClick = (val) => (e) => {
-    setAnswer(
-      !!answer.answer && answer.answer === val
-        ? answerState
-        : { ...answer, answer: val }
-    );
+    setAnswer(!!answer.answer && answer.answer === val ? answerState : { ...answer, answer: val });
   };
 
   // handling the confirm button click
   const handleConfirm = useCallback(
     (skipped = false) => {
       const updateResult = () => {
-        const manageSkippedAnswer = !skipped ? answer.answer : "";
+        const manageSkippedAnswer = !skipped ? answer.answer : '';
         setResult((pre) => [
           ...pre,
           {
@@ -69,8 +61,8 @@ function QuizScreen({ category, getQuizSummary }) {
             correct: currentQuestion.correct_answer === manageSkippedAnswer,
             your_answer: manageSkippedAnswer,
             correct_answer: currentQuestion.correct_answer,
-            cheated: answer.cheated,
-          },
+            cheated: answer.cheated
+          }
         ]);
       };
 
@@ -83,8 +75,8 @@ function QuizScreen({ category, getQuizSummary }) {
             correct: currentQuestion.correct_answer === answer.answer,
             your_answer: answer.answer,
             correct_answer: currentQuestion.correct_answer,
-            cheated: answer.cheated,
-          },
+            cheated: answer.cheated
+          }
         ]);
       }
       updateResult();
@@ -102,7 +94,7 @@ function QuizScreen({ category, getQuizSummary }) {
       }, 1000);
       return () => clearInterval(setTiming);
     } else if (!!quizData.data.length) {
-      setAnswer('')
+      setAnswer('');
       handleConfirm(true);
     }
   }, [timer, handleConfirm, quizData.data]);
@@ -111,7 +103,7 @@ function QuizScreen({ category, getQuizSummary }) {
     setAnswer({
       cheat: true,
       cheated: true,
-      answer: currentQuestion.correct_answer,
+      answer: currentQuestion.correct_answer
     });
     const showCheat = setTimeout(() => {
       setAnswer({ ...answerState, cheated: true });
@@ -120,38 +112,34 @@ function QuizScreen({ category, getQuizSummary }) {
   };
 
   const itemClassDisplayController = (option) => {
-    if (answer.cheat && answer.answer === option)
-      return "option-button blinking-options";
-    if (answer.answer === option && !answer.cheat)
-      return "option-button active-option";
-    return "option-button";
+    if (answer.cheat && answer.answer === option) return 'option-button blinking-options';
+    if (answer.answer === option && !answer.cheat) return 'option-button active-option';
+    return 'option-button';
   };
 
   // if there is an no data we display this message.
   if (quizData?.error) {
-    return (<div>We Apologize! Something Error Occured!</div>)
+    return <div>We Apologize! Something Error Occured!</div>;
   }
 
   return (
-    <div className='fun-quiz-screen'>
+    <div className="fun-quiz-screen">
       {quizData.loading && (
-        <div className='loading-overlay'>
-          <img src={confuseIcon} alt='loading' />
+        <div className="loading-overlay">
+          <img src={confuseIcon} alt="loading" />
         </div>
       )}
       {!quizData.loading && (
-        <div className='section'>
-          <div className={`timer ${timer <= 5 && "caution"}`}>{timer}</div>
-          <div className='question-info'>Question: {questionNumber + 1}</div>
-          <div className='question'>
-            <h1
-              dangerouslySetInnerHTML={{ __html: currentQuestion?.question }}
-            />
+        <div className="section">
+          <div className={`timer ${timer <= 5 && 'caution'}`}>{timer}</div>
+          <div className="question-info">Question: {questionNumber + 1}</div>
+          <div className="question">
+            <h1 dangerouslySetInnerHTML={{ __html: currentQuestion?.question }} />
           </div>
-          <div className='options'>
+          <div className="options">
             {currentQuestion?.options?.map((option, index) => {
               return (
-                <div key={index} className='single-opt'>
+                <div key={index} className="single-opt">
                   <div
                     onClick={handleAnswerClick(option)}
                     className={itemClassDisplayController(option)}
@@ -161,17 +149,17 @@ function QuizScreen({ category, getQuizSummary }) {
               );
             })}
           </div>
-          <div className='footer'>
-            <button className='link' onClick={() => handleConfirm(true)}>
+          <div className="footer">
+            <button className="link" onClick={() => handleConfirm(true)}>
               Skip
             </button>
             {answer.answer && !answer.cheat && (
-              <button onClick={() => handleConfirm()} className='confirm-button'>
-                {questionNumber === 19 ? "Submit" : "Confirm"}
+              <button onClick={() => handleConfirm()} className="confirm-button">
+                {questionNumber === 19 ? 'Submit' : 'Confirm'}
               </button>
             )}
             {!answer.answer && (
-              <button onClick={cheatHandler} className='cheat-button'>
+              <button onClick={cheatHandler} className="cheat-button">
                 I want to Cheat
               </button>
             )}

@@ -1,4 +1,5 @@
-.play-area, .play-area-result{
+.play-area,
+.play-area-result {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -39,7 +40,7 @@
   border-radius: 1rem;
 }
 
-@media only screen and (max-width: 760px)  {
+@media only screen and (max-width: 760px) {
   .play-area-container {
     display: flex;
     flex-direction: column;

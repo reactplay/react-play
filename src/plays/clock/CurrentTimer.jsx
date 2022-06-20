@@ -1,9 +1,8 @@
-
 import PlayHeader from 'common/playlists/PlayHeader';
 import { useEffect, useState } from 'react';
 import { getPlayById } from 'meta/play-meta-util';
 
-import "./clock.css";
+import './clock.css';
 
 const CurrentTimer = (props) => {
   // The following code is to fetch the current play from the URL
@@ -17,11 +16,11 @@ const CurrentTimer = (props) => {
     const interval = setInterval(() => {
       setDate(new Date());
     }, 1000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
-  return(
+  return (
     <>
       <div className="play-details">
         <PlayHeader play={play} />
@@ -36,6 +35,6 @@ const CurrentTimer = (props) => {
       </div>
     </>
   );
-}
+};
 
 export default CurrentTimer;

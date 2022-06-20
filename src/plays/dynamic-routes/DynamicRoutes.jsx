@@ -1,10 +1,10 @@
-import { getPlayById } from "meta/play-meta-util";
-import PlayHeader from "common/playlists/PlayHeader";
-import { useParams } from "react-router-dom";
-import Navbar from "./Navbar";
-import "./dynamicRoutes.css";
-import data from "./Data";
-import { useState } from "react";
+import { getPlayById } from 'meta/play-meta-util';
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useParams } from 'react-router-dom';
+import Navbar from './Navbar';
+import './dynamicRoutes.css';
+import data from './Data';
+import { useState } from 'react';
 
 function DynamicRoutes(props) {
   // Do not remove the below lines.
@@ -15,7 +15,7 @@ function DynamicRoutes(props) {
   // Your Code Start below.
   let { menu } = useParams(); // return the parameter of url
   const [activeMenu, setActiveMenu] = useState(
-    menu === ":menu" ? "breakfast" : menu
+    menu === ':menu' ? 'breakfast' : menu
     //we take url input and set to our activeMenu state so we can fetch recipes based on active menu
     //if its first laod then url parameter is ":menu" so we change the active menu to "breakfast" as default category
   );
@@ -55,7 +55,7 @@ function DynamicRoutes(props) {
             </div>
 
             <div className="recipe-container">
-              {activeRecipes.length <= 0 ? <>Sorry, check the url</> : ""}
+              {activeRecipes.length <= 0 ? <>Sorry, check the url</> : ''}
               {activeRecipes.map((recipe, index) => {
                 //render the recipes based on active menu
 
@@ -64,14 +64,8 @@ function DynamicRoutes(props) {
                     <div>
                       <h4>{recipe.name}</h4>
                     </div>
-                    <img
-                      className="image"
-                      src={recipe.image}
-                      alt={recipe.name}
-                    />
-                    <div className={`symbol ${recipe.mealtype}`}>
-                      {recipe.mealtype}
-                    </div>
+                    <img className="image" src={recipe.image} alt={recipe.name} />
+                    <div className={`symbol ${recipe.mealtype}`}>{recipe.mealtype}</div>
                   </div>
                 );
               })}

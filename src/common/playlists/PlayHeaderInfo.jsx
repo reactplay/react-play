@@ -1,10 +1,10 @@
-import { IoMdArrowBack } from "react-icons/io";
+import { IoMdArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
 import useGitHub from 'common/hooks/useGitHub';
 import LevelBadge from 'common/components/LevelBadge';
 
-const Author = ({github}) => {
+const Author = ({ github }) => {
   const { data, error, isLoading } = useGitHub(github);
   return (
     <>
@@ -12,27 +12,27 @@ const Author = ({github}) => {
       {error && <span>Error: {error.message}</span>}
       {data && (
         <div className="header-author">
-          by <a 
-              href={`https://github.com/${github}`}
-              target="_blank"
-              className="play-anchor"
-              rel="noopener noreferrer">
-                <strong>{data.name}</strong>
-              </a>
+          by{' '}
+          <a
+            href={`https://github.com/${github}`}
+            target="_blank"
+            className="play-anchor"
+            rel="noopener noreferrer"
+          >
+            <strong>{data.name}</strong>
+          </a>
         </div>
       )}
-    </>  
+    </>
   );
 };
 
-const Tags = ({tags}) => {
+const Tags = ({ tags }) => {
   return (
     <ul className="list-tags">
       {tags.map((tag, index) => (
         <li key={index}>
-          <span className="play-tag">
-            {tag}
-          </span>
+          <span className="play-tag">{tag}</span>
         </li>
       ))}
     </ul>
@@ -40,7 +40,6 @@ const Tags = ({tags}) => {
 };
 
 const PlayHeaderInfo = ({ play }) => {
-   
   return (
     <div className="header-leftcol">
       <div className="header-leftcol-action">
@@ -53,12 +52,10 @@ const PlayHeaderInfo = ({ play }) => {
         <div className="header-primary">
           <h3 className="header-title">{play.name}</h3>
           <div className="header-title-tags">
-            <LevelBadge level={play.level} /> { play.tags && <Tags tags={play.tags.split(',')} /> }
+            <LevelBadge level={play.level} /> {play.tags && <Tags tags={play.tags.split(',')} />}
           </div>
         </div>
-        <div className="header-secondary">
-          { play.github && <Author github={play.github} /> }
-        </div>
+        <div className="header-secondary">{play.github && <Author github={play.github} />}</div>
       </div>
     </div>
   );

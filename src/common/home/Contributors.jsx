@@ -1,4 +1,4 @@
-import useContributors from "common/hooks/useContributors";
+import useContributors from 'common/hooks/useContributors';
 
 const Contributors = () => {
   const { data, error, isLoading } = useContributors(true);

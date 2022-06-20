@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { getPlayById } from 'meta/play-meta-util';
 
 import PlayHeader from 'common/playlists/PlayHeader';
@@ -8,7 +8,7 @@ import CardDetails from './CardDetails';
 
 import { SocialContext } from './context/SocialContext';
 
-import "./social-card.css";
+import './social-card.css';
 
 function SocialCard(props) {
   // The following code is to fetch the current play from the URL
@@ -26,7 +26,7 @@ function SocialCard(props) {
       <div className="play-details">
         <PlayHeader play={play} />
         <div className="play-details-body">
-          <div style={{textAlign: 'center'}}>
+          <div style={{ textAlign: 'center' }}>
             <h2>Create your Social Card</h2>
             <p>Please fill the form below to create a Social Card for you.</p>
           </div>

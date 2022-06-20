@@ -1,9 +1,9 @@
-import * as React from "react";
-import { getPlayById } from "meta/play-meta-util";
+import * as React from 'react';
+import { getPlayById } from 'meta/play-meta-util';
 
-import PlayHeader from "common/playlists/PlayHeader";
-import Wizard from "./wizard";
-import data from "./data.json";
+import PlayHeader from 'common/playlists/PlayHeader';
+import Wizard from './wizard';
+import data from './data.json';
 
 function WhyTypescript(props: any) {
   // Do not remove the below lines.

@@ -1,9 +1,9 @@
-import { getPlayById } from "meta/play-meta-util";
-import "./AnalogClock.css";
+import { getPlayById } from 'meta/play-meta-util';
+import './AnalogClock.css';
 
-import PlayHeader from "common/playlists/PlayHeader";
-import { useState } from "react";
-import { useEffect } from "react";
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function AnalogClock(props) {
   // Do not remove the below lines.
@@ -36,19 +36,19 @@ function AnalogClock(props) {
               <div
                 className="hour-hand"
                 style={{
-                  transform: "rotate(" + hour + "deg)",
+                  transform: 'rotate(' + hour + 'deg)'
                 }}
               ></div>
               <div
                 className="minute-hand"
                 style={{
-                  transform: "rotate(" + minute + "deg)",
+                  transform: 'rotate(' + minute + 'deg)'
                 }}
               ></div>
               <div
                 className="second-hand"
                 style={{
-                  transform: "rotate(" + second + "deg)",
+                  transform: 'rotate(' + second + 'deg)'
                 }}
               ></div>
               <div className="brand"></div>

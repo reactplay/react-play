@@ -22,15 +22,15 @@
   --color-brand-primary-rgb: 0, 244, 252;
   --color-brand-primary-alt: #61dafb;
   --color-brand-primary-dark: #00aada;
-  
+
   /* Neutral */
   --color-neutral-10: #ffffff;
   --color-neutral-20: #f6f6f9;
   --color-neutral-30: #e0e0e6;
-  --color-neutral-40: #BDBDBD;
-  --color-neutral-50: #7F878A;
-  --color-neutral-60: #5C6C70;
-  --color-neutral-70: #3E5156;
+  --color-neutral-40: #bdbdbd;
+  --color-neutral-50: #7f878a;
+  --color-neutral-60: #5c6c70;
+  --color-neutral-70: #3e5156;
   --color-neutral-80: #242230;
   --color-neutral-90: #010326;
   --color-neutral-100: #000000;
@@ -58,7 +58,6 @@
   --fs-lg: 2rem;
   --fs-xl: 3rem;
   --fs-xxl: 4rem;
-  
 
   /* Line Height */
   --lh-xs: 0.8em;
@@ -115,10 +114,8 @@ body * {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-
 
 @media screen and (max-width: 1200px) {
   :root {
@@ -202,4 +199,3 @@ code {
 .app-footer a:focus {
   color: var(--color-brand-primary-alt);
 }
-

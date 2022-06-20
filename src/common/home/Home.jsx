@@ -1,32 +1,31 @@
-import { useState, useEffect, useContext } from "react";
-import useFetch from "common/hooks/useFetch";
-import { Link } from "react-router-dom";
-import "./home.css";
-import { RiSlideshow4Line } from "react-icons/ri";
-import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
-import { BsGithub } from "react-icons/bs";
-import { FiStar } from "react-icons/fi";
+import { useState, useEffect, useContext } from 'react';
+import useFetch from 'common/hooks/useFetch';
+import { Link } from 'react-router-dom';
+import './home.css';
+import { RiSlideshow4Line } from 'react-icons/ri';
+import { BiShareAlt, BiAddToQueue } from 'react-icons/bi';
+import { BsGithub } from 'react-icons/bs';
+import { FiStar } from 'react-icons/fi';
 import { FaLightbulb } from 'react-icons/fa';
-import { ReactComponent as Flower } from "images/icon-flower.svg";
-import { MdManageSearch } from "react-icons/md";
+import { ReactComponent as Flower } from 'images/icon-flower.svg';
+import { MdManageSearch } from 'react-icons/md';
 import YoutubeVideoEmbed from 'common/components/YouTubeEmbed';
-import FeaturedPlays from "common/playlists/FeaturedPlays";
-import Contributors from "./Contributors";
-import { SearchContext } from "common/search/search-context";
+import FeaturedPlays from 'common/playlists/FeaturedPlays';
+import Contributors from './Contributors';
+import { SearchContext } from 'common/search/search-context';
 
 const Home = () => {
-  const [gitHubStars, setGitHubStars] = useState("...");
-  const { data } = useFetch("https://api.github.com/repos/reactplay/react-play");
-  const { setSearchTerm, searchTerm, setFilterQuery } =
-    useContext(SearchContext);
+  const [gitHubStars, setGitHubStars] = useState('...');
+  const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
+  const { setSearchTerm, searchTerm, setFilterQuery } = useContext(SearchContext);
   useEffect(() => {
     setGitHubStars(data.stargazers_count);
-    setSearchTerm("");
+    setSearchTerm('');
     setFilterQuery({
-      level: "",
+      level: '',
       tags: [],
-      creator: "",
-      language: ""
+      creator: '',
+      language: ''
     });
   }, [data, setSearchTerm, searchTerm, setFilterQuery]);
 
@@ -44,9 +43,8 @@ const Home = () => {
             with ReactPlay
           </h2>
           <p className="body-desc">
-            ReactPlay is an open-source platform to learn, create and share
-            ReactJS projects with the developer community. Start by browsing the
-            plays or exploring the source code.
+            ReactPlay is an open-source platform to learn, create and share ReactJS projects with
+            the developer community. Start by browsing the plays or exploring the source code.
           </p>
           <div className="body-c2a">
             <Link to="/plays" className="body-c2a-btn body-c2a-btn--primary">
@@ -61,15 +59,18 @@ const Home = () => {
             >
               <BsGithub className="icon" />
               <span className="btn-label">
-                GitHub{" "}
+                GitHub{' '}
                 <div className="label-info-more">
                   <FiStar /> <div className="more-label">{gitHubStars}</div>
-                </div>{" "}
+                </div>{' '}
               </span>
             </a>
-          </div>          
+          </div>
           <div className="video">
-            <YoutubeVideoEmbed videoId="XrWonrp296w" title="🤩 Introducing ReactPlay - An Opensource Platform to Create, Learn, and Share ReactJS Projects" />
+            <YoutubeVideoEmbed
+              videoId="XrWonrp296w"
+              title="🤩 Introducing ReactPlay - An Opensource Platform to Create, Learn, and Share ReactJS Projects"
+            />
           </div>
         </div>
       </section>
@@ -77,17 +78,13 @@ const Home = () => {
         <ul className="list-home-features">
           <li className="home-features-item">
             <div className="item-icon">
-              <RiSlideshow4Line
-                className="icon"
-                color="var(--color-neutral-90)"
-              />
+              <RiSlideshow4Line className="icon" color="var(--color-neutral-90)" />
             </div>
             <h3 className="item-title">Learn </h3>
             <p className="item-desc">
-              Learn how to "Think in React" and build applications inspired by
-              several plays(source code & demos). Get to the source code of it,
-              find related article, or even a YouTube video. Learn from the
-              expert code reviews.
+              Learn how to "Think in React" and build applications inspired by several plays(source
+              code & demos). Get to the source code of it, find related article, or even a YouTube
+              video. Learn from the expert code reviews.
             </p>
           </li>
           <li className="home-features-item">
@@ -96,10 +93,9 @@ const Home = () => {
             </div>
             <h3 className="item-title">Create </h3>
             <p className="item-desc">
-              Create your own plays and own them by following a few simple
-              steps. Learned something new? Perfect to present as a play. You
-              can also contribute to the existing plays. Your play will be
-              reviewed by the experts before being made public.
+              Create your own plays and own them by following a few simple steps. Learned something
+              new? Perfect to present as a play. You can also contribute to the existing plays. Your
+              play will be reviewed by the experts before being made public.
             </p>
           </li>
           <li className="home-features-item">
@@ -108,15 +104,14 @@ const Home = () => {
             </div>
             <h3 className="item-title">Socialize </h3>
             <p className="item-desc">
-              Share your plays with the community. The best way of building in
-              public is by sharing the learning. You can share your plays on
-              social media platforms like Facebook, Twitter, LinkedIn, to name a
-              few, just with a single click.
+              Share your plays with the community. The best way of building in public is by sharing
+              the learning. You can share your plays on social media platforms like Facebook,
+              Twitter, LinkedIn, to name a few, just with a single click.
             </p>
           </li>
         </ul>
         <div className="home-ideas">
-          <FaLightbulb className="icon" color="var(--color-brand-primary)" size='48px'/>
+          <FaLightbulb className="icon" color="var(--color-brand-primary)" size="48px" />
           <p className="ideas-lead">Not sure how to get started?</p>
           <p className="ideas-title">We have got lot of ideas</p>
           <Link to="/ideas" className="home-anchor">

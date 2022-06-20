@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function Square(props) {
   return (
-    <button className={`squareButton ${props.winningSquare?.includes(props.index) && "bg-yellow-500"}`} onClick={props.onClick}>
+    <button
+      className={`squareButton ${props.winningSquare?.includes(props.index) && 'bg-yellow-500'}`}
+      onClick={props.onClick}
+    >
       {props.value}
     </button>
   );
@@ -19,10 +22,9 @@ function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
 
-  const nextSymbol = isXNext ? "X" : "O";
+  const nextSymbol = isXNext ? 'X' : 'O';
 
   const winner = calculateWinner(squares);
-
 
   function renderSquare(i) {
     return (
@@ -47,7 +49,7 @@ function Game() {
     if (winner) {
       return `Winner:   ${winner.player}`;
     } else if (isBoardFull(squares)) {
-      return "Draw!";
+      return 'Draw!';
     } else {
       return `Next player:   ${nextSymbol}`;
     }
@@ -76,12 +78,12 @@ function Game() {
 
   return (
     <div className="container">
-        <header className="header">Tic Tac Toe Game</header>
-        <div className="boardMain">
-          {renderRow(0)}
-          {renderRow(3)}
-          {renderRow(6)}
-        </div>
+      <header className="header">Tic Tac Toe Game</header>
+      <div className="boardMain">
+        {renderRow(0)}
+        {renderRow(3)}
+        {renderRow(6)}
+      </div>
       <div className="status">{getStatus()}</div>
       <div>{renderRestartButton()}</div>
     </div>
@@ -97,12 +99,12 @@ function calculateWinner(squares) {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6],
+    [2, 4, 6]
   ];
   for (let i = 0; i < possibleLines.length; i++) {
     const [a, b, c] = possibleLines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return  {player:squares[a], line:[a, b, c]};
+      return { player: squares[a], line: [a, b, c] };
     }
   }
   return null;

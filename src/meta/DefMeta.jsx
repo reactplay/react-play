@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 function DefMeta() {
   return (
@@ -36,11 +36,7 @@ function DefMeta() {
         content="Start React Code Arena with ReactPlay"
         data-react-helmet="true"
       />
-      <meta
-        property="og:url"
-        content="https://reactplay.io"
-        data-react-helmet="true"
-      />
+      <meta property="og:url" content="https://reactplay.io" data-react-helmet="true" />
       <meta
         name="twitter:title"
         content="ReactPlay - One app to learn, create, and share ReactJS projects."

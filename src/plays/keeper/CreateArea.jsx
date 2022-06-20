@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
 
 function CreateArea(props) {
   const [note, setNote] = useState({
-    title: "",
-    content: ""
+    title: '',
+    content: ''
   });
   function handleChange(event) {
     const { name, value } = event.target;
-    setNote(prevNote => {
+    setNote((prevNote) => {
       return {
         ...prevNote,
         [name]: value
@@ -18,15 +18,15 @@ function CreateArea(props) {
   function submitNote(event) {
     props.onAdd(note);
     setNote({
-      title: "",
-      content: ""
+      title: '',
+      content: ''
     });
     event.preventDefault();
   }
   return (
     <div>
       <form className="create-note">
-        {(
+        {
           <input
             className="create-input"
             name="title"
@@ -34,7 +34,6 @@ function CreateArea(props) {
             value={note.title}
             placeholder="Title"
           />
-        )
         }
         <textarea
           className="create-text"
@@ -43,7 +42,9 @@ function CreateArea(props) {
           value={note.content}
           placeholder="Take a note..."
         />
-        <button className="create-button" onClick={submitNote}>< FaPlusCircle /></button>
+        <button className="create-button" onClick={submitNote}>
+          <FaPlusCircle />
+        </button>
       </form>
     </div>
   );

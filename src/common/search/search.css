@@ -30,26 +30,29 @@
   color: var(--color-neutral-20);
   font-family: var(--ff-default);
   font-size: var(--fs-rg);
-  background-color: rgba(var(--color-brand-primary-rgb), 0.20);
+  background-color: rgba(var(--color-brand-primary-rgb), 0.2);
 }
 
 .search-input .search-input-text:focus,
 .search-input .search-input-text:focus-visible {
   border: solid 1px var(--color-neutral-50);
-  box-shadow:  0 0 0 rgba(0,0,0,0);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   outline: none;
 }
 
-.search-input .search-input-text::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.search-input .search-input-text::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--color-neutral-10);
   opacity: 0.5; /* Firefox */
 }
 
-.search-input .search-input-text:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.search-input .search-input-text:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: var(--color-neutral-10);
 }
 
-.search-input .search-input-text::-ms-input-placeholder { /* Microsoft Edge */
+.search-input .search-input-text::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: var(--color-neutral-10);
 }
 
@@ -108,7 +111,6 @@
 
 @media screen and (max-width: 576px) {
   .btn-filter {
-    
   }
   .btn-filter .icon {
     width: 24px;
@@ -124,25 +126,24 @@
   z-index: 100;
   display: flex;
   flex-direction: column;
-  
+
   /* Probably need media queries here */
   width: 400px;
   max-width: 90%;
   max-height: 90%;
   border-radius: 0.2rem;
-  
-  transform: translate(-50%, -50%);
-  
-  background: white;
-  box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb),0.62);
-  -webkit-box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb),0.62);
-  -moz-box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb),0.62);
 
+  transform: translate(-50%, -50%);
+
+  background: white;
+  box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb), 0.62);
+  -webkit-box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb), 0.62);
+  -moz-box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb), 0.62);
 }
 
 .modal-overlay {
   position: fixed;
-  background-color: rgba(0,0,0,0.72);
+  background-color: rgba(0, 0, 0, 0.72);
   top: 0;
   right: 0;
   bottom: 0;
@@ -178,10 +179,8 @@
   margin-bottom: 1rem;
 }
 
-
 .modal-filter .form-group:last-child {
   margin-bottom: 0;
-
 }
 
 .modal-filter .form-group label {
@@ -205,18 +204,18 @@
   display: inline-flex;
   align-items: center;
   grid-gap: 0.4rem;
-  border-radius: 2rem; 
+  border-radius: 2rem;
   padding: 0.8rem 1.4rem;
   font-size: var(--fs-rg);
   font-weight: var(--fw-bold);
-  background-color: rgba(var(--color-neutral-90-rgb),0.1);
+  background-color: rgba(var(--color-neutral-90-rgb), 0.1);
   color: var(--color-neutral-80);
   transition: all 0.16s ease-in-out;
 }
 
 .btn-default-light:hover,
 .btn-default-light:focus {
-  background-color: rgba(var(--color-neutral-90-rgb),0.2);
+  background-color: rgba(var(--color-neutral-90-rgb), 0.2);
   color: var(--color-neutral-90);
 }
 
@@ -225,7 +224,7 @@
   display: inline-flex;
   align-items: center;
   grid-gap: 0.4rem;
-  border-radius: 2rem; 
+  border-radius: 2rem;
   padding: 0.8rem 1.4rem;
   font-size: var(--fs-rg);
   font-weight: var(--fw-bold);

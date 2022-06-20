@@ -1,8 +1,8 @@
-import { cloneElement } from "react";
-import { Helmet } from "react-helmet";
+import { cloneElement } from 'react';
+import { Helmet } from 'react-helmet';
 
 function PlayMeta({ id, name, description, path, cover, component }) {
-  const playFolder = path.split("/")[2];
+  const playFolder = path.split('/')[2];
 
   let metaImage; // Initialize metaImage variable
   if (cover) {
@@ -14,7 +14,7 @@ function PlayMeta({ id, name, description, path, cover, component }) {
       // some platforms such as Twitter need full, explicit URL's to display images correctly
     } catch {
       // If no image is available, cover stays as undefined
-      console.log("No cover available.");
+      console.log('No cover available.');
     }
   }
 
@@ -24,31 +24,11 @@ function PlayMeta({ id, name, description, path, cover, component }) {
         <meta name="description" content={description} />
         <meta property="og:title" content={name} />
         <meta property="og:description" content={description} />
-        {metaImage && (
-          <meta
-            property="og:image"
-            content={metaImage}
-            data-react-helmet="true"
-          />
-        )}
-        <meta
-          property="og:image:alt"
-          content={description}
-          data-react-helmet="true"
-        />
+        {metaImage && <meta property="og:image" content={metaImage} data-react-helmet="true" />}
+        <meta property="og:image:alt" content={description} data-react-helmet="true" />
         <meta name="twitter:title" content={name} data-react-helmet="true" />
-        <meta
-          name="twitter:description"
-          content={description}
-          data-react-helmet="true"
-        />
-        {metaImage && (
-          <meta
-            name="twitter:image"
-            content={metaImage}
-            data-react-helmet="true"
-          />
-        )}
+        <meta name="twitter:description" content={description} data-react-helmet="true" />
+        {metaImage && <meta name="twitter:image" content={metaImage} data-react-helmet="true" />}
       </Helmet>
       {cloneElement(component(), { id })}
     </>

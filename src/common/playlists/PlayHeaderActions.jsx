@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { BsGithub } from "react-icons/bs";
-import { IoLogoYoutube } from "react-icons/io";
-import { AiOutlineRead } from "react-icons/ai";
-import { BiComment } from "react-icons/bi";
-import { MdClose } from "react-icons/md";
+import React, { useState } from 'react';
+import { BsGithub } from 'react-icons/bs';
+import { IoLogoYoutube } from 'react-icons/io';
+import { AiOutlineRead } from 'react-icons/ai';
+import { BiComment } from 'react-icons/bi';
+import { MdClose } from 'react-icons/md';
 
-import Comment from "common/components/Comment";
+import Comment from 'common/components/Comment';
 
 const PlayHeaderActions = ({ play }) => {
   console.log(play);
@@ -32,23 +32,13 @@ const PlayHeaderActions = ({ play }) => {
         </a>
       )}
       {play.blog && (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="action"
-          href={play.blog}
-        >
+        <a target="_blank" rel="noopener noreferrer" className="action" href={play.blog}>
           <AiOutlineRead className="icon" size="24px" />
           <span className="sr-only">Blog</span>
         </a>
       )}
       {play.video && (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="action"
-          href={play.video}
-        >
+        <a target="_blank" rel="noopener noreferrer" className="action" href={play.video}>
           <IoLogoYoutube className="icon" size="24px" />
           <span className="sr-only">Video</span>
         </a>
@@ -57,10 +47,7 @@ const PlayHeaderActions = ({ play }) => {
         <div className="play-details-comments">
           <div className="comments-header">
             <h3 className="header-title">Comments</h3>
-            <button
-              className="header-action"
-              onClick={() => setShowComment(false)}
-            >
+            <button className="header-action" onClick={() => setShowComment(false)}>
               <MdClose size={24} className="icon" />
             </button>
           </div>

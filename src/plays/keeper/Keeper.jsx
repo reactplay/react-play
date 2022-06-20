@@ -1,22 +1,22 @@
 import { getPlayById } from 'meta/play-meta-util';
 import PlayHeader from 'common/playlists/PlayHeader';
-import './Keeper.css'
+import './Keeper.css';
 import Header from './Header';
 import CreateArea from './CreateArea';
 import Note from './Notes';
 import useLocalStorage from './Hooks/useLocalStorage';
 
 function Keeper(props) {
-  // Do not remove the below lines. 
+  // Do not remove the below lines.
   // The following code is to fetch the current play from the URL
   const { id } = props;
   const play = getPlayById(id);
   //code starts here
-  const [notes, setNotes] = useLocalStorage("notes", [
+  const [notes, setNotes] = useLocalStorage('notes', [
     {
       id: 0,
-      title: "Write Your Title",
-      content: "And, content here. :)"
+      title: 'Write Your Title',
+      content: 'And, content here. :)'
     }
   ]); //notes array
   //adding notes
@@ -27,11 +27,11 @@ function Keeper(props) {
   }
   //deleting notes
   function deleteNote(id) {
-    setNotes(prevNotes => {
+    setNotes((prevNotes) => {
       return prevNotes.filter((noteItem, index) => {
         return index !== id;
-      })
-    })
+      });
+    });
   }
   return (
     <>
@@ -42,13 +42,15 @@ function Keeper(props) {
           <Header />
           <CreateArea onAdd={addNote} />
           {notes.map((noteItem, index) => {
-            return <Note
-              key={index}
-              id={index}
-              title={noteItem.title}
-              content={noteItem.content}
-              onDelete={deleteNote}
-            />
+            return (
+              <Note
+                key={index}
+                id={index}
+                title={noteItem.title}
+                content={noteItem.content}
+                onDelete={deleteNote}
+              />
+            );
           })}
         </div>
       </div>

@@ -1,18 +1,18 @@
-import { useState, useContext, useEffect, useRef } from "react";
-import { SocialContext } from "./context/SocialContext";
+import { useState, useContext, useEffect, useRef } from 'react';
+import { SocialContext } from './context/SocialContext';
 
 const CardForm = () => {
   // Declaring the state value with an object that contains
   // all the information of the social card.
   const [state, setState] = useState({
-    name: "",
-    email: "",
-    photo: "",
-    bio: "",
-    website: "",
-    twitter: "",
-    linkedIn: "",
-    github: "",
+    name: '',
+    email: '',
+    photo: '',
+    bio: '',
+    website: '',
+    twitter: '',
+    linkedIn: '',
+    github: ''
   });
 
   // We get the updater function from the context.
@@ -20,7 +20,7 @@ const CardForm = () => {
   // so that, other component can access it.
   const { setSocial } = useContext(SocialContext);
 
-  // We create a reference to focus on the 
+  // We create a reference to focus on the
   // first input field of the form.
   const nameInputRef = useRef(null);
 
@@ -29,11 +29,10 @@ const CardForm = () => {
   // note how we handle the file input differently.
   const handleChange = (evt) => {
     const name = evt.target.name;
-    const value =
-      evt.target.type === "file" ? evt.target.files : evt.target.value;
+    const value = evt.target.type === 'file' ? evt.target.files : evt.target.value;
     setState({
       ...state,
-      [name]: value,
+      [name]: value
     });
   };
 
@@ -53,7 +52,7 @@ const CardForm = () => {
       <div className="form-group">
         <label htmlFor="name"></label>
         <input
-          ref = {nameInputRef}
+          ref={nameInputRef}
           type="text"
           placeholder="Enter Name"
           className="form-control"

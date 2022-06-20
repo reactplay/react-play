@@ -1,17 +1,17 @@
-import RouteDefs from "common/routing/RouteDefs";
-import { SearchContext } from "common/search/search-context";
-import "index.css";
-import React, { useState } from "react";
+import RouteDefs from 'common/routing/RouteDefs';
+import { SearchContext } from 'common/search/search-context';
+import 'index.css';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import reportWebVitals from "reportWebVitals";
+import reportWebVitals from 'reportWebVitals';
 
 const Index = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [filterQuery, setFilterQuery] = useState({
-    level: "",
+    level: '',
     tags: [],
-    creator: "",
-    language: ""
+    creator: '',
+    language: ''
   });
 
   const value = { searchTerm, setSearchTerm, filterQuery, setFilterQuery };
@@ -23,7 +23,7 @@ const Index = () => {
     </React.StrictMode>
   );
 };
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 createRoot(container).render(<Index />);
 
 // If you want to start measuring performance in your app, pass a function

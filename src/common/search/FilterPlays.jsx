@@ -1,12 +1,12 @@
-import { Modal } from "common";
-import { getAllCreators, getAllLevels, getAllTags, getAllLanguages } from "meta/play-meta-util";
-import { useContext, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { SearchContext } from "./search-context";
-import "./search.css";
+import { Modal } from 'common';
+import { getAllCreators, getAllLevels, getAllTags, getAllLanguages } from 'meta/play-meta-util';
+import { useContext, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { SearchContext } from './search-context';
+import './search.css';
 
-import { RiFilterFill } from "react-icons/ri";
-import useBackListener from "common/routing/hooks/useBackListener";
+import { RiFilterFill } from 'react-icons/ri';
+import useBackListener from 'common/routing/hooks/useBackListener';
 
 const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   const tags = getAllTags();
@@ -20,9 +20,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <label>Level</label>
         <select
           className="form-control"
-          onChange={(event) =>
-            setFilterQuery({ ...filterQuery, level: event.target.value })
-          }
+          onChange={(event) => setFilterQuery({ ...filterQuery, level: event.target.value })}
           value={filterQuery.level}
         >
           <option value="">All</option>
@@ -38,7 +36,10 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <select
           className="form-control"
           onChange={(event) =>
-            setFilterQuery({ ...filterQuery, tags: event.target.value !== "" ? [event.target.value] : [] })
+            setFilterQuery({
+              ...filterQuery,
+              tags: event.target.value !== '' ? [event.target.value] : []
+            })
           }
           value={filterQuery.tags[0]}
         >
@@ -54,9 +55,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <label>Creator</label>
         <select
           className="form-control"
-          onChange={(event) =>
-            setFilterQuery({ ...filterQuery, creator: event.target.value })
-          }
+          onChange={(event) => setFilterQuery({ ...filterQuery, creator: event.target.value })}
           value={filterQuery.creator}
         >
           <option value="">All</option>
@@ -71,9 +70,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <label>Language</label>
         <select
           className="form-control"
-          onChange={(event) =>
-            setFilterQuery({ ...filterQuery, language: event.target.value })
-          }
+          onChange={(event) => setFilterQuery({ ...filterQuery, language: event.target.value })}
           value={filterQuery.language}
         >
           <option value="">All</option>
@@ -91,20 +88,13 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
 const getAppliedFilter = (filterObject) => {
   //for single filter to check whether filter has been applied
   const noOfLevelsApplied =
-    filterObject?.level !== undefined && filterObject.level.trim() !== ""
-      ? 1
-      : 0;
+    filterObject?.level !== undefined && filterObject.level.trim() !== '' ? 1 : 0;
   const noOfcreatorsApplied =
-    filterObject.creator !== undefined && filterObject.creator.trim() !== ""
-      ? 1
-      : 0;
+    filterObject.creator !== undefined && filterObject.creator.trim() !== '' ? 1 : 0;
   const noOfLanguageApplied =
-    filterObject.language !== undefined && filterObject.language.trim() !== ""
-      ? 1 : 0;
-  const noOfTagsApplied =
-    filterObject?.tags?.length ? filterObject.tags.length : 0
-  let totalTags = noOfLevelsApplied +
-    noOfcreatorsApplied + noOfLanguageApplied + noOfTagsApplied;
+    filterObject.language !== undefined && filterObject.language.trim() !== '' ? 1 : 0;
+  const noOfTagsApplied = filterObject?.tags?.length ? filterObject.tags.length : 0;
+  let totalTags = noOfLevelsApplied + noOfcreatorsApplied + noOfLanguageApplied + noOfTagsApplied;
 
   return totalTags;
 };
@@ -123,8 +113,8 @@ const FilterPlays = () => {
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
   useBackListener(({ action }) => {
-    if (action === "POP") {
-      console.log("POP");
+    if (action === 'POP') {
+      console.log('POP');
       setModifiedFilterQuery({
         level: '',
         tags: [],
@@ -139,8 +129,8 @@ const FilterPlays = () => {
       });
       setnoOfAppliedFilter(0);
     }
-    if (action === "PUSH") {
-      console.log("PUSH");
+    if (action === 'PUSH') {
+      console.log('PUSH');
       setModifiedFilterQuery({
         level: '',
         tags: [],
@@ -158,12 +148,12 @@ const FilterPlays = () => {
   });
   const handleFilter = (event) => {
     event.preventDefault();
-    console.log("filterQuery", filterQuery);
-    console.log("modifiedFilterQuery", modifiedFilterQuery);
+    console.log('filterQuery', filterQuery);
+    console.log('modifiedFilterQuery', modifiedFilterQuery);
     setFilterQuery(modifiedFilterQuery);
     setnoOfAppliedFilter(getAppliedFilter(modifiedFilterQuery));
-    if (location.pathname !== "/plays") {
-      navigate("/plays", { replace: true });
+    if (location.pathname !== '/plays') {
+      navigate('/plays', { replace: true });
     }
     showModal && setShowModal(false);
   };
@@ -184,21 +174,10 @@ const FilterPlays = () => {
         }
       />
 
-      <button
-        onClick={() => setShowModal(true)}
-        className="btn-filter"
-        title="Filter Plays"
-      >{
-          noOfAppliedFilter === 0 ?
-            null
-            : <div className="badge">{noOfAppliedFilter}</div>
-        }
+      <button onClick={() => setShowModal(true)} className="btn-filter" title="Filter Plays">
+        {noOfAppliedFilter === 0 ? null : <div className="badge">{noOfAppliedFilter}</div>}
 
-        <RiFilterFill
-          className="icon"
-          size="28px"
-          color="var(--color-neutral-30"
-        />
+        <RiFilterFill className="icon" size="28px" color="var(--color-neutral-30" />
       </button>
     </div>
   );

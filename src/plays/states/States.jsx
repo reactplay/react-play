@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { getPlayById } from "meta/play-meta-util";
-import PlayHeader from "common/playlists/PlayHeader";
-import "./states.css";
+import { useState } from 'react';
+import { getPlayById } from 'meta/play-meta-util';
+import PlayHeader from 'common/playlists/PlayHeader';
+import './states.css';
 
 function States(props) {
   // Do not remove the below lines.
@@ -10,19 +10,19 @@ function States(props) {
   const play = getPlayById(id);
 
   // Your Code Start below.
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const [display, setDisplay] = useState(false);
   const [duration, setDuration] = useState(0);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if(!name && !duration) {
-      return
+    e.preventDefault();
+    if (!name && !duration) {
+      return;
     }
     setDisplay(true);
     setTimeout(() => {
       setDisplay(false);
-      setName("");
+      setName('');
       setDuration(0);
     }, duration * 1000);
   };
@@ -44,15 +44,13 @@ function States(props) {
           <div>
             <h1>States - Details about Component</h1>
             <p>
-              State is an inbuilt object of React which stores data/information
-              about the component. State of the component can change over time.
-              Change in state of the component causes re-rendering of the
-              component. This change of State is Asynchronous.
+              State is an inbuilt object of React which stores data/information about the component.
+              State of the component can change over time. Change in state of the component causes
+              re-rendering of the component. This change of State is Asynchronous.
             </p>
             <div className="play-area-container">
               <div className="play-area">
-                <p>Enter a Name and Duration in Seconds for which you want to
-                display a Message.</p>
+                <p>Enter a Name and Duration in Seconds for which you want to display a Message.</p>
                 <input
                   className="input nameInput"
                   type="text"
@@ -71,20 +69,16 @@ function States(props) {
                   onChange={handleDurationChange}
                   value={duration}
                 />
-                <button
-                  className="submit-button"
-                  type="submit"
-                  onClick={(e) => handleSubmit(e)}
-                >
+                <button className="submit-button" type="submit" onClick={(e) => handleSubmit(e)}>
                   Submit
                 </button>
               </div>
-              
+
               <div className="play-area-result">
                 {!display ? (
-                  <p >Enter Details of the Message</p>
+                  <p>Enter Details of the Message</p>
                 ) : (
-                  <h3 >Welcome to State Play, {name} </h3>
+                  <h3>Welcome to State Play, {name} </h3>
                 )}
               </div>
             </div>

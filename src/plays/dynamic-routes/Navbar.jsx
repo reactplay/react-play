@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar(props) {
   const [mealTypes, activeMealHandler, activeMenu] = Object.values(props);
@@ -10,7 +10,7 @@ function Navbar(props) {
           <NavLink
             key={index}
             to={`/plays/dynamic-routes/${mealtype}`}
-            className={`navbar-link ${activeMenu === mealtype ? "active" : ""}`}
+            className={`navbar-link ${activeMenu === mealtype ? 'active' : ''}`}
             onClick={() => activeMealHandler(mealtype)}
           >
             {mealtype}

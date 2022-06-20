@@ -1,17 +1,17 @@
-import { getPlayById } from "meta/play-meta-util";
+import { getPlayById } from 'meta/play-meta-util';
 
-import PlayHeader from "common/playlists/PlayHeader";
-import { useEffect, useState } from "react";
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useEffect, useState } from 'react';
 
-import "./password-generator-style.css";
-import data from "./data.json";
+import './password-generator-style.css';
+import data from './data.json';
 
 const config = {
   length: 12,
   numbers: true,
   special: true,
   uppercase: true,
-  lowercase: true,
+  lowercase: true
 };
 
 function PasswordGenerator(props) {
@@ -21,7 +21,7 @@ function PasswordGenerator(props) {
   const play = getPlayById(id);
 
   // Your Code Start below.
-  const [password, setPassword] = useState({ status: false, password: "" });
+  const [password, setPassword] = useState({ status: false, password: '' });
   const [passwordConfig, setPasswordConfig] = useState({ ...config });
   const [error, setError] = useState(false);
 
@@ -48,10 +48,10 @@ function PasswordGenerator(props) {
     };
 
     const concated = [
-      ...parseData(numbers, "numbers"),
-      ...parseData(special, "special"),
-      ...parseData(uppercase, "uppercase"),
-      ...parseData(lowercase, "lowercase"),
+      ...parseData(numbers, 'numbers'),
+      ...parseData(special, 'special'),
+      ...parseData(uppercase, 'uppercase'),
+      ...parseData(lowercase, 'lowercase')
     ];
     return concated;
   };
@@ -60,7 +60,7 @@ function PasswordGenerator(props) {
   const generatePassword = () => {
     setError(false);
     const concated = arrangeData();
-    let finalPassword = "";
+    let finalPassword = '';
     for (let i = 0; i < passwordConfig.length; i++) {
       finalPassword += concated[randomNumberGenerator(concated.length)];
     }
@@ -99,48 +99,48 @@ function PasswordGenerator(props) {
   }, []);
 
   const ErrorBox = () => {
-    return <p className='error'>You cannot Uncheck All At Once.</p>;
+    return <p className="error">You cannot Uncheck All At Once.</p>;
   };
 
   return (
-    <div className='play-details'>
+    <div className="play-details">
       <PlayHeader play={play} />
-      <div className='play-details-body password-generator'>
+      <div className="play-details-body password-generator">
         {/* Your Code Starts Here */}
-        <div className='main'>
-          <h1 className='title'>Password Generator</h1>
-          <section className='section'>
+        <div className="main">
+          <h1 className="title">Password Generator</h1>
+          <section className="section">
             {error && <ErrorBox />}
             <div>
               <CheckBox
                 getCheckedItem={handleCheckedItem}
                 checked={passwordConfig?.uppercase}
-                name='Uppercase'
-                id='uppercase'
+                name="Uppercase"
+                id="uppercase"
               />
               <CheckBox
                 getCheckedItem={handleCheckedItem}
                 checked={passwordConfig?.lowercase}
-                name='Lowercase'
-                id='lowercase'
+                name="Lowercase"
+                id="lowercase"
               />
               <CheckBox
                 getCheckedItem={handleCheckedItem}
                 checked={passwordConfig?.special}
-                name='Special Char.'
-                id='special'
+                name="Special Char."
+                id="special"
               />
               <CheckBox
                 getCheckedItem={handleCheckedItem}
                 checked={passwordConfig?.numbers}
-                name='Numbers'
-                id='numbers'
+                name="Numbers"
+                id="numbers"
               />
-              <div className='checkbox-comp '>
+              <div className="checkbox-comp ">
                 <label>Length</label>
                 <select
-                  className='select'
-                  onChange={(e) => handleCheckedItem("length", e.target.value)}
+                  className="select"
+                  onChange={(e) => handleCheckedItem('length', e.target.value)}
                   value={passwordConfig.length}
                 >
                   {[12, 14, 16, 20].map((num) => {
@@ -155,23 +155,21 @@ function PasswordGenerator(props) {
             </div>
             <div>
               <input
-                type='text'
-                className='password-input'
+                type="text"
+                className="password-input"
                 value={password?.password}
                 onChange={null}
                 readOnly={true}
               />
               <button
                 onClick={onCopyClick}
-                className={
-                  password?.status ? "copy-button copid" : "copy-button"
-                }
+                className={password?.status ? 'copy-button copid' : 'copy-button'}
               >
-                {password?.status ? "Copied" : "Copy"}
+                {password?.status ? 'Copied' : 'Copy'}
               </button>
             </div>
             <div>
-              <button onClick={generateHander} className='generate-pwd'>
+              <button onClick={generateHander} className="generate-pwd">
                 Generate Password
               </button>
             </div>
@@ -189,14 +187,14 @@ const CheckBox = ({ name, checked, getCheckedItem, id }) => {
   };
 
   return (
-    <div className='checkbox-comp'>
+    <div className="checkbox-comp">
       <label htmlFor={name}>{name}</label>
       <input
         checked={checked}
-        className='checkbox'
+        className="checkbox"
         onChange={checkboxChangeHandler(id)}
         id={name}
-        type='checkbox'
+        type="checkbox"
       />
     </div>
   );

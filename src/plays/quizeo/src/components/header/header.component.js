@@ -4,12 +4,14 @@ import './header.styles.css';
 import { isClicked } from '../../redux/questions/questions-action';
 
 const Header = () => {
-    let dispatch = useDispatch();
-    return ( 
-        <div>
-            <h1 className="header" onClick={() => dispatch(isClicked())}>Quizeo</h1>
-        </div>
-    );
-}
+  let dispatch = useDispatch();
+  return (
+    <div>
+      <h1 className="header" onClick={() => dispatch(isClicked())}>
+        Quizeo
+      </h1>
+    </div>
+  );
+};
 
 export default Header;

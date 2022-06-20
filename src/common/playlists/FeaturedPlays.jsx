@@ -1,6 +1,6 @@
-import PlayThumbnail from "./PlayThumbnail";
+import PlayThumbnail from './PlayThumbnail';
 
-import { getFeaturedPlays } from "meta/play-meta-util";
+import { getFeaturedPlays } from 'meta/play-meta-util';
 
 const FeaturedPlays = () => {
   const plays = getFeaturedPlays();
@@ -9,7 +9,7 @@ const FeaturedPlays = () => {
   return (
     <>
       <h3 className="plays-title-primary">
-          Trending <strong>Plays</strong>
+        Trending <strong>Plays</strong>
       </h3>
       <ul className="list-plays">
         {plays.map((play, index) => (
@@ -17,6 +17,7 @@ const FeaturedPlays = () => {
         ))}
       </ul>
     </>
-  )};
+  );
+};
 
 export default FeaturedPlays;

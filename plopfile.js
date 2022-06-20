@@ -1,17 +1,21 @@
-String.prototype.replaceAll = String.prototype.replaceAll || function(string, replaced) {
-  return this.replace(new RegExp(string, 'g'), replaced);
-};
+String.prototype.replaceAll =
+  String.prototype.replaceAll ||
+  function (string, replaced) {
+    return this.replace(new RegExp(string, 'g'), replaced);
+  };
 
-module.exports = plop => {
-  plop.setHelper('trim', str => str.trim());
-  plop.setHelper('removeAllSpaces', str => str.replaceAll(/\s/g,''));
+module.exports = (plop) => {
+  plop.setHelper('trim', (str) => str.trim());
+  plop.setHelper('removeAllSpaces', (str) => str.replaceAll(/\s/g, ''));
 
-  plop.setHelper('generateId', str => `pl-${str.trim().replaceAll(/\s/g,'-').toLowerCase()}`);
+  plop.setHelper('generateId', (str) => `pl-${str.trim().replaceAll(/\s/g, '-').toLowerCase()}`);
 
-  plop.setHelper('generateFolderName', str => `${str.trim().replaceAll(/\s/g,'-').toLowerCase()}`);
+  plop.setHelper(
+    'generateFolderName',
+    (str) => `${str.trim().replaceAll(/\s/g, '-').toLowerCase()}`
+  );
 
   const insertIf = (condition, ...elements) => (condition ? elements : []);
-
 
   // demo generator
   plop.setGenerator('play', {
@@ -20,12 +24,12 @@ module.exports = plop => {
       {
         type: 'input',
         name: 'name',
-        message: 'Please provide the name of the play(Example: Identity Card):',
+        message: 'Please provide the name of the play(Example: Identity Card):'
       },
       {
         type: 'input',
         name: 'description',
-        message: 'Tell us more about the play(Max 1024 characters):',
+        message: 'Tell us more about the play(Max 1024 characters):'
       },
       {
         type: 'list',
@@ -48,63 +52,63 @@ module.exports = plop => {
       {
         type: 'input',
         name: 'tags',
-        message: 'Provide maximum of 5 tags(Example: JSX, Hooks):',
+        message: 'Provide maximum of 5 tags(Example: JSX, Hooks):'
       },
       {
         type: 'input',
         name: 'github',
-        message: 'Enter your github username(Example: atapas):',
+        message: 'Enter your github username(Example: atapas):'
       },
       {
         type: 'input',
         name: 'cover',
-        message: 'Please provide the path(URL) to cover image(When the image is hosted publicly):',
+        message: 'Please provide the path(URL) to cover image(When the image is hosted publicly):'
       },
       {
         type: 'input',
         name: 'blog',
-        message: 'Enter your blog url(Example: https://blog.greenroots.info):',
+        message: 'Enter your blog url(Example: https://blog.greenroots.info):'
       },
       {
         type: 'input',
         name: 'video',
-        message: 'Enter your video url(Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ):',
-      },
+        message: 'Enter your video url(Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ):'
+      }
     ],
     actions: [
       {
         type: 'add',
         path: 'src/plays/{{generateFolderName name}}/{{pascalCase name}}.{{language}}x',
-        templateFile: 'plop-templates/component_{{language}}.hbs',
+        templateFile: 'plop-templates/component_{{language}}.hbs'
       },
       {
         type: 'add',
         path: 'src/plays/{{generateFolderName name}}/{{camelCase name}}.{{style}}',
-        templateFile: 'plop-templates/style_{{style}}.hbs',
+        templateFile: 'plop-templates/style_{{style}}.hbs'
       },
       {
         type: 'add',
         path: 'src/plays/{{generateFolderName name}}/Readme.md',
-        templateFile: 'plop-templates/play-readme.hbs',
+        templateFile: 'plop-templates/play-readme.hbs'
       },
       {
         type: 'modify',
         path: 'src/plays/index.js',
         pattern: /\/\/add export here/gi,
-        templateFile: 'plop-templates/exportPlay.hbs',
+        templateFile: 'plop-templates/exportPlay.hbs'
       },
       {
         type: 'modify',
         path: 'src/meta/play-meta.js',
         pattern: /\/\/import play here/gi,
-        templateFile: 'plop-templates/importToMeta.hbs',
+        templateFile: 'plop-templates/importToMeta.hbs'
       },
       {
         type: 'modify',
         path: 'src/meta/play-meta.js',
         pattern: /\/\/replace new play item here/gi,
-        templateFile: 'plop-templates/play.hbs',
-      },
-    ],
+        templateFile: 'plop-templates/play.hbs'
+      }
+    ]
   });
 };
