@@ -32,8 +32,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "create-play": "plop",
-    "lint": "eslint .",
-    "lint:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|scss|md|)\""
+    "lint:fix": "eslint . --fix",
+    "prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|scss|md|)\"",
+    "format": "yarn prettier:fix && yarn lint:fix"
   },
   "eslintConfig": {
     "extends": [
