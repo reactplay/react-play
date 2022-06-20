@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from 'reportWebVitals';
 
-const Index = () => {
+function Index() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterQuery, setFilterQuery] = useState({
     level: '',
@@ -22,7 +22,7 @@ const Index = () => {
       </SearchContext.Provider>
     </React.StrictMode>
   );
-};
+}
 const container = document.getElementById('root');
 createRoot(container).render(<Index />);
 

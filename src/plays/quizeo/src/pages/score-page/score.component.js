@@ -9,18 +9,21 @@ import {
 import { selectScore } from '../../redux/movie/movieSelector';
 import './score.styles.css';
 
-export const ScoreModel = () => {
-  var score = useSelector(selectScore);
+export function ScoreModel() {
+  const score = useSelector(selectScore);
   const dispatch = useDispatch();
   return (
-    <div className="score-container">
-      <div className="score-section">
-        <button className="score-close" onClick={() => dispatch(showModel())}>
-          x
+    <div className={'score-container'}>
+      <div className={'score-section'}>
+        <button className={'score-close'} onClick={() => dispatch(showModel())}>
+          {'x'}
         </button>
-        <h1>🎉Your score is {score}</h1>
+        <h1>
+          {'🎉Your score is '}
+          {score}
+        </h1>
         <button
-          className="play-button"
+          className={'play-button'}
           onClick={() => {
             dispatch(showModel());
             dispatch(setScore());
@@ -28,9 +31,9 @@ export const ScoreModel = () => {
             dispatch(setQuestionNo());
           }}
         >
-          Play again
+          {'Play again'}
         </button>
       </div>
     </div>
   );
-};
+}

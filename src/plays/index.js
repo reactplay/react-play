@@ -23,4 +23,4 @@ export { default as FunQuiz } from 'plays/fun-quiz/FunQuiz';
 export { default as TicTacToeGame } from 'plays/tic-tac-toe-game/TicTacToeGame';
 export { default as DynamicRoutes } from 'plays/dynamic-routes/DynamicRoutes';
 export { default as Quizeo } from 'plays/quizeo/src/Quizeo';
-//add export here
+// add export here

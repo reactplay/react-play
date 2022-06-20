@@ -10,7 +10,7 @@ import s3 from './guideimages/s3.png';
 import s4 from './guideimages/s4.png';
 import close from './close.png';
 
-const Modal = ({ showModal, toggle }) => {
+function Modal({ showModal, toggle }) {
   const [currState, setCurrentState] = useState(0);
 
   const structuringData = [
@@ -43,24 +43,24 @@ const Modal = ({ showModal, toggle }) => {
 
   if (!showModal) return false;
   return (
-    <Fragment>
-      <div className="memory-game-modal">
-        <img src={close} alt="clonse" onClick={toggle} className="close-icon" />
-        <div className="content">
-          <h1 className="text">How to Play!</h1>
+    <>
+      <div className={'memory-game-modal'}>
+        <img src={close} alt={'clonse'} className={'close-icon'} onClick={toggle} />
+        <div className={'content'}>
+          <h1 className={'text'}>{'How to Play!'}</h1>
           <p>{structuringData[currState].info}</p>
-          <img className="guide-image" src={structuringData[currState].image} alt="pic" />
-          <div className="button-section">
-            {currState > 0 ? <button onClick={buttonHandler(-1)}>Prev</button> : <p></p>}
+          <img className={'guide-image'} src={structuringData[currState].image} alt={'pic'} />
+          <div className={'button-section'}>
+            {currState > 0 ? <button onClick={buttonHandler(-1)}>{'Prev'}</button> : <p />}
             <button onClick={currState === 3 ? toggle : buttonHandler(1)}>
               {currState === 3 ? 'Done' : 'Next'}
             </button>
           </div>
         </div>
       </div>
-      <div onClick={toggle} className="memory-game-backdrop" />
-    </Fragment>
+      <div className={'memory-game-backdrop'} onClick={toggle} />
+    </>
   );
-};
+}
 
 export default Modal;

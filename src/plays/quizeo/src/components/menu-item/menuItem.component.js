@@ -4,14 +4,14 @@ import { displayQuestionComponent, isClicked } from '../../redux/questions/quest
 
 import './menu-item.styles.css';
 
-const MenuItem = ({ title, imageUrl, linkUrl }) => {
+function MenuItem({ title, imageUrl, linkUrl }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="menu-item">
-      <div className="image-container" style={{ backgroundImage: `url(${imageUrl})` }} />
+    <div className={'menu-item'}>
+      <div className={'image-container'} style={{ backgroundImage: `url(${imageUrl})` }} />
       <div
-        className="image-content"
+        className={'image-content'}
         onClick={() => {
           dispatch(displayQuestionComponent(linkUrl));
           dispatch(isClicked());
@@ -21,6 +21,6 @@ const MenuItem = ({ title, imageUrl, linkUrl }) => {
       </div>
     </div>
   );
-};
+}
 
 export default MenuItem;

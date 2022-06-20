@@ -5,7 +5,7 @@ import Questions from '../../components/questions/questions.component';
 
 import '../../quizeo.css';
 
-const MoviePage = ({ categoryId }) => {
+function MoviePage({ categoryId }) {
   console.log(categoryId);
   const collection = useSelector(selectMovieDataSection(categoryId));
   return (
@@ -13,6 +13,6 @@ const MoviePage = ({ categoryId }) => {
       <Questions collection={collection} />
     </div>
   );
-};
+}
 
 export default MoviePage;

@@ -1,36 +1,37 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ScoreModel } from '../../pages/score-page/score.component';
-import { addScore, showModel } from '../../redux/questions/questions-action';
-import { increaseQuestionNo } from '../../redux/questions/questions-action';
+import { addScore, showModel, increaseQuestionNo } from '../../redux/questions/questions-action';
 import { selectQuestionNo, selectHiddenState } from '../../redux/movie/movieSelector';
 
 import './questions.styles.css';
 
-const Questions = (collection) => {
+function Questions(collection) {
   const counter = useSelector(selectQuestionNo);
   const hidden = useSelector(selectHiddenState);
   const dispatch = useDispatch();
   let obj;
   return (
-    <div className="question-container">
+    <div className={'question-container'}>
       {Object.keys(collection).map((item, i) => (
         <div className={`${hidden ? '' : 'question-background'} question-model`}>
           {/* movie title */}
-          <p className="category-title">
-            <span className="title">{collection[item].title}</span>
+          <p className={'category-title'}>
+            <span className={'title'}>{collection[item].title}</span>
           </p>
-          <div className="questions-section">
+          <div className={'questions-section'}>
             {/* question */}
-            <p className="question-title">
-              {counter + 1}.{collection[item].questions[counter].question}
+            <p className={'question-title'}>
+              {counter + 1}
+              {'.'}
+              {collection[item].questions[counter].question}
             </p>
 
             {/* options */}
-            <div className="options-section">
+            <div className={'options-section'}>
               {Object.keys(collection[item].questions[counter].options).map((option, i) => (
                 <button
-                  className="option-button"
+                  className={'option-button'}
                   value={collection[item].questions[counter].options[option]}
                   // eslint-disable-next-line no-undef
                   onClick={(e) => {
@@ -43,27 +44,27 @@ const Questions = (collection) => {
                   {collection[item].questions[counter].options[option]}
                 </button>
               ))}
-              <br></br>
+              <br />
               {counter === collection[item].questions.length - 1 ? (
                 <button
-                  className="submit-answer"
+                  className={'submit-answer'}
                   onClick={() => {
                     dispatch(addScore(obj));
                     dispatch(showModel());
                   }}
                 >
-                  submit
+                  {'submit'}
                 </button>
               ) : (
                 <button
-                  type="button"
-                  className="submit-answer"
+                  type={'button'}
+                  className={'submit-answer'}
                   onClick={() => {
                     dispatch(addScore(obj));
                     dispatch(increaseQuestionNo());
                   }}
                 >
-                  Next
+                  {'Next'}
                 </button>
               )}
             </div>
@@ -73,6 +74,6 @@ const Questions = (collection) => {
       {hidden ? null : <ScoreModel questionNo={counter} />}
     </div>
   );
-};
+}
 
 export default Questions;
