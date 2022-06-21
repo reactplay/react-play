@@ -24,6 +24,7 @@ import {
   DynamicRoutes,
   SimpleLiveChat,
   FlipCardEffect,
+  ContextWithRealUsecases,
   //import play here
 } from "plays";
 
@@ -421,6 +422,22 @@ export const plays = [
     path: "/plays/flip-card-effect",
     level: "Beginner",
     tags: "useState-hook, jsx, flip-card-effect, transform-rotate",
+    github: "Deepak8717",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "js",
+  },
+  {
+    id: "pl-context-with-real-usecases",
+    name: "Context-with-Real-Usecases",
+    description: "",
+    component: () => {
+      return <ContextWithRealUsecases />;
+    },
+    path: "/plays/context-with-real-usecases",
+    level: "Intermediate",
+    tags: "contextAPI,useContext-hook,react-context",
     github: "Deepak8717",
     cover: "",
     blog: "",
