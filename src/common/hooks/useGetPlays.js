@@ -45,7 +45,8 @@ const useGetPlays = () => {
         if (hasSearchTerm) {
           res = await submit(filterPlaysBySearchString({ name: searchTerm }));
         } else if (hasFilterQuery) {
-          res = await submit(filterMultiTagsPayload());
+          const payload = filterMultiTagsPayload();
+          res = await submit(payload);
         } else {
           res = await submit(FetchPlaysSimple[0]);
         }
@@ -56,7 +57,7 @@ const useGetPlays = () => {
       setLoading(false);
     };
     fetchPlays();
-  }, [hasSearchTerm, hasFilterQuery]);
+  }, [hasSearchTerm, hasFilterQuery, searchTerm, filterQuery]);
 
   return [loading, error, plays];
 };

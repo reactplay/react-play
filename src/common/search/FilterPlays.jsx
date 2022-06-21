@@ -10,7 +10,7 @@ import useFetchFilterData from "./hooks/usePlayFilter";
 
 const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   const [loading, error, data] = useFetchFilterData();
-  const {tags, levels, creators} = data
+  const {tags, levels, creators} = data;
 
   const languages = ["js", "ts"];
 
