@@ -10,6 +10,7 @@ const FeaturedPlays = () => {
         Trending <strong>Plays</strong>
       </h3>
       <ul className='list-plays'>
+        {error && <p>{error?.message ?? "Something went wrong"}</p>}
         {data?.map((play, index) => (
           <PlayThumbnail key={play.id} play={play} />
         ))}

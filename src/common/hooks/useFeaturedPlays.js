@@ -1,3 +1,5 @@
+// THIS HOOK GETS THE FEATURED PLAY FROM THE BACKEND AND RETURNS IT
+
 import { useEffect, useState } from "react";
 import { submit } from "common/services/request";
 import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
@@ -15,12 +17,12 @@ const useFeaturedPlays = () => {
         const res = await submit(getAllFeaturedPlays());
         setData(res);
       } catch (err) {
-        setError(err);
+        setError(err?.[0]);
       } finally {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [getAllFeaturedPlays]);
 
   return [loading, error, data];
 };

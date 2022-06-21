@@ -68,7 +68,7 @@ export const submit = (request, url, reqheder) => {
       } catch (err) {}
     })
     .catch((error) => {
-      return error;
+      return Promise.reject(error);
     })
     .finally(() => {});
 };
