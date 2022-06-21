@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-28-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -212,6 +212,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://rafat97.github.io/"><img src="https://avatars.githubusercontent.com/u/21246862?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Emdadul Haque</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Rafat97" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Asterisk-z"><img src="https://avatars.githubusercontent.com/u/56372709?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Olang Daniel</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Asterisk-z" title="Code">💻</a></td>
     <td align="center"><a href="https://supminn-neog.netlify.app/"><img src="https://avatars.githubusercontent.com/u/30731236?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Supriya M</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=supminn" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/yung-coder"><img src="https://avatars.githubusercontent.com/u/94097778?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Saksham chandel</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=yung-coder" title="Code">💻</a></td>
   </tr>
 </table>
 
