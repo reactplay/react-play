@@ -25,6 +25,4 @@ export { default as DynamicRoutes } from "plays/dynamic-routes/DynamicRoutes";
 export { default as Quizeo } from "plays/quizeo/Quizeo";
 export { default as SimpleLiveChat } from 'plays/simple-live-chat/SimpleLiveChat';
 export { default as FlipCardEffect } from 'plays/flip-card-effect/FlipCardEffect';
-export { default as DemoPlay } from 'plays/demoplay/DemoPlay';
-export { default as TypeScriptDemoPlay } from 'plays/typescriptdemoplay/TypeScriptDemoPlay';
 //add export here

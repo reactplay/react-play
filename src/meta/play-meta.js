@@ -26,6 +26,7 @@ import {
   FlipCardEffect,
   DemoPlay,
 TypeScriptDemoPlay,
+Abcd,
 //import play here
 } from "plays";
 
@@ -428,31 +429,6 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
-  }, {
-    id: 'pl-demoplay', 
-    name: 'DemoPlay', 
-    description: 'this is demoy play to test plop templates',
-    component: () => {return <DemoPlay />},
-    path: '/plays/demoplay',
-    level: 'Beginner',
-    tags: 'JSX,Hooks',
-    github: 'Angryman18',
-    cover: '',
-    blog: '',
-    video: '',
-    language: 'js'
-  }, {
-    id: 'pl-typescriptdemoplay', 
-    name: 'TypeScriptDemoPlay', 
-    description: 'demo play in typescript',
-    component: () => {return <TypeScriptDemoPlay />},
-    path: '/plays/typescriptdemoplay',
-    level: 'Beginner',
-    tags: 'JSX,Hooks,Typescript',
-    github: 'Angryman18',
-    cover: '',
-    blog: '',
-    video: '',
-    language: 'ts'
-  }, //replace new play item here
+  },
+   //replace new play item here
 ];
