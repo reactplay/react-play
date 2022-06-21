@@ -423,7 +423,7 @@ export const plays = [
     video: "",
     language: "js",
   }, {
-    id: 'pl-navbar', 
+    id: "pl-navbar", 
     name: 'NavBar', 
     description: 'It is the responsive navbar made with tailwind',
     component: () => {return <NavBar />},
@@ -434,6 +434,6 @@ export const plays = [
     cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1654871439/myimage_140_60_px_260_146_px_dy0ipc.png',
     blog: '',
     video: '',
-    language: 'js'
+    language: 'js',
   }, //replace new play item here
 ];
