@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BACKEND_URL = `${process.env.REACT_APP_NHOST_PROTOCOL}://${process.env.REACT_APP_NHOST_SERVER}/${process.env.REACT_APP_NHOST_VERSION}/${process.env.REACT_APP_NHOST_ENDPOINT}`;
+const BACKEND_URL = `${process.env.REACT_APP_NHOST_BACKEND_URL}/${process.env.REACT_APP_NHOST_VERSION}/${process.env.REACT_APP_NHOST_ENDPOINT}`;
 const header = {
   headers: {
     "Content-Type": "application/json",
