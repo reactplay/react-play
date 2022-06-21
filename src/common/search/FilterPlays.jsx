@@ -14,9 +14,14 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
 
   const languages = ["js", "ts"];
 
+  if (error) {
+    return <p>{error?.message ?? "Something Went Wrong"}</p>
+  }
+
   return (
     <>
       <div className='form-group'>
+        {loading && "Loading Data"}
         <label>Level</label>
         <select
           className='form-control'

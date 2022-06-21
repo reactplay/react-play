@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import PlayHeader from 'common/playlists/PlayHeader';
-import './{{camelCase name}}.{{style}}';
+import './typeScriptDemoPlay.css';
 
-function {{pascalCase name}}(props:any) {
+function TypeScriptDemoPlay(props:any) {
 
   // Your Code Start below.
 
@@ -13,7 +13,7 @@ function {{pascalCase name}}(props:any) {
         <div className="play-details-body">
         {/* Your Code Starts Here */}
           <div>
-            <h1>Play Details -  {{titleCase name}}</h1>
+            <h1>Play Details -  TypeScriptDemoPlay</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Pellentesque euismod, urna eu tincidunt consectetur,
@@ -28,4 +28,4 @@ function {{pascalCase name}}(props:any) {
   );
 }
 
-export default {{pascalCase name}};
+export default TypeScriptDemoPlay;

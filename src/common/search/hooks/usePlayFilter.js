@@ -1,3 +1,5 @@
+// THIS HOOKS GRABS ALL THE FILTERABLE DATA FOR THE MODAL
+
 import { fetchFilterData } from "common/services/request/query/fetch-filter-data";
 import { submit_multi } from "../../services/request";
 import { useEffect, useState } from "react";

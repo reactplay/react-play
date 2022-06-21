@@ -256,7 +256,7 @@ export const FetchPlaysFilter = {
       type: "string",
     }));
 
-    const whereObj = new Object({ operator: "and" });
+    const whereObj = { operator: "and" };
     if (!!clause.length) {
       payload.where = { ...whereObj, clause };
     }

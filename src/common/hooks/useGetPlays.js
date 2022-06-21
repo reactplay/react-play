@@ -1,4 +1,7 @@
-import { useState, useEffect, useContext } from "react";
+// THIS HOOKS GETS ALL THE PLAY AND IN CASE OF FILTER IT GENERATES THE PAYLOAD AND GETS THE
+// ACTUAL DATA FROM THE BACKEND
+
+import { useState, useEffect, useContext, useCallback } from "react";
 import { SearchContext } from "common/search/search-context";
 import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
 import { FetchPlaysSimple } from "common/services/request/query/fetch-plays";
@@ -22,8 +25,8 @@ const useGetPlays = () => {
     filterQuery.creator.length > 0 ||
     filterQuery.language.length > 0;
 
-
-  const filterMultiTagsPayload = () => {
+  // wrapped with useCallback just to bypass the dependency warnings
+  const filterMultiTagsLvlCreatorsPayload = useCallback(() => {
     const { creator, language, level, tags } = filterQuery;
     const buildFieldValueArr = [
       { field: "owner_user_id", value: creator },
@@ -35,29 +38,45 @@ const useGetPlays = () => {
     );
 
     return filterPlaysByMultiTagsLevelLang({ tags, whereClause });
-  };
+  }, [filterPlaysByMultiTagsLevelLang, filterQuery]);
+
+  // wrapped with useCallback just to bypass the dependency warnings
+  const re_filterPlaysBySearchString = useCallback(
+    (Obj) => {
+      return filterPlaysBySearchString(Obj);
+    },
+    [filterPlaysBySearchString]
+  );
+
+  // wrapped with useCallback just to bypass the dependency warnings
+  const fetchPlays = useCallback(async () => {
+    setLoading(true);
+    try {
+      let res = [];
+      if (hasSearchTerm) {
+        res = await submit(re_filterPlaysBySearchString({ name: searchTerm }));
+      } else if (hasFilterQuery) {
+        const payload = filterMultiTagsLvlCreatorsPayload();
+        res = await submit(payload);
+      } else {
+        res = await submit(FetchPlaysSimple[0]);
+      }
+      setPlays(res);
+    } catch (error) {
+      setError(error);
+    }
+    setLoading(false);
+  }, [
+    hasSearchTerm,
+    hasFilterQuery,
+    searchTerm,
+    filterMultiTagsLvlCreatorsPayload,
+    re_filterPlaysBySearchString,
+  ]);
 
   useEffect(() => {
-    const fetchPlays = async () => {
-      setLoading(true);
-      try {
-        let res = [];
-        if (hasSearchTerm) {
-          res = await submit(filterPlaysBySearchString({ name: searchTerm }));
-        } else if (hasFilterQuery) {
-          const payload = filterMultiTagsPayload();
-          res = await submit(payload);
-        } else {
-          res = await submit(FetchPlaysSimple[0]);
-        }
-        setPlays(res);
-      } catch (error) {
-        setError(error);
-      }
-      setLoading(false);
-    };
     fetchPlays();
-  }, [hasSearchTerm, hasFilterQuery, searchTerm, filterQuery]);
+  }, [fetchPlays]);
 
   return [loading, error, plays];
 };
