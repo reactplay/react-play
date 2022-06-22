@@ -1,8 +1,11 @@
-// THIS HOOK GETS THE FEATURED PLAY FROM THE BACKEND AND RETURNS IT
-
 import { useEffect, useState } from "react";
 import { submit } from "common/services/request";
 import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
+
+/**
+ * run graphql query to retrive featured plays
+ * @returns [loading, error, data]
+ */
 
 const useFeaturedPlays = () => {
   const { getAllFeaturedPlays } = FetchPlaysFilter;

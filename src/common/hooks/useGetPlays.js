@@ -1,12 +1,14 @@
-// THIS HOOKS GETS ALL THE PLAY AND IN CASE OF FILTER IT GENERATES THE PAYLOAD AND GETS THE
-// ACTUAL DATA FROM THE BACKEND
-
 import { useState, useEffect, useContext, useCallback } from "react";
 import { SearchContext } from "common/search/search-context";
 import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
 import { FetchPlaysSimple } from "common/services/request/query/fetch-plays";
 
 import { submit } from "common/services/request";
+
+/**
+ * Run graphql query to filter plays
+ * @returns [loading, error, plays]
+ */
 
 const useGetPlays = () => {
   const [loading, setLoading] = useState(true);
@@ -20,27 +22,15 @@ const useGetPlays = () => {
 
   const hasSearchTerm = searchTerm.length > 0;
   const hasFilterQuery =
-    filterQuery.level.length > 0 ||
+    filterQuery.level_id.length > 0 ||
     filterQuery.tags.length > 0 ||
-    filterQuery.creator.length > 0 ||
+    filterQuery.owner_user_id.length > 0 ||
     filterQuery.language.length > 0;
 
-  // wrapped with useCallback just to bypass the dependency warnings
-  const filterMultiTagsLvlCreatorsPayload = useCallback(() => {
-    const { creator, language, level, tags } = filterQuery;
-    const buildFieldValueArr = [
-      { field: "owner_user_id", value: creator },
-      { field: "language", value: language },
-      { field: "level_id", value: level },
-    ];
-    const whereClause = buildFieldValueArr.filter(
-      (item) => !!item.value.length
-    );
+  const re_filterPlaysByMultiTagsLevelLang = useCallback((filterQuery) => {
+    return filterPlaysByMultiTagsLevelLang(filterQuery)
+  },[filterPlaysByMultiTagsLevelLang])
 
-    return filterPlaysByMultiTagsLevelLang({ tags, whereClause });
-  }, [filterPlaysByMultiTagsLevelLang, filterQuery]);
-
-  // wrapped with useCallback just to bypass the dependency warnings
   const re_filterPlaysBySearchString = useCallback(
     (Obj) => {
       return filterPlaysBySearchString(Obj);
@@ -48,7 +38,6 @@ const useGetPlays = () => {
     [filterPlaysBySearchString]
   );
 
-  // wrapped with useCallback just to bypass the dependency warnings
   const fetchPlays = useCallback(async () => {
     setLoading(true);
     try {
@@ -56,7 +45,7 @@ const useGetPlays = () => {
       if (hasSearchTerm) {
         res = await submit(re_filterPlaysBySearchString({ name: searchTerm }));
       } else if (hasFilterQuery) {
-        const payload = filterMultiTagsLvlCreatorsPayload();
+        const payload = re_filterPlaysByMultiTagsLevelLang(filterQuery);
         res = await submit(payload);
       } else {
         res = await submit(FetchPlaysSimple[0]);
@@ -70,8 +59,9 @@ const useGetPlays = () => {
     hasSearchTerm,
     hasFilterQuery,
     searchTerm,
-    filterMultiTagsLvlCreatorsPayload,
+    filterQuery,
     re_filterPlaysBySearchString,
+    re_filterPlaysByMultiTagsLevelLang
   ]);
 
   useEffect(() => {

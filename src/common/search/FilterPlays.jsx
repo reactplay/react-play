@@ -26,9 +26,9 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <select
           className='form-control'
           onChange={(event) =>
-            setFilterQuery({ ...filterQuery, level: event.target.value })
+            setFilterQuery({ ...filterQuery, level_id: event.target.value })
           }
-          value={filterQuery.level}
+          value={filterQuery.level_id}
         >
           <option value=''>All</option>
           {levels?.map((level) => (
@@ -63,9 +63,9 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <select
           className='form-control'
           onChange={(event) =>
-            setFilterQuery({ ...filterQuery, creator: event.target.value })
+            setFilterQuery({ ...filterQuery, owner_user_id: event.target.value })
           }
-          value={filterQuery.creator}
+          value={filterQuery.owner_user_id}
         >
           <option value=''>All</option>
           {creators?.map((creator) => (
@@ -128,9 +128,9 @@ const FilterPlays = () => {
   const { setFilterQuery, filterQuery } = useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
-    level: "",
+    level_id: "",
     tags: [],
-    creator: "",
+    owner_user_id: "",
     language: "",
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
@@ -139,15 +139,15 @@ const FilterPlays = () => {
     if (action === "POP") {
       console.log("POP");
       setModifiedFilterQuery({
-        level: "",
+        level_id: "",
         tags: [],
-        creator: "",
+        owner_user_id: "",
         language: "",
       });
       setFilterQuery({
-        level: "",
+        level_id: "",
         tags: [],
-        creator: "",
+        owner_user_id: "",
         language: "",
       });
       setnoOfAppliedFilter(0);
@@ -155,15 +155,15 @@ const FilterPlays = () => {
     if (action === "PUSH") {
       console.log("PUSH");
       setModifiedFilterQuery({
-        level: "",
+        level_id: "",
         tags: [],
-        creator: "",
+        owner_user_id: "",
         language: "",
       });
       setFilterQuery({
-        level: "",
+        level_id: "",
         tags: [],
-        creator: "",
+        owner_user_id: "",
         language: "",
       });
     }

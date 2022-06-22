@@ -5,6 +5,11 @@ import { submit_multi } from "../../services/request";
 import { useEffect, useState } from "react";
 import { getAllTags as extractTags } from "meta/play-meta-util";
 
+/**
+ * run graphql query to retrive filterable data like creators, tags, level
+ * @returns [loading, error, data]
+ */
+
 const useFetchFilterData = () => {
   const { getAllTags, getAllLevels, getAllUsers } = fetchFilterData;
 

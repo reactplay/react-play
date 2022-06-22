@@ -5,7 +5,6 @@ export const FetchPlaysFilter = {
       display: "Filter all the featured plays",
       name: "Fetch_Plays",
       function: "plays",
-      write: false,
       params: [
         "blog",
         "component",
@@ -43,7 +42,6 @@ export const FetchPlaysFilter = {
       display: "Filter Plays by a search string in name or description",
       name: "Fetch_Plays",
       function: "plays",
-      write: false,
       params: [
         "blog",
         "component",
@@ -87,7 +85,6 @@ export const FetchPlaysFilter = {
       display: "Filter Plays by Level",
       name: "Fetch_Plays",
       function: "plays",
-      write: false,
       params: [
         "blog",
         "component",
@@ -125,7 +122,6 @@ export const FetchPlaysFilter = {
     display: "Alternatively using the id",
     name: "Fetch_Plays",
     function: "plays",
-    write: false,
     params: [
       "blog",
       "component",
@@ -162,7 +158,6 @@ export const FetchPlaysFilter = {
       display: "Filter plays by level, user and language",
       name: "Fetch_Plays",
       function: "plays",
-      write: false,
       params: [
         "blog",
         "component",
@@ -209,25 +204,17 @@ export const FetchPlaysFilter = {
     };
   },
   // Filter plays by level, user, language, and multiple tags
+  /**
+   *
+   * @param {object} Obj filterQuery Object
+   * @returns payload
+   */
   filterPlaysByMultiTagsLevelLang: (Obj) => {
     const payload = {
       display: "Filter plays by level, user, language, and multiple tags",
       name: "Fetch_Plays",
       function: "plays",
-      write: false,
       params: [
-        "blog",
-        "component",
-        "cover",
-        "created_at",
-        "description",
-        "featured",
-        "github",
-        "id",
-        "language",
-        { level: ["name"] },
-        "name",
-        "path",
         !!Obj?.tags.length
           ? {
               play_tags: { tag: ["name"] },
@@ -243,23 +230,38 @@ export const FetchPlaysFilter = {
               },
             }
           : { play_tags: { tag: ["name"] } },
+        "blog",
+        "component",
+        "cover",
+        "created_at",
+        "description",
+        "featured",
+        "github",
+        "id",
+        "language",
+        { level: ["name"] },
+        "name",
+        "path",
         "updated_at",
         { user: ["id", "displayName", "avatarUrl"] },
         "video",
       ],
     };
 
-    const clause = Obj?.whereClause.map((item) => ({
-      field: item.field,
-      operator: "eq",
-      value: item.value,
-      type: "string",
-    }));
+    const { tags, ...rest } = Obj;
+    const clause = { operator: "and", clause: [] };
+    Object.keys(rest).forEach((key) => {
+      if (rest[key].length > 0) {
+        clause.clause.push({
+          field: key,
+          operator: "eq",
+          value: rest[key],
+          type: "string",
+        });
+      }
+    });
 
-    const whereObj = { operator: "and" };
-    if (!!clause.length) {
-      payload.where = { ...whereObj, clause };
-    }
+    if (!!clause.clause.length) payload.where = clause;
     return payload;
   },
 };

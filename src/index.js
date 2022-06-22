@@ -16,9 +16,9 @@ if (process.env.NODE_ENV !== "development") {
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterQuery, setFilterQuery] = useState({
-    level: "",
+    level_id: "",
     tags: [],
-    creator: "",
+    owner_user_id: "",
     language: "",
   });
 
