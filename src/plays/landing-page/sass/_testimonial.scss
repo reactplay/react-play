@@ -1,0 +1,80 @@
+.innerdiv {
+  margin-top: 5rem;
+  padding: 1rem;
+}
+.div1 {
+  position: relative;
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 20;
+}
+
+.quotation {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-image: url("../quote-svgrepo-com.svg");
+  background-repeat: no-repeat;
+  width: 10rem;
+  height: 8rem;
+  z-index: -10;
+}
+
+.userdetails {
+	display: flex;
+}
+
+.imgbox {
+	margin-right: 1rem;
+}
+
+.imgbox img {
+	border-radius: 50%;
+	width: 4rem;
+	height: 4rem;
+	border: 2px solid #cec5c5;
+}
+
+.detbox {
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detbox p {
+	margin: 0;
+}
+
+.detbox .name {
+  color: #475569;
+  font-size: 0.9rem;
+  margin-bottom: 0.1rem;
+  font-weight: 600;
+}
+
+
+.detbox .designation {
+	color: #64748b;
+  font-size: 0.8rem;
+}
+
+.review {
+  margin-top: 1rem;
+}
+
+.review h4 {
+	font-size: 1.2rem;
+	color: #475569;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+
+.review p {
+	font-size: 0.95rem;
+  color: #64748b;
+  font-weight: 500;
+  line-height: 1.5;
+}
