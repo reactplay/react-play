@@ -1,5 +1,5 @@
 # Cryptocurrency Tracker
-
+With this application the user can get updates about different cryptocurrencies. Also the user can search any currency they want using the search bar.
 
 
 ## Play Demographic
