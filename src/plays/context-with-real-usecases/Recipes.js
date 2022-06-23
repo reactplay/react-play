@@ -13,7 +13,7 @@ const Recipes = [
     recipe: {
       url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Biryani_of_Lahore.jpg/640px-Biryani_of_Lahore.jpg",
       title: "Biryani",
-      vegan: "vegan",
+      vegan: "veg",
       mealtype: "lunch",
       cusine: "Indian",
       price: "15",
@@ -23,7 +23,7 @@ const Recipes = [
     recipe: {
       url: "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/dal-makhani-how-to-make-dal-makhani-2258046.jpg",
       title: "Dal Makhani",
-      vegan: "vegan",
+      vegan: "veg",
       mealtype: "Dinner",
       cusine: "Indian",
       price: "12",
@@ -33,7 +33,7 @@ const Recipes = [
     recipe: {
       url: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/10/9/DV3016_masala-dosa_s4x3.jpg.rend.hgtvcom.406.305.suffix/1570635680579.jpeg",
       title: "Dosha",
-      vegan: "vegan",
+      vegan: "veg",
       mealtype: "Breakfast",
       cusine: "Indian",
       price: "16",
@@ -53,7 +53,7 @@ const Recipes = [
     recipe: {
       url: "https://previews.123rf.com/images/iphotoshot/iphotoshot1203/iphotoshot120300010/12882609-disk-of-soybean-milk-and-deep-fried-dough-stick-for-breakfast.jpg",
       title: "Soybean Milk and Deep-Fried Dough Sticks",
-      vegan: "vegan",
+      vegan: "veg",
       mealtype: "Lunch",
       cusine: "Chinese",
       price: "10",
@@ -73,7 +73,7 @@ const Recipes = [
     recipe: {
       url: "http://www.ecns.cn/2016/03-16/U472P886T1D203169F12DT20160316132624.jpg",
       title: "Latito",
-      vegan: "Vegan",
+      vegan: "veg",
       mealtype: "snack",
       cusine: "Chinese",
       price: "8",

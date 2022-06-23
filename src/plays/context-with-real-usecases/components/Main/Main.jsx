@@ -1,6 +1,11 @@
 import Menu from "../Menu";
 import RecipeGrid from "./RecipeGrid";
-const Main = ({ activeCuisine, activeCuisineHandler, uniqCuisines }) => {
+const Main = ({
+  activeCuisine,
+  activeCuisineHandler,
+  uniqCuisines,
+  recipesByCusine,
+}) => {
   return (
     <div className="main-container">
       <Menu
@@ -8,7 +13,7 @@ const Main = ({ activeCuisine, activeCuisineHandler, uniqCuisines }) => {
         activeCuisineHandler={activeCuisineHandler}
         uniqCuisines={uniqCuisines}
       />
-      <RecipeGrid />
+      <RecipeGrid recipesByCusine={recipesByCusine} />
     </div>
   );
 };

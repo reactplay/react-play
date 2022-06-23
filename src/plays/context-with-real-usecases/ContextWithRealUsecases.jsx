@@ -29,7 +29,6 @@ function ContextWithRealUsecases(props) {
   const recipesByCusine = Recipes.filter(
     (item) => item.recipe.cusine === activeCuisine
   );
-  console.log(recipesByCusine);
   return (
     <>
       <div className="play-details">
@@ -54,6 +53,7 @@ function ContextWithRealUsecases(props) {
                 activeCuisine={activeCuisine}
                 activeCuisineHandler={activeCuisineHandler}
                 uniqCuisines={uniqCuisines}
+                recipesByCusine={recipesByCusine}
               />
             )}
           </div>

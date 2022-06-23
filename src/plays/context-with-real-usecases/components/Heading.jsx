@@ -13,7 +13,7 @@ const Heading = ({ activeCuisine }) => {
           recipes
         </>
       )}
-      <CuisineModal />
+      {activeCuisine && <CuisineModal />}
     </div>
   );
 };
