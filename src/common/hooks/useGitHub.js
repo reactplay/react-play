@@ -1,6 +1,10 @@
-
-
 import { useState, useEffect } from 'react';
+
+/**
+ * Fetches the github api to get info about the user
+ * @param {string} github github username
+ * @returns { data, error, isLoading }
+ */
 
 const useGitHub = (github) => {
   const [data, setData] = useState();

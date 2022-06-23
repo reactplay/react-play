@@ -28,7 +28,12 @@ const RouteDefs = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/plays' element={<App />}>
-            <Route index element={<PlayList plays={success ? plays : []} />} />
+            <Route
+              index
+              element={
+                <PlayList loading={loading} plays={success ? plays : []} />
+              }
+            />
             {success &&
               plays?.map((play, index) => (
                 <Route
