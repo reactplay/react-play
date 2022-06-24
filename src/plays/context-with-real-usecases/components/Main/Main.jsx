@@ -1,19 +1,10 @@
 import Menu from "../Menu";
 import RecipeGrid from "./RecipeGrid";
-const Main = ({
-  activeCuisine,
-  activeCuisineHandler,
-  uniqCuisines,
-  recipesByCusine,
-}) => {
+const Main = () => {
   return (
     <div className="main-container">
-      <Menu
-        activeCuisine={activeCuisine}
-        activeCuisineHandler={activeCuisineHandler}
-        uniqCuisines={uniqCuisines}
-      />
-      <RecipeGrid recipesByCusine={recipesByCusine} />
+      <Menu />
+      <RecipeGrid />
     </div>
   );
 };

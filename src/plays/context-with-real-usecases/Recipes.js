@@ -7,6 +7,7 @@ const Recipes = [
       mealtype: "snacks",
       cusine: "Indian",
       price: "20",
+      randomfact: "India is the Spice Capital of the World",
     },
   },
   {
@@ -17,6 +18,8 @@ const Recipes = [
       mealtype: "lunch",
       cusine: "Indian",
       price: "15",
+      randomfact:
+        "As per Ayurveda, India’s ancient medicinal system, there are three primary categories of food – Satvic, Rajasic and Tamasic.",
     },
   },
   {
@@ -27,6 +30,8 @@ const Recipes = [
       mealtype: "Dinner",
       cusine: "Indian",
       price: "12",
+      randomfact:
+        "India is home to bhot jolokia, one of the hottest chillies in the world. Also called “ghost chilli”, ",
     },
   },
   {
@@ -37,6 +42,7 @@ const Recipes = [
       mealtype: "Breakfast",
       cusine: "Indian",
       price: "16",
+      randomfact: "Indian people use their hands to eat",
     },
   },
   {
@@ -47,6 +53,7 @@ const Recipes = [
       mealtype: "Lunch",
       cusine: "Chinese",
       price: "14",
+      randomfact: "China is the homeland of tea.",
     },
   },
   {
@@ -57,6 +64,8 @@ const Recipes = [
       mealtype: "Lunch",
       cusine: "Chinese",
       price: "10",
+      randomfact:
+        "Chinese don't eat with knives and forks, traditionally, which is seen as violent or barbaric, but with chopsticks",
     },
   },
   {
@@ -67,6 +76,8 @@ const Recipes = [
       mealtype: "Dinner",
       cusine: "Chinese",
       price: "18",
+      randomfact:
+        "Fortune Cookie was invented in California, as a variation of Japanese “omikuji senbei” fortune cookies. The main difference of Fortune Cookies is that they are much sweeter than Japanese variant.",
     },
   },
   {
@@ -77,6 +88,8 @@ const Recipes = [
       mealtype: "snack",
       cusine: "Chinese",
       price: "8",
+      randomfact:
+        "Ancient Chinese were very interested in food preservation methods",
     },
   },
   {
@@ -87,6 +100,7 @@ const Recipes = [
       mealtype: "breakfast",
       cusine: "French",
       price: "18",
+      randomfact: "French fries… are not French!",
     },
   },
   {
@@ -97,6 +111,8 @@ const Recipes = [
       mealtype: "Lunch",
       cusine: "French",
       price: "25",
+      randomfact:
+        "Approximately 500,000,000 snails are eaten in France per year",
     },
   },
   {
@@ -107,6 +123,8 @@ const Recipes = [
       mealtype: "Dinner",
       cusine: "French",
       price: "30",
+      randomfact:
+        "French people love alcohol so much that they drink some before and after the meal",
     },
   },
   {
@@ -117,6 +135,7 @@ const Recipes = [
       mealtype: "breakfast",
       cusine: "Italian",
       price: "30",
+      randomfact: "Pizza was invented in Italy, in Naples",
     },
   },
   {
@@ -127,6 +146,8 @@ const Recipes = [
       mealtype: "Dinner",
       cusine: "Italian",
       price: "25",
+      randomfact:
+        "An Italian eat an average of 23 kg (51 lbs) of pasta per year",
     },
   },
 ];
