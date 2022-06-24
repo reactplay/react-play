@@ -17,26 +17,26 @@ const Header = () => {
 
   useEffect(() => {
     if (pathName === "/") {
-      setShowHideBits({
-        ...showHideBits,
+      setShowHideBits((prev)=>({
+        ...prev,
         showSearch: false,
         showBrowse: true,
         setHeaderStyle: false,
-      });
+      }));
     } else if (pathName === "/ideas") {
-      setShowHideBits({
-        ...showHideBits,
+      setShowHideBits((prev) => ({
+        ...prev,
         showSearch: false,
         showBrowse: true,
         setHeaderStyle: true,
-      });
+      }));
     } else if (pathName === "/plays") {
-      setShowHideBits({
-        ...showHideBits,
+      setShowHideBits((prev) => ({
+        ...prev,
         showSearch: true,
         showBrowse: false,
         setHeaderStyle: true,
-      });
+      }));
     }
   }, [pathName]);
 
