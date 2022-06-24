@@ -215,21 +215,6 @@ export const FetchPlaysFilter = {
       name: "Fetch_Plays",
       function: "plays",
       params: [
-        !!Obj?.tags.length
-          ? {
-              play_tags: { tag: ["name"] },
-              where: {
-                operator: "or",
-                class: "tag",
-                clause: Obj?.tags?.map((item) => ({
-                  field: "id",
-                  operator: "eq",
-                  value: item,
-                  type: "string",
-                })),
-              },
-            }
-          : { play_tags: { tag: ["name"] } },
         "blog",
         "component",
         "cover",
@@ -242,22 +227,32 @@ export const FetchPlaysFilter = {
         { level: ["name"] },
         "name",
         "path",
+        { play_tags: { tag: ["name"] } },
         "updated_at",
         { user: ["id", "displayName", "avatarUrl"] },
         "video",
       ],
     };
 
-    const { tags, ...rest } = Obj;
     const clause = { operator: "and", clause: [] };
-    Object.keys(rest).forEach((key) => {
-      if (rest[key].length > 0) {
-        clause.clause.push({
-          field: key,
+    Object.keys(Obj).forEach((key) => {
+      const keyName = Obj[key];
+      if (keyName.length > 0) {
+        
+        const ifTags = key === "tags";
+
+        const prepareObject = {
+          field: ifTags ? "id" : key,
           operator: "eq",
-          value: rest[key],
+          value: ifTags ? keyName[0] : keyName,
           type: "string",
-        });
+        };
+
+        if (ifTags) {
+          prepareObject.class = "tag";
+          prepareObject.node = "play_tags";
+        }
+        clause.clause.push(prepareObject);
       }
     });
 

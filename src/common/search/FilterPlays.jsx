@@ -99,11 +99,11 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
 const getAppliedFilter = (filterObject) => {
   //for single filter to check whether filter has been applied
   const noOfLevelsApplied =
-    filterObject?.level !== undefined && filterObject.level.trim() !== ""
+    filterObject?.level_id !== undefined && filterObject.level_id.trim() !== ""
       ? 1
       : 0;
   const noOfcreatorsApplied =
-    filterObject.creator !== undefined && filterObject.creator.trim() !== ""
+    filterObject.owner_user_id !== undefined && filterObject.owner_user_id.trim() !== ""
       ? 1
       : 0;
   const noOfLanguageApplied =

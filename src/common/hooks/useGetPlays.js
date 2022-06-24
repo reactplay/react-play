@@ -28,7 +28,9 @@ const useGetPlays = () => {
     filterQuery.language.length > 0;
 
   const re_filterPlaysByMultiTagsLevelLang = useCallback((filterQuery) => {
-    return filterPlaysByMultiTagsLevelLang(filterQuery)
+    const callIt = filterPlaysByMultiTagsLevelLang(filterQuery)
+    console.log(callIt)
+    return callIt
   },[filterPlaysByMultiTagsLevelLang])
 
   const re_filterPlaysBySearchString = useCallback(
