@@ -10,9 +10,9 @@ const Header = () => {
   const pathName = location.pathname;
 
   const [showHideBits, setShowHideBits] = useState({
-    showSearch: true,
+    showSearch: false,
     showBrowse: false,
-    setHeaderStyle: true,
+    setHeaderStyle: false,
   });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Header = () => {
         showBrowse: true,
         setHeaderStyle: true,
       });
-    } else {
+    } else if (pathName === "/plays") {
       setShowHideBits({
         ...showHideBits,
         showSearch: true,
@@ -42,11 +42,9 @@ const Header = () => {
 
   return (
     <header
-      className={
-        showHideBits.setHeaderStyle
-          ? "app-header"
-          : "app-header app-header-home"
-      }
+      className={`app-header ${
+        showHideBits.setHeaderStyle ? "" : " app-header-home"
+      }`}
     >
       <span>
         <Link to="/" className="app-logo">
