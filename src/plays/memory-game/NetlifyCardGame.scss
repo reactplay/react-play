@@ -1,0 +1,140 @@
+$memory-game-box-width: 50%;
+
+$memory-game-single-item-img: url("./question.png");
+$memory-game-single-item-bg: rgb(241, 239, 239);
+
+$memory-game-single-item-hover: rgba(59, 154, 156, 1);
+$memory-game-single-item-hover-bg: url("./question1.png");
+
+.memory-game .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: unset;
+}
+
+.memory-game .guide {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  color: #1f6ed4;
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+
+  p {
+    cursor: pointer;
+    display: inline;
+  }
+}
+
+.memory-game .container .App {
+  margin: 5px;
+  width: $memory-game-box-width;
+  height: calc(90vh - 25px);
+  display: grid;
+  padding: 25px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+
+  .item {
+    position: relative;
+    width: 100%;
+    background: $memory-game-single-item-bg;
+    border-radius: 10px;
+    background-image: $memory-game-single-item-img;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 100ms ease-out;
+
+    .img-container {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(240, 240, 240);
+      border-radius: 10px;
+      display: none;
+    }
+
+    .shown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .item-img {
+        width: 60%;
+        animation: picAppear 0.5s ease-out forwards;
+      }
+
+      @keyframes picAppear {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 60%;
+        }
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    &:hover {
+      background-color: $memory-game-single-item-hover;
+      background-image: $memory-game-single-item-hover-bg;
+      cursor: pointer;
+    }
+  }
+  .footer {
+    grid-column: 1/5;
+    .reset {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+      outline: none;
+      font-size: 1rem;
+      cursor: pointer;
+      &:hover {
+        color: white;
+        background-color: black;
+        transition: all 100ms ease-out;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .memory-game .container .App {
+    width: 80vh;
+    margin: 5px;
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .memory-game .container .App {
+    width: 80vh;
+    height: 70vh;
+    margin: 5px;
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .memory-game .container .App {
+    margin: 5px;
+    width: calc(100vh - 35px);
+    height: auto;
+
+    .item {
+      height: 90px;
+      border-radius: 10px;
+    }
+  }
+}

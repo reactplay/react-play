@@ -1,0 +1,72 @@
+.tic-tac-toe-tj .container {
+    width: initial;
+    max-width: unset;
+    text-align: center;
+}
+
+
+.tic-tac-toe-tj .squareButton{
+    width: 5rem;
+    height: 5rem;
+    margin: 1px;
+    background-color: #EC4899;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    font: bold;
+    font-size: 32px;
+    color: white;
+}
+.tic-tac-toe-tj .squareButton:hover{
+    background-color: #10B981;
+}
+.tic-tac-toe-tj .row{
+    display: flex;
+}
+.tic-tac-toe-tj .jumpButton{
+    padding: 0.5rem 1rem;
+    background-color: #10B981;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+.tic-tac-toe-tj .bg-yellow-500{
+    background-color: #f59e0b;
+}
+.tic-tac-toe-tj .jumpButton:hover{
+    background-color: #EC4899;
+}
+.tic-tac-toe-tj .list{
+    margin-top: 1rem;
+}
+.tic-tac-toe-tj .status{
+    margin-top: 1rem;
+    font-size: 24px;
+}
+.tic-tac-toe-tj .header{
+    width: 100%;
+    padding: 16px 8px;
+    color: white;
+    font-size: 24px;
+    
+    display: grid;
+    place-content: center;
+
+    background-color: #010326;
+    margin-bottom: 2rem;
+}
+
+.tic-tac-toe-tj .boardMain{
+    display: grid;
+    place-content: center;
+}

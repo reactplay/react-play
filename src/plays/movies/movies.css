@@ -1,0 +1,39 @@
+li {
+  list-style: none;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.movie {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie img {
+  max-width: unset;
+  height: unset;
+ align-self: center;
+}
+
+

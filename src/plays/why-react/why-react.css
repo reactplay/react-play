@@ -1,0 +1,14 @@
+.why-react .heading {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: rgb(29, 91, 223)
+}
+
+.why-react .paragraph {
+  margin-bottom: 1rem;
+}
+
+.why-react .list {
+  margin: 1rem 0 0 1rem;
+}

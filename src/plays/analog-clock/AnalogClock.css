@@ -1,0 +1,88 @@
+.clock-play-heading {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.clock {
+  max-width: 375px;
+  height: 375px;
+  border: 10px solid #e6e6e6;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  background-color: #3d3d3d;
+  box-shadow: inset 0px 6px 0px 2px #646262, -4px 4px 1px 0px #959393,
+    0px 0px 1px 2px #959393, -4px 4px 7px 1px #434343;
+}
+.clock::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  top: 49%;
+  left: 49%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 4px #a3a1a1, 0px 0px 0px 5px #9d9d9d;
+}
+.hour-hand {
+  width: 10px;
+  height: 100px;
+  background: #e8e5ef;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 0px 0px 10px 10px;
+  transform-origin: top;
+}
+.minute-hand {
+  width: 5px;
+  height: 134px;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 0px 0px 10px 10px;
+  transform-origin: top;
+}
+.second-hand {
+  width: 2px;
+  height: 155px;
+  background: yellow;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 0px 0px 10px 10px;
+  transform-origin: top;
+  transform: rotate(180deg);
+}
+.brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  font-size: 21px;
+  z-index: -1;
+  padding: 0 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 7px;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 420px) {
+  .clock {
+    width: 310px;
+    height: 310px;
+  }
+  .hour-hand {
+    height: 100px;
+  }
+  .minute-hand {
+    height: 118px;
+  }
+  .second-hand {
+    height: 135px;
+  }
+}

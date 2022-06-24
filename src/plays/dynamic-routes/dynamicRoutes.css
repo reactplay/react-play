@@ -1,0 +1,102 @@
+/* enter stlyes here */
+.dynamic-routes-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+.dynamic-routes-container .heading {
+  font-size: 2rem;
+}
+
+.dynamic-routes-container .heading,
+.dynamic-routes-container .sub-heading,
+.dynamic-routes-container .navbar {
+  text-align: center;
+}
+
+.dynamic-routes-container .sub-heading {
+  font-size: calc(var(--fs-md) * .8);
+  font-weight: var(--fw-bold);
+  margin: .8rem 0 1.6rem 0;
+}
+
+.dynamic-routes-container .navbar {
+  display: flex;
+  justify-content: center;
+}
+.dynamic-routes-container .example {
+  font-weight: 300;
+}
+.dynamic-routes-container .recipe-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+.dynamic-routes-container .recipe-card {
+  max-width: 300px;
+  width: 250px;
+  background-color: rgb(228 228 231);
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: 1rem;
+  justify-content: space-between;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  text-transform: capitalize;
+}
+.dynamic-routes-container .active {
+  background-color: aqua;
+}
+.dynamic-routes-container .navbar-link {
+  width: 100px;
+  padding: 2px 5px;
+  margin: 0 10px;
+  text-decoration: none;
+  text-transform: capitalize;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 1px 2px 5px #ccc;
+  color: blue;
+}
+
+.dynamic-routes-container .symbol {
+  width: 100px;
+  padding: 5px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.dynamic-routes-container .breakfast {
+  background: green;
+  color: #fff;
+}
+.dynamic-routes-container .lunch {
+  background: #f33636;
+  color: #fff;
+}
+
+.dynamic-routes-container .dinner {
+  background: #d7ca12;
+}
+.dynamic-routes-container .image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+@media screen and (max-width: 520px) {
+  .dynamic-routes-container .recipe-container {
+    flex-direction: column;
+  }
+  .dynamic-routes-container .recipe-card {
+    margin: 20px auto;
+  }
+  .dynamic-routes-container .image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+}

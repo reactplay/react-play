@@ -1,0 +1,83 @@
+.counter-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.counter-container h1 {
+  margin: 2rem 0;
+  font-size: var(--fs-lg);
+  font-weight: bold;
+}
+
+.counter-container p {
+  margin-bottom: 1rem;
+}
+
+.counter-desc{
+  text-align: center;
+}
+button:hover{
+  cursor: pointer;
+}
+
+.counter h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.input_field {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 90%;
+  margin: 0 1rem;
+}
+.input_field input {
+  width: 100%;
+  max-width: 15rem;
+  outline: none;
+  border: 3px solid rgb(220, 182, 255);
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+.input_field button,
+.reset_btn {
+  background-color: rgb(111, 78, 138);
+  margin-left: 1rem;
+  outline: none;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0 0.5rem;
+}
+.reset_btn {
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+.counter {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reset_btn {
+  margin-top: 0.5rem;
+}
+.counter_btn {
+  height: 7rem;
+  width: 7rem;
+  background-color: rgb(199, 139, 255);
+  border-radius: 50%;
+  border: none;
+  font-size: 2.5rem;
+  transition: border 0.01s ease-in;
+}
+.counter_btn:active {
+  border: 3px solid rgb(73, 0, 141);
+}
+.counter_btn::selection {
+  background-color: transparent;
+}

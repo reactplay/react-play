@@ -1,0 +1,32 @@
+.counter .value {
+  background: linear-gradient(0deg, #b9740b,rgb(173, 134, 16));
+  color: #ddd;
+  width: 280px;
+  padding: .5rem;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  font-size: 2.5rem;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px #111;
+  box-shadow: 5px 5px #ffa500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 550px){
+  .counter .value {  
+    width: 450px;
+    padding: 1rem;
+    letter-spacing: 2px;
+    font-size: 4rem;
+    border-radius: 5px;
+    text-shadow: 2px 2px 5px #111;
+    box-shadow: 10px 10px #ffa500;
+  }
+}
+
+.counter .value  span{
+  font-family: monospace;
+
+}

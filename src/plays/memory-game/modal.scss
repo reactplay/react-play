@@ -1,0 +1,103 @@
+.memory-game-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.memory-game-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 50vw;
+  max-width: 800px;
+  z-index: 11;
+  border-radius: 10px;
+  animation: modalApear 0.3s ease-in-out;
+
+  .close-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 30px;
+    padding: 5px;
+    filter: brightness(0.1);
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      right: 1rem;
+      top: 1rem;
+      width: 30px;
+    }
+  }
+
+  .content {
+    margin: 0 2rem;
+    padding: 2rem;
+
+    .text {
+
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+    p {
+      margin: 0.6rem 0 1rem 0;
+      text-align: center;
+    }
+    .guide-image {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .button-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 32px;
+
+      button {
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        border-radius: 20px;
+        border: none;
+        background-color: rgba(81, 91, 212, 1);
+        outline: none;
+        color: #fff;
+        font-weight: bold;
+        &:disabled {
+          background-color: rgba(81, 91, 212, 0.5);
+          pointer-events: none;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        padding: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@keyframes modalApear {
+  0% {
+    opacity: 0;
+    top: 48%;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .memory-game-modal {
+    width: calc(100vw - 20px);
+  }
+}

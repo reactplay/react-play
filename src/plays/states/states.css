@@ -1,0 +1,63 @@
+.states h1 {
+  margin: 1rem 0 1.6rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.play-area, .play-area-result{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.play-area-result {
+  margin-left: 2rem;
+}
+
+.play-area {
+  border-right-width: 0.1rem;
+  border-right-style: solid;
+  border-right-color: rgb(125, 117, 117);
+}
+
+.input {
+  margin-top: 1rem;
+  width: 15rem;
+  height: 2.5rem;
+  margin-left: 4rem;
+}
+
+.play-area-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3rem;
+}
+
+.submit-button {
+  height: 2rem;
+  width: 6rem;
+  font-size: 1rem;
+  background: rgb(108, 226, 252);
+  border: none;
+  outline: none;
+  margin-top: 1.2rem;
+  margin-left: 4rem;
+  border-radius: 1rem;
+}
+
+@media only screen and (max-width: 760px)  {
+  .play-area-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .play-area {
+    border: none;
+  }
+
+  .play-area-result {
+    margin-left: 0.5rem;
+    margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,57 @@
+.meme-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.meme {
+    width: 80%;
+    max-width: 20rem;
+    height: auto;
+}
+
+.meme-generator-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.generate-meme {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.generate-btn {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    outline: none;
+    background-color: #61DBFB;
+    color: black;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.generate-btn svg {
+    margin-left: 0.5rem;
+}
+
+.loading {
+    animation: rotate 0.5s ease-in-out infinite both;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
