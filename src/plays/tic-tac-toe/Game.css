@@ -10,6 +10,7 @@
   background-color: #00f2fe;
   border: 2px solid black;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .game-button {

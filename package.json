@@ -20,7 +20,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
-    "react-toastify": "^9.0.4",
+    "react-toastify": "^9.0.5",
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.5",
