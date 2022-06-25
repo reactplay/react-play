@@ -209,7 +209,7 @@ const FilterPlays = () => {
         <RiFilterFill
           className='icon'
           size='28px'
-          color='var(--color-neutral-30'
+          color='var(--color-neutral-30)'
         />
       </button>
     </div>

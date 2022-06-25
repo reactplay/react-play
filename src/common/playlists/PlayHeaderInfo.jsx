@@ -21,9 +21,9 @@ const Author = ({ user, githubUsername }) => {
 const Tags = ({ tags }) => {
   return (
     <ul className='list-tags'>
-      {tags.map((tag, index) => (
+      {tags.map((item, index) => (
         <li key={index}>
-          <span className='play-tag'>{tag.tag.name}</span>
+          <span className='play-tag'>{item.tag.name}</span>
         </li>
       ))}
     </ul>

@@ -46,7 +46,7 @@ const RouteDefs = () => {
               ))}
           </Route>
           <Route path='/ideas' element={<PlayIdeas />} />
-          <Route path='/*' element={<PageNotFound />} />
+          <Route path='/*' element={<PageNotFound loading={loading} />} />
         </Routes>
         <Footer />
       </BrowserRouter>

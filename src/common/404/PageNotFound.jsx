@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
 import { ReactComponent as Image404 } from "images/img-404.svg";
 import "./404.css";
+import Loader from 'common/spinner/spinner';
 
-const PageNotFound = () => {
+const PageNotFound = ({loading}) => {
+
+  if (loading) {
+    return <Loader />
+  }
 
   return(
     <main className='page-404'>

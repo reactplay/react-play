@@ -3,6 +3,7 @@ import useFeaturedPlays from "common/hooks/useFeaturedPlays";
 
 const FeaturedPlays = () => {
   const [loading, error, data] = useFeaturedPlays();
+  const success = !loading && !error && !!data.length
 
   return (
     <>
@@ -12,7 +13,7 @@ const FeaturedPlays = () => {
       <ul className='list-plays'>
         {loading && <p>Loading...</p>}
         {error && <p>{error?.message ?? "Something went wrong"}</p>}
-        {data?.map((play, index) => (
+        {success && data?.map((play, index) => (
           <PlayThumbnail key={play.id} play={play} />
         ))}
       </ul>
