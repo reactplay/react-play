@@ -10,6 +10,7 @@
     "@types/react-dom": "^18.0.2",
     "date-fns": "^2.28.0",
     "firebase": "^9.8.2",
+    "graphql": "^16.5.0",
     "json-graphql-parser": "^0.0.8",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
