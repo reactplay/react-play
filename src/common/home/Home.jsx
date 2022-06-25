@@ -23,9 +23,9 @@ const Home = () => {
     setGitHubStars(data.stargazers_count);
     setSearchTerm("");
     setFilterQuery({
-      level: "",
+      level_id: "",
       tags: [],
-      creator: "",
+      owner_user_id: "",
       language: ""
     });
   }, [data, setSearchTerm, searchTerm, setFilterQuery]);

@@ -1,13 +1,8 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import { useState } from "react";
-import { getPlayById } from "meta/play-meta-util";
 import CountDownTimer from "./CountDownTimer";
 
 const CdTimerComp = (props) => {
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
-
   const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
   const NOW_IN_MS = new Date().getTime();
 
@@ -28,7 +23,7 @@ const CdTimerComp = (props) => {
   return (
     <>
       <div className="play-details">
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className="play-details-body">
           <div className="countdown-container">
             <form>

@@ -1,5 +1,3 @@
-import { getPlayById } from "meta/play-meta-util";
-
 import PlayHeader from "common/playlists/PlayHeader";
 import { useEffect, useState } from "react";
 
@@ -15,10 +13,6 @@ const config = {
 };
 
 function PasswordGenerator(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
 
   // Your Code Start below.
   const [password, setPassword] = useState({ status: false, password: "" });
@@ -106,7 +100,7 @@ function PasswordGenerator(props) {
 
   return (
     <div className='play-details'>
-      <PlayHeader play={play} />
+      <PlayHeader play={props} />
       <div className='play-details-body password-generator'>
         <div className='main'>
           <h1 className='title'>Password Generator</h1>

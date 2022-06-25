@@ -10,43 +10,41 @@ const Header = () => {
   const pathName = location.pathname;
 
   const [showHideBits, setShowHideBits] = useState({
-    showSearch: true,
+    showSearch: false,
     showBrowse: false,
-    setHeaderStyle: true,
+    setHeaderStyle: false,
   });
 
   useEffect(() => {
     if (pathName === "/") {
-      setShowHideBits({
-        ...showHideBits,
+      setShowHideBits((prev)=>({
+        ...prev,
         showSearch: false,
         showBrowse: true,
         setHeaderStyle: false,
-      });
+      }));
     } else if (pathName === "/ideas") {
-      setShowHideBits({
-        ...showHideBits,
+      setShowHideBits((prev) => ({
+        ...prev,
         showSearch: false,
         showBrowse: true,
         setHeaderStyle: true,
-      });
-    } else {
-      setShowHideBits({
-        ...showHideBits,
+      }));
+    } else if (pathName === "/plays") {
+      setShowHideBits((prev) => ({
+        ...prev,
         showSearch: true,
         showBrowse: false,
         setHeaderStyle: true,
-      });
+      }));
     }
   }, [pathName]);
 
   return (
     <header
-      className={
-        showHideBits.setHeaderStyle
-          ? "app-header"
-          : "app-header app-header-home"
-      }
+      className={`app-header ${
+        showHideBits.setHeaderStyle ? "" : " app-header-home"
+      }`}
     >
       <span>
         <Link to="/" className="app-logo">

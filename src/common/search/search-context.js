@@ -4,9 +4,9 @@ import React from 'react';
 export const SearchContext = React.createContext({
   searchTerm: '',
   filterQuery: {
-    level: '',
+    level_id: '',
     tags: [],
-    creator: '',
+    owner_user_id: '',
     language: ''
   }, 
   setSearchTerm: () => {},

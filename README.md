@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-31-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -215,6 +215,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/yung-coder"><img src="https://avatars.githubusercontent.com/u/94097778?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Saksham chandel</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=yung-coder" title="Code">💻</a></td>
+    <td align="center"><a href="http://linkedin.com/in/luca-pizzini"><img src="https://avatars.githubusercontent.com/u/15077781?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Luca Pizzini</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=lpizzinidev" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ShivamBhasin2002"><img src="https://avatars.githubusercontent.com/u/57500840?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shivam Bhasin</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ShivamBhasin2002" title="Code">💻</a></td>
   </tr>
 </table>
 

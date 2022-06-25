@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 
+/**
+ * 
+ * @param {string} url api url
+ * @param {object} options object
+ * @returns { data, loading, error }
+ */
+
 const useFetch = (url, options) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
