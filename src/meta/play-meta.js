@@ -24,9 +24,6 @@ import {
   DynamicRoutes,
   SimpleLiveChat,
   FlipCardEffect,
-  DemoPlay,
-TypeScriptDemoPlay,
-Abcd,
 //import play here
 } from "plays";
 
