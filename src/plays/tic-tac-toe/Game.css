@@ -1,0 +1,49 @@
+.ttc_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.game-card {
+  width: 8rem;
+  height: 8rem;
+  background-color: #00f2fe;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.game-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 60px;
+  margin: 10px;
+  background-color: #00f2fe;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-card:hover,
+.game-button:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .game-card {
+    width: 6rem;
+    height: 6rem;
+  }
+  .game-button {
+    width: 100px;
+    height: 60px;
+  }
+}

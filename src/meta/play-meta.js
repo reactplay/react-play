@@ -5,6 +5,7 @@ import {
   MovieContainer,
   WhyReact,
   CounterApp,
+  TicTacToe,
   States,
   SocialCard,
   RandomMemeGenerator,
@@ -223,6 +224,20 @@ export const plays = [
     video: "",
   },
   {
+    id: "pl-tic-tac-toe",
+    name: "Tic Tac Toe",
+    description: "A two players Tic Tac Toe game",
+    component: () => {
+      return <TicTacToe />;
+    },
+    path: "/plays/tic-tac-toe",
+    level: "Beginner",
+    tags: "JSX, useState, game",
+    github: "joshi-kaushal",
+    cover: "",
+    blog: "",
+    video: "",
+  }, {
     id: "pl-analog-clock",
     name: "Analog-Clock",
     description: "A beautiful wall clock",

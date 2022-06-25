@@ -1,0 +1,21 @@
+.icon {
+  color: red;
+  font-size: 30px;
+}
+
+.center > h3 {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
+.tic-tac-toe {
+  margin: 0 auto;
+}
