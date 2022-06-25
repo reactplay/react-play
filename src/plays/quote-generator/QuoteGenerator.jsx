@@ -1,4 +1,3 @@
-import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 import "./quoteGenerator.css";
 import { useEffect, useState } from "react";
@@ -9,10 +8,6 @@ const fetchQuote = () => {
 };
 
 function QuoteGenerator(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
 
   // Your Code Start below.
   const [quoteArray, setQuoteArray] = useState([]);
@@ -58,7 +53,7 @@ function QuoteGenerator(props) {
   return (
     <>
       <div className="play-details">
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className="play-details-body rand-quote-gen">
           {/* Your Code Starts Here */}
           <div>

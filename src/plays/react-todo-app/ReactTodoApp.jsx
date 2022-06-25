@@ -1,4 +1,3 @@
-import { getPlayById } from 'meta/play-meta-util';
 import PlayHeader from 'common/playlists/PlayHeader';
 import { useState, useEffect } from 'react';
 import useLocalStorage from 'common/hooks/useLocalStorage';
@@ -11,10 +10,6 @@ import Input from './components/Input';
 import TodoList from './components/TodoList';
 
 function ReactTodoApp(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
 
   // Your Code Start below.
 
@@ -48,7 +43,7 @@ function ReactTodoApp(props) {
   return (
     <>
       <div className='play-details'>
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className='play-details-body'>
           {/* Your Code Starts Here */}
           <div className='todo-play-body'>

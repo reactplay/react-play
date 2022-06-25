@@ -24,7 +24,7 @@ import {
   DynamicRoutes,
   SimpleLiveChat,
   FlipCardEffect,
-  //import play here
+//import play here
 } from "plays";
 
 export const plays = [
@@ -426,5 +426,6 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
-  }, //replace new play item here
+  },
+   //replace new play item here
 ];
