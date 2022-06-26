@@ -10,48 +10,6 @@ import { submit } from "common/services/request";
  * @returns [loading, error, plays]
  */
 
-const dummy = {
-  "blog": "",
-  "component": "DEMO",
-  "cover": "",
-  "created_at": "2022-06-08T10:14:31.440738+00:00",
-  "description": "DEMO",
-  "featured": false,
-  "dev_mode": true,
-  "github": "Angryman18",
-  "id": "4b7c0822-9e05-4195-a59b-68f4fe834c96",
-  "language": "js",
-  "level": {
-      "name": "Intermediate"
-  },
-  "name": "DEMO",
-  "path": "/plays/demo",
-  "play_tags": [
-      {
-          "tag": {
-              "name": "JSX"
-          }
-      },
-      {
-          "tag": {
-              "name": "Hooks"
-          }
-      },
-      {
-          "tag": {
-              "name": "TypeScript"
-          }
-      }
-  ],
-  "updated_at": "2022-06-17T09:24:48.58247+00:00",
-  "user": {
-      "id": "f489e687-f42f-4226-9cca-97238146bd159",
-      "displayName": "Demo",
-      "avatarUrl": ""
-  },
-  "video": ""
-}
-
 function useGetPlays() {
   const [loading, setLoading] = useState(true);
   const [plays, setPlays] = useState([]);
@@ -93,7 +51,7 @@ function useGetPlays() {
       } else {
         res = await submit(FetchPlaysSimple());
       }
-      setPlays([...res, dummy]);
+      setPlays(res);
     } catch (error) {
       setError(error);
     }

@@ -14,7 +14,7 @@ function PlayMeta({ play }) {
     RenderPlay = () => (
       <PageNotFound
         msg='Play is Under Development'
-        details='If you are developer please continue building the play'
+        details='Most likely this play is being developed by another creator. You can ignore and continue to build your play.'
         Image={underDevelopment}
       />
     );
