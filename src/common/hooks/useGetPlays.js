@@ -10,7 +10,7 @@ import { submit } from "common/services/request";
  * @returns [loading, error, plays]
  */
 
-const useGetPlays = () => {
+function useGetPlays() {
   const [loading, setLoading] = useState(true);
   const [plays, setPlays] = useState([]);
   const [error, setError] = useState(null);
@@ -29,7 +29,6 @@ const useGetPlays = () => {
 
   const re_filterPlaysByMultiTagsLevelLang = useCallback((filterQuery) => {
     const callIt = filterPlaysByMultiTagsLevelLang(filterQuery)
-    console.log(callIt)
     return callIt
   },[filterPlaysByMultiTagsLevelLang])
 
@@ -50,7 +49,7 @@ const useGetPlays = () => {
         const payload = re_filterPlaysByMultiTagsLevelLang(filterQuery);
         res = await submit(payload);
       } else {
-        res = await submit(FetchPlaysSimple[0]);
+        res = await submit(FetchPlaysSimple());
       }
       setPlays(res);
     } catch (error) {
