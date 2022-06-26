@@ -2,7 +2,7 @@ import RouteDefs from "common/routing/RouteDefs";
 import { SearchContext } from "common/search/search-context";
 import "index.css";
 import React, { useState } from "react";
-import { createRoot } from 'react-dom/client';
+import { createRoot } from "react-dom/client";
 import reportWebVitals from "reportWebVitals";
 
 /** removing console statement in react prod build */
@@ -16,10 +16,10 @@ if (process.env.NODE_ENV !== "development") {
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterQuery, setFilterQuery] = useState({
-    level: "",
+    level_id: "",
     tags: [],
-    creator: "",
-    language: ""
+    owner_user_id: "",
+    language: "",
   });
 
   const value = { searchTerm, setSearchTerm, filterQuery, setFilterQuery };

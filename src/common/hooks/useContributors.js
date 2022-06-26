@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
 
+/**
+ * Retrieves the contributors name in react play repo on github
+ * @param {boolean} sorted mandatory
+ * @returns [data, error, loading]
+ */
+
 const useContributors = (sorted) => {
   const [data, setData] = useState();
   const [error, setError] = useState();

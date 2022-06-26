@@ -1,5 +1,4 @@
 import PlayHeader from "common/playlists/PlayHeader";
-import { getPlayById } from "meta/play-meta-util";
 import { org } from "./org";
 import React, { Fragment } from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
@@ -21,14 +20,11 @@ const Card = (props) => {
 };
 
 const BasicTree = (props) => {
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
-  
+ 
   return (
     <>
       <div className="play-details">
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className="play-details-body">
           <div className="org-tree">
             <h2>Castro - Organization Tree</h2>
