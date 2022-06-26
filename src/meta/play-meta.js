@@ -22,6 +22,7 @@ import {
   FunQuiz,
   TicTacToeGame,
   DynamicRoutes,
+
   SimpleLiveChat,
   FlipCardEffect,
 //import play here
@@ -392,6 +393,7 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+
   },
   {
     id: "pl-simple-live-chat",

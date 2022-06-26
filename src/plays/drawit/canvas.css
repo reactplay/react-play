@@ -1,0 +1,20 @@
+.board{
+    
+    height: 500px;
+    /* position: absolute; */
+    left: 0;
+    /* background-color: rgb(17, 76, 35); */
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100;
+}
+.colors {
+    position: fixed;
+  }
+  
+  .color {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+  }
