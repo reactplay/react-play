@@ -1,5 +1,6 @@
-export const FetchPlaysSimple = [
-  {
+export function FetchPlaysSimple() {
+  const env = process.env.NODE_END === "development";
+  const payload = {
     display: "Simple fetch play",
     name: "Fetch_Plays",
     function: "plays",
@@ -11,6 +12,7 @@ export const FetchPlaysSimple = [
       "created_at",
       "description",
       "featured",
+      "dev_mode",
       "github",
       "id",
       "language",
@@ -22,5 +24,19 @@ export const FetchPlaysSimple = [
       { user: ["id", "displayName", "avatarUrl"] },
       "video",
     ],
-  },
-];
+  };
+
+  if (!env) {
+    payload.where = {
+      clause: [
+        {
+          field: "dev_mode",
+          operator: "eq",
+          value: false,
+          type: "boolean",
+        },
+      ],
+    };
+  }
+  return payload;
+}

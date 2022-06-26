@@ -1,6 +1,14 @@
+const env = process.env.NODE_ENV === "development"
+const defaultClause = {
+  field: "dev_mode",
+  operator: "eq",
+  value: false,
+  type: "boolean",
+}
+
 export const FetchPlaysFilter = {
   // Filter all the featured plays
-  getAllFeaturedPlays: () => {
+  getAllFeaturedPlays() {
     return {
       display: "Filter all the featured plays",
       name: "Fetch_Plays",
@@ -37,8 +45,8 @@ export const FetchPlaysFilter = {
     };
   },
   // Filter Plays by a search string in name or description
-  filterPlaysBySearchString: (Obj) => {
-    return {
+  filterPlaysBySearchString(Obj) {
+    const payload = {
       display: "Filter Plays by a search string in name or description",
       name: "Fetch_Plays",
       function: "plays",
@@ -78,130 +86,11 @@ export const FetchPlaysFilter = {
         ],
       },
     };
-  },
-  // Filter Plays by Level
-  filterPlaysByLevels: () => {
-    return {
-      display: "Filter Plays by Level",
-      name: "Fetch_Plays",
-      function: "plays",
-      params: [
-        "blog",
-        "component",
-        "cover",
-        "created_at",
-        "description",
-        "featured",
-        "github",
-        "id",
-        "language",
-        { level: ["name"] },
-        "name",
-        "path",
-        { play_tags: { tag: ["name"] } },
-        "updated_at",
-        { user: ["id", "displayName", "avatarUrl"] },
-        "video",
-      ],
-      where: {
-        operator: "",
-        class: "level",
-        clause: [
-          {
-            field: "name",
-            operator: "eq",
-            value: "Advanced",
-            type: "string",
-          },
-        ],
-      },
-    };
-  },
-  // Alternatively using the id
-  filterPlayById: {
-    display: "Alternatively using the id",
-    name: "Fetch_Plays",
-    function: "plays",
-    params: [
-      "blog",
-      "component",
-      "cover",
-      "created_at",
-      "description",
-      "featured",
-      "github",
-      "id",
-      "language",
-      { level: ["name"] },
-      "name",
-      "path",
-      { play_tags: { tag: ["name"] } },
-      "updated_at",
-      { user: ["id", "displayName", "avatarUrl"] },
-      "video",
-    ],
-    where: {
-      operator: "",
-      clause: [
-        {
-          field: "level_id",
-          operator: "eq",
-          value: "2af38a32-37a7-4456-b21b-bf6b3aedd804",
-          type: "string",
-        },
-      ],
-    },
-  },
-  // Filter plays by level, user and language
-  filterPlaysByLevelTagLang: (Obj) => {
-    return {
-      display: "Filter plays by level, user and language",
-      name: "Fetch_Plays",
-      function: "plays",
-      params: [
-        "blog",
-        "component",
-        "cover",
-        "created_at",
-        "description",
-        "featured",
-        "github",
-        "id",
-        "language",
-        { level: ["name"] },
-        "name",
-        "path",
-        {
-          play_tags: { tag: ["name"] },
-        },
-        "updated_at",
-        { user: ["id", "displayName", "avatarUrl"] },
-        "video",
-      ],
-      where: {
-        operator: "and",
-        clause: [
-          {
-            field: "owner_user_id",
-            operator: "eq",
-            value: Obj.owner_user_id,
-            type: "string",
-          },
-          {
-            field: "level_id",
-            operator: "eq",
-            value: Obj.level_id,
-            type: "string",
-          },
-          {
-            field: "language",
-            operator: "eq",
-            value: Obj.language,
-            type: "string",
-          },
-        ],
-      },
-    };
+    console.log(env)
+    if (env) {
+      payload.where.clause.push(defaultClause);
+    }
+    return payload;
   },
   // Filter plays by level, user, language, and multiple tags
   /**
@@ -209,7 +98,7 @@ export const FetchPlaysFilter = {
    * @param {object} Obj filterQuery Object
    * @returns payload
    */
-  filterPlaysByMultiTagsLevelLang: (Obj) => {
+  filterPlaysByMultiTagsLevelLang(Obj) {
     const payload = {
       display: "Filter plays by level, user, language, and multiple tags",
       name: "Fetch_Plays",
@@ -234,11 +123,10 @@ export const FetchPlaysFilter = {
       ],
     };
 
-    const clause = { operator: "and", clause: [] };
+    const clause = { operator: "and", clause: !env ? [defaultClause] : [] };
     Object.keys(Obj).forEach((key) => {
       const keyName = Obj[key];
       if (keyName.length > 0) {
-        
         const ifTags = key === "tags";
 
         const prepareObject = {
