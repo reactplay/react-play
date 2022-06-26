@@ -1,5 +1,5 @@
 export function FetchPlaysSimple() {
-  const env = process.env.NODE_END === "development";
+  const env = process.env.NODE_ENV === "development";
   const payload = {
     display: "Simple fetch play",
     name: "Fetch_Plays",

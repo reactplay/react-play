@@ -32,8 +32,9 @@ export const FetchPlaysFilter = {
         "video",
       ],
       where: {
-        operator: "",
+        operator: "and",
         clause: [
+          defaultClause,
           {
             field: "featured",
             operator: "eq",
@@ -86,8 +87,8 @@ export const FetchPlaysFilter = {
         ],
       },
     };
-    console.log(env)
-    if (env) {
+    
+    if (!env) {
       payload.where.clause.push(defaultClause);
     }
     return payload;
