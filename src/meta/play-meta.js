@@ -443,5 +443,6 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
-  }, //replace new play item here
+  },
+  //replace new play item here
 ];

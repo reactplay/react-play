@@ -38,7 +38,7 @@ const PlayIdeas = () => {
       const filteredIdeas = ideas.filter(idea => idea.level === filteredLevel);
       setFilteredIdeas(filteredIdeas);
     }
-  }, [filteredLevel]);
+  }, [filteredLevel, ideas]);
 
   if (isError) {
     return <div>Something went wrong ...</div>;
