@@ -1,5 +1,5 @@
 const env = process.env.NODE_ENV === "development"
-const preview = process.env.PREVIEW_MODE
+const preview = process.env.REACT_APP_PREVIEW_MODE
 const defaultClause = {
   field: "dev_mode",
   operator: "eq",
