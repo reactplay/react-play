@@ -12,7 +12,7 @@ const Header = () => {
   const [showHideBits, setShowHideBits] = useState({
     showSearch: false,
     showBrowse: false,
-    setHeaderStyle: false,
+    setHeaderStyle: true,
   });
 
   useEffect(() => {

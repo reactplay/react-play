@@ -12,6 +12,10 @@
     height: auto;
 }
 
+.under-development {
+    max-width: 600px;
+}
+
 .page-404-lead {
     margin: 0;
     font-family: var(--ff-accent);
@@ -23,6 +27,9 @@
     .page-404-lead {
         line-height: var(--lh-rg);
         margin-bottom: 1rem;
+    }
+    .under-development {
+        max-width: calc(100vw - 100px);
     }
 }
 
