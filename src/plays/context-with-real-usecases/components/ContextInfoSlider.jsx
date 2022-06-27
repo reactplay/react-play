@@ -29,8 +29,8 @@ const ContextInfoSlider = () => {
       </div>
       <div className={`${index === 3 ? "active" : "hidden"}`}>
         <p className="paragraph">
-          If, we drill down the props from parents to child. It would require a
-          lot of efforts. In some cases components are not even in direct
+          If, we drill down the cuisine from parents to child. It would require
+          a lot of efforts. In some cases components are not even in direct
           relation with one another.
         </p>
         <p className="paragraph">
@@ -40,8 +40,8 @@ const ContextInfoSlider = () => {
       </div>
       <div className={`${index === 4 ? "active" : "hidden"}`}>
         <p className="paragraph">
-          <strong>React context </strong>is like a pipe. Props enter at one
-          point and exit at end point without having to pass through anywhere in
+          <strong>React context </strong>is like a pipe. Props enter at one end
+          and exit at another without having to pass it through anywhere in
           between.
         </p>
         <p className="paragraph ">

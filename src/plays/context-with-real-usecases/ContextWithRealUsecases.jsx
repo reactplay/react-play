@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 import "./contextWithRealUsecases.css";
 import ContextInfoSlider from "./components/ContextInfoSlider";
@@ -10,11 +9,6 @@ import Recipes from "./Recipes";
 export const cusineContext = createContext();
 
 function ContextWithRealUsecases(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
-
   // Your Code Start below.
 
   const [activeCuisine, setActiveCuisine] = useState(null);
@@ -60,7 +54,7 @@ function ContextWithRealUsecases(props) {
   return (
     <>
       <div className="play-details">
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="context-with-real-usecases">
