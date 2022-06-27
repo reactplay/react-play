@@ -1,4 +1,5 @@
 const env = process.env.NODE_ENV === "development"
+const preview = process.env.PREVIEW_MODE
 const defaultClause = {
   field: "dev_mode",
   operator: "eq",
@@ -70,7 +71,7 @@ export const FetchPlaysFilter = {
         "video",
       ],
       where: {
-        operator: "or",
+        operator: "and",
         clause: [
           {
             field: "name",
@@ -78,17 +79,17 @@ export const FetchPlaysFilter = {
             value: Obj.name,
             type: "string",
           },
-          {
-            field: "description",
-            operator: "iregex",
-            value: Obj.name,
-            type: "string",
-          },
+          // {
+          //   field: "description",
+          //   operator: "iregex",
+          //   value: Obj.name,
+          //   type: "string",
+          // },
         ],
       },
     };
     
-    if (!env) {
+    if (!env && !preview) {
       payload.where.clause.push(defaultClause);
     }
     return payload;
@@ -124,7 +125,7 @@ export const FetchPlaysFilter = {
       ],
     };
 
-    const clause = { operator: "and", clause: !env ? [defaultClause] : [] };
+    const clause = { operator: "and", clause: !env && !preview ? [defaultClause] : [] };
     Object.keys(Obj).forEach((key) => {
       const keyName = Obj[key];
       if (keyName.length > 0) {

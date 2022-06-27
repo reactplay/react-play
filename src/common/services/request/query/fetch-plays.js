@@ -1,5 +1,6 @@
 export function FetchPlaysSimple() {
   const env = process.env.NODE_ENV === "development";
+  const preview = process.env.PREVIEW_MODE
   const payload = {
     display: "Simple fetch play",
     name: "Fetch_Plays",
@@ -26,7 +27,7 @@ export function FetchPlaysSimple() {
     ],
   };
 
-  if (!env) {
+  if (!env && !preview) {
     payload.where = {
       clause: [
         {

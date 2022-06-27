@@ -9,7 +9,7 @@ const Author = ({ user }) => {
   return (
     <div className='play-author flex items-center gap-2'>
       <img
-        className='rounded-full'
+        className='rounded-full border border-zink-400'
         src={
           user?.avatarUrl
             ? !!user?.avatarUrl.length
