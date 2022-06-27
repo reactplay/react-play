@@ -71,7 +71,7 @@ export const FetchPlaysFilter = {
         "video",
       ],
       where: {
-        operator: "and",
+        operator: "or",
         clause: [
           {
             field: "name",
@@ -79,12 +79,12 @@ export const FetchPlaysFilter = {
             value: Obj.name,
             type: "string",
           },
-          // {
-          //   field: "description",
-          //   operator: "iregex",
-          //   value: Obj.name,
-          //   type: "string",
-          // },
+          {
+            field: "description",
+            operator: "iregex",
+            value: Obj.name,
+            type: "string",
+          },
         ],
       },
     };
