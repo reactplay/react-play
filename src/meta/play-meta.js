@@ -24,7 +24,8 @@ import {
   DynamicRoutes,
   SimpleLiveChat,
   FlipCardEffect,
-//import play here
+  GitHubUserSearch,
+  //import play here
 } from "plays";
 
 export const plays = [
@@ -427,5 +428,21 @@ export const plays = [
     video: "",
     language: "js",
   },
-   //replace new play item here
+  {
+    id: "pl-github-user-search",
+    name: "GitHub User Search",
+    description: "A simple ReactJS application to search for GitHub users.",
+    component: () => {
+      return <GitHubUserSearch />;
+    },
+    path: "/plays/github-user-search",
+    level: "Beginner",
+    tags: "JSX,Tailwind,useState,Axios",
+    github: "TejasShekar",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "js",
+  },
+  //replace new play item here
 ];
