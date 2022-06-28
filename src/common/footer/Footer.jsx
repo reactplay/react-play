@@ -48,7 +48,7 @@ const Footer = () => {
       }`}
     >
       <div className="app-footer-body">
-        <div>
+        <div className="body-primary">
           <h3>
             <span className="sr-only">ReactPlay</span>
             <img src={LogoLight} alt='Logo of ReactPlay'/>
@@ -64,10 +64,10 @@ const Footer = () => {
           </p>
           <p><small>Email us</small> <div><a href="mailto:contact@reactplay.io" target="_blank" rel="noopener noreferrer" className="text-link-default">contact@reactplay.io</a></div></p>
         </div>
-        <div>
+        <div className="body-secondary">
           <h3 className="section-title mt-3">About</h3>
           <p className="mb-4">A ReactPlay is a ReactJS project, which helps you Learn, create and sharing with the developer community.</p>
-          <div className="flex">
+          <div className="flex flex-wrap gap-1">
           <a
               href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
               target="_blank"
@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
           </p>
         </div>
-        <div>
+        <div className="body-tertiary">
           <h3 className="section-title">Show love</h3>
           <p className="mb-2">Share your thoughts about ReactPlay in any of your favorite social media.</p>
           <a className="home-anchor home-anchor-sm" href="#">
