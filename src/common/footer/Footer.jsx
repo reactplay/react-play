@@ -84,12 +84,12 @@ const Footer = () => {
             </div>
           <p className="mt-10">Not sure how to get started? <br/>We have a lot of ideas, get started.
           <div className="mt-2">
-            <a href="https://tapasadhikary.com" target="_blank" rel="noopener noreferrer" className="home-anchor home-anchor-sm">
+            <Link to="/ideas" className="home-anchor home-anchor-sm">
               <span className="text">Get started</span>
-            </a>
+            </Link>
           </div>
           <div className="mt-2">
-            <a href="https://tapasadhikary.com" target="_blank" rel="noopener noreferrer" className="home-anchor home-anchor-sm">
+            <a href="https://blog.reactplay.io/" target="_blank" rel="noopener noreferrer" className="home-anchor home-anchor-sm">
               <span className="text">Read our blog posts</span>
             </a>
           </div>
