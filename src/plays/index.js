@@ -23,7 +23,8 @@ export { default as FunQuiz } from "plays/fun-quiz/FunQuiz";
 export { default as TicTacToeGame } from "plays/tic-tac-toe-game/TicTacToeGame";
 export { default as DynamicRoutes } from "plays/dynamic-routes/DynamicRoutes";
 export { default as Quizeo } from "plays/quizeo/Quizeo";
-export { default as SimpleLiveChat } from 'plays/simple-live-chat/SimpleLiveChat';
-export { default as FlipCardEffect } from 'plays/flip-card-effect/FlipCardEffect';
-export { default as ContextWithRealUsecases } from 'plays/context-with-real-usecases/ContextWithRealUsecases';
+export { default as SimpleLiveChat } from "plays/simple-live-chat/SimpleLiveChat";
+export { default as FlipCardEffect } from "plays/flip-card-effect/FlipCardEffect";
+export { default as ContextWithRealUsecases } from "plays/context-with-real-usecases/ContextWithRealUsecases";
+export { default as GitHubUserSearch } from "plays/github-user-search/GitHubUserSearch";
 //add export here

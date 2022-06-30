@@ -25,6 +25,7 @@ import {
   SimpleLiveChat,
   FlipCardEffect,
   ContextWithRealUsecases,
+  GitHubUserSearch,
   //import play here
 } from "plays";
 
@@ -440,6 +441,16 @@ export const plays = [
     level: "Intermediate",
     tags: "contextAPI,useContext-hook,react-context",
     github: "Deepak8717",
+    id: "pl-github-user-search",
+    name: "GitHub User Search",
+    description: "A simple ReactJS application to search for GitHub users.",
+    component: () => {
+      return <GitHubUserSearch />;
+    },
+    path: "/plays/github-user-search",
+    level: "Beginner",
+    tags: "JSX,Tailwind,useState,Axios",
+    github: "TejasShekar",
     cover: "",
     blog: "",
     video: "",
