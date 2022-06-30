@@ -1,6 +1,6 @@
 {
-  "short_name": "React Play",
-  "name": "React Play PWA",
+  "short_name": "ReactPlay",
+  "name": "ReactPlay",
   "icons": [
     {
       "src": "./logo.png",
