@@ -1,5 +1,5 @@
 import { getPlayById } from 'meta/play-meta-util';
-
+import './NavBar.css'
 import PlayHeader from 'common/playlists/PlayHeader';
 import NavListItems from './navListItems';
 
