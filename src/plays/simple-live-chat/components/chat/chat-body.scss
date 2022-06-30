@@ -29,6 +29,7 @@
   background-color: $simple-message-color;
   color: $simple-button-background-color;
   margin-left: 2.5rem;
+  word-wrap: break-word;
   
 
   @media screen and (min-width: 640px) {
@@ -74,7 +75,7 @@
 
 .simple-live-chat-message-context {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   width: auto;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
@@ -82,6 +83,7 @@
   margin-right: 0px;
   width: auto;
   border: 1px solid;
+  word-wrap: break-word;
 
   @media screen and (max-width: 640px) {
     width: auto;
@@ -96,6 +98,7 @@
     background-color: $simple-message-receive-background;
     margin-right: 2.5rem;
     border: 0px;
+    word-wrap: break-word;
 
     span {
       display: block;
