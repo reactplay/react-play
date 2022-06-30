@@ -1,8 +1,24 @@
 import { cloneElement } from "react";
 import { Helmet } from "react-helmet";
+import { PageNotFound } from "plays";
+import underDevelopment from 'images/underdevelpoment.png'
 
-function PlayMeta({ id, name, description, path, cover, component }) {
+function PlayMeta({ play }) {
+  const { name, description, path, cover, component } = play;
   const playFolder = path.split("/")[2];
+
+  let RenderPlay = null;
+  try {
+    RenderPlay = require(`../../plays/${playFolder}/${component}`).default;
+  } catch {
+    RenderPlay = () => (
+      <PageNotFound
+        msg='Play is Under Development'
+        details='Most likely this play is being developed by another creator. You can ignore and continue to build your play.'
+        Image={underDevelopment}
+      />
+    );
+  }
 
   let metaImage; // Initialize metaImage variable
   if (cover) {
@@ -21,36 +37,36 @@ function PlayMeta({ id, name, description, path, cover, component }) {
   return (
     <>
       <Helmet>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={name} />
-        <meta property="og:description" content={description} />
+        <meta name='description' content={description} />
+        <meta property='og:title' content={name} />
+        <meta property='og:description' content={description} />
         {metaImage && (
           <meta
-            property="og:image"
+            property='og:image'
             content={metaImage}
-            data-react-helmet="true"
+            data-react-helmet='true'
           />
         )}
         <meta
-          property="og:image:alt"
+          property='og:image:alt'
           content={description}
-          data-react-helmet="true"
+          data-react-helmet='true'
         />
-        <meta name="twitter:title" content={name} data-react-helmet="true" />
+        <meta name='twitter:title' content={name} data-react-helmet='true' />
         <meta
-          name="twitter:description"
+          name='twitter:description'
           content={description}
-          data-react-helmet="true"
+          data-react-helmet='true'
         />
         {metaImage && (
           <meta
-            name="twitter:image"
+            name='twitter:image'
             content={metaImage}
-            data-react-helmet="true"
+            data-react-helmet='true'
           />
         )}
       </Helmet>
-      {cloneElement(component(), { id })}
+      {cloneElement(<RenderPlay />, play)}
     </>
   );
 }

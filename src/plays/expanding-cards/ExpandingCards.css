@@ -27,7 +27,8 @@
 }
 
 .card-container .active {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
 }
 .Expanding-card-imgage {
   width: 100%;

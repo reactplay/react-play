@@ -12,7 +12,7 @@ const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
     }
     window.addEventListener('keydown', close)
     return () => window.removeEventListener('keydown', close)
-},[])
+},[onClose])
 
   if (!show) return null;
 

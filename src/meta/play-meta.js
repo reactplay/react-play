@@ -25,6 +25,7 @@ import {
   SimpleLiveChat,
   FlipCardEffect,
   NavBar,
+  GitHubUserSearch,
   //import play here
 } from "plays";
 
@@ -441,5 +442,21 @@ export const plays = [
     blog: '',
     video: '',
     language: 'js',
-  }, //replace new play item here
+  }, 
+    id: "pl-github-user-search",
+    name: "GitHub User Search",
+    description: "A simple ReactJS application to search for GitHub users.",
+    component: () => {
+      return <GitHubUserSearch />;
+    },
+    path: "/plays/github-user-search",
+    level: "Beginner",
+    tags: "JSX,Tailwind,useState,Axios",
+    github: "TejasShekar",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "js",
+  },
+  //replace new play item here
 ];

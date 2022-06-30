@@ -9,37 +9,48 @@ import {
   PlayIdeas,
 } from "common";
 import PlayList from "common/playlists/PlayList";
-import { getAllPlays } from "meta/play-meta-util";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { NhostClient, NhostReactProvider } from "@nhost/react";
+import useGetPlays from "common/hooks/useGetPlays";
+
+const nhost = new NhostClient({
+  backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || "",
+});
 
 const RouteDefs = () => {
-  const plays = getAllPlays();
-
+  const [loading, error, plays] = useGetPlays();
+  const success = !loading && !error && !!plays.length;
   return (
-    <BrowserRouter>
-      <Header />
-      <DefMeta />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/plays" element={<App />}>
-          <Route index element={<PlayList />} />
-          {plays.map((play, route_index) => (
+    <NhostReactProvider nhost={nhost}>
+      <BrowserRouter>
+        <Header />
+        <DefMeta />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/plays' element={<App />}>
             <Route
-              key={route_index}
-              path={play.path}
-              element={<PlayMeta {...play} />} // Put play data inside PlayMeta tag for dynamic meta tags
-            >
-              {/* For additonal paramters for routing. One can use optional route instead of child route */}
-              <Route path=":param" element={<PlayMeta {...play} />} />
-            </Route>
-          ))}
-        </Route>
-
-        <Route path="/ideas" element={<PlayIdeas />} />
-        <Route path="/*" element={<PageNotFound />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+              index
+              element={
+                <PlayList loading={loading} plays={success ? plays : []} />
+              }
+            />
+            {success &&
+              plays?.map((play, index) => (
+                <Route
+                  key={index}
+                  path={play?.path}
+                  element={<PlayMeta key={index} play={play} />}
+                >
+                  <Route path=':param' element={<PlayMeta {...play} />} />
+                </Route>
+              ))}
+          </Route>
+          <Route path='/ideas' element={<PlayIdeas />} />
+          <Route path='/*' element={<PageNotFound loading={loading} />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </NhostReactProvider>
   );
 };
 
