@@ -6,7 +6,7 @@ import Heading from "./components/Heading";
 import Menu from "./components/Menu";
 import Main from "./components/Main/Main";
 import Recipes from "./Recipes";
-export const cusineContext = createContext();
+import CuisineContext from "./context/CuisineContext";
 
 function ContextWithRealUsecases(props) {
   // Your Code Start below.
@@ -62,7 +62,7 @@ function ContextWithRealUsecases(props) {
               React Context
             </h1>
 
-            <cusineContext.Provider
+            <CuisineContext.Provider
               value={{
                 activeCuisine,
                 activeCuisineHandler,
@@ -76,7 +76,7 @@ function ContextWithRealUsecases(props) {
               <ContextInfoSlider />
               <Heading />
               {activeCuisine === null ? <Menu /> : <Main />}
-            </cusineContext.Provider>
+            </CuisineContext.Provider>
           </div>
           {/* Your Code Ends Here */}
         </div>

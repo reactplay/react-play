@@ -1,7 +1,7 @@
-import { cusineContext } from "plays/context-with-real-usecases/ContextWithRealUsecases";
+import CuisineContext from "plays/context-with-real-usecases/context/CuisineContext";
 import { useContext } from "react";
 const RecipeGrid = () => {
-  const { recipesByCusine } = useContext(cusineContext);
+  const { recipesByCusine } = useContext(CuisineContext);
   return (
     <div className="recipe-grid">
       {recipesByCusine.map((item, index) => {

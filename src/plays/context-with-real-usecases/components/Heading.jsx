@@ -1,8 +1,8 @@
 import CuisineModal from "./CuisineModal";
-import { cusineContext } from "../ContextWithRealUsecases";
+import CuisineContext from "../context/CuisineContext";
 import { useContext } from "react";
 const Heading = () => {
-  const { activeCuisine } = useContext(cusineContext);
+  const { activeCuisine } = useContext(CuisineContext);
   return (
     <div className="heading-component">
       {activeCuisine === null ? (

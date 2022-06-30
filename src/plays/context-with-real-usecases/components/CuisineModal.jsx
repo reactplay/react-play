@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import { cusineContext } from "../ContextWithRealUsecases";
+import CuisineContext from "../context/CuisineContext";
 const CuisineModal = () => {
-  const { recipesByCusine } = useContext(cusineContext);
+  const { recipesByCusine } = useContext(CuisineContext);
   const [display, setDisplay] = useState("hidden");
   const toggleDisplay = () => {
     setDisplay(display === "hidden" ? "active" : "hidden");

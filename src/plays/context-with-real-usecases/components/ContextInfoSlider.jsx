@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { cusineContext } from "../ContextWithRealUsecases";
+import CuisineContext from "../context/CuisineContext";
 import { MdSkipPrevious, MdSkipNext } from "react-icons/md";
 
 const ContextInfoSlider = () => {
-  const { index, handlePrev, handleNext } = useContext(cusineContext);
+  const { index, handlePrev, handleNext } = useContext(CuisineContext);
 
   return (
     <div className="context-info-slider">

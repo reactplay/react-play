@@ -1,8 +1,8 @@
-import { cusineContext } from "../ContextWithRealUsecases";
+import CuisineContext from "../context/CuisineContext";
 import { useContext } from "react";
 const Menu = () => {
   const { activeCuisine, activeCuisineHandler, uniqCuisines } =
-    useContext(cusineContext);
+    useContext(CuisineContext);
   return (
     <div className="menu-container">
       {uniqCuisines.map((cuisine, index) => {
