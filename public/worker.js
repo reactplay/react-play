@@ -1,4 +1,4 @@
-const CACHE_NAME = "react play";
+const CACHE_NAME = "reactplay";
 
 const urlsToCache = ["/", "/completed"];
 
