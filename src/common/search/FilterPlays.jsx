@@ -1,5 +1,5 @@
 import { Modal } from "common";
-import { useContext, useState } from "react";
+import { useContext, useState, memo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
 import "./search.css";
@@ -135,40 +135,40 @@ const FilterPlays = () => {
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
-  useBackListener(({ action }) => {
-    if (action === "POP") {
-      console.log("POP");
-      setModifiedFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setnoOfAppliedFilter(0);
-    }
-    if (action === "PUSH") {
-      console.log("PUSH");
-      setModifiedFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-    }
-    setnoOfAppliedFilter(0);
-  });
+  // useBackListener(({ action }) => {
+  //   if (action === "POP") {
+  //     console.log("POP");
+  //     setModifiedFilterQuery({
+  //       level_id: "",
+  //       tags: [],
+  //       owner_user_id: "",
+  //       language: "",
+  //     });
+  //     setFilterQuery({
+  //       level_id: "",
+  //       tags: [],
+  //       owner_user_id: "",
+  //       language: "",
+  //     });
+  //     setnoOfAppliedFilter(0);
+  //   }
+  //   if (action === "PUSH") {
+  //     console.log("PUSH");
+  //     setModifiedFilterQuery({
+  //       level_id: "",
+  //       tags: [],
+  //       owner_user_id: "",
+  //       language: "",
+  //     });
+  //     setFilterQuery({
+  //       level_id: "",
+  //       tags: [],
+  //       owner_user_id: "",
+  //       language: "",
+  //     });
+  //   }
+  //   setnoOfAppliedFilter(0);
+  // });
   const handleFilter = (event) => {
     event.preventDefault();
     console.log("filterQuery", filterQuery);

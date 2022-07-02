@@ -55,7 +55,7 @@ const PlayThumbnail = ({ play }) => {
 
   return (
     <li key={play.id}>
-      <Link to={play.path} state={{ id: play.id }}>
+      <Link to={play.path} state={{ ...play }}>
         <div className='play-thumb'>
           <Shimmer>
             <img src={cover} alt='' className='play-thumb-img' />

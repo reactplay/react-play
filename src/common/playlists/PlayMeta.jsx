@@ -1,23 +1,30 @@
 import { cloneElement } from "react";
 import { Helmet } from "react-helmet";
 import { PageNotFound } from "plays";
-import underDevelopment from 'images/underdevelpoment.png'
+import underDevelopment from "images/underdevelpoment.png";
+import { useLocation } from "react-router-dom";
 
-function PlayMeta({ play }) {
-  const { name, description, path, cover, component } = play;
-  const playFolder = path.split("/")[2];
+function PlayMeta() {
+  const { state: play } = useLocation();
+
+  const { name, description, path, cover, component } = play ?? {};
+  const playFolder = path?.split("/")[2];
 
   let RenderPlay = null;
   try {
     RenderPlay = require(`../../plays/${playFolder}/${component}`).default;
   } catch {
-    RenderPlay = () => (
-      <PageNotFound
-        msg='Play is Under Development'
-        details='Most likely this play is being developed by another creator. You can ignore and continue to build your play.'
-        Image={underDevelopment}
-      />
-    );
+    if (!play) {
+      RenderPlay = PageNotFound;
+    } else {
+      RenderPlay = () => (
+        <PageNotFound
+          msg='Play is Under Development'
+          details='Most likely this play is being developed by another creator. You can ignore and continue to build your play.'
+          Image={underDevelopment}
+        />
+      );
+    }
   }
 
   let metaImage; // Initialize metaImage variable

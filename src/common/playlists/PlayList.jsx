@@ -3,10 +3,12 @@ import { ReactComponent as ImageOops } from "images/img-oops.svg";
 import { Fragment } from "react";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "common/spinner/spinner";
-
+import { useOutletContext } from "react-router-dom";
 import "./playlist.css";
 
-const PlayList = ({ plays, loading }) => {
+const PlayList = () => {
+  const [loading, error, plays] = useOutletContext();
+
   if (loading) {
    return <Loader />;
   }
@@ -25,7 +27,7 @@ const PlayList = ({ plays, loading }) => {
   return (
     <Fragment>
       <ol className='list-plays'>
-        {plays?.map((play, index) => (
+        {plays?.map((play) => (
           <PlayThumbnail key={play.id} play={play} />
         ))}
       </ol>
