@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { BsTwitter, BsGithub } from 'react-icons/bs';
 import { FaLightbulb } from 'react-icons/fa';
-import { IoAddSharp, IoShareSocial } from 'react-icons/io5';
+import { BiMoney } from 'react-icons/bi';
+import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
 import { MdManageSearch, MdClose } from 'react-icons/md';
 import SocialShare from 'common/components/SocialShare';
 import { Modal } from "common";
@@ -86,6 +87,26 @@ const HeaderNav = ({ showBrowse }) => {
               <IoShareSocial className="icon" />
               <span className="btn-label">Share</span>
             </button>
+          </li>
+          <li>
+            <button className="app-header-btn app-header-btn--default"
+              onClick={() => setShowSocial(true)}>
+              <IoHeartSharp className="icon" />
+              <span className="btn-label">Share</span>
+            </button>
+            <div className="app-header-modal">
+              <h3 className="modal-title">Show love</h3>
+              <a className="btn-default-light" href="#">
+                <IoShareSocial className="icon" />
+                <span className="btn-label">Share about ReactPlay</span>
+              </a>
+              <p className="mt-2 mb-10">Share your thoughts about ReactPlay in any of your favorite social media.</p>
+              <a className="btn-secondary-light" href="#">
+                <BiMoney className="icon" />
+                <span className="btn-label">Sponsor ReactPlay</span>
+              </a>
+              <p className="mt-2 mb-4">Some text about asking for the money.</p>
+            </div>
           </li>
         </ul>
       </div>

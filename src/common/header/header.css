@@ -427,3 +427,26 @@
 .social-share-buttons .social-share-button:hover .icon {
   fill: var(--color-brand-primary);
 }
+
+/* App Header Modal */
+.app-header-modal {
+  position: absolute;
+  background-color: var(--color-neutral-10);
+  padding: 1.6rem 2rem;
+  width: 360px;
+  right: 1.6rem;
+  margin-top: 0.6rem;
+}
+
+.app-header-modal {
+  font-size: var(--fs-rg);
+  color: var(--color-neutral-70);
+}
+
+.app-header-modal .modal-title {
+  margin: 0 0 1rem 0;
+  font-family: var(--ff-accent);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--color-neutral-90);
+}
