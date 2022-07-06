@@ -444,10 +444,10 @@ export const plays = [
     video: '',
     language: 'js',
   }, 
+  {
     id: "pl-context-with-real-usecases",
     name: "Context-with-Real-Usecases",
-    description:
-      "context-with-real-usecases is a recipe app that lists the recipes by cuisine type. Based on the selected cuisine app shows the list of recipes, the selected cusine and the cusine fact",
+    description: "context-with-real-usecases is a recipe app that lists the recipes by cuisine type. Based on the selected cuisine app shows the list of recipes, the selected cusine and the cusine fact",
     component: () => {
       return <ContextWithRealUsecases />;
     },
