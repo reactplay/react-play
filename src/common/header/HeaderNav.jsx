@@ -43,8 +43,7 @@ const HeaderNav = ({ showBrowse }) => {
           )}
           <li className="menu-spacer">
             <a
-              href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
-              target="_blank"
+              href="/plays/create"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--primary"
             >
