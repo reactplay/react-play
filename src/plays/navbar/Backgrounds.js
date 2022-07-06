@@ -11,7 +11,6 @@ const Backgrounds = [
         discription: "ReactPlay is an OpenSource to Learn, Create, and Share ReactJS Projects",
         statement: "Know More",
         image: dash,
-        opac: "true",
         url: "https://reactplay.io/"
     },
     {
@@ -21,7 +20,6 @@ const Backgrounds = [
         discription: "Looking for project ideas to practice React? Great, click down below for some ideas to get you started.",
         statement: "Get Ideas",
         image: ideas,
-        opac: "false",
         url: "https://reactplay.io/ideas",
     },
     {
@@ -31,7 +29,6 @@ const Backgrounds = [
         discription: "Join us on Twitter and be a part of ReactPlay Community",
         statement: "Join Now",
         image: join,
-        opac: "false",
         url: "https://twitter.com/reactplayio",
     },
     {
@@ -41,7 +38,6 @@ const Backgrounds = [
         discription: "Ready to create a new play? It is super easy, click down below to get started.",
         statement: "Create Now",
         image: create,
-        opac: "false",
         url: "https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
     },
     {
@@ -51,7 +47,6 @@ const Backgrounds = [
         discription: "Start browsing the plays built by our community developers.",
         statement: "Browse Now",
         image: search,
-        opac: "false",
         url: "https://reactplay.io/plays"
     },
 ]
