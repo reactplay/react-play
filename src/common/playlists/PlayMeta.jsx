@@ -7,6 +7,7 @@ import { submit } from "common/services/request";
 import Loader from "common/spinner/spinner";
 import { toKebabCase, toPascalcase, toTitleCase } from "common/services/string";
 import { FetchPlaysByID } from "common/services/request/query/fetch-plays";
+import {PageNotFound} from 'common'
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true)
@@ -57,7 +58,7 @@ function PlayMeta() {
     return <Loader />;
    }
    if (isError) {
-    return <plays.PageNotFound />;
+    return <PageNotFound />;
    }
   
    const renderPlayComponent = () => {

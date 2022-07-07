@@ -29,5 +29,5 @@ yarn.lock
 # nhost
 .nhost
 
-# play inde
-/src/plays/index.js
+# play index
+src/plays/index.js

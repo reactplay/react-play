@@ -1,6 +1,5 @@
-import {Chip, Autocomplete, TextField, InputLabel , MenuItem , FormControl , Select} from '@mui/material';
+import {TextField , MenuItem , FormControl , Select, Button} from '@mui/material';
 import { useEffect, useState } from 'react';
-
 
 const PlayForm = ({fields, data, onChange}) => {
 
@@ -46,20 +45,7 @@ const PlayForm = ({fields, data, onChange}) => {
                                   }
                                 </Select>
                               </FormControl>
-      case 'fileupload': return <span><input
-      accept="image/*"
-      className={classes.input}
-      style={{ display: 'none' }}
-      id="raised-button-file"
-      multiple
-      type="file"
-    />
-    <label htmlFor="raised-button-file">
-      <Button variant="raised" component="span" className={classes.button}>
-        Upload
-      </Button>
-    </label> 
-    </span>
+      
     }
     
   }
