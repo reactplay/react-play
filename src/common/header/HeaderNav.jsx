@@ -27,7 +27,6 @@ const style = {
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useContext(SearchContext);
 
-  // const [showSocial, setShowSocial] = useState(false);
   const [showToggleMenu, setShowToggleMenu] = useState(false);
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -150,22 +149,6 @@ const HeaderNav = ({ showBrowse }) => {
               <IoHeartSharp className='icon' />
               <span className='btn-label'>Share</span>
             </button>
-            {/* <div className='app-header-modal'>
-              <h3 className='modal-title'>Show love</h3>
-              <a className='btn-default-light' href='#'>
-                <IoShareSocial className='icon' />
-                <span className='btn-label'>Share about ReactPlay</span>
-              </a>
-              <p className='mt-2 mb-10'>
-                Share your thoughts about ReactPlay in any of your favorite
-                social media.
-              </p>
-              <a className='btn-secondary-light' href='#'>
-                <BiMoney className='icon' />
-                <span className='btn-label'>Sponsor ReactPlay</span>
-              </a>
-              <p className='mt-2 mb-4'>Some text about asking for the money.</p>
-            </div> */}
           </li>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <Box sx={{ p: 3, pt: 1, borderRadius: 2, width: "360px" }}>
@@ -173,7 +156,10 @@ const HeaderNav = ({ showBrowse }) => {
                 Show Love
               </Typography>
               <button
-                onClick={modalClose}
+                onClick={() => {
+                  modalClose();
+                  handleClose()
+                }}
                 className='my-2 btn-default-light'
                 href='#'
               >
@@ -185,6 +171,7 @@ const HeaderNav = ({ showBrowse }) => {
                 social media.
               </Typography>
               <a
+                onClick={handleClose}
                 target='_blank'
                 className='my-2 btn-secondary-light'
                 href='https://github.com/sponsors/atapas'

@@ -11,7 +11,7 @@ const TechStack = () => {
                 key={idx}
                 target='_blank'
                 href={Item.link}
-                className='hover:bg-blue-100 duration-100 hover:border-0 cursor-pointer md:w-[200px] 2xl:w-[250px] 2xl:h-[250px] sm:w-1/2 w-full border flex-wrap flex justify-center items-center flex-col p-8'
+                className='hover:bg-blue-100 duration-100 cursor-pointer md:w-[200px] 2xl:w-[250px] 2xl:h-[250px] sm:w-1/2 w-full border flex-wrap flex justify-center items-center flex-col p-8'
               >
                 <Item.comp size='80' />
                 <p>{Item.text}</p>
@@ -23,7 +23,7 @@ const TechStack = () => {
                 key={idx}
                 target='_blank'
                 href={Item.link}
-                className='hover:bg-blue-100 duration-100 hover:border-0 cursor-pointer md:w-[200px] 2xl:w-[250px] 2xl:h-[250px] sm:w-1/2 w-full border flex-wrap flex justify-center items-center flex-col p-8'
+                className='hover:bg-blue-100 duration-100 cursor-pointer md:w-[200px] 2xl:w-[250px] 2xl:h-[250px] sm:w-1/2 w-full border flex-wrap flex justify-center items-center flex-col p-8'
               >
                 <img src={Item.comp} alt={Item.comp} />
                 <p className='text-center'>{Item.text}</p>

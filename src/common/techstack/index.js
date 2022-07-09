@@ -4,12 +4,13 @@ import {
   SiGit,
   SiMaterialui,
   SiTailwindcss,
-  SiMysql,
   SiJavascript,
   SiFirebase,
   SiTypescript,
   SiGraphql,
   SiDocker,
+  SiHasura,
+  SiPostgresql
 } from "react-icons/si";
 import NHost from "images/nhost.svg";
 
@@ -51,10 +52,16 @@ export const Tech = [
     link: "https://tailwindcss.com",
   },
   {
-    comp: SiMysql,
-    text: "MySQL",
+    comp: SiHasura,
+    text: "Hasura",
     type: "icon",
-    link: "https://www.mysql.com",
+    link: "https://hasura.io",
+  },
+  {
+    comp: SiPostgresql,
+    text: "PostgreSQL",
+    type: "icon",
+    link: "https://www.postgresql.org",
   },
   {
     comp: SiJavascript,
