@@ -167,8 +167,8 @@ const HeaderNav = ({ showBrowse }) => {
                 <span className='btn-label'>Share about ReactPlay</span>
               </button>
               <Typography className='mt-2 mb-10'>
-                Share your thoughts about ReactPlay in any of your favorite
-                social media.
+                Enjoying ReactPlay? Please help us spreading the word You can share about
+                ReactPlay on any of your favorite social media platforms.
               </Typography>
               <a
                 onClick={handleClose}
@@ -180,8 +180,7 @@ const HeaderNav = ({ showBrowse }) => {
                 <span className='btn-label'>Sponsor ReactPlay</span>
               </a>
               <Typography className='mt-2 mb-4'>
-                It is appreciated if you sponsor and help reactplay to keep
-                active.
+                Your support means a lot to us. Want to be our Sponsor and support us?
               </Typography>
             </Box>
           </Menu>
