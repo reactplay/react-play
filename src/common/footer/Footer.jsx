@@ -47,7 +47,7 @@ const Footer = () => {
             <img src={LogoLight} alt='Logo of ReactPlay' />
           </h3>
           <p className='p-lg'>
-            An open-source project made with ❤️ by 
+            An open-source project made with ❤️ by {' '}
             <a 
             href="https://tapasadhikary.com"
             className='social-link'
