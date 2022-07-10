@@ -1,4 +1,4 @@
-import { TechStackInfo } from ".";
+import { TechStackInfo } from "./TechStackInfo";
 
 const TechStack = () => {
   return (
