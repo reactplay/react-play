@@ -14,7 +14,7 @@ import {
 } from "react-icons/si";
 import NHost from "images/nhost.svg";
 
-export const Tech = [
+export const TechStackInfo = [
   {
     comp: SiReact,
     text: "ReactJS",

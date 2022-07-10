@@ -1,10 +1,10 @@
-import { Tech } from ".";
+import { TechStackInfo } from ".";
 
 const TechStack = () => {
   return (
     <div className='flex justify-center items-center'>
       <div className='md:w-[800px] 2xl:w-[1000px] w-full flex flex-wrap shadow-md m-8'>
-        {Tech.map((Item, idx) => {
+        {TechStackInfo.map((Item, idx) => {
           if (Item.type === "icon") {
             return (
               <a
