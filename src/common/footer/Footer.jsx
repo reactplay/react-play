@@ -14,43 +14,33 @@ const Footer = () => {
   const { showShareModal, setShowShareModal } = useContext(SearchContext);
 
   const [showHideBits, setShowHideBits] = useState({
-    showSearch: false,
-    showBrowse: false,
-    setHeaderStyle: true,
+    setFooterStyle: true,
+    showExtendedFooter: true,
   });
 
   useEffect(() => {
     if (pathName === "/") {
       setShowHideBits((prev) => ({
         ...prev,
-        showSearch: false,
-        showBrowse: true,
-        setHeaderStyle: false,
+        setFooterStyle: false,
+        showExtendedFooter: true,
       }));
-    } else if (pathName === "/ideas") {
+    } else {
       setShowHideBits((prev) => ({
         ...prev,
-        showSearch: false,
-        showBrowse: true,
-        setHeaderStyle: true,
+        setFooterStyle: true,
+        showExtendedFooter: false,
       }));
-    } else if (pathName === "/plays") {
-      setShowHideBits((prev) => ({
-        ...prev,
-        showSearch: true,
-        showBrowse: false,
-        setHeaderStyle: true,
-      }));
-    }
+    } 
   }, [pathName]);
 
   return (
     <footer
       className={`app-footer ${
-        showHideBits.setHeaderStyle ? "" : " app-footer--home"
+        showHideBits.setFooterStyle ? "" : " app-footer--home"
       }`}
     >
-      <div className='app-footer-body'>
+      {showHideBits.showExtendedFooter && <div className='app-footer-body'>
         <div className='body-primary'>
           <h3>
             <span className='sr-only'>ReactPlay</span>
@@ -190,7 +180,7 @@ const Footer = () => {
             <span className='text'>Sponsor ReactPlay</span>
           </a>
         </div>
-      </div>
+      </div>}
       <hr className='separater' />
       <div className="flex justify-center items-center">
         <Link to='/tech-stacks'>

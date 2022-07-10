@@ -167,7 +167,7 @@ const HeaderNav = ({ showBrowse }) => {
                 <span className='btn-label'>Share about ReactPlay</span>
               </button>
               <Typography className='mt-2 mb-10'>
-                Enjoying ReactPlay? Please help us spreading the word You can share about
+                Enjoying ReactPlay? Please help us spreading the word. You can share about
                 ReactPlay on any of your favorite social media platforms.
               </Typography>
               <a
