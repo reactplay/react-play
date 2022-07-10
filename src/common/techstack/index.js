@@ -67,7 +67,7 @@ export const Tech = [
     comp: SiJavascript,
     text: "Javascript",
     type: "icon",
-    link: "https://www.javascript.com",
+    link: "https://www.ecma-international.org/",
   },
   {
     comp: SiFirebase,

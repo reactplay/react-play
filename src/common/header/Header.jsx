@@ -23,7 +23,7 @@ const Header = () => {
         showBrowse: true,
         setHeaderStyle: false,
       }));
-    } else if (pathName === "/ideas") {
+    } else if (pathName === "/ideas" || pathName === "/tech-stacks") {
       setShowHideBits((prev) => ({
         ...prev,
         showSearch: false,

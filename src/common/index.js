@@ -6,6 +6,6 @@ import Modal from "./modal";
 import DefMeta from "meta/DefMeta";
 import PlayMeta from "./playlists/PlayMeta";
 import PlayIdeas from "./playideas/PlayIdeas";
-import TechStack from "./techstack/techstack";
+import TechStack from "./techstack/TechStack";
 
 export { Header, Footer, Home, PageNotFound, Modal, PlayMeta, DefMeta, PlayIdeas, TechStack };
