@@ -1,6 +1,6 @@
-import {TextField , MenuItem , FormControl , Select, Button} from '@mui/material';
+import {TextField , MenuItem , FormControl , Select, Button, Autocomplete} from '@mui/material';
 import { useEffect, useState } from 'react';
-
+import * as _ from 'lodash';
 const PlayForm = ({fields, data, onChange}) => {
 
   const [formData, setFormData] = useState({})
@@ -12,7 +12,7 @@ const PlayForm = ({fields, data, onChange}) => {
     formData[key] = value;
     setFormData({...formData})
     if(onChange) {
-      onChange(key, value)
+      onChange(formData)
     }
   }
 
@@ -28,34 +28,51 @@ const PlayForm = ({fields, data, onChange}) => {
                                       onChange={(e) => {
                                         onDataChanged(field.datafield, e.target.value)}
                                       }/>
-        case 'select': return <FormControl fullWidth>
-                                <Select
-                                  id={field.id} 
-                                  size="small"
-                                  label={field.plaeholder}
-                                                              value={formData[field.datafields]} 
-                                  onChange={(e) => {
-                                    onDataChanged(field.datafield, e.target.value)}
-                                  }
-                                >
-                                  {
-                                    (field.options || []).map(o => {
-                                      return <MenuItem value={o.value}>{o.name}</MenuItem>
-                                    })
-                                  }
-                                </Select>
-                              </FormControl>
-      
+        case 'select': return <Autocomplete
+                                      id={field.datafield}
+                                      size="small"
+                                      options={field.options}
+                                      getOptionLabel={(option) => option.name || option[field.fieldName] || option}
+                                      filterSelectedOptions
+                                      multiple={field.multiple}
+                                      freeSolo={field.freeSolo}
+                                      onChange={(e, newValue) => {
+                                        let updatedval = newValue;
+                                        if(field.multiple) {
+                                          updatedval = [];
+                                          newValue.forEach(v => {
+                                            if(_.isObject(v)){
+                                              updatedval.push(v);
+                                            } else {
+                                              updatedval.push({
+                                                [field.fieldName || 'name']: v,
+                                                [field.fieldValue || 'value']: ""
+                                              })
+                                            }
+                                          })
+                                        }
+                                        onDataChanged(field.datafield, updatedval)}
+                                      }
+                                      renderInput={(params) => (
+                                        <TextField
+                                          {...params}
+                                          size="small"
+                                          placeholder={field.placeholder}
+                                        />
+                                      )}
+                                    />
     }
     
   }
+
+  
  
   const renderForm = () => {
     return <>
         <FormControl className='w-full'>
-    {fields.map(field => {
+    {fields.map((field, field_key) => {
       return(
-        <div className='flex p-2'>
+        <div className='flex p-2' key={field_key}>
           <div className='flex-1'>
             {field.display}{field.required ? "*":""}
           </div>

@@ -16,17 +16,17 @@ export const FIELD_TEMPLATE = [
   },
   {
     datafield: "issue",
-    type: "autocomplete",
+    type: "select",
     display: "Issue",
     placeholder: "Select an issue to link with",
     multiple: false,
     options: [],
+    fieldName: "name",
     required: true,
   },
   {
     datafield: "language",
-    type: "autocomplete",
-    multiple: false,
+    type: "select",
     display: "Language",
     placeholder: "Preferred Language",
     options: [
@@ -43,8 +43,7 @@ export const FIELD_TEMPLATE = [
   },
   {
     datafield: "style",
-    type: "autocomplete",
-    multiple: false,
+    type: "select",
     display: "Style",
     placeholder: "Preferred Style Script",
     options: [
@@ -60,7 +59,7 @@ export const FIELD_TEMPLATE = [
   },
   {
     datafield: "level",
-    type: "autocomplete",
+    type: "select",
     multiple: false,
     display: "Level",
     placeholder: "Play Complexity Level",
@@ -75,9 +74,13 @@ export const FIELD_TEMPLATE = [
   },
   {
     datafield: "tags",
-    type: "autocomplete",
+    type: "select",
     display: "Tags",
     placeholder: "All Tags",
+    fieldValue: "id",
+    fieldName: "name",
+    freeSolo: true,
+    multiple: true,
     options: [],
   },
   {

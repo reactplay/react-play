@@ -14,7 +14,6 @@ const getIssues = () => {
         value: issue.number,
       });
     });
-    console.log(issue_formatted);
     return issue_formatted;
   });
 };

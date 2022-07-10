@@ -5,7 +5,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "common/spinner/spinner";
 import * as all_plays from "plays";
 import { useParams } from "react-router-dom";
-import {useGetPlays} from 'common/hooks'
+import useGetPlays from 'common/hooks/useGetPlays'
 
 import "./playlist.css";
 import { submit } from "common/services/request";
