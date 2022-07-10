@@ -1,5 +1,6 @@
 import { submit } from 'common/services/request';
 import { FetchPlaysByID } from 'common/services/request/query/fetch-plays';
+import { toKebabCase } from 'common/services/string';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './play-created.scss'
@@ -50,7 +51,7 @@ const PlayCreated = () => {
         Start application<code className="console-wrapper">npm start <br/># OR <br/> yarn start</code>
       </li>
       <li>
-        Find your play under <code className="console-wrapper">&lt;reactplay-directory&gt;/src/plays/{play.name}</code>
+        Find your play under <code className="console-wrapper">&lt;reactplay-directory&gt;/src/plays/{toKebabCase(play.name)}</code>
       </li>
      </ol>
      <div>

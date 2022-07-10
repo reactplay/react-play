@@ -1,9 +1,11 @@
 import { useState, useEffect, useContext, useCallback } from "react";
+// import fs from "fs";
 import { SearchContext } from "common/search/search-context";
 import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
 import { FetchPlaysSimple } from "common/services/request/query/fetch-plays";
 
 import { submit } from "common/services/request";
+import { toKebabCase } from "common/services/string";
 
 /**
  * Run graphql query to filter plays
@@ -27,10 +29,13 @@ function useGetPlays() {
     filterQuery.owner_user_id.length > 0 ||
     filterQuery.language.length > 0;
 
-  const re_filterPlaysByMultiTagsLevelLang = useCallback((filterQuery) => {
-    const callIt = filterPlaysByMultiTagsLevelLang(filterQuery)
-    return callIt
-  },[filterPlaysByMultiTagsLevelLang])
+  const re_filterPlaysByMultiTagsLevelLang = useCallback(
+    (filterQuery) => {
+      const callIt = filterPlaysByMultiTagsLevelLang(filterQuery);
+      return callIt;
+    },
+    [filterPlaysByMultiTagsLevelLang]
+  );
 
   const re_filterPlaysBySearchString = useCallback(
     (Obj) => {
@@ -51,6 +56,8 @@ function useGetPlays() {
       } else {
         res = await submit(FetchPlaysSimple());
       }
+      // Check if the play exists locally
+      // const locallyAvailablePlays = filterLocallyAvailablePlays(res);
       setPlays(res);
     } catch (error) {
       setError(error);
@@ -62,14 +69,37 @@ function useGetPlays() {
     searchTerm,
     filterQuery,
     re_filterPlaysBySearchString,
-    re_filterPlaysByMultiTagsLevelLang
+    re_filterPlaysByMultiTagsLevelLang,
   ]);
+
+  // const filterLocallyAvailablePlays = (all_plays) => {
+  //   const res = [];
+  //   const dirs = getAllPlaysLocally();
+  //   all_plays.forEach((play) => {
+  //     const playNameKebabCase = toKebabCase(play.name);
+  //     let playPath = playNameKebabCase;
+  //     if (play.path) {
+  //       const pathSegmentation = play.path.split("/");
+  //       if (pathSegmentation.length > 1) {
+  //         playPath = pathSegmentation[2];
+  //       }
+  //     }
+  //     if (dirs.indexOf(playPath) > -1) {
+  //       res.push(play);
+  //     }
+  //   });
+  // };
+
+  // const getAllPlaysLocally = () => {
+  //   const all_files = fs.readdirSync("./src/plays");
+  //   return all_files;
+  // };
 
   useEffect(() => {
     fetchPlays();
   }, [fetchPlays]);
 
   return [loading, error, plays];
-};
+}
 
 export default useGetPlays;

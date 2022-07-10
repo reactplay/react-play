@@ -32,6 +32,10 @@ const createPlay = (playObject) => {
   // Prepare issue
   objectToSubmit.issue = objectToSubmit.issue.value;
 
+  // Temporary issue resolution
+  objectToSubmit.path = "/dev/test";
+  objectToSubmit.devMode = true;
+
   // Submit play
   promises.push(submitMutation(createPlayQuery, objectToSubmit));
 
