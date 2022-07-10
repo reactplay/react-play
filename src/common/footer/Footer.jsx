@@ -57,7 +57,12 @@ const Footer = () => {
             <img src={LogoLight} alt='Logo of ReactPlay' />
           </h3>
           <p className='p-lg'>
-            An open-source project made with ❤️ by Tapas Adhikary and friends.
+            An open-source project made with ❤️ by 
+            <a 
+            href="https://tapasadhikary.com"
+            className='social-link'
+            target='_blank'
+            rel='noopener noreferrer'>Tapas Adhikary</a> and friends.
           </p>
           <p>
             <small>Connect with us</small>
@@ -75,7 +80,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href='https://github.com/reactplay/react-play'
+                  href='https://github.com/reactplay'
                   className='social-link'
                   target='_blank'
                   rel='noopener noreferrer'
@@ -86,7 +91,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href='https://discord.gg/3XVrkdCz'
+                  href='https://discord.gg/vrTxWUP8Am'
                   className='social-link'
                   target='_blank'
                   rel='noopener noreferrer'
@@ -125,8 +130,8 @@ const Footer = () => {
         <div className='body-secondary'>
           <h3 className='section-title mt-3'>About</h3>
           <p className='mb-4'>
-            A ReactPlay is a ReactJS project, which helps you Learn, create and
-            sharing with the developer community.
+            ReactPlay is an opensource platform that helps you Learn, create and
+            sharing ReactJS projects with the developer community.
           </p>
           <div className='flex flex-wrap gap-1'>
             <a
@@ -145,7 +150,7 @@ const Footer = () => {
           </div>
           <p className='mt-10'>
             Not sure how to get started? <br />
-            We have a lot of ideas, get started.
+            We have a lot of ideas for you to get started.
             <div className='mt-2'>
               <Link to='/ideas' className='home-anchor home-anchor-sm'>
                 <span className='text'>Get started</span>
@@ -166,8 +171,8 @@ const Footer = () => {
         <div className='body-tertiary'>
           <h3 className='section-title'>Show love</h3>
           <p className='mb-2'>
-            Share your thoughts about ReactPlay in any of your favorite social
-            media.
+            Enjoying ReactPlay? Please help us spreading the word You can share about
+            ReactPlay on any of your favorite social media platforms.
           </p>
           <button
             onClick={() => setShowShareModal(!showShareModal)}
@@ -176,7 +181,7 @@ const Footer = () => {
           >
             <span className='text'>Share about ReactPlay</span>
           </button>
-          <p className='mt-10 mb-2'>Some text about asking for the money.</p>
+          <p className='mt-10 mb-2'>Your support means a lot to us. Want to be our Sponsor and support us?</p>
           <a
             target='_blank'
             className='home-anchor home-anchor-sm'
