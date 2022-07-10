@@ -1,10 +1,9 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import "./ExpandingCards.css";
-import { useState } from "react";
+import {useState} from "react";
 import data from "./Expanding-Card-Images";
 
 function ExpandingCards(props) {
-
   // Your Code Start below.
 
   const [activeCard, setActiveCard] = useState(0);

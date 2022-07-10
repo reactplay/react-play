@@ -1,8 +1,8 @@
 export function FetchPlaysSimple() {
   const env = process.env.NODE_ENV === "development";
+  const preview = process.env.REACT_APP_PREVIEW_MODE;
   const payload = BasiFetchParam;
-  delete payload.where;
-  if (!env) {
+  if (!env && !preview) {
     payload.where = {
       clause: [
         {
