@@ -4,6 +4,7 @@ import {
   associatePlayWithTagQuery,
   createPlayQuery,
 } from "./request/query/play";
+import { toKebabCase } from "./string";
 import { Tags } from "./tags";
 
 // Create a play
@@ -33,8 +34,8 @@ const createPlay = (playObject) => {
   objectToSubmit.issue = objectToSubmit.issue.value;
 
   // Temporary issue resolution
-  objectToSubmit.path = "/dev/test";
-  objectToSubmit.devMode = true;
+  objectToSubmit.path = `/plays/${toKebabCase(objectToSubmit.name)}`;
+  objectToSubmit.dev_mode = true;
 
   // Submit play
   promises.push(submitMutation(createPlayQuery, objectToSubmit));
@@ -46,7 +47,7 @@ const createPlay = (playObject) => {
       if (tag.id === "") {
         promises.push(
           Tags.createATag({
-            name: tag.value,
+            name: tag.name,
           })
         );
       } else {

@@ -8,9 +8,6 @@ import { useParams } from "react-router-dom";
 import useGetPlays from 'common/hooks/useGetPlays'
 
 import "./playlist.css";
-import { submit } from "common/services/request";
-import { FetchPlaysSimple } from "common/services/request/query/fetch-plays";
-import { toTitleCase } from "common/services/string";
 
 const PlayList = () => {
   const [loading, error, plays] = useGetPlays();
@@ -39,7 +36,12 @@ const PlayList = () => {
     <Fragment>
       <ol className='list-plays'>
         {plays?.map((play, index) => (
-          <PlayThumbnail key={play.id} play={play} />
+          <>
+          {
+            all_plays[play.component] && <PlayThumbnail key={play.id} play={play} />
+          }
+          </>
+          
         ))}
       </ol>
     </Fragment>
