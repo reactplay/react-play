@@ -10,26 +10,18 @@ import useGetPlays from 'common/hooks/useGetPlays'
 import "./playlist.css";
 
 const PlayList = () => {
-  const [loading, error, plays, refresh] = useGetPlays();
+  const [loading, error, plays] = useGetPlays();
   const [allPlays, setAllPlays] = useState([])
 
   let { playid } = useParams(); // return the parameter of url
   useEffect(() => {
-    if(plays && plays.length > 1) {
-      setAllPlays(plays);
-    } else {
-      if(!loading) {
-        const playsFetchd = refresh()
-        setAllPlays(playsFetchd)
-      }
-    }
-  },[playid])
+  },[playid, loading])
   
   if (loading) {
    return <Loader />;
   }
 
-  if (allPlays?.length === 0) {
+  if (plays?.length === 0) {
     return (
       <div className='play-not-found'>
         <ImageOops className='play-not-found-image' />
@@ -43,7 +35,7 @@ const PlayList = () => {
   return (
     <Fragment>
       <ol className='list-plays'>
-        {allPlays?.map((play, index) => (
+        {plays?.map((play, index) => (
           <React.Fragment key={index}>
           {
             all_plays[play.component] && <PlayThumbnail key={play.id} play={play}/>

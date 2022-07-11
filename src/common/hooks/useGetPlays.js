@@ -44,10 +44,6 @@ function useGetPlays() {
     [filterPlaysBySearchString]
   );
 
-  const refresh = () => {
-    return fetchPlays();
-  };
-
   const fetchPlays = useCallback(async () => {
     let res = [];
     setLoading(true);
@@ -60,14 +56,11 @@ function useGetPlays() {
       } else {
         res = await submit(FetchPlaysSimple());
       }
-      // Check if the play exists locally
-      // const locallyAvailablePlays = filterLocallyAvailablePlays(res);
       setPlays(res);
     } catch (error) {
       setError(error);
     }
     setLoading(false);
-    return res;
   }, [
     hasSearchTerm,
     hasFilterQuery,
@@ -81,7 +74,7 @@ function useGetPlays() {
     fetchPlays();
   }, [fetchPlays]);
 
-  return [loading, error, plays, refresh];
+  return [loading, error, plays];
 }
 
 export default useGetPlays;

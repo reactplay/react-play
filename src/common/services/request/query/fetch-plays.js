@@ -1,7 +1,7 @@
 export function FetchPlaysSimple() {
   const env = process.env.NODE_ENV === "development";
   const preview = process.env.REACT_APP_PREVIEW_MODE;
-  const payload = BasiFetchParam;
+  const payload = { ...BasiFetchParam };
   if (!env && !preview) {
     payload.where = {
       clause: [
@@ -19,7 +19,7 @@ export function FetchPlaysSimple() {
 
 export function FetchPlaysByID(id) {
   const env = process.env.NODE_ENV === "development";
-  const payload = BasiFetchParam;
+  const payload = { ...BasiFetchParam };
 
   payload.where = {
     clause: [
