@@ -44,10 +44,14 @@ function useGetPlays() {
     [filterPlaysBySearchString]
   );
 
+  const refresh = () => {
+    return fetchPlays();
+  };
+
   const fetchPlays = useCallback(async () => {
+    let res = [];
     setLoading(true);
     try {
-      let res = [];
       if (hasSearchTerm) {
         res = await submit(re_filterPlaysBySearchString({ name: searchTerm }));
       } else if (hasFilterQuery) {
@@ -63,6 +67,7 @@ function useGetPlays() {
       setError(error);
     }
     setLoading(false);
+    return res;
   }, [
     hasSearchTerm,
     hasFilterQuery,
@@ -72,34 +77,11 @@ function useGetPlays() {
     re_filterPlaysByMultiTagsLevelLang,
   ]);
 
-  // const filterLocallyAvailablePlays = (all_plays) => {
-  //   const res = [];
-  //   const dirs = getAllPlaysLocally();
-  //   all_plays.forEach((play) => {
-  //     const playNameKebabCase = toKebabCase(play.name);
-  //     let playPath = playNameKebabCase;
-  //     if (play.path) {
-  //       const pathSegmentation = play.path.split("/");
-  //       if (pathSegmentation.length > 1) {
-  //         playPath = pathSegmentation[2];
-  //       }
-  //     }
-  //     if (dirs.indexOf(playPath) > -1) {
-  //       res.push(play);
-  //     }
-  //   });
-  // };
-
-  // const getAllPlaysLocally = () => {
-  //   const all_files = fs.readdirSync("./src/plays");
-  //   return all_files;
-  // };
-
   useEffect(() => {
     fetchPlays();
   }, [fetchPlays]);
 
-  return [loading, error, plays];
+  return [loading, error, plays, refresh];
 }
 
 export default useGetPlays;

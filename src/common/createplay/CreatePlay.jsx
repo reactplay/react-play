@@ -32,21 +32,21 @@ const CreatePlay = () => {
         }
       }
 
-      }, [isLoading])
+  }, [isLoading])
 
-    const onChange = (data) => {
-      setFormData({...data})
-    }
-    const isFieldsAreInValid = () => {
-      return false;
-      let res = false;
-      FIELD_TEMPLATE.forEach(tmpl => {
-        if(tmpl.required && (!formData || !formData[tmpl.datafield])) {
-          res = true
-        }
-      })
-      return res;
-    }
+  const onChange = (data) => {
+    setFormData({...data})
+  }
+  
+  const isFieldsAreInValid = () => {
+    let res = false;
+    FIELD_TEMPLATE.forEach(tmpl => {
+      if(tmpl.required && (!formData || !formData[tmpl.datafield])) {
+        res = true
+      }
+    })
+    return res;
+  }
 
   const initializeData = () => {
     const all_apis = [{name: 'tags', method: Tags.getAllTags}, {name: 'level', method: Levels.getAllLevels}, { name: "issue", method: Issues.getIssues}];
@@ -91,20 +91,25 @@ const CreatePlay = () => {
       </div>
     <div className="w-full h-full max-w-6xl flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-6">
       <div className="flex-1"> {
-        isDataLoading ? (<Loader title={loadingText} subtitle="Please wait...."/>): (<form><PlayForm fields={FIELD_TEMPLATE} onChange={(data) => onChange(data)}/><div className="flex items-center justify-between">
-        <Button variant="contained" disabled={isFieldsAreInValid()} onClick={() => onSubmit()}>
-          Create the awesome
-        </Button>
-        <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-          Reset?
-        </a>
-      </div>
-    </form>)
+        isDataLoading ? 
+          (
+            <Loader title={loadingText} subtitle="Please wait...."/>
+          ):(
+            <form>
+              <PlayForm fields={FIELD_TEMPLATE} onChange={(data) => onChange(data)}/>
+              <div className="flex items-center justify-between">
+                <Button variant="contained" disabled={isFieldsAreInValid()} onClick={() => onSubmit()}>
+                  Create the awesome
+                </Button>
+                <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                  Reset?
+                </a>
+              </div>
+            </form>
+          )
       }
-  
- 
-    
     </div>
+    {/* DEV NOTE: Intentionally kept empty div as the initial plan was to have multi column page. Will continue to keep until mockup is finalized */}
     </div></div>
   )
 };

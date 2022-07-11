@@ -14,8 +14,7 @@ const createPlay = (playObject) => {
   const tags = [];
   const promises = [];
 
-  // mutation Insert_Play_Mutation {insert_plays_one(object: {name:"DevTestPlay6",description:"DevTestPlay6",issue:"328",language:"js",style:"css",level_id:"bed3cf3f-d7e1-4094-ae07-c3dcde899bc7",github:"DevTestPlay6",owner_user_id:"4fa14525-8f98-45b9-9a8b-c1ba34c6ed43", path:"",component:"", blog:"", video:"", featured:false, cover:""}) {id}}
-
+  // Remove tag object array. It will be re-prepared later
   delete objectToSubmit.tags;
 
   // Prepare language
@@ -33,7 +32,7 @@ const createPlay = (playObject) => {
   // Prepare issue
   objectToSubmit.issue = objectToSubmit.issue.value;
 
-  // Temporary issue resolution
+  // DEV NOTE: Temporary issue resolution. Remove it once the current Issue(369) gets merged
   objectToSubmit.path = `/plays/${toKebabCase(objectToSubmit.name)}`;
   objectToSubmit.dev_mode = true;
 

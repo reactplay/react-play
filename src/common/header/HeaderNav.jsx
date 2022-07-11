@@ -42,14 +42,29 @@ const HeaderNav = ({ showBrowse }) => {
             </li>
           )}
           <li className="menu-spacer">
-            <a
-              href="/plays/create"
-              rel="noopener noreferrer"
-              className="app-header-btn app-header-btn--primary"
-            >
-              <IoAddSharp className="icon" />
-              <span className="btn-label">Create</span>
-            </a>
+            {process.env.NODE_ENV !== "development" ? 
+            (
+              <a
+                href="/plays/create"
+                rel="noopener noreferrer"
+                className="app-header-btn app-header-btn--primary"
+              >
+                <IoAddSharp className="icon" />
+                <span className="btn-label">Create</span>
+              </a>
+            ): (
+              <a
+                href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="app-header-btn app-header-btn--primary"
+              >
+                <IoAddSharp className="icon" />
+                <span className="btn-label">Create</span>
+              </a>
+            )}
+            
+            
           </li>
           <li>
             <Link to="/ideas" className="app-header-btn app-header-btn--default">

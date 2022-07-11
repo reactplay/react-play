@@ -28,64 +28,60 @@ const PlayForm = ({fields, data, onChange}) => {
                                       onChange={(e) => {
                                         onDataChanged(field.datafield, e.target.value)}
                                       }/>
-        case 'select': return <Autocomplete
-                                      id={field.datafield}
-                                      size="small"
-                                      options={field.options}
-                                      getOptionLabel={(option) => option.name || option[field.fieldName] || option}
-                                      filterSelectedOptions
-                                      multiple={field.multiple}
-                                      freeSolo={field.freeSolo}
-                                      onChange={(e, newValue) => {
-                                        let updatedval = newValue;
-                                        if(field.multiple) {
-                                          updatedval = [];
-                                          newValue.forEach(v => {
-                                            if(_.isObject(v)){
-                                              updatedval.push(v);
-                                            } else {
-                                              updatedval.push({
-                                                [field.fieldName || 'name']: v,
-                                                [field.fieldValue || 'value']: ""
-                                              })
+        case 'select': return <Autocomplete id={field.datafield}
+                                            size="small"
+                                            options={field.options}
+                                            getOptionLabel={(option) => option.name || option[field.fieldName] || option}
+                                            filterSelectedOptions
+                                            multiple={field.multiple}
+                                            freeSolo={field.freeSolo}
+                                            onChange={(e, newValue) => {
+                                              let updatedval = newValue;
+                                              if(field.multiple) {
+                                                updatedval = [];
+                                                newValue.forEach(v => {
+                                                  if(_.isObject(v)){
+                                                    updatedval.push(v);
+                                                  } else {
+                                                    updatedval.push({
+                                                      [field.fieldName || 'name']: v,
+                                                      [field.fieldValue || 'value']: ""
+                                                    })
+                                                  }
+                                                })
+                                              }
+                                              onDataChanged(field.datafield, updatedval)}
                                             }
-                                          })
-                                        }
-                                        onDataChanged(field.datafield, updatedval)}
-                                      }
-                                      renderInput={(params) => (
-                                        <TextField
-                                          {...params}
-                                          size="small"
-                                          placeholder={field.placeholder}
-                                        />
-                                      )}
-                                    />
+                                            renderInput={(params) => (
+                                              <TextField
+                                                {...params}
+                                                size="small"
+                                                placeholder={field.placeholder}
+                                              />
+                                            )}
+                                />
     }
-    
   }
-
-  
  
   const renderForm = () => {
     return <>
         <FormControl className='w-full'>
-    {fields.map((field, field_key) => {
-      return(
-        <div className='flex p-2' key={field_key}>
-          <div className='flex-1'>
-            {field.display}{field.required ? "*":""}
-          </div>
-          <div className='flex-1'>
-        {renderField(field)}
-        </div>
-        </div>
-        
-      )
-    })}
-   
+          {fields.map((field, field_key) => {
+            return(
+              <div className='flex p-2' key={field_key}>
+                <div className='flex-1'>
+                  {field.display}{field.required ? "*":""}
+                </div>
+                <div className='flex-1'>
+              {renderField(field)}
+              </div>
+              </div>
+              
+            )
+          })}
         </FormControl> </>
   }
+  
   return (
     <>
       {renderForm()}
