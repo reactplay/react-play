@@ -22,7 +22,7 @@ const ExtendedFooter = () => {
             An open-source project made with ❤️ by{" "}
             <a
               href='https://tapasadhikary.com'
-              className='social-link'
+              className='text-link-default'
               target='_blank'
               rel='noopener noreferrer'
             >
