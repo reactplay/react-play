@@ -151,10 +151,10 @@ const HeaderNav = ({ showBrowse }) => {
             </button>
           </li>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-            <Box sx={{ p: 3, pt: 1, borderRadius: 2, width: "360px" }}>
-              <Typography sx={{ py: 1 }} variant='h5'>
+            <Box sx={{ p: 4, pt: 2, borderRadius: 2, width: "360px" }}>
+              <h3 className="section-title">
                 Show Love
-              </Typography>
+              </h3>
               <button
                 onClick={() => {
                   modalClose();
@@ -166,10 +166,11 @@ const HeaderNav = ({ showBrowse }) => {
                 <IoShareSocial className='icon' />
                 <span className='btn-label'>Share about ReactPlay</span>
               </button>
-              <Typography className='mt-2 mb-10'>
+              <p className='mt-2 mb-8 leading-tight'><small>
                 Enjoying ReactPlay? Please help us spreading the word. You can share about
                 ReactPlay on any of your favorite social media platforms.
-              </Typography>
+                </small>
+              </p>
               <a
                 onClick={handleClose}
                 target='_blank'
@@ -179,9 +180,9 @@ const HeaderNav = ({ showBrowse }) => {
                 <BiMoney className='icon' />
                 <span className='btn-label'>Sponsor ReactPlay</span>
               </a>
-              <Typography className='mt-2 mb-4'>
-                Your support means a lot to us. Want to be our Sponsor and support us?
-              </Typography>
+              <p className='mt-2 mb-4 leading-tight'>
+                <small>Your support means a lot to us. Want to be our Sponsor and support us?</small>
+              </p>
             </Box>
           </Menu>
         </ul>

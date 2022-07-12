@@ -750,6 +750,7 @@
 
 .home-anchor.home-anchor-sm {
     font-size: calc(var(--fs-rg)*1.2);
+    line-height: 1.2;
 }
 
 .home-anchor.home-anchor-sm:before {

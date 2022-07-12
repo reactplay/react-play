@@ -50,7 +50,7 @@ const Footer = () => {
             An open-source project made with ❤️ by {' '}
             <a 
             href="https://tapasadhikary.com"
-            className='social-link'
+            className='text-link-default'
             target='_blank'
             rel='noopener noreferrer'>Tapas Adhikary</a> and friends.
           </p>
@@ -118,7 +118,7 @@ const Footer = () => {
           </p>
         </div>
         <div className='body-secondary'>
-          <h3 className='section-title mt-3'>About</h3>
+          <h3 className='section-title mt-0'>About</h3>
           <p className='mb-4'>
             ReactPlay is an opensource platform that helps you Learn, create and
             sharing ReactJS projects with the developer community.
@@ -159,7 +159,7 @@ const Footer = () => {
           </p>
         </div>
         <div className='body-tertiary'>
-          <h3 className='section-title'>Show love</h3>
+          <h3 className='section-title mt-0'>Show love</h3>
           <p className='mb-2'>
             Enjoying ReactPlay? Please help us spreading the word You can share about
             ReactPlay on any of your favorite social media platforms.
@@ -182,7 +182,7 @@ const Footer = () => {
         </div>
       </div>}
       <hr className='separater' />
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center py-2">
         <Link to='/tech-stacks'>
           ReactPlay - The MIT License (MIT) Copyright &copy;
           {new Date().getFullYear()} . Powered by{" "}

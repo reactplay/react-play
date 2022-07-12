@@ -2,8 +2,10 @@ import { TechStackInfo } from "./TechStackInfo";
 
 const TechStack = () => {
   return (
-    <div className='flex justify-center items-center'>
-      <div className='md:w-[800px] 2xl:w-[1000px] w-full flex flex-wrap shadow-md m-8'>
+    <div className='app-body'>
+      <h2 className="section-title text-center pt-8 mt-48">ReactPlay is proudly powered by</h2>
+      <div className='list-brand-tech-stack'>
+      {/* <div className='md:w-[800px] 2xl:w-[1000px] w-full flex flex-wrap m-8'> */}
         {TechStackInfo.map((Item, idx) => {
           if (Item.type === "icon") {
             return (
@@ -11,9 +13,9 @@ const TechStack = () => {
                 key={idx}
                 target='_blank'
                 href={Item.link}
-                className='hover:bg-blue-100 duration-100 cursor-pointer md:w-[200px] 2xl:w-[250px] 2xl:h-[250px] sm:w-1/2 w-full border flex-wrap flex justify-center items-center flex-col p-8'
+                className='brand-tech-stack'
               >
-                <Item.comp size='80' />
+                <Item.comp size='80' className='icon' />
                 <p>{Item.text}</p>
               </a>
             );
@@ -23,7 +25,7 @@ const TechStack = () => {
                 key={idx}
                 target='_blank'
                 href={Item.link}
-                className='hover:bg-blue-100 duration-100 cursor-pointer md:w-[200px] 2xl:w-[250px] 2xl:h-[250px] sm:w-1/2 w-full border flex-wrap flex justify-center items-center flex-col p-8'
+                className='brand-tech-stack'
               >
                 <img src={Item.comp} alt={Item.comp} />
                 <p className='text-center'>{Item.text}</p>

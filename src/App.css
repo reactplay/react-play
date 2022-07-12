@@ -191,6 +191,14 @@ small {
   height: 100%;
 }
 
+.section-title {
+  margin: 0 0 0.6rem 0;
+  font-family: var(--ff-accent);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-neutral-90);
+}
+
 /* Anchors or Links */
 .text-link-default {
   font-weight: var(--fw-semibold);
@@ -233,7 +241,7 @@ small {
 }
 
 .app-footer-body .section-title {
-  margin: 1rem 0;
+  margin: 0 0 0.6rem 0;
   font-family: var(--ff-accent);
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
@@ -315,7 +323,7 @@ small {
   color: var(--color-brand-primary-alt);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1176px) {
   .app-footer--home .app-footer-body {
     display: flex;
     flex-wrap: wrap;
@@ -527,4 +535,52 @@ small {
 .btn-size--sm .icon {
   width: var(--navbar-icon-size-sm);
   height: var(--navbar-icon-size-sm);
+}
+
+/* Tech Stack */
+.list-brand-tech-stack {
+  --techstack-cardsize: 250px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 1rem auto 2rem auto;
+  max-width: 1280px;
+  box-sizing: border-box;
+  grid-gap: .4rem;
+  justify-content: center;
+}
+
+.brand-tech-stack {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.4rem;
+  background-color: var(--color-neutral-10);
+  justify-content: center;
+  align-items: center;
+  width: var(--techstack-cardsize);
+  height: var(--techstack-cardsize);
+  padding: 1rem 2rem;
+  border-radius: 0.2rem;
+  /* border: solid 1px var(--color-neutral-30); */
+  box-sizing: border-box;
+  transition: all 0.16s ease-in-out;
+}
+
+.brand-tech-stack .icon {
+  fill: var(--color-neutral-50);
+}
+
+.brand-tech-stack:hover,
+.brand-tech-stack:focus {
+  border: solid 2px rgba(var(--color-brand-primary-rgb), 60%);
+  transform: scale(1.10);
+  box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.12);
+    -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.12);
+    -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.12);
+}
+
+.brand-tech-stack:hover .icon,
+.brand-tech-stack:focus .icon {
+  fill: var(--color-brand-primary);
 }
