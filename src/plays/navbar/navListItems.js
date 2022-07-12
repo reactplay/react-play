@@ -7,15 +7,18 @@ import UserImg from "./assest/User.png"
 import SettingImg from "./assest/Setting.png"
 import SearchImg from "./assest/Search.png"
 import Backgrounds from './Backgrounds'
+import { FaTwitterSquare } from 'react-icons/fa';
 
 const NavListItems = (props) => {
     const [open, setOpen] = useState(true);
     const [show, setShow] = useState("opacity-0");
+    const [hide, setHide] = useState(true);  //true == opacity-1
     const [data, setData] = useState(Backgrounds);
 
     const filterResult = (catItem) => {
         const result = Backgrounds.filter((currentData) => {
             handleOpacity();
+            handleHide();
             return currentData.type === catItem;
         });
         setData(result)
@@ -23,6 +26,14 @@ const NavListItems = (props) => {
     const handleOnClick = () => setOpen((prevState) => !prevState)
     const handleOpacity = () => {
         setShow("opacity-1")
+    }
+    const handleHide = () => {
+        setHide(false)
+    }
+
+    const reverseClick = () => {
+        setShow("opacity-0");
+        setHide("opacity-1");
     }
     return (
         <>
@@ -33,7 +44,7 @@ const NavListItems = (props) => {
                         alt='collasp'
                         className={`absolute cursor-pointer rounded-full -right-3 top-9 w-7 border-2 bg-cyan-500 ${!open && "rotate-180"}`}
                         onClick={handleOnClick} />
-                    <div className='flex gap-x-4 items-center'>
+                    <div className='flex gap-x-4 items-center' onClick={reverseClick}>
                         <img src={LogoImage}
                             alt='play-logo'
                             className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"}`}
@@ -92,11 +103,35 @@ mt-2  menu-items`} onClick={() => filterResult('search')} >
                 </div>
                 <div>
                     {/* Fetching Values */}
+                    <div className={`${hide ? "opacity-1" : "opacity-0"} card-content`}>
+                        <div class="contentiner-box">
+                            <p class="contentiner-box-sub">It is a responsive NavBar that helps you to navigate
+                                <button id='neon'>
+                                    <span id="n"> Re</span>
+                                    <span id="a">a</span>
+                                    <span id="c">c</span>
+                                    <span id="t">t</span>
+                                    <span id="pl">Pl</span>
+                                    <span id="a2">a</span>
+                                    <span id="y">y</span>
+                                </button>
+                                .</p>
+                            <a href='https://twitter.com/Shivamkatare_27'><FaTwitterSquare className='allIcons' /></a>
+                        </div>
+                        <h1 className='headings'>
+                            <span>Made with</span>
+                            <div class="message">
+                                <div class="word1">CSS3</div>
+                                <div class="word2">React JS</div>
+                                <div class="word3">Tailwind CSS</div>
+                            </div>
+                        </h1>
+                    </div>
                     {data.map((values) => {
                         const { id, image, title, discription, statement, url } = values
                         return (
                             <>
-                                <div className={`card ${show}`} key={id}>
+                                <div className={`card ${show} ${hide ? "invisible" : "visible"}`} key={id}>
                                     <img src={image} alt={"card-images"} className={`images`} />
                                     <div className='hover'>
                                         <h2 className='heading'>{title}</h2>
