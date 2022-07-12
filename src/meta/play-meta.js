@@ -26,7 +26,8 @@ import {
   FlipCardEffect,
   ContextWithRealUsecases,
   GitHubUserSearch,
-  //import play here
+  BudgetApp,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -455,5 +456,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-budget-app', 
+    name: 'Budget App', 
+    description: 'This app helps the user in planning and categorizing all their expenses really well.',
+    component: () => {return <BudgetApp />},
+    path: '/plays/budget-app',
+    level: 'Intermediate',
+    tags: 'JSX,Hooks,LocalStorage',
+    github: 'Adit0507',
+    cover: 'https://i.ibb.co/RC6pC23/budget.png',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];

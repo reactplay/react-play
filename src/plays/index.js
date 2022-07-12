@@ -27,4 +27,5 @@ export { default as SimpleLiveChat } from "plays/simple-live-chat/SimpleLiveChat
 export { default as FlipCardEffect } from "plays/flip-card-effect/FlipCardEffect";
 export { default as ContextWithRealUsecases } from "plays/context-with-real-usecases/ContextWithRealUsecases";
 export { default as GitHubUserSearch } from "plays/github-user-search/GitHubUserSearch";
+export { default as BudgetApp } from 'plays/budget-app/BudgetApp';
 //add export here
