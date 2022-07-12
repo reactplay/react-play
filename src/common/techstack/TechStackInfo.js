@@ -10,7 +10,9 @@ import {
   SiGraphql,
   SiDocker,
   SiHasura,
-  SiPostgresql
+  SiPostgresql,
+  SiPython,
+  SiNodedotjs,
 } from "react-icons/si";
 import NHost from "images/nhost.svg";
 
@@ -92,5 +94,17 @@ export const TechStackInfo = [
     text: "Docker",
     type: "icon",
     link: "https://www.docker.com",
+  },
+  {
+    comp: SiNodedotjs,
+    text: "NodeJS",
+    type: "icon",
+    link: "https://nodejs.org/en",
+  },
+  {
+    comp: SiPython,
+    text: "Python",
+    type: "icon",
+    link: "https://www.python.org",
   },
 ];
