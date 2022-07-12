@@ -7,5 +7,6 @@ import DefMeta from "meta/DefMeta";
 import PlayMeta from "./playlists/PlayMeta";
 import PlayIdeas from "./playideas/PlayIdeas";
 import TechStack from "./techstack/techstack";
+import ExtendedFooter from "./footer/ExtendedFooter";
 
-export { Header, Footer, Home, PageNotFound, Modal, PlayMeta, DefMeta, PlayIdeas, TechStack };
+export { Header, Footer, Home, PageNotFound, Modal, PlayMeta, DefMeta, PlayIdeas, TechStack, ExtendedFooter };
