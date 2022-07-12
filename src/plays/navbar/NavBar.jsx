@@ -13,7 +13,7 @@ function NavBar(props) {
           {/* Your Code Starts Here */}
 
           <NavListItems />
-          
+
           {/* Your Code Ends Here */}
         </div>
       </div>
