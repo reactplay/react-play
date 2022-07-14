@@ -154,7 +154,7 @@ const ExtendedFooter = () => {
           <a
             target='_blank'
             className='home-anchor home-anchor-sm'
-            href='https://github.com/sponsors/atapas'
+            href='https://github.com/sponsors/reactplay'
           >
             <span className='text'>Sponsor ReactPlay</span>
           </a>
