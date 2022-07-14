@@ -24,7 +24,10 @@ import {
   DynamicRoutes,
   SimpleLiveChat,
   FlipCardEffect,
-//import play here
+  NavBar,
+  ContextWithRealUsecases,
+  GitHubUserSearch,
+  //import play here
 } from "plays";
 
 export const plays = [
@@ -427,5 +430,44 @@ export const plays = [
     video: "",
     language: "js",
   },
-   //replace new play item here
+  {
+    id: "pl-navbar", 
+    name: 'NavBar', 
+    description: 'It is the responsive navbar made with tailwind',
+    component: () => {return <NavBar />},
+    path: '/plays/navbar',
+    level: 'Beginner',
+    tags: 'JSX, useState, Tailwind',
+    github: 'Shivam-Katare',
+    cover: 'https://res.cloudinary.com/dbjmy6wdu/image/upload/v1654871439/myimage_140_60_px_260_146_px_dy0ipc.png',
+    blog: '',
+    video: '',
+    language: 'js',
+  }, 
+  {
+    id: "pl-context-with-real-usecases",
+    name: "Context-with-Real-Usecases",
+    description: "context-with-real-usecases is a recipe app that lists the recipes by cuisine type. Based on the selected cuisine app shows the list of recipes, the selected cusine and the cusine fact",
+    component: () => {
+      return <ContextWithRealUsecases />;
+    },
+    path: "/plays/context-with-real-usecases",
+    level: "Intermediate",
+    tags: "contextAPI,useContext-hook,react-context",
+    github: "Deepak8717",
+    id: "pl-github-user-search",
+    name: "GitHub User Search",
+    description: "A simple ReactJS application to search for GitHub users.",
+    component: () => {
+      return <GitHubUserSearch />;
+    },
+    path: "/plays/github-user-search",
+    level: "Beginner",
+    tags: "JSX,Tailwind,useState,Axios",
+    github: "TejasShekar",
+    cover: "",
+    blog: "",
+    video: "",
+    language: "js",
+  }, //replace new play item here
 ];

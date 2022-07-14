@@ -3,11 +3,24 @@ import { Link } from "react-router-dom";
 import { BsPlayCircleFill } from "react-icons/bs";
 import thumbPlay from "images/thumb-play.png";
 import Shimmer from "react-shimmer-effect";
+import userImage from "images/user.png";
 
 const Author = ({ user }) => {
   return (
     <div className='play-author flex items-center gap-2'>
-      <img className="rounded-full" src={user?.avatarUrl} width="25px" height="25px" alt="avatar" />
+      <img
+        className='rounded-full border border-zink-400'
+        src={
+          user?.avatarUrl
+            ? !!user?.avatarUrl.length
+              ? user?.avatarUrl
+              : userImage
+            : userImage
+        }
+        width='25px'
+        height='25px'
+        alt='avatar'
+      />
       <div className='author-anchor'>{user?.displayName}</div>
     </div>
   );
