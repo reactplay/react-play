@@ -12,6 +12,7 @@ import { MdManageSearch } from "react-icons/md";
 import YoutubeVideoEmbed from 'common/components/YouTubeEmbed';
 import FeaturedPlays from "common/playlists/FeaturedPlays";
 import Contributors from "./Contributors";
+import ExtendedFooter from "common/footer/ExtendedFooter";
 import { SearchContext } from "common/search/search-context";
 
 
@@ -176,6 +177,7 @@ const Home = () => {
       <section className="home-contributors">
         <Contributors />
       </section>
+      <ExtendedFooter />
     </div>
   );
 };
