@@ -7,22 +7,9 @@ import { IoAddSharp, IoShareSocial, IoHeartSharp } from "react-icons/io5";
 import { MdManageSearch, MdClose } from "react-icons/md";
 import SocialShare from "common/components/SocialShare";
 import { GoX } from "react-icons/go";
-import { Modal, Box, Typography, Menu, Link as MuiLink } from "@mui/material";
+import { Modal, Box, Typography, Menu } from "@mui/material";
 import { useContext } from "react";
 import { SearchContext } from "common/search/search-context";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  borderRadius: 2,
-  boxShadow: 24,
-  px: 4,
-  py: 2,
-};
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useContext(SearchContext);
@@ -45,11 +32,11 @@ const HeaderNav = ({ showBrowse }) => {
   return (
     <nav>
       <Modal open={showShareModal} onClose={modalClose}>
-        <Box sx={style}>
+        <Box className="modal-share">
           <Typography
-            sx={{ display: "block", textAlign: "center", py: 2 }}
+            sx={{ display: "block", textAlign: "center", py: 2, fontFamily: "var(--ff-default)" }}
             component='div'
-            variant='h5'
+            variant='subtitle1'
           >
             Share about ReactPlay
           </Typography>
@@ -59,10 +46,10 @@ const HeaderNav = ({ showBrowse }) => {
             sx={{ mt: 4, display: "flex", justifyContent: "flex-end" }}
           >
             <button
-              className='btn-default-light btn-size--sm'
+              className='modal-share-close'
               onClick={modalClose}
             >
-              <GoX size='16px' className='icon' /> Cancel
+              <GoX size='16px' className='icon' /> <span className='sr-only'>Cancel</span>
             </button>
           </Box>
         </Box>
@@ -174,6 +161,7 @@ const HeaderNav = ({ showBrowse }) => {
               <a
                 onClick={handleClose}
                 target='_blank'
+                rel='noopener noreferrer'
                 className='my-2 btn-secondary-light'
                 href='https://github.com/sponsors/atapas'
               >
