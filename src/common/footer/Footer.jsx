@@ -1,15 +1,15 @@
+import { Link } from "react-router-dom";
 
-
-const Footer = () => {
-
-  return (
-    <footer className="app-footer">
-      <p>
-        ReactPlay - The MIT License (MIT) Copyright &copy;{new Date().getFullYear()} {' '} is an open-source project made with ❤️ by <a 
-          href="https://tapasadhikary.com" 
-          target="_blank" 
-          rel="noopener noreferrer">Tapas Adhikary</a> and friends.
-      </p>
+const Footer = () => {  return (
+    <footer className='app-footer'>
+      <hr className='separater' />
+      <div className='flex justify-center items-center py-2'>
+        <Link to='/tech-stacks'>
+          ReactPlay - The MIT License (MIT) Copyright &copy;
+          {new Date().getFullYear()} . Powered by{" "}
+          <a className='text-link-default'>Top Notch Tech Stacks</a>.
+        </Link>
+      </div>
     </footer>
   );
 };
