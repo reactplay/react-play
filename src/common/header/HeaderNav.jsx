@@ -163,7 +163,7 @@ const HeaderNav = ({ showBrowse }) => {
                 target='_blank'
                 rel='noopener noreferrer'
                 className='my-2 btn-secondary-light'
-                href='https://github.com/sponsors/atapas'
+                href='https://github.com/sponsors/reactplay'
               >
                 <BiMoney className='icon' />
                 <span className='btn-label'>Sponsor ReactPlay</span>
