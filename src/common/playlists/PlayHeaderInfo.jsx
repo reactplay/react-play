@@ -5,7 +5,7 @@ import Like from "common/components/Like/Like";
 import { NhostClient } from "@nhost/nhost-js";
 
 const nhost = new NhostClient({
-  subdomain: "eotczmyygmencxertmeq",
+  subdomain: "dbfthfvixtwizmlpusmu",
   region: "eu-central-1"
 });
 
