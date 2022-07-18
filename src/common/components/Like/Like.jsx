@@ -1,11 +1,30 @@
 import "./Like.scss";
+import { useState, useEffect } from "react";
+import { useAuthenticated } from "@nhost/react";
 
 const Like = ({ onLikeClick }) => {
+  const [liked, setLiked] = useState(false);
+  const isAuthenticated = useAuthenticated();
+
+  const likeClickHandler = (e) => {
+    if (onLikeClick) {
+      if (isAuthenticated) {
+        setLiked(e.target.checked);
+      }
+      onLikeClick();
+    }
+  };
+
   return (
-    <div className='like-main' onClick={onLikeClick}>
+    <div className='like-main'>
       <div id='main-content'>
         <div>
-          <input type='checkbox' id='checkbox' />
+          <input
+            onChange={likeClickHandler}
+            checked={liked}
+            type='checkbox'
+            id='checkbox'
+          />
           <label for='checkbox'>
             <svg
               id='heart-svg'
@@ -76,7 +95,7 @@ const Like = ({ onLikeClick }) => {
 };
 
 Like.defaultProps = {
-  onLikeClick: () => {}
-}
+  onLikeClick: null,
+};
 
 export default Like;

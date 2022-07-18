@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import LevelBadge from "common/components/LevelBadge";
 import Like from "common/components/Like/Like";
 import { NhostClient } from "@nhost/nhost-js";
+import MuiModal from "common/modal/MuiModal";
+import { useAuthenticated } from "@nhost/react";
+import SignInMethods from "./SignInMethods";
+import { useState } from "react";
 
 const nhost = new NhostClient({
-  subdomain: "eotczmyygmencxertmeq",
-  region: "eu-central-1"
+  subdomain: "dbfthfvixtwizmlpusmu",
+  region: "eu-central-1",
 });
 
 const Author = ({ user, githubUsername }) => {
@@ -44,11 +48,24 @@ const Tags = ({ tags }) => {
 };
 
 const PlayHeaderInfo = ({ play }) => {
-  const likeHandler = async (e) => {
-   await nhost.auth.signIn({
-      provider: "google",
+  const [showSignInMethods, setShowSignInMethods] = useState(false);
+  const isAuthenticated = useAuthenticated();
+
+  const handleLogin = async (value) => {
+    return await nhost.auth.signIn({
+      provider: value,
     });
   };
+
+  console.log(isAuthenticated);
+
+  const modalHandler = (e) => {
+    if (!isAuthenticated) {
+      return setShowSignInMethods(!showSignInMethods);
+    }
+    return null;
+  };
+
   return (
     <div className='header-leftcol overflow-hidden'>
       <div className='header-leftcol-action'>
@@ -71,7 +88,12 @@ const PlayHeaderInfo = ({ play }) => {
           )}
         </div>
       </div>
-      <Like onLikeClick={likeHandler} />
+      <Like onLikeClick={modalHandler} />
+      <MuiModal
+        open={showSignInMethods}
+        handleClose={modalHandler}
+        component={<SignInMethods loginHandler={handleLogin} />}
+      />
     </div>
   );
 };

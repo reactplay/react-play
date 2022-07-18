@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@giscus/react": "^2.0.3",
+    "@mui/material": "^5.9.0",
     "@nhost/nhost-js": "^1.4.5",
     "@nhost/react": "^0.9.0",
     "@types/lodash": "^4.14.182",
