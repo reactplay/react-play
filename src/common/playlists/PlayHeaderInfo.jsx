@@ -9,8 +9,8 @@ import SignInMethods from "./SignInMethods";
 import { useState } from "react";
 
 const nhost = new NhostClient({
-  subdomain: "dbfthfvixtwizmlpusmu",
-  region: "eu-central-1",
+  subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
+  region: process.env.REACT_APP_NHOST_REGION
 });
 
 const Author = ({ user, githubUsername }) => {
@@ -51,13 +51,15 @@ const PlayHeaderInfo = ({ play }) => {
   const [showSignInMethods, setShowSignInMethods] = useState(false);
   const isAuthenticated = useAuthenticated();
 
+
   const handleLogin = async (value) => {
     return await nhost.auth.signIn({
       provider: value,
+      options: {
+        redirectTo: window.location.href
+      }
     });
   };
-
-  console.log(isAuthenticated);
 
   const modalHandler = (e) => {
     if (!isAuthenticated) {

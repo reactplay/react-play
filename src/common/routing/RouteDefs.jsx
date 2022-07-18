@@ -15,7 +15,7 @@ import { NhostClient, NhostReactProvider } from "@nhost/react";
 import useGetPlays from "common/hooks/useGetPlays";
 
 const nhost = new NhostClient({
-  backendUrl: "https://dbfthfvixtwizmlpusmu.nhost.run" || "",
+  backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || "",
 });
 
 const RouteDefs = () => {
