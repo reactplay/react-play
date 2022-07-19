@@ -377,7 +377,7 @@
 
 .home-tweets{
     position: relative;
-    min-height: 20em;
+    min-height: 10em;
 
     overflow: hidden;
 }
@@ -425,12 +425,7 @@
     
 
 }
-.tweets-container{
-    
-    display:none;
 
-    
-}
 .tweets-container > div{
     
     /* height: fit-content; */
