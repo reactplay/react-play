@@ -3,7 +3,7 @@ import SearchPlays from "common/search/SearchPlays";
 import HeaderNav from "./HeaderNav";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./header.css";
+import "./header.scss";
 
 const Header = () => {
   const location = useLocation();
