@@ -50,18 +50,16 @@ const Home = () => {
         "1532349503709122561"
     ]
 
-    //* get a single wrapper for one of the embeded tweets
-    const ele = document.querySelector(".tweets-container")?.childNodes[0]?.childNodes[0]
-    const [tweetWrapperElement,setTweetWrapperElement] = useState(undefined)
+    //* set the state for loading
+   
+    const [isLoading,setLoading] = useState(true)
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            //* now set it 
-            setTweetWrapperElement(ele)
-            
-        },8000)
-    })
 
+
+    function tweetLoadHandler (){
+        //* as soon as tweets loads on DOM disable the loading spinner
+        setLoading(false)
+    }
 
 
   return (
@@ -174,14 +172,15 @@ const Home = () => {
             <img src={tweetBg} alt="" />
         </div>
         {
-            !(tweetWrapperElement) ? <Spinner/> :""
+            (isLoading) ? <Spinner/> :""
         }
-        <div className={!(tweetWrapperElement)?"tweets-container":"tweets-container active"} >
+        <div className="tweets-container active" >
             {
                 
                 tweetIdArray.map(id=> {
 
-                    return <Tweet  key={id} tweetId={id} options={{width:'410' ,conversation:"none",cards:"hidden",align:"center"}} />
+                    return <Tweet  key={id} tweetId={id}
+                    onLoad={tweetLoadHandler} options={{width:'410' ,conversation:"none",cards:"hidden",align:"center"}} />
                 })
             }
         </div>
