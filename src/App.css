@@ -216,7 +216,7 @@ small {
 
 /* App Footer */
 .app-footer {
-  padding: 0;
+  padding: 0 12px;
   font-size: var(--fs-xs);
   font-weight: var(--fw-light);
   color: var(--color-neutral-50);
