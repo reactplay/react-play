@@ -50,6 +50,7 @@ const PlayHeaderInfo = ({ play }) => {
   const [showSignInMethods, setShowSignInMethods] = useState(false);
   const isAuthenticated = useAuthenticated();
 
+  // handle the Button Clicks
   const handleLogin = async (value) => {
     return await nhost.auth.signIn({
       provider: value,
@@ -59,12 +60,15 @@ const PlayHeaderInfo = ({ play }) => {
     });
   };
 
+  // handles the modal
   const modalHandler = (e) => {
     if (!isAuthenticated) {
       return setShowSignInMethods(!showSignInMethods);
     }
     return null;
   };
+
+  // actual lik
 
   return (
     <div className="header-leftcol overflow-hidden">
