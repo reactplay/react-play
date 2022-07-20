@@ -4,12 +4,13 @@ import { BsPlayCircleFill } from "react-icons/bs";
 import thumbPlay from "images/thumb-play.png";
 import Shimmer from "react-shimmer-effect";
 import userImage from "images/user.png";
+import Like from "common/components/Like/Like";
 
 const Author = ({ user }) => {
   return (
-    <div className='play-author flex items-center gap-2'>
+    <div className="play-author flex items-center gap-2">
       <img
-        className='rounded-full border border-zink-400'
+        className="rounded-full border border-zink-400"
         src={
           user?.avatarUrl
             ? !!user?.avatarUrl.length
@@ -17,11 +18,11 @@ const Author = ({ user }) => {
               : userImage
             : userImage
         }
-        width='25px'
-        height='25px'
-        alt='avatar'
+        width="25px"
+        height="25px"
+        alt="avatar"
       />
-      <div className='author-anchor'>{user?.displayName}</div>
+      <div className="author-anchor">{user?.displayName}</div>
     </div>
   );
 };
@@ -56,20 +57,23 @@ const PlayThumbnail = ({ play }) => {
   return (
     <li key={play.id}>
       <Link to={play.path} state={{ id: play.id }}>
-        <div className='play-thumb'>
+        <div className="play-thumb">
           <Shimmer>
-            <img src={cover} alt='' className='play-thumb-img' />
+            <img src={cover} alt="" className="play-thumb-img" />
           </Shimmer>
         </div>
-        <div className='play-header'>
-          <div className='play-title'>{play.name}</div>
+        <div className="play-header">
+          <div className="play-title">{play.name}</div>
           {play.user && <Author user={play.user} />}
-          <div className={`language language-${play.language || "js"}`}></div>
+          <div className="mt-1 ">
+            <Like />
+            <div className={`language language-${play.language || "js"}`}></div>
+          </div>
         </div>
-        <div className='play-status'>
-          <BsPlayCircleFill size='48px' />
-          <div className='default'>Play now</div>
-          <div className='current'>Playing..</div>
+        <div className="play-status">
+          <BsPlayCircleFill size="48px" />
+          <div className="default">Play now</div>
+          <div className="current">Playing..</div>
         </div>
       </Link>
     </li>

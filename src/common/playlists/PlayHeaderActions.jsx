@@ -4,6 +4,7 @@ import { IoLogoYoutube } from "react-icons/io";
 import { AiOutlineRead } from "react-icons/ai";
 import { BiComment } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
+import Like from "common/components/Like/Like";
 
 import Comment from "common/components/Comment";
 
@@ -13,13 +14,13 @@ const PlayHeaderActions = ({ play }) => {
 
   return (
     <>
-      {
-        <button className="action badged" onClick={() => setShowComment(true)}>
-          <BiComment className="icon" size="24px" />
-          {/*<div className="badge-count">99</div>*/}
-          <span className="sr-only">Comments</span>
-        </button>
-      }
+      <Like />
+      <button className="action badged" onClick={() => setShowComment(true)}>
+        <BiComment className="icon" size="24px" />
+        {/*<div className="badge-count">99</div>*/}
+        <span className="sr-only">Comments</span>
+      </button>
+
       {play.path && (
         <a
           target="_blank"
