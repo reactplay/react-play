@@ -1,6 +1,6 @@
 const CACHE_NAME = "reactplay";
 
-const urlsToCache = ["/", "/completed"];
+const urlsToCache = ["/", "./index.html"];
 
 const self = this;
 
