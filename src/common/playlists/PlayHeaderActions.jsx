@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useAuthenticated } from "@nhost/react";
+import React, { useCallback, useLayoutEffect, useState } from "react";
+import { useAuthenticated, useUserId } from "@nhost/react";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoYoutube } from "react-icons/io";
 import { AiOutlineRead } from "react-icons/ai";
@@ -10,6 +10,7 @@ import SignInMethods from "./SignInMethods";
 import Comment from "common/components/Comment";
 import { NhostClient } from "@nhost/nhost-js";
 import MuiModal from "common/modal/MuiModal";
+import useLikePlays from "common/hooks/useLikePlays";
 
 const nhost = new NhostClient({
   subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
@@ -17,11 +18,33 @@ const nhost = new NhostClient({
 });
 
 const PlayHeaderActions = ({ play }) => {
+  const { play_like } = play;
+  const userId = useUserId();
+
+  const { likePlay, dislikePlay } = useLikePlays();
+
   const [showComment, setShowComment] = useState(false);
   const [showSignInMethods, setShowSignInMethods] = useState(false);
-  const [likeObj, setLikeObj] = useState({ like: false, number: 5 });
+  const [likeObj, setLikeObj] = useState({});
+  const [loading, setLoading] = useState(false)
+  // Other Hooks
   const isAuthenticated = useAuthenticated();
 
+  const constructLikeData = useCallback(
+    (userId) => {
+      if (!play_like.length) return { like: false, number: 0 };
+      const ifLiked = play_like.find((obj) => obj.user_id === userId);
+      if (ifLiked) return { like: true, number: play_like.length };
+      return { like: false, number: play_like.length };
+    },
+    [play_like]
+  );
+
+  useLayoutEffect(() => {
+    setLikeObj(constructLikeData(userId));
+  }, [userId, constructLikeData]);
+
+  // i will replace this function and remove the nhost javascript sdk after the new flow gets merged?
   const handleLogin = async (value) => {
     return await nhost.auth.signIn({
       provider: value,
@@ -31,14 +54,28 @@ const PlayHeaderActions = ({ play }) => {
     });
   };
 
-  const modalHandler = () => {
+  const onLikeClick = async () => {
     if (!isAuthenticated) return setShowSignInMethods(!showSignInMethods);
-    return setLikeObj(pre => ({like: !pre.like, number: !pre.like ? 6 : 5}));
+    try {
+      setLoading(true)
+      const mutationObj = { play_id: play.id, user_id: userId };
+      if (!likeObj.like) {
+        await likePlay(mutationObj);
+        return setLikeObj((pre) => ({ like: true, number: ++pre.number }));
+      } else {
+        await dislikePlay(mutationObj);
+        setLikeObj((pre) => ({ like: false, number: --pre.number }));
+      }
+    } catch (err) {
+      console.log(err)
+    } finally {
+      setLoading(false)
+    }
   };
 
   return (
     <>
-      <Like onLikeClick={modalHandler} likeObj={likeObj} />
+      <Like onLikeClick={!loading ? onLikeClick : null} likeObj={likeObj} />
       <button className='action badged' onClick={() => setShowComment(true)}>
         <BiComment className='icon' size='24px' />
         {/*<div className="badge-count">99</div>*/}
@@ -98,7 +135,7 @@ const PlayHeaderActions = ({ play }) => {
       )}
       <MuiModal
         open={showSignInMethods}
-        handleClose={modalHandler}
+        handleClose={onLikeClick}
         component={<SignInMethods loginHandler={handleLogin} />}
       />
     </>

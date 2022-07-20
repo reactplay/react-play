@@ -1,6 +1,6 @@
 export function FetchPlaysSimple() {
   const env = process.env.NODE_ENV === "development";
-  const preview = process.env.REACT_APP_PREVIEW_MODE
+  const preview = process.env.REACT_APP_PREVIEW_MODE;
   const payload = {
     display: "Simple fetch play",
     name: "Fetch_Plays",
@@ -17,6 +17,7 @@ export function FetchPlaysSimple() {
       "github",
       "id",
       "language",
+      { play_like: ["play_id", "user_id"] },
       { level: ["name"] },
       "name",
       "path",
