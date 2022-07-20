@@ -95,7 +95,7 @@ const CardDetails = () => {
         <button className="green" onClick={ (theme) => applyTheme("green")}></button>
       </div>
 
-      <div className="card" style={{ backgroundColor: cardTheme.bc, color: cardTheme.fc}}>
+      <div className="social-card-preview" style={{ backgroundColor: cardTheme.bc, color: cardTheme.fc}}>
       
         <div className="card-header">
           {picture && (

@@ -7,6 +7,7 @@ import {
   DefMeta,
   PageNotFound,
   PlayIdeas,
+  TechStack
 } from "common";
 import PlayList from "common/playlists/PlayList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -27,6 +28,7 @@ const RouteDefs = () => {
         <DefMeta />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path="/tech-stacks" element={<TechStack />} />
           <Route path='/plays' element={<App />}>
             <Route
               index

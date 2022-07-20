@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== "development") {
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [showShareModal, setShowShareModal] = useState(false);
   const [filterQuery, setFilterQuery] = useState({
     level_id: "",
     tags: [],
@@ -23,7 +24,14 @@ const Index = () => {
     language: "",
   });
 
-  const value = { searchTerm, setSearchTerm, filterQuery, setFilterQuery };
+  const value = {
+    searchTerm,
+    setSearchTerm,
+    filterQuery,
+    setFilterQuery,
+    showShareModal,
+    setShowShareModal,
+  };
   return (
     <React.StrictMode>
       <SearchContext.Provider value={value}>
