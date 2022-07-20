@@ -1,22 +1,10 @@
 import "./Like.scss";
-import { useState, useEffect, useLayoutEffect } from "react";
-import { useAuthenticated } from "@nhost/react";
 
-const Like = ({ onLikeClick, likeStatus }) => {
-  const [liked, setLiked] = useState(false);
-  const isAuthenticated = useAuthenticated();
-
-  useLayoutEffect(() => {
-    setLiked(likeStatus);
-  }, [likeStatus])
-
-  const likeClickHandler = (e) => {
-    if (onLikeClick) {
-      if (isAuthenticated) {
-        setLiked(e.target.checked);
-      }
-      onLikeClick();
-    }
+const Like = ({ onLikeClick, likeObj }) => {
+  const {like, number} = likeObj
+  
+  const likeClickHandler = () => {
+    if (onLikeClick) return onLikeClick();
   };
   
   return (
@@ -24,7 +12,7 @@ const Like = ({ onLikeClick, likeStatus }) => {
       <div className="like-icon" onClick={likeClickHandler}>
         <svg
           viewBox="-4 -8 42 42"
-          className={`${liked ? "liked back" : "back"}`}
+          className={`${like ? "liked back" : "back"}`}
         >
           <path
             d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"
@@ -33,7 +21,7 @@ const Like = ({ onLikeClick, likeStatus }) => {
         </svg>
         <svg
           viewBox="-4 -8 42 42"
-          className={`${liked ? "liked front" : "front"}`}
+          className={`${like ? "liked front" : "front"}`}
         >
           <path
             d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"
@@ -41,7 +29,7 @@ const Like = ({ onLikeClick, likeStatus }) => {
           />
         </svg>
       </div>
-      <div className="like-count">10</div>
+      <div className="like-count">{number}</div>
     </div>
   );
 };
