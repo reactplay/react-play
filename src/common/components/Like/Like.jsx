@@ -1,25 +1,27 @@
 import "./Like.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { useAuthenticated } from "@nhost/react";
 
-const Like = ({ onLikeClick }) => {
+const Like = ({ onLikeClick, likeStatus }) => {
   const [liked, setLiked] = useState(false);
   const isAuthenticated = useAuthenticated();
 
-  // const likeClickHandler = (e) => {
-  //   if (onLikeClick) {
-  //     if (isAuthenticated) {
-  //       setLiked(e.target.checked);
-  //     }
-  //     onLikeClick();
-  //   }
-  // };
-  const clickHandler = () => {
-    setLiked(!liked);
+  useLayoutEffect(() => {
+    setLiked(likeStatus);
+  }, [likeStatus])
+
+  const likeClickHandler = (e) => {
+    if (onLikeClick) {
+      if (isAuthenticated) {
+        setLiked(e.target.checked);
+      }
+      onLikeClick();
+    }
   };
+  
   return (
     <div className="like-container">
-      <div className="like-icon" onClick={clickHandler}>
+      <div className="like-icon" onClick={likeClickHandler}>
         <svg
           viewBox="-4 -8 42 42"
           className={`${liked ? "liked back" : "back"}`}

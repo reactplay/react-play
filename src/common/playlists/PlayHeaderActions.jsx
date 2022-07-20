@@ -1,20 +1,48 @@
 import React, { useState } from "react";
+import { useAuthenticated } from "@nhost/react";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoYoutube } from "react-icons/io";
 import { AiOutlineRead } from "react-icons/ai";
 import { BiComment } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
 import Like from "common/components/Like/Like";
-
+import SignInMethods from "./SignInMethods";
 import Comment from "common/components/Comment";
+import { NhostClient } from "@nhost/nhost-js";
+import MuiModal from "common/modal/MuiModal";
+
+const nhost = new NhostClient({
+  subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
+  region: process.env.REACT_APP_NHOST_REGION,
+});
 
 const PlayHeaderActions = ({ play }) => {
-  console.log(play);
   const [showComment, setShowComment] = useState(false);
+  const [showSignInMethods, setShowSignInMethods] = useState(false);
+  const isAuthenticated = useAuthenticated();
+
+  // handle the Button Clicks
+  const handleLogin = async (value) => {
+    return await nhost.auth.signIn({
+      provider: value,
+      options: {
+        redirectTo: window.location.href,
+      },
+    });
+  };
+
+  // handles the modal
+  const modalHandler = (e) => {
+    if (!isAuthenticated) {
+      return setShowSignInMethods(!showSignInMethods);
+    }
+    console.log(isAuthenticated)
+    return null;
+  };
 
   return (
     <>
-      <Like />
+      <Like onLikeClick={modalHandler} />
       <button className="action badged" onClick={() => setShowComment(true)}>
         <BiComment className="icon" size="24px" />
         {/*<div className="badge-count">99</div>*/}
@@ -72,6 +100,11 @@ const PlayHeaderActions = ({ play }) => {
           </div>
         </div>
       )}
+      <MuiModal
+        open={showSignInMethods}
+        handleClose={modalHandler}
+        component={<SignInMethods loginHandler={handleLogin} />}
+      />
     </>
   );
 };

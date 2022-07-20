@@ -1,16 +1,6 @@
 import { IoMdArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import LevelBadge from "common/components/LevelBadge";
-import { NhostClient } from "@nhost/nhost-js";
-import MuiModal from "common/modal/MuiModal";
-import { useAuthenticated } from "@nhost/react";
-import SignInMethods from "./SignInMethods";
-import { useState } from "react";
-
-const nhost = new NhostClient({
-  subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
-  region: process.env.REACT_APP_NHOST_REGION,
-});
 
 const Author = ({ user, githubUsername }) => {
   return (
@@ -47,29 +37,6 @@ const Tags = ({ tags }) => {
 };
 
 const PlayHeaderInfo = ({ play }) => {
-  const [showSignInMethods, setShowSignInMethods] = useState(false);
-  const isAuthenticated = useAuthenticated();
-
-  // handle the Button Clicks
-  const handleLogin = async (value) => {
-    return await nhost.auth.signIn({
-      provider: value,
-      options: {
-        redirectTo: window.location.href,
-      },
-    });
-  };
-
-  // handles the modal
-  const modalHandler = (e) => {
-    if (!isAuthenticated) {
-      return setShowSignInMethods(!showSignInMethods);
-    }
-    return null;
-  };
-
-  // actual lik
-
   return (
     <div className="header-leftcol overflow-hidden">
       <div className="header-leftcol-action">
@@ -92,11 +59,6 @@ const PlayHeaderInfo = ({ play }) => {
           )}
         </div>
       </div>
-      <MuiModal
-        open={showSignInMethods}
-        handleClose={modalHandler}
-        component={<SignInMethods loginHandler={handleLogin} />}
-      />
     </div>
   );
 };
