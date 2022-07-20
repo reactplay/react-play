@@ -35,7 +35,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npx create-react-play -p && react-scripts start",
     "build": "npx create-react-play -p && react-scripts build",
     "snap": "react-snap",
     "test": "react-scripts test",
