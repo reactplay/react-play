@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "common/spinner/spinner";
 
-import "./playlist.css";
+import "./playlist.scss";
 
 const PlayList = ({ plays, loading }) => {
   if (loading) {
