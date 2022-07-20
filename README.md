@@ -53,7 +53,7 @@ Here is the link to the app. We hope you enjoy it.
   
 Who doesn't want motivation and support? Many Thanks to all the Stargazers who have supported this project with stars(⭐). You all are amazing!!!
 
-[![Stargazers repo roster for @reactplay/react-play](https://reporoster.com/stars/reactplay/react-play)](https://github.com/reactplay/react-play/stargazers)
+[![Stargazers repo roster for @reactplay/react-play](https://git-lister.onrender.com/api/stars/reactplay/react-play?limit=30)](https://github.com/reactplay/react-play/stargazers)
 
 Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on Twitter [@reactplayio](https://twitter.com/reactplayio).
 
