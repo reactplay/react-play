@@ -27,7 +27,8 @@ import {
   NavBar,
   ContextWithRealUsecases,
   GitHubUserSearch,
-  //import play here
+  DevDash,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -469,5 +470,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-dev-dash', 
+    name: 'DEV-DASH', 
+    description: 'It is a dev.to dashboard which visually represents the stats of your blogs. It also lists out the blogs of an author.',
+    component: () => {return <DevDash />},
+    path: '/plays/dev-dash',
+    level: 'Intermediate',
+    tags: 'JSX,Hooks,API,Graphs',
+    github: 'shreyazz',
+    cover: 'https://i.imgur.com/V17Xghb.png',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
