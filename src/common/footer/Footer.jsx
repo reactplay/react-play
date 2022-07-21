@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => {  return (
-    <footer className='app-footer'>
+    <footer className='app-footer text-center'>
       <hr className='separater' />
       <div className='flex justify-center items-center py-2'>
         <Link to='/tech-stacks'>
