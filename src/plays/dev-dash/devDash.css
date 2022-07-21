@@ -1,0 +1,256 @@
+/* enter stlyes here */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+form {
+  margin: 1rem auto 0 auto;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search {
+  position: relative;
+}
+
+.search p {
+  position: absolute;
+  color: rgba(112, 112, 112, 0.753);
+  bottom: -1.35rem;
+  left: 10px;
+  font-size: 12px;
+}
+
+.main {
+  /* overflow: hidden; */
+  height: auto;
+}
+
+input {
+  padding: 1rem;
+  height: 2.5rem;
+  width: 18.5rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  background-color: rgba(243, 243, 243, 0.89);
+  box-shadow: 3px 3px 20px rgba(105, 101, 101, 0.281);
+
+  margin-right: 2rem;
+  font-size: 14px;
+}
+
+::placeholder {
+  font-size: 14px;
+}
+
+.fas {
+  color: #7c62ed;
+  font-size: 20px;
+}
+
+.mid {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 85vh;
+}
+
+.right,
+.left {
+  padding: 3.5rem 2.1rem;
+  height: 100%;
+}
+
+.right {
+  text-align: center;
+  /* background: red; */
+  width: 60%;
+  padding: 2rem;
+}
+
+.graph-main {
+  height: 85%;
+  margin-top: 10px;
+  padding-top: 20px;
+  /* background: chartreuse; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  height: auto;
+  text-align: center;
+  background-color: rgba(243, 243, 243, 0.788);
+  box-shadow: 20px 20px 60px #dbdbdb, -20px -20px 60px #e0e0e0a6;
+
+  width: 30%;
+  border-radius: 1.3rem;
+}
+
+.profPic {
+  height: 20rem;
+  border-radius: 50%;
+  width: 20rem;
+  margin-bottom: 3rem;
+}
+
+.left span {
+  margin-left: 10px;
+  color: rgb(17, 17, 17);
+  font-weight: 500;
+}
+
+.left p {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: rgba(48, 48, 48, 0.884);
+}
+
+a {
+  text-decoration: underline;
+  color: #7c62ed;
+}
+
+.choices {
+  margin: 2.7rem auto 0 auto;
+  width: 16.5rem;
+  height: 3.1rem;
+  background-color: rgba(243, 243, 243, 0.788);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.3rem;
+  box-shadow: 10px 10px 10px rgba(105, 101, 101, 0.281);
+  padding-inline: 1.5rem;
+}
+
+.choices button {
+  outline: none;
+  border: none;
+  background: rgba(243, 243, 243, 0.788);
+  cursor: pointer;
+  height: 100%;
+  color: rgb(29, 29, 29);
+  text-transform: uppercase;
+}
+button:focus {
+  transform: scale(10px);
+}
+
+.fa-chevron-down {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  margin-top: 1rem;
+  animation: upDown 1.5s infinite;
+}
+
+@keyframes upDown {
+  from {
+    transform: translateY(-10px);
+    transition: all 0.5s ease-in;
+  }
+  to {
+    transform: translateY(-14px);
+    transition: all 0.5s ease-in;
+  }
+}
+
+.blog-main {
+  margin: 4rem auto 0 auto;
+  height: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.blog-one {
+  width: 25rem;
+  box-shadow: 20px 20px 60px #dbdbdb, -20px -20px 60px #e0e0e0a6;
+  border-radius: 1rem;
+  padding: 0.3rem 0.4rem;
+  background: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.blog-one img {
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.desc {
+  font-size: 15px;
+  color: rgba(73, 73, 73, 0.884);
+  margin-block: 0.65rem;
+}
+
+.reading-time {
+  font-size: 13px;
+  color: rgba(83, 83, 83, 0.884);
+}
+
+.reading-time span {
+  font-size: 16px;
+}
+
+.read-more {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  text-align: center;
+  background: #7c62edb9;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  border-radius: 0.6rem;
+  transform: translateX(-50%);
+  color: rgb(247, 247, 247);
+  height: 1.6rem;
+  width: 8rem;
+  text-transform: uppercase;
+}
+
+.fa-clock {
+  font-size: 14px;
+  margin-right: 4.5px;
+}
+
+.free-space {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+footer {
+  margin: 3vh auto 1vh auto;
+  font-size: 14.5px;
+  text-align: center;
+  color: rgb(92, 92, 92);
+}
+
+.vercel {
+  height: 13px;
+  width: 13px;
+  margin-left: 4px;
+}
