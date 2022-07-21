@@ -23,7 +23,7 @@ const CurrentTimer = (props) => {
         <PlayHeader play={props} />
         <div className="play-details-body">
           <div className="counter">
-            <h2>Current Time</h2>
+            <h2>Current Clock Time</h2>
             <div className="value">
               <span>{date.toLocaleTimeString()}</span>
             </div>

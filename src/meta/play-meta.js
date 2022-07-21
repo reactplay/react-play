@@ -1,7 +1,6 @@
 import {
   BasicTree,
   CdTimerComp,
-  CurrentTimer,
   MovieContainer,
   WhyReact,
   CounterApp,
@@ -27,7 +26,9 @@ import {
   NavBar,
   ContextWithRealUsecases,
   GitHubUserSearch,
-  //import play here
+  CurrentTimer,
+  DataUtil,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -469,5 +470,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-data-util', 
+    name: 'Data Util', 
+    description: 'Thin utility for connecting and basic sql query',
+    component: () => {return <DataUtil />},
+    path: '/plays/data-util',
+    level: 'Beginner',
+    tags: 'sql,query,data,connect,records',
+    github: 'james-david-marks',
+    cover: '',
+    blog: 'jimmarks.net',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
