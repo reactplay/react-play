@@ -371,9 +371,30 @@
   font-size: var(--fs-md);
 }
 
-.modal-share .modal-share-body {
-  padding: 0 1.6rem 1rem 1.6rem;
+.modal-share {
+  padding: 1.6rem;
   flex-grow: 1;
+}
+
+.modal-share .modal-share-close {
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  padding: .6rem;
+}
+
+.modal-share .modal-share-close .icon {
+  fill: var(--color-neutral-70);
+}
+
+.modal-share .modal-share-close:hover,
+.modal-share .modal-share-close:focus {
+  background-color: var(--color-neutral-30);
+}
+
+.modal-share .modal-share-close:hover .icon,
+.modal-share .modal-share-close:focus .icon {
+  fill: var(--color-neutral-100);
 }
 
 .modal-share .modal-share-footer {
@@ -422,8 +443,31 @@
 }
 
 .social-share-buttons .social-share-button .icon {
-  fill: var(--color-neutral-80);
+  fill: var(--color-neutral-70);
 }
 .social-share-buttons .social-share-button:hover .icon {
   fill: var(--color-brand-primary);
+}
+
+/* App Header Modal */
+.app-header-modal {
+  position: absolute;
+  background-color: var(--color-neutral-10);
+  padding: 1.6rem 2rem;
+  width: 360px;
+  right: 1.6rem;
+  margin-top: 0.6rem;
+}
+
+.app-header-modal {
+  font-size: var(--fs-rg);
+  color: var(--color-neutral-70);
+}
+
+.app-header-modal .modal-title {
+  margin: 0 0 1rem 0;
+  font-family: var(--ff-accent);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--color-neutral-90);
 }

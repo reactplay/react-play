@@ -205,42 +205,4 @@
   font-size: var(--fs-rg);
 }
 
-.btn-default-light {
-  border: 0;
-  display: inline-flex;
-  align-items: center;
-  grid-gap: 0.4rem;
-  border-radius: 2rem; 
-  padding: 0.8rem 1.4rem;
-  font-size: var(--fs-rg);
-  font-weight: var(--fw-bold);
-  background-color: rgba(var(--color-neutral-90-rgb),0.1);
-  color: var(--color-neutral-80);
-  transition: all 0.16s ease-in-out;
-}
 
-.btn-default-light:hover,
-.btn-default-light:focus {
-  background-color: rgba(var(--color-neutral-90-rgb),0.2);
-  color: var(--color-neutral-90);
-}
-
-.btn-primary {
-  border: 0;
-  display: inline-flex;
-  align-items: center;
-  grid-gap: 0.4rem;
-  border-radius: 2rem; 
-  padding: 0.8rem 1.4rem;
-  font-size: var(--fs-rg);
-  font-weight: var(--fw-bold);
-  background-color: var(--color-brand-primary);
-  color: var(--color-neutral-80);
-  transition: all 0.16s ease-in-out;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  color: var(--color-neutral-10);
-  background-color: var(--color-neutral-90);
-}

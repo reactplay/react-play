@@ -748,6 +748,26 @@
     right: -0.4rem;
 }
 
+.home-anchor.home-anchor-sm {
+    font-size: calc(var(--fs-rg)*1.2);
+    line-height: 1.2;
+}
+
+.home-anchor.home-anchor-sm:before {
+    bottom: -1px;
+    height: 2px;
+}
+
+.home-anchor.home-anchor-sm:hover:before,
+.home-anchor.home-anchor-sm:focus:before {
+    bottom: -2px;
+    height: 3px;
+}
+
+.home-anchor.home-anchor-sm:after {
+    width: 16px;
+    background-size: contain;
+}
 
 /* Home abstract graphics */
 .home-bg-graphics {
