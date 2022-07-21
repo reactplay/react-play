@@ -165,12 +165,12 @@ const Home = () => {
         </div>
       </section>
       <section className="home-tweets">
-        <h3 className="primary-title">
-            What Our <span>Community</span> Says!
-        </h3>
-        <div className="bg-tweet">
-            <img src={tweetBg} alt="" />
-        </div>
+              <h3 className="title-primary">
+                What Our <strong>
+                       <span>Community</span>
+                  </strong> Says!
+              </h3>
+
         {
             (isLoading) ? <Spinner/> :""
         }
