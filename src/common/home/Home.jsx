@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useMemo,useRef, useCallback } from "react";
+import { useState, useEffect, useContext} from "react";
 import useFetch from "common/hooks/useFetch";
 import { Link } from "react-router-dom";
 import "./home.css";
@@ -16,7 +16,7 @@ import ExtendedFooter from "common/footer/ExtendedFooter";
 import { SearchContext } from "common/search/search-context";
 import { Tweet } from "react-twitter-widgets";
 import Spinner from "../spinner/spinner"
-import tweetBg from "../../images/group-1825510_1280.jpg"
+
 
 
 
