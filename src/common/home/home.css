@@ -377,9 +377,10 @@
 
 .home-tweets{
     position: relative;
-    min-height: 10em;
+    padding: 5rem 0 6rem 0;
+
     background-color: var(--color-neutral-20);
-    overflow: hidden;
+
 }
 .home-tweets .title-primary{
   text-align: center;
@@ -427,7 +428,7 @@
     background-color: var(--color-neutral-10);
 }
 
-:is(.home-contributors,.home-tweets) .title-primary {
+.home-contributors .title-primary,.home-tweets .title-primary {
     position: relative;
     margin: 0 0 3rem 0;
     font-family: var(--ff-accent);
@@ -437,17 +438,17 @@
     line-height: 1.2;
 }
 
-:is(.home-contributors,.home-tweets) .title-primary strong {
+.home-contributors .title-primary strong , .home-tweets .title-primary strong {
     position: relative;
     font-family: var(--ff-accent);
     position: relative;
 }
-:is(.home-contributors,.home-tweets) .title-primary strong span {
+.home-contributors .title-primary strong span, .home-tweets .title-primary strong span {
     position: relative;
     font-family: var(--ff-accent);
 }
 
-:is(.home-contributors,.home-tweets) .title-primary strong:before {
+.home-contributors .title-primary strong:before, .home-tweets .title-primary strong:before {
     content:"";
     position: absolute;
     height: 4px;
