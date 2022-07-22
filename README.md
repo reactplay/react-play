@@ -86,6 +86,14 @@ Or
 yarn install
 ```
 
+### ⛓️ Create a `.env` file at the root of your project folder with the following content,
+
+```bash
+REACT_APP_NHOST_BACKEND_URL=https://rgkjmwftqtbpayoyolwh.nhost.run/
+REACT_APP_NHOST_VERSION=v1
+REACT_APP_NHOST_ENDPOINT=graphql
+```
+
 ### 🦄 Start the Development Mode
 Use the following command to start the app in the development mode:
 
