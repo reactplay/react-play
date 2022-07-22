@@ -86,6 +86,12 @@ Or
 yarn install
 ```
 
+> **Note**: `ReactPlay` runs on React 18. However, some of our dependencies are yet to upgrade to version 18. So please use the following command when you face difficulties installing the dependencies.
+
+```bash
+npm install --legacy-peer-deps
+```
+
 ### ⛓️ Create a `.env` file at the root of your project folder with the following content,
 
 ```bash
