@@ -22,9 +22,9 @@ Welcome developers! We are as excited as you are to know that you are going to c
   Press `y` and hit `Enter`. This will install `create-react-play` globally. For more info check [`create-react-play readme`](https://github.com/reactplay/create-react-play/blob/main/README.md)
 
 - You should be able to access the application on http://localhost:3000
-- Click on `Create` button
+- Click on `Create` button. Note, its a `beta` feature, feel free to [log issue](https://github.com/reactplay/react-play/issues) (if any) 
 - The application will try to authenticate you
-- If you are NOT alredy logged in with [`NHost`](https://nhost.io), you will promth to give permission
+- If you are NOT alredy logged in with [`NHost`](https://nhost.io), you will be prompted to give permission
   - Log in with your GitHub account
 - Fill the information and submit.
   Paramter details
@@ -57,7 +57,8 @@ Welcome developers! We are as excited as you are to know that you are going to c
   ```
 -  You should now see your play added to the [play list](http://localhost:3000/plays) page. You can click on the play thumbnail to see the details of the play.
 -  And you will notice a directory create fro your play under `./src/plays/<your_play_name>`
-- 
+-  Continue developing your play. Happy conding.
+  
 ## 👀 Submitting a Play for Review
 After you done with coding for your `Play`, you can submit it for review. Submitting a `Play` for review is a two step process.
 
