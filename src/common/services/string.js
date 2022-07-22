@@ -30,3 +30,8 @@ export const replaceAll = (str, replaceWhat, replaceTo) => {
   var re = new RegExp(replaceWhat, "g");
   return str.replace(re, replaceTo);
 };
+
+export const toTitleCaseTrimmed = (str) => {
+  const titleCse = toTitleCase(str);
+  return titleCse.replace(/\s/g, "");
+};

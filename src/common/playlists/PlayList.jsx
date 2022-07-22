@@ -36,9 +36,10 @@ const PlayList = () => {
     <Fragment>
       <ol className='list-plays'>
         {plays?.map((play, index) => (
+          
           <React.Fragment key={index}>
           {
-            all_plays[play.component] && <PlayThumbnail key={play.id} play={play}/>
+            all_plays[play.component ? play.component : play.title_name] && <PlayThumbnail key={play.id} play={play}/>
           }
           </React.Fragment>
           

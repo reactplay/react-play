@@ -5,7 +5,7 @@ import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filt
 import { FetchPlaysSimple } from "common/services/request/query/fetch-plays";
 
 import { submit } from "common/services/request";
-import { toKebabCase } from "common/services/string";
+import { toTitleCaseTrimmed } from "common/services/string";
 
 /**
  * Run graphql query to filter plays
@@ -56,6 +56,9 @@ function useGetPlays() {
       } else {
         res = await submit(FetchPlaysSimple());
       }
+      res.forEach(element => {
+        element.title_name = toTitleCaseTrimmed(element.name)
+      });
       setPlays(res);
     } catch (error) {
       setError(error);
