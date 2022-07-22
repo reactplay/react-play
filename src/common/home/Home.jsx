@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext} from "react";
+import { useState, useEffect, useContext } from "react";
 import useFetch from "common/hooks/useFetch";
 import { Link } from "react-router-dom";
 import "./home.css";
