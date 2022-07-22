@@ -1,0 +1,44 @@
+/* enter stlyes here */
+.App {
+    --react-play-theme: #00f2fe;
+    --react-play-bg: #ffffffs;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 5rem;
+}
+
+#qrValue,
+#download-btn {
+    border: 0.15rem solid var(--react-play-theme);
+    padding: 0.5rem 1rem;
+    background-color: var(--react-play-bg);
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+#download-btn {
+    border-color: #0103262c;
+    background-color: var(--react-play-theme);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1rem;
+}
+
+#download-btn svg {
+    transform: rotate(0);
+    animation: load 1s linear infinite;
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

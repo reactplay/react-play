@@ -53,7 +53,9 @@ Here is the link to the app. We hope you enjoy it.
   
 Who doesn't want motivation and support? Many Thanks to all the Stargazers who have supported this project with stars(⭐). You all are amazing!!!
 
-[![Stargazers repo roster for @reactplay/react-play](https://reporoster.com/stars/reactplay/react-play)](https://github.com/reactplay/react-play/stargazers)
+<a href="https://github.com/reactplay/react-play/stargazers">
+  <img src="https://git-lister.onrender.com/api/stars/reactplay/react-play?limit=25" alt="Stargazers repo roster for @reactplay/react-play" />
+</a>
 
 Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on Twitter [@reactplayio](https://twitter.com/reactplayio).
 
@@ -84,6 +86,12 @@ Or
   
 ```bash
 yarn install
+```
+
+> **Note**: `ReactPlay` runs on React 18. However, some of our dependencies are yet to upgrade to version 18. So please use the following command when you face difficulties installing the dependencies.
+
+```bash
+npm install --legacy-peer-deps
 ```
 
 ### ⛓️ Create a `.env` file at the root of your project folder with the following content,
