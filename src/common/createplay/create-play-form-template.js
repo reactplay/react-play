@@ -10,6 +10,7 @@ export const FIELD_TEMPLATE = [
     datafield: "description",
     type: "input",
     multiline: true,
+    rows: 2,
     display: "Description",
     placeholder: "Describe your play",
     required: true,

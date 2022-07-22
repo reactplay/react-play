@@ -1,4 +1,4 @@
-import {TextField , MenuItem , FormControl , Select, Button, Autocomplete} from '@mui/material';
+import {TextField , FormControl, Autocomplete} from '@mui/material';
 import { useEffect, useState } from 'react';
 import * as _ from 'lodash';
 const PlayForm = ({fields, data, onChange}) => {
@@ -30,7 +30,7 @@ const PlayForm = ({fields, data, onChange}) => {
                                       }/>
         case 'select': return <Autocomplete id={field.datafield}
                                             size="small"
-                                            options={field.options}
+                                            options={field.options || []}
                                             getOptionLabel={(option) => option.name || option[field.fieldName] || option}
                                             filterSelectedOptions
                                             multiple={field.multiple}
@@ -60,6 +60,7 @@ const PlayForm = ({fields, data, onChange}) => {
                                               />
                                             )}
                                 />
+                default: return <></>
     }
   }
  
