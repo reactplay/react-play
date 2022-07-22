@@ -88,10 +88,6 @@ export const FetchPlaysFilter = {
         ],
       },
     };
-    
-    if (!env && !preview) {
-      payload.where.clause.push(defaultClause);
-    }
     return payload;
   },
   // Filter plays by level, user, language, and multiple tags
