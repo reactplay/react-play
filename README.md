@@ -86,6 +86,12 @@ Or
 yarn install
 ```
 
+**Note:** If the above installation didn't worked for you try running: 
+
+```bash
+npm install --legacy-peer-deps
+```
+
 ### ⛓️ Create a `.env` file at the root of your project folder with the following content,
 
 ```bash
