@@ -7,7 +7,7 @@ import { IoAddSharp, IoShareSocial, IoHeartSharp } from "react-icons/io5";
 import { MdManageSearch, MdClose } from "react-icons/md";
 import SocialShare from "common/components/SocialShare";
 import { GoX } from "react-icons/go";
-import { Modal, Box, Typography, Menu, Badge } from "@mui/material";
+import { Modal, Box, Typography, Menu } from "@mui/material";
 import { useContext } from "react";
 import { SearchContext } from "common/search/search-context";
 
