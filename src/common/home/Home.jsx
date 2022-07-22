@@ -52,13 +52,13 @@ const Home = () => {
 
     //* set the state for loading
    
-    const [isLoading,setLoading] = useState(true)
+    const [isTweetsLoading,setTweetsLoading] = useState(true)
 
 
 
     function tweetLoadHandler (){
         //* as soon as tweets loads on DOM disable the loading spinner
-        setLoading(false)
+        setTweetsLoading(false)
     }
 
 
@@ -172,7 +172,7 @@ const Home = () => {
               </h3>
 
         {
-            (isLoading) ? <Spinner/> :""
+            (isTweetsLoading) ? <Spinner/> :""
         }
         <div className="tweets-container active" >
             {
