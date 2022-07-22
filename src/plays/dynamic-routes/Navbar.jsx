@@ -9,7 +9,7 @@ function Navbar(props) {
         return (
           <NavLink
             key={index}
-            to={`/plays/dynamic-routes/${mealtype}`}
+            to={`${mealtype}`}
             className={`navbar-link ${mealtype === activeMenu ? "active" : ""}`}
             onClick={() => activeMealHandler(mealtype)}
           >

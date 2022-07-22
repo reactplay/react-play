@@ -8,5 +8,20 @@ import PlayMeta from "./playlists/PlayMeta";
 import PlayIdeas from "./playideas/PlayIdeas";
 import TechStack from "./techstack/TechStacks";
 import ExtendedFooter from "./footer/ExtendedFooter";
+import CreatePlay from "./createplay/CreatePlay";
+import PlayCreated from "./playcreated/PlayCreated";
 
-export { Header, Footer, Home, PageNotFound, Modal, PlayMeta, DefMeta, PlayIdeas, TechStack, ExtendedFooter };
+export {
+  Header,
+  Footer,
+  Home,
+  PageNotFound,
+  Modal,
+  PlayMeta,
+  DefMeta,
+  PlayIdeas,
+  CreatePlay,
+  PlayCreated,
+  TechStack,
+  ExtendedFooter,
+};
