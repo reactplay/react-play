@@ -29,6 +29,7 @@ const Author = ({ user }) => {
 const PlayThumbnail = ({ play }) => {
   const [cover, setCover] = useState(null);
 
+
   useEffect(() => {
     // Set the cover image
     // if it is passed as a meta data
@@ -55,7 +56,7 @@ const PlayThumbnail = ({ play }) => {
 
   return (
     <li key={play.id}>
-      <Link to={play.path} state={{ id: play.id }}>
+      <Link to={`/plays/${play.id}`} state={{ id: play.id }}>
         <div className='play-thumb'>
           <Shimmer>
             <img src={cover} alt='' className='play-thumb-img' />
