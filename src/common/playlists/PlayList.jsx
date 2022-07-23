@@ -9,12 +9,13 @@ import useGetPlays from 'common/hooks/useGetPlays'
 
 import "./playlist.css";
 
-const PlayList = () => {
+const PlayList = ({filtered}) => {
   const [loading, error, plays] = useGetPlays();
   const [allPlays, setAllPlays] = useState([])
 
   let { playid } = useParams(); // return the parameter of url
   useEffect(() => {
+
   },[playid, loading])
   
   if (loading) {

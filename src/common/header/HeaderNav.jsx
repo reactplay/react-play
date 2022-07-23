@@ -92,7 +92,7 @@ const HeaderNav = ({ showBrowse }) => {
           <li className="menu-spacer">
             {process.env.NODE_ENV === "development" ? (
               <a
-                href="/plays/create"
+                href="/play/create"
                 rel="noopener noreferrer"
                 className="app-header-btn app-header-btn--primary"
 

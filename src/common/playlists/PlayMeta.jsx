@@ -6,24 +6,24 @@ import underDevelopment from 'images/underdevelpoment.png'
 import { submit } from "common/services/request";
 import Loader from "common/spinner/spinner";
 import { toKebabCase, toPascalcase, toTitleCase } from "common/services/string";
-import { FetchPlaysByID } from "common/services/request/query/fetch-plays";
+import { FetchPlaysByNameAndUser } from "common/services/request/query/fetch-plays";
 import {PageNotFound} from 'common'
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true)
   const [play, setPlay] = useState({})
   const [isError, setIsError] = useState(false)
-  let { playid } = useParams(); // return the parameter of url
+  let { playname, username } = useParams(); // return the parameter of url
 
   useEffect(() => {
-    submit(FetchPlaysByID(playid)).then(res => {
+    submit(FetchPlaysByNameAndUser(playname, username)).then(res => {
       setPlay(res[0])
       setLoading(false)
     }).catch(err => {
       setIsError(true)
       setLoading(false)
     })
-  },[playid])
+  },[playname, username])
 
   if (loading) {
     return <Loader />;

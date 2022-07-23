@@ -8,7 +8,7 @@ import {
   PlayIdeas,
   CreatePlay,
   PlayCreated,
-  TechStack
+  TechStack,
 } from "common";
 import PlayList from "common/playlists/PlayList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -27,24 +27,24 @@ const RouteDefs = () => {
         <Header />
         <DefMeta />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/tech-stacks" element={<TechStack />} />
-          <Route path='/plays' element={<App />}>
-            <Route
-              index
-              element={
-                <PlayList/>
-              }
-            />
-                  <Route exact path="create" element= {<CreatePlay />}/>
-                  <Route exact path="created/:playid" element= {<PlayCreated />}/>
-                  <Route exact path=":playid" element= {<PlayMeta />}>
-                    <Route exact path=":param1" element= {<PlayMeta />}>
-                      <Route exact path=":param2" element= {<PlayMeta />}/>
-                      </Route>
-                  </Route>
+          <Route path="/plays" element={<App />}>
+            <Route index element={<PlayList />} />
+            <Route exact path=":username" element={<PlayMeta />}>
+              <Route exact path=":playname" element={<PlayMeta />}>
+                <Route exact path=":param1" element={<PlayMeta />}>
+                  <Route exact path=":param2" element={<PlayMeta />} />
+                </Route>
+              </Route>
+            </Route>
           </Route>
-          <Route path='/ideas' element={<PlayIdeas />} />
+          <Route path="/play" element={<App />}>
+            <Route index element={<PlayList />} />
+            <Route exact path="create" element={<CreatePlay />} />
+            <Route exact path="created/:playid" element={<PlayCreated />} />
+          </Route>
+          <Route path="/ideas" element={<PlayIdeas />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -34,6 +34,30 @@ export function FetchPlaysByID(id) {
   return payload;
 }
 
+export function FetchPlaysByNameAndUser(playname, username) {
+  const env = process.env.NODE_ENV === "development";
+  const payload = { ...BasiFetchParam };
+
+  payload.where = {
+    operator: "and",
+    clause: [
+      {
+        field: "name",
+        operator: "eq",
+        value: playname,
+        type: "string",
+      },
+      {
+        field: "github",
+        operator: "eq",
+        value: username,
+        type: "string",
+      },
+    ],
+  };
+  return payload;
+}
+
 const BasiFetchParam = {
   display: "Simple fetch play",
   name: "Fetch_Plays",
