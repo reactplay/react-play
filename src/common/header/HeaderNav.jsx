@@ -7,7 +7,7 @@ import { IoAddSharp, IoShareSocial, IoHeartSharp } from "react-icons/io5";
 import { MdManageSearch, MdClose } from "react-icons/md";
 import SocialShare from "common/components/SocialShare";
 import { GoX } from "react-icons/go";
-import { Modal, Box, Typography, Menu, Badge, Stack } from "@mui/material";
+import { Modal, Box, Typography, Menu } from "@mui/material";
 import { useContext } from "react";
 import { SearchContext } from "common/search/search-context";
 
@@ -95,12 +95,10 @@ const HeaderNav = ({ showBrowse }) => {
                 href="/plays/create"
                 rel="noopener noreferrer"
                 className="app-header-btn app-header-btn--primary"
-
               >
                 <IoAddSharp className="icon" />
-                <Badge badgeContent={"BETA"} color="success">
-                  <span className="btn-label mr-6">Create</span>
-                </Badge>
+                <span className="btn-label">Create</span>
+                <span className="create-button-badge">beta</span>
               </a>
             ) : (
               <a
