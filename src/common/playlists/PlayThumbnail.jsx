@@ -26,10 +26,9 @@ const Author = ({ user }) => {
   );
 };
 
-const PlayThumbnail = ({ play, addRoute }) => {
+const PlayThumbnail = ({ play }) => {
   const [cover, setCover] = useState(null);
 
-  const getRoute = addRoute ? `plays/${play.id}` : play.id
 
   useEffect(() => {
     // Set the cover image
@@ -57,7 +56,7 @@ const PlayThumbnail = ({ play, addRoute }) => {
 
   return (
     <li key={play.id}>
-      <Link to={getRoute} state={{ id: play.id }}>
+      <Link to={`/plays/${play.id}`} state={{ id: play.id }}>
         <div className='play-thumb'>
           <Shimmer>
             <img src={cover} alt='' className='play-thumb-img' />
@@ -77,9 +76,5 @@ const PlayThumbnail = ({ play, addRoute }) => {
     </li>
   );
 };
-
-PlayThumbnail.defaultProps = {
-  addRoute: false
-}
 
 export default PlayThumbnail;

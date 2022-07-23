@@ -14,7 +14,7 @@ const FeaturedPlays = () => {
         {loading && <p>Loading...</p>}
         {error && <p>{error?.message ?? "Something went wrong"}</p>}
         {success && data?.map((play, index) => (
-          <PlayThumbnail addRoute={true} key={play.id} play={play} />
+          <PlayThumbnail key={play.id} play={play} />
         ))}
       </ul>
     </>
