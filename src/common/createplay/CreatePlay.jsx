@@ -80,7 +80,7 @@ const CreatePlay = () => {
     setIsDataLoading(true);
     formData.owner_user_id = userData.id;
     Plays.createPlay(formData).then((res) => {
-      navigate(`/play/created/${res}`);
+      navigate(`/plays/created/${res}`);
       setIsDataLoading(false);
       setLoadingText("");
     });

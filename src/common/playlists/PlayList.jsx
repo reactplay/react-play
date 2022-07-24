@@ -9,7 +9,7 @@ import useGetPlays from 'common/hooks/useGetPlays'
 
 import "./playlist.css";
 
-const PlayList = ({filtered}) => {
+const PlayList = () => {
   const [loading, error, plays] = useGetPlays();
   const [allPlays, setAllPlays] = useState([])
 
