@@ -1,6 +1,6 @@
 import PlayThumbnail from "./PlayThumbnail";
 import { ReactComponent as ImageOops } from "images/img-oops.svg";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "common/spinner/spinner";
 import * as all_plays from "plays";
@@ -11,14 +11,13 @@ import "./playlist.scss";
 
 const PlayList = () => {
   const [loading, error, plays] = useGetPlays();
-  const [allPlays, setAllPlays] = useState([])
 
   let { playid } = useParams(); // return the parameter of url
   useEffect(() => {
-  },[playid, loading])
-  
+  }, [playid, loading])
+
   if (loading) {
-   return <Loader />;
+    return <Loader />;
   }
 
   if (plays?.length === 0) {
@@ -36,13 +35,13 @@ const PlayList = () => {
     <Fragment>
       <ol className='list-plays'>
         {plays?.map((play, index) => (
-          
+
           <React.Fragment key={index}>
-          {
-            all_plays[play.component ? play.component : play.title_name] && <PlayThumbnail key={play.id} play={play}/>
-          }
+            {
+              all_plays[play.component ? play.component : play.title_name] && <PlayThumbnail key={play.id} play={play} />
+            }
           </React.Fragment>
-          
+
         ))}
       </ol>
     </Fragment>

@@ -36,13 +36,13 @@ const PlayCreated = () => {
      <div>
      <ol className="ordered-list">
       <li className="ordered-nav--link">
-        Fork <a className="play-create-anchor" href="https://github.com/reactplay/react-play" target="_blank" >reactplay</a> repository
+        Fork <a className="play-create-anchor" href="https://github.com/reactplay/react-play" target="_blank" rel="noreferrer">reactplay</a> repository
       </li>
       <li>
         Open command line console of your choice
       </li>
       <li>
-        Run following command on your <a className="play-create-anchor" href="https://github.com/reactplay/react-play" target="_blank" >reactplay</a> project folder<code className="console-wrapper">npx create-react-play -c {play.id}</code>
+        Run following command on your <a className="play-create-anchor" href="https://github.com/reactplay/react-play" target="_blank" rel="noreferrer">reactplay</a> project folder<code className="console-wrapper">npx create-react-play -c {play.id}</code>
       </li>
       <li>
         Install dependencies<code className="console-wrapper">npm install <br/># OR <br/> yarn </code>
@@ -55,7 +55,7 @@ const PlayCreated = () => {
       </li>
      </ol>
      <div>
-      Refer <a className="play-create-anchor" href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md" target="_blank">play creation guide</a> for more information
+      Refer <a className="play-create-anchor" href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md" target="_blank" rel="noreferrer">play creation guide</a> for more information
       </div><div>
       Happy coding!!
      </div>
