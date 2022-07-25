@@ -28,3 +28,6 @@ yarn.lock
 
 # nhost
 .nhost
+
+# play index
+src/plays/index.js

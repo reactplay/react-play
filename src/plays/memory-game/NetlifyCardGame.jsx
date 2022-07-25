@@ -199,7 +199,7 @@ function NetlifyCardGame(props) {
             How to Play?
           </h2>
           <div className='container'>
-            <div className='App'>
+            <div className='game-body'>
               {newImgArray.map((item, idx) => {
                 return (
                   <div

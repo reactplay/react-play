@@ -48,7 +48,7 @@ export const FetchPlaysFilter = {
   },
   // Filter Plays by a search string in name or description
   filterPlaysBySearchString(Obj) {
-    const payload = {
+    return {
       display: "Filter Plays by a search string in name or description",
       name: "Fetch_Plays",
       function: "plays",
@@ -76,23 +76,18 @@ export const FetchPlaysFilter = {
           {
             field: "name",
             operator: "iregex",
-            value: Obj.name,
+            value: Obj.name.toLowerCase(),
             type: "string",
           },
           {
             field: "description",
             operator: "iregex",
-            value: Obj.name,
+            value: Obj.name.toLowerCase(),
             type: "string",
           },
         ],
       },
     };
-    
-    if (!env && !preview) {
-      payload.where.clause.push(defaultClause);
-    }
-    return payload;
   },
   // Filter plays by level, user, language, and multiple tags
   /**

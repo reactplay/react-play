@@ -30,3 +30,9 @@ export const submit_multi = (requests, url, reqheder) => {
 export const submit = (request, url, reqheder) => {
   return gsubmit(request, BACKEND_URL);
 };
+
+export const submitMutation = (query, object) => {
+  const mutationQuery = query;
+  mutationQuery.object = object;
+  return submit(mutationQuery);
+};
