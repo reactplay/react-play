@@ -3,11 +3,7 @@ import data from "./ideas.json";
 import { IoAddSharp } from "react-icons/io5";
 import { RiChatNewLine } from "react-icons/ri";
 import LevelBadge from "common/components/LevelBadge";
-<<<<<<< HEAD
 import "./playIdeas.scss";
-=======
-import "./playIdeas.css";
->>>>>>> 04741742008c4e06bdcbf56bfe56deb283c2a703
 
 const PlayIdeas = () => {
   const [ideas, setIdeas] = useState([]);
