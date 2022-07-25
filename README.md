@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-33-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -53,7 +53,9 @@ Here is the link to the app. We hope you enjoy it.
   
 Who doesn't want motivation and support? Many Thanks to all the Stargazers who have supported this project with stars(⭐). You all are amazing!!!
 
-[![Stargazers repo roster for @reactplay/react-play](https://reporoster.com/stars/reactplay/react-play)](https://github.com/reactplay/react-play/stargazers)
+<a href="https://github.com/reactplay/react-play/stargazers">
+  <img src="https://git-lister.onrender.com/api/stars/reactplay/react-play?limit=25" alt="Stargazers repo roster for @reactplay/react-play" />
+</a>
 
 Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on Twitter [@reactplayio](https://twitter.com/reactplayio).
 
@@ -84,6 +86,12 @@ Or
   
 ```bash
 yarn install
+```
+
+> **Note**: `ReactPlay` runs on React 18. However, some of our dependencies are yet to upgrade to version 18. So please use the following command when you face difficulties installing the dependencies.
+
+```bash
+npm install --legacy-peer-deps
 ```
 
 ### ⛓️ Create a `.env` file at the root of your project folder with the following content,
@@ -226,6 +234,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://linkedin.com/in/luca-pizzini"><img src="https://avatars.githubusercontent.com/u/15077781?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Luca Pizzini</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=lpizzinidev" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/ShivamBhasin2002"><img src="https://avatars.githubusercontent.com/u/57500840?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shivam Bhasin</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ShivamBhasin2002" title="Code">💻</a></td>
     <td align="center"><a href="https://tejasshekar.netlify.app/"><img src="https://avatars.githubusercontent.com/u/68545229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tejas Shekar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=TejasShekar" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/anirban-pratihar-48a591226/"><img src="https://avatars.githubusercontent.com/u/82874704?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anirban Pratihar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Anirban-1490" title="Code">💻</a></td>
   </tr>
 </table>
 

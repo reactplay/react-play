@@ -1,8 +1,7 @@
 import "./AnalogClock.css";
 
 import PlayHeader from "common/playlists/PlayHeader";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function AnalogClock(props) {
 

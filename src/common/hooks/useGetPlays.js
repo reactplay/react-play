@@ -1,9 +1,11 @@
 import { useState, useEffect, useContext, useCallback } from "react";
+// import fs from "fs";
 import { SearchContext } from "common/search/search-context";
 import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
 import { FetchPlaysSimple } from "common/services/request/query/fetch-plays";
 
 import { submit } from "common/services/request";
+import { toTitleCaseTrimmed } from "common/services/string";
 
 /**
  * Run graphql query to filter plays
@@ -27,10 +29,13 @@ function useGetPlays() {
     filterQuery.owner_user_id.length > 0 ||
     filterQuery.language.length > 0;
 
-  const re_filterPlaysByMultiTagsLevelLang = useCallback((filterQuery) => {
-    const callIt = filterPlaysByMultiTagsLevelLang(filterQuery)
-    return callIt
-  },[filterPlaysByMultiTagsLevelLang])
+  const re_filterPlaysByMultiTagsLevelLang = useCallback(
+    (filterQuery) => {
+      const callIt = filterPlaysByMultiTagsLevelLang(filterQuery);
+      return callIt;
+    },
+    [filterPlaysByMultiTagsLevelLang]
+  );
 
   const re_filterPlaysBySearchString = useCallback(
     (Obj) => {
@@ -40,9 +45,9 @@ function useGetPlays() {
   );
 
   const fetchPlays = useCallback(async () => {
+    let res = [];
     setLoading(true);
     try {
-      let res = [];
       if (hasSearchTerm) {
         res = await submit(re_filterPlaysBySearchString({ name: searchTerm }));
       } else if (hasFilterQuery) {
@@ -51,6 +56,9 @@ function useGetPlays() {
       } else {
         res = await submit(FetchPlaysSimple());
       }
+      res.forEach(element => {
+        element.title_name = toTitleCaseTrimmed(element.name)
+      });
       setPlays(res);
     } catch (error) {
       setError(error);
@@ -62,7 +70,7 @@ function useGetPlays() {
     searchTerm,
     filterQuery,
     re_filterPlaysBySearchString,
-    re_filterPlaysByMultiTagsLevelLang
+    re_filterPlaysByMultiTagsLevelLang,
   ]);
 
   useEffect(() => {
@@ -70,6 +78,6 @@ function useGetPlays() {
   }, [fetchPlays]);
 
   return [loading, error, plays];
-};
+}
 
 export default useGetPlays;
