@@ -8,14 +8,9 @@ import { MdClose } from "react-icons/md";
 import Like from "common/components/Like/Like";
 import SignInMethods from "./SignInMethods";
 import Comment from "common/components/Comment";
-import { NhostClient } from "@nhost/nhost-js";
 import MuiModal from "common/modal/MuiModal";
 import useLikePlays from "common/hooks/useLikePlays";
-
-const nhost = new NhostClient({
-  subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
-  region: process.env.REACT_APP_NHOST_REGION,
-});
+import { NHOST } from "common/const";
 
 const PlayHeaderActions = ({ play }) => {
   const { play_like } = play;
@@ -32,10 +27,10 @@ const PlayHeaderActions = ({ play }) => {
 
   const constructLikeData = useCallback(
     (userId) => {
-      if (!play_like.length) return { like: false, number: 0 };
+      if (!play_like?.length) return { like: false, number: 0 };
       const ifLiked = play_like.find((obj) => obj.user_id === userId);
       if (ifLiked) return { like: true, number: play_like.length };
-      return { like: false, number: play_like.length };
+      return { like: false, number: play_like?.length };
     },
     [play_like]
   );
@@ -45,13 +40,8 @@ const PlayHeaderActions = ({ play }) => {
   }, [userId, constructLikeData]);
 
   // i will replace this function and remove the nhost javascript sdk after the new flow gets merged?
-  const handleLogin = async (value) => {
-    return await nhost.auth.signIn({
-      provider: value,
-      options: {
-        redirectTo: window.location.href,
-      },
-    });
+  const handleLogin = (value) => {
+    return window.location.href = NHOST.AUTH_URL(window.location.href, value)
   };
 
   const onLikeClick = async () => {

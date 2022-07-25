@@ -21,8 +21,6 @@ const nhost = new NhostClient({
 });
 
 const RouteDefs = () => {
-  const [loading, error, plays] = useGetPlays();
-  const success = !loading && !error && !!plays.length;
   return (
     <NhostReactProvider nhost={nhost}>
       <BrowserRouter>
