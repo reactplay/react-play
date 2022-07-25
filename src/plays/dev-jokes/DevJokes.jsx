@@ -4,14 +4,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function DevJokes(props) {
-  // Your Code Start below.
   const [joke, setjoke] = useState([]);
   const fetch = () => {
     axios
       .get("https://backend-omega-seven.vercel.app/api/getjoke")
       .then((response) => {
         setjoke(response.data);
-        console.log(response.data);
       });
   };
   useEffect(() => {
@@ -25,7 +23,7 @@ function DevJokes(props) {
           <div className="jokecontanier">
             {joke.map((value) => {
               return (
-                <div className="cont2">
+                <div key={value}>
                   <h1>{value.question}</h1>
                   <p>{value.punchline}</p>
                 </div>
