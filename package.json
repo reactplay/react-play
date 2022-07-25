@@ -11,7 +11,6 @@
     "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
-    "@types/react-simple-maps": "^1.0.8",
     "axios": "^0.27.2",
     "date-fns": "^2.28.0",
     "downloadjs": "^1.4.7",
@@ -33,7 +32,11 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
+<<<<<<< HEAD
     "react-twitter-widgets": "^1.11.0",
+=======
+    "react-simple-maps": "^2.3.0",
+>>>>>>> e8da69d (added a map and countries grid fetching data)
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.5",
