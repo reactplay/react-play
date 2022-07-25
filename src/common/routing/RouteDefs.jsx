@@ -5,13 +5,15 @@ import {
   Home,
   PlayMeta,
   DefMeta,
-  PageNotFound,
   PlayIdeas,
+  CreatePlay,
+  PlayCreated,
   TechStack
 } from "common";
 import PlayList from "common/playlists/PlayList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NhostClient, NhostReactProvider } from "@nhost/react";
+
 import useGetPlays from "common/hooks/useGetPlays";
 
 const nhost = new NhostClient({
@@ -21,7 +23,6 @@ const nhost = new NhostClient({
 const RouteDefs = () => {
   const [loading, error, plays] = useGetPlays();
   const success = !loading && !error && !!plays.length;
-  
   return (
     <NhostReactProvider nhost={nhost}>
       <BrowserRouter>
@@ -34,22 +35,18 @@ const RouteDefs = () => {
             <Route
               index
               element={
-                <PlayList loading={loading} plays={success ? plays : []} />
+                <PlayList/>
               }
             />
-            {success &&
-              plays?.map((play, index) => (
-                <Route
-                  key={index}
-                  path={play?.path}
-                  element={<PlayMeta key={index} play={play} />}
-                >
-                  <Route path=':param' element={<PlayMeta {...play} />} />
-                </Route>
-              ))}
+                  <Route exact path="create" element= {<CreatePlay />}/>
+                  <Route exact path="created/:playid" element= {<PlayCreated />}/>
+                  <Route exact path=":playid" element= {<PlayMeta />}>
+                    <Route exact path=":param1" element= {<PlayMeta />}>
+                      <Route exact path=":param2" element= {<PlayMeta />}/>
+                      </Route>
+                  </Route>
           </Route>
           <Route path='/ideas' element={<PlayIdeas />} />
-          <Route path='/*' element={<PageNotFound loading={loading} />} />
         </Routes>
         <Footer />
       </BrowserRouter>

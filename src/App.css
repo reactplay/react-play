@@ -216,7 +216,7 @@ small {
 
 /* App Footer */
 .app-footer {
-  padding: 0;
+  padding: 0 12px;
   font-size: var(--fs-xs);
   font-weight: var(--fw-light);
   color: var(--color-neutral-50);
@@ -583,4 +583,16 @@ small {
 .brand-tech-stack:hover .icon,
 .brand-tech-stack:focus .icon {
   fill: var(--color-brand-primary);
+}
+
+.create-button-badge{
+  background-color: var(--color-neutral-60);
+  border-radius: 0px 6px 6px 0px;
+  margin: -14.8px 0px 0px -1px;
+  color: var(--color-neutral-10);
+  padding: 1.5px 5px 0px 5px;
+  height: 16.5px;
+  transform: skew(170deg);
+  font-size: var(--fs-xxs);
+  text-transform: uppercase;
 }
