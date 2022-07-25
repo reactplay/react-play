@@ -12,7 +12,13 @@ import { MdManageSearch } from "react-icons/md";
 import YoutubeVideoEmbed from 'common/components/YouTubeEmbed';
 import FeaturedPlays from "common/playlists/FeaturedPlays";
 import Contributors from "./Contributors";
+import ExtendedFooter from "common/footer/ExtendedFooter";
 import { SearchContext } from "common/search/search-context";
+import { Tweet } from "react-twitter-widgets";
+import Spinner from "../spinner/spinner"
+
+
+
 
 const Home = () => {
   const [gitHubStars, setGitHubStars] = useState("...");
@@ -29,6 +35,32 @@ const Home = () => {
       language: ""
     });
   }, [data, setSearchTerm, searchTerm, setFilterQuery]);
+
+  //* array of tweet IDs to show on the home page
+    const tweetIdArray = [
+        "1544376341172068352",  
+        "1530197614771458049",
+        "1529884210269671424",
+        "1522165831005728769",
+        "1521784126717710336",
+        "1518200201302974464",
+        "1541802575775035392",
+        "1515598358748237830",
+        "1528938773710782464",
+        "1532349503709122561"
+    ]
+
+    //* set the state for loading
+   
+    const [isTweetsLoading,setTweetsLoading] = useState(true)
+
+
+
+    function tweetLoadHandler (){
+        //* as soon as tweets loads on DOM disable the loading spinner
+        setTweetsLoading(false)
+    }
+
 
   return (
     <div>
@@ -132,9 +164,32 @@ const Home = () => {
           </Link>
         </div>
       </section>
+      <section className="home-tweets">
+              <h3 className="title-primary">
+                What Our <strong>
+                       <span>Community</span>
+                  </strong> Says!
+              </h3>
+
+        {
+            (isTweetsLoading) ? <Spinner/> :""
+        }
+        <div className="tweets-container active" >
+            {
+                
+                tweetIdArray.map(id=> {
+
+                    return <Tweet  key={id} tweetId={id}
+                    onLoad={tweetLoadHandler} options={{width:'410' ,conversation:"none",cards:"hidden",align:"center"}} />
+                })
+            }
+        </div>
+         
+      </section>
       <section className="home-contributors">
         <Contributors />
       </section>
+      <ExtendedFooter />
     </div>
   );
 };

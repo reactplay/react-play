@@ -30,7 +30,14 @@ const Header = () => {
         showBrowse: true,
         setHeaderStyle: true,
       }));
-    } else if (pathName === "/plays") {
+    } else if (pathName === "/tech-stacks") {
+      setShowHideBits((prev) => ({
+        ...prev,
+        showSearch: false,
+        showBrowse: true,
+        setHeaderStyle: true,
+      }));
+    } else if (pathName.startsWith("/plays")) {
       setShowHideBits((prev) => ({
         ...prev,
         showSearch: true,

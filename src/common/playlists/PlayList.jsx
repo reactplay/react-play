@@ -1,12 +1,22 @@
 import PlayThumbnail from "./PlayThumbnail";
 import { ReactComponent as ImageOops } from "images/img-oops.svg";
-import { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "common/spinner/spinner";
+import * as all_plays from "plays";
+import { useParams } from "react-router-dom";
+import useGetPlays from 'common/hooks/useGetPlays'
 
 import "./playlist.css";
 
-const PlayList = ({ plays, loading }) => {
+const PlayList = () => {
+  const [loading, error, plays] = useGetPlays();
+  const [allPlays, setAllPlays] = useState([])
+
+  let { playid } = useParams(); // return the parameter of url
+  useEffect(() => {
+  },[playid, loading])
+  
   if (loading) {
    return <Loader />;
   }
@@ -26,7 +36,13 @@ const PlayList = ({ plays, loading }) => {
     <Fragment>
       <ol className='list-plays'>
         {plays?.map((play, index) => (
-          <PlayThumbnail key={play.id} play={play} />
+          
+          <React.Fragment key={index}>
+          {
+            all_plays[play.component ? play.component : play.title_name] && <PlayThumbnail key={play.id} play={play}/>
+          }
+          </React.Fragment>
+          
         ))}
       </ol>
     </Fragment>
