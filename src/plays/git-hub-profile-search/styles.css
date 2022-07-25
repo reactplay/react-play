@@ -1,5 +1,5 @@
 /* enter stlyes here */
-.top-heading {
+.nirban-github-profile-heading {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
@@ -8,7 +8,7 @@
     font-weight: 600;
 }
 
-.form {
+.nirban-github-profile-form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@
     flex-direction: column;
 }
 
-.search {
+.nirban-github-profile-search {
     border: none;
     outline: none;
     margin-bottom: 1.5rem;
@@ -25,15 +25,15 @@
     box-shadow: 0px 0px 4px 4px #01032609;
 }
 
-.search ::placeholder {
+.nirban-github-profile-search ::placeholder {
     color: #010326;
 }
 
-.search:focus {
+.nirban-github-profile-search:focus {
     box-shadow: 0px 0px 4px 4px #01032638;
 }
 
-.btn {
+.nirban-github-profile-btn {
     background-color: #00f1feab;
     color: #010326;
     padding: 4px 15px;
@@ -41,16 +41,16 @@
     box-shadow: 0px 0px 4px 4px rgba(173, 169, 169, 0.377);
 }
 
-.btn:hover {
+.nirban-github-profile-btn:hover {
     background-color: #00f1fe;
 }
 
-.result {
+.nirban-github-profile-result {
     display: flex;
     justify-content: center;
 }
 
-.results {
+.nirban-github-profile-results {
     max-width: 500px;
     background: #ffff;
     padding: 1rem;
@@ -60,54 +60,54 @@
     font-weight: 500;
 }
 
-.results-info {
+.nirban-github-profile-results-info {
     padding-left: 1rem;
 }
 
-.bio,
-.location,
-.twitter {
+.nirban-github-profile-bio,
+.nirban-github-profile-location,
+.nirban-github-profile-twitter {
     margin-bottom: 0.5rem;
 }
 
-.profile-details {
+.nirban-github-profile-details {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.profile-link {
+.nirban-github-profile-link {
     font-size: x-large;
     font-weight: 600;
     text-decoration: underline;
 }
 
-.avatar {
+.nirban-github-profile-avatar {
     border-radius: 50%;
     border: 10px solid #fff;
     max-height: 125px;
     max-width: 125px;
 }
 
-.profile {
+.nirban-github-profile-socials {
     display: flex;
     margin-bottom: 1rem;
 }
 
-.profile>:first-child {
+.nirban-github-profile-socials>:first-child {
     margin-right: 1rem;
 }
 
-.profile>:nth-child(2) {
+.nirban-github-profile-socials>:nth-child(2) {
     margin: 0 1rem;
 }
 
-.profile>:last-child {
+.nirban-github-profile-socials>:last-child {
     margin-left: 1rem;
 }
 
-.repos-heading {
+.nirban-github-profile-repos-heading {
     font-size: 1.4rem;
     font-weight: 600;
     text-align: center;
@@ -115,19 +115,19 @@
     margin-top: 1rem;
 }
 
-.repos {
+.nirban-github-profile-repos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.repo-link {
+.nirban-github-profile-repo-link {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     text-align: center;
     text-decoration: underline;
 }
 
-.emptyUser {
+.nirban-github-profile-no-user {
     color: #010326;
     font-weight: 600;
     font-size: 1.3rem;
@@ -141,50 +141,50 @@
 
 @media screen and (max-width: 600px) {
 
-    .results {
+    .nirban-github-profile-results {
         max-width: 450px;
     }
 
-    .profile-details {
+    .nirban-github-profile-details {
         flex-direction: column;
     }
 
-    .repos-heading {
+    .nirban-github-profile-repos-heading {
         text-align: left;
     }
 
-    .repos {
+    .nirban-github-profile-repos {
         display: block;
     }
 
-    .repo-link {
+    .nirban-github-profile-repo-link {
         text-align: left;
     }
 }
 
 @media screen and (max-width: 450px) {
 
-    .top-heading {
+    .nirban-github-profile-top {
         text-align: center;
     }
 
-    .results {
+    .nirban-github-profile-results {
         max-width: 300px;
     }
 
-    .profile {
+    .nirban-github-profile-socials {
         display: block;
     }
 
-    .profile>:first-child {
+    .nirban-github-profile-socials>:first-child {
         margin-right: 0;
     }
 
-    .profile>:nth-child(2) {
+    .nirban-github-profile-socials>:nth-child(2) {
         margin: 0;
     }
 
-    .profile>:last-child {
+    .nirban-github-profile-socials>:last-child {
         margin-left: 0;
     }
 }

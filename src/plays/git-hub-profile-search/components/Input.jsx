@@ -14,9 +14,9 @@ const Input = () => {
     }
 
     return (
-        <form className='form'>
-            <input value={username} placeholder="Search Username" onChange={(e) => setUsername(e.target.value)} className="search" />
-            <button type="submit" onClick={handleSubmit} className="btn">
+        <form className='nirban-github-profile-form'>
+            <input value={username} placeholder="Search Username" onChange={(e) => setUsername(e.target.value)} className="nirban-github-profile-search" />
+            <button type="submit" onClick={handleSubmit} className="nirban-github-profile-btn">
                 Search
             </button>
         </form>
