@@ -39,9 +39,8 @@ const PlayHeaderActions = ({ play }) => {
     setLikeObj(constructLikeData(userId));
   }, [userId, constructLikeData]);
 
-  // i will replace this function and remove the nhost javascript sdk after the new flow gets merged?
   const handleLogin = (value) => {
-    return window.location.href = NHOST.AUTH_URL(window.location.href, value)
+    return window.location = NHOST.AUTH_URL(window.location.href, value)
   };
 
   const onLikeClick = async () => {
