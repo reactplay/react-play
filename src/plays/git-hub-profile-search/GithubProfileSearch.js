@@ -11,11 +11,11 @@ function GithubProfileSearch(props) {
 
   return (
     <>
-      <div className="play-details">
+      <div className="play-details nirban-github-profile">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="play-details-body nirban-github-profile-details">
           {/* Your Code Starts Here */}
-          <div className='play-body'>
+          <div className='play-body nirban-github-profile-body'>
             <ResultContextProvider>
               <h1 className='top-heading'>
                 Github Profile Search
