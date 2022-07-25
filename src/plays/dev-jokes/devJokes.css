@@ -1,4 +1,3 @@
-/* enter stlyes here */
 .maincontanier {
   display: flex;
   justify-content: center;
@@ -23,61 +22,38 @@
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
   margin-top: 30px;
-  /* background: radial-gradient(#76b2fe, #b69efe); */
   background-color: rgb(0, 0, 0);
   background-color: rgba(199, 183, 183, 0.4);
   font-size: x-large;
 }
 
 .jokecontanier:hover {
-  /* box-shadow:rgba(28, 97, 226, 0.48) 5px 5px, rgba(28, 97, 226, 0.48) 10px 10px, rgba(28, 97, 226, 0.48) 15px 15px, rgba(28, 97, 226, 0.48) 20px 20px, rgba(28, 97, 226, 0.48) 25px 25px; */
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
   transform: scale(1.01);
 }
 
 .btn {
-  /* background-color: #c2fbd7;
-  border-radius: 10px;
+  padding: 1em 2.1em 1.1em;
+  border-radius: 3px;
+  margin: 8px 8px 8px 8px;
+  color: black;
+  background-color: #c2fbd7;
+  display: inline-block;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
   box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
     rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
     rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
     rgba(44, 187, 99, 0.15) 0 16px 32px;
-  color: rgb(40, 113, 56);
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-top: 100px;
-  width: 10%; */
-  padding: 1em 2.1em 1.1em;
-    border-radius: 3px;
-    margin: 8px 8px 8px 8px;
-    color: black;
-    background-color: #c2fbd7;
-    display: inline-block;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    font-family: sans-serif;
-    font-weight: 800;
-    font-size: .85em;
-    text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
-    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
-    rgba(44, 187, 99, 0.15) 0 16px 32px;
-    position: relative;
+  position: relative;
 }
 
 .btn:hover {
@@ -87,11 +63,15 @@
     rgba(44, 187, 99, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
-@media screen and (max-width:764px) {
-   .jokecontanier{
+@media screen and (max-width: 764px) {
+  .jokecontanier {
     width: 75%;
     min-height: 40%;
-    margin-top: 100px;
+    margin-top: 50px;
     font-size: larger;
-   }
+    word-break: break-all;
+  }
+  .btn {
+    padding: 0.5rem 1rem 0.5rem;
+  }
 }
