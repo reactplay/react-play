@@ -21,8 +21,10 @@ function CountriesStatics(props) {
             statistics.
           </h2>
           <SearchAndFilter />
-          <Map />
-          <CountriesGrid />
+          <div className="flex flex-col xl:flex-row justify-between">
+            <Map />
+            <CountriesGrid />
+          </div>
 
           {/* Your Code Ends Here */}
         </div>
