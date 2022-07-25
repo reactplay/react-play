@@ -1,6 +1,8 @@
 # GitHub Profile Search
 
-A play in which when you type someone's github username it displays there public github profile.
+A play where you can search anybody's public github profile. I have made it using Context Api for showing basic implementation which you can practice in order to get comfortable with using Context Api for bigger projects.
+
+The search result provides you with one user whose username matches with his/her profile link, bio, followers, as well as the current 5 public repositories made by the user starting from the latest.
 
 ## Play Demographic
 
@@ -11,17 +13,10 @@ A play in which when you type someone's github username it displays there public
 
 - User: nirban256
 - Gihub Link: https://github.com/nirban256
-- Blog: null
-- Video: null
+- Blog: NA
+- Video: NA
 
-## Implementation Details
-
-Update your implementation idea and details here
-
-## Consideration
-
-Update all considerations(if any)
 
 ## Resources
 
-Update external resources(if any)
+[GitHub RESST API](https://docs.github.com/rest)

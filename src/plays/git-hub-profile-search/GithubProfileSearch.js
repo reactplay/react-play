@@ -17,11 +17,11 @@ function GithubProfileSearch(props) {
           {/* Your Code Starts Here */}
           <div className='play-body'>
             <ResultContextProvider>
-              <h1 className='play-heading' style={{ fontSize: '2rem', color: '#010326', fontWeight: '600' }}>
+              <h1 className='top-heading'>
                 Github Profile Search
               </h1>
               <Input />
-              <div className='results'>
+              <div className='result'>
                 <Results />
               </div>
             </ResultContextProvider>

@@ -15,7 +15,7 @@ const Input = () => {
 
     return (
         <form className='form'>
-            <input value={username} placeholder="Search User" onChange={(e) => setUsername(e.target.value)} className="search" />
+            <input value={username} placeholder="Search Username" onChange={(e) => setUsername(e.target.value)} className="search" />
             <button type="submit" onClick={handleSubmit} className="btn">
                 Search
             </button>

@@ -1,8 +1,11 @@
 /* enter stlyes here */
-.play-heading {
+.top-heading {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #010326;
+    font-weight: 600;
 }
 
 .form {
@@ -42,12 +45,12 @@
     background-color: #00f1fe;
 }
 
-.results {
+.result {
     display: flex;
     justify-content: center;
 }
 
-.play-results {
+.results {
     max-width: 500px;
     background: #ffff;
     padding: 1rem;
@@ -124,11 +127,21 @@
     text-decoration: underline;
 }
 
+.emptyUser {
+    color: #010326;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    background: #fff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 600px) {
 
-    .play-results {
+    .results {
         max-width: 450px;
     }
 
@@ -151,11 +164,11 @@
 
 @media screen and (max-width: 450px) {
 
-    .play-heading {
+    .top-heading {
         text-align: center;
     }
 
-    .play-results {
+    .results {
         max-width: 300px;
     }
 
