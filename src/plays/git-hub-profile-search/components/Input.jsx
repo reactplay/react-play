@@ -15,7 +15,7 @@ const Input = () => {
 
     return (
         <form className='nirban-github-profile-form'>
-            <input value={username} placeholder="Search Username" onChange={(e) => setUsername(e.target.value)} className="nirban-github-profile-search" />
+            <input tabIndex={0} autoFocus value={username} placeholder="Search Username" onChange={(e) => setUsername(e.target.value)} className="nirban-github-profile-search" />
             <button type="submit" onClick={handleSubmit} className="nirban-github-profile-btn">
                 Search
             </button>

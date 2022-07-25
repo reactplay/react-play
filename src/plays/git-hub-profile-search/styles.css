@@ -20,7 +20,7 @@
     border: none;
     outline: none;
     margin-bottom: 1.5rem;
-    padding: 5px;
+    padding: 10px;
     border-radius: 6px;
     box-shadow: 0px 0px 4px 4px #01032609;
 }
@@ -129,11 +129,11 @@
 
 .nirban-github-profile-no-user {
     color: #010326;
-    font-weight: 600;
-    font-size: 1.3rem;
+    font-weight: 400;
+    font-size: 1.2rem;
     margin-top: 2rem;
     background: #fff;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     border-radius: 10px;
 }
 
