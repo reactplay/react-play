@@ -5,7 +5,7 @@ const LogOut = () => {
   const isAuthenticated = useAuthenticated();
   const { signOut } = useSignOut();
 
-  if (!isAuthenticated && process.env.NODE_ENV !== "development") {
+  if (!isAuthenticated || process.env.NODE_ENV === "development") {
     return null;
   }
   return (
