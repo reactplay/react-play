@@ -4,6 +4,7 @@ import { BsPlayCircleFill } from "react-icons/bs";
 import thumbPlay from "images/thumb-play.png";
 import Shimmer from "react-shimmer-effect";
 import userImage from "images/user.png";
+import Like from "common/components/Like/Like";
 
 const Author = ({ user }) => {
   return (
@@ -66,6 +67,7 @@ const PlayThumbnail = ({ play }) => {
           <div className="play-title">{play.name}</div>
           {play.user && <Author user={play.user} />}
           <div className="mt-1 ">
+            <Like onLikeClick={null} likeObj={{number: play?.play_like?.length}} />
             <div className={`language language-${play.language || "js"}`}></div>
           </div>
         </div>
