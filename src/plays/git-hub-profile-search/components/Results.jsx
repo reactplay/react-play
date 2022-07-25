@@ -36,7 +36,7 @@ const Results = () => {
                                 <div>
                                     {results.bio === '' ? '' : <h2 className='bio'><strong>Bio:</strong> {results.bio}</h2>}
                                     {results.location === '' ? '' : <p className='location'><strong>Location:</strong> {results.location}</p>}
-                                    {results.twitter_username === '' ? '' : <p className='twitter'><strong>Twitter:</strong> <a href={`https://twitter.com/${results.twitter_username}`} target="_blank" rel='noreferrer' style={{ color: '#010326' }}>{results.twitter_username}</a></p>}
+                                    {results.twitter_username === '' ? '' : <p className='twitter'><strong>Twitter:</strong> <a href={`https://twitter.com/${results.twitter_username}`} target="_blank" rel='noreferrer' className='twitter-link'>{results.twitter_username}</a></p>}
                                     <ul className='profile'>
                                         <li><strong>{results.followers}</strong> Followers</li>
                                         <li><strong>{results.following}</strong> Following</li>
