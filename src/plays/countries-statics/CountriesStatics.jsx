@@ -2,11 +2,16 @@ import PlayHeader from "common/playlists/PlayHeader";
 import Map from "./Map";
 import SearchAndFilter from "./SearchAndFilter";
 import CountriesGrid from "./CountriesGrid";
+import Country from "./Country";
 import "./countriesStatics.css";
+import { useState } from "react";
 
 function CountriesStatics(props) {
   // Your Code Start below.
-
+  const [activeGeo, setActiveGeo] = useState("ind");
+  const handleClickMap = (geo) => {
+    setActiveGeo(geo.id.toLowerCase());
+  };
   return (
     <>
       <div className="play-details">
@@ -22,8 +27,8 @@ function CountriesStatics(props) {
           </h2>
           <SearchAndFilter />
           <div className="flex flex-col xl:flex-row justify-between">
-            <Map />
-            <CountriesGrid />
+            <Map activeGeo={activeGeo} handleClickMap={handleClickMap} />
+            <Country activeGeo={activeGeo} />
           </div>
 
           {/* Your Code Ends Here */}
