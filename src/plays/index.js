@@ -27,5 +27,6 @@
  export { default as GitHubUserSearch } from 'plays/github-user-search/GitHubUserSearch';
  export { default as ContextWithRealUsecases } from 'plays/context-with-real-usecases/ContextWithRealUsecases';
  export { default as QrCodeGenerator } from 'plays/qr-code-generator/QrCodeGenerator';
+ export { default as GithubProfileSearch } from 'plays/git-hub-profile-search/GithubProfileSearch';
  export { default as NavBar } from 'plays/navbar/NavBar';
  export { default as DevJokes } from 'plays/dev-jokes/DevJokes';
