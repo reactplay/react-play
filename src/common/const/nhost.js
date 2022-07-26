@@ -1,5 +1,7 @@
-export const NHOST = {
-  AUTH_URL: `https://rgkjmwftqtbpayoyolwh.nhost.run/v1/auth/signin/provider/github?redirectTo=${encodeURI(
-    "http://localhost:3000/plays/create"
-  )}`,
+const AUTH_URL = (redirectURL, provider = "github") => {
+  return `https://rgkjmwftqtbpayoyolwh.nhost.run/v1/auth/signin/provider/${provider}?redirectTo=${encodeURI(
+    redirectURL
+  )}`;
 };
+
+export const NHOST = { AUTH_URL }

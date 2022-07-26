@@ -102,7 +102,7 @@ const CreatePlay = () => {
     if (refreshToken) {
       console.log(refreshToken);
     } else {
-      window.location = NHOST.AUTH_URL;
+      window.location = NHOST.AUTH_URL('http://localhost:3000/plays/create');
       return null;
     }
   } else {
