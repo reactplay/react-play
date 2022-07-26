@@ -30,7 +30,7 @@ function DevJokes(props) {
               );
             })}
           </div>
-          <button onClick={fetch} className="btn">Next joke</button>
+          <button onClick={fetch} className="dev-jokes-btn">Next joke</button>
         </div>
       </div>
     </>
