@@ -15,6 +15,7 @@ export default function Map({ activeGeo, handleClickMap }) {
   const defaultStyle = {
     default: { outline: "none" },
     hover: { outline: "none", fill: "#C0C0C0" },
+<<<<<<< HEAD
     pressed: { outline: "none" },
   };
   return (
@@ -44,6 +45,39 @@ export default function Map({ activeGeo, handleClickMap }) {
               })
             }
           </Geographies>
+=======
+  };
+
+  return (
+    <>
+      <div className="w-[60%] ">
+        <ComposableMap width={800} height={500}>
+          <ZoomableGroup>
+            <Geographies geography={mapdata}>
+              {({ geographies }) =>
+                geographies.map((geo) => {
+                  return (
+                    <Geography
+                      key={geo.rsmKey}
+                      geography={geo}
+                      fill={
+                        activeGeo === geo.id.toLowerCase()
+                          ? "darkblue"
+                          : "lightblue"
+                      }
+                      onClick={() => handleClickMap(geo)}
+                      style={
+                        activeGeo === geo.id.toLowerCase()
+                          ? activeStyle
+                          : defaultStyle
+                      }
+                    />
+                  );
+                })
+              }
+            </Geographies>
+          </ZoomableGroup>
+>>>>>>> a2622fc (worked on country specific detail)
         </ComposableMap>
       </div>
     </>
