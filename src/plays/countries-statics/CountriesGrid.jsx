@@ -4,22 +4,22 @@ export default function CountriesGrid() {
   const [countries, setCounteries] = useState([]);
   const [search, SetSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  // const getCountries = () => {
-  //   setIsLoading(true);
-  //   fetch(`https://restcountries.com/v3.1/all`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setIsLoading(false);
-  //       setCounteries(data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-  // const handleChange = (e) => {
-  //   SetSearch(e.target.value);
-  // };
-  // useEffect(() => {
-  //   getCountries();
-  // }, []);
+  const getCountries = () => {
+    setIsLoading(true);
+    fetch(`https://restcountries.com/v3.1/all`)
+      .then((response) => response.json())
+      .then((data) => {
+        setIsLoading(false);
+        setCounteries(data);
+      })
+      .catch((error) => console.log(error));
+  };
+  const handleChange = (e) => {
+    SetSearch(e.target.value);
+  };
+  useEffect(() => {
+    getCountries();
+  }, []);
 
   return (
     <div className="my-4 ">
