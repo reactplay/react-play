@@ -20,7 +20,6 @@
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
   margin: 30px 20px 20px;
-  background-color: rgb(0, 0, 0);
   background-color: rgba(199, 183, 183, 0.4);
   font-size: x-large;
 }
