@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from "react";
-import data from "./test";
 
 export default function Country({ activeGeo }) {
-  console.log(data);
-  const [country, setCountry] = useState(data);
+  const [country, setCountry] = useState([]);
   const [isloading, setIsLoading] = useState(false);
-  // const getCountry = () => {
-  //   setIsLoading(true);
-  //   fetch(`https://restcountries.com/v3.1/alpha/${activeGeo}`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setIsLoading(false);
-  //       setCountry(data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-  // useEffect(() => {
-  //   getCountry();
-  // }, [activeGeo]);
+  const getCountry = () => {
+    setIsLoading(true);
+    fetch(`https://restcountries.com/v3.1/alpha/${activeGeo}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setIsLoading(false);
+        setCountry(data);
+      })
+      .catch((error) => console.log(error));
+  };
+  useEffect(() => {
+    getCountry();
+  }, [activeGeo]);
   console.log(country);
   return (
     <div className="w-[100%] xl:w-[40%] my-8">
       {isloading ? (
-        <h1 className="my-12  text-center text-3xl font-bold text-cyan-800">
+        <h1 className="my-12  text-center text-xl md:text-3xl font-bold text-cyan-800">
           Loading....
         </h1>
       ) : (
@@ -30,20 +28,20 @@ export default function Country({ activeGeo }) {
           {country.map((country, index) => {
             return (
               <div key={index}>
-                <h1 className="text-5xl font-bold text-center uppercase">
+                <h1 className="text-3xl md:text-5xl font-bold text-center uppercase">
                   {country.name.common}
                 </h1>
-                <div>
+                <div className="md:flex md:w-[70%] items-center  md:mx-auto xl:block">
                   <img
                     src={country.flags.png}
                     className="w-[350px] h-[200px] my-2 mx-auto"
                   />
-                  <div className="w-[350px] mx-auto  p-4">
+                  <div className="w-[350px] mx-auto  p-4 ">
                     <div className="flex m-1">
                       <div className="w-[120px] text-xl font-semibold capitalize ">
                         Capital
                       </div>
-                      <div className="text-xl w-[200px]">
+                      <div className="text-xl w-[200px] break-words">
                         {country.capital[0]}
                       </div>
                     </div>
@@ -91,7 +89,7 @@ export default function Country({ activeGeo }) {
                             return (
                               <span
                                 key={index}
-                                className="bg-lime-600 text-white px-1 rounded m-1"
+                                className="inline-block bg-lime-600 text-white px-1 rounded m-2 "
                               >
                                 {language[1]}
                               </span>
@@ -105,6 +103,36 @@ export default function Country({ activeGeo }) {
                         Area
                       </div>
                       <div className="text-xl w-[200px] ">{country.area}</div>
+                    </div>
+                    <div className="flex m-1">
+                      <div className="w-[120px] text-xl font-semibold capitalize ">
+                        TimeZone
+                      </div>
+                      <div className="text-xl w-[200px] overflow-none break-words">
+                        {country.timezones}
+                      </div>
+                    </div>
+                    <div className="flex m-1">
+                      <div className="w-[120px] text-xl font-semibold capitalize ">
+                        Region
+                      </div>
+                      <div className="text-xl w-[200px]">
+                        {country.subregion}
+                      </div>
+                    </div>
+                    <div className="flex m-1">
+                      <div className="w-[120px] text-xl font-semibold capitalize ">
+                        Idd
+                      </div>
+                      <div className="text-xl w-[200px]">
+                        {Object.entries(country.idd).map((item, index) => {
+                          return (
+                            <span key={index} className="inline-block">
+                              {item[1]}
+                            </span>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>

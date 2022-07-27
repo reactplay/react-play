@@ -19,11 +19,10 @@ function CountriesStatics(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <h1 className="text-4xl mt-4 font-bold text-center capitalize">
-            Search on map
+            Geo Now
           </h1>
-          <h2 className="text-xl text-center">
-            Click the country on the map to pull the country specific
-            statistics.
+          <h2 className="text-xl text-center capitalize">
+            Learn geography in fun and interactive way
           </h2>
           <SearchAndFilter />
           <div className="flex flex-col xl:flex-row justify-between">
