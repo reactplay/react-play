@@ -34,6 +34,10 @@
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
     "react-twitter-widgets": "^1.11.0",
+<<<<<<< HEAD
+=======
+    "react-simple-maps": "^2.3.0",
+>>>>>>> 14a55de (fixed all the dependencies and merge)
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.5",
