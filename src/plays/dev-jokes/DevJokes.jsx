@@ -2,10 +2,10 @@ import PlayHeader from "common/playlists/PlayHeader";
 import "./devJokes.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Spinner from './Spinner'
+import Spinner from "./Spinner";
 function DevJokes(props) {
   const [joke, setjoke] = useState([]);
-  const [spinner,setspinner]=useState(false);
+  const [spinner, setspinner] = useState(false);
   const fetch = () => {
     setspinner(true);
     axios
@@ -24,21 +24,24 @@ function DevJokes(props) {
         <PlayHeader play={props} />
         <div className="maincontanier">
           <div className="jokecontanier">
-          { spinner ? 
-             <Spinner/> : 
-          <div>
-            {joke.map((value) => {
-                 return (
-                   <div key={value}>
-                     <h1>{value.question}</h1>
-                     <p>{value.punchline}</p>
-                   </div>
-                 );
-               })}
+            {spinner ? (
+              <Spinner />
+            ) : (
+              <div>
+                {joke.map((value) => {
+                  return (
+                    <div key={value}>
+                      <h1>{value.question}</h1>
+                      <p>{value.punchline}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
-          }
-          </div>
-          <button onClick={fetch} className="dev-jokes-btn">Next joke</button>
+          <button onClick={fetch} className="dev-jokes-btn">
+            Next joke
+          </button>
         </div>
       </div>
     </>
