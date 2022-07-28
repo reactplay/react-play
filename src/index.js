@@ -4,7 +4,7 @@ import "index.css";
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "reportWebVitals";
-// import * as registerServiceWorker from "./registerServiceWorker";
+import * as registerServiceWorker from "./registerServiceWorker";
 
 /** removing console statement in react prod build */
 if (process.env.NODE_ENV !== "development") {
@@ -44,7 +44,7 @@ const container = document.getElementById("root");
 createRoot(container).render(<Index />);
 
 // Makes the app to work offline and load faster
-// registerServiceWorker.register();
+registerServiceWorker.register();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
