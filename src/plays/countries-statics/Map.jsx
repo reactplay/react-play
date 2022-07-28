@@ -50,7 +50,7 @@ export default function Map({ activeGeo, handleClickMap }) {
 
   return (
     <>
-      <div className="w-full xl:w-[60%]">
+      <div className="w-full xl:w-[60%]  mt-8">
         <ComposableMap width={800} height={600}>
           <ZoomableGroup>
             <Geographies geography={mapdata}>

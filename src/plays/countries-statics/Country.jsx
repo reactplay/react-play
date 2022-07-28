@@ -1,24 +1,40 @@
+import { set } from "lodash";
 import React, { useEffect, useState } from "react";
 
 export default function Country({ activeGeo }) {
   const [country, setCountry] = useState([]);
   const [isloading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(null);
   const getCountry = () => {
     setIsLoading(true);
     fetch(`https://restcountries.com/v3.1/alpha/${activeGeo}`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Something went wrong");
+        }
+        return response.json();
+      })
       .then((data) => {
         setIsLoading(false);
+        setIsError(null);
         setCountry(data);
       })
-      .catch((error) => console.log(error));
+      .catch((e) => {
+        setIsLoading(false);
+        setCountry([]);
+        setIsError(e.message);
+      });
   };
   useEffect(() => {
     getCountry();
   }, [activeGeo]);
-  console.log(country);
   return (
     <div className="w-[100%] xl:w-[40%] my-8">
+      {isError && (
+        <h1 className="my-12  text-center text-xl md:text-3xl font-bold text-red-300">
+          {isError}
+        </h1>
+      )}
       {isloading ? (
         <h1 className="my-12  text-center text-xl md:text-3xl font-bold text-cyan-800">
           Loading....
@@ -31,12 +47,12 @@ export default function Country({ activeGeo }) {
                 <h1 className="text-3xl md:text-5xl font-bold text-center uppercase">
                   {country.name.common}
                 </h1>
-                <div className="md:flex md:w-[70%] items-center  md:mx-auto xl:block">
+                <div className="md:flex md:w-[70%] md:mx-auto  xl:block">
                   <img
                     src={country.flags.png}
-                    className="w-[350px] h-[200px] my-2 mx-auto"
+                    className="w-[350px] h-[200px] my-2 mx-auto md:mt-6"
                   />
-                  <div className="w-[350px] mx-auto  p-4 ">
+                  <div className="w-[350px] md:w-[500px] xl:w-[350px]  mx-auto  p-4">
                     <div className="flex m-1">
                       <div className="w-[120px] text-xl font-semibold capitalize ">
                         Capital
@@ -53,7 +69,10 @@ export default function Country({ activeGeo }) {
                         {Object.keys(country.currencies).map(
                           (currency, index) => {
                             return (
-                              <span className="bg-lime-600 text-white px-1 rounded m-1">
+                              <span
+                                key={index}
+                                className="bg-lime-600 text-white px-1 rounded m-1"
+                              >
                                 {currency}
                               </span>
                             );
@@ -83,7 +102,7 @@ export default function Country({ activeGeo }) {
                       <div className="w-[120px] text-xl font-semibold capitalize ">
                         Language
                       </div>
-                      <div className="text-xl w-[200px]">
+                      <div className="text-xl w-[200px] md:w-[400px]">
                         {Object.entries(country.languages).map(
                           (language, index) => {
                             return (

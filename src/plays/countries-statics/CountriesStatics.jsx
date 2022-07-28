@@ -3,7 +3,6 @@ import Map from "./Map";
 import SearchAndFilter from "./SearchAndFilter";
 import CountriesGrid from "./CountriesGrid";
 import Country from "./Country";
-import "./countriesStatics.css";
 import { useState } from "react";
 
 function CountriesStatics(props) {
