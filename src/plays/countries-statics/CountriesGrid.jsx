@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 export default function CountriesGrid() {
   const [countries, setCounteries] = useState([]);
   const [search, SetSearch] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(null);
   const getCountries = () => {
     setIsLoading(true);
     fetch(`https://restcountries.com/v3.1/all`)
@@ -12,7 +13,10 @@ export default function CountriesGrid() {
         setIsLoading(false);
         setCounteries(data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setIsLoading(false);
+        setIsError(error);
+      });
   };
   const handleChange = (e) => {
     SetSearch(e.target.value);
@@ -24,6 +28,7 @@ export default function CountriesGrid() {
   return (
     <div className="my-4 ">
       <div className="grid grid-cols-3 gap-4">
+        {isError !== null && <h1>{isError}</h1>}
         {isLoading ? (
           <h1 className="my-12  text-3xl font-bold text-cyan-800">
             Loading....
