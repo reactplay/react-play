@@ -47,7 +47,6 @@ export default function Map({ activeGeo, handleClickMap }) {
           </Geographies>
 =======
   };
-
   return (
     <>
       <div className="w-full xl:w-[60%]  mt-8">
