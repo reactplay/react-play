@@ -16,6 +16,7 @@ export default function Map({ activeGeo, handleClickMap }) {
     default: { outline: "none" },
     hover: { outline: "none", fill: "#C0C0C0" },
 <<<<<<< HEAD
+<<<<<<< HEAD
     pressed: { outline: "none" },
   };
   return (
@@ -46,11 +47,15 @@ export default function Map({ activeGeo, handleClickMap }) {
             }
           </Geographies>
 =======
+=======
+    pressed: { outline: "none" },
+>>>>>>> 65a2887 (disabled zoom control on the map)
   };
   return (
     <>
-      <div className="w-full xl:w-[60%]  mt-8">
+      <div className="w-full xl:w-[60%] ">
         <ComposableMap width={800} height={600}>
+<<<<<<< HEAD
           <ZoomableGroup>
             <Geographies geography={mapdata}>
               {({ geographies }) =>
@@ -77,6 +82,31 @@ export default function Map({ activeGeo, handleClickMap }) {
             </Geographies>
           </ZoomableGroup>
 >>>>>>> a2622fc (worked on country specific detail)
+=======
+          <Geographies geography={mapdata}>
+            {({ geographies }) =>
+              geographies.map((geo) => {
+                return (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    fill={
+                      activeGeo === geo.id.toLowerCase()
+                        ? "darkblue"
+                        : "lightblue"
+                    }
+                    onClick={() => handleClickMap(geo)}
+                    style={
+                      activeGeo === geo.id.toLowerCase()
+                        ? activeStyle
+                        : defaultStyle
+                    }
+                  />
+                );
+              })
+            }
+          </Geographies>
+>>>>>>> 65a2887 (disabled zoom control on the map)
         </ComposableMap>
       </div>
     </>
