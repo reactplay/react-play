@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import underDevelopment from 'images/underdevelpoment.png'
 import { submit } from "common/services/request";
 import Loader from "common/spinner/spinner";
-import { toKebabCase, toPascalcase, toTitleCase } from "common/services/string";
+import { toKebabCase, toPascalcase, toTitleCase, toTitleCaseTrimmed } from "common/services/string";
 import { FetchPlaysByNameAndUser } from "common/services/request/query/fetch-plays";
 import {PageNotFound} from 'common'
 
@@ -14,10 +14,28 @@ function PlayMeta() {
   const [play, setPlay] = useState({})
   const [isError, setIsError] = useState(false)
   let { playname, username } = useParams(); // return the parameter of url
+  const [metaImage, setMetaImage] = useState()
 
   useEffect(() => {
     submit(FetchPlaysByNameAndUser(playname, username)).then(res => {
-      setPlay(res[0])
+      const play_obj = res[0];
+      setPlay(play_obj)
+      if (play_obj.cover) {
+        // If cover image path is updated in DB
+        setMetaImage( play_obj.cover); // If cover path is given, use that
+      } else {
+        try {
+          let path = play_obj.path;
+          // If the cover image path needs to prepared from local path
+          if(!path) {
+            path  = `/plays/${toTitleCaseTrimmed(play_obj.name)}`
+          }
+          setMetaImage( `${path}/cover.png`)
+        } catch {
+          // If no image is available, cover stays as undefined
+          console.log("No cover available.");
+        }
+      }
       setLoading(false)
     }).catch(err => {
       setIsError(true)

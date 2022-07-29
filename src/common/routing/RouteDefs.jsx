@@ -31,13 +31,19 @@ const RouteDefs = () => {
             <Route index element={<PlayList />} />
             <Route exact path="create" element={<CreatePlay />} />
             <Route exact path="created/:playid" element={<PlayCreated />} />
-            <Route exact path=":username" element={<PlayMeta />}>
+            <Route idex exact path=":username" element={<PlayMeta />}>
               <Route exact path=":playname" element={<PlayMeta />}>
                 <Route exact path=":param1" element={<PlayMeta />}>
                   <Route exact path=":param2" element={<PlayMeta />} />
                 </Route>
               </Route>
             </Route>
+
+            {/* <Route exact path=":playid" element= {<PlayMeta />}>
+                    <Route exact path=":param1" element= {<PlayMeta />}>
+                      <Route exact path=":param2" element= {<PlayMeta />}/>
+                      </Route>
+                  </Route> */}
           </Route>
           <Route path="/play" element={<App />}>
             <Route index element={<PlayList />} />
