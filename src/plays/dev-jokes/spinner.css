@@ -1,0 +1,16 @@
+@keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 10px solid #fefefe; /* Light grey */
+    border-top: 10px solid #383636; /* Black */
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite;
+  }
