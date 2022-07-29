@@ -27,7 +27,8 @@ import {
   NavBar,
   ContextWithRealUsecases,
   GitHubUserSearch,
-  //import play here
+  DevJokes,
+//import play here
 } from "plays";
 
 export const plays = [
@@ -469,5 +470,18 @@ export const plays = [
     blog: "",
     video: "",
     language: "js",
+  }, {
+    id: 'pl-dev-jokes', 
+    name: 'Dev Jokes', 
+    description: 'Developer jokes is a app where a random developer joke pops up every time you open it  or  click next joke',
+    component: () => {return <DevJokes />},
+    path: '/plays/dev-jokes',
+    level: 'Intermediate',
+    tags: '',
+    github: 'yung-coder',
+    cover: '',
+    blog: '',
+    video: '',
+    language: 'js'
   }, //replace new play item here
 ];
