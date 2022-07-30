@@ -10,13 +10,28 @@ import Comment from "common/components/Comment";
 const PlayHeaderActions = ({ play }) => {
   console.log(play);
   const [showComment, setShowComment] = useState(false);
+  const [commentCount, setCommentCount] = useState('...');
+  const giscusApiURL = new URL("https://giscus.app/api/discussions")
+
+  const getCommentCount = () => {
+    giscusApiURL.searchParams.append('repo', 'atapas/react-play');
+    giscusApiURL.searchParams.append('term', play.path.substr(1));
+    fetch(giscusApiURL).then(response => {
+      response.json().then(data => {
+        setCommentCount(data.discussion ? data.discussion.totalCommentCount : 0);
+      }
+      )
+    })
+  }
+
+  getCommentCount();
 
   return (
     <>
       {
         <button className="action badged" onClick={() => setShowComment(true)}>
           <BiComment className="icon" size="24px" />
-          {/*<div className="badge-count">99</div>*/}
+          <div className="badge-count">{commentCount}</div>
           <span className="sr-only">Comments</span>
         </button>
       }
