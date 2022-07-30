@@ -1,21 +1,20 @@
-export function unregister() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-      navigator.serviceWorker
-        .register("./serviceWorker.js")
-        .then(
-          function (registration) {
-            console.log("Worker registration successful", registration.scope);
-          },
-          function (err) {
-            console.log("Worker registration failed", err);
-          }
-        )
-        .catch(function (err) {
-          console.log(err);
-        });
-    });
-  } else {
-    console.log("Service Worker is not supported by browser.");
+import { Workbox } from "workbox-window";
+
+const register = () => {
+  if (process.env.NODE_ENV !== "production") return;
+  if (navigator.serviceWorker) {
+    const wb = new Workbox(`${process.env.PUBLIC_URL}/service-worker.js`);
+
+    const checkForUpdate = () => {
+      const isUpdate = window.confirm("New Update Available. Click OK to update");
+      if (isUpdate) {
+        wb.messageSkipWaiting();
+      }
+    };
+
+    wb.addEventListener("waiting", checkForUpdate);
+    wb.register();
   }
-}
+};
+
+export default register;
