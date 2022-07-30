@@ -101,7 +101,7 @@ const CreatePlay = () => {
     });
   };
 
-  if (process.env.NODE_ENV !== "production") {
+  if (process.env.NODE_ENV !== "development") {
     return <NoCreationInProdScreen />
   }
 
