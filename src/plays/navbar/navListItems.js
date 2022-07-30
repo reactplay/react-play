@@ -38,7 +38,7 @@ const NavListItems = (props) => {
     return (
         <>
             {/* Code Starts Here */}
-            <div className='contain'>
+            <div className='navbar-play-contain'>
                 <div className={`${open ? 'w-64' : 'w-20'} duration-500 h-screen p-5 pt-8 bg-slate-900 relative md:w-30`}>
                     <img src={Collasp}
                         alt='collasp'
@@ -104,10 +104,10 @@ mt-2  menu-items`} onClick={() => filterResult('search')} >
                 <div>
                     {/* Fetching Values */}
                     <div className={`${hide ? "opacity-1" : "opacity-0"} card-content`}>
-                        <div class="contentiner-box">
-                            <p class="contentiner-box-sub">It is a responsive NavBar that helps you to navigate
-                                <button id='neon'>
-                                    <span id="n"> Re</span>
+                        <div class="side-box-contentiner">
+                            <p class="side-box-contentiner-sub">It is a responsive NavBar that helps you to navigate
+                                <button id='side-box-neon'>
+                                    <span id="re">Re</span>
                                     <span id="a">a</span>
                                     <span id="c">c</span>
                                     <span id="t">t</span>
@@ -116,14 +116,14 @@ mt-2  menu-items`} onClick={() => filterResult('search')} >
                                     <span id="y">y</span>
                                 </button>
                                 .</p>
-                            <a href='https://twitter.com/Shivamkatare_27'><FaTwitterSquare className='allIcons' /></a>
+                            <a href='https://twitter.com/Shivamkatare_27'><FaTwitterSquare className='side-box-twt-icon' /></a>
                         </div>
-                        <h1 className='headings'>
+                        <h1 className='side-animated-heading'>
                             <span>Made with</span>
-                            <div class="message">
-                                <div class="word1">CSS3</div>
-                                <div class="word2">React JS</div>
-                                <div class="word3">Tailwind CSS</div>
+                            <div class="nav-side-message-box">
+                                <div class="side-box-animated-word1">CSS3</div>
+                                <div class="side-box-animated-word2">React JS</div>
+                                <div class="side-box-animated-word3">Tailwind CSS</div>
                             </div>
                         </h1>
                     </div>
@@ -131,12 +131,12 @@ mt-2  menu-items`} onClick={() => filterResult('search')} >
                         const { id, image, title, discription, statement, url } = values
                         return (
                             <>
-                                <div className={`card ${show} ${hide ? "invisible" : "visible"}`} key={id}>
-                                    <img src={image} alt={"card-images"} className={`images`} />
-                                    <div className='hover'>
-                                        <h2 className='heading'>{title}</h2>
-                                        <div className='text1'>{discription}</div>
-                                        <a href={url}> <button className='button'>{statement}</button></a>
+                                <div className={`navbar-side-card ${show} ${hide ? "invisible" : "visible"}`} key={id}>
+                                    <img src={image} alt={"nav-card-images"} className={`nav-card-images`} />
+                                    <div className='nav-side-card-hover'>
+                                        <h2 className='nav-side-card-heading'>{title}</h2>
+                                        <div className='nav-side-card-description'>{discription}</div>
+                                        <a href={url}> <button className='nav-card-button'>{statement}</button></a>
                                     </div>
                                 </div>
                             </>

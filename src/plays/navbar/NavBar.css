@@ -1,9 +1,9 @@
-.contain {
+.navbar-play-contain {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 20rem));
 }
 
-.card {
+.navbar-side-card {
   position: relative;
   top: -18rem;
   left: 8rem;
@@ -23,7 +23,7 @@
   box-shadow: 0px 0px 100px rgba(88, 199, 250, .15);
 }
 
-.images {
+.nav-card-images {
   position: relative;
   font-size: 33px;
   font-family: roboto;
@@ -36,12 +36,12 @@
   border-radius: 15px;
 }
 
-.card:hover .images {
+.navbar-side-card:hover .nav-card-images {
   transform: translateY(-150px);
   opacity: 0
 }
 
-.text1 {
+.nav-side-card-description {
   color: #dbf9ff;
   font-family: roboto;
   font-weight: 100;
@@ -53,7 +53,7 @@
   opacity: 0
 }
 
-.heading {
+.nav-side-card-heading {
   font-size: 38px;
   font-family: roboto;
   color: rgb(88 199 250);
@@ -66,7 +66,7 @@
   opacity: 0
 }
 
-.button {
+.nav-card-button {
   transform: translatey(200px);
   transition: .88s;
   opacity: 0;
@@ -85,35 +85,35 @@
   cursor: pointer
 }
 
-.card:hover .hover {
+.navbar-side-card:hover .nav-side-card-hover {
   display: block
 }
 
-.card:hover .heading {
+.navbar-side-card:hover .nav-side-card-heading {
   transform: translatey(-170px);
   opacity: 1
 }
 
-.card:hover .text1 {
+.navbar-side-card:hover .nav-side-card-description {
   transform: translatey(-150px);
   opacity: 1
 }
 
-.card:hover .button {
+.navbar-side-card:hover .nav-card-button {
   transform: translatey(-100px);
   opacity: 1
 }
 
-.card:hover {
+.navbar-side-card:hover {
   transform: scale(110%);
   box-shadow: 0px 0px 100px rgb(88 199 250);
 }
 
-.button:active {
+.nav-card-button:active {
   color: #0beef9
 }
 
-h1.headings {
+h1.side-animated-heading {
   color: #333;
   font-family: tahoma;
   font-size: 3rem;
@@ -126,12 +126,12 @@ h1.headings {
   width: 610px;
 }
 
-h1.headings span {
+h1.side-animated-heading span {
   font-size: 40px;
   margin-left: 2px;
 }
 
-.message {
+.nav-side-message-box {
   background-color: #76cfe5;
   color: #333;
   display: block;
@@ -144,9 +144,9 @@ h1.headings span {
   animation: openclose 5s ease-in-out infinite;
 }
 
-.word1,
-.word2,
-.word3 {
+.side-box-animated-word1,
+.side-box-animated-word2,
+.side-box-animated-word3 {
   font-family: tahoma;
 }
 
@@ -229,7 +229,7 @@ h1.headings span {
   }
 }
 
-.contentiner-box {
+.side-box-contentiner {
   background-color: #485461;
   background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
   color: white;
@@ -243,40 +243,40 @@ h1.headings span {
   height: 200px;
 }
 
-p.contentiner-box-sub {
+p.side-box-contentiner-sub {
   padding: 2rem;
   text-align: center;
 }
 
-button#neon {
+button#side-box-neon {
   font-size: 29px;
 }
 
-#neon:hover span {
+#side-box-neon:hover span {
   animation: flicker 1s linear forwards;
 }
 
-#neon:hover #a {
+#side-box-neon:hover #a {
   animation-delay: .2s;
 }
 
-#neon:hover #c {
+#side-box-neon:hover #c {
   animation-delay: .5s;
 }
 
-#neon:hover #t {
+#side-box-neon:hover #t {
   animation-delay: .6s;
 }
 
-#neon:hover #pl {
+#side-box-neon:hover #pl {
   animation-delay: .8s;
 }
 
-#neon:hover #a2 {
+#side-box-neon:hover #a2 {
   animation-delay: .9s;
 }
 
-#neon:hover #y {
+#side-box-neon:hover #y {
   animation-delay: .9s;
 }
 
@@ -301,33 +301,33 @@ button#neon {
   }
 }
 
-#neon:focus {
+#side-box-neon:focus {
   outline: none;
 }
 
-.allIcons {
+.side-box-twt-icon {
   width: 70px;
   cursor: pointer;
   color: #19d2ef;
   font-size: 20px;
 }
 
-.allIcons:hover {
+.side-box-twt-icon:hover {
   font-size: 26px;
   transition: 0.3s ease-in-out;
 }
 
 /* Media Query */
 @media(max-width: 990px) {
-  h1.headings span {
+  h1.side-animated-heading span {
     font-size: 29px;
   }
 
-  .message {
+  .nav-side-message-box {
     left: 168px;
   }
 
-  h1.headings {
+  h1.side-animated-heading {
     font-size: 2rem;
     width: 478px;
   }
@@ -413,15 +413,15 @@ button#neon {
 }
 
 @media (max-width: 790px) {
-  h1.headings span {
+  h1.side-animated-heading span {
     font-size: 19px;
   }
 
-  .message {
+  .nav-side-message-box {
     left: 109px;
   }
 
-  h1.headings {
+  h1.side-animated-heading {
     font-size: 22px;
     width: 291px;
   }
@@ -507,43 +507,43 @@ button#neon {
 }
 
 @media(max-width:713px) {
-  .card {
+  .navbar-side-card {
     height: 220px;
     width: 180px;
     left: 4rem;
     top: -17rem;
   }
 
-  .card:hover .heading {
-    transform: translatey(-122px);
+  .navbar-side-card:hover .nav-side-card-heading {
+    transform: translatey(-101px);
     opacity: 1;
   }
 
-  .card:hover .text1 {
-    transform: translatey(-118px);
+  .navbar-side-card:hover .nav-side-card-description {
+    transform: translatey(-105px);
     opacity: 1;
   }
 
-  .text1 {
+  .nav-side-card-description {
     font-size: 11px;
   }
 }
 
 @media (max-width: 620px) {
-  .contentiner-box {
+  .side-box-contentiner {
 
     margin-top: 30px;
     height: 137px;
     width: 243px;
   }
 
-  p.contentiner-box-sub {
+  p.side-box-contentiner-sub {
     padding: 0rem;
     text-align: center;
     font-size: 12px;
   }
 
-  .allIcons {
+  .side-box-twt-icon {
     width: 26px;
   }
 }
@@ -560,7 +560,7 @@ button#neon {
     visibility: hidden;
   }
 
-  h1.headings.text-white.origin-left.font-medium.text-xl.duration-300.false {
+  h1.side-animated-heading.text-white.origin-left.font-medium.text-xl.duration-300.false {
     visibility: hidden;
   }
 
@@ -572,16 +572,16 @@ button#neon {
     visibility: hidden;
   }
 
-  .contentiner-box {
+  .side-box-contentiner {
     position: relative;
     left: -6rem;
   }
 
-  h1.headings {
+  h1.side-animated-heading {
     left: -7rem;
   }
 
-  .card {
+  .navbar-side-card {
     top: -10rem;
   }
 }
@@ -591,7 +591,7 @@ button#neon {
     width: 5rem;
   }
 
-  .card {
+  .navbar-side-card {
     height: 195px;
     width: 180px;
     left: -1rem;
@@ -621,41 +621,41 @@ button#neon {
 }
 
 @media(max-width:418px) {
-  .contentiner-box {
+  .side-box-contentiner {
     padding: 3rem 1rem;
     height: 211px;
     width: 174px;
     left: -3rem;
   }
 
-  .message {
+  .nav-side-message-box {
     left: 60px;
   }
 
-  h1.headings span {
+  h1.side-animated-heading span {
     visibility: hidden;
   }
 }
 
 @media(max-width: 341px) {
-  .text1 {
+  .nav-side-card-description {
     font-size: 10px;
     text-align: center;
   }
 
-  .card {
+  .navbar-side-card {
     width: 158px;
     left: -3rem;
     top: -16rem;
   }
 
-  .heading {
+  .nav-side-card-heading {
     font-size: 28px;
   }
 }
 
 @media(max-width:292px) {
-  .card {
+  .navbar-side-card {
     left: -1.5rem;
   }
 }
