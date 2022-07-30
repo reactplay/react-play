@@ -14,6 +14,8 @@ import PlayList from "common/playlists/PlayList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NhostClient, NhostReactProvider } from "@nhost/react";
 
+import useGetPlays from "common/hooks/useGetPlays";
+
 const nhost = new NhostClient({
   backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || "",
 });
@@ -35,7 +37,12 @@ const RouteDefs = () => {
               }
             />
                   <Route exact path="create" element= {<CreatePlay />}/>
-                  <Route exact path="created/:playid" element= {<PlayCreated />}/>
+                  { 
+                    process.env.NODE_ENV === "development"
+                    && <>
+                      <Route exact path="created/:playid" element= {<PlayCreated />}/>
+                    </>
+                  }
                   <Route exact path=":playid" element= {<PlayMeta />}>
                     <Route exact path=":param1" element= {<PlayMeta />}>
                       <Route exact path=":param2" element= {<PlayMeta />}/>
