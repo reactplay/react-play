@@ -61,10 +61,10 @@ function PlayMeta() {
         <meta name='description' content={play.description} />
         <meta property='og:title' content={play.name} />
         <meta property='og:description' content={play.description} />
-        {play.cover && (
+        {metaImage && (
           <meta
             property='og:image'
-            content={play.cover}
+            content={metaImage}
             data-react-helmet='true'
           />
         )}
