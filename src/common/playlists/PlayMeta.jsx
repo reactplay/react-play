@@ -80,10 +80,10 @@ function PlayMeta() {
           content={play.description}
           data-react-helmet='true'
         />
-        {play.cover && (
+        {metaImage && (
           <meta
             name='twitter:image'
-            content={play.cover}
+            content={metaImage}
             data-react-helmet='true'
           />
         )}
