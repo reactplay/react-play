@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import useFetch from "common/hooks/useFetch";
 import { Link } from "react-router-dom";
-import "./home.css";
+import "./home.scss";
 import { RiSlideshow4Line } from "react-icons/ri";
 import { BiShareAlt, BiAddToQueue } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";

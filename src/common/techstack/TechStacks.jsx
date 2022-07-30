@@ -5,17 +5,20 @@ const TechStack = () => {
     <div className='app-body'>
       <h2 className="section-title text-center pt-8 mt-48">ReactPlay is proudly powered by</h2>
       <div className='list-brand-tech-stack'>
-      {/* <div className='md:w-[800px] 2xl:w-[1000px] w-full flex flex-wrap m-8'> */}
+        {/* <div className='md:w-[800px] 2xl:w-[1000px] w-full flex flex-wrap m-8'> */}
         {TechStackInfo.map((Item, idx) => {
+          Item.Comp = Item.comp
+          
           if (Item.type === "icon") {
             return (
               <a
                 key={idx}
                 target='_blank'
                 href={Item.link}
+                rel='noreferrer'
                 className='brand-tech-stack'
               >
-                <Item.comp size='80' className='icon' />
+                <Item.Comp size='80' className='icon' />
                 <p>{Item.text}</p>
               </a>
             );
@@ -25,9 +28,10 @@ const TechStack = () => {
                 key={idx}
                 target='_blank'
                 href={Item.link}
+                rel='noreferrer'
                 className='brand-tech-stack'
               >
-                <img src={Item.comp} alt={Item.comp} />
+                <img src={Item.Comp} alt={Item.Comp} />
                 <p className='text-center'>{Item.text}</p>
               </a>
             );

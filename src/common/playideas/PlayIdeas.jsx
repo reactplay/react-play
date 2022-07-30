@@ -3,7 +3,7 @@ import data from "./ideas.json";
 import { IoAddSharp } from "react-icons/io5";
 import { RiChatNewLine } from "react-icons/ri";
 import LevelBadge from "common/components/LevelBadge";
-import "./playIdeas.css";
+import "./playIdeas.scss";
 
 const PlayIdeas = () => {
   const [ideas, setIdeas] = useState([]);

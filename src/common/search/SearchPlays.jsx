@@ -1,7 +1,7 @@
 import { useContext, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
-import "./search.css";
+import "./search.scss";
 import { BiSearch } from "react-icons/bi";
 import useBackListener from "common/routing/hooks/useBackListener";
 

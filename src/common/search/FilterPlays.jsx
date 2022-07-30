@@ -2,7 +2,7 @@ import { Modal } from "common";
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
-import "./search.css";
+import "./search.scss";
 
 import { RiFilterFill } from "react-icons/ri";
 import useBackListener from "common/routing/hooks/useBackListener";
