@@ -17,7 +17,7 @@ function PlayMeta() {
   const [metaImage, setMetaImage] = useState()
 
   useEffect(() => {
-    submit(FetchPlaysByNameAndUser(playname, username)).then(res => {
+    submit(FetchPlaysByNameAndUser(decodeURI(playname), decodeURI(username))).then(res => {
       const play_obj = res[0];
       setPlay(play_obj)
       if (play_obj.cover) {
