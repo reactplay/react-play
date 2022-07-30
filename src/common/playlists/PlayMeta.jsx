@@ -30,7 +30,7 @@ function PlayMeta() {
           if(!path) {
             path  = `/plays/${toTitleCaseTrimmed(play_obj.name)}`
           }
-          setMetaImage( `${path}/cover.png`)
+          setMetaImage( `cover.png`)
           console.log(`DEBUG LOG: Path to cover image: ${path}/cover.png`)
         } catch {
           // If no image is available, cover stays as undefined
