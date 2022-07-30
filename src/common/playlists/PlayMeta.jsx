@@ -28,9 +28,9 @@ function PlayMeta() {
           let path = play_obj.path;
           // If the cover image path needs to prepared from local path
           if(!path) {
-            path  = `/plays/${toTitleCaseTrimmed(play_obj.name)}`
+            path  = `plays/${toTitleCaseTrimmed(play_obj.name)}`
           }
-          setMetaImage( `cover.png`)
+          setMetaImage( `${path}/cover.png`)
           console.log(`DEBUG LOG: Path to cover image: ${path}/cover.png`)
         } catch {
           // If no image is available, cover stays as undefined
