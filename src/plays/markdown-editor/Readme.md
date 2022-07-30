@@ -1,6 +1,6 @@
 # Markdown Editor
 
-An app where you can write markdown-formatted texts.
+An app where you can write or test markdown-formatted texts.
 
 ## Play Demographic
 
@@ -13,15 +13,3 @@ An app where you can write markdown-formatted texts.
 - Gihub Link: https://github.com/EOEboh
 - Blog: 
 - Video: 
-
-## Implementation Details
-
-Update your implementation idea and details here
-
-## Consideration
-
-Update all considerations(if any)
-
-## Resources
-
-Update external resources(if any)
