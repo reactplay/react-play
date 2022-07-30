@@ -36,9 +36,10 @@ const RouteDefs = () => {
                 <PlayList/>
               }
             />
-                  { process.env.NODE_ENV === "development"
+                  <Route exact path="create" element= {<CreatePlay />}/>
+                  {
+                    process.env.NODE_ENV === "development"
                     && <>
-                      <Route exact path="create" element= {<CreatePlay />}/>
                       <Route exact path="created/:playid" element= {<PlayCreated />}/>
                     </>
                   }
