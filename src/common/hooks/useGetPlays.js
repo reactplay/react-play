@@ -56,8 +56,8 @@ function useGetPlays() {
       } else {
         res = await submit(FetchPlaysSimple());
       }
-      res.forEach(element => {
-        element.title_name = toTitleCaseTrimmed(element.name)
+      res.forEach((element) => {
+        element.title_name = toTitleCaseTrimmed(element.name);
       });
       setPlays(res);
     } catch (error) {

@@ -15,6 +15,7 @@ const PlayList = () => {
 
   let { playid } = useParams(); // return the parameter of url
   useEffect(() => {
+
   },[playid, loading])
   
   if (loading) {

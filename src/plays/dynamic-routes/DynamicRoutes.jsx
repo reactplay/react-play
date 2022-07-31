@@ -8,12 +8,12 @@ import { useEffect, useState } from "react";
 function DynamicRoutes(props) {
 
   // Your Code Start below.
-  let { param } = useParams(); // return the parameter of url
+  let { param1 } = useParams(); // return the parameter of url
   const [activeMenu, setActiveMenu] = useState();
   useEffect(() => {
     //useEffect hook keep eye on url parameter whenever it changes so we can re-mount
-    setActiveMenu(param ? param : "breakfast");
-  }, [param]);
+    setActiveMenu(param1 ? param1 : "breakfast");
+  }, [param1]);
   const activeRecipes = data.filter((recipe) => {
     return recipe.mealtype === activeMenu; //filter reciepes based on active menu
   });

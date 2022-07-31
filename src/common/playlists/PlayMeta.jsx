@@ -5,25 +5,44 @@ import { useParams } from "react-router-dom";
 import underDevelopment from 'images/underdevelpoment.png'
 import { submit } from "common/services/request";
 import Loader from "common/spinner/spinner";
-import { toKebabCase, toPascalcase, toTitleCase } from "common/services/string";
-import { FetchPlaysByID } from "common/services/request/query/fetch-plays";
+import { toKebabCase, toPascalcase, toTitleCase, toTitleCaseTrimmed } from "common/services/string";
+import { FetchPlaysByNameAndUser } from "common/services/request/query/fetch-plays";
 import {PageNotFound} from 'common'
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true)
   const [play, setPlay] = useState({})
   const [isError, setIsError] = useState(false)
-  let { playid } = useParams(); // return the parameter of url
+  let { playname, username } = useParams(); // return the parameter of url
+  const [metaImage, setMetaImage] = useState()
 
   useEffect(() => {
-    submit(FetchPlaysByID(playid)).then(res => {
-      setPlay(res[0])
+    submit(FetchPlaysByNameAndUser(decodeURI(playname), decodeURI(username))).then(res => {
+      const play_obj = res[0];
+      setPlay(play_obj)
+      if (play_obj.cover) {
+        // If cover image path is updated in DB
+        setMetaImage( play_obj.cover); // If cover path is given, use that
+      } else {
+        try {
+          let path = play_obj.path;
+          // If the cover image path needs to prepared from local path
+          if(!path) {
+            path = `https://reactplay.io${require(`../../plays/${username}/${playname}/cover.png`)}`
+          }
+          setMetaImage( path)
+          console.log(`DEBUG LOG: Path to cover image: ${path}`)
+        } catch {
+          // If no image is available, cover stays as undefined
+          console.log("No cover available.");
+        }
+      }
       setLoading(false)
     }).catch(err => {
       setIsError(true)
       setLoading(false)
     })
-  },[playid])
+  },[playname, username])
 
   if (loading) {
     return <Loader />;
@@ -43,10 +62,10 @@ function PlayMeta() {
         <meta name='description' content={play.description} />
         <meta property='og:title' content={play.name} />
         <meta property='og:description' content={play.description} />
-        {play.cover && (
+        {metaImage && (
           <meta
             property='og:image'
-            content={play.cover}
+            content={metaImage}
             data-react-helmet='true'
           />
         )}
@@ -60,11 +79,11 @@ function PlayMeta() {
           name='twitter:description'
           content={play.description}
           data-react-helmet='true'
-        />
-        {play.cover && (
+        /> 
+        {metaImage && (
           <meta
             name='twitter:image'
-            content={play.cover}
+            content={metaImage}
             data-react-helmet='true'
           />
         )}
