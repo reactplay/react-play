@@ -28,10 +28,10 @@ function PlayMeta() {
           let path = play_obj.path;
           // If the cover image path needs to prepared from local path
           if(!path) {
-            path  = `plays/${toTitleCaseTrimmed(play_obj.name)}`
+            path = `https://reactplay.io${require(`../../plays/${username}/${playname}/cover.png`)}`
           }
-          setMetaImage( `${path}/cover.png`)
-          console.log(`DEBUG LOG: Path to cover image: ${path}/cover.png`)
+          setMetaImage( path)
+          console.log(`DEBUG LOG: Path to cover image: ${path}`)
         } catch {
           // If no image is available, cover stays as undefined
           console.log("No cover available.");
@@ -79,7 +79,7 @@ function PlayMeta() {
           name='twitter:description'
           content={play.description}
           data-react-helmet='true'
-        />
+        /> 
         {metaImage && (
           <meta
             name='twitter:image'
