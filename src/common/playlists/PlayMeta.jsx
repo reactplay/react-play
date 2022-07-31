@@ -31,11 +31,14 @@ function PlayMeta() {
           // If cover image path is updated in DB
           metaImagePath = play_obj.cover; // If cover path is given, use that
         } else if (play.path) {
-          const playFolder = path.split("/")[2];
-          metaImagePath = `https://reactplay.io${require(`../../plays/${username}/${playFolder}/cover.png`)}`;
+          const pathSegment =play.path.split("/");
+          if(pathSegment.length > 2) { 
+            const playFolder = pathSegment[2];
+            metaImagePath = `https://react-play-git-issue-417-play-url-update-atapas.vercel.app/${require(`../../plays/${username}/${playFolder}/cover.png`)}`;
+          }
         } else {
           try {
-            metaImagePath = `https://reactplay.io${require(`../../plays/${username}/${playname}/cover.png`)}`;
+            metaImagePath = `https://react-play-git-issue-417-play-url-update-atapas.vercel.app/${require(`../../plays/${username}/${playname}/cover.png`)}`;
             
           } catch {
             // If no image is available, cover stays as undefined
