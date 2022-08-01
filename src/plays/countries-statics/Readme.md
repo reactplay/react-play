@@ -1,6 +1,6 @@
 # countries-statics
 
-Project fetch countries statics such name, currency, demographics etc. Project uses a rest api to pull the information. Project offer many functionalities such as search specific country or sort by region. It&#x27;s must project if you want to learn with apis and pratice y w
+Fetch country specific statistic such as demographics by single click on map.
 
 ## Play Demographic
 
@@ -11,8 +11,8 @@ Project fetch countries statics such name, currency, demographics etc. Project u
 
 - User: deepak8717
 - Gihub Link: https://github.com/deepak8717
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 
