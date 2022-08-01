@@ -56,7 +56,7 @@ export default function Country({ activeGeo }) {
                       Capital
                     </div>
                     <div className="text-xl w-[200px] break-words">
-                      {/* {country.capital[0]} */}
+                      {country.capital[0]}
                     </div>
                   </div>
                   <div className="flex m-1">
