@@ -2,7 +2,7 @@ export const fetchAllTags = {
   display: "Play Tags",
   name: "Fetch_Tags",
   function: "tags",
-  params: ["id", "name"],
+  return: ["id", "name"],
 };
 
 export const createATagQuery = {
@@ -11,4 +11,5 @@ export const createATagQuery = {
   function: "insert_tags_one",
   write: true,
   object: {},
+  return: ["id"],
 };

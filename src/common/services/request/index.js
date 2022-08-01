@@ -1,7 +1,7 @@
 import {
   submit as gsubmit,
   submit_multi as gsubmit_multi,
-} from "json-graphql-parser";
+} from "json-graphql-parser/v2/index.js";
 
 const BACKEND_URL = `${process.env.REACT_APP_NHOST_BACKEND_URL}/${process.env.REACT_APP_NHOST_VERSION}/${process.env.REACT_APP_NHOST_ENDPOINT}`;
 const header = {
