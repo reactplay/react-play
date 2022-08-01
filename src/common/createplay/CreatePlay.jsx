@@ -22,7 +22,7 @@ const NoCreationInProdScreen = () => {
     <div className="text-center">
       You can't create plays in production
       <br />
-      <a className="text-link-default" href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md" target="__blank__">read this</a> for more details
+      <a className="text-link-default" href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md" target="_blank" rel="noopener noreferrer">read this</a> for more details
     </div>
   </div>
 }
