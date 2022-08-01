@@ -41,21 +41,23 @@ export function FetchPlaysByNameAndUser(playname, username) {
   const payload = { ...BasiFetchParam };
 
   payload.where = {
-    operator: "and",
-    clause: [
-      {
-        field: "name",
-        operator: "eq",
-        value: playname,
-        type: "string",
-      },
-      {
-        field: "github",
-        operator: "eq",
-        value: username,
-        type: "string",
-      },
-    ],
+    clause: {
+      operator: "and",
+      conditions: [
+        {
+          field: "name",
+          operator: "eq",
+          value: playname,
+          type: "string",
+        },
+        {
+          field: "github",
+          operator: "eq",
+          value: username,
+          type: "string",
+        },
+      ],
+    },
   };
   return payload;
 }
