@@ -11,12 +11,12 @@ import Loader from "common/spinner/spinner";
 import { Plays } from "common/services/plays";
 import { useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
-import { ReactComponent as NotInProduction } from "../../images/not-in-production.svg"
+import { ReactComponent as NotAllowedImage } from "../../images/img-403.svg"
 
 const NoCreationInProdScreen = () => {
   return <div className="w-full h-full flex flex-col justify-center items-center gap-8">
     <div>
-      <NotInProduction width={550} className="rounded-md" />
+      <NotAllowedImage width={550} />
     </div>
 
     <div className="text-center">
