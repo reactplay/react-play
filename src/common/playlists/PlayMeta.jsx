@@ -20,6 +20,7 @@ function PlayMeta() {
       .then((res) => {
           const play_obj = res[0];
           setPlay(play_obj);
+          setMetaImage(play_obj.cover);
           setLoading(false);
       })
       .catch((err) => {
