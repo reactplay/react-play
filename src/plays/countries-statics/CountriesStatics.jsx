@@ -1,7 +1,5 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import Map from "./Map";
-import SearchAndFilter from "./SearchAndFilter";
-import CountriesGrid from "./CountriesGrid";
 import Country from "./Country";
 import { useState } from "react";
 
