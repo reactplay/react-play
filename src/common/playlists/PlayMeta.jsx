@@ -4,9 +4,7 @@ import * as plays from "plays";
 import { useParams } from "react-router-dom";
 import { submit } from "common/services/request";
 import Loader from "common/spinner/spinner";
-import {
-  toTitleCase,
-} from "common/services/string";
+import { toTitleCase } from "common/services/string";
 import { FetchPlaysByNameAndUser } from "common/services/request/query/fetch-plays";
 import { PageNotFound } from "common";
 
@@ -20,9 +18,9 @@ function PlayMeta() {
   useEffect(() => {
     submit(FetchPlaysByNameAndUser(decodeURI(playname), decodeURI(username)))
       .then((res) => {
-        const play_obj = res[0];
-        setPlay(play_obj);
-        setLoading(false);
+          const play_obj = res[0];
+          setPlay(play_obj);
+          setLoading(false);
       })
       .catch((err) => {
         setIsError(true);
@@ -33,7 +31,7 @@ function PlayMeta() {
   if (loading) {
     return <Loader />;
   }
-  if (isError) {
+  if (isError || !play) {
     return <PageNotFound />;
   }
 
