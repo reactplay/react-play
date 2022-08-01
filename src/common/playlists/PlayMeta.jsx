@@ -26,34 +26,6 @@ function PlayMeta() {
       .then((res) => {
         const play_obj = res[0];
         setPlay(play_obj);
-        let metaImagePath = "";
-        if (play_obj.cover) {
-          // If cover image path is updated in DB
-          metaImagePath = play_obj.cover; // If cover path is given, use that
-        } else if (play_obj.path) {
-          const pathSegment =play_obj.path.split("/");
-          if(pathSegment.length > 2) { 
-            const playFolder = pathSegment[2];
-            try{
-            metaImagePath = `https://react-play-git-issue-417-play-url-update-atapas.vercel.app/${require(`plays/${username}/${playFolder}/cover.png`)}`;
-            }
-            catch(err){
-              console.log("Cover image couldn't be retrieved from play folder.", err);  
-            }
-          }
-        } else {
-          try {
-            metaImagePath = `https://react-play-git-issue-417-play-url-update-atapas.vercel.app/${require(`../../plays/${username}/${playname}/cover.png`)}`;
-            
-          } catch {
-            // If no image is available, cover stays as undefined
-            console.log("No cover available.");
-          }
-          console.log(`DEBUG LOG: Path to cover image: ${metaImagePath}`);
-          if (metaImagePath) {
-            setMetaImage(metaImagePath);
-          }
-        }
         setLoading(false);
       })
       .catch((err) => {
