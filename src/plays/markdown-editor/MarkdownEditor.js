@@ -19,18 +19,18 @@ function MarkdownEditor(props) {
       <div className="play-details">
         <PlayHeader play={props} />
         
-        <div className='play-details-body'>
-        <main className='main'>
-        <h1>Markdown Editor </h1>
-        <article>
-          <label htmlFor='markdown'><h3>Type Here </h3></label> 
-          <textarea cols='30' rows='10' id='markdown' name='markdown' placeholder='Type Something...' required
-          value={text}
-          onChange={(e) => setText(e.target.value)}
+        <div>
+          <main className='wrapper-div'>
+            <h1 className='heading-1'>Markdown Editor </h1>
+            <article>
+            <label htmlFor='markdown'><h3 className='heading-3'>Type Here </h3></label> 
+             <textarea cols='30' rows='10' id='markdown' name='markdown' placeholder='Type Something...' required
+            value={text}
+            onChange={(e) => setText(e.target.value)}
           >
-          </textarea>
+            </textarea>
           
-          <h3> Preview</h3>
+        <h3 className='heading-3'> Preview</h3>
 
           <div className='output-div' dangerouslySetInnerHTML={{__html: md.render(text)}} >
           </div>
