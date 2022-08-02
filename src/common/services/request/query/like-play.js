@@ -22,6 +22,7 @@ export const unlikeIndividualPlay = (Obj) => {
     write: true,
     where: {
       clause: {
+        operator: "and",
         conditions: [
           {
             field: "play_id",
