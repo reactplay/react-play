@@ -37,7 +37,6 @@ export function FetchPlaysByID(id) {
 }
 
 export function FetchPlaysByNameAndUser(playname, username) {
-  const env = process.env.NODE_ENV === "development";
   const payload = { ...BasiFetchParam };
 
   payload.where = {
