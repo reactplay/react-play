@@ -1,7 +1,7 @@
 import { submit } from "common/services/request";
 import {
   LikeIndividualPlay,
-  dislikeIndividualPlay,
+  unlikeIndividualPlay,
 } from "common/services/request/query/like-play";
 
 const useLikePlays = () => {
@@ -14,16 +14,16 @@ const useLikePlays = () => {
     }
   };
 
-  const dislikePlay = async (Obj) => {
+  const unLikePlay = async (Obj) => {
     try {
-      const resp = await submit(dislikeIndividualPlay(Obj));
+      const resp = await submit(unlikeIndividualPlay(Obj));
       return Promise.resolve(resp);
     } catch (err) {
       return Promise.reject(err);
     }
   };
 
-  return { likePlay, dislikePlay };
+  return { likePlay, unLikePlay };
 };
 
 export default useLikePlays;

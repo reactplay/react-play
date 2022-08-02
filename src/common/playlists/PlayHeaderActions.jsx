@@ -16,21 +16,26 @@ const PlayHeaderActions = ({ play }) => {
   const { play_like } = play;
   const userId = useUserId();
 
-  const { likePlay, dislikePlay } = useLikePlays();
+  const { likePlay, unLikePlay } = useLikePlays();
 
   const [showComment, setShowComment] = useState(false);
-  const [showSignInMethods, setShowSignInMethods] = useState(false);
+  // const [showSignInMethods, setShowSignInMethods] = useState(false);
   const [likeObj, setLikeObj] = useState({});
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   // Other Hooks
   const isAuthenticated = useAuthenticated();
 
   const constructLikeData = useCallback(
     (userId) => {
       if (!play_like?.length) return { like: false, number: 0 };
-      const ifLiked = play_like.find((obj) => obj.user_id === userId);
-      if (ifLiked) return { like: true, number: play_like.length };
-      return { like: false, number: play_like?.length };
+      const numberOflikes = play_like.reduce((a, b) => {
+        if (b.liked) return ++a;
+        return a;
+      }, 0);
+      console.log("number of likes are", numberOflikes);
+      const ifLiked = play_like.find((obj) => obj.user_id === userId)?.liked;
+      if (ifLiked) return { like: true, number: numberOflikes };
+      return { like: false, number: numberOflikes };
     },
     [play_like]
   );
@@ -40,25 +45,25 @@ const PlayHeaderActions = ({ play }) => {
   }, [userId, constructLikeData]);
 
   const handleLogin = (value) => {
-    return window.location = NHOST.AUTH_URL(window.location.href, value)
+    return (window.location = NHOST.AUTH_URL(window.location.href, value));
   };
 
   const onLikeClick = async () => {
-    if (!isAuthenticated) return setShowSignInMethods(!showSignInMethods);
+    if (!isAuthenticated) return handleLogin('github');
     try {
-      setLoading(true)
+      setLoading(true);
       const mutationObj = { play_id: play.id, user_id: userId };
       if (!likeObj.like) {
         await likePlay(mutationObj);
         return setLikeObj((pre) => ({ like: true, number: ++pre.number }));
       } else {
-        await dislikePlay(mutationObj);
-        setLikeObj((pre) => ({ like: false, number: --pre.number }));
+        await unLikePlay(mutationObj);
+        return setLikeObj((pre) => ({ like: false, number: --pre.number }));
       }
     } catch (err) {
-      console.log(err)
+      console.log(err);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -122,11 +127,11 @@ const PlayHeaderActions = ({ play }) => {
           </div>
         </div>
       )}
-      <MuiModal
+      {/* <MuiModal
         open={showSignInMethods}
         handleClose={onLikeClick}
         component={<SignInMethods loginHandler={handleLogin} />}
-      />
+      /> */}
     </>
   );
 };

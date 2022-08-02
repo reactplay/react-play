@@ -35,7 +35,7 @@ const BasiFetchParam = {
     "github",
     "id",
     "language",
-    { play_like: ["play_id", "user_id"] },
+    { play_like: ["liked", "play_id", "user_id"] },
     { level: ["name"] },
     "name",
     "path",
