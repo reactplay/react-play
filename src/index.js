@@ -7,12 +7,12 @@ import reportWebVitals from "reportWebVitals";
 import register from "./registerServiceWorker";
 
 /** removing console statement in react prod build */
-// if (process.env.NODE_ENV !== "development") {
-//   console.log = () => {};
-//   console.debug = () => {};
-//   console.info = () => {};
-//   console.disableYellowBox = true;
-// }
+if (process.env.NODE_ENV !== "development") {
+   console.log = () => {};
+   console.debug = () => {};
+   console.info = () => {};
+   console.disableYellowBox = true;
+ }
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
