@@ -1,5 +1,4 @@
 // Do not modify the content of this file
- export { default as WhyReact } from 'plays/why-react/WhyReact';
  export { default as CurrentTimer } from 'plays/clock/CurrentTimer';
  export { default as CdTimerComp } from 'plays/date-time-counter/CdTimerComp';
  export { default as MovieContainer } from 'plays/movies/MovieContainer';
@@ -24,9 +23,11 @@
  export { default as BasicTree } from 'plays/org-tree/BasicTree';
  export { default as Calendar } from 'plays/calendar/Calendar';
  export { default as States } from 'plays/states/States';
+ export { default as WhyReact } from 'plays/why-react/WhyReact';
  export { default as GitHubUserSearch } from 'plays/github-user-search/GitHubUserSearch';
  export { default as ContextWithRealUsecases } from 'plays/context-with-real-usecases/ContextWithRealUsecases';
  export { default as QrCodeGenerator } from 'plays/qr-code-generator/QrCodeGenerator';
  export { default as GithubProfileSearch } from 'plays/git-hub-profile-search/GithubProfileSearch';
  export { default as NavBar } from 'plays/navbar/NavBar';
  export { default as DevJokes } from 'plays/dev-jokes/DevJokes';
+ export { default as ImageCarousel } from 'plays/image-carousel/ImageCarousel';
