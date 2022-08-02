@@ -20,7 +20,7 @@ export default function Country({ activeGeo }) {
       })
       .catch((e) => {
         setIsLoading(false);
-        setCountry([]);
+        setCountry();
         setErrorInfo(e.message);
       });
   };
