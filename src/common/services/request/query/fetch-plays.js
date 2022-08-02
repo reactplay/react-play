@@ -6,14 +6,15 @@ export function FetchPlaysByID(id) {
   const payload = { ...BasiFetchParam };
 
   payload.where = {
-    clause: [
-      {
-        field: "id",
-        operator: "eq",
-        value: id,
-        type: "string",
-      },
-    ],
+    clause: {
+      conditions: [
+        {
+          field: "id",
+          operator: "eq",
+          value: id,
+        },
+      ],
+    },
   };
   return payload;
 }
@@ -23,7 +24,7 @@ const BasiFetchParam = {
   name: "Fetch_Plays",
   function: "plays",
   write: false,
-  params: [
+  return: [
     "blog",
     "component",
     "cover",
