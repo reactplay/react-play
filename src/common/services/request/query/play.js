@@ -4,6 +4,7 @@ export const createPlayQuery = {
   function: "insert_plays_one",
   write: true,
   object: {},
+  return: ["id"],
 };
 
 export const associatePlayWithTagQuery = {
@@ -12,4 +13,5 @@ export const associatePlayWithTagQuery = {
   function: "insert_play_tags_one",
   write: true,
   object: {},
+  return: ["id"],
 };
