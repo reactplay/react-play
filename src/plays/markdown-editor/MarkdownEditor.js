@@ -4,7 +4,7 @@ import { Remarkable } from 'remarkable';
 import './styles.css';
 
 
-const md = new Remarkable();
+const markdown = new Remarkable();
 
 // WARNING: Do not change the entry component name
 function MarkdownEditor(props) {
@@ -16,11 +16,11 @@ function MarkdownEditor(props) {
 
   return (
     <>
-      <div className="play-details">
+      <div className="md-editor play-details">
         <PlayHeader play={props} />
         
         <div>
-          <main className='wrapper-div'>
+          <main className='wrapper-div main'>
             <h1 className='heading-1'>Markdown Editor </h1>
             <article>
             <label htmlFor='markdown'><h3 className='heading-3'>Type Here </h3></label> 
@@ -32,7 +32,7 @@ function MarkdownEditor(props) {
           
         <h3 className='heading-3'> Preview</h3>
 
-          <div className='output-div' dangerouslySetInnerHTML={{__html: md.render(text)}} >
+          <div className='md output-div' dangerouslySetInnerHTML={{__html: markdown.render(text)}} >
           </div>
           
         </article>
