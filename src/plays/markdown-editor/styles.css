@@ -6,25 +6,25 @@
     box-sizing: border-box;
   }
   
-  .wrapper-div.main{
+  .md-editor.main{
     display: flex;
     flex-direction: column;
     text-align: center;  
   }
      
-   .heading-1{
+   .md-editor.heading-1{
     margin: 2rem 0rem;
     font-size: larger;
     font-weight: 900;
     color: #ffffff;
    }
 
-   .heading-3{
+   .md-editor.heading-3{
     margin-bottom: 0.5rem;
     font-weight: bold;
    }
 
-  .md.output-div{
+   .md-editor.md-editor.output-div{
     background-color: white;
     height: 10rem;
     width: 20rem;
