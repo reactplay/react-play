@@ -12,6 +12,18 @@ import MuiModal from "common/modal/MuiModal";
 import useLikePlays from "common/hooks/useLikePlays";
 import { NHOST } from "common/const";
 
+// we cannot remove delete SignInMethods, MuiModal file since in future we will support
+// more authentication provider. so let us keep it.
+
+
+// we are not getting latest play_like object after liking or updating liking a play
+// thats y we need to track interations of the user
+const initialLikeObject = {
+  liked: false,
+  number: null,
+  interation: false,
+};
+
 const PlayHeaderActions = ({ play }) => {
   const { play_like } = play;
   const userId = useUserId();
@@ -20,22 +32,23 @@ const PlayHeaderActions = ({ play }) => {
 
   const [showComment, setShowComment] = useState(false);
   // const [showSignInMethods, setShowSignInMethods] = useState(false);
-  const [likeObj, setLikeObj] = useState({});
+  const [likeObj, setLikeObj] = useState({ ...initialLikeObject });
   const [loading, setLoading] = useState(false);
   // Other Hooks
   const isAuthenticated = useAuthenticated();
 
+  const countLike = (playLike) => playLike.reduce((a, b) => b?.liked ? ++a : a, 0);
+
   const constructLikeData = useCallback(
     (userId) => {
-      if (!play_like?.length) return { like: false, number: 0 };
-      const numberOflikes = play_like.reduce((a, b) => {
-        if (b.liked) return ++a;
-        return a;
-      }, 0);
-      console.log("number of likes are", numberOflikes);
-      const ifLiked = play_like.find((obj) => obj.user_id === userId)?.liked;
-      if (ifLiked) return { like: true, number: numberOflikes };
-      return { like: false, number: numberOflikes };
+      if (!play_like?.length) return { liked: false, number: 0, interation: false };
+      const numberOfLikes = countLike(play_like);
+      const ifLiked = play_like.find((obj) => obj.user_id === userId);
+      return ifLiked
+        ? ifLiked?.liked
+          ? { liked: true, number: numberOfLikes, interation: true }
+          : { liked: false, number: numberOfLikes, interation: true }
+        : { liked: false, number: numberOfLikes, interation: false };
     },
     [play_like]
   );
@@ -49,21 +62,30 @@ const PlayHeaderActions = ({ play }) => {
   };
 
   const onLikeClick = async () => {
-    if (!isAuthenticated) return handleLogin('github');
+    if (!isAuthenticated) return handleLogin("github");
     try {
       setLoading(true);
       const mutationObj = { play_id: play.id, user_id: userId };
-      if (!likeObj.like) {
+
+      if (!likeObj.liked && !likeObj.interation) {
         await likePlay(mutationObj);
-        return setLikeObj((pre) => ({ like: true, number: ++pre.number }));
+        setLikeObj((pre) => ({
+          liked: true,
+          number: ++pre.number,
+          interation: true,
+        }));
       } else {
-        await unLikePlay(mutationObj);
-        return setLikeObj((pre) => ({ like: false, number: --pre.number }));
+        await unLikePlay({ ...mutationObj, liked: !likeObj.liked });
+        setLikeObj((pre) => ({
+          liked: !pre.liked,
+          number: !pre.liked ? ++pre.number : --pre.number,
+          interation: true,
+        }));
       }
     } catch (err) {
       console.log(err);
     } finally {
-      setLoading(false);
+      return setLoading(false);
     }
   };
 

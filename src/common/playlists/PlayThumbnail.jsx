@@ -55,6 +55,10 @@ const PlayThumbnail = ({ play }) => {
     }
   }, [play]);
 
+  const countLikes = (Obj) => {
+    return Obj?.reduce((a, b) => b.liked ? ++a : a, 0)
+  }
+
   return (
     <li key={play.id}>
       <Link to={`/plays/${play.id}`} state={{ id: play.id }}>
@@ -67,7 +71,7 @@ const PlayThumbnail = ({ play }) => {
           <div className="play-title">{play.name}</div>
           {play.user && <Author user={play.user} />}
           <div className="mt-1 ">
-            <Like onLikeClick={null} likeObj={{number: play?.play_like?.length}} />
+            <Like onLikeClick={null} likeObj={{number: countLikes(play?.play_like)}} />
             <div className={`language language-${play.language || "js"}`}></div>
           </div>
         </div>

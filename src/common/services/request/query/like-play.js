@@ -38,7 +38,7 @@ export const unlikeIndividualPlay = (Obj) => {
       },
     },
     value: {
-      liked: false,
+      liked: Obj.liked,
     },
     return: ["affected_rows"],
   };
