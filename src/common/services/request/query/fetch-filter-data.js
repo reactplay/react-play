@@ -4,26 +4,16 @@ export const fetchFilterData = {
     name: "Fetch_Tags",
     function: "plays",
     write: false,
-    params: [{ play_tags: { tag: ["id", "name"] } }],
-    filters: [
-      {
-        field: "distinct_on",
-        value: "id",
-      },
-    ],
+    return: [{ play_tags: { tag: ["id", "name"] } }],
+    distinct: "id",
   },
   getAllLevels: {
     display: "Play Levels",
     name: "Fetch_Levels",
     function: "plays",
     write: false,
-    params: [{ level: ["id", "name"] }],
-    filters: [
-      {
-        field: "distinct_on",
-        value: "level_id",
-      },
-    ],
+    return: [{ level: ["id", "name"] }],
+    distinct: "level_id",
   },
 
   getAllUsers: {
@@ -31,12 +21,7 @@ export const fetchFilterData = {
     name: "Fetch_Users",
     function: "plays",
     write: false,
-    params: [{ user: ["avatarUrl", "displayName", "id"] }],
-    filters: [
-      {
-        field: "distinct_on",
-        value: "owner_user_id",
-      },
-    ],
+    return: [{ user: ["avatarUrl", "displayName", "id"] }],
+    distinct: "owner_user_id",
   },
 };

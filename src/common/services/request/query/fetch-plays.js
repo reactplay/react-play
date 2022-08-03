@@ -4,14 +4,15 @@ export function FetchPlaysSimple() {
   const payload = { ...BasiFetchParam };
   if (!env && !preview) {
     payload.where = {
-      clause: [
-        {
-          field: "dev_mode",
-          operator: "eq",
-          value: false,
-          type: "boolean",
-        },
-      ],
+      clause: {
+        conditions: [
+          {
+            field: "dev_mode",
+            operator: "eq",
+            value: false,
+          },
+        ],
+      },
     };
   }
   return payload;
@@ -22,14 +23,40 @@ export function FetchPlaysByID(id) {
   const payload = { ...BasiFetchParam };
 
   payload.where = {
-    clause: [
-      {
-        field: "id",
-        operator: "eq",
-        value: id,
-        type: "string",
-      },
-    ],
+    clause: {
+      conditions: [
+        {
+          field: "id",
+          operator: "eq",
+          value: id,
+        },
+      ],
+    },
+  };
+  return payload;
+}
+
+export function FetchPlaysByNameAndUser(playname, username) {
+  const payload = { ...BasiFetchParam };
+
+  payload.where = {
+    clause: {
+      operator: "and",
+      conditions: [
+        {
+          field: "name",
+          operator: "eq",
+          value: playname,
+          type: "string",
+        },
+        {
+          field: "github",
+          operator: "eq",
+          value: username,
+          type: "string",
+        },
+      ],
+    },
   };
   return payload;
 }
@@ -39,7 +66,7 @@ const BasiFetchParam = {
   name: "Fetch_Plays",
   function: "plays",
   write: false,
-  params: [
+  return: [
     "blog",
     "component",
     "cover",
