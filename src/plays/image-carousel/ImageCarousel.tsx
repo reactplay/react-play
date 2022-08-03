@@ -73,7 +73,7 @@ function ImageCarousel(props:any) {
 
   return (
     <>
-      <div className="play-details">
+      <div className="play-details image-carousel">
         <PlayHeader play={props} />
         <div className="play-details-body">
           <div className='wrapper'>
