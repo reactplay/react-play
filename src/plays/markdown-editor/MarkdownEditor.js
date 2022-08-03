@@ -28,6 +28,7 @@ function MarkdownEditor(props) {
             value={text}
             onChange={(e) => setText(e.target.value)}
           >
+            
             </textarea>
           
         <h3 className='md-editor heading-3'> Preview</h3>
