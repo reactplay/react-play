@@ -1,5 +1,5 @@
 /* enter stlyes here */
-.wrapper{
+.image-carousel .wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,13 +8,13 @@
   height: 100%;
 }
 
-.image-element{
+.image-carousel .image-element{
   border-radius: 10px;
   position: relative;
   max-width: 80%;
 }
 
-.image-slider-body{
+.image-carousel .image-slider-body{
   height: 250px;
   width: 400px;
   max-width: 100%;
@@ -23,7 +23,7 @@
   border-radius: 10px;
 }
 
-.image-slider{
+.image-carousel .image-slider{
   position: absolute;
   top:0;
   display: flex;
@@ -31,11 +31,11 @@
   transition:transform 0.5s ease-in-out;
 }
 
-.image-slider > img{
+.image-carousel .image-slider > img{
   object-fit: cover;
 }
 
-.arrow{
+.image-carousel .arrow{
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -48,23 +48,23 @@
   cursor:pointer;
 }
 
-.right-arrow{
+.image-carousel .right-arrow{
   right:0;
   transform: translate(50%,-50%);
 }
 
-.left-arrow{
+.image-carousel .left-arrow{
   left:0;
   transform: translate(-50%,-50%);
 }
 
-.dots{
+.image-carousel .dots{
   display: flex;
   justify-content: center;
   gap:1rem;
 }
 
-.dot{
+.image-carousel .dot{
   height: 10px;
   width: 10px;
   border-radius: 50%;
@@ -72,6 +72,6 @@
   cursor:pointer;
 }
 
-.dot.active{
+.image-carousel .dot.active{
   background-color: black;
 }
