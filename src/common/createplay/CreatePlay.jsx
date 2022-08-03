@@ -11,6 +11,21 @@ import Loader from "common/spinner/spinner";
 import { Plays } from "common/services/plays";
 import { useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
+import { ReactComponent as NotAllowedImage } from "../../images/img-403.svg"
+
+const NoCreationInProdScreen = () => {
+  return <div className="w-full h-full flex flex-col justify-center items-center gap-8">
+    <div>
+      <NotAllowedImage width={550} />
+    </div>
+
+    <div className="text-center">
+      You can't create plays in production
+      <br />
+      <a className="text-link-default" href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md" target="_blank" rel="noopener noreferrer">read this</a> for more details
+    </div>
+  </div>
+}
 
 const CreatePlay = () => {
   const { isAuthenticated, isLoading } = useAuthenticationStatus();
@@ -86,6 +101,10 @@ const CreatePlay = () => {
     });
   };
 
+  if (process.env.NODE_ENV !== "development") {
+    return <NoCreationInProdScreen />
+  }
+
   if (isLoading || isDataLoading) {
     return (
       <Loader
@@ -112,6 +131,7 @@ const CreatePlay = () => {
   if (isDataLoading) {
     <Loader title={"Loading data"} subtitle="Please wait...." />;
   }
+
   return (
     <div className="w-full h-full flex flex-col justify-center items-center create-plays-wrapper">
       <div>
