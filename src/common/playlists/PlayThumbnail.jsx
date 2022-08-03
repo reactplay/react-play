@@ -5,12 +5,13 @@ import thumbPlay from "images/thumb-play.png";
 import Shimmer from "react-shimmer-effect";
 import userImage from "images/user.png";
 import Like from "common/components/Like/Like";
+import { useUserId, useAuthenticated } from "@nhost/react";
 
 const Author = ({ user }) => {
   return (
-    <div className="play-author flex items-center gap-2">
+    <div className='play-author flex items-center gap-2'>
       <img
-        className="rounded-full border border-zink-400"
+        className='rounded-full border border-zink-400'
         src={
           user?.avatarUrl
             ? !!user?.avatarUrl.length
@@ -18,18 +19,29 @@ const Author = ({ user }) => {
               : userImage
             : userImage
         }
-        width="25px"
-        height="25px"
-        alt="avatar"
+        width='25px'
+        height='25px'
+        alt='avatar'
       />
-      <div className="author-anchor">{user?.displayName}</div>
+      <div className='author-anchor'>{user?.displayName}</div>
     </div>
   );
 };
 
 const PlayThumbnail = ({ play }) => {
   const [cover, setCover] = useState(null);
+  const isAuthenticated = useAuthenticated();
+  const userId = useUserId();
 
+  const LikeObject = () => {
+    const { play_like } = play;
+    const number = countLikes(play_like);
+    if (isAuthenticated) {
+      const liked = play_like.find((i) => i.user_id === userId)?.liked;
+      return { liked, number };
+    }
+    return { liked: false, number };
+  };
 
   useEffect(() => {
     // Set the cover image
@@ -56,29 +68,35 @@ const PlayThumbnail = ({ play }) => {
   }, [play]);
 
   const countLikes = (Obj) => {
-    return Obj?.reduce((a, b) => b.liked ? ++a : a, 0)
-  }
+    return Obj?.reduce((a, b) => (b.liked ? ++a : a), 0);
+  };
 
   return (
     <li key={play.id}>
-      <Link to={`/plays/${encodeURI(play.github)}/${encodeURI(play.name)}`} state={{ id: play.id }}>
+      <Link
+        to={`/plays/${encodeURI(play.github)}/${encodeURI(play.name)}`}
+        state={{ id: play.id }}
+      >
         <div className='play-thumb'>
           <Shimmer>
-            <img src={cover} alt="" className="play-thumb-img" />
+            <img src={cover} alt='' className='play-thumb-img' />
           </Shimmer>
         </div>
-        <div className="play-header">
-          <div className="play-title">{play.name}</div>
+        <div className='play-header'>
+          <div className='play-title'>{play.name}</div>
           {play.user && <Author user={play.user} />}
-          <div className="mt-1 ">
-            <Like onLikeClick={null} likeObj={{number: countLikes(play?.play_like)}} />
+          <div className='mt-1 '>
+            <Like
+              onLikeClick={null}
+              likeObj={LikeObject()}
+            />
             <div className={`language language-${play.language || "js"}`}></div>
           </div>
         </div>
-        <div className="play-status">
-          <BsPlayCircleFill size="48px" />
-          <div className="default">Play now</div>
-          <div className="current">Playing..</div>
+        <div className='play-status'>
+          <BsPlayCircleFill size='48px' />
+          <div className='default'>Play now</div>
+          <div className='current'>Playing..</div>
         </div>
       </Link>
     </li>
