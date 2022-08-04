@@ -4,14 +4,15 @@ import "index.css";
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "reportWebVitals";
+import register from "./registerServiceWorker";
 
 /** removing console statement in react prod build */
 if (process.env.NODE_ENV !== "development") {
-  console.log = () => {};
-  console.debug = () => {};
-  console.info = () => {};
-  console.disableYellowBox = true;
-}
+   console.log = () => {};
+   console.debug = () => {};
+   console.info = () => {};
+   console.disableYellowBox = true;
+ }
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -41,6 +42,9 @@ const Index = () => {
 };
 const container = document.getElementById("root");
 createRoot(container).render(<Index />);
+
+// Makes the app to work offline and load faster
+register();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
