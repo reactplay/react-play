@@ -462,6 +462,21 @@
 
 }
 
+.play-details .header-actions .action.counted {
+    display: flex;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    grid-gap: 0.2rem;
+    align-items: center;
+}
+
+.play-details .header-actions .action.counted .count-value {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: rgba(var(--color-neutral-90-rgb), 0.4);
+}
+
 .play-details .header-actions .action.badged {
     display: flex;
     width: auto;
@@ -504,9 +519,15 @@
     fill: rgba(var(--color-neutral-90-rgb), 0.4);
 }
 
+.play-details .header-actions .action .icon.active,
 .play-details .header-actions .action:hover .icon,
 .play-details .header-actions .action:focus .icon {
     fill: rgba(var(--color-neutral-90-rgb), 0.8);
+}
+
+.play-details .header-actions .action:hover .count-value,
+.play-details .header-actions .action:focus .badge-count {
+    color: rgba(var(--color-neutral-90-rgb), 0.8);
 }
 
 .play-details .header-actions .action.badged:hover .badge-count {
