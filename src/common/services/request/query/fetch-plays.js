@@ -36,6 +36,31 @@ export function FetchPlaysByID(id) {
   return payload;
 }
 
+export function FetchPlaysByNameAndUser(playname, username) {
+  const payload = { ...BasiFetchParam };
+
+  payload.where = {
+    clause: {
+      operator: "and",
+      conditions: [
+        {
+          field: "name",
+          operator: "ilike",
+          value: playname,
+          type: "string",
+        },
+        {
+          field: "github",
+          operator: "ilike",
+          value: username,
+          type: "string",
+        },
+      ],
+    },
+  };
+  return payload;
+}
+
 const BasiFetchParam = {
   display: "Simple fetch play",
   name: "Fetch_Plays",
