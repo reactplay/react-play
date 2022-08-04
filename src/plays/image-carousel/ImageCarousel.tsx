@@ -1,0 +1,105 @@
+import React,{useEffect, useState} from 'react';
+import PlayHeader from 'common/playlists/PlayHeader';
+import data from './common/data';
+import './styles.css';
+
+function ImageCarousel(props:any) {
+
+  // Your Code Start below.
+  const [activeSlide,setActiveSlide]=useState<number>(Math.floor(data.length/2)|| 0);
+  const [startPos,setStartPos]=useState<number>(0);
+  const [endPos,setEndPos]=useState<number>(0);
+  const totalSlides:number=data.length;
+  const threshold:number = 100;
+  
+  const isSwipe=()=>Math.abs(endPos-startPos)>=threshold;
+
+
+  const touchEnd = (e:TouchEvent) => {
+    setEndPos(e.changedTouches[0].clientX);
+  };
+  const touchStart=(e:TouchEvent)=>{
+    setStartPos(e.touches[0].clientX);
+  }
+  
+  const handleActiveSlide=(direction:number=0)=>{
+    // 0 -> right 1-> left
+    if(direction===0){
+      if(activeSlide===data.length-1){
+        setActiveSlide(0);
+        return;
+      }
+      setActiveSlide(prev=>prev+1);
+    }
+    if(direction===1){
+      if(activeSlide===0){
+        setActiveSlide(totalSlides-1);
+        return;
+      }
+      setActiveSlide(prev=>prev-1);
+    }
+  }
+
+  useEffect(()=>{
+    const sliderContainer=document.querySelector('.image-slider') as HTMLElement;
+    const width:number=sliderContainer.offsetWidth;
+
+    console.log("image",width,activeSlide )
+    if(!sliderContainer)return;
+
+    sliderContainer.style.transform=`
+      translateX(-${activeSlide*width}px)
+    `
+  },[activeSlide]);
+
+  useEffect(()=>{
+    const wrapperContainer=document.querySelector('.wrapper') as HTMLElement;
+    wrapperContainer.addEventListener('touchstart',touchStart,{passive:true});
+    wrapperContainer.addEventListener('touchend',touchEnd,{passive:true});
+  },[]);
+
+  useEffect(()=>{
+    console.log(endPos,startPos,isSwipe())
+    if(!isSwipe())return;
+
+    if(endPos-startPos<0){
+      handleActiveSlide(0);
+    }
+
+    if(endPos-startPos>0){
+      handleActiveSlide(1);
+    }
+  },[endPos]);
+
+  return (
+    <>
+      <div className="play-details image-carousel">
+        <PlayHeader play={props} />
+        <div className="play-details-body">
+          <div className='wrapper'>
+            <div className='image-element'>
+              <div className="image-slider-body">
+              <div className='image-slider'>
+                {
+                  data.map(({id,imgSrc,alt})=>(
+                    <img className='image' src={imgSrc} alt={alt} data-id={id} key={`image${id}`}/>
+                  ))
+                }
+              </div>
+              </div>
+              <div className='right-arrow arrow' onClick={()=>handleActiveSlide(0)}>&#8594;</div>
+              <div className='left-arrow arrow' onClick={()=>handleActiveSlide(1)}>&#8592;</div>
+            </div>
+            <div className='dots'>
+              {
+                data.map((_,index)=><div className={`dot ${index===activeSlide && "active"}`} onClick={()=>setActiveSlide(index)}></div>)
+              }
+            </div> 
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default ImageCarousel;
