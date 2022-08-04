@@ -28,13 +28,13 @@ export function FetchPlaysByNameAndUser(playname, username) {
       conditions: [
         {
           field: "name",
-          operator: "eq",
+          operator: "ilike",
           value: playname,
           type: "string",
         },
         {
           field: "github",
-          operator: "eq",
+          operator: "ilike",
           value: username,
           type: "string",
         },
