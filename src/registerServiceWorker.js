@@ -2,7 +2,7 @@ import { Workbox } from "workbox-window";
 
 const register = () => {
   if (process.env.NODE_ENV !== "production") return;
-  if (navigator.serviceWorker) {
+  if (navigator?.serviceWorker) {
     const wb = new Workbox(`${process.env.PUBLIC_URL}/service-worker.js`);
 
     const checkForUpdate = () => {
