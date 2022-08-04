@@ -121,7 +121,7 @@ const CreatePlay = () => {
     if (refreshToken) {
       console.log(refreshToken);
     } else {
-      window.location = NHOST.AUTH_URL('http://localhost:3000/plays/create');
+      window.location = NHOST.AUTH_URL(`http://localhost:${process.env.RAECT_APP_DEV_PORT ?? '3000'}/plays/create`);
       return null;
     }
   } else {
