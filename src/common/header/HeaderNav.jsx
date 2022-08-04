@@ -10,7 +10,7 @@ import { GoX } from "react-icons/go";
 import { Modal, Box, Typography, Menu } from "@mui/material";
 import { useContext } from "react";
 import { SearchContext } from "common/search/search-context";
-import LogOut from './Logout'
+// import LogOut from './Logout'
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useContext(SearchContext);
@@ -153,7 +153,7 @@ const HeaderNav = ({ showBrowse }) => {
               <span className="btn-label">Share</span>
             </button>
           </li>
-          // <LogOut />
+          {/* <LogOut /> */}
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <Box sx={{ p: 4, pt: 2, borderRadius: 2, width: "360px" }}>
               <h3 className="section-title">Show Love</h3>
