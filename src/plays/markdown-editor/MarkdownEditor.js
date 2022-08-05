@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import PlayHeader from 'common/playlists/PlayHeader';
 import { Remarkable } from 'remarkable';
+import Output from './Output';
 import './styles.css';
+import Downloader from './Downloader';
 
-
-const markdown = new Remarkable();
+// defining the default rules
+const md = new Remarkable('full', {
+  html: true,
+  typographer: true
+});
 
 // WARNING: Do not change the entry component name
 function MarkdownEditor(props) {
@@ -24,7 +29,7 @@ function MarkdownEditor(props) {
             <h1 className='md-editor heading-1'>Markdown Editor </h1>
             <article>
             <label htmlFor='markdown'><h3 className='md-editor heading-3'>Type Here </h3></label> 
-             <textarea cols='30' rows='10' id='markdown' name='markdown' placeholder='Type Something...' required
+             <textarea cols='40' rows='10' id='markdown' name='markdown' placeholder='Type Markdown...' required
             value={text}
             onChange={(e) => setText(e.target.value)}
           >
@@ -33,8 +38,16 @@ function MarkdownEditor(props) {
           
         <h3 className='md-editor heading-3'> Preview</h3>
 
-          <div className='md-editor output-div' dangerouslySetInnerHTML={{__html: markdown.render(text)}} >
-          </div>
+          <Output 
+          md={md}
+          text={text}
+          elementId='elementId'
+          />
+
+          <Downloader
+          fileName='your-markdown'
+          elementId='elementId'
+          />
           
         </article>
       </main>
@@ -46,3 +59,7 @@ function MarkdownEditor(props) {
 }
 
 export default MarkdownEditor;
+
+
+
+

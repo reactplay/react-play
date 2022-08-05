@@ -1,7 +1,8 @@
 /* enter stlyes here */
   
+/* MarkdownEditor.js */
   .md-editor.play-details{
-    background-color: #724040;
+    background-color: #323031;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
   }
@@ -24,10 +25,26 @@
     font-weight: bold;
    }
 
+   .md-editor textarea{
+    padding: 1rem;
+    outline: none;
+   }
+
    .md-editor.md-editor.output-div{
     background-color: white;
     height: 10rem;
     width: 20rem;
     padding: 2rem;
     margin: auto;
+  }
+
+  /* Downloader.js */
+  .md-editor.btn{
+    background-color: #FFC857;
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+  }
+  .md-editor.heading-4{
+    color: #084C61;
   }
