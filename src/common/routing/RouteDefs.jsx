@@ -29,8 +29,8 @@ const RouteDefs = () => {
           <Route path="/tech-stacks" element={<TechStack />} />
           <Route path="/plays" element={<App />}>
             <Route index element={<PlayList />} />
-            <Route exact path="create" element={<CreatePlay />} />
-            <Route exact path="created/:playid" element={<PlayCreated />} />
+            <Route exact path="create" element= {<CreatePlay />}/>
+            {process.env.NODE_ENV === "development" && <Route exact path="created/:playid" element={<PlayCreated />} />}
             <Route idex exact path=":username" element={<PlayMeta />}>
               <Route exact path=":playname" element={<PlayMeta />}>
                 <Route exact path=":param1" element={<PlayMeta />}>
