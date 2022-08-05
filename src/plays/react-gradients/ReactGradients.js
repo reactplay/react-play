@@ -13,7 +13,7 @@ function ReactGradients(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className="grid py-2 px-6 grid-cols-3 gap-5 place-items-center">
+          <div className="grid py-2 px-6 grid-cols-3 gap-8 place-items-center">
             {gradients.map((gradient) => (
               <GradientComponent
                 name={gradient.name}
