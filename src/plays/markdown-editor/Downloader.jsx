@@ -23,7 +23,7 @@ const Downloader = ({ elementId, fileName}) => {
   return (
     <div>
         <button onClick={downloadMdAsPDF} className='md-editor btn'>
-            <h3 className='md-editor heading-4'><b> Download Markdown</b></h3>
+            <h3 className='md-editor heading-4'><b> Download Text</b></h3>
         </button>
     </div>
   )
