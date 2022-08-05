@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { submit } from "common/services/request";
 import Loader from "common/spinner/spinner";
 import { toTitleCase } from "common/services/string";
-import { FetchPlaysByNameAndUser } from "common/services/request/query/fetch-plays";
+import { FetchPlaysBySlugAndUser } from "common/services/request/query/fetch-plays";
 import { PageNotFound } from "common";
 
 function PlayMeta() {
@@ -16,7 +16,7 @@ function PlayMeta() {
   const [metaImage, setMetaImage] = useState();
 
   useEffect(() => {
-    submit(FetchPlaysByNameAndUser(decodeURI(playname), decodeURI(username)))
+    submit(FetchPlaysBySlugAndUser(decodeURI(playname), decodeURI(username)))
       .then((res) => {
           const play_obj = res[0];
           setPlay(play_obj);
