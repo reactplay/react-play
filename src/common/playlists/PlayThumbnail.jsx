@@ -6,6 +6,7 @@ import Shimmer from "react-shimmer-effect";
 import userImage from "images/user.png";
 import Like from "common/components/Like/Like";
 import { useUserId, useAuthenticated } from "@nhost/react";
+import countByProp from "common/utils/countByProp";
 
 const Author = ({ user }) => {
   return (
@@ -33,9 +34,9 @@ const PlayThumbnail = ({ play }) => {
   const isAuthenticated = useAuthenticated();
   const userId = useUserId();
 
-  const LikeObject = () => {
+  const likeObject = () => {
     const { play_like } = play;
-    const number = countLikes(play_like);
+    const number = countByProp(play_like, 'liked', true);
     if (isAuthenticated) {
       const liked = play_like.find((i) => i.user_id === userId)?.liked;
       return { liked, number };
@@ -67,9 +68,6 @@ const PlayThumbnail = ({ play }) => {
     }
   }, [play]);
 
-  const countLikes = (Obj) => {
-    return Obj?.reduce((a, b) => (b.liked ? ++a : a), 0);
-  };
 
   return (
     <li key={play.id}>
@@ -88,7 +86,7 @@ const PlayThumbnail = ({ play }) => {
           <div className='mt-1 '>
             <Like
               onLikeClick={null}
-              likeObj={LikeObject()}
+              likeObj={likeObject()}
             />
             <div className={`language language-${play.language || "js"}`}></div>
           </div>

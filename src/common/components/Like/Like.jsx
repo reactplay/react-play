@@ -10,8 +10,8 @@ const Like = ({ onLikeClick, likeObj }) => {
   
   return (
     <button className="action counted -mr-0.5" onClick={likeClickHandler}>
-      <AiOutlineLike size='24px' className={`${liked ? "hidden" : "icon"}`}/>
-      <AiFillLike size='24px' className={`${liked ? "icon" : "hidden"}`}/>
+      <AiOutlineLike size='24px' className={liked ? "hidden" : "icon"}/>
+      <AiFillLike size='24px' className={liked ? "icon" : "hidden"}/>
       {number > 0 ? (<div className="count-value">{number}</div>):(<div></div>)}
       
     </button>

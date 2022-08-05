@@ -1,5 +1,5 @@
-export const LikeIndividualPlay = (Obj) => {
-  const { play_id, user_id } = Obj;
+export const likeIndividualPlay = (obj) => {
+  const { play_id, user_id } = obj;
   return {
     display: "Delete a tag",
     name: "insert_play_like_one",
@@ -14,7 +14,7 @@ export const LikeIndividualPlay = (Obj) => {
   };
 };
 
-export const unlikeIndividualPlay = (Obj) => {
+export const unlikeIndividualPlay = (obj) => {
   return {
     display: "Update Like",
     name: "update_play_like",
@@ -27,18 +27,18 @@ export const unlikeIndividualPlay = (Obj) => {
           {
             field: "play_id",
             operator: "eq",
-            value: Obj.play_id,
+            value: obj.play_id,
           },
           {
             field: "user_id",
             operator: "eq",
-            value: Obj.user_id,
+            value: obj.user_id,
           },
         ],
       },
     },
     value: {
-      liked: Obj.liked,
+      liked: obj.liked,
     },
     return: ["affected_rows"],
   };
