@@ -19,7 +19,7 @@
     "git-repo-api": "^0.0.17",
     "graphql": "^16.5.0",
     "html-to-image": "^1.9.0",
-    "json-graphql-parser": "^0.0.20",
+    "json-graphql-parser": "^0.1.7",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
     "react": "^18.0.0",

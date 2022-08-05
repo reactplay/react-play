@@ -4,6 +4,9 @@ import { BsPlayCircleFill } from "react-icons/bs";
 import thumbPlay from "images/thumb-play.png";
 import Shimmer from "react-shimmer-effect";
 import userImage from "images/user.png";
+import Like from "common/components/Like/Like";
+import { useUserId, useAuthenticated } from "@nhost/react";
+import countByProp from "common/utils/countByProp";
 
 const Author = ({ user }) => {
   return (
@@ -28,7 +31,18 @@ const Author = ({ user }) => {
 
 const PlayThumbnail = ({ play }) => {
   const [cover, setCover] = useState(null);
+  const isAuthenticated = useAuthenticated();
+  const userId = useUserId();
 
+  const likeObject = () => {
+    const { play_like } = play;
+    const number = countByProp(play_like, 'liked', true);
+    if (isAuthenticated) {
+      const liked = play_like.find((i) => i.user_id === userId)?.liked;
+      return { liked, number };
+    }
+    return { liked: false, number };
+  };
 
   useEffect(() => {
     // Set the cover image
@@ -54,9 +68,13 @@ const PlayThumbnail = ({ play }) => {
     }
   }, [play]);
 
+
   return (
     <li key={play.id}>
-      <Link to={`/plays/${encodeURI(play.github)}/${encodeURI(play.name)}`} state={{ id: play.id }}>
+      <Link
+        to={`/plays/${encodeURI(play.github)}/${encodeURI(play.name)}`}
+        state={{ id: play.id }}
+      >
         <div className='play-thumb'>
           <Shimmer>
             <img src={cover} alt='' className='play-thumb-img' />
@@ -65,7 +83,12 @@ const PlayThumbnail = ({ play }) => {
         <div className='play-header'>
           <div className='play-title'>{play.name}</div>
           {play.user && <Author user={play.user} />}
-          <div className={`language language-${play.language || "js"}`}></div>
+          <div className='play-actions mt-4'>
+            <div className="flex flex-row justify-between items-end">
+              <Like onLikeClick={null} likeObj={likeObject()}/>
+              <div className={`language language-${play.language || "js"}`}></div>
+            </div>
+          </div>
         </div>
         <div className='play-status'>
           <BsPlayCircleFill size='48px' />
