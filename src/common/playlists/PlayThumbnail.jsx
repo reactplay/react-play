@@ -83,12 +83,11 @@ const PlayThumbnail = ({ play }) => {
         <div className='play-header'>
           <div className='play-title'>{play.name}</div>
           {play.user && <Author user={play.user} />}
-          <div className='mt-1 '>
-            <Like
-              onLikeClick={null}
-              likeObj={likeObject()}
-            />
-            <div className={`language language-${play.language || "js"}`}></div>
+          <div className='play-actions mt-4'>
+            <div className="flex flex-row justify-between items-end">
+              <Like onLikeClick={null} likeObj={likeObject()}/>
+              <div className={`language language-${play.language || "js"}`}></div>
+            </div>
           </div>
         </div>
         <div className='play-status'>
