@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-34-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-35-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -236,6 +236,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://tejasshekar.netlify.app/"><img src="https://avatars.githubusercontent.com/u/68545229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tejas Shekar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=TejasShekar" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/anirban-pratihar-48a591226/"><img src="https://avatars.githubusercontent.com/u/82874704?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anirban Pratihar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Anirban-1490" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/harshsinghatz"><img src="https://avatars.githubusercontent.com/u/51085015?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Harsh Singh</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=harshsinghatz" title="Code">💻</a></td>
+    <td align="center"><a href="http://frankiefab.com"><img src="https://avatars.githubusercontent.com/u/46662771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Franklin U.O. Ohaegbulam</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=frankiefab100" title="Code">💻</a></td>
   </tr>
 </table>
 
