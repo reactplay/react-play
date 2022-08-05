@@ -114,16 +114,9 @@ const CreatePlay = () => {
     );
   }
 
-  const refreshToken = searchParams.get("refreshToken");
-  // setValue(refreshToken);
-
   if (!isAuthenticated) {
-    if (refreshToken) {
-      console.log(refreshToken);
-    } else {
-      window.location = NHOST.AUTH_URL;
-      return null;
-    }
+    window.location = NHOST.AUTH_URL(`http://localhost:${process.env.RAECT_APP_DEV_PORT ?? '3000'}/plays/create`);
+    return null;
   } else {
     initializeData();
   }
