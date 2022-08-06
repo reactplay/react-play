@@ -56,12 +56,8 @@
 }
 
 .list-plays a .play-header .language {
-    position: absolute;
-    height: 1rem;
-    width: 1rem;
-    bottom: 0;
-    right:0;
-    padding: .8rem;
+    height: 1.25rem;
+    width: 1.25rem;
     background-repeat: no-repeat;
     opacity: 0.2;
 }
@@ -145,6 +141,26 @@
 .list-plays .active a .play-status .current {
     display: block;
     font-size: var(--fs-sm);
+}
+
+.list-plays .play-actions .action.counted {
+    display: flex;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    grid-gap: 0.2rem;
+    align-items: center;
+}
+
+.list-plays .play-actions .action.counted .icon {
+    fill: rgba(var(--color-neutral-90-rgb), 0.4);
+}
+
+.list-plays .play-actions .action.counted .count-value {
+    margin-top: 2px;
+    font-size: var(--fs-rg);
+    font-weight: var(--fw-semibold);
+    color: rgba(var(--color-neutral-90-rgb), 0.4);
 }
 
 /* Play Details */
@@ -462,6 +478,22 @@
 
 }
 
+.play-details .header-actions .action.counted {
+    display: flex;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    grid-gap: 0.2rem;
+    align-items: center;
+}
+
+.play-details .header-actions .action.counted .count-value {
+    margin-top: 2px;
+    font-size: var(--fs-rg);
+    font-weight: var(--fw-semibold);
+    color: rgba(var(--color-neutral-90-rgb), 0.4);
+}
+
 .play-details .header-actions .action.badged {
     display: flex;
     width: auto;
@@ -504,9 +536,15 @@
     fill: rgba(var(--color-neutral-90-rgb), 0.4);
 }
 
+.play-details .header-actions .action .icon.active,
 .play-details .header-actions .action:hover .icon,
 .play-details .header-actions .action:focus .icon {
     fill: rgba(var(--color-neutral-90-rgb), 0.8);
+}
+
+.play-details .header-actions .action:hover .count-value,
+.play-details .header-actions .action:focus .badge-count {
+    color: rgba(var(--color-neutral-90-rgb), 0.8);
 }
 
 .play-details .header-actions .action.badged:hover .badge-count {
