@@ -1,37 +1,37 @@
 [
     {
         "name": "Midnight",
-        "css": "linear-gradient(to right, rgb(29, 78, 216), rgb(30, 64, 175), rgb(17, 24, 39)",
+        "css": "linear-gradient(to right, #1d4ed8, #1e40af, #111827",
         "tailwind": "bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900"
     },
     {
         "name": "Emerald",
-        "css": "linear-gradient(to right, rgb(16, 185, 129), rgb(101, 163, 13))",
+        "css": "linear-gradient(to right, #10b981, #65a30d)",
         "tailwind": "bg-gradient-to-r from-emerald-500 to-lime-600"
     },
     {
         "name": "Horizon",
-        "css": "linear-gradient(rgb(249, 115, 22), rgb(253, 224, 71))",
+        "css": "linear-gradient(#f97316, #fde047)",
         "tailwind": "bg-gradient-to-b from-orange-500 to-yellow-300"
     },
     {
         "name": "Dawn",
-        "css": "linear-gradient(to right, rgb(251, 113, 133), rgb(253, 186, 116))",
+        "css": "linear-gradient(to right, #fb7185, #fdba74)",
         "tailwind": "bg-gradient-to-r from-rose-400 to-orange-300"
     },
     {
         "name": "Coral",
-        "css": "linear-gradient(to right, rgb(96, 165, 250), rgb(52, 211, 153))",
+        "css": "linear-gradient(to right, #60a5fa, #34d399)",
         "tailwind": "bg-gradient-to-r from-blue-400 to-emerald-400"
     },
     {
         "name": "Flamingo",
-        "css": "linear-gradient(to right, rgb(244, 114, 182), rgb(219, 39, 119))",
+        "css": "linear-gradient(to right, #f472b6, #db2777)",
         "tailwind": "bg-gradient-to-r from-pink-400 to-pink-600"
     },
     {
         "name": "Ocean",
-        "css": "linear-gradient(to right, rgb(165, 243, 252), rgb(34, 211, 238))",
+        "css": "linear-gradient(to right, #a5f3fc, #22d3ee)",
         "tailwind": "bg-gradient-to-r from-cyan-200 to-cyan-400"
     }
 
