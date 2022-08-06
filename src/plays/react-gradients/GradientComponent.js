@@ -2,6 +2,15 @@ import React from "react";
 import { SiTailwindcss, SiCss3 } from "react-icons/si";
 
 const GradientComponent = ({ index, name, css, tailwind }) => {
+  const copyTailwind = async () => {
+    await navigator.clipboard.writeText(tailwind);
+    alert("TailwindCSS copied");
+  };
+  const copyCSS = async () => {
+    await navigator.clipboard.writeText(css);
+    alert("CSS copied");
+  };
+
   return (
     <div
       key={index}
@@ -9,10 +18,10 @@ const GradientComponent = ({ index, name, css, tailwind }) => {
       style={{ background: css }}
     >
       <div className="absolute group-hover:flex hidden right-0 top-0 w-fit rounded-lg rounded-tl-none rounded-br-none bg-[#010326] transition-all duration-200 p-1 justify-center items-center border-2 border-[#010326]">
-        <GradientCopyButton>
+        <GradientCopyButton handleOnClick={copyTailwind}>
           <SiTailwindcss />
         </GradientCopyButton>
-        <GradientCopyButton>
+        <GradientCopyButton handleOnClick={copyCSS}>
           <SiCss3 />
         </GradientCopyButton>
         <GradientCopyButton>
