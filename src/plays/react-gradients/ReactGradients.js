@@ -23,6 +23,7 @@ function ReactGradients(props) {
                 name={gradient.name}
                 css={gradient.css}
                 tailwind={gradient.tailwind}
+                colors={gradient.colors}
               />
             ))}
           </div>

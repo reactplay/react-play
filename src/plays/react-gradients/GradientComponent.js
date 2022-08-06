@@ -1,7 +1,7 @@
 import React from "react";
 import { SiTailwindcss, SiCss3 } from "react-icons/si";
 
-const GradientComponent = ({ index, name, css, tailwind }) => {
+const GradientComponent = ({ index, name, css, tailwind, colors }) => {
   const copyTailwind = async () => {
     await navigator.clipboard.writeText(tailwind);
     alert("TailwindCSS copied");
@@ -24,12 +24,11 @@ const GradientComponent = ({ index, name, css, tailwind }) => {
         <GradientCopyButton handleOnClick={copyCSS}>
           <SiCss3 />
         </GradientCopyButton>
-        <GradientCopyButton>
-          <span className="text-sm">#010326</span>
-        </GradientCopyButton>
-        <GradientCopyButton>
-          <span className="text-sm">#010326</span>
-        </GradientCopyButton>
+        {colors.map((color) => (
+          <GradientCopyButton>
+            <span className="text-sm">{color}</span>
+          </GradientCopyButton>
+        ))}
       </div>
       <div class="absolute bottom-0 w-full rounded-b-lg bg-[#010326] py-4 px-6 text-xl font-bold text-white">
         {name}

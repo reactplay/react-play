@@ -3,7 +3,7 @@
         "name": "Midnight",
         "css": "linear-gradient(to right, #1d4ed8, #1e40af, #111827)",
         "tailwind": "bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900",
-        "colors": ["#1d4ed8", "#1e40af", "111827"]
+        "colors": ["#1d4ed8", "#1e40af", "#111827"]
     },
     {
         "name": "Emerald",
