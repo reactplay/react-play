@@ -4,7 +4,7 @@ import * as plays from "plays";
 import { useParams } from "react-router-dom";
 import { submit } from "common/services/request";
 import Loader from "common/spinner/spinner";
-import { toTitleCase } from "common/services/string";
+import { toSanitized, toTitleCase, toTitleCaseTrimmed } from "common/services/string";
 import { FetchPlaysBySlugAndUser } from "common/services/request/query/fetch-plays";
 import { PageNotFound } from "common";
 
@@ -19,6 +19,7 @@ function PlayMeta() {
     submit(FetchPlaysBySlugAndUser(decodeURI(playname), decodeURI(username)))
       .then((res) => {
           const play_obj = res[0];
+          play_obj.title_name = toTitleCaseTrimmed(play_obj.name);
           setPlay(play_obj);
           setMetaImage(play_obj.cover);
           setLoading(false);
@@ -38,7 +39,7 @@ function PlayMeta() {
 
   const renderPlayComponent = () => {
     const Comp =
-      plays[play.component || toTitleCase(play.name).replace(/ /g, "")];
+      plays[play.component || toSanitized(play.title_name)] ;
     return <Comp {...play} />;
   };
 

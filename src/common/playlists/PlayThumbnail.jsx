@@ -71,7 +71,7 @@ const PlayThumbnail = ({ play }) => {
   return (
     <li key={play.id}>
       <Link
-        to={`/plays/${encodeURI(play.github.toLowerCase())}/${encodeURI(play.slug)}`}
+        to={`/plays/${encodeURI(play.github.toLowerCase())}/${play.slug}`}
         state={{ id: play.id }}
       >
         <div className='play-thumb'>
