@@ -10,6 +10,10 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
     await navigator.clipboard.writeText(css);
     alert("CSS copied");
   };
+  const copyColor = async (colorToCopy) => {
+    await navigator.clipboard.writeText(colorToCopy);
+    alert("CSS copied");
+  };
 
   return (
     <div
@@ -25,7 +29,7 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
           <SiCss3 />
         </GradientCopyButton>
         {colors.map((color) => (
-          <GradientCopyButton>
+          <GradientCopyButton handleOnClick={() => copyColor(color)}>
             <span className="text-sm">{color}</span>
           </GradientCopyButton>
         ))}
