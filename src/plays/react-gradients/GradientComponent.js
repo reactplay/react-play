@@ -1,9 +1,10 @@
 import React from "react";
 import { SiTailwindcss, SiCss3 } from "react-icons/si";
 
-const GradientComponent = ({ name, css, tailwind }) => {
+const GradientComponent = ({ index, name, css, tailwind }) => {
   return (
     <div
+      key={index}
       className="group relative h-72 w-[22rem] rounded-2xl transition-all duration-150 hover:scale-105 border-[6px] border-[#010326]"
       style={{ background: css }}
     >

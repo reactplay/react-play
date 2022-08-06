@@ -13,19 +13,20 @@ function ReactGradients(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <header className="w-full h-fit py-6 px-7 flex">
+          <div className="w-full h-fit py-6 px-7 flex">
             <span>React Gradients</span>
-          </header>
+          </div>
           <div className="grid py-2 px-6 grid-cols-3 gap-8 place-items-center">
-            {gradients.map((gradient) => (
+            {gradients.map((gradient, index) => (
               <GradientComponent
+                index={index}
                 name={gradient.name}
                 css={gradient.css}
                 tailwind={gradient.tailwind}
               />
             ))}
           </div>
-          <footer className="w-full h-fit py-4 px-6 flex justify-center items-center">
+          <div className="w-full h-fit py-4 px-6 flex justify-center items-center">
             <span>
               Built with 💙 by{" "}
               <a
@@ -40,7 +41,7 @@ function ReactGradients(props) {
                 ReactPlay.io
               </a>
             </span>
-          </footer>
+          </div>
           {/* Your Code Ends Here */}
         </div>
       </div>
