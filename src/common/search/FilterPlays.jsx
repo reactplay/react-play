@@ -28,11 +28,18 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
     defaultOption,
     ...(creators?.map((creator) => ({
       value: creator.user.id,
-      label: (
+      label: creator.user.avatarUrl ? (
         <div className="flex gap-x-2 items-center">
-          <img className="rounded" src={creator.user.avatarUrl} width="32px" />
+          <img
+            alt={creator.user.displayName}
+            className="rounded"
+            src={creator.user.avatarUrl}
+            width="32px"
+          />
           {creator.user.displayName}
         </div>
+      ) : (
+        creator.user.displayName
       ),
     })) || []),
   ];
