@@ -25,6 +25,7 @@ export const FetchPlaysFilter = {
         "id",
         "language",
         { level: ["name"] },
+        { play_like: ["liked", "play_id", "user_id"] },
         "name",
         "path",
         { play_tags: { tag: ["name"] } },

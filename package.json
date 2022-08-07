@@ -19,7 +19,7 @@
     "git-repo-api": "^0.0.17",
     "graphql": "^16.5.0",
     "html-to-image": "^1.9.0",
-    "json-graphql-parser": "^0.0.20",
+    "json-graphql-parser": "^0.1.7",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
     "react": "^18.0.0",
@@ -39,7 +39,14 @@
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.5",
-    "web-vitals": "^2.1.0"
+    "web-vitals": "^2.1.0",
+    "workbox-cacheable-response": "^6.5.4",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
+    "workbox-window": "^6.5.4"
   },
   "scripts": {
     "start": "npx create-react-play -p && react-scripts start",
