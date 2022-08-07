@@ -49,11 +49,11 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
     // Gradient Component
     <div
       key={index}
-      className="group relative h-72 w-[22rem] rounded-2xl transition-all duration-150 md:hover:scale-105 border-[6px] border-[#010326]"
+      className="group relative h-72 w-[22.5rem] rounded-2xl transition-all duration-150 md:hover:scale-105 border-[6px] border-[#010326]"
       style={{ background: css }}
     >
       {/* component containing buttons to copy code, colors of the gradient */}
-      <div className="absolute md:group-hover:flex md:hidden flex right-0 top-0 w-fit rounded-lg rounded-tl-none rounded-br-none bg-[#010326] transition-all duration-200 p-1 justify-center items-center border-2 border-[#010326]">
+      <div className="absolute md:group-hover:flex md:hidden flex right-0 top-0 w-fit rounded-lg rounded-tl-none rounded-br-none bg-[#010326] transition-all duration-200 py-1 px-2 justify-center items-center border-2 border-[#010326]">
         <GradientCopyButton handleOnClick={copyTailwind}>
           <SiTailwindcss />
         </GradientCopyButton>
@@ -81,7 +81,7 @@ export default GradientComponent;
 const GradientCopyButton = ({ children, handleOnClick }) => {
   return (
     <button
-      className="flex justify-center items-center text-center mx-1 p-2 text-gray-300 hover:text-white hover:bg-cyan-700 text-xl hover:bg-opacity-60 rounded-full transition-all duration-200"
+      className="flex justify-center items-center text-center p-2 text-gray-300 hover:text-white hover:bg-cyan-700 text-xl hover:bg-opacity-60 rounded-full transition-all duration-200"
       onClick={handleOnClick}
     >
       {children}
