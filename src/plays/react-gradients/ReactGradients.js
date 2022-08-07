@@ -4,6 +4,7 @@ import "./styles.css";
 import gradients from "./gradients.json";
 import { IoColorPaletteSharp, IoAddSharp } from "react-icons/io5";
 import { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 // WARNING: Do not change the entry componenet name
 function ReactGradients(props) {
@@ -14,7 +15,7 @@ function ReactGradients(props) {
       <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body">
-          {/* Your Code Starts Here */}
+          {/* Header/Intro of play */}
           <div className="w-full h-fit py-11 px-7 text-center">
             <span className="font-bold md:text-4xl text-3xl w-full text-black inline-flex justify-center items-center">
               React
@@ -29,6 +30,8 @@ function ReactGradients(props) {
               use in your application.
             </p>
           </div>
+
+          {/* Grid layout of all gradients */}
           <div className="grid py-2 md:px-6 px-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 place-items-center">
             {gradients.map((gradient, index) => (
               <GradientComponent
@@ -40,6 +43,8 @@ function ReactGradients(props) {
               />
             ))}
           </div>
+
+          {/* Button to add new gradient, Note:- Currently it is an <a> tag that redirects to README.md of the play. Hoping to convert it to a <button> element that opens up a modal containing a form to easily add a gradient. */}
           <a
             href="https://github.com/reactplay/react-play/src/plays/react-gradients"
             target="_blank"
@@ -49,6 +54,8 @@ function ReactGradients(props) {
             <IoAddSharp size={32} />{" "}
             <span className="md:flex hidden ml-2">Add a Gradient</span>
           </a>
+
+          {/* Footer/End Credits of play */}
           <div className="w-full h-fit pt-14 px-6 flex justify-center items-center text-center">
             <span>
               Built with 💙 by{" "}
@@ -61,19 +68,17 @@ function ReactGradients(props) {
                 Ammaar Aslam
               </a>{" "}
               for{" "}
-              <a
-                href="/"
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to="/"
                 className="font-semibold underline hover:text-[#00f2fe] transition-all duration-200"
               >
                 ReactPlay.io
-              </a>
+              </Link>
             </span>
           </div>
-          <Toaster position="bottom-left" reverseOrder={false} />
 
-          {/* Your Code Ends Here */}
+          {/* react-hot-toast component to display a message when code/color is copied */}
+          <Toaster position="bottom-left" reverseOrder={false} />
         </div>
       </div>
     </>
