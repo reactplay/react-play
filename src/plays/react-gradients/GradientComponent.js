@@ -1,18 +1,37 @@
 import React from "react";
 import { SiTailwindcss, SiCss3 } from "react-icons/si";
+import toast from "react-hot-toast";
 
 const GradientComponent = ({ index, name, css, tailwind, colors }) => {
   const copyTailwind = async () => {
     await navigator.clipboard.writeText(tailwind);
-    alert("TailwindCSS copied");
+    toast("Copied TailwindCSS", {
+      icon: "📋",
+      style: {
+        backgroundColor: "#010326",
+        color: "#00f2fe",
+      },
+    });
   };
   const copyCSS = async () => {
     await navigator.clipboard.writeText(css);
-    alert("CSS copied");
+    toast("Copied CSS", {
+      icon: "📋",
+      style: {
+        backgroundColor: "#010326",
+        color: "#00f2fe",
+      },
+    });
   };
   const copyColor = async (colorToCopy) => {
     await navigator.clipboard.writeText(colorToCopy);
-    alert("CSS copied");
+    toast("Copied Color", {
+      icon: "📋",
+      style: {
+        backgroundColor: "#010326",
+        color: "#00f2fe",
+      },
+    });
   };
 
   return (

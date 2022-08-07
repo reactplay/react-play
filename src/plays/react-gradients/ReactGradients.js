@@ -3,6 +3,7 @@ import GradientComponent from "./GradientComponent";
 import "./styles.css";
 import gradients from "./gradients.json";
 import { IoColorPaletteSharp, IoAddSharp } from "react-icons/io5";
+import { Toaster } from "react-hot-toast";
 
 // WARNING: Do not change the entry componenet name
 function ReactGradients(props) {
@@ -70,6 +71,8 @@ function ReactGradients(props) {
               </a>
             </span>
           </div>
+          <Toaster position="bottom-left" reverseOrder={false} />
+
           {/* Your Code Ends Here */}
         </div>
       </div>
