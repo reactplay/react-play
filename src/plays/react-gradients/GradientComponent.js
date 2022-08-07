@@ -18,10 +18,10 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
   return (
     <div
       key={index}
-      className="group relative h-72 w-[22rem] rounded-2xl transition-all duration-150 hover:scale-105 border-[6px] border-[#010326]"
+      className="group relative h-72 w-[22rem] rounded-2xl transition-all duration-150 md:hover:scale-105 border-[6px] border-[#010326]"
       style={{ background: css }}
     >
-      <div className="absolute group-hover:flex hidden right-0 top-0 w-fit rounded-lg rounded-tl-none rounded-br-none bg-[#010326] transition-all duration-200 p-1 justify-center items-center border-2 border-[#010326]">
+      <div className="absolute md:group-hover:flex md:hidden flex right-0 top-0 w-fit rounded-lg rounded-tl-none rounded-br-none bg-[#010326] transition-all duration-200 p-1 justify-center items-center border-2 border-[#010326]">
         <GradientCopyButton handleOnClick={copyTailwind}>
           <SiTailwindcss />
         </GradientCopyButton>
@@ -30,7 +30,7 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
         </GradientCopyButton>
         {colors.map((color) => (
           <GradientCopyButton handleOnClick={() => copyColor(color)}>
-            <span className="text-sm">{color}</span>
+            <span className="text-sm uppercase">{color}</span>
           </GradientCopyButton>
         ))}
       </div>

@@ -15,7 +15,7 @@ function ReactGradients(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="w-full h-fit py-11 px-7 text-center">
-            <span className="font-bold text-4xl w-full text-black inline-flex justify-center items-center">
+            <span className="font-bold md:text-4xl text-3xl w-full text-black inline-flex justify-center items-center">
               React
               <IoColorPaletteSharp
                 className="text-[#00f2fe] mt-auto mb-auto"
@@ -23,12 +23,12 @@ function ReactGradients(props) {
               />
               Gradients
             </span>
-            <p className="mt-2 font-semibold text-xl w-full text-gray-700">
+            <p className="mt-2 font-semibold md:text-xl text-lg w-full text-gray-700">
               A collection of beautiful gradients that you can copy to easily
               use in your application.
             </p>
           </div>
-          <div className="grid py-2 px-6 grid-cols-3 gap-8 place-items-center">
+          <div className="grid py-2 md:px-6 px-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 place-items-center">
             {gradients.map((gradient, index) => (
               <GradientComponent
                 index={index}
@@ -43,12 +43,12 @@ function ReactGradients(props) {
             href="https://github.com/reactplay/react-play/src/plays/react-gradients"
             target="_blank"
             rel="noreferrer"
-            className="fixed bottom-16 right-9 w-fit p-4 text-white bg-[#00f2fe] rounded-full font-semibold text-xl inline-flex justify-center items-center border-2 border-[#00f2fe] hover:bg-white hover:text-[#00f2fe] transition-all duration-200"
+            className="fixed bottom-16 md:right-9 right-7 w-fit p-4 text-white bg-[#00f2fe] rounded-full font-semibold text-xl inline-flex justify-center items-center border-2 border-[#00f2fe] hover:bg-white hover:text-[#00f2fe] transition-all duration-200"
           >
             <IoAddSharp size={32} />{" "}
-            <span className="ml-2">Add a Gradient</span>
+            <span className="md:flex hidden ml-2">Add a Gradient</span>
           </a>
-          <div className="w-full h-fit pt-14 px-6 flex justify-center items-center">
+          <div className="w-full h-fit pt-14 px-6 flex justify-center items-center text-center">
             <span>
               Built with 💙 by{" "}
               <a
