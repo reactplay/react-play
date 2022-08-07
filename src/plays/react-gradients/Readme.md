@@ -70,34 +70,6 @@ Learn more about `JSON` Objects - https://developer.mozilla.org/en-US/docs/Learn
 
 ## Thanks for your time!
 
-Thank you so much for taking the time to read this. If you like this play, please do share about it and tag me [@itsammaar_7](https://twitter.com/itsammaar_7) and [@ReactPlayIO](https://twitter.com/ReactPlayIO). Also star the [react-play repository](https://github.com/reactplay/react-play), it gives me and all the [contributors](https://github.com/reactplay/react-play#contributors-) a boost in confidence
+Thank you so much for taking the time to read this. If you like this play, please do share about it and tag me [@itsammaar_7](https://twitter.com/itsammaar_7) and [@ReactPlayIO](https://twitter.com/ReactPlayIO). Also star the [react-play repository](https://github.com/reactplay/react-play), it gives me and all the [contributors](https://github.com/reactplay/react-play#contributors-) a boost in confidence 🤩.
 
 **Happy Coding!!**
-
-
-
-## Description
-
-This is a new play consisting of a collection of beautiful gradients that can be copied either as TailwindCSS or CSS code and use in their application. Users are also able to copy each color used in a gradient.
-
-Fixes #442
-
-## Type of change
-
-- [x] New feature (non-breaking change which adds functionality)
-
-# How Has This Been Tested?
-
-This play has been tested on my local machine. It creates no new errors and passes all unit tests.
-**Screenshots:**
-
-
-# Checklist:
-
-- [x] I have performed a self-review of my own code
-- [x] I have commented my code, particularly in hard-to-understand areas
-- [x] I have made corresponding changes to the documentation
-- [x] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [x] New and existing unit tests pass locally with my changes
-- [x] Any dependent changes have been merged and published in downstream modules
