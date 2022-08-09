@@ -3,7 +3,6 @@ import GradientComponent from "./GradientComponent";
 import gradients from "./gradients.json";
 import { IoColorPaletteSharp, IoAddSharp } from "react-icons/io5";
 import { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
 
 // WARNING: Do not change the entry componenet name
 function ReactGradients(props) {
@@ -53,29 +52,6 @@ function ReactGradients(props) {
             <IoAddSharp size={32} />{" "}
             <span className="md:flex hidden ml-2">Add a Gradient</span>
           </a>
-
-          {/* Footer/End Credits of play */}
-          <div className="w-full h-fit pt-14 px-6 flex justify-center items-center text-center">
-            <span>
-              Built with 💙 by{" "}
-              <a
-                href="https://twitter.com/itsammaar_7"
-                target="_blank"
-                rel="noreferrer"
-                className="font-semibold underline hover:text-[#00f2fe] transition-all duration-200"
-              >
-                Ammaar Aslam
-              </a>{" "}
-              for{" "}
-              <Link
-                to="/"
-                className="font-semibold underline hover:text-[#00f2fe] transition-all duration-200"
-              >
-                ReactPlay.io
-              </Link>
-            </span>
-          </div>
-
           {/* react-hot-toast component to display a message when code/color is copied */}
           <Toaster position="bottom-left" reverseOrder={false} />
         </div>
