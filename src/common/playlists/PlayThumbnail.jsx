@@ -53,8 +53,7 @@ const PlayThumbnail = ({ play }) => {
       // if it is not passed as a meta data
       // check in the play folder for a cover image
       // with the name cover.png
-      const playFolder = play.path.split("/")[2];
-      import(`plays/${playFolder}/cover.png`)
+      import(`plays/${play.slug}/cover.png`)
         .then((Cover) => {
           setCover(Cover.default);
         })
@@ -72,7 +71,7 @@ const PlayThumbnail = ({ play }) => {
   return (
     <li key={play.id}>
       <Link
-        to={`/plays/${encodeURI(play.github)}/${encodeURI(play.name)}`}
+        to={`/plays/${encodeURI(play.github.toLowerCase())}/${play.slug}`}
         state={{ id: play.id }}
       >
         <div className='play-thumb'>

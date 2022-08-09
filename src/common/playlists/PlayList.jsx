@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import useGetPlays from 'common/hooks/useGetPlays'
 
 import "./playlist.css";
+import { toSanitized } from "common/services/string";
 
 const PlayList = () => {
   const [loading, error, plays] = useGetPlays();
@@ -37,7 +38,7 @@ const PlayList = () => {
           
           <React.Fragment key={index}>
           {
-            all_plays[play.component ? play.component : play.title_name] && <PlayThumbnail key={play.id} play={play}/>
+            all_plays[play.component ? play.component : toSanitized(play.title_name)] && <PlayThumbnail key={play.id} play={play}/>
           }
           </React.Fragment>
           
