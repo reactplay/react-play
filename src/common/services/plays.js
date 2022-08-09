@@ -4,7 +4,7 @@ import {
   associatePlayWithTagQuery,
   createPlayQuery,
 } from "./request/query/play";
-import { toKebabCase } from "./string";
+import { toKebabCase, toSlug } from "./string";
 import { Tags } from "./tags";
 
 // Create a play
@@ -24,6 +24,9 @@ const createPlay = (playObject) => {
   objectToSubmit.style = objectToSubmit.style
     ? objectToSubmit.style.value
     : "css";
+
+  // Prepare slug
+  objectToSubmit.slug = toSlug(objectToSubmit.name);
 
   // Prepare level
   objectToSubmit.level_id = objectToSubmit.level.value;
