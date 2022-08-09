@@ -11,8 +11,6 @@ React Gradients is list of beautiful gradients which you can easily use for your
 
 - User: ammaaraslam
 - Gihub Link: https://github.com/ammaaraslam
-- Blog: 
-- Video: 
 
 ## Implementation Details
 

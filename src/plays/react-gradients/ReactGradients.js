@@ -1,6 +1,5 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import GradientComponent from "./GradientComponent";
-import "./styles.css";
 import gradients from "./gradients.json";
 import { IoColorPaletteSharp, IoAddSharp } from "react-icons/io5";
 import { Toaster } from "react-hot-toast";

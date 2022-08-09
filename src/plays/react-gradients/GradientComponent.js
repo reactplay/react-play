@@ -3,40 +3,11 @@ import { SiTailwindcss, SiCss3 } from "react-icons/si";
 import toast from "react-hot-toast";
 
 const GradientComponent = ({ index, name, css, tailwind, colors }) => {
-  // function to copy TailwindCSS code of a specific gradient
-  const copyTailwind = async () => {
-    await navigator.clipboard.writeText(tailwind);
-
-    // Calling react-hot-toast after copying
-    toast("Copied TailwindCSS", {
-      icon: "📋",
-      style: {
-        backgroundColor: "#010326",
-        color: "#00f2fe",
-      },
-    });
-  };
-
-  // function to copy CSS code of a specific gradient
-  const copyCSS = async () => {
-    await navigator.clipboard.writeText(css);
-
-    // Calling react-hot-toast after copying
-    toast("Copied CSS", {
-      icon: "📋",
-      style: {
-        backgroundColor: "#010326",
-        color: "#00f2fe",
-      },
-    });
-  };
-
-  // function to copy each color of a specific gradient
-  const copyColor = async (colorToCopy) => {
-    await navigator.clipboard.writeText(colorToCopy);
-
-    // Calling react-hot-toast after copying
-    toast("Copied Color", {
+  // Function to copy tailwind,css, color to clipboard.This function takes in 2 arguments. One is the text to be copied and the other is the message for the toast.
+  // Note:- Initially, there were three functions that executed this task. Later, combined those functions into just one function(the below one) for better practice and efficiency.
+  const copyCode = async (codeToCopy, message) => {
+    await navigator.clipboard.writeText(codeToCopy);
+    toast(`Copied ${message}`, {
       icon: "📋",
       style: {
         backgroundColor: "#010326",
@@ -54,14 +25,16 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
     >
       {/* component containing buttons to copy code, colors of the gradient */}
       <div className="absolute md:group-hover:flex md:hidden flex right-0 top-0 w-fit rounded-lg rounded-tl-none rounded-br-none bg-[#010326] transition-all duration-200 py-1 px-2 justify-center items-center border-2 border-[#010326]">
-        <GradientCopyButton handleOnClick={copyTailwind}>
+        <GradientCopyButton
+          handleOnClick={() => copyCode(tailwind, "TailwindCSS")}
+        >
           <SiTailwindcss />
         </GradientCopyButton>
-        <GradientCopyButton handleOnClick={copyCSS}>
+        <GradientCopyButton handleOnClick={() => copyCode(css, "CSS")}>
           <SiCss3 />
         </GradientCopyButton>
         {colors.map((color) => (
-          <GradientCopyButton handleOnClick={() => copyColor(color)}>
+          <GradientCopyButton handleOnClick={() => copyCode(color, "Color")}>
             <span className="text-sm uppercase">{color}</span>
           </GradientCopyButton>
         ))}
