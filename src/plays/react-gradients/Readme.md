@@ -23,10 +23,11 @@ The implementation of the play is fairly simple.
     - `css` - The CSS code for the gradient.
     - `colors` - A list of colors used in the gradient.
 - The properties of each gradient is passed to the separate component named `GradientComponent` in the `GradientComponent.js` file to be styled and displayed.
-- In the `GradientComponent` component, you will find the following three functions to copy:
-    - `copyTailwind` - This function copies the TailwindCSS code of the gradient.
-    - `copyCSS` - This function copies the CSS code of the gradient.
-    - `copyColor` - This function copies the colors used in the gradient.
+- In the `GradientComponent` component, you will find the following function:
+    - `copyCode` - This function is used to copy the tailwind, css, color of a gradient to the clipboard. This function **takes in 2 arguments**.
+        1. `codeToCopy` - The text that needs to be copied.
+        2. `message` - The message to be displayed in the toast. *(If user clicked to copy the TailwindCSS code, the message argument is "TailwindCSS". Then the toast says "Copied TailwindCSS")*
+    - >**Note:-** Initially, there were three different functions(`copyTailwind`, `copyCSS`, `copyColor`) to copy. Later combined these functions into one, the `copyCode` function for better practice and efficiency.
 - And finally, the play uses `react-hot-toast` *(a notification library for react)* to display a message after user has copied.
 
 ## Contributing
