@@ -1,0 +1,191 @@
+/* enter stlyes here */
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+
+.heading-gallery {
+  text-align: center;
+  font-size: 43px;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  cursor: pointer;
+}
+
+.gallery-image {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image .gallery-grid-image {
+  height: 250px;
+  width: 350px;
+  transform: scale(1.0);
+  transition: transform 0.4s ease;
+}
+
+.gallery-image .gallery-video {
+  height: 255px;
+  width: 351px;
+  transform: scale(2);
+  transition: transform 0.4s ease;
+  z-index: 10;
+  position: absolute;
+  top: -2rem;
+  /* opacity: 0; */
+  visibility: hidden;
+}
+
+.gallery-img-box {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 250px;
+  width: 350px;
+  overflow: hidden;
+  display: inline-block;
+  color: white;
+  position: relative;
+  background-color: white;
+}
+
+.caption {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  opacity: 0.0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+  height: 250px;
+  width: 350px;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.gallery-img-box:hover .gallery-grid-image {
+  transform: scale(1.1);
+}
+
+.gallery-img-box:hover .gallery-video {
+  visibility: visible;
+}
+
+.gallery-img-box:hover .transparent-box {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.gallery-img-box:hover .caption {
+  transform: translateY(-20px);
+  opacity: 1.0;
+  z-index: 10000;
+}
+
+.gallery-img-box:hover {
+  cursor: pointer;
+}
+
+.caption>p:nth-child(2) {
+  font-size: 0.8em;
+}
+
+.opacity-low {
+  opacity: 0.5;
+  background-color: white;
+  border-radius: 5px 5px;
+  padding: 0 6px;
+  margin-top: 14px;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+  position: relative;
+  left: 42rem;
+}
+
+.gallery-btn {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: rgb(255, 27, 0);
+  background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+}
+
+.gallery-btn:hover {
+  color: #f0094a;
+  background: transparent;
+  box-shadow: none;
+}
+
+.gallery-btn:before,
+.gallery-btn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #f0094a;
+  box-shadow:
+    -1px -1px 5px 0px #fff,
+    7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
+}
+
+.gallery-btn:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.gallery-btn:hover:before,
+.gallery-btn:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+/* Media Queries */
+
+@media(max-width: 2138px) {
+  .custom-btn {
+    left: 57rem;
+  }
+}
+
+@media(max-width: 1087px) {
+  .custom-btn {
+    left: 29rem;
+  }
+}
+
+@media(max-width: 679px) {
+  .custom-btn {
+    left: 16rem;
+  }
+}
+
+@media(max-width: 679px) {
+  .custom-btn {
+    left: 9rem;
+  }
+}
