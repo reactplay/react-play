@@ -44,7 +44,7 @@ export function FetchPlaysBySlugAndUser(playslug, username) {
   return payload;
 }
 
-const BasiFetchParam = {
+export const BasiFetchParam = {
   display: "Simple fetch play",
   name: "Fetch_Plays",
   function: "plays",
@@ -64,7 +64,7 @@ const BasiFetchParam = {
   ],
 };
 
-const DetailedFetchParam = {
+export const DetailedFetchParam = {
   ...BasiFetchParam,
   ...{
     return: [
