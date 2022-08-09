@@ -16,7 +16,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   const languages = ["js", "ts"];
 
   if (error) {
-    return <p>{error?.message ?? "Something Went Wrong"}</p>;
+    return <p>{error?.message ?? "Something Went Wrong "}</p>;
   }
 
   const defaultOption = {
