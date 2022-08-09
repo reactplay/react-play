@@ -1,9 +1,9 @@
 export function FetchPlaysSimple() {
-  return {...BasiFetchParam}
+  return { ...BasiFetchParam };
 }
 
 export function FetchPlaysByID(id) {
-  const payload = { ...BasiFetchParam };
+  const payload = { ...DetailedFetchParam };
 
   payload.where = {
     clause: {
@@ -19,17 +19,17 @@ export function FetchPlaysByID(id) {
   return payload;
 }
 
-export function FetchPlaysByNameAndUser(playname, username) {
-  const payload = { ...BasiFetchParam };
+export function FetchPlaysBySlugAndUser(playslug, username) {
+  const payload = { ...DetailedFetchParam };
 
   payload.where = {
     clause: {
       operator: "and",
       conditions: [
         {
-          field: "name",
+          field: "slug",
           operator: "ilike",
-          value: playname,
+          value: playslug,
           type: "string",
         },
         {
@@ -50,23 +50,30 @@ const BasiFetchParam = {
   function: "plays",
   write: false,
   return: [
-    "blog",
     "component",
     "cover",
-    "created_at",
     "description",
     "featured",
     "dev_mode",
     "github",
-    "id",
     "language",
     { play_like: ["liked", "play_id", "user_id"] },
-    { level: ["name"] },
     "name",
-    "path",
-    { play_tags: { tag: ["name"] } },
-    "updated_at",
+    "slug",
     { user: ["id", "displayName", "avatarUrl"] },
-    "video",
   ],
+};
+
+const DetailedFetchParam = {
+  ...BasiFetchParam,
+  ...{
+    return: [
+      ...BasiFetchParam.return,
+      "blog",
+      "id",
+      { level: ["name"] },
+      "video",
+      { play_tags: { tag: ["name"] } },
+    ],
+  },
 };
