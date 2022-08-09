@@ -2,6 +2,7 @@ import PlayHeader from "common/playlists/PlayHeader";
 import Map from "./Map";
 import Country from "./Country";
 import { useState } from "react";
+import SearchAndFilter from "./SearchAndFilter";
 
 function CountriesStatics(props) {
   // Your Code Start below.
@@ -21,6 +22,7 @@ function CountriesStatics(props) {
           <h2 className="text-xl text-center capitalize">
             Learn geography in fun and interactive way
           </h2>
+          <SearchAndFilter />
           <div className="flex flex-col xl:flex-row justify-between">
             <Map activeGeo={activeGeo} handleClickMap={handleClickMap} />
             <Country activeGeo={activeGeo} />
