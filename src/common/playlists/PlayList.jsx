@@ -1,6 +1,7 @@
 import PlayThumbnail from "./PlayThumbnail";
 import { ReactComponent as ImageOops } from "images/img-oops.svg";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState, useContext } from "react";
+import { SearchContext } from "common/search/search-context";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "common/spinner/spinner";
 import * as all_plays from "plays";
@@ -13,6 +14,8 @@ const PlayList = () => {
   const [loading, error, plays] = useGetPlays();
   const [allPlays, setAllPlays] = useState([])
 
+  const { searchTerm } = useContext(SearchContext);
+
   let { playid } = useParams(); // return the parameter of url
   
   if (loading) {
@@ -23,7 +26,7 @@ const PlayList = () => {
     return (
       <div className='play-not-found'>
         <ImageOops className='play-not-found-image' />
-        <p className='page-404-lead'>Play not found</p>
+        <p className='page-404-lead'>Play not found for "{ searchTerm }" </p>
         <p className='page-404-desc'>
           Please change your search or adjust filters to find plays.
         </p>
