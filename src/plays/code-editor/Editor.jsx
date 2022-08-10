@@ -1,50 +1,71 @@
-import React, { useState } from 'react'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/theme/seti.css'
-import 'codemirror/mode/xml/xml'
-import 'codemirror/mode/javascript/javascript'
-import 'codemirror/mode/css/css'
-import { Controlled as ControlledEditor } from 'react-codemirror2'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
+import React, { useState,useEffect } from 'react';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/dracula.css';
+import 'codemirror/theme/material.css';
 
-export default function Editor(props) {
-  const {
-    language,
-    displayName,
-    value,
-    onChange
-  } = props
-  const [open, setOpen] = useState(true)
+import 'codemirror/theme/mdn-like.css';
+import 'codemirror/theme/the-matrix.css';
+import 'codemirror/theme/night.css';
 
-  function handleChange(editor, data, value) {
-    onChange(value)
+import 'codemirror/mode/xml/xml';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/css/css';
+
+import 'codemirror/addon/edit/closebrackets';
+import 'codemirror/addon/edit/closetag';
+
+import { Controlled as ControlledEditorComponent } from 'react-codemirror2';
+
+
+
+const Editor = ({ language, value, setEditorState }) => {
+
+  const [theme, setTheme] = useState("dracula")
+  const handleChange = (editor, data, value) => {
+    setEditorState(value);
   }
-
+  
+  const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night']
+  
+  // const remover=function(){
+  //   const editors = document.getElementsByClassName('CodeMirror');
+  //   for(let i=1;i<editors.length;i++){
+  //     editors[i].remove;
+  //   }
+  // };
+  // useEffect(()=>{
+  //   remover;
+  // },[])
   return (
-    <div className={`editor-container ${open ? '' : 'collapsed'}`}>
-      <div className="editor-title">
-        {displayName}
-        <button
-          type="button"
-          className="expand-collapse-btn"
-          onClick={() => setOpen(prevOpen => !prevOpen)}
-        >
-          <FontAwesomeIcon icon={open ? faCompressAlt : faExpandAlt} />
-        </button>
+    <div className="editor-container">
+      <div style={{marginBottom: "10px"}}>
+        <label for="cars">Choose a theme: </label>
+        <select name="theme" onChange={(el) => {
+          setTheme(el.target.value)
+        }}>
+          {
+            themeArray.map( theme => (
+              <option value={theme}>{theme}</option>
+            ))
+          }
+        </select>
       </div>
-      <ControlledEditor
+      <ControlledEditorComponent
         onBeforeChange={handleChange}
-        value={value}
-        className="code-mirror-wrapper"
+        value= {value}
+        className="Codemirror-wrapper"
         options={{
           lineWrapping: true,
           lint: true,
           mode: language,
-          theme: 'seti',
-          lineNumbers: true
+          lineNumbers: true,
+          theme: theme,
+          autoCloseTags: true,
+          autoCloseBrackets: true, 
         }}
       />
-    </div>
+      </div>
   )
 }
+
+export default Editor
