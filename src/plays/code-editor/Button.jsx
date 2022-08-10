@@ -4,11 +4,8 @@ const Button = ({ title, backgroundColor, border, onClick }) => {
   return (
     <div>
       <button
+        className="btn-editor"
         style={{
-          maxWidth: "140px",
-          minWidth: "80px",
-          height: "30px",
-          marginRight: "5px",
           backgroundColor: backgroundColor,
           border: border
         }}

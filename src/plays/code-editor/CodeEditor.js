@@ -87,8 +87,8 @@ function CodeEditor(props) {
                 setEditorState={setJs}
               />
             )}
-          </div>
-          <div>
+          </div> 
+          <div className="bottom-pane">
             <iframe
               id="my_iframe"
               srcDoc={srcDoc}

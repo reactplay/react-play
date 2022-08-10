@@ -37,8 +37,8 @@ const Editor = ({ language, value, setEditorState }) => {
   //   remover;
   // },[])
   return (
-    <div className="editor-container">
-      <div style={{marginBottom: "10px"}}>
+  <div className="editor-container">
+      <div className='dropdown'>
         <label for="cars">Choose a theme: </label>
         <select name="theme" onChange={(el) => {
           setTheme(el.target.value)
@@ -50,6 +50,7 @@ const Editor = ({ language, value, setEditorState }) => {
           }
         </select>
       </div>
+      <div className='editor-cont'>
       <ControlledEditorComponent
         onBeforeChange={handleChange}
         value= {value}
@@ -64,6 +65,7 @@ const Editor = ({ language, value, setEditorState }) => {
           autoCloseBrackets: true, 
         }}
       />
+      </div>
       </div>
   )
 }
