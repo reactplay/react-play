@@ -3,7 +3,6 @@ import "./styles.css";
 import React, { useState, useEffect } from "react";
 import Editor from "./Editor";
 import Button from './Button'
-// import useLocalStorage from "./useLocalstorage";
 // WARNING: Do not change the entry componenet name
 function CodeEditor(props) {
   // Your Code Start below.

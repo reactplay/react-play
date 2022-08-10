@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState} from 'react';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/dracula.css';
 import 'codemirror/theme/material.css';
@@ -16,8 +16,6 @@ import 'codemirror/addon/edit/closetag';
 
 import { Controlled as ControlledEditorComponent } from 'react-codemirror2';
 
-
-
 const Editor = ({ language, value, setEditorState }) => {
 
   const [theme, setTheme] = useState("dracula")
@@ -26,16 +24,6 @@ const Editor = ({ language, value, setEditorState }) => {
   }
   
   const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night']
-  
-  // const remover=function(){
-  //   const editors = document.getElementsByClassName('CodeMirror');
-  //   for(let i=1;i<editors.length;i++){
-  //     editors[i].remove;
-  //   }
-  // };
-  // useEffect(()=>{
-  //   remover;
-  // },[])
   return (
   <div className="editor-container">
       <div className='dropdown'>
