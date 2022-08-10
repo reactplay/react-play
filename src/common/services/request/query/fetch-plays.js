@@ -60,7 +60,6 @@ export const BasiFetchParam = {
     { play_like: ["liked", "play_id", "user_id"] },
     "name",
     "slug",
-    "path",
     { user: ["id", "displayName", "avatarUrl"] },
   ],
 };
@@ -70,6 +69,7 @@ export const DetailedFetchParam = {
   ...{
     return: [
       ...BasiFetchParam.return,
+      "path",
       "blog",
       "id",
       { level: ["name"] },
