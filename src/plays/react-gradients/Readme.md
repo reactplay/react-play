@@ -28,6 +28,7 @@ The implementation of the play is fairly simple.
         1. `codeToCopy` - The text that needs to be copied.
         2. `message` - The message to be displayed in the toast. *(If user clicked to copy the TailwindCSS code, the message argument is "TailwindCSS". Then the toast says "Copied TailwindCSS")*
     - >**Note:-** Initially, there were three different functions(`copyTailwind`, `copyCSS`, `copyColor`) to copy. Later combined these functions into one, the `copyCode` function for better practice and efficiency.
+- Also in the `GradientComponent` component, you will find a `GradientCopyButton` component. This is a button component for copying the different TailwindCSS, CSS and color codes. It also displays a tooltip on hover. This tooltip is achieved by using react useState hook, `debounce` function of `lodash` to set delay on hover and onMouseEnter,onMouseLeave events to set the state of a state variable. Then the tooltip is conditionally displayed using that state variable.
 - And finally, the play uses `react-hot-toast` *(a notification library for react)* to display a message after user has copied.
 
 ## Contributing
