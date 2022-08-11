@@ -8,6 +8,7 @@ import { toSanitized, toTitleCaseTrimmed } from "common/services/string";
 import { FetchPlaysBySlugAndUser } from "common/services/request/query/fetch-plays";
 import { PageNotFound } from "common";
 import thumbPlay from "images/thumb-play.png";
+import { getLocalPlayCoverURL } from "common/utils/playsUtil";
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -15,7 +16,7 @@ function PlayMeta() {
   const [isError, setIsError] = useState(false);
   let { playname, username } = useParams(); // return the parameter of url
   const [metaImage, setMetaImage] = useState();
-  const [localImage, setLocalImage] = useState(thumbPlay);
+  const [localImage, setLocalImage] = useState(getLocalPlayCoverURL(thumbPlay));
 
   /**
    * Fetch local playImage
@@ -26,12 +27,12 @@ function PlayMeta() {
        * Try to Fetch the local cover image
        */
       const response = await import(`plays/${playObj.slug}/cover.png`);
-      setLocalImage(response.default);
+      setLocalImage(getLocalPlayCoverURL(response.default));
     } catch (_error) {
       /**
        * On error set the default image
        */
-      setLocalImage(thumbPlay);
+      setLocalImage(getLocalPlayCoverURL(thumbPlay));
     }
   }, []);
 
