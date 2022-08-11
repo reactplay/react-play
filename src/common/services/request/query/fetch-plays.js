@@ -69,6 +69,7 @@ export const DetailedFetchParam = {
   ...{
     return: [
       ...BasiFetchParam.return,
+      "path",
       "blog",
       "id",
       { level: ["name"] },
