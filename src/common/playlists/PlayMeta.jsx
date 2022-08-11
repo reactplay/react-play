@@ -15,7 +15,7 @@ function PlayMeta() {
   const [isError, setIsError] = useState(false);
   let { playname, username } = useParams(); // return the parameter of url
   const [metaImage, setMetaImage] = useState();
-  const [localImage, setLocalImage] = useState();
+  const [localImage, setLocalImage] = useState(thumbPlay);
 
   /**
    * Fetch local playImage
@@ -74,20 +74,11 @@ function PlayMeta() {
         <meta name="description" content={play.description} />
         <meta property="og:title" content={play.name} />
         <meta property="og:description" content={play.description} />
-        {metaImage && (
-          <meta
-            property="og:image"
-            content={metaImage}
-            data-react-helmet="true"
-          />
-        )}
-        {localImage && (
-          <meta
-            property="og:image"
-            content={localImage}
-            data-react-helmet="true"
-          />
-        )}
+        <meta
+          property="og:image"
+          content={metaImage ? metaImage : localImage}
+          data-react-helmet="true"
+        />
         <meta
           property="og:image:alt"
           content={play.description}
@@ -103,20 +94,11 @@ function PlayMeta() {
           content={play.description}
           data-react-helmet="true"
         />
-        {metaImage && (
-          <meta
-            name="twitter:image"
-            content={metaImage}
-            data-react-helmet="true"
-          />
-        )}
-        {localImage && (
-          <meta
-            name="twitter:image"
-            content={localImage}
-            data-react-helmet="true"
-          />
-        )}
+        <meta
+          name="twitter:image"
+          content={metaImage ? metaImage : localImage}
+          data-react-helmet="true"
+        />
       </Helmet>
       <Suspense fallback={<Loader />}>{renderPlayComponent()}</Suspense>
     </>
