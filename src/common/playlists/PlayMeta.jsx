@@ -81,6 +81,11 @@ function PlayMeta() {
           data-react-helmet="true"
         />
         <meta
+          property="og:image:secure_url"
+          content={metaImage ? metaImage : localImage}
+          data-react-helmet="true"
+        />
+        <meta
           property="og:image:alt"
           content={play.description}
           data-react-helmet="true"
