@@ -151,6 +151,13 @@ const GalleryAPI = [
         url: "https://cdn.pixabay.com/photo/2021/10/03/14/34/statue-6678155__340.jpg",
         videoUrl: "https://ak.picdn.net/shutterstock/videos/1024024013/preview/stock-footage-statue-of-unity.webm"
     },
+    {
+        id: 21,
+        title: "Yellowstone National Park, USA",
+        discription: "Nature is amazing. It is the combination of mountains, forests, waterfalls, hot springs, and wildlife is breath-taking",
+        url: "https://images.unsplash.com/photo-1629985692757-48648f4f1fc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8eWVsbG93c3RvbmUlMjBuYXRpb25hbCUyMHBhcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        videoUrl: "https://media.istockphoto.com/videos/grand-prismatic-spring-overlook-yellowstone-national-park-wyoming-usa-video-id1336259333"
+    },
 ]
 
 export default GalleryAPI;
