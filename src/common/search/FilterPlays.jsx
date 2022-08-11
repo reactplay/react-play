@@ -5,9 +5,9 @@ import { SearchContext } from "./search-context";
 import "./search.css";
 
 import { RiFilterFill } from "react-icons/ri";
-import Select from "react-select";
 import useBackListener from "common/routing/hooks/useBackListener";
 import useFetchFilterData from "./hooks/usePlayFilter";
+import { FormControl, MenuItem, Select } from "@mui/material";
 
 const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   const [loading, error, data] = useFetchFilterData();
@@ -20,7 +20,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   }
 
   const defaultOption = {
-    value: "",
+    value: " ",
     label: "All",
   };
 
@@ -68,63 +68,100 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
     })),
   ];
 
+  const renderCreator = (value) => {
+    const selectedCreator = creatorOptions.find(
+      (option) => option.value === value
+    );
+    return selectedCreator ? selectedCreator.label : "All";
+  };
+
   return (
     <>
       <div className="form-group">
         {loading && "Loading Data"}
         <label>Level</label>
-        <Select
-          onChange={(option) =>
-            setFilterQuery({ ...filterQuery, level_id: option.value })
-          }
-          value={levelOptions.find(
-            (option) => option.value === filterQuery.level_id
-          )}
-          options={levelOptions}
-        />
+        <FormControl fullWidth>
+          <Select
+            value={filterQuery.level_id || " "}
+            onChange={(event) => {
+              const { value } = event.target;
+              setFilterQuery({
+                ...filterQuery,
+                level_id: defaultOption.value === value ? "" : value,
+              });
+            }}
+          >
+            {levelOptions.map((option) => (
+              <MenuItem value={option.value} key={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
       <div className="form-group">
         <label>Tags</label>
-        <Select
-          onChange={(option) =>
-            setFilterQuery({
-              ...filterQuery,
-              tags: option.value !== "" ? [option.value] : [],
-            })
-          }
-          value={
-            tagOptions.find((option) => option.value === filterQuery.tags[0]) ??
-            defaultOption
-          }
-          options={tagOptions}
-        />
+        <FormControl fullWidth>
+          <Select
+            value={filterQuery.tags[0] || " "}
+            onChange={(event) => {
+              const { value } = event.target;
+              setFilterQuery({
+                ...filterQuery,
+                tags: value !== defaultOption.value ? [value] : [],
+              });
+            }}
+          >
+            {tagOptions.map((option) => (
+              <MenuItem value={option.value} key={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
       <div className="form-group">
         <label>Creator</label>
-        <Select
-          onChange={(option) => {
-            setFilterQuery({
-              ...filterQuery,
-              owner_user_id: option.value,
-            });
-          }}
-          value={creatorOptions.find(
-            (option) => option.value === filterQuery.owner_user_id
-          )}
-          options={creatorOptions}
-        />
+        <FormControl fullWidth>
+          <Select
+            value={filterQuery.owner_user_id || " "}
+            onChange={(event) => {
+              const { value } = event.target;
+              setFilterQuery({
+                ...filterQuery,
+                owner_user_id: defaultOption.value === value ? "" : value,
+              });
+            }}
+            renderValue={renderCreator}
+          >
+            {creatorOptions.map((option) => (
+              <MenuItem value={option.value} key={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
       <div className="form-group">
         <label>Language</label>
-        <Select
-          onChange={(option) =>
-            setFilterQuery({ ...filterQuery, language: option.value })
-          }
-          value={languageOptions.find(
-            (option) => option.value === filterQuery.language
-          )}
-          options={languageOptions}
-        />
+        <FormControl fullWidth>
+          <Select
+            value={filterQuery.language || " "}
+            onChange={(event) => {
+              const { value } = event.target;
+              setFilterQuery({
+                ...filterQuery,
+                language: defaultOption.value === value ? "" : value,
+              });
+            }}
+          >
+            {languageOptions.map((option) => (
+              <MenuItem value={option.value} key={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
     </>
   );
