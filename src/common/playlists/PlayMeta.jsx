@@ -40,7 +40,7 @@ function PlayMeta() {
        */
        console.log(thumbPlay)
        console.error(_error)
-       setMetaImage(getLocalPlayCoverURL(thumbPlay));
+       setMetaImage(thumbPlay);
     }
   }, []);
 
