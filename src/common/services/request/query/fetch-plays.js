@@ -1,26 +1,9 @@
 export function FetchPlaysSimple() {
-  const env = process.env.NODE_ENV === "development";
-  const preview = process.env.REACT_APP_PREVIEW_MODE;
-  const payload = { ...BasiFetchParam };
-  if (!env && !preview) {
-    payload.where = {
-      clause: {
-        conditions: [
-          {
-            field: "dev_mode",
-            operator: "eq",
-            value: false,
-          },
-        ],
-      },
-    };
-  }
-  return payload;
+  return { ...BasiFetchParam };
 }
 
 export function FetchPlaysByID(id) {
-  const env = process.env.NODE_ENV === "development";
-  const payload = { ...BasiFetchParam };
+  const payload = { ...DetailedFetchParam };
 
   payload.where = {
     clause: {
@@ -36,17 +19,17 @@ export function FetchPlaysByID(id) {
   return payload;
 }
 
-export function FetchPlaysByNameAndUser(playname, username) {
-  const payload = { ...BasiFetchParam };
+export function FetchPlaysBySlugAndUser(playslug, username) {
+  const payload = { ...DetailedFetchParam };
 
   payload.where = {
     clause: {
       operator: "and",
       conditions: [
         {
-          field: "name",
+          field: "slug",
           operator: "ilike",
-          value: playname,
+          value: playslug,
           type: "string",
         },
         {
@@ -61,28 +44,37 @@ export function FetchPlaysByNameAndUser(playname, username) {
   return payload;
 }
 
-const BasiFetchParam = {
+export const BasiFetchParam = {
   display: "Simple fetch play",
   name: "Fetch_Plays",
   function: "plays",
   write: false,
   return: [
-    "blog",
     "component",
     "cover",
-    "created_at",
     "description",
     "featured",
     "dev_mode",
     "github",
-    "id",
     "language",
-    { level: ["name"] },
+    { play_like: ["liked", "play_id", "user_id"] },
     "name",
-    "path",
-    { play_tags: { tag: ["name"] } },
-    "updated_at",
+    "slug",
     { user: ["id", "displayName", "avatarUrl"] },
-    "video",
   ],
+};
+
+export const DetailedFetchParam = {
+  ...BasiFetchParam,
+  ...{
+    return: [
+      ...BasiFetchParam.return,
+      "path",
+      "blog",
+      "id",
+      { level: ["name"] },
+      "video",
+      { play_tags: { tag: ["name"] } },
+    ],
+  },
 };
