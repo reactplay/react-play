@@ -1,0 +1,119 @@
+.quizeo .question-container{
+    display: flex; 
+    margin-left: 2.25rem;
+    margin-right: 2.25rem; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.quizeo .question-background{
+    opacity: 0.5; 
+}
+
+.quizeo .question-model{
+    margin-top:-4%;
+}
+
+.quizeo .category-title{
+    display: inline-block; 
+    position: relative; 
+    margin: 1rem 0;
+    font-size: 2.25rem;
+    line-height: 2.5rem; 
+    text-align: center; 
+}
+
+.quizeo .category-title::before{
+    content:"";
+    display:block;
+    position: absolute;
+    background-color: #c12893; 
+    top: -0.25rem;
+    right: -0.25rem;
+    bottom: -0.25rem;
+    left: -0.25rem; 
+    transform: rotate(-3deg);
+}
+
+
+.quizeo .title{
+    position: relative; 
+    color: #ffffff; 
+}
+
+.quizeo .questions-section{
+    background-color: #d8e2f7;
+    margin-top: 2rem; 
+    border-radius: 0.75rem; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+}
+
+.quizeo .question-title{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem; 
+    padding-top: 3rem;
+    padding-bottom: 3rem; 
+    color: #312E81; 
+    font-size: 1.5rem;
+    line-height: 2rem; 
+    font-weight: 600; 
+}
+
+.quizeo .options-section{
+    margin-left: 1rem;
+    margin-right: 1rem; 
+    text-align: center; 
+}
+
+.quizeo .option-button{
+    padding-top: 0.75rem;
+    border:none;
+    padding-bottom: 0.75rem; 
+    margin: 1rem; 
+    background-color: #3B82F6; 
+    color: #ffffff;
+    font-size: 1.125rem;
+    line-height: 1.75rem; 
+    font-weight: 500; 
+    text-align: center; 
+    text-transform: uppercase; 
+    width: 13rem; 
+    border-radius: 9999px; 
+    cursor: pointer; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+}
+
+.quizeo .option-button:hover{
+    background-color: #2563EB; 
+}
+
+.quizeo .option-button:active{
+    background-color: #2e2b77;
+}
+
+.quizeo .option-button:focus{
+    outline: 0;
+    background-color: #2e2b77;
+    border : 2px solid #93C5FD; 
+}
+
+.quizeo .submit-answer{
+    border:none;
+    padding: 0.5rem;
+    margin:4%;
+    color: #fff;
+    background-color: #10B981; 
+    font-weight: 500; 
+    font-size: 1.2rem;
+    width: 9rem; 
+    border-radius: 0.5rem; 
+}
+
+@media only screen and (min-width: 600px) {
+    .quizeo .question-model{
+        width: 50%;
+    }
+}

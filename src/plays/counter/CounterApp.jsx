@@ -1,13 +1,9 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import { useState } from 'react';
-import { getPlayById } from 'meta/play-meta-util';
 import Counter from "./Counter";
 import "./counter.css";
 
 function CounterApp(props) {
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
   
   const [input, setInput] = useState("");
   const [times, setTimes] = useState(33);
@@ -20,7 +16,7 @@ function CounterApp(props) {
   return (
     <>
       <div className="play-details">
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className="play-details-body">
           <div className="counter-container">
             <h1>Counter</h1>

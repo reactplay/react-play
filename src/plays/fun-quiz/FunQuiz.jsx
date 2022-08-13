@@ -1,6 +1,4 @@
-import { getPlayById } from "meta/play-meta-util";
 import { useState } from "react";
-
 import PlayHeader from "common/playlists/PlayHeader";
 import QuizScreen from "./QuizScreen";
 import QuizSelectionScreen from "./FrontScreen";
@@ -10,10 +8,6 @@ import EndScreen from "./EndScreen";
 import './FunQuiz.scss'
 
 function FunQuiz(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
 
   // Your Code Start below.
   const [category, setCategory] = useState("");
@@ -52,7 +46,7 @@ function FunQuiz(props) {
   return (
     <>
       <div className='play-details'>
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className='play-details-body fun-quiz'>
           {/* Your Code Starts Here */}
           {!category && !quizCompleted && (

@@ -12,5 +12,5 @@
         "resolveJsonModule": true,
         "allowSyntheticDefaultImports": true
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*", "public/serviceWorker.js"]
 }

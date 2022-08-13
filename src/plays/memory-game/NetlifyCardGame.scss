@@ -10,6 +10,7 @@ $memory-game-single-item-hover-bg: url("./question1.png");
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: unset;
 }
 
 .memory-game .guide {
@@ -17,6 +18,9 @@ $memory-game-single-item-hover-bg: url("./question1.png");
   padding: 0;
   margin: 0;
   color: #1f6ed4;
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
 
   p {
     cursor: pointer;
@@ -24,7 +28,7 @@ $memory-game-single-item-hover-bg: url("./question1.png");
   }
 }
 
-.memory-game .container .App {
+.memory-game .container .game-body {
   margin: 5px;
   width: $memory-game-box-width;
   height: calc(90vh - 25px);
@@ -104,7 +108,7 @@ $memory-game-single-item-hover-bg: url("./question1.png");
 }
 
 @media screen and (max-width: 1366px) {
-  .memory-game .container .App {
+  .memory-game .container .game-body {
     width: 80vh;
     margin: 5px;
     padding: 10px;
@@ -113,7 +117,7 @@ $memory-game-single-item-hover-bg: url("./question1.png");
 }
 
 @media screen and (min-width: 1600px) {
-  .memory-game .container .App {
+  .memory-game .container .game-body {
     width: 80vh;
     height: 70vh;
     margin: 5px;
@@ -123,7 +127,7 @@ $memory-game-single-item-hover-bg: url("./question1.png");
 }
 
 @media screen and (max-width: 768px) {
-  .memory-game .container .App {
+  .memory-game .container .game-body {
     margin: 5px;
     width: calc(100vh - 35px);
     height: auto;

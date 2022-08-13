@@ -3,35 +3,57 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@giscus/react": "^2.0.3",
+    "@mui/material": "^5.9.1",
+    "@nhost/react": "^0.9.0",
     "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
+    "add": "^2.0.6",
+    "axios": "^0.27.2",
     "date-fns": "^2.28.0",
+    "downloadjs": "^1.4.7",
+    "firebase": "^9.8.2",
+    "git-repo-api": "^0.0.17",
+    "graphql": "^16.5.0",
+    "html-to-image": "^1.9.0",
+    "json-graphql-parser": "^0.1.7",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
-    "plop": "^3.0.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
+    "react-hot-toast": "^2.3.0",
     "react-icons": "^4.3.1",
+    "react-loader-spinner": "^5.1.5",
     "react-organizational-chart": "^2.1.1",
+    "react-qr-code": "^2.0.7",
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
+    "react-simple-maps": "^2.3.0",
+    "react-twitter-widgets": "^1.11.0",
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.5",
-    "web-vitals": "^2.1.0"
+    "web-vitals": "^2.1.0",
+    "workbox-cacheable-response": "^6.5.4",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
+    "workbox-window": "^6.5.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "postbuild": "react-snap",
+    "start": "npx create-react-play -p && react-scripts start",
+    "build": "npx create-react-play -p && react-scripts build",
+    "snap": "react-snap",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "create-play": "plop"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -58,8 +80,11 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.13",
     "puppeteer": "^13.7.0",
     "react-snap": "^1.23.0",
+    "tailwindcss": "^3.0.24",
     "typescript": "^4.6.4"
   }
 }

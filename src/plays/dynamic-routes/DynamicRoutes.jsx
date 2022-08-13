@@ -1,43 +1,38 @@
-import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./dynamicRoutes.css";
 import data from "./Data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function DynamicRoutes(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
 
   // Your Code Start below.
-  let { menu } = useParams(); // return the parameter of url
-  const [activeMenu, setActiveMenu] = useState(
-    menu === ":menu" ? "breakfast" : menu
-    //we take url input and set to our activeMenu state so we can fetch recipes based on active menu
-    //if its first laod then url parameter is ":menu" so we change the active menu to "breakfast" as default category
-  );
-
+  let { param1 } = useParams(); // return the parameter of url
+  const [activeMenu, setActiveMenu] = useState();
+  useEffect(() => {
+    //useEffect hook keep eye on url parameter whenever it changes so we can re-mount
+    setActiveMenu(param1 ? param1 : "breakfast");
+  }, [param1]);
   const activeRecipes = data.filter((recipe) => {
     return recipe.mealtype === activeMenu; //filter reciepes based on active menu
   });
-
   const mealType = [];
   data.map((recipe) => {
     return mealType.push(recipe.mealtype); //push  meal categories to an array
   });
 
-  const uniqMealType = [...new Set(mealType)]; // eliminate duplicate categories so we can render a navbar of uniq categories
+  // eliminate duplicate categories so we can render a navbar of uniq categories
+  const uniqMealType = [...new Set(mealType)];
 
   const activeMenuHandler = (mealtype) => {
     setActiveMenu(mealtype);
   };
+
   return (
     <>
       <div className="play-details">
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="dynamic-routes-container">

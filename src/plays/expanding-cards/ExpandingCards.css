@@ -3,7 +3,14 @@
   margin: 0 auto;
   text-align: center;
 }
+
+.play-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
 .card-container {
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -17,11 +24,11 @@
   margin: 20px;
   position: relative;
   transition: width 1s;
-  -webkit-backface-visibility: hidden;
+
 }
 
 .card-container .active {
-  width: 600px;
+  width: 100%;
 }
 .Expanding-card-imgage {
   width: 100%;

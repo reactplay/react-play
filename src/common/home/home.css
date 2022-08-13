@@ -22,6 +22,7 @@
 }
 
 .app-home-body .body-title {
+    margin-top: 3.2rem;
     margin-bottom: 1rem;
     font-family: var(--ff-accent);
     font-size: var(--fs-xxl);
@@ -40,6 +41,7 @@
     }
 
     .app-home-body .body-title {
+        margin-top: 1rem;
         margin-left: 1rem;
         margin-right: 1rem;
     }
@@ -310,6 +312,10 @@
     text-align: center;
 }
 
+.home-ideas .icon {
+    margin: 0 auto 1rem auto;
+}
+
 .home-ideas .ideas-title {
     margin: 0 0 3rem 0;
     font-family: var(--ff-accent);
@@ -367,6 +373,53 @@
     text-align: center;
 }
 
+/* Tweet section */
+
+.home-tweets{
+    position: relative;
+    padding: 5rem 0 6rem 0;
+
+    background-color: var(--color-neutral-20);
+
+}
+.home-tweets .title-primary{
+  text-align: center;
+  margin-top: 1.5rem !important;
+ 
+    
+}
+
+
+.tweets-container.active{
+    
+    width: 90.5%;
+    margin: 0 auto;
+    margin-top: 4.5em;
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit,370px);
+    grid-template-rows: repeat(auto-fill,400px);
+    grid-auto-rows:auto;
+    grid-auto-columns: auto;
+    grid-row-gap:1em; */
+  justify-content: center;
+  align-items:center;
+    /* row-gap: 1.3em; */
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.tweets-container > div{
+    
+    /* height: fit-content; */
+    width: clamp(5em,320px,44em);
+    /* max-width: 410px; */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.097));
+ 
+
+}
+
+
 
 /* Home Contributors */
 .home-contributors {
@@ -375,7 +428,7 @@
     background-color: var(--color-neutral-10);
 }
 
-.home-contributors .title-primary {
+.home-contributors .title-primary,.home-tweets .title-primary {
     position: relative;
     margin: 0 0 3rem 0;
     font-family: var(--ff-accent);
@@ -385,17 +438,17 @@
     line-height: 1.2;
 }
 
-.home-contributors .title-primary strong {
+.home-contributors .title-primary strong , .home-tweets .title-primary strong {
     position: relative;
     font-family: var(--ff-accent);
     position: relative;
 }
-.home-contributors .title-primary strong span {
+.home-contributors .title-primary strong span, .home-tweets .title-primary strong span {
     position: relative;
     font-family: var(--ff-accent);
 }
 
-.home-contributors .title-primary strong:before {
+.home-contributors .title-primary strong:before, .home-tweets .title-primary strong:before {
     content:"";
     position: absolute;
     height: 4px;
@@ -742,6 +795,26 @@
     right: -0.4rem;
 }
 
+.home-anchor.home-anchor-sm {
+    font-size: calc(var(--fs-rg)*1.2);
+    line-height: 1.2;
+}
+
+.home-anchor.home-anchor-sm:before {
+    bottom: -1px;
+    height: 2px;
+}
+
+.home-anchor.home-anchor-sm:hover:before,
+.home-anchor.home-anchor-sm:focus:before {
+    bottom: -2px;
+    height: 3px;
+}
+
+.home-anchor.home-anchor-sm:after {
+    width: 16px;
+    background-size: contain;
+}
 
 /* Home abstract graphics */
 .home-bg-graphics {

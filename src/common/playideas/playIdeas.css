@@ -20,11 +20,13 @@
     flex-direction: row;
     align-items: center;
     grid-gap: 0.4rem;
+    font-weight: var(--fw-bold);
+    font-size: calc(var(--fs-md) * .8);
 }
 
 .playideas-header .header-title .header-title-badge {
     background: var(--color-brand-primary);
-    font-size: var(--fs-sm);
+    font-size: var(--fs-xs);
     font-weight: var(--fw-bold);
     line-height: 1;
     padding: .32rem .4rem;
@@ -212,98 +214,4 @@
     .list-playideas .list-playideas-item .idea-actions {
         padding: 0 2rem;
     }
-}
-
-
-/* Buttons */
-.btn-default {
-    border: solid 1px var(--color-neutral-60);
-    border-radius: 2rem;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    grid-gap: 0.4rem;
-    padding: .8rem 1.4rem;
-    font-size: var(--fs-rg);
-    font-weight: var(--fw-bold);
-    text-decoration: none;
-    width: unset;
-    height: unset;
-    background: transparent;
-    transition: all 0.12s ease-in-out;
-    color: var(--color-neutral-10);
-    cursor: pointer;
-}
-
-.btn-default .icon {
-    width: var(--navbar-icon-size-rg);
-    height: var(--navbar-icon-size-rg);
-    fill: var(--color-brand-primary-dark);
-    color: var(--color-brand-primary-dark);
-}
-
-.btn-default:hover,
-.btn-default:focus {
-    border-color: var(--color-neutral-20);
-    background-color: var(--color-neutral-20);
-    color: var(--color-neutral-90);
-}
-
-.btn-default:hover .icon,
-.btn-default:focus .icon {
-    fill: var(--color-brand-primary-dark);
-    color: var(--color-brand-primary-dark);
-}
-
-.btn-default .btn-label {
-    display: flex;
-    align-items: center;
-    grid-gap: 1.2rem;
-}
-
-
-.btn-primary {
-    border: solid 2px var(--color-brand-primary);
-    background-color: var(--color-brand-primary);
-    color: var(--color-neutral-80);
-
-    border-radius: 2rem;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    grid-gap: 0.4rem;
-    padding: .8rem 1.4rem;
-    font-size: var(--fs-rg);
-    font-weight: var(--fw-bold);
-    text-decoration: none;
-    width: unset;
-    height: unset;
-    transition: all 0.12s ease-in-out;
-    cursor: pointer;
-}
-
-.btn-primary .icon {    
-    width: var(--navbar-icon-size-rg);
-    height: var(--navbar-icon-size-rg);
-    fill: var(--color-neutral-90);
-    color: var(--color-neutral-90);
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-    border-color: var(--color-neutral-20);
-    background-color: var(--color-neutral-20);
-    color: var(--color-neutral-90);
-}
-
-.btn-primary:hover .icon,
-.btn-primary:focus .icon {
-    fill: var(--color-brand-primary-dark);
-    color: var(--color-brand-primary-dark);
-}
-
-.btn-primary .btn-label {
-    display: flex;
-    align-items: center;
-    grid-gap: 1.2rem;
 }

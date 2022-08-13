@@ -1,14 +1,8 @@
 import { useState } from "react";
-import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 import "./states.css";
 
 function States(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
-
   // Your Code Start below.
   const [name, setName] = useState("");
   const [display, setDisplay] = useState(false);
@@ -38,10 +32,10 @@ function States(props) {
   return (
     <>
       <div className="play-details">
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div>
+          <div className="states">
             <h1>States - Details about Component</h1>
             <p>
               State is an inbuilt object of React which stores data/information

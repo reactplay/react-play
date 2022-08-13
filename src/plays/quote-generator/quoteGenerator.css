@@ -1,3 +1,8 @@
+.rand-quote-gen h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
 .rand-quote-gen .play-area {
   border: none;
   display: flex;
@@ -25,6 +30,7 @@
 
 .rand-quote-gen .play-area .quote-area .page-author {
   width: 45%;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
 }

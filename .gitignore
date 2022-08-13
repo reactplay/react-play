@@ -25,3 +25,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 yarn.lock
+
+# nhost
+.nhost
+
+# play index
+src/plays/index.js

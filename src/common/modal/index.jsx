@@ -12,7 +12,7 @@ const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
     }
     window.addEventListener('keydown', close)
     return () => window.removeEventListener('keydown', close)
-},[])
+},[onClose])
 
   if (!show) return null;
 
@@ -28,8 +28,8 @@ const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
           { children }
         </div>
         <div className={`modal-${cname}-footer`}>
-          <button className="btn-default-light" onClick={ onClose }><GoX size="16px" /> Cancel</button>
-          { onSubmit && <button className="btn-primary" onClick={ onSubmit }><GoCheck size="16px" /> Apply</button> }
+          <button className="btn-default-light btn-size--sm" onClick={ onClose }><GoX size="16px" className="icon" /> Cancel</button>
+          { onSubmit && <button className="btn-primary btn-size--sm" onClick={ onSubmit }><GoCheck size="16px" className="icon" /> Apply</button> }
         </div>
      </div>
      </>
