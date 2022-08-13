@@ -37,6 +37,7 @@ function PlayMeta() {
       const coverImageLocationLocal =getLocalPlayCoverURL(response.default)
       console.error(coverImageLocationLocal)
       setMetaImage(coverImageLocationLocal);
+      setLoading(false);
     } catch (_error) {
       /**
        * On error set the default image
@@ -45,6 +46,7 @@ function PlayMeta() {
        console.error(getLocalPlayCoverURL(thumbPlay))
        console.error(_error)
        setMetaImage(getLocalPlayCoverURL(thumbPlay));
+       setLoading(false);
     }
   }, []);
 
@@ -54,8 +56,8 @@ function PlayMeta() {
         const play_obj = res[0];
         play_obj.title_name = toTitleCaseTrimmed(play_obj.name);
         setPlay(play_obj);
-        console.log(play_obj.cover)
-        setLoading(false);
+        fetchLocalPlayCover(play_obj)
+        // setLoading(false);
       })
       .catch((err) => {
         setIsError(true);
@@ -63,11 +65,11 @@ function PlayMeta() {
       });
   }, [playname, username]);
 
-  useEffect(() => {
-    if (play) {
-      fetchLocalPlayCover(play);
-    }
-  }, [play, fetchLocalPlayCover]);
+  // useEffect(() => {
+  //   if (play) {
+  //     fetchLocalPlayCover(play);
+  //   }
+  // }, [play, fetchLocalPlayCover]);
 
   if (loading) {
     return <Loader />;
