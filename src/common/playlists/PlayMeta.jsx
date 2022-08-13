@@ -37,7 +37,7 @@ function PlayMeta() {
       const response = await import(`plays/${playObj.slug}/cover.png`);
       const coverImageLocationLocal =getLocalPlayCoverURL(response.default)
       console.error(coverImageLocationLocal)
-      setMetaImage(coverImageLocationLocal);
+      setMetaImage(response.default);
       setLoading(false);
     } catch (_error) {
       /**
