@@ -22,6 +22,10 @@ function PlayMeta() {
    * Fetch local playImage
    */
   const fetchLocalPlayCover = useCallback(async (playObj) => {
+    if(playObj.cover) {
+      setMetaImage(playObj.cover)
+      return;
+    }
     try {
       /**
        * Try to Fetch the local cover image
@@ -35,7 +39,8 @@ function PlayMeta() {
        * On error set the default image
        */
        console.log(thumbPlay)
-       console.log(getLocalPlayCoverURL(thumbPlay));
+       console.error(_error)
+       setMetaImage(getLocalPlayCoverURL(thumbPlay));
     }
   }, []);
 
