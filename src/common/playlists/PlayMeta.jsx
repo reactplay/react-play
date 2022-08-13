@@ -30,15 +30,16 @@ function PlayMeta() {
       /**
        * Try to Fetch the local cover image
        */
+      console.error("Reading local play")
       const response = await import(`plays/${playObj.slug}/cover.png`);
       const coverImageLocationLocal =getLocalPlayCoverURL(response.default)
-      console.log(coverImageLocationLocal)
+      console.error(coverImageLocationLocal)
       setMetaImage(coverImageLocationLocal);
     } catch (_error) {
       /**
        * On error set the default image
        */
-       console.log(thumbPlay)
+       console.error(thumbPlay)
        console.error(_error)
        setMetaImage(thumbPlay);
     }
