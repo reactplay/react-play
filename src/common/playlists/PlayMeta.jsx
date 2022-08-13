@@ -28,14 +28,14 @@ function PlayMeta() {
        */
       const response = await import(`plays/${playObj.slug}/cover.png`);
       const coverImageLocationLocal =getLocalPlayCoverURL(response.default)
-      alert(coverImageLocationLocal)
+      console.log(coverImageLocationLocal)
       setMetaImage(coverImageLocationLocal);
     } catch (_error) {
       /**
        * On error set the default image
        */
-      alert(thumbPlay)
-       setMetaImage(getLocalPlayCoverURL(thumbPlay));
+       console.log(thumbPlay)
+       console.log(getLocalPlayCoverURL(thumbPlay));
     }
   }, []);
 
@@ -45,7 +45,7 @@ function PlayMeta() {
         const play_obj = res[0];
         play_obj.title_name = toTitleCaseTrimmed(play_obj.name);
         setPlay(play_obj);
-        alert(play_obj.cover)
+        console.log(play_obj.cover)
         setMetaImage(play_obj.cover);
         setLoading(false);
       })
