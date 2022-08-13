@@ -11,8 +11,7 @@ An app where you can write or test markdown-formatted texts.
 
 - User: EOEboh
 - Gihub Link: https://github.com/EOEboh
-- Blog: 
-- Video: 
+
 
 ## Implementation Details
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-const Output = ({md, text, elementId}) => {
+const Output = ({md, text, mdPreviewBox}) => {
   return (
-        <div className='md-editor output-div' id={elementId} dangerouslySetInnerHTML={{__html: md.render(text)}} >
+        <div className='md-editor output-div' id={mdPreviewBox} dangerouslySetInnerHTML={{__html: md.render(text)}} >
         </div>
   )
 }

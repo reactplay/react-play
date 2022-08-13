@@ -20,7 +20,10 @@
     font-weight: 900;
     color: #ffffff;
    }
-
+   .md-editor.heading-4{
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+   }
    .md-editor.heading-3{
     margin-bottom: 0.5rem;
     font-weight: bold;
@@ -30,10 +33,11 @@
     padding: 1rem;
     outline: none;
     border-radius: 1rem;
+    background-color: #95A3B3;
    }
 
    .md-editor.output-div{  
-    background-color: #95A3B3;
+    background-color: #ffffff;
     height: 18rem;
     width: 20rem;
     padding: 2rem;

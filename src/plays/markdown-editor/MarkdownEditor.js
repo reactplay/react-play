@@ -11,6 +11,22 @@ const md = new Remarkable('full', {
   typographer: true
 });
 
+// enabling some html tag rules
+md.core.ruler.enable([
+  'abbr'
+]);
+md.block.ruler.enable([
+  'footnote',
+  'deflist'
+]);
+md.inline.ruler.enable([
+  'footnote_inline',
+  'ins',
+  'mark',
+  'sub',
+  'sup'
+]);
+
 // WARNING: Do not change the entry component name
 function MarkdownEditor(props) {
 
@@ -27,6 +43,7 @@ function MarkdownEditor(props) {
         <div>
           <main className='md-editor main'>
             <h1 className='md-editor heading-1'>Markdown Editor </h1>
+            <h4 className='md-editor heading-4'>You can type in html tags as well</h4>
             <article>
 
             <div className='md-editor flex-container'> 
@@ -36,20 +53,17 @@ function MarkdownEditor(props) {
             >
             
             </textarea>
-          
-            {/* <h3 className='md-editor heading-3'>
-        Preview
-      </h3> */}
 
           <Output 
           md={md}
           text={text}
-          elementId='elementId'
+          mdPreviewBox='mdPreviewBox'
           />
         </div>
           <Downloader
           fileName='your-markdown'
-          elementId='elementId'
+          mdPreviewBox='mdPreviewBox'
+          text={text}
           />
           
         </article>
