@@ -8,6 +8,7 @@ import { toSanitized, toTitleCaseTrimmed } from "common/services/string";
 import { FetchPlaysBySlugAndUser } from "common/services/request/query/fetch-plays";
 import { PageNotFound } from "common";
 import thumbPlay from "images/thumb-play.png";
+import { getLocalPlayCoverURL } from "common/utils/playsUtil";
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -96,7 +97,7 @@ function PlayMeta() {
         />
         <meta
           name="twitter:image"
-          content={metaImage ? metaImage : localImage}
+          content={metaImage ? metaImage : getLocalPlayCoverURL(localImage)}
           data-react-helmet="true"
         />
       </Helmet>
