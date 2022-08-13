@@ -31,6 +31,7 @@ function PlayMeta() {
        * Try to Fetch the local cover image
        */
       console.error("Reading local play")
+      console.error(`plays/${playObj.slug}/cover.png`)
       const response = await import(`plays/${playObj.slug}/cover.png`);
       const coverImageLocationLocal =getLocalPlayCoverURL(response.default)
       console.error(coverImageLocationLocal)
