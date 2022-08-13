@@ -51,7 +51,6 @@ function PlayMeta() {
         play_obj.title_name = toTitleCaseTrimmed(play_obj.name);
         setPlay(play_obj);
         console.log(play_obj.cover)
-        setMetaImage(play_obj.cover);
         setLoading(false);
       })
       .catch((err) => {
