@@ -27,12 +27,12 @@ function PlayMeta() {
        * Try to Fetch the local cover image
        */
       const response = await import(`plays/${playObj.slug}/cover.png`);
-      setLocalImage(getLocalPlayCoverURL(response.default));
+      setLocalImage(response.default);
     } catch (_error) {
       /**
        * On error set the default image
        */
-      setLocalImage(getLocalPlayCoverURL(thumbPlay));
+      setLocalImage(thumbPlay);
     }
   }, []);
 
