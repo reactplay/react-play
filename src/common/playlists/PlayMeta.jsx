@@ -27,12 +27,13 @@ function PlayMeta() {
        * Try to Fetch the local cover image
        */
       const response = await import(`plays/${playObj.slug}/cover.png`);
-      setLocalImage(getLocalPlayCoverURL(response.default));
+      const coverImageLocationLocal =getLocalPlayCoverURL(response.default)
+      setMetaImage(coverImageLocationLocal);
     } catch (_error) {
       /**
        * On error set the default image
        */
-      setLocalImage(getLocalPlayCoverURL(thumbPlay));
+       setMetaImage(getLocalPlayCoverURL(thumbPlay));
     }
   }, []);
 
@@ -77,7 +78,7 @@ function PlayMeta() {
         <meta property="og:description" content={play.description} />
         <meta
           property="og:image"
-          content={metaImage ? metaImage : localImage}
+          content={metaImage}
           data-react-helmet="true"
         />
         <meta
@@ -97,7 +98,7 @@ function PlayMeta() {
         />
         <meta
           name="twitter:image"
-          content={metaImage ? metaImage : localImage}
+          content={metaImage}
           data-react-helmet="true"
         />
       </Helmet>
