@@ -39,9 +39,10 @@ function PlayMeta() {
       /**
        * On error set the default image
        */
-       console.error(thumbPlay)
+      console.error("Exception***************")
+       console.error(getLocalPlayCoverURL(thumbPlay))
        console.error(_error)
-       setMetaImage(thumbPlay);
+       setMetaImage(getLocalPlayCoverURL(thumbPlay));
     }
   }, []);
 
