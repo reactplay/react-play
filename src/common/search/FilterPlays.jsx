@@ -8,10 +8,19 @@ import { RiFilterFill } from "react-icons/ri";
 import useBackListener from "common/routing/hooks/useBackListener";
 import useFetchFilterData from "./hooks/usePlayFilter";
 import { FormControl, MenuItem, Select } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  menuPaper: {
+    maxHeight: "250px",
+  },
+});
 
 const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   const [loading, error, data] = useFetchFilterData();
   const { tags, levels, creators } = data;
+
+  const classes = useStyles();
 
   const languages = ["js", "ts"];
 
@@ -90,6 +99,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
                 level_id: defaultOption.value === value ? "" : value,
               });
             }}
+            MenuProps={{ classes: { paper: classes.menuPaper } }}
           >
             {levelOptions.map((option) => (
               <MenuItem value={option.value} key={option.value}>
@@ -111,6 +121,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
                 tags: value !== defaultOption.value ? [value] : [],
               });
             }}
+            MenuProps={{ classes: { paper: classes.menuPaper } }}
           >
             {tagOptions.map((option) => (
               <MenuItem value={option.value} key={option.value}>
@@ -133,6 +144,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
               });
             }}
             renderValue={renderCreator}
+            MenuProps={{ classes: { paper: classes.menuPaper } }}
           >
             {creatorOptions.map((option) => (
               <MenuItem value={option.value} key={option.value}>
@@ -154,6 +166,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
                 language: defaultOption.value === value ? "" : value,
               });
             }}
+            MenuProps={{ classes: { paper: classes.menuPaper } }}
           >
             {languageOptions.map((option) => (
               <MenuItem value={option.value} key={option.value}>
