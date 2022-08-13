@@ -24,6 +24,7 @@ function PlayMeta() {
   const fetchLocalPlayCover = useCallback(async (playObj) => {
     if(playObj.cover) {
       setMetaImage(playObj.cover)
+      setLoading(false);
       return;
     }
     try {
