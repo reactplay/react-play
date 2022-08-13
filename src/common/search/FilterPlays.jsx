@@ -12,7 +12,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   menuPaper: {
-    maxHeight: "250px",
+    maxHeight: "250px !important",
   },
 });
 
