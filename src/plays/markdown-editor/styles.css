@@ -35,12 +35,14 @@
     border-radius: 1rem;
     background-color: #95A3B3;
    }
-
+   textarea::placeholder{
+    color: #000;
+   }
    .md-editor.output-div{  
     background-color: #ffffff;
     height: 18rem;
     width: 20rem;
-    padding: 2rem;
+    padding: 1rem;
     margin-left: 2rem;
     border-radius: 1rem;
   }
