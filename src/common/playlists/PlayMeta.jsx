@@ -61,8 +61,8 @@ function PlayMeta() {
   }, []);
 
   useEffect(() => {
-    console.log(`ENV: ${process.env.NEXT_PUBLIC_SITE_URL}`)
-    console.log(`ENV: ${process.env.VERCEL_URL}`)
+    console.error(`ENV: ${process.env.NEXT_PUBLIC_SITE_URL}`)
+    console.error(`ENV: ${process.env.VERCEL_URL}`)
     submit(FetchPlaysBySlugAndUser(decodeURI(playname), decodeURI(username)))
       .then((res) => {
         const play_obj = res[0];
