@@ -53,7 +53,6 @@ function PlayMeta() {
        ogTagImg = thumbPlay;
        setMetaImage(metaImg);
        setOgTagImage(ogTagImg);
-       console.error(`Local NOT found: ${metaImg} > ${ogTagImg}`)
        setLoading(false) 
     }
   }, []);
