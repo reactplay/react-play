@@ -1,8 +1,8 @@
 /**
  *
  * @param path cover path
- * @returns absolute url for cover image
+ * @returns absolute url for cover image for production build
  */
-export const getLocalPlayCoverURL = (path) => {
-  return `${window.location.protocol}//${window.location.hostname}${path}`;
+export const getProdUrl = (path) => {
+  return `https://reactplay.io${path}`;
 };
