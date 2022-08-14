@@ -63,7 +63,7 @@ Please support the work by giving the repository a ⭐, contributing to it, and/
 
 You may want to set up the `react-play` repo for the following reasons:
 
-- You want to create a new play or want to edit an existing play as a contributor. Please check the [Create a Play Guide](./CREATE-PLAY.md) for more details. Also, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
+- You want to create a new play (A play is a React project) or want to edit an existing play as a contributor. Please check the [Create a Play Guide](./CREATE-PLAY.md) for more details. Also, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
 - You want to contribute to the `react-play` repo in general. Please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
