@@ -22,7 +22,7 @@ function PlayMeta() {
   /**
    * Fetch local playImage
    */
-  const fetchLocalPlayCover = useCallback(async (playObj) => {
+  const processCoverImage = useCallback(async (playObj) => {
     let metaImg = '';
     let ogTagImg = '';
     if(playObj.cover) {
@@ -68,8 +68,8 @@ function PlayMeta() {
         const play_obj = res[0];
         play_obj.title_name = toTitleCaseTrimmed(play_obj.name);
         setPlay(play_obj);
-        setMetaImage(play_obj.cover);
-        setLoading(false);
+        processCoverImage(play_obj);
+        // setLoading(false);
       })
       .catch((err) => {
         setIsError(true);
@@ -77,11 +77,11 @@ function PlayMeta() {
       });
   }, [playname, username]);
 
-  useEffect(() => {
-    if (play) {
-      fetchLocalPlayCover(play);
-    }
-  }, [play, fetchLocalPlayCover]);
+  // useEffect(() => {
+  //   if (play) {
+  //     fetchLocalPlayCover(play);
+  //   }
+  // }, [play, fetchLocalPlayCover]);
 
   if (loading) {
     return <Loader />;
