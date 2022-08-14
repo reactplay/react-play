@@ -30,7 +30,7 @@ function PlayMeta() {
       ogTagImg = playObj.cover;
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
-      console.error(`Cover found: ${metaImage} > ${ogTagImage}`)
+      console.error(`Cover found: ${metaImg} > ${ogTagImg}`)
       setLoading(false)
       return
     }
@@ -44,7 +44,7 @@ function PlayMeta() {
       ogTagImg = getLocalPlayCoverURL(response.default);
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
-      console.error(`Local found: ${metaImage} > ${ogTagImage}`)
+      console.error(`Local found: ${metaImg} > ${ogTagImg}`)
       setLoading(false) 
     } catch (_error) {
       /**
@@ -55,7 +55,7 @@ function PlayMeta() {
        ogTagImg = thumbPlay;
        setMetaImage(metaImg);
        setOgTagImage(ogTagImg);
-       console.error(`Local NOT found: ${metaImage} > ${ogTagImage}`)
+       console.error(`Local NOT found: ${metaImg} > ${ogTagImg}`)
        setLoading(false) 
     }
   }, []);
