@@ -36,7 +36,7 @@ const Home = () => {
     });
   }, [data, setSearchTerm, searchTerm, setFilterQuery]);
 
-  //* array of tweet IDs to show on the home page
+  // array of tweet IDs to show on the home page
     const tweetIdArray = [
         "1544376341172068352",  
         "1530197614771458049",
@@ -50,16 +50,11 @@ const Home = () => {
         "1532349503709122561"
     ]
 
-    //* set the state for loading
-   
+    // set the state for loading
     const [isTweetsLoading,setTweetsLoading] = useState(true)
 
-
-
-    function tweetLoadHandler (){
-        //* as soon as tweets loads on DOM disable the loading spinner
-        setTweetsLoading(false)
-    }
+    // Function to handle the tweets loading state after tweets have been loaded.
+    const tweetLoadHandler = () => setTweetsLoading(false)
 
 
   return (
@@ -171,20 +166,24 @@ const Home = () => {
                   </strong> Says!
               </h3>
 
-        {
-            (isTweetsLoading) ? <Spinner/> :""
-        }
-        <div className="tweets-container active" >
-            {
-                
-                tweetIdArray.map(id=> {
-
-                    return <Tweet  key={id} tweetId={id}
-                    onLoad={tweetLoadHandler} options={{width:'410' ,conversation:"none",cards:"hidden",align:"center"}} />
-                })
-            }
+        {isTweetsLoading && (
+          <Spinner />
+        )}
+        <div className={isTweetsLoading ? "tweets-container" : "tweets-container active"}>
+            {tweetIdArray.map((id) => (
+              <Tweet
+                key={id}
+                tweetId={id}
+                onLoad={tweetLoadHandler}
+                options={{
+                  width: "410",
+                  conversation: "none",
+                  cards: "hidden",
+                  align: "center",
+                }}
+              />
+            ))}
         </div>
-         
       </section>
       <section className="home-contributors">
         <Contributors />
