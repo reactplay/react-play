@@ -16,27 +16,53 @@ function PlayMeta() {
   const [isError, setIsError] = useState(false);
   let { playname, username } = useParams(); // return the parameter of url
   const [metaImage, setMetaImage] = useState();
-  const [localImage, setLocalImage] = useState(thumbPlay);
+  const [ogTagImage, setOgTagImage] = useState();
+  // const [localImage, setLocalImage] = useState(thumbPlay);
 
   /**
    * Fetch local playImage
    */
   const fetchLocalPlayCover = useCallback(async (playObj) => {
+    let metaImg = '';
+    let ogTagImg = '';
+    if(playObj.cover) {
+      metaImg = playObj.cover;
+      ogTagImg = playObj.cover;
+      setMetaImage(metaImg);
+      setOgTagImage(ogTagImg);
+      console.error(`Cover found: ${metaImage} > ${ogTagImage}`)
+      setLoading(false)
+      return
+    }
     try {
       /**
        * Try to Fetch the local cover image
        */
       const response = await import(`plays/${playObj.slug}/cover.png`);
-      setLocalImage(response.default);
+
+      metaImg = response.default;
+      ogTagImg = getLocalPlayCoverURL(response.default);
+      setMetaImage(metaImg);
+      setOgTagImage(ogTagImg);
+      console.error(`Local found: ${metaImage} > ${ogTagImage}`)
+      setLoading(false) 
     } catch (_error) {
       /**
        * On error set the default image
        */
-      setLocalImage(thumbPlay);
+
+       metaImg = thumbPlay;
+       ogTagImg = thumbPlay;
+       setMetaImage(metaImg);
+       setOgTagImage(ogTagImg);
+       console.error(`Local NOT found: ${metaImage} > ${ogTagImage}`)
+       setLoading(false) 
     }
   }, []);
 
   useEffect(() => {
+    console.log(`ENV: ${process.env.NEXT_PUBLIC_SITE_URL}`)
+    console.log(`ENV: ${process.env.VERCEL_URL}`)
     submit(FetchPlaysBySlugAndUser(decodeURI(playname), decodeURI(username)))
       .then((res) => {
         const play_obj = res[0];
@@ -77,7 +103,7 @@ function PlayMeta() {
         <meta property="og:description" content={play.description} />
         <meta
           property="og:image"
-          content={metaImage ? metaImage : localImage}
+          content={metaImage}
           data-react-helmet="true"
         />
         <meta
@@ -97,7 +123,7 @@ function PlayMeta() {
         />
         <meta
           name="twitter:image"
-          content={metaImage ? metaImage : getLocalPlayCoverURL(localImage)}
+          content={ogTagImage}
           data-react-helmet="true"
         />
       </Helmet>
