@@ -7,6 +7,9 @@ import Loader from "common/spinner/spinner";
 import { toSanitized, toTitleCase, toTitleCaseTrimmed } from "common/services/string";
 import { FetchPlaysBySlugAndUser } from "common/services/request/query/fetch-plays";
 import { PageNotFound } from "common";
+import { Button } from "@mui/material";
+import PlayHeader from "./PlayHeader";
+import CodeViewer from "common/components/code-viewer";
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -14,7 +17,7 @@ function PlayMeta() {
   const [isError, setIsError] = useState(false);
   let { playname, username } = useParams(); // return the parameter of url
   const [metaImage, setMetaImage] = useState();
-
+  const [showCode, setShowCode] = useState(true)
   useEffect(() => {
     submit(FetchPlaysBySlugAndUser(decodeURI(playname), decodeURI(username)))
       .then((res) => {
@@ -79,7 +82,16 @@ function PlayMeta() {
           />
         )}
       </Helmet>
-      <Suspense fallback={<Loader />}>{renderPlayComponent()}</Suspense>
+      <div className="play-details">
+      <PlayHeader play={play} onCodeButtonClicked={() => setShowCode(!showCode)}/>
+      <div>
+         {
+          showCode && <div>
+          <CodeViewer slug={play.slug}/>
+        </div>}
+        <Suspense fallback={<Loader />}>{renderPlayComponent()}</Suspense>
+      </div>
+      </div>
     </>
   );
 }

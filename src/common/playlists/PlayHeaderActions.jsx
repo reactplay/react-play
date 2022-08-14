@@ -5,11 +5,13 @@ import { IoLogoYoutube } from "react-icons/io";
 import { AiOutlineRead } from "react-icons/ai";
 import { BiComment } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
+import { FaCode } from "react-icons/fa";
 import Like from "common/components/Like/Like";
 import Comment from "common/components/Comment";
 import useLikePlays from "common/hooks/useLikePlays";
 import { NHOST } from "common/const";
 import countByProp from "common/utils/countByProp";
+import CodeViewLeft from "common/components/code-viewer";
 
 const initialLikeObject = {
   liked: false,
@@ -17,7 +19,7 @@ const initialLikeObject = {
   interation: false,
 };
 
-const PlayHeaderActions = ({ play }) => {
+const PlayHeaderActions = ({ play, onCodeButtonClicked }) => {
   const { play_like } = play;
 
   const userId = useUserId();
@@ -79,13 +81,16 @@ const PlayHeaderActions = ({ play }) => {
   };
 
   return (
-    <>
+    <>  <button className='action badged' onClick={() => onCodeButtonClicked()}>
+        <FaCode className='icon' size='24px' />
+        <span className='sr-only'>Code</span>
+      </button>
       <Like onLikeClick={!loading ? onLikeClick : null} likeObj={likeObj} />
+    
       <button className='action badged' onClick={() => setShowComment(true)}>
         <BiComment className='icon' size='24px' />
         <span className='sr-only'>Comments</span>
       </button>
-
       {play.path && (
         <a
           target='_blank'
