@@ -8,7 +8,7 @@ import { toSanitized, toTitleCaseTrimmed } from "common/services/string";
 import { FetchPlaysBySlugAndUser } from "common/services/request/query/fetch-plays";
 import { PageNotFound } from "common";
 import thumbPlay from "images/thumb-play.png";
-import { getLocalPlayCoverURL } from "common/utils/playsUtil";
+import { getProdUrl } from "common/utils/playsUtil";
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -30,7 +30,6 @@ function PlayMeta() {
       ogTagImg = playObj.cover;
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
-      console.error(`Cover found: ${metaImg} > ${ogTagImg}`)
       setLoading(false)
       return
     }
@@ -40,11 +39,10 @@ function PlayMeta() {
        */
       const response = await import(`plays/${playObj.slug}/cover.png`);
 
-      metaImg = response.default;
-      ogTagImg = getLocalPlayCoverURL(response.default);
+      metaImg = getProdUrl(response.default);
+      ogTagImg = getProdUrl(response.default);
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
-      console.error(`Local found: ${metaImg} > ${ogTagImg}`)
       setLoading(false) 
     } catch (_error) {
       /**
@@ -61,8 +59,6 @@ function PlayMeta() {
   }, []);
 
   useEffect(() => {
-    console.error(`ENV: ${process.env.NEXT_PUBLIC_SITE_URL}`)
-    console.error(`ENV: ${process.env.VERCEL_URL}`)
     submit(FetchPlaysBySlugAndUser(decodeURI(playname), decodeURI(username)))
       .then((res) => {
         const play_obj = res[0];
@@ -76,12 +72,6 @@ function PlayMeta() {
         setLoading(false);
       });
   }, [playname, username]);
-
-  // useEffect(() => {
-  //   if (play) {
-  //     fetchLocalPlayCover(play);
-  //   }
-  // }, [play, fetchLocalPlayCover]);
 
   if (loading) {
     return <Loader />;
