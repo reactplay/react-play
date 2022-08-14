@@ -1,9 +1,6 @@
 export const toKebabCase = (str) => {
   return str
-    .match(
-      //  eslint-disable-next-line no-useless-escape
-      /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
-    )
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map((x) => x.toLowerCase())
     .join("-");
 };
@@ -29,7 +26,6 @@ export const toTitleCase = (str) => {
 };
 
 export const replaceAll = (str, replaceWhat, replaceTo) => {
-  //  eslint-disable-next-line no-useless-escape
   replaceWhat = replaceWhat.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
   var re = new RegExp(replaceWhat, "g");
   return str.replace(re, replaceTo);
@@ -46,7 +42,7 @@ export const toSlug = (str) => {
 
 export const toSanitized = (str) => {
   //replace all special characters | symbols with a space
-  //  eslint-disable-next-line no-useless-escape
+
   str = str.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, " ");
   // trim spaces at start and end of string
   str = str.replace(/^\s+|\s+$/gm, "");
