@@ -4,7 +4,7 @@ const Button = ({ title, backgroundColor, border, onClick }) => {
   return (
     <div>
       <button
-        className="btn-editor"
+        className="code-editor-btn"
         style={{
           backgroundColor: backgroundColor,
           border: border

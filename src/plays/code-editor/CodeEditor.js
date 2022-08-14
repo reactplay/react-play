@@ -38,9 +38,9 @@ function CodeEditor(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="play-details-body ">
           {/* Your Code Starts Here */}
-          <div className="tab-button-container">
+          <div className="code-editor-tab-button-container">
             <Button
               backgroundColor={activeButton === "html" ? "blue" : ""}
               title="HTML"
@@ -63,7 +63,7 @@ function CodeEditor(props) {
               }}
             />
           </div>
-          <div className="editor-container">
+          <div className="code-editor-container">
             {openedEditor === "html" ? (
               <Editor
                 language="xml"
@@ -87,7 +87,7 @@ function CodeEditor(props) {
               />
             )}
           </div> 
-          <div className="bottom-pane">
+          <div className="code-editor-bottom-pane">
             <iframe
               id="my_iframe"
               srcDoc={srcDoc}

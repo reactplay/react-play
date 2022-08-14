@@ -1,18 +1,18 @@
 /* enter stlyes here */
-.tab-button-container{
+.code-editor-tab-button-container{
   display: flex;
   flex-direction: row;
   margin-left: 40%;
 }
-.editor-container{
+.code-editor-container{
   padding-top: 0.5%;
 }
-.dropdown{
+.code-editor-dropdown{
   margin-top: 15px;
   display: flex;
   margin-left: 36%;
 }
-.btn-editor{
+.code-editor-btn{
   max-width: 240px;
   min-width: 100px;
   height: 50px;
@@ -22,45 +22,45 @@
   font-size: larger;
   font-weight: 200px;
 }
-.dropdown label{
+.code-editor-dropdown label{
    font-size: larger;
    font-weight: 400;
    font-family: sans-serif;
    margin-right: 12px;
 }
-.dropdown select{
+.code-editor-dropdown select{
   width: 300px;
   background-color: black;
   color: white;
 }
-.dropdown select option{
+.code-editor-dropdown select option{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.editor-cont{
+.code-editor-cont{
   margin-top: 20px;
   border: 5px solid white;
 }
-.editor-cont:hover{
+.code-editor-cont:hover{
   border: 5px  solid rgb(0, 255, 0);
 }
-.bottom-pane{
+.code-editor-bottom-pane{
   height: 50vh;
   display: flex;
 }
 @media (max-width: 764px){
-   .tab-button-container{
+   .code-editor-tab-button-container{
     flex-direction: column;
    }
-   .dropdown{
+   .code-editor-dropdown {
     margin-left: 20%;
    }
-   .dropdown label {
+   .code-editor-dropdown  label {
      font-size: medium;
      margin-right: 0px;
    }
-   .dropdown select{
+   .code-editor-dropdown  select{
     width: 100px;
    }
 }

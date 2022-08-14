@@ -25,8 +25,8 @@ const Editor = ({ language, value, setEditorState }) => {
   
   const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night']
   return (
-  <div className="editor-container">
-      <div className='dropdown'>
+  <div className="code-editor-container">
+      <div className='code-editor-dropdown'>
         <label for="cars">Choose a theme: </label>
         <select name="theme" onChange={(el) => {
           setTheme(el.target.value)
@@ -38,7 +38,7 @@ const Editor = ({ language, value, setEditorState }) => {
           }
         </select>
       </div>
-      <div className='editor-cont'>
+      <div className='code-editor-cont'>
       <ControlledEditorComponent
         onBeforeChange={handleChange}
         value= {value}
