@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-35-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-37-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -63,7 +63,7 @@ Please support the work by giving the repository a ⭐, contributing to it, and/
 
 You may want to set up the `react-play` repo for the following reasons:
 
-- You want to create a new play or want to edit an existing play as a contributor. Please check the [Create a Play Guide](./CREATE-PLAY.md) for more details. Also, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
+- You want to create a new play (A play is a React project) or want to edit an existing play as a contributor. Please check the [Create a Play Guide](./CREATE-PLAY.md) for more details. Also, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
 - You want to contribute to the `react-play` repo in general. Please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
@@ -237,6 +237,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.linkedin.com/in/anirban-pratihar-48a591226/"><img src="https://avatars.githubusercontent.com/u/82874704?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anirban Pratihar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Anirban-1490" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/harshsinghatz"><img src="https://avatars.githubusercontent.com/u/51085015?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Harsh Singh</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=harshsinghatz" title="Code">💻</a></td>
     <td align="center"><a href="http://frankiefab.com"><img src="https://avatars.githubusercontent.com/u/46662771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Franklin U.O. Ohaegbulam</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=frankiefab100" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/ammaaraslam"><img src="https://avatars.githubusercontent.com/u/96367405?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ammaar Aslam</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ammaaraslam" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/mayukh551"><img src="https://avatars.githubusercontent.com/u/82811112?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mayukh Bhowmick</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=mayukh551" title="Code">💻</a></td>
   </tr>
 </table>
 
