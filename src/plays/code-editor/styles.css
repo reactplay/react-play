@@ -21,6 +21,7 @@
   font-family: sans-serif;
   font-size: larger;
   font-weight: 200px;
+  color: black;
 }
 .code-editor-dropdown label{
    font-size: larger;
@@ -48,6 +49,21 @@
 .code-editor-bottom-pane{
   height: 50vh;
   display: flex;
+  margin-top: 20px;
+  border: 5px solid rgb(36, 129, 99);
+  border: 5px  solid rgb(0, 255, 0);
+}
+.code-editor-bottom-pane:hover{
+  border: 5px solid rgb(36, 129, 99);
+}
+.code-editor-heading-output{
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:x-large;
+  color: white;
+  margin-top: 10px;
 }
 @media (max-width: 764px){
    .code-editor-tab-button-container{

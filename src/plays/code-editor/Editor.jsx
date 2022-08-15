@@ -49,8 +49,6 @@ const Editor = ({ language, value, setEditorState }) => {
           mode: language,
           lineNumbers: true,
           theme: theme,
-          autoCloseTags: true,
-          autoCloseBrackets: true, 
         }}
       />
       </div>

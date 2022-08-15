@@ -1,6 +1,6 @@
 # Code editor 
 
-It is a code editor for html css and javascript it is like a clone of codepen !
+It is a code editor for html ,css and js inspired from codepen made using codemirror and react-codemirror2 for writing and executing the code at same time !
 
 ## Play Demographic
 

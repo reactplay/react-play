@@ -42,21 +42,21 @@ function CodeEditor(props) {
           {/* Your Code Starts Here */}
           <div className="code-editor-tab-button-container">
             <Button
-              backgroundColor={activeButton === "html" ? "blue" : ""}
+              backgroundColor={activeButton === "html" ? "#98AFC7" : ""}
               title="HTML"
               onClick={() => {
                 onTabClick("html");
               }}
             />
             <Button
-              backgroundColor={activeButton === "css" ? "blue" : ""}
+              backgroundColor={activeButton === "css" ? "#98AFC7" : ""}
               title="CSS"
               onClick={() => {
                 onTabClick("css");
               }}
             />
             <Button
-              backgroundColor={activeButton === "js" ? "blue" : ""}
+              backgroundColor={activeButton === "js" ? "#98AFC7" : ""}
               title="JavaScript"
               onClick={() => {
                 onTabClick("js");
@@ -87,6 +87,9 @@ function CodeEditor(props) {
               />
             )}
           </div> 
+          <div className="code-editor-heading-output">
+             <h1>Output</h1>
+          </div>
           <div className="code-editor-bottom-pane">
             <iframe
               id="my_iframe"
