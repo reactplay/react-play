@@ -15,9 +15,15 @@ const PlayList = () => {
   const [loading, error, plays] = useGetPlays();
   const [allPlays, setAllPlays] = useState([])
 
-  const { searchTerm } = useContext(SearchContext);
+  const { searchTerm, filterQuery } = useContext(SearchContext);
+  
+  const hasFilterQuery =
+    filterQuery.level_id.length > 0 ||
+    filterQuery.tags.length > 0 ||
+    filterQuery.owner_user_id.length > 0 ||
+    filterQuery.language.length > 0;
 
-  let { playid } = useParams(); // return the parameter of url
+    let { playid } = useParams(); // return the parameter of url
   
   if (loading) {
    return <Loader />;
@@ -27,7 +33,11 @@ const PlayList = () => {
     return (
       <div className='play-not-found'>
         <ImageOops className='play-not-found-image' />  
-        <p className='page-404-lead'>Play not found {searchTerm ? "for " + searchTerm : null} </p>
+        <p className='page-404-lead'>Play not found 
+        {hasFilterQuery? " for matched filter criteria" : null}
+        {hasFilterQuery && searchTerm ? " and ": null}
+        {searchTerm ? " for " + searchTerm : null}
+        </p>
         <p className='page-404-desc'>
           Please change your search or adjust filters to find plays.
         </p>
