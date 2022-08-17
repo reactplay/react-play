@@ -24,6 +24,7 @@ const Editor = ({ language, value, setEditorState }) => {
   }
   
   const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night']
+  
   return (
   <div className="code-editor-container">
       <div className='code-editor-dropdown'>
