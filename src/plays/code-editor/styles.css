@@ -66,7 +66,7 @@
   color: white;
   margin-top: 10px;
 }
-.code-eitor-modal-toogle{
+.code-editor-modal-toogle{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,5 +85,9 @@
    }
    .code-editor-dropdown  select{
     width: 100px;
+   }
+   .code-editor-modal-toogle{
+     font-size: larger;
+    margin-left: 45px;
    }
 }

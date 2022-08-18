@@ -48,7 +48,7 @@ function CodeEditor(props) {
         <PlayHeader play={props} />
         <div className="play-details-body ">
           {/* Your Code Starts Here */}
-          <div className="code-eitor-modal-toogle">
+          <div className="code-editor-modal-toogle">
             <button onClick={toggle}>How to play ?</button>
           </div>
           <div className="code-editor-tab-button-container">

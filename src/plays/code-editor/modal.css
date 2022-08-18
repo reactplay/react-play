@@ -1,4 +1,4 @@
-.memory-game-backdrop {
+.code-editor-backdrop {
     position: fixed;
     top: 10%;
     left: 0;
@@ -7,7 +7,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
-.memory-game-modal {
+.code-editor-modal {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -19,7 +19,7 @@
     border-radius: 10px;
     animation: modalApear 0.3s ease-in-out;
 }
-.memory-game-modal .close-icon {
+.code-editor-modal .close-icon {
     position: absolute;
     right: 1.5rem;
     top: 1.5rem;
@@ -29,38 +29,38 @@
     cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-    .memory-game-modal .close-icon {
+    .code-editor-modal .close-icon {
         right: 1rem;
         top: 1rem;
         width: 30px;
    }
 }
-.memory-game-modal .content {
+.code-editor-modal .content {
     margin: 0 2rem;
     padding: 2rem;
 }
-.memory-game-modal .content .text {
+.code-editor-modal .content .text {
     text-align: center;
     font-size: 1.6rem;
     font-weight: bold;
 }
-.memory-game-modal .content p {
+.code-editor-modal .content p {
     margin: 0.6rem 0 1rem 0;
     text-align: center;
 }
-.memory-game-modal .content .guide-image {
+.code-editor-modal .content .guide-image {
     display: block;
     margin: 0 auto;
     max-width: 70%;
     height: auto;
 }
-.memory-game-modal .content .button-section {
+.code-editor-modal .content .button-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 32px;
 }
-.memory-game-modal .content .button-section button {
+.code-editor-modal .content .button-section button {
     padding: 0.5rem 2rem;
     font-size: 1rem;
     border-radius: 20px;
@@ -70,12 +70,12 @@
     color: #fff;
     font-weight: bold;
 }
-.memory-game-modal .content .button-section button:disabled {
+.code-editor-modal .content .button-section button:disabled {
     background-color: rgba(81, 91, 212, 0.5);
     pointer-events: none;
 }
 @media screen and (max-width: 768px) {
-    .memory-game-modal .content .button-section {
+    .code-editor-modal .content .button-section {
         padding: 0;
         margin-top: 10px;
    }
@@ -91,11 +91,11 @@
    }
 }
 @media screen and (max-width: 768px) {
-    .memory-game-modal {
+    .code-editor-modal {
         width: calc(100vw - 20px);
    }
 }
-.memory-game-backdrop {
+.code-editor-backdrop  {
     position: fixed;
     top: 0;
     left: 0;
@@ -104,7 +104,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
-.memory-game-modal {
+.code-editor-modal {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -116,7 +116,7 @@
     border-radius: 10px;
     animation: modalApear 0.3s ease-in-out;
 }
-.memory-game-modal .close-icon {
+.code-editor-modal .close-icon {
     position: absolute;
     right: 1.5rem;
     top: 1.5rem;
@@ -126,38 +126,38 @@
     cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-    .memory-game-modal .close-icon {
+    .code-editor-modal .close-icon {
         right: 1rem;
         top: 1rem;
         width: 30px;
    }
 }
-.memory-game-modal .content {
+.code-editor-modal .content {
     margin: 0 2rem;
     padding: 2rem;
 }
-.memory-game-modal .content .text {
+.code-editor-modal .content .text {
     text-align: center;
     font-size: 1.6rem;
     font-weight: bold;
 }
-.memory-game-modal .content p {
+.code-editor-modal .content p {
     margin: 0.6rem 0 1rem 0;
     text-align: center;
 }
-.memory-game-modal .content .guide-image {
+.code-editor-modal .content .guide-image {
     display: block;
     margin: 0 auto;
     max-width: 70%;
     height: auto;
 }
-.memory-game-modal .content .button-section {
+.code-editor-modal .content .button-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 32px;
 }
-.memory-game-modal .content .button-section button {
+.code-editor-modal .content .button-section button {
     padding: 0.5rem 2rem;
     font-size: 1rem;
     border-radius: 20px;
@@ -167,12 +167,12 @@
     color: #fff;
     font-weight: bold;
 }
-.memory-game-modal .content .button-section button:disabled {
+.code-editor-modal .content .button-section button:disabled {
     background-color: rgba(81, 91, 212, 0.5);
     pointer-events: none;
 }
 @media screen and (max-width: 768px) {
-    .memory-game-modal .content .button-section {
+    .code-editor-modal .content .button-section {
         padding: 0;
         margin-top: 10px;
    }
@@ -188,7 +188,7 @@
    }
 }
 @media screen and (max-width: 768px) {
-    .memory-game-modal {
+    .code-editor-modal {
         width: calc(100vw - 20px);
    }
 }
