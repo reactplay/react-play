@@ -9,19 +9,19 @@ const Modal = ({ showModal, toggle }) => {
 
   const structuringData = [
     {
-      info: "Its a code editor for html css and js made using codemirror your can write your code seprately from html css and js ",
+      info: "Its a code editor for html css and js made using codemirror your can write your code seprately for html css and js. ",
       
     },
     {
-      info: "Javascript will work normally and can be used to manipulate things but their will not be shown any output for it like for console loging ",
+      info: "Javascript will work normally and can be used to manipulate things but their will not be shown any output for it like for console loging.",
      
     },
     {
-      info: "Css output will be shown when try to make style changes using it ",
+      info: "Css output will be shown when try to make style changes using it.",
       
     },
     {
-      info: "Lastly all your output will be displayed in output section as you type ",
+      info: "Lastly all your output will be displayed in output section as you type.",
       
     },
   ];
