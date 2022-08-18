@@ -72,6 +72,9 @@
   align-items: center;
   font-size: xx-large;
 }
+.code-editor-modal-toogle button{
+  color: #1f6ed4;
+}
 @media (max-width: 764px){
    .code-editor-tab-button-container{
     flex-direction: column;

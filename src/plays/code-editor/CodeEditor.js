@@ -49,7 +49,7 @@ function CodeEditor(props) {
         <div className="play-details-body ">
           {/* Your Code Starts Here */}
           <div className="code-editor-modal-toogle">
-            <button onClick={toggle}>How to play ?</button>
+            <button onClick={toggle}>How to Use ?</button>
           </div>
           <div className="code-editor-tab-button-container">
             <Button

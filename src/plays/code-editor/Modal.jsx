@@ -40,7 +40,7 @@ const Modal = ({ showModal, toggle }) => {
       <div className='code-editor-modal'>
         <img src={close} alt="clonse" onClick={toggle} className="close-icon" />
         <div className='content'>
-          <h1 className='text'>How to Play!</h1>
+          <h1 className='text'>How to Use!</h1>
           <p>{structuringData[currState].info}</p>
           <div className='button-section'>
             {currState > 0 ? <button onClick={buttonHandler(-1)}>Prev</button> : <p></p>}
