@@ -169,7 +169,7 @@ const Home = () => {
         {isTweetsLoading && (
           <Spinner />
         )}
-        <div className={isTweetsLoading ? "tweets-container" : "tweets-container active"}>
+        <div className={isTweetsLoading ? "tweets-container" : "tweets-container active"} data-testid="tweet-container">
             {tweetIdArray.map((id) => (
               <Tweet
                 key={id}

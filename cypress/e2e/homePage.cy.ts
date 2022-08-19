@@ -1,9 +1,12 @@
 /// <reference types="cypress" />
 
+import { TWEET_COUNT } from "../support/constant";
+
 describe("Test home page", () => {
   beforeEach(() => {
     cy.visit("/");
   });
+
   it("Header component should render properly", () => {
     cy.get('[data-testid="app-header"]').should("be.visible");
     cy.get('[data-testid="app-logo"]').should("be.visible");
@@ -15,5 +18,19 @@ describe("Test home page", () => {
     cy.get('[data-testid="github-btn"]').should("be.visible");
     cy.get('[data-testid="twitter-btn"]').should("be.visible");
     cy.get('[data-testid="share-btn"]').should("be.visible");
+  });
+
+  it("Tweet box should render with all tweets", () => {
+    cy.intercept("GET", "https://cdn.syndication.twimg.com/*").as("tweets");
+    cy.get('[data-testid="tweet-container"]')
+      .scrollIntoView()
+      .should("be.visible");
+    cy.get('[data-testid="watch-svg"]').should("be.visible");
+    cy.wait("@tweets");
+    cy.get('[data-testid="tweet-container"] [id*="twitter-widget"]').should(
+      "have.length",
+      TWEET_COUNT
+    );
+    cy.get('[data-testid="watch-svg"]').should("not.exist");
   });
 });
