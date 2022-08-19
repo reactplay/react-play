@@ -67,7 +67,7 @@ const HeaderNav = ({ showBrowse }) => {
       <div
         className={showToggleMenu ? "navbar-collapse show" : "navbar-collapse"}
       >
-        <ul className="header-links">
+        <ul className="header-links" data-testid="header-links-container">
           <li className="menu-closer">
             <button
               className="navbar-closer"
@@ -83,6 +83,7 @@ const HeaderNav = ({ showBrowse }) => {
               <Link
                 to="/plays"
                 className="app-header-btn app-header-btn--secondary"
+                data-testid="browse-btn"
               >
                 <MdManageSearch className="icon" />
                 <span className="btn-label">Browse</span>
@@ -95,6 +96,7 @@ const HeaderNav = ({ showBrowse }) => {
                 href="/plays/create"
                 rel="noopener noreferrer"
                 className="app-header-btn app-header-btn--primary"
+                data-testid="create-btn"
               >
                 <IoAddSharp className="icon" />
                 <span className="btn-label">Create</span>
@@ -106,6 +108,7 @@ const HeaderNav = ({ showBrowse }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="app-header-btn app-header-btn--primary"
+                data-testid="create-btn"
               >
                 <IoAddSharp className="icon" />
                 <span className="btn-label">Create</span>
@@ -116,6 +119,7 @@ const HeaderNav = ({ showBrowse }) => {
             <Link
               to="/ideas"
               className="app-header-btn app-header-btn--default"
+              data-testid="ideas-btn"
             >
               <FaLightbulb className="icon" />
               <span className="btn-label">Idea</span>
@@ -127,6 +131,7 @@ const HeaderNav = ({ showBrowse }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--default"
+              data-testid="github-btn"
             >
               <BsGithub className="icon" />
               <span className="btn-label">GitHub</span>
@@ -138,6 +143,7 @@ const HeaderNav = ({ showBrowse }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--default"
+              data-testid="twitter-btn"
             >
               <BsTwitter className="icon" />
               <span className="btn-label">Twitter</span>
@@ -147,6 +153,7 @@ const HeaderNav = ({ showBrowse }) => {
             <button
               className="app-header-btn app-header-btn--default"
               onClick={handleClick}
+              data-testid="share-btn"
             >
               <IoHeartSharp className="icon" />
               <span className="btn-label">Share</span>

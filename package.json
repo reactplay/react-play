@@ -59,7 +59,9 @@
     "build": "npx create-react-play -p && react-scripts build",
     "snap": "react-snap",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -87,6 +89,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "cypress": "^10.6.0",
     "postcss": "^8.4.13",
     "puppeteer": "^13.7.0",
     "react-snap": "^1.23.0",
