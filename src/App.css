@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@900&display=swap");
 
 .text-center {
   text-align: center;
@@ -21,7 +21,11 @@
   border-width: 0;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   color: initial;
 }
 
@@ -30,15 +34,15 @@ button, input, optgroup, select, textarea {
   --color-brand-primary-rgb: 0, 244, 252;
   --color-brand-primary-alt: #61dafb;
   --color-brand-primary-dark: #00aada;
-  
+
   /* Neutral */
   --color-neutral-10: #ffffff;
   --color-neutral-20: #f6f6f9;
   --color-neutral-30: #e0e0e6;
-  --color-neutral-40: #BDBDBD;
-  --color-neutral-50: #7F878A;
-  --color-neutral-60: #5C6C70;
-  --color-neutral-70: #3E5156;
+  --color-neutral-40: #bdbdbd;
+  --color-neutral-50: #7f878a;
+  --color-neutral-60: #5c6c70;
+  --color-neutral-70: #3e5156;
   --color-neutral-80: #242230;
   --color-neutral-90: #010326;
   --color-neutral-100: #000000;
@@ -66,7 +70,6 @@ button, input, optgroup, select, textarea {
   --fs-lg: 2rem;
   --fs-xl: 3rem;
   --fs-xxl: 4rem;
-  
 
   /* Line Height */
   --lh-xs: 0.8em;
@@ -91,6 +94,9 @@ button, input, optgroup, select, textarea {
   /* Play */
   --play-thumb-size-w: 260px;
   --play-thumb-size-h: 146px;
+  /* For Mobile */
+  --play-thumb-size-w-mobile: 308px;
+  --play-thumb-size-h-mobile: 194px;
 
   /* Play level */
   --color-play-level-1: 3, 169, 244;
@@ -123,7 +129,7 @@ body * {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -212,8 +218,6 @@ small {
   text-decoration: underline;
 }
 
-
-
 /* App Footer */
 .app-footer {
   padding: 0 12px;
@@ -232,7 +236,7 @@ small {
   max-width: var(--screen-lg-max);
   margin: 0 auto 1rem auto;
   display: none;
-  grid-template-columns: 1fr 1.2fr .8fr;
+  grid-template-columns: 1fr 1.2fr 0.8fr;
   gap: 4rem;
 }
 
@@ -305,7 +309,7 @@ small {
 }
 
 .app-footer .copy {
-  margin: .4rem 0;
+  margin: 0.4rem 0;
   text-align: center;
 }
 
@@ -353,8 +357,6 @@ small {
   }
 }
 
-
-
 /* Buttons */
 .btn-default {
   border: solid 1px var(--color-neutral-60);
@@ -363,7 +365,7 @@ small {
   flex-direction: row;
   align-items: center;
   grid-gap: 0.4rem;
-  padding: .8rem 1.4rem;
+  padding: 0.8rem 1.4rem;
   font-size: var(--fs-rg);
   font-weight: var(--fw-bold);
   text-decoration: none;
@@ -401,17 +403,16 @@ small {
   grid-gap: 1.2rem;
 }
 
-
 .btn-default-light {
   border: 0;
   display: inline-flex;
   align-items: center;
   grid-gap: 0.4rem;
-  border-radius: 2rem; 
+  border-radius: 2rem;
   padding: 0.8rem 1.4rem;
   font-size: var(--fs-rg);
   font-weight: var(--fw-bold);
-  background-color: rgba(var(--color-neutral-90-rgb),0.1);
+  background-color: rgba(var(--color-neutral-90-rgb), 0.1);
   color: var(--color-neutral-80);
   transition: all 0.16s ease-in-out;
 }
@@ -433,7 +434,6 @@ small {
   color: var(--color-brand-primary-dark);
 }
 
-
 .btn-primary {
   border: solid 2px var(--color-brand-primary);
   background-color: var(--color-brand-primary);
@@ -444,7 +444,7 @@ small {
   flex-direction: row;
   align-items: center;
   grid-gap: 0.4rem;
-  padding: .8rem 1.4rem;
+  padding: 0.8rem 1.4rem;
   font-size: var(--fs-rg);
   font-weight: var(--fw-bold);
   text-decoration: none;
@@ -454,7 +454,7 @@ small {
   cursor: pointer;
 }
 
-.btn-primary .icon {    
+.btn-primary .icon {
   width: var(--navbar-icon-size-rg);
   height: var(--navbar-icon-size-rg);
   fill: var(--color-neutral-90);
@@ -490,7 +490,7 @@ small {
   flex-direction: row;
   align-items: center;
   grid-gap: 0.4rem;
-  padding: .8rem 1.4rem;
+  padding: 0.8rem 1.4rem;
   font-size: var(--fs-rg);
   font-weight: var(--fw-bold);
   text-decoration: none;
@@ -500,7 +500,7 @@ small {
   cursor: pointer;
 }
 
-.btn-secondary-light .icon {    
+.btn-secondary-light .icon {
   width: var(--navbar-icon-size-rg);
   height: var(--navbar-icon-size-rg);
   fill: var(--color-brand-primary);
@@ -527,7 +527,7 @@ small {
 }
 
 .btn-size--sm {
-  padding: .6rem 1.2rem;
+  padding: 0.6rem 1.2rem;
   height: 42px;
   font-size: var(--fs-sm);
 }
@@ -547,7 +547,7 @@ small {
   margin: 1rem auto 2rem auto;
   max-width: 1280px;
   box-sizing: border-box;
-  grid-gap: .4rem;
+  grid-gap: 0.4rem;
   justify-content: center;
 }
 
@@ -574,10 +574,10 @@ small {
 .brand-tech-stack:hover,
 .brand-tech-stack:focus {
   border: solid 2px rgba(var(--color-brand-primary-rgb), 60%);
-  transform: scale(1.10);
-  box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.12);
-    -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.12);
-    -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.12);
+  transform: scale(1.1);
+  box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.12);
+  -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.12);
+  -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.12);
 }
 
 .brand-tech-stack:hover .icon,
@@ -585,7 +585,7 @@ small {
   fill: var(--color-brand-primary);
 }
 
-.create-button-badge{
+.create-button-badge {
   background-color: var(--color-neutral-60);
   border-radius: 0px 6px 6px 0px;
   margin: -14.8px 0px 0px -1px;
