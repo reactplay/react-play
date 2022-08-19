@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { TWEET_COUNT } from "../support/constant";
+import { CONTRIBUTORS_COUNT, TWEET_COUNT } from "../support/constant";
 
 describe("Test home page", () => {
   beforeEach(() => {
@@ -22,10 +22,10 @@ describe("Test home page", () => {
 
   it("Tweet section should render with all tweets", () => {
     cy.intercept("GET", "https://cdn.syndication.twimg.com/*").as("tweets");
+    cy.get('[data-testid="watch-svg"]').should("be.visible");
     cy.get('[data-testid="tweet-container"]')
       .scrollIntoView()
       .should("be.visible");
-    cy.get('[data-testid="watch-svg"]').should("be.visible");
     cy.wait("@tweets");
     cy.get('[data-testid="tweet-container"] [id*="twitter-widget"]').should(
       "have.length",
@@ -34,5 +34,12 @@ describe("Test home page", () => {
     cy.get('[data-testid="watch-svg"]').should("not.exist");
   });
 
-  it("Contributors section should render with all contributors", () => {});
+  it("Contributors section should render with all contributors", () => {
+    cy.get('[data-testid="contributors-section"]')
+      .scrollIntoView()
+      .should("be.visible");
+    cy.get(
+      '[data-testid="contributors-section"] [data-testid*="contributor-"]'
+    ).should("have.length", CONTRIBUTORS_COUNT);
+  });
 });
