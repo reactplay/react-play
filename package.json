@@ -60,8 +60,9 @@
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,scss,md,html,json}'",
-    "lint": "eslint  --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "prettier": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\"",
+    "lint": "eslint  --fix \"**/*.+(js|jsx|json|css|scss|md)\"",
+    "format": "npm run lint && npm run prettier",
     "prepare": "husky install"
   },
   "reactSnap": {
