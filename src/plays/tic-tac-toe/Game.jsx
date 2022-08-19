@@ -116,7 +116,7 @@ const Game = () => {
             )}
 
             <div className="ttc_grid">
-              {gameArray.map((value, index) => (
+              {gameArray.map((index) => (
                 <div
                   className="game-card center"
                   onClick={() => changeItem(index)}
