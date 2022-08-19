@@ -60,6 +60,8 @@
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,scss,md,html,json}'",
+    "lint": "eslint  --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "prepare": "husky install"
   },
   "reactSnap": {
@@ -101,6 +103,9 @@
     "typescript": "^4.6.4"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md}": ["eslint --cache --fix", "prettier --write"]
+    "*.{js,jsx,ts,tsx,md}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
   }
 }
