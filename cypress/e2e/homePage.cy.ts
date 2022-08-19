@@ -20,7 +20,7 @@ describe("Test home page", () => {
     cy.get('[data-testid="share-btn"]').should("be.visible");
   });
 
-  it("Tweet box should render with all tweets", () => {
+  it("Tweet section should render with all tweets", () => {
     cy.intercept("GET", "https://cdn.syndication.twimg.com/*").as("tweets");
     cy.get('[data-testid="tweet-container"]')
       .scrollIntoView()
@@ -33,4 +33,6 @@ describe("Test home page", () => {
     );
     cy.get('[data-testid="watch-svg"]').should("not.exist");
   });
+
+  it("Contributors section should render with all contributors", () => {});
 });
