@@ -1,4 +1,3 @@
-import { getPlayById } from "meta/play-meta-util";
 import PlayHeader from "common/playlists/PlayHeader";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -7,18 +6,14 @@ import data from "./Data";
 import { useEffect, useState } from "react";
 
 function DynamicRoutes(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
 
   // Your Code Start below.
-  let { param } = useParams(); // return the parameter of url
+  let { param1 } = useParams(); // return the parameter of url
   const [activeMenu, setActiveMenu] = useState();
   useEffect(() => {
     //useEffect hook keep eye on url parameter whenever it changes so we can re-mount
-    setActiveMenu(param ? param : "breakfast");
-  }, [param]);
+    setActiveMenu(param1 ? param1 : "breakfast");
+  }, [param1]);
   const activeRecipes = data.filter((recipe) => {
     return recipe.mealtype === activeMenu; //filter reciepes based on active menu
   });
@@ -37,7 +32,7 @@ function DynamicRoutes(props) {
   return (
     <>
       <div className="play-details">
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="dynamic-routes-container">

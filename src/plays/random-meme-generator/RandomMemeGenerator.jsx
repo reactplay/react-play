@@ -1,4 +1,3 @@
-import { getPlayById } from 'meta/play-meta-util';
 import { useState, useEffect, useCallback } from 'react';
 import { FaSyncAlt } from 'react-icons/fa';
 
@@ -6,10 +5,6 @@ import PlayHeader from 'common/playlists/PlayHeader';
 import './random-meme-generator.css';
 
 function RandomMemeGenerator(props) {
-  // Do not remove the below lines. 
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
 
   // Your Code Start below.
 
@@ -43,7 +38,7 @@ function RandomMemeGenerator(props) {
   return (
     <>
       <div className="play-details">
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="meme-generator-title">

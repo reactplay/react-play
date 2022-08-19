@@ -1,5 +1,4 @@
 import { Modal } from "common";
-import { getAllCreators, getAllLevels, getAllTags, getAllLanguages } from "meta/play-meta-util";
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
@@ -7,82 +6,175 @@ import "./search.css";
 
 import { RiFilterFill } from "react-icons/ri";
 import useBackListener from "common/routing/hooks/useBackListener";
+import useFetchFilterData from "./hooks/usePlayFilter";
+import { FormControl, MenuItem, Select } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  menuPaper: {
+    maxHeight: "250px !important",
+  },
+});
 
 const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
-  const tags = getAllTags();
-  const levels = getAllLevels();
-  const creators = getAllCreators();
-  const languages = getAllLanguages();
+  const [loading, error, data] = useFetchFilterData();
+  const { tags, levels, creators } = data;
+
+  const classes = useStyles();
+
+  const languages = ["js", "ts"];
+
+  if (error) {
+    return <p>{error?.message ?? "Something Went Wrong"}</p>;
+  }
+
+  const defaultOption = {
+    value: " ",
+    label: "All",
+  };
+
+  const creatorOptions = [
+    defaultOption,
+    ...(creators?.map((creator) => ({
+      value: creator.user.id,
+      label: creator.user.avatarUrl ? (
+        <div className="flex gap-x-2 items-center">
+          <img
+            alt={creator.user.displayName}
+            className="rounded"
+            src={creator.user.avatarUrl}
+            width="32px"
+          />
+          {creator.user.displayName}
+        </div>
+      ) : (
+        creator.user.displayName
+      ),
+    })) || []),
+  ];
+
+  const levelOptions = [
+    defaultOption,
+    ...(levels?.map((level) => ({
+      label: level.level.name,
+      value: level.level.id,
+    })) || []),
+  ];
+
+  const tagOptions = [
+    defaultOption,
+    ...(tags?.map((tag) => ({
+      label: tag.tag,
+      value: tag.id,
+    })) || []),
+  ];
+
+  const languageOptions = [
+    defaultOption,
+    ...languages?.map((language) => ({
+      label: language === "ts" ? "TypeScript" : "JavaScript",
+      value: language,
+    })),
+  ];
+
+  const renderCreator = (value) => {
+    const selectedCreator = creatorOptions.find(
+      (option) => option.value === value
+    );
+    return selectedCreator ? selectedCreator.label : "All";
+  };
 
   return (
     <>
       <div className="form-group">
+        {loading && "Loading Data"}
         <label>Level</label>
-        <select
-          className="form-control"
-          onChange={(event) =>
-            setFilterQuery({ ...filterQuery, level: event.target.value })
-          }
-          value={filterQuery.level}
-        >
-          <option value="">All</option>
-          {levels.map((level) => (
-            <option key={level} value={level}>
-              {level}
-            </option>
-          ))}
-        </select>
+        <FormControl fullWidth>
+          <Select
+            value={filterQuery.level_id || " "}
+            onChange={(event) => {
+              const { value } = event.target;
+              setFilterQuery({
+                ...filterQuery,
+                level_id: defaultOption.value === value ? "" : value,
+              });
+            }}
+            MenuProps={{ classes: { paper: classes.menuPaper } }}
+          >
+            {levelOptions.map((option) => (
+              <MenuItem value={option.value} key={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
       <div className="form-group">
         <label>Tags</label>
-        <select
-          className="form-control"
-          onChange={(event) =>
-            setFilterQuery({ ...filterQuery, tags: event.target.value !== "" ? [event.target.value] : [] })
-          }
-          value={filterQuery.tags[0]}
-        >
-          <option value="">All</option>
-          {tags.map((tag) => (
-            <option key={tag} value={tag}>
-              {tag}
-            </option>
-          ))}
-        </select>
+        <FormControl fullWidth>
+          <Select
+            value={filterQuery.tags[0] || " "}
+            onChange={(event) => {
+              const { value } = event.target;
+              setFilterQuery({
+                ...filterQuery,
+                tags: value !== defaultOption.value ? [value] : [],
+              });
+            }}
+            MenuProps={{ classes: { paper: classes.menuPaper } }}
+          >
+            {tagOptions.map((option) => (
+              <MenuItem value={option.value} key={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
       <div className="form-group">
         <label>Creator</label>
-        <select
-          className="form-control"
-          onChange={(event) =>
-            setFilterQuery({ ...filterQuery, creator: event.target.value })
-          }
-          value={filterQuery.creator}
-        >
-          <option value="">All</option>
-          {creators.map((creator) => (
-            <option key={creator} value={creator}>
-              {creator}
-            </option>
-          ))}
-        </select>
+        <FormControl fullWidth>
+          <Select
+            value={filterQuery.owner_user_id || " "}
+            onChange={(event) => {
+              const { value } = event.target;
+              setFilterQuery({
+                ...filterQuery,
+                owner_user_id: defaultOption.value === value ? "" : value,
+              });
+            }}
+            renderValue={renderCreator}
+            MenuProps={{ classes: { paper: classes.menuPaper } }}
+          >
+            {creatorOptions.map((option) => (
+              <MenuItem value={option.value} key={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
       <div className="form-group">
         <label>Language</label>
-        <select
-          className="form-control"
-          onChange={(event) =>
-            setFilterQuery({ ...filterQuery, language: event.target.value })
-          }
-          value={filterQuery.language}
-        >
-          <option value="">All</option>
-          {languages.map((language) => (
-            <option key={language} value={language}>
-              {language === 'ts' ? 'TypeScript' : 'JavaScript'}
-            </option>
-          ))}
-        </select>
+        <FormControl fullWidth>
+          <Select
+            value={filterQuery.language || " "}
+            onChange={(event) => {
+              const { value } = event.target;
+              setFilterQuery({
+                ...filterQuery,
+                language: defaultOption.value === value ? "" : value,
+              });
+            }}
+            MenuProps={{ classes: { paper: classes.menuPaper } }}
+          >
+            {languageOptions.map((option) => (
+              <MenuItem value={option.value} key={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
     </>
   );
@@ -91,20 +183,26 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
 const getAppliedFilter = (filterObject) => {
   //for single filter to check whether filter has been applied
   const noOfLevelsApplied =
-    filterObject?.level !== undefined && filterObject.level.trim() !== ""
+    filterObject?.level_id !== undefined && filterObject.level_id.trim() !== ""
       ? 1
       : 0;
   const noOfcreatorsApplied =
-    filterObject.creator !== undefined && filterObject.creator.trim() !== ""
+    filterObject.owner_user_id !== undefined &&
+    filterObject.owner_user_id.trim() !== ""
       ? 1
       : 0;
   const noOfLanguageApplied =
     filterObject.language !== undefined && filterObject.language.trim() !== ""
-      ? 1 : 0;
-  const noOfTagsApplied =
-    filterObject?.tags?.length ? filterObject.tags.length : 0
-  let totalTags = noOfLevelsApplied +
-    noOfcreatorsApplied + noOfLanguageApplied + noOfTagsApplied;
+      ? 1
+      : 0;
+  const noOfTagsApplied = filterObject?.tags?.length
+    ? filterObject.tags.length
+    : 0;
+  let totalTags =
+    noOfLevelsApplied +
+    noOfcreatorsApplied +
+    noOfLanguageApplied +
+    noOfTagsApplied;
 
   return totalTags;
 };
@@ -115,10 +213,10 @@ const FilterPlays = () => {
   const { setFilterQuery, filterQuery } = useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
-    level: '',
+    level_id: "",
     tags: [],
-    creator: '',
-    language: ''
+    owner_user_id: "",
+    language: "",
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
@@ -126,32 +224,32 @@ const FilterPlays = () => {
     if (action === "POP") {
       console.log("POP");
       setModifiedFilterQuery({
-        level: '',
+        level_id: "",
         tags: [],
-        creator: '',
-        language: ''
+        owner_user_id: "",
+        language: "",
       });
       setFilterQuery({
-        level: '',
+        level_id: "",
         tags: [],
-        creator: '',
-        language: ''
+        owner_user_id: "",
+        language: "",
       });
       setnoOfAppliedFilter(0);
     }
     if (action === "PUSH") {
       console.log("PUSH");
       setModifiedFilterQuery({
-        level: '',
+        level_id: "",
         tags: [],
-        creator: '',
-        language: ''
+        owner_user_id: "",
+        language: "",
       });
       setFilterQuery({
-        level: '',
+        level_id: "",
         tags: [],
-        creator: '',
-        language: ''
+        owner_user_id: "",
+        language: "",
       });
     }
     setnoOfAppliedFilter(0);
@@ -188,16 +286,15 @@ const FilterPlays = () => {
         onClick={() => setShowModal(true)}
         className="btn-filter"
         title="Filter Plays"
-      >{
-          noOfAppliedFilter === 0 ?
-            null
-            : <div className="badge">{noOfAppliedFilter}</div>
-        }
+      >
+        {noOfAppliedFilter === 0 ? null : (
+          <div className="badge">{noOfAppliedFilter}</div>
+        )}
 
         <RiFilterFill
           className="icon"
           size="28px"
-          color="var(--color-neutral-30"
+          color="var(--color-neutral-30)"
         />
       </button>
     </div>

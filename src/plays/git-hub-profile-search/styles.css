@@ -1,0 +1,190 @@
+/* enter stlyes here */
+.nirban-github-profile-heading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #010326;
+    font-weight: 600;
+}
+
+.nirban-github-profile-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-direction: column;
+}
+
+.nirban-github-profile-search {
+    border: none;
+    outline: none;
+    margin-bottom: 1.5rem;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px 4px #01032609;
+}
+
+.nirban-github-profile-search ::placeholder {
+    color: #010326;
+}
+
+.nirban-github-profile-search:focus {
+    box-shadow: 0px 0px 4px 4px #01032638;
+}
+
+.nirban-github-profile-btn {
+    background-color: #00f1feab;
+    color: #010326;
+    padding: 4px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 4px rgba(173, 169, 169, 0.377);
+}
+
+.nirban-github-profile-btn:hover {
+    background-color: #00f1fe;
+}
+
+.nirban-github-profile-result {
+    display: flex;
+    justify-content: center;
+}
+
+.nirban-github-profile-results {
+    max-width: 500px;
+    background: #ffff;
+    padding: 1rem;
+    border-radius: 25px;
+    box-shadow: 0px 0px 4px 4px rgba(173, 169, 169, 0.377);
+    color: #010326;
+    font-weight: 500;
+}
+
+.nirban-github-profile-results-info {
+    padding-left: 1rem;
+}
+
+.nirban-github-profile-bio,
+.nirban-github-profile-location,
+.nirban-github-profile-twitter {
+    margin-bottom: 0.5rem;
+}
+
+.nirban-github-profile-details {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.nirban-github-profile-link {
+    font-size: x-large;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.nirban-github-profile-avatar {
+    border-radius: 50%;
+    border: 10px solid #fff;
+    max-height: 125px;
+    max-width: 125px;
+}
+
+.nirban-github-profile-socials {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.nirban-github-profile-socials>:first-child {
+    margin-right: 1rem;
+}
+
+.nirban-github-profile-socials>:nth-child(2) {
+    margin: 0 1rem;
+}
+
+.nirban-github-profile-socials>:last-child {
+    margin-left: 1rem;
+}
+
+.nirban-github-profile-repos-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
+}
+
+.nirban-github-profile-repos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.nirban-github-profile-repo-link {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.nirban-github-profile-no-user {
+    color: #010326;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 600px) {
+
+    .nirban-github-profile-results {
+        max-width: 450px;
+    }
+
+    .nirban-github-profile-details {
+        flex-direction: column;
+    }
+
+    .nirban-github-profile-repos-heading {
+        text-align: left;
+    }
+
+    .nirban-github-profile-repos {
+        display: block;
+    }
+
+    .nirban-github-profile-repo-link {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .nirban-github-profile-top {
+        text-align: center;
+    }
+
+    .nirban-github-profile-results {
+        max-width: 300px;
+    }
+
+    .nirban-github-profile-socials {
+        display: block;
+    }
+
+    .nirban-github-profile-socials>:first-child {
+        margin-right: 0;
+    }
+
+    .nirban-github-profile-socials>:nth-child(2) {
+        margin: 0;
+    }
+
+    .nirban-github-profile-socials>:last-child {
+        margin-left: 0;
+    }
+}

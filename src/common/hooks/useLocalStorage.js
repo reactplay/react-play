@@ -1,5 +1,12 @@
 import { useState } from 'react';
 
+/**
+ * 
+ * @param {string} key localstorage key name
+ * @param {*} initialValue any initial value to store
+ * @returns [storedValue, setValue]
+ */
+
 function useLocalStorage(key, initialValue) {
   // State to store our value
   // Pass initial state function to useState so logic is only executed once

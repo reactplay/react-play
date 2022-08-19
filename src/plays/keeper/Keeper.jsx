@@ -1,4 +1,3 @@
-import { getPlayById } from 'meta/play-meta-util';
 import PlayHeader from 'common/playlists/PlayHeader';
 import './Keeper.css';
 import Header from './Header';
@@ -7,10 +6,6 @@ import Note from './Notes';
 import useLocalStorage from 'common/hooks/useLocalStorage';
 
 function Keeper(props) {
-  // Do not remove the below lines.
-  // The following code is to fetch the current play from the URL
-  const { id } = props;
-  const play = getPlayById(id);
   //code starts here
   const [notes, setNotes] = useLocalStorage('keeper/notes', [
     {
@@ -36,7 +31,7 @@ function Keeper(props) {
   return (
     <>
       <div className='play-details'>
-        <PlayHeader play={play} />
+        <PlayHeader play={props} />
         <div className='play-details-body'>
           {/* Your Code Starts Here */}
           <Header />
