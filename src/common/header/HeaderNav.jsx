@@ -107,7 +107,7 @@ const HeaderNav = ({ showBrowse }) => {
                 href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="app-header-btn app-header-btn--primary"
+                className="app-header-btn app-header-btn--primary umami--click--create-play"
                 data-testid="create-btn"
               >
                 <IoAddSharp className="icon" />
@@ -130,7 +130,7 @@ const HeaderNav = ({ showBrowse }) => {
               href="https://github.com/reactplay/react-play"
               target="_blank"
               rel="noopener noreferrer"
-              className="app-header-btn app-header-btn--default"
+              className="app-header-btn app-header-btn--default umami--click--github"
               data-testid="github-btn"
             >
               <BsGithub className="icon" />

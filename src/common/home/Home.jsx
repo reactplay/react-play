@@ -84,7 +84,7 @@ const Home = () => {
               href="https://github.com/reactplay/react-play"
               target="_blank"
               rel="noopener noreferrer"
-              className="body-c2a-btn"
+              className="body-c2a-btn umami--click--github"
             >
               <BsGithub className="icon" />
               <span className="btn-label">
