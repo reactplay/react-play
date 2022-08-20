@@ -7,13 +7,13 @@ function DefMeta() {
   const currentPath = useLocation().pathname
 
   useEffect(() => {
-    if (currentPath == "/plays") {
+    if (currentPath === "/plays") {
       setTitle("ReactPlay - Plays")
     }
-    else if (currentPath == "/ideas") {
+    else if (currentPath === "/ideas") {
       setTitle("ReactPlay - Ideas")
     }
-    else if (currentPath == "/tech-stacks") {
+    else if (currentPath === "/tech-stacks") {
       setTitle("ReactPlay - Tech Stacks")
     }
     else {
