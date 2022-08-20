@@ -16,6 +16,10 @@ function DefMeta() {
     else if (currentPath === "/tech-stacks") {
       setTitle("ReactPlay - Tech Stacks")
     }
+    else if (currentPath === "/plays/create") {
+      setTitle("ReactPlay - Create Play")
+    }
+
     else {
       setTitle("ReactPlay - One app to learn, create, and share ReactJS projects.")
     }
