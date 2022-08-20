@@ -1,8 +1,29 @@
 import { Helmet } from "react-helmet";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function DefMeta() {
+  const [title, setTitle] = useState("ReactPlay - One app to learn, create, and share ReactJS projects.")
+  const currentPath = useLocation().pathname
+
+  useEffect(() => {
+    if (currentPath === "/plays") {
+      setTitle("ReactPlay - Plays")
+    }
+    if (currentPath === "/ideas") {
+      setTitle("ReactPlay - Ideas")
+    }
+    if (currentPath === "/tech-stacks") {
+      setTitle("ReactPlay - Tech Stacks")
+    }
+    else {
+      setTitle("ReactPlay - One app to learn, create, and share ReactJS projects.")
+    }
+  
+  }, [currentPath])
   return (
     <Helmet>
+      <title>{title}</title>
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="ReactPlay" />
       <meta property="og:image:type" content="image/png" />
@@ -23,7 +44,7 @@ function DefMeta() {
       />
       <meta
         property="og:title"
-        content="ReactPlay - One app to learn, create, and share ReactJS projects."
+        content={title}
         data-react-helmet="true"
       />
       <meta
@@ -43,7 +64,7 @@ function DefMeta() {
       />
       <meta
         name="twitter:title"
-        content="ReactPlay - One app to learn, create, and share ReactJS projects."
+        content={title}
         data-react-helmet="true"
       />
       <meta
