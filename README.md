@@ -1,6 +1,9 @@
 # ReactPlay(Repo: `react-play`)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -46,11 +49,13 @@
 `react-play` is an `open-source` web app that helps you learn ReactJS faster with a hands-on practice model. It is a collection of `ReactJS projects` that you can use to learn ReactJS.
 
 Is that all? Nope. You can also create your projects and share them with the world. The best part is that the ReactJS experts will `review` your project code before it gets part of the `ReactPlay` app. Isn't that a pure WIN-WIN?
+
 ## 🔥 Demo
+
 Here is the link to the app. We hope you enjoy it.
 
 > [The ReactPlay app Link](https://reactplay.io)
-  
+
 Who doesn't want motivation and support? Many Thanks to all the Stargazers who have supported this project with stars(⭐). You all are amazing!!!
 
 <a href="https://github.com/reactplay/react-play/stargazers">
@@ -69,7 +74,8 @@ You may want to set up the `react-play` repo for the following reasons:
 
 Here is a quick overview of the `react-play` repo setup:
 
-### 🍴 Fork and Clone the Repo 
+### 🍴 Fork and Clone the Repo
+
 First, you need to fork the `react-play` repo. You can do this by clicking the `Fork` button on the top right corner of the repo. If you are new to forking, please watch this [YouTube Guide](https://www.youtube.com/watch?v=h8suY-Osn8Q) to get started.
 
 Once forked, you can clone the repo by clicking the `Clone or Download` button on the top right corner of the forked repo.
@@ -77,13 +83,15 @@ Once forked, you can clone the repo by clicking the `Clone or Download` button o
 Please change the directory after cloning the repository using the `cd <folder-name>` command.
 
 ### ⬇️ Install Dependencies
+
 Next, install the dependencies by running the following command in the `react-play` repo:
 
 ```bash
 npm install
 ```
+
 Or
-  
+
 ```bash
 yarn install
 ```
@@ -103,13 +111,15 @@ REACT_APP_NHOST_ENDPOINT=graphql
 ```
 
 ### 🦄 Start the Development Mode
+
 Use the following command to start the app in the development mode:
 
 ```bash
 npm start
 ```
+
 Or
-  
+
 ```bash
 yarn start
 ```
@@ -119,18 +129,38 @@ It runs the app in development mode. Open [http://localhost:3000](http://localho
 The page will reload when you make changes. You may also see any lint errors in the console.
 
 ### 🧱 Build the App for Production
+
 Use the following command to build the app for production:
 
 ```bash
 npm run build
 ```
+
 Or
-  
+
 ```bash
 yarn build
 ```
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+
+### 🧪 Test App Locally (E2E with Cypress)
+
+Use the following command to run cypress locally:
+
+```bash
+npm run cypress:open
+```
+
+Or
+
+```bash
+yarn cypress:open
+```
+
+It will open cypress dashboard, through which you need to select `E2E Testing`.
+Once you done with selection you will get options to choose your preferred browser in which you want to run the test.!
+Once you done with selecting the browser you need to click on `Start E2E Testing in <SELECTED_BROWSER_NAME>.` Selected browser will popup and you can able to see list of cypress test click on the test to start testing.!
 
 ### 🚀 Deploy
 
@@ -144,6 +174,7 @@ You can deploy the app to `Vercel` or `Netlify` with a single click.
 </a>
 
 ## 🤝 Contributing to `ReactPlay`
+
 Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
 
 If you wish to contribute, you can,
@@ -158,14 +189,15 @@ If you wish to contribute, you can,
 > Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
 
 ## Launching reactplay Rewards
- Contributed to reactplay? Here is a big thank you from our community to you.
- Claim your badge and showcase them with pride.
- Let us inspire more folks !
 
- ![reactplay Badges](https://aviyel.com/assets/uploads/rewards/share/project/43/512/share.png)
- 
- ### **[Claim Now!](https://aviyel.com/projects/43/reactplay/rewards)**
- 
+Contributed to reactplay? Here is a big thank you from our community to you.
+Claim your badge and showcase them with pride.
+Let us inspire more folks !
+
+![reactplay Badges](https://aviyel.com/assets/uploads/rewards/share/project/43/512/share.png)
+
+### **[Claim Now!](https://aviyel.com/projects/43/reactplay/rewards)**
+
 ## 🙏 Support
 
 We all need support and motivation. `ReactPlay` is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
@@ -181,9 +213,6 @@ If you found the app helpful, consider supporting us with a coffee.
 <h3 align="center">
 A ⭐️ to <b>ReactPlay</b> is to make us more 💪 stronger and motivated.
 </h3>
-
-
-
 
 ## Contributors ✨
 
