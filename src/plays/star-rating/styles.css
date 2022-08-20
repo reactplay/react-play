@@ -1,0 +1,17 @@
+/* enter stlyes here */
+
+.star-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.star > button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
