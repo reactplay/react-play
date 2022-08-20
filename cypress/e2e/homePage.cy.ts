@@ -22,7 +22,6 @@ describe("Test home page", () => {
 
   it("Tweet section should render with all tweets", () => {
     cy.intercept("GET", "https://cdn.syndication.twimg.com/*").as("tweets");
-    cy.get('[data-testid="watch-svg"]').should("be.visible");
     cy.get('[data-testid="tweet-container"]')
       .scrollIntoView()
       .should("be.visible");
