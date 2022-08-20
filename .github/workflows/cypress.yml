@@ -7,12 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+      - name: Install Packages
+        run: |
+          npm install --legacy-peer-deps
+
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
+          install-command: |
+            npm install --legacy-peer-deps
           start: npm start
           wait-on: "http://localhost:3000"
           browser: chrome
