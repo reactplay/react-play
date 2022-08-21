@@ -7,6 +7,7 @@ import { makeStyles } from "@mui/styles";
 const useStyle = makeStyles({
   Typography: {
     margin: "8px 0px",
+    fontWeight: 600,
   },
   Button: {
     background: "#00f2fe",
