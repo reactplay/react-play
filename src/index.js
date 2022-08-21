@@ -5,14 +5,15 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "reportWebVitals";
 import register from "./registerServiceWorker";
+import ErrorBoundry from "./ErrorBoundary/ErrorBoundary";
 
 /** removing console statement in react prod build */
 if (process.env.NODE_ENV !== "development") {
-   console.log = () => {};
-   console.debug = () => {};
-   console.info = () => {};
-   console.disableYellowBox = true;
- }
+  console.log = () => {};
+  console.debug = () => {};
+  console.info = () => {};
+  console.disableYellowBox = true;
+}
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,9 +35,11 @@ const Index = () => {
   };
   return (
     <React.StrictMode>
-      <SearchContext.Provider value={value}>
-        <RouteDefs />
-      </SearchContext.Provider>
+      <ErrorBoundry>
+        <SearchContext.Provider value={value}>
+          <RouteDefs />
+        </SearchContext.Provider>
+      </ErrorBoundry>
     </React.StrictMode>
   );
 };
