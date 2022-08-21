@@ -7,7 +7,7 @@ describe("Test home page", () => {
     cy.visit("/");
   });
 
-  it.only("Header component should render properly", () => {
+  it("Header component should render properly", () => {
     cy.get('[data-testid="app-header"]').should("be.visible");
     cy.get('[data-testid="app-logo"]').should("be.visible");
     cy.get('[data-testid="plays-search-box-container"]').should("not.exist");
@@ -21,7 +21,6 @@ describe("Test home page", () => {
 
     cy.get("@browseBtn").click();
     cy.get('[data-testid="plays-search-box-container"]').should("be.visible");
-
   });
 
   it("Tweet section should render with all tweets", () => {
