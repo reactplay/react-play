@@ -92,6 +92,9 @@ const ExtendedFooter = () => {
               </a>
             </div>
           </p>
+          <p className="mt-8 mb-4">
+            <a href="https://www.netlify.com" className="inline-block"> <img src="https://www.netlify.com/v3/img/components/netlify-light.svg" alt="Deploys by Netlify" /> </a>
+          </p>
         </div>
         <div className='body-secondary'>
           <h3 className='section-title mt-3'>About</h3>
