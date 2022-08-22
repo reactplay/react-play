@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function DefMeta() {
-  const [title, setTitle] = useState("ReactPlay - One app to learn, create, and share ReactJS projects.")
+  const [title, setTitle] = useState("ReactPlay - One app to learn, create, and share ReactJS projects")
   const currentPath = useLocation().pathname
 
   useEffect(() => {
