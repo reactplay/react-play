@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, createContext } from "react";
 import useFetch from "common/hooks/useFetch";
 import { Link } from "react-router-dom";
 import "./home.css";
@@ -15,7 +15,11 @@ import Contributors from "./Contributors";
 import ExtendedFooter from "common/footer/ExtendedFooter";
 import { SearchContext } from "common/search/search-context";
 import { Tweet } from "react-twitter-widgets";
-import Spinner from "../spinner/spinner"
+import Spinner from "../spinner/spinner";
+
+
+
+export const ThemeContext = createContext(null);
 
 
 
@@ -56,10 +60,18 @@ const Home = () => {
     // Function to handle the tweets loading state after tweets have been loaded.
     const tweetLoadHandler = () => setTweetsLoading(false)
 
+    // state for light mode or dark mode functionality
+    const [theme, setTheme] = useState("dark");
+
+    const toggleTheme = () => {
+      setTheme((curr) => ( curr === "light" ? "dark" : "light"));
+    }
 
   return (
-    <div>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}> 
+    <div id={theme}>
       <section className="app-home-body">
+        
         <div className="home-bg-graphics">
           <Flower className="home-bg-graphics-sm" />
           <Flower className="home-bg-graphics-rg" />
@@ -145,7 +157,7 @@ const Home = () => {
         <div className="home-ideas">
           <FaLightbulb className="icon" color="var(--color-brand-primary)" size='48px'/>
           <p className="ideas-lead">Not sure how to get started?</p>
-          <p className="ideas-title">We have got lot of ideas</p>
+          <p className="ideas-title">We have got lots of ideas</p>
           <Link to="/ideas" className="home-anchor">
             <span className="text">Get started with some ideas</span>
           </Link>
@@ -190,6 +202,7 @@ const Home = () => {
       </section>
       <ExtendedFooter />
     </div>
+  </ThemeContext.Provider>
   );
 };
 

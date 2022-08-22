@@ -4,6 +4,7 @@ import HeaderNav from "./HeaderNav";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./header.css";
+import ReactSwitch from "react-switch";
 
 const Header = () => {
   const location = useLocation();
@@ -53,10 +54,11 @@ const Header = () => {
         showHideBits.setHeaderStyle ? "" : " app-header-home"
       }`}
     >
-      <span>
+      <span className="header-span">
         <Link to="/" className="app-logo">
           <span className="sr-only">React Play</span>
         </Link>
+        <span className="switch-span"> <ReactSwitch /></span>
       </span>
       <div className="app-header-search">
         {showHideBits.showSearch && (

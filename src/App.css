@@ -189,7 +189,8 @@ small {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  background-color: var(--color-neutral-20);
+  background-color: #000000;
+  /* background-color: var(--color-neutral-20); */
 }
 
 .app-body-overflow-hidden {

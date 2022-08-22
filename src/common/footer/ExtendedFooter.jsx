@@ -31,7 +31,7 @@ const ExtendedFooter = () => {
             and friends.
           </p>
           <p>
-            <small>Connect with us</small>
+            <small className="p-sm">Connect with us</small>
             <ul className='social-links'>
               <li>
                 <a

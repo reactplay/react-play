@@ -1,6 +1,6 @@
 import useContributors from "common/hooks/useContributors";
 
-const Contributors = () => {
+const Contributors = ({theme}) => {
   const { data, error, isLoading } = useContributors(true);
 
   return (
