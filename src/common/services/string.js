@@ -41,6 +41,9 @@ export const toSlug = (str) => {
 };
 
 export const toSanitized = (str) => {
+  if (!str) {
+    return "";
+  }
   //replace all special characters | symbols with a space
   str = str.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, " ");
   // trim spaces at start and end of string
