@@ -36,7 +36,7 @@ const PlayList = () => {
         <p className='page-404-lead'>Play not found 
         {hasFilterQuery? " for matched filter criteria" : null}
         {hasFilterQuery && searchTerm ? " and": null}
-        {searchTerm ? " for " + searchTerm : null}
+        {searchTerm ? ` for  ${searchTerm}` : null}
         </p>
         <p className='page-404-desc'>
           Please change your search or adjust filters to find plays.
