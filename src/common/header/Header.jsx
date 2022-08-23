@@ -1,12 +1,12 @@
 import FilterPlays from "common/search/FilterPlays";
 import SearchPlays from "common/search/SearchPlays";
 import HeaderNav from "./HeaderNav";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./header.css";
 import ReactSwitch from "react-switch";
 
-const Header = () => {
+const Header = ({ toggleTheme, theme}) => {
   const location = useLocation();
   const pathName = location.pathname;
 
@@ -48,7 +48,8 @@ const Header = () => {
     }
   }, [pathName]);
 
-  return (
+  
+  return (  
     <header
       className={`app-header ${
         showHideBits.setHeaderStyle ? "" : " app-header-home"
@@ -58,7 +59,7 @@ const Header = () => {
         <Link to="/" className="app-logo">
           <span className="sr-only">React Play</span>
         </Link>
-        <span className="switch-span"> <ReactSwitch /></span>
+        <span className="switch-span"> <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/></span>
       </span>
       <div className="app-header-search">
         {showHideBits.showSearch && (
@@ -69,7 +70,7 @@ const Header = () => {
         )}
       </div>
       <HeaderNav showBrowse={showHideBits.showBrowse} />
-    </header>
+    </header>   
   );
 };
 

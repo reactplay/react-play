@@ -1,4 +1,5 @@
 import App from "App";
+import { useState } from "react";
 import {
   Footer,
   Header,
@@ -19,16 +20,25 @@ const nhost = new NhostClient({
 });
 
 const RouteDefs = () => {
+
+   // state for light mode or dark mode functionality
+   const [theme, setTheme] = useState("light");
+
+   // function for toggling betweern light and dark mode
+   const toggleTheme = () => {
+     setTheme((curr) => ( curr === "light" ? "dark" : "light"));
+   }
+
   return (
     <NhostReactProvider nhost={nhost}>
       <BrowserRouter>
-        <Header />
+        <Header toggleTheme={toggleTheme} theme={theme}/>
         <DefMeta />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home theme={theme} />} />
           <Route path="/tech-stacks" element={<TechStack />} />
           <Route path="/plays" element={<App />}>
-            <Route index element={<PlayList />} />
+            <Route index element={<PlayList theme={theme}/>} />
             <Route exact path="create" element= {<CreatePlay />}/>
             {process.env.NODE_ENV === "development" && <Route exact path="created/:playid" element={<PlayCreated />} />}
             <Route idex exact path=":username" element={<PlayMeta />}>

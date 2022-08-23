@@ -32,6 +32,7 @@ const Index = () => {
     showShareModal,
     setShowShareModal,
   };
+
   return (
     <React.StrictMode>
       <SearchContext.Provider value={value}>

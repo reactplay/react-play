@@ -14,6 +14,17 @@
   justify-content: center;
 }
 
+ .play-not-found{
+  
+}
+/* light || dark mode */
+.light{
+  background-color: unset;
+}
+.dark{
+  background-color: var(--color-neutral-110)
+}
+
 .list-plays li a {
   display: block;
   position: relative;

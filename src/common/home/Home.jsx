@@ -19,12 +19,7 @@ import Spinner from "../spinner/spinner";
 
 
 
-export const ThemeContext = createContext(null);
-
-
-
-
-const Home = () => {
+const Home = ({ theme}) => {
   const [gitHubStars, setGitHubStars] = useState("...");
   const { data } = useFetch("https://api.github.com/repos/reactplay/react-play");
   const { setSearchTerm, searchTerm, setFilterQuery } =
@@ -60,16 +55,10 @@ const Home = () => {
     // Function to handle the tweets loading state after tweets have been loaded.
     const tweetLoadHandler = () => setTweetsLoading(false)
 
-    // state for light mode or dark mode functionality
-    const [theme, setTheme] = useState("dark");
-
-    const toggleTheme = () => {
-      setTheme((curr) => ( curr === "light" ? "dark" : "light"));
-    }
-
+   
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}> 
-    <div id={theme}>
+    
+    <div className={theme}>
       <section className="app-home-body">
         
         <div className="home-bg-graphics">
@@ -202,7 +191,7 @@ const Home = () => {
       </section>
       <ExtendedFooter />
     </div>
-  </ThemeContext.Provider>
+  
   );
 };
 
