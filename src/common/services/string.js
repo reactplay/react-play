@@ -35,3 +35,20 @@ export const toTitleCaseTrimmed = (str) => {
   const titleCse = toTitleCase(str);
   return titleCse.replace(/\s/g, "");
 };
+
+export const toSlug = (str) => {
+  return toSanitized(str).toLowerCase();
+};
+
+export const toSanitized = (str) => {
+  if (!str) {
+    return "";
+  }
+  //replace all special characters | symbols with a space
+  str = str.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, " ");
+  // trim spaces at start and end of string
+  str = str.replace(/^\s+|\s+$/gm, "");
+  // replace space with dash/hyphen
+  str = str.replace(/\s+/g, "-");
+  return str;
+};
