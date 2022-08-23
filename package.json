@@ -46,12 +46,18 @@
     "remarkable": "^2.0.1",
     "reselect": "^4.1.5",
     "web-vitals": "^2.1.0",
+    "workbox-background-sync": "^6.5.4",
+    "workbox-broadcast-update": "^6.5.4",
     "workbox-cacheable-response": "^6.5.4",
     "workbox-core": "^6.5.4",
     "workbox-expiration": "^6.5.4",
+    "workbox-google-analytics": "^6.5.4",
+    "workbox-navigation-preload": "^6.5.4",
     "workbox-precaching": "^6.5.4",
+    "workbox-range-requests": "^6.5.4",
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4",
+    "workbox-streams": "^6.5.4",
     "workbox-window": "^6.5.4"
   },
   "scripts": {
