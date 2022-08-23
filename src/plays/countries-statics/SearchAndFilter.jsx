@@ -38,7 +38,7 @@ const SearchAndFilter = () => {
         {showSuggestions && 
         <div className='absolute w-full bg-white p-4'>
           {SearchResult.map((country)=>{
-            return <div className='border-b'>{country.properties.name}</div>
+            return <div className='border-b cursor-pointer hover:bg-cyan-100'>{country.properties.name}</div>
           })}
         </div>
           }
