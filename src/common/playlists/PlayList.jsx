@@ -35,7 +35,7 @@ const PlayList = () => {
         <ImageOops className='play-not-found-image' />  
         <p className='page-404-lead'>Play not found 
         {hasFilterQuery? " for matched filter criteria" : null}
-        {hasFilterQuery && searchTerm ? " and ": null}
+        {hasFilterQuery && searchTerm ? " and": null}
         {searchTerm ? " for " + searchTerm : null}
         </p>
         <p className='page-404-desc'>
