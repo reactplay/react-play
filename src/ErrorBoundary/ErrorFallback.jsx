@@ -24,7 +24,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
 
   return (
     <div className="error-boundary-fallback">
-      <ImageOops className="image" />
+      <ImageOops className="error-boundary-image" />
       <Typography className={classes.Typography}>
         Something went wrong!
       </Typography>

@@ -708,14 +708,14 @@
 }
 
 .play-not-found .play-not-found-image,
-.error-boundary-fallback .image {
+.error-boundary-fallback .error-boundary-image {
   max-width: 100%;
   height: auto;
 }
 
 @media screen and (max-width: 768px) {
   .play-not-found .play-not-found-image,
-  .error-boundary-fallback .image {
+  .error-boundary-fallback .error-boundary-image {
     max-width: 50%;
     margin-bottom: 2rem;
   }
