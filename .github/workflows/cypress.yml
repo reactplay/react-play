@@ -27,3 +27,6 @@ jobs:
           start: npm start
           wait-on: "http://localhost:3000"
           browser: chrome
+        env:
+          # pass GitHub token to detect new build vs re-run build
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
