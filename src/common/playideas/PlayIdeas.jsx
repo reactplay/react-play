@@ -5,7 +5,7 @@ import { RiChatNewLine } from "react-icons/ri";
 import LevelBadge from "common/components/LevelBadge";
 import "./playIdeas.css";
 
-const PlayIdeas = () => {
+const PlayIdeas = ({theme}) => {
   const [ideas, setIdeas] = useState([]);
   const [filteredIdeas, setFilteredIdeas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -57,7 +57,7 @@ const PlayIdeas = () => {
   return (
     <div className="app-body app-body-overflow-hidden">
       <div className="playideas-container">
-        <div className="playideas-header">
+        <div className={`${theme} playideas-header`}>
           <div>
             <h3 className="header-title">
               Play Ideas
@@ -127,7 +127,7 @@ const PlayIdeas = () => {
         <div className="playideas-body">
           <ul className="list-playideas">
             {filteredIdeas.map((idea) => (
-              <li className="list-playideas-item" key={idea.id}>
+              <li className={`${theme} list-playideas-item`} key={idea.id}>
                 <h4 className="idea-title">{idea.title}</h4>
                 <p className="idea-desc">{idea.description}</p>
                 <p className="idea-level">

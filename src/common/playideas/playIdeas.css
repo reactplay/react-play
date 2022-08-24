@@ -1,3 +1,11 @@
+/* light || dark mode */
+.light{
+    background-color: var(--color-neutral-10) !important;
+}
+.dark{
+    background-color: var(--color-neutral-110)
+}
+
 .playideas-container {
     display: flex;
     flex-direction: column;
@@ -11,9 +19,12 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: var(--color-neutral-10);
+    /* background-color: var(--color-neutral-10); */
 }
 
+.dark .playideas-header{
+    background-color: var(--color-neutral-110) ;
+}
 .playideas-header .header-title {
     margin: 0;
     display: flex;
@@ -36,7 +47,11 @@
 .playideas-header .header-desc {
     margin: 0 0 .4rem 0;
     font-size: var(--fs-sm);
-    color: var(--color-neutral-60);
+    /* color: var(--color-neutral-60); */
+}
+
+.dark .playideas-header .header-desc {
+    color: var(--color-neutral-10);
 }
 
 .playideas-header .playideas-levels-pills {
@@ -117,12 +132,11 @@
 }
 
 
-
 .list-playideas .list-playideas-item {
     position: relative;
     border-radius: 4px;
     padding: 1.6rem;
-    background-color: var(--color-neutral-10);
+    /* background-color: var(--color-neutral-10); */
     box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.03);
     -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.03);
     -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb),0.03);
@@ -142,17 +156,18 @@
     margin-bottom: 0.3rem;
     font-size: var(--fs-md);
     font-weight: var(--fw-bold);
-    color: var(--color-neutral-90);
+    /* color: var(--color-neutral-90); */
     z-index: 1;
     line-height: var(--lh-rg);
     transition: all 0.16s ease-in-out;
 }
 
+
 .list-playideas .list-playideas-item .idea-desc {
     margin: 0.8rem 0;
     font-size: var(--fs-sm);
     font-weight: var(--fw-light);
-    color: var(--color-neutral-50);
+    /* color: var(--color-neutral-50); */
 }
 
 .list-playideas .list-playideas-item .idea-level {

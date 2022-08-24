@@ -38,7 +38,7 @@ const RouteDefs = () => {
           <Route path="/" element={<Home theme={theme} />} />
           <Route path="/tech-stacks" element={<TechStack />} />
           <Route path="/plays" element={<App />}>
-            <Route index element={<PlayList theme={theme}/>} />
+            <Route index element={<PlayList />} />
             <Route exact path="create" element= {<CreatePlay />}/>
             {process.env.NODE_ENV === "development" && <Route exact path="created/:playid" element={<PlayCreated />} />}
             <Route idex exact path=":username" element={<PlayMeta />}>
@@ -58,7 +58,7 @@ const RouteDefs = () => {
           <Route path="/play" element={<App />}>
             <Route index element={<PlayList />} />
           </Route>
-          <Route path="/ideas" element={<PlayIdeas />} />
+          <Route path="/ideas" element={<PlayIdeas theme={theme}/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

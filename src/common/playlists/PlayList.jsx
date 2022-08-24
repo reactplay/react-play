@@ -10,7 +10,7 @@ import useGetPlays from 'common/hooks/useGetPlays'
 import "./playlist.css";
 import { toSanitized } from "common/services/string";
 
-const PlayList = ({theme}) => {
+const PlayList = () => {
   const [loading, error, plays] = useGetPlays();
   const [allPlays, setAllPlays] = useState([])
 
@@ -22,7 +22,7 @@ const PlayList = ({theme}) => {
 
   if (plays?.length === 0) {
     return (
-      <div className={`${theme} play-not-found`}>
+      <div className='play-not-found'>
         <ImageOops className='play-not-found-image' />
         <p className='page-404-lead'>Play not found</p>
         <p className='page-404-desc'>
@@ -33,7 +33,7 @@ const PlayList = ({theme}) => {
   }
   return (
     <Fragment>
-      <ol className={`${theme} list-plays`}>
+      <ol className='list-plays'>
         {plays?.map((play, index) => (
           
           <React.Fragment key={index}>
