@@ -132,6 +132,24 @@ yarn build
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
+### 🧪 Test App Locally (E2E with Cypress)
+
+Use the following command to run cypress locally:
+
+```bash
+npm run cypress:open
+```
+
+Or
+
+```bash
+yarn cypress:open
+```
+
+It will open cypress dashboard, through which you need to select `E2E Testing`.
+Once you done with selection you will get options to choose your preferred browser in which you want to run the test.!
+Once you done with selecting the browser you need to click on `Start E2E Testing in <SELECTED_BROWSER_NAME>.` Selected browser will popup and you can able to see list of cypress test, click on the test to start testing.!
+
 ### 🚀 Deploy
 
 You can deploy the app to `Vercel` or `Netlify` with a single click.

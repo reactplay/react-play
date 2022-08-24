@@ -52,9 +52,10 @@ const Header = () => {
       className={`app-header ${
         showHideBits.setHeaderStyle ? "" : " app-header-home"
       }`}
+      data-testid="app-header"
     >
       <span>
-        <Link to="/" className="app-logo">
+        <Link to="/" className="app-logo" data-testid="app-logo">
           <span className="sr-only">React Play</span>
         </Link>
       </span>
