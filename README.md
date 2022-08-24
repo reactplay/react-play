@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-39-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -260,6 +260,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/ammaaraslam"><img src="https://avatars.githubusercontent.com/u/96367405?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ammaar Aslam</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ammaaraslam" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/mayukh551"><img src="https://avatars.githubusercontent.com/u/82811112?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mayukh Bhowmick</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=mayukh551" title="Code">💻</a></td>
     <td align="center"><a href="http://emmanueleboh.vercel.app"><img src="https://avatars.githubusercontent.com/u/63825997?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Emmanuel O Eboh</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=EOEboh" title="Code">💻</a></td>
+    <td align="center"><a href="https://shailesh-parmar.netlify.app/"><img src="https://avatars.githubusercontent.com/u/71748675?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shailesh Parmar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ShaileshParmar11" title="Code">💻</a></td>
   </tr>
 </table>
 
