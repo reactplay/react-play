@@ -54,6 +54,7 @@ const Header = ({ toggleTheme, theme}) => {
       className={`app-header ${
         showHideBits.setHeaderStyle ? "" : " app-header-home"
       }`}
+      data-testid="app-header"
     >
       <span className="header-span">
         <Link to="/" className="app-logo">
