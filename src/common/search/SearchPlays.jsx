@@ -33,10 +33,15 @@ const SearchPlays = () => {
 
   return (
     <>
-      <div className="search-input">
-        <BiSearch className="search-input-icon" size="24px" />
+      <div className="search-input" data-testid="plays-search-box-container">
+        <BiSearch
+          className="search-input-icon"
+          data-testid="plays-search-box-icon"
+          size="24px"
+        />
         <input
           className="search-input-text"
+          data-testid="plays-search-box-input-field"
           type="text"
           placeholder="Search for a play..."
           onKeyUp={handleSearch}

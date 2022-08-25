@@ -15,8 +15,8 @@ const Contributors = () => {
         {isLoading && <li>Loading...</li>}
         {error && <li>Error: {error.message}</li>}
         {data &&
-          data.map((contributor, index) => (
-            <li key={contributor.id} className="contributor">
+          data.map((contributor) => (
+            <li key={contributor.id} className="contributor" data-testid={`contributor-${contributor.id}`}>
               <a
                 href={contributor.html_url}
                 target="_blank"
