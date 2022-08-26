@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-39-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -132,6 +132,24 @@ yarn build
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
+### 🧪 Test App Locally (E2E with Cypress)
+
+Use the following command to run cypress locally:
+
+```bash
+npm run cypress:open
+```
+
+Or
+
+```bash
+yarn cypress:open
+```
+
+It will open cypress dashboard, through which you need to select `E2E Testing`.
+Once you done with selection you will get options to choose your preferred browser in which you want to run the test.!
+Once you done with selecting the browser you need to click on `Start E2E Testing in <SELECTED_BROWSER_NAME>.` Selected browser will popup and you can able to see list of cypress test, click on the test to start testing.!
+
 ### 🚀 Deploy
 
 You can deploy the app to `Vercel` or `Netlify` with a single click.
@@ -242,6 +260,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/ammaaraslam"><img src="https://avatars.githubusercontent.com/u/96367405?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ammaar Aslam</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ammaaraslam" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/mayukh551"><img src="https://avatars.githubusercontent.com/u/82811112?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mayukh Bhowmick</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=mayukh551" title="Code">💻</a></td>
     <td align="center"><a href="http://emmanueleboh.vercel.app"><img src="https://avatars.githubusercontent.com/u/63825997?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Emmanuel O Eboh</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=EOEboh" title="Code">💻</a></td>
+    <td align="center"><a href="https://shailesh-parmar.netlify.app/"><img src="https://avatars.githubusercontent.com/u/71748675?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shailesh Parmar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ShaileshParmar11" title="Code">💻</a></td>
   </tr>
 </table>
 

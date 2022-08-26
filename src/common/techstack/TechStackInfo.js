@@ -15,6 +15,7 @@ import {
   SiNodedotjs,
 } from "react-icons/si";
 import NHost from "images/nhost.svg";
+import Umami from "images/umami.svg";
 
 export const TechStackInfo = [
   {
@@ -106,5 +107,11 @@ export const TechStackInfo = [
     text: "Python",
     type: "icon",
     link: "https://www.python.org",
+  },
+  {
+    comp: Umami,
+    text: "Umami",
+    type: "image",
+    link: "https://umami.is/",
   },
 ];
