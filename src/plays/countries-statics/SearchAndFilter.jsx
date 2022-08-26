@@ -7,7 +7,6 @@ const SearchAndFilter = () => {
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [searchQuery, setSearchQuery] = useState("");
   const SearchResult = MapData.objects.world.geometries.filter(o=>o.properties.name.toLowerCase().includes(searchQuery.toLowerCase())).slice(0, 10)
-  
   const handleOnKeyDown = (e)=>{
     if(e.keyCode === 27){
       setShowSuggestions(false)
@@ -38,7 +37,7 @@ const SearchAndFilter = () => {
         {showSuggestions && 
         <div className='absolute w-full bg-white p-4'>
           {SearchResult.map((country)=>{
-            return <div className='border-b cursor-pointer hover:bg-cyan-100'>{country.properties.name}</div>
+            return <div className='border-b cursor-pointer hover:bg-cyan-100 font-bold'>{country.properties.name}</div>
           })}
         </div>
           }
