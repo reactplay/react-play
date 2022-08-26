@@ -47,7 +47,7 @@ function QuoteGenerator(props) {
       );
     };
     fetcher();
-  }, [quoteArray]);
+  }, []);
 
   return (
     <>
