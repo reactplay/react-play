@@ -87,6 +87,7 @@ function PlayMeta() {
   return (
     <>
       <Helmet>
+        <title>ReactPlay - {play.name}</title>
         <meta name="description" content={play.description} />
         <meta property="og:title" content={play.name} />
         <meta property="og:description" content={play.description} />
