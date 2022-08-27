@@ -17,6 +17,7 @@ export default function Map({ activeGeo, handleClickMap }) {
     hover: { outline: "none", fill: "#C0C0C0" },
     pressed: { outline: "none" },
   };
+
   return (
     <>
       <div className="w-full xl:w-[60%] ">
@@ -29,7 +30,7 @@ export default function Map({ activeGeo, handleClickMap }) {
                     key={geo.rsmKey}
                     geography={geo}
                     fill={
-                      activeGeo === geo.id.toLowerCase()
+                      activeGeo.toLowerCase() === geo.id.toLowerCase()
                         ? "darkblue"
                         : "lightblue"
                     }

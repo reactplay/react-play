@@ -10,6 +10,7 @@ const SearchAndFilter = () => {
     index,
     selected,
     SearchResult,
+    searchSuggestionRef,
     keyPressHandler,
     handleOnchange,
     handleOnFocus,
@@ -32,15 +33,16 @@ const SearchAndFilter = () => {
         </div>
         {showSuggestions && (
           <div
-            className="absolute w-full bg-white p-4 "
+            className="absolute w-full bg-white  p-4 "
             onKeyDown={keyPressHandler}
+            ref={searchSuggestionRef}
           >
             {SearchResult.map((country, i) => {
               return (
                 <div
                   key={i}
                   onClick={() => searchResultClickHandler(i)}
-                  className={`border-b cursor-pointer hover:bg-cyan-100 font-bold ${
+                  className={`border-b cursor-pointer hover:bg-cyan-100 font-bold  ${
                     index === i ? "geo-search-selected" : ""
                   }`}
                 >

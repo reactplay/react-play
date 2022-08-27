@@ -1,7 +1,7 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import Map from "./Map";
 import Country from "./Country";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SearchAndFilter from "./SearchAndFilter";
 import { GeoContext } from "./Context";
 import MapData from "./featues.json";
@@ -12,6 +12,7 @@ function CountriesStatics(props) {
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState("");
   const [searchQuery, setSearchQuery] = useState("India");
+  const searchSuggestionRef = useRef(null);
   //search query return the first 10 matching results.
   const SearchResult = MapData.objects.world.geometries
     .filter((o) =>
@@ -45,8 +46,11 @@ function CountriesStatics(props) {
       if (searchQuery !== null) {
         setShowSuggestions(false);
       }
+      setSelected(SearchResult[index].properties.name);
+      setActiveGeo(SearchResult[index].id);
     }
   };
+
   useEffect(() => {
     setSelected(SearchResult[index].properties.name);
   }, [index]);
@@ -59,13 +63,27 @@ function CountriesStatics(props) {
   const handleOnFocus = () => {
     setShowSuggestions(true);
   };
-  const handleOnBlur = () => {
-    setShowSuggestions(false);
-  };
   const searchResultClickHandler = (i) => {
     setIndex(i);
+    setSelected(SearchResult[i].properties.name);
     setShowSuggestions(false);
+    setActiveGeo(SearchResult[i].id);
   };
+  useEffect(() => {
+    //hide showSuggestion if the user clicked outside of the ref
+    const handleClickOutside = (event) => {
+      if (
+        searchSuggestionRef.current &&
+        !searchSuggestionRef.current.contains(event.target)
+      ) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [searchSuggestionRef]);
   const handleClickMap = (geo) => {
     setActiveGeo(geo.id.toLowerCase());
   };
@@ -88,10 +106,10 @@ function CountriesStatics(props) {
               selected,
               searchQuery,
               SearchResult,
+              searchSuggestionRef,
               keyPressHandler,
               handleOnchange,
               handleOnFocus,
-              handleOnBlur,
               searchResultClickHandler,
             }}
           >
