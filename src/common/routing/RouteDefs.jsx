@@ -19,11 +19,24 @@ const nhost = new NhostClient({
 });
 
 const RouteDefs = () => {
+  // Array of paths and it's corresponding title. This array is used for changing the title of the website dynamically.
+  const routes = [
+    {
+      path: "/",
+      title:
+        "ReactPlay - One app to learn, create, and share ReactJS projects.",
+    },
+    { path: "/plays", title: "ReactPlay - Plays" },
+    { path: "/ideas", title: "ReactPlay - Ideas" },
+    { path: "/tech-stacks", title: "ReactPlay - Tech Stacks" },
+    { path: "/plays/create", title: "ReactPlay - Create Play" },
+  ];
+
   return (
     <NhostReactProvider nhost={nhost}>
       <BrowserRouter>
         <Header />
-        <DefMeta />
+        <DefMeta routes={routes} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tech-stacks" element={<TechStack />} />

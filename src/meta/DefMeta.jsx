@@ -2,29 +2,16 @@ import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-function DefMeta() {
+function DefMeta({ routes }) {
   const [title, setTitle] = useState(
     "ReactPlay - One app to learn, create, and share ReactJS projects."
   );
   const currentPath = useLocation().pathname;
 
   useEffect(() => {
-    // Array of paths and it's corresponding title. This array is used for changing the title of the website dynamically.
-    const routes = [
-      {
-        path: "/",
-        title:
-          "ReactPlay - One app to learn, create, and share ReactJS projects.",
-      },
-      { path: "/plays", title: "ReactPlay - Plays" },
-      { path: "/ideas", title: "ReactPlay - Ideas" },
-      { path: "/tech-stacks", title: "ReactPlay - Tech Stacks" },
-      { path: "/plays/create", title: "ReactPlay - Create Play" },
-    ];
-
     // Logic to set title of website dynamically depending on the path.
     routes.some((route) => route.path === currentPath && setTitle(route.title));
-  }, [currentPath]);
+  }, [currentPath, routes]);
   return (
     <Helmet>
       <title>{title}</title>
