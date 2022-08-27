@@ -67,12 +67,16 @@ export default function Country({ activeGeo }) {
                       {Object.keys(country.currencies).map(
                         (currency, index) => {
                           return (
-                            <span
-                              key={index}
-                              className="bg-lime-600 text-white px-1 rounded m-1"
-                            >
-                              {currency}
-                            </span>
+                            <div>
+                              <span
+                                key={index}
+                                className=" text-2xl px-1 rounded m-1"
+                              >
+                                {country.currencies[currency].symbol},
+                              </span>
+                              <span>{currency}</span>,
+                              <div>{country.currencies[currency].name}</div>
+                            </div>
                           );
                         }
                       )}
