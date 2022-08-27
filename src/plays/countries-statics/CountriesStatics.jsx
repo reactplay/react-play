@@ -85,6 +85,7 @@ function CountriesStatics(props) {
     };
   }, [searchSuggestionRef]);
   const handleClickMap = (geo) => {
+    setSelected(geo.properties.name);
     setActiveGeo(geo.id.toLowerCase());
   };
   return (
