@@ -1,12 +1,19 @@
 /* enter stlyes here */
-
-.star-wrapper {
+.play-details .play-details-body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+}
+
+.star-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .star > button {
@@ -14,4 +21,10 @@
   border: none;
   cursor: pointer;
   outline: none;
+}
+
+@media screen and (max-width: 450px) {
+  .FaStar {
+    width: 40px;
+  }
 }
