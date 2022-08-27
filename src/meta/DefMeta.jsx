@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 function DefMeta({ routes }) {
   const [title, setTitle] = useState(
-    "ReactPlay - One app to learn, create, and share ReactJS projects."
+    "ReactPlay - One app to learn, create, and share ReactJS projects"
   );
   const currentPath = useLocation().pathname;
 
