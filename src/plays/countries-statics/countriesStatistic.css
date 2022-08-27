@@ -1,13 +1,17 @@
-.geo-now-searchbar{
-    border: 2px solid lightblue !important;
-    outline: none;
-    padding-left: 1rem !important;
+.geo-now-searchbar {
+  border: 2px solid lightblue !important;
+  outline: none;
+  padding-left: 1rem !important;
 }
-.geo-now-searchbar:focus{
-    outline: solid;
-    outline-color: lightblue;
-    outline-width: 2px;
-    border: none;
-    background-color: #fff;
-    /* border: 5px solid lightblue !important; */
+.geo-now-searchbar:focus {
+  outline: solid;
+  outline-color: lightblue;
+  outline-width: 2px;
+  border: none;
+  background-color: #fff;
+  /* border: 5px solid lightblue !important; */
+}
+
+.geo-search-selected {
+  background: lightblue;
 }
