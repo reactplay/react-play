@@ -3,28 +3,28 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function DefMeta() {
-  const [title, setTitle] = useState("ReactPlay - One app to learn, create, and share ReactJS projects")
-  const currentPath = useLocation().pathname
+  const [title, setTitle] = useState(
+    "ReactPlay - One app to learn, create, and share ReactJS projects."
+  );
+  const currentPath = useLocation().pathname;
 
   useEffect(() => {
-    if (currentPath === "/plays") {
-      setTitle("ReactPlay - Plays")
-    }
-    else if (currentPath === "/ideas") {
-      setTitle("ReactPlay - Ideas")
-    }
-    else if (currentPath === "/tech-stacks") {
-      setTitle("ReactPlay - Tech Stacks")
-    }
-    else if (currentPath === "/plays/create") {
-      setTitle("ReactPlay - Create Play")
-    }
+    // Array of paths and it's corresponding title. This array is used for changing the title of the website dynamically.
+    const routes = [
+      {
+        path: "/",
+        title:
+          "ReactPlay - One app to learn, create, and share ReactJS projects.",
+      },
+      { path: "/plays", title: "ReactPlay - Plays" },
+      { path: "/ideas", title: "ReactPlay - Ideas" },
+      { path: "/tech-stacks", title: "ReactPlay - Tech Stacks" },
+      { path: "/plays/create", title: "ReactPlay - Create Play" },
+    ];
 
-    else {
-      setTitle("ReactPlay - One app to learn, create, and share ReactJS projects.")
-    }
-  
-  }, [currentPath])
+    // Logic to set title of website dynamically depending on the path.
+    routes.some((route) => route.path === currentPath && setTitle(route.title));
+  }, [currentPath, routes]);
   return (
     <Helmet>
       <title>{title}</title>
@@ -46,11 +46,7 @@ function DefMeta() {
     share ReactJS projects with the developer community."
         data-react-helmet="true"
       />
-      <meta
-        property="og:title"
-        content={title}
-        data-react-helmet="true"
-      />
+      <meta property="og:title" content={title} data-react-helmet="true" />
       <meta
         property="og:image"
         content="https://reactplay.io/og-image.png" // React should default these to public
@@ -66,11 +62,7 @@ function DefMeta() {
         content="https://reactplay.io"
         data-react-helmet="true"
       />
-      <meta
-        name="twitter:title"
-        content={title}
-        data-react-helmet="true"
-      />
+      <meta name="twitter:title" content={title} data-react-helmet="true" />
       <meta
         name="twitter:description"
         content="ReactPlay is an open-source application to learn, create and
