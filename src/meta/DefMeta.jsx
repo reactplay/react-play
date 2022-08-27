@@ -24,7 +24,7 @@ function DefMeta() {
 
     // Logic to set title of website dynamically depending on the path.
     routes.some((route) => route.path === currentPath && setTitle(route.title));
-  }, [currentPath, routes]);
+  }, [currentPath]);
   return (
     <Helmet>
       <title>{title}</title>
