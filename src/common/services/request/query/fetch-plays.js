@@ -61,6 +61,7 @@ export const BasiFetchParam = {
     "name",
     "slug",
     { user: ["id", "displayName", "avatarUrl"] },
+    "created_at",
   ],
 };
 
