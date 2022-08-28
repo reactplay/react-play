@@ -60,7 +60,7 @@ function useGetPlays() {
         element.title_name = toTitleCaseTrimmed(element.name);
       });
       setPlays(
-        res.sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
+        res.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
       );
     } catch (error) {
       setError(error);
