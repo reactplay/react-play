@@ -158,6 +158,27 @@ const GalleryAPI = [
         url: "https://images.unsplash.com/photo-1629985692757-48648f4f1fc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8eWVsbG93c3RvbmUlMjBuYXRpb25hbCUyMHBhcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
         videoUrl: "https://media.istockphoto.com/videos/grand-prismatic-spring-overlook-yellowstone-national-park-wyoming-usa-video-id1336259333"
     },
+    {
+        id: 22,
+        title: "Rainbows, Hawaii",
+        discription: "Hawaii is the best place in the world to see rainbows.",
+        url: "https://images.unsplash.com/photo-1643483698945-a5b5f5209fc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        videoUrl: "https://media.istockphoto.com/videos/rainbow-over-a-beach-with-lava-rocks-in-hawaii-video-id494202142"
+    },
+    {
+        id: 23,
+        title: "Longest Name, New Zeland",
+        discription: "The longest place name on the planet is 85 letters long. This place is in New Zeland.",
+        url: "https://c8.alamy.com/comp/EMJ84W/taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu-EMJ84W.jpg",
+        videoUrl: "https://media.istockphoto.com/videos/new-zealand-countryside-at-opposite-lighting-video-id1407679929"
+    },
+    {
+        id: 24,
+        title: "421 Snow Word, Scotland",
+        discription: "Scotland has 421 words for snow. like: sneesl, feefle, flinkdrinkin, etc.",
+        url: "https://www.rd.com/wp-content/uploads/2018/02/07-Incredible-Facts-About-Practically-Everything.jpg?resize=768,512",
+        videoUrl: "https://media.istockphoto.com/videos/journey-through-the-mountain-coniferous-forest-in-winter-gopro-video-id508775038"
+    },
 ]
 
 export default GalleryAPI;
