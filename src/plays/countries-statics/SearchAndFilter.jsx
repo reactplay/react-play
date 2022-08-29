@@ -27,6 +27,7 @@ const SearchAndFilter = () => {
           onChange={(e) => handleOnchange(e)}
           onFocus={handleOnFocus}
           onKeyDown={keyPressHandler}
+          autocomplete="new-password"
         />
         <div className="absolute top-[50%] translate-y-[-50%] right-0  w-[30px] h-[30px] mx-2 bg-cyan-500 cursor-pointer">
           <BsSearch className="absolute top-1 left-1 text-2xl text-white" />
