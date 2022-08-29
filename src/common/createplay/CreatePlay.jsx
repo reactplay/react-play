@@ -155,7 +155,7 @@ const CreatePlay = () => {
     });
   };
 
-  if (process.env.NODE_ENV !== "development" && location.pathname !== 'editplay') {
+  if (process.env.NODE_ENV === "development" && location.pathname !== 'editplay') {
     return <NoCreationInProdScreen />;
   }
 
