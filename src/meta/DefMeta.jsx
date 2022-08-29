@@ -15,6 +15,7 @@ function DefMeta({ routes }) {
   return (
     <Helmet>
       <title>{title}</title>
+      <link rel="canonical" href="https://reactplay.io" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="ReactPlay" />
       <meta property="og:image:type" content="image/png" />
