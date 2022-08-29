@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useAuthenticationStatus, useUserData } from "@nhost/react";
 import { Tags, Levels, Issues } from "common/services";
 import Button from "@mui/material/Button";
@@ -9,40 +9,91 @@ import { FIELD_TEMPLATE } from "./create-play-form-template";
 import "./create-play.scss";
 import Loader from "common/spinner/spinner";
 import { Plays } from "common/services/plays";
-import { useNavigate } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
-import { ReactComponent as NotAllowedImage } from "../../images/img-403.svg"
+import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
+import { ReactComponent as NotAllowedImage } from "../../images/img-403.svg";
+import { defaultInputFields, createStateObject } from "./utils";
 
 const NoCreationInProdScreen = () => {
-  return <div className="w-full h-full flex flex-col justify-center items-center gap-8">
-    <div>
-      <NotAllowedImage width={550} />
-    </div>
+  return (
+    <div className='w-full h-full flex flex-col justify-center items-center gap-8'>
+      <div>
+        <NotAllowedImage width={550} />
+      </div>
 
-    <div className="text-center">
-      You can't create plays in production
-      <br />
-      <a className="text-link-default" href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md" target="_blank" rel="noopener noreferrer">read this</a> for more details
+      <div className='text-center'>
+        You can't create plays in production
+        <br />
+        <a
+          className='text-link-default'
+          href='https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          read this
+        </a>{" "}
+        for more details
+      </div>
     </div>
-  </div>
-}
+  );
+};
+
+// {
+//   name: "demoplay",
+//   description: "description of play",
+//   issue: {
+//     name: "Dark and Light Mode Implemented on the ReactPlay Website",
+//     value: 522,
+//   },
+//   language: {
+//     name: "JavaScript",
+//     value: "js",
+//   },
+//   style: {
+//     name: "CSS",
+//     value: "css",
+//   },
+//   level: {
+//     id: "4127ed16-bf37-4c34-bed0-282cd646cd53",
+//     name: "Beginner",
+//     value: "4127ed16-bf37-4c34-bed0-282cd646cd53",
+//   },
+//   github: "Angryman18",
+//   tags: [
+//     {
+//       id: "914e9491-b1f6-4b90-ad0f-727eabd5a41e",
+//       name: "JSX",
+//     },
+//     {
+//       id: "457a8807-3c4a-4868-9113-104482837650",
+//       name: "Component Structure",
+//     },
+//   ],
+//   cover: "cover img",
+//   blog: "blog url",
+//   video: "video url",
+// };
 
 const CreatePlay = () => {
+  const location = useLocation();
   const { isAuthenticated, isLoading } = useAuthenticationStatus();
   const [searchParams] = useSearchParams();
-
+  
   const userData = useUserData();
   let navigate = useNavigate();
 
-  const [loadingText, setLoadingText] = useState(
-    "Loading authentication information."
-  );
+  const [loadingText, setLoadingText] = useState("Loading authentication information.");
   const [storedData, setStoredData] = useState({});
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({ ...defaultInputFields });
   const [isDataLoading, setIsDataLoading] = useState(false);
 
-  const onChange = (data) => {
-    setFormData({ ...data });
+  // useLayoutEffect(() => {
+  //   if (location.state instanceof Object) {
+  //     setFormData(createStateObject(location.state, storedData))
+  //   }
+  // },[])
+
+  const onChange = (key, value) => {
+    setFormData((pre) => ({ ...pre, [key]: value }));
   };
 
   const isFieldsAreInValid = () => {
@@ -81,6 +132,9 @@ const CreatePlay = () => {
               anyField[0].options = rApi;
             }
           });
+          if (location.state instanceof Object) {
+            setFormData(createStateObject(location.state, storedData))
+          }
           setStoredData({ ...storedData });
         })
         .finally(() => {
@@ -101,57 +155,58 @@ const CreatePlay = () => {
     });
   };
 
-  if (process.env.NODE_ENV !== "development") {
-    return <NoCreationInProdScreen />
+  if (process.env.NODE_ENV !== "development" && location.pathname !== 'editplay') {
+    return <NoCreationInProdScreen />;
   }
 
   if (isLoading || isDataLoading) {
     return (
       <Loader
         title={loadingText || "Loading authentication information"}
-        subtitle="Please wait...."
+        subtitle='Please wait....'
       />
     );
   }
 
   if (!isAuthenticated) {
-    window.location = NHOST.AUTH_URL(`http://localhost:${process.env.RAECT_APP_DEV_PORT ?? '3000'}/plays/create`);
+    window.location = NHOST.AUTH_URL(
+      `http://localhost:${process.env.RAECT_APP_DEV_PORT ?? "3000"}/plays/create`
+    );
     return null;
   } else {
     initializeData();
   }
 
+  console.log(formData)
+
   if (isDataLoading) {
-    <Loader title={"Loading data"} subtitle="Please wait...." />;
+    <Loader title={"Loading data"} subtitle='Please wait....' />;
   }
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center create-plays-wrapper">
+    <div className='w-full h-full flex flex-col justify-center items-center create-plays-wrapper'>
       <div>
-        <span className="title-primary">
+        <span className='title-primary'>
           Create <strong>A Play</strong>
         </span>
       </div>
-      <div className="w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6">
-        <div className="flex flex-col flex-1">
-          <div className="h-14 p-8">
+      <div className='w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6'>
+        <div className='flex flex-col flex-1'>
+          <div className='h-14 p-8'>
             Welcome <strong>{userData.displayName}</strong>, create your play
           </div>
 
-          <div className="flex-1 px-10 py-8 overflow-auto">
+          <div className='flex-1 px-10 py-8 overflow-auto'>
             <form>
-              <PlayForm
-                fields={FIELD_TEMPLATE}
-                onChange={(data) => onChange(data)}
-              />
+              <PlayForm fields={FIELD_TEMPLATE} onChange={onChange} formData={formData} />
             </form>
           </div>
-          <div className="h-14">
+          <div className='h-14'>
             <hr />
-            <div className="p-8 h-full flex items-center">
+            <div className='p-8 h-full flex items-center'>
               <Button
-                size="small"
-                variant="contained"
+                size='small'
+                variant='contained'
                 disabled={isFieldsAreInValid()}
                 onClick={() => onSubmit()}
               >
