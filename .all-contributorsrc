@@ -319,6 +319,42 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ammaaraslam",
+      "name": "Ammaar Aslam",
+      "avatar_url": "https://avatars.githubusercontent.com/u/96367405?v=4",
+      "profile": "https://github.com/ammaaraslam",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mayukh551",
+      "name": "Mayukh Bhowmick",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82811112?v=4",
+      "profile": "https://github.com/mayukh551",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "EOEboh",
+      "name": "Emmanuel O Eboh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63825997?v=4",
+      "profile": "http://emmanueleboh.vercel.app",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ShaileshParmar11",
+      "name": "Shailesh Parmar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71748675?v=4",
+      "profile": "https://shailesh-parmar.netlify.app/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
