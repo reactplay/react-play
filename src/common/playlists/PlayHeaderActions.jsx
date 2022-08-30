@@ -81,7 +81,8 @@ const PlayHeaderActions = ({ play }) => {
   };
 
   const handleEditPlay = () => {
-    return navigate('/plays/editplay', {state: play})
+    const generateLink = `/editplay/${play.github}/${play.slug}`
+    return navigate(generateLink)
   }
 
   return (

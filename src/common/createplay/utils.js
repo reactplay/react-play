@@ -68,5 +68,5 @@ export const createStateObject = (existingObj, storedData) => {
   const levelInfo = constructLevelInfo(levelData, level);
   const tagsInfo = constructTagInfo(tags, play_tags);
   const languageInfo = constructLanguageInfo(language);
-  return {name, description, github, cover, github, blog, video, tags: tagsInfo, level: levelInfo, language: languageInfo}
+  return {name, description, github, cover, blog, video, tags: tagsInfo, level: levelInfo, language: languageInfo}
 };

@@ -1,16 +1,23 @@
-import { TextField, FormControl, Autocomplete } from "@mui/material";
-import * as _ from 'lodash'
+import { useEffect, useState } from "react";
+import { TextField, FormControl, Autocomplete, Button } from "@mui/material";
+import * as _ from "lodash";
 
-const PlayForm = ({ fields, formData, onChange }) => {
+const disabledFields = ['issue', 'github']
+
+const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay}) => {
+
+  const [formData, setFormData] = useState({...formDataObj});
+
+  const checkDisabledInputs = (fieldName) => isEditPlay && disabledFields.includes(fieldName)
 
   const handleChange = (key, value) => {
-    if (onChange) {
-      onChange(key, value);
-    }
+    setFormData((pre) => ({...pre, [key]: value }));
   };
 
-  console.log(formData['name'])
-
+  useEffect(() => {
+    setFormData({...formDataObj})
+  },[formDataObj])
+ 
   const renderField = (field) => {
     switch (field.type) {
       case "input":
@@ -21,8 +28,9 @@ const PlayForm = ({ fields, formData, onChange }) => {
             value={formData[field.datafield]}
             size='small'
             className='w-full'
+            disabled={checkDisabledInputs(field.datafield)}
             {...field}
-            onChange={e => handleChange(field.datafield, e.target.value)}
+            onChange={(e) => handleChange(field.datafield, e.target.value)}
           />
         );
       case "select":
@@ -35,7 +43,8 @@ const PlayForm = ({ fields, formData, onChange }) => {
             filterSelectedOptions
             multiple={field.multiple}
             freeSolo={field.freeSolo}
-            value={formData[field.datafield]}
+            disabled={checkDisabledInputs(field.datafield)}
+            value={formData[field.datafield] ?? ''}
             onChange={(e, newValue) => {
               let updatedval = newValue;
               if (field.multiple) {
@@ -59,31 +68,58 @@ const PlayForm = ({ fields, formData, onChange }) => {
           />
         );
       default:
-        return <></>;
+        return null;
     }
   };
 
   const renderForm = () => {
     return (
-      <>
-        <FormControl className='w-full'>
-          {fields.map((field, field_key) => {
-            return (
-              <div className='flex p-2' key={field_key}>
-                <div className='flex-1'>
-                  {field.display}
-                  {field.required ? "*" : ""}
-                </div>
-                <div className='flex-1'>{renderField(field)}</div>
+      <FormControl className='w-full'>
+        {fields.map((field, field_key) => {
+          return (
+            <div className='flex p-2' key={field_key}>
+              <div className='flex-1'>
+                {field.display}
+                {field.required ? "*" : ""}
               </div>
-            );
-          })}
-        </FormControl>{" "}
-      </>
+              <div className='flex-1'>{renderField(field)}</div>
+            </div>
+          );
+        })}
+      </FormControl>
     );
   };
 
-  return <>{renderForm()}</>;
+  const isFieldsAreInValid = () => {
+    let res = false;
+    fields.forEach((tmpl) => {
+      if (tmpl.required && (!formData || !formData[tmpl.datafield]) && !disabledFields.includes(tmpl.datafield)) {
+        res = true;
+      }
+    });
+    return res;
+  };
+
+  return (
+    <>
+      <div className='flex-1 px-10 py-8 overflow-auto'>
+        <form>{renderForm()}</form>
+      </div>
+      <div className='h-14'>
+        <hr />
+        <div className='p-8 h-full flex items-center'>
+          <Button
+            size='small'
+            variant='contained'
+            disabled={isFieldsAreInValid()}
+            onClick={onSubmit.bind(null, formData)}
+          >
+            Create the awesome
+          </Button>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default PlayForm;
