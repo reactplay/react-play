@@ -12,7 +12,11 @@ const answerState = {
 };
 
 function QuizScreen({ category, getQuizSummary }) {
-  const [quizData, setQuizData] = useState({ loading: false, data: [], error: false });
+  const [quizData, setQuizData] = useState({
+    loading: false,
+    data: [],
+    error: false,
+  });
   const [answer, setAnswer] = useState({ ...answerState });
   const [result, setResult] = useState([]);
   const [questionNumber, setQuestionNumber] = useState(0);
@@ -30,7 +34,7 @@ function QuizScreen({ category, getQuizSummary }) {
         );
         const { results } = await response.json();
         // if there is no data coming from api but status 200 is returned then we want to end up in catch block
-        if (!results.length) throw new Error(); 
+        if (!results.length) throw new Error();
         const createOptions = results.map((result) => {
           const { incorrect_answers, correct_answer } = result;
           const options = [...incorrect_answers];
@@ -41,12 +45,16 @@ function QuizScreen({ category, getQuizSummary }) {
           );
           return { ...result, options };
         });
-        return setQuizData({ data: createOptions, loading: false, error: false });
+        return setQuizData({
+          data: createOptions,
+          loading: false,
+          error: false,
+        });
       } catch (err) {
         setQuizData({ ...quizData, loading: false, error: true });
       }
     })();
-  }, []);
+  }, [formatCategoryText, quizData]);
 
   // select and deselect the answer
   const handleAnswerClick = (val) => (e) => {
@@ -102,7 +110,7 @@ function QuizScreen({ category, getQuizSummary }) {
       }, 1000);
       return () => clearInterval(setTiming);
     } else if (!!quizData.data.length) {
-      setAnswer('')
+      setAnswer("");
       handleConfirm(true);
     }
   }, [timer, handleConfirm, quizData.data]);
@@ -129,29 +137,29 @@ function QuizScreen({ category, getQuizSummary }) {
 
   // if there is an no data we display this message.
   if (quizData?.error) {
-    return (<div>We Apologize! Something Error Occured!</div>)
+    return <div>We Apologize! Something Error Occured!</div>;
   }
 
   return (
-    <div className='fun-quiz-screen'>
+    <div className="fun-quiz-screen">
       {quizData.loading && (
-        <div className='loading-overlay'>
-          <img src={confuseIcon} alt='loading' />
+        <div className="loading-overlay">
+          <img src={confuseIcon} alt="loading" />
         </div>
       )}
       {!quizData.loading && (
-        <div className='section'>
+        <div className="section">
           <div className={`timer ${timer <= 5 && "caution"}`}>{timer}</div>
-          <div className='question-info'>Question: {questionNumber + 1}</div>
-          <div className='question'>
+          <div className="question-info">Question: {questionNumber + 1}</div>
+          <div className="question">
             <h1
               dangerouslySetInnerHTML={{ __html: currentQuestion?.question }}
             />
           </div>
-          <div className='options'>
+          <div className="options">
             {currentQuestion?.options?.map((option, index) => {
               return (
-                <div key={index} className='single-opt'>
+                <div key={index} className="single-opt">
                   <div
                     onClick={handleAnswerClick(option)}
                     className={itemClassDisplayController(option)}
@@ -161,17 +169,20 @@ function QuizScreen({ category, getQuizSummary }) {
               );
             })}
           </div>
-          <div className='footer'>
-            <button className='link' onClick={() => handleConfirm(true)}>
+          <div className="footer">
+            <button className="link" onClick={() => handleConfirm(true)}>
               Skip
             </button>
             {answer.answer && !answer.cheat && (
-              <button onClick={() => handleConfirm()} className='confirm-button'>
+              <button
+                onClick={() => handleConfirm()}
+                className="confirm-button"
+              >
                 {questionNumber === 19 ? "Submit" : "Confirm"}
               </button>
             )}
             {!answer.answer && (
-              <button onClick={cheatHandler} className='cheat-button'>
+              <button onClick={cheatHandler} className="cheat-button">
                 I want to Cheat
               </button>
             )}
