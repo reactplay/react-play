@@ -1,10 +1,4 @@
-import { useEffect, useState } from "react";
-import {
-  ComposableMap,
-  ZoomableGroup,
-  Geographies,
-  Geography,
-} from "react-simple-maps";
+import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import mapdata from "./featues.json";
 export default function Map({ activeGeo, handleClickMap }) {
   const activeStyle = {
