@@ -1,1 +1,11 @@
 /* enter stlyes here */
+.card{
+    border: 2px solid pink;
+    width: 100%;
+    height: 100%;
+}
+.search{
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+}

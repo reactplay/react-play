@@ -1,0 +1,85 @@
+/* .wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+} */
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid red; */
+  background-image: url('../images/bg1.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+.clash-card {
+  width: 300px;
+  display: inline-block;
+  margin: auto;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+  backdrop-filter: blur(25px);
+}
+
+.clash-card__image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  margin-bottom: 35px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+.name{
+  font-weight: 900;
+  font-style: italic;
+  color: white;
+}
+
+/* .clash-card__image--barbarian {
+  
+  background: black;
+} */
+
+.clash-card__image--barbarian img {
+  width: 400px;
+  position: absolute;
+  top: -65px;
+}
+
+.clash-card__level {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.clash-card__level--barbarian {
+  color: #ec9b3b;
+}
+
+.powers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px;
+  flex-direction: column;
+  border: 2px solid green;
+  color: white;
+}
+
+.one-third{
+  display: flex;
+  padding: 5px 5px;
+
+}
+
+.stat{
+  margin-left: 5px;
+}
