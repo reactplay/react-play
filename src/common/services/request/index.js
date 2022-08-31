@@ -4,11 +4,6 @@ import {
 } from "json-graphql-parser/v2/index.js";
 
 const BACKEND_URL = `${process.env.REACT_APP_NHOST_BACKEND_URL}/${process.env.REACT_APP_NHOST_VERSION}/${process.env.REACT_APP_NHOST_ENDPOINT}`;
-const header = {
-  headers: {
-    "Content-Type": "application/json",
-  },
-};
 
 /**
  * Run GraphQL queries using Axios using multiple  JSON object

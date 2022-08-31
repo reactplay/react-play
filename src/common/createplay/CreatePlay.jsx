@@ -31,7 +31,6 @@ const NoCreationInProdScreen = () => {
       <div>
         <NotAllowedImage width={550} />
       </div>
-
       <div className='text-center'>
         You can't create plays in production
         <br />
@@ -110,8 +109,6 @@ const CreatePlay = () => {
   const isEditPlay = location.pathname.includes("editplay") && validParams;
   const userData = useUserData();
   let navigate = useNavigate();
-
-  console.log("create play is mounted");
 
   const fetchPlayInfo = async () => {
     if (isEditPlay) {
