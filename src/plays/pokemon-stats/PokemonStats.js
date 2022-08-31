@@ -12,7 +12,6 @@ function PokemonStats(props) {
   const Pokemon = (e) => {
     e.preventDefault();
     axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`).then((response) => {
-      console.log(response.data);
       setpokemon(response.data);
     });
   };
