@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import PlayHeader from "common/playlists/PlayHeader";
 import "./contextWithRealUsecases.css";
 import ContextInfoSlider from "./components/ContextInfoSlider";
@@ -35,22 +35,18 @@ function ContextWithRealUsecases(props) {
 
   //prev slide
   const handlePrev = () => {
-    if (index > 1) {
-      setIndex(index - 1);
-    } else setIndex(5);
+    setIndex((preV) => (preV > 1 ? preV - 1 : 5));
   };
 
   //next slide
-  const handleNext = () => {
-    if (index < 5) {
-      setIndex(index + 1);
-    } else setIndex(1);
-  };
+  const handleNext = useCallback(() => {
+    setIndex((preV) => (preV < 5 ? preV + 1 : 1));
+  }, []);
 
   //As the we click the menu, it will change the slider
   useEffect(() => {
     handleNext();
-  }, [activeCuisine]);
+  }, [activeCuisine, handleNext]);
   return (
     <>
       <div className="play-details">
