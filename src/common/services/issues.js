@@ -1,5 +1,3 @@
-import { submit } from "./request";
-import { fetchAllTags } from "./request/query";
 import { GitAPI } from "git-repo-api";
 import { GIT } from "../const";
 

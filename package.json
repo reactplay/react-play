@@ -29,10 +29,11 @@
     "react": "^18.0.0",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^18.0.0",
+    "react-error-boundary": "^3.1.4",
     "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.3.0",
     "react-icons": "^4.3.1",
-    "react-loader-spinner": "^5.1.5",
+    "react-loader-spinner": "~5.1.5",
     "react-organizational-chart": "^2.1.1",
     "react-qr-code": "^2.0.7",
     "react-redux": "^8.0.1",
@@ -64,6 +65,8 @@
     "lint": "eslint  --fix \"**/*.+(js|jsx|json|css|scss|md)\"",
     "format": "npm run lint && npm run prettier",
     "prepare": "husky install"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "reactSnap": {
     "puppeteerArgs": [
@@ -96,6 +99,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "cypress": "^10.6.0",
     "postcss": "^8.4.13",
     "prettier": "^2.7.1",
     "puppeteer": "^13.7.0",

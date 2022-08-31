@@ -1,5 +1,5 @@
 import PlayHeader from "common/playlists/PlayHeader";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import "./password-generator-style.css";
 import data from "./data.json";
@@ -13,7 +13,6 @@ const config = {
 };
 
 function PasswordGenerator(props) {
-
   // Your Code Start below.
   const [password, setPassword] = useState({ status: false, password: "" });
   const [passwordConfig, setPasswordConfig] = useState({ ...config });
@@ -33,7 +32,7 @@ function PasswordGenerator(props) {
   };
 
   // arrange data to feed the generatePassword function
-  const arrangeData = () => {
+  const arrangeData = useCallback(() => {
     const { numbers, special, uppercase, lowercase } = passwordConfig;
     const parseData = (val, key) => {
       if (val) return data[key];
@@ -46,10 +45,10 @@ function PasswordGenerator(props) {
       ...parseData(lowercase, "lowercase"),
     ];
     return concated;
-  };
+  }, [passwordConfig]);
 
   // Generate a random password
-  const generatePassword = () => {
+  const generatePassword = useCallback(() => {
     setError(false);
     const concated = arrangeData();
     let finalPassword = "";
@@ -57,13 +56,13 @@ function PasswordGenerator(props) {
       finalPassword += concated[randomNumberGenerator(concated.length)];
     }
     return finalPassword;
-  };
+  }, [arrangeData, passwordConfig]);
 
   // generate password button click handler
-  const generateHander = () => {
+  const generateHander = useCallback(() => {
     const finalPassword = generatePassword();
     setPassword({ status: false, password: finalPassword });
-  };
+  }, [generatePassword]);
 
   // Copy the password to the clipboard
   const onCopyClick = (e) => {
@@ -73,7 +72,7 @@ function PasswordGenerator(props) {
   };
 
   const ErrorBox = () => {
-    return <p className='error'>You cannot Uncheck All At Once.</p>;
+    return <p className="error">You cannot Uncheck All At Once.</p>;
   };
 
   const checkhandler = (id, inputCheckbox) => (e) => {
@@ -91,107 +90,107 @@ function PasswordGenerator(props) {
 
   useEffect(() => {
     generateHander();
-  }, []);
+  }, [generateHander]);
 
   const setLength = (value) => {
-    setPasswordConfig({ ...passwordConfig, ["length"]: value });
+    setPasswordConfig({ ...passwordConfig, length: value });
     setError(false);
   };
 
   return (
-    <div className='play-details'>
+    <div className="play-details">
       <PlayHeader play={props} />
-      <div className='play-details-body password-generator'>
-        <div className='main'>
-          <h1 className='title'>Password Generator</h1>
+      <div className="play-details-body password-generator">
+        <div className="main">
+          <h1 className="title">Password Generator</h1>
           {error && <ErrorBox />}
-          <div className='inputfield'>
+          <div className="inputfield">
             <input
-              type='text'
-              className='text'
+              type="text"
+              className="text"
               disabled
               value={password.password}
               readOnly
             />
-            <button className='copy copybtn' onClick={onCopyClick}>
+            <button className="copy copybtn" onClick={onCopyClick}>
               {password?.status ? "Copied" : "Copy"}
             </button>
           </div>
-          <div className='block'>
+          <div className="block">
             <input
-              type='checkbox'
-              name='lowercase'
-              id='lowercaseToggle'
+              type="checkbox"
+              name="lowercase"
+              id="lowercaseToggle"
               hidden
               checked={passwordConfig.lowercase}
               readOnly
             />
             <div
-              className='select lowercase'
-              id='lower'
+              className="select lowercase"
+              id="lower"
               onClick={checkhandler("lowercase", passwordConfig.lowercase)}
             >
               <h3>Lowercase</h3>
-              <div className='bigCircle'>
-                <div className='smallCircle'></div>
+              <div className="bigCircle">
+                <div className="smallCircle"></div>
               </div>
             </div>
             <input
-              type='checkbox'
-              id='uppercaseToggle'
+              type="checkbox"
+              id="uppercaseToggle"
               hidden
               checked={passwordConfig.uppercase}
               readOnly
             />
             <div
-              className='select uppercase'
+              className="select uppercase"
               onClick={checkhandler("uppercase", passwordConfig.uppercase)}
             >
               <h3>Uppercase</h3>
-              <div className='bigCircle'>
-                <div className='smallCircle'></div>
+              <div className="bigCircle">
+                <div className="smallCircle"></div>
               </div>
             </div>
           </div>
-          <div className='block'>
+          <div className="block">
             <input
-              type='checkbox'
-              id='numberToggle'
+              type="checkbox"
+              id="numberToggle"
               hidden
               checked={passwordConfig.numbers}
               readOnly
             />
             <div
-              className='select number'
+              className="select number"
               onClick={checkhandler("numbers", passwordConfig.numbers)}
             >
               <h3>Number</h3>
-              <div className='bigCircle'>
-                <div className='smallCircle'></div>
+              <div className="bigCircle">
+                <div className="smallCircle"></div>
               </div>
             </div>
             <input
-              type='checkbox'
-              id='specialCharToggle'
+              type="checkbox"
+              id="specialCharToggle"
               hidden
               checked={passwordConfig.special}
               readOnly
             />
             <div
-              className='select specialchar'
+              className="select specialchar"
               onClick={checkhandler("special", passwordConfig.special)}
             >
               <h3>Special Char</h3>
-              <div className='bigCircle'>
-                <div className='smallCircle'></div>
+              <div className="bigCircle">
+                <div className="smallCircle"></div>
               </div>
             </div>
           </div>
-          <div className='block length'>
-            <div className='flexlength'>
+          <div className="block length">
+            <div className="flexlength">
               <h3>Length</h3>
               <select
-                className='select'
+                className="select"
                 onChange={(e) => setLength(e.target.value)}
                 value={passwordConfig.length}
               >
@@ -205,13 +204,13 @@ function PasswordGenerator(props) {
               </select>
             </div>
           </div>
-          <div className='block generate'>
-            <div className='sub'>
+          <div className="block generate">
+            <div className="sub">
               <input
-                type='submit'
+                type="submit"
                 onClick={generateHander}
-                className='generate'
-                value='Generate Password'
+                className="generate"
+                value="Generate Password"
               />
             </div>
           </div>

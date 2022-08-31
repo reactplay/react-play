@@ -8,7 +8,6 @@ const fetchQuote = () => {
 };
 
 function QuoteGenerator(props) {
-
   // Your Code Start below.
   const [quoteArray, setQuoteArray] = useState([]);
   const [current, setCurrent] = useState(0);
@@ -87,12 +86,13 @@ function QuoteGenerator(props) {
                 {quoteArray.length > 0 && <p>{quoteArray[current][0]}</p>}
               </div>
               <div className="page-author">
-                {quoteArray.length > 0 && 
-                <span className="page">
-                  <p>
-                    {current + 1}/{quoteArray.length}
-                  </p>
-                </span>}
+                {quoteArray.length > 0 && (
+                  <span className="page">
+                    <p>
+                      {current + 1}/{quoteArray.length}
+                    </p>
+                  </span>
+                )}
                 <span className="quote-author">
                   {quoteArray.length > 0 && (
                     <p className="author">- {quoteArray[current][1]}</p>
