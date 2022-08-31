@@ -1,13 +1,13 @@
 /* enter stlyes here */
-.card{    
+.poke-card-container{    
     width: 100%;
     height: 100%;
 }
-.search{
+.poke-search-container{
     width: 100%;
     height: 100%;
 }
 .play-details-body{
-    background: url('./images/bg8.jpg');
+    background: url('./images/background.jpg');
     background-size: cover;
 }

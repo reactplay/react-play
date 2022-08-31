@@ -1,25 +1,24 @@
 import React from "react";
 import "./search.css";
-// import pokeball from '../images/pokeball.png';
 const search = (props) => {
   const { setname, Pokemon } = props;
   return (
-    <div className="main">
-      <div class="form__group field">
+    <div className="poke-main-cont">
+      <div className="poke-input-cont field">
         <input
           type="input"
-          class="form__field"
-          placeholder="Name"
+          className="poke-input-field"
+          placeholder=" "
           name="name"
           id="name"
           required
           onChange={(e) => setname(e.target.value)}
         />
-        <label for="name" class="form__label">
-          Name
+        <label for="name" class="poke-form-label">
+          Pokemon name
         </label>
       </div>
-      <button className="button-30" onClick={Pokemon} >Search</button>
+      <button className="poke-stats-sumbit-btn" onClick={Pokemon} >Search</button>
     </div>
   );
 };

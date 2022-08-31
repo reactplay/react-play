@@ -1,4 +1,4 @@
-.cont {
+.poke-card-cont {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,23 +8,22 @@
   width: 100%;
   font-family: sans-serif;
 }
-.clash-card {
+.pokemon-card {
   width: 300px;
   display: inline-block;
   margin: auto;
   border-radius: 19px;
   position: relative;
   text-align: center;
-  /* box-shadow: -1px 15px 30px -12px black; */
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   z-index: 9999;
   backdrop-filter: blur(20px);
 }
-.clash-card:hover{
+.pokemon-card:hover{
   transform: scale(1.01);
 }
 
-.clash-card__image {
+.pokemon-card__image {
   position: relative;
   display: flex;
   justify-content: center;
@@ -33,36 +32,36 @@
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
 }
-.name{
+.poke-name{
   font-weight: 900;
   font-size: 25px;
   font-style: italic;
   color: white;
 }
-.clash-card__image--barbarian img {
+.pokemon-card__image--pokemon img {
   width: 150px;
   position: absolute;
 }
 
-.clash-card__level {
+.pokemon-card__level {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 700;
   margin-bottom: 3px;
 }
 
-.clash-card__level--barbarian {
+.pokemon-card__level--pokemon {
   color: #ec9b3b;
 }
 
-.powers {
+.pokemon-stats {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px 5px;
   flex-direction: column;
 }
-.powers:hover{
+.pokemon-stats:hover{
   cursor: pointer;
 }
 
@@ -79,6 +78,6 @@
   color: white;
 }
 
-.stat{
-  margin-left: 5px;
+.stat-value{
+  margin-left: 6px;
 }
