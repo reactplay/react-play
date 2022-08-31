@@ -9,6 +9,7 @@ function StarRating(props) {
 
   const [rating, setRating] = useState(null);
   const [hoverFill, setHoverFill] = useState(null);
+  const [isHover, setIsHover] = useState(null);
 
   const getReviewLabel = (rating) => {
     switch (rating) {
@@ -36,12 +37,8 @@ function StarRating(props) {
           {/* Your Code Starts Here */}
 
           <div className="star-wrapper">
-            <h2 className="review-text">
-              {rating
-                ? getReviewLabel(rating)
-                : hoverFill
-                ? getReviewLabel(hoverFill)
-                : null}
+            <h2 className="review-label">
+              {getReviewLabel(isHover > 0 ? isHover : rating)}
             </h2>
 
             <div className="star">
@@ -51,6 +48,8 @@ function StarRating(props) {
                 return (
                   <button
                     key={index}
+                    onMouseOver={() => setIsHover(ratingValue)}
+                    onMouseOut={() => setIsHover(null)}
                     onMouseEnter={() => setHoverFill(ratingValue)}
                     onMouseLeave={() => setHoverFill(null)}
                     onClick={() => setRating(ratingValue)}
@@ -64,7 +63,7 @@ function StarRating(props) {
                             ? "#ffe101"
                             : "#ccc",
                       }}
-                      onChange={() => setRating(ratingValue)}
+                      onChange={(ratingValue) => setRating(ratingValue)}
                       value={ratingValue}
                     />
                   </button>

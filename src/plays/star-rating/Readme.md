@@ -1,6 +1,6 @@
 # Star rating
 
-A star rating component is commonly used to give feedback and reviews on e-commerce websites
+A star rating component is commonly used to give feedback and reviews on e-commerce websites or app stores.
 
 ## Play Demographic
 
@@ -12,16 +12,12 @@ A star rating component is commonly used to give feedback and reviews on e-comme
 - User: frankiefab100
 - Github Link: https://github.com/frankiefab100
 - Blog: https://frankiefab.hashnode.dev/how-to-build-a-star-rating-using-usestate-hook
-- Video: 
 
-## Implementation Details
 
-Update your implementation idea and details here
+## What will you learn?
 
-## Consideration
+- Functional Component.
+- useState Hook.
+- Event handling.
+- State management
 
-Update all considerations(if any)
-
-## Resources
-
-Update external resources(if any)

@@ -1,19 +1,18 @@
 /* enter stlyes here */
-.play-details .play-details-body {
+.star-wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
-.star-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.review-label {
+  position: absolute;
+  margin-top: -100px;
 }
 
 .star > button {
