@@ -102,7 +102,7 @@ const CreatePlay = () => {
   const { isAuthenticated, isLoading } = useAuthenticationStatus();
   // const [searchParams] = useSearchParams();
   const { username = "", playname = "" } = useParams();
-  const validParams = username && playname;
+  const validParams = !!username && !!playname;
   const [state, setState] = useReducer(reducer, initialState);
 
   const { creator, loadingText, storedData, formData, isDataLoading, errorMessage } = state;
@@ -111,17 +111,22 @@ const CreatePlay = () => {
   const userData = useUserData();
   let navigate = useNavigate();
 
+  console.log("create play is mounted");
+
   const fetchPlayInfo = async () => {
     if (isEditPlay) {
       try {
         const res = await submit(FetchPlaysBySlugAndUser(decodeURI(playname), decodeURI(username)));
         if (!res.length) throw new Error("Play Not Found");
         const data = res[0];
-        const ownerOfPlay = data?.user?.id === userData?.id
+        const ownerOfPlay = data?.user?.id === userData?.id;
         if (ownerOfPlay) {
-          return setState({ creator: data.user?.id, formData: createStateObject(data, storedData) });
+          return setState({
+            creator: data.user?.id,
+            formData: createStateObject(data, storedData),
+          });
         }
-        return setState({ creator: null })
+        return setState({ creator: null });
       } catch (err) {
         setState({ errorMessage: err?.message ?? "Something Went Wrong" });
       }
@@ -129,10 +134,8 @@ const CreatePlay = () => {
   };
 
   useEffect(() => {
-    if (validParams) {
-      return setState.bind(null, { errorMessage: "", storedData: [] });
-    }
-  }, [validParams]);
+    setState({ creator: null, errorMessage: "", storedData: {} });
+  }, [location.pathname]);
 
   const initializeData = () => {
     if (Object.keys(storedData).length === 0) {
@@ -160,10 +163,10 @@ const CreatePlay = () => {
             }
           });
           await fetchPlayInfo();
-          setState({ storedData: { ...storedData } });
+          return setState({ storedData: { ...storedData } });
         })
         .finally(() => {
-          setState({ isDataLoading: false, loadingText: "" });
+          return setState({ isDataLoading: false, loadingText: "" });
         });
     }
   };
@@ -178,7 +181,7 @@ const CreatePlay = () => {
     });
   };
 
-  if (process.env.NODE_ENV === "development" && location.pathname !== 'editplay') {
+  if (process.env.NODE_ENV === "development" && location.pathname !== "editplay") {
     return <NoCreationInProdScreen />;
   }
 
@@ -208,11 +211,13 @@ const CreatePlay = () => {
   }
 
   if (isEditPlay && !creator && !errorMessage) {
-    return <PageNotFound msg="You don't own this play" details="Only Owner is able to edit their play" />;
+    return (
+      <PageNotFound msg="You don't own this play" details='Only Owner is able to edit their play' />
+    );
   }
 
   if (errorMessage) {
-    return <PageNotFound msg="Something Error Occured" details="apologize for the inconvenience" />;
+    return <PageNotFound msg='Something Error Occured' details='apologize for the inconvenience' />;
   }
 
   return (
