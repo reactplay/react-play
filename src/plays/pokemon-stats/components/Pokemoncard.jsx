@@ -4,32 +4,32 @@ const Pokemoncard = (props) => {
   const { pokemon } = props;
   return (
     <div className="poke-card-cont">
-      <div class="wrapper">
-        <div class="pokemon-card pokemon">
-          <div class="pokemon-card__image pokemon-card__image--pokemon">
+      <div className="wrapper">
+        <div className="pokemon-card pokemon">
+          <div className="pokemon-card__image pokemon-card__image--pokemon">
             <img src={pokemon.sprites.front_default} alt="pokemon" />
           </div>
-          <div class="poke-name">{pokemon.species.name}</div>
+          <div className="poke-name">{pokemon.species.name}</div>
 
-          <div class="pokemon-stats">
-            <div class="one-third">
-              <div class="stat">HP:</div>
-              <div class="stat-value"> {pokemon.stats[0].base_stat} </div>
+          <div className="pokemon-stats">
+            <div className="one-third">
+              <div className="stat">HP:</div>
+              <div className="stat-value"> {pokemon.stats[0].base_stat} </div>
             </div>
 
-            <div class="one-third">
-              <div class="stat">ATTACK:</div>
-              <div class="stat-value">{pokemon.stats[1].base_stat}</div>
+            <div className="one-third">
+              <div className="stat">ATTACK:</div>
+              <div className="stat-value">{pokemon.stats[1].base_stat}</div>
             </div>
 
-            <div class="one-third no-border">
-              <div class="stat">DEFENSE:</div>
-              <div class="stat-value">{pokemon.stats[2].base_stat}</div>
+            <div className="one-third no-border">
+              <div className="stat">DEFENSE:</div>
+              <div className="stat-value">{pokemon.stats[2].base_stat}</div>
             </div>
 
-            <div class="one-third no-border">
-              <div class="stat">TYPE:</div>
-              <div class="stat-value">{pokemon.types[0].type.name}</div>
+            <div className="one-third no-border">
+              <div className="stat">TYPE:</div>
+              <div className="stat-value">{pokemon.types[0].type.name}</div>
             </div>
           </div>
         </div>

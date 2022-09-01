@@ -61,22 +61,17 @@
   padding: 5px 5px;
   flex-direction: column;
 }
-.pokemon-stats:hover{
-  cursor: pointer;
-}
+
 
 .one-third{
   display: flex;
-  color: gray;
+  color: white;
   font-family: serif;
   font-style: oblique;
   padding: 5px 5px;
 }
 
-.one-third:hover{
-  cursor: pointer;
-  color: white;
-}
+
 
 .stat-value{
   margin-left: 6px;

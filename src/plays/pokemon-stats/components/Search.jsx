@@ -1,7 +1,7 @@
 import React from "react";
 import "./search.css";
 const search = (props) => {
-  const { setname, Pokemon } = props;
+  const { setname, fetchPokemonDetails } = props;
   return (
     <div className="poke-main-cont">
       <div className="poke-input-cont field">
@@ -14,11 +14,11 @@ const search = (props) => {
           required
           onChange={(e) => setname(e.target.value)}
         />
-        <label for="name" class="poke-form-label">
+        <label htmlFor="name" className="poke-form-label">
           Pokemon name
         </label>
       </div>
-      <button className="poke-stats-sumbit-btn" onClick={Pokemon} >Search</button>
+      <button className="poke-stats-sumbit-btn" onClick={fetchPokemonDetails} >Search</button>
     </div>
   );
 };
