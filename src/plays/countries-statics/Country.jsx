@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 export default function Country({ activeGeo }) {
   const [country, setCountry] = useState();
   const [isloading, setIsLoading] = useState(false);
   const [errorInfo, setErrorInfo] = useState(null);
-  const getCountry = () => {
+  const getCountry = useCallback((activeGeoVal) => {
     setIsLoading(true);
-    fetch(`https://restcountries.com/v3.1/alpha/${activeGeo}`)
+    fetch(`https://restcountries.com/v3.1/alpha/${activeGeoVal}`)
       .then((response) => {
         if (!response.ok) {
           throw Error("Something went wrong");
@@ -23,10 +23,10 @@ export default function Country({ activeGeo }) {
         setCountry();
         setErrorInfo(e.message);
       });
-  };
+  }, []);
   useEffect(() => {
-    getCountry();
-  }, [activeGeo]);
+    getCountry(activeGeo);
+  }, [activeGeo, getCountry]);
   return (
     <div className="w-[100%] xl:w-[40%] my-8">
       {errorInfo && (
@@ -47,6 +47,7 @@ export default function Country({ activeGeo }) {
               </h1>
               <div className="md:flex md:w-[70%] md:mx-auto  xl:block">
                 <img
+                  alt="country-flag"
                   src={country.flags.png}
                   className="w-[350px] h-[200px] my-2 mx-auto md:mt-6"
                 />

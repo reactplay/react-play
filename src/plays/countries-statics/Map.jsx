@@ -1,8 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import mapdata from "./featues.json";
 import { GeoContext } from "./Context";
-import { tr } from "date-fns/locale";
 export default function Map() {
   const { activeGeo, handleClickMap } = useContext(GeoContext);
 
