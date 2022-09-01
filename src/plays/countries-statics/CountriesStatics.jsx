@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import SearchAndFilter from "./SearchAndFilter";
 import { GeoContext } from "./Context";
 import MapData from "./featues.json";
+import { connectFirestoreEmulator } from "firebase/firestore";
 function CountriesStatics(props) {
   // Your Code Start below.
   const [activeGeo, setActiveGeo] = useState("ind");
@@ -69,6 +70,13 @@ function CountriesStatics(props) {
     setShowSuggestions(false);
     setActiveGeo(SearchResult[i].id);
   };
+  const searchbarClickHandler = () => {
+    MapData.objects.world.geometries.map((country) => {
+      if (country.properties.name.toLowerCase() === selected.toLowerCase()) {
+        setActiveGeo(country.id);
+      }
+    });
+  };
   useEffect(() => {
     //hide showSuggestion if the user clicked outside of the ref
     const handleClickOutside = (event) => {
@@ -95,13 +103,14 @@ function CountriesStatics(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <h1 className="text-4xl mt-4 font-bold text-center capitalize">
-            Geo Now
+            Geography Now
           </h1>
           <h2 className="text-xl text-center capitalize">
             Learn geography in fun and interactive way
           </h2>
           <GeoContext.Provider
             value={{
+              activeGeo,
               showSuggestions,
               index,
               selected,
@@ -112,11 +121,13 @@ function CountriesStatics(props) {
               handleOnchange,
               handleOnFocus,
               searchResultClickHandler,
+              handleClickMap,
+              searchbarClickHandler,
             }}
           >
             <SearchAndFilter />
             <div className="flex flex-col xl:flex-row justify-between">
-              <Map activeGeo={activeGeo} handleClickMap={handleClickMap} />
+              <Map />
               <Country activeGeo={activeGeo} />
             </div>
           </GeoContext.Provider>

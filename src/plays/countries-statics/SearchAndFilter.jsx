@@ -15,6 +15,7 @@ const SearchAndFilter = () => {
     handleOnchange,
     handleOnFocus,
     searchResultClickHandler,
+    searchbarClickHandler,
   } = useContext(GeoContext);
   return (
     <div className="w-full max-w-[550px] mx-auto flex justify-center">
@@ -29,7 +30,10 @@ const SearchAndFilter = () => {
           onKeyDown={keyPressHandler}
           autocomplete="new-password"
         />
-        <div className="absolute top-[50%] translate-y-[-50%] right-0  w-[30px] h-[30px] mx-2 bg-cyan-500 cursor-pointer">
+        <div
+          className="absolute top-[50%] translate-y-[-50%] right-0  w-[30px] h-[30px] mx-2 bg-cyan-500 cursor-pointer"
+          onClick={searchbarClickHandler}
+        >
           <BsSearch className="absolute top-1 left-1 text-2xl text-white" />
         </div>
         {showSuggestions && (

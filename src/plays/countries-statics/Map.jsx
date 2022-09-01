@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import {
-  ComposableMap,
-  ZoomableGroup,
-  Geographies,
-  Geography,
-} from "react-simple-maps";
+import { useContext, useEffect, useState } from "react";
+import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import mapdata from "./featues.json";
-export default function Map({ activeGeo, handleClickMap }) {
+import { GeoContext } from "./Context";
+import { tr } from "date-fns/locale";
+export default function Map() {
+  const { activeGeo, handleClickMap } = useContext(GeoContext);
+
   const activeStyle = {
     default: { outline: "none" },
     hover: { outline: "none" },
