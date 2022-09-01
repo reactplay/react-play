@@ -10,25 +10,14 @@ const defaultClause = {
 };
 
 export const FetchPlaysFilter = {
-  // Filter all the featured plays
+  // Filter all the featured plays (descending by number of likes). Later this will be compared with the pageviews of the play to properly display featured/trending plays.
   getAllFeaturedPlays() {
     return {
       ...BasiFetchParam,
       ...{
         display: "Filter all the featured plays",
-        where: {
-          clause: {
-            operator: "and",
-            conditions: [
-              defaultClause,
-              {
-                field: "featured",
-                operator: "eq",
-                value: true,
-              },
-            ],
-          },
-        },
+        orderBy: { play_like_aggregate: { count: "desc" } },
+        limit: 4,
       },
     };
   },
