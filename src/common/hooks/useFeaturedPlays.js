@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { submit } from "common/services/request";
+import { FetchPlaysSimple } from "common/services/request/query/fetch-plays";
 
 const useFeaturedPlays = () => {
+  const [viewsData, setViewsData] = useState([]);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -17,15 +20,19 @@ const useFeaturedPlays = () => {
       Authorization: `Bearer ${process.env.UMAMI_BEARER_TOKEN}`,
     };
     const weeklyStartTime = 1661365800000;
-    const weeklyEndTime = 1661797800000(async () => {
+    const weeklyEndTime = 1661797800000;
+
+    (async () => {
       try {
         setLoading(true);
-        const res = await fetchTrendingPlays(
+        const viewsRes = await fetchTrendingPlays(
           weeklyStartTime,
           weeklyEndTime,
           headers
         );
-        setData(res);
+        const dataRes = await submit(FetchPlaysSimple());
+        setViewsData(viewsRes);
+        setData(dataRes);
       } catch (err) {
         setError(err?.[0]);
       } finally {
@@ -34,7 +41,7 @@ const useFeaturedPlays = () => {
     })();
   }, []);
 
-  return [loading, error, data];
+  return [loading, error, data, viewsData];
 };
 
 export default useFeaturedPlays;
