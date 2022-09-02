@@ -12,12 +12,12 @@ const useFeaturedPlays = () => {
 
   function slugFromViewsData() {
     viewsData.slice(0, 4).filter((v) => {
-      return setSlug(v.x.split("/")[3]);
+      return setSlug((oldVal) => [...oldVal, v.x.split("/")[3]]);
     });
   }
   function githubFromViewsData() {
     viewsData.slice(0, 4).filter((v) => {
-      return setGithub(v.x.split("/")[2]);
+      return setGithub((oldVal) => [...oldVal, v.x.split("/")[2]]);
     });
   }
 
