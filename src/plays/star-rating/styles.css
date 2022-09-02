@@ -1,0 +1,29 @@
+/* enter stlyes here */
+.star-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.review-label {
+  position: absolute;
+  margin-top: -100px;
+}
+
+.star > button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+@media screen and (max-width: 450px) {
+  .FaStar {
+    width: 40px;
+  }
+}
