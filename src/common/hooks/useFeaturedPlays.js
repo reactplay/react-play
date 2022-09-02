@@ -1,23 +1,30 @@
 import { useEffect, useState } from "react";
-import { submit } from "common/services/request";
-import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
-
-/**
- * run graphql query to retrive featured plays
- * @returns [loading, error, data]
- */
 
 const useFeaturedPlays = () => {
-  const { getAllFeaturedPlays } = FetchPlaysFilter;
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  async function fetchTrendingPlays(start, end, headers) {
+    return await fetch(
+      `https://analytics.reactplay.io/api/website/1/metrics?start_at=${start}&end_at=${end}&type=url`,
+      { headers }
+    );
+  }
+
   useEffect(() => {
-    (async () => {
+    const headers = {
+      Authorization: `Bearer ${process.env.UMAMI_BEARER_TOKEN}`,
+    };
+    const weeklyStartTime = 1661365800000;
+    const weeklyEndTime = 1661797800000(async () => {
       try {
         setLoading(true);
-        const res = await submit(getAllFeaturedPlays());
+        const res = await fetchTrendingPlays(
+          weeklyStartTime,
+          weeklyEndTime,
+          headers
+        );
         setData(res);
       } catch (err) {
         setError(err?.[0]);
@@ -25,7 +32,7 @@ const useFeaturedPlays = () => {
         setLoading(false);
       }
     })();
-  }, [getAllFeaturedPlays]);
+  }, []);
 
   return [loading, error, data];
 };
