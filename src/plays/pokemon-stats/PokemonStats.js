@@ -34,7 +34,7 @@ function PokemonStats(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="Skeleton-pokemon-app">
           {/* Your Code Starts Here */}
           <ToastContainer
             position="bottom-left"
@@ -55,13 +55,14 @@ function PokemonStats(props) {
             <div className="poke-search-container">
               <Search
                 setname={setname}
+                name={name}
                 fetchPokemonDetails={fetchPokemonDetails}
               />
             </div>
           )}
+          </div>
           {/* Your Code Ends Here */}
         </div>
-      </div>
     </>
   );
 }

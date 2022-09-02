@@ -76,3 +76,13 @@
 .stat-value{
   margin-left: 6px;
 }
+
+@media (max-width: 764px){
+   .pokemon-stats{
+     padding: 3px 3px;
+   }
+
+   .one-third{
+    padding: 2px 2px;
+   }
+}
