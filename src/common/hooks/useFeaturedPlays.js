@@ -35,6 +35,25 @@ const useFeaturedPlays = () => {
     const weeklyStartTime = 1661365800000;
     const weeklyEndTime = 1661797800000;
 
+    const unwantedPaths = [
+      "/",
+      "/plays",
+      "/ideas",
+      "/plays/",
+      "/?ref=madewithreactjs.com",
+      "/tech-stacks",
+      "/?error=invalid-request&errorDescription=%22redirectTo%22%20does%20not%20match%20any%20of%20the%20allowed%20types",
+      "/ideas/",
+      "/plays/create",
+      "/plays/98415e0a-68d2-4930-a7ff-3559200740fe",
+      "/plays/editplay",
+    ];
+    setViewsData((current) =>
+      current.filter((d, index) => {
+        return unwantedPaths.includes(d.x) === false;
+      })
+    );
+
     (async () => {
       try {
         setLoading(true);
