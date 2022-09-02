@@ -7,6 +7,20 @@ const useFeaturedPlays = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [slug, setSlug] = useState([])
+
+  
+  function slugFromViewsData(){
+    viewsData.slice(0, 4).filter(v => {
+      return setSlug(v.x.split("/")[3])
+    })
+  }
+  function githubFromViewsData(){
+    viewsData.slice(0, 4).filter(v => {
+      return setSlug(v.x.split("/")[2])
+    })
+  }
+
 
   async function fetchTrendingPlays(start, end, headers) {
     return await fetch(
