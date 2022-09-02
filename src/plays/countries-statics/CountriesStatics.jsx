@@ -15,12 +15,12 @@ function CountriesStatics(props) {
   const [searchQuery, setSearchQuery] = useState("India");
   const searchSuggestionRef = useRef(null);
   //search query return the first 10 matching results.
-  const SearchResult = MapData.objects.world.geometries
-    .filter((o) =>
-      o.properties.name.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-    .slice(0, 10);
-
+  const SearchResult = MapData.objects.world.geometries.filter((o) =>
+    o.properties.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
+  );
+  SearchResult.sort((a, b) =>
+    a.properties.name.localeCompare(b.properties.name)
+  );
   const keyPressHandler = (e) => {
     const length = SearchResult.length;
     //downArrow Key
@@ -56,6 +56,9 @@ function CountriesStatics(props) {
     setSelected(SearchResult[index].properties.name);
   }, [index]);
 
+  const searchInputClickHandler = () => {
+    setShowSuggestions(true);
+  };
   const handleOnchange = (e) => {
     setShowSuggestions(true);
     setSearchQuery(e.target.value);
@@ -63,6 +66,11 @@ function CountriesStatics(props) {
   };
   const handleOnFocus = () => {
     setShowSuggestions(true);
+  };
+  const handleOnBlur = (e) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setShowSuggestions(false);
+    }
   };
   const searchResultClickHandler = (i) => {
     setIndex(i);
@@ -77,21 +85,7 @@ function CountriesStatics(props) {
       }
     });
   };
-  useEffect(() => {
-    //hide showSuggestion if the user clicked outside of the ref
-    const handleClickOutside = (event) => {
-      if (
-        searchSuggestionRef.current &&
-        !searchSuggestionRef.current.contains(event.target)
-      ) {
-        setShowSuggestions(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [searchSuggestionRef]);
+
   const handleClickMap = (geo) => {
     setSelected(geo.properties.name);
     setActiveGeo(geo.id.toLowerCase());
@@ -116,13 +110,14 @@ function CountriesStatics(props) {
               selected,
               searchQuery,
               SearchResult,
-              searchSuggestionRef,
+              handleOnBlur,
               keyPressHandler,
               handleOnchange,
               handleOnFocus,
               searchResultClickHandler,
               handleClickMap,
               searchbarClickHandler,
+              searchInputClickHandler,
             }}
           >
             <SearchAndFilter />

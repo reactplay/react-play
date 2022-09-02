@@ -19,7 +19,7 @@ export default function Map() {
   return (
     <>
       <div className="w-full xl:w-[60%] ">
-        <ComposableMap width={800} height={600}>
+        <ComposableMap width={800} height={550}>
           <Geographies geography={mapdata}>
             {({ geographies }) =>
               geographies.map((geo) => {

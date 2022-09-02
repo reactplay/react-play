@@ -1,7 +1,7 @@
 .geo-now-searchbar {
   border: 2px solid lightblue !important;
   outline: none;
-  padding-left: 1rem !important;
+  padding-left: 1.5rem !important;
 }
 .geo-now-searchbar:focus {
   outline: solid;

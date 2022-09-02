@@ -68,7 +68,7 @@ export default function Country({ activeGeo }) {
                       {Object.keys(country.currencies).map(
                         (currency, index) => {
                           return (
-                            <div>
+                            <div key={index}>
                               <span
                                 key={index}
                                 className=" text-2xl px-1 rounded m-1"
