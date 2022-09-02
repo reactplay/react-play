@@ -25,6 +25,7 @@ export default function Map() {
               geographies.map((geo) => {
                 return (
                   <Geography
+                    tabIndex="-1"
                     key={geo.rsmKey}
                     geography={geo}
                     fill={
