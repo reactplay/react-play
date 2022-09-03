@@ -7,19 +7,7 @@ const useFeaturedPlays = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [slug, setSlug] = useState([]);
-  const [github, setGithub] = useState([]);
-
-  function slugFromViewsData() {
-    viewsData.slice(0, 4).filter((v) => {
-      return setSlug((oldVal) => [...oldVal, v.x.split("/")[3]]);
-    });
-  }
-  function githubFromViewsData() {
-    viewsData.slice(0, 4).filter((v) => {
-      return setGithub((oldVal) => [...oldVal, v.x.split("/")[2]]);
-    });
-  }
+  const [slugs, setSlug] = useState([]);
 
   async function fetchTrendingPlays(start, end, headers) {
     return await fetch(
@@ -29,8 +17,14 @@ const useFeaturedPlays = () => {
   }
 
   useEffect(() => {
+    function slugFromViewsData(slug) {
+      return setSlug((oldVal) => [...oldVal, slug.split("/")[3]]);
+    }
+
     const headers = {
       Authorization: `Bearer ${process.env.UMAMI_BEARER_TOKEN}`,
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
     };
     const weeklyStartTime = 1661365800000;
     const weeklyEndTime = 1661797800000;
@@ -48,11 +42,6 @@ const useFeaturedPlays = () => {
       "/plays/98415e0a-68d2-4930-a7ff-3559200740fe",
       "/plays/editplay",
     ];
-    setViewsData((current) =>
-      current.filter((d, index) => {
-        return unwantedPaths.includes(d.x) === false;
-      })
-    );
 
     (async () => {
       try {
@@ -62,6 +51,14 @@ const useFeaturedPlays = () => {
           weeklyEndTime,
           headers
         );
+        setViewsData((current) =>
+          current.filter((d) => {
+            return unwantedPaths.includes(d.x) === false;
+          })
+        );
+        viewsData.slice(0, 4).map((v) => {
+          return slugFromViewsData(v.x);
+        });
         const dataRes = await submit(FetchPlaysSimple());
         setViewsData(viewsRes);
         setData(dataRes);
@@ -71,9 +68,9 @@ const useFeaturedPlays = () => {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [viewsData, slugs]);
 
-  return [loading, error, data, viewsData];
+  return [loading, error, data, slugs];
 };
 
 export default useFeaturedPlays;
