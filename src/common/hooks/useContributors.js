@@ -20,8 +20,6 @@ const useContributors = (sorted) => {
         );
         const responseData = await response.json();
 
-        console.log(responseData)
-
         // Remove the bots
         const contributors = responseData.filter(
           (contributor) => contributor.type !== "Bot"
