@@ -21,6 +21,7 @@ function CountriesStatics(props) {
   SearchResult.sort((a, b) =>
     a.properties.name.localeCompare(b.properties.name)
   );
+
   const keyPressHandler = (e) => {
     const length = SearchResult.length;
     //downArrow Key
@@ -85,7 +86,15 @@ function CountriesStatics(props) {
       }
     });
   };
-
+  const searchBtnOnKeyEnterHandler = (e) => {
+    if (e.keyCode === 13) {
+      MapData.objects.world.geometries.map((country) => {
+        if (country.properties.name.toLowerCase() === selected.toLowerCase()) {
+          setActiveGeo(country.id);
+        }
+      });
+    }
+  };
   const handleClickMap = (geo) => {
     setSelected(geo.properties.name);
     setActiveGeo(geo.id.toLowerCase());
@@ -118,6 +127,7 @@ function CountriesStatics(props) {
               handleClickMap,
               searchbarClickHandler,
               searchInputClickHandler,
+              searchBtnOnKeyEnterHandler,
             }}
           >
             <SearchAndFilter />
