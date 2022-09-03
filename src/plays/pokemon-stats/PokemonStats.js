@@ -19,7 +19,7 @@ function PokemonStats(props) {
         setpokemon(response.data);
       })
       .catch((err) => {
-        toast.error("Sorry, Unable to fetch", {
+        toast.error("Pokemon you are searching is not found, try another.", {
           position: "bottom-left",
           autoClose: 2000,
           hideProgressBar: false,
@@ -34,8 +34,8 @@ function PokemonStats(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="Skeleton-pokemon-app">
-          {/* Your Code Starts Here */}
+        {/* Your Code Starts Here */}
+        <div className="skeleton-pokemon-app">
           <ToastContainer
             position="bottom-left"
             autoClose={2000}
@@ -60,9 +60,9 @@ function PokemonStats(props) {
               />
             </div>
           )}
-          </div>
-          {/* Your Code Ends Here */}
         </div>
+        {/* Your Code Ends Here */}
+      </div>
     </>
   );
 }

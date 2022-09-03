@@ -81,12 +81,14 @@
   height: 35px;
   justify-content: center;
   line-height: 1;
-  list-style: none;
+  /* list-style: none; */
   overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
+  /* padding-left: 16px;
+  padding-right: 16px; */
+  padding: 0px 16px;
   position: relative;
-  text-align: left;
+  /* text-align: left; */
+  text-align: center;
   text-decoration: none;
   transition: box-shadow 0.15s, transform 0.15s;
   user-select: none;

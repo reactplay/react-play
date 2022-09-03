@@ -16,12 +16,4 @@ So , its kinda fun type app it will give details of a specific pokemon on search
 
 ## Implementation Details
 
-Update your implementation idea and details here
-
-## Consideration
-
-Update all considerations(if any)
-
-## Resources
-
-Update external resources(if any)
+So, it's a app that gives you details about a paticular pokemon on search it displays the pokemon in a card with its details.
