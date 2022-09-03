@@ -16,9 +16,11 @@ const useContributors = (sorted) => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://api.github.com/repos/reactplay/react-play/contributors`
+          `https://api.github.com/repos/reactplay/react-play/contributors?page=1&per_page=1000`
         );
         const responseData = await response.json();
+
+        console.log(responseData)
 
         // Remove the bots
         const contributors = responseData.filter(

@@ -15,13 +15,13 @@ const Contributors = () => {
         {isLoading && <li>Loading...</li>}
         {error && <li>Error: {error.message}</li>}
         {data &&
-          data.map((contributor) => (
+          data.map((contributor, index) => (
             <li key={contributor.id} className="contributor" data-testid={`contributor-${contributor.id}`}>
               <a
                 href={contributor.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contributor-anchor"
+                className={`contributor-anchor ${index >= 25 && 'small-contribution'}`}
                 title={`${contributor.login}(${contributor.contributions} contributions)`}
               >
                 <img
@@ -33,6 +33,15 @@ const Contributors = () => {
             </li>
           ))}
       </ul>
+      <div className="link-container">
+      <a  
+        target="_blank" 
+        href="https://github.com/reactplay/react-play#contributors-" 
+        className="home-anchor"
+      >
+        <span className="text">See more contributors...</span>
+      </a>
+      </div>
     </>
   );
 };
