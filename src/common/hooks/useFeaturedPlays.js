@@ -51,6 +51,9 @@ const useFeaturedPlays = () => {
           weeklyEndTime,
           headers
         );
+        console.log(viewsRes);
+        setViewsData(viewsRes);
+
         setViewsData((current) =>
           current.filter((d) => {
             return unwantedPaths.includes(d.x) === false;
@@ -60,7 +63,6 @@ const useFeaturedPlays = () => {
           return slugFromViewsData(v.x);
         });
         const dataRes = await submit(FetchPlaysSimple());
-        setViewsData(viewsRes);
         setData(dataRes);
       } catch (err) {
         setError(err?.[0]);
@@ -70,7 +72,7 @@ const useFeaturedPlays = () => {
     })();
   }, [viewsData, slugs]);
 
-  return [loading, error, data, slugs];
+  return [loading, error, data, viewsData, slugs];
 };
 
 export default useFeaturedPlays;
