@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import SearchAndFilter from "./SearchAndFilter";
 import { GeoContext } from "./Context";
 import MapData from "./featues.json";
-import { connectFirestoreEmulator } from "firebase/firestore";
+
 function CountriesStatics(props) {
   // Your Code Start below.
   const [activeGeo, setActiveGeo] = useState("ind");
@@ -14,6 +14,7 @@ function CountriesStatics(props) {
   const [selected, setSelected] = useState("");
   const [searchQuery, setSearchQuery] = useState("India");
   const searchSuggestionRef = useRef(null);
+
   //search query return the first 10 matching results.
   const SearchResult = MapData.objects.world.geometries.filter((o) =>
     o.properties.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
@@ -25,17 +26,26 @@ function CountriesStatics(props) {
   const keyPressHandler = (e) => {
     const length = SearchResult.length;
     //downArrow Key
+
     if (e.keyCode === 40) {
-      setIndex(index + 1);
-      if (index >= length - 1) {
-        setIndex(0);
+      if (index < length - 1) {
+        searchSuggestionRef.current.focus();
+        if (e.target.value === "") {
+          setIndex(0);
+          searchSuggestionRef.current.scrollTo(0, index);
+        } else {
+          setIndex(index + 1);
+        }
       }
     }
     //upArrow Key
     if (e.keyCode === 38) {
-      setIndex(index - 1);
-      if (index <= 0) {
-        setIndex(length - 1);
+      if (index > 0) {
+        searchSuggestionRef.current.focus();
+        if (e.target.value === "") {
+          setIndex(0);
+          searchSuggestionRef.current.scrollTo(0, 0);
+        } else setIndex(index - 1);
       }
     }
     //esc key
@@ -45,14 +55,16 @@ function CountriesStatics(props) {
     }
     //Enter key
     if (e.keyCode === 13) {
-      if (searchQuery !== null) {
-        setShowSuggestions(false);
-      }
+      MapData.objects.world.geometries.map((country) => {
+        if (country.properties.name.toLowerCase() === selected.toLowerCase()) {
+          setActiveGeo(country.id);
+          setShowSuggestions(false);
+        }
+      });
       setSelected(SearchResult[index].properties.name);
       setActiveGeo(SearchResult[index].id);
     }
   };
-
   useEffect(() => {
     setSelected(SearchResult[index].properties.name);
   }, [index]);
@@ -86,15 +98,7 @@ function CountriesStatics(props) {
       }
     });
   };
-  const searchBtnOnKeyEnterHandler = (e) => {
-    if (e.keyCode === 13) {
-      MapData.objects.world.geometries.map((country) => {
-        if (country.properties.name.toLowerCase() === selected.toLowerCase()) {
-          setActiveGeo(country.id);
-        }
-      });
-    }
-  };
+
   const handleClickMap = (geo) => {
     setSelected(geo.properties.name);
     setActiveGeo(geo.id.toLowerCase());
@@ -119,6 +123,7 @@ function CountriesStatics(props) {
               selected,
               searchQuery,
               SearchResult,
+              searchSuggestionRef,
               handleOnBlur,
               keyPressHandler,
               handleOnchange,
@@ -127,7 +132,6 @@ function CountriesStatics(props) {
               handleClickMap,
               searchbarClickHandler,
               searchInputClickHandler,
-              searchBtnOnKeyEnterHandler,
             }}
           >
             <SearchAndFilter />

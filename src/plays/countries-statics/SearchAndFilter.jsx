@@ -10,6 +10,7 @@ const SearchAndFilter = () => {
     index,
     selected,
     SearchResult,
+    searchSuggestionRef,
     keyPressHandler,
     handleOnchange,
     handleOnFocus,
@@ -17,8 +18,8 @@ const SearchAndFilter = () => {
     searchResultClickHandler,
     searchbarClickHandler,
     searchInputClickHandler,
-    searchBtnOnKeyEnterHandler,
   } = useContext(GeoContext);
+
   return (
     <div className="w-full max-w-[550px] mx-auto flex justify-center">
       <div
@@ -34,29 +35,30 @@ const SearchAndFilter = () => {
           value={selected}
           onChange={(e) => handleOnchange(e)}
           onFocus={handleOnFocus}
-          onKeyDown={keyPressHandler}
           autoComplete="new-password"
           onClick={searchInputClickHandler}
+          onKeyDown={keyPressHandler}
         />
         <div
-          tabIndex="0"
+          tabIndex="-1"
           className="absolute top-[50%] translate-y-[-50%] right-0  w-[30px] h-[30px] mx-2 bg-cyan-500 cursor-pointer"
           onClick={searchbarClickHandler}
-          onKeyDown={(e) => searchBtnOnKeyEnterHandler(e)}
         >
           <BsSearch className="absolute top-1 left-1  text-2xl text-white " />
         </div>
         {showSuggestions && (
           <div
-            className="absolute w-full max-h-[290px] bg-white  p-4 overflow-y-auto"
-            onKeyDown={keyPressHandler}
+            tabIndex={-1}
+            ref={searchSuggestionRef}
+            className="absolute w-full max-h-[290px] bg-white  p-4 overflow-y-auto outline-none"
+            onKeyDown={(e) => keyPressHandler(e)}
           >
             {SearchResult.map((country, i) => {
               return (
                 <div
                   key={i}
                   onClick={() => searchResultClickHandler(i)}
-                  className={`border-b cursor-pointer hover:bg-cyan-100 font-bold px-2 ${
+                  className={`border-b cursor-pointer hover:bg-cyan-100 font-bold px-2 my-[1rem] ${
                     index === i ? "geo-search-selected" : ""
                   }`}
                 >
