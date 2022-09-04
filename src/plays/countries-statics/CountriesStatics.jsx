@@ -95,6 +95,8 @@ function CountriesStatics(props) {
     MapData.objects.world.geometries.map((country) => {
       if (country.properties.name.toLowerCase() === selected.toLowerCase()) {
         setActiveGeo(country.id);
+        setShowSuggestions(false);
+        console.log(showSuggestions);
       }
     });
   };
