@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "reportWebVitals";
 import register from "./registerServiceWorker";
+import ErrorBoundry from "./ErrorBoundary/ErrorBoundary";
 
 /** removing console statement in react prod build */
 if (process.env.NODE_ENV !== "development") {
@@ -34,9 +35,11 @@ const Index = () => {
   };
   return (
     <React.StrictMode>
-      <SearchContext.Provider value={value}>
-        <RouteDefs />
-      </SearchContext.Provider>
+      <ErrorBoundry>
+        <SearchContext.Provider value={value}>
+          <RouteDefs />
+        </SearchContext.Provider>
+      </ErrorBoundry>
     </React.StrictMode>
   );
 };

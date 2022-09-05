@@ -84,7 +84,7 @@ const Home = () => {
               href="https://github.com/reactplay/react-play"
               target="_blank"
               rel="noopener noreferrer"
-              className="body-c2a-btn"
+              className="body-c2a-btn umami--click--github"
             >
               <BsGithub className="icon" />
               <span className="btn-label">
@@ -169,7 +169,7 @@ const Home = () => {
         {isTweetsLoading && (
           <Spinner />
         )}
-        <div className={isTweetsLoading ? "tweets-container" : "tweets-container active"}>
+        <div className={isTweetsLoading ? "tweets-container" : "tweets-container active"} data-testid="tweet-container">
             {tweetIdArray.map((id) => (
               <Tweet
                 key={id}
@@ -185,7 +185,7 @@ const Home = () => {
             ))}
         </div>
       </section>
-      <section className="home-contributors">
+      <section className="home-contributors" data-testid="contributors-section">
         <Contributors />
       </section>
       <ExtendedFooter />

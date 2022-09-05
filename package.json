@@ -14,13 +14,18 @@
     "plop": "^3.0.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-error-boundary": "^3.1.4",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
+    "react-loader-spinner": "~5.1.5",
     "react-organizational-chart": "^2.1.1",
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
+    "react-simple-maps": "^2.3.0",
+    "react-toastify": "^9.0.8",
+    "react-twitter-widgets": "^1.11.0",
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.5",
@@ -33,6 +38,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "create-play": "plop"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +67,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "cypress": "^10.6.0",
     "postcss": "^8.4.13",
     "puppeteer": "^13.7.0",
     "react-snap": "^1.23.0",
