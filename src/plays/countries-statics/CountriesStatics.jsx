@@ -12,8 +12,9 @@ function CountriesStatics(props) {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState("");
-  const [searchQuery, setSearchQuery] = useState("India");
+  const [searchQuery, setSearchQuery] = useState("india");
   const searchSuggestionRef = useRef(null);
+  const searchResultItemRef = useRef();
 
   //search query return the first 10 matching results.
   const SearchResult = MapData.objects.world.geometries.filter((o) =>
@@ -32,10 +33,12 @@ function CountriesStatics(props) {
         searchSuggestionRef.current.focus();
         if (e.target.value === "") {
           setIndex(0);
-          searchSuggestionRef.current.scrollTo(0, index);
+          searchSuggestionRef.current.scrollTo(0, 0);
         } else {
           setIndex(index + 1);
         }
+      } else {
+        setIndex(0);
       }
     }
     //upArrow Key
@@ -65,9 +68,15 @@ function CountriesStatics(props) {
       setActiveGeo(SearchResult[index].id);
     }
   };
+
   useEffect(() => {
     setSelected(SearchResult[index].properties.name);
-  }, [index]);
+    searchResultItemRef.current &&
+      searchResultItemRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+  }, [index, showSuggestions]);
 
   const searchInputClickHandler = () => {
     setShowSuggestions(true);
@@ -126,6 +135,7 @@ function CountriesStatics(props) {
               searchQuery,
               SearchResult,
               searchSuggestionRef,
+              searchResultItemRef,
               handleOnBlur,
               keyPressHandler,
               handleOnchange,

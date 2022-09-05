@@ -11,6 +11,7 @@ const SearchAndFilter = () => {
     selected,
     SearchResult,
     searchSuggestionRef,
+    searchResultItemRef,
     keyPressHandler,
     handleOnchange,
     handleOnFocus,
@@ -40,15 +41,16 @@ const SearchAndFilter = () => {
           onKeyDown={keyPressHandler}
         />
         <div
-          tabIndex="-1"
+          tabIndex="0"
           className="absolute top-[50%] translate-y-[-50%] right-0  w-[30px] h-[30px] mx-2 bg-cyan-500 cursor-pointer"
           onClick={searchbarClickHandler}
+          onKeyDown={keyPressHandler}
         >
           <BsSearch className="absolute top-1 left-1  text-2xl text-white " />
         </div>
         {showSuggestions && (
           <div
-            tabIndex={-1}
+            tabIndex="-1"
             ref={searchSuggestionRef}
             className="absolute w-full max-h-[290px] bg-white  p-4 overflow-y-auto outline-none"
             onKeyDown={(e) => keyPressHandler(e)}
@@ -57,8 +59,9 @@ const SearchAndFilter = () => {
               return (
                 <div
                   key={i}
+                  ref={index === i ? searchResultItemRef : null}
                   onClick={() => searchResultClickHandler(i)}
-                  className={`border-b cursor-pointer hover:bg-cyan-100 font-bold px-2 my-[1rem] ${
+                  className={`border-b cursor-pointer hover:bg-cyan-100 font-bold px-2 my-[0.9rem] ${
                     index === i ? "geo-search-selected" : ""
                   }`}
                 >
