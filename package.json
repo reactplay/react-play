@@ -41,6 +41,7 @@
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
     "react-simple-maps": "^2.3.0",
+    "react-toastify": "^9.0.8",
     "react-twitter-widgets": "^1.11.0",
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
