@@ -114,7 +114,7 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay}) => {
             disabled={isFieldsAreInValid()}
             onClick={onSubmit.bind(null, formData)}
           >
-            Create the awesome
+            {!isEditPlay ? 'Create the awesome' : 'Edit Play'}
           </Button>
         </div>
       </div>

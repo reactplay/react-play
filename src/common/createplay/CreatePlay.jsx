@@ -221,13 +221,13 @@ const CreatePlay = () => {
     <div className='w-full h-full flex flex-col justify-center items-center create-plays-wrapper'>
       <div>
         <span className='title-primary'>
-          Create <strong>A Play</strong>
+          {!isEditPlay ? <>Create <strong>A Play</strong></> :<>Edit <strong>Play</strong></> }
         </span>
       </div>
       <div className='w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6'>
         <div className='flex flex-col flex-1'>
           <div className='h-14 p-8'>
-            Welcome <strong>{userData.displayName}</strong>, create your play
+            Welcome <strong>{userData.displayName}</strong>, {!isEditPlay ? 'create' : 'edit'} your play
           </div>
           <PlayForm
             isEditPlay={isEditPlay}
