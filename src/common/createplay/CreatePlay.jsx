@@ -21,6 +21,7 @@ import { FetchPlaysBySlugAndUser } from "common/services/request/query/fetch-pla
 import { Tags, Levels, Issues } from "common/services";
 import { Plays } from "common/services/plays";
 import { submit } from "common/services/request";
+import { updatePlayInfo } from "common/services/request/query/edit-play";
 
 // STYLES
 import "./create-play.scss";
@@ -47,43 +48,6 @@ const NoCreationInProdScreen = () => {
     </div>
   );
 };
-
-// DEMO OBJECT NEEDED IN ORDER TO EDIT
-// {
-//   name: "demoplay",
-//   description: "description of play",
-//   issue: {
-//     name: "Dark and Light Mode Implemented on the ReactPlay Website",
-//     value: 522,
-//   },
-//   language: {
-//     name: "JavaScript",
-//     value: "js",
-//   },
-//   style: {
-//     name: "CSS",
-//     value: "css",
-//   },
-//   level: {
-//     id: "4127ed16-bf37-4c34-bed0-282cd646cd53",
-//     name: "Beginner",
-//     value: "4127ed16-bf37-4c34-bed0-282cd646cd53",
-//   },
-//   github: "Angryman18",
-//   tags: [
-//     {
-//       id: "914e9491-b1f6-4b90-ad0f-727eabd5a41e",
-//       name: "JSX",
-//     },
-//     {
-//       id: "457a8807-3c4a-4868-9113-104482837650",
-//       name: "Component Structure",
-//     },
-//   ],
-//   cover: "cover img",
-//   blog: "blog url",
-//   video: "video url",
-// };
 
 const reducer = (state, updatedState) => ({ ...state, ...updatedState });
 
@@ -116,8 +80,8 @@ const CreatePlay = () => {
         const res = await submit(FetchPlaysBySlugAndUser(decodeURI(playname), decodeURI(username)));
         if (!res.length) throw new Error("Play Not Found");
         const data = res[0];
-        const ownerOfPlay = data?.user?.id === userData?.id;
-        if (ownerOfPlay) {
+        const checkPlayOwenership = data?.user?.id === userData?.id;
+        if (checkPlayOwenership) {
           return setState({
             creator: data.user?.id,
             formData: createStateObject(data, storedData),
@@ -168,19 +132,27 @@ const CreatePlay = () => {
     }
   };
 
-  const onSubmit = (formData) => {
-    if (isEditPlay) return console.log(formData);
-    setState({ loadingText: "Creating Play", isDataLoading: true });
-    formData.owner_user_id = userData.id;
-    Plays.createPlay(formData).then((res) => {
+  const onSubmit = async (formData) => {
+    const { id, ...rest } = formData;
+    try {
+      if (isEditPlay) {
+        const prepareObj = { play_id: id, user_id: userData?.id, editObj: rest };
+        // const response = await submit(updatePlayInfo(prepareObj));
+        return console.log(prepareObj);
+      }
+      setState({ loadingText: "Creating Play", isDataLoading: true });
+      const res = await Plays.createPlay(rest);
       navigate(`/plays/created/${res}`);
+    } catch (err) {
+      alert("Something Error Occured");
+    } finally {
       setState({ isDataLoading: false, loadingText: "" });
-    });
+    }
   };
 
-  if (process.env.NODE_ENV === "development" && location.pathname !== "editplay") {
-    return <NoCreationInProdScreen />;
-  }
+  // if (process.env.NODE_ENV === "development" && location.pathname !== "editplay") {
+  //   return <NoCreationInProdScreen />;
+  // }
 
   if (isLoading || isDataLoading) {
     return (
@@ -221,13 +193,22 @@ const CreatePlay = () => {
     <div className='w-full h-full flex flex-col justify-center items-center create-plays-wrapper'>
       <div>
         <span className='title-primary'>
-          {!isEditPlay ? <>Create <strong>A Play</strong></> :<>Edit <strong>Play</strong></> }
+          {!isEditPlay ? (
+            <>
+              Create <strong>A Play</strong>
+            </>
+          ) : (
+            <>
+              Edit <strong>Play</strong>
+            </>
+          )}
         </span>
       </div>
       <div className='w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6'>
         <div className='flex flex-col flex-1'>
           <div className='h-14 p-8'>
-            Welcome <strong>{userData.displayName}</strong>, {!isEditPlay ? 'create' : 'edit'} your play
+            Welcome <strong>{userData.displayName}</strong>, {!isEditPlay ? "create" : "edit"} your
+            play
           </div>
           <PlayForm
             isEditPlay={isEditPlay}

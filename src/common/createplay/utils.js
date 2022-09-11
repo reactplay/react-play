@@ -10,6 +10,7 @@ export const defaultInputFields = {
   cover: "",
   blog: "",
   video: "",
+  id: ""
 };
 
 export const constructLevelInfo = (lvlData, currLvl) => {
@@ -63,10 +64,10 @@ export const constructLanguageInfo = (currLang) => {
 // };
 
 export const createStateObject = (existingObj, storedData) => {
-  const { name, description, github, cover, blog, video, play_tags, language, level } = existingObj;
+  const { name, description, github, cover, blog, video, play_tags, language, level, id } = existingObj;
   const {tags, level: levelData} = storedData
   const levelInfo = constructLevelInfo(levelData, level);
   const tagsInfo = constructTagInfo(tags, play_tags);
   const languageInfo = constructLanguageInfo(language);
-  return {name, description, github, cover, blog, video, tags: tagsInfo, level: levelInfo, language: languageInfo}
+  return {name, description, github, cover, blog, video, id, tags: tagsInfo, level: levelInfo, language: languageInfo}
 };
