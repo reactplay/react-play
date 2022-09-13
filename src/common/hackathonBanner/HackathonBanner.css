@@ -1,0 +1,7 @@
+.hackathon-banner-image {
+  width: 320px;
+  height: 300px;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: 100% center;
+}
