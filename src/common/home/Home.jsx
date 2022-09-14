@@ -9,7 +9,6 @@ import { FiStar } from "react-icons/fi";
 import { FaLightbulb } from "react-icons/fa";
 import { ReactComponent as Flower } from "images/icon-flower.svg";
 import { MdManageSearch } from "react-icons/md";
-import YoutubeVideoEmbed from "common/components/YouTubeEmbed";
 import FeaturedPlays from "common/playlists/FeaturedPlays";
 import Contributors from "./Contributors";
 import ExtendedFooter from "common/footer/ExtendedFooter";
@@ -65,42 +64,44 @@ const Home = () => {
           <Flower className="home-bg-graphics-lg" />
         </div>
         <div className="app-home-body-content">
-          <h2 className="body-title">
-            Start <strong>React Code</strong> Arena <br />
-            with ReactPlay
-          </h2>
-          <p className="body-desc">
-            ReactPlay is an open-source platform to learn, create and share
-            ReactJS projects with the developer community. Start by browsing the
-            plays or exploring the source code.
-          </p>
-          <div className="body-c2a">
-            <Link to="/plays" className="body-c2a-btn body-c2a-btn--primary">
-              <MdManageSearch className="icon" />
-              <span className="btn-label">Browse</span>
-            </Link>
-            <a
-              href="https://github.com/reactplay/react-play"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="body-c2a-btn umami--click--github"
-            >
-              <BsGithub className="icon" />
-              <span className="btn-label">
-                GitHub{" "}
-                <div className="label-info-more">
-                  <FiStar /> <div className="more-label">{gitHubStars}</div>
-                </div>{" "}
-              </span>
-            </a>
-          </div>
-          <HackathonBanner />
-          {/* <div className="video">
-            <YoutubeVideoEmbed
-              videoId="XrWonrp296w"
-              title="🤩 Introducing ReactPlay - An Opensource Platform to Create, Learn, and Share ReactJS Projects"
-            />
-          </div> */}
+          {!process.env.REACT_APP_ACTIVITIES_ON ? (
+            <>
+              <h2 className="body-title">
+                Start <strong>React Code</strong> Arena <br />
+                with ReactPlay
+              </h2>
+              <p className="body-desc">
+                ReactPlay is an open-source platform to learn, create and share
+                ReactJS projects with the developer community. Start by browsing
+                the plays or exploring the source code.
+              </p>
+              <div className="body-c2a">
+                <Link
+                  to="/plays"
+                  className="body-c2a-btn body-c2a-btn--primary"
+                >
+                  <MdManageSearch className="icon" />
+                  <span className="btn-label">Browse</span>
+                </Link>
+                <a
+                  href="https://github.com/reactplay/react-play"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="body-c2a-btn umami--click--github"
+                >
+                  <BsGithub className="icon" />
+                  <span className="btn-label">
+                    GitHub{" "}
+                    <div className="label-info-more">
+                      <FiStar /> <div className="more-label">{gitHubStars}</div>
+                    </div>{" "}
+                  </span>
+                </a>
+              </div>
+            </>
+          ) : (
+            <HackathonBanner />
+          )}
         </div>
       </section>
       <section className="home-features">

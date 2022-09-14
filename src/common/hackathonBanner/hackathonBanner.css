@@ -1,0 +1,14 @@
+.hackathon-banner-image {
+  width: 320px;
+  height: 300px;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: 100% center;
+}
+@media screen and (min-width: 992px) {
+  .hackathon-banner-image {
+    width: 390px;
+    height: 360px;
+    object-position: 90% center;
+  }
+}
