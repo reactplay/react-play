@@ -86,7 +86,6 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
 
     return (
         <>
-            {console.log("Owner user id", filterQuery.owner_user_id)}
             <div className="form-group">
                 {loading && "Loading Data"}
                 <label>Level</label>
@@ -283,13 +282,23 @@ const FilterPlays = () => {
             owner_user_id: "",
             language: "",
         });
+        setModifiedFilterQuery({
+            level_id: "",
+            tags: [],
+            owner_user_id: "",
+            language: "",
+        });
+        setnoOfAppliedFilter(0);
     };
 
     return (
         <div className="search-filter">
             <Modal
                 title="Filter Plays By"
-                onClose={() => setShowModal(false)}
+                onClose={() => {
+                    setShowModal(false);
+                    clearFiltersOnClose();
+                }}
                 onSubmit={handleFilter}
                 show={showModal}
                 cname="filter"
@@ -302,10 +311,7 @@ const FilterPlays = () => {
             />
 
             <button
-                onClick={() => {
-                    setShowModal(true);
-                    clearFiltersOnClose();
-                }}
+                onClick={() => setShowModal(true)}
                 className="btn-filter"
                 title="Filter Plays"
             >
