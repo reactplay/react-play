@@ -295,7 +295,8 @@ const FilterPlays = () => {
         <div className="search-filter">
             <Modal
                 title="Filter Plays By"
-                onClose={() => {
+                onClose={() => setShowModal(false)}
+                onCancel={() => {
                     setShowModal(false);
                     clearFiltersOnClose();
                 }}

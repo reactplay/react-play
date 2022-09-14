@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { GoCheck, GoX } from "react-icons/go";
 
-const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
+const Modal =({ title, show, onClose, onCancel, onSubmit, children, cname })=> {
   useEffect(() => {
     const close = (e) => {
       // e.keyCode is deprecated: developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode. So I've used e.key === 'Escape' instead, for better international keyboard support. 
@@ -28,7 +28,7 @@ const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
           { children }
         </div>
         <div className={`modal-${cname}-footer`}>
-          <button className="btn-default-light btn-size--sm" onClick={ onClose }><GoX size="16px" className="icon" /> Cancel</button>
+          <button className="btn-default-light btn-size--sm" onClick={ onCancel }><GoX size="16px" className="icon" /> Cancel</button>
           { onSubmit && <button className="btn-primary btn-size--sm" onClick={ onSubmit }><GoCheck size="16px" className="icon" /> Apply</button> }
         </div>
      </div>
