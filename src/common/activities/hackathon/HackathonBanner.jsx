@@ -9,9 +9,8 @@ import "./hackathonBanner.css";
 
 function HackathonBanner() {
   const { data } = useFetch(
-    "https://api.github.com/repos/reactplay/activities"
+    "https://api.github.com/repos/reactplay/react-play"
   );
-  console.log(data);
   return (
     <div className="flex flex-col lg:flex-row justify-between w-[98%]  max-w-[600px]  md:max-w-[992px] lg:max-w-[1200px] mt-16 m-auto text-white">
       <div className="w-[90%] lg:w-[60%] mx-auto text-center lg:text-left">
@@ -27,12 +26,10 @@ function HackathonBanner() {
         </span>
         <div className="my-2 md:my-4 md:text-xl">
           <p>
-            ReactPlay is an open-source platform to learn, create and share
-            ReactJs projects with the developer community.
-          </p>
-          <p>
-            Join us in ReactPlay hackathon and showcase your mind blowing ideas
-            and amazing projects.
+            Developers and Hacking are inseparable! ReactPlay brings you the
+            opportunity to take part in the Hackathon and learn from it.
+            Showcase your mindblowing ideas, build projects, and create content
+            - there are also chances to win exciting prizes
           </p>
         </div>
         <div className="flex flex-col sm:flex-row justify-center lg:justify-start w-full ">
@@ -54,13 +51,6 @@ function HackathonBanner() {
               </div>
             </div>
           </a>
-          <Link
-            to="/plays"
-            className="p-4 lg:w-48 my-2 flex justify-center items-center rounded-full bg-cyan-300 font-bold text-black  cursor-pointer"
-          >
-            <MdManageSearch className="inline-block text-xl" />
-            <span className="inline-block">Browse</span>
-          </Link>
         </div>
       </div>
       <div>
