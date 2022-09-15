@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { GoCheck, GoX } from "react-icons/go";
 import classes from './index.module.css';
 
-const Modal =({ title, show, onClose, onClearFilters, onSubmit, children, cname })=> {
+const Modal =({ title, show, onClose, filters, onClearFilters, onSubmit, children, cname })=> {
   useEffect(() => {
     const close = (e) => {
       // e.keyCode is deprecated: developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode. So I've used e.key === 'Escape' instead, for better international keyboard support. 
@@ -27,7 +27,12 @@ const Modal =({ title, show, onClose, onClearFilters, onSubmit, children, cname 
         </div>
         {/* Clear All filters button */}
         <div className={classes["modal-clear-filter"]}>
-          <button onClick={onClearFilters} className={classes["clear-all-filter-btn"]}>Clear All</button>
+          {console.log(filters.owner_user_id !== "")}
+          <button onClick={
+            filters.level_id !== "" || filters.tags.length !== 0 || 
+            filters.owner_user_id !== "" || filters.language !== ""? 
+            () => onClearFilters(): () => {}} 
+            className={classes["clear-all-filter-btn"]}>Clear All</button>
         </div>
         <div className={`modal-${cname}-body`}>
           { children }
