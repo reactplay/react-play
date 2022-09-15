@@ -364,6 +364,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Ceesco",
+      "name": "Ceesco",
+      "avatar_url": "https://avatars.githubusercontent.com/u/104683015?v=4",
+      "profile": "https://github.com/Ceesco",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
