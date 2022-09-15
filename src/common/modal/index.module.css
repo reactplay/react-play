@@ -1,0 +1,20 @@
+/* CSS attributes for clear All button */
+
+.modal-clear-filter {
+    width: 100%;
+    text-align: right;
+    padding: 0 1.5rem;
+}
+
+.clear-all-filter-btn {
+    font-size: smaller;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 8px 18px;
+    background-color: #E5E5E9;
+    transition: all .2s
+}
+
+.clear-all-filter-btn:hover{
+    background-color: whitesmoke;
+}
