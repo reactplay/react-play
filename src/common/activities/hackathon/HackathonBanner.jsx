@@ -19,23 +19,28 @@ function HackathonBanner() {
         </h1>
         <span className="text-lg md:text-xl lg:text-2xl">Presents</span>
         <h1 className=" uppercase text-5xl md:text-6xl lg:text-8xl font-bold text-cyan-300">
-          Hackathon
+          HACK-R-PLAY
         </h1>
-        <span className="text-xl md:text-2xl lg:text-3xl text-cyan-300">
-          16 Sep - 8 Oct
+        <span className="text-xl md:text-2xl  text-cyan-300">
+          20th Sep - 20th Oct 2022
         </span>
         <div className="my-2 md:my-4 md:text-xl">
+          <p>Developers and Hacking are inseparable!</p>
           <p>
-            Developers and Hacking are inseparable! ReactPlay brings you the
-            opportunity to take part in the Hackathon and learn from it.
-            Showcase your mindblowing ideas, build projects, and create content
-            - there are also chances to win exciting prizes
+            ReactPlay brings you the opportunity to take part in the Hackathon
+            and learn from it. Showcase your mindblowing ideas, build projects,
+            and create content - there are also chances to win exciting prizes.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row justify-center lg:justify-start w-full ">
-          <button className="p-4 lg:w-48 my-2 rounded-full bg-cyan-300 font-bold  cursor-pointer">
+          <a
+            href="https://hustles.reactplay.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-4 lg:w-48 my-2 rounded-full bg-cyan-300 border-2 border-cyan-300 text-black text-center lg:text-xl leading-6 font-bold  cursor-pointer"
+          >
             Get started
-          </button>
+          </a>
           <a
             href="https://github.com/reactplay/activities"
             target="_blank"
