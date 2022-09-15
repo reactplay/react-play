@@ -18,3 +18,7 @@
 .clear-all-filter-btn:hover{
     background-color: whitesmoke;
 }
+
+.clear-all-filter-btn:active{
+    background-color: white;
+}
