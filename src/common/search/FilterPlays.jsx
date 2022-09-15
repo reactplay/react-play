@@ -274,32 +274,11 @@ const FilterPlays = () => {
         showModal && setShowModal(false);
     };
 
-    const clearFiltersOnClose = () => {
-        console.log("clearing filters on close");
-        setFilterQuery({
-            level_id: "",
-            tags: [],
-            owner_user_id: "",
-            language: "",
-        });
-        setModifiedFilterQuery({
-            level_id: "",
-            tags: [],
-            owner_user_id: "",
-            language: "",
-        });
-        setnoOfAppliedFilter(0);
-    };
-
     return (
         <div className="search-filter">
             <Modal
                 title="Filter Plays By"
                 onClose={() => setShowModal(false)}
-                onCancel={() => {
-                    setShowModal(false);
-                    clearFiltersOnClose();
-                }}
                 onSubmit={handleFilter}
                 show={showModal}
                 cname="filter"
