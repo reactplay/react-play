@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-41-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-42-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -264,6 +264,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://shailesh-parmar.netlify.app/"><img src="https://avatars.githubusercontent.com/u/71748675?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shailesh Parmar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ShaileshParmar11" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/dangvu0502"><img src="https://avatars.githubusercontent.com/u/57172125?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dangvu0502</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=dangvu0502" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/Ceesco"><img src="https://avatars.githubusercontent.com/u/104683015?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ceesco</b></sub></a><br /><a href="#design-Ceesco" title="Design">🎨</a></td>
+      <td align="center"><a href="https://github.com/Hat52"><img src="https://avatars.githubusercontent.com/u/44437268?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hamza Ali</b></sub></a><br /><a href="#design-Hat52" title="Design">🎨</a></td>
     </tr>
   </tbody>
 </table>
