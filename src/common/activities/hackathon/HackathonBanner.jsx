@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FiStar } from "react-icons/fi";
+import { IoIosRocket } from "react-icons/io";
 import HackerBannerImage from "./banner.png";
 import useFetch from "common/hooks/useFetch";
 import "./hackathonBanner.css";
@@ -37,7 +38,10 @@ function HackathonBanner() {
             rel="noopener noreferrer"
             className="p-4 lg:w-48 leading-10 my-2 rounded-full bg-cyan-300 border-2 border-cyan-300 hover:bg-slate-300 hover:border-slate-300 text-black text-center text-lg font-bold  cursor-pointer"
           >
-            Get started
+            <span>
+              <IoIosRocket className="inline-block w-8 h-8" />
+              Get started
+            </span>
           </a>
           <a
             href="https://github.com/reactplay/activities"
