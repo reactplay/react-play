@@ -17,6 +17,7 @@ const Modal =({ title, show, onClose, filters, onClearFilters, onSubmit, childre
 
   if (!show) return null;
 
+  const isFilterEmpty= filters.level_id !== "" || filters.tags.length !== 0 || filters.owner_user_id !== "" || filters.language !== "";
 
   return ReactDOM.createPortal(
     <>
@@ -28,10 +29,7 @@ const Modal =({ title, show, onClose, filters, onClearFilters, onSubmit, childre
         {/* Clear All filters button */}
         <div className={classes["modal-clear-filter"]}>
           {console.log(filters.owner_user_id !== "")}
-          <button onClick={
-            filters.level_id !== "" || filters.tags.length !== 0 || 
-            filters.owner_user_id !== "" || filters.language !== ""? 
-            () => onClearFilters(): () => {}} 
+          <button onClick={ isFilterEmpty && onClearFilters} 
             className={classes["clear-all-filter-btn"]}>Clear All</button>
         </div>
         <div className={`modal-${cname}-body`}>
