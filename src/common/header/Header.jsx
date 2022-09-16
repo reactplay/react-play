@@ -17,7 +17,7 @@ const Header = () => {
 
   useEffect(() => {
     if (pathName === "/") {
-      setShowHideBits((prev)=>({
+      setShowHideBits((prev) => ({
         ...prev,
         showSearch: false,
         showBrowse: true,
