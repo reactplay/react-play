@@ -299,7 +299,7 @@ const FilterPlays = () => {
                 onClose={() => setShowModal(false)}
                 onClearFilters={clearFilters}
                 onSubmit={handleFilter}
-                filters={modifiedFilterQuery}
+                // filters={modifiedFilterQuery}
                 show={showModal}
                 cname="filter"
                 children={
