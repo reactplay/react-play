@@ -35,7 +35,7 @@ function HackathonBanner() {
             href="https://hustles.reactplay.io/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 lg:w-48 leading-10 my-2 rounded-full bg-cyan-300 border-2 border-cyan-300 text-black text-center text-lg font-bold  cursor-pointer"
+            className="p-4 lg:w-48 leading-10 my-2 rounded-full bg-cyan-300 border-2 border-cyan-300 hover:bg-slate-300 hover:border-slate-300 text-black text-center text-lg font-bold  cursor-pointer"
           >
             Get started
           </a>
