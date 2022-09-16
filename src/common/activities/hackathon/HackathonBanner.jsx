@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
-import { Link } from "react-router-dom";
-import { MdManageSearch } from "react-icons/md";
 import { FiStar } from "react-icons/fi";
 import HackerBannerImage from "./banner.png";
 import useFetch from "common/hooks/useFetch";
@@ -25,7 +23,7 @@ function HackathonBanner() {
           20th Sep - 20th Oct 2022
         </span>
         <div className="my-2 md:my-4 md:text-xl">
-          <p>Developers and Hacking are inseparable!</p>
+          <p className="mb-2">Developers and Hacking are inseparable!</p>
           <p>
             ReactPlay brings you the opportunity to take part in the Hackathon
             and learn from it. Showcase your mindblowing ideas, build projects,
@@ -37,7 +35,7 @@ function HackathonBanner() {
             href="https://hustles.reactplay.io/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 lg:w-48 my-2 rounded-full bg-cyan-300 border-2 border-cyan-300 text-black text-center lg:text-xl leading-6 font-bold  cursor-pointer"
+            className="p-4 lg:w-48 leading-10 my-2 rounded-full bg-cyan-300 border-2 border-cyan-300 text-black text-center text-lg font-bold  cursor-pointer"
           >
             Get started
           </a>
