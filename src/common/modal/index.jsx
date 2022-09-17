@@ -32,7 +32,8 @@ const Modal =({ title, show, onClose, filters, onClearFilters, onSubmit, childre
         {/* Clear All filters button */}
         <div className={classes["modal-clear-filter"]}>
           {console.log(filters.owner_user_id !== "")}
-          <button onClick={ isFilterEmpty && onClearFilters} 
+          <button 
+          // onClick={ isFilterEmpty && onClearFilters} 
             className={classes["clear-all-filter-btn"]}>Clear All</button>
         </div>
         <div className={`modal-${cname}-body`}>
