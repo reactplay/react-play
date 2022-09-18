@@ -5,7 +5,6 @@ import { SearchContext } from "./search-context";
 import "./search.css";
 
 import { RiFilterFill } from "react-icons/ri";
-import useBackListener from "common/routing/hooks/useBackListener";
 import useFetchFilterData from "./hooks/usePlayFilter";
 import { FormControl, MenuItem, Select } from "@mui/material";
 import { makeStyles } from "@mui/styles";
@@ -220,40 +219,6 @@ const FilterPlays = () => {
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
-  useBackListener(({ action }) => {
-    if (action === "POP") {
-      console.log("POP");
-      setModifiedFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setnoOfAppliedFilter(0);
-    }
-    if (action === "PUSH") {
-      console.log("PUSH");
-      setModifiedFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-    }
-    setnoOfAppliedFilter(0);
-  });
   const handleFilter = (event) => {
     event.preventDefault();
     console.log("filterQuery", filterQuery);
