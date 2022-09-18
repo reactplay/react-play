@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@faker-js/faker": "^7.5.0",
     "@giscus/react": "^2.0.3",
     "@mui/material": "^5.9.1",
     "@mui/styles": "^5.9.3",
@@ -28,6 +29,7 @@
     "node-sass": "^7.0.1",
     "react": "^18.0.0",
     "react-codemirror2": "^7.2.1",
+    "react-countdown-circle-timer": "^3.0.9",
     "react-dom": "^18.0.0",
     "react-error-boundary": "^3.1.4",
     "react-helmet": "^6.1.0",

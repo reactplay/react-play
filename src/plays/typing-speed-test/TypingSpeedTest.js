@@ -1,4 +1,5 @@
 import PlayHeader from "common/playlists/PlayHeader";
+import TypingTest from "./components/TypingTest";
 import "./styles.css";
 
 function TypingSpeedTest(props) {
@@ -6,14 +7,11 @@ function TypingSpeedTest(props) {
 
   return (
     <>
-      <div className="play-details">
+      <div className="play-details ">
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div>
-            <h1 className="text-red-500">Play Details - Typing Speed Test</h1>
-            <p>This is going to be typing test application</p>
-          </div>
+          <TypingTest />
           {/* Your Code Ends Here */}
         </div>
       </div>
