@@ -3,14 +3,22 @@ import { faker } from "@faker-js/faker";
 
 import Word from "./Word";
 import Timer from "./Timer";
+import Stats from "./Stats";
+
+const TIMER_SECONDS = 60;
 
 const TypingTest = () => {
   const [userInput, setUserInput] = useState("");
-  const typingText = useRef(faker.random.words(5).toLowerCase().split(" "));
+  const typingText = useRef(faker.random.words(30).toLowerCase().split(" "));
 
   const [activeWordIndex, setActiveWordIndex] = useState(0);
   const [correctedWords, setCorrectedWords] = useState([]);
   const [isTestFinish, setIsTestFinish] = useState(false);
+
+  const onTimerCompleted = () => {
+    setUserInput("Test Completed");
+    setIsTestFinish(true);
+  };
 
   const processUserInput = (value) => {
     if (value?.endsWith(" ")) {
@@ -38,7 +46,11 @@ const TypingTest = () => {
       </h3>
 
       <div className="my-8">
-        <Timer />
+        <Stats
+          timer={TIMER_SECONDS}
+          onTimerCompleted={onTimerCompleted}
+          correctedWords={correctedWords.filter(Boolean).length}
+        />
       </div>
       <div className=" max-w-4xl">
         <p className="text-xl tracking-wide leading-9">
