@@ -9,12 +9,13 @@ import { generateWords } from "../utils";
 const Main = () => {
   const [words, setWords] = useState("");
   const [userInput, setUserInput] = useState("");
-  const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(60);
   const [status, setStatus] = useState("waiting");
   const [isTimerStart, setIsTimerStart] = useState(false);
   const [activeWordIndex, setActiveWordIndex] = useState(0);
   const [correctWords, setCorrectWords] = useState(0);
   const [incorrectWords, setIncorrectWords] = useState(0);
+  const [correctCharacters, setCorrectCharacters] = useState(0);
 
   const refreshState = () => {
     setWords(generateWords());
@@ -29,12 +30,18 @@ const Main = () => {
 
   // To check each character and word
   const checkWordMatch = () => {
+    console.log(userInput);
     let wordToCompare = words[activeWordIndex];
     let isWordMatch = wordToCompare === userInput.trim();
 
-    isWordMatch
-      ? setCorrectWords(correctWords + 1)
-      : setIncorrectWords(incorrectWords + 1);
+    if (isWordMatch) {
+      setCorrectWords(correctWords + 1);
+      setCorrectCharacters(
+        (prevCharacter) => prevCharacter + userInput?.length
+      );
+    } else {
+      setIncorrectWords(incorrectWords + 1);
+    }
   };
 
   const handleUserInputKeyDown = ({ keyCode }) => {
@@ -57,11 +64,13 @@ const Main = () => {
       return;
     }
 
-    setTimeout(() => {
+    let timerTimout = setTimeout(() => {
       if (status === "started") {
         setTimer(timer - 1);
       }
     }, 1000);
+
+    return () => clearTimeout(timerTimout);
   }, [timer, status]);
 
   useEffect(() => {
@@ -81,6 +90,7 @@ const Main = () => {
         <Timer timer={timer} />
         <Stats
           wordsPerMinute={correctWords}
+          charactersPerMinute={correctCharacters}
           accuracy={Math.round(
             (correctWords / (correctWords + incorrectWords)) * 100
           )}
@@ -109,7 +119,7 @@ const Main = () => {
           placeholder="Start typing..."
           value={status !== "finished" ? userInput : "Test Completed"}
           onKeyDown={handleUserInputKeyDown}
-          onChange={(e) => setUserInput(e.target.value)}
+          onChange={(e) => setUserInput(e.target.value.trim())}
         />
         <div
           title="Refresh"

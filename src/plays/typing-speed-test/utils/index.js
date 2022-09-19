@@ -5,6 +5,6 @@ let words =
 export const generateWords = () => {
   return words
     .split(" ")
-    .splice(0, 50)
-    .sort(() => Math.random() - 0.5);
+    .sort(() => Math.random() - 0.5)
+    .splice(0, 50);
 };
