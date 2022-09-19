@@ -1,14 +1,35 @@
 .hackathon-banner-image {
-  width: 320px;
+  width: 100%;
   height: 300px;
   margin: 0 auto;
-  object-fit: cover;
+  object-fit: contain;
   object-position: 100% center;
 }
 @media screen and (min-width: 992px) {
   .hackathon-banner-image {
-    width: 390px;
+    width: 100%;
     height: 360px;
     object-position: 90% center;
+  }
+}
+
+.app-home-body .body-c2a {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  grid-gap: 1rem;
+  margin: 1rem auto;
+  justify-content: center;
+}
+
+@media screen and (min-width: 992px) {
+  .app-home-body .body-c2a {
+    justify-content: start;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .app-home-body .body-c2a {
+    flex-wrap: wrap;
   }
 }
