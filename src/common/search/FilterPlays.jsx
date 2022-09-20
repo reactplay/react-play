@@ -1,5 +1,5 @@
 import { Modal } from "common";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
 import "./search.css";
@@ -219,10 +219,26 @@ const FilterPlays = () => {
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
+  useEffect(() => {
+    if (location.pathname !== '/plays') {
+      setModifiedFilterQuery({
+        level_id: "",
+        tags: [],
+        owner_user_id: "",
+        language: "",
+      });
+      setFilterQuery({
+        level_id: "",
+        tags: [],
+        owner_user_id: "",
+        language: "",
+      });
+      setnoOfAppliedFilter(0);
+    }
+  },[location.pathname])
+
   const handleFilter = (event) => {
     event.preventDefault();
-    console.log("filterQuery", filterQuery);
-    console.log("modifiedFilterQuery", modifiedFilterQuery);
     setFilterQuery(modifiedFilterQuery);
     setnoOfAppliedFilter(getAppliedFilter(modifiedFilterQuery));
     if (location.pathname !== "/plays") {
