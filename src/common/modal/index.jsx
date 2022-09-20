@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { GoCheck, GoX } from "react-icons/go";
-import classes from './index.module.css';
 
-const Modal =({ title, show, onClose, appliedFilterQuery, onClearAppliedFilters, onSubmit, children, cname })=> {
+const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
   useEffect(() => {
     const close = (e) => {
       // e.keyCode is deprecated: developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode. So I've used e.key === 'Escape' instead, for better international keyboard support. 
@@ -17,22 +16,12 @@ const Modal =({ title, show, onClose, appliedFilterQuery, onClearAppliedFilters,
 
   if (!show) return null;
 
-  // condition to check if there is no applied filters
-  // If False, clicking on onClearAppliedFilters function linked to Clear All button
-  // will not be activated
-  const isFilterEmpty= appliedFilterQuery.level_id !== "" || appliedFilterQuery.tags.length !== 0 || appliedFilterQuery.owner_user_id !== "" || appliedFilterQuery.language !== "";
-
   return ReactDOM.createPortal(
     <>
       <div className="modal-overlay" onClick={ onClose }></div>
       <div className={`modal-${cname}`}>
         <div className={`modal-${cname}-header`}>
           <h2 className="modal-title">{ title }</h2>
-        </div>
-        {/* Clear All filters button */}
-        <div className={classes["modal-clear-filter"]}>
-          <span onClick={ isFilterEmpty && onClearAppliedFilters} 
-            className={classes["clear-all-filter-btn"]}>Clear All</span>
         </div>
         <div className={`modal-${cname}-body`}>
           { children }

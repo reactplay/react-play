@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     },
 });
 
-const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
+const FilterPlaysModalBody = ({ filterQuery, setFilterQuery, onClearAppliedFilters }) => {
     const [loading, error, data] = useFetchFilterData();
     const { tags, levels, creators } = data;
 
@@ -81,10 +81,20 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
     return selectedCreator ? selectedCreator.label : "All";
   };
 
+  // condition to check if there is no applied filters
+  // If False, clicking on onClearAppliedFilters function linked to Clear All button
+  // will not be activated
+  const isFilterEmpty= filterQuery.level_id !== "" || filterQuery.tags.length !== 0 || filterQuery.owner_user_id !== "" || filterQuery.language !== "";
+
   return (
     <>
       <div className='form-group'>
         {loading && "Loading Data"}
+        {/* Clear All filters button */}
+        <div className={"modal-clear-filter"}>
+          <span onClick={ isFilterEmpty && onClearAppliedFilters} 
+            className={"clear-all-filter-btn"}>Clear All</span>
+        </div>
         <label>Level</label>
         <FormControl fullWidth>
           <Select
@@ -236,14 +246,13 @@ const FilterPlays = ({ reset }) => {
         title='Filter Plays By'
         onClose={() => setShowModal(false)}
         onSubmit={handleFilter}
-        appliedFilterQuery={modifiedFilterQuery}
-        onClearAppliedFilters={resetFilter}
         show={showModal}
         cname='filter'
         children={
           <FilterPlaysModalBody
             filterQuery={modifiedFilterQuery}
             setFilterQuery={setModifiedFilterQuery}
+            onClearAppliedFilters={resetFilter}
           />
         }
       />
