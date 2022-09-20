@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-
+import { useEffect, useState, useRef } from "react";
 import { VscRefresh } from "react-icons/vsc";
 
+// Project local imports
 import Stats from "./Stats";
 import Timer from "./Timer";
 import { generateWords } from "../utils";
@@ -13,9 +13,11 @@ const Main = () => {
   const [status, setStatus] = useState("waiting");
   const [isTimerStart, setIsTimerStart] = useState(false);
   const [activeWordIndex, setActiveWordIndex] = useState(0);
-  const [correctWords, setCorrectWords] = useState(0);
+  const [correctWords, setCorrectWords] = useState([]);
   const [incorrectWords, setIncorrectWords] = useState(0);
   const [correctCharacters, setCorrectCharacters] = useState(0);
+  const [currentCharacterIndex, setCurrentCharacterIndex] = useState(0);
+  const userInputRef = useRef(null);
 
   const refreshState = () => {
     setWords(generateWords());
@@ -30,7 +32,6 @@ const Main = () => {
 
   // To check each character and word
   const checkWordMatch = () => {
-    console.log(userInput);
     let wordToCompare = words[activeWordIndex];
     let isWordMatch = wordToCompare === userInput.trim();
 
@@ -44,8 +45,9 @@ const Main = () => {
     }
   };
 
-  const handleUserInputKeyDown = ({ keyCode }) => {
+  const handleUserInputKeyDown = ({ value, keyCode }) => {
     if (!isTimerStart) setIsTimerStart(true);
+    setCurrentCharacterIndex(value);
 
     // Start the game
     setStatus("started");
@@ -58,6 +60,7 @@ const Main = () => {
     }
   };
 
+  // To start countdown
   useEffect(() => {
     if (timer === 0) {
       setStatus("finished");
@@ -74,19 +77,22 @@ const Main = () => {
   }, [timer, status]);
 
   useEffect(() => {
-    // Set typing text
+    // Setting typing text
     setWords(generateWords());
+
+    // Setting focus on input
+    userInputRef.current.focus();
   }, []);
 
   return (
     <div className=" max-w-3xl text-center my-4 mx-auto flex flex-col justify-center">
-      <h2 className="text-3xl text-violet-600 font-bold">
+      <h2 className="text-4xl text-violet-600 font-bold">
         Typing Speed Test ⌨️🚀
       </h2>
       <p className="text-lg text-gray-600 my-3 ">Test your typing skills</p>
 
       {/* Statistics & Timer */}
-      <div className="flex my-6 justify-around items-center">
+      <div className="flex my-6 mt-8 justify-around items-center">
         <Timer timer={timer} />
         <Stats
           wordsPerMinute={correctWords}
@@ -97,12 +103,21 @@ const Main = () => {
         />
       </div>
 
-      <div className="max-w-3xl my-4 mx-auto text-justify leading-9 tracking-wide">
+      <div className="max-w-3xl my-6 mx-auto text-justify leading-10 tracking-wide">
         {words?.length ? (
           words?.map((word, index) => (
-            <span key={index} className="text-lg">
+            <span
+              key={index}
+              className={
+                activeWordIndex === index
+                  ? "text-black font-medium"
+                  : "text-gray-500"
+              }
+            >
               {word?.split("")?.map((char, i) => (
-                <span key={i}>{char}</span>
+                <span key={i} className={`text-[1.2rem] tracking-wider`}>
+                  {char}
+                </span>
               ))}{" "}
             </span>
           ))
@@ -111,9 +126,10 @@ const Main = () => {
         )}
       </div>
 
-      <div className="flex items-center justify-center mt-10 space-x-7">
+      <div className="flex items-center justify-center mt-8 space-x-7">
         <input
           type="text"
+          ref={userInputRef}
           disabled={status === "finished"}
           className="rounded-md border !border-violet-400 !p-3 w-[300px] outline-1 outline-violet-600"
           placeholder="Start typing..."

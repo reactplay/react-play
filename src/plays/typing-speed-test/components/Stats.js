@@ -6,15 +6,15 @@ const Stats = ({ wordsPerMinute, accuracy, charactersPerMinute }) => {
   return (
     <div className="flex justify-center items-center space-x-8">
       <div className={statsCard}>
-        <p className="font-extrabold text-2xl">{wordsPerMinute}</p>
+        <p className="font-extrabold text-3xl">{wordsPerMinute}</p>
         <span className="text-sm mt-2">Words/min</span>
       </div>
       <div className={statsCard}>
-        <p className="font-extrabold text-2xl">{charactersPerMinute}</p>
+        <p className="font-extrabold text-3xl">{charactersPerMinute}</p>
         <span className="text-sm mt-2">Chars/min</span>
       </div>
       <div className={statsCard}>
-        <p className="font-extrabold text-2xl">
+        <p className="font-extrabold text-3xl">
           {isNaN(accuracy) ? 0 : accuracy}
         </p>
         <span className="text-sm mt-2">% accuracy</span>
