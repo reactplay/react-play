@@ -31,9 +31,8 @@ const Modal =({ title, show, onClose, appliedFilterQuery, onClearAppliedFilters,
         </div>
         {/* Clear All filters button */}
         <div className={classes["modal-clear-filter"]}>
-          <button 
-          onClick={ isFilterEmpty && onClearAppliedFilters} 
-            className={classes["clear-all-filter-btn"]}>Clear All</button>
+          <span onClick={ isFilterEmpty && onClearAppliedFilters} 
+            className={classes["clear-all-filter-btn"]}>Clear All</span>
         </div>
         <div className={`modal-${cname}-body`}>
           { children }

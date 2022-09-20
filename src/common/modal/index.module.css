@@ -4,21 +4,18 @@
     width: 100%;
     text-align: right;
     padding: 0 1.5rem;
+    display:flex;
+    justify-content: flex-end;
 }
 
 .clear-all-filter-btn {
     font-size: smaller;
     font-weight: bold;
-    border-radius: 20px;
-    padding: 8px 18px;
-    background-color: #E5E5E9;
+    cursor: pointer;
     transition: all .2s
 }
 
 .clear-all-filter-btn:hover{
-    background-color: whitesmoke;
-}
-
-.clear-all-filter-btn:active{
-    background-color: white;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
