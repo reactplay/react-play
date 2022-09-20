@@ -30,8 +30,8 @@ const Main = () => {
     setIncorrectWords(0);
   };
 
-  // To check each character and word
   const checkWordMatch = () => {
+    // To check each character and word
     let wordToCompare = words[activeWordIndex];
     let isWordMatch = wordToCompare === userInput.trim();
 
@@ -60,13 +60,13 @@ const Main = () => {
     }
   };
 
-  // To start countdown
   useEffect(() => {
     if (timer === 0) {
       setStatus("finished");
       return;
     }
 
+    // To start countdown
     let timerTimout = setTimeout(() => {
       if (status === "started") {
         setTimer(timer - 1);
