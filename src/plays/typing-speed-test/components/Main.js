@@ -2,9 +2,9 @@ import { useEffect, useState, useRef } from "react";
 import { VscRefresh } from "react-icons/vsc";
 
 // Project local imports
+import { generateWords } from "../utils";
 import Stats from "./Stats";
 import Timer from "./Timer";
-import { generateWords } from "../utils";
 import Word from "./Word";
 import ResultModal from "./ResultModal";
 
@@ -33,6 +33,7 @@ const Main = () => {
     setIncorrectWords(0);
     setCorrectCharLength(0);
     setTypedWordsArray([]);
+    userInputRef.current.focus();
   };
 
   const handleModalClose = () => {
@@ -65,8 +66,17 @@ const Main = () => {
       setStatus("started");
     }
 
+    if (activeWordIndex === words.length) return;
+
     if (value.endsWith(" ")) {
       checkIsWordMatch(value);
+
+      // Check if length of activeWordIndex  === words then end the test
+      if (activeWordIndex === words.length - 1) {
+        setStatus("finished");
+        setTimer(60);
+        setIsResultModalOpen(true);
+      }
     } else {
       setUserInput(value);
     }
@@ -99,14 +109,16 @@ const Main = () => {
 
   return (
     <>
-      <div className=" max-w-3xl text-center my-4 mx-auto flex flex-col justify-center">
-        <h2 className="text-4xl text-violet-600 font-bold">
+      <div className=" max-w-3xl text-center my-8 mx-auto flex flex-col justify-center">
+        <h2 className="text-[1.6rem] md:text-4xl  text-violet-600 font-bold">
           Typing Speed Test ⌨️🚀
         </h2>
-        <p className="text-lg text-gray-600 my-3 ">Test your typing skills</p>
+        <p className="text-base my-2 md:text-lg md:my-3 text-gray-600  ">
+          Test your typing skills
+        </p>
 
         {/* Statistics & Timer */}
-        <div className="flex my-6 mt-8 justify-around items-center">
+        <div className="flex flex-col justify-around items-center my-5 sm:flex-row md:my-6 md:mt-8 ">
           <Timer timer={timer} />
           <Stats
             wpm={correctWords}
@@ -117,7 +129,7 @@ const Main = () => {
           />
         </div>
 
-        <div className="max-w-3xl my-6 mx-auto text-justify leading-10 tracking-wide">
+        <div className="max-w-3xl my-6 mx-auto leading-9 text-justify md:leading-10 tracking-wide">
           {words.length ? (
             words.map((word, index) => (
               <Word
@@ -140,8 +152,6 @@ const Main = () => {
             className="rounded-md border !border-violet-400 !p-3 w-[300px] outline-1 outline-violet-600"
             placeholder="Start typing..."
             value={status !== "finished" ? userInput : "Test Completed"}
-            // onKeyDown={handleUserInputKeyDown}
-            // onChange={(e) => setUserInput(e.target.value.trim())}
             onChange={(e) => processUserInput(e.target.value)}
           />
           <div

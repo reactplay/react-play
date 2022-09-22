@@ -6,7 +6,7 @@ const ResultModal = ({ open, handleModalClose, wpm, cpm, accuracy }) => {
     <Modal open={open} onClose={handleModalClose}>
       <div className="result__modal ">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-center text-[1.05rem] tracking-wide my-4 leading-7">
+          <h1 className="text-center text-[1.05rem] tracking-wide my-4 leading-9">
             {wpm >= 40
               ? "Excellent..!"
               : wpm >= 30
