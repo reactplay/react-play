@@ -29,12 +29,12 @@ function HackathonBanner() {
           </p>
         </div>
         <div className="">
-          <div className="body-c2a">
+          <div className="body-c2a body-c2a-hackathon">
             <a
               href="https://hustles.reactplay.io/"
               target="_blank"
               rel="noopener noreferrer"
-              className="body-c2a-btn body-c2a-btn--primary"
+              className="body-c2a-btn  body-c2a-btn--primary"
             >
               <IoIosRocket className="icon"/>
               <span className="btn-label">Get started</span>

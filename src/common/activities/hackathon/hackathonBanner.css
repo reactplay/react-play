@@ -13,7 +13,7 @@
   }
 }
 
-.app-home-body .body-c2a {
+.app-home-body .body-c2a.body-c2a-hackathon {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -23,13 +23,8 @@
 }
 
 @media screen and (min-width: 992px) {
-  .app-home-body .body-c2a {
+  .app-home-body .body-c2a.body-c2a-hackathon {
     justify-content: start;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .app-home-body .body-c2a {
     flex-wrap: wrap;
   }
 }
