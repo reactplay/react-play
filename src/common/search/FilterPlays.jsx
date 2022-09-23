@@ -248,7 +248,7 @@ const FilterPlays = ({ reset }) => {
             filterQuery={modifiedFilterQuery}
             setFilterQuery={setModifiedFilterQuery}
             onClearAppliedFilters={() => {
-              setModifiedFilterQuery(filterObject);
+              setModifiedFilterQuery({...filterObject});
               setnoOfAppliedFilter(0);
             }}
           />
