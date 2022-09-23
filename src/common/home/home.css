@@ -106,6 +106,10 @@
   justify-content: center;
 }
 
+.app-home-body .body-c2a.c2a-left {
+  justify-content: start;
+}
+
 .app-home-body .body-c2a .body-c2a-btn {
   border: solid 1px var(--color-neutral-40);
   border-radius: 2rem;
