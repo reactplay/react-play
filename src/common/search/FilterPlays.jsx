@@ -81,11 +81,11 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery, onClearAppliedFilte
     return selectedCreator ? selectedCreator.label : "All";
   };
 
-
   return (
     <>
       <div className='form-group'>
         {loading && "Loading Data"}
+        {/* Clear All filters button */}
         <div className="modal-clear-filter">
           <span onClick={ onClearAppliedFilters } 
             className="clear-all-filter-btn">Clear All</span>
