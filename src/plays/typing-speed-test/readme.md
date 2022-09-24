@@ -1,3 +1,5 @@
+![cover.png](https://i.postimg.cc/0yKFRpT1/cover.png)
+
 # Typing Speed Test ⌨️🚀
 
 The faster you type, the faster you communicate with others. With **Typing Speed Test** you can check your WPM (words per minute) , CPM (Characters per minute) and accuracy scores in 60 seconds.

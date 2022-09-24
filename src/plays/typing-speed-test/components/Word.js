@@ -17,14 +17,4 @@ const Word = ({ text, isActive, correct }) => {
   return <span className="text-gray-500 text-[1.2rem]">{text} </span>;
 };
 
-export default Word;
-
-// index === activeWordIndex ? (
-//     <span className="font-medium text-[1.2rem] tracking-[.08rem]">
-//       {word}{" "}
-//     </span>
-//   ) : (
-//     <span className="text-gray-500 text-[1.2rem] tracking-[.08rem]">
-//       {word}{" "}
-//     </span>
-//   )
+export default React.memo(Word);
