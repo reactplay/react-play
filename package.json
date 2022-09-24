@@ -37,7 +37,7 @@
     "react-organizational-chart": "^2.1.1",
     "react-qr-code": "^2.0.7",
     "react-redux": "^8.0.1",
-    "react-router-dom": "6.3.0",
+    "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
     "react-simple-maps": "^2.3.0",
