@@ -1,6 +1,5 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import Main from "./components/Main";
-import "./styles.css";
 
 function TypingSpeedTest(props) {
   // Your Code Start below.
