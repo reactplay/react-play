@@ -41,6 +41,8 @@ The implementation of the Typing Speed Test play is quite simple.
 
 - In the `Main` component, you will also find the refresh button besides the input on click of that button it will reset the state of `Main` component. (new typing text, reset timer, reset word count etc.)
 
+- There is also a `ResultModal` component when the time is up or user finished typing all the words the modal will open and render the statistics.
+
 ## Contributing
 
 First of all thanks for wanting to contribute! To start contributing to this play, please go through the [Contribution guidelines of ReactPlay](https://github.com/reactplay/react-play/blob/main/CONTRIBUTING.md).
