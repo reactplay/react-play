@@ -5,17 +5,17 @@ const Contributors = () => {
 
   return (
     <>
-      <h3 className="title-primary">
+      <h2 className="title-primary">
         <strong>
           <span>Big Thanks</span>
         </strong>
         <br /> to All Contributors!
-      </h3>
+      </h2>
       <ul className="list-contributors">
         {isLoading && <li>Loading...</li>}
         {error && <li>Error: {error.message}</li>}
         {data &&
-          data.map((contributor) => (
+          data.map(contributor => (
             <li key={contributor.id} className="contributor" data-testid={`contributor-${contributor.id}`}>
               <a
                 href={contributor.html_url}
@@ -24,17 +24,13 @@ const Contributors = () => {
                 className="contributor-anchor"
                 title={`${contributor.login}(${contributor.contributions} contributions)`}
               >
-                <img
-                  src={contributor.avatar_url}
-                  alt={contributor.login}
-                  className="contributor-thumb"
-                />
+                <img src={contributor.avatar_url} alt={contributor.login} className="contributor-thumb" />
               </a>
             </li>
           ))}
       </ul>
     </>
-  );
+  )
 };
 
 export default Contributors;
