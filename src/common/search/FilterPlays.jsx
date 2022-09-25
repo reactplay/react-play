@@ -206,10 +206,12 @@ const filterObject = {
 const FilterPlays = ({ reset }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { setFilterQuery } = useContext(SearchContext);
+  const { filterQuery, setFilterQuery } = useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({ ...filterObject });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
+
+  const [ifFilterApplied, setIfFilterApplied] = useState(false);
 
   const resetFilter = useCallback(() => {
     const filterObj = { ...filterObject };
@@ -229,6 +231,9 @@ const FilterPlays = ({ reset }) => {
 
   const handleFilter = (event) => {
     event.preventDefault();
+    // if Apply button on Filter Modal is clicked then set true
+    setIfFilterApplied(true);
+
     setFilterQuery(modifiedFilterQuery);
     setnoOfAppliedFilter(getAppliedFilter(modifiedFilterQuery));
     navigate("/plays", { replace: true, state: { search: true, filter: false } });
@@ -239,7 +244,13 @@ const FilterPlays = ({ reset }) => {
     <div className='search-filter'>
       <Modal
         title='Filter Plays By'
-        onClose={() => setShowModal(false)}
+        onClose={() => {
+          setShowModal(false);
+          if(!ifFilterApplied) {  // if user closes modal instead of applying filters
+            setModifiedFilterQuery({...filterQuery});
+            setnoOfAppliedFilter(getAppliedFilter(filterQuery));
+          }
+        }}
         onSubmit={handleFilter}
         show={showModal}
         cname='filter'
@@ -255,7 +266,11 @@ const FilterPlays = ({ reset }) => {
         }
       />
 
-      <button onClick={() => setShowModal(true)} className='btn-filter' title='Filter Plays'>
+      <button onClick={() => {
+        setShowModal(true);
+        setIfFilterApplied(false);
+        }} 
+        className='btn-filter' title='Filter Plays'>
         {noOfAppliedFilter === 0 ? null : <div className='badge'>{noOfAppliedFilter}</div>}
 
         <RiFilterFill className='icon' size='28px' color='var(--color-neutral-30)' />
