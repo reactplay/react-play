@@ -6,7 +6,8 @@ function TypingSpeedTest(props) {
 
   return (
     <>
-      <div className="play-details ">
+      <div className="play-details">
+
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
