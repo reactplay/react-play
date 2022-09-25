@@ -60,7 +60,8 @@ const Main = () => {
   };
 
   // Hanlde user input
-  const processUserInput = (value) => {
+  const handleUserInput = (value) => {
+
     if (!isTimerStart) {
       setIsTimerStart(true);
       setStatus("started");
