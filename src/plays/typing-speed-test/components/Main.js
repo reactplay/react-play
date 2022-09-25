@@ -87,7 +87,6 @@ const Main = () => {
     if (timer === 0) {
       setStatus("finished");
       setIsResultModalOpen(true);
-      return;
     }
 
     // To start countdown
