@@ -246,8 +246,9 @@ const FilterPlays = ({ reset }) => {
         title='Filter Plays By'
         onClose={() => {
           setShowModal(false);
-          const isFilterEmpty= modifiedFilterQuery.level_id !== "" || modifiedFilterQuery.tags.length !== 0 || modifiedFilterQuery.owner_user_id !== "" || modifiedFilterQuery.language !== "";
-          // if user closes modal instead of applying clear All filters
+          const {level_id, tags, owner_user_id, language} = modifiedFilterQuery;
+          const isFilterEmpty= level_id !== "" || tags.length !== 0 || owner_user_id !== "" || language !== "";
+          // if user closes modal instead of clicking on Apply after clear All filters
           if(!ifFilterApplied && !isFilterEmpty) {
             setModifiedFilterQuery({...filterQuery});
             setnoOfAppliedFilter(getAppliedFilter(filterQuery));
