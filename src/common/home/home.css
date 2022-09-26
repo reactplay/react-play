@@ -7,22 +7,16 @@
   /* background-color: var(--color-neutral-90); */
   background: rgb(1, 4, 38);
   background: rgb(1, 4, 38);
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(1, 4, 38, 1) 0%,
-    rgba(76, 91, 94, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(1, 4, 38, 1) 0%,
-    rgba(76, 91, 94, 1) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(1, 4, 38, 1) 0%,
-    rgba(76, 91, 94, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010426",endColorstr="#4c5b5e",GradientType=1);
+  background: -moz-linear-gradient(180deg,
+      rgba(1, 4, 38, 1) 0%,
+      rgba(76, 91, 94, 1) 100%);
+  background: -webkit-linear-gradient(180deg,
+      rgba(1, 4, 38, 1) 0%,
+      rgba(76, 91, 94, 1) 100%);
+  background: linear-gradient(180deg,
+      rgba(1, 4, 38, 1) 0%,
+      rgba(76, 91, 94, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010426", endColorstr="#4c5b5e", GradientType=1);
   padding: 6rem 0 2rem 0;
   width: 100%;
   overflow-x: hidden;
@@ -31,7 +25,7 @@
 
 .app-home-body .app-home-body-content {
   margin-bottom: 4rem;
-  z-index: 10;
+  z-index: 5;
 }
 
 .app-home-body .body-title {
@@ -58,6 +52,7 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
   .app-home-body .body-title br {
     display: none;
   }
@@ -232,6 +227,7 @@
   background-color: #000;
   overflow: hidden;
 }
+
 .video-wrapper .video-iframe {
   position: absolute;
   top: 0;
@@ -245,6 +241,7 @@
 :root {
   --home-features-icon-size: 120px;
 }
+
 .home-features {
   position: relative;
   padding: 8rem 0;
@@ -278,6 +275,7 @@
   list-style: none;
   color: var(--color-neutral-10);
 }
+
 .list-home-features .home-features-item .item-icon {
   margin: 0 auto;
   display: flex;
@@ -392,6 +390,7 @@
 
   background-color: var(--color-neutral-20);
 }
+
 .home-tweets .title-primary {
   text-align: center;
   margin-top: 1.5rem !important;
@@ -415,7 +414,7 @@
   margin-bottom: 2em;
 }
 
-.tweets-container > div {
+.tweets-container>div {
   /* height: fit-content; */
   width: clamp(5em, 320px, 44em);
   /* max-width: 410px; */
@@ -446,6 +445,7 @@
   font-family: var(--ff-accent);
   position: relative;
 }
+
 .home-contributors .title-primary strong span,
 .home-tweets .title-primary strong span {
   position: relative;
@@ -680,42 +680,30 @@
   left: 0;
   bottom: 0;
   background: rgb(0, 0, 0);
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(var(--color-neutral-10-rgb), 0.2) 0%,
-    rgba(var(--color-neutral-10-rgb), 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(var(--color-neutral-10-rgb), 0.2) 0%,
-    rgba(var(--color-neutral-10-rgb), 1) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(var(--color-neutral-10-rgb), 0.2) 0%,
-    rgba(var(--color-neutral-10-rgb), 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+  background: -moz-linear-gradient(180deg,
+      rgba(var(--color-neutral-10-rgb), 0.2) 0%,
+      rgba(var(--color-neutral-10-rgb), 1) 100%);
+  background: -webkit-linear-gradient(180deg,
+      rgba(var(--color-neutral-10-rgb), 0.2) 0%,
+      rgba(var(--color-neutral-10-rgb), 1) 100%);
+  background: linear-gradient(180deg,
+      rgba(var(--color-neutral-10-rgb), 0.2) 0%,
+      rgba(var(--color-neutral-10-rgb), 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
 }
 
 .list-apps a:hover:after {
   background: rgb(0, 0, 0);
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(var(--color-neutral-90-rgb), 1) 0%,
-    rgba(var(--color-neutral-90-rgb), 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(var(--color-neutral-90-rgb), 1) 0%,
-    rgba(var(--color-neutral-90-rgb), 1) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(var(--color-neutral-90-rgb), 1) 0%,
-    rgba(var(--color-neutral-90-rgb), 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--color-neutral-90)",endColorstr="var(--color-neutral-90)",GradientType=1);
+  background: -moz-linear-gradient(180deg,
+      rgba(var(--color-neutral-90-rgb), 1) 0%,
+      rgba(var(--color-neutral-90-rgb), 1) 100%);
+  background: -webkit-linear-gradient(180deg,
+      rgba(var(--color-neutral-90-rgb), 1) 0%,
+      rgba(var(--color-neutral-90-rgb), 1) 100%);
+  background: linear-gradient(180deg,
+      rgba(var(--color-neutral-90-rgb), 1) 0%,
+      rgba(var(--color-neutral-90-rgb), 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--color-neutral-90)", endColorstr="var(--color-neutral-90)", GradientType=1);
 }
 
 .list-apps a .list-app__title {
@@ -894,6 +882,7 @@
   from {
     transform: rotate(360deg) scale(0.6);
   }
+
   to {
     transform: rotate(0deg) scale(0.6);
   }
@@ -904,6 +893,7 @@
     from {
       transform: rotate(360deg) scale(0.3);
     }
+
     to {
       transform: rotate(0deg) scale(0.3);
     }
@@ -914,6 +904,7 @@
   from {
     transform: rotate(0deg) scale(1.4);
   }
+
   to {
     transform: rotate(360deg) scale(1.4);
   }
@@ -924,6 +915,7 @@
     from {
       transform: rotate(0deg) scale(1);
     }
+
     to {
       transform: rotate(360deg) scale(1);
     }
@@ -934,6 +926,7 @@
   from {
     transform: rotate(0deg) scale(5);
   }
+
   to {
     transform: rotate(360deg) scale(5);
   }
@@ -944,6 +937,7 @@
     from {
       transform: rotate(0deg) scale(3);
     }
+
     to {
       transform: rotate(360deg) scale(3);
     }
