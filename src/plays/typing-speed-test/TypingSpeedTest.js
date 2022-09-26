@@ -1,5 +1,5 @@
 import PlayHeader from "common/playlists/PlayHeader";
-import Main from "./components/Main";
+import TypingTest from "./components/TypingTest";
 
 function TypingSpeedTest(props) {
   // Your Code Start below.
@@ -10,7 +10,7 @@ function TypingSpeedTest(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <Main />
+          <TypingTest />
           {/* Your Code Ends Here */}
         </div>
       </div>

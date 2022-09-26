@@ -1,4 +1,4 @@
-const Stats = ({ wpm, cpm, accuracy }) => {
+const Stats = ({ stats: { wpm, cpm, accuracy } }) => {
   let statsCard =
     "h-[85px] w-[85px] md:h-[100px] md:w-[110px] bg-white flex flex-col justify-center items-center rounded-xl";
 

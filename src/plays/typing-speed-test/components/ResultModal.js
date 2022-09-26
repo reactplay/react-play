@@ -1,18 +1,17 @@
 import { Modal } from "@mui/material";
 import "../styles.css";
+import { getEvaluationText } from "../utils";
 
-const ResultModal = ({ open, handleModalClose, wpm, cpm, accuracy }) => {
+const ResultModal = ({ open, handleModalClose, stats }) => {
+  const { wpm, cpm, accuracy } = stats;
+  let evaluationText = getEvaluationText(wpm);
+
   return (
     <Modal open={open} onClose={handleModalClose}>
-      <div className="result__modal ">
+      <div className="typing__speed__test__result__modal ">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-center text-[1.05rem] tracking-wide my-4 leading-9">
-            {wpm >= 40
-              ? "Excellent..!"
-              : wpm >= 30
-              ? "Good Job..!"
-              : "Nice...!"}{" "}
-            You type with the speed of{" "}
+            {evaluationText} You type with the speed of{" "}
             <span className="bg-violet-100 text-violet-500 font-bold">
               {wpm} WPM
             </span>{" "}

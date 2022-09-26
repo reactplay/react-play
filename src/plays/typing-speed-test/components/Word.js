@@ -1,8 +1,9 @@
 import React from "react";
 
 const Word = ({ text, isActive, correct }) => {
+  console.log(correct);
   // if word is correct
-  if (correct === true)
+  if (correct)
     return <span className="text-green-500 text-[1.2rem]">{text} </span>;
 
   // if word is incorrect
