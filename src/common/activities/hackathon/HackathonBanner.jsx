@@ -40,7 +40,7 @@ function HackathonBanner() {
               <span className="btn-label">Get started</span>
             </a>
             <a
-            href="https://github.com/reactplay/activities"
+            href="https://github.com/reactplay/react-play"
             target="_blank"
             rel="noopener noreferrer"
             className="body-c2a-btn umami--click--github"
