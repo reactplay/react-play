@@ -1,11 +1,10 @@
 import { Modal } from "common";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "./search-context";
 import "./search.css";
 
 import { RiFilterFill } from "react-icons/ri";
-import useBackListener from "common/routing/hooks/useBackListener";
 import useFetchFilterData from "./hooks/usePlayFilter";
 import { FormControl, MenuItem, Select } from "@mui/material";
 import { makeStyles } from "@mui/styles";
@@ -38,12 +37,12 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
     ...(creators?.map((creator) => ({
       value: creator.user.id,
       label: creator.user.avatarUrl ? (
-        <div className="flex gap-x-2 items-center">
+        <div className='flex gap-x-2 items-center'>
           <img
             alt={creator.user.displayName}
-            className="rounded"
+            className='rounded'
             src={creator.user.avatarUrl}
-            width="32px"
+            width='32px'
           />
           {creator.user.displayName}
         </div>
@@ -78,15 +77,13 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   ];
 
   const renderCreator = (value) => {
-    const selectedCreator = creatorOptions.find(
-      (option) => option.value === value
-    );
+    const selectedCreator = creatorOptions.find((option) => option.value === value);
     return selectedCreator ? selectedCreator.label : "All";
   };
 
   return (
     <>
-      <div className="form-group">
+      <div className='form-group'>
         {loading && "Loading Data"}
         <label>Level</label>
         <FormControl fullWidth>
@@ -109,7 +106,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
           </Select>
         </FormControl>
       </div>
-      <div className="form-group">
+      <div className='form-group'>
         <label>Tags</label>
         <FormControl fullWidth>
           <Select
@@ -131,7 +128,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
           </Select>
         </FormControl>
       </div>
-      <div className="form-group">
+      <div className='form-group'>
         <label>Creator</label>
         <FormControl fullWidth>
           <Select
@@ -154,7 +151,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
           </Select>
         </FormControl>
       </div>
-      <div className="form-group">
+      <div className='form-group'>
         <label>Language</label>
         <FormControl fullWidth>
           <Select
@@ -183,97 +180,64 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
 const getAppliedFilter = (filterObject) => {
   //for single filter to check whether filter has been applied
   const noOfLevelsApplied =
-    filterObject?.level_id !== undefined && filterObject.level_id.trim() !== ""
-      ? 1
-      : 0;
+    filterObject?.level_id !== undefined && filterObject.level_id.trim() !== "" ? 1 : 0;
   const noOfcreatorsApplied =
-    filterObject.owner_user_id !== undefined &&
-    filterObject.owner_user_id.trim() !== ""
-      ? 1
-      : 0;
+    filterObject.owner_user_id !== undefined && filterObject.owner_user_id.trim() !== "" ? 1 : 0;
   const noOfLanguageApplied =
-    filterObject.language !== undefined && filterObject.language.trim() !== ""
-      ? 1
-      : 0;
-  const noOfTagsApplied = filterObject?.tags?.length
-    ? filterObject.tags.length
-    : 0;
-  let totalTags =
-    noOfLevelsApplied +
-    noOfcreatorsApplied +
-    noOfLanguageApplied +
-    noOfTagsApplied;
+    filterObject.language !== undefined && filterObject.language.trim() !== "" ? 1 : 0;
+  const noOfTagsApplied = filterObject?.tags?.length ? filterObject.tags.length : 0;
+  let totalTags = noOfLevelsApplied + noOfcreatorsApplied + noOfLanguageApplied + noOfTagsApplied;
 
   return totalTags;
 };
 
-const FilterPlays = () => {
+const filterObject = {
+  level_id: "",
+  tags: [],
+  owner_user_id: "",
+  language: "",
+};
+
+const FilterPlays = ({ reset }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { setFilterQuery, filterQuery } = useContext(SearchContext);
+  const { setFilterQuery } = useContext(SearchContext);
   const [showModal, setShowModal] = useState(false);
-  const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
-    level_id: "",
-    tags: [],
-    owner_user_id: "",
-    language: "",
-  });
+  const [modifiedFilterQuery, setModifiedFilterQuery] = useState({ ...filterObject });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
-  useBackListener(({ action }) => {
-    if (action === "POP") {
-      console.log("POP");
-      setModifiedFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setnoOfAppliedFilter(0);
-    }
-    if (action === "PUSH") {
-      console.log("PUSH");
-      setModifiedFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-    }
+  const resetFilter = useCallback(() => {
+    const filterObj = { ...filterObject };
+    setModifiedFilterQuery(filterObj);
+    setFilterQuery(filterObj);
     setnoOfAppliedFilter(0);
-  });
+  }, [setFilterQuery]);
+
+  useEffect(() => {
+    if (location.pathname !== "/plays") {
+      resetFilter();
+    }
+    if (reset.filter) {
+      resetFilter();
+    }
+  }, [location.pathname, resetFilter, reset.filter]);
+
   const handleFilter = (event) => {
     event.preventDefault();
-    console.log("filterQuery", filterQuery);
-    console.log("modifiedFilterQuery", modifiedFilterQuery);
     setFilterQuery(modifiedFilterQuery);
     setnoOfAppliedFilter(getAppliedFilter(modifiedFilterQuery));
-    if (location.pathname !== "/plays") {
-      navigate("/plays", { replace: true });
-    }
+    navigate("/plays", { replace: true, state: { search: true, filter: false } });
     showModal && setShowModal(false);
   };
 
   return (
-    <div className="search-filter">
+    <div className='search-filter'>
       <Modal
-        title="Filter Plays By"
+        title='Filter Plays By'
         onClose={() => setShowModal(false)}
         onSubmit={handleFilter}
         show={showModal}
-        cname="filter"
+        cname='filter'
         children={
           <FilterPlaysModalBody
             filterQuery={modifiedFilterQuery}
@@ -282,20 +246,10 @@ const FilterPlays = () => {
         }
       />
 
-      <button
-        onClick={() => setShowModal(true)}
-        className="btn-filter"
-        title="Filter Plays"
-      >
-        {noOfAppliedFilter === 0 ? null : (
-          <div className="badge">{noOfAppliedFilter}</div>
-        )}
+      <button onClick={() => setShowModal(true)} className='btn-filter' title='Filter Plays'>
+        {noOfAppliedFilter === 0 ? null : <div className='badge'>{noOfAppliedFilter}</div>}
 
-        <RiFilterFill
-          className="icon"
-          size="28px"
-          color="var(--color-neutral-30)"
-        />
+        <RiFilterFill className='icon' size='28px' color='var(--color-neutral-30)' />
       </button>
     </div>
   );

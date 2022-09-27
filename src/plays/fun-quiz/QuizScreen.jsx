@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 
 import "./QuizScreen.scss";
 
@@ -25,10 +25,12 @@ function QuizScreen({ category, getQuizSummary }) {
   const formatCategoryText = category === "all" ? "" : `&category=${category}`;
   const currentQuestion = quizData?.data?.[questionNumber];
 
+  const nonPremitiveReference = useRef(quizData)
+
   useEffect(() => {
     (async () => {
       try {
-        setQuizData({ ...quizData, loading: true });
+        setQuizData({ ...nonPremitiveReference.current, loading: true });
         const response = await fetch(
           `https://opentdb.com/api.php?amount=20${formatCategoryText}&type=multiple`
         );
@@ -51,10 +53,10 @@ function QuizScreen({ category, getQuizSummary }) {
           error: false,
         });
       } catch (err) {
-        setQuizData({ ...quizData, loading: false, error: true });
+        setQuizData({ ...nonPremitiveReference.current, loading: false, error: true });
       }
     })();
-  }, [formatCategoryText, quizData]);
+  }, [formatCategoryText, nonPremitiveReference]);
 
   // select and deselect the answer
   const handleAnswerClick = (val) => (e) => {

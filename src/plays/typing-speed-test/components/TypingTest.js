@@ -83,10 +83,9 @@ const TypingTest = () => {
     }
   };
 
-  // Handle user input
-  const handleUserInput = (event) => {
-    const { value } = event.target;
-
+  // Hanlde user input
+  const handleUserInput = (e) => {
+    let { value } = e.target;
     if (!isTimerStart) {
       setIsTimerStart(true);
       setStatus("started");

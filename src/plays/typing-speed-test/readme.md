@@ -24,22 +24,22 @@ The faster you type, the faster you communicate with others. With **Typing Speed
 
 The implementation of the Typing Speed Test play is quite simple.
 
-- All start with `Main` component, every time the `Main` component will mount on the UI it will render different typing text
+- All start with `TypingTest` component, every time the when `TypingTest` component will mount on the UI it will render different typing text
 
-- `generateWords()` function in `utils/index.js` is responsible for generating typing text. whenever it gets called it will return a paragraph of 60 random words, so when the `Main` component rendered on the UI it called the `generateWords()` function.
+- `generateText()` function in `utils/index.js` is responsible for generating typing text. whenever it gets called it will return a paragraph of 60 random words, so when the `TypingTest` component rendered on the UI it called the `generateText()` function.
 
-- There are two other components in `Main`
+- There are two other components in `TypingTest`
 
   - `Timer` : As the name suggests it is responsible for 60 seconds countdown. It accepts single
   - `Stats` : The stats component is responsible for rendering WPM, CPM and accuracy statistics.
 
-- The moment user starts typing the timer gets started and `processUserInput()` starts listening to `onChange` event until it's get `space` (" ") as input. If so it means the user has finished typing a word.
+- The moment user starts typing the timer gets started and `handleUserInput()` starts listening to `onChange` event until it's get `space` (" ") as input. If so it means the user has finished typing a word.
 
-- Then `processUserInput()` will compare that word with Typing text whether it is correct or not and based on that it updates the word count , characters count and accuracy.
+- Then `handleUserInput()` will compare that word with Typing text whether it is correct or not and based on that it updates the word count , characters count and accuracy.
 
 - The stats (word count, character count and accuracy ) will pass to `Stats` component as props and it will render the stats.
 
-- In the `Main` component, you will also find the refresh button besides the input on click of that button it will reset the state of `Main` component. (new typing text, reset timer, reset word count etc.)
+- In the `TypingTest` component, you will also find the refresh button besides the input on click of that button it will reset the state of `TypingTest` component. (new typing text, reset timer, reset word count etc.)
 
 - There is also a `ResultModal` component when the time is up or user finished typing all the words the modal will open and render the statistics.
 
