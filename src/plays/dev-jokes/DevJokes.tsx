@@ -2,10 +2,12 @@ import PlayHeader from "common/playlists/PlayHeader";
 import "./devJokes.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import React from "react";
 import Spinner from "./Spinner";
-function DevJokes(props) {
-  const [joke, setjoke] = useState([]);
-  const [spinner, setspinner] = useState(false);
+
+function DevJokes(props: any) {
+  const [joke, setjoke] = useState<any[]>([]);
+  const [spinner, setspinner] = useState<boolean>(false);
   const fetch = () => {
     setspinner(true);
     axios
