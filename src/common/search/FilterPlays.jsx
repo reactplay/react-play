@@ -211,7 +211,7 @@ const FilterPlays = ({ reset }) => {
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({ ...filterObject });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
-  const [ifFilterApplied, setIfFilterApplied] = useState(false);
+  const [isFilterApplied, setIsFilterApplied] = useState(false);
 
   const resetFilter = useCallback(() => {
     const filterObj = { ...filterObject };
@@ -232,7 +232,7 @@ const FilterPlays = ({ reset }) => {
   const handleFilter = (event) => {
     event.preventDefault();
     // if Apply button on Filter Modal is clicked then set true
-    setIfFilterApplied(true);
+    setIsFilterApplied(true);
 
     setFilterQuery(modifiedFilterQuery);
     setnoOfAppliedFilter(getAppliedFilter(modifiedFilterQuery));
@@ -249,7 +249,7 @@ const FilterPlays = ({ reset }) => {
           const {level_id, tags, owner_user_id, language} = modifiedFilterQuery;
           const isFilterEmpty= level_id !== "" || tags.length !== 0 || owner_user_id !== "" || language !== "";
           // if user closes modal instead of clicking on Apply after clear All filters
-          if(!ifFilterApplied && !isFilterEmpty) {
+          if(!isFilterApplied && !isFilterEmpty) {
             setModifiedFilterQuery({...filterQuery});
             setnoOfAppliedFilter(getAppliedFilter(filterQuery));
           }
@@ -271,7 +271,7 @@ const FilterPlays = ({ reset }) => {
 
       <button onClick={() => {
         setShowModal(true);
-        setIfFilterApplied(false);
+        setIsFilterApplied(false);
         }} 
         className='btn-filter' title='Filter Plays'>
         {noOfAppliedFilter === 0 ? null : <div className='badge'>{noOfAppliedFilter}</div>}
