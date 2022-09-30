@@ -28,3 +28,10 @@
     flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .app-home-body .body-c2a.body-c2a-hackathon {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
