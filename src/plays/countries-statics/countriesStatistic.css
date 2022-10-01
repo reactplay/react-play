@@ -1,0 +1,16 @@
+.geo-now-searchbar {
+  border: 2px solid lightblue !important;
+  outline: none;
+  padding-left: 1.5rem !important;
+}
+.geo-now-searchbar:focus {
+  outline: solid;
+  outline-color: lightblue;
+  outline-width: 2px;
+  border: none;
+  background-color: #fff;
+}
+
+.geo-search-selected {
+  background: lightblue;
+}
