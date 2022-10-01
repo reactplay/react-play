@@ -240,20 +240,22 @@ const FilterPlays = ({ reset }) => {
     showModal && setShowModal(false);
   };
 
+  const filterModalCloseBtnHandler = () => {
+    setShowModal(false);
+    const {level_id, tags, owner_user_id, language} = modifiedFilterQuery;
+    const isFilterEmpty= level_id !== "" || tags.length !== 0 || owner_user_id !== "" || language !== "";
+    // if user closes modal instead of clicking on Apply after clear All filters
+    if(!isFilterApplied && !isFilterEmpty) {
+      setModifiedFilterQuery({...filterQuery});
+      setnoOfAppliedFilter(getAppliedFilter(filterQuery));
+    }
+  }
+
   return (
     <div className='search-filter'>
       <Modal
         title='Filter Plays By'
-        onClose={() => {
-          setShowModal(false);
-          const {level_id, tags, owner_user_id, language} = modifiedFilterQuery;
-          const isFilterEmpty= level_id !== "" || tags.length !== 0 || owner_user_id !== "" || language !== "";
-          // if user closes modal instead of clicking on Apply after clear All filters
-          if(!isFilterApplied && !isFilterEmpty) {
-            setModifiedFilterQuery({...filterQuery});
-            setnoOfAppliedFilter(getAppliedFilter(filterQuery));
-          }
-        }}
+        onClose={filterModalCloseBtnHandler}
         onSubmit={handleFilter}
         show={showModal}
         cname='filter'
