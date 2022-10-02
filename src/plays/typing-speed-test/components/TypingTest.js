@@ -176,11 +176,11 @@ const TypingTest = () => {
         </div>
 
         <div className="flex items-center justify-center mt-8 space-x-7">
-          <input
+          <textarea
             type="text"
             ref={userInputRef}
             disabled={status === "finished"}
-            className="rounded-md border !border-violet-400 !p-3 w-[300px] outline-1 outline-violet-600"
+            className="rounded-md border !border-violet-400 !p-3 w-[320px] outline-1 outline-violet-600"
             placeholder="Start typing..."
             value={status !== "finished" ? userInput : "Test Completed"}
             onChange={handleUserInput}
