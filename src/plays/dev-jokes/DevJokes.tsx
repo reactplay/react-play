@@ -8,14 +8,14 @@ import {
 import React from "react";
 import Spinner from "./Spinner";
 
-interface jokes{
+interface Jokes{
   punchline: string
   question: string
 }
 
 
 function DevJokes(props: any) {
-  const [joke, setjoke] = useState<jokes[]>([]);
+  const [joke, setjoke] = useState<Jokes[]>([]);
   const [spinner, setspinner] = useState<boolean>(false);
   const fetch = () => {
     setspinner(true);
