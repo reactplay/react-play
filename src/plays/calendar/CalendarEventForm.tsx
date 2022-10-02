@@ -63,6 +63,7 @@ const CalendarEventForm = ({ date, event, onCancel }: Props) => {
       updateEvent(data)
       setCalendarEvent({...data})
       setEditable(false)
+      onCancel()
       return
     }
     
