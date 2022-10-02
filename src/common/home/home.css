@@ -687,21 +687,21 @@
   bottom: 0;
   background: rgb(0, 0, 0);
   background: -moz-linear-gradient(
-    180deg,
-    rgba(var(--color-neutral-10-rgb), 0.2) 0%,
-    rgba(var(--color-neutral-10-rgb), 1) 100%
+  180deg,
+  rgba(var(--color-neutral-90-rgb), 1) 0%,
+  rgba(var(--color-neutral-90-rgb), 1) 100%
   );
   background: -webkit-linear-gradient(
     180deg,
-    rgba(var(--color-neutral-10-rgb), 0.2) 0%,
-    rgba(var(--color-neutral-10-rgb), 1) 100%
+    rgba(var(--color-neutral-90-rgb), 1) 0%,
+    rgba(var(--color-neutral-90-rgb), 1) 100%
   );
   background: linear-gradient(
     180deg,
-    rgba(var(--color-neutral-10-rgb), 0.2) 0%,
-    rgba(var(--color-neutral-10-rgb), 1) 100%
+    rgba(var(--color-neutral-90-rgb), 1) 0%,
+    rgba(var(--color-neutral-90-rgb), 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--color-neutral-90)",endColorstr="var(--color-neutral-90)",GradientType=1);
 }
 
 .list-apps a:hover:after {
