@@ -22,7 +22,6 @@ function DevJokes(props: any) {
     axios
       .get("https://backend-omega-seven.vercel.app/api/getjoke")
       .then((response) => {
-        console.log(response.data)
         setjoke(response.data);
         setspinner(false);
       });
