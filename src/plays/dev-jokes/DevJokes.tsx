@@ -1,28 +1,23 @@
 import PlayHeader from "common/playlists/PlayHeader";
 import "./devJokes.css";
 import axios from "axios";
-import {
-  useEffect,
-  useState,
-} from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 
-interface Jokes{
-  punchline: string
-  question: string
+interface Jokes {
+  punchline: string;
+  question: string;
 }
 
-
 function DevJokes(props: any) {
-  const [joke, setjoke] = useState<Jokes[]>([]);
+  const [joke, setJokes] = useState<Jokes[]>([]);
   const [spinner, setspinner] = useState<boolean>(false);
   const fetch = () => {
     setspinner(true);
     axios
       .get("https://backend-omega-seven.vercel.app/api/getjoke")
       .then((response) => {
-        setjoke(response.data);
+        setJokes(response.data);
         setspinner(false);
       });
   };
@@ -39,7 +34,7 @@ function DevJokes(props: any) {
               <Spinner />
             ) : (
               <div>
-                {joke.map((value,index) => {
+                {joke.map((value, index) => {
                   return (
                     <div key={index}>
                       <h1>{value.question}</h1>
