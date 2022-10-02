@@ -8,15 +8,21 @@ import {
 import React from "react";
 import Spinner from "./Spinner";
 
+interface jokes{
+  punchline: string
+  question: string
+}
+
 
 function DevJokes(props: any) {
-  const [joke, setjoke] = useState<any[]>([]);
+  const [joke, setjoke] = useState<jokes[]>([]);
   const [spinner, setspinner] = useState<boolean>(false);
   const fetch = () => {
     setspinner(true);
     axios
       .get("https://backend-omega-seven.vercel.app/api/getjoke")
       .then((response) => {
+        console.log(response.data)
         setjoke(response.data);
         setspinner(false);
       });
@@ -34,9 +40,9 @@ function DevJokes(props: any) {
               <Spinner />
             ) : (
               <div>
-                {joke.map((value) => {
+                {joke.map((value,index) => {
                   return (
-                    <div key={value}>
+                    <div key={index}>
                       <h1>{value.question}</h1>
                       <p>{value.punchline}</p>
                     </div>
