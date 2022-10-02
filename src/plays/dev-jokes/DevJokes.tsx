@@ -10,7 +10,7 @@ interface Jokes {
 }
 
 function DevJokes(props: any) {
-  const [joke, setJokes] = useState<Jokes[]>([]);
+  const [jokes, setJokes] = useState<Jokes[]>([]);
   const [spinner, setspinner] = useState<boolean>(false);
   const fetch = () => {
     setspinner(true);
@@ -34,7 +34,7 @@ function DevJokes(props: any) {
               <Spinner />
             ) : (
               <div>
-                {joke.map((value, index) => {
+                {jokes.map((value, index) => {
                   return (
                     <div key={index}>
                       <h1>{value.question}</h1>
