@@ -4,7 +4,7 @@ import { getEvaluationText } from "../utils";
 
 const ResultModal = ({ open, handleModalClose, stats }) => {
   const { wpm, cpm, accuracy } = stats;
-  let evaluationText = getEvaluationText(wpm);
+  const evaluationText = getEvaluationText(wpm);
 
   return (
     <Modal open={open} onClose={handleModalClose}>

@@ -60,8 +60,8 @@ const TypingTest = () => {
     setUserInput("");
 
     // To check each character and word
-    let wordToCompare = text[wordObj.activeWordIndex];
-    let isWordMatch = wordToCompare === value.trim();
+    const wordToCompare = text[wordObj.activeWordIndex];
+    const isWordMatch = wordToCompare === value.trim();
 
     setWordObj((prevObj) => ({
       ...prevObj,
@@ -85,7 +85,7 @@ const TypingTest = () => {
 
   // Hanlde user input
   const handleUserInput = (e) => {
-    let { value } = e.target;
+    const { value } = e.target;
     if (!isTimerStart) {
       setIsTimerStart(true);
       setStatus("started");
@@ -109,7 +109,7 @@ const TypingTest = () => {
 
   useEffect(() => {
     // Set stats object
-    setStats((prevObj) => ({
+    setStats({
       wpm: wordObj.correctWords,
       cpm: wordObj.correctChars,
       accuracy: Math.round(
@@ -117,7 +117,7 @@ const TypingTest = () => {
           (wordObj.correctWords + wordObj.incorrectWords)) *
           100
       ),
-    }));
+    });
   }, [wordObj]);
 
   useEffect(() => {
@@ -127,7 +127,7 @@ const TypingTest = () => {
     }
 
     // To start countdown
-    let timerTimout = setTimeout(() => {
+    const timerTimout = setTimeout(() => {
       if (status === "started") {
         setTimer(timer - 1);
       }
