@@ -9,6 +9,30 @@ const defaultClause = {
   type: "boolean",
 };
 
+function createObjectPayload(items, key, ifTags) {
+  const obj = {};
+  if (items.length > 1) {
+    obj.clause = {
+      operator: "or",
+      conditions: !env && !preview ? [defaultClause] : [],
+    };
+    items.forEach((item) => {
+      const prepareObject = {
+        field: ifTags ? "tag_id" : key,
+        operator: "eq",
+        value: item,
+      };
+      obj.clause.conditions.push(prepareObject);
+    });
+    return { ...obj };
+  }
+  return {
+    field: ifTags ? "tag_id" : key,
+    operator: "eq",
+    value: items[0],
+  };
+}
+
 export const FetchPlaysFilter = {
   // Filter all the featured plays
   getAllFeaturedPlays() {
@@ -59,6 +83,7 @@ export const FetchPlaysFilter = {
       },
     };
   },
+
   // Filter plays by level, user, language, and multiple tags
   /**
    *
@@ -77,19 +102,14 @@ export const FetchPlaysFilter = {
       operator: "and",
       conditions: !env && !preview ? [defaultClause] : [],
     };
+
     Object.keys(Obj).forEach((key) => {
-      const keyName = Obj[key];
-      if (keyName.length > 0) {
+      const filterItem = Obj[key];
+      if (filterItem.length > 0 && filterItem[0] !== " ") {
         const ifTags = key === "tags";
-
-        const prepareObject = {
-          field: ifTags ? "tag_id" : key,
-          operator: "eq",
-          value: ifTags ? keyName[0] : keyName,
-        };
-
+        const prepareObject = createObjectPayload(filterItem, key, ifTags);
         if (ifTags) {
-          clause.class = "play_tags";
+          prepareObject.class = "play_tags";
         }
         clause.conditions.push(prepareObject);
       }
