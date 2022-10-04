@@ -148,7 +148,7 @@ yarn cypress:open
 
 It will open the cypress dashboard, through which you need to select `E2E Testing`.
 Once you are done with the selection you will get options to choose your preferred browser in which you want to run the test.!
-Once you are done with selecting the browser you need to click on `Start E2E Testing in <SELECTED_BROWSER_NAME>.` Selected browser will popup and you can able to see a list of cypress tests, click on the test to start testing.!
+Once you select the browser you need to click on `Start E2E Testing in <SELECTED_BROWSER_NAME>.` The chosen browser will pop up you can see a list of cypress tests, click on the test to start testing.!
 
 ### 🚀 Deploy
 
