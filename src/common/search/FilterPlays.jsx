@@ -23,6 +23,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
     label: "All",
   };
 
+  creators?.sort((a, b) => (a.user.displayName < b.user.displayName ? -1 : 1));
   const creatorOptions = [
     defaultOption,
     ...(creators?.map((creator) => ({
@@ -44,28 +45,28 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
   ];
 
   const levelOptions = [
-    defaultOption,
     ...(levels?.map((level) => ({
       label: level.level.name,
       value: level.level.id,
     })) || []),
   ];
+  levelOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   const tagOptions = [
-    defaultOption,
     ...(tags?.map((tag) => ({
       label: tag.tag,
       value: tag.id,
     })) || []),
   ];
+  tagOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   const languageOptions = [
-    defaultOption,
     ...languages?.map((language) => ({
       label: language === "ts" ? "TypeScript" : "JavaScript",
       value: language,
     })),
   ];
+  languageOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   return (
     <>
@@ -74,7 +75,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <MultipleSelectCheckmarks
           filterQuery={filterQuery}
           setFilterQuery={setFilterQuery}
-          options={levelOptions}
+          options={[defaultOption, ...levelOptions]}
           filterKey="level_id"
           label="Level"
         />
@@ -83,7 +84,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <MultipleSelectCheckmarks
           filterQuery={filterQuery}
           setFilterQuery={setFilterQuery}
-          options={tagOptions}
+          options={[defaultOption, ...tagOptions]}
           filterKey="tags"
           label="Tags"
         />
@@ -101,7 +102,7 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         <MultipleSelectCheckmarks
           filterQuery={filterQuery}
           setFilterQuery={setFilterQuery}
-          options={languageOptions}
+          options={[defaultOption, ...levelOptions]}
           filterKey="language"
           label="Language"
         />
