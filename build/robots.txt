@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://reactplay.io/sitemap.xml
