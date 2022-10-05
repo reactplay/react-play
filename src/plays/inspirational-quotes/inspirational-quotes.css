@@ -1,0 +1,12 @@
+.custom-container.play-details {
+  background: #2c302d;
+}
+
+.card__container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+  color: white;
+}
