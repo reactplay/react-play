@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-44-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-45-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -269,6 +269,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center"><a href="https://github.com/yash91989201"><img src="https://avatars.githubusercontent.com/u/68579045?v=4?s=100" width="100px;" alt="yash91989201"/><br /><sub><b>yash91989201</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=yash91989201" title="Code">💻</a></td>
       <td align="center"><a href="http://makdoom.github.io"><img src="https://avatars.githubusercontent.com/u/28287599?v=4?s=100" width="100px;" alt="Makdoom Shaikh"/><br /><sub><b>Makdoom Shaikh</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=makdoom" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/muzaffar640"><img src="https://avatars.githubusercontent.com/u/55223302?v=4?s=100" width="100px;" alt="Muzaffar Hossain"/><br /><sub><b>Muzaffar Hossain</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=muzaffar640" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>
