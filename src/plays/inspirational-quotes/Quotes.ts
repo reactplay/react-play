@@ -7,11 +7,6 @@ const quotes: Array<Quote> = [
   },
   {
     quote:
-      "Meditation is intermittent fasting for the mind. Too much sugar leads to a heavy body, and too many distractions lead to a heavy mind. Time spent undistracted and alone, in self-examination, journaling, meditation, resolves the unresolved and takes us from mentally fat to fit.",
-    author: "Naval Ravikant",
-  },
-  {
-    quote:
       "Become the best in the world at what you do. Keep redefining what you do until this is true.",
     author: "Naval Ravikant",
   },
@@ -211,11 +206,6 @@ const quotes: Array<Quote> = [
   {
     quote:
       "Why do I get angry when I am insulted? A: Because you entertain the verity of the insult.",
-    author: "Kapil Gupta",
-  },
-  {
-    quote:
-      "That which comes from the heart is natural and satisfying. That which comes from the idea of responsibility is forced, artificial, and often produces resentment and the expectation for reciprocation.",
     author: "Kapil Gupta",
   },
   {
