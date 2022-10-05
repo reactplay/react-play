@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import PlayHeader from "common/playlists/PlayHeader";
 import Card from "./Card";
-import Quotes from "./Quotes";
+import { Quotes } from "./Quotes";
 import "./inspirational-quotes.css";
+import { Quote } from "./Types";
 
 export default function InspirationalQuotes(props: any) {
-  const [quote, setQuote] = useState(Quotes[2]);
+  const [quote, setQuote] = useState<Quote>(Quotes[2]);
 
   const handleMoreClick = () => {
-    let randomNumber = Math.floor(Math.random() * Quotes.length);
+    const randomNumber = Math.floor(Math.random() * Quotes.length);
     setQuote(Quotes[randomNumber]);
   };
   return (

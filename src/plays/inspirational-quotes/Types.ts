@@ -3,3 +3,8 @@ export type CardProps = {
   author: string;
   onClick: () => void;
 };
+
+export type Quote = {
+  quote: string;
+  author: string;
+};

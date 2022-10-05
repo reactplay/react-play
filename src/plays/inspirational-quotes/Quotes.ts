@@ -1,5 +1,6 @@
-import { Quote } from "./type/Quote";
-const quotes: Array<Quote> = [
+import { Quote } from "./Types";
+
+export const Quotes: Array<Quote> = [
   {
     quote:
       "Work as hard as you can. Even though what you work on and who you work with are more important.",
@@ -695,5 +696,3 @@ const quotes: Array<Quote> = [
     author: "Zig Ziglar",
   },
 ];
-
-export default quotes;
