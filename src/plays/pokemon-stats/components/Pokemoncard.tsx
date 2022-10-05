@@ -1,10 +1,54 @@
 import React from "react";
 import "./pokecard.css";
-
-type Props ={
-   pokemon: any
+export interface Species {
+  name: string;
+  url: string;
 }
-const Pokemoncard = (props: Props) => {
+
+export interface Sprites {
+  back_default: string;
+  back_female: any;
+  back_shiny: string;
+  back_shiny_female: any;
+  front_default: string;
+  front_female: any;
+  front_shiny: string;
+  front_shiny_female: any;
+}
+
+export interface Stat {
+  base_stat: number;
+  effort: number;
+  stat: Stat2;
+}
+
+export interface Stat2 {
+  name: string;
+  url: string;
+}
+
+export interface Type {
+  slot: number;
+  type: Type2;
+}
+
+export interface Type2 {
+  name: string;
+  url: string;
+}
+
+export interface Props {
+  name: string;
+  species: Species;
+  sprites: Sprites;
+  stats: Stat[];
+  types: Type[];
+}
+
+export interface final {
+  pokemon: Props;
+};
+const Pokemoncard = (props: final) => {
   const { pokemon } = props;
   return (
     <div className="poke-card-cont">

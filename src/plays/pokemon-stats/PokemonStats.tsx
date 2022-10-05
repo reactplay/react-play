@@ -2,15 +2,17 @@ import PlayHeader from "common/playlists/PlayHeader";
 import { useState } from "react";
 import "./styles.css";
 import axios from "axios";
-import Pokemoncard from "./components/Pokemoncard";
+import Pokemoncard, { final, Props, Species, Sprites } from "./components/Pokemoncard";
 import Search from "./components/Search";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React from 'react';
+
+
 // WARNING: Do not change the entry componenet name
 function PokemonStats(props: any) {
   // Your Code Start below.
-  const [pokemon, setpokemon] = useState([]);
+  const [pokemon, setpokemon] = useState();
   const [name, setname] = useState<string>("");
   const fetchPokemonDetails = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

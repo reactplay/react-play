@@ -1,12 +1,20 @@
 import React from "react";
 import "./search.css";
+type Propsi = {
+  setname: React.Dispatch<React.SetStateAction<string>>;
+  name: string;
+  fetchPokemonDetails: (e: React.FormEvent<HTMLFormElement>) => void;
+};
 
-type Props = {
-  setname: React.Dispatch<React.SetStateAction<string>>,
-  name: string,
-  fetchPokemonDetails:  (e: React.FormEvent<HTMLFormElement>) => void
-}
-const search = (props: Props) => {
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & { type?: 'submit' }
+
+const Button = ({ children, type, ...props }: Props) => (
+  <button {...props} type={type || 'button'}>
+    {children}
+  </button>
+)
+
+const search = (props: Propsi) => {
   const { setname, fetchPokemonDetails, name } = props;
   return (
     <div className="poke-main-cont">
@@ -25,13 +33,12 @@ const search = (props: Props) => {
           <label htmlFor="name" className="poke-form-label">
             Pokemon name
           </label>
-          <input className="poke-stats-sumbit-btn" type="sumbit">
+          <Button className="poke-stats-sumbit-btn" type="submit">
             Search
-          </input>
+          </Button>
         </form>
       </div>
     </div>
   );
 };
-
 export default search;
