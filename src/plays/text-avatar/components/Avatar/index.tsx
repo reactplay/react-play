@@ -1,16 +1,14 @@
+import { AvatarProps } from 'plays/text-avatar/types';
 import React from 'react';
-import { generateAbbreName, getRandomColor } from '../../hooks/utils';
+import { generateAbbreName, getRandomColor } from '../../utils';
 import './style.scss';
-type Props = {
-    first: string;
-    last: string;
-}
-function Avatar({first, last}: Props) {
+
+function Avatar({first, last}: AvatarProps) {
     const randomColor = getRandomColor();
     const abbreName = generateAbbreName(first, last);
     
     return (
-        <div className='avatar'
+        <div className='text-avatar_avatar'
             style={{
                 backgroundColor: randomColor,
             }}>

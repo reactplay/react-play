@@ -2,15 +2,13 @@ import React from 'react';
 import { User } from '../../types';
 import Avatar from '../Avatar';
 import './style.scss';
-type Props = {
-    user: User
-}
-function UserCard({ user }: Props) {
-    const { first, last } = user.name;
+
+function UserCard({ name }: User) {
+    const { first, last } = name;
     return (
-        <div className='card'>
+        <div className='text-avatar_card'>
             <Avatar first={first} last={last} />
-            <p className='username'>{first} { last }</p>
+            <p className='text-avatar_username'>{first} { last }</p>
         </div>
     )
 }

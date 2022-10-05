@@ -1,4 +1,4 @@
-.card {
+.text-avatar_card {
     border: 1px solid #dcdce0;
     padding: 1rem;
     max-width: 200px;
@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    & .username {
+    & .text-avatar_username {
         margin-top: 2rem;
         font-weight: bold;
         color: black;
