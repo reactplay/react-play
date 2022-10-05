@@ -1,6 +1,12 @@
 import React from "react";
 import "./search.css";
-const search = (props) => {
+
+type Props = {
+  setname: React.Dispatch<React.SetStateAction<string>>,
+  name: string,
+  fetchPokemonDetails:  (e: React.FormEvent<HTMLFormElement>) => void
+}
+const search = (props: Props) => {
   const { setname, fetchPokemonDetails, name } = props;
   return (
     <div className="poke-main-cont">
@@ -19,9 +25,9 @@ const search = (props) => {
           <label htmlFor="name" className="poke-form-label">
             Pokemon name
           </label>
-          <button className="poke-stats-sumbit-btn" type="sumbit">
+          <input className="poke-stats-sumbit-btn" type="sumbit">
             Search
-          </button>
+          </input>
         </form>
       </div>
     </div>
