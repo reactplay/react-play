@@ -382,6 +382,24 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "yash91989201",
+      "name": "yash91989201",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68579045?v=4",
+      "profile": "https://github.com/yash91989201",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "makdoom",
+      "name": "Makdoom Shaikh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28287599?v=4",
+      "profile": "http://makdoom.github.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
