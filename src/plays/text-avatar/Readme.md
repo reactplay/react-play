@@ -4,7 +4,7 @@ Avatar based on the user's firstname and lastname with random background color
 
 ## Play Demographic
 
-- Language: typescript
+- Language: TypeScript
 - Level: Beginner
 
 ## Creator Information
