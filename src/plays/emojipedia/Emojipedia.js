@@ -19,7 +19,7 @@ function Emojipedia(props) {
 
   const handleEmojiSearch = (e) => {
     const { value } = e.target;
-    console.log(value);
+
     setEmojisList(
       emojisList?.filter((item) => {
         if (value == "") {
