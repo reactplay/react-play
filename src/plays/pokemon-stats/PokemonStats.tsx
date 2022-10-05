@@ -2,7 +2,7 @@ import PlayHeader from "common/playlists/PlayHeader";
 import { useState } from "react";
 import "./styles.css";
 import axios from "axios";
-import Pokemoncard, { final, Props, Species, Sprites } from "./components/Pokemoncard";
+import Pokemoncard from "./components/Pokemoncard";
 import Search from "./components/Search";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

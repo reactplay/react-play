@@ -6,13 +6,15 @@ type Propsi = {
   fetchPokemonDetails: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & { type?: 'submit' }
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  type?: "submit";
+};
 
 const Button = ({ children, type, ...props }: Props) => (
-  <button {...props} type={type || 'button'}>
+  <button {...props} type={type || "button"}>
     {children}
   </button>
-)
+);
 
 const search = (props: Propsi) => {
   const { setname, fetchPokemonDetails, name } = props;
