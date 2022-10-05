@@ -7,7 +7,7 @@ import "./inspirational-quotes.css";
 export default function InspirationalQuotes(props: any) {
   const [quote, setQuote] = useState(Quotes[2]);
 
-  const handleClick = () => {
+  const handleMoreClick = () => {
     let randomNumber = Math.floor(Math.random() * Quotes.length);
     setQuote(Quotes[randomNumber]);
   };
@@ -15,7 +15,11 @@ export default function InspirationalQuotes(props: any) {
     <div className="custom-container play-details">
       <PlayHeader play={props} />
       <div className="card__container">
-        <Card quote={quote.quote} author={quote.author} onClick={handleClick} />
+        <Card
+          quote={quote.quote}
+          author={quote.author}
+          onClick={handleMoreClick}
+        />
       </div>
     </div>
   );
