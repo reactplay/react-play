@@ -7,34 +7,35 @@ import EmojiCard from "./components/EmojiCard";
 import { useEffect, useState } from "react";
 import { API_KEY } from "./config";
 import { FiSearch } from "react-icons/fi";
+import SkeletonCard from "./components/SkeletonCard";
 
 const URL = `https://emoji-api.com/emojis?access_key=${API_KEY}`;
 
 function Emojipedia(props) {
   // Your Code Start below.
   const [emojisList, setEmojisList] = useState([]);
+  const [query, setQuery] = useState("");
 
   // Fetch all the emojis
   const { data, loading, error } = useFetch(URL);
 
   const handleEmojiSearch = (e) => {
-    const { value } = e.target;
+    const value = e.target.value;
 
-    setEmojisList(
-      emojisList?.filter((item) => {
-        if (value == "") {
-          return item;
-        } else if (
-          item?.unicodeName.toLowerCase().includes(value.toLowerCase())
-        ) {
-          return item;
-        }
-      })
-    );
-    // setEmojisList(emojisList?.filter((item) => item?.unicodeName === value));
+    if (value !== "") {
+      setEmojisList(
+        emojisList?.filter((emoji) =>
+          emoji?.unicodeName?.toLowerCase().includes(value?.toLowerCase())
+        )
+      );
+    } else {
+      setEmojisList(data);
+    }
+    setQuery(value);
   };
 
   useEffect(() => {
+    // Set Emoji list
     if (data?.length) {
       setEmojisList(data);
     }
@@ -51,23 +52,21 @@ function Emojipedia(props) {
               <div className="w-[100%] mx-auto flex justify-center items-center bg-[#3d4b63] rounded-md px-3 text-gray-300">
                 <FiSearch fontSize={22} />
                 <input
+                  className="w-[100%] !p-3 outline-none !border-0 bg-transparent text-gray-300"
                   type="text"
                   placeholder="Search Emoji..."
+                  value={query}
                   onChange={handleEmojiSearch}
-                  className="w-[100%] !p-3 outline-none !border-0 bg-transparent text-gray-300"
                 />
               </div>
             </div>
 
             <div className="text-white grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
-              {loading ? (
-                <p>loading</p>
-              ) : (
-                emojisList?.length &&
-                emojisList?.map((emoji, index) => (
-                  <EmojiCard key={index} emoji={emoji} />
-                ))
-              )}
+              {loading
+                ? Array.from(Array(25).keys()).map(() => <SkeletonCard />)
+                : emojisList?.map((emoji, index) => (
+                    <EmojiCard key={index} emoji={emoji} />
+                  ))}
             </div>
           </div>
           {/* Your Code Ends Here */}
