@@ -16,6 +16,9 @@ function createObjectPayload(items, key, ifTags) {
       operator: "or",
       conditions: !env && !preview ? [defaultClause] : [],
     };
+    if (ifTags) {
+      obj.clause.class = "play_tags";
+    }
     items.forEach((item) => {
       const prepareObject = {
         field: ifTags ? "tag_id" : key,
@@ -108,7 +111,7 @@ export const FetchPlaysFilter = {
       if (filterItem.length > 0 && filterItem[0] !== " ") {
         const ifTags = key === "tags";
         const prepareObject = createObjectPayload(filterItem, key, ifTags);
-        if (ifTags) {
+        if (ifTags && filterItem.length === 1) {
           prepareObject.class = "play_tags";
         }
         clause.conditions.push(prepareObject);
