@@ -22,7 +22,7 @@ export const UseCustomFetchAPI = (endPoint) => {
           }
         }
       } catch (e) {
-        setError(true);
+        if (e.name !== "AbortError") setError(true);
       } finally {
         setFetching(false);
       }

@@ -60,6 +60,7 @@ export default function DownloadFetchResponse() {
                         placeholder="Type/Paste API Endpoint here.."
                         type="textarea"
                         onChange={(e) => setEndpoint(e.target.value)}
+                        value={endpoint}
                       />
                     </div>
                   ) : (
@@ -69,7 +70,11 @@ export default function DownloadFetchResponse() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button onClick={() => setToBeFetched(endpoint)} size="small">
+              <Button
+                disabled={["", null, undefined].includes(endpoint.trim())}
+                onClick={() => setToBeFetched(endpoint)}
+                size="small"
+              >
                 Download
               </Button>
             </CardActions>
