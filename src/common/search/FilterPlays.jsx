@@ -115,7 +115,7 @@ const FilterPlaysModalBody = ({
         <MultipleSelectCheckmarks
           filterQuery={filterQuery}
           setFilterQuery={setFilterQuery}
-          options={[defaultOption, ...levelOptions]}
+          options={[defaultOption, ...languageOptions]}
           filterKey="language"
           label="Language"
         />
