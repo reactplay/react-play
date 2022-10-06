@@ -20,11 +20,11 @@ I have implemented the `Inspirational Quotes` in below steps
 
 - Added `cover.png` for play card thumbnail background.
 - Made a list of carefully chosen motivational sayings and saved it as `Quotes.ts`
-- Quote data type defined in `Quote.tsx` and stored in a separate `type` folder, utilised in `Quotes.ts`
+- Quote data type defined in `Quote.tsx` and stored in `Type.tx`
 - Fetching `Quotes.ts` data and maintaining it inside a `quote` state in `InspirationalQuotes.tsx`.
 - Placed all css of `InspirationalQuotes.tsx` inside `inspirational-quotes.css`
 - Made the reusable card component `Card.tsx` and defined all the CSS in "card.css."
-- Defined `CardProps` data type in `CardProps.tsx` that we used in `Card.tsx` inside `type` folder
+- Defined `CardProps` data type in `Type.ts` that we used in `Card.tsx`
 - Importing `Card.tsx` in `InspirationalQuotes.tsx` and passing `quote` data as prop.
 - Created a `RandomNumber` generator in the `handleMoreClick` function, which must be less than the length of `Quotes` array.
 - When updating state as `setQuote()`, `RandomNumber` was passed as an index.
