@@ -8,7 +8,8 @@ const TechStack = () => {
       </h2>
       <div className="list-brand-tech-stack">
         {/* <div className='md:w-[800px] 2xl:w-[1000px] w-full flex flex-wrap m-8'> */}
-        {TechStackInfo.map((Item, idx) => {
+        {
+          TechStackInfo.length&&(TechStackInfo.map((Item, idx) => {
           if (Item.type === "icon") {
             return (
               <a
@@ -39,7 +40,9 @@ const TechStack = () => {
           } else {
             return null;
           }
-        })}
+        })
+)
+}
       </div>
     </div>
   );
