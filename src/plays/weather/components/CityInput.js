@@ -24,6 +24,10 @@ export default function CityInput({
   const fetchWeather = async (e) => {
     e.preventDefault();
 
+    if (cityInput.length === 0) {
+      return;
+    }
+
     try {
       // Show loading messae
       setIsLoading(true);
