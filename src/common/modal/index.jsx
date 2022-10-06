@@ -16,7 +16,6 @@ const Modal =({ title, show, onClose, onSubmit, children, cname })=> {
 
   if (!show) return null;
 
-
   return ReactDOM.createPortal(
     <>
       <div className="modal-overlay" onClick={ onClose }></div>
