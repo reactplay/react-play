@@ -8,7 +8,7 @@ const Footer = () => {
         <p>
           ReactPlay - The MIT License (MIT) Copyright &copy;
           {new Date().getFullYear()} . Powered by{" "}
-          <a href="/" className="text-link-default">
+          <a href="/tech-stacks" className="text-link-default">
             Top Notch Tech Stacks
           </a>
           .
