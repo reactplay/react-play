@@ -205,4 +205,24 @@
   font-size: var(--fs-rg);
 }
 
+/* CSS attributes for clear All button */
+
+.modal-clear-filter {
+  width: 100%;
+  text-align: right;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.clear-all-filter-btn {
+  font-size: smaller;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .2s
+}
+
+.clear-all-filter-btn:hover{
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
