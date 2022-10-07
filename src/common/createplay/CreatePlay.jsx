@@ -77,9 +77,12 @@ const CreatePlay = () => {
         promises.push(api.method());
       });
 
-      Promise.all(promises)
-        .then((res) => {
-          res.forEach((rApi, rApi_ind) => {
+   
+  async function fancy(){
+    
+     try{
+   let res=await Promise.all(promises)
+        res.forEach((rApi, rApi_ind) => {
             const api_obj = all_apis[rApi_ind];
             storedData[api_obj.name] = rApi;
             const anyField = FIELD_TEMPLATE.filter((field) => {
@@ -90,12 +93,14 @@ const CreatePlay = () => {
             }
           });
           setStoredData({ ...storedData });
-        })
-        .finally(() => {
-          setIsDataLoading(false);
-          setLoadingText("");
-        });
     }
+    catch(error){
+     setIsDataLoading(false);
+          setLoadingText("");
+    }
+  }  
+   fancy();
+    
   };
 
   const onSubmit = () => {
