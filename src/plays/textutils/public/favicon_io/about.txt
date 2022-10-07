@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Inika
+- Font Author: Copyright (c) 2011 by Constanza Artigas Preller. All rights reserved.
+- Font Source: http://fonts.gstatic.com/s/inika/v21/rnCm-x5X3QP-phTHRcc2s2XH.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
