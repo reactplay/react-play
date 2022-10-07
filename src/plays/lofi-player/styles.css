@@ -1,7 +1,7 @@
 /* enter stlyes here */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-*{
+.lofi-all{
     margin: 0;
     padding: 0;
     color: rgb(36, 36, 36);
@@ -9,9 +9,8 @@
     font-weight: 400;
 }
 
-.App{
+.App-music{
     top: 150px;
-    
     font-size: medium;
     position: absolute;
     width: 98%;

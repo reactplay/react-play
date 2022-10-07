@@ -11,12 +11,13 @@ Lofi music player using react
 
 - User: riyajath-ahamed
 - Gihub Link: https://github.com/riyajath-ahamed
-- Blog: null
-- Video: null
 
 ## Implementation Details
 
-Update your implementation idea and details here
+- Music player with cool lofi music with a nice UI
+- The music player is built using react and the music is fetched from the firebase database
+- In furter update will conclude some cool UI
+
 
 ## Consideration
 

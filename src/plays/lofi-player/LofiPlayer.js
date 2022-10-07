@@ -33,29 +33,27 @@ function LofiPlayer(props) {
 
   return (
     <>
+
       <div className="play-details">
         <PlayHeader play={props} />
-        {/* <div className='video-bg'>
-          <video  autoPlay muted loop>
-            <source src="https://firebasestorage.googleapis.com/v0/b/musicplayer-bc7a2.appspot.com/o/video%2F7btrrd%20(1).mp4?alt=media&token=4a59fcc2-368b-40b4-a486-6cbff3c5c98b" type="video/mp4"/>
-          </video> */}
+        <div className='lofi-all'>
           <div className='video-bg'>
                 <video  autoPlay muted loop>
                   <source src="https://firebasestorage.googleapis.com/v0/b/musicplayer-bc7a2.appspot.com/o/video%2F7btrrd%20(1).mp4?alt=media&token=4a59fcc2-368b-40b4-a486-6cbff3c5c98b" type="video/mp4"/>
                   </video>
         <div className="play-details-body">    
-              <div className="App">
+              <div className="App-music">
                 <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
                 <Player songs={songs} setSongs={setSongs} isplaying={isplaying} setisplaying={setisplaying} audioElem={audioElem} currentSong={currentSong} setCurrentSong={setCurrentSong} />
               </div>
               <div>
-                
+
               </div>
               
         </div>
         
         </div>
-        
+        </div>
       </div>
     </>
   );
