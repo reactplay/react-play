@@ -1,0 +1,75 @@
+.player_container
+{
+    width: 50%;
+    padding: 1rem;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    color: rgb(10, 16, 65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.536);
+    box-shadow: {
+        x: 20px;
+        y: 20px;
+        color: rgba(247, 239, 239, 0.559);
+        blur: 10px;
+        spread: 5px;
+    };
+
+    >*
+    {
+        padding: 1rem 0;
+        color: rgb(202, 202, 202);
+    }
+
+    .title{
+        font-size: inherit;
+    }
+    .navigation{
+        width: 100%;
+
+
+        .navigation_wrapper
+        {
+            min-width: 100%;
+            background-color: rgba(119, 119, 119, 0.781);
+            height: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            
+            .seek_bar{
+                width: 0;
+                height: 100%;
+                background-color: rgb(19, 164, 255);
+                border-radius: 30px;
+            }
+
+        }
+    }
+    .controls{
+        font-size: inherit;
+        display: flex;
+        align-items: center;
+
+        .btn_action
+        {
+            font-size: 2rem;
+            margin: 0 1rem;
+            cursor: pointer;
+
+            &:hover{
+            color: white;
+        }
+
+        }
+        
+        .pp
+        {
+            font-size: 4rem;
+            
+        }
+        
+    }
+}
