@@ -1,27 +1,27 @@
 import React from "react";
 import "./search.css";
 type SearchProps = {
-  eventchange:(e: React.ChangeEvent<HTMLInputElement>) => void;
+  onEventChange:(e: React.ChangeEvent<HTMLInputElement>) => void;
   fetchPokemonDetails: (e: React.FormEvent<HTMLFormElement>) => void;
-  Name: string;
+  name: string;
 };
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-const search = (props: SearchProps) => {
-  const { eventchange, fetchPokemonDetails, Name } = props;
+const Search = (props: SearchProps) => {
+  const { onEventChange, fetchPokemonDetails, name } = props;
   return (
     <div className="poke-main-cont">
       <div className="poke-input-cont field">
         <form onSubmit={fetchPokemonDetails} className="poke-form">
           <input
             type="input"
-            value={Name}
+            value={name}
             className="poke-input-field"
             placeholder=" "
             name="name"
             id="name"
             required
-            onChange={eventchange}
+            onChange={onEventChange}
           />
           <label htmlFor="name" className="poke-form-label">
             Pokemon name
@@ -34,4 +34,4 @@ const search = (props: SearchProps) => {
     </div>
   );
 };
-export default search;
+export default Search;

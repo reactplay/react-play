@@ -7,20 +7,20 @@ import Search from "./components/Search";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React from "react";
-import { Root } from "./typing";
+import { Root } from "./types";
 
 // WARNING: Do not change the entry componenet name
 function PokemonStats(props: any) {
   // Your Code Start below.
   const [pokemon, setpokemon] = useState<Root>();
-  const [Name, onSetName] = useState<string>("");
+  const [name, onSetName] = useState<string>("");
   const handleSetName = (e: React.ChangeEvent<HTMLInputElement>) => {
      onSetName(e.target.value);
   };
   const fetchPokemonDetails = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${Name.toLowerCase()}`)
+      .get(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`)
       .then((response) => {
         setpokemon(response.data);
       })
@@ -60,8 +60,8 @@ function PokemonStats(props: any) {
           ) : (
             <div className="poke-search-container">
               <Search
-                eventchange={handleSetName}
-                Name={Name}
+                onEventChange={handleSetName}
+                name={name}
                 fetchPokemonDetails={fetchPokemonDetails}
               />
             </div>

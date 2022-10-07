@@ -1,5 +1,5 @@
 import React from "react";
-import { Props } from "../typing";
+import { Props } from "../types";
 import "./pokecard.css";
 const Pokemoncard = (props: Props) => {
   const { pokemon } = props;
