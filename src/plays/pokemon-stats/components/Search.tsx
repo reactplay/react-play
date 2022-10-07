@@ -1,43 +1,34 @@
 import React from "react";
 import "./search.css";
-type Propsi = {
-  setname: React.Dispatch<React.SetStateAction<string>>;
-  name: string;
+type SearchProps = {
+  eventchange:(e: React.ChangeEvent<HTMLInputElement>) => void;
   fetchPokemonDetails: (e: React.FormEvent<HTMLFormElement>) => void;
+  Name: string;
 };
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  type?: "submit";
-};
-
-const Button = ({ children, type, ...props }: Props) => (
-  <button {...props} type={type || "button"}>
-    {children}
-  </button>
-);
-
-const search = (props: Propsi) => {
-  const { setname, fetchPokemonDetails, name } = props;
+const search = (props: SearchProps) => {
+  const { eventchange, fetchPokemonDetails, Name } = props;
   return (
     <div className="poke-main-cont">
       <div className="poke-input-cont field">
         <form onSubmit={fetchPokemonDetails} className="poke-form">
           <input
             type="input"
-            value={name}
+            value={Name}
             className="poke-input-field"
             placeholder=" "
             name="name"
             id="name"
             required
-            onChange={(e) => setname(e.target.value)}
+            onChange={eventchange}
           />
           <label htmlFor="name" className="poke-form-label">
             Pokemon name
           </label>
-          <Button className="poke-stats-sumbit-btn" type="submit">
+          <button className="poke-stats-sumbit-btn" type="submit">
             Search
-          </Button>
+          </button>
         </form>
       </div>
     </div>
