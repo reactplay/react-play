@@ -1,11 +1,15 @@
 # download-fetch-response
 
-Save the FETCH API response as a file. To accomplish this, a custom hook for the fetch API is written.
+Save the FETCH API response as a file.
 
 ## Play Demographic
 
 - Language: js
 - Level: Beginner
+
+## Implementation Details
+
+To accomplish this, a custom hook for the fetch (GET)API is written along with UseEffect which includes a cleanup function .
 
 ## Consideration
 
