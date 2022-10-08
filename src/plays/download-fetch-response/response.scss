@@ -6,6 +6,14 @@
         padding-top: 2rem;
         color: darkslategrey;
     }
+    .desk-screen
+    {
+        min-width: 650px
+    }
+    .other-screen
+    {
+        min-width:-webkit-fill-available; ;
+         }
 .clazz {
         input {
             border: none;

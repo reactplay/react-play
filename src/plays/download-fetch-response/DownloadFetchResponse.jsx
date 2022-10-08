@@ -8,6 +8,7 @@ import {
   Grid,
   Snackbar,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import PlayHeader from "common/playlists/PlayHeader";
 import { useEffect, useState } from "react";
@@ -19,7 +20,8 @@ export default function DownloadFetchResponse(props) {
   const [alertError, setAlertError] = useState();
   const [toBeFetched, setToBeFetched] = useState("");
   const { data, error, fetching } = UseCustomFetchAPI(toBeFetched);
-
+  //Hook from mui to detect screen
+  const matches = useMediaQuery('(min-width:650px)');
   useEffect(() => {
     const download = document.createElement("a");
     download.href = URL.createObjectURL(
@@ -57,7 +59,7 @@ export default function DownloadFetchResponse(props) {
             style={{ paddingTop: "10rem" }}
           >
             <Grid item xs={5}>
-              <Card sx={{ fontSize: 14 }}>
+              <Card className={matches ? 'desk-screen' : 'other-screen'} sx={{ fontSize: 14 }}>
                 <CardContent>
                   <Typography sx={{ fontSize: 14 }} gutterBottom>
                     Save Fetch API Response
@@ -67,7 +69,7 @@ export default function DownloadFetchResponse(props) {
                       {!fetching ? (
                         <div className="clazz">
                           <input
-                            placeholder="Input Endpoint here.."
+                            placeholder={matches ? 'Paste/Type API endpoint here...' : 'Input Endpoint here..'}
                             type="textarea"
                             onChange={(e) => setEndpoint(e.target.value)}
                             value={endpoint}
@@ -116,7 +118,7 @@ export default function DownloadFetchResponse(props) {
         </div>
         {/* Your Code Ends Here */}
       </div>
-    </div>
+    </div >
 
   );
 }
