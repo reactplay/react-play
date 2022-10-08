@@ -54,7 +54,7 @@ export default function DownloadFetchResponse(props) {
             direction="column"
             alignItems="center"
             justify="center"
-            style={{ minHeight: "800vh", paddingTop: "12rem" }}
+            style={{ paddingTop: "10rem" }}
           >
             <Grid item xs={5}>
               <Card sx={{ fontSize: 14 }}>
