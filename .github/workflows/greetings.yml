@@ -1,0 +1,21 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message:  |
+            Hello! Thank you for filing an issue.
+            If this is a bug report, please include relevant logs to help us debug the problem.
+        pr-message:  |
+            Hello! Thank you for your contribution 😊.
+            Please reference the issue number in the description if you are fixing a bug.
+            If you are implementing a feature request, please check with the maintainers that the feature will be accepted first.
