@@ -57,7 +57,7 @@ export default function DownloadFetchResponse(props) {
             style={{ minHeight: "800vh", paddingTop: "12rem" }}
           >
             <Grid item xs={5}>
-              <Card sx={{ minWidth: 800 }}>
+              <Card sx={{ fontSize: 14 }}>
                 <CardContent>
                   <Typography sx={{ fontSize: 14 }} gutterBottom>
                     Save Fetch API Response
@@ -67,7 +67,7 @@ export default function DownloadFetchResponse(props) {
                       {!fetching ? (
                         <div className="clazz">
                           <input
-                            placeholder="Type/Paste API Endpoint here.."
+                            placeholder="Input Endpoint here.."
                             type="textarea"
                             onChange={(e) => setEndpoint(e.target.value)}
                             value={endpoint}
