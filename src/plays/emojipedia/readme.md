@@ -10,9 +10,12 @@ Its a fun play where user can search for any emojis and can copy it or use it an
 ## Creator Information
 
 - User: makdoom
-- Gihub Link: https://github.com/makdoom
-- Blog: null
-- Video: null
+
+- Github Link: https://github.com/makdoom
+
+- Twitter: https://twitter.com/shaikh_makdoom
+
+- Linkedin: https://linkedin.com/makdoom
 
 ## Implementation Details
 

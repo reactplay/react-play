@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { FiSearch } from "react-icons/fi";
 
 // Project local imports
 import PlayHeader from "common/playlists/PlayHeader";
-import "./styles.css";
 import useFetch from "common/hooks/useFetch";
 import EmojiCard from "./components/EmojiCard";
 import SkeletonCard from "./components/SkeletonCard";
 import { API_BASE_URL } from "./config";
-import toast, { Toaster } from "react-hot-toast";
 
 function Emojipedia(props) {
   // Your Code Start below.
   const [emojisList, setEmojisList] = useState([]);
   const [query, setQuery] = useState("");
+  const inputRef = useRef(null);
 
   // Fetch all the emojis
   const { data, loading, error } = useFetch(API_BASE_URL);
@@ -22,9 +22,10 @@ function Emojipedia(props) {
 
   // Copy emoji handler
   const handleCopyEmoji = async (emojiCharacter) => {
-    if ("clipboard" in navigator)
+    if ("clipboard" in navigator) {
       await navigator.clipboard.writeText(emojiCharacter);
-    toast.success(`Emoji ${emojiCharacter} copied to clipboard.`);
+      toast.success(`Emoji ${emojiCharacter} copied to clipboard.`);
+    }
   };
 
   // Search filter
@@ -48,9 +49,10 @@ function Emojipedia(props) {
     if (error) return toast.error(error);
 
     // Set Emoji list
-    if (data?.length) {
-      setEmojisList(data);
-    }
+    if (data?.length) setEmojisList(data);
+
+    // Set focus to search field
+    inputRef.current.focus();
   }, [data]);
 
   return (
@@ -64,6 +66,7 @@ function Emojipedia(props) {
               <div className="w-[100%] mx-auto flex justify-center items-center bg-[#3d4b63] rounded-md px-3 text-gray-300">
                 <FiSearch fontSize={22} />
                 <input
+                  ref={inputRef}
                   className="w-[100%] !p-3 outline-none !border-0 bg-transparent text-gray-300"
                   type="text"
                   placeholder="Search Emoji..."
@@ -96,7 +99,8 @@ function Emojipedia(props) {
               </div>
             )}
 
-            <Toaster position="top-right" reverseOrder={false} />
+            {/* Toaster to show erros & copied emoji message */}
+            <Toaster position="top-center" reverseOrder={false} />
           </div>
           {/* Your Code Ends Here */}
         </div>
