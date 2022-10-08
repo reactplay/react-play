@@ -1,15 +1,14 @@
+import { useEffect, useState } from "react";
+import { FiSearch } from "react-icons/fi";
+
 // Project local imports
 import PlayHeader from "common/playlists/PlayHeader";
-
-import useFetch from "common/hooks/useFetch";
 import "./styles.css";
+import useFetch from "common/hooks/useFetch";
 import EmojiCard from "./components/EmojiCard";
-import { useEffect, useState } from "react";
-import { API_KEY } from "./config";
-import { FiSearch } from "react-icons/fi";
 import SkeletonCard from "./components/SkeletonCard";
-
-const URL = `https://emoji-api.com/emojis?access_key=${API_KEY}`;
+import { API_BASE_URL } from "./config";
+import toast, { Toaster } from "react-hot-toast";
 
 function Emojipedia(props) {
   // Your Code Start below.
@@ -17,24 +16,18 @@ function Emojipedia(props) {
   const [query, setQuery] = useState("");
 
   // Fetch all the emojis
-  const { data, loading, error } = useFetch(URL);
+  const { data, loading, error } = useFetch(API_BASE_URL);
 
-  const handleEmojiSearch = (e) => {
-    const value = e.target.value;
-    // setQuery(value);
+  const handleEmojiSearch = (e) => setQuery(e.target.value);
 
-    // if (value !== "") {
-    //   setEmojisList(
-    //     emojisList?.filter((emoji) =>
-    //       emoji?.unicodeName?.toLowerCase().includes(value?.toLowerCase())
-    //     )
-    //   );
-    // } else {
-    //   setEmojisList(data);
-    // }
-    setQuery(value);
+  // Copy emoji handler
+  const handleCopyEmoji = async (emojiCharacter) => {
+    if ("clipboard" in navigator)
+      await navigator.clipboard.writeText(emojiCharacter);
+    toast.success(`Emoji ${emojiCharacter} copied to clipboard.`);
   };
 
+  // Search filter
   useEffect(() => {
     const delayFn = setTimeout(() => {
       if (query !== "") {
@@ -46,12 +39,14 @@ function Emojipedia(props) {
       } else {
         setEmojisList(data);
       }
-    }, 500);
+    }, 300);
 
     return () => clearTimeout(delayFn);
   }, [query, data, emojisList]);
 
   useEffect(() => {
+    if (error) return toast.error(error);
+
     // Set Emoji list
     if (data?.length) {
       setEmojisList(data);
@@ -82,9 +77,26 @@ function Emojipedia(props) {
               {loading
                 ? Array.from(Array(25).keys()).map(() => <SkeletonCard />)
                 : emojisList?.map((emoji, index) => (
-                    <EmojiCard key={index} emoji={emoji} />
+                    <EmojiCard
+                      key={index}
+                      emoji={emoji}
+                      handleCopyEmoji={handleCopyEmoji}
+                    />
                   ))}
             </div>
+
+            {emojisList?.length === 0 && (
+              <div className="mt-20">
+                <p className="mb-3 text-center text-2xl font-semibold text-gray-200">
+                  Oops ...! No Emoji Found
+                </p>
+                <span className="text-center text-gray-300">
+                  We can't find any emoji matching your search, please try again
+                </span>
+              </div>
+            )}
+
+            <Toaster position="top-right" reverseOrder={false} />
           </div>
           {/* Your Code Ends Here */}
         </div>
