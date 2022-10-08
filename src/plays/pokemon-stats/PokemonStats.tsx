@@ -7,11 +7,12 @@ import Search from "./components/Search";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React from "react";
-import { Root } from "./types";
+import { PlayRoot, Root } from "./types";
 
 // WARNING: Do not change the entry componenet name
-function PokemonStats(props: any) {
+function PokemonStats(props: PlayRoot) {
   // Your Code Start below.
+  console.log(props);
   const [pokemon, setpokemon] = useState<Root>();
   const [name, onSetName] = useState<string>("");
   const handleSetName = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -34,3 +34,50 @@ export interface Root {
 export interface Props {
   pokemon: Root;
 }
+
+
+export interface PlayRoot {
+  component: any
+  cover: any
+  description: string
+  featured: any
+  dev_mode: boolean
+  github: string
+  language: string
+  play_like: PlayLike[]
+  name: string
+  slug: string
+  user: User
+  created_at: string
+  path: string
+  blog: any
+  id: string
+  level: Level
+  video: any
+  play_tags: PlayTag[]
+  title_name: string
+}
+
+export interface PlayLike {
+  liked: boolean
+  play_id: string
+  user_id: string
+}
+
+export interface User {
+  id: string
+  displayName: string
+  avatarUrl: string
+}
+
+export interface Level {
+  name: string
+}
+
+export interface PlayTag {
+  tag: Tag
+}
+
+export interface Tag {
+  name: string
+}
