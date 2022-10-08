@@ -30,6 +30,13 @@ function PokemonStats(props) {
         });
       });
   };
+
+  // Clear the Searched pokemon
+  const clearSearchedPokemon = () => {
+    setpokemon(undefined);
+    setname("");
+  }
+
   return (
     <>
       <div className="play-details">
@@ -49,7 +56,7 @@ function PokemonStats(props) {
           />
           {pokemon ? (
             <div className="poke-card-container">
-              <Pokemoncard pokemon={pokemon} />
+              <Pokemoncard pokemon={pokemon} backToSearch={clearSearchedPokemon}/>
             </div>
           ) : (
             <div className="poke-search-container">

@@ -1,7 +1,7 @@
 import React from "react";
 import "./pokecard.css";
 const Pokemoncard = (props) => {
-  const { pokemon } = props;
+  const { pokemon, backToSearch } = props;
   return (
     <div className="poke-card-cont">
       <div className="wrapper">
@@ -32,6 +32,10 @@ const Pokemoncard = (props) => {
               <div className="stat-value">{pokemon.types[0].type.name}</div>
             </div>
           </div>
+
+          <button type="button" className="poke-stats-back-btn" onClick={backToSearch}>
+            Back
+          </button>
         </div>
       </div>
     </div>
