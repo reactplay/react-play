@@ -45,75 +45,77 @@ export default function DownloadFetchResponse(props) {
   return (
     <div className="play-details">
       <PlayHeader play={props} />
-      {/* Your Code Starts Here */}
-      <div className="fetch-download">
-        <Grid
-          container
-          spacing={0}
-          direction="column"
-          alignItems="center"
-          justify="center"
-          style={{ minHeight: "800vh", paddingTop: "12rem" }}
-        >
-          <Grid item xs={5}>
-            <Card sx={{ minWidth: 800 }}>
-              <CardContent>
-                <Typography sx={{ fontSize: 14 }} gutterBottom>
-                  Save Fetch API Response
-                </Typography>
-                <Typography variant="h5" component="div">
-                  <div className="civ">
-                    {!fetching ? (
-                      <div className="clazz">
-                        <input
-                          placeholder="Type/Paste API Endpoint here.."
-                          type="textarea"
-                          onChange={(e) => setEndpoint(e.target.value)}
-                          value={endpoint}
-                        />
-                      </div>
-                    ) : (
-                      <span>Fetching.....</span>
-                    )}
-                  </div>
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button
-                  disabled={["", null, undefined].includes(endpoint?.trim())}
-                  onClick={() => setToBeFetched(endpoint)}
-                  size="small"
-                >
-                  Download
-                </Button>
-                <Button onClick={reset} size="small">
-                  Reset
-                </Button>
-              </CardActions>
-            </Card>{" "}
-          </Grid>
-          <span className="note-txt flex justify-center items-center py-2">
-            Note:Current version works for all valid GET API's(provided token is
-            not mandatory)
-          </span>
-        </Grid>
-
-        <Snackbar
-          anchorOrigin={{ vertical: "top", horizontal: "right" }}
-          open={alertError}
-          autoHideDuration={6000}
-          onClose={() => setAlertError(false)}
-        >
-          <Alert
-            onClose={() => setAlertError(false)}
-            severity="error"
-            sx={{ width: "100%" }}
+      <div className="play-details-body">
+        {/* Your Code Starts Here */}
+        <div className="fetch-download">
+          <Grid
+            container
+            spacing={0}
+            direction="column"
+            alignItems="center"
+            justify="center"
+            style={{ minHeight: "800vh", paddingTop: "12rem" }}
           >
-            Uh-Oh!Some Error happened.Please verify the API Endpoint
-          </Alert>
-        </Snackbar>
+            <Grid item xs={5}>
+              <Card sx={{ minWidth: 800 }}>
+                <CardContent>
+                  <Typography sx={{ fontSize: 14 }} gutterBottom>
+                    Save Fetch API Response
+                  </Typography>
+                  <Typography variant="h5" component="div">
+                    <div className="civ">
+                      {!fetching ? (
+                        <div className="clazz">
+                          <input
+                            placeholder="Type/Paste API Endpoint here.."
+                            type="textarea"
+                            onChange={(e) => setEndpoint(e.target.value)}
+                            value={endpoint}
+                          />
+                        </div>
+                      ) : (
+                        <span>Fetching.....</span>
+                      )}
+                    </div>
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    disabled={["", null, undefined].includes(endpoint?.trim())}
+                    onClick={() => setToBeFetched(endpoint)}
+                    size="small"
+                  >
+                    Download
+                  </Button>
+                  <Button onClick={reset} size="small">
+                    Reset
+                  </Button>
+                </CardActions>
+              </Card>{" "}
+            </Grid>
+            <span className="note-txt flex justify-center items-center py-2">
+              Note:Current version works for all valid GET API's(provided token is
+              not mandatory)
+            </span>
+          </Grid>
+
+          <Snackbar
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            open={alertError}
+            autoHideDuration={6000}
+            onClose={() => setAlertError(false)}
+          >
+            <Alert
+              onClose={() => setAlertError(false)}
+              severity="error"
+              sx={{ width: "100%" }}
+            >
+              Uh-Oh!Some Error happened.Please verify the API Endpoint
+            </Alert>
+          </Snackbar>
+        </div>
+        {/* Your Code Ends Here */}
       </div>
-      {/* Your Code Ends Here */}
     </div>
 
   );
