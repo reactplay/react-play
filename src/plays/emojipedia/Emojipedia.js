@@ -21,18 +21,35 @@ function Emojipedia(props) {
 
   const handleEmojiSearch = (e) => {
     const value = e.target.value;
+    // setQuery(value);
 
-    if (value !== "") {
-      setEmojisList(
-        emojisList?.filter((emoji) =>
-          emoji?.unicodeName?.toLowerCase().includes(value?.toLowerCase())
-        )
-      );
-    } else {
-      setEmojisList(data);
-    }
+    // if (value !== "") {
+    //   setEmojisList(
+    //     emojisList?.filter((emoji) =>
+    //       emoji?.unicodeName?.toLowerCase().includes(value?.toLowerCase())
+    //     )
+    //   );
+    // } else {
+    //   setEmojisList(data);
+    // }
     setQuery(value);
   };
+
+  useEffect(() => {
+    const delayFn = setTimeout(() => {
+      if (query !== "") {
+        setEmojisList(
+          emojisList?.filter((emoji) =>
+            emoji?.unicodeName?.toLowerCase().includes(query?.toLowerCase())
+          )
+        );
+      } else {
+        setEmojisList(data);
+      }
+    }, 500);
+
+    return () => clearTimeout(delayFn);
+  }, [query, data, emojisList]);
 
   useEffect(() => {
     // Set Emoji list
