@@ -6,13 +6,14 @@ export const UseCustomFetchAPI = (endPoint) => {
   const [fetching, setFetching] = useState(true);
 
   useEffect(() => {
+    //Abort controller allows us to abort API calls
     const controller = new AbortController();
     setFetching(true);
     setError(false);
     let cancel = false;
     (async () => {
       try {
-        if (!["", undefined, null].includes(endPoint.trim())) {
+        if (!["", undefined, null].includes(endPoint?.trim())) {
           const response = await window.fetch(endPoint, {
             signal: controller.signal,
           });
@@ -28,6 +29,7 @@ export const UseCustomFetchAPI = (endPoint) => {
       }
     })();
     return () => {
+      // Preventing the component from updating dom while unmounting thus no memory leaks.
       controller.abort();
       cancel = true;
     };

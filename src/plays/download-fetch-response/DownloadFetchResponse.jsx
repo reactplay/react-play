@@ -28,7 +28,7 @@ export default function DownloadFetchResponse() {
     );
     download.setAttribute("download", `Play - ${new Date().getTime()}.json`);
     document.body.appendChild(download);
-    if (!["", undefined, null].includes(toBeFetched.trim()) && !error)
+    if (!["", undefined, null].includes(toBeFetched?.trim()) && !error)
       download.click();
     document.body.removeChild(download);
   }, [data]);
@@ -36,15 +36,20 @@ export default function DownloadFetchResponse() {
   useEffect(() => {
     setAlertError(error);
   }, [error]);
+
+  const reset = () => {
+    setEndpoint("");
+    setToBeFetched("");
+  };
   return (
-    <>
+    <div className="fetch-download">
       <Grid
         container
         spacing={0}
         direction="column"
         alignItems="center"
         justify="center"
-        style={{ minHeight: "100vh", paddingTop: "15rem", background: "black" }}
+        style={{ minHeight: "100vh", paddingTop: "15rem" }}
       >
         <Grid item xs={5}>
           <Card sx={{ minWidth: 800 }}>
@@ -71,16 +76,24 @@ export default function DownloadFetchResponse() {
             </CardContent>
             <CardActions>
               <Button
-                disabled={["", null, undefined].includes(endpoint.trim())}
+                disabled={["", null, undefined].includes(endpoint?.trim())}
                 onClick={() => setToBeFetched(endpoint)}
                 size="small"
               >
                 Download
               </Button>
+              <Button onClick={reset} size="small">
+                Reset
+              </Button>
             </CardActions>
           </Card>{" "}
         </Grid>
+        <span className="note-txt flex justify-center items-center py-2">
+          Note:Current version works for all valid GET API's(provided token is
+          not mandatory)
+        </span>
       </Grid>
+
       <Snackbar
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         open={alertError}
@@ -95,6 +108,6 @@ export default function DownloadFetchResponse() {
           Uh-Oh!Some Error happened.Please verify the API Endpoint
         </Alert>
       </Snackbar>
-    </>
+    </div>
   );
 }

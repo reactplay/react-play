@@ -1,11 +1,22 @@
-.clazz{
-input {
-    border: none;
-    overflow: auto;
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    resize: none;
-    width: -webkit-fill-available;;
-}}
+.fetch-download
+{
+    .note-txt
+    {
+        font-size: 11px !important;
+        padding-top: 2rem;
+        color: darkslategrey;
+    }
+.clazz {
+        input {
+            border: none;
+            overflow: auto;
+            outline: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            resize: none;
+            width: -webkit-fill-available;
+            ;
+        }
+    }
+}
