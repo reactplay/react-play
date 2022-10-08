@@ -409,6 +409,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Susmita-Dey",
+      "name": "Susmita Dey",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79099734?v=4",
+      "profile": "https://bio.link/susmitadey",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -416,5 +425,6 @@
   "projectOwner": "reactplay",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
