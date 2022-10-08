@@ -12,7 +12,6 @@ import { PlayRoot, Root } from "./types";
 // WARNING: Do not change the entry componenet name
 function PokemonStats(props: PlayRoot) {
   // Your Code Start below.
-  console.log(props);
   const [pokemon, setpokemon] = useState<Root>();
   const [name, onSetName] = useState<string>("");
   const handleSetName = (e: React.ChangeEvent<HTMLInputElement>) => {
