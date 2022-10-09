@@ -62,7 +62,7 @@ function Emojipedia(props) {
         <div className="play-details-body !p-2 bg-gradient-to-r from-[#0f172a] to-[#1c2d52]">
           {/* Your Code Starts Here */}
           <div className="emojipedia__container max-w-[95%] mx-auto text-center ">
-            <div className="max-w-[700px] mx-auto m-4 mb-12 ">
+            <div className="max-w-[700px] mx-auto m-5 mb-12 ">
               <div className="w-[100%] mx-auto flex justify-center items-center bg-[#3d4b63] rounded-md px-3 text-gray-300">
                 <FiSearch fontSize={22} />
                 <input
