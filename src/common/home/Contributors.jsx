@@ -25,6 +25,7 @@ const Contributors = () => {
                 title={`${contributor.login}(${contributor.contributions} contributions)`}
               >
                 <img
+                  loading="lazy"
                   src={contributor.avatar_url}
                   alt={contributor.login}
                   className="contributor-thumb"
