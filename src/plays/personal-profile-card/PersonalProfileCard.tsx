@@ -1,3 +1,4 @@
+import PlayHeader from "common/playlists/PlayHeader";
 import React, { useState, ChangeEvent, useEffect } from 'react'
 
 import * as Storage from "./local-storage"
@@ -6,7 +7,7 @@ import ProfileCard from './components/profile-card'
 import ProfileForm from './components/profile-form'
 import './index.css'
 
-const PersonalProfileCard = () => {
+const PersonalProfileCard = (props: any) => {
   const [profileCard, setProfileCard] = useState<ProfileType>(null)
   const [value, setValue] = useState(null)
   const [key, setKey] = useState<number>(0)
@@ -48,12 +49,15 @@ const PersonalProfileCard = () => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row px-5 py-7">
-      <div className="w-[100%] md:w-[50%] mb-8 md:mb-0">
-        <ProfileForm value={value} profile={profileCard} onChange={handleChange} onClick={handleClick} onUpload={handleUpload} onClear={handleClear} />
-      </div>
-      <div className="w-[100%] md:w-[50%] bg-[#19a2ae] px-5 py-5 rounded-[20px] max-h-[460px]">
-        <ProfileCard profile={profileCard} />
+    <div className="play-details">
+      <PlayHeader play={props} />
+      <div className="flex flex-col md:flex-row px-5 py-7">
+        <div className="w-[100%] md:w-[50%] mb-8 md:mb-0">
+          <ProfileForm value={value} profile={profileCard} onChange={handleChange} onClick={handleClick} onUpload={handleUpload} onClear={handleClear} />
+        </div>
+        <div className="w-[100%] md:w-[50%] bg-[#19a2ae] px-5 py-5 rounded-[20px] max-h-[460px]">
+          <ProfileCard profile={profileCard} />
+        </div>
       </div>
     </div>
   )
