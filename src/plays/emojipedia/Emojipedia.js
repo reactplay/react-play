@@ -53,7 +53,7 @@ function Emojipedia(props) {
 
     // Set focus to search field
     inputRef.current.focus();
-  }, [data]);
+  }, [data, error]);
 
   return (
     <>
@@ -100,7 +100,7 @@ function Emojipedia(props) {
             )}
 
             {/* Toaster to show erros & copied emoji message */}
-            <Toaster position="top-center" reverseOrder={false} />
+            <Toaster position="top-center" />
           </div>
           {/* Your Code Ends Here */}
         </div>
