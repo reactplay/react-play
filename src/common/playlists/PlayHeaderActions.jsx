@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { useAuthenticated, useUserId } from "@nhost/react";
 import { BsGithub } from "react-icons/bs";
 import { IoLogoYoutube } from "react-icons/io";
@@ -10,6 +10,7 @@ import Comment from "common/components/Comment";
 import useLikePlays from "common/hooks/useLikePlays";
 import { NHOST } from "common/const";
 import countByProp from "common/utils/countByProp";
+import axios from "axios";
 
 const initialLikeObject = {
   liked: false,
