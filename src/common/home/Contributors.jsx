@@ -24,7 +24,12 @@ const Contributors = () => {
                 className="contributor-anchor"
                 title={`${contributor.login}(${contributor.contributions} contributions)`}
               >
-                <img src={contributor.avatar_url} alt={contributor.login} className="contributor-thumb" />
+              <img
+                  loading="lazy"
+                  src={contributor.avatar_url}
+                  alt={contributor.login}
+                  className="contributor-thumb"
+                />
               </a>
             </li>
           ))}
