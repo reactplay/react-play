@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-48-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-49-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -273,6 +273,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://bio.link/susmitadey"><img src="https://avatars.githubusercontent.com/u/79099734?v=4?s=100" width="100px;" alt="Susmita Dey"/><br /><sub><b>Susmita Dey</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Susmita-Dey" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/SSK-14"><img src="https://avatars.githubusercontent.com/u/45158568?v=4?s=100" width="100px;" alt="Sanjay Kumar"/><br /><sub><b>Sanjay Kumar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=SSK-14" title="Code">💻</a></td>
       <td align="center"><a href="http://vinaypatil.netlify.app"><img src="https://avatars.githubusercontent.com/u/29520476?v=4?s=100" width="100px;" alt="Vinay Patil "/><br /><sub><b>Vinay Patil </b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Engineervinay" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/abhi-works"><img src="https://avatars.githubusercontent.com/u/115144059?v=4?s=100" width="100px;" alt="Abhilash"/><br /><sub><b>Abhilash</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=abhi-works" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
