@@ -25,6 +25,7 @@ const PlayHeaderActions = ({ play }) => {
   const [showComment, setShowComment] = useState(false);
   const [likeObj, setLikeObj] = useState({ ...initialLikeObject });
   const [loading, setLoading] = useState(false);
+  const [commentCount, setCommentCount] = useState(0);
   const isAuthenticated = useAuthenticated();
 
   const constructLikeData = useCallback(
@@ -78,11 +79,21 @@ const PlayHeaderActions = ({ play }) => {
     }
   };
 
+  useEffect(() => {
+    (async () => {
+      const { data } = await axios.get(
+        `https://giscus.app/api/discussions?repo=reactplay/react-play&term=${play.path}`
+      );
+      setCommentCount(data.discussion.totalCommentCount);
+    })();
+  }, []);
+
   return (
     <>
       <Like onLikeClick={!loading ? onLikeClick : null} likeObj={likeObj} />
       <button className='action badged' onClick={() => setShowComment(true)}>
         <BiComment className='icon' size='24px' />
+        <div className="badge-count">{commentCount}</div>
         <span className='sr-only'>Comments</span>
       </button>
 
