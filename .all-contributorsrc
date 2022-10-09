@@ -427,6 +427,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Engineervinay",
+      "name": "Vinay Patil ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29520476?v=4",
+      "profile": "http://vinaypatil.netlify.app",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "abhi-works",
+      "name": "Abhilash",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115144059?v=4",
+      "profile": "https://github.com/abhi-works",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
