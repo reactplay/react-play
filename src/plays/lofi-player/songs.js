@@ -1,4 +1,4 @@
-exports.songsdata = [
+export const SONGS_DATA = [
     {
         "title": "1 A.M Study Session",
         "url": "https://firebasestorage.googleapis.com/v0/b/musicplayer-bc7a2.appspot.com/o/lofi%2FY2Mate.is%20-%201%20A.M%20Study%20Session%20%F0%9F%93%9A%20-%20%5Blofi%20hip%20hopchill%20beats%5D-lTRiuFIWV54-128k-1655168017632.mp3?alt=media&token=74f542c9-6eff-4803-a4b3-12be658611d8"

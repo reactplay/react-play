@@ -2,20 +2,15 @@ import React, { useRef } from 'react';
 import './player.scss';
 import {BsFillPlayCircleFill, BsFillPauseCircleFill, BsFillSkipStartCircleFill, BsSkipEndCircleFill, BsFillSkipEndCircleFill} from 'react-icons/bs';
 
-const Player = ({audioElem, isplaying, setisplaying, currentSong, setCurrentSong, songs})=> {
+const Player = ({audioElem, isPlaying, setisPlaying, currentSong, setCurrentSong, songs})=> {
 
   const clickRef = useRef();
 
-  const PlayPause = ()=>
-  {
-    setisplaying(!isplaying);
-
-  }
-
+  const PlayPause = ()=> setisPlaying(!isPlaying);
 
   const checkWidth = (e)=>
   {
-    let width = clickRef.current.clientWidth;
+    const width = clickRef.current.clientWidth;
     const offset = e.nativeEvent.offsetX;
 
     const divprogress = offset / width * 100;
@@ -23,7 +18,7 @@ const Player = ({audioElem, isplaying, setisplaying, currentSong, setCurrentSong
 
   }
 
-  const skipBack = ()=>
+  const handleSkipBack = ()=>
   {
     const index = songs.findIndex(x=>x.title == currentSong.title);
     if (index == 0)
@@ -39,7 +34,7 @@ const Player = ({audioElem, isplaying, setisplaying, currentSong, setCurrentSong
   }
 
 
-  const skiptoNext = ()=>
+  const handleSkipToNext = ()=>
   {
     const index = songs.findIndex(x=>x.title == currentSong.title);
 
@@ -66,9 +61,9 @@ const Player = ({audioElem, isplaying, setisplaying, currentSong, setCurrentSong
         </div>
       </div>
       <div className="controls">
-        <BsFillSkipStartCircleFill className='btn_action' onClick={skipBack}/>
-        {isplaying ? <BsFillPauseCircleFill className='btn_action pp' onClick={PlayPause}/> : <BsFillPlayCircleFill className='btn_action pp' onClick={PlayPause}/>}
-        <BsFillSkipEndCircleFill className='btn_action' onClick={skiptoNext}/>        
+        <BsFillSkipStartCircleFill className='btn_action' onClick={handleSkipBack}/>
+        {isPlaying ? <BsFillPauseCircleFill className='btn_action pp' onClick={PlayPause}/> : <BsFillPlayCircleFill className='btn_action pp' onClick={PlayPause}/>}
+        <BsFillSkipEndCircleFill className='btn_action' onClick={handleSkipToNext}/>        
       </div>
     </div>
   

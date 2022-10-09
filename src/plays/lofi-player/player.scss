@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.536);
+    background-color: rgba(255, 255, 255, 0.409);
     box-shadow: {
         x: 20px;
         y: 20px;
@@ -21,7 +21,9 @@
     >*
     {
         padding: 1rem 0;
-        color: rgb(202, 202, 202);
+        color: rgb(59, 59, 59);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
     }
 
     .title{
