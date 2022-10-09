@@ -1,4 +1,6 @@
-[cover.png](https://postimg.cc/xk9PwyHh)
+<p align="center">
+    <img src="https://i.postimg.cc/G2zVxzZZ/trest.png" />    
+</p>
 
 # Emojipedia 😉
 
