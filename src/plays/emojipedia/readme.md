@@ -1,3 +1,5 @@
+[cover.png](https://postimg.cc/xk9PwyHh)
+
 # Emojipedia 😉
 
 Emojipedia is a fun project play where users can search for any emojis and can copy or use it anywhere.
