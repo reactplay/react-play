@@ -15,6 +15,7 @@ export default function Gallery() {
       speechHandler(msg)
       return currentData.type === catItem;
     });
+    setData(result);
   }
   const speechHandler = (msg) => {
     msg.text = ourText
@@ -57,7 +58,7 @@ export default function Gallery() {
                   <source src={videoUrl} />
                 </video>
 
-                 <div class="know-image-transparent-box">
+                <div class="know-image-transparent-box">
                   <div class="know-image-caption">
                     <p>{title}</p>
                     <button class="know-image-opacity-low" onClick={sayAboutImage}>Know Me</button>
