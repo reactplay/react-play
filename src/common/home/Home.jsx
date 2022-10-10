@@ -14,6 +14,7 @@ import { Tweet } from "react-twitter-widgets";
 import Spinner from "../spinner/spinner";
 import HackathonBanner from "common/activities/hackathon/HackathonBanner";
 import DefaultBanner from "common/defaultBanner/DefaultBanner";
+import { page_figures } from "common/services/dashboard/page-figures";
 
 const Home = () => {
   const [gitHubStars, setGitHubStars] = useState("...");
@@ -23,6 +24,7 @@ const Home = () => {
   const { setSearchTerm, searchTerm, setFilterQuery } =
     useContext(SearchContext);
   useEffect(() => {
+    page_figures();
     setGitHubStars(data.stargazers_count);
     setSearchTerm("");
     setFilterQuery({
