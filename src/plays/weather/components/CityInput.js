@@ -42,7 +42,7 @@ export default function CityInput({
   };
 
   return (
-    <form onSubmit={fetchWeather} className="w-1/4">
+    <form onSubmit={fetchWeather}>
       <input
         value={cityInput}
         className="p-2 text-sm rounded-lg"
