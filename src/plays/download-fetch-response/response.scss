@@ -1,0 +1,30 @@
+.fetch-download
+{
+    .note-txt
+    {
+        font-size: 11px !important;
+        padding-top: 2rem;
+        color: darkslategrey;
+    }
+    .desk-screen
+    {
+        min-width: 650px
+    }
+    .other-screen
+    {
+        min-width:-webkit-fill-available; ;
+         }
+.clazz {
+        input {
+            border: none;
+            overflow: auto;
+            outline: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            resize: none;
+            width: -webkit-fill-available;
+            ;
+        }
+    }
+}
