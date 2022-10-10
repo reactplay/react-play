@@ -7,7 +7,7 @@ export default function ForecastData({ forecastData }) {
         // Filter is done to get the forecast from the next day
         .filter((_, index) => (index + 1) % 8 === 0)
         .map((data) => (
-          <ForecastItem data={data} />
+          <ForecastItem key={data.dt} data={data} />
         ))}
     </div>
   );

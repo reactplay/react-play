@@ -1,3 +1,5 @@
+import { fetchForecast, WEATHER_API_BASE_URL } from "../utils";
+
 export default function CityInput({
   cityInput,
   setCityInput,
@@ -7,18 +9,6 @@ export default function CityInput({
 }) {
   const handleCityInput = (e) => {
     setCityInput(e.target.value);
-  };
-
-  const fetchForecast = async (lat, long) => {
-    try {
-      const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
-      );
-      const data = await res.json();
-      setForecastData(data);
-    } catch (e) {
-      console.log(e);
-    }
   };
 
   const fetchWeather = async (e) => {
@@ -31,20 +21,20 @@ export default function CityInput({
     try {
       // Show loading messae
       setIsLoading(true);
+
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+        `${WEATHER_API_BASE_URL}/weather?q=${cityInput}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
       );
       const json = await res.json();
 
       // Fetch forecast only for valid city name
       if (json.cod !== "404") {
-        await fetchForecast(json.coord.lat, json.coord.lon);
+        await fetchForecast(json.coord.lat, json.coord.lon, setForecastData);
       }
 
       setWeatherDetails(json);
 
       // Hide loading message
-
       setIsLoading(false);
     } catch (e) {
       console.log(e);
@@ -52,7 +42,7 @@ export default function CityInput({
   };
 
   return (
-    <form onSubmit={fetchWeather}>
+    <form onSubmit={fetchWeather} className="w-1/4">
       <input
         value={cityInput}
         className="p-2 text-sm rounded-lg"
