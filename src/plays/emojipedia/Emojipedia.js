@@ -31,9 +31,9 @@ function Emojipedia(props) {
   // Search filter
   useEffect(() => {
     const delayFn = setTimeout(() => {
-      if (query !== "") {
-        setEmojisList(
-          emojisList?.filter((emoji) =>
+      if (query) {
+        setEmojisList((prevEmojiList) =>
+          prevEmojiList?.filter((emoji) =>
             emoji?.unicodeName?.toLowerCase().includes(query?.toLowerCase())
           )
         );
@@ -46,10 +46,14 @@ function Emojipedia(props) {
   }, [query, data, emojisList]);
 
   useEffect(() => {
-    if (error) return toast.error(error);
+    if (error) {
+      toast.error(error);
+    }
 
     // Set Emoji list
-    if (data?.length) setEmojisList(data);
+    if (data?.length) {
+      setEmojisList(data);
+    }
 
     // Set focus to search field
     inputRef.current.focus();
@@ -78,7 +82,9 @@ function Emojipedia(props) {
 
             <div className="text-white grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
               {loading
-                ? Array.from(Array(25).keys()).map(() => <SkeletonCard />)
+                ? Array.from(Array(25).keys()).map((_, index) => (
+                    <SkeletonCard key={index} />
+                  ))
                 : emojisList?.map((emoji, index) => (
                     <EmojiCard
                       key={index}

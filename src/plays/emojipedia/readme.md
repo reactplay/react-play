@@ -33,7 +33,7 @@ Emojipedia is a fun project play where users can search for any emojis and can c
 
 - There is also a search bar where users can search for any emoji.
 
-- When `Emojipedia` components are rendered on UI, it will fetch all the emojis from [Open Emoji API](https://emoji-api.com/) endpoint and set it to the `EmojisList` state. I've used the custom hook `useFetch`()` for fetching the emojis.
+- When `Emojipedia` components are rendered on UI, it will fetch all the emojis from [Open Emoji API](https://emoji-api.com/) endpoint and set it to the `EmojisList` state. I've used the custom hook `useFetch`() for fetching the emojis.
 
 - `EmojiCard` component is used to render `emojiList` data in the card format.
 
