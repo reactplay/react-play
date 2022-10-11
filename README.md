@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-45-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-51-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -146,9 +146,9 @@ Or
 yarn cypress:open
 ```
 
-It will open cypress dashboard, through which you need to select `E2E Testing`.
-Once you done with selection you will get options to choose your preferred browser in which you want to run the test.!
-Once you done with selecting the browser you need to click on `Start E2E Testing in <SELECTED_BROWSER_NAME>.` Selected browser will popup and you can able to see list of cypress test, click on the test to start testing.!
+It will open the cypress dashboard, through which you need to select `E2E Testing`.
+Once you are done with the selection you will get options to choose your preferred browser in which you want to run the test.!
+Once you select the browser you need to click on `Start E2E Testing in <SELECTED_BROWSER_NAME>.` The chosen browser will pop up you can see a list of cypress tests, click on the test to start testing.!
 
 ### 🚀 Deploy
 
@@ -270,11 +270,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://github.com/yash91989201"><img src="https://avatars.githubusercontent.com/u/68579045?v=4?s=100" width="100px;" alt="yash91989201"/><br /><sub><b>yash91989201</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=yash91989201" title="Code">💻</a></td>
       <td align="center"><a href="http://makdoom.github.io"><img src="https://avatars.githubusercontent.com/u/28287599?v=4?s=100" width="100px;" alt="Makdoom Shaikh"/><br /><sub><b>Makdoom Shaikh</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=makdoom" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/muzaffar640"><img src="https://avatars.githubusercontent.com/u/55223302?v=4?s=100" width="100px;" alt="Muzaffar Hossain"/><br /><sub><b>Muzaffar Hossain</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=muzaffar640" title="Code">💻</a></td>
+      <td align="center"><a href="https://bio.link/susmitadey"><img src="https://avatars.githubusercontent.com/u/79099734?v=4?s=100" width="100px;" alt="Susmita Dey"/><br /><sub><b>Susmita Dey</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Susmita-Dey" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/SSK-14"><img src="https://avatars.githubusercontent.com/u/45158568?v=4?s=100" width="100px;" alt="Sanjay Kumar"/><br /><sub><b>Sanjay Kumar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=SSK-14" title="Code">💻</a></td>
+      <td align="center"><a href="http://vinaypatil.netlify.app"><img src="https://avatars.githubusercontent.com/u/29520476?v=4?s=100" width="100px;" alt="Vinay Patil "/><br /><sub><b>Vinay Patil </b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Engineervinay" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/abhi-works"><img src="https://avatars.githubusercontent.com/u/115144059?v=4?s=100" width="100px;" alt="Abhilash"/><br /><sub><b>Abhilash</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=abhi-works" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/KashishLakhara04"><img src="https://avatars.githubusercontent.com/u/104296574?v=4?s=100" width="100px;" alt="Kashish Lakhara"/><br /><sub><b>Kashish Lakhara</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=KashishLakhara04" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/hiimnhan"><img src="https://avatars.githubusercontent.com/u/35358825?v=4?s=100" width="100px;" alt="hiimnhan"/><br /><sub><b>hiimnhan</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=hiimnhan" title="Code">💻</a></td>
     </tr>
   </tbody>
-  <tfoot>
-    
-  </tfoot>
 </table>
 
 <!-- markdownlint-restore -->

@@ -409,6 +409,60 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Susmita-Dey",
+      "name": "Susmita Dey",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79099734?v=4",
+      "profile": "https://bio.link/susmitadey",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "SSK-14",
+      "name": "Sanjay Kumar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45158568?v=4",
+      "profile": "https://github.com/SSK-14",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Engineervinay",
+      "name": "Vinay Patil ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29520476?v=4",
+      "profile": "http://vinaypatil.netlify.app",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "abhi-works",
+      "name": "Abhilash",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115144059?v=4",
+      "profile": "https://github.com/abhi-works",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "KashishLakhara04",
+      "name": "Kashish Lakhara",
+      "avatar_url": "https://avatars.githubusercontent.com/u/104296574?v=4",
+      "profile": "https://github.com/KashishLakhara04",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "hiimnhan",
+      "name": "hiimnhan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35358825?v=4",
+      "profile": "https://github.com/hiimnhan",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -416,5 +470,6 @@
   "projectOwner": "reactplay",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
