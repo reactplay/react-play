@@ -9,8 +9,9 @@ function LofiPlayer(props) {
 
   // Your Code Start below.
   const [songs, setSongs] = useState(SONGS_DATA);
-  const [isPlaying, setisPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(SONGS_DATA[1]);
+  const handlePlayState = (value) => setIsPlaying(value);
 
   const audioElem = useRef();
   const vidLink= "https://firebasestorage.googleapis.com/v0/b/musicplayer-bc7a2.appspot.com/o/video%2F7btrrd%20(1).mp4?alt=media&token=4a59fcc2-368b-40b4-a486-6cbff3c5c98b";
@@ -45,7 +46,7 @@ function LofiPlayer(props) {
         <div className="play-details-body">    
               <div className="app-music">
                 <audio src={currentSong.url} ref={audioElem} onTimeUpdate={handleOnPlay} />
-                <Player songs={songs} setSongs={setSongs} isPlaying={isPlaying} setisPlaying={setisPlaying} audioElem={audioElem} currentSong={currentSong} setCurrentSong={setCurrentSong} />
+                <Player songs={songs} setSongs={setSongs} isPlaying={isPlaying} setIsPlaying={handlePlayState} audioElem={audioElem} currentSong={currentSong} setCurrentSong={setCurrentSong} />
               </div>
               <div>
 

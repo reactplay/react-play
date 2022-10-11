@@ -2,11 +2,11 @@ import React, { useRef } from 'react';
 import './player.scss';
 import {BsFillPlayCircleFill, BsFillPauseCircleFill, BsFillSkipStartCircleFill, BsSkipEndCircleFill, BsFillSkipEndCircleFill} from 'react-icons/bs';
 
-const Player = ({audioElem, isPlaying, setisPlaying, currentSong, setCurrentSong, songs})=> {
+const Player = ({audioElem, isPlaying, setIsPlaying, currentSong, setCurrentSong, songs})=> {
 
   const clickRef = useRef();
 
-  const PlayPause = ()=> setisPlaying(!isPlaying);
+  const handlePlayPause = ()=> setIsPlaying(!isPlaying);
 
   const checkWidth = (e)=>
   {
@@ -62,7 +62,7 @@ const Player = ({audioElem, isPlaying, setisPlaying, currentSong, setCurrentSong
       </div>
       <div className="controls">
         <BsFillSkipStartCircleFill className='btn_action' onClick={handleSkipBack}/>
-        {isPlaying ? <BsFillPauseCircleFill className='btn_action pp' onClick={PlayPause}/> : <BsFillPlayCircleFill className='btn_action pp' onClick={PlayPause}/>}
+        {isPlaying ? <BsFillPauseCircleFill className='btn_action pp' onClick={handlePlayPause}/> : <BsFillPlayCircleFill className='btn_action pp' onClick={handlePlayPause}/>}
         <BsFillSkipEndCircleFill className='btn_action' onClick={handleSkipToNext}/>        
       </div>
     </div>
