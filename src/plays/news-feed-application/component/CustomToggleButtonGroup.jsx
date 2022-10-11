@@ -1,7 +1,6 @@
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { categories } from "../data";
-
+import { categories } from "../countriesAndCategories";
 
 const CustomToggleButtonGroup = ({ selectedCategory, handleCategoryChange}) => {
   const control = {

@@ -3,13 +3,12 @@ import { useState, useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
-import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import { data, countries } from "./data";
+import { countries } from "./countriesAndCategories";
 import NewsCard from "./component/Card";
-import "./styles.css";
 import CustomToggleButtonGroup from "./component/CustomToggleButtonGroup";
+import "./styles.css";
 
 function NewsFeedApplication(props) {
   const [newsData, setNewsData] = useState();
@@ -23,8 +22,7 @@ function NewsFeedApplication(props) {
       ).then((data) => data.json());
       setNewsData(res.articles);
     }
-    // fetchData();
-    setNewsData(data);
+    fetchData();
   }, [selectedCountry, selectedCategory]);
 
   const handleCountryChange = (event) => {
@@ -34,8 +32,6 @@ function NewsFeedApplication(props) {
   const handleCategoryChange = (event) => {
     updateSelectedCategory(event.target.value);
   };
-
-  // Your Code Start below.
 
   return (
     <>
@@ -76,13 +72,10 @@ function NewsFeedApplication(props) {
               {newsData ? (
                 newsData.map((news, i) => <NewsCard news={news} />)
               ) : (
-                <div>
-                  <CircularProgress />{" "}
-                </div>
+                <CircularProgress />
               )}
             </div>
           </div>
-          {/* Your Code Ends Here */}
         </div>
       </div>
     </>
