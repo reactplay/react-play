@@ -43,7 +43,7 @@ function CreateArea(props) {
           value={note.content}
           placeholder="Take a note..."
         />
-        <button disabled={note.title === '' && note.content === ''} className="create-button" onClick={submitNote}>< FaPlusCircle /></button>
+        <button disabled={note.title.trim().length === 0 && note.content.trim().length === 0} className={(note.title.trim().length === 0 && note.content.trim().length === 0) ? 'create-button-disabled' : 'create-button'} onClick={submitNote}>< FaPlusCircle /></button>
       </form>
     </div>
   );
