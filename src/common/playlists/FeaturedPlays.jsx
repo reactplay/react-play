@@ -12,8 +12,10 @@ const FeaturedPlays = () => {
       </h2>
       <ul className="list-plays">
         {loading && <p>Loading...</p>}
-        {error && <p>{error?.message ?? 'Something went wrong'}</p>}
-        {success && data?.map((play, index) => <PlayThumbnail key={play.id} play={play} />)}
+        {error && <p>{error?.message ?? "Something went wrong"}</p>}
+        {success && data?.map((play, index) => (
+          <PlayThumbnail key={index} play={play} />
+        ))}
       </ul>
     </>
   )
