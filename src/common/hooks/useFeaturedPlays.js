@@ -81,7 +81,7 @@ const useFeaturedPlays = () => {
     })();
   }, [viewsData, slugs, data]);
 
-  return [loading, error, trendingPlays];
+  return [loading, error, slugs, viewsData, data, trendingPlays];
 };
 
 export default useFeaturedPlays;
