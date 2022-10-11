@@ -6,12 +6,12 @@ const page_figures = async (start_date, end_date, tz, unit) => {
 
   try {
     const result = await axios({
-      method: 'POST',
-      url: 'https://analytics.reactplay.io/api/auth/login',
-      data: {
-        username: "reactplayio",
-        password: "reactplayadmin"
-      },
+      method: 'GET',
+      withCredentials: true,
+      url: 'https://analytics.reactplay.io/api/websites',
+      headers: {
+        'Authorization': `Bearer KOCazGR0IoyYOS7MT0XggVLEGAaLGeJnOuezhhWj9pVJwkdVZg+jhVyI/yh6p4Yu9Pc/hqnatgIxaHRmIeokaTNDnNfIB7iJO0j+/f0ktqbmfj0xQ3FSMQw6qgoVwIofiQuLlUYhv+CTcAB/+9emekjaqBV/uyvJd2iaEpRt+IEnAC/eaf4U7vfLc1SLzeLv6cgeCxdYfHHbQgLoJSn56eeTsF333hXV/nVgoOaKxPx8T2dMChrfabVFJqtr2kc+GK8UAffs5Bo6y3usU6EQlErpmhK/qOxSJZnyJJcCkJ/OK6aZnsCS0rYuYoF/0Qcgkplv0XBYlWeen1v5/QnOKD9pga2Tm0notX1Qtte4ZBI=`
+      }
     })
     console.log(result);
   } catch (e) {
