@@ -10,18 +10,27 @@
 
 .card {
     cursor: pointer;
-    background-color: #f1f2f3 !important;
+    background-color: #fff !important;
 }
 
 .card:hover {
     transition: transform .2s;
     transform: scale(1.1);
-    background-color: #fff !important;
 }
-  
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 16px;
+}
+
 .author {
+    font-weight: 600;
     font-size: 12px;
-    padding: 16px;
+}
+
+.published-at {
+    font-size: 10px;
 }
 
 .header-panel {
