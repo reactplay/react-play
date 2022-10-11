@@ -1,7 +1,6 @@
 /* enter stlyes here */
 .card-container {
     display: grid;
-    /* grid-template-columns: repeat(5, 200px); */
     grid-gap: 24px;
     padding: 84px 16px;
     justify-content: space-evenly;
@@ -91,11 +90,6 @@
     .menu-form-control {
         width: 120px;
     }
-    /* .category-container {
-        display: flex;
-        flex-direction: column;
-    } */
-
 }
 
 @media (min-width: 780px) {

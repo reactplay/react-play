@@ -56,7 +56,9 @@ function NewsFeedApplication(props) {
                       }}
                     >
                       {countries.map((country) => (
-                        <MenuItem key={country.name} value={country.code}>{country.name}</MenuItem>
+                        <MenuItem key={country.name} value={country.code}>
+                          {country.name}
+                        </MenuItem>
                       ))}
                     </Select>
                   </FormControl>
