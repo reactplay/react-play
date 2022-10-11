@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/alt-text */
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 
 const NewsCard = (props) => {
   return (
@@ -24,7 +22,7 @@ const NewsCard = (props) => {
             "- " + props.news.author}
         </div>
         <div className="published-at">
-        {"published at: " + new Date(props.news.publishedAt).toLocaleString()}
+          {"published at: " + new Date(props.news.publishedAt).toLocaleString()}
         </div>
       </div>
     </Card>
