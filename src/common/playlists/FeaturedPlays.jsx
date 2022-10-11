@@ -2,7 +2,7 @@ import PlayThumbnail from "./PlayThumbnail";
 import useFeaturedPlays from "common/hooks/useFeaturedPlays";
 
 const FeaturedPlays = () => {
-  const [wloading, error, slugs, viewsData, data, trendingPlays] = useFeaturedPlays();
+  const [loading, error, slugs, viewsData, data, trendingPlays] = useFeaturedPlays();
   const success = !loading && !error && !!trendingPlays.length;
   
   console.log(slugs)
