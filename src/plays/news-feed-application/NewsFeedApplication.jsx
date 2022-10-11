@@ -56,7 +56,7 @@ function NewsFeedApplication(props) {
                       }}
                     >
                       {countries.map((country) => (
-                        <MenuItem value={country.code}>{country.name}</MenuItem>
+                        <MenuItem key={country.name} value={country.code}>{country.name}</MenuItem>
                       ))}
                     </Select>
                   </FormControl>
@@ -69,7 +69,7 @@ function NewsFeedApplication(props) {
             </div>
             <div className="card-container">
               {newsData ? (
-                newsData.map((news, i) => <NewsCard news={news} />)
+                newsData.map((news, i) => <NewsCard news={news} key={i} />)
               ) : (
                 <CircularProgress />
               )}
