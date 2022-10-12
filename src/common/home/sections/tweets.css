@@ -1,0 +1,69 @@
+/* Tweet section */
+
+.home-tweets {
+  position: relative;
+  padding: 5rem 0 6rem 0;
+  background-color: var(--color-neutral-20);
+}
+
+.home-tweets .title-primary {
+  text-align: center;
+  position: relative;
+  margin: 1.5rem 0 3rem 0;
+  font-family: var(--ff-accent);
+  font-size: var(--fs-xxl);
+  text-align: center;
+  color: var(--color-neutral-80);
+  line-height: 1.2;
+}
+
+.home-tweets .title-primary strong {
+  position: relative;
+  font-family: var(--ff-accent);
+  position: relative;
+}
+
+.home-tweets .title-primary strong span {
+  position: relative;
+  font-family: var(--ff-accent);
+}
+
+.home-tweets .title-primary strong:before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background-color: var(--color-brand-primary);
+  left: 0;
+  right: 0;
+  bottom: 0.4rem;
+  z-index: 0;
+}
+
+.tweets-container.active {
+  width: 90.5%;
+  margin: 0 auto;
+  margin-top: 4.5em;
+  display: flex;
+  /* grid-template-columns: repeat(auto-fit,370px);
+      grid-template-rows: repeat(auto-fill,400px);
+      grid-auto-rows:auto;
+      grid-auto-columns: auto;
+      grid-row-gap:1em; */
+  justify-content: center;
+  align-items: center;
+  /* row-gap: 1.3em; */
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.tweets-container > div {
+  /* height: fit-content; */
+  width: clamp(5em, 320px, 44em);
+  /* max-width: 410px; */
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.097));
+}
+
+.error__message__twitter {
+    @apply text-red-400;
+}

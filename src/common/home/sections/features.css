@@ -1,0 +1,102 @@
+/* Home Features */
+:root {
+  --home-features-icon-size: 120px;
+}
+.home-features {
+  position: relative;
+  padding: 8rem 0;
+}
+
+.list-home-features {
+  position: relative;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+  width: 80%;
+  max-width: var(--screen-lg-max);
+}
+
+@media screen and (max-width: 1024px) {
+  .list-home-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .list-home-features {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.list-home-features .home-features-item {
+  list-style: none;
+  color: var(--color-neutral-10);
+}
+.list-home-features .home-features-item .item-icon {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--home-features-icon-size);
+  height: var(--home-features-icon-size);
+  background-color: var(--color-brand-primary);
+  border: solid 2px var(--color-brand-primary);
+  border-top-left-radius: calc(var(--home-features-icon-size) / 2);
+  border-bottom-left-radius: calc(var(--home-features-icon-size) / 2);
+  border-bottom-right-radius: calc(var(--home-features-icon-size) / 2);
+  /* box-shadow: 0px -1px 26px 0px rgba(0,14,17,0.59);
+      -webkit-box-shadow: 0px -1px 26px 0px rgba(0,14,17,0.59);
+      -moz-box-shadow: 0px -1px 26px 0px rgba(0,14,17,0.59); */
+}
+
+.list-home-features .home-features-item .item-icon .icon {
+  width: 48px;
+  height: 48px;
+}
+
+.list-home-features .home-features-item .item-title {
+  margin: 1rem 0 0.6rem 0;
+  font-family: var(--ff-accent);
+  font-size: var(--fs-lg);
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--color-neutral-80);
+}
+
+.list-home-features .home-features-item .item-desc {
+  margin: 0;
+  font-size: var(--fs-rg);
+  text-align: center;
+  color: var(--color-neutral-60);
+}
+
+/* Home ideas */
+.home-ideas {
+  max-width: var(--screen-lg-max);
+  margin: 4rem auto 0 auto;
+  padding: 4rem 0 0 0;
+  border-top: solid 1px var(--color-neutral-30);
+  text-align: center;
+}
+
+.home-ideas .icon {
+  margin: 0 auto 1rem auto;
+}
+
+.home-ideas .ideas-title {
+  margin: 0 0 3rem 0;
+  font-family: var(--ff-accent);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-brand-primary);
+}
+
+.home-ideas .ideas-lead {
+  margin: 0;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-regular);
+  color: var(--color-neutral-60);
+}

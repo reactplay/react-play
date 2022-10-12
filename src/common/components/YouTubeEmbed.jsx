@@ -1,3 +1,4 @@
+import './YouTubeEmbed.css';
 
 const YouTubeEmbed = ({ videoId, title }) => {
   return (

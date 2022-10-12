@@ -1,0 +1,158 @@
+/* Home Body content */
+.app-home-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: var(--color-neutral-90); */
+  background: rgb(1, 4, 38);
+  background: rgb(1, 4, 38);
+  background: -moz-linear-gradient(180deg, rgba(1, 4, 38, 1) 0%, rgba(76, 91, 94, 1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(1, 4, 38, 1) 0%, rgba(76, 91, 94, 1) 100%);
+  background: linear-gradient(180deg, rgba(1, 4, 38, 1) 0%, rgba(76, 91, 94, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010426",endColorstr="#4c5b5e",GradientType=1);
+  padding: 6rem 0 2rem 0;
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Home abstract graphics */
+.home-bg-graphics {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.home-bg-graphics-sm {
+  position: absolute;
+  top: 5%;
+  right: 20%;
+  opacity: 0.14;
+  transform: rotate(30deg) scale(0.6);
+  animation: flowerSpinSm 20s linear 0s infinite normal forwards;
+}
+
+.home-bg-graphics-rg {
+  position: absolute;
+  opacity: 0.08;
+  top: 35%;
+  transform: rotate(10deg) scale(1.4) translateX(-25%);
+  animation: flowerSpinRg 50s linear 0s infinite reverse forwards;
+}
+
+.home-bg-graphics-lg {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  opacity: 0.04;
+  animation: flowerSpinLg 100s linear 0s infinite normal forwards;
+}
+
+@media screen and (max-width: 768px) {
+  .home-bg-graphics-sm {
+    top: 0%;
+  }
+
+  .home-bg-graphics-rg {
+    left: -15%;
+    top: 35%;
+  }
+
+  .home-bg-graphics-lg {
+    top: 20%;
+    right: -15%;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes flowerSpinSm {
+  from {
+    transform: rotate(360deg) scale(0.6);
+  }
+  to {
+    transform: rotate(0deg) scale(0.6);
+  }
+}
+
+@keyframes flowerSpinLg {
+  from {
+    transform: rotate(0deg) scale(5);
+  }
+  to {
+    transform: rotate(360deg) scale(5);
+  }
+}
+
+@keyframes flowerSpinRg {
+  from {
+    transform: rotate(0deg) scale(1.4);
+  }
+  to {
+    transform: rotate(360deg) scale(1.4);
+  }
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 576px) {
+  .app-home-body .body-c2a {
+    flex-direction: column;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app-home-body {
+    min-height: unset;
+  }
+
+  .app-home-body .app-home-body-content {
+    margin-bottom: 0;
+  }
+
+  .app-home-body .body-title {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .app-home-body .body-title br {
+    display: none;
+  }
+
+  @keyframes flowerSpinSm {
+    from {
+      transform: rotate(360deg) scale(0.3);
+    }
+    to {
+      transform: rotate(0deg) scale(0.3);
+    }
+  }
+
+  @keyframes flowerSpinLg {
+    from {
+      transform: rotate(0deg) scale(3);
+    }
+    to {
+      transform: rotate(360deg) scale(3);
+    }
+  }
+
+  @keyframes flowerSpinRg {
+    from {
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .app-home-body .body-title strong::after {
+    height: 1px;
+    bottom: 3px;
+  }
+}

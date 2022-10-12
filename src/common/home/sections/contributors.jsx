@@ -1,10 +1,11 @@
 import useContributors from "common/hooks/useContributors";
+import './contributors.css';
 
-const Contributors = () => {
+export default function SectionContributors() {
   const { data, error, isLoading } = useContributors(true);
 
   return (
-    <>
+    <section className="home-contributors" data-testid="contributors-section">
       <h3 className="title-primary">
         <strong>
           <span>Big Thanks</span>
@@ -34,8 +35,6 @@ const Contributors = () => {
             </li>
           ))}
       </ul>
-    </>
+    </section>
   );
-};
-
-export default Contributors;
+}
