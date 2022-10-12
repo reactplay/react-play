@@ -6,6 +6,8 @@ function CreateArea(props) {
     title: "",
     content: ""
   });
+  const title_len = note.title.trim().length;
+  const content_len = note.content.trim().length;
   function handleChange(event) {
     const { name, value } = event.target;
     setNote(prevNote => {
@@ -43,7 +45,7 @@ function CreateArea(props) {
           value={note.content}
           placeholder="Take a note..."
         />
-        <button disabled={note.title.trim().length === 0 && note.content.trim().length === 0} className={(note.title.trim().length === 0 && note.content.trim().length === 0) ? 'create-button-disabled' : 'create-button'} onClick={submitNote}>< FaPlusCircle /></button>
+        <button disabled={title_len === 0 && content_len === 0} className={(title_len === 0 && content_len === 0) ? 'create-button-disabled' : 'create-button'} onClick={submitNote}>< FaPlusCircle /></button>
       </form>
     </div>
   );
