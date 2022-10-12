@@ -30,8 +30,8 @@ const ExtendedFooter = () => {
             </a>{" "}
             and friends.
           </p>
-          <p>
-            <small>Connect with us</small>
+          <div>
+            <p><small>Connect with us</small></p> 
             <ul className="social-links">
               <li>
                 <a
@@ -78,20 +78,20 @@ const ExtendedFooter = () => {
                 </a>
               </li>
             </ul>
-          </p>
-          <p>
-            <small>Email us</small>{" "}
+          </div>
+          <div>
+            <p><small>Email us</small></p> {" "}
             <div>
-              <a
+              <p><a
                 href="mailto:contact@reactplay.io"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-link-default"
               >
                 contact@reactplay.io
-              </a>
+              </a></p>
             </div>
-          </p>
+          </div>
           <p className="mt-8 mb-4">
             <a href="https://www.netlify.com" className="inline-block"> <img src="https://www.netlify.com/v3/img/components/netlify-light.svg" alt="Deploys by Netlify" /> </a>
           </p>
@@ -117,25 +117,29 @@ const ExtendedFooter = () => {
               <span className="btn-label">Browse</span>
             </Link>
           </div>
-          <p className="mt-10">
-            Not sure how to get started? <br />
-            We have a lot of ideas for you to get started.
+          <div className="mt-10">
+            <p>Not sure how to get started? <br />
+            We have a lot of ideas for you to get started.</p>
             <div className="mt-2">
-              <Link to="/ideas" className="home-anchor home-anchor-sm">
-                <span className="text">Get started</span>
-              </Link>
+              <p> 
+                <Link to="/ideas" className="home-anchor home-anchor-sm">
+                  <span className="text">Get started</span>
+                </Link>
+              </p> 
             </div>
             <div className="mt-2">
-              <a
-                href="https://blog.reactplay.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-anchor home-anchor-sm"
-              >
-                <span className="text">Read our blog posts</span>
-              </a>
+              <p> 
+                <a
+                  href="https://blog.reactplay.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="home-anchor home-anchor-sm"
+                >
+                  <span className="text">Read our blog posts</span>
+                </a>
+              </p> 
             </div>
-          </p>
+          </div>
         </div>
         <div className="body-tertiary">
           <h3 className="section-title">Show love</h3>

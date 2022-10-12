@@ -9,6 +9,14 @@ const Header = () => {
   const location = useLocation();
   const pathName = location.pathname;
 
+  const [reset, setReset] = useState({ search: false, filter: false });
+
+  useEffect(() => {
+    if (location.state) {
+      setReset({...location.state });
+    }
+  }, [location.state]);
+
   const [showHideBits, setShowHideBits] = useState({
     showSearch: false,
     showBrowse: false,
@@ -16,54 +24,51 @@ const Header = () => {
   });
 
   useEffect(() => {
+    if (pathName !== "/plays") {
+      setReset({ search: false, filter: false });
+    }
     if (pathName === "/") {
-      setShowHideBits((prev)=>({
-        ...prev,
+      setShowHideBits({
         showSearch: false,
         showBrowse: true,
         setHeaderStyle: false,
-      }));
+      });
     } else if (pathName === "/ideas") {
-      setShowHideBits((prev) => ({
-        ...prev,
+      setShowHideBits({
         showSearch: false,
         showBrowse: true,
         setHeaderStyle: true,
-      }));
+      });
     } else if (pathName === "/tech-stacks") {
-      setShowHideBits((prev) => ({
-        ...prev,
+      setShowHideBits({
         showSearch: false,
         showBrowse: true,
         setHeaderStyle: true,
-      }));
+      });
     } else if (pathName.startsWith("/plays")) {
-      setShowHideBits((prev) => ({
-        ...prev,
+      setShowHideBits({
         showSearch: true,
         showBrowse: false,
         setHeaderStyle: true,
-      }));
+      });
     }
   }, [pathName]);
 
   return (
     <header
-      className={`app-header ${
-        showHideBits.setHeaderStyle ? "" : " app-header-home"
-      }`}
-      data-testid="app-header"
+      className={`app-header ${showHideBits.setHeaderStyle ? "" : " app-header-home"}`}
+      data-testid='app-header'
     >
       <span>
-        <Link to="/" className="app-logo" data-testid="app-logo">
-          <span className="sr-only">React Play</span>
+        <Link to='/' className='app-logo' data-testid='app-logo'>
+          <span className='sr-only'>React Play</span>
         </Link>
       </span>
-      <div className="app-header-search">
+      <div className='app-header-search'>
         {showHideBits.showSearch && (
           <>
-            <SearchPlays />
-            <FilterPlays />
+            <SearchPlays reset={reset} />
+            <FilterPlays reset={reset} />
           </>
         )}
       </div>
