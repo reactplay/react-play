@@ -51,7 +51,7 @@ export default function Country({ activeGeo }) {
                   src={country.flags.png}
                   className="w-[350px] h-[200px] my-2 mx-auto md:mt-6"
                 />
-                <div className="w-[350px] md:w-[500px] xl:w-[350px]  mx-auto  p-4">
+                <div className="w-[400px] md:w-[500px] xl:w-[400px]  mx-auto  pl-4 ">
                   <div className="flex m-1">
                     <div className="w-[120px] text-xl font-semibold capitalize ">
                       Capital
@@ -68,12 +68,16 @@ export default function Country({ activeGeo }) {
                       {Object.keys(country.currencies).map(
                         (currency, index) => {
                           return (
-                            <span
-                              key={index}
-                              className="bg-lime-600 text-white px-1 rounded m-1"
-                            >
-                              {currency}
-                            </span>
+                            <div key={index}>
+                              <span
+                                key={index}
+                                className=" text-2xl px-1 rounded m-1"
+                              >
+                                {country.currencies[currency].symbol},
+                              </span>
+                              <span>{currency}</span>,
+                              <div>{country.currencies[currency].name}</div>
+                            </div>
                           );
                         }
                       )}
@@ -84,7 +88,7 @@ export default function Country({ activeGeo }) {
                       Population
                     </div>
                     <div className="text-xl w-[200px] ">
-                      {country.population}
+                      {country.population.toLocaleString()}
                     </div>
                   </div>
                   <div className="flex m-1">

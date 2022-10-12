@@ -20,6 +20,7 @@ const Author = ({ user }) => {
               : userImage
             : userImage
         }
+        loading='lazy'
         width='25px'
         height='25px'
         alt='avatar'
@@ -69,14 +70,13 @@ const PlayThumbnail = ({ play }) => {
 
 
   return (
-    <li key={play.id}>
+    <li>
       <Link
         to={`/plays/${encodeURI(play.github.toLowerCase())}/${play.slug}`}
-        state={{ id: play.id }}
       >
         <div className='play-thumb'>
           <Shimmer>
-            <img src={cover} alt='' className='play-thumb-img' />
+            <img loading='lazy' src={cover} alt='' className='play-thumb-img' />
           </Shimmer>
         </div>
         <div className='play-header'>
@@ -84,7 +84,7 @@ const PlayThumbnail = ({ play }) => {
           {play.user && <Author user={play.user} />}
           <div className='play-actions mt-4'>
             <div className="flex flex-row justify-between items-end">
-              <Like onLikeClick={null} likeObj={likeObject()}/>
+              <Like onLikeClick={null} likeObj={likeObject()} />
               <div className={`language language-${play.language || "js"}`}></div>
             </div>
           </div>

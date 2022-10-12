@@ -1,0 +1,14 @@
+/* enter stlyes here */
+.typing__speed__test__result__modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 350px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    outline: none;
+    text-align:"center";
+}
