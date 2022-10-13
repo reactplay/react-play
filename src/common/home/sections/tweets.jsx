@@ -36,7 +36,7 @@ export default function SectionTweets() {
       setTwitterErrors((errors) => errors.concat(id));
 
       return (
-        <div key={id} className="error__message__twitter">
+        <div key={id} className="error-message-twitter">
           Unable to load tweet
         </div>
       );
@@ -72,7 +72,7 @@ export default function SectionTweets() {
             />
           ))
         ) : (
-          <div className="error__message__twitter">There was an error loading the tweets</div>
+          <div className="error-message-twitter">There was an error loading the tweets</div>
         )}
       </div>
     </section>

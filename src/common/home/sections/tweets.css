@@ -64,6 +64,6 @@
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.097));
 }
 
-.error__message__twitter {
-    @apply text-red-400;
+.error-message-twitter {
+  @apply text-red-400;
 }

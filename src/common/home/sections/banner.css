@@ -116,6 +116,6 @@
   fill: var(--color-neutral-90);
 }
 
-.home_banner_fallback {
+.home-banner-fallback {
   min-height: 400px;
 }
