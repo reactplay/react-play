@@ -14,6 +14,7 @@ import { Tweet } from "react-twitter-widgets";
 import Spinner from "../spinner/spinner";
 import HackathonBanner from "common/activities/hackathon/HackathonBanner";
 import DefaultBanner from "common/defaultBanner/DefaultBanner";
+import LazyLoad from 'react-lazy-load';
 
 const Home = () => {
   const [gitHubStars, setGitHubStars] = useState("...");
@@ -132,6 +133,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
+      <LazyLoad offset={100}>
       <section className="home-tweets">
         <h3 className="title-primary">
           What Our{" "}
@@ -163,9 +165,12 @@ const Home = () => {
           ))}
         </div>
       </section>
+      </LazyLoad>
+      <LazyLoad offset={50}>
       <section className="home-contributors" data-testid="contributors-section">
         <Contributors />
       </section>
+      </LazyLoad>
       <ExtendedFooter />
     </div>
   );
