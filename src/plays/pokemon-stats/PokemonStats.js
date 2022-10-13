@@ -49,6 +49,17 @@ function PokemonStats(props) {
           />
           {pokemon ? (
             <div className="poke-card-container">
+              <div
+                className="flex justify-center items-center"
+                style={{ height: "10%" }}
+              >
+                <button
+                  className="poke-stats-back-btn"
+                  onClick={() => setpokemon(null)}
+                >
+                  Back
+                </button>
+              </div>
               <Pokemoncard pokemon={pokemon} />
             </div>
           ) : (
