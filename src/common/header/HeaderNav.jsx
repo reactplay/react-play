@@ -45,7 +45,7 @@ const HeaderNav = ({ showBrowse }) => {
           >
             Share about ReactPlay
           </Typography>
-          <SocialShare />
+          <SocialShare showTwitter showLinkedin showFB showReddit />
           <Box
             component="div"
             sx={{ mt: 4, display: "flex", justifyContent: "flex-end" }}
