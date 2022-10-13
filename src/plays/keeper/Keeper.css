@@ -77,6 +77,27 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-button-disabled {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #888888;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .create-button:hover {
@@ -90,32 +111,39 @@
     width: 21rem;
   }
 }
+
 @media(max-width: 358px) {
   .create-note {
     width: 13rem;
   }
 }
+
 @media(max-width: 304px) {
   .create-note {
     width: 12rem;
   }
-  .note{
-    width:205px;
+
+  .note {
+    width: 205px;
   }
 }
+
 @media(max-width: 269px) {
   .create-note {
     width: 11rem;
   }
-  .note{
-    width:182px;
+
+  .note {
+    width: 182px;
   }
 }
+
 @media(max-width: 269px) {
   .create-note {
     width: 9rem;
   }
-  .note{
-    width:170px;
+
+  .note {
+    width: 170px;
   }
 }

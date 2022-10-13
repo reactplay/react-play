@@ -454,6 +454,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "hiimnhan",
+      "name": "hiimnhan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35358825?v=4",
+      "profile": "https://github.com/hiimnhan",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "siddxharth",
+      "name": "Siddharth Khatri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67476171?v=4",
+      "profile": "http://siddxharth.live",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
