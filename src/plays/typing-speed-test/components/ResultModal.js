@@ -26,6 +26,7 @@ const ResultModal = ({ open, handleModalClose, stats }) => {
           >
             Try Again
           </button>
+          <SocialShare showTwitter msg={`Hey checkout I got typing speed of  ${wpm} WPM. Find yours with`}/>
         </div>
       </div>
     </Modal>
