@@ -11,16 +11,16 @@ import CustomToggleButtonGroup from "./component/CustomToggleButtonGroup";
 import "./styles.css";
 
 function NewsFeedApplication(props) {
-  const [newsData, setNewsData] = useState();
+  const [newsData, setNewsData] = useState([]);
   const [selectedCountry, updateSelectedCountry] = useState("IN");
   const [selectedCategory, updateSelectedCategory] = useState("general");
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch(
+      const { articles } = await fetch(
         `https://newsapi.org/v2/top-headlines?country=${selectedCountry.toLowerCase()}&category=${selectedCategory}&pageSize=100&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
       ).then((data) => data.json());
-      setNewsData(res.articles);
+      setNewsData(articles);
     }
     fetchData();
   }, [selectedCountry, selectedCategory]);
@@ -70,7 +70,7 @@ function NewsFeedApplication(props) {
               </div>
             </div>
             <div className="card-container">
-              {newsData ? (
+              {newsData.length > 0 ? (
                 newsData.map((news, i) => <NewsCard news={news} key={i} />)
               ) : (
                 <CircularProgress />

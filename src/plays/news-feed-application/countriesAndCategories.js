@@ -1,330 +1,228 @@
-export const categories = ["business", "health", "entertainment", "science", "sports", "technology", "general"];
+export const categories = [
+  "business",
+  "health",
+  "entertainment",
+  "science",
+  "sports",
+  "technology",
+  "general",
+];
 
 export const countries = [
-    {
-      code: "AR",
-      code3: "ARG",
-      name: "Argentina",
-      number: "032",
-    },
-    {
-      code: "AU",
-      code3: "AUS",
-      name: "Australia",
-      number: "036",
-    },
-    {
-      code: "AT",
-      code3: "AUT",
-      name: "Austria",
-      number: "040",
-    },
-    {
-      code: "BE",
-      code3: "BEL",
-      name: "Belgium",
-      number: "056",
-    },
-    {
-      code: "BR",
-      code3: "BRA",
-      name: "Brazil",
-      number: "076",
-    },
-    {
-      code: "BG",
-      code3: "BGR",
-      name: "Bulgaria",
-      number: "100",
-    },
-    {
-      code: "CA",
-      code3: "CAN",
-      name: "Canada",
-      number: "124",
-    },
-    {
-      code: "CN",
-      code3: "CHN",
-      name: "China",
-      number: "156",
-    },
-    {
-      code: "CO",
-      code3: "COL",
-      name: "Colombia",
-      number: "170",
-    },
-    {
-      code: "CU",
-      code3: "CUB",
-      name: "Cuba",
-      number: "192",
-    },
-    {
-      code: "CZ",
-      code3: "CZE",
-      name: "Czechia",
-      number: "203",
-    },
-    {
-      code: "EG",
-      code3: "EGY",
-      name: "Egypt",
-      number: "818",
-    },
-    {
-      code: "FR",
-      code3: "FRA",
-      name: "France",
-      number: "250",
-    },
-    {
-      code: "DE",
-      code3: "DEU",
-      name: "Germany",
-      number: "276",
-    },
-    {
-      code: "GR",
-      code3: "GRC",
-      name: "Greece",
-      number: "300",
-    },
-    {
-      code: "HK",
-      code3: "HKG",
-      name: "Hong Kong",
-      number: "344",
-    },
-    {
-      code: "HU",
-      code3: "HUN",
-      name: "Hungary",
-      number: "348",
-    },
-    {
-      code: "IN",
-      code3: "IND",
-      name: "India",
-      number: "356",
-    },
-    {
-      code: "ID",
-      code3: "IDN",
-      name: "Indonesia",
-      number: "360",
-    },
-    {
-      code: "IE",
-      code3: "IRL",
-      name: "Ireland",
-      number: "372",
-    },
-    {
-      code: "IL",
-      code3: "ISR",
-      name: "Israel",
-      number: "376",
-    },
-    {
-      code: "IT",
-      code3: "ITA",
-      name: "Italy",
-      number: "380",
-    },
-    {
-      code: "JP",
-      code3: "JPN",
-      name: "Japan",
-      number: "392",
-    },
-    {
-      code: "KR",
-      code3: "KOR",
-      name: "Korea (the Republic of)",
-      number: "410",
-    },
-    {
-      code: "LV",
-      code3: "LVA",
-      name: "Latvia",
-      number: "428",
-    },
-    {
-      code: "LT",
-      code3: "LTU",
-      name: "Lithuania",
-      number: "440",
-    },
-    {
-      code: "MY",
-      code3: "MYS",
-      name: "Malaysia",
-      number: "458",
-    },
-    {
-      code: "MX",
-      code3: "MEX",
-      name: "Mexico",
-      number: "484",
-    },
-    {
-      code: "MA",
-      code3: "MAR",
-      name: "Morocco",
-      number: "504",
-    },
-    {
-      code: "NL",
-      code3: "NLD",
-      name: "Netherlands (the)",
-      number: "528",
-    },
-    {
-      code: "NZ",
-      code3: "NZL",
-      name: "New Zealand",
-      number: "554",
-    },
-    {
-      code: "NG",
-      code3: "NGA",
-      name: "Nigeria",
-      number: "566",
-    },
-    {
-      code: "NO",
-      code3: "NOR",
-      name: "Norway",
-      number: "578",
-    },
-    {
-      code: "PH",
-      code3: "PHL",
-      name: "Philippines (the)",
-      number: "608",
-    },
-    {
-      code: "PL",
-      code3: "POL",
-      name: "Poland",
-      number: "616",
-    },
-    {
-      code: "PT",
-      code3: "PRT",
-      name: "Portugal",
-      number: "620",
-    },
-    {
-      code: "RO",
-      code3: "ROU",
-      name: "Romania",
-      number: "642",
-    },
-    {
-      code: "RU",
-      code3: "RUS",
-      name: "Russian Federation (the)",
-      number: "643",
-    },
-    {
-      code: "SA",
-      code3: "SAU",
-      name: "Saudi Arabia",
-      number: "682",
-    },
-    {
-      code: "RS",
-      code3: "SRB",
-      name: "Serbia",
-      number: "688",
-    },
-    {
-      code: "SG",
-      code3: "SGP",
-      name: "Singapore",
-      number: "702",
-    },
-    {
-      code: "SK",
-      code3: "SVK",
-      name: "Slovakia",
-      number: "703",
-    },
-    {
-      code: "SI",
-      code3: "SVN",
-      name: "Slovenia",
-      number: "705",
-    },
-    {
-      code: "ZA",
-      code3: "ZAF",
-      name: "South Africa",
-      number: "710",
-    },
-    {
-      code: "SE",
-      code3: "SWE",
-      name: "Sweden",
-      number: "752",
-    },
-    {
-      code: "CH",
-      code3: "CHE",
-      name: "Switzerland",
-      number: "756",
-    },
-    {
-      code: "TW",
-      code3: "TWN",
-      name: "Taiwan",
-      number: "158",
-    },
-    {
-      code: "TH",
-      code3: "THA",
-      name: "Thailand",
-      number: "764",
-    },
-    {
-      code: "TR",
-      code3: "TUR",
-      name: "Turkey",
-      number: "792",
-    },
-    {
-      code: "UA",
-      code3: "UKR",
-      name: "Ukraine",
-      number: "804",
-    },
-    {
-      code: "AE",
-      code3: "ARE",
-      name: "United Arab Emirates (the)",
-      number: "784",
-    },
-    {
-      code: "GB",
-      code3: "GBR",
-      name: "United Kingdom of Great Britain and Northern Ireland (the)",
-      number: "826",
-    },
-    {
-      code: "US",
-      code3: "USA",
-      name: "United States of America (the)",
-      number: "840",
-    },
-    {
-      code: "VE",
-      code3: "VEN",
-      name: "Venezuela (Bolivarian Republic of)",
-      number: "862",
-    },
-  ];
-
-  
+  {
+    name: "Argentina",
+    code: "AR",
+  },
+  {
+    name: "Australia",
+    code: "AU",
+  },
+  {
+    name: "Austria",
+    code: "AT",
+  },
+  {
+    name: "Belgium",
+    code: "BE",
+  },
+  {
+    name: "Brazil",
+    code: "BR",
+  },
+  {
+    name: "Bulgaria",
+    code: "BG",
+  },
+  {
+    name: "Canada",
+    code: "CA",
+  },
+  {
+    name: "China",
+    code: "CN",
+  },
+  {
+    name: "Colombia",
+    code: "CO",
+  },
+  {
+    name: "Cuba",
+    code: "CU",
+  },
+  {
+    name: "Czechia",
+    code: "CZ",
+  },
+  {
+    name: "Egypt",
+    code: "EG",
+  },
+  {
+    name: "France",
+    code: "FR",
+  },
+  {
+    name: "Germany",
+    code: "DE",
+  },
+  {
+    name: "Greece",
+    code: "GR",
+  },
+  {
+    name: "Hong Kong",
+    code: "HK",
+  },
+  {
+    name: "Hungary",
+    code: "HU",
+  },
+  {
+    name: "India",
+    code: "IN",
+  },
+  {
+    name: "Indonesia",
+    code: "ID",
+  },
+  {
+    name: "Ireland",
+    code: "IE",
+  },
+  {
+    name: "Israel",
+    code: "IL",
+  },
+  {
+    name: "Italy",
+    code: "IT",
+  },
+  {
+    name: "Japan",
+    code: "JP",
+  },
+  {
+    name: "Korea (the Republic of)",
+    code: "KR",
+  },
+  {
+    name: "Latvia",
+    code: "LV",
+  },
+  {
+    name: "Lithuania",
+    code: "LT",
+  },
+  {
+    name: "Malaysia",
+    code: "MY",
+  },
+  {
+    name: "Mexico",
+    code: "MX",
+  },
+  {
+    name: "Morocco",
+    code: "MA",
+  },
+  {
+    name: "Netherlands (the)",
+    code: "NL",
+  },
+  {
+    name: "New Zealand",
+    code: "NZ",
+  },
+  {
+    name: "Nigeria",
+    code: "NG",
+  },
+  {
+    name: "Norway",
+    code: "NO",
+  },
+  {
+    name: "Philippines (the)",
+    code: "PH",
+  },
+  {
+    name: "Poland",
+    code: "PL",
+  },
+  {
+    name: "Portugal",
+    code: "PT",
+  },
+  {
+    name: "Romania",
+    code: "RO",
+  },
+  {
+    name: "Russian Federation (the)",
+    code: "RU",
+  },
+  {
+    name: "Saudi Arabia",
+    code: "SA",
+  },
+  {
+    name: "Serbia",
+    code: "RS",
+  },
+  {
+    name: "Singapore",
+    code: "SG",
+  },
+  {
+    name: "Slovakia",
+    code: "SK",
+  },
+  {
+    name: "Slovenia",
+    code: "SI",
+  },
+  {
+    name: "South Africa",
+    code: "ZA",
+  },
+  {
+    name: "Sweden",
+    code: "SE",
+  },
+  {
+    name: "Switzerland",
+    code: "CH",
+  },
+  {
+    name: "Taiwan",
+    code: "TW",
+  },
+  {
+    name: "Thailand",
+    code: "TH",
+  },
+  {
+    name: "Turkey",
+    code: "TR",
+  },
+  {
+    name: "Ukraine",
+    code: "UA",
+  },
+  {
+    name: "United Arab Emirates (the)",
+    code: "AE",
+  },
+  {
+    name: "United Kingdom of Great Britain and Northern Ireland (the)",
+    code: "GB",
+  },
+  {
+    name: "United States of America (the)",
+    code: "US",
+  },
+  {
+    name: "Venezuela (Bolivarian Republic of)",
+    code: "VE",
+  },
+];
