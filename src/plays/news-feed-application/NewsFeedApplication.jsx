@@ -6,7 +6,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { countries } from "./countriesAndCategories";
-import NewsCard from "./component/Card";
+import NewsCard from "./component/NewsCard";
 import CustomToggleButtonGroup from "./component/CustomToggleButtonGroup";
 import "./styles.css";
 
@@ -24,10 +24,6 @@ function NewsFeedApplication(props) {
     }
     fetchData();
   }, [selectedCountry, selectedCategory]);
-
-  const handleCountryChange = (event) => {
-    updateSelectedCountry(event.target.value);
-  };
 
   const handleCategoryChange = (event) => {
     updateSelectedCategory(event.target.value);
@@ -52,12 +48,12 @@ function NewsFeedApplication(props) {
                       value={selectedCountry}
                       label="Country"
                       onChange={(e) => {
-                        handleCountryChange(e);
+                        updateSelectedCountry(e.target.value);
                       }}
                     >
-                      {countries.map((country) => (
-                        <MenuItem key={country.name} value={country.code}>
-                          {country.name}
+                      {countries.map(({name, code}) => (
+                        <MenuItem key={name} value={code}>
+                          {name}
                         </MenuItem>
                       ))}
                     </Select>
