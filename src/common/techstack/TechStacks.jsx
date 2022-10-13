@@ -32,7 +32,7 @@ const TechStack = () => {
                 href={Item.link}
                 className="brand-tech-stack"
               >
-                <img src={Item.comp} alt={Item.comp} />
+                <img src={Item.comp} alt={Item.comp} className="image"/>
                 <p className="text-center">{Item.text}</p>
               </a>
             );
