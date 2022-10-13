@@ -18,7 +18,7 @@ function NewsFeedApplication(props) {
   useEffect(() => {
     async function fetchData() {
       const res = await fetch(
-        `https://newsapi.org/v2/top-headlines?country=${selectedCountry.toLowerCase()}&category=${selectedCategory}&pageSize=100&apiKey=a0d1c2f8467541c380cb42b179d3b263`
+        `https://newsapi.org/v2/top-headlines?country=${selectedCountry.toLowerCase()}&category=${selectedCategory}&pageSize=100&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
       ).then((data) => data.json());
       setNewsData(res.articles);
     }
