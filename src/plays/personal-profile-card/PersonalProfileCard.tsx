@@ -9,11 +9,11 @@ import './index.css'
 
 const PersonalProfileCard = (props: any) => {
   const [profileCard, setProfileCard] = useState<ProfileType>(null)
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState<ProfileType>(null)
   const [key, setKey] = useState<number>(0)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>):void => {
-    setValue((value: Object) => {
+    setValue((value: ProfileType) => {
       return { ...value, [e.target.name]: e.target.value }
     })
   }
@@ -34,7 +34,7 @@ const PersonalProfileCard = (props: any) => {
       const fileReader = new FileReader()
       fileReader.readAsDataURL(files)
       fileReader.addEventListener("load", function () {
-        setValue((value: Object) => {
+        setValue((value: ProfileType) => {
           return { ...value, [e.target.name]: this.result }
         })
       })    
