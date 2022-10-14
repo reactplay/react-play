@@ -20,8 +20,8 @@ const ProfileForm = ({
   onClear,
 }: Props) => {
   return (
-    <div className="profile-form md:mr-5">
-      <div className="profile-info">
+    <div className="profilecard-profile-form md:mr-5">
+      <div className="profilecard-profile-info">
         <input
           className="profilecard-cover-input mx-auto mr-0 relative top-[20px] mt-[-20px] h-[30px] sm:h-[40px] w-[30px] sm:w-[40px] rounded-full flex bg-[#45576f] hover:cursor-pointer"
           type="file"
@@ -69,7 +69,7 @@ const ProfileForm = ({
           value={value ? value.description : ""}
         ></textarea>
       </div>
-      <div className="social-links">
+      <div className="profilecard-social-links">
         <input
           value={value ? value.facebook : ""}
           type="text"

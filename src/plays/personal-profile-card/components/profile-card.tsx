@@ -35,7 +35,7 @@ const profile = ({ profile }: Props) => {
           className="w-[100px] sm:w-[150px] h-[100px] sm:h-[150px] rounded-[50%] mt-[-50px] sm:mt-[-100px]"
         />
       </div>
-      <div className="profile-details">
+      <div className="profilecard-profile-details">
         <h1 className="text-[28px] text-center font-bold px-[10px] pt-[20px] pb-[10px] text-[#FFE4E6]">
           {profile && profile.name ? profile.name : "@name"}
         </h1>
