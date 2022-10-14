@@ -30,7 +30,7 @@ const ProfileForm = ({
         />
         <img
           src={
-            !value || !value.cover
+            value.cover === ''
               ? require("../images/placeholder_cover.jpg")
               : value.cover
           }
@@ -44,7 +44,7 @@ const ProfileForm = ({
         />
         <img
           src={
-            !value || !value.dp
+            value.dp === ''
               ? require("../images/placeholder_profile.png")
               : value.dp
           }
@@ -58,7 +58,7 @@ const ProfileForm = ({
           placeholder="@your name"
           required
           onChange={onChange}
-          value={value ? value.name : ""}
+          value={value.name}
         />
         <textarea
           name="description"
@@ -66,12 +66,12 @@ const ProfileForm = ({
           className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 mb-2 placeholder-gray-400"
           placeholder="@your description"
           onChange={onChange}
-          value={value ? value.description : ""}
+          value={value.description}
         ></textarea>
       </div>
       <div className="profilecard-social-links">
         <input
-          value={value ? value.facebook : ""}
+          value={value.facebook}
           type="text"
           name="facebook"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2"
@@ -80,7 +80,7 @@ const ProfileForm = ({
           onChange={onChange}
         />
         <input
-          value={value ? value.twitter : ""}
+          value={value.twitter}
           type="text"
           name="twitter"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2"
@@ -89,7 +89,7 @@ const ProfileForm = ({
           onChange={onChange}
         />
         <input
-          value={value ? value.instagram : ""}
+          value={value.instagram}
           type="text"
           name="instagram"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2"
@@ -98,7 +98,7 @@ const ProfileForm = ({
           onChange={onChange}
         />
         <input
-          value={value ? value.github : ""}
+          value={value.github}
           type="text"
           name="github"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2"
@@ -107,7 +107,7 @@ const ProfileForm = ({
           onChange={onChange}
         />
         <input
-          value={value ? value.linkedin : ""}
+          value={value.linkedin}
           type="text"
           name="linkedin"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2"
