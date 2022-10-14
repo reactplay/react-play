@@ -1,7 +1,8 @@
-.cover-input::-webkit-file-upload-button, .dp-input::-webkit-file-upload-button {
+.profilecard-cover-input::-webkit-file-upload-button,
+.profilecard-dp-input::-webkit-file-upload-button {
   visibility: hidden;
 }
-.cover-input::before, .dp-input::before {
+.profilecard-cover-input::before, .profilecard-dp-input::before {
   background-image: url('./images/edit.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -12,7 +13,7 @@
 }
 
 @media only screen and (max-width: 640px) {
-  .cover-input::before, .dp-input::before {
+  .profilecard-cover-input::before, .profilecard-dp-input::before {
     background-size: 15px;
     height: 30px;
     width: 30px;
