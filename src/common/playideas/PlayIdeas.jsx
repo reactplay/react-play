@@ -55,7 +55,7 @@ const PlayIdeas = () => {
   };
 
   return (
-    <div className="app-body app-body-overflow-hidden">
+    <main className="app-body app-body-overflow-hidden">
       <div className="playideas-container">
         <div className="playideas-header">
           <div>
@@ -152,7 +152,7 @@ const PlayIdeas = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </main>
   )
 };
 

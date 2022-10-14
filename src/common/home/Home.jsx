@@ -54,7 +54,7 @@ const Home = () => {
   const tweetLoadHandler = () => setTweetsLoading(false);
 
   return (
-    <div>
+    <main>
       <section className="app-home-body">
         <div className="home-bg-graphics">
           <Flower className="home-bg-graphics-sm" />
@@ -143,7 +143,7 @@ const Home = () => {
         <Contributors />
       </section>
       <ExtendedFooter />
-    </div>
+    </main>
   )
 };
 
