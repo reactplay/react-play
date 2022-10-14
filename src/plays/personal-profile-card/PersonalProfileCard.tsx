@@ -7,9 +7,21 @@ import ProfileCard from './components/profile-card'
 import ProfileForm from './components/profile-form'
 import './index.css'
 
+const initialStateProfile = {
+  name: '',
+  description: '',
+  dp: '',
+  cover: '',
+  facebook: '',
+  twitter: '',
+  instagram: '',
+  github: '',
+  linkedin: ''
+}
+
 const PersonalProfileCard = (props: any) => {
-  const [profileCard, setProfileCard] = useState<ProfileType>(null)
-  const [value, setValue] = useState<ProfileType>(null)
+  const [profileCard, setProfileCard] = useState<ProfileType>(initialStateProfile)
+  const [value, setValue] = useState<ProfileType>(initialStateProfile)
   const [key, setKey] = useState<number>(0)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>):void => {
@@ -44,8 +56,8 @@ const PersonalProfileCard = (props: any) => {
   const handleClear = () => {
     setKey(Math.random())
     Storage.remove('profile_card')
-    setValue(null)
-    setProfileCard(null)
+    setValue(initialStateProfile)
+    setProfileCard(initialStateProfile)
   }
 
   return (
