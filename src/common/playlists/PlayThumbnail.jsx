@@ -76,7 +76,7 @@ const PlayThumbnail = ({ play }) => {
       >
         <div className='play-thumb'>
           <Shimmer>
-            <img loading='lazy' src={cover} alt='' className='play-thumb-img' />
+            <img loading='lazy' src={cover} alt={play.component} className='play-thumb-img' />
           </Shimmer>
         </div>
         <div className='play-header'>
