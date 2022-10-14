@@ -2,7 +2,7 @@ import PlayHeader from 'common/playlists/PlayHeader'
 import React, { useState, ChangeEvent, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 
-import * as Storage from './local-storage'
+import useLocalStorage from '../../common/hooks/useLocalStorage'
 import ProfileType from './types'
 import ProfileCard from './components/profile-card'
 import ProfileForm from './components/profile-form'
@@ -21,6 +21,7 @@ const initialStateProfile = {
 }
 
 const PersonalProfileCard = (props: any) => {
+  const [localStoreProfile, setLocalStoreProfile] = useLocalStorage("profile_card", null);
   const [profileCard, setProfileCard] = useState<ProfileType>(initialStateProfile)
   const [value, setValue] = useState<ProfileType>(initialStateProfile)
   const [key, setKey] = useState<number>(0)
@@ -32,13 +33,13 @@ const PersonalProfileCard = (props: any) => {
   }
 
   useEffect(() => {
-    setProfileCard(Storage.get('profile_card'))
-    Storage.get('profile_card') !== null && setValue(Storage.get('profile_card'))
+    setProfileCard(localStoreProfile)
+    localStoreProfile !== null && setValue(localStoreProfile)
   }, [key])
 
   const handleClick = () => {
     setKey(Math.random())
-    Storage.set('profile_card', value)
+    setLocalStoreProfile(value)
   }
 
   const handleUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -64,7 +65,7 @@ const PersonalProfileCard = (props: any) => {
 
   const handleClear = () => {
     setKey(Math.random())
-    Storage.remove('profile_card')
+    localStorage.removeItem('profile_card')
     setValue(initialStateProfile)
     setProfileCard(initialStateProfile)
   }
