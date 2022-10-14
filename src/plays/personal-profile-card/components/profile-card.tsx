@@ -12,7 +12,7 @@ interface Props {
   profile: ProfileType
 }
 
-const profile = ({ profile }: Props) => {
+const ProfileCard = ({ profile }: Props) => {
   return (
     <>
       <div className="flex flex-col justify-center items-center">
@@ -111,4 +111,4 @@ const profile = ({ profile }: Props) => {
   )
 }
 
-export default profile
+export default ProfileCard
