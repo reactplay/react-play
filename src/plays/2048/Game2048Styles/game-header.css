@@ -1,0 +1,260 @@
+.twentyFourtyEight-header {
+  display: table;
+  width: 258px;
+  margin-left: 4px;
+}
+
+.twentyFourtyEight-header__row {
+  display: table-row;
+}
+
+.twentyFourtyEight-header__title {
+  display: table-cell;
+  float: left;
+  margin-bottom: 0px;
+  color: black;
+  position: absolute;
+  left: 45rem;
+  font-size: 46px;
+  font-family: cursive;
+}
+
+.twentyFourtyEight-header .twentyFourtyEight-restart {
+  padding: 0 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 41px;
+  float: right;
+  margin-top: 27px;
+  position: absolute;
+  top: 11rem;
+  left: 1.1rem;
+}
+
+
+.twentyFourtyEight-header .twentyFourtyEight-restart:focus,
+.twentyFourtyEight-header .twentyFourtyEight-restart:active,
+.twentyFourtyEight-header .twentyFourtyEight-restart {
+  border: none;
+  border-style: none;
+  outline: none;
+}
+
+.twentyFourtyEight-header .scores {
+  display: table-cell;
+  float: right;
+}
+
+.twentyFourtyEight-header .score {
+  display: inline;
+  top: 25px;
+  left: 58rem;
+  padding-top: 20px;
+  font-size: 39px;
+  line-height: 47px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: black;
+  text-align: center;
+}
+
+.score.score--current {
+  left: 19rem;
+  position: absolute;
+  top: 7rem;
+
+}
+
+.twentyFourtyEight-header .score--current:after {
+  content: "Score";
+  position: absolute;
+  width: 100%;
+  top: 5px;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+  color: black;
+}
+
+.score.score--best {
+  left: 64rem;
+  top: 8rem;
+  position: absolute;
+}
+
+.twentyFourtyEight-header .score--best:after {
+  content: "Best";
+  position: absolute;
+  width: 100%;
+  top: 5px;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+  color: black;
+}
+
+/* Media Queries */
+
+@media(max-width: 1352px) {
+  .twentyFourtyEight-header .score {
+    left: 16rem;
+  }
+
+  .score.score--best {
+    left: 52rem;
+  }
+
+  .twentyFourtyEight-header__title {
+    left: 33rem;
+  }
+}
+
+@media(max-width: 1258px) {
+  .twentyFourtyEight-header .score {
+    left: 50rem;
+    top: 8rem;
+  }
+
+  .score.score--best {
+    top: 15rem;
+    left: 50rem;
+  }
+
+  .twentyFourtyEight-header__title {
+    left: 33rem;
+  }
+}
+
+@media(max-width: 988px) {
+  .twentyFourtyEight-header__title {
+    left: 24rem;
+  }
+
+  .twentyFourtyEight-header .restart {
+    font-size: 39px;
+  }
+
+  .twentyFourtyEight-header .score {
+    left: 40rem;
+    top: 6rem;
+    font-size: 26px;
+  }
+
+  .score.score--best {
+    left: 40rem;
+    top: 13rem;
+  }
+}
+
+@media(max-width: 805px) {
+  .twentyFourtyEight-header .score {
+    left: 21rem;
+    top: 27rem;
+  }
+
+  .score.score--best {
+    left: 32rem;
+  }
+}
+
+@media (max-width: 593px) {
+  .twentyFourtyEight-header__title {
+    left: 12rem;
+    top: 6rem;
+  }
+
+  .twentyFourtyEight-header .twentyFourtyEight-restart {
+    top: 8rem;
+    left: 1.1rem;
+    font-size: 20px;
+  }
+
+  .score.score--best {
+    top: 27rem;
+    left: 19rem;
+    font-size: 19px;
+  }
+
+  .score.score--current {
+    left: 8rem;
+    top: 27rem;
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 494px) {
+  .score.score--current {
+    left: 9rem;
+    top: 27rem;
+    font-size: 13px;
+  }
+
+  .score.score--best {
+    top: 27rem;
+    left: 19rem;
+    font-size: 14px;
+  }
+}
+
+@media(max-width: 424px) {
+  .score.score--best {
+    left: 16rem;
+    top: 26rem;
+  }
+
+  .twentyFourtyEight-header__title {
+    left: 10rem;
+    top: 7rem;
+  }
+
+  .score.score--current {
+    left: 6rem;
+    top: 26rem;
+  }
+}
+
+@media(max-width: 354px) {
+  .twentyFourtyEight-header__title {
+    left: 7rem;
+    top: 11rem;
+  }
+
+  .score.score--current {
+    left: 4rem;
+    top: 8rem;
+    font-size: 11px;
+  }
+
+  .score.score--best {
+    top: 8rem;
+    left: 11rem;
+    font-size: 11px;
+  }
+
+  .twentyFourtyEight-header .twentyFourtyEight-restart {
+    top: 14rem;
+    left: 0.1rem;
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 333px) {
+  .score.score--current {
+    left: 4rem;
+    top: 12rem;
+  }
+
+  .score.score--best {
+    top: 12rem;
+    left: 13rem;
+    font-size: 11px;
+  }
+
+  .twentyFourtyEight-header__title {
+    visibility: hidden;
+  }
+}
