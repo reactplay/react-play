@@ -45,11 +45,15 @@ const PersonalProfileCard = (props: any) => {
     if (files) {
       const fileReader = new FileReader()
       fileReader.readAsDataURL(files)
-      fileReader.addEventListener("load", function () {
+      const load = () => {
         setValue((value: ProfileType) => {
-          return { ...value, [e.target.name]: this.result }
+          return { ...value, [e.target.name]: fileReader.result }
         })
-      })    
+      }
+      fileReader.addEventListener("load", load)
+      return function cleanupListener() {
+        window.removeEventListener("load", load)
+      }    
     }
   }
 
