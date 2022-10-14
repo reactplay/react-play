@@ -20,7 +20,7 @@ function Weather(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
 
-          <div className="flex flex-col items-center h-full p-4 rounded-lg weather-container">
+          <div className="flex flex-col items-center min-h-full p-4 rounded-lg weather-container">
             <CityInput
               cityInput={cityInput}
               setCityInput={setCityInput}

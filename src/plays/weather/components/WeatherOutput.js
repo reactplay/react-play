@@ -14,7 +14,7 @@ export default function WeatherOutput({ weatherDetails }) {
         </h1>
       </div>
 
-      <div className="flex items-start gap-16 mt-8">
+      <div className="flex flex-col items-center gap-8 mt-8 md:items-start md:flex-row md:gap-16">
         <img
           src={getWeatherIcon(weatherDetails.weather[0].icon, "lg")}
           alt="icon"

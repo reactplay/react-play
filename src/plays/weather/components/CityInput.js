@@ -42,10 +42,10 @@ export default function CityInput({
   };
 
   return (
-    <form onSubmit={fetchWeather}>
+    <form onSubmit={fetchWeather} className="w-full md:w-1/3">
       <input
         value={cityInput}
-        className="p-2 text-sm rounded-lg"
+        className="w-full p-2 text-sm rounded-lg"
         onChange={handleCityInput}
         placeholder="Search your city here..."
       />
