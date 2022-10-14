@@ -4,7 +4,7 @@ So , its kinda fun type app it will give details of a specific pokemon on search
 
 ## Play Demographic
 
-- Language: js
+- Language: ts
 - Level: Intermediate
 
 ## Creator Information

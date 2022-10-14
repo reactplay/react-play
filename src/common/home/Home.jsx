@@ -10,15 +10,15 @@ import SectionContributors from "./sections/contributors";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <SectionLanding />
       <SectionFeatures />
       <SectionPlayground />
       <SectionTweets />
       <SectionContributors />
       <ExtendedFooter />
-    </div>
-  );
+    </main>
+  )
 };
 
 export default Home;

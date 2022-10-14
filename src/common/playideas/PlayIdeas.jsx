@@ -55,7 +55,7 @@ const PlayIdeas = () => {
   };
 
   return (
-    <div className="app-body app-body-overflow-hidden">
+    <main className="app-body app-body-overflow-hidden">
       <div className="playideas-container">
         <div className="playideas-header">
           <div>
@@ -64,8 +64,8 @@ const PlayIdeas = () => {
               <span className="header-title-badge">{filteredIdeas.length}</span>
             </h3>
             <p className="header-desc">
-              Looking for project ideas to practice React? Great, you have
-              landed on the right place. Here are some ideas to get you started.
+              Looking for project ideas to practice React? Great, you have landed on the right place. Here are some ideas to get you
+              started.
             </p>
           </div>
           <div className="playideas-levels-pills">
@@ -84,14 +84,7 @@ const PlayIdeas = () => {
               </label>
             </div>
             <div className="level-pill">
-              <input
-                type="radio"
-                name="level"
-                value="Beginner"
-                id="beginner-id"
-                className="level-pill-control"
-                onChange={onValueChange}
-              />
+              <input type="radio" name="level" value="Beginner" id="beginner-id" className="level-pill-control" onChange={onValueChange} />
               <label htmlFor="beginner-id" className="level-pill-label">
                 BEGINNER
               </label>
@@ -110,14 +103,7 @@ const PlayIdeas = () => {
               </label>
             </div>
             <div className="level-pill">
-              <input
-                type="radio"
-                name="level"
-                value="Advanced"
-                id="advanced-id"
-                className="level-pill-control"
-                onChange={onValueChange}
-              />
+              <input type="radio" name="level" value="Advanced" id="advanced-id" className="level-pill-control" onChange={onValueChange} />
               <label htmlFor="advanced-id" className="level-pill-label">
                 ADVANCED
               </label>
@@ -126,7 +112,7 @@ const PlayIdeas = () => {
         </div>
         <div className="playideas-body">
           <ul className="list-playideas">
-            {filteredIdeas.map((idea) => (
+            {filteredIdeas.map(idea => (
               <li className="list-playideas-item" key={idea.id}>
                 <h4 className="idea-title">{idea.title}</h4>
                 <p className="idea-desc">{idea.description}</p>
@@ -134,15 +120,11 @@ const PlayIdeas = () => {
                   <LevelBadge level={idea.level} />
                 </p>
                 <div className="idea-actions">
-                  {process.env.NODE_ENV === "development" ? (
-                    <a
-                      href="/plays/create"
-                      rel="noopener noreferrer"
-                      className="btn-primary action-btn"
-                    >
+                  {process.env.NODE_ENV === 'development' ? (
+                    <a href="/plays/create" rel="noopener noreferrer" className="btn-primary action-btn">
                       <IoAddSharp className="icon" />
-                        <span className="btn-label">Create</span>
-                        <span className="create-button-badge">beta</span>
+                      <span className="btn-label">Create</span>
+                      <span className="create-button-badge">beta</span>
                     </a>
                   ) : (
                     <a
@@ -170,8 +152,8 @@ const PlayIdeas = () => {
           </ul>
         </div>
       </div>
-    </div>
-  );
+    </main>
+  )
 };
 
 export default PlayIdeas;
