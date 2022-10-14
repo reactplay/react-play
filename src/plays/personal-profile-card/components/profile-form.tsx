@@ -1,6 +1,8 @@
 import React from 'react'
 
 import ProfileType from '../types'
+import placeholder_cover from '../images/placeholder_cover.jpg'
+import placeholder_profile from '../images/placeholder_profile.png'
 
 interface Props {
   value: ProfileType
@@ -31,7 +33,7 @@ const ProfileForm = ({
         <img
           src={
             value.cover === ''
-              ? require("../images/placeholder_cover.jpg")
+              ? placeholder_cover
               : value.cover
           }
           className="w-full md:w-[600px] h-[150px] sm:h-[200px] rounded-3xl"
@@ -45,7 +47,7 @@ const ProfileForm = ({
         <img
           src={
             value.dp === ''
-              ? require("../images/placeholder_profile.png")
+              ? placeholder_profile
               : value.dp
           }
           className="w-[110px] sm:w-[150px] h-[110px] sm:h-[150px] rounded-[50%] relative top-[-100px] mb-[-90px]  mx-auto"
