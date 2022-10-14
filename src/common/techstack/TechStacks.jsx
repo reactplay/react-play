@@ -17,8 +17,14 @@ const TechStack = () => {
             )
           } else if (Item.type === 'image') {
             return (
-              <a key={idx} target="_blank" rel="noreferrer" href={Item.link} className="brand-tech-stack">
-                <img src={Item.comp} alt={Item.comp} />
+              <a
+                key={idx}
+                target="_blank"
+                rel="noreferrer"
+                href={Item.link}
+                className="brand-tech-stack"
+              >
+                <img src={Item.comp} alt={Item.comp} className="image"/>
                 <p className="text-center">{Item.text}</p>
               </a>
             )
