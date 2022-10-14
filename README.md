@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-51-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-53-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -278,6 +278,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center"><a href="https://github.com/KashishLakhara04"><img src="https://avatars.githubusercontent.com/u/104296574?v=4?s=100" width="100px;" alt="Kashish Lakhara"/><br /><sub><b>Kashish Lakhara</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=KashishLakhara04" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/hiimnhan"><img src="https://avatars.githubusercontent.com/u/35358825?v=4?s=100" width="100px;" alt="hiimnhan"/><br /><sub><b>hiimnhan</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=hiimnhan" title="Code">💻</a></td>
+      <td align="center"><a href="http://siddxharth.live"><img src="https://avatars.githubusercontent.com/u/67476171?v=4?s=100" width="100px;" alt="Siddharth Khatri"/><br /><sub><b>Siddharth Khatri</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=siddxharth" title="Code">💻</a></td>
+      <td align="center"><a href="https://emmadawson.dev"><img src="https://avatars.githubusercontent.com/u/57045550?v=4?s=100" width="100px;" alt="Emma Dawson"/><br /><sub><b>Emma Dawson</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=EmmaDawsonDev" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
