@@ -7,6 +7,8 @@ import {
   AiOutlineTwitter,
 } from 'react-icons/ai'
 import ProfileType from '../types'
+import placeholder_cover from '../images/placeholder_cover.jpg'
+import placeholder_profile from '../images/placeholder_profile.png'
 
 interface Props {
   profile: ProfileType
@@ -19,7 +21,7 @@ const ProfileCard = ({ profile }: Props) => {
         <img
           src={
             !profile || !profile.cover
-              ? require("../images/placeholder_cover.jpg")
+              ? placeholder_cover
               : profile.cover
           }
           alt="Cover"
@@ -28,7 +30,7 @@ const ProfileCard = ({ profile }: Props) => {
         <img
           src={
             !profile || !profile.dp
-              ? require("../images/placeholder_profile.png")
+              ? placeholder_profile
               : profile.dp
           }
           alt="dp"
