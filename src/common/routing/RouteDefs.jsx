@@ -13,6 +13,14 @@ import {
 import PlayList from "common/playlists/PlayList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NhostClient, NhostReactProvider } from "@nhost/react";
+import Dashboard from "dashboard";
+import PlayFigures from "dashboard/components/PlayFigures";
+import GithubActivities from "dashboard/components/GithubActivities";
+import MainDashboard from "dashboard/components/MainDasboard";
+import Traffic from "dashboard/components/GithubActivities/Traffic";
+import Issues from "dashboard/components/GithubActivities/Issues";
+import StarGazers from "dashboard/components/GithubActivities/StarGazers";
+import MainGithubDashboard from "dashboard/components/GithubActivities/MainGithubDashboard";
 
 const nhost = new NhostClient({
   backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || "",
@@ -64,6 +72,16 @@ const RouteDefs = () => {
             <Route index element={<PlayList />} />
           </Route>
           <Route path="/ideas" element={<PlayIdeas />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="" element={<MainDashboard />} />
+            <Route path="play-figures" element={<PlayFigures />} />
+            <Route path="github-activities" element={<GithubActivities />}>
+              <Route path="" element={<MainGithubDashboard />} />
+              <Route path="issues" element={<Issues />} />
+              <Route path="traffic" element={<Traffic />} />
+              <Route path="star-gazers" element={<StarGazers />} />
+            </Route>
+          </Route>
         </Routes>
         <Footer />
       </BrowserRouter>

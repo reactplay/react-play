@@ -1,0 +1,52 @@
+.sideNavbarContainer{
+  display: flex;  
+  flex-direction: column;
+}
+
+.links{
+    margin-top: 3rem;
+    display: flex;   
+    &:active,&:hover,&:focus{
+      color: aqua;
+    } 
+   
+  }
+.activeLink{
+      color: aqua;
+}  
+.sideNavbar{
+  background: var(--color-neutral-90);
+  color: #fff;
+}
+
+.sublink{
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.flyBar{
+background-color:  var(--color-neutral-90);
+}
+
+.flyerBtn{
+  position: fixed;
+  top: 40vh;
+  left:0.5rem;
+  background-color: var(--color-neutral-90);
+  border-radius: 50%;
+  color: #fff;
+  height: 3rem;
+  width: 3rem;
+}
+
+@media screen and (max-width:768px) {
+  .sideNavbarContainer{
+    display: none;    
+  }
+}
+
+@media screen and (min-width:768px) {
+  .flyBar{
+    display: none;  
+  }
+}
