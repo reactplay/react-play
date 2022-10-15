@@ -32,8 +32,7 @@ function Emojipedia(props) {
   useEffect(() => {
     const delayFn = setTimeout(() => {
       if (query) {
-        setEmojisList((prevEmojiList) =>
-          prevEmojiList?.filter((emoji) =>
+        setEmojisList(data.filter((emoji) =>
             emoji?.unicodeName?.toLowerCase().includes(query?.toLowerCase())
           )
         );
