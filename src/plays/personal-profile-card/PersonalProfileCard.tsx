@@ -56,7 +56,7 @@ const PersonalProfileCard = (props: any) => {
 
   const handleClear = () => {
     setKey(Math.random())
-    localStorage.removeItem('profile_card')
+    setLocalStoreProfile(null)
     setValue(initialStateProfile)
     setProfileCard(initialStateProfile)
   }
