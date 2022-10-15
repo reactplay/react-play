@@ -1,6 +1,5 @@
 import PlayHeader from 'common/playlists/PlayHeader'
 import React, { useState, ChangeEvent, useEffect } from 'react'
-import { ToastContainer, toast } from 'react-toastify'
 
 import useLocalStorage from '../../common/hooks/useLocalStorage'
 import ProfileType from './types'
@@ -45,21 +44,17 @@ const PersonalProfileCard = (props: any) => {
   const handleUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files[0]
     if (files) {
-      if(files.size > 102400) {
-        toast.warn("Please upload image file size less than 100kb.");
-      }else {
-        const fileReader = new FileReader()
-        fileReader.readAsDataURL(files)
-        const load = () => {
-          setValue((value: ProfileType) => {
-            return { ...value, [e.target.name]: fileReader.result }
-          })
-        }
-        fileReader.addEventListener("load", load)
-        return function cleanupListener() {
-          window.removeEventListener("load", load)
-        }    
+      const fileReader = new FileReader()
+      fileReader.readAsDataURL(files)
+      const load = () => {
+        setValue((value: ProfileType) => {
+          return { ...value, [e.target.name]: fileReader.result }
+        })
       }
+      fileReader.addEventListener("load", load)
+      return function cleanupListener() {
+        window.removeEventListener("load", load)
+      }    
     }
   }
 
@@ -73,14 +68,6 @@ const PersonalProfileCard = (props: any) => {
   return (
     <div className="play-details">
       <PlayHeader play={props} />
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        closeOnClick
-        rtl={false}
-        pauseOnHover
-      />
       <div className="flex flex-col md:flex-row px-5 py-7">
         <div className="w-[100%] md:w-[50%] mb-8 md:mb-0">
           <ProfileForm value={value} profile={profileCard} onChange={handleChange} onClick={handleClick} onUpload={handleUpload} onClear={handleClear} />
