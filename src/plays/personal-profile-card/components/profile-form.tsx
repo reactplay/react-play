@@ -28,6 +28,7 @@ const ProfileForm = ({
           className="profilecard-cover-input mx-auto mr-0 relative top-[20px] mt-[-20px] h-[30px] sm:h-[40px] w-[30px] sm:w-[40px] rounded-full flex bg-[#45576f] hover:cursor-pointer"
           type="file"
           name="cover"
+          accept="image/*"
           onChange={onUpload}
         />
         <img
@@ -42,6 +43,7 @@ const ProfileForm = ({
           className="profilecard-dp-input mx-auto relative top-[-50px] sm:top-[-40px] h-[30px] sm:h-[40px] w-[30px] sm:w-[40px] rounded-full flex bg-[#45576f] z-10 left-[50px] sm:left-[65px] hover:cursor-pointer"
           type="file"
           name="dp"
+          accept="image/*"
           onChange={onUpload}
         />
         <img
