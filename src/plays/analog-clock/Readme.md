@@ -1,6 +1,6 @@
 # analog-clock
 
-A Beautiful wall clock
+A beautiful wall clock
 
 ## What will you learn
 
