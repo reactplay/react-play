@@ -13,7 +13,7 @@ const SearchPlays = ({ reset }) => {
   const resetSearchField = useCallback(() => {
     setSearchTerm("");
     setSearchText("");
-  },[setSearchTerm])
+  }, [setSearchTerm])
 
   useEffect(() => {
     if (location.pathname !== "/plays") {
@@ -26,10 +26,10 @@ const SearchPlays = ({ reset }) => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    if (event.key === "Enter") {
-      setSearchTerm(event.target.value);
-      navigate("/plays", { replace: true, state: { filter: true, search: false } });
-    }
+    // if (event.key === "Enter") {
+    setSearchTerm(event.target.value);
+    navigate("/plays", { replace: true, state: { filter: true, search: false } });
+    // }
   };
 
   return (
