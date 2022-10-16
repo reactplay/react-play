@@ -1,0 +1,141 @@
+.note-taker {
+    max-width: 1200px;
+    margin: 1rem auto;
+    width: 90%;
+    height: 100%;
+    position: relative;
+}
+
+.note-taker>.create-button {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 2;
+    background-color: green;
+    padding: 0 1rem;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.note-taker>.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-taker .modal-container {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+.note-taker .input-containers {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.note-taker .input-containers input{
+    outline: none;
+    margin-top: 10px;
+}
+
+.note-taker .action-buttons {
+    display: flex;
+    gap:1rem;
+}
+
+.note-taker .action-buttons button, .note-taker .note .note-actions button{
+    background-color: #eee;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+}
+
+.note-taker h2{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.note-taker h3{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.note-taker >.notes>div{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.note-taker >.notes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note-taker .pinned-notes, .note-taker .other-notes{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.note-taker >.notes .note{
+    max-width: 350px;
+    min-width: 300px;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.note-taker .note{
+    background-color: rgb(230, 230, 230);
+}
+
+.note-taker .note .note-actions{
+    display: flex;
+    gap:1rem;
+    margin-top: 1rem;
+}
+
+.note-taker .modal-container{
+    position: relative;
+}
+
+.note-taker .close-modal-button{
+    position: absolute;
+    right: 1rem;
+    top:0.8rem;
+    font-size: 1.5rem;
+}
+
+.note-taker button:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+
+.note-taker .search-container{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.note-taker .search-container input{
+    outline: none;
+    padding:5px;
+}
+
+.note-taker input,.note-taker textarea{
+    outline: none;
+}
