@@ -1,0 +1,84 @@
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: start;
+    align-items: start;
+}
+
+.todo-container h2 {
+    align-self: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.todo-container h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.todo-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    gap: 1rem;
+}
+
+.todo-container textarea {
+    padding: 5px 8px;
+    border-radius: 5px;
+    width: 80%;
+    outline: none;
+}
+
+.todo-container button {
+    background-color: rgb(68, 68, 68);
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+}
+
+.todo-container .todo-wrapper {
+    background-color: rgb(253, 219, 219);
+    width: 600px;
+    max-width: 80%;
+    padding: 0.8rem 1.4rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.todo-container .todo-wrapper.active {
+    background-color: #bfeebf;
+}
+
+.todo-container .status-circle {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.todo-container .status-circle.active {
+    background-color: green;
+}
+
+.todo-container .todos-container,
+.todo-container .pending-todo-container,
+.todo-container .done-todo-container {
+    width: 100%;
+}
+
+.todo-container .todos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
