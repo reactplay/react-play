@@ -61,7 +61,7 @@ const MultiSelect = ({defaultOptions, selectedOptions, onChange}: MultiSelectPro
                     {isOpen ? <CloseOptionsIcon onClick={closeOptions}/> : <OpenOptionsIcon onClick={openOptions}/>}
                 </div>
             </div>
-            <div id="options" role="list" className={isOpen ? "" : "closed"} data-testid="options">
+            <div id="options" role="list" className={isOpen ? "" : "closed"}>
                 {options
                     .map(option =>
                         <p key={option.name}

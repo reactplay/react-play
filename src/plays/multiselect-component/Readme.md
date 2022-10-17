@@ -10,7 +10,7 @@ A Select component that allows the users to choose multiple values and also filt
 ## Creator Information
 
 - User: Abrar0204
-- Gihub Link: https://github.com/Abrar0204
+- Github Link: https://github.com/Abrar0204
 - Blog: NA
 - Video: NA
 
