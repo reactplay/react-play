@@ -103,7 +103,7 @@ function QuizApp(props: any) {
             <div className="flex justify-between">
               <div className="flex">
                 <button onClick={()=>showAnswer()}><CgEditFlipH size={40} /></button>
-                {isWin === false ? <AiOutlineClose size={40} color="red" /> : <AiOutlineCheck size={40} color="#021C1E" />}
+                {isWin === false ? <AiOutlineClose size={40} color="red" /> : isWin === true ?<AiOutlineCheck size={40} color="#021C1E" /> : '' }
               </div>
               <button className="text-[#2C7873] py-2 px-10 rounded-lg bg-[#021C1E] w-32 self-end" onClick={() => nextQuestion()}>Next</button>
             </div>
