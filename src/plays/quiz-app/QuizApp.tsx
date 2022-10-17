@@ -73,8 +73,8 @@ function QuizApp(props: any) {
   return (
     <div className="play-details">
       <PlayHeader play={props} />
-        <div className="max-w-[1080px] w-[100%] mx-auto px-5 sm:px-8 md:px-10 lg:px-0 py-10 flex items-center min-h-[calc(100vh-182px)]">
-          <div className="w-[30%] flex flex-col justify-center">
+        <div className="max-w-[1080px] w-[100%] mx-auto px-5 sm:px-8 md:px-1 lg:px-0 py-10 flex items-center min-h-[calc(100vh-182px)] flex-col md:flex-row">
+          <div className="w-full md:w-[30%] md:mr-2 flex flex-col justify-center">
           {questions.map((question: QuestionProps) => (
             <div className="flex" key={question.qNo}>
               <AiOutlineCheck style={{ visibility: question.qStatus === 1 ? 'visible' : 'hidden' }} size={20} color="#021C1E" />
@@ -84,9 +84,9 @@ function QuizApp(props: any) {
               </button>
             </div>
           ))}
-          <button className="text-white mt-5 py-2 px-10 rounded-lg bg-[#021C1E]" onClick={() => handleClear()}>Start Again</button>
+          <button className="text-white mb-10 md:mb-0 mt-5 py-2 px-10 rounded-lg bg-[#021C1E]" onClick={() => handleClear()}>Start Again</button>
           </div>
-          <div className="mx-auto w-[70%] max-w-[700px] min-h-[350px] bg-[#6FB98F] flex flex-col py-5 px-8 sm:px-10 md:px-20 rounded-md">
+          <div className="w-full md:w-[70%] mx-auto max-w-[700px] min-h-[350px] bg-[#6FB98F] flex flex-col py-5 px-8 sm:px-10 md:px-20 rounded-md">
             <div className="text-[#021C1E] flex-1 flex flex-col justify-center">
               <div className="pb-2">Question: {questions[question].qNo}</div>
               <div className="pb-2">{questions[question].question}</div>
