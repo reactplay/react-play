@@ -9,6 +9,8 @@ import {
   CreatePlay,
   PlayCreated,
   TechStack,
+  LeaderBoard
+
 } from "common";
 import PlayList from "common/playlists/PlayList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -30,6 +32,7 @@ const RouteDefs = () => {
     { path: "/ideas", title: "ReactPlay - Ideas" },
     { path: "/tech-stacks", title: "ReactPlay - Tech Stacks" },
     { path: "/plays/create", title: "ReactPlay - Create Play" },
+    { path: "/leaderboard", title: " ReactPlay - Leader Board" }
   ];
 
   return (
@@ -64,6 +67,7 @@ const RouteDefs = () => {
             <Route index element={<PlayList />} />
           </Route>
           <Route path="/ideas" element={<PlayIdeas />} />
+          <Route path='/leaderboard' element={<LeaderBoard/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
