@@ -1,4 +1,5 @@
 import { Modal } from "@mui/material";
+import SocialShare from "../../../common/components/SocialShare";
 import "../styles.css";
 import { getEvaluationText } from "../utils";
 
