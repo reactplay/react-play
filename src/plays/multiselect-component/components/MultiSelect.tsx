@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import CloseOptionsIcon from "./CloseOptionsIcon";
+import OpenOptionsIcon from "./OpenOptionsIcon";
 
 interface Option {
     name: string;
@@ -40,15 +42,8 @@ const MultiSelect = ({defaultOptions, selectedOptions, onChange}: MultiSelectPro
         setSearchTerm(event.target.value);
     }
 
-    const OpenOptionsIcon = () => <img alt="down-arrow" className="icon-button"
-                                       onClick={openOptions}
-                                       src="https://img.icons8.com/ios/20/000000/expand-arrow--v2.png"/>
-
-    const CloseOptionsIcon = () => <img alt="close"  className="icon-button"
-                                        onClick={closeOptions}
-                                        src="https://img.icons8.com/ios/20/000000/delete-sign--v1.png"/>
-
     const openOptions = () => setIsOpen(true);
+
     const closeOptions = () => setIsOpen(false);
 
     return (
@@ -63,7 +58,7 @@ const MultiSelect = ({defaultOptions, selectedOptions, onChange}: MultiSelectPro
                     <input type="text" id="input" placeholder="Press Enter to Search.."
                            onChange={handleSearchTerm} onFocus={openOptions}
                            onBlur={event => event.stopPropagation()}/>
-                    {isOpen ? <CloseOptionsIcon/> : <OpenOptionsIcon/>}
+                    {isOpen ? <CloseOptionsIcon onClick={closeOptions}/> : <OpenOptionsIcon onClick={openOptions}/>}
                 </div>
             </div>
             <div id="options" role="list" className={isOpen ? "" : "closed"} data-testid="options">
