@@ -1,0 +1,47 @@
+name: New Play
+description: Add a New Play Request
+title: "[Add a Play]: "
+labels: ["play-request"]
+assignees: [""]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time for creating a new play.
+        
+        
+  - type: textarea
+    id: about-play
+    attributes:
+      label: What's the Play about?
+      description: Tell us in details about your play.
+    validations:
+      required: true
+        
+  - type: textarea
+    id: react-concepts
+    attributes:
+      label: What ReactJS concept will be used to create this play?
+      placeholder: Components, Hooks, React Router ...
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: implementation
+    attributes:
+      label: Are you willing to take it up for implementation?
+      multiple: false
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+        
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/reactplay/react-play/blob/main/CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

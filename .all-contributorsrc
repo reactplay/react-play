@@ -463,6 +463,33 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "siddxharth",
+      "name": "Siddharth Khatri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67476171?v=4",
+      "profile": "http://siddxharth.live",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "EmmaDawsonDev",
+      "name": "Emma Dawson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57045550?v=4",
+      "profile": "https://emmadawson.dev",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "senali-d",
+      "name": "Senali",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52546856?v=4",
+      "profile": "https://github.com/senali-d",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
