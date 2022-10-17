@@ -1,8 +1,20 @@
 import { Helmet } from "react-helmet";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-function DefMeta() {
+function DefMeta({ routes }) {
+  const [title, setTitle] = useState(
+    "ReactPlay - One app to learn, create, and share ReactJS projects"
+  );
+  const currentPath = useLocation().pathname;
+
+  useEffect(() => {
+    // Logic to set title of website dynamically depending on the path.
+    routes.some((route) => route.path === currentPath && setTitle(route.title));
+  }, [currentPath, routes]);
   return (
     <Helmet>
+      <title>{title}</title>
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="ReactPlay" />
       <meta property="og:image:type" content="image/png" />
@@ -21,11 +33,7 @@ function DefMeta() {
     share ReactJS projects with the developer community."
         data-react-helmet="true"
       />
-      <meta
-        property="og:title"
-        content="ReactPlay - One app to learn, create, and share ReactJS projects."
-        data-react-helmet="true"
-      />
+      <meta property="og:title" content={title} data-react-helmet="true" />
       <meta
         property="og:image"
         content="https://reactplay.io/og-image.png" // React should default these to public
@@ -41,11 +49,7 @@ function DefMeta() {
         content="https://reactplay.io"
         data-react-helmet="true"
       />
-      <meta
-        name="twitter:title"
-        content="ReactPlay - One app to learn, create, and share ReactJS projects."
-        data-react-helmet="true"
-      />
+      <meta name="twitter:title" content={title} data-react-helmet="true" />
       <meta
         name="twitter:description"
         content="ReactPlay is an open-source application to learn, create and

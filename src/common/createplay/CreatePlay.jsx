@@ -10,26 +10,34 @@ import "./create-play.scss";
 import Loader from "common/spinner/spinner";
 import { Plays } from "common/services/plays";
 import { useNavigate } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
-import { ReactComponent as NotAllowedImage } from "../../images/img-403.svg"
+import { ReactComponent as NotAllowedImage } from "../../images/img-403.svg";
 
 const NoCreationInProdScreen = () => {
-  return <div className="w-full h-full flex flex-col justify-center items-center gap-8">
-    <div>
-      <NotAllowedImage width={550} />
-    </div>
+  return (
+    <div className="w-full h-full flex flex-col justify-center items-center gap-8">
+      <div>
+        <NotAllowedImage width={550} />
+      </div>
 
-    <div className="text-center">
-      You can't create plays in production
-      <br />
-      <a className="text-link-default" href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md" target="_blank" rel="noopener noreferrer">read this</a> for more details
+      <div className="text-center">
+        You can't create plays in production
+        <br />
+        <a
+          className="text-link-default"
+          href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          read this
+        </a>{" "}
+        for more details
+      </div>
     </div>
-  </div>
-}
+  );
+};
 
 const CreatePlay = () => {
   const { isAuthenticated, isLoading } = useAuthenticationStatus();
-  const [searchParams] = useSearchParams();
 
   const userData = useUserData();
   let navigate = useNavigate();
@@ -102,7 +110,7 @@ const CreatePlay = () => {
   };
 
   if (process.env.NODE_ENV !== "development") {
-    return <NoCreationInProdScreen />
+    return <NoCreationInProdScreen />;
   }
 
   if (isLoading || isDataLoading) {
@@ -115,7 +123,11 @@ const CreatePlay = () => {
   }
 
   if (!isAuthenticated) {
-    window.location = NHOST.AUTH_URL(`http://localhost:${process.env.RAECT_APP_DEV_PORT ?? '3000'}/plays/create`);
+    window.location = NHOST.AUTH_URL(
+      `http://localhost:${
+        process.env.RAECT_APP_DEV_PORT ?? "3000"
+      }/plays/create`
+    );
     return null;
   } else {
     initializeData();

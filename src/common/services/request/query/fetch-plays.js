@@ -61,7 +61,11 @@ export const BasiFetchParam = {
     "name",
     "slug",
     { user: ["id", "displayName", "avatarUrl"] },
+    "created_at",
   ],
+  orderBy: {
+    created_at: "desc",
+  },
 };
 
 export const DetailedFetchParam = {
