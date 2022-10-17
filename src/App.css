@@ -571,6 +571,11 @@ small {
   fill: var(--color-neutral-50);
 }
 
+.brand-tech-stack .image,
+.brand-tech-stack .image {
+  filter: invert(60%) sepia(12%) saturate(186%) hue-rotate(151deg) brightness(86%) contrast(84%);
+}
+
 .brand-tech-stack:hover,
 .brand-tech-stack:focus {
   border: solid 2px rgba(var(--color-brand-primary-rgb), 60%);
@@ -583,6 +588,11 @@ small {
 .brand-tech-stack:hover .icon,
 .brand-tech-stack:focus .icon {
   fill: var(--color-brand-primary);
+}
+
+.brand-tech-stack:hover .image,
+.brand-tech-stack:focus .image {
+  filter: invert(75%) sepia(58%) saturate(2245%) hue-rotate(131deg) brightness(102%) contrast(103%);
 }
 
 .create-button-badge {
