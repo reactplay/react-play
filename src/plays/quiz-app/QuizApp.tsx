@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import PlayHeader from 'common/playlists/PlayHeader';
 
 import { CgEditFlipH } from 'react-icons/cg';
 import { AiOutlineClose, AiOutlineCheck } from 'react-icons/ai'
 import useLocalStorage from 'common/hooks/useLocalStorage';
+import { Status, QuestionProps} from './types';
 
 const questionsArray = [
   {qNo: 1, title: 'JavaScript ', question: 'Which type of JavaScript language is ___', answers: ['Object-Oriented', 'Object-Based', 'Assembly-language', 'High-level'], answer: 2, qStatus: 0},
@@ -17,17 +18,6 @@ const questionsArray = [
   {qNo: 9, title: 'JavaScript ', question: 'When there is an indefinite or an infinite value during an arithmetic computation in a program, then JavaScript prints______.', answers: ['Prints an exception error', 'Prints an overflow error', 'Displays "Infinity"', 'Prints the value as such'], answer: 3, qStatus: 0},
   {qNo: 10, title: 'JavaScript', question: 'Which one of the following also known as Conditional Expression:', answers: ['Alternative to if-else', 'Switch statement', 'If-then-else statement', 'immediate if'], answer: 4, qStatus: 0},
 ]
-
-interface Status {
-  qNo: number;
-  status?: number;
-}
-
-interface QuestionProps {
-  qNo: number;
-  qStatus: number;
-  question: string;
-}
 
 function QuizApp(props: any) {
   const [question, setQuestion] = useState<number>(0)
@@ -85,10 +75,10 @@ function QuizApp(props: any) {
       <PlayHeader play={props} />
         <div className="max-w-[1080px] w-[100%] mx-auto px-5 sm:px-8 md:px-10 lg:px-0 py-10 flex items-center min-h-[calc(100vh-182px)]">
           <div className="w-[30%] flex flex-col justify-center">
-          {questions !== null && questions.map((question: QuestionProps) => (
+          {questions.map((question: QuestionProps) => (
             <div className="flex" key={question.qNo}>
               <AiOutlineCheck style={{ visibility: question.qStatus === 1 ? 'visible' : 'hidden' }} size={20} color="#021C1E" />
-              <button className={`text-left ml-2 
+              <button className={`text-left ml-2
               `} onClick={() => selectedQuestion(question.qNo)}>
                 {question.qNo} {`${question.question.split(' ', 4).join(' ')}...`}
               </button>
@@ -103,7 +93,7 @@ function QuizApp(props: any) {
               <div className="flex flex-col">
                 {
                   questions[question].answers.map((answer: string, index: number) => (
-                    <button disabled={questions[question].qStatus === 1 ? true : false} className={`text-left py-2 border-b-2 ${questions[question].qStatus === 1 ? 'opacity-50 cursor-auto' : ''} ${(isWin === false && index+1 === questions[question].answer && isFlipped) ? ' border-red-600' : (index+1 === questions[question].answer && questions[question].qStatus === 1) ?'border-[#021C1E]' : 'border-b-0'}`} key={index} onClick={() => handleAnswer(questions[question].qNo, index)}>
+                    <button disabled={questions[question].qStatus === 1 ? true : false} className={`text-left py-2 border-b-2 ${questions[question].qStatus === 1 ? 'opacity-50 cursor-auto' : ''} ${(isWin === false && index+1 === questions[question].answer && isFlipped) ? ' border-red-600' : (index+1 === questions[question].answer && questions[question].qStatus === 1) ? 'border-[#021C1E]' : 'border-b-0'}`} key={index} onClick={() => handleAnswer(questions[question].qNo, index)}>
                       {`${index+1}) ${answer}`}
                     </button>
                   ))
@@ -113,7 +103,7 @@ function QuizApp(props: any) {
             <div className="flex justify-between">
               <div className="flex">
                 <button onClick={()=>showAnswer()}><CgEditFlipH size={40} /></button>
-                {isWin === false ? <AiOutlineClose size={40} color="red" /> : isWin === true  && <AiOutlineCheck size={40} color="#021C1E" />}
+                {isWin === false ? <AiOutlineClose size={40} color="red" /> : <AiOutlineCheck size={40} color="#021C1E" />}
               </div>
               <button className="text-[#2C7873] py-2 px-10 rounded-lg bg-[#021C1E] w-32 self-end" onClick={() => nextQuestion()}>Next</button>
             </div>
