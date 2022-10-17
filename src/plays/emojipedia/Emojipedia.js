@@ -43,7 +43,6 @@ function Emojipedia(props) {
         setEmojisList(data);
       }
     }, 300);
-
     return () => clearTimeout(delayFn);
   }, [query, data]);
 
