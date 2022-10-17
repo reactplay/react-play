@@ -10,10 +10,12 @@ interface Option {
 interface MultiSelectProps {
     defaultOptions: string[],
     selectedOptions: string[],
-    onChange: (options: string[]) => void
+    onChange: (options: string[]) => void,
+    label: string,
+    placeholder?: string
 }
 
-const MultiSelect = ({defaultOptions, selectedOptions, onChange}: MultiSelectProps ) => {
+const MultiSelect = ({defaultOptions, selectedOptions, onChange, label, placeholder}: MultiSelectProps) => {
     const [options, setOptions] = useState<Option[]>([]);
     const [isOpen, setIsOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
@@ -47,16 +49,18 @@ const MultiSelect = ({defaultOptions, selectedOptions, onChange}: MultiSelectPro
     const closeOptions = () => setIsOpen(false);
 
     return (
+        // tabIndex is added so that onBlur can work on a div element
         <div id="select" tabIndex={0} onBlur={closeOptions}>
-            <label htmlFor="selector">Select Your Favorite Game:</label>
+            <label htmlFor="selector">{label}</label>
             <div id="selector">
                 <div id="selected-options">
                     {selectedOptions.map(option => <p key={option + "selected"} className="option"
                                                       onClick={() => removeFromSelected(option)}>{option}</p>)}
                 </div>
                 <div id="search">
-                    <input type="text" id="input" placeholder="Press Enter to Search.."
+                    <input type="text" id="input" placeholder={placeholder || ""}
                            onChange={handleSearchTerm} onFocus={openOptions}
+                        // stopPropagation prevents options list from closing when clicked directly from input field
                            onBlur={event => event.stopPropagation()}/>
                     {isOpen ? <CloseOptionsIcon onClick={closeOptions}/> : <OpenOptionsIcon onClick={openOptions}/>}
                 </div>

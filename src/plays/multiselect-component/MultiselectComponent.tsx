@@ -20,7 +20,7 @@ function MultiselectComponent(props: any) {
                 <PlayHeader play={props}/>
                 <div className="play-details-body multi-select-container">
                     {/* Your Code Starts Here */}
-                    <MultiSelect defaultOptions={defaultOptions} selectedOptions={selectedOptions} onChange={handleSelect}/>
+                    <MultiSelect label={"Select Your Favorite Game:"} placeholder={"Search Games.."} defaultOptions={defaultOptions} selectedOptions={selectedOptions} onChange={handleSelect}/>
                     {/* Your Code Ends Here */}
                 </div>
             </div>
