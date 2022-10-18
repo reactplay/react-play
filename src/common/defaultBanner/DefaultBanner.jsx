@@ -11,14 +11,13 @@ const DefaultBanner = () => {
   );
   return (
     <div>
-      <h2 className="body-title">
+      <h1 className="body-title">
         Start <strong>React Code</strong> Arena <br />
         with ReactPlay
-      </h2>
+      </h1>
       <p className="body-desc">
-        ReactPlay is an open-source platform to learn, create and share ReactJS
-        projects with the developer community. Start by browsing the plays or
-        exploring the source code.
+        ReactPlay is an open-source platform to learn, create and share ReactJS projects with the developer community. Start by browsing the
+        plays or exploring the source code.
       </p>
       <div className="body-c2a">
         <Link to="/plays" className="body-c2a-btn body-c2a-btn--primary">
@@ -33,16 +32,15 @@ const DefaultBanner = () => {
         >
           <BsGithub className="icon" />
           <span className="btn-label">
-            GitHub{" "}
+            GitHub{' '}
             <div className="label-info-more">
-              <FiStar />{" "}
-              <div className="more-label">{data.stargazers_count}</div>
-            </div>{" "}
+              <FiStar /> <div className="more-label">{data.stargazers_count}</div>
+            </div>{' '}
           </span>
         </a>
       </div>
     </div>
-  );
+  )
 };
 
 export default DefaultBanner;

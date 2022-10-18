@@ -7,10 +7,10 @@ const FeaturedPlays = () => {
 
   return (
     <>
-      <h3 className='plays-title-primary'>
+      <h2 className="plays-title-primary">
         Trending <strong>Plays</strong>
-      </h3>
-      <ul className='list-plays'>
+      </h2>
+      <ul className="list-plays">
         {loading && <p>Loading...</p>}
         {error && <p>{error?.message ?? "Something went wrong"}</p>}
         {success && data?.map((play, index) => (
@@ -18,7 +18,7 @@ const FeaturedPlays = () => {
         ))}
       </ul>
     </>
-  );
+  )
 };
 
 export default FeaturedPlays;
