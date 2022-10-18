@@ -3,10 +3,10 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="app-body">
+    <main className="app-body">
       <Outlet />
-    </div>
-  );
+    </main>
+  )
 }
 
 export default App;
