@@ -11,7 +11,7 @@ const NavBarCommonComponent = ({
       <Link
         onClick={handleLinkClick}
         className={
-          currentRoute.includes("dashboard/") && currentRoute.split("/").length === 2
+          currentRoute.includes("dashboard") && currentRoute.split("/").length === 2
             ? activeClass : "links"}
         to="/dashboard">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mr-2 w-6 h-6">
