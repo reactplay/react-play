@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-49-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-55-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -274,6 +274,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://github.com/SSK-14"><img src="https://avatars.githubusercontent.com/u/45158568?v=4?s=100" width="100px;" alt="Sanjay Kumar"/><br /><sub><b>Sanjay Kumar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=SSK-14" title="Code">💻</a></td>
       <td align="center"><a href="http://vinaypatil.netlify.app"><img src="https://avatars.githubusercontent.com/u/29520476?v=4?s=100" width="100px;" alt="Vinay Patil "/><br /><sub><b>Vinay Patil </b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Engineervinay" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/abhi-works"><img src="https://avatars.githubusercontent.com/u/115144059?v=4?s=100" width="100px;" alt="Abhilash"/><br /><sub><b>Abhilash</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=abhi-works" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/KashishLakhara04"><img src="https://avatars.githubusercontent.com/u/104296574?v=4?s=100" width="100px;" alt="Kashish Lakhara"/><br /><sub><b>Kashish Lakhara</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=KashishLakhara04" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/hiimnhan"><img src="https://avatars.githubusercontent.com/u/35358825?v=4?s=100" width="100px;" alt="hiimnhan"/><br /><sub><b>hiimnhan</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=hiimnhan" title="Code">💻</a></td>
+      <td align="center"><a href="http://siddxharth.live"><img src="https://avatars.githubusercontent.com/u/67476171?v=4?s=100" width="100px;" alt="Siddharth Khatri"/><br /><sub><b>Siddharth Khatri</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=siddxharth" title="Code">💻</a></td>
+      <td align="center"><a href="https://emmadawson.dev"><img src="https://avatars.githubusercontent.com/u/57045550?v=4?s=100" width="100px;" alt="Emma Dawson"/><br /><sub><b>Emma Dawson</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=EmmaDawsonDev" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/senali-d"><img src="https://avatars.githubusercontent.com/u/52546856?v=4?s=100" width="100px;" alt="Senali"/><br /><sub><b>Senali</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=senali-d" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/nishasen"><img src="https://avatars.githubusercontent.com/u/43262505?v=4?s=100" width="100px;" alt="Nisha Sen"/><br /><sub><b>Nisha Sen</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=nishasen" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
