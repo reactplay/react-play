@@ -3,7 +3,7 @@ import { TechStackInfo } from "./TechStackInfo";
 const TechStack = () => {
   return (
     <main className="app-body">
-      <h2 className="section-title text-center pt-8 mt-48">ReactPlay is proudly powered by</h2>
+      <h1 className="section-title text-center pt-8 mt-48">ReactPlay is proudly powered by</h1>
       <div className="list-brand-tech-stack">
         {/* <div className='md:w-[800px] 2xl:w-[1000px] w-full flex flex-wrap m-8'> */}
         {TechStackInfo.map((Item, idx) => {
