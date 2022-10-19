@@ -38,6 +38,11 @@ const ProfileForm = ({
               : value.cover
           }
           className="w-full md:w-[600px] h-[150px] sm:h-[200px] rounded-3xl"
+          alt={
+            value.cover === ''
+              ? "placeholder cover"
+              : "cover"
+          }
         />
         <input
           className="profilecard-dp-input mx-auto relative top-[-50px] sm:top-[-40px] h-[30px] sm:h-[40px] w-[30px] sm:w-[40px] rounded-full flex bg-[#45576f] z-10 left-[50px] sm:left-[65px] hover:cursor-pointer"
@@ -53,6 +58,11 @@ const ProfileForm = ({
               : value.dp
           }
           className="w-[110px] sm:w-[150px] h-[110px] sm:h-[150px] rounded-[50%] relative top-[-100px] mb-[-90px]  mx-auto"
+          alt={
+            value.dp === ''
+              ? "placeholder display picture"
+              : "display picture"
+          }
         />
         <p className="mb-5 italic font-bold">*** Please use cover image size 730X270 for better quality</p>
         <input
