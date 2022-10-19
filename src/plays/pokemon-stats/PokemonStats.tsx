@@ -39,8 +39,8 @@ function PokemonStats(props: PlayRoot) {
 
   // Clear the Searched pokemon
   const clearSearchedPokemon = () => {
-    setpokemon(undefined);
-    setname("");
+    setPokemon(undefined);
+    onSetName("");
   }
 
   return (
