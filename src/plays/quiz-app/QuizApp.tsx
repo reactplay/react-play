@@ -24,13 +24,13 @@ function QuizApp(props: any) {
   const [isWin, setIsWin] = useState<boolean | null>(null)
   const [isFlipped, setIsFlipped] = useState<boolean>(false)
   const [status, setStatus] = useState<Status[]>([])
+  const [selectedAns, setSelectedAns] = useState<number | null>(null)
   const [key, setKey] = useState<number>(0)
 
   const [questions, setQuestions] = useLocalStorage('questions', questionsArray);
 
   useEffect(() => {
     setQuestions(questions)
-    questions !== null && setQuestions(questions)
   }, [key])
 
   const nextQuestion = () => {
@@ -38,6 +38,7 @@ function QuizApp(props: any) {
     currentQuestion < 9 ? setQuestion(currentQuestion+1) : setQuestion(0)
     setIsWin(null)
     setIsFlipped(false)
+    setSelectedAns(null)
   }
   
   const selectedQuestion = (question: number) => {
@@ -45,11 +46,13 @@ function QuizApp(props: any) {
     setIsWin(null)
     setIsFlipped(false)
     setKey(Math.random())
+    setSelectedAns(null)
   }
   
   const handleAnswer = (qNo: number, ans: number) => {
     const question = questions.filter((q: QuestionProps) => q.qNo === qNo)[0]
     setKey(Math.random())
+    setSelectedAns(ans)
     if(question.answer === ans+1) {
       setIsWin(true)
       const questionsClone = questions
@@ -67,7 +70,12 @@ function QuizApp(props: any) {
   }
   
   const handleClear = () => {
-    setQuestions(questionsArray)
+    const questionsClone = questions
+    const clearedQuestions = questionsClone.map((question: { qStatus: number; }) =>
+      question.qStatus === 1 ? { ...question, qStatus: 0 } : question
+    )
+    setQuestions(clearedQuestions)
+    setQuestion(0)
   }
 
   return (
@@ -75,12 +83,12 @@ function QuizApp(props: any) {
       <PlayHeader play={props} />
         <div className="max-w-[1080px] w-[100%] mx-auto px-5 sm:px-8 md:px-1 lg:px-0 py-10 flex items-center min-h-[calc(100vh-182px)] flex-col md:flex-row">
           <div className="w-full md:w-[30%] md:mr-2 flex flex-col justify-center">
-          {questions.map((question: QuestionProps) => (
-            <div className="flex" key={question.qNo}>
-              <AiOutlineCheck style={{ visibility: question.qStatus === 1 ? 'visible' : 'hidden' }} size={20} color="#021C1E" />
-              <button className={`text-left ml-2
-              `} onClick={() => selectedQuestion(question.qNo)}>
-                {question.qNo} {`${question.question.split(' ', 4).join(' ')}...`}
+          {questions.map((q: QuestionProps) => (
+            <div className="flex" key={q.qNo}>
+              <AiOutlineCheck style={{ visibility: q.qStatus === 1 ? 'visible' : 'hidden' }} size={20} color="#021C1E" />
+              <button className={`text-left ml-2 hover:text-blue-500
+              ${q.qNo === question+1 ? 'text-blue-500' : ''}`} onClick={() => selectedQuestion(q.qNo)}>
+                {q.qNo} {`${q.question.split(' ', 4).join(' ')}...`}
               </button>
             </div>
           ))}
@@ -93,7 +101,7 @@ function QuizApp(props: any) {
               <div className="flex flex-col">
                 {
                   questions[question].answers.map((answer: string, index: number) => (
-                    <button disabled={questions[question].qStatus === 1 ? true : false} className={`text-left py-2 border-b-2 ${questions[question].qStatus === 1 ? 'opacity-50 cursor-auto' : ''} ${(isWin === false && index+1 === questions[question].answer && isFlipped) ? ' border-red-600' : (index+1 === questions[question].answer && questions[question].qStatus === 1) ? 'border-[#021C1E]' : 'border-b-0'}`} key={index} onClick={() => handleAnswer(questions[question].qNo, index)}>
+                    <button disabled={questions[question].qStatus === 1 ? true : false} className={`text-left py-2 border-b-2 ${questions[question].qStatus === 1 ? 'opacity-50 cursor-auto' : 'hover:text-blue-700'} ${(isWin === false && index+1 === questions[question].answer && isFlipped) ? ' border-red-600' : (index+1 === questions[question].answer && questions[question].qStatus === 1) ? 'border-[#021C1E]' : 'border-b-0'} ${selectedAns === index ? 'text-blue-700' : ''}`} key={index} onClick={() => handleAnswer(questions[question].qNo, index)}>
                       {`${index+1}) ${answer}`}
                     </button>
                   ))
