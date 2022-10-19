@@ -25,8 +25,8 @@ const TopPlayCreators = ({ topPlayCreators }) => {
       <Table aria-label="leader board" sx={{ minWidth: 430 }}>
         <TableHead>
           <TableRow>
-            <TableCell align="left" >Name</TableCell>
-            <TableCell align="center">Number of plays</TableCell>
+            <TableCell align="left" className="table-header">Name</TableCell>
+            <TableCell align="center" className="table-header">Number of plays</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

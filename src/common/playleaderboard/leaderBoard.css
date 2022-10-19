@@ -1,3 +1,6 @@
 .table-cell {
     padding: 6px !important;
 }
+.table-header {
+    font-weight: 600 !important;
+}
