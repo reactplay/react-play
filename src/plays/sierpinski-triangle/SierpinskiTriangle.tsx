@@ -40,8 +40,8 @@ const SierpinskiTriangle = () => {
 
   const draw = (p: P5) => {
     // canvas size
-    const canvasWidth = p.windowWidth * 0.8;
-    const canvasHeight = p.windowHeight * 0.8;
+    const canvasWidth = 600;
+    const canvasHeight = 600;
 
     p.background(222, 222, 222);
     // create initial vectors
