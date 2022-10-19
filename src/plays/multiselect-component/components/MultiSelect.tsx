@@ -57,8 +57,8 @@ const MultiSelect = ({
     const closeOptions = () => setIsOpen(false);
 
     const addSearchTermAsNewOption = () => {
-        setSearchTerm("");
         addNewOption(searchTerm);
+        setSearchTerm("");
     }
 
     const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
