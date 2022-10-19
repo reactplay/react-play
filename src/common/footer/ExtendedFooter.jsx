@@ -36,6 +36,7 @@ const ExtendedFooter = () => {
               <li>
                 <a
                   href="https://twitter.com/reactplayio"
+                  title = "Twitter page"
                   className="social-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -47,6 +48,7 @@ const ExtendedFooter = () => {
               <li>
                 <a
                   href="https://github.com/reactplay"
+                  title = "GitHub Page"
                   className="social-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -58,6 +60,7 @@ const ExtendedFooter = () => {
               <li>
                 <a
                   href="https://discord.gg/vrTxWUP8Am"
+                  title="Discord Channel"
                   className="social-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -69,6 +72,7 @@ const ExtendedFooter = () => {
               <li>
                 <a
                   href="https://blog.reactplay.io/"
+                  title = "Blog Page"
                   className="social-link"
                   target="_blank"
                   rel="noopener noreferrer"
