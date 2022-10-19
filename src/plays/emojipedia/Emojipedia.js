@@ -18,7 +18,7 @@ function Emojipedia(props) {
   
   // Fetch all the emojis
   const { data, loading, error } = useFetch(API_BASE_URL);
-  
+
   const handleEmojiSearch = (e) => setQuery(e.target.value);
 
   // Copy emoji handler
@@ -100,6 +100,13 @@ function Emojipedia(props) {
             </div>
 
             {emojisList?.length === 0 && (
+              error ? 
+              <div className="mt-20">
+                <p className="mb-3 text-center text-2xl font-semibold text-gray-200">
+                  Cannot load emojis, Please try again later...
+                </p>
+              </div>
+              :
               <div className="mt-20">
                 <p className="mb-3 text-center text-2xl font-semibold text-gray-200">
                   Oops ...! No Emoji Found
@@ -110,7 +117,7 @@ function Emojipedia(props) {
               </div>
             )}
 
-            {/* Toaster to show erros & copied emoji message */}
+            {/* Toaster to show errors & copied emoji message */}
             <Toaster position="top-center" />
           </div>
           {/* Your Code Ends Here */}
