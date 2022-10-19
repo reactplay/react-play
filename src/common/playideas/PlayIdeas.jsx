@@ -59,10 +59,10 @@ const PlayIdeas = () => {
       <div className="playideas-container">
         <div className="playideas-header">
           <div>
-            <h3 className="header-title">
+            <h1 className="header-title">
               Play Ideas
               <span className="header-title-badge">{filteredIdeas.length}</span>
-            </h3>
+            </h1>
             <p className="header-desc">
               Looking for project ideas to practice React? Great, you have landed on the right place. Here are some ideas to get you
               started.
@@ -114,7 +114,7 @@ const PlayIdeas = () => {
           <ul className="list-playideas">
             {filteredIdeas.map(idea => (
               <li className="list-playideas-item" key={idea.id}>
-                <h4 className="idea-title">{idea.title}</h4>
+                <h2 className="idea-title">{idea.title}</h2>
                 <p className="idea-desc">{idea.description}</p>
                 <p className="idea-level">
                   <LevelBadge level={idea.level} />
