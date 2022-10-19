@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { AiFillGithub } from "react-icons/ai";
+import React from "react";
 import { BsGithub } from "react-icons/bs";
 import { FiStar } from "react-icons/fi";
 import { IoIosRocket } from "react-icons/io";
