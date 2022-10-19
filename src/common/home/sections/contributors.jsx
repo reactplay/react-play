@@ -6,17 +6,17 @@ export default function SectionContributors() {
 
   return (
     <section className="home-contributors" data-testid="contributors-section">
-      <h3 className="title-primary">
+      <h2 className="title-primary">
         <strong>
           <span>Big Thanks</span>
         </strong>
         <br /> to All Contributors!
-      </h3>
+      </h2>
       <ul className="list-contributors">
         {isLoading && <li>Loading...</li>}
         {error && <li>Error: {error.message}</li>}
         {data &&
-          data.map((contributor) => (
+          data.map(contributor => (
             <li key={contributor.id} className="contributor" data-testid={`contributor-${contributor.id}`}>
               <a
                 href={contributor.html_url}
@@ -25,7 +25,7 @@ export default function SectionContributors() {
                 className="contributor-anchor"
                 title={`${contributor.login}(${contributor.contributions} contributions)`}
               >
-                <img
+              <img
                   loading="lazy"
                   src={contributor.avatar_url}
                   alt={contributor.login}

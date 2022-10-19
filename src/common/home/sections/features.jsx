@@ -34,7 +34,7 @@ export default function SectionFeatures() {
             <div className="item-icon">
               <Icon className="icon" color="var(--color-neutral-90)" />
             </div>
-            <h3 className="item-title">{title}</h3>
+            <h2 className="item-title">{title}</h2>
             <p className="item-desc">{description}</p>
           </li>
         ))}

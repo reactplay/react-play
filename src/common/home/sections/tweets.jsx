@@ -45,13 +45,13 @@ export default function SectionTweets() {
 
   return (
     <section className="home-tweets">
-      <h3 className="title-primary">
+      <h2 className="title-primary">
         What Our{" "}
         <strong>
           <span>Community</span>
         </strong>{" "}
         Says!
-      </h3>
+      </h2>
 
       {isTweetsLoading && <Spinner />}
 
