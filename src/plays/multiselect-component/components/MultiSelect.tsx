@@ -61,9 +61,18 @@ const MultiSelect = ({
         addNewOption(searchTerm);
     }
 
+    const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
+        // relatedTarget is the element that was clicked on which triggered the onBlur event
+        // if the relatedTarget id is select it means the option was clicked on which means the options should not be closed
+        // if the relatedTarget is null it means an empty space was clicked.
+        if (event.relatedTarget === null || event.relatedTarget.id !== "select") {
+            closeOptions();
+        }
+    }
+
     return (
         // tabIndex is added so that onBlur can work on a div element
-        <div id="select" tabIndex={0} onBlur={closeOptions}>
+        <div id="select" tabIndex={0} onBlur={handleBlur}>
             <label htmlFor="selector">{label}</label>
             <div id="selector">
                 <div id="selected-options">
@@ -78,8 +87,7 @@ const MultiSelect = ({
                            onChange={handleSearchTerm}
                            onFocus={openOptions}
                            value={searchTerm}
-                        // stopPropagation prevents options list from closing when clicked directly from input field
-                           onBlur={event => event.stopPropagation()}/>
+                    />
                     {isOpen ? <CloseOptionsIcon onClick={closeOptions} size={30}/> :
                         <OpenOptionsIcon size={30} onClick={openOptions}/>}
                 </div>
