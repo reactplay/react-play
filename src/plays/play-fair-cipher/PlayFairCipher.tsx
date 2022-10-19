@@ -100,8 +100,6 @@ function PlayFairCipher(props: any) {
 	const performDecryption = (e: React.MouseEvent<HTMLDivElement>) => {
 		setCt("");
 		let newPt = "";
-		console.log(input.replace("j", "i"));
-		console.log(matrix);
 		for (let i = 0; i < input.length; i += 2) {
 			const pos1 = findIndex(input[i]);
 			const pos2 = findIndex(input[i + 1]);
