@@ -39,7 +39,7 @@ const TopPlayCreators = ({ topPlayCreators }) => {
                 {profilePicture(creator.displayName, creator.avatarUrl)}
               </TableCell>
               <TableCell align="center" className="table-cell">
-                {creator.plays_aggregate.aggregate.count}
+                {creator.count}
               </TableCell>
             </TableRow>
           ))}
