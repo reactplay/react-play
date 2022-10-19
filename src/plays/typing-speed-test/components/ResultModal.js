@@ -1,12 +1,28 @@
 import { Modal } from "@mui/material";
-import SocialShare from "../../../common/components/SocialShare";
+import SocialShare from "common/components/SocialShare";
+import { IoLogoTwitter } from "react-icons/io5";
 import "../styles.css";
 import { getEvaluationText } from "../utils";
 
 const ResultModal = ({ open, handleModalClose, stats }) => {
   const { wpm, cpm, accuracy } = stats;
   const evaluationText = getEvaluationText(wpm);
-
+  const tweetIt = (msg) => {
+    const URL = window.location.href;
+    const VIA = "reactplayIO";
+    msg = msg ?? "Learning ReactJS? Check out this awesome React Playlist!";
+    const hashTags = [
+      "javascript",
+      "devcommunity",
+      "100daysofcode",
+      "react",
+      "reactplay",
+    ];
+    const tags = encodeURIComponent(hashTags.join(","));
+    return `https://twitter.com/intent/tweet?url=${URL}&text=${encodeURIComponent(
+      msg
+    )}&hashtags=${tags}&via=${VIA}`;
+  };
   return (
     <Modal open={open} onClose={handleModalClose}>
       <div className="typing__speed__test__result__modal ">
@@ -20,14 +36,24 @@ const ResultModal = ({ open, handleModalClose, stats }) => {
             <span className="font-bold">{isNaN(accuracy) ? 0 : accuracy}%</span>{" "}
             Keep practicing!
           </h1>
-
-          <button
-            className="mt-4 text-center bg-violet-500 px-5 py-[0.7rem] text-sm text-white rounded-[4px] font-medium"
-            onClick={handleModalClose}
-          >
-            Try Again
-          </button>
-          <SocialShare showTwitter msg={`Hey checkout I got typing speed of  ${wpm} WPM. Find yours with`}/>
+          <div className="flex gap-4">
+            <a
+              href={tweetIt(
+                `Hey checkout I got typing speed of  ${wpm} WPM. Find yours with`
+              )}
+              className="mt-4 text-center bg-violet-500 px-5 py-[0.7rem] text-sm text-white rounded-[4px] font-medium flex gap-2 items-center"
+            >
+              {" "}
+              Share
+              <IoLogoTwitter size={18} className="icon" />
+            </a>
+            <button
+              className="mt-4 text-center bg-gray-400 px-5 py-[0.7rem] text-sm text-white rounded-[4px] font-medium"
+              onClick={handleModalClose}
+            >
+              Try Again
+            </button>
+          </div>
         </div>
       </div>
     </Modal>
