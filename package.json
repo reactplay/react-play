@@ -25,6 +25,7 @@
     "json-graphql-parser": "^0.0.20",
     "jspdf": "^2.5.1",
     "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "node-sass": "^7.0.1",
     "react": "^18.0.0",
     "react-codemirror2": "^7.2.1",

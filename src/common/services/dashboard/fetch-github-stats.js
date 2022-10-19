@@ -72,10 +72,26 @@ const getViews = async () => {
   }
 }
 
+const getContributors = async () => {
+
+  try {
+    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/repos/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}/contributors?per_page=10`, {
+      method: 'GET',
+      headers: new Headers({
+        'Authorization': `Bearer ${process.env.REACT_APP_BARER_TOKEN}`
+      }),
+    });
+    return await res.json();
+  } catch (e) {
+    return [];
+  }
+}
+
 export {
   getCloneFigures,
   popularContent,
   refralSites,
   getIssues,
-  getViews
+  getViews,
+  getContributors
 }

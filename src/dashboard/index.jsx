@@ -13,7 +13,7 @@ const Dashboard = () => {
         <SideNavBar />
         <FlyNavBar />
       </Grid>
-      <Grid item md={10} xs={12} className="bg-blue-400">
+      <Grid item md={10} xs={12}>
         <Outlet />
       </Grid>
     </Grid>

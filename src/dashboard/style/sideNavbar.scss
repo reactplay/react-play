@@ -7,12 +7,12 @@
     margin-top: 3rem;
     display: flex;   
     &:active,&:hover,&:focus{
-      color: aqua;
+      color: var(--color-brand-primary);
     } 
    
   }
 .activeLink{
-      color: aqua;
+      color: var(--color-brand-primary);
 }  
 .sideNavbar{
   background: var(--color-neutral-90);
