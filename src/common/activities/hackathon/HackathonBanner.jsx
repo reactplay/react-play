@@ -17,7 +17,7 @@ function HackathonBanner() {
         <span className="text-lg md:text-xl lg:text-2xl">ReactPlay Presents</span>
         <h1 className=" uppercase text-5xl md:text-6xl lg:text-8xl font-bold text-cyan-300 text-center lg:text-left">
           <span className="sr-only">HACK-R-PLAY</span>
-          <img src={HRPLogo} className="w-10/12 md:w-64 lg:w-auto ml-auto mr-auto lg:ml-0 lg:mr-0 lg:inline-block" />
+          <img src={HRPLogo} className="w-10/12 md:w-64 lg:w-auto ml-auto mr-auto lg:ml-0 lg:mr-0 lg:inline-block" alt="HRP Logo" />
         </h1>
         <div className="my-2 md:my-4 md:text-xl">
           <p className="text-2xl font-bold mt-8 mb-4 text-center lg:text-left">Developers and Hacking are inseparable!</p>
@@ -58,7 +58,7 @@ function HackathonBanner() {
         </div>
       </div>
       <div>
-        <img src={HackerBannerImage} className="hackathon-banner-image" />
+        <img src={HackerBannerImage} className="hackathon-banner-image" alt="" />
       </div>
     </div>
   );
