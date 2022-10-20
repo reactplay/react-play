@@ -34,10 +34,14 @@ function ImageCollector(props) {
             <div className="image-grid">
               {images.length > 0 ? (
                 images.map((image, index) => (
-                  <img className="image" src={image} alt="grid" key={index} />
+                  <div className="image-wrapper">
+                    <img className="image" src={image} alt="grid" key={index} />
+                  </div>
                 ))
               ) : (
-                <p className="empty-message">Images will appear once you add them</p>
+                <p className="empty-message">
+                  Images will appear once you add them
+                </p>
               )}
             </div>
           </div>

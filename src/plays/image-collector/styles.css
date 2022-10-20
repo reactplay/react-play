@@ -24,10 +24,15 @@
   justify-content: space-between;
   grid-gap: 12px;
 }
-
-.image {
+.image-wrapper {
   width: 200px;
   height: 300px;
+  flex-grow: 1;
+  border: 1px solid #010326;
+}
+.image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .empty-message {
