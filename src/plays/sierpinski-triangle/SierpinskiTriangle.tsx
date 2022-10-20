@@ -3,9 +3,11 @@ import Sketch from "react-p5";
 import P5 from "p5";
 import { Triangle } from "./Triangle";
 import { getMidPoint } from "./utils";
+import PlayHeader from "common/playlists/PlayHeader";
 
-const SierpinskiTriangle = () => {
+const SierpinskiTriangle = (props: any) => {
   const level: number = 6;
+  const multiplier = 0.7;
 
   // recursive sierpinski triangle func
   const drawSierpinskiTriangle = (p: P5, t: Triangle, depth: number) => {
@@ -32,7 +34,10 @@ const SierpinskiTriangle = () => {
   };
 
   const setup = (p: P5, canvasParentref: Element) => {
-    p.createCanvas(p.windowWidth, p.windowHeight).parent(canvasParentref);
+    p.createCanvas(
+      p.windowWidth * multiplier,
+      p.windowHeight * multiplier
+    ).parent(canvasParentref);
 
     // Stops p5.js from continuously executing the code within draw().
     p.noLoop();
@@ -40,8 +45,8 @@ const SierpinskiTriangle = () => {
 
   const draw = (p: P5) => {
     // canvas size
-    const canvasWidth = 600;
-    const canvasHeight = 600;
+    const canvasWidth = p.windowWidth * multiplier;
+    const canvasHeight = p.windowHeight * multiplier;
 
     p.background(222, 222, 222);
     // create initial vectors
@@ -55,13 +60,17 @@ const SierpinskiTriangle = () => {
     drawSierpinskiTriangle(p, t0, 0);
   };
   return (
-    <div>
-      <Sketch
-        className="flex items-center justify-center"
-        setup={setup}
-        draw={draw}
-      />
+    <div className="play-details">
+      <PlayHeader play={props} />
+      <div className="play-details-body simple-live-chat">
+        <Sketch
+          className="flex items-center justify-center"
+          setup={setup}
+          draw={draw}
+        />
+      </div>
     </div>
   );
 };
 export default SierpinskiTriangle;
+
