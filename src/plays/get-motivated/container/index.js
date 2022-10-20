@@ -2,7 +2,6 @@ import Card from '../components/cards';
 import SearchBar from '../components/search-bar';
 import './index.css';
 export default function Container({ Quotes, setAuthor, author }) {
-	console.log(Quotes, author);
 	return (
 		<div className="card-main-container">
 			<SearchBar author={author} setAuthor={setAuthor} Quotes={Quotes} />
