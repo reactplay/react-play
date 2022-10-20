@@ -192,7 +192,7 @@ const CreatePlay = () => {
   return (
     <div className='w-full h-full flex flex-col justify-center items-center create-plays-wrapper'>
       <div>
-        <span className='title-primary'>
+        <span className="title-primary">
           {!isEditPlay ? (
             <>
               Create <strong>A Play</strong>
@@ -204,11 +204,25 @@ const CreatePlay = () => {
           )}
         </span>
       </div>
-      <div className='w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6'>
-        <div className='flex flex-col flex-1'>
-          <div className='h-14 p-8'>
+      <div className="w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6">
+        <div className="flex flex-col flex-1">
+          <div className="h-14 p-8">
             Welcome <strong>{userData.displayName}</strong>, {!isEditPlay ? "create" : "edit"} your
             play
+          </div>
+
+          <div className="flex-1 px-10 py-8 overflow-auto">
+            <form>
+              <PlayForm fields={FIELD_TEMPLATE} onChange={data => onChange(data)} />
+            </form>
+          </div>
+          <div className="h-14">
+            <hr />
+            <div className="p-8 h-full flex items-center">
+              <Button size="small" variant="contained" disabled={isFieldsAreInValid()} onClick={() => onSubmit()}>
+                Create the awesome
+              </Button>
+            </div>
           </div>
           <PlayForm
             isEditPlay={isEditPlay}
@@ -219,7 +233,7 @@ const CreatePlay = () => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default CreatePlay;
