@@ -6,6 +6,7 @@ function CreateArea(props) {
     title: "",
     content: ""
   });
+  const disableButton = !note.title.trim() && !note.content.trim()
   function handleChange(event) {
     const { name, value } = event.target;
     setNote(prevNote => {
@@ -43,7 +44,7 @@ function CreateArea(props) {
           value={note.content}
           placeholder="Take a note..."
         />
-        <button className="create-button" onClick={submitNote}>< FaPlusCircle /></button>
+        <button disabled={disableButton} className={disableButton ? 'create-button-disabled' : 'create-button'} onClick={submitNote}>< FaPlusCircle /></button>
       </form>
     </div>
   );
