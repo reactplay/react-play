@@ -43,7 +43,7 @@ $select-component-dropdown-max-height: 450px;
       align-items: center;
       flex-wrap: wrap;
 
-      .option {
+      .multi-select-option {
         background-color: aqua;
         border-radius: 5px;
         padding: 4px 8px;
@@ -75,7 +75,7 @@ $select-component-dropdown-max-height: 450px;
       display: none;
     }
 
-    .option {
+    .multi-select-option {
       padding: 4px;
       margin: 4px;
       cursor: pointer;

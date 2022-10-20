@@ -77,7 +77,7 @@ const MultiSelect = ({
             <div id="selector">
                 <div id="selected-options">
                     {selectedOptions.map(option =>
-                        <div key={option + "selected"} className="option">
+                        <div key={option + "selected"} className="multi-select-option">
                             <p>{option}</p>
                             <CloseOptionsIcon size={25} onClick={() => removeFromSelected(option)}/>
                         </div>)}
@@ -96,7 +96,7 @@ const MultiSelect = ({
                 {!!options.length ? options
                         .map(option =>
                             <p key={option.name}
-                               className={`option ${option.selected ? "selected" : ""}`}
+                               className={`multi-select-option ${option.selected ? "selected" : ""}`}
                                onMouseDown={() =>
                                    handleSelect(option)
                                }>
