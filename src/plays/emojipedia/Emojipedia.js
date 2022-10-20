@@ -48,7 +48,7 @@ function Emojipedia(props) {
 
   useEffect(() => {
     if (error) {
-      toast.error(error);
+      toast.error("Something went wrong");
     }
 
     // Set Emoji list
