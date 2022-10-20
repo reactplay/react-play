@@ -16,7 +16,7 @@ export const FetchPlayCountByUser = {
     return {...allPlaysByUser };
   },
 
-  getAllPlaysByUserByMonth(lte, gte) {
+  getAllPlaysByUserByMonth(gte, lte) {
     return {
       ...allPlaysByUser,
       where: {

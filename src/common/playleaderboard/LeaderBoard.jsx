@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import { submit } from "../services/request";
 import { FetchPlayCountByUser } from "common/services/request/query/fetch-leaderboard-data";
-import { topPlayCreatorOfTheMonth, topPlayCreators } from "./leaderboardData";
 import TopPlayCreatorOfTheMonth from "./TopPlayCreatorOfTheMonth";
 import TopPlayCreators from "./TopPlayCreators";
 import _ from "lodash";
+import { format, lastDayOfMonth } from "date-fns";
 
 const LeaderBoard = () => {
   const [top10Contributors, updateTop10Contributors] = useState([]);
-  const { getAllPlaysByUser } = FetchPlayCountByUser;
+  const [topContributorOfTheMonth, updateTopContributorOfTheMonth] = useState(
+    []
+  );
+  const { getAllPlaysByUser, getAllPlaysByUserByMonth } = FetchPlayCountByUser;
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const formatData = (data) => {
     const formattedData = [];
     const finalData = [];
@@ -23,30 +25,42 @@ const LeaderBoard = () => {
     });
     const groupByUser = _.groupBy(formattedData, "displayName");
     Object.values(groupByUser).map((v) =>
-      finalData.push({ displayName: v[0].displayName, avatarUrl: v.map(t => t.avatarUrl)[0], count: v.length })
+      finalData.push({
+        displayName: v[0].displayName,
+        avatarUrl: v.map((t) => t.avatarUrl)[0],
+        count: v.length,
+      })
     );
-    return finalData.sort((a,b) => b.count - a.count).slice(0,10);
+    return finalData.sort((a, b) => b.count - a.count);
   };
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchTopContributors() {
       const data = await submit(getAllPlaysByUser());
-      updateTop10Contributors(formatData(data))
-    }
-    fetchData();
-  }, [formatData, getAllPlaysByUser]);
+      updateTop10Contributors(formatData(data).slice(0, 10));
+    };
+    async function fetchTopContributorOfTheMonth() {
+      const firstDateOfMonth = format(new Date(), "yyyy-MM-01");
+      const lastDateOfMonth = format(lastDayOfMonth(new Date()), "yyyy-MM-dd");
+      const data = await submit(
+        getAllPlaysByUserByMonth(firstDateOfMonth, lastDateOfMonth)
+      );
+      updateTopContributorOfTheMonth(formatData(data)[0]);
+    };
+    
+    fetchTopContributors();
+    fetchTopContributorOfTheMonth();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  console.log("final", top10Contributors);
   return (
     <main className="app-body">
-      <div className=" overflow-auto p-4 lg:flex flex-row justify-around ">
+      <div className=" overflow-auto lg:flex flex-row justify-around ">
         <TopPlayCreatorOfTheMonth
-          topPlayCreatorOfTheMonth={topPlayCreatorOfTheMonth}
+          topPlayCreatorOfTheMonth={topContributorOfTheMonth}
         />
         <div className="flex flex-col m-4 items-center">
-          <div className="text-3xl font-semibold">
-            Top play creators of all time
-          </div>
+          <div className="heading">Top play creators of all time</div>
           <div>
             <TopPlayCreators topPlayCreators={top10Contributors} />
           </div>

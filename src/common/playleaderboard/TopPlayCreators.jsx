@@ -16,7 +16,7 @@ const TopPlayCreators = ({ topPlayCreators }) => {
             alt={name}
             title={name}
           />
-      <div>{name}</div>
+      <div className="table-cell">{name}</div>
     </div>
   }
 
