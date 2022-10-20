@@ -31,8 +31,8 @@ export default function WeatherOutput({ weatherDetails }) {
         <div className="flex flex-col gap-6 text-neutral-200 weather-report">
           <WeatherDetail
             icon={<WiHumidity />}
-            value={weatherDetails.wind.speed}
-            unit="mps"
+            value={weatherDetails.main.humidity}
+            unit="%"
           />
           <WeatherDetail
             icon={<WiUmbrella />}
@@ -41,8 +41,8 @@ export default function WeatherOutput({ weatherDetails }) {
           />
           <WeatherDetail
             icon={<WiStrongWind />}
-            value={weatherDetails.main.humidity}
-            unit="%"
+            value={weatherDetails.wind.speed}
+            unit="mps"
           />
         </div>
       </div>
