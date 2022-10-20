@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sketch from "react-p5";
 import P5 from "p5";
 import { Triangle } from "./Triangle";
@@ -8,6 +8,11 @@ import PlayHeader from "common/playlists/PlayHeader";
 const SierpinskiTriangle = (props: any) => {
   const level: number = 6;
   const multiplier = 0.7;
+  const [windowSize, setWindowSize] = useState([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
+  const [width, height] = windowSize;
 
   // recursive sierpinski triangle func
   const drawSierpinskiTriangle = (p: P5, t: Triangle, depth: number) => {
@@ -34,10 +39,9 @@ const SierpinskiTriangle = (props: any) => {
   };
 
   const setup = (p: P5, canvasParentref: Element) => {
-    p.createCanvas(
-      p.windowWidth * multiplier,
-      p.windowHeight * multiplier
-    ).parent(canvasParentref);
+    p.createCanvas(width * multiplier, height * multiplier).parent(
+      canvasParentref
+    );
 
     // Stops p5.js from continuously executing the code within draw().
     p.noLoop();
@@ -45,8 +49,8 @@ const SierpinskiTriangle = (props: any) => {
 
   const draw = (p: P5) => {
     // canvas size
-    const canvasWidth = p.windowWidth * multiplier;
-    const canvasHeight = p.windowHeight * multiplier;
+    const canvasWidth = width * multiplier;
+    const canvasHeight = height * multiplier;
 
     p.background(222, 222, 222);
     // create initial vectors
@@ -59,18 +63,23 @@ const SierpinskiTriangle = (props: any) => {
 
     drawSierpinskiTriangle(p, t0, 0);
   };
+  //
+  const updateWindowSize = (p: P5) => {
+    p.resizeCanvas(width * multiplier, height * multiplier);
+    setWindowSize([p.windowWidth, p.windowHeight]);
+  };
   return (
     <div className="play-details">
       <PlayHeader play={props} />
-      <div className="play-details-body simple-live-chat">
+      <div className="play-details-body">
         <Sketch
           className="flex items-center justify-center"
           setup={setup}
           draw={draw}
+          windowResized={updateWindowSize}
         />
       </div>
     </div>
   );
 };
 export default SierpinskiTriangle;
-
