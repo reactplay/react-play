@@ -72,7 +72,7 @@ const MultiSelect = ({
 
     return (
         // tabIndex is added so that onBlur can work on a div element
-        <div id="select" tabIndex={0} onBlur={handleBlur}>
+        <div id="multi-select-component" tabIndex={0} onBlur={handleBlur}>
             <label htmlFor="selector">{label}</label>
             <div id="selector">
                 <div id="selected-options">
@@ -83,7 +83,7 @@ const MultiSelect = ({
                         </div>)}
                 </div>
                 <div id="search">
-                    <input type="text" id="input" placeholder={placeholder || ""}
+                    <input type="text" id="search-input" placeholder={placeholder || ""}
                            onChange={handleSearchTerm}
                            onFocus={openOptions}
                            value={searchTerm}
