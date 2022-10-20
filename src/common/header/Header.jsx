@@ -56,7 +56,7 @@ const Header = () => {
 
   return (
     <header
-      className={`app-header ${showHideBits.setHeaderStyle ? "" : " app-header-home"}`}
+      className="app-header"
       data-testid='app-header'
     >
       <span>
