@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./savingOptions.scss";
 
-function SavingOptions() {
+function SavingOptions(props) {
+  const { currency, setCurrency, setTotal } = props;
+
   const [startingBalance, setStartingBalance] = useState(1000);
   const [monthlyContribution, setMonthlyContribution] = useState(100);
   const [period, setPeriod] = useState(1);
@@ -10,15 +12,45 @@ function SavingOptions() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    let total = parseFloat(startingBalance);
+    let monthlyInterest = parseFloat(annualInterest) / 12;
+    let monthlyInterestPaid = 0;
+    let periodInMonths =
+      periodChoice === "Years" ? parseFloat(period) * 12 : parseFloat(period);
+    let monthlyContributionAmount = parseFloat(monthlyContribution);
+
+    for (let i = 0; i < periodInMonths; i++) {
+      monthlyInterestPaid = total * (monthlyInterest / 100);
+      total = total + monthlyContributionAmount + monthlyInterestPaid;
+    }
+
+    total = parseInt(total);
+
+    setTotal(total);
   };
+
+  console.log(setCurrency);
 
   return (
     <div className="savingOptions">
       <div className="savingOptions__currencies">
-        <div className="savingOptions__currency savingOptions__currency--selected">
+        <div
+          className={`savingOptions__currency ${
+            currency === "INR" ? "savingOptions__currency--selected" : ""
+          }`}
+          onClick={() => setCurrency("INR")}
+          data-testid="currency-inr"
+        >
           <h4>INR</h4>
         </div>
-        <div className="savingOptions__currency">
+        <div
+          className={`savingOptions__currency ${
+            currency === "USD" ? "savingOptions__currency--selected" : ""
+          }`}
+          onClick={() => setCurrency("USD")}
+          data-testid="currency-usd"
+        >
           <h4>USD</h4>
         </div>
       </div>

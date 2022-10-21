@@ -1,0 +1,54 @@
+import { fireEvent, render, screen } from "@testing-library/react";
+import SavingOptions from "../index";
+
+describe("Saving Options: Basic rendering and functionality", () => {
+  test("should have default values in form", () => {
+    render(<SavingOptions currency="INR" />);
+
+    const currencyOptions = screen.getByTestId("currency-inr");
+    const startingBalance = screen.getByPlaceholderText(
+      "Enter initial balance"
+    );
+    const monthlyContribution = screen.getByPlaceholderText(
+      "Enter monthly contribution"
+    );
+    const period = screen.getByPlaceholderText("Enter period of contribution");
+    const periodChoice = screen.getByLabelText("Years");
+    const annualInterest = screen.getByPlaceholderText(
+      "Enter interest rate per annum"
+    );
+
+    expect(currencyOptions).toHaveClass("savingOptions__currency--selected");
+    expect(startingBalance).toHaveValue(1000);
+    expect(monthlyContribution).toHaveValue(100);
+    expect(period).toHaveValue(1);
+    expect(periodChoice).toBeChecked();
+    expect(annualInterest).toHaveValue(8);
+  });
+
+  test("should be able to change currency", () => {
+    const changeCurrency = jest.fn();
+
+    render(<SavingOptions currency="INR" setCurrency={changeCurrency} />);
+
+    const usdCurrencyOption = screen.getByTestId("currency-usd");
+
+    fireEvent.click(usdCurrencyOption);
+
+    expect(changeCurrency).toHaveBeenCalledWith("USD");
+  });
+
+  test("should return total amount", () => {
+    var total;
+    const setTotal = (result) => {
+      total = result;
+    };
+
+    render(<SavingOptions setTotal={setTotal} currency="INR" />);
+
+    const calculateButton = screen.getByRole("button", { name: /Calculate/i });
+    fireEvent.click(calculateButton);
+
+    expect(total).toBe(2327);
+  });
+});
