@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.total {
+  text-align: center;
+
+  .total__piggyBank {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .total__endBalance {
+    .total__heading {
+      text-transform: uppercase;
+      font-size: 2rem;
+      margin-bottom: 0;
+      opacity: 0.75;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .total__value {
+      margin-top: 0px;
+      font-size: 4rem;
+      background-image: $gradient;
+      font-weight: bold;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+    }
+  }
+}
