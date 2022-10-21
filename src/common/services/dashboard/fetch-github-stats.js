@@ -87,8 +87,24 @@ const getContributors = async () => {
   }
 }
 
+const getStats = async () => {
+
+  try {
+    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/repos/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}`, {
+      method: 'GET',
+      headers: new Headers({
+        'Authorization': `Bearer ${process.env.REACT_APP_BARER_TOKEN}`
+      }),
+    });
+    return await res.json();
+  } catch (e) {
+    return {};
+  }
+}
+
 export {
   getCloneFigures,
+  getStats,
   popularContent,
   refralSites,
   getIssues,

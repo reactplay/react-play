@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { submit } from 'json-graphql-parser';
+import { submit } from 'json-graphql-parser/v2';
 import { fetchPlaysDateFiltered } from '../request/query/fetch-plays-date-filtered';
 
 const calculateDateDiff = (day, dateObj) => {

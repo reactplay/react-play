@@ -9,6 +9,7 @@ const TopContributors = () => {
     async function getTopContributor() {
       const res = await getContributors();
       if (Array.isArray(res)) {
+        // console.log("I got a call")
         setTopContributors(res);
       }
     }
@@ -28,7 +29,7 @@ const TopContributors = () => {
         {
           topContributors.map((value, index) => {
             return (
-              <div className="col-span-1 rounded-md py-4 bg-blue-100 shadow mb-10 h-28  w-60 px-6 grid grid-cols-3">
+              <div key={value.login} className="col-span-1 rounded-md py-4 bg-blue-100 shadow mb-10 h-28  w-60 px-6 grid grid-cols-3">
                 <div className=" col-span-1">
                   <img
                     className=" h-16 w-16 rounded-full"

@@ -19,7 +19,6 @@ import GithubActivities from "dashboard/components/GithubActivities";
 import MainDashboard from "dashboard/components/MainDasboard";
 import Traffic from "dashboard/components/GithubActivities/Traffic";
 import Issues from "dashboard/components/GithubActivities/Issues";
-import StarGazers from "dashboard/components/GithubActivities/StarGazers";
 import MainGithubDashboard from "dashboard/components/GithubActivities/MainGithubDashboard";
 
 const nhost = new NhostClient({
@@ -79,7 +78,6 @@ const RouteDefs = () => {
               <Route path="" element={<MainGithubDashboard />} />
               <Route path="issues" element={<Issues />} />
               <Route path="traffic" element={<Traffic />} />
-              <Route path="star-gazers" element={<StarGazers />} />
             </Route>
           </Route>
         </Routes>
