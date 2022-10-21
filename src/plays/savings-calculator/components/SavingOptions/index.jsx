@@ -30,8 +30,6 @@ function SavingOptions(props) {
     setTotal(total);
   };
 
-  console.log(setCurrency);
-
   return (
     <div className="savingOptions">
       <div className="savingOptions__currencies">

@@ -10,7 +10,7 @@ function SavingsCalculator() {
   return (
     <div className="savingsCalculator__container">
       <div className="savingsCalculator">
-        <Total />
+        <Total total={total} currency={currency} />
         <SavingOptions
           currency={currency}
           setCurrency={setCurrency}
