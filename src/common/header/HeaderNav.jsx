@@ -45,7 +45,7 @@ const HeaderNav = ({ showBrowse }) => {
           >
             Share about ReactPlay
           </Typography>
-          <SocialShare />
+          <SocialShare showTwitter showLinkedin showFB showReddit />
           <Box
             component="div"
             sx={{ mt: 4, display: "flex", justifyContent: "flex-end" }}
@@ -128,6 +128,7 @@ const HeaderNav = ({ showBrowse }) => {
           <li>
             <Link
               to="/ideas"
+              title = "Play Ideas"
               className="app-header-btn app-header-btn--default"
               data-testid="ideas-btn"
             >
@@ -139,6 +140,7 @@ const HeaderNav = ({ showBrowse }) => {
             <a
               href="https://github.com/reactplay/react-play"
               target="_blank"
+              title = "GitHub page"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--default umami--click--github"
               data-testid="github-btn"
@@ -151,6 +153,7 @@ const HeaderNav = ({ showBrowse }) => {
             <a
               href="https://twitter.com/reactplayio"
               target="_blank"
+              title = "Twitter Page"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--default"
               data-testid="twitter-btn"
@@ -161,6 +164,7 @@ const HeaderNav = ({ showBrowse }) => {
           </li>
           <li>
             <button
+              title="Show love"
               className="app-header-btn app-header-btn--default"
               onClick={handleClick}
               data-testid="share-btn"
