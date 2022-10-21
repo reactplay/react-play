@@ -16,6 +16,15 @@ Welcome developers! We are as excited as you are to know that you are going to c
   ```bash
   npm install --legacy-peer-deps
   ```
+  
+### ⛓️ Create a `.env` file at the root of your project folder with the following content,
+
+```bash
+REACT_APP_NHOST_BACKEND_URL=https://rgkjmwftqtbpayoyolwh.nhost.run/
+REACT_APP_NHOST_VERSION=v1
+REACT_APP_NHOST_ENDPOINT=graphql
+```
+
   You might check the [README](README.md) file for more details.
 
   You might see a prompt like this 
