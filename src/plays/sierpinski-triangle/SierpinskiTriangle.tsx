@@ -16,9 +16,8 @@ const SierpinskiTriangle = (props: any) => {
   // recursive sierpinski triangle func
   const drawSierpinskiTriangle = (p: P5, triangle: Triangle, depth: number) => {
     // base case
-    if (depth === level) {
-      return;
-    }
+    if (depth === level)  return;
+  
 
     const midPoint1 = getMidPoint(p, triangle.p1, triangle.p2);
     const midPoint2 = getMidPoint(p, triangle.p2, triangle.p3);
