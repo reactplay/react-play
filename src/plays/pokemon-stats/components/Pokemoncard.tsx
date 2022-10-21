@@ -50,25 +50,6 @@ const Pokemoncard = (props: Props) => {
           <div className="poke-name">{pokemon.species.name}</div>
 
           <div className="pokemon-stats">
-            {/* <div className="one-third">
-              <div className="stat">HP:</div>
-              <div className="stat-value">  </div>
-            </div>
-
-            <div className="one-third">
-              <div className="stat">ATTACK:</div>
-              <div className="stat-value">{}</div>
-            </div>
-
-            <div className="one-third no-border">
-              <div className="stat">DEFENSE:</div>
-              <div className="stat-value">{}</div>
-            </div>
-
-            <div className="one-third no-border">
-              <div className="stat">TYPE:</div>
-              <div className="stat-value"></div>
-            </div> */}
             <Radar data={data}  options={{color:"black"}}/>
           </div>
         </div>
