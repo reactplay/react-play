@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useTransition } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { FiSearch } from "react-icons/fi";
 
@@ -13,8 +13,9 @@ function Emojipedia(props) {
   // Your Code Start below.
   const [emojisList, setEmojisList] = useState([]);
   const [query, setQuery] = useState("");
+  const [isPending, startTransition] = useTransition();
   const inputRef = useRef(null);
-
+  
   // Fetch all the emojis
   const { data, loading, error } = useFetch(API_BASE_URL);
 
@@ -32,22 +33,22 @@ function Emojipedia(props) {
   useEffect(() => {
     const delayFn = setTimeout(() => {
       if (query) {
-        setEmojisList((prevEmojiList) =>
-          prevEmojiList?.filter((emoji) =>
-            emoji?.unicodeName?.toLowerCase().includes(query?.toLowerCase())
-          )
-        );
+        startTransition(()=> {
+            setEmojisList(data.filter((emoji) =>
+              emoji?.unicodeName?.toLowerCase().includes(query?.toLowerCase())
+            )
+          );
+        })
       } else {
         setEmojisList(data);
       }
     }, 300);
-
     return () => clearTimeout(delayFn);
-  }, [query, data, emojisList]);
+  }, [query, data]);
 
   useEffect(() => {
     if (error) {
-      toast.error(error);
+      toast.error("Something went wrong");
     }
 
     // Set Emoji list
@@ -85,7 +86,11 @@ function Emojipedia(props) {
                 ? Array.from(Array(25).keys()).map((_, index) => (
                     <SkeletonCard key={index} />
                   ))
-                : emojisList?.map((emoji, index) => (
+                : isPending ? 
+                    Array.from(Array(25).keys()).map((_, index) => (
+                      <SkeletonCard key={index} />
+                    )) :
+                    emojisList?.map((emoji, index) => (
                     <EmojiCard
                       key={index}
                       emoji={emoji}
@@ -95,6 +100,13 @@ function Emojipedia(props) {
             </div>
 
             {emojisList?.length === 0 && (
+              error ? 
+              <div className="mt-20">
+                <p className="mb-3 text-center text-2xl font-semibold text-gray-200">
+                  Cannot load emojis, Please try again later...
+                </p>
+              </div>
+              :
               <div className="mt-20">
                 <p className="mb-3 text-center text-2xl font-semibold text-gray-200">
                   Oops ...! No Emoji Found
@@ -105,7 +117,7 @@ function Emojipedia(props) {
               </div>
             )}
 
-            {/* Toaster to show erros & copied emoji message */}
+            {/* Toaster to show errors & copied emoji message */}
             <Toaster position="top-center" />
           </div>
           {/* Your Code Ends Here */}

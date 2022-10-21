@@ -1,7 +1,14 @@
 import React from "react";
 import "./search.css";
-const search = (props) => {
-  const { setname, fetchPokemonDetails, name } = props;
+type SearchProps = {
+  onEventChange:(e: React.ChangeEvent<HTMLInputElement>) => void;
+  fetchPokemonDetails: (e: React.FormEvent<HTMLFormElement>) => void;
+  name: string;
+};
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+const Search = (props: SearchProps) => {
+  const { onEventChange, fetchPokemonDetails, name } = props;
   return (
     <div className="poke-main-cont">
       <div className="poke-input-cont field">
@@ -14,12 +21,12 @@ const search = (props) => {
             name="name"
             id="name"
             required
-            onChange={(e) => setname(e.target.value)}
+            onChange={onEventChange}
           />
           <label htmlFor="name" className="poke-form-label">
             Pokemon name
           </label>
-          <button className="poke-stats-sumbit-btn" type="sumbit">
+          <button className="poke-stats-sumbit-btn" type="submit">
             Search
           </button>
         </form>
@@ -27,5 +34,4 @@ const search = (props) => {
     </div>
   );
 };
-
-export default search;
+export default Search;
