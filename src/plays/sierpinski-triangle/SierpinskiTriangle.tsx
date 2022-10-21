@@ -4,10 +4,9 @@ import P5 from "p5";
 import { Triangle } from "./Triangle";
 import { getMidPoint } from "./utils";
 import PlayHeader from "common/playlists/PlayHeader";
+import { level, multiplier } from "./constants";
 
 const SierpinskiTriangle = (props: any) => {
-  const level: number = 6;
-  const multiplier = 0.7;
   const [windowSize, setWindowSize] = useState([
     window.innerWidth,
     window.innerHeight,
@@ -15,27 +14,27 @@ const SierpinskiTriangle = (props: any) => {
   const [width, height] = windowSize;
 
   // recursive sierpinski triangle func
-  const drawSierpinskiTriangle = (p: P5, t: Triangle, depth: number) => {
+  const drawSierpinskiTriangle = (p: P5, triangle: Triangle, depth: number) => {
     // base case
     if (depth === level) {
       return;
     }
 
-    const m1 = getMidPoint(p, t.p1, t.p2);
-    const m2 = getMidPoint(p, t.p2, t.p3);
-    const m3 = getMidPoint(p, t.p3, t.p1);
+    const midPoint1 = getMidPoint(p, triangle.p1, triangle.p2);
+    const midPoint2 = getMidPoint(p, triangle.p2, triangle.p3);
+    const midPoint3 = getMidPoint(p, triangle.p3, triangle.p1);
 
-    const t0 = new Triangle(m1, m2, m3);
+    const t0 = new Triangle(midPoint1, midPoint2, midPoint3);
 
     t0.draw(p);
 
-    const t1 = new Triangle(t.p1, m1, m3);
-    const t2 = new Triangle(t.p2, m1, m2);
-    const t3 = new Triangle(t.p3, m2, m3);
+    const triangle1 = new Triangle(triangle.p1, midPoint1, midPoint3);
+    const triangle2 = new Triangle(triangle.p2, midPoint1, midPoint2);
+    const triangle3 = new Triangle(triangle.p3, midPoint2, midPoint3);
 
-    drawSierpinskiTriangle(p, t1, depth + 1);
-    drawSierpinskiTriangle(p, t2, depth + 1);
-    drawSierpinskiTriangle(p, t3, depth + 1);
+    drawSierpinskiTriangle(p, triangle1, depth + 1);
+    drawSierpinskiTriangle(p, triangle2, depth + 1);
+    drawSierpinskiTriangle(p, triangle3, depth + 1);
   };
 
   const setup = (p: P5, canvasParentref: Element) => {
@@ -58,10 +57,10 @@ const SierpinskiTriangle = (props: any) => {
     const p2 = p.createVector(0, canvasHeight);
     const p3 = p.createVector(canvasWidth, canvasHeight);
 
-    const t0 = new Triangle(p1, p2, p3);
-    t0.draw(p);
+    const triangle = new Triangle(p1, p2, p3);
+    triangle.draw(p);
 
-    drawSierpinskiTriangle(p, t0, 0);
+    drawSierpinskiTriangle(p, triangle, 0);
   };
   //
   const updateWindowSize = (p: P5) => {
