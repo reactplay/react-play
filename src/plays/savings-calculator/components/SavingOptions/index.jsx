@@ -56,7 +56,9 @@ function SavingOptions(props) {
         <div className="savingOptions__formGroup">
           <label htmlFor="starting-balance">Starting Balance:</label>
           <div className="savingOptions__inputGroup">
-            <div className="savingOptions__inputPrepend">₹</div>
+            <div className="savingOptions__inputPrepend">
+              {currency === "INR" ? "₹" : "$"}
+            </div>
             <input
               type="number"
               className="savingOptions__formControl"
@@ -70,7 +72,9 @@ function SavingOptions(props) {
         <div className="savingOptions__formGroup">
           <label htmlFor="monthly-contribution">Monthly Contribution:</label>
           <div className="savingOptions__inputGroup">
-            <div className="savingOptions__inputPrepend">₹</div>
+            <div className="savingOptions__inputPrepend">
+              {currency === "INR" ? "₹" : "$"}
+            </div>
             <input
               type="number"
               className="savingOptions__formControl"
