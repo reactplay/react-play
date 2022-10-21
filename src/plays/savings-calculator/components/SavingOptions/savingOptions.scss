@@ -1,0 +1,171 @@
+@import "../../styles/variables";
+
+.savingOptions {
+  margin-left: 100px;
+  margin-right: 50px;
+
+  .savingOptions__currencies {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vh;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.1),
+      -5px -5px 3px 2px rgba(255, 255, 255, 0.868);
+    border-radius: 50px;
+    font-weight: 800;
+    padding: 5px 10px;
+    transition: 0.5s;
+
+    .savingOptions__currency {
+      width: 50%;
+      text-align: center;
+      color: #9aa1ab7f;
+      cursor: pointer;
+    }
+
+    .savingOptions__currency--selected {
+      box-shadow: inset 3px 3px 3px 2px rgba(0, 0, 0, 0.1),
+        inset -5px -5px 3px 2px rgba(255, 255, 255, 0.868);
+      padding: 7px 0;
+      border-radius: 50px;
+
+      h4 {
+        margin: 7px 0;
+        background-image: $gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .savingOptions__formGroup {
+    font-weight: 800;
+    margin-bottom: 2vh;
+
+    label {
+      font-size: small;
+      margin-left: 10px;
+    }
+
+    .savingOptions__inputGroup {
+      display: flex;
+      box-shadow: inset 3px 3px 3px 2px rgba(0, 0, 0, 0.1),
+        inset -5px -5px 3px 2px rgba(255, 255, 255, 0.868);
+      border-radius: 10px;
+      padding: 10px 15px;
+      margin: 10px 0;
+      width: 250px;
+      font-size: larger;
+
+      .savingOptions__inputPrepend {
+        margin-right: 5px;
+      }
+
+      .savingOptions__formControl {
+        background-color: transparent;
+        border: none;
+        color: $text;
+        font-size: inherit;
+        font-weight: inherit;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: #9aa1ab7f;
+        }
+      }
+    }
+  }
+
+  .savingOptions__periodChoice {
+    display: flex;
+    margin-bottom: 2vh;
+    margin-left: 10px;
+
+    .savingOptions__formRadio {
+      margin-right: 10px;
+
+      label {
+        font-size: medium;
+        font-weight: 800;
+      }
+
+      .savingOptions__radioInput {
+        margin-right: 10px;
+      }
+
+      .savingOptions__radioInput:checked,
+      .savingOptions__radioInput:not(:checked) {
+        position: absolute;
+        left: -9999px;
+      }
+
+      .savingOptions__radioInput:checked + label,
+      .savingOptions__radioInput:not(:checked) + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+      }
+
+      .savingOptions__radioInput:checked + label:before,
+      .savingOptions__radioInput:not(:checked) + label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.1),
+          -3px -3px 2px 2px rgba(255, 255, 255, 0.868);
+        border-radius: 100%;
+        background: #fff;
+      }
+
+      .savingOptions__radioInput:checked + label:after,
+      .savingOptions__radioInput:not(:checked) + label:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: $gradient;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        border-radius: 100%;
+        -webkit-transition: all 0.2s ease;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease;
+      }
+
+      .savingOptions__radioInput:not(:checked) + label:after {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+
+      .savingOptions__radioInput:checked + label:after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+  }
+
+  .savingOptions__calculate {
+    width: 100%;
+    background: $gradient;
+    border: none;
+    color: white;
+    font-size: larger;
+    font-weight: 800;
+    padding: 15px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
