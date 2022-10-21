@@ -31,3 +31,29 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .total {
+    width: 100%;
+    border-top: 3px solid #9aa1ab62;
+
+    .total__piggyBank {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .total {
+    .total__endBalance {
+      .total__heading {
+        font-size: 1.2rem;
+      }
+
+      .total__value {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

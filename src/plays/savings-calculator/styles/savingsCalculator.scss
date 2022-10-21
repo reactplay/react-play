@@ -17,3 +17,22 @@
   color: $text;
   padding: 4vh 3vw;
 }
+
+@media screen and (max-width: 1200px) {
+  .savingsCalculator {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .savingsCalculator {
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .savingsCalculator {
+    box-shadow: none;
+    padding: 0%;
+  }
+}
