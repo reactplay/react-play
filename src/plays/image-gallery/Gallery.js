@@ -4,14 +4,14 @@ import GalleryAPI from './GalleryAPI'
 
 
 export default function Gallery() {
-  const [data, setData] = useState(GalleryAPI)
+  const data = GalleryAPI
   const [ourText, setOurText] = useState("Welcome to the Image Gallery, Click on the Images and get to know about it.")
-  const [midText, setMidText] = useState("Sorry for interrupting. I think you like our Gallery. Don't forget to give it a thumbs up.")
+  const midText = "Sorry for interrupting. I think you like our Gallery. Don't forget to give it a thumbs up."
   const msg = new SpeechSynthesisUtterance()
   var voiceName = "Zira"
 
   const filterResult = (catItem) => {
-    const result = GalleryAPI.filter((currentData) => {
+    GalleryAPI.filter((currentData) => {
       speechHandler(msg)
       return currentData.type === catItem;
     });
