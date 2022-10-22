@@ -1,31 +1,17 @@
 import React from "react";
 import { Props } from "../types";
 import "./pokecard.css";
-import {
-  Chart as ChartJS,
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend, } from "chart.js";
 import { Radar } from "react-chartjs-2";
 
-ChartJS.register(
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend
-);
-
-// ChartJS.defaults.color = 'rgb(0,0,0)';
+ChartJS.register( RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 const Pokemoncard = (props: Props) => {
   const { pokemon } = props;
+
+  // custom label in datasets of pokemon type
   let pokemontype = pokemon.types[0].type.name + " type";
+
   const data = {
     labels: ["HP", "ATTACK", "SPECIAL-ATTACK", "SPEED", "DEFENSE"],
     datasets: [
