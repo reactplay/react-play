@@ -9,8 +9,8 @@ import {
   Filler,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Radar } from 'react-chartjs-2';
+} from "chart.js";
+import { Radar } from "react-chartjs-2";
 
 ChartJS.register(
   RadialLinearScale,
@@ -21,25 +21,35 @@ ChartJS.register(
   Legend
 );
 
+// ChartJS.defaults.color = 'rgb(0,0,0)';
 
 const Pokemoncard = (props: Props) => {
   const { pokemon } = props;
-  let pokemontype = pokemon.types[0].type.name + " type"
+  let pokemontype = pokemon.types[0].type.name + " type";
   const data = {
-    labels: ['HP', 'ATTACK','SPECIAL-ATTACK',"SPEED", "DEFENSE",],
+    labels: ["HP", "ATTACK", "SPECIAL-ATTACK", "SPEED", "DEFENSE"],
     datasets: [
       {
         label: pokemontype,
         data: [60, pokemon.stats[1].base_stat, pokemon.stats[3].base_stat, pokemon.stats[5].base_stat, pokemon.stats[2].base_stat,],
-        backgroundColor: 'rgba(155, 99, 132, 0.2)',
-        borderColor: 'rgba(5, 99, 132, 1)',
+        backgroundColor: "rgba(155, 99, 132, 0.2)",
+        borderColor: "rgba(5, 99, 132, 1)",
         borderWidth: 2,
         pointBorderWidth: 0,
+        pointBackgroundColor: "gray",
       },
     ],
   };
 
-  
+  const options = {
+    scales: {
+      r: {
+        pointLabels:{
+          color: "black"
+        }
+      }
+  }  };
+
   return (
     <div className="poke-card-cont">
       <div className="wrapper">
@@ -50,7 +60,7 @@ const Pokemoncard = (props: Props) => {
           <div className="poke-name">{pokemon.species.name}</div>
 
           <div className="pokemon-stats">
-            <Radar data={data}  options={{color:"black"}}/>
+            <Radar data={data} options={options} />
           </div>
         </div>
       </div>
