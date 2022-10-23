@@ -12,7 +12,7 @@ const useFeaturedPlays = () => {
 
   async function fetchTrendingPlays(start, end, headers) {
     return await fetch(
-      `${process.env.REACT_APP_UMAMI_METRICS_URL}?start_at=${start}&end_at=${end}&type=url`,
+      `/api/website/1/metrics?start_at=${start}&end_at=${end}&type=url`,
       { headers }
     );
   }
