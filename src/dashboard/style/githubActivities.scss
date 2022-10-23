@@ -9,3 +9,16 @@
   background-color: var(--color-neutral-90);
   color: var(--color-brand-primary)
 }
+
+.tabNavTraffic{
+  border-bottom: 1pt solid var(--color-neutral-90);
+  color: var(--color-neutral-90);
+  &:hover,&:focus,&:active{
+    border-bottom: 1pt solid var(--color-neutral-90);
+    color:var(--color-brand-primary)
+  }
+}
+.activeTabNavTraffic{
+  border-bottom: 1pt solid var(--color-brand-primary);
+  color:var(--color-neutral-90);
+}

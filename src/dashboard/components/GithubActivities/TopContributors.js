@@ -24,7 +24,7 @@ const TopContributors = () => {
         </svg>
         Top 10 Contributors
       </h3>
-      <div className=" col-span-1 sm:place-items-center md:place-items-start  grid grid-cols-1 md:grid-cols-4">
+      <div className=" col-span-1 xs:place-items-center md:place-items-start  grid grid-cols-1 md:grid-cols-4">
 
         {
           topContributors.map((value, index) => {

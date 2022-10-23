@@ -32,7 +32,7 @@ const refralSites = async () => {
 
 const getIssues = async (pageNum, perPageCount) => {
   try {
-    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}/issues?page=${pageNum}&per_page=${perPageCount}`, {
+    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/repos/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}/issues?page=${pageNum}&per_page=${perPageCount}`, {
       method: 'GET',
       headers: new Headers({
         'Authorization': `Bearer ${process.env.REACT_APP_BARER_TOKEN}`
@@ -46,7 +46,7 @@ const getIssues = async (pageNum, perPageCount) => {
 
 const getCloneFigures = async () => {
   try {
-    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}/traffic/clones`, {
+    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/repos/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}/traffic/clones`, {
       method: 'GET',
       headers: new Headers({
         'Authorization': `Bearer ${process.env.REACT_APP_BARER_TOKEN}`
@@ -60,7 +60,7 @@ const getCloneFigures = async () => {
 
 const getViews = async () => {
   try {
-    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}/traffic/views`, {
+    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/repos/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}/traffic/views`, {
       method: 'GET',
       headers: new Headers({
         'Authorization': `Bearer ${process.env.REACT_APP_BARER_TOKEN}`

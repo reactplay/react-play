@@ -14,7 +14,7 @@ const MainDashboard = () => {
   const [selectedFilter, setSelectedFilter] = useState(filterOption[0]);
 
   useEffect(() => {
-    getPlay('year');
+    // getPlay('year');
   }, [selectedFilter])
   return (
     <div>

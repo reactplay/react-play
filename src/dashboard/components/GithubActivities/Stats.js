@@ -43,7 +43,7 @@ const Stats = () => {
   }, []);
 
   return (
-    <div className=" grid grid-cols-4 gap-2">
+    <div className=" grid grid-cols-1 md:grid-cols-4 gap-2">
       {
         counts.map((value) => {
           return (
