@@ -130,7 +130,8 @@
   align-items: center;
   justify-content: center;
   width: 120px;
-  height: 120px;
+  aspect-ratio: 1;
+  object-fit: cover;
   padding: 5px;
   border-radius: 50%;
 }
