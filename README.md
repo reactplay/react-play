@@ -76,6 +76,8 @@ Once forked, you can clone the repo by clicking the `Clone or Download` button o
 
 Please change the directory after cloning the repository using the `cd <folder-name>` command.
 
+>**Note:** Please do not remove the `.env.development` file from the root folder. It contains all the evironment variables required for development.
+
 ### ⬇️ Install Dependencies
 Next, install the dependencies by running the following command in the `react-play` repo:
 
