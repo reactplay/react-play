@@ -6,7 +6,6 @@
   justify-content: center;
   /* background-color: var(--color-neutral-90); */
   background: rgb(1, 4, 38);
-  background: rgb(1, 4, 38);
   background: -moz-linear-gradient(
     180deg,
     rgba(1, 4, 38, 1) 0%,
@@ -444,7 +443,6 @@
 .home-tweets .title-primary strong {
   position: relative;
   font-family: var(--ff-accent);
-  position: relative;
 }
 .home-contributors .title-primary strong span,
 .home-tweets .title-primary strong span {
@@ -465,10 +463,6 @@
 }
 
 .list-contributors {
-  list-style: none;
-}
-
-.list-contributors {
   position: relative;
   list-style: none;
   margin: 0 auto;
@@ -479,7 +473,6 @@
   flex-wrap: wrap;
   justify-content: center;
   grid-gap: 3rem;
-  width: 80%;
   max-width: var(--screen-lg-max);
 }
 
