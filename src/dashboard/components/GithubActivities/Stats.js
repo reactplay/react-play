@@ -31,13 +31,17 @@ const dataTransformer = (data) => {
   return transformedData;
 }
 
-const Stats = () => {
+const Stats = ({
+  setLoading
+}) => {
   const [counts, setCounts] = useState([]);
 
   useEffect(() => {
     async function getCounts() {
       const res = await getStats();
+      localStorage.setItem("open-issue-count", await res.open_issues_count);
       setCounts(dataTransformer(await res));
+      setLoading();
     }
     getCounts();
   }, []);

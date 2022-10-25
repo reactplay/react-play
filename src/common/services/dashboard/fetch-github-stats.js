@@ -32,7 +32,7 @@ const refralSites = async () => {
 
 const getIssues = async (pageNum, perPageCount) => {
   try {
-    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/repos/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}/issues?page=${pageNum}&per_page=${perPageCount}`, {
+    const res = await fetch(`${GIT.BASE_URL_FOR_GIT_TRAFFIC}/repos/${GIT.GIT_REPO_OWNER}/${GIT.GIT_REPO_NAME}/issues?page=${pageNum}&per_page=${perPageCount}&state=open`, {
       method: 'GET',
       headers: new Headers({
         'Authorization': `Bearer ${process.env.REACT_APP_BARER_TOKEN}`
