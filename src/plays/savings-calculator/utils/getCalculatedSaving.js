@@ -1,4 +1,4 @@
-export const calculateSavings = (savingOptions) => {
+export const getCalculatedSaving = (savingOptions) => {
   const {
     startingBalance,
     monthlyContribution,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { calculateSavings } from "../../utils/calculateSavings";
+import { getCalculatedSaving } from "../../utils/getCalculatedSaving";
 import "./savingOptions.scss";
 
 function SavingOptions(props) {
@@ -14,7 +14,7 @@ function SavingOptions(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const total = calculateSavings({
+    const total = getCalculatedSaving({
       startingBalance,
       monthlyContribution,
       period,
