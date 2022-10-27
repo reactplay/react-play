@@ -1,4 +1,4 @@
 import "./index.css"
 export default function Header () {
-    return <div className="header"></div>
+    return <div className="motivate-me-header"></div>
 }

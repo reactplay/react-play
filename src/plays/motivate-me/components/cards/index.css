@@ -9,7 +9,7 @@
     padding-bottom: 0;
     padding-top: 15px;
 }
-.question__tag {
+.motivate-me-question__tag {
     position: absolute;
     top: 0;
     right: -65px;
@@ -18,19 +18,19 @@
     width: 125px;
     height: 40px;
 }
-.even_div{
+.motivate-me-even_div{
     background: linear-gradient(130deg,#FDC5B8,#FDC5B8);
 }
-.odd_div{
+.motivate-me-odd_div{
     background: linear-gradient(130deg,#45CCDF,#45CCDF);
 }
-.quote{
+.motivate-me-quote{
     font-weight: 400;
     font-size: 18px;
     line-height: 1.25;
     text-align: center;
 }
-.author-name {
+.motivate-me-author-name {
     position: absolute;
     left: 50%;
     bottom:5%;

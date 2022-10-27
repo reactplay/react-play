@@ -9,7 +9,7 @@ function GetMotivated(props) {
 	return (
 		<div className="play-details">
 			<PlayHeader play={props} />
-			<div className="main">
+			<div className="motivate-me-main">
 				<Header />
 				<Container author={author}  handleAuthorChange={(value)=> setAuthor(value)} Quotes={Quotes} />
 			</div>
