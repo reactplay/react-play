@@ -4,7 +4,7 @@ import Total from "./components/Total";
 import SavingOptions from "./components/SavingOptions";
 import "./styles/savingsCalculator.scss";
 
-function SavingsCalculator(props) {
+function SavingCalculator(props) {
   const [total, setTotal] = useState(2327);
   const [currency, setCurrency] = useState("INR");
 
@@ -27,4 +27,4 @@ function SavingsCalculator(props) {
   );
 }
 
-export default SavingsCalculator;
+export default SavingCalculator;
