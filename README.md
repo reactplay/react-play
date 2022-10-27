@@ -36,6 +36,15 @@
     ·
     <a href="https://github.com/reactplay/react-play/issues/new/choose">Request Feature</a>
 </p>
+<p align="center">
+  <a href="https://gitpod.io/#https://github.com/reactplay/react-play">
+  <img
+    src="https://gitpod.io/button/open-in-gitpod.svg"
+    alt="Open in Gitpod"
+  />
+</a>
+</p>
+
 
 ## 👋 Introducing ReactPlay
 
