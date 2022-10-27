@@ -5,40 +5,36 @@
   margin-right: 50px;
   border-left: 3px solid #9aa1ab62;
 
-  .savingOptions__currencies {
+  .savingOptions__currencyGroup {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1vh;
-    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.1),
-      -5px -5px 3px 2px rgba(255, 255, 255, 0.868);
-    border-radius: 50px;
-    font-weight: 800;
-    padding: 5px 10px;
-    transition: 0.5s;
 
-    .savingOptions__currency {
-      width: 50%;
-      text-align: center;
-      color: #9aa1ab7f;
-      cursor: pointer;
+    label {
+      margin-top: 0px;
+      font-size: 1.25rem;
+      background-image: $gradient;
+      font-weight: bold;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
     }
 
-    .savingOptions__currency--selected {
+    .savingOptions__currencies {
       box-shadow: inset 3px 3px 3px 2px rgba(0, 0, 0, 0.1),
         inset -5px -5px 3px 2px rgba(255, 255, 255, 0.868);
-      padding: 7px 0;
-      border-radius: 50px;
-
-      h4 {
-        margin: 7px 0;
-        background-image: $gradient;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
-      }
+      border-radius: 10px;
+      padding: 10px 15px;
+      margin: 10px 0;
+      font-size: medium;
+      background-color: transparent;
+      color: $text;
+      width: 40%;
+      font-weight: bold;
+      background: url(../../images/arrow-down.png) no-repeat right;
+      -webkit-appearance: none;
     }
   }
 

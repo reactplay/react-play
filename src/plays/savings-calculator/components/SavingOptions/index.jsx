@@ -27,25 +27,17 @@ function SavingOptions(props) {
 
   return (
     <div className="savingOptions">
-      <div className="savingOptions__currencies">
-        <div
-          className={`savingOptions__currency ${
-            currency === "INR" ? "savingOptions__currency--selected" : ""
-          }`}
-          onClick={() => setCurrency("INR")}
-          data-testid="currency-inr"
+      <div className="savingOptions__currencyGroup">
+        <label htmlFor="currency">Currency:</label>
+        <select
+          className="savingOptions__currencies"
+          id="currency"
+          value={currency}
+          onChange={(e) => setCurrency(e.target.value)}
         >
-          <h4>INR</h4>
-        </div>
-        <div
-          className={`savingOptions__currency ${
-            currency === "USD" ? "savingOptions__currency--selected" : ""
-          }`}
-          onClick={() => setCurrency("USD")}
-          data-testid="currency-usd"
-        >
-          <h4>USD</h4>
-        </div>
+          <option>INR</option>
+          <option>USD</option>
+        </select>
       </div>
       <form>
         <div className="savingOptions__formGroup">

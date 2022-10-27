@@ -5,7 +5,7 @@ describe("Saving Options: Basic rendering and functionality", () => {
   test("should have default values in form", () => {
     render(<SavingOptions currency="INR" />);
 
-    const currencyOptions = screen.getByTestId("currency-inr");
+    const currencyOptions = screen.getByRole("option", { name: "INR" });
     const startingBalance = screen.getByPlaceholderText(
       "Enter initial balance"
     );
@@ -18,7 +18,7 @@ describe("Saving Options: Basic rendering and functionality", () => {
       "Enter interest rate per annum"
     );
 
-    expect(currencyOptions).toHaveClass("savingOptions__currency--selected");
+    expect(currencyOptions.selected).toBeTruthy();
     expect(startingBalance).toHaveValue(1000);
     expect(monthlyContribution).toHaveValue(100);
     expect(period).toHaveValue(1);
@@ -31,9 +31,11 @@ describe("Saving Options: Basic rendering and functionality", () => {
 
     render(<SavingOptions currency="INR" setCurrency={changeCurrency} />);
 
-    const usdCurrencyOption = screen.getByTestId("currency-usd");
+    const selectCurrency = screen.getByRole("combobox", { name: "Currency:" });
 
-    fireEvent.click(usdCurrencyOption);
+    fireEvent.change(selectCurrency, {
+      target: { value: "USD" },
+    });
 
     expect(changeCurrency).toHaveBeenCalledWith("USD");
   });
