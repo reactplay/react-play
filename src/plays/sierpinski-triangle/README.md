@@ -2,7 +2,7 @@
 
 # Sierpinski Triangle 🔺
 
-A Interesting use of p5.js and along with recursion. Sierpinski Triangle is an equilateral triangle, subdivided recursively into smaller equilateral triangles.
+An Interesting use of p5.js and along with recursion. Sierpinski Triangle is an equilateral triangle, subdivided recursively into smaller equilateral triangles.
 
 ## Play Demographic
 
@@ -22,7 +22,7 @@ A Interesting use of p5.js and along with recursion. Sierpinski Triangle is an e
 - Linkedin: https://linkedin.com/bhavika-tibrewal
 
 ## Implementation Details
-The Typing Speed Test play is very easy to implement.
+p5.js is a JavaScript library for creative coding. It has a full set of drawing functionality.
 
 The `SierpinskiTriangle` component is the first in all. You will see the Triangle filled with a different set of colours each time you refresh or resize the website.
 
