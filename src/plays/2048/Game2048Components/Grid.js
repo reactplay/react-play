@@ -4,11 +4,11 @@ import TransformGrid from "../transformGrid";
 import GameLogic from "../gameLogic";
 
 function Grid(props) {
-  useEffect(() => {
-    const handleKeyDown = e => {
-      e.preventDefault();
 
-      if (props.status !== "running" && props.status !== "continue") return;
+  function handleKey(e) {
+    e.preventDefault();
+
+    if (props.status !== "running" && props.status !== "continue") return;
       let result = {};
 
       switch (e.key) {
@@ -43,13 +43,13 @@ function Grid(props) {
       if (GameLogic.hasNoMovesLeft(result.transform)) {
         props.setStatus("over");
       }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
+  }
+  useEffect(() => {
+    window.addEventListener("keydown", handleKey);
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keydown", handleKey);
     };
-  });
+  }, [handleKey]);
 
   return (
     <div className="twentyFourtyEight-grid">
