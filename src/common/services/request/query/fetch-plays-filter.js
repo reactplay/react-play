@@ -1,12 +1,12 @@
-import { BasiFetchParam } from "./fetch-plays";
+import { BasiFetchParam } from './fetch-plays';
 
-const env = process.env.NODE_ENV === "development";
+const env = process.env.NODE_ENV === 'development';
 const preview = process.env.REACT_APP_PREVIEW_MODE;
 const defaultClause = {
-  field: "dev_mode",
-  operator: "eq",
+  field: 'dev_mode',
+  operator: 'eq',
   value: false,
-  type: "boolean",
+  type: 'boolean'
 };
 
 export const FetchPlaysFilter = {
@@ -15,21 +15,21 @@ export const FetchPlaysFilter = {
     return {
       ...BasiFetchParam,
       ...{
-        display: "Filter all the featured plays",
+        display: 'Filter all the featured plays',
         where: {
           clause: {
-            operator: "and",
+            operator: 'and',
             conditions: [
               defaultClause,
               {
-                field: "featured",
-                operator: "eq",
-                value: true,
-              },
-            ],
-          },
-        },
-      },
+                field: 'featured',
+                operator: 'eq',
+                value: true
+              }
+            ]
+          }
+        }
+      }
     };
   },
   // Filter Plays by a search string in name or description
@@ -37,26 +37,26 @@ export const FetchPlaysFilter = {
     return {
       ...BasiFetchParam,
       ...{
-        display: "Filter Plays by a search string in name or description",
+        display: 'Filter Plays by a search string in name or description',
 
         where: {
           clause: {
-            operator: "or",
+            operator: 'or',
             conditions: [
               {
-                field: "name",
-                operator: "iregex",
-                value: Obj.name.toLowerCase(),
+                field: 'name',
+                operator: 'iregex',
+                value: Obj.name.toLowerCase()
               },
               {
-                field: "description",
-                operator: "iregex",
-                value: Obj.name.toLowerCase(),
-              },
-            ],
-          },
-        },
-      },
+                field: 'description',
+                operator: 'iregex',
+                value: Obj.name.toLowerCase()
+              }
+            ]
+          }
+        }
+      }
     };
   },
   // Filter plays by level, user, language, and multiple tags
@@ -69,36 +69,37 @@ export const FetchPlaysFilter = {
     const payload = {
       ...BasiFetchParam,
       ...{
-        display: "Filter plays by level, user, language, and multiple tags",
-      },
+        display: 'Filter plays by level, user, language, and multiple tags'
+      }
     };
 
     const clause = {
-      operator: "and",
-      conditions: !env && !preview ? [defaultClause] : [],
+      operator: 'and',
+      conditions: !env && !preview ? [defaultClause] : []
     };
     Object.keys(Obj).forEach((key) => {
       const keyName = Obj[key];
       if (keyName.length > 0) {
-        const ifTags = key === "tags";
+        const ifTags = key === 'tags';
 
         const prepareObject = {
-          field: ifTags ? "tag_id" : key,
-          operator: "eq",
-          value: ifTags ? keyName[0] : keyName,
+          field: ifTags ? 'tag_id' : key,
+          operator: 'eq',
+          value: ifTags ? keyName[0] : keyName
         };
 
         if (ifTags) {
-          clause.class = "play_tags";
+          clause.class = 'play_tags';
         }
         clause.conditions.push(prepareObject);
       }
     });
 
-    if (!!clause.conditions.length) {
+    if (clause.conditions.length) {
       payload.where = payload.where || {};
       payload.where.clause = clause;
     }
+
     return payload;
-  },
+  }
 };

@@ -1,16 +1,16 @@
-import { useState } from "react";
-import { useAuthenticationStatus, useUserData } from "@nhost/react";
-import { Tags, Levels, Issues } from "common/services";
-import Button from "@mui/material/Button";
+import { useState } from 'react';
+import { useAuthenticationStatus, useUserData } from '@nhost/react';
+import { Tags, Levels, Issues } from 'common/services';
+import Button from '@mui/material/Button';
 
-import PlayForm from "common/components/PlayForms";
-import { NHOST } from "common/const";
-import { FIELD_TEMPLATE } from "./create-play-form-template";
-import "./create-play.scss";
-import Loader from "common/spinner/spinner";
-import { Plays } from "common/services/plays";
-import { useNavigate } from "react-router-dom";
-import { ReactComponent as NotAllowedImage } from "../../images/img-403.svg";
+import PlayForm from 'common/components/PlayForms';
+import { NHOST } from 'common/const';
+import { FIELD_TEMPLATE } from './create-play-form-template';
+import './create-play.scss';
+import Loader from 'common/spinner/spinner';
+import { Plays } from 'common/services/plays';
+import { useNavigate } from 'react-router-dom';
+import { ReactComponent as NotAllowedImage } from '../../images/img-403.svg';
 
 const NoCreationInProdScreen = () => {
   return (
@@ -20,16 +20,16 @@ const NoCreationInProdScreen = () => {
       </div>
 
       <div className="text-center">
-        You can't create plays in production
+        You can&apos;t create plays in production
         <br />
         <a
           className="text-link-default"
           href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
         >
           read this
-        </a>{" "}
+        </a>{' '}
         for more details
       </div>
     </div>
@@ -42,9 +42,7 @@ const CreatePlay = () => {
   const userData = useUserData();
   let navigate = useNavigate();
 
-  const [loadingText, setLoadingText] = useState(
-    "Loading authentication information."
-  );
+  const [loadingText, setLoadingText] = useState('Loading authentication information.');
   const [storedData, setStoredData] = useState({});
   const [formData, setFormData] = useState({});
   const [isDataLoading, setIsDataLoading] = useState(false);
@@ -60,17 +58,18 @@ const CreatePlay = () => {
         res = true;
       }
     });
+
     return res;
   };
 
   const initializeData = () => {
     if (Object.keys(storedData).length === 0) {
       setIsDataLoading(true);
-      setLoadingText("Loading information.");
+      setLoadingText('Loading information.');
       const all_apis = [
-        { name: "tags", method: Tags.getAllTags },
-        { name: "level", method: Levels.getAllLevels },
-        { name: "issue", method: Issues.getIssues },
+        { name: 'tags', method: Tags.getAllTags },
+        { name: 'level', method: Levels.getAllLevels },
+        { name: 'issue', method: Issues.getIssues }
       ];
       const promises = [];
       all_apis.forEach((api) => {
@@ -93,48 +92,47 @@ const CreatePlay = () => {
         })
         .finally(() => {
           setIsDataLoading(false);
-          setLoadingText("");
+          setLoadingText('');
         });
     }
   };
 
   const onSubmit = () => {
-    setLoadingText("Creating play.");
+    setLoadingText('Creating play.');
     setIsDataLoading(true);
     formData.owner_user_id = userData.id;
     Plays.createPlay(formData).then((res) => {
       navigate(`/plays/created/${res}`);
       setIsDataLoading(false);
-      setLoadingText("");
+      setLoadingText('');
     });
   };
 
-  if (process.env.NODE_ENV !== "development") {
+  if (process.env.NODE_ENV !== 'development') {
     return <NoCreationInProdScreen />;
   }
 
   if (isLoading || isDataLoading) {
     return (
       <Loader
-        title={loadingText || "Loading authentication information"}
         subtitle="Please wait...."
+        title={loadingText || 'Loading authentication information'}
       />
     );
   }
 
   if (!isAuthenticated) {
     window.location = NHOST.AUTH_URL(
-      `http://localhost:${
-        process.env.RAECT_APP_DEV_PORT ?? "3000"
-      }/plays/create`
+      `http://localhost:${process.env.RAECT_APP_DEV_PORT ?? '3000'}/plays/create`
     );
+
     return null;
   } else {
     initializeData();
   }
 
   if (isDataLoading) {
-    <Loader title={"Loading data"} subtitle="Please wait...." />;
+    <Loader subtitle="Please wait...." title="Loading data" />;
   }
 
   return (
@@ -154,13 +152,18 @@ const CreatePlay = () => {
 
           <div className="flex-1 px-10 py-8 overflow-auto">
             <form>
-              <PlayForm fields={FIELD_TEMPLATE} onChange={data => onChange(data)} />
+              <PlayForm fields={FIELD_TEMPLATE} onChange={(data) => onChange(data)} />
             </form>
           </div>
           <div className="h-14">
             <hr />
             <div className="p-8 h-full flex items-center">
-              <Button size="small" variant="contained" disabled={isFieldsAreInValid()} onClick={() => onSubmit()}>
+              <Button
+                disabled={isFieldsAreInValid()}
+                size="small"
+                variant="contained"
+                onClick={() => onSubmit()}
+              >
                 Create the awesome
               </Button>
             </div>
@@ -168,7 +171,7 @@ const CreatePlay = () => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default CreatePlay;

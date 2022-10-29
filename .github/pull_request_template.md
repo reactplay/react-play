@@ -1,4 +1,3 @@
-
 > First thing, PLEASE READ THIS: [ReactPlay Code Review Checklist](https://github.com/reactplay/react-play/wiki/ReactPlay-Code-Review-Checklist)
 
 # Description
@@ -18,7 +17,7 @@ Please delete options that are not relevant.
 
 # How Has This Been Tested?
 
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. 
+Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce.
 
 # Checklist:
 

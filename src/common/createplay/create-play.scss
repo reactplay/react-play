@@ -15,7 +15,7 @@
   strong {
     font-size: var(--fs-lg);
     ::before {
-      content: "";
+      content: '';
       position: absolute;
       height: 4px;
       background-color: var(--color-brand-primary);

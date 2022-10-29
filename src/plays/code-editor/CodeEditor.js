@@ -1,18 +1,19 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import "./styles.css";
-import React, { useState, useEffect } from "react";
-import Editor from "./Editor";
-import Button from './Button'
+import PlayHeader from 'common/playlists/PlayHeader';
+import './styles.css';
+import React, { useState, useEffect } from 'react';
+import Editor from './Editor';
+import Button from './Button';
 import Modal from './Modal';
+
 // WARNING: Do not change the entry componenet name
 function CodeEditor(props) {
   // Your Code Start below.
-  const [openedEditor, setOpenedEditor] = useState("html");
-  const [activeButton, setActiveButton] = useState("html");
+  const [openedEditor, setOpenedEditor] = useState('html');
+  const [activeButton, setActiveButton] = useState('html');
 
-  const [html, setHtml] = useState("");
-  const [css, setCss] = useState("");
-  const [js, setJs] = useState("");
+  const [html, setHtml] = useState('');
+  const [css, setCss] = useState('');
+  const [js, setJs] = useState('');
   const [srcDoc, setSrcDoc] = useState(``);
 
   const onTabClick = (editorName) => {
@@ -39,9 +40,9 @@ function CodeEditor(props) {
   const [showModal, setShowModal] = useState(false);
 
   const toggle = (e) => {
-
     setShowModal(!showModal);
   };
+
   return (
     <>
       <div className="play-details">
@@ -53,69 +54,54 @@ function CodeEditor(props) {
           </div>
           <div className="code-editor-tab-button-container">
             <Button
-              backgroundColor={activeButton === "html" ? "#98AFC7" : ""}
+              backgroundColor={activeButton === 'html' ? '#98AFC7' : ''}
               title="HTML"
               onClick={() => {
-                onTabClick("html");
+                onTabClick('html');
               }}
             />
             <Button
-              backgroundColor={activeButton === "css" ? "#98AFC7" : ""}
+              backgroundColor={activeButton === 'css' ? '#98AFC7' : ''}
               title="CSS"
               onClick={() => {
-                onTabClick("css");
+                onTabClick('css');
               }}
             />
             <Button
-              backgroundColor={activeButton === "js" ? "#98AFC7" : ""}
+              backgroundColor={activeButton === 'js' ? '#98AFC7' : ''}
               title="JavaScript"
               onClick={() => {
-                onTabClick("js");
+                onTabClick('js');
               }}
             />
           </div>
           <div className="code-editor-container">
-            {openedEditor === "html" ? (
-              <Editor
-                language="xml"
-                displayName="HTML"
-                value={html}
-                setEditorState={setHtml}
-              />
-            ) : openedEditor === "css" ? (
-              <Editor
-                language="css"
-                displayName="CSS"
-                value={css}
-                setEditorState={setCss}
-              />
+            {openedEditor === 'html' ? (
+              <Editor displayName="HTML" language="xml" setEditorState={setHtml} value={html} />
+            ) : openedEditor === 'css' ? (
+              <Editor displayName="CSS" language="css" setEditorState={setCss} value={css} />
             ) : (
-              <Editor
-                language="javascript"
-                displayName="JS"
-                value={js}
-                setEditorState={setJs}
-              />
+              <Editor displayName="JS" language="javascript" setEditorState={setJs} value={js} />
             )}
-          </div> 
+          </div>
           <div className="code-editor-heading-output">
-             <h1>Output</h1>
+            <h1>Output</h1>
           </div>
           <div className="code-editor-bottom-pane">
             <iframe
+              frameBorder="1"
+              height="100%"
               id="my_iframe"
+              sandbox="allow-scripts"
               srcDoc={srcDoc}
               title="output"
-              sandbox="allow-scripts"
-              frameBorder="1"
               width="100%"
-              height="100%"
             />
           </div>
           {/* Your Code Ends Here */}
         </div>
       </div>
-      <Modal showModal={showModal} toggle={toggle}/>
+      <Modal showModal={showModal} toggle={toggle} />
     </>
   );
 }

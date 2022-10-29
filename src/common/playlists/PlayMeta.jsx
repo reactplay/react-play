@@ -1,14 +1,14 @@
-import { useEffect, useState, Suspense, useCallback } from "react";
-import { Helmet } from "react-helmet";
-import * as plays from "plays";
-import { useParams } from "react-router-dom";
-import { submit } from "common/services/request";
-import Loader from "common/spinner/spinner";
-import { toSanitized, toTitleCaseTrimmed } from "common/services/string";
-import { FetchPlaysBySlugAndUser } from "common/services/request/query/fetch-plays";
-import { PageNotFound } from "common";
-import thumbPlay from "images/thumb-play.png";
-import { getProdUrl } from "common/utils/playsUtil";
+import { useEffect, useState, Suspense, useCallback } from 'react';
+import { Helmet } from 'react-helmet';
+import * as plays from 'plays';
+import { useParams } from 'react-router-dom';
+import { submit } from 'common/services/request';
+import Loader from 'common/spinner/spinner';
+import { toSanitized, toTitleCaseTrimmed } from 'common/services/string';
+import { FetchPlaysBySlugAndUser } from 'common/services/request/query/fetch-plays';
+import { PageNotFound } from 'common';
+import thumbPlay from 'images/thumb-play.png';
+import { getProdUrl } from 'common/utils/playsUtil';
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -25,13 +25,14 @@ function PlayMeta() {
   const processCoverImage = useCallback(async (playObj) => {
     let metaImg = '';
     let ogTagImg = '';
-    if(playObj.cover) {
+    if (playObj.cover) {
       metaImg = playObj.cover;
       ogTagImg = playObj.cover;
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
-      setLoading(false)
-      return
+      setLoading(false);
+
+      return;
     }
     try {
       /**
@@ -43,17 +44,17 @@ function PlayMeta() {
       ogTagImg = getProdUrl(response.default);
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
-      setLoading(false) 
+      setLoading(false);
     } catch (_error) {
       /**
        * On error set the default image
        */
 
-       metaImg = thumbPlay;
-       ogTagImg = thumbPlay;
-       setMetaImage(metaImg);
-       setOgTagImage(ogTagImg);
-       setLoading(false) 
+      metaImg = thumbPlay;
+      ogTagImg = thumbPlay;
+      setMetaImage(metaImg);
+      setOgTagImage(ogTagImg);
+      setLoading(false);
     }
   }, []);
 
@@ -81,6 +82,7 @@ function PlayMeta() {
 
   const renderPlayComponent = () => {
     const Comp = plays[play.component || toSanitized(play.title_name)];
+
     return <Comp {...play} />;
   };
 
@@ -88,34 +90,14 @@ function PlayMeta() {
     <>
       <Helmet>
         <title>ReactPlay - {play.name}</title>
-        <meta name="description" content={play.description} />
-        <meta property="og:title" content={play.name} />
-        <meta property="og:description" content={play.description} />
-        <meta
-          property="og:image"
-          content={metaImage}
-          data-react-helmet="true"
-        />
-        <meta
-          property="og:image:alt"
-          content={play.description}
-          data-react-helmet="true"
-        />
-        <meta
-          name="twitter:title"
-          content={play.name}
-          data-react-helmet="true"
-        />
-        <meta
-          name="twitter:description"
-          content={play.description}
-          data-react-helmet="true"
-        />
-        <meta
-          name="twitter:image"
-          content={ogTagImage}
-          data-react-helmet="true"
-        />
+        <meta content={play.description} name="description" />
+        <meta content={play.name} property="og:title" />
+        <meta content={play.description} property="og:description" />
+        <meta content={metaImage} data-react-helmet="true" property="og:image" />
+        <meta content={play.description} data-react-helmet="true" property="og:image:alt" />
+        <meta content={play.name} data-react-helmet="true" name="twitter:title" />
+        <meta content={play.description} data-react-helmet="true" name="twitter:description" />
+        <meta content={ogTagImage} data-react-helmet="true" name="twitter:image" />
       </Helmet>
       <Suspense fallback={<Loader />}>{renderPlayComponent()}</Suspense>
     </>

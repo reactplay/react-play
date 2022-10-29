@@ -99,7 +99,7 @@
 }
 
 .list-plays a .play-thumb:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
@@ -513,10 +513,10 @@
     height: unset;
 } */
 
-.play-details .play-details-body input[type="text"],
-.play-details .play-details-body input[type="password"],
-.play-details .play-details-body input[type="email"],
-.play-details .play-details-body input[type="datetime-local"] {
+.play-details .play-details-body input[type='text'],
+.play-details .play-details-body input[type='password'],
+.play-details .play-details-body input[type='email'],
+.play-details .play-details-body input[type='datetime-local'] {
   border: solid 1px var(--color-neutral-50);
   padding: 0.4rem;
 }

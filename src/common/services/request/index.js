@@ -1,7 +1,4 @@
-import {
-  submit as gsubmit,
-  submit_multi as gsubmit_multi,
-} from "json-graphql-parser/v2/index.js";
+import { submit as gsubmit, submit_multi as gsubmit_multi } from 'json-graphql-parser/v2/index.js';
 
 const BACKEND_URL = `${process.env.REACT_APP_NHOST_BACKEND_URL}/${process.env.REACT_APP_NHOST_VERSION}/${process.env.REACT_APP_NHOST_ENDPOINT}`;
 
@@ -29,5 +26,6 @@ export const submit = (request, url, reqheder) => {
 export const submitMutation = (query, object) => {
   const mutationQuery = query;
   mutationQuery.object = object;
+
   return submit(mutationQuery);
 };

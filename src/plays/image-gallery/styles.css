@@ -16,7 +16,7 @@
 .know-image-gallery-image .know-image-gallery-grid-image {
   height: 250px;
   width: 350px;
-  transform: scale(1.0);
+  transform: scale(1);
   transition: transform 0.4s ease;
 }
 
@@ -48,7 +48,7 @@
   position: absolute;
   bottom: 5px;
   left: 20px;
-  opacity: 0.0;
+  opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -76,7 +76,7 @@
 
 .know-image-gallery-img-box:hover .know-image-caption {
   transform: translateY(-20px);
-  opacity: 1.0;
+  opacity: 1;
   z-index: 10000;
 }
 
@@ -84,7 +84,7 @@
   cursor: pointer;
 }
 
-.know-image-caption>p:nth-child(2) {
+.know-image-caption > p:nth-child(2) {
   font-size: 0.8em;
 }
 
@@ -109,9 +109,8 @@
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
   position: relative;
   left: 42rem;
@@ -142,10 +141,7 @@
   height: 2px;
   width: 0;
   background: #f0094a;
-  box-shadow:
-    -1px -1px 5px 0px #fff,
-    7px 7px 20px 0px #0003,
-    4px 4px 5px 0px #0002;
+  box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
   transition: 400ms ease all;
 }
 
@@ -164,25 +160,25 @@
 
 /* Media Queries */
 
-@media(max-width: 2138px) {
+@media (max-width: 2138px) {
   .know-image-custom-btn {
     left: 57rem;
   }
 }
 
-@media(max-width: 1087px) {
+@media (max-width: 1087px) {
   .know-image-custom-btn {
     left: 29rem;
   }
 }
 
-@media(max-width: 679px) {
+@media (max-width: 679px) {
   .know-image-custom-btn {
     left: 16rem;
   }
 }
 
-@media(max-width: 679px) {
+@media (max-width: 679px) {
   .know-image-custom-btn {
     left: 9rem;
   }

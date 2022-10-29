@@ -18,7 +18,7 @@
   strong {
     font-size: var(--fs-xxl);
     ::before {
-      content: "";
+      content: '';
       position: absolute;
       height: 4px;
       left: 0;
@@ -75,7 +75,7 @@
   color: var(--color-neutral-80);
   font-family: var(--ff-accent);
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     right: 0;

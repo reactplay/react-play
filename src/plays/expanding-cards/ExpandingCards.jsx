@@ -1,7 +1,7 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import "./ExpandingCards.css";
-import {useState} from "react";
-import data from "./Expanding-Card-Images";
+import PlayHeader from 'common/playlists/PlayHeader';
+import './ExpandingCards.css';
+import { useState } from 'react';
+import data from './Expanding-Card-Images';
 
 function ExpandingCards(props) {
   // Your Code Start below.
@@ -25,20 +25,12 @@ function ExpandingCards(props) {
               {data.map((item, i) => {
                 return (
                   <div
+                    className={i === activeCard ? 'Expanding-card active' : 'Expanding-card'}
                     key={i}
-                    className={
-                      i === activeCard
-                        ? "Expanding-card active"
-                        : "Expanding-card"
-                    }
                     onClick={() => toggle(i)}
                   >
                     <div className="info">{item.title}</div>
-                    <img
-                      src={item.url}
-                      className="Expanding-card-imgage"
-                      alt="Nature pics"
-                    />
+                    <img alt="Nature pics" className="Expanding-card-imgage" src={item.url} />
                   </div>
                 );
               })}

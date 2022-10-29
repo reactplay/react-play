@@ -1,10 +1,7 @@
-import { submitMutation } from "./request";
-import {
-  associatePlayWithTagQuery,
-  createPlayQuery,
-} from "./request/query/play";
-import { toKebabCase, toSlug } from "./string";
-import { Tags } from "./tags";
+import { submitMutation } from './request';
+import { associatePlayWithTagQuery, createPlayQuery } from './request/query/play';
+import { toKebabCase, toSlug } from './string';
+import { Tags } from './tags';
 
 // Create a play
 const createPlay = (playObject) => {
@@ -20,9 +17,7 @@ const createPlay = (playObject) => {
   objectToSubmit.language = objectToSubmit.language.value;
 
   // Prepare style
-  objectToSubmit.style = objectToSubmit.style
-    ? objectToSubmit.style.value
-    : "css";
+  objectToSubmit.style = objectToSubmit.style ? objectToSubmit.style.value : 'css';
 
   // Prepare slug
   objectToSubmit.slug = toSlug(objectToSubmit.name);
@@ -45,10 +40,10 @@ const createPlay = (playObject) => {
   if (tagsTmp && tagsTmp.length) {
     objectToSubmit.tags = [];
     tagsTmp.forEach((tag) => {
-      if (tag.id === "") {
+      if (tag.id === '') {
         promises.push(
           Tags.createATag({
-            name: tag.name,
+            name: tag.name
           })
         );
       } else {
@@ -79,10 +74,10 @@ const createPlay = (playObject) => {
 const associateTag = (tag, play) => {
   return submitMutation(associatePlayWithTagQuery, {
     play_id: play,
-    tag_id: tag,
+    tag_id: tag
   });
 };
 
 export const Plays = {
-  createPlay,
+  createPlay
 };

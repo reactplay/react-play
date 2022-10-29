@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function Card(item) {
   const [clicked, setClicked] = useState(false);
@@ -9,14 +9,8 @@ function Card(item) {
 
   return (
     <div className="card-container">
-      <div
-        className={`item front ${clicked ? "rotate-180" : ""}`}
-        onClick={handleClick}
-      ></div>
-      <div
-        className={`item back ${clicked ? "rotate-360" : ""}`}
-        onClick={handleClick}
-      >
+      <div className={`item front ${clicked ? 'rotate-180' : ''}`} onClick={handleClick} />
+      <div className={`item back ${clicked ? 'rotate-360' : ''}`} onClick={handleClick}>
         {item.item}
       </div>
     </div>
