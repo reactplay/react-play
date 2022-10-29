@@ -17,14 +17,12 @@ import DefaultBanner from "common/defaultBanner/DefaultBanner";
 import LazyLoad from 'react-lazy-load';
 
 const Home = () => {
-  const [gitHubStars, setGitHubStars] = useState("...");
   const { data } = useFetch(
     "https://api.github.com/repos/reactplay/react-play"
   );
   const { setSearchTerm, searchTerm, setFilterQuery } =
     useContext(SearchContext);
   useEffect(() => {
-    setGitHubStars(data.stargazers_count);
     setSearchTerm("");
     setFilterQuery({
       level_id: "",
