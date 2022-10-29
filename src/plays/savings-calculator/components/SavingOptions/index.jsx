@@ -35,8 +35,8 @@ function SavingOptions(props) {
           value={currency}
           onChange={(e) => setCurrency(e.target.value)}
         >
-          <option>INR</option>
-          <option>USD</option>
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
         </select>
       </div>
       <form>
