@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-.twentyFourtyEight-header {
+.twenty-forty-eight-header {
   display: table;
   width: 258px;
   margin-left: 4px;
 }
 
-.twentyFourtyEight-header__row {
+.twenty-forty-eight-header__row {
   display: table-row;
 }
 
-.twentyFourtyEight-header__title {
+.twenty-forty-eight-header__title {
   display: table-cell;
   float: left;
   margin-bottom: 0px;
@@ -23,7 +23,7 @@
   text-decoration-color: brown;
 }
 
-.twentyFourtyEight-header .twentyFourtyEight-restart {
+.twenty-forty-eight-header .twenty-forty-eight-restart {
   padding: 0 20px;
   text-decoration: none;
   color: black;
@@ -36,20 +36,20 @@
 }
 
 
-.twentyFourtyEight-header .twentyFourtyEight-restart:focus,
-.twentyFourtyEight-header .twentyFourtyEight-restart:active,
-.twentyFourtyEight-header .twentyFourtyEight-restart {
+.twenty-forty-eight-header .twenty-forty-eight-restart:focus,
+.twenty-forty-eight-header .twenty-forty-eight-restart:active,
+.twenty-forty-eight-header .twenty-forty-eight-restart {
   border: none;
   border-style: none;
   outline: none;
 }
 
-.twentyFourtyEight-header .scores {
+.twenty-forty-eight-header .scores {
   display: table-cell;
   float: right;
 }
 
-.twentyFourtyEight-header .score {
+.twenty-forty-eight-header .score {
   display: inline;
   top: 25px;
   left: 58rem;
@@ -69,7 +69,7 @@
 
 }
 
-.twentyFourtyEight-header .score--current:after {
+.twenty-forty-eight-header .score--current:after {
   content: "Score";
   position: absolute;
   width: 100%;
@@ -88,7 +88,7 @@
   position: absolute;
 }
 
-.twentyFourtyEight-header .score--best:after {
+.twenty-forty-eight-header .score--best:after {
   content: "Best";
   position: absolute;
   width: 100%;
@@ -104,7 +104,7 @@
 /* Media Queries */
 
 @media(max-width: 1352px) {
-  .twentyFourtyEight-header .score {
+  .twenty-forty-eight-header .score {
     left: 16rem;
   }
 
@@ -112,13 +112,13 @@
     left: 56rem;
   }
 
-  .twentyFourtyEight-header__title {
+  .twenty-forty-eight-header__title {
     left: 37rem;
   }
 }
 
 @media(max-width: 1258px) {
-  .twentyFourtyEight-header .score {
+  .twenty-forty-eight-header .score {
     left: 15rem;
     top: 8rem;
   }
@@ -128,21 +128,21 @@
     left: 55rem;
   }
 
-  .twentyFourtyEight-header__title {
+  .twenty-forty-eight-header__title {
     left: 37rem;
   }
 }
 
 @media(max-width: 988px) {
-  .twentyFourtyEight-header__title {
+  .twenty-forty-eight-header__title {
     left: 19rem;
   }
 
-  .twentyFourtyEight-header .restart {
+  .twenty-forty-eight-header .restart {
     font-size: 39px;
   }
 
-  .twentyFourtyEight-header .score {
+  .twenty-forty-eight-header .score {
     left: 40rem;
     top: 6rem;
     font-size: 26px;
@@ -155,7 +155,7 @@
 }
 
 @media(max-width: 805px) {
-  .twentyFourtyEight-header .score {
+  .twenty-forty-eight-header .score {
     left: 34rem;
     top: 6rem;
   }
@@ -165,20 +165,20 @@
     top: 12rem;
   }
 
-  .twentyFourtyEight-header__title {
+  .twenty-forty-eight-header__title {
     left: 14rem;
   }
 
 }
 
 @media (max-width: 593px) {
-  .twentyFourtyEight-header__title {
+  .twenty-forty-eight-header__title {
     left: 1rem;
     top: 21rem;
     font-size: 27px;
   }
 
-  .twentyFourtyEight-header .twentyFourtyEight-restart {
+  .twenty-forty-eight-header .twenty-forty-eight-restart {
     top: 8rem;
     left: 1.1rem;
     font-size: 20px;
@@ -205,17 +205,17 @@
     font-size: 13px;
   }
 
-  .twentyFourtyEight-header .score--best:after {
+  .twenty-forty-eight-header .score--best:after {
     top: 21px;
   }
 
-  .twentyFourtyEight-header__title {
+  .twenty-forty-eight-header__title {
     left: 14rem;
     top: 36rem;
     font-size: 43px;
   }
 
-  .twentyFourtyEight-header .score--current:after {
+  .twenty-forty-eight-header .score--current:after {
     top: 21px;
   }
 
@@ -225,7 +225,7 @@
     font-size: 13px;
   }
 
-  .twentyFourtyEight-header .twentyFourtyEight-restart {
+  .twenty-forty-eight-header .twenty-forty-eight-restart {
     top: 12rem;
     left: -6px;
     font-size: 20px;
@@ -238,7 +238,7 @@
     top: 7rem;
   }
 
-  .twentyFourtyEight-header__title {
+  .twenty-forty-eight-header__title {
     left: 10rem;
     top: 27rem;
     font-size: 43px;
@@ -249,7 +249,7 @@
     top: 7rem;
   }
 
-  .twentyFourtyEight-header .twentyFourtyEight-restart {
+  .twenty-forty-eight-header .twenty-forty-eight-restart {
     top: 27rem;
     left: 109px;
     font-size: 20px;
@@ -257,7 +257,7 @@
 }
 
 @media(max-width: 354px) {
-  .twentyFourtyEight-header__title {
+  .twenty-forty-eight-header__title {
     left: 7rem;
     top: 11rem;
   }
@@ -274,7 +274,7 @@
     font-size: 11px;
   }
 
-  .twentyFourtyEight-header .twentyFourtyEight-restart {
+  .twenty-forty-eight-header .twenty-forty-eight-restart {
     top: 14rem;
     left: 0.1rem;
     font-size: 16px;
@@ -293,7 +293,7 @@
     font-size: 11px;
   }
 
-  .twentyFourtyEight-header__title {
+  .twenty-forty-eight-header__title {
     visibility: hidden;
   }
 }

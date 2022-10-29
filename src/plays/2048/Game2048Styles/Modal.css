@@ -1,8 +1,8 @@
-.twentyFourtyEight-active-modal {
+.twenty-forty-eight-active-modal {
   overflow-y: hidden;
 }
 
-.twentyFourtyEight-btn-modal {
+.twenty-forty-eight-btn-modal {
   padding: 10px 20px;
   font-size: 18px;
   color: black;
@@ -11,8 +11,8 @@
   top: 7rem;
 }
 
-.twentyFourtyEight-modal,
-.twentyFourtyEight-overlay {
+.twenty-forty-eight-modal,
+.twenty-forty-eight-overlay {
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -22,11 +22,11 @@
   position: fixed;
 }
 
-.twentyFourtyEight-modal {
+.twenty-forty-eight-modal {
   z-index: 1;
 }
 
-.twentyFourtyEight-overlay {
+.twenty-forty-eight-overlay {
   background: rgba(49, 49, 49, 0.8);
 }
 
@@ -34,7 +34,7 @@
   visibility: hidden;
 }
 
-.twentyFourtyEight-modal-content {
+.twenty-forty-eight-modal-content {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -48,7 +48,7 @@
   text-align: center;
 }
 
-.twentyFourtyEight-close-modal {
+.twenty-forty-eight-close-modal {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -56,14 +56,14 @@
 }
 
 @media(max-width: 593px) {
-  .twentyFourtyEight-btn-modal {
+  .twenty-forty-eight-btn-modal {
     top: 6rem;
     font-size: 23px;
   }
 }
 
 @media(max-width: 494px) {
-  .twentyFourtyEight-btn-modal {
+  .twenty-forty-eight-btn-modal {
     top: 16rem;
     font-size: 23px;
     left: -8px;
@@ -71,7 +71,7 @@
 }
 
 @media(max-width:424px) {
-  .twentyFourtyEight-btn-modal {
+  .twenty-forty-eight-btn-modal {
     top: 27.1rem;
     font-size: 23px;
     left: 245px;
@@ -79,7 +79,7 @@
 }
 
 @media(max-width: 354px) {
-  .twentyFourtyEight-btn-modal {
+  .twenty-forty-eight-btn-modal {
     top: 17rem;
     font-size: 19px;
     left: 0rem;

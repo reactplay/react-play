@@ -52,7 +52,7 @@ function Grid(props) {
   }, [handleKey]);
 
   return (
-    <div className="twentyFourtyEight-grid">
+    <div className="twenty-forty-eight-grid">
       <Row row={props.grid[0]} />
       <Row row={props.grid[1]} />
       <Row row={props.grid[2]} />

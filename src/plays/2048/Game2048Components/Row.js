@@ -3,7 +3,7 @@ import Cell from "./Cell";
 
 function GridRow(props) {
   return (
-    <div className="twentyFourtyEight-row">
+    <div className="twenty-forty-eight-row">
       <Cell label={props.row[0]} />
       <Cell label={props.row[1]} />
       <Cell label={props.row[2]} />
