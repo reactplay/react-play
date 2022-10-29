@@ -38,3 +38,4 @@ The implementation of the Web3 staking dapp play is quite simple.
 
 - A browser wallet like Metamask.
 - A little knowledge about Web3 dapps functionality.
+- Dependencies: HardHat, Ethers
