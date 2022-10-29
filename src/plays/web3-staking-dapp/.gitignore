@@ -1,4 +1,4 @@
 node_modules
 .env
-./artifacts/build-info
-./artifacts/contracts/Staking.sol/Staking.dbg.json
+artifacts/build-info
+artifacts/contracts/Staking.sol/Staking.dbg.json
