@@ -1,8 +1,8 @@
-body.active-modal {
+.twentyFourtyEight-active-modal {
   overflow-y: hidden;
 }
 
-.btn-modal {
+.twentyFourtyEight-btn-modal {
   padding: 10px 20px;
   font-size: 18px;
   color: black;
@@ -12,7 +12,7 @@ body.active-modal {
 }
 
 .twentyFourtyEight-modal,
-.overlay {
+.twentyFourtyEight-overlay {
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -26,7 +26,7 @@ body.active-modal {
   z-index: 1;
 }
 
-.overlay {
+.twentyFourtyEight-overlay {
   background: rgba(49, 49, 49, 0.8);
 }
 
@@ -34,7 +34,7 @@ body.active-modal {
   visibility: hidden;
 }
 
-.modal-content {
+.twentyFourtyEight-modal-content {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -48,7 +48,7 @@ body.active-modal {
   text-align: center;
 }
 
-.close-modal {
+.twentyFourtyEight-close-modal {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -56,14 +56,14 @@ body.active-modal {
 }
 
 @media(max-width: 593px) {
-  .btn-modal {
+  .twentyFourtyEight-btn-modal {
     top: 6rem;
     font-size: 23px;
   }
 }
 
 @media(max-width: 494px) {
-  .btn-modal {
+  .twentyFourtyEight-btn-modal {
     top: 16rem;
     font-size: 23px;
     left: -8px;
@@ -71,7 +71,7 @@ body.active-modal {
 }
 
 @media(max-width:424px) {
-  .btn-modal {
+  .twentyFourtyEight-btn-modal {
     top: 27.1rem;
     font-size: 23px;
     left: 245px;
@@ -79,7 +79,7 @@ body.active-modal {
 }
 
 @media(max-width: 354px) {
-  .btn-modal {
+  .twentyFourtyEight-btn-modal {
     top: 17rem;
     font-size: 19px;
     left: 0rem;
