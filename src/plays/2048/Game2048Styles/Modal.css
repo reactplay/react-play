@@ -30,6 +30,10 @@ body.active-modal {
   background: rgba(49, 49, 49, 0.8);
 }
 
+.hide {
+  visibility: hidden;
+}
+
 .modal-content {
   position: absolute;
   top: 40%;
@@ -60,8 +64,17 @@ body.active-modal {
 
 @media(max-width: 494px) {
   .btn-modal {
-    top: 12rem;
+    top: 16rem;
     font-size: 23px;
+    left: -8px;
+  }
+}
+
+@media(max-width:424px) {
+  .btn-modal {
+    top: 27.1rem;
+    font-size: 23px;
+    left: 245px;
   }
 }
 

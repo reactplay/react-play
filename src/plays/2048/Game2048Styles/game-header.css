@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .twentyFourtyEight-header {
   display: table;
   width: 258px;
@@ -16,7 +18,9 @@
   position: absolute;
   left: 45rem;
   font-size: 46px;
-  font-family: cursive;
+  font-family: 'Pacifico', cursive;
+  text-decoration: underline;
+  text-decoration-color: brown;
 }
 
 .twentyFourtyEight-header .twentyFourtyEight-restart {
@@ -105,33 +109,33 @@
   }
 
   .score.score--best {
-    left: 52rem;
+    left: 56rem;
   }
 
   .twentyFourtyEight-header__title {
-    left: 33rem;
+    left: 37rem;
   }
 }
 
 @media(max-width: 1258px) {
   .twentyFourtyEight-header .score {
-    left: 50rem;
+    left: 15rem;
     top: 8rem;
   }
 
   .score.score--best {
-    top: 15rem;
-    left: 50rem;
+    top: 8rem;
+    left: 55rem;
   }
 
   .twentyFourtyEight-header__title {
-    left: 33rem;
+    left: 37rem;
   }
 }
 
 @media(max-width: 988px) {
   .twentyFourtyEight-header__title {
-    left: 24rem;
+    left: 19rem;
   }
 
   .twentyFourtyEight-header .restart {
@@ -152,19 +156,26 @@
 
 @media(max-width: 805px) {
   .twentyFourtyEight-header .score {
-    left: 21rem;
-    top: 27rem;
+    left: 34rem;
+    top: 6rem;
   }
 
   .score.score--best {
-    left: 32rem;
+    left: 34rem;
+    top: 12rem;
   }
+
+  .twentyFourtyEight-header__title {
+    left: 14rem;
+  }
+
 }
 
 @media (max-width: 593px) {
   .twentyFourtyEight-header__title {
-    left: 12rem;
-    top: 6rem;
+    left: 1rem;
+    top: 21rem;
+    font-size: 27px;
   }
 
   .twentyFourtyEight-header .twentyFourtyEight-restart {
@@ -174,46 +185,74 @@
   }
 
   .score.score--best {
-    top: 27rem;
-    left: 19rem;
+    top: 7rem;
+    left: 22rem;
     font-size: 19px;
   }
 
   .score.score--current {
     left: 8rem;
-    top: 27rem;
+    top: 7rem;
     font-size: 19px;
   }
 }
 
 @media (max-width: 494px) {
-  .score.score--current {
-    left: 9rem;
-    top: 27rem;
+
+  .score.score--best {
+    left: 18rem;
+    top: 7rem;
     font-size: 13px;
   }
 
-  .score.score--best {
-    top: 27rem;
-    left: 19rem;
-    font-size: 14px;
+  .twentyFourtyEight-header .score--best:after {
+    top: 21px;
+  }
+
+  .twentyFourtyEight-header__title {
+    left: 14rem;
+    top: 36rem;
+    font-size: 43px;
+  }
+
+  .twentyFourtyEight-header .score--current:after {
+    top: 21px;
+  }
+
+  .score.score--current {
+    left: 3rem;
+    top: 7rem;
+    font-size: 13px;
+  }
+
+  .twentyFourtyEight-header .twentyFourtyEight-restart {
+    top: 12rem;
+    left: -6px;
+    font-size: 20px;
   }
 }
 
 @media(max-width: 424px) {
   .score.score--best {
     left: 16rem;
-    top: 26rem;
+    top: 7rem;
   }
 
   .twentyFourtyEight-header__title {
     left: 10rem;
-    top: 7rem;
+    top: 27rem;
+    font-size: 43px;
   }
 
   .score.score--current {
-    left: 6rem;
-    top: 26rem;
+    left: 2rem;
+    top: 7rem;
+  }
+
+  .twentyFourtyEight-header .twentyFourtyEight-restart {
+    top: 27rem;
+    left: 109px;
+    font-size: 20px;
   }
 }
 
