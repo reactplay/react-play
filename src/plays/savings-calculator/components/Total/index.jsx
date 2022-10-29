@@ -1,3 +1,4 @@
+import { getCurrencySymbol } from "plays/savings-calculator/utils/getCurrencySymbol";
 import React from "react";
 import PiggyBank from "../../images/piggy-bank.png";
 import "./total.scss";
@@ -11,7 +12,7 @@ function Total(props) {
       <div className="total__endBalance">
         <h3 className="total__heading">End Balance:</h3>
         <h1 className="total__value">
-          {currency === "INR" ? "₹" : "$"}
+          {getCurrencySymbol(currency)}
           {total}
         </h1>
       </div>

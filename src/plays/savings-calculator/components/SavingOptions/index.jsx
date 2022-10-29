@@ -1,3 +1,4 @@
+import { getCurrencySymbol } from "plays/savings-calculator/utils/getCurrencySymbol";
 import React, { useState } from "react";
 import { getCalculatedSaving } from "../../utils/getCalculatedSaving";
 import "./savingOptions.scss";
@@ -44,7 +45,7 @@ function SavingOptions(props) {
           <label htmlFor="starting-balance">Starting Balance:</label>
           <div className="savingOptions__inputGroup">
             <div className="savingOptions__inputPrepend">
-              {currency === "INR" ? "₹" : "$"}
+              {getCurrencySymbol(currency)}
             </div>
             <input
               type="number"
@@ -60,7 +61,7 @@ function SavingOptions(props) {
           <label htmlFor="monthly-contribution">Monthly Contribution:</label>
           <div className="savingOptions__inputGroup">
             <div className="savingOptions__inputPrepend">
-              {currency === "INR" ? "₹" : "$"}
+              {getCurrencySymbol(currency)}
             </div>
             <input
               type="number"
