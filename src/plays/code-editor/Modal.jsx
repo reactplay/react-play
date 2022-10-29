@@ -38,7 +38,7 @@ const Modal = ({ showModal, toggle }) => {
   return (
     <Fragment>
       <div className='code-editor-modal'>
-        <img src={close} alt="clonse" onClick={toggle} className="close-icon" />
+        <img src={close} alt="close" onClick={toggle} className="close-icon" />
         <div className='content'>
           <h1 className='text'>How to Use!</h1>
           <p>{structuringData[currState].info}</p>
