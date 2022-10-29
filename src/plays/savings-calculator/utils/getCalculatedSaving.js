@@ -8,11 +8,11 @@ export const getCalculatedSaving = (savingOptions) => {
   } = savingOptions;
 
   let total = parseFloat(startingBalance);
-  let monthlyInterest = parseFloat(annualInterest) / 12;
+  const monthlyInterest = parseFloat(annualInterest) / 12;
   let monthlyInterestPaid = 0;
-  let periodInMonths =
+  const periodInMonths =
     periodChoice === "Years" ? parseFloat(period) * 12 : parseFloat(period);
-  let monthlyContributionAmount = parseFloat(monthlyContribution);
+  const monthlyContributionAmount = parseFloat(monthlyContribution);
 
   for (let i = 0; i < periodInMonths; i++) {
     monthlyInterestPaid = total * (monthlyInterest / 100);

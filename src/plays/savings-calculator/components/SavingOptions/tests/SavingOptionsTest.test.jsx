@@ -43,7 +43,7 @@ describe("Saving Options: Basic rendering and functionality", () => {
   });
 
   test("should return total amount", () => {
-    var total;
+    let total;
     const setTotal = (result) => {
       total = result;
     };
