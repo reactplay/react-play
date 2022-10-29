@@ -1,6 +1,6 @@
 import { getCurrencySymbol } from "plays/savings-calculator/utils/getCurrencySymbol";
 import React from "react";
-import PiggyBank from "../../images/piggy-bank.png";
+import PiggyBankImage from "../../images/piggy-bank.png";
 import "./total.scss";
 
 function Total(props) {
@@ -8,7 +8,7 @@ function Total(props) {
 
   return (
     <div className="savingCalculator__total">
-      <img src={PiggyBank} alt="piggy-bank" className="total__piggyBank" />
+      <img src={PiggyBankImage} alt="piggy-bank" className="total__piggyBank" />
       <div className="total__endBalance">
         <h3 className="total__heading">End Balance:</h3>
         <h1 className="total__value">
