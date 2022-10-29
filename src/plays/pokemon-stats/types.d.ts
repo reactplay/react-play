@@ -33,51 +33,51 @@ export interface Root {
 
 export interface Props {
   pokemon: Root;
+  backToSearch: () => void;
 }
 
-
 export interface PlayRoot {
-  component: any
-  cover: any
-  description: string
-  featured: any
-  dev_mode: boolean
-  github: string
-  language: string
-  play_like: PlayLike[]
-  name: string
-  slug: string
-  user: User
-  created_at: string
-  path: string
-  blog: any
-  id: string
-  level: Level
-  video: any
-  play_tags: PlayTag[]
-  title_name: string
+  component: any;
+  cover: any;
+  description: string;
+  featured: any;
+  dev_mode: boolean;
+  github: string;
+  language: string;
+  play_like: PlayLike[];
+  name: string;
+  slug: string;
+  user: User;
+  created_at: string;
+  path: string;
+  blog: any;
+  id: string;
+  level: Level;
+  video: any;
+  play_tags: PlayTag[];
+  title_name: string;
 }
 
 export interface PlayLike {
-  liked: boolean
-  play_id: string
-  user_id: string
+  liked: boolean;
+  play_id: string;
+  user_id: string;
 }
 
 export interface User {
-  id: string
-  displayName: string
-  avatarUrl: string
+  id: string;
+  displayName: string;
+  avatarUrl: string;
 }
 
 export interface Level {
-  name: string
+  name: string;
 }
 
 export interface PlayTag {
-  tag: Tag
+  tag: Tag;
 }
 
 export interface Tag {
-  name: string
+  name: string;
 }
