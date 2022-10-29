@@ -10,19 +10,19 @@ export default function Modal(props) {
   };
   
   useEffect(() => {
-    document.body.classList.add('active-modal')
+    document.body.classList.add('twentyFourtyEight-active-modal')
   }, [modal])
   
   return (
     <>
-      <button onClick={toggleModal} className={`${props.status === "over" ? "hide" : "btn-modal"}`}>
+      <button onClick={toggleModal} className={`${props.status === "over" ? "hide" : "twentyFourtyEight-btn-modal"}`}>
         <FaRegQuestionCircle />
       </button>
 
       {modal && (
         <div className="twentyFourtyEight-modal">
-          <div onClick={toggleModal} className="overlay"></div>
-          <div className="modal-content">
+          <div onClick={toggleModal} className="twentyFourtyEight-overlay"></div>
+          <div className="twentyFourtyEight-modal-content">
             <h2 className="mb-4 font-extrabold">HOW TO PLAY</h2>
             <p className="twentyfourtyeight-modal-para-one">
               Use your arrow keys to move the tiles. When two tiles with the same number touch, they merge into one!
@@ -31,7 +31,7 @@ export default function Modal(props) {
             <p className="twentyfourtyeight-modal-para-two">
               Join the numbers and get the <b>2048 tile!</b>to WIN.
             </p>
-            <button className="close-modal font-extrabold text-red-500" onClick={toggleModal}>
+            <button className="twentyFourtyEight-close-modal font-extrabold text-red-500" onClick={toggleModal}>
               CLOSE
             </button>
           </div>
