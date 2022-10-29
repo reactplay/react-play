@@ -6,19 +6,18 @@ import { ethers } from "ethers";
 import Navbar from "./components/Navbar";
 import maticLogo from "./images/polygon-matic-logo.svg";
 import { FaRupeeSign } from 'react-icons/fa';
+import { ContractAddress } from './constant';
 
 // WARNING: Do not change the entry componenet name
 function Web3StakingDapp(props) {
 
   // Your Code Start below.
 
-  const ContractAddress = '0x12163B070B97f06F5061D93164D960bbFCfdf965';
-
   // frontend states
-  const [provider, setProvider] = useState(undefined);
-  const [account, setAccount] = useState(undefined);
-  const [contract, setContract] = useState(undefined);
-  const [accountAddress, setAccountAddress] = useState(undefined);
+  const [provider, setProvider] = useState();
+  const [account, setAccount] = useState();
+  const [contract, setContract] = useState();
+  const [accountAddress, setAccountAddress] = useState();
 
   // assets
   const [assetId, setAssetId] = useState([]);
@@ -26,26 +25,26 @@ function Web3StakingDapp(props) {
 
   // staking
   const [stakeModal, setStakeModal] = useState(false);
-  const [stakingLength, setStakingLength] = useState(undefined);
-  const [stakingPercent, setStakingPercent] = useState(undefined);
+  const [stakingLength, setStakingLength] = useState();
+  const [stakingPercent, setStakingPercent] = useState();
   const [amount, setAmount] = useState(0);
 
   // functions
   const toWei = ether => ethers.utils.parseEther(ether);
   const toMatic = wei => ethers.utils.formatEther(wei);
 
+  const onload = async () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    setProvider(provider);
+
+    const contract = new ethers.Contract(
+      ContractAddress,
+      artifact.abi
+    )
+    setContract(contract);
+  }
+
   useEffect(() => {
-    const onload = async () => {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      setProvider(provider);
-
-      const contract = new ethers.Contract(
-        ContractAddress,
-        artifact.abi
-      )
-      setContract(contract);
-    }
-
     onload();
   }, [])
 

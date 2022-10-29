@@ -16,12 +16,25 @@ It is a staking dapp built upon polygon testnet in which users can stake matic t
 
 ## Implementation Details
 
-Update your implementation idea and details here
+The implementation of the Web3 staking dapp play is quite simple.
+
+- All start with `Navbar.js` component, every time when you run the play it will first check whether you have a wallet extension like Metamask in your browser or not, if not then the play will not work. If you have the extension then it will connect with your wallet.
+
+- `stakeMatic()` function in `smart-contract/contracts/Staking.sol` is responsible for staking matic tokens. whenever it gets called it stake the amount specified by you from your wallet to the dapps contract.
+
+- `withdrawToken` function in `smart-contract/contracts/Staking.sol` is responsible for withdrawing tokens from the dapp.
+
+- There are two cases that the user will get:
+    
+    - If you withdraw before the staking period completes then you will not receive the interest.
+    - If you withdraw after the staking period then you will get the amount you staked along with the interest.
+
 
 ## Consideration
 
-Update all considerations(if any)
+- Use the polygon testnet tokens to use the dapp.
 
 ## Resources
 
-Update external resources(if any)
+- A browser wallet like Metamask.
+- A little knowledge about Web3 dapps functionality.
