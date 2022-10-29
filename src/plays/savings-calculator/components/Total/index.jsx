@@ -7,7 +7,7 @@ function Total(props) {
   const { total, currency } = props;
 
   return (
-    <div className="total">
+    <div className="savingCalculator__total">
       <img src={PiggyBank} alt="piggy-bank" className="total__piggyBank" />
       <div className="total__endBalance">
         <h3 className="total__heading">End Balance:</h3>

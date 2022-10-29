@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.savingOptions {
+.savingCalculator__savingOptions {
   padding-left: 100px;
   margin-right: 50px;
   border-left: 3px solid #9aa1ab62;
@@ -168,7 +168,7 @@
 }
 
 @media screen and (max-width: 992px) {
-  .savingOptions {
+  .savingCalculator__savingOptions {
     margin-left: 70px;
     margin-right: 35px;
 
@@ -181,7 +181,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .savingOptions {
+  .savingCalculator__savingOptions {
     padding: 0;
     margin: 0;
     margin-bottom: 30px;
@@ -190,7 +190,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .savingOptions {
+  .savingCalculator__savingOptions {
     margin-bottom: 20px;
     .savingOptions__currencies {
       font-weight: 600;

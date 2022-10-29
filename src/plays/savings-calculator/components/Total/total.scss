@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.total {
+.savingCalculator__total {
   text-align: center;
 
   .total__piggyBank {
@@ -33,7 +33,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .total {
+  .savingCalculator__total {
     width: 100%;
     border-top: 3px solid #9aa1ab62;
 
@@ -44,7 +44,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .total {
+  .savingCalculator__total {
     .total__endBalance {
       .total__heading {
         font-size: 1.2rem;

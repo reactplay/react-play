@@ -27,7 +27,7 @@ function SavingOptions(props) {
   };
 
   return (
-    <div className="savingOptions">
+    <div className="savingCalculator__savingOptions">
       <div className="savingOptions__currencyGroup">
         <label htmlFor="currency">Currency:</label>
         <select
