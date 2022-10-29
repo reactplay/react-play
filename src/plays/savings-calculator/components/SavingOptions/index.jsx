@@ -93,9 +93,9 @@ function SavingOptions(props) {
               type="radio"
               name="period-choice"
               id="period-choice-years"
-              value="years"
+              value="Years"
               defaultChecked
-              onChange={() => setPeriodChoice("Years")}
+              onChange={(e) => setPeriodChoice(e.target.value)}
             />
             <label
               className="savingOptions__radioLabel"
@@ -110,8 +110,8 @@ function SavingOptions(props) {
               type="radio"
               name="period-choice"
               id="period-choice-months"
-              value="months"
-              onChange={() => setPeriodChoice("Months")}
+              value="Months"
+              onChange={(e) => setPeriodChoice(e.target.value)}
             />
             <label
               className="savingOptions__radioLabel"
