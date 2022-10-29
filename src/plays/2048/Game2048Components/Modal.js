@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaRegQuestionCircle } from 'react-icons/fa';
 import "../Game2048Styles/Modal.css";
 
-export default function Modal() {
+export default function Modal(props) {
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
-    setModal(!modal);
+    setModal(previous=>!previous);
   };
-
-  if (modal) {
+  
+  useEffect(() => {
     document.body.classList.add('active-modal')
-  } else {
-    document.body.classList.remove('active-modal')
-  }
-
+  }, [modal])
+  
   return (
     <>
-      <button onClick={toggleModal} className="btn-modal">
+      <button onClick={toggleModal} className={`${props.status === "over" ? "hide" : "btn-modal"}`}>
         <FaRegQuestionCircle />
       </button>
 
