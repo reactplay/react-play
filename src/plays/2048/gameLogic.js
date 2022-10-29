@@ -12,7 +12,7 @@ const addCell = (grid, props) => {
     };
   }
 
-  let score = props.score + calcScore(props.grid, grid);
+  const score = props.score + calcScore(props.grid, grid);
 
   if (score > props.best) {
     props.setBest(score);
@@ -22,7 +22,7 @@ const addCell = (grid, props) => {
   props.setGridState(TransformGrid.addRandomCell(grid));
 
   return {
-    score: score,
+    score,
     best: props.best,
     grid: props.grid,
     transform: grid
