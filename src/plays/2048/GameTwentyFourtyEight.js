@@ -27,11 +27,12 @@ function GameTwentyFourtyEight() {
     localStorage.setItem("Best", score);
     setBest(score);
   };
+  const handleStatus = (status) => setStatus(status)
 
   return (
     <>
       <GameHeader score={score} best={best} resetGame={resetGame} />
-      <GameOverlay tryAgain={resetGame} status={status} setStatus={setStatus} />
+      <GameOverlay tryAgain={resetGame} status={status} setStatus={handleStatus} />
       <Modal status={status} />
       <Game key={game}
         score={score}

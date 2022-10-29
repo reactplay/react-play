@@ -4,6 +4,7 @@ import TranformGrid from "../transformGrid";
 
 function Game(props) {
   const [grid, setGrid] = useState(grids)
+
   function grids() {
     let _grid = [
       [null, null, null, null],
@@ -18,11 +19,12 @@ function Game(props) {
     return _grid;
   }
 
+  const handleGrid = (grid) => setGrid(grid)
   return (
     <div className="game_wrapper">
       <Grid
         grid={grid}
-        setGridState={setGrid}
+        setGridState={handleGrid}
         score={props.score}
         setScore={props.setScore}
         best={props.best}
