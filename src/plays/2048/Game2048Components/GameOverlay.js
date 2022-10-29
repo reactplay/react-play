@@ -8,13 +8,16 @@ function GameOverlay(props) {
   const over = new Audio(gameOver)
   const win = new Audio(gameWin)
 
-  { props.status === "over" ? over.play() : over.pause() }
-  { props.status === "win" ? win.play() : win.pause() }
+  const isStatusOver = props.status === "over"
+  const isStatusWon = props.status === "won"
+
+  { isStatusOver ? over.play() : over.pause() }  //Play game over sound effect
+  { isStatusWon === "win" ? win.play() : win.pause() } //Play game win sound effect
   return (
-    <div>
+    <>
       <div
         className={
-          props.status === "over"
+          isStatusOver
             ? "game-overlay game-overlay--over active"
             : "game-overlay game-overlay--over"
         }
@@ -26,7 +29,7 @@ function GameOverlay(props) {
       </div>
       <div
         className={
-          props.status === "won"
+          isStatusWon
             ? "game-overlay game-overlay--won active"
             : "game-overlay game-overlay--won"
         }
@@ -44,7 +47,7 @@ function GameOverlay(props) {
           Try Again
         </button>
       </div>
-    </div>
+    </>
   )
 }
 
