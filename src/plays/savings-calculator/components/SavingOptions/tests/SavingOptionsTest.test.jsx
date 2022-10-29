@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import SavingOptions from "../index";
 
 describe("Saving Options: Basic rendering and functionality", () => {
@@ -33,9 +33,11 @@ describe("Saving Options: Basic rendering and functionality", () => {
 
     const selectCurrency = screen.getByRole("combobox", { name: "Currency:" });
 
-    fireEvent.change(selectCurrency, {
-      target: { value: "USD" },
-    });
+    act(() => {
+      fireEvent.change(selectCurrency, {
+        target: { value: "USD" },
+      });
+    })
 
     expect(changeCurrency).toHaveBeenCalledWith("USD");
   });
@@ -49,7 +51,9 @@ describe("Saving Options: Basic rendering and functionality", () => {
     render(<SavingOptions setTotal={setTotal} currency="INR" />);
 
     const calculateButton = screen.getByRole("button", { name: /Calculate/i });
-    fireEvent.click(calculateButton);
+    act(() => {
+      fireEvent.click(calculateButton);
+    })
 
     expect(total).toBe(2327);
   });
