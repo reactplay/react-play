@@ -32,7 +32,7 @@ function GameTwentyFourtyEight() {
     <>
       <GameHeader score={score} best={best} resetGame={resetGame} />
       <GameOverlay tryAgain={resetGame} status={status} setStatus={setStatus} />
-      <Modal />
+      <Modal status={status} />
       <Game key={game}
         score={score}
         setScore={setScore}
