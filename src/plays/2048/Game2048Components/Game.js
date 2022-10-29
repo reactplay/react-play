@@ -3,7 +3,8 @@ import Grid from "./Grid";
 import TranformGrid from "../transformGrid";
 
 function Game(props) {
-  const [grid, setGrid] = useState(() => {
+  const [grid, setGrid] = useState(grids)
+  function grids() {
     let _grid = [
       [null, null, null, null],
       [null, null, null, null],
@@ -15,10 +16,10 @@ function Game(props) {
     _grid = TranformGrid.addRandomCell(_grid);
 
     return _grid;
-  });
+  }
 
   return (
-    <div className="game">
+    <div className="game_wrapper">
       <Grid
         grid={grid}
         setGridState={setGrid}
