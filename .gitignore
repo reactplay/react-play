@@ -33,3 +33,6 @@ yarn.lock
 
 # play index
 src/plays/index.js
+
+# vscode setting
+.vscode
