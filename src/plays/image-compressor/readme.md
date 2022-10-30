@@ -24,4 +24,4 @@ Update all considerations(if any)
 
 ## Resources
 
-Update external resources(if any)
+To compress image I have used `browser-image-compression` npm package.
