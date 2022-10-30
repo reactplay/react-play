@@ -121,7 +121,7 @@ const HeaderNav = ({ showBrowse }) => {
               className="app-header-btn app-header-btn--default"
               data-testid="ideas-btn"
             >
-              <FaLightbulb className="icon" />
+              <FaLightbulb className="icon idea-icon" />
               <span className="btn-label">Idea</span>
             </Link>
           </li>
@@ -134,7 +134,7 @@ const HeaderNav = ({ showBrowse }) => {
               className="app-header-btn app-header-btn--default umami--click--github"
               data-testid="github-btn"
             >
-              <BsGithub className="icon" />
+              <BsGithub className="icon github-icon" />
               <span className="btn-label">GitHub</span>
             </a>
           </li>
@@ -147,7 +147,7 @@ const HeaderNav = ({ showBrowse }) => {
               className="app-header-btn app-header-btn--default"
               data-testid="twitter-btn"
             >
-              <BsTwitter className="icon" />
+              <BsTwitter className="icon twitter-icon" />
               <span className="btn-label">Twitter</span>
             </a>
           </li>
@@ -158,7 +158,7 @@ const HeaderNav = ({ showBrowse }) => {
               onClick={handleClick}
               data-testid="share-btn"
             >
-              <IoHeartSharp className="icon" />
+              <IoHeartSharp className="icon share-icon" />
               <span className="btn-label">Share</span>
             </button>
           </li>
