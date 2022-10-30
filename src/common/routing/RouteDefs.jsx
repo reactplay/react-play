@@ -13,6 +13,8 @@ import {
 import PlayList from "common/playlists/PlayList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NhostClient, NhostReactProvider } from "@nhost/react";
+import Badges from "common/badges-dashboard/Badges";
+import BadgesDashboard from "common/badges-dashboard";
 
 const nhost = new NhostClient({
   backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || "",
@@ -59,6 +61,9 @@ const RouteDefs = () => {
                       <Route exact path=":param2" element= {<PlayMeta />}/>
                       </Route>
                   </Route> */}
+          </Route>
+          <Route path=":username" element={<App />}>
+            <Route path=":badges" element={<BadgesDashboard />} />
           </Route>
           <Route path="/play" element={<App />}>
             <Route index element={<PlayList />} />
