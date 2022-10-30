@@ -58,13 +58,13 @@ export default function DownloadFetchResponse(props) {
             justify="center"
             style={{ paddingTop: "10rem" }}
           >
-            <Grid item xs={5}>
-              <Card className={matches ? 'desk-screen' : 'other-screen'} sx={{ fontSize: 14 }}>
-                <CardContent>
+            <Grid item xs={10} >
+              <Card className={matches ? 'desk-screen' : 'other-screen'} sx={{ fontSize: 14 }} className='main'>
+                <CardContent className="check">
                   <Typography sx={{ fontSize: 14 }} gutterBottom>
                     Save Fetch API Response
                   </Typography>
-                  <Typography variant="h5" component="div">
+                  <Typography variant="h5" component="div" >
                     <div className="civ">
                       {!fetching ? (
                         <div className="clazz">
