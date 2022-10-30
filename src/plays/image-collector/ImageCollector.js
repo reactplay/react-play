@@ -5,7 +5,6 @@ import "./styles.css";
 function ImageCollector(props) {
   const [urlInput, setUrlInput] = useState("");
   const [images, setImages] = useState([]);
-  // const images = useRef([]);
 
   function addImage() {
     setImages(images.concat(urlInput));
