@@ -13,8 +13,6 @@ async function main() {
 
   await staking.deployed();
 
-  console.log(`Staking contract deployed to ${staking.address}`);
-
   const provider = waffle.provider;
   let data;
   let transaction;
@@ -50,6 +48,5 @@ async function main() {
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main().catch((error) => {
-  console.error(error);
   process.exitCode = 1;
 });
