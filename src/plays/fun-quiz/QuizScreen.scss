@@ -9,7 +9,6 @@
     position: relative;
     color: $quiz-app-raw-black;
     display: block;
-    position: relative;
 
     @media screen and (max-width: 1366px) {
       .App {
@@ -155,7 +154,6 @@
         cursor: pointer;
         border: none;
         border-radius: 30px;
-        color: $quiz-app-white-color;
         color: $quiz-app-white-color;
         font-weight: 600;
 
