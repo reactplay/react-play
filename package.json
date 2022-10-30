@@ -9,6 +9,8 @@
     "@mui/material": "^5.9.1",
     "@mui/styles": "^5.9.3",
     "@nhost/react": "^0.9.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
@@ -36,7 +38,7 @@
     "react-icons": "^4.3.1",
     "react-loader-spinner": "~5.1.5",
     "react-organizational-chart": "^2.1.1",
-    "react-p5": "^1.3.30",
+    "react-p5": "^1.3.33",
     "react-qr-code": "^2.0.7",
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.4.0",
@@ -68,13 +70,23 @@
     "cypress:run": "cypress run"
   },
   "eslintConfig": {
-    "extends": ["react-app", "react-app/jest"]
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "reactSnap": {
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

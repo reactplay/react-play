@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsTwitter, BsGithub } from "react-icons/bs";
 import { FaLightbulb } from "react-icons/fa";
@@ -8,7 +8,6 @@ import { MdManageSearch, MdClose } from "react-icons/md";
 import SocialShare from "common/components/SocialShare";
 import { GoX } from "react-icons/go";
 import { Modal, Box, Typography, Menu } from "@mui/material";
-import { useContext } from "react";
 import { SearchContext } from "common/search/search-context";
 
 const HeaderNav = ({ showBrowse }) => {
