@@ -1,4 +1,3 @@
-import "./Like.scss";
 import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 
 const Like = ({ onLikeClick, likeObj }) => {
