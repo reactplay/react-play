@@ -1,5 +1,4 @@
 import PlayHeader from 'common/playlists/PlayHeader';
-import './styles.css';
 import React, { useState, useEffect } from "react";
 import artifact from "./artifacts/contracts/Staking.sol/Staking.json";
 import { ethers } from "ethers";
