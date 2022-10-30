@@ -33,13 +33,7 @@ const Header = () => {
         showBrowse: true,
         setHeaderStyle: false,
       });
-    } else if (pathName === "/ideas") {
-      setShowHideBits({
-        showSearch: false,
-        showBrowse: true,
-        setHeaderStyle: true,
-      });
-    } else if (pathName === "/tech-stacks") {
+    } else if (pathName === "/ideas" || pathName === "/tech-stacks") {
       setShowHideBits({
         showSearch: false,
         showBrowse: true,
