@@ -1,5 +1,4 @@
 import { Modal } from "@mui/material";
-import SocialShare from "common/components/SocialShare";
 import { IoLogoTwitter } from "react-icons/io5";
 import "../styles.css";
 import { getEvaluationText } from "../utils";

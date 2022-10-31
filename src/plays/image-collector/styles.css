@@ -1,0 +1,52 @@
+.input-container {
+  width: max-content;
+  margin: auto;
+}
+
+.input-url {
+  padding: 8px 16px;
+  width: 400px;
+  margin-bottom: 32px;
+}
+
+.input-button {
+  padding: 8px 16px;
+  background-color: aqua;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.image-grid {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  grid-gap: 12px;
+}
+.image-wrapper {
+  width: 200px;
+  height: 300px;
+  flex-grow: 1;
+  border: 1px solid #010326;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.empty-message {
+  width: max-content;
+  margin: auto;
+  font-size: 24px;
+}
+
+@media (max-width: 400px) {
+  .input-url {
+    width: 240px;
+  }
+
+  .image-grid {
+    justify-content: center;
+  }
+}
