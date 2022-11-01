@@ -240,6 +240,22 @@
   fill: var(--color-neutral-10);
 }
 
+.header-links > li > .app-header-btn:hover .share-icon {
+  fill: #a83f39;
+}
+
+.header-links > li > .app-header-btn:hover .github-icon {
+  fill: #ffffff;
+}
+
+.header-links > li > .app-header-btn:hover .idea-icon {
+  fill: #ffbb73 ;
+}
+
+.header-links > li > .app-header-btn:hover .twitter-icon {
+  fill: #00acee;
+}
+
 .header-links > li > .app-header-btn .btn-label {
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
