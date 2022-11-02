@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -7,6 +7,9 @@ import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 import { makeStyles } from "@mui/styles";
+import { InputAdornment, ListSubheader, TextField } from "@mui/material";
+import { compareTextValue } from "common/utils/compareTextValue";
+import { IoMdClose } from "react-icons/io";
 
 const useStyles = makeStyles({
   menuPaper: {
@@ -22,6 +25,15 @@ export default function MultipleSelectCheckmarks({
   label,
 }) {
   const classes = useStyles();
+  const [searchText, setSearchText] = useState("");
+
+  const filteredOptions = useMemo(
+    () =>
+      options.filter((option) =>
+        compareTextValue(option.label, searchText, typeof option.label)
+      ),
+    [searchText, options]
+  );
 
   useEffect(() => {
     if (
@@ -75,11 +87,41 @@ export default function MultipleSelectCheckmarks({
           multiple
           value={filterQuery[filterKey]}
           onChange={handleChange}
+          onClose={() => setSearchText("")}
           input={<OutlinedInput label={label} />}
           renderValue={renderValueHandler}
-          MenuProps={{ classes: { paper: classes.menuPaper } }}
+          MenuProps={{
+            classes: { paper: classes.menuPaper },
+            autoFocus: false,
+          }}
         >
-          {options.map((option) => (
+          <ListSubheader>
+            <TextField
+              size="small"
+              value={searchText}
+              placeholder={`Search ${label}...`}
+              fullWidth
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IoMdClose
+                      onClick={() => setSearchText("")}
+                      className="cursor-pointer"
+                      size="20px"
+                    />
+                  </InputAdornment>
+                ),
+              }}
+              onChange={(e) => setSearchText(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key !== "Escape") {
+                  // Prevents autoselecting item while typing (default Select behaviour)
+                  e.stopPropagation();
+                }
+              }}
+            />
+          </ListSubheader>
+          {filteredOptions.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               <Checkbox
                 checked={
