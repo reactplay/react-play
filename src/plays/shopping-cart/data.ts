@@ -1,4 +1,4 @@
-export const CART_ITEMS = [
+export const CART_ITEMS: TCartItem[] = [
   {
     id: 1,
     title: "Samsung Galaxy S7",
@@ -21,3 +21,11 @@ export const CART_ITEMS = [
     amount: 1,
   },
 ];
+
+type TCartItem = {
+  id: number;
+  title: string;
+  price: number;
+  img: string;
+  amount: number;
+};

@@ -56,9 +56,6 @@ export default function reducer(state: any, action: any) {
     case "LOADING_ITEMS":
       return { ...state, loading: true };
 
-    case "DISPLAY_ITEMS":
-      return { ...state, loading: false, cart: action.payload };
-
     case "RELOAD_CART":
       return { ...state, cart: action.payload };
     default:
