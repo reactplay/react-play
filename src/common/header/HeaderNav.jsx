@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsTwitter, BsGithub } from "react-icons/bs";
 import { FaLightbulb } from "react-icons/fa";
@@ -8,7 +8,6 @@ import { MdManageSearch, MdClose } from "react-icons/md";
 import SocialShare from "common/components/SocialShare";
 import { GoX } from "react-icons/go";
 import { Modal, Box, Typography, Menu } from "@mui/material";
-import { useContext } from "react";
 import { SearchContext } from "common/search/search-context";
 
 const HeaderNav = ({ showBrowse }) => {
@@ -45,7 +44,7 @@ const HeaderNav = ({ showBrowse }) => {
           >
             Share about ReactPlay
           </Typography>
-          <SocialShare />
+          <SocialShare showTwitter showLinkedin showFB showReddit />
           <Box
             component="div"
             sx={{ mt: 4, display: "flex", justifyContent: "flex-end" }}
@@ -118,10 +117,11 @@ const HeaderNav = ({ showBrowse }) => {
           <li>
             <Link
               to="/ideas"
+              title = "Play Ideas"
               className="app-header-btn app-header-btn--default"
               data-testid="ideas-btn"
             >
-              <FaLightbulb className="icon" />
+              <FaLightbulb className="icon idea-icon" />
               <span className="btn-label">Idea</span>
             </Link>
           </li>
@@ -129,11 +129,12 @@ const HeaderNav = ({ showBrowse }) => {
             <a
               href="https://github.com/reactplay/react-play"
               target="_blank"
+              title = "GitHub page"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--default umami--click--github"
               data-testid="github-btn"
             >
-              <BsGithub className="icon" />
+              <BsGithub className="icon github-icon" />
               <span className="btn-label">GitHub</span>
             </a>
           </li>
@@ -141,21 +142,23 @@ const HeaderNav = ({ showBrowse }) => {
             <a
               href="https://twitter.com/reactplayio"
               target="_blank"
+              title = "Twitter Page"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--default"
               data-testid="twitter-btn"
             >
-              <BsTwitter className="icon" />
+              <BsTwitter className="icon twitter-icon" />
               <span className="btn-label">Twitter</span>
             </a>
           </li>
           <li>
             <button
+              title="Show love"
               className="app-header-btn app-header-btn--default"
               onClick={handleClick}
               data-testid="share-btn"
             >
-              <IoHeartSharp className="icon" />
+              <IoHeartSharp className="icon share-icon" />
               <span className="btn-label">Share</span>
             </button>
           </li>
