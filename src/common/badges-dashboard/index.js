@@ -1,5 +1,6 @@
 import { useAuthenticated, useUserData, useUserDisplayName, useUserId } from "@nhost/react";
 import { NHOST } from "common/const";
+import { getAllBadgesByUserId, getBadgesByUserId, getUserByEmail } from "common/services/badges";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import Badges from "./Badges";
@@ -7,81 +8,61 @@ import MyBadges from "./MyBadges";
 
 const BadgesDashboard = () => {
 
-  const [currentWindow, setCurrentWindow] = useState(0);
-
   const param = useLocation();
   const navigate = useNavigate();
-  const loggedInUser = useUserDisplayName()?.replace(" ", "");
-  const userNameFromParam = param.pathname.split("/")[1];
+  const loggedInUserEmail = useUserData()?.email;
+  const userEmailFromParam = param.pathname.split("/")[1];
   const isAuthenticated = useAuthenticated();
   const user = useUserData();
+  const [allBadges, setAllBadges] = useState([]);
+  const [claimedBadges, setClaimedbadges] = useState([]);
+  const [notClaimedBadges, setNotClaimedBadges] = useState([]);
+
   const handleLogin = () => {
-    // console.log(window.location.origin)
     window.location = NHOST.AUTH_URL(`${window.location.origin}/me/badges`);
   };
 
+  useEffect(() => {
+    async function getData() {
+      const email = param.pathname.split("/")[1];
+      const userInfo = await getUserByEmail(email);
+      setAllBadges(await getAllBadgesByUserId(await userInfo[0]?.id));
+      setClaimedbadges(await getBadgesByUserId(await userInfo[0]?.id, true));
+      setNotClaimedBadges(await getBadgesByUserId(await userInfo[0]?.id, false))
+    }
+    getData();
 
-  // useEffect(() => {
-  //   console.log(user);
-  //   navigate(`/${user.id}/badges`);
-  // }, [user]);
-  // if (param.pathname.includes("me")) {
-  //   console.log(user);
-  //   return (
-  //     <Navigate to={`/${user.id}/badges`} />
-  //   )
-  // }
 
+  }, [])
 
   return (
-
-    <>
+    <div className=" flex flex-col">
       {
         user && param.pathname.includes("me") && (
           <Navigate to={`/${user.email}/badges`} />
         )
       }
-      <button onClick={() => setCurrentWindow(0)}>
+      <div className="">
         Badges
-      </button>
+      </div>
       {
-        (loggedInUser === userNameFromParam) && (
-          <button onClick={() => setCurrentWindow(1)}>
-            My badges
-          </button>
-        )
-      }
-      {
-        (currentWindow === 0) && (
-          <Badges />
+        (isAuthenticated) && (userEmailFromParam === loggedInUserEmail) && (
+          <MyBadges
+            allBadges={allBadges}
+            claimedBadges={claimedBadges}
+            notClaimedBadges={notClaimedBadges}
+          />
         )
       }{
-        (currentWindow === 1) &&
-        (isAuthenticated) && (loggedInUser === userNameFromParam) &&
-        (
-          <MyBadges />
-        )
+        (userEmailFromParam !== loggedInUserEmail) &&
+        <Badges
+          badges={allBadges}
+          isAuthenticated={isAuthenticated}
+          handleLogin={handleLogin}
+          handleViewBtnClick={() => navigate(`/${user.email}/badges`)}
+        />
       }
-      {
-        (!isAuthenticated) && (
-          <button onClick={() => {
-            handleLogin("github");
-          }}>
-            Login to view your badges
-          </button>
-        )
-      }
-      {
-        (isAuthenticated) && (
-          <button onClick={() => {
-
-            navigate(`/${user.id}/badges`)
-          }}>
-            View my badges
-          </button>
-        )
-      }
-    </>
+    </div>
   );
 }
 export default BadgesDashboard;

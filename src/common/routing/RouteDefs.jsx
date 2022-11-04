@@ -63,7 +63,7 @@ const RouteDefs = () => {
                   </Route> */}
           </Route>
           <Route path=":username" element={<App />}>
-            <Route path=":badges" element={<BadgesDashboard />} />
+            <Route path="badges" element={<BadgesDashboard />} />
           </Route>
           <Route path="/play" element={<App />}>
             <Route index element={<PlayList />} />
