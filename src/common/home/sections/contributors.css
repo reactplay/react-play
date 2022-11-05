@@ -15,11 +15,7 @@
   line-height: 1.2;
 }
 
-.home-contributors .title-primary strong {
-  position: relative;
-  font-family: var(--ff-accent);
-  position: relative;
-}
+.home-contributors .title-primary strong,
 .home-contributors .title-primary strong span {
   position: relative;
   font-family: var(--ff-accent);
@@ -37,10 +33,6 @@
 }
 
 .list-contributors {
-  list-style: none;
-}
-
-.list-contributors {
   position: relative;
   list-style: none;
   margin: 0 auto;
@@ -51,7 +43,6 @@
   flex-wrap: wrap;
   justify-content: center;
   grid-gap: 3rem;
-  width: 80%;
   max-width: var(--screen-lg-max);
 }
 

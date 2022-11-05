@@ -6,7 +6,6 @@
   justify-content: center;
   /* background-color: var(--color-neutral-90); */
   background: rgb(1, 4, 38);
-  background: rgb(1, 4, 38);
   background: -moz-linear-gradient(180deg, rgba(1, 4, 38, 1) 0%, rgba(76, 91, 94, 1) 100%);
   background: -webkit-linear-gradient(180deg, rgba(1, 4, 38, 1) 0%, rgba(76, 91, 94, 1) 100%);
   background: linear-gradient(180deg, rgba(1, 4, 38, 1) 0%, rgba(76, 91, 94, 1) 100%);
@@ -15,6 +14,11 @@
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+.app-home-body .app-home-body-content {
+  margin-bottom: 4rem;
+  z-index: 5;
 }
 
 /* Home abstract graphics */
@@ -50,22 +54,6 @@
   right: 0;
   opacity: 0.04;
   animation: flowerSpinLg 100s linear 0s infinite normal forwards;
-}
-
-@media screen and (max-width: 768px) {
-  .home-bg-graphics-sm {
-    top: 0%;
-  }
-
-  .home-bg-graphics-rg {
-    left: -15%;
-    top: 35%;
-  }
-
-  .home-bg-graphics-lg {
-    top: 20%;
-    right: -15%;
-  }
 }
 
 /* ANIMATIONS */
@@ -120,6 +108,20 @@
   }
   .app-home-body .body-title br {
     display: none;
+  }
+
+  .home-bg-graphics-sm {
+    top: 0%;
+  }
+
+  .home-bg-graphics-rg {
+    left: -15%;
+    top: 35%;
+  }
+
+  .home-bg-graphics-lg {
+    top: 20%;
+    right: -15%;
   }
 
   @keyframes flowerSpinSm {

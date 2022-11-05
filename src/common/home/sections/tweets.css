@@ -17,12 +17,7 @@
   line-height: 1.2;
 }
 
-.home-tweets .title-primary strong {
-  position: relative;
-  font-family: var(--ff-accent);
-  position: relative;
-}
-
+.home-tweets .title-primary strong,
 .home-tweets .title-primary strong span {
   position: relative;
   font-family: var(--ff-accent);
@@ -45,10 +40,10 @@
   margin-top: 4.5em;
   display: flex;
   /* grid-template-columns: repeat(auto-fit,370px);
-      grid-template-rows: repeat(auto-fill,400px);
-      grid-auto-rows:auto;
-      grid-auto-columns: auto;
-      grid-row-gap:1em; */
+    grid-template-rows: repeat(auto-fill,400px);
+    grid-auto-rows:auto;
+    grid-auto-columns: auto;
+    grid-row-gap:1em; */
   justify-content: center;
   align-items: center;
   /* row-gap: 1.3em; */
