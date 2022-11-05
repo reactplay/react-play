@@ -1,3 +1,5 @@
+import { CartItem, InitialState } from "ShoppingCartTypes";
+
 export default function reducer(state: any, action: any) {
   switch (action.type) {
     case "CLEAR_CART":
@@ -7,12 +9,12 @@ export default function reducer(state: any, action: any) {
       return {
         ...state,
         cart: state.cart.filter(
-          (cartItem: TCartItem) => cartItem.id !== action.payload
+          (cartItem: CartItem) => cartItem.id !== action.payload
         ),
       };
 
     case "INCREASE_AMOUNT":
-      let increasedCart = state.cart.map((cartItem: TCartItem) => {
+      let increasedCart = state.cart.map((cartItem: CartItem) => {
         if (cartItem.id === action.payload) {
           return { ...cartItem, amount: cartItem.amount + 1 };
         }
@@ -24,20 +26,20 @@ export default function reducer(state: any, action: any) {
 
     case "DECREASE_AMOUNT":
       let decreasedCart = state.cart
-        .map((cartItem: TCartItem) => {
+        .map((cartItem: CartItem) => {
           if (cartItem.id === action.payload) {
             return { ...cartItem, amount: cartItem.amount - 1 };
           }
 
           return cartItem;
         })
-        .filter((cartItem: TCartItem) => cartItem.amount !== 0);
+        .filter((cartItem: CartItem) => cartItem.amount !== 0);
 
       return { ...state, cart: decreasedCart };
 
     case "GET_TOTALS":
       let { total, amount } = state.cart.reduce(
-        (cartTotal: TInitialState, cartItem: TCartItem) => {
+        (cartTotal: InitialState, cartItem: CartItem) => {
           const { price, amount } = cartItem;
           const itemTotal = price * amount;
 
@@ -62,18 +64,3 @@ export default function reducer(state: any, action: any) {
       break;
   }
 }
-
-type TCartItem = {
-  id: number;
-  title: string;
-  price: number;
-  img: string;
-  amount: number;
-};
-
-type TInitialState = {
-  loading: boolean;
-  cart: TCartItem[];
-  total: number;
-  amount: number;
-};

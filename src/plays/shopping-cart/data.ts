@@ -1,4 +1,5 @@
-export const CART_ITEMS: TCartItem[] = [
+import { CartItem } from "ShoppingCartTypes";
+export const CART_ITEMS: CartItem[] = [
   {
     id: 1,
     title: "Samsung Galaxy S7",
@@ -21,11 +22,3 @@ export const CART_ITEMS: TCartItem[] = [
     amount: 1,
   },
 ];
-
-type TCartItem = {
-  id: number;
-  title: string;
-  price: number;
-  img: string;
-  amount: number;
-};

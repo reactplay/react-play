@@ -1,8 +1,11 @@
-import React, { useContext, useEffect, useReducer, createContext } from "react";
+import React from "react";
+import { useContext, useEffect, useReducer, createContext } from "react";
+import { InitialContextState, CartProviderProps } from "ShoppingCartTypes";
+
 import reducer from "./reducer";
 import { CART_ITEMS } from "./data";
 
-const CartContext = createContext({} as IInitialState);
+const CartContext = createContext({} as InitialContextState);
 
 const initialState = {
   loading: false,
@@ -40,30 +43,6 @@ const CartProvider = ({ children }: CartProviderProps) => {
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
-export const useCartContext = () => useContext(CartContext);
+const useCartContext = () => useContext(CartContext);
 
-export { CartContext, CartProvider };
-
-type TCartItem = {
-  id: number;
-  title: string;
-  price: number;
-  img: string;
-  amount: number;
-};
-
-interface IInitialState {
-  loading: boolean;
-  cart: TCartItem[];
-  total: number;
-  amount: number;
-  clearCart: () => void;
-  removeItem: (id: number) => void;
-  increaseAmount: (id: number) => void;
-  decreaseAmount: (id: number) => void;
-  reloadCart: () => void;
-}
-
-type CartProviderProps = {
-  children: React.ReactNode;
-};
+export { CartContext, CartProvider, useCartContext };

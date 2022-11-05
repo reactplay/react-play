@@ -1,4 +1,5 @@
 import React from "react";
+import { CartItem as TCartItem } from "ShoppingCartTypes";
 import { useCartContext } from "../context";
 
 export default function CartItem(props: TCartItem) {
@@ -49,11 +50,3 @@ export default function CartItem(props: TCartItem) {
     </article>
   );
 }
-
-type TCartItem = {
-  id: number;
-  title: string;
-  price: number;
-  img: string;
-  amount: number;
-};
