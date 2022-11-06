@@ -1,37 +1,27 @@
-import {
-	useAuthenticated,
-	useUserData,
-	useUserDisplayName,
-	useUserId,
-	useAuthenticationStatus,
-} from '@nhost/react';
+import { useAuthenticationStatus, useUserData } from '@nhost/react';
 import { NHOST } from 'common/const';
 import {
 	getAllBadgesByUserId,
-	getBadgesByUserId,
 	getUserByEmail,
 } from 'common/services/badges';
-import { email2Slug, slug2Email } from 'common/services/string';
+import { slug2Email } from 'common/services/string';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate, Navigate } from 'react-router-dom';
-import Badges from './Badges';
-import MyBadges from './MyBadges';
+import { useLocation } from 'react-router-dom';
 import Badge from './Badge';
 import BadgeDetails from './BadgeDetails';
+import { BsTwitter, BsLinkedin } from 'react-icons/bs';
+import PageNotFound from 'common/404/PageNotFound';
 
 const BadgesDashboard = () => {
 	const { isAuthenticated, isLoading } = useAuthenticationStatus();
 	const param = useLocation();
-	const navigate = useNavigate();
-	const loggedInUserEmail = useUserData()?.email;
-	const userEmailFromParam = param.pathname.split('/')[1];
 	const user = useUserData();
 	const [allBadges, setAllBadges] = useState([]);
-	const [claimedBadges, setClaimedbadges] = useState([]);
 	const [notClaimedBadges, setNotClaimedBadges] = useState([]);
 	const [userInfo, setUserInfo] = useState({});
 	const [itsMe, setItsMe] = useState(false);
 	const [selectedBadge, setSelectedBadge] = useState();
+	const [isUiLoading, setIsUiLoading] = useState(true);
 
 	const handleLogin = () => {
 		window.location = NHOST.AUTH_URL(`${window.location.origin}/me/badges`);
@@ -43,20 +33,20 @@ const BadgesDashboard = () => {
 			if (!isAuthenticated && email === 'me') {
 				handleLogin();
 			}
+
 			const ui = await getUserByEmail(
 				email === 'me' ? user.email : slug2Email(email)
 			);
-			console.error(ui[0]);
+
 			setUserInfo(ui[0]);
 			if (user && user.email) {
 				setItsMe(email === 'me' || user.email === slug2Email(email));
 			}
-
-			console.error(email2Slug(user.email) === email);
 			const allBadges = await getAllBadgesByUserId(await ui[0]?.id);
-			console.error(allBadges);
-			setAllBadges(allBadges.filter((b) => b.claimed === true));
+			setAllBadges(allBadges);
+			// setAllBadges(allBadges.filter((b) => b.claimed === true));
 			setNotClaimedBadges(allBadges.filter((b) => b.claimed === false));
+			setIsUiLoading(await allBadges.length < 0);
 		}
 		if (!isLoading) {
 			getData();
@@ -67,17 +57,36 @@ const BadgesDashboard = () => {
 		setSelectedBadge(badge);
 	};
 
+
+	const tweetIt = (level,) => {
+		const URL = window.location.href;
+		const msg = `Hurry !! \nI have earned "${level}" badge from ReactPlay\n`;
+		const hasTags = [
+			"#reactplay\n"
+		];
+		const tags = encodeURIComponent(hasTags.join(","));
+		return `https://twitter.com/intent/tweet?url=${URL}&text=${encodeURIComponent(
+			msg
+		)}${tags}`;
+	}
+
+	const postItOnlinkedIn = (level) => {
+		const URL = encodeURIComponent(window.location.href.replace("me", user.email));
+
+		return `https://www.linkedin.com/sharing/share-offsite/?url=${URL}`;
+	}
+
 	return (
 		<div
-			className='font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover text-gray-100 h-full p-8'
+			className='font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover'
 			style={{
 				background: 'linear-gradient(180deg,#010426,#4c5b5e)',
 			}}>
-			<div className='flex items-center h-auto  flex-wrap mx-auto my-32'>
+			<div className='flex items-center h-auto justify-center flex-wrap mx-auto '>
 				{userInfo ? (
 					<div
 						id='profile'
-						className='w-full rounded-lg shadow-2xl bg-white opacity-75 mx-6 bg-gray-900'>
+						className='w-full rounded-lg shadow-2xl my-32 opacity-75 mx-6 bg-gray-900  p-8'>
 						<div className='p-4 md:p-12 text-center'>
 							<div
 								className='block  rounded-full shadow-xl mx-auto -mt-16 h-16 w-16 bg-cover bg-center md:h-32 md:w-32 md:-mt-32'
@@ -97,33 +106,48 @@ const BadgesDashboard = () => {
 									Badges
 								</p>
 							</div>
+							{
+								(!isUiLoading) && (allBadges.length === 0) && (
+									(
+										<div className=" self-center">
+											<h2 className=" text-white">Seems no badges earned  yet !!</h2>
+										</div>
+									)
+								)
+							}
 							<div className='mx-auto'>
 								<div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
+
 									{allBadges.map((badge, bi) => {
 										return (
-											<Badge
-												badge={badge.badge_id_map}
-												key={bi}
-												selectionChanged={() =>
-													onBadgeClicked(
-														badge.badge_id_map
-													)
+											<div>
+												<Badge
+													badge={badge.badge_id_map}
+													key={bi}
+													selectionChanged={() =>
+														onBadgeClicked(
+															badge.badge_id_map
+														)
+													}
+												/>
+												{itsMe ? (
+													<div className="h-12  rounded-lg shadow dark:bg-gray-700 bg-gradient-to-b from-[#010426] to-[#4c5b5e] flex justify-around items-center ">
+														<a href={tweetIt(badge.badge_id_map.level)} rel="noreferrer" target="_blank">
+															<BsTwitter className="text-white  hover:text-sky-500  h-8 w-8" />
+														</a>
+														<a href={postItOnlinkedIn(badge.badge_id_map.level)} rel="noreferrer" target="_blank">
+															<BsLinkedin className="text-white hover:text-sky-500 h-8 w-8" />
+														</a>
+													</div>
+												) :  // Will use this space for badge claiming later
+													null
 												}
-											/>
+											</div>
+
 										);
 									})}
 								</div>
 							</div>
-
-							{itsMe ? null : ( // Will use this space for badge claiming later
-								<div className='pt-4 pb-4'>
-									<button
-										className='bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full'
-										onClick={() => handleLogin()}>
-										Take Me to My Badges
-									</button>
-								</div>
-							)}
 						</div>
 						{selectedBadge && (
 							<BadgeDetails
@@ -133,7 +157,7 @@ const BadgesDashboard = () => {
 						)}
 					</div>
 				) : (
-					<p>User not found</p>
+					<PageNotFound msg={"No user found"} />
 				)}
 			</div>
 		</div>

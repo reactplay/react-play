@@ -60,7 +60,7 @@ export const BasiFetchParam = {
     { play_like: ["liked", "play_id", "user_id"] },
     "name",
     "slug",
-    { user: ["id", "displayName", "avatarUrl"] },
+    { user: ["id", "displayName", "avatarUrl", "email"] },
     "created_at",
   ],
   orderBy: {

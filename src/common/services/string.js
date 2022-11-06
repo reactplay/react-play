@@ -82,10 +82,17 @@ export const toSanitized = (str) => {
 export const email2Slug = (email) => {
 	let convertedEmail = email;
 	EmailSlugMaps.forEach((m) => {
-		convertedEmail = convertedEmail.replace(
-			new RegExp(`${m.text}`, 'gm'),
-			m.mask
-		);
+		if (m.text === ".") {
+			convertedEmail = convertedEmail.replace(
+				new RegExp(/\./, 'gm'),
+				m.mask
+			);
+		} else {
+			convertedEmail = convertedEmail.replace(
+				new RegExp(`${m.text}`, 'gm'),
+				m.mask
+			);
+		}
 	});
 	return convertedEmail;
 };

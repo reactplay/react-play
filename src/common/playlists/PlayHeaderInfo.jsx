@@ -1,8 +1,10 @@
 import { IoMdArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import LevelBadge from "common/components/LevelBadge";
+import { email2Slug } from "common/services/string";
 
-const Author = ({ user, githubUsername }) => {
+const Author = ({ user }) => {
+  const email = email2Slug(user.email);
   return (
     <div className="header-author flex items-center gap-2">
       <img
@@ -13,8 +15,7 @@ const Author = ({ user, githubUsername }) => {
         alt="avatar"
       />
       <a
-        href={`https://github.com/${githubUsername}`}
-        target="_blank"
+        href={`/${email}/badges`}
         className="play-anchor"
         rel="noopener noreferrer"
       >
