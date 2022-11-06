@@ -59,7 +59,7 @@ const BadgesDashboard = () => {
 
 
 	const tweetIt = (level,) => {
-		const URL = window.location.href;
+		const URL = window.location.href.replace("me", user.email);
 		const msg = `Hurry !! \nI have earned "${level}" badge from ReactPlay\n`;
 		const hasTags = [
 			"#reactplay\n"
