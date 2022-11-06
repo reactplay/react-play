@@ -1,4 +1,5 @@
 import { submit } from "./request"
+import { claimBadges, setClaimBadgesAt } from "./request/query/claim-badge";
 import { FetchAllBadgesFilterByUserId, FetchBadgesFilterByUserId } from "./request/query/fetch-badges-filter-by-user-id";
 import { FetchUserFilterByEmail } from "./request/query/fetch-user-filter-by-email"
 
@@ -26,5 +27,20 @@ export const getAllBadgesByUserId = async (id) => {
     return result;
   } catch (e) {
     return [];
+  }
+}
+
+export const claimBadge = async (id, claimedAt) => {
+  console.log(id);
+  console.log(claimedAt);
+  console.log("inside");
+  try {
+    const resClaimedSet = await submit(claimBadges(id));
+    const resClaimedAtSet = await submit(setClaimBadgesAt(id, claimedAt))
+    console.log(await resClaimedAtSet);
+    console.log(await resClaimedSet);
+  } catch (e) {
+    console.log(e);
+    return null;
   }
 }

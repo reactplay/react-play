@@ -12,7 +12,7 @@ const ClaimedBadges = ({
             badges.map((badge) => {
               return (
                 <BadgeCard
-                  id={badge.badge_id_map.id}
+                  key={badge.badge_id_map.id}
                   coverImage={badge.badge_id_map.image}
                   tag={badge.badge_id_map.tag}
                   level={badge.badge_id_map.level}

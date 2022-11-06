@@ -1,8 +1,15 @@
+import { claimBadge } from "common/services/badges";
 import BadgeCard from "./BadgeCard";
 
 const NotClaimedBadges = ({
   badges
 }) => {
+  const handleClaim = async (id) => {
+    console.log("hello");
+    const claimedAt = new Date().toISOString();
+    await claimBadge(id, claimedAt);
+  }
+
   return (
     <>
       {
@@ -11,7 +18,10 @@ const NotClaimedBadges = ({
           : (badges.map((badge) => {
             return (
               <BadgeCard
-                id={badge.badge_id_map.id}
+                handleClaim={(id) => handleClaim(id)}
+                key={badge.id}
+                id={badge.id}
+                source={"notClaimed"}
                 coverImage={badge.badge_id_map.image}
                 tag={badge.badge_id_map.tag}
                 level={badge.badge_id_map.level}

@@ -31,7 +31,8 @@ const Badges = ({
               badges.map((badge, index) => {
                 return (
                   <BadgeCard
-                    id={badge.badge_id_map.id}
+                    source={"all"}
+                    key={badge.badge_id_map.id}
                     coverImage={badge.badge_id_map.image}
                     tag={badge.badge_id_map.tag}
                     level={badge.badge_id_map.level}

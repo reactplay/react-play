@@ -21,6 +21,7 @@ export const FetchBadgesFilterByUserId = (id, claimed) => {
       }
     },
     return: [
+      "id",
       "claimed",
       {
         badge_id_map: [
