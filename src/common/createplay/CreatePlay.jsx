@@ -8,6 +8,7 @@ import PlayForm from "common/components/PlayForms";
 import Loader from "common/spinner/spinner";
 import { ReactComponent as NotAllowedImage } from "../../images/img-403.svg";
 import PageNotFound from "common/404/PageNotFound";
+import { Button } from "@mui/material";
 
 // UTILS
 import { FIELD_TEMPLATE } from "./create-play-form-template";
@@ -97,6 +98,20 @@ const CreatePlay = () => {
   useEffect(() => {
     setState({ creator: null, errorMessage: "", storedData: {} });
   }, [location.pathname]);
+
+  const onChange = (data) => {
+    setState({ formData: { ...data } });
+  };
+
+  const isFieldsAreInValid = () => {
+    let res = false;
+    FIELD_TEMPLATE.forEach((tmpl) => {
+      if (tmpl.required && (!formData || !formData[tmpl.datafield])) {
+        res = true;
+      }
+    });
+    return res;
+  };
 
   const initializeData = () => {
     if (Object.keys(storedData).length === 0) {
@@ -192,7 +207,7 @@ const CreatePlay = () => {
   return (
     <div className='w-full h-full flex flex-col justify-center items-center create-plays-wrapper'>
       <div>
-        <span className="title-primary">
+        <span className='title-primary'>
           {!isEditPlay ? (
             <>
               Create <strong>A Play</strong>
@@ -204,22 +219,27 @@ const CreatePlay = () => {
           )}
         </span>
       </div>
-      <div className="w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6">
-        <div className="flex flex-col flex-1">
-          <div className="h-14 p-8">
+      <div className='w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6'>
+        <div className='flex flex-col flex-1'>
+          <div className='h-14 p-8'>
             Welcome <strong>{userData.displayName}</strong>, {!isEditPlay ? "create" : "edit"} your
             play
           </div>
 
-          <div className="flex-1 px-10 py-8 overflow-auto">
+          {/* <div className='flex-1 px-10 py-8 overflow-auto'>
             <form>
-              <PlayForm fields={FIELD_TEMPLATE} onChange={data => onChange(data)} />
+              <PlayForm fields={FIELD_TEMPLATE} onChange={(data) => onChange(data)} />
             </form>
-          </div>
-          <div className="h-14">
+          </div> */}
+          <div className='h-14'>
             <hr />
-            <div className="p-8 h-full flex items-center">
-              <Button size="small" variant="contained" disabled={isFieldsAreInValid()} onClick={() => onSubmit()}>
+            <div className='p-8 h-full flex items-center'>
+              <Button
+                size='small'
+                variant='contained'
+                disabled={isFieldsAreInValid()}
+                onClick={() => onSubmit()}
+              >
                 Create the awesome
               </Button>
             </div>
@@ -233,7 +253,7 @@ const CreatePlay = () => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default CreatePlay;
