@@ -55,9 +55,7 @@ const PlayHeaderInfo = ({ play }) => {
           </div>
         </div>
         <div className="header-secondary">
-          {play.user && (
-            <Author user={play.user} githubUsername={play.github} />
-          )}
+          {play.user && <Author user={play.user} />}
         </div>
       </div>
     </div>
