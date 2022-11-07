@@ -225,25 +225,6 @@ const CreatePlay = () => {
             Welcome <strong>{userData.displayName}</strong>, {!isEditPlay ? "create" : "edit"} your
             play
           </div>
-
-          {/* <div className='flex-1 px-10 py-8 overflow-auto'>
-            <form>
-              <PlayForm fields={FIELD_TEMPLATE} onChange={(data) => onChange(data)} />
-            </form>
-          </div> */}
-          <div className='h-14'>
-            <hr />
-            <div className='p-8 h-full flex items-center'>
-              <Button
-                size='small'
-                variant='contained'
-                disabled={isFieldsAreInValid()}
-                onClick={() => onSubmit()}
-              >
-                Create the awesome
-              </Button>
-            </div>
-          </div>
           <PlayForm
             isEditPlay={isEditPlay}
             fields={FIELD_TEMPLATE}
