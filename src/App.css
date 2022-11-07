@@ -571,7 +571,7 @@ small {
   fill: var(--color-neutral-50);
 }
 
-.brand-tech-stack .image,
+
 .brand-tech-stack .image {
   filter: invert(60%) sepia(12%) saturate(186%) hue-rotate(151deg) brightness(86%) contrast(84%);
 }
