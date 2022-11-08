@@ -21,10 +21,6 @@ On the state, we have seven different actions to take. As a result, using the 'u
 
 The context is in charge of managing the state and dispatching actions based on the trigger.
 
-## Consideration
-
-Update all considerations(if any)
-
 ## Resources
 
 This project was based on John Smigla's **[Code 15 React Projects - Complete Course](https://youtu.be/a_7Z7C_JCyo?t=24121)** playlist available on YouTube.
