@@ -65,7 +65,6 @@
     "prettier": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\"",
     "lint": "eslint  --fix \"**/*.+(js|jsx|json|css|scss|md)\"",
     "format": "npm run lint && npm run prettier",
-    "prepare": "husky install"
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
@@ -98,7 +97,6 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "cypress": "^10.6.0",
     "postcss": "^8.4.13",
@@ -107,11 +105,5 @@
     "react-snap": "^1.23.0",
     "tailwindcss": "^3.0.24",
     "typescript": "^4.6.4"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,md}": [
-      "eslint --cache --fix",
-      "prettier --write"
-    ]
   }
 }

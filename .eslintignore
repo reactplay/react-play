@@ -1,5 +1,7 @@
-node_modules.github.build;
-package - lock.json;
+node_modules
+.github
+.build;
+package-lock.json;
 package.json;
 yarn.lock;
 tailwind.config.js;
