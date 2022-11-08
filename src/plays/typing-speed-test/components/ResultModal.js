@@ -12,12 +12,10 @@ const ResultModal = ({ open, handleModalClose, stats }) => {
     msg = msg ?? 'Learning ReactJS? Check out this awesome React Playlist!';
     const hashTags = ['javascript', 'devcommunity', '100daysofcode', 'react', 'reactplay'];
     const tags = encodeURIComponent(hashTags.join(','));
-
     return `https://twitter.com/intent/tweet?url=${URL}&text=${encodeURIComponent(
       msg
     )}&hashtags=${tags}&via=${VIA}`;
   };
-
   return (
     <Modal open={open} onClose={handleModalClose}>
       <div className="typing__speed__test__result__modal ">
@@ -30,12 +28,12 @@ const ResultModal = ({ open, handleModalClose, stats }) => {
           </h1>
           <div className="flex gap-4">
             <a
-              className="mt-4 text-center bg-violet-500 px-5 py-[0.7rem] text-sm text-white rounded-[4px] font-medium flex gap-2 items-center"
               href={tweetIt(`Hey checkout I got typing speed of  ${wpm} WPM. Find yours with`)}
+              className="mt-4 text-center bg-violet-500 px-5 py-[0.7rem] text-sm text-white rounded-[4px] font-medium flex gap-2 items-center"
             >
               {' '}
               Share
-              <IoLogoTwitter className="icon" size={18} />
+              <IoLogoTwitter size={18} className="icon" />
             </a>
             <button
               className="mt-4 text-center bg-gray-400 px-5 py-[0.7rem] text-sm text-white rounded-[4px] font-medium"

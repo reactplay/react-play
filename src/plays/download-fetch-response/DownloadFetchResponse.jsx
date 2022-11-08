@@ -1,6 +1,5 @@
 import {
   Alert,
-  Box,
   Button,
   Card,
   CardActions,
@@ -58,13 +57,13 @@ export default function DownloadFetchResponse(props) {
             spacing={0}
             style={{ paddingTop: '10rem' }}
           >
-            <Grid item xs={5}>
+            <Grid item xs={10}>
               <Card className={matches ? 'desk-screen' : 'other-screen'} sx={{ fontSize: 14 }}>
-                <CardContent>
-                  <Typography gutterBottom sx={{ fontSize: 14 }}>
+                <CardContent className="check">
+                  <Typography sx={{ fontSize: 14 }} gutterBottom>
                     Save Fetch API Response
                   </Typography>
-                  <Typography component="div" variant="h5">
+                  <Typography variant="h5" component="div">
                     <div className="civ">
                       {!fetching ? (
                         <div className="clazz">

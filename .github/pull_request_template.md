@@ -28,3 +28,9 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] I have added tests that prove my fix is effective or that my feature works
 - [ ] New and existing unit tests pass locally with my changes
 - [ ] Any dependent changes have been merged and published in downstream modules
+
+# Screenshots or example output
+
+<!--- If you made any visual changes, include screenshot. -->
+<!-- If you made any workflow changes, include a screenshare -->
+<!--- If not relevant, delete this section. -->

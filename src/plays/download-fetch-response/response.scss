@@ -19,7 +19,11 @@
       -moz-box-shadow: none;
       box-shadow: none;
       resize: none;
-      width: -webkit-fill-available;
+      width: 100%;
     }
   }
+}
+
+.main {
+  width: 90vw;
 }

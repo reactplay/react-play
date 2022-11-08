@@ -54,7 +54,7 @@ const createPlay = (playObject) => {
 
   return Promise.all(promises).then((res) => {
     if (res.length > 1) {
-      for (var index = 1; index < res.length; index++) {
+      for (let index = 1; index < res.length; index++) {
         tags.push(res[index].id);
       }
     }

@@ -9,7 +9,9 @@ $select-component-dropdown-max-height: 450px;
 
 #multi-select-component {
   width: $select-component-width;
-  margin-top: 100px;
+  margin-top: 100px; 
+  width: 100%;
+  height: max-content;
 
   > * {
     font-size: $select-component-font-size;
@@ -70,6 +72,7 @@ $select-component-dropdown-max-height: 450px;
     border-top-color: white;
     max-height: $select-component-dropdown-max-height;
     overflow-y: scroll;
+    width: 100%;
 
     &.closed {
       display: none;
