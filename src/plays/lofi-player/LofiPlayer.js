@@ -36,15 +36,10 @@ function LofiPlayer(props) {
 
   return (
     <>
-
       <div className="play-details">
-        <PlayHeader play={props} />
+      <PlayHeader play={props} /> 
         <div className='lofi-all'>
-          <div className='video-bg'>
-                <video  autoPlay muted loop>
-                  <source src={vidLink} type="video/mp4"/>
-                  </video>
-        <div className="play-details-body">    
+        <div className="play-details-body">  
               <div className="app-music">
                 <audio src={currentSong.url} ref={audioElem} onTimeUpdate={handleOnPlay} />
                 <Player songs={songs} setSongs={setSongs} isPlaying={isPlaying} setIsPlaying={handlePlayState} audioElem={audioElem} currentSong={currentSong} setCurrentSong={handleCurrentSong} />
@@ -57,7 +52,8 @@ function LofiPlayer(props) {
         
         </div>
         </div>
-      </div>
+      
+      
     </>
   );
 }
