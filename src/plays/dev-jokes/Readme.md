@@ -4,7 +4,7 @@ Developer jokes is a app where a random developer joke pops up every time you op
 
 ## Play Demographic
 
-- Language: js
+- Language: ts
 - Level: Intermediate
 
 ## Creator Information
