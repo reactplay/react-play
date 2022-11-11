@@ -152,14 +152,19 @@ const CreatePlay = () => {
     try {
       if (isEditPlay) {
         const prepareObj = { play_id: id, user_id: userData?.id, editObj: rest };
-        // const response = await submit(updatePlayInfo(prepareObj));
+        // TODO: Remove this temporary code
+        delete prepareObj.editObj.tags
+        delete prepareObj.editObj.level
+        delete prepareObj.editObj.language
+        // TODO: Temporary code ends here
+        const response = await submit(updatePlayInfo(prepareObj));
         return console.log(prepareObj);
       }
       setState({ loadingText: "Creating Play", isDataLoading: true });
       const res = await Plays.createPlay(rest);
       navigate(`/plays/created/${res}`);
     } catch (err) {
-      alert("Something Error Occured");
+      alert(`Something Error Occured: ${err}`);
     } finally {
       setState({ isDataLoading: false, loadingText: "" });
     }
