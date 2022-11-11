@@ -29,9 +29,7 @@ export default function MultipleSelectCheckmarks({
 
   const filteredOptions = useMemo(
     () =>
-      options.filter((option) =>
-        compareTextValue(option.label, searchText, typeof option.label)
-      ),
+      options.filter((option) => compareTextValue(option.label, searchText)),
     [searchText, options]
   );
 
@@ -77,6 +75,8 @@ export default function MultipleSelectCheckmarks({
       .join(", ");
   };
 
+  const resetSearchText = () => setSearchText("");
+
   return (
     <div>
       <FormControl sx={{ m: 1, width: 300 }}>
@@ -87,7 +87,7 @@ export default function MultipleSelectCheckmarks({
           multiple
           value={filterQuery[filterKey]}
           onChange={handleChange}
-          onClose={() => setSearchText("")}
+          onClose={resetSearchText}
           input={<OutlinedInput label={label} />}
           renderValue={renderValueHandler}
           MenuProps={{
@@ -105,7 +105,7 @@ export default function MultipleSelectCheckmarks({
                 endAdornment: (
                   <InputAdornment position="end">
                     <IoMdClose
-                      onClick={() => setSearchText("")}
+                      onClick={resetSearchText}
                       className="cursor-pointer"
                       size="20px"
                     />
