@@ -1,6 +1,7 @@
 import { IoMdArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import LevelBadge from "common/components/LevelBadge";
+import { email2Slug } from "common/services/string";
 
 const Author = ({ user, githubUsername }) => {
   return (
@@ -13,7 +14,7 @@ const Author = ({ user, githubUsername }) => {
         alt="avatar"
       />
       <a
-        href={`https://github.com/${githubUsername}`}
+        href={`${window.location.href}/${email2Slug(user.email)}/badges`}
         target="_blank"
         className="play-anchor"
         rel="noopener noreferrer"
