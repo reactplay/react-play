@@ -17,15 +17,15 @@ module.exports = {
       chainId: 1337,
     },
     matic: {
-      url: "cccc",
-      accounts: ["fff", "vvvv"],
+      url: API_URL,
+      accounts: [PRIVATE_KEY_1, PRIVATE_KEY_2],
     },
     bscTestnet: {
-      url: "vvvv",
-      accounts: ["bbbb", "bbbb"],
+      url: API_URL,
+      accounts: [PRIVATE_KEY_1, PRIVATE_KEY_2],
     },
   },
   etherscan: {
-    apiKey: "vvvv",
+    apiKey: API_KEY,
   },
 };

@@ -40,6 +40,7 @@ function Web3StakingDapp(props) {
       setContract(contract);
     } catch (err) {
       // DO NOT DO ANYTHING
+      // THIS IS TO AVOID SNAP FAILURE
     }
   };
 
