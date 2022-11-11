@@ -1,0 +1,31 @@
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
+
+/** @type import('hardhat/config').HardhatUserConfig */
+
+const { API_URL, PRIVATE_KEY_1, PRIVATE_KEY_2, API_KEY } = process.env;
+
+module.exports = {
+  solidity: {
+    version: "0.8.0",
+  },
+  paths: {
+    artifacts: "../artifacts",
+  },
+  networks: {
+    hardhat: {
+      chainId: 1337,
+    },
+    matic: {
+      url: "cccc",
+      accounts: ["fff", "vvvv"],
+    },
+    bscTestnet: {
+      url: "vvvv",
+      accounts: ["bbbb", "bbbb"],
+    },
+  },
+  etherscan: {
+    apiKey: "vvvv",
+  },
+};
