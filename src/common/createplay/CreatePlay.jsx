@@ -1,5 +1,5 @@
 // PACKAGES
-import { useReducer, useEffect } from "react";
+import { useReducer, useEffect, useRef } from "react";
 import { useAuthenticationStatus, useUserData } from "@nhost/react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 
@@ -12,7 +12,7 @@ import { Button } from "@mui/material";
 
 // UTILS
 import { FIELD_TEMPLATE } from "./create-play-form-template";
-import { defaultInputFields, createStateObject } from "./utils";
+import { defaultInputFields, createStateObject, constructTagInfo } from "./utils";
 
 // CONSTANTS
 import { NHOST } from "common/const";
@@ -69,6 +69,8 @@ const CreatePlay = () => {
   const validParams = !!username && !!playname;
   const [state, setState] = useReducer(reducer, initialState);
 
+  const actualPlayTags = useRef(null);
+
   const { creator, loadingText, storedData, formData, isDataLoading, errorMessage } = state;
 
   const isEditPlay = location.pathname.includes("editplay") && validParams;
@@ -83,6 +85,7 @@ const CreatePlay = () => {
         const data = res[0];
         const checkPlayOwenership = data?.user?.id === userData?.id;
         if (checkPlayOwenership) {
+          actualPlayTags.current = constructTagInfo(storedData.tags, data?.play_tags);
           return setState({
             creator: data.user?.id,
             formData: createStateObject(data, storedData),
@@ -98,20 +101,6 @@ const CreatePlay = () => {
   useEffect(() => {
     setState({ creator: null, errorMessage: "", storedData: {} });
   }, [location.pathname]);
-
-  const onChange = (data) => {
-    setState({ formData: { ...data } });
-  };
-
-  const isFieldsAreInValid = () => {
-    let res = false;
-    FIELD_TEMPLATE.forEach((tmpl) => {
-      if (tmpl.required && (!formData || !formData[tmpl.datafield])) {
-        res = true;
-      }
-    });
-    return res;
-  };
 
   const initializeData = () => {
     if (Object.keys(storedData).length === 0) {
@@ -151,14 +140,17 @@ const CreatePlay = () => {
     const { id, ...rest } = formData;
     try {
       if (isEditPlay) {
-        const prepareObj = { play_id: id, user_id: userData?.id, editObj: rest };
+        setState({ isDataLoading: true, loadingText: "Updating Your Play Info." });
+        const prepareObj = { play_id: id, editObj: { ...rest } };
         // TODO: Remove this temporary code
-        delete prepareObj.editObj.tags
-        delete prepareObj.editObj.level
-        delete prepareObj.editObj.language
+        delete prepareObj.editObj.tags;
+        delete prepareObj.editObj.level;
+        delete prepareObj.editObj.language;
         // TODO: Temporary code ends here
         const response = await submit(updatePlayInfo(prepareObj));
-        return console.log(prepareObj);
+        const actualTags = actualPlayTags.current;
+        await Plays.createTags(id, [...rest.tags], actualTags).catch(console.log);
+        return console.log(response);
       }
       setState({ loadingText: "Creating Play", isDataLoading: true });
       const res = await Plays.createPlay(rest);

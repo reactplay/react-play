@@ -34,13 +34,13 @@ const Index = () => {
     setShowShareModal,
   };
   return (
-    <React.StrictMode>
+    // <React.StrictMode>
       <ErrorBoundry>
         <SearchContext.Provider value={value}>
           <RouteDefs />
         </SearchContext.Provider>
       </ErrorBoundry>
-    </React.StrictMode>
+    // </React.StrictMode>
   );
 };
 const container = document.getElementById("root");

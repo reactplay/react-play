@@ -1,8 +1,5 @@
 import { submitMutation } from "./request";
-import {
-  associatePlayWithTagQuery,
-  createPlayQuery,
-} from "./request/query/play";
+import { associatePlayWithTagQuery, createPlayQuery } from "./request/query/play";
 import { toKebabCase, toSlug } from "./string";
 import { Tags } from "./tags";
 
@@ -20,9 +17,7 @@ const createPlay = (playObject) => {
   objectToSubmit.language = objectToSubmit.language.value;
 
   // Prepare style
-  objectToSubmit.style = objectToSubmit.style
-    ? objectToSubmit.style.value
-    : "css";
+  objectToSubmit.style = objectToSubmit.style ? objectToSubmit.style.value : "css";
 
   // Prepare slug
   objectToSubmit.slug = toSlug(objectToSubmit.name);
@@ -42,38 +37,26 @@ const createPlay = (playObject) => {
   promises.push(submitMutation(createPlayQuery, objectToSubmit));
 
   // Submit new Tags
-  if (tagsTmp && tagsTmp.length) {
-    objectToSubmit.tags = [];
-    tagsTmp.forEach((tag) => {
-      if (tag.id === "") {
-        promises.push(
-          Tags.createATag({
-            name: tag.name,
-          })
-        );
-      } else {
-        tags.push(tag.id);
-      }
-    });
-  }
+  // if (tagsTmp && tagsTmp.length) {
+  //   objectToSubmit.tags = [];
+  //   tagsTmp.forEach((tag) => {
+  //     if (tag.id === "") {
+  //       promises.push(
+  //         Tags.createATag({
+  //           name: tag.name,
+  //         })
+  //       );
+  //     } else {
+  //       tags.push(tag.id);
+  //     }
+  //   });
+  // }
 
-  return Promise.all(promises).then((res) => {
-    if (res.length > 1) {
-      for (let index = 1; index < res.length; index++) {
-        tags.push(res[index].id);
-      }
-    }
-
-    const tagPlayPromises = [];
-    tags.forEach((t) => {
-      tagPlayPromises.push(associateTag(t, res[0].id));
-    });
-
-    // Submit tag - play association
-    return Promise.all(tagPlayPromises).then(() => {
-      return res[0].id;
-    });
-  });
+  return Promise.all(promises)
+    .then(async (res) => {
+      await createTags(res[0].id, tagsTmp, tags).catch(console.log);
+    })
+    .catch(console.log);
 };
 
 const associateTag = (tag, play) => {
@@ -83,6 +66,58 @@ const associateTag = (tag, play) => {
   });
 };
 
+/**
+ *
+ * @param {string} playId - Mandatory
+ * @param {object[]} tagsTmp - Mandatory
+ * @param {object[]} tags - Optional
+ * @returns {Promise}
+ */
+
+const createTags = async (playId, tagsTmp = [], actualTags = [], tags = []) => {
+  const creatTagPromies = new Array();
+
+  if (tagsTmp && tagsTmp.length) {
+    tagsTmp.forEach((tag) => {
+      if (tag.id === "") {
+        creatTagPromies.push(
+          Tags.createATag({
+            name: tag.name,
+          })
+        );
+      } else {
+        const findTag = actualTags.find((i) => i.id === tag.id);
+        if (!findTag) tags.push(tag.id);
+      }
+    });
+  }
+
+  return await Promise.all(creatTagPromies)
+    .then(async (res) => {
+      console.log(res);
+      if (!!res?.length) {
+        res.forEach((i) => {
+          tags.push(res[i].id);
+        });
+      }
+
+      const tagPlayPromises = [];
+      tags.forEach((t) => {
+        tagPlayPromises.push(associateTag(t, playId));
+      });
+
+      // Submit tag - play association
+      return await Promise.all(tagPlayPromises)
+        .then(console.log)
+        .catch((err) => Promise.reject(err));
+    })
+    .catch((err) => {
+      console.log("error occured", err);
+      return Promise.reject(err);
+    });
+};
+
 export const Plays = {
   createPlay,
+  createTags,
 };
