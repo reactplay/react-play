@@ -4,6 +4,12 @@ import LevelBadge from "common/components/LevelBadge";
 import { email2Slug } from "common/services/string";
 
 const Author = ({ user, githubUsername }) => {
+  const getHostName = () => {
+    var url = window.location.href
+    var arr = url.split("/");
+    var result = arr[0] + "//" + arr[2]
+return result;
+  }
   return (
     <div className="header-author flex items-center gap-2">
       <img
@@ -14,8 +20,7 @@ const Author = ({ user, githubUsername }) => {
         alt="avatar"
       />
       <a
-        href={`${window.location.href}/${email2Slug(user.email)}/badges`}
-        target="_blank"
+        href={`${getHostName()}/${email2Slug(user.email)}/badges`}
         className="play-anchor"
         rel="noopener noreferrer"
       >
