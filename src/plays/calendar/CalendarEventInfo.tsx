@@ -4,7 +4,7 @@ import EventType from "./EventType";
 
 interface Props {
   event: EventType;
-  onEdit: void;
+  onEdit: VoidFunction;
 }
 
 const CalendarEventInfo = ({ event, onEdit }: Props) => {

@@ -9,7 +9,7 @@ import EventType from "./EventType";
 interface Props {
   date: Date;
   event?: EventType;
-  onCancel: void;
+  onCancel: VoidFunction;
 }
 
 const CalendarEventForm = ({ date, event, onCancel }: Props) => {
