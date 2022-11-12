@@ -86,9 +86,7 @@ function ReactMultistepForm() {
                 </button>
               )}
 
-              <button className={"rounded"} type={"submit"}>
-                {isLastStep ? "Finish" : "Next"}
-              </button>
+              <button type={"submit"}>{isLastStep ? "Finish" : "Next"}</button>
             </div>
           </form>
         </div>
