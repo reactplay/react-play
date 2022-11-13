@@ -56,6 +56,7 @@ function ReactMultistepForm() {
         }}
       >
         <div
+          className={"container_form"}
           style={{
             border: "2px solid black",
             position: "relative",
@@ -64,7 +65,7 @@ function ReactMultistepForm() {
             borderRadius: ".5rem",
             fontFamily: "Arial",
             maxWidth: "500px",
-            marginTop: "1rem",
+            margin: "1rem",
           }}
         >
           <form onSubmit={handleSubmit}>

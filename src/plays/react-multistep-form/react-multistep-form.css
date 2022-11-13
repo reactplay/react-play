@@ -33,3 +33,7 @@ button:focus-visible {
 input[type="text"] {
   border: 0.5px solid black;
 }
+
+input {
+  padding: 5px;
+}

@@ -14,7 +14,7 @@ export default function accountInfo({
 }: AccountFormProps) {
   return (
     <FormWrapper title={"Account Information"}>
-      <label>Enter Your Email address</label>
+      <label> Email address</label>
       <input
         autoFocus
         required
@@ -26,9 +26,9 @@ export default function accountInfo({
           })
         }
       />
-      <label>Enter Your password</label>
+      <label>Password</label>
       <input
-        type='text'
+        type='password'
         value={password}
         onChange={(e) =>
           updateField({

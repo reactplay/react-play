@@ -12,7 +12,7 @@ export default function contactInfo({
 }: ContactFormProps) {
   return (
     <FormWrapper title={"Contact Information"}>
-      <label>Enter your address:</label>
+      <label>Address</label>
       <input
         autoFocus
         required

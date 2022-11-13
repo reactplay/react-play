@@ -15,7 +15,7 @@ export default function personalInfo({
 }: PersonalFormProps) {
   return (
     <FormWrapper title={"Personal Information"}>
-      <label>Enter your first name:</label>
+      <label> First name</label>
       <input
         autoFocus
         required
@@ -23,7 +23,7 @@ export default function personalInfo({
         value={firstName}
         onChange={(e) => updateField({ firstName: e.target.value })}
       />
-      <label>Enter your last name:</label>
+      <label>Last name</label>
       <input
         type='text'
         value={lastName}
