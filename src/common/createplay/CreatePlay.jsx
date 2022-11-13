@@ -134,7 +134,7 @@ const CreatePlay = () => {
   }
 
   if (isDataLoading) {
-    <Loader title={"Loading data"} subtitle="Please wait...." />;
+    return <Loader title={"Loading data"} subtitle="Please wait...." />;
   }
 
   return (
