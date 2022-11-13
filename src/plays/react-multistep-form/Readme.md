@@ -11,7 +11,7 @@ A simple multistep form that can be used in any of your projects.
 
 - User: abhishekh maharjan
 - Gihub Link: https://github.com/abhi886
-- Blog: NA
+- Blog: abhishekhmaharjan.com/blogs/react-multistep-form
 - Video: NA
 
 ## Implementation Details
