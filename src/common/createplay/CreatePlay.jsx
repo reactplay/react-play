@@ -2,6 +2,7 @@
 import { useReducer, useEffect, useRef } from "react";
 import { useAuthenticationStatus, useUserData } from "@nhost/react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 // COMPONENTS & FILES
 import PlayForm from "common/components/PlayForms";
@@ -136,21 +137,40 @@ const CreatePlay = () => {
     }
   };
 
+  const editPlayPromises = async (prepareObj, rest, id) => {
+    const actualTags = actualPlayTags.current;
+    return await Promise.all([
+      submit(updatePlayInfo(prepareObj)),
+      Plays.createAndRemoveTags(id, [...rest.tags], actualTags),
+    ]).catch((err) => Promise.reject(err));
+  };
+
   const onSubmit = async (formData) => {
     const { id, ...rest } = formData;
     try {
       if (isEditPlay) {
-        setState({ isDataLoading: true, loadingText: "Updating Your Play Info." });
+        setState({ isDataLoading: true, loadingText: "Please Wait" });
         const prepareObj = { play_id: id, editObj: { ...rest } };
         // TODO: Remove this temporary code
         delete prepareObj.editObj.tags;
         delete prepareObj.editObj.level;
         delete prepareObj.editObj.language;
-        // TODO: Temporary code ends here
-        const response = await submit(updatePlayInfo(prepareObj));
-        const actualTags = actualPlayTags.current;
-        await Plays.createTags(id, [...rest.tags], actualTags).catch(console.log);
-        return console.log(response);
+        try {
+          const createAsyncReference = await editPlayPromises.bind(null, prepareObj, rest, id);
+          await toast.promise(createAsyncReference, {
+            pending: "Updating Play Informations",
+            success: "Play info successfully updated",
+            error: {
+              render({ data: err }) {
+                return err?.message;
+              },
+            },
+          });
+          return navigate(`/plays/${username}/${playname}`, { replace: true });
+        } catch (err) {
+          return err;
+          // console.log(err);
+        }
       }
       setState({ loadingText: "Creating Play", isDataLoading: true });
       const res = await Plays.createPlay(rest);
