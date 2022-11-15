@@ -26,6 +26,7 @@
     "jspdf": "^2.5.1",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
+    "playwright-aws-lambda": "^0.9.0",
     "react": "^18.0.0",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^18.0.0",
