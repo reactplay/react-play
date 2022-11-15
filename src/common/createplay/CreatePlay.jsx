@@ -134,14 +134,16 @@ const CreatePlay = () => {
   }
 
   if (isDataLoading) {
-    <Loader title={"Loading data"} subtitle="Please wait...." />;
+    return <Loader title={"Loading data"} subtitle="Please wait...." />;
   }
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center create-plays-wrapper">
       <div>
         <span className="title-primary">
-          Create <strong>A Play</strong>
+          <h1>
+            Create <strong>A Play</strong>
+          </h1>
         </span>
       </div>
       <div className="w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6">
@@ -152,21 +154,13 @@ const CreatePlay = () => {
 
           <div className="flex-1 px-10 py-8 overflow-auto">
             <form>
-              <PlayForm
-                fields={FIELD_TEMPLATE}
-                onChange={(data) => onChange(data)}
-              />
+              <PlayForm fields={FIELD_TEMPLATE} onChange={data => onChange(data)} />
             </form>
           </div>
           <div className="h-14">
             <hr />
             <div className="p-8 h-full flex items-center">
-              <Button
-                size="small"
-                variant="contained"
-                disabled={isFieldsAreInValid()}
-                onClick={() => onSubmit()}
-              >
+              <Button size="small" variant="contained" disabled={isFieldsAreInValid()} onClick={() => onSubmit()}>
                 Create the awesome
               </Button>
             </div>
@@ -174,7 +168,7 @@ const CreatePlay = () => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default CreatePlay;

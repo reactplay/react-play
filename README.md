@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-51-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-55-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -36,6 +36,15 @@
     ·
     <a href="https://github.com/reactplay/react-play/issues/new/choose">Request Feature</a>
 </p>
+<p align="center">
+  <a href="https://gitpod.io/#https://github.com/reactplay/react-play">
+  <img
+    src="https://gitpod.io/button/open-in-gitpod.svg"
+    alt="Open in Gitpod"
+  />
+</a>
+</p>
+
 
 ## 👋 Introducing ReactPlay
 
@@ -76,6 +85,8 @@ Once forked, you can clone the repo by clicking the `Clone or Download` button o
 
 Please change the directory after cloning the repository using the `cd <folder-name>` command.
 
+>**Note:** Please do not remove the `.env.development` file from the root folder. It contains all the evironment variables required for development.
+
 ### ⬇️ Install Dependencies
 Next, install the dependencies by running the following command in the `react-play` repo:
 
@@ -92,14 +103,6 @@ yarn install
 
 ```bash
 npm install --legacy-peer-deps
-```
-
-### ⛓️ Create a `.env` file at the root of your project folder with the following content,
-
-```bash
-REACT_APP_NHOST_BACKEND_URL=https://rgkjmwftqtbpayoyolwh.nhost.run/
-REACT_APP_NHOST_VERSION=v1
-REACT_APP_NHOST_ENDPOINT=graphql
 ```
 
 ### 🦄 Start the Development Mode
@@ -278,6 +281,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center"><a href="https://github.com/KashishLakhara04"><img src="https://avatars.githubusercontent.com/u/104296574?v=4?s=100" width="100px;" alt="Kashish Lakhara"/><br /><sub><b>Kashish Lakhara</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=KashishLakhara04" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/hiimnhan"><img src="https://avatars.githubusercontent.com/u/35358825?v=4?s=100" width="100px;" alt="hiimnhan"/><br /><sub><b>hiimnhan</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=hiimnhan" title="Code">💻</a></td>
+      <td align="center"><a href="http://siddxharth.live"><img src="https://avatars.githubusercontent.com/u/67476171?v=4?s=100" width="100px;" alt="Siddharth Khatri"/><br /><sub><b>Siddharth Khatri</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=siddxharth" title="Code">💻</a></td>
+      <td align="center"><a href="https://emmadawson.dev"><img src="https://avatars.githubusercontent.com/u/57045550?v=4?s=100" width="100px;" alt="Emma Dawson"/><br /><sub><b>Emma Dawson</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=EmmaDawsonDev" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/senali-d"><img src="https://avatars.githubusercontent.com/u/52546856?v=4?s=100" width="100px;" alt="Senali"/><br /><sub><b>Senali</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=senali-d" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/nishasen"><img src="https://avatars.githubusercontent.com/u/43262505?v=4?s=100" width="100px;" alt="Nisha Sen"/><br /><sub><b>Nisha Sen</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=nishasen" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
