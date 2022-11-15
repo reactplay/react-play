@@ -8,7 +8,7 @@ import Select from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 import { makeStyles } from "@mui/styles";
 import { InputAdornment, ListSubheader, TextField } from "@mui/material";
-import { compareTextValue } from "common/utils/compareTextValue";
+import { compareTextValue } from "../utils/commonUtils";
 import { IoMdClose } from "react-icons/io";
 
 const useStyles = makeStyles({
@@ -26,12 +26,14 @@ export default function MultipleSelectCheckmarks({
 }) {
   const classes = useStyles();
   const [searchText, setSearchText] = useState("");
+  const [filteredOptions, setFilteredOptions] = useState([]);
 
-  const filteredOptions = useMemo(
-    () =>
-      options.filter((option) => compareTextValue(option.label, searchText)),
-    [searchText, options]
-  );
+  useEffect(() => {
+    const updatedOptions = options.filter((option) =>
+      compareTextValue(option.label, searchText)
+    );
+    setFilteredOptions(updatedOptions);
+  }, [searchText, options.length]);
 
   useEffect(() => {
     if (
@@ -41,7 +43,7 @@ export default function MultipleSelectCheckmarks({
     ) {
       setFilterQuery({ ...filterQuery, [filterKey]: [" "] });
     }
-  }, [filterQuery, setFilterQuery, options, filterKey]);
+  }, [filterQuery, setFilterQuery, options.length, filterKey]);
 
   const handleChange = (event) => {
     const {
