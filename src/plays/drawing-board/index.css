@@ -1,0 +1,52 @@
+@import "../../../node_modules/xp.css/dist/XP.css";
+
+canvas {
+  transform: translate3d(-50%, 0, 0);
+  cursor: url(./assets/pencil.png) 0 34, auto;
+  margin: 100px 50%;
+}
+
+.colors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 336px;
+}
+
+.color {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf,
+    inset 2px 2px #0a0a0a;
+}
+
+.colors-panel {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  z-index: 10;
+}
+
+.edit {
+  position: fixed;
+  bottom: 40px;
+  left: 10%;
+  z-index: 10;
+}
+
+.file {
+  position: fixed;
+  bottom: 40px;
+  right: 20%;
+  z-index: 10;
+}
+
+.modal-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 10;
+}
