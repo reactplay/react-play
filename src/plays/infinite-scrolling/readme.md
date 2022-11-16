@@ -24,11 +24,3 @@ Implementaion starts with `InfiniteScrolling` component.
 3. `pageNo` gets incremented on every interaction on `lastPost`
 - To observe the `lastPost` I have user `IntersectionObserver` and once it observe the `lastPost` it increments the `pageNo`.
 - And once the `pageNo` gets incremented, more 20 posts gets added into `displayPosts`
-
-## Consideration
-
-Update all considerations(if any)
-
-## Resources
-
-Update external resources(if any)
