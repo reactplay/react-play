@@ -1,11 +1,11 @@
-button {
+.button {
   border-radius: 8px;
   border: 1px solid;
   padding: 0.2em 0.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -36,4 +36,44 @@ input[type="text"] {
 
 input {
   padding: 5px;
+}
+
+/* CSS for ReactMultistepForm Component */
+.container-flexbox {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.container {
+  border: 1px solid black;
+  position: relative;
+  background: white;
+  padding: 1rem;
+  borderradius: 0.5rem;
+  fontfamily: Arial;
+  max-width: 500px;
+  margin: 1rem;
+}
+.steps {
+  position: absolute;
+  top: 2px;
+  right: 0.5rem;
+}
+.form-steps {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+.form-wrapper-heading {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 2 rem;
+}
+.form-wrapper-content-grid {
+  display: grid;
+  gap: 1rem 0.5rem;
+  justify-content: flex-start;
+  grid-template-columns: auto minmax(auto, 400px);
 }

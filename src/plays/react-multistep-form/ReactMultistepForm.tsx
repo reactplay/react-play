@@ -48,46 +48,23 @@ function ReactMultistepForm() {
   };
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-        }}
-      >
-        <div
-          className={"container_form"}
-          style={{
-            border: "2px solid black",
-            position: "relative",
-            background: "white",
-            padding: "1rem",
-            borderRadius: ".5rem",
-            fontFamily: "Arial",
-            maxWidth: "500px",
-            margin: "1rem",
-          }}
-        >
+      <div className='container-flexbox'>
+        <div className={"container"}>
           <form onSubmit={handleSubmit}>
-            <div style={{ position: "absolute", top: "2px", right: ".5rem" }}>
+            <div className={"steps"}>
               {currentStepIndex + 1}/{totalSteps}
             </div>
             {step}
-            <div
-              style={{
-                marginTop: "1rem",
-                display: "flex",
-                gap: ".5rem",
-                justifyContent: "flex-end",
-              }}
-            >
+            <div className='form-steps'>
               {!isFirstStep && (
-                <button type={"button"} onClick={back}>
+                <button className='button' type={"button"} onClick={back}>
                   Back
                 </button>
               )}
 
-              <button type={"submit"}>{isLastStep ? "Finish" : "Next"}</button>
+              <button className='button' type={"submit"}>
+                {isLastStep ? "Finish" : "Next"}
+              </button>
             </div>
           </form>
         </div>
