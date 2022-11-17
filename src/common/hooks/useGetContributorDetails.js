@@ -17,12 +17,12 @@ function useGetContributorsDetails(username) {
     try {
       const res = await submit(
         user_skill_map.FetchUserSkillMapByUserId(
-          "03724f8f-e5c7-423d-a98c-a7fdee9e959f"
+          "4fa14525-8f98-45b9-9a8b-c1ba34c6ed43"
         )
       );
       const response = await submit(
         user_profile.FetchUserProfileById(
-          "03724f8f-e5c7-423d-a98c-a7fdee9e959f"
+          "4fa14525-8f98-45b9-9a8b-c1ba34c6ed43"
         )
       );
       setContributor(response[0]);
