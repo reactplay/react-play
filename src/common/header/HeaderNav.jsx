@@ -1,7 +1,8 @@
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useUserId, useAuthenticated } from "@nhost/react";
 import { BsTwitter, BsGithub } from "react-icons/bs";
-import { FaLightbulb } from "react-icons/fa";
+import { FaLightbulb, FaUserAlt } from "react-icons/fa";
 import { BiMoney } from "react-icons/bi";
 import { IoAddSharp, IoShareSocial, IoHeartSharp } from "react-icons/io5";
 import { MdManageSearch, MdClose } from "react-icons/md";
@@ -9,6 +10,7 @@ import SocialShare from "common/components/SocialShare";
 import { GoX } from "react-icons/go";
 import { Modal, Box, Typography, Menu } from "@mui/material";
 import { SearchContext } from "common/search/search-context";
+import { NHOST } from "common/const";
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useContext(SearchContext);
@@ -18,12 +20,26 @@ const HeaderNav = ({ showBrowse }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
+  const navigate = useNavigate();
+  const userId = useUserId();
+  const isAuthenticated = useAuthenticated();
+
+  const handleLogin = (value) => {
+    return (window.location = NHOST.AUTH_URL(window.location.href, value));
+  };
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleUserProfileClick = () => {
+    if (!isAuthenticated) return handleLogin("github");
+    if(isAuthenticated){
+      navigate(`/contributors/${userId}`);
+    }
   };
 
   const modalClose = () => setShowShareModal(!showShareModal);
@@ -160,6 +176,17 @@ const HeaderNav = ({ showBrowse }) => {
             >
               <IoHeartSharp className="icon share-icon" />
               <span className="btn-label">Share</span>
+            </button>
+          </li>
+          <li>
+          <button
+              title="User Profile"
+              className="app-header-btn app-header-btn--default"
+              onClick={handleUserProfileClick}
+              data-testid="share-btn"
+            >
+              <FaUserAlt className="icon twitter-icon" />
+              <span className="btn-label">User Profile</span>
             </button>
           </li>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>

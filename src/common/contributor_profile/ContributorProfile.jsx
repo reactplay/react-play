@@ -11,7 +11,7 @@ import LoadingSpinner from "plays/dev-jokes/Spinner";
 import { TestimonialCard } from "./components/TestimonialCard";
 import { regex } from "common/const/socialsRegex";
 
-export const UserProfile = () => {
+const UserProfile = () => {
   // const {username} = useParams();
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -101,3 +101,5 @@ export const UserProfile = () => {
 //   });
 // }, []);
 // console.log(tags, languages, levels);
+
+export default UserProfile;
