@@ -44,30 +44,29 @@ function ReactMultistepForm() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!isLastStep) return next();
-    alert("Logic to submit the form");
+
+    alert(JSON.stringify(data));
   };
   return (
     <>
-      <div className='container-flexbox'>
-        <div className={"container"}>
-          <form onSubmit={handleSubmit}>
-            <div className={"steps"}>
-              {currentStepIndex + 1}/{totalSteps}
-            </div>
-            {step}
-            <div className='form-steps'>
-              {!isFirstStep && (
-                <button className='button' type={"button"} onClick={back}>
-                  Back
-                </button>
-              )}
-
-              <button className='button' type={"submit"}>
-                {isLastStep ? "Finish" : "Next"}
+      <div className='container'>
+        <form onSubmit={handleSubmit}>
+          <div className='steps'>
+            {currentStepIndex + 1}/{totalSteps}
+          </div>
+          {step}
+          <div className='form-steps'>
+            {!isFirstStep && (
+              <button className='btn' type={"button"} onClick={back}>
+                Back
               </button>
-            </div>
-          </form>
-        </div>
+            )}
+
+            <button className='btn' type={"submit"}>
+              {isLastStep ? "Finish" : "Next"}
+            </button>
+          </div>
+        </form>
       </div>
     </>
   );

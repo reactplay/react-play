@@ -15,20 +15,29 @@ export default function personalInfo({
 }: PersonalFormProps) {
   return (
     <FormWrapper title={"Personal Information"}>
-      <label> First name</label>
-      <input
-        autoFocus
-        required
-        type='text'
-        value={firstName}
-        onChange={(e) => updateField({ firstName: e.target.value })}
-      />
-      <label>Last name</label>
-      <input
-        type='text'
-        value={lastName}
-        onChange={(e) => updateField({ lastName: e.target.value })}
-      />
+      <label>
+        {" "}
+        First name (*)
+        <input
+          className='form-input-text'
+          autoFocus
+          required
+          type='text'
+          placeholder='Your first name...'
+          value={firstName}
+          onChange={(e) => updateField({ firstName: e.target.value })}
+        />
+      </label>
+      <label>
+        Last name
+        <input
+          className='form-input-text'
+          type='text'
+          value={lastName}
+          placeholder='Your last name...'
+          onChange={(e) => updateField({ lastName: e.target.value })}
+        />
+      </label>
     </FormWrapper>
   );
 }

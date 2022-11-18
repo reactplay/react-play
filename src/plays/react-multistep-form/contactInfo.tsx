@@ -12,16 +12,20 @@ export default function contactInfo({
 }: ContactFormProps) {
   return (
     <FormWrapper title={"Contact Information"}>
-      <label>Address</label>
-      <input
-        autoFocus
-        required
-        type='text'
-        value={address}
-        onChange={(e) => {
-          updateField({ address: e.target.value });
-        }}
-      />
+      <label>
+        Address (*)
+        <input
+          className='form-input-text'
+          autoFocus
+          required
+          type='text'
+          placeholder='Your address...'
+          value={address}
+          onChange={(e) => {
+            updateField({ address: e.target.value });
+          }}
+        />
+      </label>
     </FormWrapper>
   );
 }

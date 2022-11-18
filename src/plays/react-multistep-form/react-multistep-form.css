@@ -1,44 +1,32 @@
-.button {
+.btn {
   border-radius: 8px;
   border: 1px solid;
   padding: 0.2em 0.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+btn:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
+btn:focus,
+btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.form-input-text {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  font-size: 0.75rem;
 }
 
-input[type="text"] {
-  border: 0.5px solid black;
-}
-
-input {
-  padding: 5px;
-}
-
-/* CSS for ReactMultistepForm Component */
 .container-flexbox {
   display: flex;
   justify-content: center;
@@ -50,10 +38,11 @@ input {
   position: relative;
   background: white;
   padding: 1rem;
-  borderradius: 0.5rem;
-  fontfamily: Arial;
+  border-radius: 0.5rem;
+  font-family: Arial;
   max-width: 500px;
-  margin: 1rem;
+  margin: 0 auto;
+  margin-top: 10%;
 }
 .steps {
   position: absolute;
@@ -70,10 +59,4 @@ input {
   text-align: center;
   margin: 0;
   margin-bottom: 2 rem;
-}
-.form-wrapper-content-grid {
-  display: grid;
-  gap: 1rem 0.5rem;
-  justify-content: flex-start;
-  grid-template-columns: auto minmax(auto, 400px);
 }

@@ -14,28 +14,38 @@ export default function accountInfo({
 }: AccountFormProps) {
   return (
     <FormWrapper title={"Account Information"}>
-      <label> Email address</label>
-      <input
-        autoFocus
-        required
-        type='text'
-        value={email}
-        onChange={(e) =>
-          updateField({
-            email: e.target.value,
-          })
-        }
-      />
-      <label>Password</label>
-      <input
-        type='password'
-        value={password}
-        onChange={(e) =>
-          updateField({
-            password: e.target.value,
-          })
-        }
-      />
+      <label>
+        {" "}
+        Email address (*)
+        <input
+          className='form-input-text'
+          autoFocus
+          required
+          pattern='[^ @]*@[^ @]*'
+          type='text'
+          value={email}
+          placeholder='a@abc.com'
+          onChange={(e) =>
+            updateField({
+              email: e.target.value,
+            })
+          }
+        />
+      </label>
+      <label>
+        Password (*)
+        <input
+          className='form-input-text'
+          type='password'
+          value={password}
+          placeholder='Your password...'
+          onChange={(e) =>
+            updateField({
+              password: e.target.value,
+            })
+          }
+        />
+      </label>
     </FormWrapper>
   );
 }
