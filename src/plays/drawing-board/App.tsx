@@ -22,6 +22,7 @@ function App() {
     return { canvas, context: canvas?.getContext("2d") };
   };
 
+  // to prepare the canvas for drawing when we open the app
   useEffect(() => {
     const { canvas, context } = getCanvasWithContext();
     if (!canvas || !context) {
@@ -36,12 +37,15 @@ function App() {
 
     clearCanvas(canvas);
   }, []);
+  //set the canvas side to the predefined values,
+  //we set the strokes style and then we clear the canvas, preparing it for the first strokes.
 
   const currentStroke = useSelector(currentStrokeSelector);
 
   const isDrawing = !!currentStroke.points.length;
   const dispatch = useDispatch();
 
+  // side-effect to handle the currentStroke updates.
   useEffect(() => {
     const { context } = getCanvasWithContext();
     if (!context) {
@@ -77,6 +81,7 @@ function App() {
   const historyIndex = useSelector(historyIndexSelector);
   const strokes = useSelector(strokesSelector);
 
+  //useEffect that will observe the historyIndex value:
   useEffect(() => {
     const { canvas, context } = getCanvasWithContext();
     if (!context || !canvas) {
@@ -90,6 +95,9 @@ function App() {
       });
     });
   }, [historyIndex]);
+  {
+    /*Every time the historyIndex gets updated we clear the screen and then draw only the strokes that weren’t undone. */
+  }
 
   return (
     <div className="window">
