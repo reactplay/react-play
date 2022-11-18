@@ -1,7 +1,6 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useGetContributorsDetails from "common/hooks/useGetContributorDetails";
 import PlayThumbnail from "common/playlists/PlayThumbnail";
-import React, { useEffect } from "react";
 import * as all_plays from "plays";
 import { toSanitized } from "common/services/string";
 import { BsGithub, BsShare } from "react-icons/bs";
@@ -14,9 +13,11 @@ import { regex } from "common/const/socialsRegex";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import Badge from "./components/Badge";
 
 export const UserProfile = () => {
   const [value, setValue] = useState(0);
+  const [playCount, setPlayCount] = useState(0);
   // const {username} = useParams();
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -30,6 +31,12 @@ export const UserProfile = () => {
     website,
     users_user_profile_map: { displayName, avatarUrl, email, plays } = {},
   } = contributor || {};
+
+  // Need to figure out how we can get the proper play list for the user.
+  useEffect(() => {
+    const count = plays?.filter((play) => play.component !== null);
+    setPlayCount(count?.length);
+  }, [plays]);
 
   console.log(social_links);
 
@@ -120,9 +127,24 @@ export const UserProfile = () => {
             onChange={handleTabChange}
             aria-label="User profile details"
           >
-            <Tab label="Plays" {...a11yProps(0)} />
-            <Tab label="Contents" {...a11yProps(1)} />
-            <Tab label="Contributions" {...a11yProps(2)} />
+            <Tab
+              icon={<Badge count={playCount} />}
+              iconPosition="end"
+              label="Plays"
+              {...a11yProps(0)}
+            />
+            <Tab
+              label="Contents"
+              icon={<Badge />}
+              iconPosition="end"
+              {...a11yProps(1)}
+            />
+            <Tab
+              label="Contributions"
+              icon={<Badge />}
+              iconPosition="end"
+              {...a11yProps(2)}
+            />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
