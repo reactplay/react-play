@@ -12,8 +12,8 @@ import { useCanvas } from "./CanvasContext";
 import { FilePanel } from "./shared/FilePanel";
 import { ModalLayer } from "./ModalLayer";
 
-const WIDTH = 1024;
-const HEIGHT = 768;
+const CANVAS_WIDTH = 1024;
+const CANVAS_HEIGHT = 768;
 
 function App() {
   const canvasRef = useCanvas();
@@ -28,7 +28,7 @@ function App() {
     if (!canvas || !context) {
       return;
     }
-    setCanvasSize(canvas, WIDTH, HEIGHT);
+    setCanvasSize(canvas, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     context.lineJoin = "round";
     context.lineCap = "round";
@@ -95,9 +95,7 @@ function App() {
       });
     });
   }, [historyIndex]);
-  {
-    /*Every time the historyIndex gets updated we clear the screen and then draw only the strokes that weren’t undone. */
-  }
+  //Every time the historyIndex gets updated we clear the screen and then draw only the strokes that weren’t undone.
 
   return (
     <div className="window">

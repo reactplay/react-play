@@ -1,4 +1,4 @@
-@import "../../../node_modules/xp.css/dist/XP.css";
+@import "@import~xp.css/dist/XP.css";
 
 canvas {
   transform: translate3d(-50%, 0, 0);
