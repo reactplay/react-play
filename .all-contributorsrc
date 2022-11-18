@@ -499,6 +499,33 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Harshil-Jani",
+      "name": "Harshil Jani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79367883?v=4",
+      "profile": "https://github.com/Harshil-Jani",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tech-doctor",
+      "name": "Oluka Isaac",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55724699?v=4",
+      "profile": "https://olukaisaac.netlify.app/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "NagarjunShroff",
+      "name": "NagarjunShroff",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37444771?v=4",
+      "profile": "https://github.com/NagarjunShroff",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
