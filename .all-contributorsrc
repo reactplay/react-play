@@ -508,6 +508,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "tech-doctor",
+      "name": "Oluka Isaac",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55724699?v=4",
+      "profile": "https://olukaisaac.netlify.app/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

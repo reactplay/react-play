@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-56-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-57-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -286,6 +286,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://github.com/senali-d"><img src="https://avatars.githubusercontent.com/u/52546856?v=4?s=100" width="100px;" alt="Senali"/><br /><sub><b>Senali</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=senali-d" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/nishasen"><img src="https://avatars.githubusercontent.com/u/43262505?v=4?s=100" width="100px;" alt="Nisha Sen"/><br /><sub><b>Nisha Sen</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=nishasen" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/Harshil-Jani"><img src="https://avatars.githubusercontent.com/u/79367883?v=4?s=100" width="100px;" alt="Harshil Jani"/><br /><sub><b>Harshil Jani</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Harshil-Jani" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://olukaisaac.netlify.app/"><img src="https://avatars.githubusercontent.com/u/55724699?v=4?s=100" width="100px;" alt="Oluka Isaac"/><br /><sub><b>Oluka Isaac</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=tech-doctor" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
