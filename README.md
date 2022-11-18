@@ -1,6 +1,6 @@
 # ReactPlay(Repo: `react-play`)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-57-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-58-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -289,6 +289,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center"><a href="https://olukaisaac.netlify.app/"><img src="https://avatars.githubusercontent.com/u/55724699?v=4?s=100" width="100px;" alt="Oluka Isaac"/><br /><sub><b>Oluka Isaac</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=tech-doctor" title="Code">💻</a></td>
+      <td align="center"><a href="https://abrarhasan.netlify.com"><img src="https://avatars.githubusercontent.com/u/49402306?v=4?s=100" width="100px;" alt="Abrar Hasan S"/><br /><sub><b>Abrar Hasan S</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Abrar0204" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
