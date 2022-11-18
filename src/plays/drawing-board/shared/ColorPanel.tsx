@@ -59,18 +59,18 @@ export const ColorPanel = () => {
   };
 
   return (
-    <div className="window colors-panel">
+    <div className="window dboard-colors-panel">
       <div className="title-bar">
         <div className="title-bar-text">Colors</div>
       </div>
-      <div className="window-body colors">
+      <div className="window-body dboard-colors">
         {COLORS.map((color: string) => (
           <div
             key={color}
             onClick={() => {
               onColorChange(color);
             }}
-            className="color"
+            className="dboard-color"
             style={{ backgroundColor: color }}></div>
         ))}
       </div>

@@ -6,14 +6,14 @@ canvas {
   margin: 100px 50%;
 }
 
-.colors {
+.dboard-colors {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 336px;
 }
 
-.color {
+.dboard-color {
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -21,7 +21,7 @@ canvas {
     inset 2px 2px #0a0a0a;
 }
 
-.colors-panel {
+.dboard-colors-panel {
   position: fixed;
   bottom: 40px;
   left: 50%;
