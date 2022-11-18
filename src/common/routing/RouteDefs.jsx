@@ -13,7 +13,7 @@ import {
 import PlayList from "common/playlists/PlayList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NhostClient, NhostReactProvider } from "@nhost/react";
-import UserProfile from "common/contributor_profile/ContributorProfile";
+import { UserProfile } from "common/contributor_profile/ContributorProfile";
 
 const nhost = new NhostClient({
   backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || "",
