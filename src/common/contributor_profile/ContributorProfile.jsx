@@ -73,8 +73,8 @@ export const UserProfile = () => {
   if (loading) return <LoadingSpinner />;
 
   return (
-    <div className="p-5 bg-gray-100 h-full flex">
-      <div className="bg-white p-4 w-fit flex flex-col items-center mt-20 rounded-lg shadow-md">
+    <div className="p-5 bg-gray-100 h-full flex flex-row gap-5">
+      <div className="bg-white p-4 w-[25%] flex flex-col items-center mt-20 rounded-lg shadow-md">
         <img
           src={avatarUrl}
           alt="avatar"
