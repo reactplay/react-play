@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useGetContributorsDetails from "common/hooks/useGetContributorDetails";
 import PlayThumbnail from "common/playlists/PlayThumbnail";
 import React, { useEffect } from "react";
@@ -10,8 +11,12 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import LoadingSpinner from "plays/dev-jokes/Spinner";
 import { TestimonialCard } from "./components/TestimonialCard";
 import { regex } from "common/const/socialsRegex";
+import Box from "@mui/material/Box";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
 export const UserProfile = () => {
+  const [value, setValue] = useState(0);
   // const {username} = useParams();
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -27,6 +32,33 @@ export const UserProfile = () => {
   } = contributor || {};
 
   console.log(social_links);
+
+  const handleTabChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const TabPanel = (props) => {
+    const { children, value, index, ...other } = props;
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`user-profile-tabpanel-${index}`}
+        aria-labelledby={`user-profile-tab-${index}`}
+        {...other}
+      >
+        {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      </div>
+    );
+  };
+
+  const a11yProps = (index) => {
+    return {
+      id: `user-profile-tab-${index}`,
+      "aria-controls": `user-profile-tabpanel-${index}`,
+    };
+  };
+
   const socials = () => {
     return Object.keys(regex).map((entry, index) => {
       const link = social_links?.find((link) => link.match(regex[entry].regex));
@@ -37,6 +69,7 @@ export const UserProfile = () => {
       );
     });
   };
+
   if (loading) return <LoadingSpinner />;
 
   return (
@@ -79,40 +112,38 @@ export const UserProfile = () => {
         )}
       </div>
 
-      <div className="w-full">
-        {/* tabs */}
-        <div className="flex flex-wrap border-b border-gray-200 text-gray-500">
-          <NavLink
-            to="/a"
-            className={(isActive) =>
-              `mr-2 inline-block rounded-t-lg py-4 px-4 text-sm font-medium text-center border-b-2  hover:font-semibold
-              ${isActive ? " border-gray-700 font-semibold" : ""}`
-            }
+      {/* Tabs */}
+      <Box sx={{ width: "100%" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs
+            value={value}
+            onChange={handleTabChange}
+            aria-label="User profile details"
           >
-            Profile
-          </NavLink>
-
-          <NavLink
-            to="/"
-            className={
-              "mr-2 inline-block  rounded-t-lg py-4 px-4 text-sm font-medium text-center border-b-2  "
-            }
-          >
-            Dashboard
-          </NavLink>
-        </div>
-
-        {/* Plays */}
-        <ol className="list-plays">
-          {plays?.map((play, index) => (
-            <React.Fragment key={index}>
-              {all_plays[
-                play.component ? play.component : toSanitized(play.title_name)
-              ] && <PlayThumbnail key={play.id} play={play} />}
-            </React.Fragment>
-          ))}
-        </ol>
-      </div>
+            <Tab label="Plays" {...a11yProps(0)} />
+            <Tab label="Contents" {...a11yProps(1)} />
+            <Tab label="Contributions" {...a11yProps(2)} />
+          </Tabs>
+        </Box>
+        <TabPanel value={value} index={0}>
+          <ol className="list-plays">
+            {plays?.map((play, index) => (
+              <React.Fragment key={index}>
+                {all_plays[
+                  play.component ? play.component : toSanitized(play.title_name)
+                ] && <PlayThumbnail key={play.id} play={play} />}
+              </React.Fragment>
+            ))}
+          </ol>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          {" "}
+          Content{" "}
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          Contributions
+        </TabPanel>
+      </Box>
     </div>
   );
 };
