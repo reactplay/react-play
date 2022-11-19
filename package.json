@@ -71,9 +71,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\"",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "lint": "eslint \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\"",
+    "lint:fix": "eslint --fix \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\"",
+    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\" --config ./.prettierrc",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
