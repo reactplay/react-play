@@ -19,6 +19,16 @@ import Badges from "./Badges";
 import MyBadges from "./MyBadges";
 import Badge from "./Badge";
 import BadgeDetails from "./BadgeDetails";
+import bparticipant from "./img/p.jpg";
+import bfinisher from "./img/pf.jpg";
+import bwinner from "./img/pfw.jpg";
+import { BadgeMap } from "./BadgeMap";
+
+const BADGE_MAP = {
+  participant: bparticipant,
+  finisher: bfinisher,
+  winner: bwinner,
+};
 
 const BadgesDashboard = () => {
   const { isAuthenticated, isLoading } = useAuthenticationStatus();
@@ -41,17 +51,47 @@ const BadgesDashboard = () => {
     window.location = NHOST.AUTH_URL(`${window.location.origin}/me/badges`);
   };
 
+  const getBadgeImage = (prev_badge, current_badge) => {
+    if (!prev_badge) {
+      return current_badge;
+    }
+    if (prev_badge === "winner" || current_badge === "winner") {
+      return "winner";
+    }
+
+    if (prev_badge === "finisher" || current_badge === "finisher") {
+      return "finisher";
+    }
+
+    if (prev_badge === "participant" || current_badge === "participant") {
+      return "participant";
+    }
+    return undefined;
+  };
+
+  const setMetaInformation = (badges) => {
+    let b_image = undefined;
+    let b_current_img = undefined;
+    badges.forEach((b) => {
+      b_current_img = BadgeMap[b.badge_id_map.tag];
+      b_image = getBadgeImage(b_image, b_current_img);
+    });
+    if (b_image) {
+      setMetaImage(BADGE_MAP[b_image]);
+    }
+  };
+
   useEffect(() => {
     async function getData() {
       const email = param.pathname.split("/")[1];
       if ((email && email === "me") || user) {
-        const reader = new FileReader();
-        reader.readAsDataURL(
-          "https://icon2.cleanpng.com/20171221/rhw/red-seal-badge-transparent-png-clip-art-5a3c12a9420ac4.1498310515138863772705.jpg"
-        );
-        reader.onload = () => {
-          setMetaImage(reader.result);
-        };
+        // const reader = new FileReader();
+        // reader.readAsDataURL(
+        //   "https://icon2.cleanpng.com/20171221/rhw/red-seal-badge-transparent-png-clip-art-5a3c12a9420ac4.1498310515138863772705.jpg"
+        // );
+        // reader.onload = () => {
+        //   setMetaImage(reader.result);
+        // };
         if (!isAuthenticated && email === "me") {
           handleLogin();
         }
@@ -66,9 +106,10 @@ const BadgesDashboard = () => {
 
         console.error(email2Slug(user.email) === email);
         const allBadges = await getAllBadgesByUserId(await ui[0]?.id);
-        console.error(allBadges);
-        setAllBadges(allBadges.filter((b) => b.claimed === true));
-        setNotClaimedBadges(allBadges.filter((b) => b.claimed === false));
+        setAllBadges(allBadges);
+
+        // setNotClaimedBadges(allBadges.filter((b) => b.claimed === false));
+        setMetaInformation(allBadges);
       }
     }
     if (!isLoading) {

@@ -78,6 +78,7 @@ export const toSanitized = (str) => {
 };
 
 export const email2Slug = (email) => {
+  return encodeURIComponent(email);
   let convertedEmail = email;
   EmailSlugMaps.forEach((m) => {
     convertedEmail = convertedEmail.replace(
@@ -89,6 +90,7 @@ export const email2Slug = (email) => {
 };
 
 export const slug2Email = (email) => {
+  return decodeURIComponent(email);
   let convertedEmail = email;
   EmailSlugMaps.forEach((m) => {
     convertedEmail = convertedEmail.replace(
