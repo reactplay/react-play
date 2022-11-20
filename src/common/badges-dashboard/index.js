@@ -84,27 +84,24 @@ const BadgesDashboard = () => {
   useEffect(() => {
     async function getData() {
       const email = param.pathname.split("/")[1];
-      if ((email && email !== "me") || (email === "me" && user)) {
-        // const reader = new FileReader();
-        // reader.readAsDataURL(
-        //   "https://icon2.cleanpng.com/20171221/rhw/red-seal-badge-transparent-png-clip-art-5a3c12a9420ac4.1498310515138863772705.jpg"
-        // );
-        // reader.onload = () => {
-        //   setMetaImage(reader.result);
-        // };
-        if (!isAuthenticated && email === "me") {
-          handleLogin();
+      let finalEmail = undefined;
+      if (email) {
+        if (email === "me") {
+          if (!isAuthenticated) {
+            handleLogin();
+          }
+          finalEmail = user?.email;
+        } else {
+          finalEmail = slug2Email(email);
         }
-        const ui = await getUserByEmail(
-          email === "me" ? user.email : slug2Email(email)
-        );
+
+        const ui = await getUserByEmail(finalEmail);
         console.error(ui[0]);
         setUserInfo(ui[0]);
         if (user && user.email) {
           setItsMe(email === "me" || user.email === slug2Email(email));
         }
 
-        console.error(email2Slug(user.email) === email);
         const allBadges = await getAllBadgesByUserId(await ui[0]?.id);
         setAllBadges(allBadges);
 
