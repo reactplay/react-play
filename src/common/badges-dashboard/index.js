@@ -84,7 +84,7 @@ const BadgesDashboard = () => {
   useEffect(() => {
     async function getData() {
       const email = param.pathname.split("/")[1];
-      if ((email && email === "me") || user) {
+      if ((email && email !== "me") || (email === "me" && user)) {
         // const reader = new FileReader();
         // reader.readAsDataURL(
         //   "https://icon2.cleanpng.com/20171221/rhw/red-seal-badge-transparent-png-clip-art-5a3c12a9420ac4.1498310515138863772705.jpg"
