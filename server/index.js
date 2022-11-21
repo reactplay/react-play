@@ -22,7 +22,7 @@ app.get("/users/:email/:details", (req, res, next) => {
         console.error("Error during file reading", err);
         return res.status(404).end();
       }
-      const post = {}; //getPostById(postId);
+      const post = {};
       htmlData = htmlData
         .replace("<title>React App</title>", `<title>${post.title}</title>`)
         .replace("__META_OG_TITLE__", "Badges")
@@ -36,6 +36,7 @@ app.get("/users/:email/:details", (req, res, next) => {
     });
   }
 });
+
 // listening...
 app.listen(PORT, (error) => {
   if (error) {
