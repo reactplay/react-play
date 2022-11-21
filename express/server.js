@@ -44,6 +44,9 @@ router.get("/users/:email/:details", (req, res, next) => {
   console.log("XXXXXXXXXXXXXXxx");
   const { email, details } = req.params;
   console.log(email, details);
+  console.log(__dirname);
+  console.log(__filename);
+  console.log(path.basename(__dirname));
   walk(__dirname, function (err, results) {
     if (err) throw err;
     console.log(results);
