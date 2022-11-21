@@ -55,7 +55,13 @@
     "workbox-precaching": "^6.5.4",
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4",
-    "workbox-window": "^6.5.4"
+    "workbox-window": "^6.5.4",
+    "serverless-http": "^3.1.0",
+		"webpack-node-externals": "^3.0.0",
+    "netlify-lambda": "^2.0.15",
+    "body-parser": "^1.20.1",
+		"dotenv": "^16.0.3",
+		"express": "^4.17.1"
   },
   "scripts": {
     "start": "npx --yes create-react-play -p && react-scripts start",
@@ -65,7 +71,7 @@
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "metaserver" : "npm run build&&node server/index.js"
+    "metaserver" : "netlify-lambda build express --config webpack.config.js && node server.js"
 
   },
   "eslintConfig": {

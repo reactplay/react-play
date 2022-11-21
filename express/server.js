@@ -1,8 +1,12 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-// const { getPostById } = require("./stub/posts");
-const app = express();
+const serverless = require("serverless-http");
+const bodyParser = require("body-parser");
+
+// Configuration
+var app = express();
+const router = express.Router();
 
 const PORT = process.env.PORT || 3000;
 const indexPath = path.resolve(__dirname, "..", "build", "index.html");
@@ -12,7 +16,7 @@ app.use(
   express.static(path.resolve(__dirname, "..", "build"), { maxAge: "30d" })
 );
 // here we serve the index.html page
-app.get("/users/:email/:details", (req, res, next) => {
+router.get("/users/:email/:details", (req, res, next) => {
   console.log("XXXXXXXXXXXXXXxx");
   const { email, details } = req.params;
   console.log(email, details);
@@ -37,10 +41,22 @@ app.get("/users/:email/:details", (req, res, next) => {
   }
 });
 
-// listening...
-app.listen(PORT, (error) => {
-  if (error) {
-    return console.log("Error during app startup", error);
-  }
-  console.log("listening on " + PORT + "...");
+router.get("/*", (req, res, next) => {
+  console.log("XXXXXXXXXXXXXXxx");
+  const { email, details } = req.params;
+  console.log(email, details);
+  fs.readFile(indexPath, "utf8", (err, htmlData) => {
+    if (err) {
+      console.error("Error during file reading", err);
+      return res.status(404).end();
+    }
+    return res.send(htmlData);
+  });
 });
+
+app.use(bodyParser.json());
+app.use("/.netlify/functions/server", router); // path must route to lambda
+app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
+
+module.exports = app;
+module.exports.handler = serverless(app);
