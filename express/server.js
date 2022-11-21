@@ -9,7 +9,7 @@ var app = express();
 const router = express.Router();
 
 const PORT = process.env.PORT || 3000;
-const indexPath = path.resolve(__dirname, "..", "../build", "index.html");
+const indexPath = "../build/index.html"; //path.resolve(__dirname, "..", "../build", "index.html");
 
 // static resources should just be served as they are
 app.use(
