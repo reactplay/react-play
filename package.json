@@ -64,7 +64,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "server" : "npm run build&&nodemon server/index.js"
+
   },
   "eslintConfig": {
     "extends": [

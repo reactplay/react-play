@@ -62,8 +62,10 @@ const RouteDefs = () => {
                       </Route>
                   </Route> */}
           </Route>
-          <Route path=":username" element={<App />}>
-            <Route path="badges" element={<BadgesDashboard />} />
+          <Route path="/users" element={<App />}>
+            <Route path=":email" element={<App />}>
+              <Route path="badges" element={<BadgesDashboard />} />
+            </Route>
           </Route>
           <Route path="/play" element={<App />}>
             <Route index element={<PlayList />} />

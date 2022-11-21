@@ -23,6 +23,7 @@ import bparticipant from "./img/p.jpg";
 import bfinisher from "./img/pf.jpg";
 import bwinner from "./img/pfw.jpg";
 import { BadgeMap } from "./BadgeMap";
+import { useParams } from "react-router-dom";
 
 const BADGE_MAP = {
   participant: bparticipant,
@@ -46,6 +47,7 @@ const BadgesDashboard = () => {
 
   // Meta related
   const [metaImage, setMetaImage] = useState();
+  let { email, details } = useParams();
 
   const handleLogin = () => {
     window.location = NHOST.AUTH_URL(`${window.location.origin}/me/badges`);
@@ -83,7 +85,6 @@ const BadgesDashboard = () => {
 
   useEffect(() => {
     async function getData() {
-      const email = param.pathname.split("/")[1];
       let finalEmail = undefined;
       if (email) {
         if (email === "me") {
