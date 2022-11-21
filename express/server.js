@@ -9,7 +9,7 @@ var app = express();
 const router = express.Router();
 
 const PORT = process.env.PORT || 3000;
-const indexPath = path.resolve(process.cwd(), "..", "../build", "index.html");
+const indexPath = path.resolve(process.cwd(), "..", "build", "index.html");
 
 // static resources should just be served as they are
 app.use(
@@ -50,7 +50,7 @@ router.get("/users/:email/:details", (req, res, next) => {
   console.log(path.basename(__dirname));
   console.log(process.cwd());
   console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-  walk(path.resolve(process.cwd(), "..", "../build"), function (err, results) {
+  walk(path.resolve(process.cwd(), "..", "build"), function (err, results) {
     if (err) throw err;
     console.log(results);
   });
