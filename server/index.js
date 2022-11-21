@@ -22,13 +22,7 @@ app.get("/users/:email/:details", (req, res, next) => {
         console.error("Error during file reading", err);
         return res.status(404).end();
       }
-      //     // get post info
-      //     const postId = req.query.id;
       const post = {}; //getPostById(postId);
-      //     if (!post) return res.status(404).send("Post not found");
-
-      // return res.status(404).send("Post not found");
-      // inject meta tags
       htmlData = htmlData
         .replace("<title>React App</title>", `<title>${post.title}</title>`)
         .replace("__META_OG_TITLE__", "Badges")
