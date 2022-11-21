@@ -71,7 +71,7 @@
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "metaserver" : "netlify-lambda build express --config webpack.config.js && node server.js"
+    "metaserver" : "netlify-lambda build express --config webpack.config.js"
 
   },
   "eslintConfig": {
