@@ -65,7 +65,7 @@
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "server" : "npm run build&&node server/index.js"
+    "metaserver" : "npm run build&&node server/index.js"
 
   },
   "eslintConfig": {
