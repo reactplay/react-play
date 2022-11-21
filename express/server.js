@@ -15,11 +15,44 @@ const indexPath = "../build/index.html"; //path.resolve(__dirname, "..", "../bui
 app.use(
   express.static(path.resolve(__dirname, "..", "build"), { maxAge: "30d" })
 );
+
+var walk = function (dir, done) {
+  var results = [];
+  fs.readdir(dir, function (err, list) {
+    if (err) return done(err);
+    var i = 0;
+    (function next() {
+      var file = list[i++];
+      if (!file) return done(null, results);
+      file = path.resolve(dir, file);
+      fs.stat(file, function (err, stat) {
+        if (stat && stat.isDirectory()) {
+          walk(file, function (err, res) {
+            results = results.concat(res);
+            next();
+          });
+        } else {
+          results.push(file);
+          next();
+        }
+      });
+    })();
+  });
+};
 // here we serve the index.html page
 router.get("/users/:email/:details", (req, res, next) => {
   console.log("XXXXXXXXXXXXXXxx");
   const { email, details } = req.params;
   console.log(email, details);
+  walk(__dirname, function (err, results) {
+    if (err) throw err;
+    console.log(results);
+  });
+  console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+  walk("../", function (err, results) {
+    if (err) throw err;
+    console.log(results);
+  });
   if (details === "badges") {
     fs.readFile(indexPath, "utf8", (err, htmlData) => {
       if (err) {
