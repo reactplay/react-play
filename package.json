@@ -65,7 +65,7 @@
   },
   "scripts": {
     "start": "npx --yes create-react-play -p && react-scripts start",
-    "build": "npx --yes create-react-play -p && react-scripts build",
+    "build": "npx --yes create-react-play -p && react-scripts build && netlify-lambda build express --config webpack.config.js",
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

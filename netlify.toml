@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm run metaserver"
+  command = "npm install --legacy-peer-deps && npm run build"
   functions = "functions"
 
 [functions]
