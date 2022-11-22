@@ -21,9 +21,13 @@ export const EditProfile = () => {
 
   const onSubmit = () => {};
   console.log(skill_map);
+
   const handleChange = (e) => {
-    console.log(e.target.value);
-    // setSkill(prev=> prev.at(-1).level)
+    setSkill((prev) => {
+      const newArr = [...prev];
+      newArr.at(-1).level = e.target.value;
+      return newArr;
+    });
   };
   return (
     <div className="p-5">

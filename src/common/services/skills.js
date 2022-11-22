@@ -7,6 +7,7 @@ const GetSkills = () => {
   };
 };
 
+/* insert a new skill */
 const InsertSkill = (label) => {
   return {
     display: "Get Skills",

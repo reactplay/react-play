@@ -18,6 +18,7 @@ import { useAuthenticationStatus } from "@nhost/react";
 import { isEmpty } from "lodash";
 import "./index.css";
 import { Skills } from "common/services/skills";
+import { MdEmail } from "react-icons/md";
 
 export const UserProfile = () => {
   const [value, setValue] = useState(0);
@@ -112,7 +113,9 @@ export const UserProfile = () => {
         <Button className="rounded-md">
           <BsShare />
         </Button>
-        <p>{email} </p>
+        <a href={email} className="flex gap-1 items-center">
+          <MdEmail /> {email}
+        </a>
         <div className="flex ">{socials()}</div>
         <p> {bio}</p>
         <a href={website} target="_blank" rel="noreferrer">

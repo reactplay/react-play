@@ -9,6 +9,7 @@
     background-color: rgb(227, 227, 227);
     display: grid;
     grid-template-columns: minmax(15rem, 25%) 1fr;
+    gap: 2rem;
     /* p-5 bg-gray-100 h-full flex flex-row gap-5 */
 }
 
