@@ -1,16 +1,16 @@
 import { BsGithub, BsTwitter, BsLinkedin } from "react-icons/bs";
 
-export const regex = {
+export const socilsRegex = {
   twitter: {
     regex: `http(s)?:\/\/([\w]+\.)?twitter.com\/[A-z0-9_-]+\/?`,
-    icon: BsTwitter,
+    Icon: BsTwitter,
   },
   linkedin: {
     regex: `http(s)?:\/\/([\w]+\.)?linkedin\.com\/in\/[A-z0-9_-]+\/?`,
-    icon: BsLinkedin,
+    Icon: BsLinkedin,
   },
   github: {
     regex: `http(s)?:\/\/([\w]+\.)?github.com\/[A-z0-9_-]+\/?`,
-    icon: BsGithub,
+    Icon: BsGithub,
   },
 };

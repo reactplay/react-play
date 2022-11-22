@@ -9,31 +9,11 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useSkillsList } from "common/hooks/useSkillsList";
+import { useExpertLevelsList } from "common/hooks/useExpertiseLevelList";
 
-const expert_levels = [
-  {
-    id: "86d0a64d-135c-4ce1-9869-a8150580bb91",
-    label: "Novice",
-  },
-  {
-    id: "e8999abe-3253-4ded-84d1-3f7bc236077f",
-    label: "Adv. Beginner",
-  },
-  {
-    id: "3708e27a-daea-44db-b8a8-65e253ec08cb",
-    label: "Competent",
-  },
-  {
-    id: "0b03e8ba-e2a6-4959-8ff3-43bdef3a701c",
-    label: "Proficient",
-  },
-  {
-    id: "a122912a-3d08-43da-9833-39ad159d6171",
-    label: "Expert",
-  },
-];
 export const EditProfile = () => {
-  const [skills_List, loading] = useSkillsList();
+  const [skills_List, skills_List_isLoading] = useSkillsList();
+  const [expert_levels, expert_levels_isLoading] = useExpertLevelsList();
 
   const [skill_map, setSkill] = useState([{ skill: {}, level: {} }]);
 
@@ -47,7 +27,7 @@ export const EditProfile = () => {
   };
   return (
     <div className="p-5">
-      <h1>Edit Profile</h1>
+      <h1 className="section-title">Edit Profile</h1>
       <h2> Update your details here</h2>
       <FormControl>
         <Autocomplete

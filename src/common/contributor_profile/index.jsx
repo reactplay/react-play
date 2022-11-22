@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import useGetContributorsDetails from "common/hooks/useGetContributorDetails";
 import PlayThumbnail from "common/playlists/PlayThumbnail";
 import * as all_plays from "plays";
@@ -9,19 +9,24 @@ import { Button } from "@mui/material";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import LoadingSpinner from "plays/dev-jokes/Spinner";
 import { TestimonialCard } from "./components/TestimonialCard";
-import { regex } from "common/const/socialsRegex";
+import { socilsRegex } from "common/const/socialsRegex";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Badge from "./components/Badge";
+import { useAuthenticationStatus } from "@nhost/react";
+import { isEmpty } from "lodash";
+import "./index.css";
+import { Skills } from "common/services/skills";
 
 export const UserProfile = () => {
   const [value, setValue] = useState(0);
-  const [playCount, setPlayCount] = useState(0);
   // const {username} = useParams();
+  const { isAuthenticated, isLoading } = useAuthenticationStatus();
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [contributor, skills, error, loading] = useGetContributorsDetails();
+  const [contributor, skills_map, error, dataLoading] =
+    useGetContributorsDetails();
 
   const {
     resume_link,
@@ -33,9 +38,9 @@ export const UserProfile = () => {
   } = contributor || {};
 
   // Need to figure out how we can get the proper play list for the user.
-  useEffect(() => {
+  const playsCount = useMemo(() => {
     const count = plays?.filter((play) => play.component !== null);
-    setPlayCount(count?.length);
+    return count?.length;
   }, [plays]);
 
   console.log(social_links);
@@ -67,21 +72,24 @@ export const UserProfile = () => {
   };
 
   const socials = () => {
-    return Object.keys(regex).map((entry, index) => {
-      const link = social_links?.find((link) => link.match(regex[entry].regex));
+    return Object.keys(socilsRegex).map((entry, index) => {
+      const { regex, Icon } = socilsRegex[entry];
+      const link = social_links?.find((link) => link.match(regex));
+      if (!link) return null;
       return (
         <a key={index} href={link}>
-          {entry}
+          <Icon />
         </a>
       );
     });
   };
+  const handleAddResume = () => {};
 
-  if (loading) return <LoadingSpinner />;
+  if (dataLoading || isLoading) return <LoadingSpinner />;
 
   return (
-    <div className="p-5 bg-gray-100 h-full flex flex-row gap-5">
-      <div className="bg-white p-4 w-[25%] flex flex-col items-center mt-20 rounded-lg shadow-md">
+    <div className="app-body contributor_page ">
+      <div className="left_section ">
         <img
           src={avatarUrl}
           alt="avatar"
@@ -90,33 +98,40 @@ export const UserProfile = () => {
         <h2 className="text-lg font-bold"> {displayName}</h2>
 
         {/* show only if current login user same as user whose profile we are on */}
-        <Button
-          className="rounded-md flex gap-1 "
-          onClick={() => {
-            navigate(pathname + "/edit");
-          }}
-        >
-          <FiEdit2 className="icon" /> Edit Profile
-        </Button>
+        {isAuthenticated ? (
+          <Button
+            className="rounded-md flex gap-1 "
+            onClick={() => {
+              navigate(pathname + "/edit");
+            }}
+          >
+            <FiEdit2 className="icon" /> Edit Profile
+          </Button>
+        ) : null}
+
         <Button className="rounded-md">
           <BsShare />
         </Button>
         <p>{email} </p>
-        <a href={email} target="blank">
-          <BsGithub className="icon" />
-        </a>
-        {socials()}
+        <div className="flex ">{socials()}</div>
         <p> {bio}</p>
         <a href={website} target="_blank" rel="noreferrer">
           Website
         </a>
-        {resume_link !== null ? (
+        {!isEmpty(resume_link) ? (
           <a href={resume_link} target="_blank" rel="noreferrer">
             Resume
           </a>
         ) : (
-          "Add resume"
+          <button className="btn-default-light " onClick={handleAddResume}>
+            Add resume
+          </button>
         )}
+        {skills_map?.map(({ skill_id_map, expert_level_id_map }) => (
+          <div>
+            {skill_id_map.label}: {expert_level_id_map.label}
+          </div>
+        ))}
       </div>
 
       {/* Tabs */}
@@ -128,7 +143,7 @@ export const UserProfile = () => {
             aria-label="User profile details"
           >
             <Tab
-              icon={<Badge count={playCount} />}
+              icon={<Badge count={playsCount} />}
               iconPosition="end"
               label="Plays"
               {...a11yProps(0)}

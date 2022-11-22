@@ -11,9 +11,10 @@ import {
   TechStack,
 } from "common";
 import PlayList from "common/playlists/PlayList";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { NhostClient, NhostReactProvider } from "@nhost/react";
-import { UserProfile } from "common/contributor_profile/ContributorProfile";
+import { UserProfile } from "common/contributor_profile";
+import { EditProfile } from "common/edit-contributor_profile";
 
 const nhost = new NhostClient({
   backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || "",
@@ -65,7 +66,10 @@ const RouteDefs = () => {
             <Route index element={<PlayList />} />
           </Route>
           <Route path="/ideas" element={<PlayIdeas />} />
-          <Route path="/contributors/:id" element={<UserProfile/>}></Route>
+          <Route idex path="/contributors/:id" element={<App />}>
+            <Route index element={<UserProfile />} />
+            <Route exact path="edit" element={<EditProfile />} />
+          </Route>
         </Routes>
         <Footer />
       </BrowserRouter>
