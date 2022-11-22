@@ -173,6 +173,7 @@ const CreatePlay = () => {
         }
       }
       setState({ loadingText: "Creating Play", isDataLoading: true });
+      rest.owner_user_id = userData.id;
       const res = await Plays.createPlay(rest);
       navigate(`/plays/created/${res}`);
     } catch (err) {
@@ -182,9 +183,6 @@ const CreatePlay = () => {
     }
   };
 
-  // if (process.env.NODE_ENV === "development" && location.pathname !== "editplay") {
-  //   return <NoCreationInProdScreen />;
-  // }
 
   if (isLoading || isDataLoading) {
     return (

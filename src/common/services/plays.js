@@ -40,6 +40,7 @@ const createPlay = (playObject) => {
   return Promise.all(promises)
     .then(async (res) => {
       await createAndRemoveTags(res?.[0]?.id, tagsTmp, tags).catch((err) => Promise.reject(err));
+      return res?.[0]?.id
     })
     .catch(() => Promise.reject(new Error("Error Updating play informations")));
 };

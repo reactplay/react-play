@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { TextField, FormControl, Autocomplete, Button } from "@mui/material";
 import * as _ from "lodash";
 
@@ -7,17 +7,19 @@ const disabledFields = ['issue', 'github']
 const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay}) => {
 
   const [formData, setFormData] = useState({...formDataObj});
+  const formDataReference = useRef(formDataObj);
 
   const checkDisabledInputs = (fieldName) => isEditPlay && disabledFields.includes(fieldName)
+
 
   const handleChange = (key, value) => {
     setFormData((pre) => ({...pre, [key]: value }));
   };
 
   useEffect(() => {
-    setFormData({...formDataObj})
-  },[formDataObj])
- 
+    setFormData({ ...formDataReference.current });
+  }, []);
+
   const renderField = (field) => {
     switch (field.type) {
       case "input":
@@ -93,8 +95,12 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay}) => {
   const isFieldsAreInValid = () => {
     let res = false;
     fields.forEach((tmpl) => {
-      if (tmpl.required && (!formData || !formData[tmpl.datafield]) && !disabledFields.includes(tmpl.datafield)) {
-        res = true;
+      if (tmpl.required && (!formData || !formData[tmpl.datafield])) {
+        if (isEditPlay && disabledFields.includes(tmpl.datafield)) {
+          res =  false
+        } else {
+          res = true;
+        }
       }
     });
     return res;
@@ -114,7 +120,7 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay}) => {
             disabled={isFieldsAreInValid()}
             onClick={onSubmit.bind(null, formData)}
           >
-            {!isEditPlay ? 'Create the awesome' : 'Edit Play'}
+            {!isEditPlay ? "Create the awesome" : "Edit Play"}
           </Button>
         </div>
       </div>
