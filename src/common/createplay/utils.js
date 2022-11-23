@@ -18,7 +18,7 @@ export const constructLevelInfo = (lvlData, currLvl) => {
 };
 
 export const constructTagInfo = (tagData, currTags) => {
-  if (!currTags.length) return "";
+  if (!currTags.length) return [];
   const tagArr = currTags?.map((i) => i.tag.name);
   return tagData.filter((item) => tagArr.includes(item.name));
 };
