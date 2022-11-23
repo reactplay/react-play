@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { clearCanvas, drawStroke, setCanvasSize } from "./utils/canvasUtils";
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { beginStroke, updateStroke } from "./modules/currentStroke/slice";
 import { endStroke } from "./modules/sharedActions";
@@ -10,7 +11,6 @@ import { ColorPanel } from "./shared/ColorPanel";
 import { EditPanel } from "./shared/EditPanel";
 import { useCanvas } from "./CanvasContext";
 import { FilePanel } from "./shared/FilePanel";
-import { ModalLayer } from "./ModalLayer";
 
 const CANVAS_WIDTH = 1024;
 const CANVAS_HEIGHT = 768;
@@ -108,7 +108,6 @@ function App() {
       <EditPanel />
       <ColorPanel />
       <FilePanel />
-      <ModalLayer />
       <canvas
         onMouseDown={startDrawing}
         onMouseUp={endDrawing}
