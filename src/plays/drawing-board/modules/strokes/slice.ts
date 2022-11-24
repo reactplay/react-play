@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../utils/types";
-import { endStroke, SharedAction } from "../sharedActions";
+import { endStroke } from "../sharedActions";
 
 const initialState: RootState["strokes"] = [];
 

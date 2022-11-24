@@ -43,6 +43,8 @@ function App() {
   const currentStroke = useSelector(currentStrokeSelector);
 
   const isDrawing = !!currentStroke.points.length;
+  const historyIndex = useSelector(historyIndexSelector);
+  const strokes = useSelector(strokesSelector);
   const dispatch = useDispatch();
 
   // side-effect to handle the currentStroke updates.
@@ -77,9 +79,6 @@ function App() {
 
     dispatch(updateStroke({ x: offsetX, y: offsetY }));
   };
-
-  const historyIndex = useSelector(historyIndexSelector);
-  const strokes = useSelector(strokesSelector);
 
   //useEffect that will observe the historyIndex value:
   useEffect(() => {

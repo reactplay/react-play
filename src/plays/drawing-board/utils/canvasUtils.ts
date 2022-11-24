@@ -40,6 +40,7 @@ export const setCanvasSize = (
   canvas.getContext("2d")?.scale(2, 2);
 };
 
+// eslint-disable-next-line no-lone-blocks
 {
   /* This function resolves with canvas contenets transformed into a Blob. Later we'll be able to save this Blob as a file*/
 }
