@@ -10,6 +10,8 @@ import Comment from 'common/components/Comment';
 import useLikePlays from 'common/hooks/useLikePlays';
 import { NHOST } from 'common/const';
 import countByProp from 'common/utils/countByProp';
+import { useNavigate } from 'react-router-dom';
+import { AiFillEdit } from 'react-icons/ai';
 
 const initialLikeObject = {
   liked: false,
@@ -19,6 +21,7 @@ const initialLikeObject = {
 
 const PlayHeaderActions = ({ play }) => {
   const { play_like } = play;
+  const navigate = useNavigate();
 
   const userId = useUserId();
   const { likePlay, unLikePlay } = useLikePlays();
@@ -79,9 +82,17 @@ const PlayHeaderActions = ({ play }) => {
     }
   };
 
+  const handleEditPlay = () => {
+    const generateLink = `/editplay/${play.github}/${play.slug}`;
+    return navigate(generateLink);
+  };
+
   return (
     <>
-      <Like likeObj={likeObj} onLikeClick={!loading ? onLikeClick : null} />
+      <Like onLikeClick={!loading ? onLikeClick : null} likeObj={likeObj} />
+      <button className="action">
+        <AiFillEdit onClick={handleEditPlay} size={24} className="icon" />
+      </button>
       <button className="action badged" onClick={() => setShowComment(true)}>
         <BiComment className="icon" size="24px" />
         <span className="sr-only">Comments</span>

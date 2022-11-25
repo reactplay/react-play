@@ -37,18 +37,19 @@ const RouteDefs = () => {
         <Header />
         <DefMeta routes={routes} />
         <Routes>
-          <Route element={<Home />} path="/" />
-          <Route element={<TechStack />} path="/tech-stacks" />
-          <Route element={<App />} path="/plays">
+          <Route path="/" element={<Home />} />
+          <Route path="/tech-stacks" element={<TechStack />} />
+          <Route path="/editplay/:username/:playname" element={<CreatePlay />} />
+          <Route path="/plays" element={<App />}>
             <Route index element={<PlayList />} />
-            <Route exact element={<CreatePlay />} path="create" />
+            <Route exact path="create" element={<CreatePlay />} />
             {process.env.NODE_ENV === 'development' && (
-              <Route exact element={<PlayCreated />} path="created/:playid" />
+              <Route exact path="created/:playid" element={<PlayCreated />} />
             )}
-            <Route exact idex element={<PlayMeta />} path=":username">
-              <Route exact element={<PlayMeta />} path=":playname">
-                <Route exact element={<PlayMeta />} path=":param1">
-                  <Route exact element={<PlayMeta />} path=":param2" />
+            <Route idex exact path=":username" element={<PlayMeta />}>
+              <Route exact path=":playname" element={<PlayMeta />}>
+                <Route exact path=":param1" element={<PlayMeta />}>
+                  <Route exact path=":param2" element={<PlayMeta />} />
                 </Route>
               </Route>
             </Route>
