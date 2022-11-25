@@ -1,31 +1,31 @@
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef } from "react";
 
-import './QuizScreen.scss';
+import "./QuizScreen.scss";
 
 // assets
-import confuseIcon from './confuse.gif';
+import confuseIcon from "./confuse.gif";
 
 const answerState = {
-  answer: '',
+  answer: "",
   cheat: false,
-  cheated: false
+  cheated: false,
 };
 
 function QuizScreen({ category, getQuizSummary }) {
   const [quizData, setQuizData] = useState({
     loading: false,
     data: [],
-    error: false
+    error: false,
   });
   const [answer, setAnswer] = useState({ ...answerState });
   const [result, setResult] = useState([]);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [timer, setTimer] = useState(30);
 
-  const formatCategoryText = category === 'all' ? '' : `&category=${category}`;
+  const formatCategoryText = category === "all" ? "" : `&category=${category}`;
   const currentQuestion = quizData?.data?.[questionNumber];
 
-  const nonPremitiveReference = useRef(quizData);
+  const nonPremitiveReference = useRef(quizData)
 
   useEffect(() => {
     (async () => {
@@ -40,13 +40,17 @@ function QuizScreen({ category, getQuizSummary }) {
         const createOptions = results.map((result) => {
           const { incorrect_answers, correct_answer } = result;
           const options = [...incorrect_answers];
-          options?.splice(Math.floor(Math.random() * (options.length + 1)), 0, correct_answer);
+          options?.splice(
+            Math.floor(Math.random() * (options.length + 1)),
+            0,
+            correct_answer
+          );
           return { ...result, options };
         });
         return setQuizData({
           data: createOptions,
           loading: false,
-          error: false
+          error: false,
         });
       } catch (err) {
         setQuizData({ ...nonPremitiveReference.current, loading: false, error: true });
@@ -56,14 +60,18 @@ function QuizScreen({ category, getQuizSummary }) {
 
   // select and deselect the answer
   const handleAnswerClick = (val) => (e) => {
-    setAnswer(!!answer.answer && answer.answer === val ? answerState : { ...answer, answer: val });
+    setAnswer(
+      !!answer.answer && answer.answer === val
+        ? answerState
+        : { ...answer, answer: val }
+    );
   };
 
   // handling the confirm button click
   const handleConfirm = useCallback(
     (skipped = false) => {
       const updateResult = () => {
-        const manageSkippedAnswer = !skipped ? answer.answer : '';
+        const manageSkippedAnswer = !skipped ? answer.answer : "";
         setResult((pre) => [
           ...pre,
           {
@@ -71,8 +79,8 @@ function QuizScreen({ category, getQuizSummary }) {
             correct: currentQuestion.correct_answer === manageSkippedAnswer,
             your_answer: manageSkippedAnswer,
             correct_answer: currentQuestion.correct_answer,
-            cheated: answer.cheated
-          }
+            cheated: answer.cheated,
+          },
         ]);
       };
 
@@ -85,8 +93,8 @@ function QuizScreen({ category, getQuizSummary }) {
             correct: currentQuestion.correct_answer === answer.answer,
             your_answer: answer.answer,
             correct_answer: currentQuestion.correct_answer,
-            cheated: answer.cheated
-          }
+            cheated: answer.cheated,
+          },
         ]);
       }
       updateResult();
@@ -104,7 +112,7 @@ function QuizScreen({ category, getQuizSummary }) {
       }, 1000);
       return () => clearInterval(setTiming);
     } else if (!!quizData.data.length) {
-      setAnswer('');
+      setAnswer("");
       handleConfirm(true);
     }
   }, [timer, handleConfirm, quizData.data]);
@@ -113,7 +121,7 @@ function QuizScreen({ category, getQuizSummary }) {
     setAnswer({
       cheat: true,
       cheated: true,
-      answer: currentQuestion.correct_answer
+      answer: currentQuestion.correct_answer,
     });
     const showCheat = setTimeout(() => {
       setAnswer({ ...answerState, cheated: true });
@@ -122,9 +130,11 @@ function QuizScreen({ category, getQuizSummary }) {
   };
 
   const itemClassDisplayController = (option) => {
-    if (answer.cheat && answer.answer === option) return 'option-button blinking-options';
-    if (answer.answer === option && !answer.cheat) return 'option-button active-option';
-    return 'option-button';
+    if (answer.cheat && answer.answer === option)
+      return "option-button blinking-options";
+    if (answer.answer === option && !answer.cheat)
+      return "option-button active-option";
+    return "option-button";
   };
 
   // if there is an no data we display this message.
@@ -141,10 +151,12 @@ function QuizScreen({ category, getQuizSummary }) {
       )}
       {!quizData.loading && (
         <div className="section">
-          <div className={`timer ${timer <= 5 && 'caution'}`}>{timer}</div>
+          <div className={`timer ${timer <= 5 && "caution"}`}>{timer}</div>
           <div className="question-info">Question: {questionNumber + 1}</div>
           <div className="question">
-            <h1 dangerouslySetInnerHTML={{ __html: currentQuestion?.question }} />
+            <h1
+              dangerouslySetInnerHTML={{ __html: currentQuestion?.question }}
+            />
           </div>
           <div className="options">
             {currentQuestion?.options?.map((option, index) => {
@@ -164,8 +176,11 @@ function QuizScreen({ category, getQuizSummary }) {
               Skip
             </button>
             {answer.answer && !answer.cheat && (
-              <button onClick={() => handleConfirm()} className="confirm-button">
-                {questionNumber === 19 ? 'Submit' : 'Confirm'}
+              <button
+                onClick={() => handleConfirm()}
+                className="confirm-button"
+              >
+                {questionNumber === 19 ? "Submit" : "Confirm"}
               </button>
             )}
             {!answer.answer && (

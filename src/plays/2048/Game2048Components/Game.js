@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import Grid from './Grid';
-import TranformGrid from '../transformGrid';
+import React, { useState } from "react";
+import Grid from "./Grid";
+import TranformGrid from "../transformGrid";
 
 function Game(props) {
-  const [grid, setGrid] = useState(grids);
+  const [grid, setGrid] = useState(grids)
 
   function grids() {
     let _grid = [
@@ -19,7 +19,7 @@ function Game(props) {
     return _grid;
   }
 
-  const handleGrid = (grid) => setGrid(grid);
+  const handleGrid = (grid) => setGrid(grid)
   return (
     <div className="game_wrapper">
       <Grid

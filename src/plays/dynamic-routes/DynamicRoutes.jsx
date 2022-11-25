@@ -1,17 +1,18 @@
-import PlayHeader from 'common/playlists/PlayHeader';
-import { useParams } from 'react-router-dom';
-import Navbar from './Navbar';
-import './dynamicRoutes.css';
-import data from './Data';
-import { useEffect, useState } from 'react';
+import PlayHeader from "common/playlists/PlayHeader";
+import { useParams } from "react-router-dom";
+import Navbar from "./Navbar";
+import "./dynamicRoutes.css";
+import data from "./Data";
+import { useEffect, useState } from "react";
 
 function DynamicRoutes(props) {
+
   // Your Code Start below.
   let { param1 } = useParams(); // return the parameter of url
   const [activeMenu, setActiveMenu] = useState();
   useEffect(() => {
     //useEffect hook keep eye on url parameter whenever it changes so we can re-mount
-    setActiveMenu(param1 ? param1 : 'breakfast');
+    setActiveMenu(param1 ? param1 : "breakfast");
   }, [param1]);
   const activeRecipes = data.filter((recipe) => {
     return recipe.mealtype === activeMenu; //filter reciepes based on active menu
@@ -49,7 +50,7 @@ function DynamicRoutes(props) {
             </div>
 
             <div className="recipe-container">
-              {activeRecipes.length <= 0 ? <>Sorry, check the url</> : ''}
+              {activeRecipes.length <= 0 ? <>Sorry, check the url</> : ""}
               {activeRecipes.map((recipe, index) => {
                 //render the recipes based on active menu
 
@@ -58,8 +59,14 @@ function DynamicRoutes(props) {
                     <div>
                       <h4>{recipe.name}</h4>
                     </div>
-                    <img className="image" src={recipe.image} alt={recipe.name} />
-                    <div className={`symbol ${recipe.mealtype}`}>{recipe.mealtype}</div>
+                    <img
+                      className="image"
+                      src={recipe.image}
+                      alt={recipe.name}
+                    />
+                    <div className={`symbol ${recipe.mealtype}`}>
+                      {recipe.mealtype}
+                    </div>
                   </div>
                 );
               })}

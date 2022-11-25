@@ -25,8 +25,10 @@ The implementation of the Web3 staking dapp play is quite simple.
 - `withdrawToken` function in `smart-contract/contracts/Staking.sol` is responsible for withdrawing tokens from the dapp.
 
 - There are two cases that the user will get:
-  - If you withdraw before the staking period completes then you will not receive the interest.
-  - If you withdraw after the staking period then you will get the amount you staked along with the interest.
+    
+    - If you withdraw before the staking period completes then you will not receive the interest.
+    - If you withdraw after the staking period then you will get the amount you staked along with the interest.
+
 
 ## Consideration
 

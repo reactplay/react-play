@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import PlayHeader from 'common/playlists/PlayHeader';
-import './styles.css';
-import Posts from './Posts';
+import { useEffect, useState } from "react";
+import PlayHeader from "common/playlists/PlayHeader";
+import "./styles.css";
+import Posts from "./Posts";
 
 function InfiniteScrolling(props) {
   const [posts, setPosts] = useState([]);
 
   const fectPost = async () => {
-    fetch('https://jsonplaceholder.typicode.com/photos')
+    fetch("https://jsonplaceholder.typicode.com/photos")
       .then((res) => res.json())
       .then((data) => setPosts(data));
   };

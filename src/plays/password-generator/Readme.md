@@ -1,5 +1,4 @@
 # Password Generator
-
 The `Password Generator` project is a fun project which shows the usecase of some concept in ReactJS.
 
 - Multiple Checkbox Handling.

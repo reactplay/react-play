@@ -1,10 +1,10 @@
-import { Helmet } from 'react-helmet';
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Helmet } from "react-helmet";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function DefMeta({ routes }) {
   const [title, setTitle] = useState(
-    'ReactPlay - One app to learn, create, and share ReactJS projects'
+    "ReactPlay - One app to learn, create, and share ReactJS projects"
   );
   const currentPath = useLocation().pathname;
 
@@ -44,7 +44,11 @@ function DefMeta({ routes }) {
         content="Start React Code Arena with ReactPlay"
         data-react-helmet="true"
       />
-      <meta property="og:url" content="https://reactplay.io" data-react-helmet="true" />
+      <meta
+        property="og:url"
+        content="https://reactplay.io"
+        data-react-helmet="true"
+      />
       <meta name="twitter:title" content={title} data-react-helmet="true" />
       <meta
         name="twitter:description"

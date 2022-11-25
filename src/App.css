@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@900&display=swap");
 
 .text-center {
   text-align: center;
@@ -129,7 +129,8 @@ body * {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 small {
@@ -569,6 +570,7 @@ small {
 .brand-tech-stack .icon {
   fill: var(--color-neutral-50);
 }
+
 
 .brand-tech-stack .image {
   filter: invert(60%) sepia(12%) saturate(186%) hue-rotate(151deg) brightness(86%) contrast(84%);

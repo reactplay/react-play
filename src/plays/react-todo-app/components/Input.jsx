@@ -10,7 +10,7 @@ const Input = ({
   isEditing,
   setIsEditing,
   editId,
-  setEditId
+  setEditId,
 }) => {
   const inputHandler = (e) => {
     setInput(e.target.value);
@@ -33,7 +33,10 @@ const Input = ({
       setInput('');
     } else {
       //If not editing, add new todo to the list
-      setTodos([...todos, { text: input, completed: false, id: Math.random() * 1000 }]);
+      setTodos([
+        ...todos,
+        { text: input, completed: false, id: Math.random() * 1000 },
+      ]);
       setInput('');
     }
   };
@@ -43,18 +46,27 @@ const Input = ({
   };
 
   return (
-    <form className="react-todo-form">
-      <div className="react-todo-input">
-        <input onChange={inputHandler} value={input} type="text" className="todo-input" />
-        <button onClick={submitHandler} className="todo-button" type="submit">
+    <form className='react-todo-form'>
+      <div className='react-todo-input'>
+        <input
+          onChange={inputHandler}
+          value={input}
+          type='text'
+          className='todo-input'
+        />
+        <button onClick={submitHandler} className='todo-button' type='submit'>
           <FaPlusSquare />
         </button>
       </div>
-      <div className="select-todo">
-        <select onChange={statusHandler} name="todos" className="filter-todo options">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
+      <div className='select-todo'>
+        <select
+          onChange={statusHandler}
+          name='todos'
+          className='filter-todo options'
+        >
+          <option value='all'>All</option>
+          <option value='completed'>Completed</option>
+          <option value='uncompleted'>Uncompleted</option>
         </select>
       </div>
     </form>

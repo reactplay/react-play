@@ -4,15 +4,15 @@ Encrypt and Decrypt using play fair cipher technique
 
 ## Play Demographic
 
-- Language: ts
-- Level: Beginner
+-   Language: ts
+-   Level: Beginner
 
 ## Creator Information
 
-- User: KMohZaid
-- Gihub Link: https://github.com/KMohZaid
-- Blog: null
-- Video: null
+-   User: KMohZaid
+-   Gihub Link: https://github.com/KMohZaid
+-   Blog: null
+-   Video: null
 
 ## Implementation Details
 

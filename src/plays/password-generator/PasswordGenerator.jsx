@@ -1,20 +1,20 @@
-import PlayHeader from 'common/playlists/PlayHeader';
-import { useCallback, useEffect, useState } from 'react';
+import PlayHeader from "common/playlists/PlayHeader";
+import { useCallback, useEffect, useState } from "react";
 
-import './password-generator-style.css';
-import data from './data.json';
+import "./password-generator-style.css";
+import data from "./data.json";
 
 const config = {
   length: 12,
   numbers: true,
   special: true,
   uppercase: true,
-  lowercase: true
+  lowercase: true,
 };
 
 function PasswordGenerator(props) {
   // Your Code Start below.
-  const [password, setPassword] = useState({ status: false, password: '' });
+  const [password, setPassword] = useState({ status: false, password: "" });
   const [passwordConfig, setPasswordConfig] = useState({ ...config });
   const [error, setError] = useState(false);
 
@@ -39,10 +39,10 @@ function PasswordGenerator(props) {
       return [];
     };
     const concated = [
-      ...parseData(numbers, 'numbers'),
-      ...parseData(special, 'special'),
-      ...parseData(uppercase, 'uppercase'),
-      ...parseData(lowercase, 'lowercase')
+      ...parseData(numbers, "numbers"),
+      ...parseData(special, "special"),
+      ...parseData(uppercase, "uppercase"),
+      ...parseData(lowercase, "lowercase"),
     ];
     return concated;
   }, [passwordConfig]);
@@ -51,7 +51,7 @@ function PasswordGenerator(props) {
   const generatePassword = useCallback(() => {
     setError(false);
     const concated = arrangeData();
-    let finalPassword = '';
+    let finalPassword = "";
     for (let i = 0; i < passwordConfig.length; i++) {
       finalPassword += concated[randomNumberGenerator(concated.length)];
     }
@@ -105,9 +105,15 @@ function PasswordGenerator(props) {
           <h1 className="title">Password Generator</h1>
           {error && <ErrorBox />}
           <div className="inputfield">
-            <input type="text" className="text" disabled value={password.password} readOnly />
+            <input
+              type="text"
+              className="text"
+              disabled
+              value={password.password}
+              readOnly
+            />
             <button className="copy copybtn" onClick={onCopyClick}>
-              {password?.status ? 'Copied' : 'Copy'}
+              {password?.status ? "Copied" : "Copy"}
             </button>
           </div>
           <div className="block">
@@ -122,7 +128,7 @@ function PasswordGenerator(props) {
             <div
               className="select lowercase"
               id="lower"
-              onClick={checkhandler('lowercase', passwordConfig.lowercase)}
+              onClick={checkhandler("lowercase", passwordConfig.lowercase)}
             >
               <h3>Lowercase</h3>
               <div className="bigCircle">
@@ -138,7 +144,7 @@ function PasswordGenerator(props) {
             />
             <div
               className="select uppercase"
-              onClick={checkhandler('uppercase', passwordConfig.uppercase)}
+              onClick={checkhandler("uppercase", passwordConfig.uppercase)}
             >
               <h3>Uppercase</h3>
               <div className="bigCircle">
@@ -156,7 +162,7 @@ function PasswordGenerator(props) {
             />
             <div
               className="select number"
-              onClick={checkhandler('numbers', passwordConfig.numbers)}
+              onClick={checkhandler("numbers", passwordConfig.numbers)}
             >
               <h3>Number</h3>
               <div className="bigCircle">
@@ -172,7 +178,7 @@ function PasswordGenerator(props) {
             />
             <div
               className="select specialchar"
-              onClick={checkhandler('special', passwordConfig.special)}
+              onClick={checkhandler("special", passwordConfig.special)}
             >
               <h3>Special Char</h3>
               <div className="bigCircle">

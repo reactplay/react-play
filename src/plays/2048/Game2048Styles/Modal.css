@@ -55,14 +55,14 @@
   padding: 5px 7px;
 }
 
-@media (max-width: 593px) {
+@media(max-width: 593px) {
   .twenty-forty-eight-btn-modal {
     top: 6rem;
     font-size: 23px;
   }
 }
 
-@media (max-width: 494px) {
+@media(max-width: 494px) {
   .twenty-forty-eight-btn-modal {
     top: 16rem;
     font-size: 23px;
@@ -70,7 +70,7 @@
   }
 }
 
-@media (max-width: 424px) {
+@media(max-width:424px) {
   .twenty-forty-eight-btn-modal {
     top: 27.1rem;
     font-size: 23px;
@@ -78,7 +78,7 @@
   }
 }
 
-@media (max-width: 354px) {
+@media(max-width: 354px) {
   .twenty-forty-eight-btn-modal {
     top: 17rem;
     font-size: 19px;

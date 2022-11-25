@@ -5,20 +5,16 @@ import './motivate_me_style.css';
 import Container from './container';
 import PlayHeader from 'common/playlists/PlayHeader';
 function GetMotivated(props) {
-  const [author, setAuthor] = useState('');
-  return (
-    <div className="play-details">
-      <PlayHeader play={props} />
-      <div className="motivate-me-main">
-        <Header />
-        <Container
-          author={author}
-          handleAuthorChange={(value) => setAuthor(value)}
-          Quotes={Quotes}
-        />
-      </div>
-    </div>
-  );
+	const [author, setAuthor] = useState('');
+	return (
+		<div className="play-details">
+			<PlayHeader play={props} />
+			<div className="motivate-me-main">
+				<Header />
+				<Container author={author}  handleAuthorChange={(value)=> setAuthor(value)} Quotes={Quotes} />
+			</div>
+		</div>
+	);
 }
 
 export default GetMotivated;

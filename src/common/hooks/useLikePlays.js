@@ -1,5 +1,8 @@
-import { submit } from 'common/services/request';
-import { likeIndividualPlay, unlikeIndividualPlay } from 'common/services/request/query/like-play';
+import { submit } from "common/services/request";
+import {
+  likeIndividualPlay,
+  unlikeIndividualPlay,
+} from "common/services/request/query/like-play";
 
 const useLikePlays = () => {
   const likePlay = async (obj) => {

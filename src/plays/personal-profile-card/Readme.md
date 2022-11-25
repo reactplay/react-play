@@ -14,7 +14,6 @@ The `Personal profile card` is a project developed to demonstrate personal detai
 - Blog: [https://medium.com/@senali](https://medium.com/@senali)
 
 ## ## What will you learn?
-
 The `Personal profile card` project demonstrate many key concepts of ReactJS.
 
 - Managing Complex state data like object and how to update it with the single handler.

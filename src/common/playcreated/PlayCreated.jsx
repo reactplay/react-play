@@ -1,9 +1,9 @@
-import { submit } from 'common/services/request';
-import { FetchPlaysByID } from 'common/services/request/query/fetch-plays';
-import { toKebabCase } from 'common/services/string';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import './play-created.scss';
+import { submit } from "common/services/request";
+import { FetchPlaysByID } from "common/services/request/query/fetch-plays";
+import { toKebabCase } from "common/services/string";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./play-created.scss";
 
 const PlayCreated = () => {
   const { playid } = useParams();
@@ -34,7 +34,7 @@ const PlayCreated = () => {
         <div>
           <ol className="ordered-list">
             <li className="ordered-nav--link">
-              Fork{' '}
+              Fork{" "}
               <a
                 className="play-create-anchor"
                 href="https://github.com/reactplay/react-play"
@@ -42,12 +42,12 @@ const PlayCreated = () => {
                 rel="noopener noreferrer"
               >
                 reactplay
-              </a>{' '}
+              </a>{" "}
               repository
             </li>
             <li>Open command line console of your choice</li>
             <li>
-              Run following command on your{' '}
+              Run following command on your{" "}
               <a
                 className="play-create-anchor"
                 href="https://github.com/reactplay/react-play"
@@ -55,14 +55,16 @@ const PlayCreated = () => {
                 rel="noopener noreferrer"
               >
                 reactplay
-              </a>{' '}
+              </a>{" "}
               project folder
-              <code className="console-wrapper">npx create-react-play -c {play.id}</code>
+              <code className="console-wrapper">
+                npx create-react-play -c {play.id}
+              </code>
             </li>
             <li>
               Install dependencies
               <code className="console-wrapper">
-                npm install <br /># OR <br /> yarn{' '}
+                npm install <br /># OR <br /> yarn{" "}
               </code>
             </li>
             <li>
@@ -72,14 +74,14 @@ const PlayCreated = () => {
               </code>
             </li>
             <li>
-              Find your play under{' '}
+              Find your play under{" "}
               <code className="console-wrapper">
                 &lt;reactplay-directory&gt;/src/plays/{toKebabCase(play.name)}
               </code>
             </li>
           </ol>
           <div>
-            Refer{' '}
+            Refer{" "}
             <a
               className="play-create-anchor"
               href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
@@ -87,7 +89,7 @@ const PlayCreated = () => {
               rel="noopener noreferrer"
             >
               play creation guide
-            </a>{' '}
+            </a>{" "}
             for more information
           </div>
           <div>Happy coding!!</div>

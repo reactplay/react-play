@@ -1,14 +1,14 @@
-export const getWeatherIcon = (iconCode, size = '') => {
+export const getWeatherIcon = (iconCode, size = "") => {
   let base = `https://openweathermap.org/img/wn/${iconCode}`;
-  if (size === 'lg') {
-    base += '@2x';
+  if (size === "lg") {
+    base += "@2x";
   }
-  base += '.png';
+  base += ".png";
   return base;
 };
 
 export const getWeekDay = (index) => {
-  const days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+  const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
   return days[index];
 };
 
@@ -16,7 +16,7 @@ export const getWeekdayIndex = (date) => {
   return new Date(date * 1000).getDay();
 };
 
-export const WEATHER_API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
+export const WEATHER_API_BASE_URL = "https://api.openweathermap.org/data/2.5";
 
 export const fetchForecast = async (lat, long, setForecastData) => {
   try {

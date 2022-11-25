@@ -1,6 +1,6 @@
-import React from 'react';
-import { Props } from '../types';
-import './pokecard.css';
+import React from "react";
+import { Props } from "../types";
+import "./pokecard.css";
 const Pokemoncard = (props: Props) => {
   const { pokemon, backToSearch } = props;
   return (

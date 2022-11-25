@@ -1,7 +1,7 @@
-import * as React from 'react';
-import PlayHeader from 'common/playlists/PlayHeader';
-import Wizard from './wizard';
-import data from './data.json';
+import * as React from "react";
+import PlayHeader from "common/playlists/PlayHeader";
+import Wizard from "./wizard";
+import data from "./data.json";
 
 function WhyTypescript(props: any) {
   // Your Code Start below.

@@ -11,8 +11,8 @@ function Keeper(props) {
     {
       id: 0,
       title: 'Write Your Title',
-      content: 'And, content here. :)'
-    }
+      content: 'And, content here. :)',
+    },
   ]); //notes array
   //adding notes
   function addNote(newNote) {
@@ -30,9 +30,9 @@ function Keeper(props) {
   }
   return (
     <>
-      <div className="play-details">
+      <div className='play-details'>
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className='play-details-body'>
           {/* Your Code Starts Here */}
           <Header />
           <CreateArea onAdd={addNote} />

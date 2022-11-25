@@ -24,6 +24,7 @@
   margin: 20px;
   position: relative;
   transition: width 1s;
+
 }
 
 .card-container .active {

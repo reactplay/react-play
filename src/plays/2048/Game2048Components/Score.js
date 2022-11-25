@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 function Score(props) {
   return (
@@ -6,6 +6,6 @@ function Score(props) {
       <div className="score score--current">{props.score}</div>
       <div className="score score--best">{props.best}</div>
     </>
-  );
+  )
 }
-export default Score;
+export default Score

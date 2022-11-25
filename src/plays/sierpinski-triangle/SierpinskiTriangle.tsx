@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
-import Sketch from 'react-p5';
-import P5 from 'p5';
-import { Triangle } from './Triangle';
-import { getMidPoint } from './utils';
-import PlayHeader from 'common/playlists/PlayHeader';
-import { level, multiplier } from './constants';
+import React, { useState } from "react";
+import Sketch from "react-p5";
+import P5 from "p5";
+import { Triangle } from "./Triangle";
+import { getMidPoint } from "./utils";
+import PlayHeader from "common/playlists/PlayHeader";
+import { level, multiplier } from "./constants";
 
 const SierpinskiTriangle = (props: any) => {
-  const [windowSize, setWindowSize] = useState([window.innerWidth, window.innerHeight]);
+  const [windowSize, setWindowSize] = useState([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
   const [width, height] = windowSize;
 
   // recursive sierpinski triangle func
   const drawSierpinskiTriangle = (p: P5, triangle: Triangle, depth: number) => {
     // base case
-    if (depth === level) return;
+    if (depth === level)  return;
+  
 
     const midPoint1 = getMidPoint(p, triangle.p1, triangle.p2);
     const midPoint2 = getMidPoint(p, triangle.p2, triangle.p3);
@@ -33,7 +37,9 @@ const SierpinskiTriangle = (props: any) => {
   };
 
   const setup = (p: P5, canvasParentref: Element) => {
-    p.createCanvas(width * multiplier, height * multiplier).parent(canvasParentref);
+    p.createCanvas(width * multiplier, height * multiplier).parent(
+      canvasParentref
+    );
 
     // Stops p5.js from continuously executing the code within draw().
     p.noLoop();

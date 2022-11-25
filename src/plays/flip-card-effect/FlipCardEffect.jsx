@@ -1,14 +1,14 @@
-import PlayHeader from 'common/playlists/PlayHeader';
-import Card from './Card';
-import './FlipCardEffect.css';
+import PlayHeader from "common/playlists/PlayHeader";
+import Card from "./Card";
+import "./FlipCardEffect.css";
 
 function FlipCardEffect(props) {
   // Your Code Start below.
   const quotes = [
-    'Spread love everywhere you go.',
-    'if you love someone give them infinite space.',
-    'The happiest people are the givers not the takers.',
-    'The journey of a thousand miles begins with one step.'
+    "Spread love everywhere you go.",
+    "if you love someone give them infinite space.",
+    "The happiest people are the givers not the takers.",
+    "The journey of a thousand miles begins with one step.",
   ];
   return (
     <>
@@ -25,7 +25,7 @@ function FlipCardEffect(props) {
               })}
             </div>
             <p className="sub-heading">
-              Inspired by{' '}
+              Inspired by{" "}
               <strong>
                 <a
                   className="external-link"

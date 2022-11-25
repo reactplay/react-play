@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { ReactComponent as Image404 } from 'images/img-404.svg';
-import './404.css';
-import Loader from 'common/spinner/spinner';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { ReactComponent as Image404 } from "images/img-404.svg";
+import "./404.css";
+import Loader from "common/spinner/spinner";
+import { useNavigate } from "react-router-dom";
 
 const PageNotFound = ({ loading, msg, details, Image }) => {
   const [timer, setTimer] = useState(5);
@@ -15,7 +15,7 @@ const PageNotFound = ({ loading, msg, details, Image }) => {
     return () => {
       clearInterval(interval);
       if (timer === 0) {
-        return navigate('/plays');
+        return navigate("/plays");
       }
     };
   }, [timer]);
@@ -25,24 +25,22 @@ const PageNotFound = ({ loading, msg, details, Image }) => {
   }
 
   return (
-    <main className="page-404">
+    <main className='page-404'>
       {Image ? (
-        <img src={Image} alt="under-development" className="under-development" />
+        <img src={Image} alt='under-development' className='under-development' />
       ) : (
-        <Image404 className="page-404-image" />
+        <Image404 className='page-404-image' />
       )}
-      <p className="page-404-lead">{msg}</p>
-      <p className="page-404-desc">
-        {details}. Redirecting in {timer} sec.
-      </p>
+      <p className='page-404-lead'>{msg}</p>
+      <p className='page-404-desc'>{details}. Redirecting in {timer} sec.</p>
     </main>
   );
 };
 
 PageNotFound.defaultProps = {
-  msg: 'Looks like you are lost',
+  msg: "Looks like you are lost",
   details: "Why don't you go back to home.",
-  Image: null
+  Image: null,
 };
 
 export default PageNotFound;

@@ -1,4 +1,4 @@
-import useContributors from 'common/hooks/useContributors';
+import useContributors from "common/hooks/useContributors";
 
 const Contributors = () => {
   const { data, error, isLoading } = useContributors(true);
@@ -15,12 +15,8 @@ const Contributors = () => {
         {isLoading && <li>Loading...</li>}
         {error && <li>Error: {error.message}</li>}
         {data &&
-          data.map((contributor) => (
-            <li
-              key={contributor.id}
-              className="contributor"
-              data-testid={`contributor-${contributor.id}`}
-            >
+          data.map(contributor => (
+            <li key={contributor.id} className="contributor" data-testid={`contributor-${contributor.id}`}>
               <a
                 href={contributor.html_url}
                 target="_blank"
@@ -28,7 +24,7 @@ const Contributors = () => {
                 className="contributor-anchor"
                 title={`${contributor.login}(${contributor.contributions} contributions)`}
               >
-                <img
+              <img
                   loading="lazy"
                   src={contributor.avatar_url}
                   alt={contributor.login}
@@ -39,7 +35,7 @@ const Contributors = () => {
           ))}
       </ul>
     </>
-  );
+  )
 };
 
 export default Contributors;

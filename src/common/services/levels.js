@@ -1,5 +1,5 @@
-import { submit } from './request';
-import { fetchAllLevels } from './request/query';
+import { submit } from "./request";
+import { fetchAllLevels } from "./request/query";
 // get all tags
 const getAllLevels = () => {
   return submit(fetchAllLevels).then((res) => {
@@ -11,5 +11,5 @@ const getAllLevels = () => {
 };
 
 export const Levels = {
-  getAllLevels
+  getAllLevels,
 };

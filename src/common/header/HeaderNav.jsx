@@ -1,14 +1,14 @@
-import { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { BsTwitter, BsGithub } from 'react-icons/bs';
-import { FaLightbulb } from 'react-icons/fa';
-import { BiMoney } from 'react-icons/bi';
-import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
-import { MdManageSearch, MdClose } from 'react-icons/md';
-import SocialShare from 'common/components/SocialShare';
-import { GoX } from 'react-icons/go';
-import { Modal, Box, Typography, Menu } from '@mui/material';
-import { SearchContext } from 'common/search/search-context';
+import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import { BsTwitter, BsGithub } from "react-icons/bs";
+import { FaLightbulb } from "react-icons/fa";
+import { BiMoney } from "react-icons/bi";
+import { IoAddSharp, IoShareSocial, IoHeartSharp } from "react-icons/io5";
+import { MdManageSearch, MdClose } from "react-icons/md";
+import SocialShare from "common/components/SocialShare";
+import { GoX } from "react-icons/go";
+import { Modal, Box, Typography, Menu } from "@mui/material";
+import { SearchContext } from "common/search/search-context";
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useContext(SearchContext);
@@ -34,10 +34,10 @@ const HeaderNav = ({ showBrowse }) => {
         <Box className="modal-share">
           <Typography
             sx={{
-              display: 'block',
-              textAlign: 'center',
+              display: "block",
+              textAlign: "center",
               py: 2,
-              fontFamily: 'var(--ff-default)'
+              fontFamily: "var(--ff-default)",
             }}
             component="div"
             variant="subtitle1"
@@ -45,17 +45,27 @@ const HeaderNav = ({ showBrowse }) => {
             Share about ReactPlay
           </Typography>
           <SocialShare showTwitter showLinkedin showFB showReddit />
-          <Box component="div" sx={{ mt: 4, display: 'flex', justifyContent: 'flex-end' }}>
+          <Box
+            component="div"
+            sx={{ mt: 4, display: "flex", justifyContent: "flex-end" }}
+          >
             <button className="modal-share-close" onClick={modalClose}>
-              <GoX size="16px" className="icon" /> <span className="sr-only">Cancel</span>
+              <GoX size="16px" className="icon" />{" "}
+              <span className="sr-only">Cancel</span>
             </button>
           </Box>
         </Box>
       </Modal>
-      <button className="navbar-toggler" type="button" onClick={() => setShowToggleMenu(true)}>
+      <button
+        className="navbar-toggler"
+        type="button"
+        onClick={() => setShowToggleMenu(true)}
+      >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className={showToggleMenu ? 'navbar-collapse show' : 'navbar-collapse'}>
+      <div
+        className={showToggleMenu ? "navbar-collapse show" : "navbar-collapse"}
+      >
         <ul className="header-links" data-testid="header-links-container">
           <li className="menu-closer">
             <button
@@ -80,7 +90,7 @@ const HeaderNav = ({ showBrowse }) => {
             </li>
           )}
           <li className="menu-spacer">
-            {process.env.NODE_ENV === 'development' ? (
+            {process.env.NODE_ENV === "development" ? (
               <a
                 href="/plays/create"
                 rel="noopener noreferrer"
@@ -107,7 +117,7 @@ const HeaderNav = ({ showBrowse }) => {
           <li>
             <Link
               to="/ideas"
-              title="Play Ideas"
+              title = "Play Ideas"
               className="app-header-btn app-header-btn--default"
               data-testid="ideas-btn"
             >
@@ -119,7 +129,7 @@ const HeaderNav = ({ showBrowse }) => {
             <a
               href="https://github.com/reactplay/react-play"
               target="_blank"
-              title="GitHub page"
+              title = "GitHub page"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--default umami--click--github"
               data-testid="github-btn"
@@ -132,7 +142,7 @@ const HeaderNav = ({ showBrowse }) => {
             <a
               href="https://twitter.com/reactplayio"
               target="_blank"
-              title="Twitter Page"
+              title = "Twitter Page"
               rel="noopener noreferrer"
               className="app-header-btn app-header-btn--default"
               data-testid="twitter-btn"
@@ -153,7 +163,7 @@ const HeaderNav = ({ showBrowse }) => {
             </button>
           </li>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-            <Box sx={{ p: 4, pt: 2, borderRadius: 2, width: '360px' }}>
+            <Box sx={{ p: 4, pt: 2, borderRadius: 2, width: "360px" }}>
               <h3 className="section-title">Show Love</h3>
               <button
                 onClick={() => {
@@ -168,8 +178,9 @@ const HeaderNav = ({ showBrowse }) => {
               </button>
               <p className="mt-2 mb-8 leading-tight">
                 <small>
-                  Enjoying ReactPlay? Please help us spreading the word. You can share about
-                  ReactPlay on any of your favorite social media platforms.
+                  Enjoying ReactPlay? Please help us spreading the word. You can
+                  share about ReactPlay on any of your favorite social media
+                  platforms.
                 </small>
               </p>
               <a
@@ -184,7 +195,8 @@ const HeaderNav = ({ showBrowse }) => {
               </a>
               <p className="mt-2 mb-4 leading-tight">
                 <small>
-                  Your support means a lot to us. Want to be our Sponsor and support us?
+                  Your support means a lot to us. Want to be our Sponsor and
+                  support us?
                 </small>
               </p>
             </Box>

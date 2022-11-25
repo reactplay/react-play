@@ -1,19 +1,26 @@
-import React from 'react';
+import React from 'react'
 
-import ProfileType from '../types';
-import placeholder_cover from '../images/placeholder_cover.jpg';
-import placeholder_profile from '../images/placeholder_profile.png';
+import ProfileType from '../types'
+import placeholder_cover from '../images/placeholder_cover.jpg'
+import placeholder_profile from '../images/placeholder_profile.png'
 
 interface Props {
-  value: ProfileType;
-  profile: ProfileType;
-  onChange: React.ChangeEventHandler;
-  onClick: () => void;
-  onUpload: React.ChangeEventHandler;
-  onClear: () => void;
+  value: ProfileType
+  profile: ProfileType
+  onChange: React.ChangeEventHandler
+  onClick: () => void
+  onUpload: React.ChangeEventHandler
+  onClear: () => void
 }
 
-const ProfileForm = ({ value, profile, onChange, onClick, onUpload, onClear }: Props) => {
+const ProfileForm = ({
+  value,
+  profile,
+  onChange,
+  onClick,
+  onUpload,
+  onClear,
+}: Props) => {
   return (
     <div className="profilecard-profile-form md:mr-5">
       <div className="profilecard-profile-info">
@@ -25,9 +32,17 @@ const ProfileForm = ({ value, profile, onChange, onClick, onUpload, onClear }: P
           onChange={onUpload}
         />
         <img
-          src={value.cover === '' ? placeholder_cover : value.cover}
+          src={
+            value.cover === ''
+              ? placeholder_cover
+              : value.cover
+          }
           className="w-full md:w-[600px] h-[150px] sm:h-[200px] rounded-3xl"
-          alt={value.cover === '' ? 'placeholder cover' : 'cover'}
+          alt={
+            value.cover === ''
+              ? "placeholder cover"
+              : "cover"
+          }
         />
         <input
           className="profilecard-dp-input mx-auto relative top-[-50px] sm:top-[-40px] h-[30px] sm:h-[40px] w-[30px] sm:w-[40px] rounded-full flex bg-[#45576f] z-10 left-[50px] sm:left-[65px] hover:cursor-pointer"
@@ -37,13 +52,19 @@ const ProfileForm = ({ value, profile, onChange, onClick, onUpload, onClear }: P
           onChange={onUpload}
         />
         <img
-          src={value.dp === '' ? placeholder_profile : value.dp}
+          src={
+            value.dp === ''
+              ? placeholder_profile
+              : value.dp
+          }
           className="w-[110px] sm:w-[150px] h-[110px] sm:h-[150px] rounded-[50%] relative top-[-100px] mb-[-90px]  mx-auto"
-          alt={value.dp === '' ? 'placeholder display picture' : 'display picture'}
+          alt={
+            value.dp === ''
+              ? "placeholder display picture"
+              : "display picture"
+          }
         />
-        <p className="mb-5 italic font-bold">
-          *** Please use cover image size 730X270 for better quality
-        </p>
+        <p className="mb-5 italic font-bold">*** Please use cover image size 730X270 for better quality</p>
         <input
           type="text"
           name="name"
@@ -113,7 +134,7 @@ const ProfileForm = ({ value, profile, onChange, onClick, onUpload, onClear }: P
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none"
           onClick={onClick}
         >
-          {profile === null ? 'Save Profile Card' : 'Update Profile Card'}
+          {profile === null ? "Save Profile Card" : "Update Profile Card"}
         </button>
         <button
           type="button"
@@ -124,7 +145,7 @@ const ProfileForm = ({ value, profile, onChange, onClick, onUpload, onClear }: P
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProfileForm;
+export default ProfileForm

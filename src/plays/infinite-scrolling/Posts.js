@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const Posts = ({ posts }) => {
   const [displayPosts, setDisplayPosts] = useState([]);
@@ -9,7 +9,8 @@ const Posts = ({ posts }) => {
     const tempPosts = JSON.parse(JSON.stringify(posts));
     let start = pageNo * 20;
     let end = (pageNo + 1) * 20;
-    if (pageNo) setDisplayPosts((prev) => [...prev, ...tempPosts.slice(start, end)]);
+    if (pageNo)
+      setDisplayPosts((prev) => [...prev, ...tempPosts.slice(start, end)]);
     else setDisplayPosts(tempPosts.slice(start, end));
   };
 

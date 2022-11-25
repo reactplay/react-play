@@ -1,20 +1,20 @@
 export const defaultInputFields = {
-  name: '',
-  description: '',
-  issue: '',
-  language: '',
-  style: '',
-  level: '',
-  github: '',
+  name: "",
+  description: "",
+  issue: "",
+  language: "",
+  style: "",
+  level: "",
+  github: "",
   tags: [],
-  cover: '',
-  blog: '',
-  video: '',
-  id: ''
+  cover: "",
+  blog: "",
+  video: "",
+  id: ""
 };
 
 export const constructLevelInfo = (lvlData, currLvl) => {
-  return lvlData?.find((i) => i.name === currLvl?.name) ?? '';
+  return lvlData?.find((i) => i.name === currLvl?.name) ?? "";
 };
 
 export const constructTagInfo = (tagData, currTags) => {
@@ -28,22 +28,10 @@ export const constructLanguageInfo = (currLang) => {
 };
 
 export const createStateObject = (existingObj, storedData) => {
-  const { name, description, github, cover, blog, video, play_tags, language, level, id } =
-    existingObj;
-  const { tags, level: levelData } = storedData;
+  const { name, description, github, cover, blog, video, play_tags, language, level, id } = existingObj;
+  const {tags, level: levelData} = storedData
   const levelInfo = constructLevelInfo(levelData, level);
   const tagsInfo = constructTagInfo(tags, play_tags);
   const languageInfo = constructLanguageInfo(language);
-  return {
-    name,
-    description,
-    github,
-    cover,
-    blog,
-    video,
-    id,
-    tags: tagsInfo,
-    level: levelInfo,
-    language: languageInfo
-  };
+  return {name, description, github, cover, blog, video, id, tags: tagsInfo, level: levelInfo, language: languageInfo}
 };

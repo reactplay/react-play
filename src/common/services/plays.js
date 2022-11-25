@@ -1,8 +1,8 @@
-import { submit, submitMutation } from './request';
-import { deleteATagQuery } from './request/query';
-import { associatePlayWithTagQuery, createPlayQuery } from './request/query/play';
-import { toKebabCase, toSlug } from './string';
-import { Tags } from './tags';
+import { submit, submitMutation } from "./request";
+import { deleteATagQuery } from "./request/query";
+import { associatePlayWithTagQuery, createPlayQuery } from "./request/query/play";
+import { toKebabCase, toSlug } from "./string";
+import { Tags } from "./tags";
 
 // Create a play
 const createPlay = (playObject) => {
@@ -18,7 +18,7 @@ const createPlay = (playObject) => {
   objectToSubmit.language = objectToSubmit.language.value;
 
   // Prepare style
-  objectToSubmit.style = objectToSubmit.style ? objectToSubmit.style.value : 'css';
+  objectToSubmit.style = objectToSubmit.style ? objectToSubmit.style.value : "css";
 
   // Prepare slug
   objectToSubmit.slug = toSlug(objectToSubmit.name);
@@ -40,15 +40,15 @@ const createPlay = (playObject) => {
   return Promise.all(promises)
     .then(async (res) => {
       await createAndRemoveTags(res?.[0]?.id, tagsTmp, tags).catch((err) => Promise.reject(err));
-      return res?.[0]?.id;
+      return res?.[0]?.id
     })
-    .catch(() => Promise.reject(new Error('Error Updating play informations')));
+    .catch(() => Promise.reject(new Error("Error Updating play informations")));
 };
 
 const associateTag = (tag, play) => {
   return submitMutation(associatePlayWithTagQuery, {
     play_id: play,
-    tag_id: tag
+    tag_id: tag,
   });
 };
 
@@ -68,12 +68,12 @@ const createAndRemoveTags = (playId, tagsTmp = [], actualTags = [], tags = []) =
   // will determine if the tag is created then insert the id into the tags array
   if (tagsTmp && tagsTmp.length) {
     tagsTmp.forEach((tag) => {
-      if (tag.id === '') {
+      if (tag.id === "") {
         // looking if the id is created
         createTagPromies.push(
           // inserting the promise
           Tags.createATag({
-            name: tag.name
+            name: tag.name,
           })
         );
       } else {
@@ -106,12 +106,12 @@ const createAndRemoveTags = (playId, tagsTmp = [], actualTags = [], tags = []) =
           const deleteTagPromises = deleteATag(playId, actualTags, tagsTmp);
           return Promise.all(deleteTagPromises)
             .then((res) => Promise.resolve(res))
-            .catch(() => Promise.reject(new Error('Error happened while deleting tag from play')));
+            .catch(() => Promise.reject(new Error("Error happened while deleting tag from play")));
         })
-        .catch(() => Promise.reject(new Error('Error while mapping tags with play')));
+        .catch(() => Promise.reject(new Error("Error while mapping tags with play")));
     })
     .catch(() => {
-      return Promise.reject(new Error('Error in creating new tags.'));
+      return Promise.reject(new Error("Error in creating new tags."));
     });
 };
 
@@ -130,5 +130,5 @@ export const deleteATag = (play_id, actualTags, newTags) => {
 
 export const Plays = {
   createPlay,
-  createAndRemoveTags
+  createAndRemoveTags,
 };

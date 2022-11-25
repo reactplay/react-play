@@ -1,18 +1,18 @@
-import PlayHeader from 'common/playlists/PlayHeader';
-import Map from './Map';
-import Country from './Country';
-import { useEffect, useRef, useState } from 'react';
-import SearchAndFilter from './SearchAndFilter';
-import { GeoContext } from './Context';
-import MapData from './featues.json';
+import PlayHeader from "common/playlists/PlayHeader";
+import Map from "./Map";
+import Country from "./Country";
+import { useEffect, useRef, useState } from "react";
+import SearchAndFilter from "./SearchAndFilter";
+import { GeoContext } from "./Context";
+import MapData from "./featues.json";
 
 function CountriesStatics(props) {
   // Your Code Start below.
-  const [activeGeo, setActiveGeo] = useState('ind');
+  const [activeGeo, setActiveGeo] = useState("ind");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [index, setIndex] = useState(0);
-  const [selected, setSelected] = useState('');
-  const [searchQuery, setSearchQuery] = useState('india');
+  const [selected, setSelected] = useState("");
+  const [searchQuery, setSearchQuery] = useState("india");
   const searchSuggestionRef = useRef(null);
   const searchResultItemRef = useRef();
 
@@ -20,7 +20,9 @@ function CountriesStatics(props) {
   const SearchResult = MapData.objects.world.geometries.filter((o) =>
     o.properties.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
   );
-  SearchResult.sort((a, b) => a.properties.name.localeCompare(b.properties.name));
+  SearchResult.sort((a, b) =>
+    a.properties.name.localeCompare(b.properties.name)
+  );
 
   const keyPressHandler = (e) => {
     const length = SearchResult.length;
@@ -29,7 +31,7 @@ function CountriesStatics(props) {
     if (e.keyCode === 40) {
       if (index < length - 1) {
         searchSuggestionRef.current.focus();
-        if (e.target.value === '') {
+        if (e.target.value === "") {
           setIndex(0);
           searchSuggestionRef.current.scrollTo(0, 0);
         } else {
@@ -43,7 +45,7 @@ function CountriesStatics(props) {
     if (e.keyCode === 38) {
       if (index > 0) {
         searchSuggestionRef.current.focus();
-        if (e.target.value === '') {
+        if (e.target.value === "") {
           setIndex(0);
           searchSuggestionRef.current.scrollTo(0, 0);
         } else setIndex(index - 1);
@@ -71,8 +73,8 @@ function CountriesStatics(props) {
     setSelected(SearchResult[index].properties.name);
     searchResultItemRef.current &&
       searchResultItemRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
+        behavior: "smooth",
+        block: "center",
       });
   }, [index, showSuggestions]);
 
@@ -118,7 +120,9 @@ function CountriesStatics(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <h1 className="text-4xl mt-4 font-bold text-center capitalize">Geography Now</h1>
+          <h1 className="text-4xl mt-4 font-bold text-center capitalize">
+            Geography Now
+          </h1>
           <h2 className="text-xl text-center capitalize">
             Learn geography in fun and interactive way
           </h2>
@@ -139,7 +143,7 @@ function CountriesStatics(props) {
               searchResultClickHandler,
               handleClickMap,
               searchbarClickHandler,
-              searchInputClickHandler
+              searchInputClickHandler,
             }}
           >
             <SearchAndFilter />

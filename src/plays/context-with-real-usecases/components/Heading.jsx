@@ -1,6 +1,6 @@
-import CuisineModal from './CuisineModal';
-import CuisineContext from '../context/CuisineContext';
-import { useContext } from 'react';
+import CuisineModal from "./CuisineModal";
+import CuisineContext from "../context/CuisineContext";
+import { useContext } from "react";
 const Heading = () => {
   const { activeCuisine } = useContext(CuisineContext);
   return (
@@ -10,7 +10,9 @@ const Heading = () => {
       ) : (
         <>
           You are looking at
-          <span style={{ fontWeight: 'bold', fontSize: '30px', margin: '0 10px' }}>
+          <span
+            style={{ fontWeight: "bold", fontSize: "30px", margin: "0 10px" }}
+          >
             {activeCuisine}
           </span>
           recipes

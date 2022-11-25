@@ -11,7 +11,7 @@ const Todo = ({
   setTodos,
   editId,
   setEditId,
-  setIsEditing
+  setIsEditing,
 }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((element) => element.id !== todo.id));
@@ -23,7 +23,7 @@ const Todo = ({
         if (item.id === todo.id) {
           return {
             ...item,
-            completed: !item.completed
+            completed: !item.completed,
           };
         }
         return item;
@@ -41,15 +41,17 @@ const Todo = ({
   };
 
   return (
-    <div className="todo">
-      <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>{text}</li>
-      <button onClick={completeHandler} className="complete-btn">
+    <div className='todo'>
+      <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+        {text}
+      </li>
+      <button onClick={completeHandler} className='complete-btn'>
         <FaCheck />
       </button>
-      <button onClick={editHandler} className="edit-btn">
+      <button onClick={editHandler} className='edit-btn'>
         <FaEdit />
       </button>
-      <button onClick={deleteHandler} className="trash-btn">
+      <button onClick={deleteHandler} className='trash-btn'>
         <FaTrash />
       </button>
     </div>

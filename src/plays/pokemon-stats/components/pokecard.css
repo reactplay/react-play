@@ -19,7 +19,7 @@
   z-index: 9999;
   backdrop-filter: blur(20px);
 }
-.pokemon-card:hover {
+.pokemon-card:hover{
   transform: scale(1.01);
 }
 
@@ -32,7 +32,7 @@
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
 }
-.poke-name {
+.poke-name{
   font-weight: 900;
   font-size: 25px;
   font-style: italic;
@@ -62,7 +62,8 @@
   flex-direction: column;
 }
 
-.one-third {
+
+.one-third{
   display: flex;
   color: white;
   font-family: serif;
@@ -77,12 +78,12 @@
   background-color: #fcfcfd;
   border-radius: 4px;
   border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
-    #d6d6e7 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   box-sizing: border-box;
   color: #36395a;
   display: inline-flex;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   height: 35px;
   justify-content: center;
   line-height: 1;
@@ -96,16 +97,16 @@
   font-size: 18px;
 }
 
-.stat-value {
+.stat-value{
   margin-left: 6px;
 }
 
-@media (max-width: 764px) {
-  .pokemon-stats {
-    padding: 3px 3px;
-  }
+@media (max-width: 764px){
+   .pokemon-stats{
+     padding: 3px 3px;
+   }
 
-  .one-third {
+   .one-third{
     padding: 2px 2px;
-  }
+   }
 }

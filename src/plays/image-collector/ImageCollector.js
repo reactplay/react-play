@@ -1,14 +1,14 @@
-import PlayHeader from 'common/playlists/PlayHeader';
-import { useState } from 'react';
-import './styles.css';
+import PlayHeader from "common/playlists/PlayHeader";
+import { useState } from "react";
+import "./styles.css";
 
 function ImageCollector(props) {
-  const [urlInput, setUrlInput] = useState('');
+  const [urlInput, setUrlInput] = useState("");
   const [images, setImages] = useState([]);
 
   function addImage() {
     setImages(images.concat(urlInput));
-    setUrlInput('');
+    setUrlInput("");
   }
 
   return (
@@ -38,7 +38,9 @@ function ImageCollector(props) {
                   </div>
                 ))
               ) : (
-                <p className="empty-message">Images will appear once you add them</p>
+                <p className="empty-message">
+                  Images will appear once you add them
+                </p>
               )}
             </div>
           </div>

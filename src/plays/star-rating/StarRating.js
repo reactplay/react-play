@@ -1,7 +1,7 @@
-import PlayHeader from 'common/playlists/PlayHeader';
-import { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
-import './styles.css';
+import PlayHeader from "common/playlists/PlayHeader";
+import { useState } from "react";
+import { FaStar } from "react-icons/fa";
+import "./styles.css";
 
 // WARNING: Do not change the entry componenet name
 function StarRating(props) {
@@ -14,18 +14,18 @@ function StarRating(props) {
   const getReviewLabel = (rating) => {
     switch (rating) {
       case 1:
-        return `Very bad ${String.fromCodePoint('0x1F922')}`;
+        return `Very bad ${String.fromCodePoint("0x1F922")}`;
       case 2:
-        return `Bad ${String.fromCodePoint('0x1F97A')}`;
+        return `Bad ${String.fromCodePoint("0x1F97A")}`;
       case 3:
-        return `Okay ${String.fromCodePoint('0x1F60C')}`;
+        return `Okay ${String.fromCodePoint("0x1F60C")}`;
       case 4:
-        return `Good ${String.fromCodePoint('0x1F60A')}`;
+        return `Good ${String.fromCodePoint("0x1F60A")}`;
       case 5:
-        return `Excellent ${String.fromCodePoint('0x1F929')}`;
+        return `Excellent ${String.fromCodePoint("0x1F929")}`;
 
       default:
-        return '';
+        return "";
     }
   };
 
@@ -37,7 +37,9 @@ function StarRating(props) {
           {/* Your Code Starts Here */}
 
           <div className="star-wrapper">
-            <h2 className="review-label">{getReviewLabel(isHover > 0 ? isHover : rating)}</h2>
+            <h2 className="review-label">
+              {getReviewLabel(isHover > 0 ? isHover : rating)}
+            </h2>
 
             <div className="star">
               {[...Array(5)].map((_, index) => {
@@ -56,7 +58,10 @@ function StarRating(props) {
                       className="FaStar"
                       size={80}
                       style={{
-                        color: ratingValue <= (hoverFill || rating) ? '#ffe101' : '#ccc'
+                        color:
+                          ratingValue <= (hoverFill || rating)
+                            ? "#ffe101"
+                            : "#ccc",
                       }}
                       onChange={(ratingValue) => setRating(ratingValue)}
                       value={ratingValue}

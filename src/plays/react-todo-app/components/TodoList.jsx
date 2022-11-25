@@ -9,11 +9,11 @@ const TodoList = ({
   editId,
   setEditId,
   filtered,
-  setIsEditing
+  setIsEditing,
 }) => {
   return (
-    <div className="todo-container">
-      <ul className="todo-list">
+    <div className='todo-container'>
+      <ul className='todo-list'>
         {filtered.map((todo) => (
           <Todo
             text={todo.text}

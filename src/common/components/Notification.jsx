@@ -1,10 +1,10 @@
-import React from 'react';
-import { ToastContainer } from 'react-toastify';
+import React from "react";
+import { ToastContainer } from "react-toastify";
 
 function Notification() {
   return (
     <ToastContainer
-      position="top-right"
+      position='top-right'
       autoClose={5000}
       hideProgressBar={false}
       newestOnTop={false}
@@ -13,7 +13,7 @@ function Notification() {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme="light"
+      theme='light'
     />
   );
 }

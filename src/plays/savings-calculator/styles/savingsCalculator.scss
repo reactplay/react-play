@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 .savingsCalculator__container {
   display: flex;
@@ -11,7 +11,8 @@
 .savingsCalculator {
   display: flex;
   align-items: center;
-  box-shadow: 7px 7px 20px 5px rgba(0, 0, 0, 0.1), -7px -7px 20px 5px rgba(255, 255, 255, 0.868);
+  box-shadow: 7px 7px 20px 5px rgba(0, 0, 0, 0.1),
+    -7px -7px 20px 5px rgba(255, 255, 255, 0.868);
   border-radius: 16px;
   color: $text;
   padding: 4vh 3vw;

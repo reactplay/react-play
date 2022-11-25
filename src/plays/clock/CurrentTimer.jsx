@@ -1,9 +1,11 @@
+
 import PlayHeader from 'common/playlists/PlayHeader';
 import { useEffect, useState } from 'react';
 
-import './clock.css';
+import "./clock.css";
 
 const CurrentTimer = (props) => {
+
   // Create a real-time date time counter
   const [date, setDate] = useState(new Date());
 
@@ -11,11 +13,11 @@ const CurrentTimer = (props) => {
     const interval = setInterval(() => {
       setDate(new Date());
     }, 1000);
-
+    
     return () => clearInterval(interval);
   }, []);
 
-  return (
+  return(
     <>
       <div className="play-details">
         <PlayHeader play={props} />
@@ -30,6 +32,6 @@ const CurrentTimer = (props) => {
       </div>
     </>
   );
-};
+}
 
 export default CurrentTimer;

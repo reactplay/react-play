@@ -6,18 +6,18 @@ When you hit your low point motivation is what you need. This play is designed t
 
 ## Play Demographic
 
-- Language: JavaScript
-- Level: Intermediate
+-  Language: JavaScript
+-  Level: Intermediate
 
 ## Creator Information
 
-- User: Hamza Ali
-- Github Link: https://github.com/hat52
-- Blog: null
+-  User: Hamza Ali
+-  Github Link: https://github.com/hat52
+-  Blog: null
 
 ## What will you learn?
 
-- Functional Component.
-- Hooks
-- JavaScript array methods
-- JavaScript basic
+-  Functional Component.
+-  Hooks
+-  JavaScript array methods
+-  JavaScript basic

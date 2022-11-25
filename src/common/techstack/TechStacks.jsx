@@ -1,4 +1,4 @@
-import { TechStackInfo } from './TechStackInfo';
+import { TechStackInfo } from "./TechStackInfo";
 
 const TechStack = () => {
   return (
@@ -9,18 +9,12 @@ const TechStack = () => {
         {TechStackInfo.map((Item, idx) => {
           if (Item.type === 'icon') {
             return (
-              <a
-                key={idx}
-                target="_blank"
-                rel="noreferrer"
-                href={Item.link}
-                className="brand-tech-stack"
-              >
+              <a key={idx} target="_blank" rel="noreferrer" href={Item.link} className="brand-tech-stack">
                 {/* eslint-disable-next-line react/jsx-pascal-case */}
                 <Item.comp size="80" className="icon" />
                 <p>{Item.text}</p>
               </a>
-            );
+            )
           } else if (Item.type === 'image') {
             return (
               <a
@@ -30,17 +24,17 @@ const TechStack = () => {
                 href={Item.link}
                 className="brand-tech-stack"
               >
-                <img src={Item.comp} alt={Item.comp} className="image" />
+                <img src={Item.comp} alt={Item.comp} className="image"/>
                 <p className="text-center">{Item.text}</p>
               </a>
-            );
+            )
           } else {
-            return null;
+            return null
           }
         })}
       </div>
     </main>
-  );
+  )
 };
 
 export default TechStack;

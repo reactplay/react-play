@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { AppProps, IPageData } from './contract';
-import './index.css';
+import * as React from "react";
+import { AppProps, IPageData } from "./contract";
+import "./index.css";
 
 const Page = (props: AppProps) => {
   const data: IPageData = props.pagedata;

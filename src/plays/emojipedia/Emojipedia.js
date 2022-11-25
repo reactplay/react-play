@@ -1,21 +1,21 @@
-import { useEffect, useState, useRef, useTransition } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
-import { FiSearch } from 'react-icons/fi';
+import { useEffect, useState, useRef, useTransition } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { FiSearch } from "react-icons/fi";
 
 // Project local imports
-import PlayHeader from 'common/playlists/PlayHeader';
-import useFetch from 'common/hooks/useFetch';
-import EmojiCard from './components/EmojiCard';
-import SkeletonCard from './components/SkeletonCard';
-import { API_BASE_URL } from './config';
+import PlayHeader from "common/playlists/PlayHeader";
+import useFetch from "common/hooks/useFetch";
+import EmojiCard from "./components/EmojiCard";
+import SkeletonCard from "./components/SkeletonCard";
+import { API_BASE_URL } from "./config";
 
 function Emojipedia(props) {
   // Your Code Start below.
   const [emojisList, setEmojisList] = useState([]);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [isPending, startTransition] = useTransition();
   const inputRef = useRef(null);
-
+  
   // Fetch all the emojis
   const { data, loading, error } = useFetch(API_BASE_URL);
 
@@ -23,7 +23,7 @@ function Emojipedia(props) {
 
   // Copy emoji handler
   const handleCopyEmoji = async (emojiCharacter) => {
-    if ('clipboard' in navigator) {
+    if ("clipboard" in navigator) {
       await navigator.clipboard.writeText(emojiCharacter);
       toast.success(`Emoji ${emojiCharacter} copied to clipboard.`);
     }
@@ -33,11 +33,12 @@ function Emojipedia(props) {
   useEffect(() => {
     const delayFn = setTimeout(() => {
       if (query) {
-        startTransition(() => {
-          setEmojisList(
-            data.filter((emoji) => emoji?.unicodeName?.toLowerCase().includes(query?.toLowerCase()))
+        startTransition(()=> {
+            setEmojisList(data.filter((emoji) =>
+              emoji?.unicodeName?.toLowerCase().includes(query?.toLowerCase())
+            )
           );
-        });
+        })
       } else {
         setEmojisList(data);
       }
@@ -47,7 +48,7 @@ function Emojipedia(props) {
 
   useEffect(() => {
     if (error) {
-      toast.error('Something went wrong');
+      toast.error("Something went wrong");
     }
 
     // Set Emoji list
@@ -82,31 +83,39 @@ function Emojipedia(props) {
 
             <div className="text-white grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
               {loading
-                ? Array.from(Array(25).keys()).map((_, index) => <SkeletonCard key={index} />)
-                : isPending
-                ? Array.from(Array(25).keys()).map((_, index) => <SkeletonCard key={index} />)
-                : emojisList?.map((emoji, index) => (
-                    <EmojiCard key={index} emoji={emoji} handleCopyEmoji={handleCopyEmoji} />
+                ? Array.from(Array(25).keys()).map((_, index) => (
+                    <SkeletonCard key={index} />
+                  ))
+                : isPending ? 
+                    Array.from(Array(25).keys()).map((_, index) => (
+                      <SkeletonCard key={index} />
+                    )) :
+                    emojisList?.map((emoji, index) => (
+                    <EmojiCard
+                      key={index}
+                      emoji={emoji}
+                      handleCopyEmoji={handleCopyEmoji}
+                    />
                   ))}
             </div>
 
-            {emojisList?.length === 0 &&
-              (error ? (
-                <div className="mt-20">
-                  <p className="mb-3 text-center text-2xl font-semibold text-gray-200">
-                    Cannot load emojis, Please try again later...
-                  </p>
-                </div>
-              ) : (
-                <div className="mt-20">
-                  <p className="mb-3 text-center text-2xl font-semibold text-gray-200">
-                    Oops ...! No Emoji Found
-                  </p>
-                  <span className="text-center text-gray-300">
-                    We can't find any emoji matching your search, please try again
-                  </span>
-                </div>
-              ))}
+            {emojisList?.length === 0 && (
+              error ? 
+              <div className="mt-20">
+                <p className="mb-3 text-center text-2xl font-semibold text-gray-200">
+                  Cannot load emojis, Please try again later...
+                </p>
+              </div>
+              :
+              <div className="mt-20">
+                <p className="mb-3 text-center text-2xl font-semibold text-gray-200">
+                  Oops ...! No Emoji Found
+                </p>
+                <span className="text-center text-gray-300">
+                  We can't find any emoji matching your search, please try again
+                </span>
+              </div>
+            )}
 
             {/* Toaster to show errors & copied emoji message */}
             <Toaster position="top-center" />

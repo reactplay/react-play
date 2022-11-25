@@ -11,7 +11,6 @@ An Interesting use of p5.js and along with recursion. Sierpinski Triangle is an 
 - Level: Beginner
 
 - External packages: react-p5, p5
-
 ## Creator Information
 
 - User: Bhavika
@@ -23,7 +22,6 @@ An Interesting use of p5.js and along with recursion. Sierpinski Triangle is an 
 - Linkedin: https://linkedin.com/bhavika-tibrewal
 
 ## Implementation Details
-
 p5.js is a JavaScript library for creative coding. It has a full set of drawing functionality.
 
 The `SierpinskiTriangle` component is the first in all. You will see the Triangle filled with a different set of colours each time you refresh or resize the website.
@@ -37,6 +35,7 @@ The `SierpinskiTriangle` component is the first in all. You will see the Triangl
 - We find the mid point of the 3 vectors and create a new triangle from it.
 
 - We have a `generateRandomColor()` utility function that generates random color to fill the triangle with.
+
 
 ## Contributing
 

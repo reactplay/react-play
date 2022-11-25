@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import data from './ideas.json';
-import { IoAddSharp } from 'react-icons/io5';
-import { RiChatNewLine } from 'react-icons/ri';
-import LevelBadge from 'common/components/LevelBadge';
-import './playIdeas.css';
+import { useState, useEffect } from "react";
+import data from "./ideas.json";
+import { IoAddSharp } from "react-icons/io5";
+import { RiChatNewLine } from "react-icons/ri";
+import LevelBadge from "common/components/LevelBadge";
+import "./playIdeas.css";
 
 const PlayIdeas = () => {
   const [ideas, setIdeas] = useState([]);
   const [filteredIdeas, setFilteredIdeas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [filteredLevel, setFilteredLevel] = useState('');
+  const [filteredLevel, setFilteredLevel] = useState("");
 
   useEffect(() => {
     try {
@@ -32,10 +32,12 @@ const PlayIdeas = () => {
   }, []);
 
   useEffect(() => {
-    if (filteredLevel === '') {
+    if (filteredLevel === "") {
       setFilteredIdeas(data.ideas);
     } else {
-      const filteredIdeas = ideas.filter((idea) => idea.level === filteredLevel);
+      const filteredIdeas = ideas.filter(
+        (idea) => idea.level === filteredLevel
+      );
       setFilteredIdeas(filteredIdeas);
     }
   }, [filteredLevel, ideas]);
@@ -62,8 +64,8 @@ const PlayIdeas = () => {
               <span className="header-title-badge">{filteredIdeas.length}</span>
             </h1>
             <p className="header-desc">
-              Looking for project ideas to practice React? Great, you have landed on the right
-              place. Here are some ideas to get you started.
+              Looking for project ideas to practice React? Great, you have landed on the right place. Here are some ideas to get you
+              started.
             </p>
           </div>
           <div className="playideas-levels-pills">
@@ -82,14 +84,7 @@ const PlayIdeas = () => {
               </label>
             </div>
             <div className="level-pill">
-              <input
-                type="radio"
-                name="level"
-                value="Beginner"
-                id="beginner-id"
-                className="level-pill-control"
-                onChange={onValueChange}
-              />
+              <input type="radio" name="level" value="Beginner" id="beginner-id" className="level-pill-control" onChange={onValueChange} />
               <label htmlFor="beginner-id" className="level-pill-label">
                 BEGINNER
               </label>
@@ -108,14 +103,7 @@ const PlayIdeas = () => {
               </label>
             </div>
             <div className="level-pill">
-              <input
-                type="radio"
-                name="level"
-                value="Advanced"
-                id="advanced-id"
-                className="level-pill-control"
-                onChange={onValueChange}
-              />
+              <input type="radio" name="level" value="Advanced" id="advanced-id" className="level-pill-control" onChange={onValueChange} />
               <label htmlFor="advanced-id" className="level-pill-label">
                 ADVANCED
               </label>
@@ -124,7 +112,7 @@ const PlayIdeas = () => {
         </div>
         <div className="playideas-body">
           <ul className="list-playideas">
-            {filteredIdeas.map((idea) => (
+            {filteredIdeas.map(idea => (
               <li className="list-playideas-item" key={idea.id}>
                 <h2 className="idea-title">{idea.title}</h2>
                 <p className="idea-desc">{idea.description}</p>
@@ -133,11 +121,7 @@ const PlayIdeas = () => {
                 </p>
                 <div className="idea-actions">
                   {process.env.NODE_ENV === 'development' ? (
-                    <a
-                      href="/plays/create"
-                      rel="noopener noreferrer"
-                      className="btn-primary action-btn"
-                    >
+                    <a href="/plays/create" rel="noopener noreferrer" className="btn-primary action-btn">
                       <IoAddSharp className="icon" />
                       <span className="btn-label">Create</span>
                       <span className="create-button-badge">beta</span>
@@ -169,7 +153,7 @@ const PlayIdeas = () => {
         </div>
       </div>
     </main>
-  );
+  )
 };
 
 export default PlayIdeas;
