@@ -1,0 +1,11 @@
+node_modules
+.github
+.build;
+package-lock.json;
+package.json;
+yarn.lock;
+tailwind.config.js;
+tsconfig.json;
+postcss.config.js;
+Dockerfile.DEV;
+Dockerfile.PROD;
