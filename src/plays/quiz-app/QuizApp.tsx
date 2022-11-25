@@ -178,9 +178,9 @@ function QuizApp(props: any) {
           {questions.map((q: QuestionProps) => (
             <div className="flex" key={q.qNo}>
               <AiOutlineCheck
-                style={{ visibility: q.qStatus === 1 ? 'visible' : 'hidden' }}
-                size={20}
                 color="#021C1E"
+                size={20}
+                style={{ visibility: q.qStatus === 1 ? 'visible' : 'hidden' }}
               />
               <button
                 className={`text-left ml-2 hover:text-blue-500
@@ -205,7 +205,6 @@ function QuizApp(props: any) {
             <div className="flex flex-col">
               {questions[question].answers.map((answer: string, index: number) => (
                 <button
-                  disabled={questions[question].qStatus === 1 ? true : false}
                   className={`text-left py-2 border-b-2 ${
                     questions[question].qStatus === 1
                       ? 'opacity-50 cursor-auto'
@@ -218,6 +217,7 @@ function QuizApp(props: any) {
                       ? 'border-[#021C1E]'
                       : 'border-b-0'
                   } ${selectedAns === index ? 'text-blue-700' : ''}`}
+                  disabled={questions[question].qStatus === 1 ? true : false}
                   key={index}
                   onClick={() => handleAnswer(questions[question].qNo, index)}
                 >
@@ -232,9 +232,9 @@ function QuizApp(props: any) {
                 <CgEditFlipH size={40} />
               </button>
               {isWin === false ? (
-                <AiOutlineClose size={40} color="red" />
+                <AiOutlineClose color="red" size={40} />
               ) : isWin === true ? (
-                <AiOutlineCheck size={40} color="#021C1E" />
+                <AiOutlineCheck color="#021C1E" size={40} />
               ) : (
                 ''
               )}

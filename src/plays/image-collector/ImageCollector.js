@@ -20,8 +20,8 @@ function ImageCollector(props) {
             <div className="input-container">
               <input
                 className="input-url"
-                type="url"
                 placeholder="Enter image url"
+                type="url"
                 value={urlInput}
                 onChange={(e) => setUrlInput(e.target.value)}
               />
@@ -34,7 +34,7 @@ function ImageCollector(props) {
               {images.length > 0 ? (
                 images.map((image, index) => (
                   <div className="image-wrapper">
-                    <img className="image" src={image} alt="grid" key={index} />
+                    <img alt="grid" className="image" key={index} src={image} />
                   </div>
                 ))
               ) : (

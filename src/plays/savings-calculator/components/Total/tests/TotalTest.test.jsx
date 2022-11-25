@@ -6,7 +6,7 @@ describe('Total: Basic rendering', () => {
     const total = 2327.99;
     const currency = 'INR';
 
-    render(<Total total={total} currency={currency} />);
+    render(<Total currency={currency} total={total} />);
 
     const totalElement = screen.getByText(/₹/);
 

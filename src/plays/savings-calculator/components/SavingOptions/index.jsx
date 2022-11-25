@@ -46,10 +46,10 @@ function SavingOptions(props) {
           <div className="savingOptions__inputGroup">
             <div className="savingOptions__inputPrepend">{getCurrencySymbol(currency)}</div>
             <input
-              type="number"
               className="savingOptions__formControl"
               id="starting-balance"
               placeholder="Enter initial balance"
+              type="number"
               value={startingBalance}
               onChange={(e) => setStartingBalance(e.target.value)}
             />
@@ -60,10 +60,10 @@ function SavingOptions(props) {
           <div className="savingOptions__inputGroup">
             <div className="savingOptions__inputPrepend">{getCurrencySymbol(currency)}</div>
             <input
-              type="number"
               className="savingOptions__formControl"
               id="monthly-contribution"
               placeholder="Enter monthly contribution"
+              type="number"
               value={monthlyContribution}
               onChange={(e) => setMonthlyContribution(e.target.value)}
             />
@@ -73,10 +73,10 @@ function SavingOptions(props) {
           <label htmlFor="period">Period:</label>
           <div className="savingOptions__inputGroup">
             <input
-              type="number"
               className="savingOptions__formControl"
               id="period"
               placeholder="Enter period of contribution"
+              type="number"
               value={period}
               onChange={(e) => setPeriod(e.target.value)}
             />
@@ -85,12 +85,12 @@ function SavingOptions(props) {
         <div className="savingOptions__periodChoice">
           <div className="savingOptions__formRadio">
             <input
-              className="savingOptions__radioInput"
-              type="radio"
-              name="period-choice"
-              id="period-choice-years"
-              value="Years"
               defaultChecked
+              className="savingOptions__radioInput"
+              id="period-choice-years"
+              name="period-choice"
+              type="radio"
+              value="Years"
               onChange={(e) => setPeriodChoice(e.target.value)}
             />
             <label className="savingOptions__radioLabel" htmlFor="period-choice-years">
@@ -100,9 +100,9 @@ function SavingOptions(props) {
           <div className="savingOptions__formRadio">
             <input
               className="savingOptions__radioInput"
-              type="radio"
-              name="period-choice"
               id="period-choice-months"
+              name="period-choice"
+              type="radio"
               value="Months"
               onChange={(e) => setPeriodChoice(e.target.value)}
             />
@@ -115,16 +115,16 @@ function SavingOptions(props) {
           <label htmlFor="annual-interest-rate">Annual Interest Rate (%):</label>
           <div className="savingOptions__inputGroup">
             <input
-              type="number"
               className="savingOptions__formControl"
               id="annual-interest-rate"
               placeholder="Enter interest rate per annum"
+              type="number"
               value={annualInterest}
               onChange={(e) => setAnnualInterest(e.target.value)}
             />
           </div>
         </div>
-        <button type="submit" className="savingOptions__calculate" onClick={handleSubmit}>
+        <button className="savingOptions__calculate" type="submit" onClick={handleSubmit}>
           Calculate Total
         </button>
       </form>

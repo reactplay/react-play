@@ -45,15 +45,15 @@ function ImageCompressor(props) {
           {/* Your Code Starts Here */}
           <div className="image-compressor">
             <input
+              accept="image/*"
               className="image-compressor__input"
               type="file"
-              accept="image/*"
               onChange={handleImageUpload}
             />
             <div className="image-compressor__imageContainer">
               <div className="image-compressor__box">
                 <div className="image-compressor__image">
-                  {selectedFile && <img src={createObjectURL(selectedFile)} alt="Original Image" />}
+                  {selectedFile && <img alt="Original Image" src={createObjectURL(selectedFile)} />}
                 </div>
                 <p>{selectedFileSize} MB</p>
               </div>
@@ -63,7 +63,7 @@ function ImageCompressor(props) {
               <div className="image-compressor__box">
                 <div className="image-compressor__image">
                   {compressedFile && (
-                    <img src={createObjectURL(compressedFile)} alt="Compressed Image" />
+                    <img alt="Compressed Image" src={createObjectURL(compressedFile)} />
                   )}
                 </div>
                 <p>{compressedFileSize} MB</p>
@@ -71,7 +71,7 @@ function ImageCompressor(props) {
             </div>
             {compressedFile && (
               <button className="image-compressor__btn">
-                <a href={createObjectURL(compressedFile)} download>
+                <a download href={createObjectURL(compressedFile)}>
                   Download
                 </a>
               </button>

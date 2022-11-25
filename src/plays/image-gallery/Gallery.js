@@ -15,6 +15,7 @@ export default function Gallery() {
   const filterResult = (catItem) => {
     GalleryAPI.filter((currentData) => {
       speechHandler(msg);
+
       return currentData.type === catItem;
     });
   };

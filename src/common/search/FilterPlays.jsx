@@ -74,43 +74,43 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery, onClearAppliedFilte
         {loading && 'Loading Data'}
         {/* Clear All filters button */}
         <div className="modal-clear-filter">
-          <span onClick={onClearAppliedFilters} className="clear-all-filter-btn">
+          <span className="clear-all-filter-btn" onClick={onClearAppliedFilters}>
             Clear All
           </span>
         </div>
         <MultipleSelectCheckmarks
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          options={[defaultOption, ...levelOptions]}
           filterKey="level_id"
+          filterQuery={filterQuery}
           label="Level"
+          options={[defaultOption, ...levelOptions]}
+          setFilterQuery={setFilterQuery}
         />
       </div>
       <div className="form-group">
         <MultipleSelectCheckmarks
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          options={[defaultOption, ...tagOptions]}
           filterKey="tags"
+          filterQuery={filterQuery}
           label="Tags"
+          options={[defaultOption, ...tagOptions]}
+          setFilterQuery={setFilterQuery}
         />
       </div>
       <div className="form-group">
         <MultipleSelectCheckmarks
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          options={creatorOptions}
           filterKey="owner_user_id"
+          filterQuery={filterQuery}
           label="Creator"
+          options={creatorOptions}
+          setFilterQuery={setFilterQuery}
         />
       </div>
       <div className="form-group">
         <MultipleSelectCheckmarks
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          options={[defaultOption, ...languageOptions]}
           filterKey="language"
+          filterQuery={filterQuery}
           label="Language"
+          options={[defaultOption, ...languageOptions]}
+          setFilterQuery={setFilterQuery}
         />
       </div>
     </>
@@ -193,11 +193,6 @@ const FilterPlays = ({ reset }) => {
   return (
     <div className="search-filter">
       <Modal
-        title="Filter Plays By"
-        onClose={filterModalCloseBtnHandler}
-        onSubmit={handleFilter}
-        show={showModal}
-        cname="filter"
         children={
           <FilterPlaysModalBody
             filterQuery={modifiedFilterQuery}
@@ -209,23 +204,28 @@ const FilterPlays = ({ reset }) => {
           />
         }
         cname="filter"
+        cname="filter"
+        show={showModal}
         show={showModal}
         title="Filter Plays By"
+        title="Filter Plays By"
         onClose={filterModalCloseBtnHandler}
+        onClose={filterModalCloseBtnHandler}
+        onSubmit={handleFilter}
         onSubmit={handleFilter}
       />
 
       <button
+        className="btn-filter"
+        title="Filter Plays"
         onClick={() => {
           setShowModal(true);
           setIsFilterApplied(false);
         }}
-        className="btn-filter"
-        title="Filter Plays"
       >
         {noOfAppliedFilter === 0 ? null : <div className="badge">{noOfAppliedFilter}</div>}
 
-        <RiFilterFill className="icon" size="28px" color="var(--color-neutral-30)" />
+        <RiFilterFill className="icon" color="var(--color-neutral-30)" size="28px" />
       </button>
     </div>
   );

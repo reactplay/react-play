@@ -8,7 +8,7 @@ function Total(props) {
 
   return (
     <div className="savingCalculator__total">
-      <img src={PiggyBankImage} alt="piggy-bank" className="total__piggyBank" />
+      <img alt="piggy-bank" className="total__piggyBank" src={PiggyBankImage} />
       <div className="total__endBalance">
         <h3 className="total__heading">End Balance:</h3>
         <h1 className="total__value">

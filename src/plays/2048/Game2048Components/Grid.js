@@ -13,15 +13,19 @@ function Grid(props) {
     switch (e.key) {
       case 'ArrowUp':
         result = GameLogic.addCell(TransformGrid.shiftUp(props.grid), props);
+
         break;
       case 'ArrowRight':
         result = GameLogic.addCell(TransformGrid.shiftRight(props.grid), props);
+
         break;
       case 'ArrowDown':
         result = GameLogic.addCell(TransformGrid.shiftDown(props.grid), props);
+
         break;
       case 'ArrowLeft':
         result = GameLogic.addCell(TransformGrid.shiftLeft(props.grid), props);
+
         break;
       default:
     }
@@ -36,6 +40,7 @@ function Grid(props) {
   }
   useEffect(() => {
     window.addEventListener('keydown', handleKey);
+
     return () => {
       window.removeEventListener('keydown', handleKey);
     };

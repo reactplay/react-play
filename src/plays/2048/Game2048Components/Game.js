@@ -20,17 +20,18 @@ function Game(props) {
   }
 
   const handleGrid = (grid) => setGrid(grid);
+
   return (
     <div className="game_wrapper">
       <Grid
-        grid={grid}
-        setGridState={handleGrid}
-        score={props.score}
-        setScore={props.setScore}
         best={props.best}
+        grid={grid}
+        score={props.score}
         setBest={props.setBest}
-        status={props.status}
+        setGridState={handleGrid}
+        setScore={props.setScore}
         setStatus={props.setStatus}
+        status={props.status}
       />
     </div>
   );

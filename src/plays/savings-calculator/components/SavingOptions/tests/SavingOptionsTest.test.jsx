@@ -42,7 +42,7 @@ describe('Saving Options: Basic rendering and functionality', () => {
       total = result;
     };
 
-    render(<SavingOptions setTotal={setTotal} currency="INR" />);
+    render(<SavingOptions currency="INR" setTotal={setTotal} />);
 
     const calculateButton = screen.getByRole('button', { name: /Calculate/i });
     act(() => {

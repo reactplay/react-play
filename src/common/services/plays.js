@@ -40,6 +40,7 @@ const createPlay = (playObject) => {
   return Promise.all(promises)
     .then(async (res) => {
       await createAndRemoveTags(res?.[0]?.id, tagsTmp, tags).catch((err) => Promise.reject(err));
+
       return res?.[0]?.id;
     })
     .catch(() => Promise.reject(new Error('Error Updating play informations')));
@@ -62,7 +63,7 @@ const associateTag = (tag, play) => {
 
 const createAndRemoveTags = (playId, tagsTmp = [], actualTags = [], tags = []) => {
   // promise array to create tags
-  const createTagPromies = new Array();
+  const createTagPromies = [];
 
   // this loop will insert new tags which is not created at backend and also
   // will determine if the tag is created then insert the id into the tags array
@@ -86,7 +87,7 @@ const createAndRemoveTags = (playId, tagsTmp = [], actualTags = [], tags = []) =
 
   return Promise.all(createTagPromies) // creating tags which are newly added (doesnt have id)
     .then((res) => {
-      if (!!res?.length) {
+      if (res?.length) {
         // in response we are getting newly created tag's ids
         res.forEach((i) => {
           tags.push(i.id); // again pushing this ids into tag array to associte with play
@@ -104,6 +105,7 @@ const createAndRemoveTags = (playId, tagsTmp = [], actualTags = [], tags = []) =
         .then(() => {
           // geting promise array if any tag is deleted
           const deleteTagPromises = deleteATag(playId, actualTags, tagsTmp);
+
           return Promise.all(deleteTagPromises)
             .then((res) => Promise.resolve(res))
             .catch(() => Promise.reject(new Error('Error happened while deleting tag from play')));
@@ -116,7 +118,7 @@ const createAndRemoveTags = (playId, tagsTmp = [], actualTags = [], tags = []) =
 };
 
 export const deleteATag = (play_id, actualTags, newTags) => {
-  const toBeDeletedTags = new Array(); // to be deleted tag object (only play_id and tag_id)'
+  const toBeDeletedTags = []; // to be deleted tag object (only play_id and tag_id)'
   actualTags.forEach((tag) => {
     const toBeDelete = newTags.find((i) => !!i.id && i.id === tag.id);
     if (!toBeDelete) {
@@ -125,6 +127,7 @@ export const deleteATag = (play_id, actualTags, newTags) => {
       toBeDeletedTags.push(promise);
     }
   });
+
   return toBeDeletedTags; // array of promises to be resolved or rejected
 };
 

@@ -73,8 +73,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md}' --config ./.prettierrc"
+    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md} --config ./.prettierrc"
   },
   "reactSnap": {
     "puppeteerArgs": [

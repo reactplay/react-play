@@ -20,6 +20,7 @@ export const constructLevelInfo = (lvlData, currLvl) => {
 export const constructTagInfo = (tagData, currTags) => {
   if (!currTags.length) return [];
   const tagArr = currTags?.map((i) => i.tag.name);
+
   return tagData.filter((item) => tagArr.includes(item.name));
 };
 
@@ -34,6 +35,7 @@ export const createStateObject = (existingObj, storedData) => {
   const levelInfo = constructLevelInfo(levelData, level);
   const tagsInfo = constructTagInfo(tags, play_tags);
   const languageInfo = constructLanguageInfo(language);
+
   return {
     name,
     description,

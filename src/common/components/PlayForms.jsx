@@ -23,12 +23,12 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
       case 'input':
         return (
           <TextField
-            id={field.id}
-            label={field.plaeholder}
-            value={formData[field.datafield]}
-            size="small"
             className="w-full"
             disabled={checkDisabledInputs(field.datafield)}
+            id={field.id}
+            label={field.plaeholder}
+            size="small"
+            value={formData[field.datafield]}
             {...field}
             onChange={(e) => handleChange(field.datafield, e.target.value)}
           />
@@ -36,14 +36,17 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
       case 'select':
         return (
           <Autocomplete
-            id={field.datafield}
-            size="small"
-            options={field.options || []}
-            getOptionLabel={(option) => option.name || option[field.fieldName] || option}
             filterSelectedOptions
-            multiple={field.multiple}
-            freeSolo={field.freeSolo}
             disabled={checkDisabledInputs(field.datafield)}
+            freeSolo={field.freeSolo}
+            getOptionLabel={(option) => option.name || option[field.fieldName] || option}
+            id={field.datafield}
+            multiple={field.multiple}
+            options={field.options || []}
+            renderInput={(params) => (
+              <TextField {...params} placeholder={field.placeholder} size="small" />
+            )}
+            size="small"
             value={
               !formData[field.datafield] ? (field.multiple ? [] : '') : formData[field.datafield]
             }
@@ -64,9 +67,6 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
               }
               handleChange(field.datafield, updatedval);
             }}
-            renderInput={(params) => (
-              <TextField {...params} size="small" placeholder={field.placeholder} />
-            )}
           />
         );
       default:
@@ -103,6 +103,7 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
         }
       }
     });
+
     return res;
   };
 
@@ -115,9 +116,9 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
         <hr />
         <div className="p-8 h-full flex items-center">
           <Button
+            disabled={isFieldsAreInValid()}
             size="small"
             variant="contained"
-            disabled={isFieldsAreInValid()}
             onClick={onSubmit.bind(null, formData)}
           >
             {!isEditPlay ? 'Create the awesome' : 'Edit Play'}

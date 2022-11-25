@@ -25,6 +25,7 @@ const shiftRight = (arr) => {
 
   result = [null, null, null, null].concat(arr.filter((i) => i != null));
   result = result.slice(result.length - 4);
+
   return result;
 };
 

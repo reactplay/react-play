@@ -60,18 +60,20 @@ const SierpinskiTriangle = (props: any) => {
     p.resizeCanvas(width * multiplier, height * multiplier);
     setWindowSize([p.windowWidth, p.windowHeight]);
   };
+
   return (
     <div className="play-details">
       <PlayHeader play={props} />
       <div className="play-details-body">
         <Sketch
           className="flex items-center justify-center"
-          setup={setup}
           draw={draw}
+          setup={setup}
           windowResized={updateWindowSize}
         />
       </div>
     </div>
   );
 };
+
 export default SierpinskiTriangle;

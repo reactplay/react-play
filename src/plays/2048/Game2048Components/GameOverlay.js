@@ -12,10 +12,11 @@ function GameOverlay(props) {
 
   {
     isStatusOver ? over.play() : over.pause();
-  } //Play game over sound effect
+  } // Play game over sound effect
   {
     isStatusWon === 'win' ? win.play() : win.pause();
-  } //Play game win sound effect
+  } // Play game win sound effect
+
   return (
     <>
       <div

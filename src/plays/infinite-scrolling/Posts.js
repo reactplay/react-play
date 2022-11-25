@@ -51,11 +51,11 @@ const Posts = ({ posts }) => {
       <div className="infinite-scrolling__Container">
         {displayPosts.map((post, idx) => (
           <div
-            key={post.id}
             className="infinite-scrolling__Container__Post"
+            key={post.id}
             ref={idx === displayPosts.length - 1 ? setLastPost : null}
           >
-            <img src={post.url} alt={`Post No: ${idx + 1}`} />
+            <img alt={`Post No: ${idx + 1}`} src={post.url} />
             <h5>{post.title}</h5>
           </div>
         ))}

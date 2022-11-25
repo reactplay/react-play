@@ -16,15 +16,15 @@ export default function Modal(props) {
   return (
     <>
       <button
-        onClick={toggleModal}
         className={`${props.status === 'over' ? 'hide' : 'twenty-forty-eight-btn-modal'}`}
+        onClick={toggleModal}
       >
         <FaRegQuestionCircle />
       </button>
 
       {modal && (
         <div className="twenty-forty-eight-modal">
-          <div onClick={toggleModal} className="twenty-forty-eight-overlay"></div>
+          <div className="twenty-forty-eight-overlay" onClick={toggleModal} />
           <div className="twenty-forty-eight-modal-content">
             <h2 className="mb-4 font-extrabold">HOW TO PLAY</h2>
             <p className="twenty-forty-eight-modal-para-one">

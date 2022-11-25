@@ -84,14 +84,15 @@ const PlayHeaderActions = ({ play }) => {
 
   const handleEditPlay = () => {
     const generateLink = `/editplay/${play.github}/${play.slug}`;
+
     return navigate(generateLink);
   };
 
   return (
     <>
-      <Like onLikeClick={!loading ? onLikeClick : null} likeObj={likeObj} />
+      <Like likeObj={likeObj} onLikeClick={!loading ? onLikeClick : null} />
       <button className="action">
-        <AiFillEdit onClick={handleEditPlay} size={24} className="icon" />
+        <AiFillEdit className="icon" size={24} onClick={handleEditPlay} />
       </button>
       <button className="action badged" onClick={() => setShowComment(true)}>
         <BiComment className="icon" size="24px" />

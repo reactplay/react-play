@@ -40,8 +40,8 @@ const NoCreationInProdScreen = () => {
         <a
           className="text-link-default"
           href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
         >
           read this
         </a>
@@ -87,11 +87,13 @@ const CreatePlay = () => {
         const checkPlayOwenership = data?.user?.id === userData?.id;
         if (checkPlayOwenership) {
           actualPlayTags.current = constructTagInfo(storedData.tags, data?.play_tags);
+
           return setState({
             creator: data.user?.id,
             formData: createStateObject(data, storedData)
           });
         }
+
         return setState({ creator: null });
       } catch (err) {
         setState({ errorMessage: err?.message ?? 'Something Went Wrong' });
@@ -129,6 +131,7 @@ const CreatePlay = () => {
             }
           });
           await fetchPlayInfo();
+
           return setState({ storedData: { ...storedData } });
         })
         .finally(() => {
@@ -139,6 +142,7 @@ const CreatePlay = () => {
 
   const editPlayPromises = async (prepareObj, rest, id) => {
     const actualTags = actualPlayTags.current;
+
     return await Promise.all([
       submit(updatePlayInfo(prepareObj)),
       Plays.createAndRemoveTags(id, [...rest.tags], actualTags)
@@ -166,6 +170,7 @@ const CreatePlay = () => {
               }
             }
           });
+
           return navigate(`/plays/${username}/${playname}`, { replace: true });
         } catch (err) {
           return err;
@@ -186,8 +191,8 @@ const CreatePlay = () => {
   if (isLoading || isDataLoading) {
     return (
       <Loader
-        title={loadingText || 'Loading authentication information'}
         subtitle="Please wait...."
+        title={loadingText || 'Loading authentication information'}
       />
     );
   }
@@ -200,23 +205,24 @@ const CreatePlay = () => {
     return null;
   } else if (!isAuthenticated && isEditPlay) {
     window.location = NHOST.AUTH_URL(window.location.href, 'github');
+
     return null;
   } else {
     initializeData();
   }
 
   if (isDataLoading) {
-    <Loader title={'Loading data'} subtitle="Please wait...." />;
+    <Loader subtitle="Please wait...." title="Loading data" />;
   }
 
   if (isEditPlay && !creator && !errorMessage) {
     return (
-      <PageNotFound msg="You don't own this play" details="Only Owner is able to edit their play" />
+      <PageNotFound details="Only Owner is able to edit their play" msg="You don't own this play" />
     );
   }
 
   if (errorMessage) {
-    return <PageNotFound msg="Something Error Occured" details="apologize for the inconvenience" />;
+    return <PageNotFound details="apologize for the inconvenience" msg="Something Error Occured" />;
   }
 
   return (
@@ -241,10 +247,10 @@ const CreatePlay = () => {
             play
           </div>
           <PlayForm
-            isEditPlay={isEditPlay}
             fields={FIELD_TEMPLATE}
-            onSubmit={onSubmit}
             formDataObj={formData}
+            isEditPlay={isEditPlay}
+            onSubmit={onSubmit}
           />
         </div>
       </div>

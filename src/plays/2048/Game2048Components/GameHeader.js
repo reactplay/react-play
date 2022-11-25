@@ -7,7 +7,7 @@ function GameHeader(props) {
     <div className="twenty-forty-eight-header">
       <div className="twenty-forty-eight-header__row">
         <h1 className="twenty-forty-eight-header__title">2048</h1>
-        <Score score={props.score} best={props.best} />
+        <Score best={props.best} score={props.score} />
       </div>
       <div className="twenty-forty-eight-header__row">
         <button className="twenty-forty-eight-restart" onClick={props.resetGame}>

@@ -15,7 +15,7 @@ function SavingCalculator(props) {
         <div className="play-details-body">
           <div className="savingsCalculator__container">
             <div className="savingsCalculator">
-              <Total total={total} currency={currency} />
+              <Total currency={currency} total={total} />
               <SavingOptions currency={currency} setCurrency={setCurrency} setTotal={setTotal} />
             </div>
           </div>

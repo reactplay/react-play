@@ -59,6 +59,7 @@ export default function MultipleSelectCheckmarks({
         .map((option) => option?.label?.props?.children[1])
         .join(', ');
     }
+
     return options
       .filter((option) => filterQuery[filterKey].includes(option.value))
       .map((option) => option.label)
@@ -70,14 +71,14 @@ export default function MultipleSelectCheckmarks({
       <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">{label}</InputLabel>
         <Select
-          labelId="demo-multiple-checkbox-label"
-          id="demo-multiple-checkbox"
           multiple
+          MenuProps={{ classes: { paper: classes.menuPaper } }}
+          id="demo-multiple-checkbox"
+          input={<OutlinedInput label={label} />}
+          labelId="demo-multiple-checkbox-label"
+          renderValue={renderValueHandler}
           value={filterQuery[filterKey]}
           onChange={handleChange}
-          input={<OutlinedInput label={label} />}
-          renderValue={renderValueHandler}
-          MenuProps={{ classes: { paper: classes.menuPaper } }}
         >
           {options.map((option) => (
             <MenuItem key={option.value} value={option.value}>

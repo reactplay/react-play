@@ -29,17 +29,17 @@ function GameTwentyFourtyEight() {
 
   return (
     <>
-      <GameHeader score={score} best={best} resetGame={resetGame} />
-      <GameOverlay tryAgain={resetGame} status={status} setStatus={handleStatus} />
+      <GameHeader best={best} resetGame={resetGame} score={score} />
+      <GameOverlay setStatus={handleStatus} status={status} tryAgain={resetGame} />
       <Modal status={status} />
       <Game
+        best={best}
         key={game}
         score={score}
-        setScore={setScore}
-        best={best}
         setBest={cacheBest}
-        status={status}
+        setScore={setScore}
         setStatus={setStatus}
+        status={status}
       />
       <VideoMusic />
     </>

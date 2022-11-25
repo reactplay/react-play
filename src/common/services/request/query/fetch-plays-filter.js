@@ -27,8 +27,10 @@ function createObjectPayload(items, key, ifTags) {
       };
       obj.clause.conditions.push(prepareObject);
     });
+
     return { ...obj };
   }
+
   return {
     field: ifTags ? 'tag_id' : key,
     operator: 'eq',

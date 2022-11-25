@@ -24,6 +24,7 @@ function PlayFairCipher(props: any) {
           tmp.push(v);
       });
     while (tmp.length) newMatrix.push(tmp.splice(0, 5));
+
     return newMatrix;
   };
   const [matrix, setMatrix] = useState(matrixMaker(''));
@@ -39,13 +40,13 @@ function PlayFairCipher(props: any) {
   };
 
   const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
-    let newInput = validateInput(e.currentTarget.value);
+    const newInput = validateInput(e.currentTarget.value);
     setInput(newInput);
   };
 
   const ensureNoSameCharPair = (pt: string) => {
     let formattedPt = '';
-    let arr = pt.split('');
+    const arr = pt.split('');
     for (let i = 0; i < arr.length; i += 2) {
       formattedPt += arr[i];
       if (i + 1 === arr.length) {
@@ -58,13 +59,14 @@ function PlayFairCipher(props: any) {
         formattedPt += arr[i + 1];
       }
     }
+
     return formattedPt.length % 2 === 0 ? formattedPt : formattedPt + 'x'; // even length
   };
 
   // find index of alphabet in 5x5 matrix
   const findIndex = (v: string) => {
     for (let i = 0; i < matrix.length; i++) {
-      let index = matrix[i].indexOf(v);
+      const index = matrix[i].indexOf(v);
       if (index > -1) {
         return [i, index];
       }
@@ -72,7 +74,7 @@ function PlayFairCipher(props: any) {
   };
   const performEncryption = (e: React.MouseEvent<HTMLDivElement>) => {
     setPt('');
-    let newPt = ensureNoSameCharPair(input.replace('j', 'i'));
+    const newPt = ensureNoSameCharPair(input.replace('j', 'i'));
     let newCt = '';
     for (let i = 0; i < input.length; i += 2) {
       const pos1 = findIndex(newPt[i]);
@@ -120,6 +122,7 @@ function PlayFairCipher(props: any) {
     }
     setPt(newPt);
   };
+
   return (
     <>
       <div className="play-details">
@@ -131,19 +134,19 @@ function PlayFairCipher(props: any) {
             <form className="pf-form">
               <label htmlFor="input">Input : (Plain text or Cipher test)</label>
               <input
-                type="text"
-                placeholder="Enter plain text"
-                name="input"
                 id="input"
+                name="input"
+                placeholder="Enter plain text"
+                type="text"
                 value={input}
                 onChange={handleInputChange}
               />
               <label htmlFor="key">Key</label>
               <input
-                type="text"
-                placeholder="Enter key"
-                name="key"
                 id="key"
+                name="key"
+                placeholder="Enter key"
+                type="text"
                 value={key}
                 onChange={handleKeyChange}
               />
@@ -174,7 +177,7 @@ function PlayFairCipher(props: any) {
                 })}
               </table>
             </div>
-            <div id="output" className="font-bold text-xl mt-5">
+            <div className="font-bold text-xl mt-5" id="output">
               {ct && (
                 <>
                   Cipher Text : <span className="font-normal">{ct}</span>

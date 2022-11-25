@@ -14,15 +14,15 @@ const Navbar = ({ isConnected, connect }) => {
         </div>
         {isConnected() ? (
           <button
-            type="submit"
             className="bg-[#00f1fec5] hover:bg-[#00f1fe] rounded-3xl px-2 py-1 text-base md:px-5 md:py-2 md:text-xl font-semibold text-[#010326]"
+            type="submit"
           >
             Connected
           </button>
         ) : (
           <button
-            type="submit"
             className="bg-[#00f1fec5] hover:bg-[#00f1fe] rounded-3xl px-2 py-1 text-base md:px-5 md:py-2 md:text-xl font-semibold text-[#010326]"
+            type="submit"
             onClick={connect}
           >
             Connect Wallet

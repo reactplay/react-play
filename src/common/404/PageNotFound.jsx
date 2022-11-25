@@ -12,6 +12,7 @@ const PageNotFound = ({ loading, msg, details, Image }) => {
     const interval = setInterval(() => {
       setTimer(timer - 1);
     }, 1000);
+
     return () => {
       clearInterval(interval);
       if (timer === 0) {
@@ -27,7 +28,7 @@ const PageNotFound = ({ loading, msg, details, Image }) => {
   return (
     <main className="page-404">
       {Image ? (
-        <img src={Image} alt="under-development" className="under-development" />
+        <img alt="under-development" className="under-development" src={Image} />
       ) : (
         <Image404 className="page-404-image" />
       )}
