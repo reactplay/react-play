@@ -1,8 +1,5 @@
-const shiftLeft = arr => {
-  const result = arr
-    .filter(Boolean)
-    .concat([null, null, null, null])
-    .slice(0, 4);
+const shiftLeft = (arr) => {
+  const result = arr.filter(Boolean).concat([null, null, null, null]).slice(0, 4);
 
   for (let i = 0, len = arr.length; i < len; i++) {
     if (result[i] && result[i + 1] && result[i] === result[i + 1]) {
@@ -11,14 +8,11 @@ const shiftLeft = arr => {
     }
   }
 
-  return result
-    .filter(Boolean)
-    .concat([null, null, null, null])
-    .slice(0, 4);
+  return result.filter(Boolean).concat([null, null, null, null]).slice(0, 4);
 };
 
-const shiftRight = arr => {
-  arr = arr.filter(i => i != null);
+const shiftRight = (arr) => {
+  arr = arr.filter((i) => i != null);
   let arrLen = arr.length - 1;
   let result = [];
 
@@ -29,7 +23,7 @@ const shiftRight = arr => {
     }
   }
 
-  result = [null, null, null, null].concat(arr.filter(i => i != null));
+  result = [null, null, null, null].concat(arr.filter((i) => i != null));
   result = result.slice(result.length - 4);
   return result;
 };
@@ -40,7 +34,7 @@ const gridFunction = (grid, func) => {
   }
 };
 
-const addRandomCell = grid => {
+const addRandomCell = (grid) => {
   const availableCells = getAvailableCells(grid);
   const availableCellsLength = availableCells.length;
 
@@ -48,8 +42,7 @@ const addRandomCell = grid => {
     return grid;
   }
 
-  const randomCell =
-    availableCells[Math.floor(Math.random() * availableCellsLength)];
+  const randomCell = availableCells[Math.floor(Math.random() * availableCellsLength)];
   const randomNumber = Math.random() < 0.9 ? 2 : 4;
 
   grid[randomCell.row][randomCell.col] = randomNumber;
@@ -57,7 +50,7 @@ const addRandomCell = grid => {
   return grid;
 };
 
-const getAvailableCells = grid => {
+const getAvailableCells = (grid) => {
   let result = [];
 
   for (let i = 0; i < grid.length; i++) {
@@ -72,20 +65,20 @@ const getAvailableCells = grid => {
 };
 
 const display = {
-  self: g => {
-    gridFunction(g, i => console.log(i));
+  self: (g) => {
+    gridFunction(g, (i) => console.log(i));
   },
-  shiftLeft: g => {
-    gridFunction(g, i => console.log(shiftLeft(i)));
+  shiftLeft: (g) => {
+    gridFunction(g, (i) => console.log(shiftLeft(i)));
   },
-  shiftRight: g => {
-    gridFunction(g, i => console.log(shiftLeft(i)));
+  shiftRight: (g) => {
+    gridFunction(g, (i) => console.log(shiftLeft(i)));
   }
 };
 
 const transformGrid = {
   display: display,
-  shiftLeft: g => {
+  shiftLeft: (g) => {
     let grid = [];
 
     gridFunction(g, function (i) {
@@ -94,7 +87,7 @@ const transformGrid = {
 
     return grid;
   },
-  shiftRight: g => {
+  shiftRight: (g) => {
     let grid = [];
 
     gridFunction(g, function (i) {
@@ -103,7 +96,7 @@ const transformGrid = {
 
     return grid;
   },
-  rotateRight: grid => {
+  rotateRight: (grid) => {
     const result = [
       [grid[3][0], grid[2][0], grid[1][0], grid[0][0]],
       [grid[3][1], grid[2][1], grid[1][1], grid[0][1]],
@@ -113,7 +106,7 @@ const transformGrid = {
 
     return result;
   },
-  rotateLeft: grid => {
+  rotateLeft: (grid) => {
     let result = [
       [grid[0][3], grid[1][3], grid[2][3], grid[3][3]],
       [grid[0][2], grid[1][2], grid[2][2], grid[3][2]],
@@ -123,7 +116,7 @@ const transformGrid = {
 
     return result;
   },
-  shiftUp: grid => {
+  shiftUp: (grid) => {
     let result = [];
 
     result = transformGrid.rotateLeft(grid);
@@ -132,7 +125,7 @@ const transformGrid = {
 
     return result;
   },
-  shiftDown: grid => {
+  shiftDown: (grid) => {
     let result = [];
 
     result = transformGrid.rotateRight(grid);
@@ -141,10 +134,10 @@ const transformGrid = {
 
     return result;
   },
-  addRandomCell: grid => {
+  addRandomCell: (grid) => {
     return addRandomCell(grid);
   },
-  getAvailableCells: grid => {
+  getAvailableCells: (grid) => {
     return getAvailableCells(grid);
   }
 };

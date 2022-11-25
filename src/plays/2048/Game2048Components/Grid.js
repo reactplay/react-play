@@ -1,53 +1,43 @@
-import React, { useEffect } from "react";
-import Row from "./Row";
-import TransformGrid from "../transformGrid";
-import GameLogic from "../gameLogic";
+import React, { useEffect } from 'react';
+import Row from './Row';
+import TransformGrid from '../transformGrid';
+import GameLogic from '../gameLogic';
 
 function Grid(props) {
-
   function handleKey(e) {
     e.preventDefault();
 
-    if (props.status !== "running" && props.status !== "continue") return;
-      let result = {};
+    if (props.status !== 'running' && props.status !== 'continue') return;
+    let result = {};
 
-      switch (e.key) {
-        case "ArrowUp":
-          result = GameLogic.addCell(TransformGrid.shiftUp(props.grid), props);
-          break;
-        case "ArrowRight":
-          result = GameLogic.addCell(
-            TransformGrid.shiftRight(props.grid),
-            props
-          );
-          break;
-        case "ArrowDown":
-          result = GameLogic.addCell(
-            TransformGrid.shiftDown(props.grid),
-            props
-          );
-          break;
-        case "ArrowLeft":
-          result = GameLogic.addCell(
-            TransformGrid.shiftLeft(props.grid),
-            props
-          );
-          break;
-        default:
-      }
+    switch (e.key) {
+      case 'ArrowUp':
+        result = GameLogic.addCell(TransformGrid.shiftUp(props.grid), props);
+        break;
+      case 'ArrowRight':
+        result = GameLogic.addCell(TransformGrid.shiftRight(props.grid), props);
+        break;
+      case 'ArrowDown':
+        result = GameLogic.addCell(TransformGrid.shiftDown(props.grid), props);
+        break;
+      case 'ArrowLeft':
+        result = GameLogic.addCell(TransformGrid.shiftLeft(props.grid), props);
+        break;
+      default:
+    }
 
-      if (props.status !== "continue" && GameLogic.has2048(result.transform)) {
-        props.setStatus("won");
-      }
+    if (props.status !== 'continue' && GameLogic.has2048(result.transform)) {
+      props.setStatus('won');
+    }
 
-      if (GameLogic.hasNoMovesLeft(result.transform)) {
-        props.setStatus("over");
-      }
+    if (GameLogic.hasNoMovesLeft(result.transform)) {
+      props.setStatus('over');
+    }
   }
   useEffect(() => {
-    window.addEventListener("keydown", handleKey);
+    window.addEventListener('keydown', handleKey);
     return () => {
-      window.removeEventListener("keydown", handleKey);
+      window.removeEventListener('keydown', handleKey);
     };
   }, [handleKey]);
 

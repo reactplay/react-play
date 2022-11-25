@@ -1,11 +1,11 @@
-import { fetchForecast, WEATHER_API_BASE_URL } from "../utils";
+import { fetchForecast, WEATHER_API_BASE_URL } from '../utils';
 
 export default function CityInput({
   cityInput,
   setCityInput,
   setWeatherDetails,
   setForecastData,
-  setIsLoading,
+  setIsLoading
 }) {
   const handleCityInput = (e) => {
     setCityInput(e.target.value);
@@ -28,7 +28,7 @@ export default function CityInput({
       const json = await res.json();
 
       // Fetch forecast only for valid city name
-      if (json.cod !== "404") {
+      if (json.cod !== '404') {
         await fetchForecast(json.coord.lat, json.coord.lon, setForecastData);
       }
 
@@ -37,17 +37,17 @@ export default function CityInput({
       // Hide loading message
       setIsLoading(false);
     } catch (e) {
-      console.log(e);
+      // handle error
     }
   };
 
   return (
-    <form onSubmit={fetchWeather} className="w-full md:w-1/3">
+    <form className="w-full md:w-1/3" onSubmit={fetchWeather}>
       <input
-        value={cityInput}
         className="w-full p-2 text-sm rounded-lg"
-        onChange={handleCityInput}
         placeholder="Search your city here..."
+        value={cityInput}
+        onChange={handleCityInput}
       />
     </form>
   );

@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
 export const SearchContext = React.createContext({
-  searchTerm: "",
+  searchTerm: '',
   showShareModal: false,
   filterQuery: {
     level_id: [],
     tags: [],
     owner_user_id: [],
-    language: [],
+    language: []
   },
   setSearchTerm: () => {},
   setFilterQuery: () => {},
-  setShowShareModal: () => {},
+  setShowShareModal: () => {}
 });

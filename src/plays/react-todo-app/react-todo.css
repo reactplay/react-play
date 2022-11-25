@@ -137,29 +137,29 @@
 
 /*CUSTOM SELECTOR */
 .select-todo .options {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: 0;
-    height: 50px;
-    box-shadow: none;
-    border: 0 !important;
-    background-image: none;
-    color: #ff6f47;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
-    width: 12rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  height: 50px;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  color: #ff6f47;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  width: 12rem;
 }
 
 .todo-input {
-    height: 50px;
+  height: 50px;
 }
 
 .todo-button {
-    height: 48px;
-    width: 40px;
-    transform: translateX(-100%);
+  height: 48px;
+  width: 40px;
+  transform: translateX(-100%);
 }
 
 /* Custom Select */
