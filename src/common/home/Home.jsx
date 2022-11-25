@@ -138,7 +138,7 @@ const Home = () => {
         </div>
       </section>
       <section className="home-contributors" data-testid="contributors-section">
-        <Contributors />
+        <Contributors /> 
       </section>
       <ExtendedFooter />
     </main>

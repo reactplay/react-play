@@ -2,7 +2,9 @@ import useContributors from "common/hooks/useContributors";
 
 const Contributors = () => {
   const { data, error, isLoading } = useContributors(true);
-
+  console.log(data);
+  const color = getComputedStyle(document.documentElement).getPropertyValue('--custom-color');
+  console.log(color);  
   return (
     <>
       <h2 className="title-primary">
@@ -16,7 +18,7 @@ const Contributors = () => {
         {error && <li>Error: {error.message}</li>}
         {data &&
           data.map(contributor => (
-            <li key={contributor.id} className="contributor" data-testid={`contributor-${contributor.id}`}>
+            <li key={contributor.id} className={`rounded-sm`} data-testid={`contributor-${contributor.id}`}>
               <a
                 href={contributor.html_url}
                 target="_blank"

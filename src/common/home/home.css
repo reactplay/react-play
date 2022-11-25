@@ -1,4 +1,7 @@
 /* Home Body content */
+:root{
+  --custom-color: green;
+}
 .app-home-body {
   position: relative;
   display: flex;
@@ -426,6 +429,7 @@
   position: relative;
   padding: 5rem 0 6rem 0;
   background-color: var(--color-neutral-10);
+  border: 2px solid red;
 }
 
 .home-contributors .title-primary,
@@ -463,22 +467,25 @@
 }
 
 .list-contributors {
-  position: relative;
+  /* position: relative; */
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  width: 80%;
+  width: 90%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
   justify-content: center;
+  align-items: center;
   grid-gap: 3rem;
   max-width: var(--screen-lg-max);
+  border: 2px solid green;
 }
 
 .list-contributors .contributor-anchor {
   display: block;
   width: 160px;
+  border: 2px solid var(--custom-color);
   height: 160px;
   border-radius: 160px;
   overflow: hidden;
