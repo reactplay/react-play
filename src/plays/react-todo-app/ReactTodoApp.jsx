@@ -10,7 +10,6 @@ import Input from './components/Input';
 import TodoList from './components/TodoList';
 
 function ReactTodoApp(props) {
-
   // Your Code Start below.
 
   const [input, setInput] = useState('');
@@ -42,12 +41,12 @@ function ReactTodoApp(props) {
 
   return (
     <>
-      <div className='play-details'>
+      <div className="play-details">
         <PlayHeader play={props} />
-        <div className='play-details-body'>
+        <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className='todo-play-body'>
-            <div className='todo-top-banner'>
+          <div className="todo-play-body">
+            <div className="todo-top-banner">
               <h1>Todo List</h1>
             </div>
             <Input

@@ -1,4 +1,4 @@
-import ForecastItem from "./ForecastItem";
+import ForecastItem from './ForecastItem';
 
 export default function ForecastData({ forecastData }) {
   return (

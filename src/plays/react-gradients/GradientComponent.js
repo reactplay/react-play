@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { SiTailwindcss, SiCss3 } from "react-icons/si";
-import { BsFillTriangleFill } from "react-icons/bs";
-import toast from "react-hot-toast";
-import { debounce } from "lodash";
+import React, { useState } from 'react';
+import { SiTailwindcss, SiCss3 } from 'react-icons/si';
+import { BsFillTriangleFill } from 'react-icons/bs';
+import toast from 'react-hot-toast';
+import { debounce } from 'lodash';
 
 const GradientComponent = ({ index, name, css, tailwind, colors }) => {
   // Function to copy tailwind,css, color to clipboard.This function takes in 2 arguments. One is the text to be copied and the other is the message for the toast.
@@ -10,11 +10,11 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
   const copyCode = async (codeToCopy, message) => {
     await navigator.clipboard.writeText(codeToCopy);
     toast(`Copied ${message}`, {
-      icon: "📋",
+      icon: '📋',
       style: {
-        backgroundColor: "#010326",
-        color: "#00f2fe",
-      },
+        backgroundColor: '#010326',
+        color: '#00f2fe'
+      }
     });
   };
 
@@ -28,20 +28,17 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
       {/* component containing buttons to copy code, colors of the gradient */}
       <div className="absolute md:group-hover:flex md:hidden flex right-0 top-0 w-fit rounded-lg rounded-tl-none rounded-br-none bg-[#010326] transition-all duration-200 py-1 px-2 justify-center items-center border-2 border-[#010326]">
         <GradientCopyButton
-          handleOnClick={() => copyCode(tailwind, "TailwindCSS")}
+          handleOnClick={() => copyCode(tailwind, 'TailwindCSS')}
           tooltipText="Copy TailwindCSS"
         >
           <SiTailwindcss />
         </GradientCopyButton>
-        <GradientCopyButton
-          handleOnClick={() => copyCode(css, "CSS")}
-          tooltipText="Copy CSS"
-        >
+        <GradientCopyButton handleOnClick={() => copyCode(css, 'CSS')} tooltipText="Copy CSS">
           <SiCss3 />
         </GradientCopyButton>
         {colors.map((color) => (
           <GradientCopyButton
-            handleOnClick={() => copyCode(color, "Color")}
+            handleOnClick={() => copyCode(color, 'Color')}
             tooltipText="Copy Color"
           >
             <span className="text-sm uppercase font-semibold">{color}</span>

@@ -1,7 +1,7 @@
-import React from "react";
-import "./search.css";
+import React from 'react';
+import './search.css';
 type SearchProps = {
-  onEventChange:(e: React.ChangeEvent<HTMLInputElement>) => void;
+  onEventChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   fetchPokemonDetails: (e: React.FormEvent<HTMLFormElement>) => void;
   name: string;
 };

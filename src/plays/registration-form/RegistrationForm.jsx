@@ -1,36 +1,35 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import "./Registration-form.css";
-import { useState } from "react";
+import PlayHeader from 'common/playlists/PlayHeader';
+import './Registration-form.css';
+import { useState } from 'react';
 
 function RegistrationForm(props) {
-
   // Your Code Start below.
 
   //for input values
   const [values, setValues] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
     errors: {
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    },
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    }
   });
 
   //input values after submit
   const [storedValues, setStoredValues] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
   });
 
   //self explanatory
   const validateEmail = (emailvalue) => {
-    if (emailvalue[0] === "email") {
+    if (emailvalue[0] === 'email') {
       const regx = /\S+@\S+\.\S+/;
       if (!regx.test(emailvalue[1])) {
         //set error and return false
@@ -38,8 +37,8 @@ function RegistrationForm(props) {
           ...prevState,
           errors: {
             ...prevState.errors,
-            email: `your email is not correct`,
-          },
+            email: `your email is not correct`
+          }
         }));
         return false;
       } else {
@@ -48,8 +47,8 @@ function RegistrationForm(props) {
           ...prevState,
           errors: {
             ...prevState.errors,
-            email: ``,
-          },
+            email: ``
+          }
         }));
         return true;
       }
@@ -61,8 +60,8 @@ function RegistrationForm(props) {
   //self explanatory
   const conmparePassword = (pass, confirmPass) => {
     // (pass and confirmPass) arrays containing name, value pair eg. ["password","xyz"] and ["confirmpassword","xyz"]
-    if (pass[0] === "password") {
-      if (values.confirmPassword !== "") {
+    if (pass[0] === 'password') {
+      if (values.confirmPassword !== '') {
         if (pass[1] !== confirmPass[1]) {
           //values don't match set error, return false
           setValues((prevState) => ({
@@ -70,8 +69,8 @@ function RegistrationForm(props) {
             errors: {
               ...prevState.errors,
               password: "Password doesn't match",
-              confirmPassword: "Password doesn't match",
-            },
+              confirmPassword: "Password doesn't match"
+            }
           }));
           return false;
         } else {
@@ -80,9 +79,9 @@ function RegistrationForm(props) {
             ...prevState,
             errors: {
               ...prevState.errors,
-              password: "",
-              confirmPassword: "",
-            },
+              password: '',
+              confirmPassword: ''
+            }
           }));
           return true;
         }
@@ -97,14 +96,14 @@ function RegistrationForm(props) {
   //final validation
   const validate = (value) => {
     //value is an array ex. ["name","deepak"]
-    if (value[1] === "") {
+    if (value[1] === '') {
       //if empty set error msg return false
       setValues((prevState) => ({
         ...prevState,
         errors: {
           ...prevState.errors,
-          [value[0]]: `Please fill the ${value[0]}`,
-        },
+          [value[0]]: `Please fill the ${value[0]}`
+        }
       }));
       return false;
     } else {
@@ -113,13 +112,10 @@ function RegistrationForm(props) {
         ...prevState,
         errors: {
           ...prevState.errors,
-          [value[0]]: ``,
-        },
+          [value[0]]: ``
+        }
       }));
-      return (
-        validateEmail(value) &&
-        conmparePassword(value, Object.entries(values)[3])
-      );
+      return validateEmail(value) && conmparePassword(value, Object.entries(values)[3]);
     }
   };
 
@@ -140,14 +136,14 @@ function RegistrationForm(props) {
         name: values.name,
         email: values.email,
         password: values.password,
-        confirmPassword: values.confirmPassword,
+        confirmPassword: values.confirmPassword
       });
       setValues({
-        name: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-        errors: { name: "", email: "", password: "", confirmPassword: "" },
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        errors: { name: '', email: '', password: '', confirmPassword: '' }
       });
     }
   };
@@ -173,42 +169,32 @@ function RegistrationForm(props) {
                   <div className="user-input" key={index}>
                     <label
                       htmlFor="email"
-                      className={`user-label  ${
-                        value[0] === "errors" ? "hidden" : ""
-                      }`}
+                      className={`user-label  ${value[0] === 'errors' ? 'hidden' : ''}`}
                     >
                       {value[0]}*
                     </label>
                     <input
                       key={index}
                       type={
-                        value[0] === "name"
-                          ? "text"
-                          : value[0] === "email"
-                          ? "email"
-                          : "password"
+                        value[0] === 'name' ? 'text' : value[0] === 'email' ? 'email' : 'password'
                       }
                       name={value[0]}
                       placeholder={`Enter ${value[0]}`}
                       onChange={onChangeHandler}
                       value={value[1]}
-                      className={`registration-input ${
-                        value[0] === "errors" ? "hidden" : ""
-                      }`}
+                      className={`registration-input ${value[0] === 'errors' ? 'hidden' : ''}`}
                     />
                     <label className="error">{values.errors[value[0]]}</label>
                   </div>
                 );
               })}
               <div className="user-btn">
-                <button type="submit" className="btn-primary">Submit</button>
+                <button type="submit" className="btn-primary">
+                  Submit
+                </button>
               </div>
             </form>
-            <div
-              className={` ${
-                storedValues.name === "" ? "hidden" : "entered-value-container"
-              }`}
-            >
+            <div className={` ${storedValues.name === '' ? 'hidden' : 'entered-value-container'}`}>
               <span className="success">Form Submitted !</span>
               <div className="entered-value-inner">
                 {Object.entries(storedValues).map((storedValue, index) => {

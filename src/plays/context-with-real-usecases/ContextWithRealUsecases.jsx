@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
-import PlayHeader from "common/playlists/PlayHeader";
-import "./contextWithRealUsecases.css";
-import ContextInfoSlider from "./components/ContextInfoSlider";
-import Heading from "./components/Heading";
-import Menu from "./components/Menu";
-import Main from "./components/Main/Main";
-import Recipes from "./Recipes";
-import CuisineContext from "./context/CuisineContext";
+import { useCallback, useEffect, useState } from 'react';
+import PlayHeader from 'common/playlists/PlayHeader';
+import './contextWithRealUsecases.css';
+import ContextInfoSlider from './components/ContextInfoSlider';
+import Heading from './components/Heading';
+import Menu from './components/Menu';
+import Main from './components/Main/Main';
+import Recipes from './Recipes';
+import CuisineContext from './context/CuisineContext';
 
 function ContextWithRealUsecases(props) {
   // Your Code Start below.
@@ -29,9 +29,7 @@ function ContextWithRealUsecases(props) {
   const uniqCuisines = [...new Set(cuisines)];
 
   //get recipes filtered by cuisine type
-  const recipesByCusine = Recipes.filter(
-    (item) => item.recipe.cusine === activeCuisine
-  );
+  const recipesByCusine = Recipes.filter((item) => item.recipe.cusine === activeCuisine);
 
   //prev slide
   const handlePrev = () => {
@@ -54,9 +52,7 @@ function ContextWithRealUsecases(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="context-with-real-usecases">
-            <h1 className="context-with-real-usecases main-heading">
-              React Context
-            </h1>
+            <h1 className="context-with-real-usecases main-heading">React Context</h1>
 
             <CuisineContext.Provider
               value={{
@@ -66,7 +62,7 @@ function ContextWithRealUsecases(props) {
                 recipesByCusine,
                 index,
                 handlePrev,
-                handleNext,
+                handleNext
               }}
             >
               <ContextInfoSlider />

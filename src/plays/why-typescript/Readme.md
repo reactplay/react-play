@@ -1,4 +1,5 @@
 # Why Typescript
+
 The `Why Typescript` project shows how `TypeScript` can be used .
 
 - It uses simple concept of interface.

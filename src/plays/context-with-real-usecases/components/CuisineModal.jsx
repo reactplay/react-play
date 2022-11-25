@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
-import CuisineContext from "../context/CuisineContext";
+import { useContext, useState } from 'react';
+import CuisineContext from '../context/CuisineContext';
 const CuisineModal = () => {
   const { recipesByCusine } = useContext(CuisineContext);
-  const [display, setDisplay] = useState("hidden");
+  const [display, setDisplay] = useState('hidden');
   const toggleDisplay = () => {
-    setDisplay(display === "hidden" ? "active" : "hidden");
+    setDisplay(display === 'hidden' ? 'active' : 'hidden');
   };
   return (
     <div className="cuisine-modal">

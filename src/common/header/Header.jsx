@@ -1,9 +1,9 @@
-import FilterPlays from "common/search/FilterPlays";
-import SearchPlays from "common/search/SearchPlays";
-import HeaderNav from "./HeaderNav";
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./header.css";
+import FilterPlays from 'common/search/FilterPlays';
+import SearchPlays from 'common/search/SearchPlays';
+import HeaderNav from './HeaderNav';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './header.css';
 
 const Header = () => {
   const location = useLocation();
@@ -13,52 +13,52 @@ const Header = () => {
 
   useEffect(() => {
     if (location.state) {
-      setReset({...location.state });
+      setReset({ ...location.state });
     }
   }, [location.state]);
 
   const [showHideBits, setShowHideBits] = useState({
     showSearch: false,
     showBrowse: false,
-    setHeaderStyle: true,
+    setHeaderStyle: true
   });
 
   useEffect(() => {
-    if (pathName !== "/plays") {
+    if (pathName !== '/plays') {
       setReset({ search: false, filter: false });
     }
-    if (pathName === "/") {
+    if (pathName === '/') {
       setShowHideBits({
         showSearch: false,
         showBrowse: true,
-        setHeaderStyle: false,
+        setHeaderStyle: false
       });
-    } else if (pathName === "/ideas" || pathName === "/tech-stacks") {
+    } else if (pathName === '/ideas' || pathName === '/tech-stacks') {
       setShowHideBits({
         showSearch: false,
         showBrowse: true,
-        setHeaderStyle: true,
+        setHeaderStyle: true
       });
-    } else if (pathName.startsWith("/plays")) {
+    } else if (pathName.startsWith('/plays')) {
       setShowHideBits({
         showSearch: true,
         showBrowse: false,
-        setHeaderStyle: true,
+        setHeaderStyle: true
       });
     }
   }, [pathName]);
 
   return (
     <header
-      className={`app-header ${showHideBits.setHeaderStyle ? "" : " app-header-home"}`}
-      data-testid='app-header'
+      className={`app-header ${showHideBits.setHeaderStyle ? '' : ' app-header-home'}`}
+      data-testid="app-header"
     >
       <span>
-        <Link to='/' className='app-logo' data-testid='app-logo'>
-          <span className='sr-only'>React Play</span>
+        <Link to="/" className="app-logo" data-testid="app-logo">
+          <span className="sr-only">React Play</span>
         </Link>
       </span>
-      <div className='app-header-search'>
+      <div className="app-header-search">
         {showHideBits.showSearch && (
           <>
             <SearchPlays reset={reset} />

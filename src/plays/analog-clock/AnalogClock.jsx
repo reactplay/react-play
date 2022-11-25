@@ -1,10 +1,9 @@
-import "./AnalogClock.css";
+import './AnalogClock.css';
 
-import PlayHeader from "common/playlists/PlayHeader";
-import { useState, useEffect } from "react";
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useState, useEffect } from 'react';
 
 function AnalogClock(props) {
-
   // Your Code Start below.
 
   const [date, setDate] = useState(new Date());
@@ -31,19 +30,19 @@ function AnalogClock(props) {
               <div
                 className="hour-hand"
                 style={{
-                  transform: "rotate(" + hour + "deg)",
+                  transform: 'rotate(' + hour + 'deg)'
                 }}
               ></div>
               <div
                 className="minute-hand"
                 style={{
-                  transform: "rotate(" + minute + "deg)",
+                  transform: 'rotate(' + minute + 'deg)'
                 }}
               ></div>
               <div
                 className="second-hand"
                 style={{
-                  transform: "rotate(" + second + "deg)",
+                  transform: 'rotate(' + second + 'deg)'
                 }}
               ></div>
               <div className="brand"></div>

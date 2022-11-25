@@ -1,29 +1,25 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from 'react';
 
-import "./modal.css";
+import './modal.css';
 
-import close from './close.png'
+import close from './close.png';
 
 const Modal = ({ showModal, toggle }) => {
   const [currState, setCurrentState] = useState(0);
 
   const structuringData = [
     {
-      info: "Its a code editor for html css and js made using codemirror your can write your code seprately for html css and js. ",
-      
+      info: 'Its a code editor for html css and js made using codemirror your can write your code seprately for html css and js. '
     },
     {
-      info: "Javascript will work normally and can be used to manipulate things but their will not be shown any output for it like for console loging.",
-     
+      info: 'Javascript will work normally and can be used to manipulate things but their will not be shown any output for it like for console loging.'
     },
     {
-      info: "Css output will be shown when try to make style changes using it.",
-      
+      info: 'Css output will be shown when try to make style changes using it.'
     },
     {
-      info: "Lastly all your output will be displayed in output section as you type.",
-      
-    },
+      info: 'Lastly all your output will be displayed in output section as you type.'
+    }
   ];
 
   useEffect(() => {
@@ -37,20 +33,20 @@ const Modal = ({ showModal, toggle }) => {
   if (!showModal) return false;
   return (
     <Fragment>
-      <div className='code-editor-modal'>
+      <div className="code-editor-modal">
         <img src={close} alt="close" onClick={toggle} className="close-icon" />
-        <div className='content'>
-          <h1 className='text'>How to Use!</h1>
+        <div className="content">
+          <h1 className="text">How to Use!</h1>
           <p>{structuringData[currState].info}</p>
-          <div className='button-section'>
+          <div className="button-section">
             {currState > 0 ? <button onClick={buttonHandler(-1)}>Prev</button> : <p></p>}
             <button onClick={currState === 3 ? toggle : buttonHandler(1)}>
-              {currState === 3 ? "Done" : "Next"}
+              {currState === 3 ? 'Done' : 'Next'}
             </button>
           </div>
         </div>
       </div>
-      <div onClick={toggle} className='code-editor-backdrop' />
+      <div onClick={toggle} className="code-editor-backdrop" />
     </Fragment>
   );
 };

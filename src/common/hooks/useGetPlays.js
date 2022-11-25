@@ -1,11 +1,11 @@
-import { useState, useEffect, useContext, useCallback } from "react";
+import { useState, useEffect, useContext, useCallback } from 'react';
 // import fs from "fs";
-import { SearchContext } from "common/search/search-context";
-import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
-import { FetchPlaysSimple } from "common/services/request/query/fetch-plays";
+import { SearchContext } from 'common/search/search-context';
+import { FetchPlaysFilter } from 'common/services/request/query/fetch-plays-filter';
+import { FetchPlaysSimple } from 'common/services/request/query/fetch-plays';
 
-import { submit } from "common/services/request";
-import { toTitleCaseTrimmed } from "common/services/string";
+import { submit } from 'common/services/request';
+import { toTitleCaseTrimmed } from 'common/services/string';
 
 /**
  * Run graphql query to filter plays
@@ -17,8 +17,7 @@ function useGetPlays() {
   const [plays, setPlays] = useState([]);
   const [error, setError] = useState(null);
 
-  const { filterPlaysBySearchString, filterPlaysByMultiTagsLevelLang } =
-    FetchPlaysFilter;
+  const { filterPlaysBySearchString, filterPlaysByMultiTagsLevelLang } = FetchPlaysFilter;
 
   const { searchTerm, filterQuery } = useContext(SearchContext);
 
@@ -70,7 +69,7 @@ function useGetPlays() {
     searchTerm,
     filterQuery,
     re_filterPlaysBySearchString,
-    re_filterPlaysByMultiTagsLevelLang,
+    re_filterPlaysByMultiTagsLevelLang
   ]);
 
   useEffect(() => {

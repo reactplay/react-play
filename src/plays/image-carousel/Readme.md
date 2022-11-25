@@ -12,7 +12,7 @@ Image Carousel that has click navigation for desktop and touch(swipe) navigation
 - User: harshsinghatz
 - Gihub Link: https://github.com/harshsinghatz
 - Blog: https://harshsinghatz.hashnode.dev/
-- Video: 
+- Video:
 
 ## Implementation Details
 

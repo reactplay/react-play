@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { BsSearch } from "react-icons/bs";
-import "./countriesStatistic.css";
+import React, { useContext } from 'react';
+import { BsSearch } from 'react-icons/bs';
+import './countriesStatistic.css';
 
-import { GeoContext } from "./Context";
+import { GeoContext } from './Context';
 
 const SearchAndFilter = () => {
   const {
@@ -18,16 +18,12 @@ const SearchAndFilter = () => {
     handleOnBlur,
     searchResultClickHandler,
     searchbarClickHandler,
-    searchInputClickHandler,
+    searchInputClickHandler
   } = useContext(GeoContext);
 
   return (
     <div className="w-full max-w-[550px] mx-auto flex justify-center">
-      <div
-        className="relative w-full h-fit"
-        tabIndex="0"
-        onBlur={(e) => handleOnBlur(e)}
-      >
+      <div className="relative w-full h-fit" tabIndex="0" onBlur={(e) => handleOnBlur(e)}>
         <input
           tabIndex="0"
           type="text"
@@ -62,7 +58,7 @@ const SearchAndFilter = () => {
                   ref={index === i ? searchResultItemRef : null}
                   onClick={() => searchResultClickHandler(i)}
                   className={`border-b cursor-pointer hover:bg-cyan-100 font-bold px-2 my-[0.9rem] ${
-                    index === i ? "geo-search-selected" : ""
+                    index === i ? 'geo-search-selected' : ''
                   }`}
                 >
                   {country.properties.name}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export const UseCustomFetchAPI = (endPoint) => {
   const [data, setData] = useState();
@@ -13,9 +13,9 @@ export const UseCustomFetchAPI = (endPoint) => {
     let cancel = false;
     (async () => {
       try {
-        if (!["", undefined, null].includes(endPoint?.trim())) {
+        if (!['', undefined, null].includes(endPoint?.trim())) {
           const response = await window.fetch(endPoint, {
-            signal: controller.signal,
+            signal: controller.signal
           });
           const json = await response.json();
           if (cancel === false) {
@@ -23,7 +23,7 @@ export const UseCustomFetchAPI = (endPoint) => {
           }
         }
       } catch (e) {
-        if (e.name !== "AbortError") setError(true);
+        if (e.name !== 'AbortError') setError(true);
       } finally {
         setFetching(false);
       }

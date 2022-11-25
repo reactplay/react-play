@@ -7,31 +7,30 @@ import {
   Grid,
   Snackbar,
   Typography,
-  useMediaQuery,
-} from "@mui/material";
-import PlayHeader from "common/playlists/PlayHeader";
-import { useEffect, useState } from "react";
-import { UseCustomFetchAPI } from "./CustomHooks/UseCustomFetchAPI";
-import "./response.scss";
+  useMediaQuery
+} from '@mui/material';
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useEffect, useState } from 'react';
+import { UseCustomFetchAPI } from './CustomHooks/UseCustomFetchAPI';
+import './response.scss';
 
 export default function DownloadFetchResponse(props) {
-  const [endpoint, setEndpoint] = useState("");
+  const [endpoint, setEndpoint] = useState('');
   const [alertError, setAlertError] = useState();
-  const [toBeFetched, setToBeFetched] = useState("");
+  const [toBeFetched, setToBeFetched] = useState('');
   const { data, error, fetching } = UseCustomFetchAPI(toBeFetched);
   //Hook from mui to detect screen
   const matches = useMediaQuery('(min-width:650px)');
   useEffect(() => {
-    const download = document.createElement("a");
+    const download = document.createElement('a');
     download.href = URL.createObjectURL(
       new Blob([JSON.stringify(data, null, 2)], {
-        type: "text/plain",
+        type: 'text/plain'
       })
     );
-    download.setAttribute("download", `Play - ${new Date().getTime()}.json`);
+    download.setAttribute('download', `Play - ${new Date().getTime()}.json`);
     document.body.appendChild(download);
-    if (!["", undefined, null].includes(toBeFetched?.trim()) && !error)
-      download.click();
+    if (!['', undefined, null].includes(toBeFetched?.trim()) && !error) download.click();
     document.body.removeChild(download);
   }, [data]);
 
@@ -40,8 +39,8 @@ export default function DownloadFetchResponse(props) {
   }, [error]);
 
   const reset = () => {
-    setEndpoint("");
-    setToBeFetched("");
+    setEndpoint('');
+    setToBeFetched('');
   };
   return (
     <div className="play-details">
@@ -55,20 +54,26 @@ export default function DownloadFetchResponse(props) {
             direction="column"
             alignItems="center"
             justify="center"
-            style={{ paddingTop: "10rem" }}
+            style={{ paddingTop: '10rem' }}
           >
-            <Grid item xs={10} >
-              <Card className={matches ? 'desk-screen' : 'other-screen'} sx={{ fontSize: 14 }} className='main'>
+            <Grid item xs={10}>
+              <Card
+                className={matches ? 'desk-screen' : 'other-screen'}
+                sx={{ fontSize: 14 }}
+                className="main"
+              >
                 <CardContent className="check">
                   <Typography sx={{ fontSize: 14 }} gutterBottom>
                     Save Fetch API Response
                   </Typography>
-                  <Typography variant="h5" component="div" >
+                  <Typography variant="h5" component="div">
                     <div className="civ">
                       {!fetching ? (
                         <div className="clazz">
                           <input
-                            placeholder={matches ? 'Paste/Type API endpoint here...' : 'Input Endpoint here..'}
+                            placeholder={
+                              matches ? 'Paste/Type API endpoint here...' : 'Input Endpoint here..'
+                            }
                             type="textarea"
                             onChange={(e) => setEndpoint(e.target.value)}
                             value={endpoint}
@@ -82,7 +87,7 @@ export default function DownloadFetchResponse(props) {
                 </CardContent>
                 <CardActions>
                   <Button
-                    disabled={["", null, undefined].includes(endpoint?.trim())}
+                    disabled={['', null, undefined].includes(endpoint?.trim())}
                     onClick={() => setToBeFetched(endpoint)}
                     size="small"
                   >
@@ -92,32 +97,26 @@ export default function DownloadFetchResponse(props) {
                     Reset
                   </Button>
                 </CardActions>
-              </Card>{" "}
+              </Card>{' '}
             </Grid>
             <span className="note-txt flex justify-center items-center py-2">
-              Note:Current version works for all valid GET API's(provided token is
-              not mandatory)
+              Note:Current version works for all valid GET API's(provided token is not mandatory)
             </span>
           </Grid>
 
           <Snackbar
-            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={alertError}
             autoHideDuration={6000}
             onClose={() => setAlertError(false)}
           >
-            <Alert
-              onClose={() => setAlertError(false)}
-              severity="error"
-              sx={{ width: "100%" }}
-            >
+            <Alert onClose={() => setAlertError(false)} severity="error" sx={{ width: '100%' }}>
               Uh-Oh!Some Error happened.Please verify the API Endpoint
             </Alert>
           </Snackbar>
         </div>
         {/* Your Code Ends Here */}
       </div>
-    </div >
-
+    </div>
   );
 }

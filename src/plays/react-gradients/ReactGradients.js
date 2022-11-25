@@ -1,8 +1,8 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import GradientComponent from "./GradientComponent";
-import gradients from "./gradients.json";
-import { IoColorPaletteSharp, IoAddSharp } from "react-icons/io5";
-import { Toaster } from "react-hot-toast";
+import PlayHeader from 'common/playlists/PlayHeader';
+import GradientComponent from './GradientComponent';
+import gradients from './gradients.json';
+import { IoColorPaletteSharp, IoAddSharp } from 'react-icons/io5';
+import { Toaster } from 'react-hot-toast';
 
 // WARNING: Do not change the entry componenet name
 function ReactGradients(props) {
@@ -17,15 +17,12 @@ function ReactGradients(props) {
           <div className="w-full h-fit py-11 px-7 text-center">
             <span className="font-bold md:text-4xl text-3xl w-full text-black inline-flex justify-center items-center">
               React
-              <IoColorPaletteSharp
-                className="text-[#00f2fe] mt-auto mb-auto"
-                size={50}
-              />
+              <IoColorPaletteSharp className="text-[#00f2fe] mt-auto mb-auto" size={50} />
               Gradients
             </span>
             <p className="mt-2 font-semibold md:text-xl text-lg w-full text-gray-700">
-              A collection of beautiful gradients that you can copy to easily
-              use in your application.
+              A collection of beautiful gradients that you can copy to easily use in your
+              application.
             </p>
           </div>
 
@@ -49,8 +46,7 @@ function ReactGradients(props) {
             rel="noreferrer"
             className="fixed bottom-16 md:right-9 right-7 w-fit p-4 text-white bg-[#00f2fe] rounded-full font-semibold text-xl inline-flex justify-center items-center border-2 border-[#00f2fe] hover:bg-white hover:text-[#00f2fe] transition-all duration-200"
           >
-            <IoAddSharp size={32} />{" "}
-            <span className="md:flex hidden ml-2">Add a Gradient</span>
+            <IoAddSharp size={32} /> <span className="md:flex hidden ml-2">Add a Gradient</span>
           </a>
           {/* react-hot-toast component to display a message when code/color is copied */}
           <Toaster position="bottom-left" reverseOrder={false} />

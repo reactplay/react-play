@@ -1,32 +1,32 @@
 export const org = {
-  name: "👴 CEO",
+  name: '👴 CEO',
   children: [
     {
-      name: "🧔 Dir. Finance",
+      name: '🧔 Dir. Finance',
       children: [
         {
-          name: "🧑 Finance Exec",
-        },
-      ],
+          name: '🧑 Finance Exec'
+        }
+      ]
     },
     {
-      name: "👩‍🦱 Dir. Engineering",
+      name: '👩‍🦱 Dir. Engineering',
       children: [
         {
-          name: "👩 Team Lead",
+          name: '👩 Team Lead',
           children: [
             {
-              name: "👱 Frond-End(ReactJS)",
+              name: '👱 Frond-End(ReactJS)'
             },
             {
-              name: "👩‍🦳 Back-End(Node.js)",
-            },
-          ],
-        },
-      ],
+              name: '👩‍🦳 Back-End(Node.js)'
+            }
+          ]
+        }
+      ]
     },
     {
-      name: "👱‍♀️ Dir. HR",
-    },
-  ],
+      name: '👱‍♀️ Dir. HR'
+    }
+  ]
 };

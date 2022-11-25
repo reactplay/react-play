@@ -1,7 +1,7 @@
-import { getCurrencySymbol } from "plays/savings-calculator/utils/getCurrencySymbol";
-import React from "react";
-import PiggyBankImage from "../../images/piggy-bank.png";
-import "./total.scss";
+import { getCurrencySymbol } from 'plays/savings-calculator/utils/getCurrencySymbol';
+import React from 'react';
+import PiggyBankImage from '../../images/piggy-bank.png';
+import './total.scss';
 
 function Total(props) {
   const { total, currency } = props;

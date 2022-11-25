@@ -1,9 +1,9 @@
 // THIS HOOKS GRABS ALL THE FILTERABLE DATA FOR THE MODAL
 
-import { fetchFilterData } from "common/services/request/query/fetch-filter-data";
-import { submit_multi } from "../../services/request";
-import { useEffect, useState } from "react";
-import { getAllTags as extractTags } from "meta/play-meta-util";
+import { fetchFilterData } from 'common/services/request/query/fetch-filter-data';
+import { submit_multi } from '../../services/request';
+import { useEffect, useState } from 'react';
+import { getAllTags as extractTags } from 'meta/play-meta-util';
 
 /**
  * run graphql query to retrive filterable data like creators, tags, level
@@ -27,11 +27,7 @@ const useFetchFilterData = () => {
     (async () => {
       try {
         setLoading(true);
-        const response = await submit_multi([
-          getAllTags,
-          getAllLevels,
-          getAllUsers,
-        ]);
+        const response = await submit_multi([getAllTags, getAllLevels, getAllUsers]);
         setData(dataConstructor(response));
       } catch (err) {
         setError(err);

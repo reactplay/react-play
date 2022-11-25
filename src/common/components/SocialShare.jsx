@@ -1,20 +1,13 @@
-
 import { IoLogoFacebook, IoLogoTwitter, IoLogoLinkedin, IoLogoReddit } from 'react-icons/io5';
 
-const SocialShare = ({ showTwitter, showLinkedin, showFB, showReddit , msg}) => {
+const SocialShare = ({ showTwitter, showLinkedin, showFB, showReddit, msg }) => {
   const URL = window.location.href;
-  const VIA = "reactplayIO";
+  const VIA = 'reactplayIO';
 
   const tweetIt = () => {
-    msg = msg ?? "Learning ReactJS? Check out this awesome React Playlist!";
-    const hashTags = [
-      "javascript",
-      "devcommunity",
-      "100daysofcode",
-      "react",
-      "reactplay",
-    ];
-    const tags = encodeURIComponent(hashTags.join(","));
+    msg = msg ?? 'Learning ReactJS? Check out this awesome React Playlist!';
+    const hashTags = ['javascript', 'devcommunity', '100daysofcode', 'react', 'reactplay'];
+    const tags = encodeURIComponent(hashTags.join(','));
     return `https://twitter.com/intent/tweet?url=${URL}&text=${encodeURIComponent(
       msg
     )}&hashtags=${tags}&via=${VIA}`;
@@ -29,10 +22,8 @@ const SocialShare = ({ showTwitter, showLinkedin, showFB, showReddit , msg}) => 
   };
 
   const postOnReddit = () => {
-    const title = "Learning ReactJS? Check out this awesome React Playlist!";
-    return `http://www.reddit.com/submit?url=${URL}&title=${encodeURIComponent(
-      title
-    )}`;
+    const title = 'Learning ReactJS? Check out this awesome React Playlist!';
+    return `http://www.reddit.com/submit?url=${URL}&title=${encodeURIComponent(title)}`;
   };
 
   return (

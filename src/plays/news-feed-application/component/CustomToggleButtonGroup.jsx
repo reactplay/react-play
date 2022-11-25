@@ -1,16 +1,13 @@
-import { useState, useEffect } from "react";
-import ToggleButton from "@mui/material/ToggleButton";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { categories } from "../countriesAndCategories";
+import { useState, useEffect } from 'react';
+import ToggleButton from '@mui/material/ToggleButton';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { categories } from '../countriesAndCategories';
 
-const CustomToggleButtonGroup = ({
-  selectedCategory,
-  handleCategoryChange,
-}) => {
+const CustomToggleButtonGroup = ({ selectedCategory, handleCategoryChange }) => {
   const [isDesktop, setDesktop] = useState(window.innerWidth > 650);
 
   const updateMedia = () => {
@@ -18,14 +15,14 @@ const CustomToggleButtonGroup = ({
   };
 
   useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
+    window.addEventListener('resize', updateMedia);
+    return () => window.removeEventListener('resize', updateMedia);
   });
 
   const control = {
     value: selectedCategory,
     onChange: handleCategoryChange,
-    exclusive: true,
+    exclusive: true
   };
 
   const renderCatogories = () => {
@@ -48,7 +45,7 @@ const CustomToggleButtonGroup = ({
           <Select
             labelId="categoryselect-label"
             id="category-select"
-            defaultValue={"general"}
+            defaultValue={'general'}
             value={selectedCategory}
             label="Category"
             onChange={(e) => {

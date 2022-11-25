@@ -1,25 +1,25 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import { useState, useEffect } from "react";
-import CircularProgress from "@mui/material/CircularProgress";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import { countries } from "./countriesAndCategories";
-import NewsCard from "./component/NewsCard";
-import CustomToggleButtonGroup from "./component/CustomToggleButtonGroup";
-import "./styles.css";
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useState, useEffect } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import { countries } from './countriesAndCategories';
+import NewsCard from './component/NewsCard';
+import CustomToggleButtonGroup from './component/CustomToggleButtonGroup';
+import './styles.css';
 
 function NewsFeedApplication(props) {
   const [newsData, setNewsData] = useState([]);
-  const [selectedCountry, updateSelectedCountry] = useState("IN");
-  const [selectedCategory, updateSelectedCategory] = useState("general");
+  const [selectedCountry, updateSelectedCountry] = useState('IN');
+  const [selectedCategory, updateSelectedCategory] = useState('general');
 
   useEffect(() => {
     async function fetchData() {
       const { articles } = await fetch(
         `https://saurav.tech/NewsAPI/top-headlines/category/${selectedCategory}/${selectedCountry.toLowerCase()}.json`
-      ).then(res => res.json());
+      ).then((res) => res.json());
       setNewsData(articles);
     }
     fetchData();
@@ -44,14 +44,14 @@ function NewsFeedApplication(props) {
                     <Select
                       labelId="country-select-label"
                       id="country-select"
-                      defaultValue={"IN"}
+                      defaultValue={'IN'}
                       value={selectedCountry}
                       label="Country"
                       onChange={(e) => {
                         updateSelectedCountry(e.target.value);
                       }}
                     >
-                      {countries.map(({name, code}) => (
+                      {countries.map(({ name, code }) => (
                         <MenuItem key={name} value={code}>
                           {name}
                         </MenuItem>

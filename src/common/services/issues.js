@@ -1,5 +1,5 @@
-import { GitAPI } from "git-repo-api";
-import { GIT } from "../const";
+import { GitAPI } from 'git-repo-api';
+import { GIT } from '../const';
 
 // get all tags
 const getIssues = () => {
@@ -9,7 +9,7 @@ const getIssues = () => {
     res.forEach((issue) => {
       issue_formatted.push({
         name: issue.title,
-        value: issue.number,
+        value: issue.number
       });
     });
     return issue_formatted;
@@ -17,5 +17,5 @@ const getIssues = () => {
 };
 
 export const Issues = {
-  getIssues,
+  getIssues
 };
