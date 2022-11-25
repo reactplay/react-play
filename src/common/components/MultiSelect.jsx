@@ -1,17 +1,17 @@
-import { useEffect } from "react";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import ListItemText from "@mui/material/ListItemText";
-import Select from "@mui/material/Select";
-import Checkbox from "@mui/material/Checkbox";
-import { makeStyles } from "@mui/styles";
+import { useEffect } from 'react';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import ListItemText from '@mui/material/ListItemText';
+import Select from '@mui/material/Select';
+import Checkbox from '@mui/material/Checkbox';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
   menuPaper: {
-    maxHeight: "250px !important",
-  },
+    maxHeight: '250px !important'
+  }
 });
 
 export default function MultipleSelectCheckmarks({
@@ -19,7 +19,7 @@ export default function MultipleSelectCheckmarks({
   setFilterQuery,
   options,
   filterKey,
-  label,
+  label
 }) {
   const classes = useStyles();
 
@@ -27,42 +27,42 @@ export default function MultipleSelectCheckmarks({
     if (
       filterQuery[filterKey].length > 0 &&
       filterQuery[filterKey].length === options.length - 1 &&
-      !filterQuery[filterKey].includes(" ")
+      !filterQuery[filterKey].includes(' ')
     ) {
-      setFilterQuery({ ...filterQuery, [filterKey]: [" "] });
+      setFilterQuery({ ...filterQuery, [filterKey]: [' '] });
     }
   }, [filterQuery, setFilterQuery, options, filterKey]);
 
   const handleChange = (event) => {
     const {
-      target: { value },
+      target: { value }
     } = event;
     if (value.length === 0) {
       setFilterQuery({ ...filterQuery, [filterKey]: [] });
-    } else if (value.indexOf(" ") > -1) {
-      const updatedValues = value.filter((id) => id !== " ");
-      if (updatedValues.length && value[value.length - 1] !== " ") {
+    } else if (value.indexOf(' ') > -1) {
+      const updatedValues = value.filter((id) => id !== ' ');
+      if (updatedValues.length && value[value.length - 1] !== ' ') {
         setFilterQuery({ ...filterQuery, [filterKey]: updatedValues });
       } else {
-        setFilterQuery({ ...filterQuery, [filterKey]: [" "] });
+        setFilterQuery({ ...filterQuery, [filterKey]: [' '] });
       }
     } else {
-      const updatedValues = value.filter((id) => id !== " ");
+      const updatedValues = value.filter((id) => id !== ' ');
       setFilterQuery({ ...filterQuery, [filterKey]: updatedValues });
     }
   };
 
   const renderValueHandler = (value) => {
-    if (filterKey === "owner_user_id") {
+    if (filterKey === 'owner_user_id') {
       return options
         .filter((option) => value.includes(option.value))
         .map((option) => option?.label?.props?.children[1])
-        .join(", ");
+        .join(', ');
     }
     return options
       .filter((option) => filterQuery[filterKey].includes(option.value))
       .map((option) => option.label)
-      .join(", ");
+      .join(', ');
   };
 
   return (
@@ -84,7 +84,7 @@ export default function MultipleSelectCheckmarks({
               <Checkbox
                 checked={
                   filterQuery[filterKey].indexOf(option.value) > -1 ||
-                  filterQuery[filterKey].includes(" ")
+                  filterQuery[filterKey].includes(' ')
                 }
               />
               <ListItemText primary={option.label} />

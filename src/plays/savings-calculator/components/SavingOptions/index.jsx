@@ -1,7 +1,7 @@
-import { getCurrencySymbol } from "plays/savings-calculator/utils/getCurrencySymbol";
-import React, { useState } from "react";
-import { getCalculatedSaving } from "../../utils/getCalculatedSaving";
-import "./savingOptions.scss";
+import { getCurrencySymbol } from 'plays/savings-calculator/utils/getCurrencySymbol';
+import React, { useState } from 'react';
+import { getCalculatedSaving } from '../../utils/getCalculatedSaving';
+import './savingOptions.scss';
 
 function SavingOptions(props) {
   const { currency, setCurrency, setTotal } = props;
@@ -9,7 +9,7 @@ function SavingOptions(props) {
   const [startingBalance, setStartingBalance] = useState(1000);
   const [monthlyContribution, setMonthlyContribution] = useState(100);
   const [period, setPeriod] = useState(1);
-  const [periodChoice, setPeriodChoice] = useState("Years");
+  const [periodChoice, setPeriodChoice] = useState('Years');
   const [annualInterest, setAnnualInterest] = useState(8);
 
   const handleSubmit = (event) => {
@@ -20,7 +20,7 @@ function SavingOptions(props) {
       monthlyContribution,
       period,
       periodChoice,
-      annualInterest,
+      annualInterest
     });
 
     setTotal(total);
@@ -44,9 +44,7 @@ function SavingOptions(props) {
         <div className="savingOptions__formGroup">
           <label htmlFor="starting-balance">Starting Balance:</label>
           <div className="savingOptions__inputGroup">
-            <div className="savingOptions__inputPrepend">
-              {getCurrencySymbol(currency)}
-            </div>
+            <div className="savingOptions__inputPrepend">{getCurrencySymbol(currency)}</div>
             <input
               type="number"
               className="savingOptions__formControl"
@@ -60,9 +58,7 @@ function SavingOptions(props) {
         <div className="savingOptions__formGroup">
           <label htmlFor="monthly-contribution">Monthly Contribution:</label>
           <div className="savingOptions__inputGroup">
-            <div className="savingOptions__inputPrepend">
-              {getCurrencySymbol(currency)}
-            </div>
+            <div className="savingOptions__inputPrepend">{getCurrencySymbol(currency)}</div>
             <input
               type="number"
               className="savingOptions__formControl"
@@ -97,10 +93,7 @@ function SavingOptions(props) {
               defaultChecked
               onChange={(e) => setPeriodChoice(e.target.value)}
             />
-            <label
-              className="savingOptions__radioLabel"
-              htmlFor="period-choice-years"
-            >
+            <label className="savingOptions__radioLabel" htmlFor="period-choice-years">
               Years
             </label>
           </div>
@@ -113,18 +106,13 @@ function SavingOptions(props) {
               value="Months"
               onChange={(e) => setPeriodChoice(e.target.value)}
             />
-            <label
-              className="savingOptions__radioLabel"
-              htmlFor="period-choice-months"
-            >
+            <label className="savingOptions__radioLabel" htmlFor="period-choice-months">
               Months
             </label>
           </div>
         </div>
         <div className="savingOptions__formGroup">
-          <label htmlFor="annual-interest-rate">
-            Annual Interest Rate (%):
-          </label>
+          <label htmlFor="annual-interest-rate">Annual Interest Rate (%):</label>
           <div className="savingOptions__inputGroup">
             <input
               type="number"
@@ -136,11 +124,7 @@ function SavingOptions(props) {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="savingOptions__calculate"
-          onClick={handleSubmit}
-        >
+        <button type="submit" className="savingOptions__calculate" onClick={handleSubmit}>
           Calculate Total
         </button>
       </form>
