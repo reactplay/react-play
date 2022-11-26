@@ -24,7 +24,7 @@ export const toTitleCase = (str) => {
 };
 
 export const replaceAll = (str, replaceWhat, replaceTo) => {
-  replaceWhat = replaceWhat.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+  replaceWhat = replaceWhat.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
   var re = new RegExp(replaceWhat, 'g');
 
   return str.replace(re, replaceTo);
@@ -45,7 +45,7 @@ export const toSanitized = (str) => {
     return '';
   }
   // replace all special characters | symbols with a space
-  str = str.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, ' ');
+  str = str.replace(/[`~!@#$%^&*()_\-+=[\]{};:'"\\|/,.<>?\s]/g, ' ');
   // trim spaces at start and end of string
   str = str.replace(/^\s+|\s+$/gm, '');
   // replace space with dash/hyphen
