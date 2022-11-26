@@ -6,14 +6,17 @@ import { createRoot } from "react-dom/client";
 import reportWebVitals from "reportWebVitals";
 import register from "./registerServiceWorker";
 import ErrorBoundry from "./ErrorBoundary/ErrorBoundary";
+import Notification from "common/components/Notification";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 /** removing console statement in react prod build */
 if (process.env.NODE_ENV !== "development") {
-   console.log = () => {};
-   console.debug = () => {};
-   console.info = () => {};
-   console.disableYellowBox = true;
- }
+  console.log = () => {};
+  console.debug = () => {};
+  console.info = () => {};
+  console.disableYellowBox = true;
+}
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,13 +37,14 @@ const Index = () => {
     setShowShareModal,
   };
   return (
-    <React.StrictMode>
-      <ErrorBoundry>
-        <SearchContext.Provider value={value}>
-          <RouteDefs />
-        </SearchContext.Provider>
-      </ErrorBoundry>
-    </React.StrictMode>
+    // <React.StrictMode>
+    <ErrorBoundry>
+      <SearchContext.Provider value={value}>
+        <RouteDefs />
+        <Notification />
+      </SearchContext.Provider>
+    </ErrorBoundry>
+    // </React.StrictMode>
   );
 };
 const container = document.getElementById("root");

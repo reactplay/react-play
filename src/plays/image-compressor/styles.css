@@ -1,0 +1,52 @@
+/* enter stlyes here */
+.image-compressor {
+  min-height: 100%;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(156, 252, 248, 1) 11.2%,
+    rgba(110, 123, 251, 1) 91.1%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  gap: 16px;
+}
+.image-compressor__input {
+  padding: 16px;
+  border: 1px dashed rgba(110, 123, 251, 1);
+  border-radius: 4px;
+}
+.image-compressor__imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.image-compressor__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-compressor__progress {
+  width: 40px;
+}
+.image-compressor__image {
+  height: 350px;
+  width: 350px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(110, 123, 251, 1);
+  border-radius: 8px;
+}
+.image-compressor__image img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.image-compressor__btn {
+  background-color: #084c61;
+  padding: 8px;
+  border-radius: 8px;
+}

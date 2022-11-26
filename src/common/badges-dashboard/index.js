@@ -50,7 +50,9 @@ const BadgesDashboard = () => {
   let { email, details } = useParams();
 
   const handleLogin = () => {
-    window.location = NHOST.AUTH_URL(`${window.location.origin}/me/badges`);
+    window.location = NHOST.AUTH_URL(
+      `${window.location.origin}/contributors/me/badges`
+    );
   };
 
   const getBadgeImage = (prev_badge, current_badge) => {
