@@ -153,38 +153,33 @@ const BadgesDashboard = () => {
         /> */}
       </Helmet>
 
-      <div
-        className="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover text-gray-100 h-full p-8"
-        style={{
-          background: "linear-gradient(180deg,#010426,#4c5b5e)",
-        }}
-      >
-        <div className="flex items-center h-auto  flex-wrap mx-auto my-32">
+      <div className="font-sans antialiased leading-normal tracking-wider bg-cover h-full p-8 bg-[#F6F6F9]">
+        <div className="flex items-center h-auto  flex-wrap mx-auto my-16">
           {userInfo ? (
             <div
               id="profile"
-              className="w-full rounded-lg shadow-2xl bg-white opacity-75 mx-6 bg-gray-900"
+              className="w-full rounded-lg shadow-2xl bg-white opacity-75 mx-6"
             >
-              <div className="p-4 md:p-12 text-center">
+              <div className="p-1 md:p-12 text-center">
                 <div
-                  className="block  rounded-full shadow-xl mx-auto -mt-16 h-16 w-16 bg-cover bg-center md:h-32 md:w-32 md:-mt-32"
+                  className="block border-4 border-white rounded-full mx-auto -mt-16 h-24 w-24 bg-cover bg-center md:h-32 md:w-32 md:-mt-32"
                   style={{
                     backgroundImage: `url(${userInfo.avatarUrl})`,
                   }}
                 ></div>
 
-                <h1 className="text-3xl font-bold pt-8 text-gray-100">
+                <h1 className="text-3xl font-bold pt-8 text-gray-900">
                   {userInfo.displayName}
                 </h1>
-                <p className="pt-4 flex items-center justify-center text-xs text-grey-600  text-gray-100">
+                <p className="pt-4 flex items-center justify-center text-xs text-grey-500">
                   {userInfo.email}
                 </p>
-                <div className="mx-auto w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+                <div className="mx-auto w-4/5 pt-3 border-b-2 border-grey-100 opacity-25"></div>
                 <div className="pt-4 pb-8">
-                  <p className="pt-2 text-sm  text-gray-100">Badges</p>
+                  <p className="pt-2 text-sm  text-gray-900">Badges</p>
                 </div>
                 <div className="mx-auto">
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-6">
                     {allBadges.map((badge, bi) => {
                       return (
                         <Badge

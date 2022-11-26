@@ -20,7 +20,7 @@ return result;
         alt="avatar"
       />
       <a
-        href={`${getHostName()}/${email2Slug(user.email)}/badges`}
+        href={`${getHostName()}/contributors/${email2Slug(user.email)}/badges`}
         className="play-anchor"
         rel="noopener noreferrer"
       >
