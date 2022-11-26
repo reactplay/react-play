@@ -1,13 +1,13 @@
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { SearchContext } from './search-context';
+import { useSearchContext } from './search-context';
 import './search.css';
 import { BiSearch } from 'react-icons/bi';
 
 const SearchPlays = ({ reset }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { setSearchTerm } = useContext(SearchContext);
+  const { setSearchTerm } = useSearchContext();
   const [searchText, setSearchText] = useState('');
 
   const resetSearchField = useCallback(() => {
@@ -41,10 +41,10 @@ const SearchPlays = ({ reset }) => {
           data-testid="plays-search-box-input-field"
           placeholder="Search for a play..."
           type="text"
-          onKeyUp={handleSearch}
           value={searchText}
           // ref={inputRef}
           onChange={(e) => setSearchText(e.target.value)}
+          onKeyUp={handleSearch}
         />
       </div>
     </>

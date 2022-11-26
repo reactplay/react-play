@@ -1,14 +1,13 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { IoAddSharp, IoLogoRss } from 'react-icons/io5';
 import { MdManageSearch } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
 import { BsTwitter, BsGithub } from 'react-icons/bs';
 import LogoLight from 'images/img-logo-light.svg';
-import { SearchContext } from 'common/search/search-context';
+import { useSearchContext } from 'common/search/search-context';
 
 const ExtendedFooter = () => {
-  const { showShareModal, setShowShareModal } = useContext(SearchContext);
+  const { showShareModal, setShowShareModal } = useSearchContext();
 
   return (
     <div className="app-footer--home app-footer">

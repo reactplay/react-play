@@ -1,5 +1,5 @@
 import RouteDefs from 'common/routing/RouteDefs';
-import { SearchContext } from 'common/search/search-context';
+import { SearchContextProvider } from 'common/search/search-context';
 import 'index.css';
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -21,10 +21,10 @@ const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showShareModal, setShowShareModal] = useState(false);
   const [filterQuery, setFilterQuery] = useState({
-    level_id: '',
+    level_id: [],
     tags: [],
-    owner_user_id: '',
-    language: ''
+    owner_user_id: [],
+    language: []
   });
 
   const value = {
@@ -39,10 +39,10 @@ const Index = () => {
   return (
     // <React.StrictMode>
     <ErrorBoundry>
-      <SearchContext.Provider value={value}>
+      <SearchContextProvider value={value}>
         <RouteDefs />
         <Notification />
-      </SearchContext.Provider>
+      </SearchContextProvider>
     </ErrorBoundry>
     // </React.StrictMode>
   );

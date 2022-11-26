@@ -1,7 +1,7 @@
 import { Modal } from 'common';
-import { useContext, useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { SearchContext } from './search-context';
+import { useSearchContext } from './search-context';
 import './search.css';
 
 import { RiFilterFill } from 'react-icons/ri';
@@ -61,10 +61,10 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery, onClearAppliedFilte
   tagOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   const languageOptions = [
-    ...languages?.map((language) => ({
+    ...(languages?.map((language) => ({
       label: language === 'ts' ? 'TypeScript' : 'JavaScript',
       value: language
-    }))
+    })) || [])
   ];
   languageOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
@@ -136,7 +136,7 @@ const filterObject = {
 const FilterPlays = ({ reset }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { filterQuery, setFilterQuery } = useContext(SearchContext);
+  const { filterQuery, setFilterQuery } = useSearchContext();
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
     ...filterObject
@@ -193,27 +193,21 @@ const FilterPlays = ({ reset }) => {
   return (
     <div className="search-filter">
       <Modal
-        children={
-          <FilterPlaysModalBody
-            filterQuery={modifiedFilterQuery}
-            setFilterQuery={setModifiedFilterQuery}
-            onClearAppliedFilters={() => {
-              setModifiedFilterQuery({ ...filterObject });
-              setnoOfAppliedFilter(0);
-            }}
-          />
-        }
-        cname="filter"
         cname="filter"
         show={showModal}
-        show={showModal}
-        title="Filter Plays By"
         title="Filter Plays By"
         onClose={filterModalCloseBtnHandler}
-        onClose={filterModalCloseBtnHandler}
         onSubmit={handleFilter}
-        onSubmit={handleFilter}
-      />
+      >
+        <FilterPlaysModalBody
+          filterQuery={modifiedFilterQuery}
+          setFilterQuery={setModifiedFilterQuery}
+          onClearAppliedFilters={() => {
+            setModifiedFilterQuery({ ...filterObject });
+            setnoOfAppliedFilter(0);
+          }}
+        />
+      </Modal>
 
       <button
         className="btn-filter"

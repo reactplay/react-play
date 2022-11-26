@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import useFetch from 'common/hooks/useFetch';
 import { Link } from 'react-router-dom';
 import './home.css';
@@ -9,7 +9,7 @@ import { ReactComponent as Flower } from 'images/icon-flower.svg';
 import FeaturedPlays from 'common/playlists/FeaturedPlays';
 import Contributors from './Contributors';
 import ExtendedFooter from 'common/footer/ExtendedFooter';
-import { SearchContext } from 'common/search/search-context';
+import { useSearchContext } from 'common/search/search-context';
 import { Tweet } from 'react-twitter-widgets';
 import Spinner from '../spinner/spinner';
 import HackathonBanner from 'common/activities/hackathon/HackathonBanner';
@@ -17,7 +17,7 @@ import DefaultBanner from 'common/defaultBanner/DefaultBanner';
 
 const Home = () => {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
-  const { setSearchTerm, searchTerm, setFilterQuery } = useContext(SearchContext);
+  const { setSearchTerm, searchTerm, setFilterQuery } = useSearchContext();
   useEffect(() => {
     setSearchTerm('');
     setFilterQuery({

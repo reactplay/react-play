@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 // import fs from "fs";
-import { SearchContext } from 'common/search/search-context';
+import { useSearchContext } from 'common/search/search-context';
 import { FetchPlaysFilter } from 'common/services/request/query/fetch-plays-filter';
 import { FetchPlaysSimple } from 'common/services/request/query/fetch-plays';
 
@@ -19,7 +19,7 @@ function useGetPlays() {
 
   const { filterPlaysBySearchString, filterPlaysByMultiTagsLevelLang } = FetchPlaysFilter;
 
-  const { searchTerm, filterQuery } = useContext(SearchContext);
+  const { searchTerm, filterQuery } = useSearchContext();
 
   const hasSearchTerm = searchTerm.length > 0;
   const hasFilterQuery =
