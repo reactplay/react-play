@@ -34,7 +34,6 @@ const PlayHeaderActions = ({ play }) => {
     (userId) => {
       if (!play_like?.length) return { liked: false, number: 0, interation: false };
       const numberOfLikes = countByProp(play_like, 'liked', true);
-      console.log('number of likes are', numberOfLikes);
       const ifLiked = play_like.find((obj) => obj.user_id === userId);
 
       return ifLiked
@@ -76,9 +75,9 @@ const PlayHeaderActions = ({ play }) => {
         }));
       }
     } catch (err) {
-      console.log(err);
+      return { success: false, error: err };
     } finally {
-      return setLoading(false);
+      setLoading(false);
     }
   };
 

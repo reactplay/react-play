@@ -19,7 +19,7 @@ const nhost = new NhostClient({
 });
 
 const RouteDefs = () => {
-  // Array of paths and it's corresponding title. This array is used for changing the title of the website dynamically.
+  // Array of paths used for changing the title of the website dynamically.
   const routes = [
     {
       path: '/',
