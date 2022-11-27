@@ -1,6 +1,12 @@
 import React from "react";
 import { useContext, useEffect, useReducer, createContext } from "react";
-import { InitialContextState, CartProviderProps } from "ShoppingCartTypes";
+import {
+  CartItem,
+  InitialState,
+  REDUCER_ACTIONS,
+  InitialContextState,
+  CartProviderProps,
+} from "ShoppingCartTypes";
 
 import reducer from "./reducer";
 import { CART_ITEMS } from "./data";
@@ -28,7 +34,26 @@ const CartProvider = ({ children }: CartProviderProps) => {
     dispatch({ type: "RELOAD_CART", payload: CART_ITEMS });
 
   useEffect(() => {
-    dispatch({ type: "GET_TOTALS" });
+    const getTotal = () => {
+      let { total, amount } = state.cart.reduce(
+        (cartTotal: InitialState, cartItem: CartItem) => {
+          const { price, amount } = cartItem;
+          const itemTotal = price * amount;
+          cartTotal.total += itemTotal;
+          cartTotal.amount += amount;
+          return cartTotal;
+        },
+        {
+          total: 0,
+          amount: 0,
+        }
+      );
+      total = parseFloat(total.toFixed(2));
+
+      return { ...state, total, amount };
+    };
+
+    getTotal();
   }, [state.cart]);
 
   const value = {
