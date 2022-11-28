@@ -5,7 +5,6 @@ type SearchProps = {
   fetchPokemonDetails: (e: React.FormEvent<HTMLFormElement>) => void;
   name: string;
 };
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Search = (props: SearchProps) => {
   const { onEventChange, fetchPokemonDetails, name } = props;
