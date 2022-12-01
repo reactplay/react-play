@@ -3,8 +3,9 @@ import PlayHeader from 'common/playlists/PlayHeader';
 import React, { useState } from 'react';
 import './styles.scss';
 import MultiSelect from './components/MultiSelect';
+import { PlayRoot } from './types';
 
-function MultiselectComponent(props: any) {
+function MultiselectComponent(props: PlayRoot) {
   // Your Code Start below.
   const [defaultOptions, setDefaultOptions] = useState([
     'Monster Hunter',
