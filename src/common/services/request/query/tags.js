@@ -13,3 +13,30 @@ export const createATagQuery = {
   object: {},
   return: ["id"],
 };
+
+export const deleteATagQuery = (obj) => {
+  return {
+    display: "Delete Tag",
+    name: "delete_play_tags",
+    function: "delete_play_tags",
+    write: true,
+    where: {
+      clause: {
+        operator: "and",
+        conditions: [
+          {
+            field: "play_id",
+            operator: "eq",
+            value: obj.play_id,
+          },
+          {
+            field: "tag_id",
+            operator: "eq",
+            value: obj.tag_id,
+          },
+        ],
+      },
+    },
+    return: ["affected_rows"],
+  };
+};

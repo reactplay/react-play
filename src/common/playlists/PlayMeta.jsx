@@ -8,7 +8,7 @@ import { toSanitized, toTitleCaseTrimmed } from "common/services/string";
 import { FetchPlaysBySlugAndUser } from "common/services/request/query/fetch-plays";
 import { PageNotFound } from "common";
 import thumbPlay from "images/thumb-play.png";
-import { getProdUrl } from "common/utils/playsUtil";
+import { getProdUrl } from "common/utils/commonUtils";
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -23,15 +23,15 @@ function PlayMeta() {
    * Fetch local playImage
    */
   const processCoverImage = useCallback(async (playObj) => {
-    let metaImg = '';
-    let ogTagImg = '';
-    if(playObj.cover) {
+    let metaImg = "";
+    let ogTagImg = "";
+    if (playObj.cover) {
       metaImg = playObj.cover;
       ogTagImg = playObj.cover;
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
-      setLoading(false)
-      return
+      setLoading(false);
+      return;
     }
     try {
       /**
@@ -43,17 +43,17 @@ function PlayMeta() {
       ogTagImg = getProdUrl(response.default);
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
-      setLoading(false) 
+      setLoading(false);
     } catch (_error) {
       /**
        * On error set the default image
        */
 
-       metaImg = thumbPlay;
-       ogTagImg = thumbPlay;
-       setMetaImage(metaImg);
-       setOgTagImage(ogTagImg);
-       setLoading(false) 
+      metaImg = thumbPlay;
+      ogTagImg = thumbPlay;
+      setMetaImage(metaImg);
+      setOgTagImage(ogTagImg);
+      setLoading(false);
     }
   }, []);
 
