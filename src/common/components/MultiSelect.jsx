@@ -54,6 +54,9 @@ export default function MultipleSelectCheckmarks({
 
   const renderValueHandler = (value) => {
     if (filterKey === "owner_user_id") {
+      if (value[0] === " ") {
+        return "All";
+      }
       return options
         .filter((option) => value.includes(option.value))
         .map((option) => option?.label?.props?.children[1])
