@@ -66,7 +66,7 @@ const RouteDefs = () => {
             <Route index element={<PlayList />} />
           </Route>
           <Route path="/ideas" element={<PlayIdeas />} />
-          <Route idex path="/contributors/:id" element={<App />}>
+          <Route idex path="/contributor/:id" element={<App />}>
             <Route index element={<UserProfile />} />
             <Route exact path="edit" element={<EditProfile />} />
           </Route>

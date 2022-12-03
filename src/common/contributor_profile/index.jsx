@@ -1,25 +1,25 @@
+import { Button } from "@mui/material";
+import { useAuthenticationStatus } from "@nhost/react";
+import { socilsRegex } from "common/const/socialsRegex";
 import useGetContributorsDetails from "common/hooks/useGetContributorDetails";
+import { isEmpty } from "lodash";
+import LoadingSpinner from "plays/dev-jokes/Spinner";
+import { useEffect } from "react";
+
 import { BsShare } from "react-icons/bs";
 import { FiEdit2 } from "react-icons/fi";
-import { Button } from "@mui/material";
-import { useLocation, useNavigate } from "react-router-dom";
-import LoadingSpinner from "plays/dev-jokes/Spinner";
-// import { TestimonialCard } from "./components/TestimonialCard";
-import { socilsRegex } from "common/const/socialsRegex";
-import { useAuthenticationStatus } from "@nhost/react";
-import { isEmpty } from "lodash";
-import "./index.css";
-// import { Skills } from "common/services/skills";
 import { MdEmail } from "react-icons/md";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import ContributorProfileMainContent from "./ContributorProfileMainContent";
+import "./index.css";
 
 export const UserProfile = () => {
-  // const {username} = useParams();
+  const { id } = useParams();
   const { isAuthenticated, isLoading } = useAuthenticationStatus();
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [contributor, skills_map, error, dataLoading] =
-    useGetContributorsDetails();
+  const [contributor, skills_map, error, dataLoading, addUserProfile] =
+    useGetContributorsDetails(id);
 
   const {
     resume_link,
@@ -29,9 +29,6 @@ export const UserProfile = () => {
     website,
     users_user_profile_map: { displayName, avatarUrl, email, plays } = {},
   } = contributor || {};
-
-  console.log(social_links);
-
 
   const socials = () => {
     return Object.keys(socilsRegex).map((entry, index) => {
@@ -45,10 +42,13 @@ export const UserProfile = () => {
       );
     });
   };
+  useEffect(() => {
+    if (isEmpty(contributor)) addUserProfile();
+  }, []);
   const handleAddResume = () => {};
 
   if (dataLoading || isLoading) return <LoadingSpinner />;
-
+  if (isEmpty(contributor)) return <div>User not found</div>;
   return (
     <div className="app-body contributor_page ">
       <div className="left_section ">
@@ -97,7 +97,7 @@ export const UserProfile = () => {
           </div>
         ))}
       </div>
-      <ContributorProfileMainContent plays={plays}/>
+      <ContributorProfileMainContent plays={plays} />
     </div>
   );
 };

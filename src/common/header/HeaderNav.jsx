@@ -38,7 +38,7 @@ const HeaderNav = ({ showBrowse }) => {
   const handleUserProfileClick = () => {
     if (!isAuthenticated) return handleLogin("github");
     if(isAuthenticated){
-      navigate(`/contributors/${userId}`);
+      navigate(`/contributor/${userId}`);
     }
   };
 

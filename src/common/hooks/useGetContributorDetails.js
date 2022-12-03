@@ -1,11 +1,11 @@
-import { submit } from "common/services/request";
+import { submit, submitMutation } from "common/services/request";
 import { user_profile } from "common/services/user_profile";
 import { user_skill_map } from "common/services/user_skill_map";
 import { useEffect, useState } from "react";
 
-function useGetContributorsDetails(username) {
+function useGetContributorsDetails(userId) {
   const [loading, setLoading] = useState(true);
-  const [constributor, setContributor] = useState([]);
+  const [contributor, setContributor] = useState({});
   const [skills, setSkills] = useState();
   const [error, setError] = useState(null);
 
@@ -17,12 +17,12 @@ function useGetContributorsDetails(username) {
     try {
       const res = await submit(
         user_skill_map.FetchUserSkillMapByUserId(
-          "4fa14525-8f98-45b9-9a8b-c1ba34c6ed43"
+          userId
         )
       );
       const response = await submit(
         user_profile.FetchUserProfileById(
-          "4fa14525-8f98-45b9-9a8b-c1ba34c6ed43"
+          userId
         )
       );
       setContributor(response[0]);
@@ -32,10 +32,35 @@ function useGetContributorsDetails(username) {
     }
     setLoading(false);
   };
+  const addUserProfile = async () => {
+    setLoading(true);
+    try {
+      // const res = await submitMutation(
+      //   user_skill_map.InsertUserSkillMap(
+      //     userId
+      //   )
+      // );
+      const response = await submitMutation(
+        user_profile.InsertUserProfile(
+          userId,
+        ), {
+        id: userId,
+        social_links: "{}",
+      }
+      );
+      console.log("res", response)
+      // setContributor(response[0]);
+      // setSkills(res);
+    } catch (error) {
+      setError(error);
+    }
+    setLoading(false);
+  }
   useEffect(() => {
     fetchUser();
+    console.log({ contributor })
   }, []);
-  return [constributor, skills, error, loading];
+  return [contributor, skills, error, loading, addUserProfile];
 }
 
 export default useGetContributorsDetails;

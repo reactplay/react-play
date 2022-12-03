@@ -22,11 +22,8 @@ export const InsertUserProfile = (id, avatarUrl) => {
     name: "insert_meta_user_profile_one",
     function: "insert_meta_user_profile_one",
     write: true,
-    object: {
-      id,
-      social_links: "{}",
-      photo_link: avatarUrl,
-    },
+    object: {},
+    return: ["id"]
   };
 };
 const UpdateUserProfile = (id, obj) => {
