@@ -25,6 +25,7 @@ function useGetContributorsDetails(userId) {
           userId
         )
       );
+      if (response.length == 0) addUserProfile()
       setContributor(response[0]);
       setSkills(res);
     } catch (error) {
@@ -35,22 +36,13 @@ function useGetContributorsDetails(userId) {
   const addUserProfile = async () => {
     setLoading(true);
     try {
-      // const res = await submitMutation(
-      //   user_skill_map.InsertUserSkillMap(
-      //     userId
-      //   )
-      // );
-      const response = await submitMutation(
-        user_profile.InsertUserProfile(
-          userId,
-        ), {
+      await submitMutation(
+        user_profile.InsertUserProfile(), {
         id: userId,
-        social_links: "{}",
+        // social_links: "{}",
       }
       );
-      console.log("res", response)
-      // setContributor(response[0]);
-      // setSkills(res);
+      fetchUser()
     } catch (error) {
       setError(error);
     }
@@ -58,7 +50,6 @@ function useGetContributorsDetails(userId) {
   }
   useEffect(() => {
     fetchUser();
-    console.log({ contributor })
   }, []);
   return [contributor, skills, error, loading, addUserProfile];
 }

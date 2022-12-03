@@ -1,10 +1,9 @@
 import { Button } from "@mui/material";
-import { useAuthenticationStatus } from "@nhost/react";
+import { useUserId } from "@nhost/react";
 import { socilsRegex } from "common/const/socialsRegex";
 import useGetContributorsDetails from "common/hooks/useGetContributorDetails";
 import { isEmpty } from "lodash";
 import LoadingSpinner from "plays/dev-jokes/Spinner";
-import { useEffect } from "react";
 
 import { BsShare } from "react-icons/bs";
 import { FiEdit2 } from "react-icons/fi";
@@ -15,10 +14,10 @@ import "./index.css";
 
 export const UserProfile = () => {
   const { id } = useParams();
-  const { isAuthenticated, isLoading } = useAuthenticationStatus();
+  const userId = useUserId();
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [contributor, skills_map, error, dataLoading, addUserProfile] =
+  const [contributor, skills_map, error, dataLoading] =
     useGetContributorsDetails(id);
 
   const {
@@ -42,12 +41,10 @@ export const UserProfile = () => {
       );
     });
   };
-  useEffect(() => {
-    if (isEmpty(contributor)) addUserProfile();
-  }, []);
+
   const handleAddResume = () => {};
 
-  if (dataLoading || isLoading) return <LoadingSpinner />;
+  if (dataLoading) return <LoadingSpinner />;
   if (isEmpty(contributor)) return <div>User not found</div>;
   return (
     <div className="app-body contributor_page ">
@@ -60,7 +57,7 @@ export const UserProfile = () => {
         <h2 className="text-lg font-bold"> {displayName}</h2>
 
         {/* show only if current login user same as user whose profile we are on */}
-        {isAuthenticated ? (
+        {userId === id ? (
           <Button
             className="rounded-md flex gap-1 "
             onClick={() => {

@@ -72,6 +72,7 @@ const ContributorProfileMainContent = ({ plays }) => {
         <ol className="list-plays">
           {plays?.map((play, index) => (
             <React.Fragment key={index}>
+              {console.log(play.component)}
               {all_plays[
                 play.component ? play.component : toSanitized(play.title_name)
               ] && <PlayThumbnail key={play.id} play={play} />}

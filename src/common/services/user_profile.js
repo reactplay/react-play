@@ -16,7 +16,7 @@ const FetchUserProfileById = (id) => {
   };
   return payload;
 };
-export const InsertUserProfile = (id, avatarUrl) => {
+export const InsertUserProfile = () => {
   return {
     display: "Insert User Profile",
     name: "insert_meta_user_profile_one",
