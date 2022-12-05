@@ -56,10 +56,13 @@ const PlayThumbnail = ({ play }) => {
         })
         .catch((err) => {
           // if there is no cover image, set a default image
-          console.warn(`Cover image not found for the play ${play.name}`);
-          console.info('Setting the default cover image...');
-
           setCover(thumbPlay);
+
+          return {
+            success: false,
+            error: err,
+            message: `Cover image not found for the play ${play.name}. Setting the default cover image...`
+          };
         });
     }
   }, [play]);

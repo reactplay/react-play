@@ -7,9 +7,7 @@ import { toast } from 'react-toastify';
 // COMPONENTS & FILES
 import PlayForm from 'common/components/PlayForms';
 import Loader from 'common/spinner/spinner';
-import { ReactComponent as NotAllowedImage } from '../../images/img-403.svg';
 import PageNotFound from 'common/404/PageNotFound';
-import { Button } from '@mui/material';
 
 // UTILS
 import { FIELD_TEMPLATE } from './create-play-form-template';
@@ -27,29 +25,6 @@ import { updatePlayInfo } from 'common/services/request/query/edit-play';
 
 // STYLES
 import './create-play.scss';
-
-const NoCreationInProdScreen = () => {
-  return (
-    <div className="w-full h-full flex flex-col justify-center items-center gap-8">
-      <div>
-        <NotAllowedImage width={550} />
-      </div>
-      <div className="text-center">
-        You can't create plays in production
-        <br />
-        <a
-          className="text-link-default"
-          href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          read this
-        </a>
-        for more details
-      </div>
-    </div>
-  );
-};
 
 const reducer = (state, updatedState) => ({ ...state, ...updatedState });
 

@@ -70,6 +70,8 @@ function PlayMeta() {
       .catch((err) => {
         setIsError(true);
         setLoading(false);
+
+        return { success: false, error: err };
       });
   }, [playname, username]);
 
