@@ -1,5 +1,9 @@
 node_modules
 .github
+service-worker.js
+registerServiceWorker.js
+reportWebVitals.js
+setupTests.js
 .build;
 package-lock.json;
 package.json;
