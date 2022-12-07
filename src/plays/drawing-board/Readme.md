@@ -6,3 +6,4 @@
 
 - When satisfied, you can export the image as a **.png** file
 
+Consider this [blog](https://bhaveek.hashnode.dev/make-a-drawing-board-using-react-typescript-and-redux-toolkit) for step-by-step implementation.
