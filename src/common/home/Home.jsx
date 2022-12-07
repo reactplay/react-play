@@ -155,7 +155,7 @@ const Home = () => {
                 width: "310",
                 conversation: "none",
                 cards: "hidden",
-                align: "space-between",
+                align: "center",
               }}
             />
           ))}
