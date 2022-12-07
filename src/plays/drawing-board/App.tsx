@@ -1,6 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { clearCanvas, drawStroke, setCanvasSize } from "./utils/canvasUtils";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { beginStroke, updateStroke } from "./modules/currentStroke/slice";
 import { endStroke } from "./modules/sharedActions";
@@ -17,10 +16,19 @@ const CANVAS_HEIGHT = 768;
 
 function App() {
   const canvasRef = useCanvas();
+  const historyIndex = useSelector(historyIndexSelector);
+  const currentStroke = useSelector(currentStrokeSelector);
 
-  const getCanvasWithContext = (canvas = canvasRef.current) => {
-    return { canvas, context: canvas?.getContext("2d") };
-  };
+  const strokes = useSelector(strokesSelector);
+  const dispatch = useDispatch();
+  const isDrawing = !!currentStroke.points.length;
+
+  const getCanvasWithContext = useCallback(
+    (canvas = canvasRef.current) => {
+      return { canvas, context: canvas?.getContext("2d") };
+    },
+    [canvasRef]
+  ); // using useCallback to tackle missing dependency issues with useEffect
 
   // to prepare the canvas for drawing when we open the app
   useEffect(() => {
@@ -36,16 +44,9 @@ function App() {
     context.strokeStyle = "black";
 
     clearCanvas(canvas);
-  }, []);
+  }, [getCanvasWithContext]);
   //set the canvas side to the predefined values,
   //we set the strokes style and then we clear the canvas, preparing it for the first strokes.
-
-  const currentStroke = useSelector(currentStrokeSelector);
-
-  const isDrawing = !!currentStroke.points.length;
-  const historyIndex = useSelector(historyIndexSelector);
-  const strokes = useSelector(strokesSelector);
-  const dispatch = useDispatch();
 
   // side-effect to handle the currentStroke updates.
   useEffect(() => {
@@ -56,7 +57,7 @@ function App() {
     requestAnimationFrame(() =>
       drawStroke(context, currentStroke.points, currentStroke.color)
     );
-  }, [currentStroke]);
+  }, [currentStroke, getCanvasWithContext]);
 
   // Canvas Events
   const startDrawing = ({
@@ -93,7 +94,7 @@ function App() {
         drawStroke(context, stroke.points, stroke.color);
       });
     });
-  }, [historyIndex]);
+  }, [getCanvasWithContext, historyIndex, strokes]);
   //Every time the historyIndex gets updated we clear the screen and then draw only the strokes that weren’t undone.
 
   return (
