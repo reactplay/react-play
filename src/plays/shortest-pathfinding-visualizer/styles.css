@@ -1,0 +1,150 @@
+/* enter stlyes here */
+:root {
+    --grid: rgb(177, 217, 255);
+    --path: rgb(255, 255, 148);
+    --font: "Calibri";
+    --bg: rgb(70, 182, 180);
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  .header {
+    width: 100%;
+    height: 40vh;
+  }
+  
+  .header nav {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg);
+  }
+  
+  .header nav h1 {
+    font-family: var(--font);
+    color: white;
+    margin-left: 10px;
+    font-size: 30px;
+  }
+  
+  .visualise {
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: white;
+    border: 0;
+    font-size: 20px;
+    font-family: var(--font);
+    color: var(--bg);
+    cursor: pointer;
+    border-radius: 1.5rem;
+  }
+  
+  .visualise:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .info-header {
+    text-align: center;
+    font-family: var(--font);
+    color: var(--bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    font-size: 20px;
+  }
+  
+  .note {
+    text-align: center;
+    font-family: var(--font);
+    color: var(--bg);
+    font-size: 20px;
+  }
+  
+  .algo-info {
+    text-align: center;
+    font-family: var(--font);
+    color: var(--bg);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .cell-btn {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  select {
+    width: 200px;
+    height: 42px;
+    background: none;
+    padding: 5px;
+    border: 1px solid white;
+    font-family: var(--font);
+    color: white;
+    font-size: 20px;
+  }
+  select option {
+    background-color: var(--bg);
+  }
+  
+  @keyframes findColor {
+    0% {
+      border-radius: 75%;
+      background-color: rgb(0, 51, 102);
+    }
+    25% {
+      border-radius: 50%;
+      background-color: rgb(8, 181, 109);
+    }
+    50% {
+      border-radius: 25%;
+      background-color: rgb(58, 167, 165);
+    }
+    75% {
+      border-radius: -5%;
+      background-color: rgb(49, 169, 105);
+    }
+    100% {
+      border-radius: 0;
+      background-color: rgb(70, 182, 180);
+    }
+  }
+  
+  @keyframes pathColor {
+    0% {
+      border-radius: 75%;
+      background-color: var(--path);
+    }
+    25% {
+      border-radius: 50%;
+      background-color: var(--path);
+    }
+    50% {
+      border-radius: 25%;
+      background-color: var(--path);
+    }
+    75% {
+      border-radius: 10%;
+      background-color: var(--path);
+    }
+    100% {
+      border-radius: 0;
+      background-color: var(--path);
+    }
+  }
+  
+  .cell-btn:hover {
+    background-color: var(--grid);
+  }
