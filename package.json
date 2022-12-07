@@ -63,8 +63,8 @@
     "xp.css": "^0.2.5"
   },
   "scripts": {
-    "start": "npx create-react-play -p && react-scripts start",
-    "build": "npx create-react-play -p && react-scripts build",
+    "start": "npx --yes create-react-play@latest -p && react-scripts start",
+    "build": "npx --yes create-react-play@latest -p && react-scripts build",
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
