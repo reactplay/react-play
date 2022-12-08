@@ -9,7 +9,9 @@ import Like from "common/components/Like/Like";
 import Comment from "common/components/Comment";
 import useLikePlays from "common/hooks/useLikePlays";
 import { NHOST } from "common/const";
-import countByProp from "common/utils/countByProp";
+import countByProp from "common/utils/commonUtils";
+import { useNavigate } from "react-router-dom";
+import { AiFillEdit } from "react-icons/ai";
 
 const initialLikeObject = {
   liked: false,
@@ -19,6 +21,7 @@ const initialLikeObject = {
 
 const PlayHeaderActions = ({ play }) => {
   const { play_like } = play;
+  const navigate = useNavigate();
 
   const userId = useUserId();
   const { likePlay, unLikePlay } = useLikePlays();
@@ -29,7 +32,8 @@ const PlayHeaderActions = ({ play }) => {
 
   const constructLikeData = useCallback(
     (userId) => {
-      if (!play_like?.length) return { liked: false, number: 0, interation: false };
+      if (!play_like?.length)
+        return { liked: false, number: 0, interation: false };
       const numberOfLikes = countByProp(play_like, "liked", true);
       console.log("number of likes are", numberOfLikes);
       const ifLiked = play_like.find((obj) => obj.user_id === userId);
@@ -78,9 +82,17 @@ const PlayHeaderActions = ({ play }) => {
     }
   };
 
+  const handleEditPlay = () => {
+    const generateLink = `/editplay/${play.github}/${play.slug}`;
+    return navigate(generateLink);
+  };
+
   return (
     <>
       <Like onLikeClick={!loading ? onLikeClick : null} likeObj={likeObj} />
+      <button className="action">
+        <AiFillEdit onClick={handleEditPlay} size={24} className='icon' />
+      </button>
       <button className='action badged' onClick={() => setShowComment(true)}>
         <BiComment className='icon' size='24px' />
         <span className='sr-only'>Comments</span>
@@ -88,43 +100,51 @@ const PlayHeaderActions = ({ play }) => {
 
       {play.path && (
         <a
-          target='_blank'
-          rel='noopener noreferrer'
-          className='action'
+          target="_blank"
+          rel="noopener noreferrer"
+          className="action"
           href={`https://github.com/reactplay/react-play/tree/main/src${play.path}`}
         >
-          <BsGithub className='icon' size='24px' />
-          <span className='sr-only'>GitHub</span>
+          <BsGithub className="icon" size="24px" />
+          <span className="sr-only">GitHub</span>
         </a>
       )}
       <a
-        target='_blank'
-        rel='noopener noreferrer'
-        className='action'
+        target="_blank"
+        rel="noopener noreferrer"
+        className="action"
         href={
           play.blog
             ? play.blog
             : `https://github.com/reactplay/react-play/tree/main/src${play.path}/Readme.md`
         }
       >
-        <AiOutlineRead className='icon' size='24px' />
-        <span className='sr-only'>Blog</span>
+        <AiOutlineRead className="icon" size="24px" />
+        <span className="sr-only">Blog</span>
       </a>
       {play.video && (
-        <a target='_blank' rel='noopener noreferrer' className='action' href={play.video}>
-          <IoLogoYoutube className='icon' size='24px' />
-          <span className='sr-only'>Video</span>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="action"
+          href={play.video}
+        >
+          <IoLogoYoutube className="icon" size="24px" />
+          <span className="sr-only">Video</span>
         </a>
       )}
       {showComment && (
-        <div className='play-details-comments'>
-          <div className='comments-header'>
-            <h3 className='header-title'>Comments</h3>
-            <button className='header-action' onClick={() => setShowComment(false)}>
-              <MdClose size={24} className='icon' />
+        <div className="play-details-comments">
+          <div className="comments-header">
+            <h3 className="header-title">Comments</h3>
+            <button
+              className="header-action"
+              onClick={() => setShowComment(false)}
+            >
+              <MdClose size={24} className="icon" />
             </button>
           </div>
-          <div className='comments-body'>
+          <div className="comments-body">
             <Comment />
           </div>
         </div>

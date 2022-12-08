@@ -60,12 +60,17 @@ const PlayCreated = () => {
               <code className="console-wrapper">
                 npx create-react-play -c {play.id}
               </code>
+              <strong>Note:</strong>If the play folder <i><b>&lt;reactplay_directory&gt;/src/plays/&lt;your_play_name&gt;</b></i> remain empty after running above command that means you might be in some older version of the package. Use <i><b>@latest</b></i> in that case
+              <code className="console-wrapper">
+                npx create-react-play@latest -c {play.id}
+              </code>
             </li>
             <li>
               Install dependencies
               <code className="console-wrapper">
                 npm install <br /># OR <br /> yarn{" "}
               </code>
+
             </li>
             <li>
               Start application
