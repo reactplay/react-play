@@ -8,7 +8,7 @@ import './basic-tree.css';
 const Card = (props) => {
   return (
     <>
-      {props.data.map((item, index) => (
+      {props.data.map((item) => (
         <Fragment key={item.name}>
           <TreeNode label={<div className="node">{item.name}</div>}>
             {item.children?.length && <Card data={item.children} />}

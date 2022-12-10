@@ -39,7 +39,7 @@ function CodeEditor(props) {
 
   const [showModal, setShowModal] = useState(false);
 
-  const toggle = (e) => {
+  const toggle = () => {
     setShowModal(!showModal);
   };
 

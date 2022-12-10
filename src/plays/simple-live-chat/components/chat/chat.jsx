@@ -33,7 +33,7 @@ const DisplayChat = ({ user, setLoggedUser }) => {
         setLoggedUser(null);
         localStorage.removeItem('auth');
       })
-      .catch((_error) => {
+      .catch(() => {
         // handle error
       });
   };

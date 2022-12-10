@@ -9,7 +9,7 @@ import SearchImg from './assest/Search.png';
 import Backgrounds from './Backgrounds';
 import { FaTwitterSquare } from 'react-icons/fa';
 
-const NavListItems = (props) => {
+const NavListItems = () => {
   const [open, setOpen] = useState(true);
   const [show, setShow] = useState('opacity-0');
   const [hide, setHide] = useState(true); // true == opacity-1

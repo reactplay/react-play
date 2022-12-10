@@ -30,7 +30,7 @@ export const UseCustomFetchAPI = (endPoint) => {
     })();
 
     return () => {
-      // Preventing the component from updating dom while unmounting thus no memory leaks.
+      // Preventing the component from updating dom while unmounting thus no memory leaks
       controller.abort();
       cancel = true;
     };

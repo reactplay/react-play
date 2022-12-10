@@ -149,7 +149,6 @@ const CreatePlay = () => {
           return navigate(`/plays/${username}/${playname}`, { replace: true });
         } catch (err) {
           return err;
-          // console.log(err);
         }
       }
       setState({ loadingText: 'Creating Play', isDataLoading: true });

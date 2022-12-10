@@ -40,7 +40,7 @@ const QuizSelectionScreen = ({ getSelectedCategory }) => {
           <button onClick={() => getSelectedCategory(selectedOption)}>Yes, Lets Start!</button>
         </div>
         <div>
-          <button className="back" onClick={(e) => setView(CATEGORY_SELECTION)}>
+          <button className="back" onClick={() => setView(CATEGORY_SELECTION)}>
             &#171; Back
           </button>
         </div>
@@ -61,7 +61,7 @@ const QuizSelectionScreen = ({ getSelectedCategory }) => {
               <div
                 className={`single-selection ${selectedOption === option.id && 'active-selected'}`}
                 key={option.id}
-                onClick={(e) => setSelectedOption(option.id)}
+                onClick={() => setSelectedOption(option.id)}
               >
                 {option.name}
               </div>

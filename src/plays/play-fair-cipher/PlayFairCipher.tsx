@@ -72,7 +72,7 @@ function PlayFairCipher(props: any) {
       }
     }
   };
-  const performEncryption = (e: React.MouseEvent<HTMLDivElement>) => {
+  const performEncryption = () => {
     setPt('');
     const newPt = ensureNoSameCharPair(input.replace('j', 'i'));
     let newCt = '';
@@ -98,7 +98,7 @@ function PlayFairCipher(props: any) {
     setCt(newCt);
   };
 
-  const performDecryption = (e: React.MouseEvent<HTMLDivElement>) => {
+  const performDecryption = () => {
     setCt('');
     let newPt = '';
     for (let i = 0; i < input.length; i += 2) {

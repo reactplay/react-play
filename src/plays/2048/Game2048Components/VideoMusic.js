@@ -1,7 +1,7 @@
 import React from 'react';
 import Video from '../GameAudio/VideoMusic.mp4';
 
-function VideoMusic(props) {
+function VideoMusic() {
   return (
     <>
       <div className="invisible">

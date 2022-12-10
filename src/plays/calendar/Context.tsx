@@ -7,11 +7,11 @@ import EventType from './EventType';
 export const Context = React.createContext<any>({
   modalTitle: '',
   modalContent: undefined,
-  getEvents: (date: Date) => {},
-  addEvent: (event: EventType) => {},
-  updateEvent: (event: EventType) => {},
-  deleteEvent: (event: EventType) => {},
-  showModal: (content: React.ReactNode, title?: '') => {},
+  getEvents: () => {},
+  addEvent: () => {},
+  updateEvent: () => {},
+  deleteEvent: () => {},
+  showModal: () => {},
   hideModal: () => {}
 });
 

@@ -44,7 +44,7 @@ function NetlifyCardGame(props) {
   // show guidence modal
   const [showModal, setShowModal] = useState(false);
 
-  const toggle = (e) => {
+  const toggle = () => {
     setShowModal(!showModal);
   };
 

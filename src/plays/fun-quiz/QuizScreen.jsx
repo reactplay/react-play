@@ -57,7 +57,7 @@ function QuizScreen({ category, getQuizSummary }) {
   }, [formatCategoryText, nonPremitiveReference]);
 
   // select and deselect the answer
-  const handleAnswerClick = (val) => (e) => {
+  const handleAnswerClick = (val) => () => {
     setAnswer(!!answer.answer && answer.answer === val ? answerState : { ...answer, answer: val });
   };
 
@@ -113,7 +113,7 @@ function QuizScreen({ category, getQuizSummary }) {
     }
   }, [timer, handleConfirm, quizData.data]);
 
-  const cheatHandler = (e) => {
+  const cheatHandler = () => {
     setAnswer({
       cheat: true,
       cheated: true,
