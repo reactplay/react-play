@@ -9,7 +9,6 @@ function CounterApp(props) {
 
   function register() {
     let no_times = Number(input);
-    console.log(no_times);
     setTimes(no_times);
     setInput('');
   }

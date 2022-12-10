@@ -10,8 +10,6 @@ const MovieContainer = (props) => {
   const MOVIE_API_URI = 'https://json-faker.onrender.com/movies';
   const { data, loading, error } = useFetch(MOVIE_API_URI);
 
-  console.log('data', data);
-
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {

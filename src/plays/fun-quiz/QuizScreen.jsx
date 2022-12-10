@@ -35,7 +35,7 @@ function QuizScreen({ category, getQuizSummary }) {
           `https://opentdb.com/api.php?amount=20${formatCategoryText}&type=multiple`
         );
         const { results } = await response.json();
-        // if there is no data coming from api but status 200 is returned then we want to end up in catch block
+        // if the API status = 200 but response has no data then we want to end up in catch block
         if (!results.length) throw new Error();
         const createOptions = results.map((result) => {
           const { incorrect_answers, correct_answer } = result;
@@ -57,7 +57,7 @@ function QuizScreen({ category, getQuizSummary }) {
   }, [formatCategoryText, nonPremitiveReference]);
 
   // select and deselect the answer
-  const handleAnswerClick = (val) => (e) => {
+  const handleAnswerClick = (val) => () => {
     setAnswer(!!answer.answer && answer.answer === val ? answerState : { ...answer, answer: val });
   };
 
@@ -113,7 +113,7 @@ function QuizScreen({ category, getQuizSummary }) {
     }
   }, [timer, handleConfirm, quizData.data]);
 
-  const cheatHandler = (e) => {
+  const cheatHandler = () => {
     setAnswer({
       cheat: true,
       cheated: true,

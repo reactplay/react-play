@@ -97,7 +97,8 @@ export default function DownloadFetchResponse(props) {
               </Card>{' '}
             </Grid>
             <span className="note-txt flex justify-center items-center py-2">
-              Note:Current version works for all valid GET API's(provided token is not mandatory)
+              Note:Current version works for all valid GET API{`'`}s(provided token is not
+              mandatory)
             </span>
           </Grid>
 

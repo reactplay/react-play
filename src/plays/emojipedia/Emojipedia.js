@@ -104,7 +104,7 @@ function Emojipedia(props) {
                     Oops ...! No Emoji Found
                   </p>
                   <span className="text-center text-gray-300">
-                    We can't find any emoji matching your search, please try again
+                    We can{`'`}t find any emoji matching your search, please try again
                   </span>
                 </div>
               ))}

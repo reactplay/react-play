@@ -22,14 +22,11 @@ function RandomMemeGenerator(props) {
         if (data.nsfw) {
           getMeme();
         } else {
-          console.log(data);
-          setMeme((prev) => {
-            return data;
-          });
+          setMeme(data);
         }
       })
       .catch((err) => {
-        console.error(err);
+        return { success: false, error: err };
       });
   }, []);
 

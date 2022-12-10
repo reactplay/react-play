@@ -33,7 +33,7 @@ function ImageCollector(props) {
             <div className="image-grid">
               {images.length > 0 ? (
                 images.map((image, index) => (
-                  <div className="image-wrapper">
+                  <div className="image-wrapper" key={index}>
                     <img alt="grid" className="image" key={index} src={image} />
                   </div>
                 ))

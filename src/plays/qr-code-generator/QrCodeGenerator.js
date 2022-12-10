@@ -27,6 +27,8 @@ function QrCodeGenerator(props) {
       })
       .catch((err) => {
         setLoading(false);
+
+        return { success: false, error: err };
       });
   }
 

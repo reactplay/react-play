@@ -8,7 +8,7 @@ import './basic-tree.css';
 const Card = (props) => {
   return (
     <>
-      {props.data.map((item, index) => (
+      {props.data.map((item) => (
         <Fragment key={item.name}>
           <TreeNode label={<div className="node">{item.name}</div>}>
             {item.children?.length && <Card data={item.children} />}
@@ -28,9 +28,9 @@ const BasicTree = (props) => {
           <div className="org-tree">
             <h2>Castro - Organization Tree</h2>
             <p className="about">
-              It is a basic organization tree shows the relationship between the employee's roles.
-              The tree is a hierarchical data structure. The children of each node are shown in the
-              below of the node.
+              It is a basic organization tree shows the relationship between the employee{`'`}s
+              roles. The tree is a hierarchical data structure. The children of each node are shown
+              in the below of the node.
             </p>
             <p className="about">
               The tree structure is created using the{' '}

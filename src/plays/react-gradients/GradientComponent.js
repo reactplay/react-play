@@ -5,8 +5,8 @@ import toast from 'react-hot-toast';
 import { debounce } from 'lodash';
 
 const GradientComponent = ({ index, name, css, tailwind, colors }) => {
-  // Function to copy tailwind,css, color to clipboard.This function takes in 2 arguments. One is the text to be copied and the other is the message for the toast.
-  // Note:- Initially, there were three functions that executed this task. Later, combined those functions into just one function(the below one) for better practice and efficiency.
+  // Function to copy tailwind.css color to clipboard.
+  // codeToCopy - text to be copied; message - toast.
   const copyCode = async (codeToCopy, message) => {
     await navigator.clipboard.writeText(codeToCopy);
     toast(`Copied ${message}`, {
@@ -36,9 +36,10 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
         <GradientCopyButton handleOnClick={() => copyCode(css, 'CSS')} tooltipText="Copy CSS">
           <SiCss3 />
         </GradientCopyButton>
-        {colors.map((color) => (
+        {colors.map((color, index) => (
           <GradientCopyButton
             handleOnClick={() => copyCode(color, 'Color')}
+            key={index}
             tooltipText="Copy Color"
           >
             <span className="text-sm uppercase font-semibold">{color}</span>
@@ -46,7 +47,7 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
         ))}
       </div>
 
-      {/* Name of the gradient. Note:- Hoping to add a like button to this same component in the future with justify-between to evenly space the Name on the left and the like button on the right.*/}
+      {/* Name of the gradient.*/}
       <div className="absolute bottom-0 w-full rounded-b-lg bg-[#010326] py-4 px-6 text-xl font-bold text-white">
         {name}
       </div>
@@ -56,15 +57,18 @@ const GradientComponent = ({ index, name, css, tailwind, colors }) => {
 
 export default GradientComponent;
 
-// This component is the button for copying the codes, color. Made it a separate component because it used several times and for easy customization.
+// This component is the button for copying the codes, color.
+// Made it a separate component because it used several times and for easy customization.
 const GradientCopyButton = ({ children, handleOnClick, tooltipText }) => {
   // state variables for setting hover state of button.
   const [isHovered, setIsHovered] = useState(false);
 
-  // onMouseEnter function that passes the event handler into lodash's debounce function to add a delay of 700s and sets setIsHovered to true.
+  // onMouseEnter function that passes the event handler into lodash's debounce function
+  //  to add a delay of 700s and sets setIsHovered to true.
   const handleOnMouseEnter = debounce(() => setIsHovered(true), 700);
 
-  // onMouseLeave function that sets setIsHovered to false and calls the handleOnMouseEnter.cancel() to cancel the calling of the handleOnMouseEnter function.
+  // onMouseLeave function that sets setIsHovered to false and calls the handleOnMouseEnter.
+  // cancel() to cancel the calling of the handleOnMouseEnter function.
   const handleOnMouesLeave = () => {
     setIsHovered(false);
     handleOnMouseEnter.cancel();
@@ -78,7 +82,7 @@ const GradientCopyButton = ({ children, handleOnClick, tooltipText }) => {
       onMouseLeave={handleOnMouesLeave}
     >
       {children}
-      {/* Logic that displays a tooltip when hovered. If state variable isHovered is true it is displayed, else it does not. */}
+      {/* Logic that displays a tooltip when hovered. */}
       {isHovered && (
         <p className="absolute inline-flex justify-center z-50 mt-10 w-fit p-2 text-xs bg-cyan-700 rounded-xl">
           <BsFillTriangleFill className="absolute -mt-3 text-cyan-700" />

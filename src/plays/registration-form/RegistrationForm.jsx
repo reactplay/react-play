@@ -62,7 +62,7 @@ function RegistrationForm(props) {
 
   // self explanatory
   const conmparePassword = (pass, confirmPass) => {
-    // (pass and confirmPass) arrays containing name, value pair eg. ["password","xyz"] and ["confirmpassword","xyz"]
+    // arrays containing name, value pair eg. ["password","xyz"] and ["confirmpassword","xyz"]
     if (pass[0] === 'password') {
       if (values.confirmPassword !== '') {
         if (pass[1] !== confirmPass[1]) {
@@ -131,14 +131,15 @@ function RegistrationForm(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     let counter = 0;
-    Object.entries(values).forEach((value, i) => {
+    Object.entries(values).forEach((value) => {
       // validate each field, increase counter if validation passed.
       if (validate(value)) {
         counter = counter + 1;
       }
     });
 
-    // if all fields are validated succsfully store the values in new object and clear the input values
+    // if all fields are validated successfully,
+    // store the values in new object and clear the input values
     if (counter === 5) {
       setStoredValues({
         ...storedValues,

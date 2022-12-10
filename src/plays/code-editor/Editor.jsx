@@ -34,8 +34,10 @@ const Editor = ({ language, value, setEditorState }) => {
             setTheme(el.target.value);
           }}
         >
-          {themeArray.map((theme) => (
-            <option value={theme}>{theme}</option>
+          {themeArray.map((theme, index) => (
+            <option key={index} value={theme}>
+              {theme}
+            </option>
           ))}
         </select>
       </div>

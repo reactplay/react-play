@@ -33,13 +33,14 @@ function ReactGradients(props) {
                 colors={gradient.colors}
                 css={gradient.css}
                 index={index}
+                key={index}
                 name={gradient.name}
                 tailwind={gradient.tailwind}
               />
             ))}
           </div>
 
-          {/* Button to add new gradient, Note:- Currently it is an <a> tag that redirects to README.md of the play. Hoping to convert it to a <button> element that opens up a modal containing a form to easily add a gradient. */}
+          {/* Note: Convert <a> to a <button> that opens a modal with a form to add a gradient */}
           <a
             className="fixed bottom-16 md:right-9 right-7 w-fit p-4 text-white bg-[#00f2fe] rounded-full font-semibold text-xl inline-flex justify-center items-center border-2 border-[#00f2fe] hover:bg-white hover:text-[#00f2fe] transition-all duration-200"
             href="https://github.com/reactplay/react-play/tree/main/src/plays/react-gradients#contributing"

@@ -3,8 +3,6 @@ import TransformGrid from './transformGrid';
 const addCell = (grid, props) => {
   // Don't add cell if there was no transformation
   if (JSON.stringify(grid) === JSON.stringify(props.grid)) {
-    console.log('Playing...');
-
     return {
       score: 0,
       best: props.best,

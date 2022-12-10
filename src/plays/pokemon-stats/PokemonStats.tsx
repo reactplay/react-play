@@ -34,6 +34,8 @@ function PokemonStats(props: PlayRoot) {
           draggable: true,
           progress: undefined
         });
+
+        return { success: false, error: err };
       });
   };
 

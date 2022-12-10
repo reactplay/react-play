@@ -23,7 +23,7 @@ const QuizSelectionScreen = ({ getSelectedCategory }) => {
         <p>2. Every Question will have 4 multiple choices to chooose.</p>
         <p>3. Among 4 options only one option will be correct answer of the Question.</p>
         <p>
-          4. Answer selection isn't mandatory. You can skip choosing any answer and it will be
+          4. Answer selection isn{`'`}t mandatory. You can skip choosing any answer and it will be
           counted as incorrect answer.
         </p>
         <p>
@@ -40,7 +40,7 @@ const QuizSelectionScreen = ({ getSelectedCategory }) => {
           <button onClick={() => getSelectedCategory(selectedOption)}>Yes, Lets Start!</button>
         </div>
         <div>
-          <button className="back" onClick={(e) => setView(CATEGORY_SELECTION)}>
+          <button className="back" onClick={() => setView(CATEGORY_SELECTION)}>
             &#171; Back
           </button>
         </div>
@@ -61,7 +61,7 @@ const QuizSelectionScreen = ({ getSelectedCategory }) => {
               <div
                 className={`single-selection ${selectedOption === option.id && 'active-selected'}`}
                 key={option.id}
-                onClick={(e) => setSelectedOption(option.id)}
+                onClick={() => setSelectedOption(option.id)}
               >
                 {option.name}
               </div>

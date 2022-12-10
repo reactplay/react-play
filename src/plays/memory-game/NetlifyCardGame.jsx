@@ -44,7 +44,7 @@ function NetlifyCardGame(props) {
   // show guidence modal
   const [showModal, setShowModal] = useState(false);
 
-  const toggle = (e) => {
+  const toggle = () => {
     setShowModal(!showModal);
   };
 
@@ -121,7 +121,7 @@ function NetlifyCardGame(props) {
 
           return timeOutCall(findClickedItem, currentlyShownItem); // timeout will hide the item after 1 second
         } else {
-          // if user clicks the same imgage of the active image then we find which one is clicked specefically by id this time
+          // if user clicks on the same image, we find out by image's id
           disableClick.current = true; // disable the click
           const otherPair = imageItems.find((i) => i.id !== currentlyShownItem.id); // searching for same image other object
           otherPair.show = true; // have to render it
