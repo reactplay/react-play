@@ -1,6 +1,6 @@
 # Shortest Pathfinding Visualizer
 
-Visualizes shortest path finding algorithms like Dijkstra on a grid
+Visualizes shortest path finding algorithms like "Dijkstra" on a grid
 
 ## Play Demographic
 
@@ -16,7 +16,7 @@ Visualizes shortest path finding algorithms like Dijkstra on a grid
 
 ## Implementation Details
 
-Update your implementation idea and details here
+Simple react app where I made use of standard react hooks like useEffect to render my components in the proper order. Made use of CSS animations to visualize the pathfinding process.   
 
 ## Consideration
 
