@@ -11,9 +11,7 @@ const COLORS = [
   "#ab8b04",
   "#df73ff",
   "#00ffff",
-  "#00ccff",
   "#4666ff",
-  "#40e0d0",
   "#67e0b3",
   "#00e2ab",
   "#039d63",
@@ -47,9 +45,6 @@ const COLORS = [
   "#1bfd9c",
   "#4d9385",
   "#c99aa0",
-  "#75afd2",
-  "#46aefc",
-  "#cc3333",
 ];
 
 export const ColorPanel = () => {
