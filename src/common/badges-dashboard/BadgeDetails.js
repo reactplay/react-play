@@ -12,7 +12,13 @@ const BadgeDetails = ({ badge, mask, onClose }) => {
       class="overflow-y-auto flex overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center transition duration-1000 backdrop-blur "
       onClick={() => onClose()}
     >
-      <div class="relative p-0.5 w-full max-w-4xl h-full md:h-auto bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg drop-shadow-md">
+      <div
+        class="relative p-0.5 w-full max-w-4xl h-full md:h-auto bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg drop-shadow-md"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        }}
+      >
         <div class="relative bg-white rounded-lg shadow ">
           <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
             <h3 class="text-xl font-semibold text-gray-800">{badge.level}</h3>

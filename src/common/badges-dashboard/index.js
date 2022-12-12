@@ -160,7 +160,7 @@ const BadgesDashboard = () => {
           {userInfo ? (
             <div
               id="profile"
-              className="w-full rounded-lg shadow-2xl bg-white opacity-75 mx-6"
+              className="w-full rounded-lg shadow-2xl bg-white mx-6"
             >
               <div className="p-1 md:p-12 text-center">
                 <div
@@ -181,7 +181,7 @@ const BadgesDashboard = () => {
                   <p className="pt-2 text-sm  text-gray-900">Badges</p>
                 </div>
                 <div className="mx-auto">
-                  <div className="grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-6">
+                  <div className="grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-4">
                     {allBadges.map((badge, bi) => {
                       return (
                         <Badge
