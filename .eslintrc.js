@@ -19,6 +19,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react-hooks', 'react', '@typescript-eslint', 'prettier'],
+  ignorePatterns: ['**/plays/index.js'],
 
   rules: {
     'import/extensions': 0,
@@ -46,7 +47,7 @@ module.exports = {
     'react/jsx-pascal-case': ['error'],
 
     // Console logs cannot be committed.
-    'no-console': ['error', { allow: ['error'] }],
+    'no-console': ['error', { allow: ['warn', 'error'] }],
 
     // Require props to be sorted
     'react/jsx-sort-props': ['error', { callbacksLast: true, shorthandFirst: true }],
