@@ -1,9 +1,7 @@
-import { useState } from "react";
 import Badge from "./Badge";
 import "./badge.css";
 
 const BadgeDetails = ({ badge, mask, onClose }) => {
-  const [currentWindow, setCurrentWindow] = useState(0);
   return (
     <div
       id="defaultModal"

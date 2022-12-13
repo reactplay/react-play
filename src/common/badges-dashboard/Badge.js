@@ -1,15 +1,6 @@
-import { useState } from "react";
-import BadgeCard from "./BadgeCard";
-import BadgeDetails from "./BadgeDetails";
-import ClaimedBadges from "./ClaimedBadges";
-import NotClaimedBadges from "./NotClaimedBadges";
-import OverView from "./OverView";
-
 const Badge = ({
   badge,
-  mask,
   selectionChanged,
-  imageonly,
   readonly = false,
   showtext = true,
 }) => {
