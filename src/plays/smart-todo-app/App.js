@@ -26,13 +26,13 @@ function App() {
     setAlert,
   } = useGlobalContext()
 
-  // Form submit handler method
+  // Form submit handler
   const submitHandler = (e) => {
     // Reset default behavior
     e.preventDefault()
 
     if (!text) {
-      //if input is empy
+      //if input is empty
       showAlert(true, 'Field is required!', 'danger')
     } else if (text && isEditing) {
       // Update the item & states
