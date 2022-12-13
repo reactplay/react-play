@@ -36,7 +36,7 @@ const Modal = ({ showModal, toggle }) => {
     setCurrentState(0);
   }, [showModal]);
 
-  const buttonHandler = (val) => (e) => {
+  const buttonHandler = (val) => () => {
     if ((currState === 0 && val < 0) || (currState === 3 && val > 0)) return;
     setCurrentState(currState + val);
   };

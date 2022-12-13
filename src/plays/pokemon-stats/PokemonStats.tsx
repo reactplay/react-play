@@ -24,7 +24,7 @@ function PokemonStats(props: PlayRoot) {
       .then((response) => {
         setPokemon(response.data);
       })
-      .catch((err) => {
+      .catch(() => {
         toast.error('Pokemon you are searching is not found, try another.', {
           position: 'bottom-left',
           autoClose: 2000,

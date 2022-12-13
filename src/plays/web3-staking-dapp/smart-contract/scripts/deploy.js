@@ -1,8 +1,9 @@
-const { ethers } = require('hardhat');
-require('dotenv').config();
+import { ethers, waffle } from 'hardhat';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 async function main() {
-  [signer1, signer2] = await ethers.getSigners();
+  const [signer1, signer2] = await ethers.getSigners();
 
   const Staking = await ethers.getContractFactory('Staking', signer1);
 
@@ -45,6 +46,6 @@ async function main() {
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch((error) => {
+main().catch(() => {
   process.exitCode = 1;
 });

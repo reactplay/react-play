@@ -25,7 +25,7 @@ function QrCodeGenerator(props) {
         download(dataUrl, 'qrcode.jpeg');
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setLoading(false);
       });
   }

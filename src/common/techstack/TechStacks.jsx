@@ -16,7 +16,7 @@ const TechStack = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                {/* eslint-disable-next-line react/jsx-pascal-case */}
+                {/* eslint-disable react/jsx-pascal-case */}
                 <Item.comp className="icon" size="80" />
                 <p>{Item.text}</p>
               </a>

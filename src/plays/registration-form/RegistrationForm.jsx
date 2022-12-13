@@ -131,7 +131,7 @@ function RegistrationForm(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     let counter = 0;
-    Object.entries(values).forEach((value, i) => {
+    Object.entries(values).forEach((value) => {
       // validate each field, increase counter if validation passed.
       if (validate(value)) {
         counter = counter + 1;

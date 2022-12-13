@@ -22,8 +22,7 @@ function RandomMemeGenerator(props) {
         if (data.nsfw) {
           getMeme();
         } else {
-          console.log(data);
-          setMeme((prev) => {
+          setMeme(() => {
             return data;
           });
         }

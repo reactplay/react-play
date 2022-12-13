@@ -2,17 +2,7 @@ import React from 'react';
 
 import { FaCheck, FaEdit, FaTrash } from 'react-icons/fa';
 
-const Todo = ({
-  text,
-  todo,
-  todos,
-  input,
-  setInput,
-  setTodos,
-  editId,
-  setEditId,
-  setIsEditing
-}) => {
+const Todo = ({ text, todo, todos, setInput, setTodos, setEditId, setIsEditing }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((element) => element.id !== todo.id));
   };

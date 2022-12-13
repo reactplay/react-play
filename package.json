@@ -30,7 +30,7 @@
     "json-graphql-parser": "^0.1.8",
     "jspdf": "^2.5.1",
     "lodash": "^4.17.21",
-    "node-sass": "^7.0.1",
+    "node-sass": "^8.0.0",
     "p5": "^1.5.0",
     "react": "^18.0.0",
     "react-codemirror2": "^7.2.1",
@@ -65,8 +65,9 @@
     "workbox-window": "^6.5.4"
   },
   "scripts": {
-    "start": "npx create-react-play -p && react-scripts start",
-    "build": "npx create-react-play -p && react-scripts build",
+    "start:nolint": "npx --yes create-react-play@latest -p && react-scripts start",
+    "start": "npx --yes create-react-play@latest -p && npm run lint && react-scripts start",
+    "build": "npx --yes create-react-play@latest -p && react-scripts build",
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
