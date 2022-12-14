@@ -2,7 +2,7 @@ const { expect } = require('chai');
 
 describe('Staking', () => {
   beforeEach(async () => {
-    [signer1, signer2] = await ethers.getSigners();
+    const [signer1, signer2] = await ethers.getSigners();
 
     Staking = await ethers.getContractFactory('Staking', signer1);
 

@@ -67,13 +67,13 @@ const getAvailableCells = (grid) => {
 
 const display = {
   self: (g) => {
-    gridFunction(g, (i) => console.log(i));
+    gridFunction(g, () => {});
   },
   shiftLeft: (g) => {
-    gridFunction(g, (i) => console.log(shiftLeft(i)));
+    gridFunction(g, (i) => shiftLeft(i));
   },
   shiftRight: (g) => {
-    gridFunction(g, (i) => console.log(shiftLeft(i)));
+    gridFunction(g, (i) => shiftLeft(i));
   }
 };
 

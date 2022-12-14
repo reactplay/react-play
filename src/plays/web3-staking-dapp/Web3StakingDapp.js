@@ -15,10 +15,8 @@ function Web3StakingDapp(props) {
   const [provider, setProvider] = useState();
   const [account, setAccount] = useState();
   const [contract, setContract] = useState();
-  const [accountAddress, setAccountAddress] = useState();
 
   // assets
-  const [assetId, setAssetId] = useState([]);
   const [assets, setAssets] = useState([]);
 
   // staking
@@ -88,10 +86,7 @@ function Web3StakingDapp(props) {
     setAccount(account);
 
     const accountAddress = await account.getAddress();
-    setAccountAddress(accountAddress);
-
     const assetIds = await getAssetIds(accountAddress, account);
-    setAssetId(assetIds);
 
     getAssets(assetIds, account);
   };
@@ -255,7 +250,10 @@ function Web3StakingDapp(props) {
 
               {assets.length > 0 &&
                 assets.map((asset, index) => (
-                  <div className="flex justify-between font-medium px-3 py-3 items-center">
+                  <div
+                    className="flex justify-between font-medium px-3 py-3 items-center"
+                    key={index}
+                  >
                     <div className="text-[#010326] text-center pl-4">{asset.maticStaked}</div>
                     <div className="text-[#010326] text-center pl-2">{asset.percentInterest} %</div>
                     <div className="text-[#010326] text-center pl-6">{asset.daysRemaining}</div>

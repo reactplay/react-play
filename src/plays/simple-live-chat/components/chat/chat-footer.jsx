@@ -33,7 +33,7 @@ const ChatFooter = ({ userImage: photoURL, uid, displayName, loading }) => {
     }
   };
 
-  const handleClickSend = (e) => {
+  const handleClickSend = () => {
     if (message.trim() !== '') {
       sendMessage();
       setMessage('');

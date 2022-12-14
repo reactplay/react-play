@@ -37,7 +37,6 @@ function ImageCarousel(props: any) {
     const sliderContainer = document.querySelector('.image-slider') as HTMLElement;
     const width: number = sliderContainer.offsetWidth;
 
-    console.log('image', width, activeSlide);
     if (!sliderContainer) return;
 
     sliderContainer.style.transform = `
@@ -54,7 +53,6 @@ function ImageCarousel(props: any) {
   }, []);
 
   useEffect(() => {
-    console.log(endPos, startPos, isSwipe());
     if (!isSwipe()) return;
 
     if (endPos - startPos < 0) {

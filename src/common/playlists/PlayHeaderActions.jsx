@@ -9,7 +9,7 @@ import Like from 'common/components/Like/Like';
 import Comment from 'common/components/Comment';
 import useLikePlays from 'common/hooks/useLikePlays';
 import { NHOST } from 'common/const';
-import countByProp from 'common/utils/countByProp';
+import countByProp from 'common/utils/commonUtils';
 import { useNavigate } from 'react-router-dom';
 import { AiFillEdit } from 'react-icons/ai';
 
@@ -34,7 +34,6 @@ const PlayHeaderActions = ({ play }) => {
     (userId) => {
       if (!play_like?.length) return { liked: false, number: 0, interation: false };
       const numberOfLikes = countByProp(play_like, 'liked', true);
-      console.log('number of likes are', numberOfLikes);
       const ifLiked = play_like.find((obj) => obj.user_id === userId);
 
       return ifLiked
@@ -76,9 +75,9 @@ const PlayHeaderActions = ({ play }) => {
         }));
       }
     } catch (err) {
-      console.log(err);
+      return { success: false, error: err };
     } finally {
-      return setLoading(false);
+      setLoading(false);
     }
   };
 
@@ -104,6 +103,8 @@ const PlayHeaderActions = ({ play }) => {
           className="action"
           href={`https://github.com/reactplay/react-play/tree/main/src${play.path}`}
           rel="noopener noreferrer"
+          rel="noopener noreferrer"
+          target="_blank"
           target="_blank"
         >
           <BsGithub className="icon" size="24px" />

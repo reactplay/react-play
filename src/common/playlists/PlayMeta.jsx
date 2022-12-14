@@ -8,7 +8,7 @@ import { toSanitized, toTitleCaseTrimmed } from 'common/services/string';
 import { FetchPlaysBySlugAndUser } from 'common/services/request/query/fetch-plays';
 import { PageNotFound } from 'common';
 import thumbPlay from 'images/thumb-play.png';
-import { getProdUrl } from 'common/utils/playsUtil';
+import { getProdUrl } from 'common/utils/commonUtils';
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -70,6 +70,8 @@ function PlayMeta() {
       .catch((err) => {
         setIsError(true);
         setLoading(false);
+
+        return { success: false, error: err };
       });
   }, [playname, username]);
 

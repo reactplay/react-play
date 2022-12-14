@@ -9,8 +9,7 @@ const Input = ({
   setStatus,
   isEditing,
   setIsEditing,
-  editId,
-  setEditId
+  editId
 }) => {
   const inputHandler = (e) => {
     setInput(e.target.value);

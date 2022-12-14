@@ -24,16 +24,6 @@ Welcome developers! We are as excited as you are to know that you are going to c
 
   You might check the [README](README.md) file for more details.
 
-  You might see a prompt like this
-
-  ```bash
-  Need to install the following packages:
-    create-react-play
-  Ok to proceed? (y)
-  ```
-
-  Press `y` and hit `Enter`. This will install `create-react-play` globally. For more info check [`create-react-play readme`](https://github.com/reactplay/create-react-play/blob/main/README.md)
-
 - You should be able to access the application on http://localhost:3000
 - Click on `Create` button. Note, its a `beta` feature, feel free to [log issue](https://github.com/reactplay/react-play/issues) (if any)
 - The application will try to authenticate you
@@ -62,6 +52,12 @@ Welcome developers! We are as excited as you are to know that you are going to c
   ```bash
   npx create-react-play -c <the_play_id>
   ```
+
+  **Note:** If the play folder `<reactplay_directory>/src/plays/<your_play_name>` remain empty after running above command that means you might be in some older version of the package. Use `@latest` in that case
+    ```bash
+    npx create-react-play@latest -c <the_play_id>
+    ```
+    
 - Start the application
   ```bash
   yarn start

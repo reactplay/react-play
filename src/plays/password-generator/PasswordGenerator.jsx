@@ -79,7 +79,7 @@ function PasswordGenerator(props) {
     return <p className="error">You cannot Uncheck All At Once.</p>;
   };
 
-  const checkhandler = (id, inputCheckbox) => (e) => {
+  const checkhandler = (id, inputCheckbox) => () => {
     const modifiedConfig = { ...passwordConfig };
     delete modifiedConfig.length;
     delete modifiedConfig.excludeSimilarCharacters;

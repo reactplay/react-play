@@ -103,7 +103,6 @@ function CountriesStatics(props) {
       if (country.properties.name.toLowerCase() === selected.toLowerCase()) {
         setActiveGeo(country.id);
         setShowSuggestions(false);
-        console.log(showSuggestions);
       }
     });
   };

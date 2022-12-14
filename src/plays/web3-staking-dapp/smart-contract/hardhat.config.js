@@ -1,5 +1,6 @@
-require('@nomicfoundation/hardhat-toolbox');
-require('dotenv').config();
+import '@nomicfoundation/hardhat-toolbox';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
