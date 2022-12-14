@@ -30,16 +30,17 @@ const Home = () => {
 
   // array of tweet IDs to show on the home page
   const tweetIdArray = [
-    '1544376341172068352',
-    '1530197614771458049',
-    '1529884210269671424',
-    '1522165831005728769',
-    '1521784126717710336',
-    '1518200201302974464',
-    '1541802575775035392',
-    '1515598358748237830',
-    '1528938773710782464',
-    '1532349503709122561'
+    '1586967659622572032',
+    '1588544417425928192',
+    '1588540468362874880',
+    '1592818641225097217',
+    '1585216106876502017',
+    '1588542228829704192',
+    '1597979662852182016',
+    '1597969995761614849',
+    '1597193263642857474',
+    '1586951630435495936',
+    '1591622673700098049'
   ];
 
   // set the state for loading
@@ -68,9 +69,9 @@ const Home = () => {
             </div>
             <h2 className="item-title">Learn </h2>
             <p className="item-desc">
-              Learn how to &quot;Think in React&quot; and build applications inspired by several
-              plays(source code & demos). Get to the source code of it, find related article, or
-              even a YouTube video. Learn from the expert code reviews.
+              Learn how to "Think in React" and build applications inspired by several plays(source
+              code & demos). Get to the source code of it, find related article, or even a YouTube
+              video. Learn from the expert code reviews.
             </p>
           </li>
           <li className="home-features-item">
@@ -131,7 +132,7 @@ const Home = () => {
             <Tweet
               key={id}
               options={{
-                width: '410',
+                width: '310',
                 conversation: 'none',
                 cards: 'hidden',
                 align: 'center'
