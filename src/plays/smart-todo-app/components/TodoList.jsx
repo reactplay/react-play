@@ -33,12 +33,7 @@ const TodoList = ({ filterdTasks, editHandler }) => {
                   </p>
                 </td>
                 <td>
-                  <p
-                    className='wa_date'
-                    style={{ fontSize: '12px', opacity: '.7' }}
-                  >
-                    {formatDate(createdAt)}
-                  </p>
+                  <p className='wa_date'>{formatDate(createdAt)}</p>
                 </td>
                 <td>
                   {complete ? (
@@ -89,7 +84,7 @@ const TodoList = ({ filterdTasks, editHandler }) => {
         {filterdTasks.length > 1 && (
           <tfoot>
             <tr>
-              <td colSpan={5} style={{ textAlign: 'center' }}>
+              <td colSpan={5}>
                 <button
                   className='wa_btn wa_delete-all'
                   onClick={() => {

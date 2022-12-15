@@ -47,6 +47,7 @@
 
 .wa_logo-area {
   display: flex;
+  width: 148px;
   gap: 7px;
   align-items: center;
 }
@@ -204,6 +205,16 @@ button.wa_warning-btn.cancel {
   position: sticky;
   top: 0;
 }
+
+.wa_date {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.wa_list-area tfoot {
+  text-align: center;
+}
+
 p.wa_item.completed {
   text-decoration: line-through;
   opacity: 0.6;

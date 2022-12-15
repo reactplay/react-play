@@ -93,9 +93,7 @@ function App() {
       <div className='wrapper'>
         <div className='wa_header'>
           <div className='wa_logo-area'>
-            <div style={{ width: '148px' }}>
-              <img width={'100%'} src={Logo} alt='to do list' />
-            </div>
+            <img width={'100%'} src={Logo} alt='to do list' />
           </div>
           {alert.show && (
             <Alert {...alert} removeAlert={showAlert} list={tasks} />
