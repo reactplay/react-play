@@ -1,14 +1,14 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import { useState } from "react";
-import "./styles.css";
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useState } from 'react';
+import './styles.css';
 
 function ImageCollector(props) {
-  const [urlInput, setUrlInput] = useState("");
+  const [urlInput, setUrlInput] = useState('');
   const [images, setImages] = useState([]);
 
   function addImage() {
     setImages(images.concat(urlInput));
-    setUrlInput("");
+    setUrlInput('');
   }
 
   return (
@@ -20,8 +20,8 @@ function ImageCollector(props) {
             <div className="input-container">
               <input
                 className="input-url"
-                type="url"
                 placeholder="Enter image url"
+                type="url"
                 value={urlInput}
                 onChange={(e) => setUrlInput(e.target.value)}
               />
@@ -34,13 +34,11 @@ function ImageCollector(props) {
               {images.length > 0 ? (
                 images.map((image, index) => (
                   <div className="image-wrapper">
-                    <img className="image" src={image} alt="grid" key={index} />
+                    <img alt="grid" className="image" key={index} src={image} />
                   </div>
                 ))
               ) : (
-                <p className="empty-message">
-                  Images will appear once you add them
-                </p>
+                <p className="empty-message">Images will appear once you add them</p>
               )}
             </div>
           </div>

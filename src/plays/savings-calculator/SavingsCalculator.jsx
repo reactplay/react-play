@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import PlayHeader from "common/playlists/PlayHeader";
-import Total from "./components/Total";
-import SavingOptions from "./components/SavingOptions";
-import "./styles/savingsCalculator.scss";
+import React, { useState } from 'react';
+import PlayHeader from 'common/playlists/PlayHeader';
+import Total from './components/Total';
+import SavingOptions from './components/SavingOptions';
+import './styles/savingsCalculator.scss';
 
 function SavingCalculator(props) {
   const [total, setTotal] = useState(2327);
-  const [currency, setCurrency] = useState("INR");
+  const [currency, setCurrency] = useState('INR');
 
   return (
     <>
@@ -15,12 +15,8 @@ function SavingCalculator(props) {
         <div className="play-details-body">
           <div className="savingsCalculator__container">
             <div className="savingsCalculator">
-              <Total total={total} currency={currency} />
-              <SavingOptions
-                currency={currency}
-                setCurrency={setCurrency}
-                setTotal={setTotal}
-              />
+              <Total currency={currency} total={total} />
+              <SavingOptions currency={currency} setCurrency={setCurrency} setTotal={setTotal} />
             </div>
           </div>
         </div>

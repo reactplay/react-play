@@ -1,21 +1,15 @@
-import { useEffect, useState } from "react";
-import { firebase } from "../../firebase";
-import {
-  getFirestore,
-  onSnapshot,
-  collection,
-  query,
-  orderBy,
-} from "firebase/firestore";
-import { getAuth, signOut } from "firebase/auth";
+import { useEffect, useState } from 'react';
+import { firebase } from '../../firebase';
+import { getFirestore, onSnapshot, collection, query, orderBy } from 'firebase/firestore';
+import { getAuth, signOut } from 'firebase/auth';
 
 // components
-import ChatHeader from "./chat-header";
-import ChatFooter from "./chat-footer";
-import ChatBody from "./chat-body";
+import ChatHeader from './chat-header';
+import ChatFooter from './chat-footer';
+import ChatBody from './chat-body';
 
 // css
-import './chat.scss'
+import './chat.scss';
 
 const DisplayChat = ({ user, setLoggedUser }) => {
   const db = getFirestore(firebase);
@@ -24,15 +18,12 @@ const DisplayChat = ({ user, setLoggedUser }) => {
 
   useEffect(() => {
     if (!message.length) setMessage({ message: [], loading: true });
-    onSnapshot(
-      query(collection(db, "messages"), orderBy("createdAt")),
-      (item) => {
-        setMessage({
-          message: item.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
-          loading: false,
-        });
-      }
-    );
+    onSnapshot(query(collection(db, 'messages'), orderBy('createdAt')), (item) => {
+      setMessage({
+        message: item.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
+        loading: false
+      });
+    });
   }, [db, message.length]);
 
   const signOutHandler = async (e) => {
@@ -40,16 +31,17 @@ const DisplayChat = ({ user, setLoggedUser }) => {
     signOut(auth)
       .then(() => {
         setLoggedUser(null);
-        localStorage.removeItem("auth");
+        localStorage.removeItem('auth');
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        // handle error
       });
   };
 
   const LoadingComponent = () => {
     if (!message.loading) return null;
-    return <div className='show-loading'>Loading...</div>;
+
+    return <div className="show-loading">Loading...</div>;
   };
 
   const info = {
@@ -57,7 +49,7 @@ const DisplayChat = ({ user, setLoggedUser }) => {
     userImage: user?.photoURL,
     displayName: user?.displayName,
     uid: user?.uid,
-    ...message,
+    ...message
   };
 
   return (

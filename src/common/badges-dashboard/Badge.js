@@ -1,9 +1,4 @@
-const Badge = ({
-  badge,
-  selectionChanged,
-  readonly = false,
-  showtext = true,
-}) => {
+const Badge = ({ badge, selectionChanged, readonly = false, showtext = true }) => {
   return (
     <div className="hover:group-hover">
       {readonly ? (
@@ -11,7 +6,7 @@ const Badge = ({
           <div
             className="bg-cover bg-center h-32 w-32 lg:h-48 lg:w-48 group-hover:scale-125 ease-in duration-300"
             style={{
-              backgroundImage: `url(${badge.image})`,
+              backgroundImage: `url(${badge.image})`
             }}
           />
         </div>
@@ -20,7 +15,7 @@ const Badge = ({
           <div>
             <div class="relative group ">
               <div>
-                <div class="absolute -inset-0.5 rounded-lg blur group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div class="absolute -inset-0.5 rounded-lg blur group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" />
                 <button
                   class="relative px-2 py-4 rounded-lg leading-none flex items-center divide-x divide-gray-600 w-full transition duration-1000  group-hover:shadow-md group-hover:drop-shadow-xl"
                   onClick={() => selectionChanged()}
@@ -30,16 +25,12 @@ const Badge = ({
                       <div
                         className="bg-cover bg-center h-28 w-28 group-hover:scale-125 ease-in duration-300"
                         style={{
-                          backgroundImage: `url(${badge.image})`,
+                          backgroundImage: `url(${badge.image})`
                         }}
                       />
                     </div>
 
-                    {showtext && (
-                      <div class="pr-6 text-gray-800 text-sm h-8">
-                        {badge.level}
-                      </div>
-                    )}
+                    {showtext && <div class="pr-6 text-gray-800 text-sm h-8">{badge.level}</div>}
                   </div>
                 </button>
               </div>
@@ -50,4 +41,5 @@ const Badge = ({
     </div>
   );
 };
+
 export default Badge;

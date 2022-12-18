@@ -1,43 +1,41 @@
-import { useState, useEffect } from "react";
-import data from "./ideas.json";
-import { IoAddSharp } from "react-icons/io5";
-import { RiChatNewLine } from "react-icons/ri";
-import LevelBadge from "common/components/LevelBadge";
-import "./playIdeas.css";
+import { useState, useEffect } from 'react';
+import data from './ideas.json';
+import { IoAddSharp } from 'react-icons/io5';
+import { RiChatNewLine } from 'react-icons/ri';
+import LevelBadge from 'common/components/LevelBadge';
+import './playIdeas.css';
 
 const PlayIdeas = () => {
   const [ideas, setIdeas] = useState([]);
   const [filteredIdeas, setFilteredIdeas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [filteredLevel, setFilteredLevel] = useState("");
+  const [filteredLevel, setFilteredLevel] = useState('');
+
+  async function fetchData() {
+    // TODO: The idea list has to come from the DB
+    // const response = await fetch('/api/ideas');
+    // const json = await response.json();
+    const json = data.ideas;
+    setIdeas(json);
+    setFilteredIdeas(json);
+    setIsLoading(false);
+  }
 
   useEffect(() => {
     try {
-      async function fetchData() {
-        // TODO: The idea list has to come from the DB
-        //const response = await fetch('/api/ideas');
-        //const json = await response.json();
-        const json = data.ideas;
-        setIdeas(json);
-        setFilteredIdeas(json);
-        setIsLoading(false);
-      }
       fetchData();
-    } catch (error) {
-      console.log(error);
+    } catch (_error) {
       setIsError(true);
       setIsLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    if (filteredLevel === "") {
+    if (filteredLevel === '') {
       setFilteredIdeas(data.ideas);
     } else {
-      const filteredIdeas = ideas.filter(
-        (idea) => idea.level === filteredLevel
-      );
+      const filteredIdeas = ideas.filter((idea) => idea.level === filteredLevel);
       setFilteredIdeas(filteredIdeas);
     }
   }, [filteredLevel, ideas]);
@@ -64,47 +62,61 @@ const PlayIdeas = () => {
               <span className="header-title-badge">{filteredIdeas.length}</span>
             </h1>
             <p className="header-desc">
-              Looking for project ideas to practice React? Great, you have landed on the right place. Here are some ideas to get you
-              started.
+              Looking for project ideas to practice React? Great, you have landed on the right
+              place. Here are some ideas to get you started.
             </p>
           </div>
           <div className="playideas-levels-pills">
             <div className="level-pill">
               <input
-                type="radio"
-                name="level"
-                value=""
-                id="all-id"
-                className="level-pill-control"
-                onChange={onValueChange}
                 defaultChecked
+                className="level-pill-control"
+                id="all-id"
+                name="level"
+                type="radio"
+                value=""
+                onChange={onValueChange}
               />
-              <label htmlFor="all-id" className="level-pill-label">
+              <label className="level-pill-label" htmlFor="all-id">
                 All
               </label>
             </div>
             <div className="level-pill">
-              <input type="radio" name="level" value="Beginner" id="beginner-id" className="level-pill-control" onChange={onValueChange} />
-              <label htmlFor="beginner-id" className="level-pill-label">
+              <input
+                className="level-pill-control"
+                id="beginner-id"
+                name="level"
+                type="radio"
+                value="Beginner"
+                onChange={onValueChange}
+              />
+              <label className="level-pill-label" htmlFor="beginner-id">
                 BEGINNER
               </label>
             </div>
             <div className="level-pill">
               <input
-                type="radio"
-                name="level"
-                value="Intermediate"
-                id="intermediate-id"
                 className="level-pill-control"
+                id="intermediate-id"
+                name="level"
+                type="radio"
+                value="Intermediate"
                 onChange={onValueChange}
               />
-              <label htmlFor="intermediate-id" className="level-pill-label">
+              <label className="level-pill-label" htmlFor="intermediate-id">
                 INTERMEDIATE
               </label>
             </div>
             <div className="level-pill">
-              <input type="radio" name="level" value="Advanced" id="advanced-id" className="level-pill-control" onChange={onValueChange} />
-              <label htmlFor="advanced-id" className="level-pill-label">
+              <input
+                className="level-pill-control"
+                id="advanced-id"
+                name="level"
+                type="radio"
+                value="Advanced"
+                onChange={onValueChange}
+              />
+              <label className="level-pill-label" htmlFor="advanced-id">
                 ADVANCED
               </label>
             </div>
@@ -112,7 +124,7 @@ const PlayIdeas = () => {
         </div>
         <div className="playideas-body">
           <ul className="list-playideas">
-            {filteredIdeas.map(idea => (
+            {filteredIdeas.map((idea) => (
               <li className="list-playideas-item" key={idea.id}>
                 <h2 className="idea-title">{idea.title}</h2>
                 <p className="idea-desc">{idea.description}</p>
@@ -121,27 +133,31 @@ const PlayIdeas = () => {
                 </p>
                 <div className="idea-actions">
                   {process.env.NODE_ENV === 'development' ? (
-                    <a href="/plays/create" rel="noopener noreferrer" className="btn-primary action-btn">
+                    <a
+                      className="btn-primary action-btn"
+                      href="/plays/create"
+                      rel="noopener noreferrer"
+                    >
                       <IoAddSharp className="icon" />
                       <span className="btn-label">Create</span>
                       <span className="create-button-badge">beta</span>
                     </a>
                   ) : (
                     <a
-                      href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="btn-primary action-btn"
+                      href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       <IoAddSharp className="icon" />
                       <span className="btn-label">Create</span>
                     </a>
                   )}
                   <a
-                    href={`https://github.com/reactplay/react-play/discussions/new?category=ideas&title=${idea.title}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="btn-default action-btn"
+                    href={`https://github.com/reactplay/react-play/discussions/new?category=ideas&title=${idea.title}`}
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
                     <RiChatNewLine className="icon" />
                     <span className="btn-label">Start discussion</span>
@@ -153,7 +169,7 @@ const PlayIdeas = () => {
         </div>
       </div>
     </main>
-  )
+  );
 };
 
 export default PlayIdeas;

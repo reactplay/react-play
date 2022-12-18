@@ -1,10 +1,11 @@
-import User from "../user/user";
-import "./chat-header.scss";
+import User from '../user/user';
+import './chat-header.scss';
 
 const ChatHeader = ({ userImage, signOutHandler, displayName, loading }) => {
   if (loading) return null;
+
   return (
-    <div className='simple-live-chat-chat-header'>
+    <div className="simple-live-chat-chat-header">
       <div>
         <div>
           <span>

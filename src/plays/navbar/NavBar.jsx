@@ -1,9 +1,8 @@
 import PlayHeader from 'common/playlists/PlayHeader';
-import './NavBar.css'
+import './NavBar.css';
 import NavListItems from './navListItems';
 
 function NavBar(props) {
-
   // Your Code Start below.
   return (
     <>
@@ -20,4 +19,5 @@ function NavBar(props) {
     </>
   );
 }
+
 export default NavBar;

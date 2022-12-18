@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 /**
  * Retrieves the contributors name in react play repo on github
@@ -21,13 +21,10 @@ const useContributors = (sorted) => {
         const responseData = await response.json();
 
         // Remove the bots
-        const contributors = responseData.filter(
-          (contributor) => contributor.type !== "Bot"
-        );
+        const contributors = responseData.filter((contributor) => contributor.type !== 'Bot');
 
         // Sort it by the contributions
-        sorted &&
-          contributors.sort((a, b) => b.contributions - a.contributions);
+        sorted && contributors.sort((a, b) => b.contributions - a.contributions);
 
         setData(contributors);
         setIsLoading(false);
