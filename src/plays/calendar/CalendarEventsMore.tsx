@@ -1,11 +1,11 @@
-import React from 'react'
-import { format } from 'date-fns'
-import CalendarEvent from './CalendarEvent'
-import EventType from './EventType'
+import React from 'react';
+import { format } from 'date-fns';
+import CalendarEvent from './CalendarEvent';
+import EventType from './EventType';
 
 interface Props {
-  date: Date,
-  events: EventType[]
+  date: Date;
+  events: EventType[];
 }
 
 const CalendarEventsMore = ({ date, events }: Props) => {
@@ -14,17 +14,17 @@ const CalendarEventsMore = ({ date, events }: Props) => {
       <span>{events.length} more</span>
       <div className="calendar-play-events-more-popup">
         <div>
-          <span>{format(date, "ccc")}</span>
-          <span>{format(date, "dd")}</span>
+          <span>{format(date, 'ccc')}</span>
+          <span>{format(date, 'dd')}</span>
         </div>
         <div>
-          {events.map(event => (
-            <CalendarEvent key={event.id} event={event} />
+          {events.map((event) => (
+            <CalendarEvent event={event} key={event.id} />
           ))}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default CalendarEventsMore
+export default CalendarEventsMore;

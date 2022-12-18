@@ -17,7 +17,7 @@
 }
 
 .wizard-container--core {
-  flex: 1
+  flex: 1;
 }
 
 .wizard-container--buttons {
@@ -52,10 +52,9 @@
   counter-reset: ol-cards-count;
   list-style: none;
 }
-.ol-cards  li {
+.ol-cards li {
   display: grid;
-  grid-template-areas:
-    "icon descr nr";
+  grid-template-areas: 'icon descr nr';
   gap: 0 var(--colGapSize);
   align-items: center;
   padding: var(--colGapSize) var(--flapWidth) var(--colGapSize) 0;
@@ -66,9 +65,9 @@
   box-shadow: inset 2px 2px 2px white, inset -1px -1px 1px rgba(0, 0, 0, 0.25);
 }
 
-.ol-cards  li > .icon {
+.ol-cards li > .icon {
   grid-area: icon;
-  background:#EE5830;
+  background: #ee5830;
   color: white;
   font-size: var(--iconSize);
   width: calc(2 * var(--flapWidth) + var(--iconSize));
@@ -80,26 +79,17 @@
   display: grid;
   place-items: center;
 }
-.ol-cards  li > .icon::before {
-  content: "";
+.ol-cards li > .icon::before {
+  content: '';
   position: absolute;
   width: var(--flapWidth);
 
   height: calc(100% + calc(var(--flapHeigth) * 2));
   left: 0;
   top: calc(var(--flapHeigth) * -1);
-  clip-path: polygon(
-    0 var(--flapHeigth),
-    100% 0,
-    100% 100%,
-    0 calc(100% - var(--flapHeigth))
-  );
-  background-color:#EE5830;
-  background-image: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.2)
-  );
+  clip-path: polygon(0 var(--flapHeigth), 100% 0, 100% 100%, 0 calc(100% - var(--flapHeigth)));
+  background-color: #ee5830;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
   z-index: -1;
 }
 
@@ -107,10 +97,10 @@
   grid-area: descr;
   width: 100%;
 }
-.ol-cards  li::after {
+.ol-cards li::after {
   grid-area: nr;
   content: counter(ol-cards-count, decimal-leading-zero);
-  color:#EE5830;
+  color: #ee5830;
   font-size: var(--numberSize);
   font-weight: 700;
 }
@@ -124,9 +114,8 @@
   }
 }
 
-
 .s-button span {
-  background: #FFF;
+  background: #fff;
   display: block;
   padding: 5px 15px;
   border-radius: 5px;
@@ -143,7 +132,7 @@
 .s-button {
   position: relative;
   float: left;
-  font: normal 14px/15px "Patrick Hand", sans-serif;
+  font: normal 14px/15px 'Patrick Hand', sans-serif;
   margin-right: 10px;
   text-transform: uppercase;
   color: #000;
@@ -159,8 +148,8 @@
   cursor: not-allowed;
 }
 
-.s-button:disabled span{
-  background-color: #ABABAB;
+.s-button:disabled span {
+  background-color: #ababab;
 }
 
 .page-container {
@@ -171,5 +160,5 @@
 }
 
 .page-container h1 {
-  color: #EE5830;
+  color: #ee5830;
 }

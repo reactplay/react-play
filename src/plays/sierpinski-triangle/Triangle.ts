@@ -1,5 +1,5 @@
-import P5 from "p5";
-import { generateRandomColor } from "./utils";
+import P5 from 'p5';
+import { generateRandomColor } from './utils';
 
 const drawTriangle = (p: P5, p1: P5.Vector, p2: P5.Vector, p3: P5.Vector) => {
   p.fill(generateRandomColor(p));

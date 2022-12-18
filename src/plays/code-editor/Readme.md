@@ -1,4 +1,4 @@
-# Code editor 
+# Code editor
 
 It is a code editor for html ,css and js inspired from codepen made using codemirror and react-codemirror2 for writing and executing the code at same time !
 
@@ -11,8 +11,8 @@ It is a code editor for html ,css and js inspired from codepen made using codemi
 
 - User: yung-coder
 - Gihub Link: https://github.com/yung-coder
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 

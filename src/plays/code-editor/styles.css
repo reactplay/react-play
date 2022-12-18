@@ -1,19 +1,19 @@
 /* enter stlyes here */
-.code-editor-tab-button-container{
+.code-editor-tab-button-container {
   display: flex;
   flex-direction: row;
   margin-left: 40%;
   margin-top: 25px;
 }
-.code-editor-container{
+.code-editor-container {
   padding-top: 0.5%;
 }
-.code-editor-dropdown{
+.code-editor-dropdown {
   margin-top: 15px;
   display: flex;
   margin-left: 36%;
 }
-.code-editor-btn{
+.code-editor-btn {
   max-width: 240px;
   min-width: 100px;
   height: 50px;
@@ -24,73 +24,73 @@
   font-weight: 200px;
   color: black;
 }
-.code-editor-dropdown label{
-   font-size: larger;
-   font-weight: 400;
-   font-family: sans-serif;
-   margin-right: 12px;
+.code-editor-dropdown label {
+  font-size: larger;
+  font-weight: 400;
+  font-family: sans-serif;
+  margin-right: 12px;
 }
-.code-editor-dropdown select{
+.code-editor-dropdown select {
   width: 300px;
   background-color: black;
   color: white;
 }
-.code-editor-dropdown select option{
+.code-editor-dropdown select option {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.code-editor-cont{
+.code-editor-cont {
   margin-top: 20px;
   border: 5px solid white;
 }
-.code-editor-cont:hover{
-  border: 5px  solid rgb(0, 255, 0);
+.code-editor-cont:hover {
+  border: 5px solid rgb(0, 255, 0);
 }
-.code-editor-bottom-pane{
+.code-editor-bottom-pane {
   height: 50vh;
   display: flex;
   margin-top: 20px;
   border: 5px solid rgb(36, 129, 99);
-  border: 5px  solid rgb(0, 255, 0);
+  border: 5px solid rgb(0, 255, 0);
 }
-.code-editor-bottom-pane:hover{
+.code-editor-bottom-pane:hover {
   border: 5px solid rgb(36, 129, 99);
 }
-.code-editor-heading-output{
+.code-editor-heading-output {
   background-color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size:x-large;
+  font-size: x-large;
   color: white;
   margin-top: 10px;
 }
-.code-editor-modal-toogle{
+.code-editor-modal-toogle {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: xx-large;
 }
-.code-editor-modal-toogle button{
+.code-editor-modal-toogle button {
   color: #1f6ed4;
 }
-@media (max-width: 764px){
-   .code-editor-tab-button-container{
+@media (max-width: 764px) {
+  .code-editor-tab-button-container {
     flex-direction: column;
-   }
-   .code-editor-dropdown {
+  }
+  .code-editor-dropdown {
     margin-left: 20%;
-   }
-   .code-editor-dropdown  label {
-     font-size: medium;
-     margin-right: 0px;
-   }
-   .code-editor-dropdown  select{
+  }
+  .code-editor-dropdown label {
+    font-size: medium;
+    margin-right: 0px;
+  }
+  .code-editor-dropdown select {
     width: 100px;
-   }
-   .code-editor-modal-toogle{
-     font-size: larger;
+  }
+  .code-editor-modal-toogle {
+    font-size: larger;
     margin-left: 45px;
-   }
+  }
 }
