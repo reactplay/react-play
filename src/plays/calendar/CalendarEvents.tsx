@@ -1,41 +1,39 @@
-import React, { useState, useContext, useEffect } from 'react'
-import CalendarEvent from './CalendarEvent'
-import CalendarEventsMore from './CalendarEventsMore'
-import { Context } from './Context'
-import EventType from './EventType'
+import React, { useState, useContext, useEffect } from 'react';
+import CalendarEvent from './CalendarEvent';
+import CalendarEventsMore from './CalendarEventsMore';
+import { Context } from './Context';
+import EventType from './EventType';
 
 interface Props {
-  date: Date
+  date: Date;
 }
 
-const MAX_VISIBLE_ITEMS = 3
+const MAX_VISIBLE_ITEMS = 3;
 
 const CalendarEvents = ({ date }: Props) => {
-  const [events, setEvents] = useState<EventType[]>([])
-  const context = useContext(Context)
-  const { getEvents } = context
+  const [events, setEvents] = useState<EventType[]>([]);
+  const context = useContext(Context);
+  const { getEvents } = context;
 
   useEffect(() => {
-    setEvents(getEvents(date))
-  }, [date, getEvents])
+    setEvents(getEvents(date));
+  }, [date, getEvents]);
 
   return (
     <div className="calendar-play-events" onClick={(ev) => ev.stopPropagation()}>
       {events
         .filter((e, index) => index < MAX_VISIBLE_ITEMS)
-        .map(event => (
-          <CalendarEvent key={event.id} event={event} />
+        .map((event) => (
+          <CalendarEvent event={event} key={event.id} />
         ))}
       {events.length > MAX_VISIBLE_ITEMS && (
         <CalendarEventsMore
           date={date}
-          events={events.filter(
-            (e, index) => index >= MAX_VISIBLE_ITEMS
-          )}
+          events={events.filter((e, index) => index >= MAX_VISIBLE_ITEMS)}
         />
       )}
     </div>
   );
-}
+};
 
-export default CalendarEvents
+export default CalendarEvents;

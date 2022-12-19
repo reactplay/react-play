@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 /**
- * 
+ *
  * @param {string} url api url
  * @param {object} options object
  * @returns { data, loading, error }
@@ -28,6 +28,6 @@ const useFetch = (url, options) => {
   }, [url, options]);
 
   return { data, loading, error };
-}
+};
 
 export default useFetch;

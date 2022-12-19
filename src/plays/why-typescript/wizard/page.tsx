@@ -1,9 +1,10 @@
-import * as React from "react";
-import { AppProps, IPageData } from "./contract";
-import "./index.css";
+import * as React from 'react';
+import { AppProps, IPageData } from './contract';
+import './index.css';
 
 const Page = (props: AppProps) => {
   const data: IPageData = props.pagedata;
+
   return (
     <>
       <div className="page-container">
@@ -11,7 +12,7 @@ const Page = (props: AppProps) => {
         <ol className="ol-cards">
           {data.details.map((d, dk) => (
             <li key={dk}>
-              <div className="icon"></div>
+              <div className="icon" />
               <div className="descr">{d}</div>
             </li>
           ))}
