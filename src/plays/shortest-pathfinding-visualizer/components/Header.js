@@ -1,16 +1,16 @@
 export default function Header() {
     return (
       <div className="header">
-        <nav>
+        <div className="nav">
           <div
             style={{
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "space-between",
               alignItems: "center"
             }}
           >
             <h1>Pathfinding Visualizer</h1>
-            <select style={{ marginLeft: "50px" }}>
+            <select>
               <option value="" selected disabled hidden>
                 Algorithms
               </option>
@@ -19,7 +19,7 @@ export default function Header() {
             </select>
           </div>
           <button className="visualise">Visualize</button>
-        </nav>
+          </div>
         <div className="info-header">
           <div
             style={{
@@ -101,17 +101,16 @@ export default function Header() {
                 width: "30px",
                 height: "30px",
                 backgroundColor: "var(--path)",
-                marginRight: "20px"
+                marginRight: "20px" 
               }}
             ></div>
             Shortest path Node
           </div>
         </div>
-        <div style={{display:"flex", flexDirection:"column", justifyContent:"center"}}>
-        <p className="note" style={{alignSelf:'center'}}>
+        <div style={{display:"flex", justifyContent:"center"}}>
+        <p className="note">
           Click on 'Visualize' to see the algorithm come alive!
         </p>
-        <p className="algo-info" style={{alignSelf:'center'}}></p>
         </div>
       </div>
     );
