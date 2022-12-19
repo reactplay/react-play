@@ -1,8 +1,8 @@
 .counter .value {
-  background: linear-gradient(0deg, #b9740b,rgb(173, 134, 16));
+  background: linear-gradient(0deg, #b9740b, rgb(173, 134, 16));
   color: #ddd;
   width: 280px;
-  padding: .5rem;
+  padding: 0.5rem;
   letter-spacing: 1px;
   font-weight: bolder;
   font-size: 2.5rem;
@@ -14,8 +14,8 @@
   justify-content: center;
 }
 
-@media (min-width: 550px){
-  .counter .value {  
+@media (min-width: 550px) {
+  .counter .value {
     width: 450px;
     padding: 1rem;
     letter-spacing: 2px;
@@ -26,7 +26,6 @@
   }
 }
 
-.counter .value  span{
+.counter .value span {
   font-family: monospace;
-
 }

@@ -1,8 +1,9 @@
-import * as React from "react";
-import PlayHeader from "common/playlists/PlayHeader";
-import Wizard from "./wizard";
-import data from "./data.json";
+import * as React from 'react';
+import PlayHeader from 'common/playlists/PlayHeader';
+import Wizard from './wizard';
+import data from './data.json';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function WhyTypescript(props: any) {
   // Your Code Start below.
 
@@ -15,7 +16,7 @@ function WhyTypescript(props: any) {
           <div>
             <h1>Play Details - Why Typescript</h1>
             <div>
-              <Wizard title="Why Typescript" data={data} />
+              <Wizard data={data} title="Why Typescript" />
             </div>
           </div>
           {/* Your Code Ends Here */}

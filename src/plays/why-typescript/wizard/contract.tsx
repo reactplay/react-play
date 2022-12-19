@@ -1,13 +1,14 @@
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IDataContract {}
 
 export class IPageData {
-  title: String;
-  details: Array<String>;
+  title: string;
+  details: Array<string>;
 }
 
 export class PageData implements IDataContract, IPageData {
-  title: String;
-  details: Array<String>;
+  title: string;
+  details: Array<string>;
   constructor(data: IPageData) {
     this.details = data.details;
     this.title = data.title;
@@ -15,14 +16,14 @@ export class PageData implements IDataContract, IPageData {
 }
 
 export interface IWizardData {
-  title: String;
+  title: string;
   pages: Array<PageData>;
 }
 
 export class WizardData implements IDataContract, IWizardData {
-  title: String;
+  title: string;
   pages: Array<PageData> = [];
-  constructor(title: String, pages: Array<object>) {
+  constructor(title: string, pages: Array<object>) {
     this.title = title;
     pages.forEach((o) => {
       const pagedata: IPageData = o as IPageData;

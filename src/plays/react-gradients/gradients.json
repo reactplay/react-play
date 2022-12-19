@@ -1,74 +1,74 @@
 [
-    {
-        "name": "Emerald",
-        "css": "linear-gradient(to right, #10b981, #65a30d)",
-        "tailwind": "bg-gradient-to-r from-emerald-500 to-lime-600",
-        "colors": ["#10b981", "#65a30d"]
-    },
-    {
-        "name": "Horizon",
-        "css": "linear-gradient(#f97316, #fde047)",
-        "tailwind": "bg-gradient-to-b from-orange-500 to-yellow-300",
-        "colors": ["#f97316", "#fde047"]
-    },
-    {
-        "name": "Green Apple",
-        "css": "linear-gradient(to right, #22c55e, #15803d)",
-        "tailwind": "bg-gradient-to-r from-green-500 to-green-700",
-        "colors": ["#22c55e", "#15803d"]
-    },
-    {
-        "name": "Deep Blue",
-        "css": "linear-gradient(to right, #2563eb, #1e40af, #1e3a8a)",
-        "tailwind": "bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900",
-        "colors": ["#2563eb", "#1e40af", "#1e3a8a"]
-    },
-    {
-        "name": "Dawn",
-        "css": "linear-gradient(to right, #fb7185, #fdba74)",
-        "tailwind": "bg-gradient-to-r from-rose-400 to-orange-300",
-        "colors": ["#fb7185", "#fdba74"]
-    },
-    {
-        "name": "Midnight",
-        "css": "linear-gradient(to right, #1d4ed8, #1e40af, #111827)",
-        "tailwind": "bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900",
-        "colors": ["#1d4ed8", "#1e40af", "#111827"]
-    },
-    {
-        "name": "Coral",
-        "css": "linear-gradient(to right, #60a5fa, #34d399)",
-        "tailwind": "bg-gradient-to-r from-blue-400 to-emerald-400",
-        "colors": ["#60a5fa", "#34d399"]
-    },
-    {
-        "name": "Flamingo",
-        "css": "linear-gradient(to right, #f472b6, #db2777)",
-        "tailwind": "bg-gradient-to-r from-pink-400 to-pink-600",
-        "colors": ["#f472b6", "#db2777"]
-    },
-    {
-        "name": "Ocean",
-        "css": "linear-gradient(to right, #a5f3fc, #22d3ee)",
-        "tailwind": "bg-gradient-to-r from-cyan-200 to-cyan-400",
-        "colors": ["#a5f3fc", "#22d3ee"]
-    },
-    {
-        "name": "Metal",
-        "css": "conic-gradient(at right center, #c7d2fe, #475569, #c7d2fe)",
-        "tailwind": "bg-conic-to-r from-indigo-200 via-slate-600 to-indigo-200",
-        "colors": ["#c7d2fe", "#475569", "#c7d2fe"]
-    },
-    {
-        "name": "Green Galaxy",
-        "css": "radial-gradient(at left center, #06b6d4, #047857, #dbeafe)",
-        "tailwind": "bg-radial-at-l from-cyan-500 via-emerald-700 to-blue-100",
-        "colors": ["#06b6d4", "#047857", "#dbeafe"]
-    },
-    {
-        "name": "Pure Blue Shade",
-        "css": "conic-gradient(at left top, #14b8a6, #4338ca, #1f2937)",
-        "tailwind": "bg-conic-to-tl from-teal-500 via-indigo-700 to-gray-800",
-        "colors": ["#14b8a6", "#4338ca", "#1f2937"]
-    }
+  {
+    "name": "Emerald",
+    "css": "linear-gradient(to right, #10b981, #65a30d)",
+    "tailwind": "bg-gradient-to-r from-emerald-500 to-lime-600",
+    "colors": ["#10b981", "#65a30d"]
+  },
+  {
+    "name": "Horizon",
+    "css": "linear-gradient(#f97316, #fde047)",
+    "tailwind": "bg-gradient-to-b from-orange-500 to-yellow-300",
+    "colors": ["#f97316", "#fde047"]
+  },
+  {
+    "name": "Green Apple",
+    "css": "linear-gradient(to right, #22c55e, #15803d)",
+    "tailwind": "bg-gradient-to-r from-green-500 to-green-700",
+    "colors": ["#22c55e", "#15803d"]
+  },
+  {
+    "name": "Deep Blue",
+    "css": "linear-gradient(to right, #2563eb, #1e40af, #1e3a8a)",
+    "tailwind": "bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900",
+    "colors": ["#2563eb", "#1e40af", "#1e3a8a"]
+  },
+  {
+    "name": "Dawn",
+    "css": "linear-gradient(to right, #fb7185, #fdba74)",
+    "tailwind": "bg-gradient-to-r from-rose-400 to-orange-300",
+    "colors": ["#fb7185", "#fdba74"]
+  },
+  {
+    "name": "Midnight",
+    "css": "linear-gradient(to right, #1d4ed8, #1e40af, #111827)",
+    "tailwind": "bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900",
+    "colors": ["#1d4ed8", "#1e40af", "#111827"]
+  },
+  {
+    "name": "Coral",
+    "css": "linear-gradient(to right, #60a5fa, #34d399)",
+    "tailwind": "bg-gradient-to-r from-blue-400 to-emerald-400",
+    "colors": ["#60a5fa", "#34d399"]
+  },
+  {
+    "name": "Flamingo",
+    "css": "linear-gradient(to right, #f472b6, #db2777)",
+    "tailwind": "bg-gradient-to-r from-pink-400 to-pink-600",
+    "colors": ["#f472b6", "#db2777"]
+  },
+  {
+    "name": "Ocean",
+    "css": "linear-gradient(to right, #a5f3fc, #22d3ee)",
+    "tailwind": "bg-gradient-to-r from-cyan-200 to-cyan-400",
+    "colors": ["#a5f3fc", "#22d3ee"]
+  },
+  {
+    "name": "Metal",
+    "css": "conic-gradient(at right center, #c7d2fe, #475569, #c7d2fe)",
+    "tailwind": "bg-conic-to-r from-indigo-200 via-slate-600 to-indigo-200",
+    "colors": ["#c7d2fe", "#475569", "#c7d2fe"]
+  },
+  {
+    "name": "Green Galaxy",
+    "css": "radial-gradient(at left center, #06b6d4, #047857, #dbeafe)",
+    "tailwind": "bg-radial-at-l from-cyan-500 via-emerald-700 to-blue-100",
+    "colors": ["#06b6d4", "#047857", "#dbeafe"]
+  },
+  {
+    "name": "Pure Blue Shade",
+    "css": "conic-gradient(at left top, #14b8a6, #4338ca, #1f2937)",
+    "tailwind": "bg-conic-to-tl from-teal-500 via-indigo-700 to-gray-800",
+    "colors": ["#14b8a6", "#4338ca", "#1f2937"]
+  }
 ]

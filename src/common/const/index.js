@@ -1,2 +1,2 @@
-export * from "./nhost";
-export * from "./git";
+export * from './nhost';
+export * from './git';

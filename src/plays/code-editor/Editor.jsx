@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/dracula.css';
 import 'codemirror/theme/material.css';
@@ -17,44 +17,44 @@ import 'codemirror/addon/edit/closetag';
 import { Controlled as ControlledEditorComponent } from 'react-codemirror2';
 
 const Editor = ({ language, value, setEditorState }) => {
-
-  const [theme, setTheme] = useState("dracula")
+  const [theme, setTheme] = useState('dracula');
   const handleChange = (editor, data, value) => {
     setEditorState(value);
-  }
-  
-  const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night']
-  
+  };
+
+  const themeArray = ['dracula', 'material', 'mdn-like', 'the-matrix', 'night'];
+
   return (
-  <div className="code-editor-container">
-      <div className='code-editor-dropdown'>
-        <label for="cars">Choose a theme: </label>
-        <select name="theme" onChange={(el) => {
-          setTheme(el.target.value)
-        }}>
-          {
-            themeArray.map( theme => (
-              <option value={theme}>{theme}</option>
-            ))
-          }
+    <div className="code-editor-container">
+      <div className="code-editor-dropdown">
+        <label htmlFor="cars">Choose a theme: </label>
+        <select
+          name="theme"
+          onChange={(el) => {
+            setTheme(el.target.value);
+          }}
+        >
+          {themeArray.map((theme) => (
+            <option value={theme}>{theme}</option>
+          ))}
         </select>
       </div>
-      <div className='code-editor-cont'>
-      <ControlledEditorComponent
-        onBeforeChange={handleChange}
-        value= {value}
-        className="Codemirror-wrapper"
-        options={{
-          lineWrapping: true,
-          lint: true,
-          mode: language,
-          lineNumbers: true,
-          theme: theme,
-        }}
-      />
+      <div className="code-editor-cont">
+        <ControlledEditorComponent
+          className="Codemirror-wrapper"
+          options={{
+            lineWrapping: true,
+            lint: true,
+            mode: language,
+            lineNumbers: true,
+            theme: theme
+          }}
+          value={value}
+          onBeforeChange={handleChange}
+        />
       </div>
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Editor
+export default Editor;

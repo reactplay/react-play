@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function Square(props) {
   return (
-    <button className={`squareButton ${props.winningSquare?.includes(props.index) && "bg-yellow-500"}`} onClick={props.onClick}>
+    <button
+      className={`squareButton ${props.winningSquare?.includes(props.index) && 'bg-yellow-500'}`}
+      onClick={props.onClick}
+    >
       {props.value}
     </button>
   );
 }
+
 function Restart({ onClick }) {
   return (
     <button className="jumpButton" onClick={onClick}>
@@ -19,18 +23,17 @@ function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
 
-  const nextSymbol = isXNext ? "X" : "O";
+  const nextSymbol = isXNext ? 'X' : 'O';
 
   const winner = calculateWinner(squares);
-
 
   function renderSquare(i) {
     return (
       <Square
-        key={i}
         index={i}
-        winningSquare={winner ? winner.line : null}
+        key={i}
         value={squares[i]}
+        winningSquare={winner ? winner.line : null}
         onClick={() => {
           const nextSquares = squares.slice();
           if (squares[i] != null || winner != null) {
@@ -43,15 +46,17 @@ function Game() {
       />
     );
   }
+
   function getStatus() {
     if (winner) {
       return `Winner:   ${winner.player}`;
     } else if (isBoardFull(squares)) {
-      return "Draw!";
+      return 'Draw!';
     } else {
       return `Next player:   ${nextSymbol}`;
     }
   }
+
   function renderRestartButton() {
     return (
       <Restart
@@ -62,11 +67,13 @@ function Game() {
       />
     );
   }
+
   function renderSquares(n) {
     let squares = [];
     for (let i = n; i < n + 3; i++) {
       squares.push(renderSquare(i));
     }
+
     return squares;
   }
 
@@ -76,12 +83,12 @@ function Game() {
 
   return (
     <div className="container">
-        <header className="header">Tic Tac Toe Game</header>
-        <div className="boardMain">
-          {renderRow(0)}
-          {renderRow(3)}
-          {renderRow(6)}
-        </div>
+      <header className="header">Tic Tac Toe Game</header>
+      <div className="boardMain">
+        {renderRow(0)}
+        {renderRow(3)}
+        {renderRow(6)}
+      </div>
       <div className="status">{getStatus()}</div>
       <div>{renderRestartButton()}</div>
     </div>
@@ -97,14 +104,15 @@ function calculateWinner(squares) {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6],
+    [2, 4, 6]
   ];
   for (let i = 0; i < possibleLines.length; i++) {
     const [a, b, c] = possibleLines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return  {player:squares[a], line:[a, b, c]};
+      return { player: squares[a], line: [a, b, c] };
     }
   }
+
   return null;
 }
 
@@ -114,6 +122,7 @@ function isBoardFull(squares) {
       return false;
     }
   }
+
   return true;
 }
 

@@ -1,194 +1,194 @@
 .code-editor-backdrop {
-    position: fixed;
-    top: 10%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 .code-editor-modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    width: 50vw;
-    max-width: 800px;
-    z-index: 11;
-    border-radius: 10px;
-    animation: modalApear 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 50vw;
+  max-width: 800px;
+  z-index: 11;
+  border-radius: 10px;
+  animation: modalApear 0.3s ease-in-out;
 }
 .code-editor-modal .close-icon {
-    position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
-    width: 30px;
-    padding: 5px;
-    filter: brightness(0.1);
-    cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  width: 30px;
+  padding: 5px;
+  filter: brightness(0.1);
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-    .code-editor-modal .close-icon {
-        right: 1rem;
-        top: 1rem;
-        width: 30px;
-   }
+  .code-editor-modal .close-icon {
+    right: 1rem;
+    top: 1rem;
+    width: 30px;
+  }
 }
 .code-editor-modal .content {
-    margin: 0 2rem;
-    padding: 2rem;
+  margin: 0 2rem;
+  padding: 2rem;
 }
 .code-editor-modal .content .text {
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: bold;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 .code-editor-modal .content p {
-    margin: 0.6rem 0 1rem 0;
-    text-align: center;
+  margin: 0.6rem 0 1rem 0;
+  text-align: center;
 }
 .code-editor-modal .content .guide-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 70%;
-    height: auto;
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  height: auto;
 }
 .code-editor-modal .content .button-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 32px;
 }
 .code-editor-modal .content .button-section button {
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
-    border-radius: 20px;
-    border: none;
-    background-color: rgba(81, 91, 212, 1);
-    outline: none;
-    color: #fff;
-    font-weight: bold;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(81, 91, 212, 1);
+  outline: none;
+  color: #fff;
+  font-weight: bold;
 }
 .code-editor-modal .content .button-section button:disabled {
-    background-color: rgba(81, 91, 212, 0.5);
-    pointer-events: none;
+  background-color: rgba(81, 91, 212, 0.5);
+  pointer-events: none;
 }
 @media screen and (max-width: 768px) {
-    .code-editor-modal .content .button-section {
-        padding: 0;
-        margin-top: 10px;
-   }
+  .code-editor-modal .content .button-section {
+    padding: 0;
+    margin-top: 10px;
+  }
 }
 @keyframes modalApear {
-    0% {
-        opacity: 0;
-        top: 48%;
-   }
-    100% {
-        opacity: 1;
-        top: 50%;
-   }
+  0% {
+    opacity: 0;
+    top: 48%;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
 }
 @media screen and (max-width: 768px) {
-    .code-editor-modal {
-        width: calc(100vw - 20px);
-   }
+  .code-editor-modal {
+    width: calc(100vw - 20px);
+  }
 }
-.code-editor-backdrop  {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+.code-editor-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 .code-editor-modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    width: 50vw;
-    max-width: 800px;
-    z-index: 11;
-    border-radius: 10px;
-    animation: modalApear 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 50vw;
+  max-width: 800px;
+  z-index: 11;
+  border-radius: 10px;
+  animation: modalApear 0.3s ease-in-out;
 }
 .code-editor-modal .close-icon {
-    position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
-    width: 30px;
-    padding: 5px;
-    filter: brightness(0.1);
-    cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  width: 30px;
+  padding: 5px;
+  filter: brightness(0.1);
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-    .code-editor-modal .close-icon {
-        right: 1rem;
-        top: 1rem;
-        width: 30px;
-   }
+  .code-editor-modal .close-icon {
+    right: 1rem;
+    top: 1rem;
+    width: 30px;
+  }
 }
 .code-editor-modal .content {
-    margin: 0 2rem;
-    padding: 2rem;
+  margin: 0 2rem;
+  padding: 2rem;
 }
 .code-editor-modal .content .text {
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: bold;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 .code-editor-modal .content p {
-    margin: 0.6rem 0 1rem 0;
-    text-align: center;
+  margin: 0.6rem 0 1rem 0;
+  text-align: center;
 }
 .code-editor-modal .content .guide-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 70%;
-    height: auto;
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  height: auto;
 }
 .code-editor-modal .content .button-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 32px;
 }
 .code-editor-modal .content .button-section button {
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
-    border-radius: 20px;
-    border: none;
-    background-color: rgba(81, 91, 212, 1);
-    outline: none;
-    color: #fff;
-    font-weight: bold;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(81, 91, 212, 1);
+  outline: none;
+  color: #fff;
+  font-weight: bold;
 }
 .code-editor-modal .content .button-section button:disabled {
-    background-color: rgba(81, 91, 212, 0.5);
-    pointer-events: none;
+  background-color: rgba(81, 91, 212, 0.5);
+  pointer-events: none;
 }
 @media screen and (max-width: 768px) {
-    .code-editor-modal .content .button-section {
-        padding: 0;
-        margin-top: 10px;
-   }
+  .code-editor-modal .content .button-section {
+    padding: 0;
+    margin-top: 10px;
+  }
 }
 @keyframes modalApear {
-    0% {
-        opacity: 0;
-        top: 48%;
-   }
-    100% {
-        opacity: 1;
-        top: 50%;
-   }
+  0% {
+    opacity: 0;
+    top: 48%;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
 }
 @media screen and (max-width: 768px) {
-    .code-editor-modal {
-        width: calc(100vw - 20px);
-   }
+  .code-editor-modal {
+    width: calc(100vw - 20px);
+  }
 }

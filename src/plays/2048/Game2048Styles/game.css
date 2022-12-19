@@ -6,7 +6,9 @@
   position: absolute;
   left: 36rem;
   top: 11rem;
-  box-shadow: 1.9px 2.6px 9.6px rgb(0 0 0 / 7%), 4.6px 6.3px 18.2px rgb(0 0 0 / 10%), 8.6px 11.8px 25.8px rgb(0 0 0 / 12%), 15.4px 21px 32.8px rgb(0 0 0 / 14%), 28.8px 39.3px 41.4px rgb(0 0 0 / 17%), 69px 94px 80px rgb(0 0 0 / 24%);
+  box-shadow: 1.9px 2.6px 9.6px rgb(0 0 0 / 7%), 4.6px 6.3px 18.2px rgb(0 0 0 / 10%),
+    8.6px 11.8px 25.8px rgb(0 0 0 / 12%), 15.4px 21px 32.8px rgb(0 0 0 / 14%),
+    28.8px 39.3px 41.4px rgb(0 0 0 / 17%), 69px 94px 80px rgb(0 0 0 / 24%);
 }
 
 .twenty-forty-eight-row {
@@ -31,58 +33,58 @@
 }
 
 .cell--2 {
-  background-image: url("../GameImages/two.gif");
-  color: rgba(0, 0, 0, 0.0);
+  background-image: url('../GameImages/two.gif');
+  color: rgba(0, 0, 0, 0);
 }
 
 .cell--4 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/four.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/four.gif');
 }
 
 .cell--8 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/eight.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/eight.gif');
 }
 
 .cell--16 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/sixteen.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/sixteen.gif');
 }
 
 .cell--32 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/threeTwo.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/threeTwo.gif');
 }
 
 .cell--64 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/sixFour.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/sixFour.gif');
 }
 
 .cell--128 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/oneTwo.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/oneTwo.gif');
 }
 
 .cell--256 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/twoFive.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/twoFive.gif');
 }
 
 .cell--512 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/fiveOne.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/fiveOne.gif');
 }
 
 .cell--1024 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/oneZero.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/oneZero.gif');
 }
 
 .cell--2048 {
-  color: rgba(0, 0, 0, 0.0);
-  background-image: url("../GameImages/twoZero.gif");
+  color: rgba(0, 0, 0, 0);
+  background-image: url('../GameImages/twoZero.gif');
 }
 
 .cell__label {
@@ -92,22 +94,21 @@
   margin-top: -50%;
 }
 
-
 /* Media Queries */
 
-@media(max-width: 1352px) {
+@media (max-width: 1352px) {
   .twenty-forty-eight-grid {
     left: 29rem;
   }
 }
 
-@media(max-width: 988px) {
+@media (max-width: 988px) {
   .twenty-forty-eight-grid {
     left: 11rem;
   }
 }
 
-@media(max-width: 805px) {
+@media (max-width: 805px) {
   .twenty-forty-eight-grid {
     left: 6rem;
   }
@@ -119,7 +120,7 @@
   }
 }
 
-@media(max-width: 494px) {
+@media (max-width: 494px) {
   .twenty-forty-eight-grid {
     left: 4rem;
   }
@@ -142,61 +143,61 @@
   }
 
   .cell--2 {
-    background-image: url("../GameImages/2.gif");
+    background-image: url('../GameImages/2.gif');
   }
 
   .cell--4 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/4.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/4.gif');
   }
 
   .cell--8 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/8.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/8.gif');
   }
 
   .cell--16 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/16.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/16.gif');
   }
 
   .cell--32 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/32.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/32.gif');
   }
 
   .cell--64 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/64.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/64.gif');
   }
 
   .cell--128 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/128.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/128.gif');
   }
 
   .cell--256 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/256.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/256.gif');
   }
 
   .cell--512 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/512.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/512.gif');
   }
 
   .cell--1024 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/64.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/64.gif');
   }
 
   .cell--2048 {
-    color: rgba(0, 0, 0, 0.0);
-    background-image: url("../GameImages/64.gif");
+    color: rgba(0, 0, 0, 0);
+    background-image: url('../GameImages/64.gif');
   }
 }
 
-@media(max-width: 354px) {
+@media (max-width: 354px) {
   .twenty-forty-eight-grid {
     left: 3rem;
     top: 16rem;
