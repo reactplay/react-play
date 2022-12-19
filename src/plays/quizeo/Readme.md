@@ -3,7 +3,9 @@
 Quizeo is a react fun project to play quiz around favourite movies and series, if you have watched.
 
 ## What you will learn
-The app demonstrates 
+
+The app demonstrates
+
 - the use of reusable components, shows you how to divide your react app into components
 - use of react-redux
 - use of react-redux with hooks

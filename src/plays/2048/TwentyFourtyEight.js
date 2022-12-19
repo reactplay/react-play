@@ -2,7 +2,6 @@ import PlayHeader from 'common/playlists/PlayHeader';
 import GameTwentyFourtyEight from './GameTwentyFourtyEight';
 
 function TwentyFourtyEight(props) {
-
   // Your Code Start below.
 
   return (
@@ -10,11 +9,11 @@ function TwentyFourtyEight(props) {
       <div className="play-details game-bg">
         <PlayHeader play={props} />
         <div className="play-details-body">
-        {/* Your Code Starts Here */}
+          {/* Your Code Starts Here */}
           <div>
-         <GameTwentyFourtyEight />
+            <GameTwentyFourtyEight />
           </div>
-        {/* Your Code Ends Here */}
+          {/* Your Code Ends Here */}
         </div>
       </div>
     </>

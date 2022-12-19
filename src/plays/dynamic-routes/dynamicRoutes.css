@@ -16,9 +16,9 @@
 }
 
 .dynamic-routes-container .sub-heading {
-  font-size: calc(var(--fs-md) * .8);
+  font-size: calc(var(--fs-md) * 0.8);
   font-weight: var(--fw-bold);
-  margin: .8rem 0 1.6rem 0;
+  margin: 0.8rem 0 1.6rem 0;
 }
 
 .dynamic-routes-container .navbar {

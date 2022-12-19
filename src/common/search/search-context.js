@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from 'react';
 
-export const SearchContext = React.createContext({
-  searchTerm: "",
+const SearchContext = React.createContext({
+  searchTerm: '',
   showShareModal: false,
   filterQuery: {
     level_id: [],
     tags: [],
     owner_user_id: [],
-    language: [],
-  },
-  setSearchTerm: () => {},
-  setFilterQuery: () => {},
-  setShowShareModal: () => {},
+    language: []
+  }
 });
+
+export const SearchContextProvider = ({ value, children }) => {
+  return <SearchContext.Provider value={value}>{children}</SearchContext.Provider>;
+};
+
+export const useSearchContext = () => useContext(SearchContext);

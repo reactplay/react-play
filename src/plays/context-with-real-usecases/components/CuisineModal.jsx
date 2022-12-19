@@ -1,11 +1,12 @@
-import { useContext, useState } from "react";
-import CuisineContext from "../context/CuisineContext";
+import { useContext, useState } from 'react';
+import CuisineContext from '../context/CuisineContext';
 const CuisineModal = () => {
   const { recipesByCusine } = useContext(CuisineContext);
-  const [display, setDisplay] = useState("hidden");
+  const [display, setDisplay] = useState('hidden');
   const toggleDisplay = () => {
-    setDisplay(display === "hidden" ? "active" : "hidden");
+    setDisplay(display === 'hidden' ? 'active' : 'hidden');
   };
+
   return (
     <div className="cuisine-modal">
       <button className="btn-cuisine-modal" onClick={toggleDisplay}>
@@ -14,7 +15,7 @@ const CuisineModal = () => {
       <div className={`modal-overlay ${display}`}>
         <div className={`modal-container ${display}`}>
           <div className="btn-group">
-            <button onClick={toggleDisplay} className="btn-close">
+            <button className="btn-close" onClick={toggleDisplay}>
               X
             </button>
           </div>

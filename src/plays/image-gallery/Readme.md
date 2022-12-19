@@ -11,8 +11,8 @@ It's an Image Gallery where users can explore multiple different types of images
 
 - User: Shivam-Katare
 - Gihub Link: https://github.com/Shivam-Katare
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 

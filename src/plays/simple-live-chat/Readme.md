@@ -5,6 +5,7 @@ Its a fun play which is very simple & minimal realtime live chat, build using re
 Api handling, persisting data using local storage, handling api data etc concepts are implemented in this play.
 
 ## Contents
+
 `SimpleLiveChat.jsx` is the parent file which handles the inner components (SignIn, DisplayChat) and data persistence using local storage.
 
 `Chat` folder contents chat screen structure and it's inner components which are designed using sass.
@@ -19,8 +20,8 @@ Level: Intermediate
 
 User: Angryman18
 Gihub Link: https://github.com/Angryman18
-Blog: 
-Video: 
+Blog:
+Video:
 
 ## Implementation Details
 

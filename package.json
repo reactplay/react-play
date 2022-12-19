@@ -30,7 +30,7 @@
     "json-graphql-parser": "^0.1.8",
     "jspdf": "^2.5.1",
     "lodash": "^4.17.21",
-    "node-sass": "^7.0.1",
+    "node-sass": "^8.0.0",
     "p5": "^1.5.0",
     "react": "^18.0.0",
     "react-codemirror2": "^7.2.1",
@@ -65,19 +65,17 @@
     "workbox-window": "^6.5.4"
   },
   "scripts": {
-    "start": "npx --yes create-react-play@latest -p && react-scripts start",
+    "start:nolint": "npx --yes create-react-play@latest -p && react-scripts start",
+    "start": "npx --yes create-react-play@latest -p && npm run lint && react-scripts start",
     "build": "npx --yes create-react-play@latest -p && react-scripts build",
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "cypress:run": "cypress run",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
+    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc"
   },
   "reactSnap": {
     "puppeteerArgs": [
@@ -98,12 +96,25 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.41.0",
     "autoprefixer": "^10.4.7",
     "cypress": "^10.6.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.13",
+    "prettier": "^2.7.1",
     "puppeteer": "^13.7.0",
     "react-snap": "^1.23.0",
     "tailwindcss": "^3.0.24",
-    "typescript": "^4.6.4"
+    "typescript": "*"
   }
 }

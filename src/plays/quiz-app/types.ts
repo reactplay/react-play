@@ -9,4 +9,4 @@ interface QuestionProps {
   question: string;
 }
 
-export { Status, QuestionProps }
+export { Status, QuestionProps };

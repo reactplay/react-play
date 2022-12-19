@@ -1,30 +1,26 @@
-import { Modal } from "common";
-import { useContext, useState, useEffect, useCallback } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { SearchContext } from "./search-context";
-import "./search.css";
+import { Modal } from 'common';
+import { useState, useEffect, useCallback } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useSearchContext } from './search-context';
+import './search.css';
 
-import { RiFilterFill } from "react-icons/ri";
-import useFetchFilterData from "./hooks/usePlayFilter";
-import MultipleSelectCheckmarks from "common/components/MultiSelect";
+import { RiFilterFill } from 'react-icons/ri';
+import useFetchFilterData from './hooks/usePlayFilter';
+import MultipleSelectCheckmarks from 'common/components/MultiSelect';
 
-const FilterPlaysModalBody = ({
-  filterQuery,
-  setFilterQuery,
-  onClearAppliedFilters,
-}) => {
+const FilterPlaysModalBody = ({ filterQuery, setFilterQuery, onClearAppliedFilters }) => {
   const [loading, error, data] = useFetchFilterData();
   const { tags, levels, creators } = data;
 
-  const languages = ["js", "ts"];
+  const languages = ['js', 'ts'];
 
   if (error) {
-    return <p>{error?.message ?? "Something Went Wrong"}</p>;
+    return <p>{error?.message ?? 'Something Went Wrong'}</p>;
   }
 
   const defaultOption = {
-    value: " ",
-    label: "All",
+    value: ' ',
+    label: 'All'
   };
 
   creators?.sort((a, b) => (a.user.displayName < b.user.displayName ? -1 : 1));
@@ -44,80 +40,77 @@ const FilterPlaysModalBody = ({
         </div>
       ) : (
         creator.user.displayName
-      ),
-    })) || []),
+      )
+    })) || [])
   ];
 
   const levelOptions = [
     ...(levels?.map((level) => ({
       label: level.level.name,
-      value: level.level.id,
-    })) || []),
+      value: level.level.id
+    })) || [])
   ];
   levelOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   const tagOptions = [
     ...(tags?.map((tag) => ({
       label: tag.tag,
-      value: tag.id,
-    })) || []),
+      value: tag.id
+    })) || [])
   ];
   tagOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   const languageOptions = [
-    ...languages?.map((language) => ({
-      label: language === "ts" ? "TypeScript" : "JavaScript",
-      value: language,
-    })),
+    ...(languages?.map((language) => ({
+      label: language === 'ts' ? 'TypeScript' : 'JavaScript',
+      value: language
+    })) || [])
   ];
   languageOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   return (
     <>
       <div className="form-group">
-        {loading && "Loading Data"}
+        {loading && 'Loading Data'}
         {/* Clear All filters button */}
         <div className="modal-clear-filter">
-          <span
-            onClick={onClearAppliedFilters}
-            className="clear-all-filter-btn"
-          >
+          <span className="clear-all-filter-btn" onClick={onClearAppliedFilters}>
             Clear All
           </span>
         </div>
         <MultipleSelectCheckmarks
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          options={[defaultOption, ...levelOptions]}
           filterKey="level_id"
+          filterQuery={filterQuery}
           label="Level"
+          options={[defaultOption, ...levelOptions]}
+          setFilterQuery={setFilterQuery}
         />
       </div>
       <div className="form-group">
         <MultipleSelectCheckmarks
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          options={[defaultOption, ...tagOptions]}
           filterKey="tags"
+          filterQuery={filterQuery}
           label="Tags"
+          options={[defaultOption, ...tagOptions]}
+          setFilterQuery={setFilterQuery}
         />
       </div>
       <div className="form-group">
         <MultipleSelectCheckmarks
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          options={creatorOptions}
           filterKey="owner_user_id"
+          filterQuery={filterQuery}
           label="Creator"
+          options={creatorOptions}
+          setFilterQuery={setFilterQuery}
         />
       </div>
       <div className="form-group">
         <MultipleSelectCheckmarks
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          options={[defaultOption, ...languageOptions]}
           filterKey="language"
+          filterQuery={filterQuery}
           label="Language"
+          options={[defaultOption, ...languageOptions]}
+          setFilterQuery={setFilterQuery}
         />
       </div>
     </>
@@ -137,16 +130,16 @@ const filterObject = {
   level_id: [],
   tags: [],
   owner_user_id: [],
-  language: [],
+  language: []
 };
 
 const FilterPlays = ({ reset }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { filterQuery, setFilterQuery } = useContext(SearchContext);
+  const { filterQuery, setFilterQuery } = useSearchContext();
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
-    ...filterObject,
+    ...filterObject
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
@@ -160,7 +153,7 @@ const FilterPlays = ({ reset }) => {
   }, [setFilterQuery]);
 
   useEffect(() => {
-    if (location.pathname !== "/plays") {
+    if (location.pathname !== '/plays') {
       resetFilter();
     }
     if (reset.filter) {
@@ -175,9 +168,9 @@ const FilterPlays = ({ reset }) => {
 
     setFilterQuery(modifiedFilterQuery);
     setnoOfAppliedFilter(getAppliedFilter(modifiedFilterQuery));
-    navigate("/plays", {
+    navigate('/plays', {
       replace: true,
-      state: { search: true, filter: false },
+      state: { search: true, filter: false }
     });
     showModal && setShowModal(false);
   };
@@ -200,40 +193,33 @@ const FilterPlays = ({ reset }) => {
   return (
     <div className="search-filter">
       <Modal
+        cname="filter"
+        show={showModal}
         title="Filter Plays By"
         onClose={filterModalCloseBtnHandler}
         onSubmit={handleFilter}
-        show={showModal}
-        cname="filter"
-        children={
-          <FilterPlaysModalBody
-            filterQuery={modifiedFilterQuery}
-            setFilterQuery={setModifiedFilterQuery}
-            onClearAppliedFilters={() => {
-              setModifiedFilterQuery({ ...filterObject });
-              setnoOfAppliedFilter(0);
-            }}
-          />
-        }
-      />
+      >
+        <FilterPlaysModalBody
+          filterQuery={modifiedFilterQuery}
+          setFilterQuery={setModifiedFilterQuery}
+          onClearAppliedFilters={() => {
+            setModifiedFilterQuery({ ...filterObject });
+            setnoOfAppliedFilter(0);
+          }}
+        />
+      </Modal>
 
       <button
+        className="btn-filter"
+        title="Filter Plays"
         onClick={() => {
           setShowModal(true);
           setIsFilterApplied(false);
         }}
-        className="btn-filter"
-        title="Filter Plays"
       >
-        {noOfAppliedFilter === 0 ? null : (
-          <div className="badge">{noOfAppliedFilter}</div>
-        )}
+        {noOfAppliedFilter === 0 ? null : <div className="badge">{noOfAppliedFilter}</div>}
 
-        <RiFilterFill
-          className="icon"
-          size="28px"
-          color="var(--color-neutral-30)"
-        />
+        <RiFilterFill className="icon" color="var(--color-neutral-30)" size="28px" />
       </button>
     </div>
   );

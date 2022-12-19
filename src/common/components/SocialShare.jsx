@@ -1,20 +1,14 @@
-
 import { IoLogoFacebook, IoLogoTwitter, IoLogoLinkedin, IoLogoReddit } from 'react-icons/io5';
 
-const SocialShare = ({ showTwitter, showLinkedin, showFB, showReddit , msg}) => {
+const SocialShare = ({ showTwitter, showLinkedin, showFB, showReddit, msg }) => {
   const URL = window.location.href;
-  const VIA = "reactplayIO";
+  const VIA = 'reactplayIO';
 
   const tweetIt = () => {
-    msg = msg ?? "Learning ReactJS? Check out this awesome React Playlist!";
-    const hashTags = [
-      "javascript",
-      "devcommunity",
-      "100daysofcode",
-      "react",
-      "reactplay",
-    ];
-    const tags = encodeURIComponent(hashTags.join(","));
+    msg = msg ?? 'Learning ReactJS? Check out this awesome React Playlist!';
+    const hashTags = ['javascript', 'devcommunity', '100daysofcode', 'react', 'reactplay'];
+    const tags = encodeURIComponent(hashTags.join(','));
+
     return `https://twitter.com/intent/tweet?url=${URL}&text=${encodeURIComponent(
       msg
     )}&hashtags=${tags}&via=${VIA}`;
@@ -29,10 +23,9 @@ const SocialShare = ({ showTwitter, showLinkedin, showFB, showReddit , msg}) => 
   };
 
   const postOnReddit = () => {
-    const title = "Learning ReactJS? Check out this awesome React Playlist!";
-    return `http://www.reddit.com/submit?url=${URL}&title=${encodeURIComponent(
-      title
-    )}`;
+    const title = 'Learning ReactJS? Check out this awesome React Playlist!';
+
+    return `http://www.reddit.com/submit?url=${URL}&title=${encodeURIComponent(title)}`;
   };
 
   return (
@@ -40,42 +33,42 @@ const SocialShare = ({ showTwitter, showLinkedin, showFB, showReddit , msg}) => 
       <div className="social-share-buttons">
         {showFB && (
           <a
-            href={postOnFB()}
-            target="_blank"
-            rel="noopener noreferrer"
             className="social-share-button"
+            href={postOnFB()}
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <IoLogoFacebook size={48} className="icon" />
+            <IoLogoFacebook className="icon" size={48} />
           </a>
         )}
         {showTwitter && (
           <a
-            href={tweetIt()}
-            target="_blank"
-            rel="noopener noreferrer"
             className="social-share-button"
+            href={tweetIt()}
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <IoLogoTwitter size={48} className="icon" />
+            <IoLogoTwitter className="icon" size={48} />
           </a>
         )}
         {showLinkedin && (
           <a
-            href={postOnLinkedIn()}
-            target="_blank"
-            rel="noopener noreferrer"
             className="social-share-button"
+            href={postOnLinkedIn()}
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <IoLogoLinkedin size={48} className="icon" />
+            <IoLogoLinkedin className="icon" size={48} />
           </a>
         )}
         {showReddit && (
           <a
-            href={postOnReddit()}
-            target="_blank"
-            rel="noopener noreferrer"
             className="social-share-button"
+            href={postOnReddit()}
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <IoLogoReddit size={48} className="icon" />
+            <IoLogoReddit className="icon" size={48} />
           </a>
         )}
       </div>
