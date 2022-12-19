@@ -3,6 +3,7 @@ import PlayHeader from 'common/playlists/PlayHeader';
 import React, { useState } from 'react';
 import './styles.scss';
 import MultiSelect from './components/MultiSelect';
+<<<<<<< HEAD
 import { PlayRoot } from './types';
 
 function MultiselectComponent(props: PlayRoot) {
@@ -26,6 +27,30 @@ function MultiselectComponent(props: PlayRoot) {
     setSelectedOptions((prev) => [...prev, option]);
   };
 
+=======
+
+function MultiselectComponent(props: any) {
+  // Your Code Start below.
+  const [defaultOptions, setDefaultOptions] = useState([
+    'Monster Hunter',
+    'Uncharted',
+    'God of War',
+    'Last of Us',
+    'The Witcher 3',
+    'Pokemon'
+  ]);
+  const [selectedOptions, setSelectedOptions] = useState<string[]>(['Monster Hunter']);
+
+  const handleSelect = (options: string[]) => {
+    setSelectedOptions(options);
+  };
+
+  const addNewOption = (option: string) => {
+    setDefaultOptions((prev) => [...prev, option]);
+    setSelectedOptions((prev) => [...prev, option]);
+  };
+
+>>>>>>> main
   return (
     <>
       <div className="play-details">
