@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Badge from "./components/Badge";
+import Contributions from "./components/Contributions";
 import PlayThumbnail from "common/playlists/PlayThumbnail";
 import { toSanitized } from "common/services/string";
 import * as all_plays from "plays";
@@ -85,7 +86,7 @@ const ContributorProfileMainContent = ({ plays }) => {
         Content{" "}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Contributions
+        <Contributions/>
       </TabPanel>
     </Box>
   );
