@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -10,6 +10,28 @@ import * as all_plays from "plays";
 
 const ContributorProfileMainContent = ({ plays }) => {
   const [value, setValue] = useState(0);
+  const [count, setCount] = useState({propen: 0, prmerged: 0, issueopen: 0, issueclosed: 0 });
+  const apiParams = [
+    { type: "pr", state: "merged", user: "author" },
+    { type: "pr", state: "open", user: "author" },
+    { type: "issue", state: "open", user: "assignee" },
+    { type: "issue", state: "closed", user: "assignee" },
+  ];
+
+  useEffect(() => {
+    async function fetchData(type, state, user) {
+        const res = await fetch(
+          `https://api.github.com/search/issues?q=org:reactplay%20${user}:nagarjunshroff%20type:${type}%20is:${state}`
+        );
+        const response = await res.json();
+       setCount(prev => { return {...prev, [type+state]: response.total_count}});
+    }
+    apiParams.map((param) => fetchData(param.type, param.state, param.user));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  console.log("count stats", count);
+
   const playsCount = useMemo(() => {
     const count = plays?.filter((play) => play.component !== null);
     return count?.length;
@@ -86,7 +108,7 @@ const ContributorProfileMainContent = ({ plays }) => {
         Content{" "}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Contributions/>
+        <Contributions count={count} />
       </TabPanel>
     </Box>
   );
