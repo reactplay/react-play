@@ -4,16 +4,15 @@ on:
     types:
       - closed
 
-
 jobs:
   add-contributors:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/github-script@v6
-      with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
-        script: |
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
             const creator = context.payload.sender.login
             const opts = github.rest.issues.listForRepo.endpoint.merge({
               ...context.issue,

@@ -2,7 +2,6 @@
 
 The `Memory Game` is a very fun play build with ReactJS & moreover its a memory test game which is actually to uncover cards and memorize them for next move.
 
-
 There is some key things we can also learn from projects are
 
 - Handling complex logics in ReactJS.

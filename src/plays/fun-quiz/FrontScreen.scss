@@ -1,4 +1,3 @@
-
 @import './variables';
 
 .fun-quiz-main {
@@ -73,7 +72,7 @@
       margin-bottom: 40px;
 
       &::after {
-        content: "";
+        content: '';
         display: block;
         width: 100%;
         margin-top: 5px;
@@ -177,7 +176,6 @@
         place-items: center;
         cursor: pointer;
       }
-
     }
 
     .display-question {
@@ -217,7 +215,6 @@
       color: $quiz-app-deep-blue;
       cursor: pointer;
     }
-
   }
 
   @media screen and (max-width: 600px) {
@@ -226,4 +223,3 @@
     }
   }
 }
-

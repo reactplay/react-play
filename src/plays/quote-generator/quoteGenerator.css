@@ -20,7 +20,7 @@
   justify-content: center;
 }
 
-.rand-quote-gen .play-area .quote-area .quote{
+.rand-quote-gen .play-area .quote-area .quote {
   height: 100%;
   width: 55%;
   font-size: 2rem;
@@ -35,7 +35,7 @@
   justify-content: space-between;
 }
 
-.rand-quote-gen .play-area .quote-area .page-author{
+.rand-quote-gen .play-area .quote-area .page-author {
   margin-left: 30%;
 }
 
@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border:none;
+  border: none;
 }
 
 .rand-quote-gen .play-area .change-btn:hover:enabled {
@@ -72,7 +72,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border:none;
+    border: none;
   }
 
   .rand-quote-gen .play-area .quote-area {
@@ -93,10 +93,10 @@
     width: 100%;
   }
 
-  .rand-quote-gen .play-area .quote-area .page-author{
+  .rand-quote-gen .play-area .quote-area .page-author {
     margin-left: 0;
     width: 100%;
-    padding: 0 10px 0 10px; 
+    padding: 0 10px 0 10px;
   }
 
   .rand-quote-gen .play-area .change-btn:hover {

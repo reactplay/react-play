@@ -1,0 +1,63 @@
+/* enter stlyes here */
+.infinite-scrolling {
+  height: 100%;
+  background-image: linear-gradient(109.6deg, #dd5e89 11.2%, #f7bb97 91.1%);
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.infinite-scrolling h2 {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 16px;
+}
+.infinite-scrolling__Container {
+  box-sizing: border-box;
+  height: 100%;
+  width: 700px;
+  max-width: 100%;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border: 1px solid gray;
+  border-radius: 8px;
+  overflow: auto;
+}
+.infinite-scrolling__Container::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 12px;
+}
+.infinite-scrolling__Container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+.infinite-scrolling__Container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+.infinite-scrolling__Container__Post {
+  box-sizing: border-box;
+  height: 75px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.infinite-scrolling__Container__Post img {
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .infinite-scrolling {
+    padding: 8px;
+    flex-direction: column-reverse;
+    gap: 0px;
+  }
+  .infinite-scrolling h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+}

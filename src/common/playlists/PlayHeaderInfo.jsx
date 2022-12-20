@@ -1,6 +1,6 @@
-import { IoMdArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
-import LevelBadge from "common/components/LevelBadge";
+import { IoMdArrowBack } from 'react-icons/io';
+import { Link } from 'react-router-dom';
+import LevelBadge from 'common/components/LevelBadge';
 
 const Author = ({ user, githubUsername }) => {
 
@@ -17,6 +17,7 @@ const Author = ({ user, githubUsername }) => {
         to={`/contributor/${user.id}`}
         target="_blank"
         className="play-anchor"
+        href={`https://github.com/${githubUsername}`}
         rel="noopener noreferrer"
       >
         <strong>{user?.displayName}</strong>
@@ -41,7 +42,7 @@ const PlayHeaderInfo = ({ play }) => {
   return (
     <div className="header-leftcol overflow-hidden">
       <div className="header-leftcol-action">
-        <Link to="/plays" className="action">
+        <Link className="action" to="/plays">
           <IoMdArrowBack className="icon" size="24px" />
           <span className="sr-only">Back</span>
         </Link>
@@ -50,14 +51,12 @@ const PlayHeaderInfo = ({ play }) => {
         <div className="header-primary">
           <h3 className="header-title">{play.name}</h3>
           <div className="header-title-tags">
-            <LevelBadge level={play.level.name} />{" "}
+            <LevelBadge level={play.level.name} />{' '}
             {!!play.play_tags.length && <Tags tags={play.play_tags} />}
           </div>
         </div>
         <div className="header-secondary">
-          {play.user && (
-            <Author user={play.user} githubUsername={play.github} />
-          )}
+          {play.user && <Author githubUsername={play.github} user={play.user} />}
         </div>
       </div>
     </div>
