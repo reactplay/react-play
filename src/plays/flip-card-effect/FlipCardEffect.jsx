@@ -1,15 +1,16 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import Card from "./Card";
-import "./FlipCardEffect.css";
+import PlayHeader from 'common/playlists/PlayHeader';
+import Card from './Card';
+import './FlipCardEffect.css';
 
 function FlipCardEffect(props) {
   // Your Code Start below.
   const quotes = [
-    "Spread love everywhere you go.",
-    "if you love someone give them infinite space.",
-    "The happiest people are the givers not the takers.",
-    "The journey of a thousand miles begins with one step.",
+    'Spread love everywhere you go.',
+    'if you love someone give them infinite space.',
+    'The happiest people are the givers not the takers.',
+    'The journey of a thousand miles begins with one step.'
   ];
+
   return (
     <>
       <div className="play-details">
@@ -21,17 +22,17 @@ function FlipCardEffect(props) {
             <h3 className="sub-heading">Click any card to flip</h3>
             <div className="container">
               {quotes.map((item, index) => {
-                return <Card key={index} item={item} />;
+                return <Card item={item} key={index} />;
               })}
             </div>
             <p className="sub-heading">
-              Inspired by{" "}
+              Inspired by{' '}
               <strong>
                 <a
                   className="external-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   href="https://aaronccwong.github.io/react-card-flip/"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   react-card-flip
                 </a>

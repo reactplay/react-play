@@ -10,7 +10,6 @@ import Input from './components/Input';
 import TodoList from './components/TodoList';
 
 function ReactTodoApp(props) {
-
   // Your Code Start below.
 
   const [input, setInput] = useState('');
@@ -18,7 +17,7 @@ function ReactTodoApp(props) {
   const [status, setStatus] = useState('all');
   const [filtered, setFiltered] = useState([]);
 
-  //Set states for editHandler
+  // Set states for editHandler
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
 
@@ -27,12 +26,15 @@ function ReactTodoApp(props) {
       switch (status) {
         case 'completed':
           setFiltered(todos.filter((todo) => todo.completed === true));
+
           break;
         case 'uncompleted':
           setFiltered(todos.filter((todo) => todo.completed === false));
+
           break;
         default:
           setFiltered(todos);
+
           break;
       }
     };
@@ -42,34 +44,34 @@ function ReactTodoApp(props) {
 
   return (
     <>
-      <div className='play-details'>
+      <div className="play-details">
         <PlayHeader play={props} />
-        <div className='play-details-body'>
+        <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className='todo-play-body'>
-            <div className='todo-top-banner'>
+          <div className="todo-play-body">
+            <div className="todo-top-banner">
               <h1>Todo List</h1>
             </div>
             <Input
-              todos={todos}
-              setTodos={setTodos}
-              input={input}
-              setInput={setInput}
-              setStatus={setStatus}
-              isEditing={isEditing}
-              setIsEditing={setIsEditing}
               editId={editId}
+              input={input}
+              isEditing={isEditing}
               setEditId={setEditId}
+              setInput={setInput}
+              setIsEditing={setIsEditing}
+              setStatus={setStatus}
+              setTodos={setTodos}
+              todos={todos}
             />
             <TodoList
-              todos={todos}
-              setTodos={setTodos}
-              input={input}
-              setInput={setInput}
               editId={editId}
-              setEditId={setEditId}
-              setIsEditing={setIsEditing}
               filtered={filtered}
+              input={input}
+              setEditId={setEditId}
+              setInput={setInput}
+              setIsEditing={setIsEditing}
+              setTodos={setTodos}
+              todos={todos}
             />
           </div>
           {/* Your Code Ends Here */}

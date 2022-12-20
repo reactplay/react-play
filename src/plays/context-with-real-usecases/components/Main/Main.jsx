@@ -1,5 +1,5 @@
-import Menu from "../Menu";
-import RecipeGrid from "./RecipeGrid";
+import Menu from '../Menu';
+import RecipeGrid from './RecipeGrid';
 const Main = () => {
   return (
     <div className="main-container">

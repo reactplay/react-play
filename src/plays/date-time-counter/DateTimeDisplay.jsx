@@ -1,4 +1,4 @@
-const DateTimeDisplay = ({value, type, isDanger}) => {
+const DateTimeDisplay = ({ value, type, isDanger }) => {
   return (
     <div className={isDanger ? 'countdown danger' : 'countdown'}>
       <p>{value}</p>
