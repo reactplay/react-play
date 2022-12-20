@@ -16,8 +16,8 @@ import { NhostClient, NhostReactProvider } from '@nhost/react';
 import { UserProfile } from "common/contributor_profile";
 import { EditProfile } from "common/edit-contributor_profile";
 
-const nhost = new NhostClient({
-  backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || ''
+export const nhost = new NhostClient({
+  backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || "",
 });
 
 const RouteDefs = () => {

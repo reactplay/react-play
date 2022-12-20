@@ -48,10 +48,23 @@ function useGetContributorsDetails(userId) {
     }
     setLoading(false);
   }
+  const updateUserProfile = async (obj) => {
+    const socialLinksLiteral = obj?.social_links?.filter(e => e !== "").join(", ")
+    setLoading(true);
+    try {
+
+      await submitMutation(user_profile.UpdateUserProfile(userId, { ...obj, social_links: `{${socialLinksLiteral}}` }));
+    }
+    catch (error) {
+      setError(error);
+    }
+    setLoading(false);
+  }
+
   useEffect(() => {
     fetchUser();
   }, []);
-  return [contributor, skills, error, loading, addUserProfile];
+  return { contributor, skills, error, loading, addUserProfile, updateUserProfile };
 }
 
 export default useGetContributorsDetails;

@@ -44,6 +44,7 @@ const UpdateUserProfile = (id, obj) => {
         ],
       },
     },
+    return: ["affected_rows"]
   };
 };
 
