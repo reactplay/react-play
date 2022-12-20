@@ -77,15 +77,13 @@ const ContributorProfileMainContent = ({ plays }) => {
             label="Plays"
             {...a11yProps(0)}
           />
-          <Tab
+          {/* <Tab
             label="Contents"
-            icon={<Badge />}
             iconPosition="end"
             {...a11yProps(1)}
-          />
+          /> */}
           <Tab
             label="Contributions"
-            icon={<Badge />}
             iconPosition="end"
             {...a11yProps(2)}
           />
@@ -103,11 +101,11 @@ const ContributorProfileMainContent = ({ plays }) => {
           ))}
         </ol>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      {/* <TabPanel value={value} index={1}>
         {" "}
         Content{" "}
-      </TabPanel>
-      <TabPanel value={value} index={2}>
+      </TabPanel> */}
+      <TabPanel value={value} index={1}>
         <Contributions count={count} />
       </TabPanel>
     </Box>
