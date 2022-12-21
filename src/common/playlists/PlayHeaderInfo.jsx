@@ -3,16 +3,9 @@ import { Link } from 'react-router-dom';
 import LevelBadge from 'common/components/LevelBadge';
 
 const Author = ({ user, githubUsername }) => {
-
   return (
     <div className="header-author flex items-center gap-2">
-      <img
-        className="rounded-full"
-        src={user?.avatarUrl}
-        width="25px"
-        height="25px"
-        alt="avatar"
-      />
+      <img className="rounded-full" src={user?.avatarUrl} width="25px" height="25px" alt="avatar" />
       <Link
         to={`/contributor/${user.id}`}
         target="_blank"

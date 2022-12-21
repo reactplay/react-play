@@ -1,6 +1,6 @@
-import { submit, submitMutation } from "common/services/request";
-import { Skills } from "common/services/skills";
-import { useEffect, useState } from "react";
+import { submit, submitMutation } from 'common/services/request';
+import { Skills } from 'common/services/skills';
+import { useEffect, useState } from 'react';
 
 export const useSkillsList = () => {
   const [data, setData] = useState([]);

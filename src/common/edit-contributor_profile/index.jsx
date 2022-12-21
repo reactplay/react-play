@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
-import {
-  Button,
-  FormControl,
-} from "@mui/material";
-import { useAccessToken } from "@nhost/react";
-import { styled } from "@mui/material/styles";
-import { useNavigate, useParams } from "react-router-dom";
-import { useSkillsList } from "common/hooks/useSkillsList";
-import { useExpertLevelsList } from "common/hooks/useExpertiseLevelList";
-import useGetContributorsDetails from "common/hooks/useGetContributorDetails";
-import { nhost } from "common/routing/RouteDefs";
+import React, { useEffect, useState } from 'react';
+import { Button, FormControl } from '@mui/material';
+import { useAccessToken } from '@nhost/react';
+import { styled } from '@mui/material/styles';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useSkillsList } from 'common/hooks/useSkillsList';
+import { useExpertLevelsList } from 'common/hooks/useExpertiseLevelList';
+import useGetContributorsDetails from 'common/hooks/useGetContributorDetails';
+import { nhost } from 'common/routing/RouteDefs';
 
 const CustomisedFormControl = styled(FormControl)`
   padding: 1rem;
@@ -23,7 +20,7 @@ export const EditProfile = () => {
     contributor,
     error,
     loading: dataLoading,
-    updateUserProfile,
+    updateUserProfile
   } = useGetContributorsDetails(id);
 
   const {
@@ -32,7 +29,7 @@ export const EditProfile = () => {
     photo_link,
     bio,
     website,
-    users_user_profile_map: { displayName, avatarUrl, email, plays } = {},
+    users_user_profile_map: { displayName, avatarUrl, email, plays } = {}
   } = contributor || {};
 
   const [skills_List, skills_List_isLoading] = useSkillsList();
@@ -41,12 +38,12 @@ export const EditProfile = () => {
   const [skill_map, setSkill] = useState([{ skill: {}, level: {} }]);
 
   const [imageUri, setImageUri] = useState(null);
-  const [state, setState] = useState({ photo_link: "", social_links: [] });
+  const [state, setState] = useState({ photo_link: '', social_links: [] });
   useEffect(() => {
     setState({
       photo_link: photo_link || avatarUrl,
       social_links,
-      bio,
+      bio
     });
   }, [contributor]);
 
@@ -57,7 +54,7 @@ export const EditProfile = () => {
     try {
       const result = await nhost.storage.upload({
         file: imageUri,
-        bucketId: "user_avatar",
+        bucketId: 'user_avatar'
       });
       console.log(result);
       return result;
@@ -118,20 +115,20 @@ export const EditProfile = () => {
           }}
         />
         {Array(5)
-          .fill("")
+          .fill('')
           .map((el, i) => {
             return (
               <input
-                className=""
+                className="bg-stone-50 text-sm p-3  focus:outline-none rounded-lg w-full  border-solid border  border-stone-400"
                 type="url"
-                value={state.social_links?.[i] ?? ""}
+                value={state.social_links?.[i] ?? ''}
                 onChange={(e) => {
                   setState((prev) => {
                     const newArr = [...prev.social_links];
                     newArr[i] = e.target.value;
                     return {
                       ...prev,
-                      social_links: newArr,
+                      social_links: newArr
                     };
                   });
                 }}

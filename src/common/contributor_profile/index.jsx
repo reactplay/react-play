@@ -1,18 +1,18 @@
-import { Button } from "@mui/material";
-import { useUserId } from "@nhost/react";
-import { socilsRegex } from "common/const/socialsRegex";
-import useGetContributorsDetails from "common/hooks/useGetContributorDetails";
+import { Button } from '@mui/material';
+import { useUserId } from '@nhost/react';
+import { socilsRegex } from 'common/const/socialsRegex';
+import useGetContributorsDetails from 'common/hooks/useGetContributorDetails';
 
-import { isEmpty } from "lodash";
-import LoadingSpinner from "plays/dev-jokes/Spinner";
-import React from "react";
+import { isEmpty } from 'lodash';
+import LoadingSpinner from 'plays/dev-jokes/Spinner';
+import React from 'react';
 
-import { BsShare } from "react-icons/bs";
-import { FiEdit2 } from "react-icons/fi";
-import { MdEmail } from "react-icons/md";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import ContributorProfileMainContent from "./ContributorProfileMainContent";
-import "./index.css";
+import { BsShare } from 'react-icons/bs';
+import { FiEdit2 } from 'react-icons/fi';
+import { MdEmail } from 'react-icons/md';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import ContributorProfileMainContent from './ContributorProfileMainContent';
+import './index.css';
 
 export const UserProfile = () => {
   const userId = useUserId();
@@ -23,7 +23,7 @@ export const UserProfile = () => {
     contributor,
     skills: skills_map,
     error,
-    loading: dataLoading,
+    loading: dataLoading
   } = useGetContributorsDetails(id);
 
   const {
@@ -32,7 +32,7 @@ export const UserProfile = () => {
     photo_link,
     bio,
     website,
-    users_user_profile_map: { displayName, avatarUrl, email, plays } = {},
+    users_user_profile_map: { displayName, avatarUrl, email, plays } = {}
   } = contributor || {};
 
   const socials = () => {
@@ -55,11 +55,7 @@ export const UserProfile = () => {
   return (
     <div className="app-body contributor_page ">
       <div className="left_section ">
-        <img
-          src={photo_link || avatarUrl}
-          alt="avatar"
-          className="rounded-full w-28 -mt-20"
-        />
+        <img src={photo_link || avatarUrl} alt="avatar" className="rounded-full w-28 -mt-20" />
         <h2 className="text-lg font-bold"> {displayName}</h2>
 
         {/* show only if current login user same as user whose profile we are on */}
@@ -67,7 +63,7 @@ export const UserProfile = () => {
           <Button
             className="rounded-md flex gap-1 "
             onClick={() => {
-              navigate(pathname + "/edit");
+              navigate(pathname + '/edit');
             }}
           >
             <FiEdit2 className="icon" /> Edit Profile

@@ -1,6 +1,6 @@
-import { useState, useContext} from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import { useUserId, useAuthenticated } from "@nhost/react";
+import { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useUserId, useAuthenticated } from '@nhost/react';
 import { BsTwitter, BsGithub } from 'react-icons/bs';
 import { FaLightbulb, FaUserAlt } from 'react-icons/fa';
 import { BiMoney } from 'react-icons/bi';
@@ -10,8 +10,8 @@ import SocialShare from 'common/components/SocialShare';
 import { GoX } from 'react-icons/go';
 import { Modal, Box, Typography, Menu } from '@mui/material';
 import { useSearchContext } from 'common/search/search-context';
-import { SearchContext } from "common/search/search-context";
-import { NHOST } from "common/const";
+import { SearchContext } from 'common/search/search-context';
+import { NHOST } from 'common/const';
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useSearchContext();
@@ -37,8 +37,8 @@ const HeaderNav = ({ showBrowse }) => {
   };
 
   const handleUserProfileClick = () => {
-    if (!isAuthenticated) return handleLogin("github");
-    if(isAuthenticated){
+    if (!isAuthenticated) return handleLogin('github');
+    if (isAuthenticated) {
       navigate(`/contributor/${userId}`);
     }
   };
@@ -170,7 +170,7 @@ const HeaderNav = ({ showBrowse }) => {
             </button>
           </li>
           <li>
-          <button
+            <button
               title="User Profile"
               className="app-header-btn app-header-btn--default"
               onClick={handleUserProfileClick}

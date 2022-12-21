@@ -1,7 +1,7 @@
-import { submit, submitMutation } from "common/services/request";
-import { user_profile } from "common/services/user_profile";
-import { user_skill_map } from "common/services/user_skill_map";
-import { useEffect, useState } from "react";
+import { submit, submitMutation } from 'common/services/request';
+import { user_profile } from 'common/services/user_profile';
+import { user_skill_map } from 'common/services/user_skill_map';
+import { useEffect, useState } from 'react';
 
 function useGetContributorsDetails(userId) {
   const [loading, setLoading] = useState(true);
@@ -15,17 +15,9 @@ function useGetContributorsDetails(userId) {
   const fetchUser = async () => {
     setLoading(true);
     try {
-      const res = await submit(
-        user_skill_map.FetchUserSkillMapByUserId(
-          userId
-        )
-      );
-      const response = await submit(
-        user_profile.FetchUserProfileById(
-          userId
-        )
-      );
-      if (response.length == 0) addUserProfile()
+      const res = await submit(user_skill_map.FetchUserSkillMapByUserId(userId));
+      const response = await submit(user_profile.FetchUserProfileById(userId));
+      if (response.length == 0) addUserProfile();
       setContributor(response[0]);
       setSkills(res);
     } catch (error) {
@@ -36,30 +28,28 @@ function useGetContributorsDetails(userId) {
   const addUserProfile = async () => {
     setLoading(true);
     try {
-      await submitMutation(
-        user_profile.InsertUserProfile(), {
-        id: userId,
+      await submitMutation(user_profile.InsertUserProfile(), {
+        id: userId
         // social_links: "{}",
-      }
-      );
-      fetchUser()
+      });
+      fetchUser();
     } catch (error) {
       setError(error);
     }
     setLoading(false);
-  }
+  };
   const updateUserProfile = async (obj) => {
-    const socialLinksLiteral = obj?.social_links?.filter(e => e !== "").join(", ")
+    const socialLinksLiteral = obj?.social_links?.filter((e) => e !== '').join(', ');
     setLoading(true);
     try {
-
-      await submitMutation(user_profile.UpdateUserProfile(userId, { ...obj, social_links: `{${socialLinksLiteral}}` }));
-    }
-    catch (error) {
+      await submitMutation(
+        user_profile.UpdateUserProfile(userId, { ...obj, social_links: `{${socialLinksLiteral}}` })
+      );
+    } catch (error) {
       setError(error);
     }
     setLoading(false);
-  }
+  };
 
   useEffect(() => {
     fetchUser();

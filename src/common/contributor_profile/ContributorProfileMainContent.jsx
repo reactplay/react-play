@@ -1,36 +1,38 @@
-import React, { useState, useMemo, useEffect } from "react";
-import Box from "@mui/material/Box";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Badge from "./components/Badge";
-import Contributions from "./components/Contributions";
-import PlayThumbnail from "common/playlists/PlayThumbnail";
-import { toSanitized } from "common/services/string";
-import * as all_plays from "plays";
+import React, { useState, useMemo, useEffect } from 'react';
+import Box from '@mui/material/Box';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Badge from './components/Badge';
+import Contributions from './components/Contributions';
+import PlayThumbnail from 'common/playlists/PlayThumbnail';
+import { toSanitized } from 'common/services/string';
+import * as all_plays from 'plays';
 
 const ContributorProfileMainContent = ({ plays }) => {
   const [value, setValue] = useState(0);
-  const [count, setCount] = useState({propen: 0, prmerged: 0, issueopen: 0, issueclosed: 0 });
+  const [count, setCount] = useState({ propen: 0, prmerged: 0, issueopen: 0, issueclosed: 0 });
   const apiParams = [
-    { type: "pr", state: "merged", user: "author" },
-    { type: "pr", state: "open", user: "author" },
-    { type: "issue", state: "open", user: "assignee" },
-    { type: "issue", state: "closed", user: "assignee" },
+    { type: 'pr', state: 'merged', user: 'author' },
+    { type: 'pr', state: 'open', user: 'author' },
+    { type: 'issue', state: 'open', user: 'assignee' },
+    { type: 'issue', state: 'closed', user: 'assignee' }
   ];
 
   useEffect(() => {
     async function fetchData(type, state, user) {
-        const res = await fetch(
-          `https://api.github.com/search/issues?q=org:reactplay%20${user}:nagarjunshroff%20type:${type}%20is:${state}`
-        );
-        const response = await res.json();
-       setCount(prev => { return {...prev, [type+state]: response.total_count}});
+      const res = await fetch(
+        `https://api.github.com/search/issues?q=org:reactplay%20${user}:nagarjunshroff%20type:${type}%20is:${state}`
+      );
+      const response = await res.json();
+      setCount((prev) => {
+        return { ...prev, [type + state]: response.total_count };
+      });
     }
     apiParams.map((param) => fetchData(param.type, param.state, param.user));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log("count stats", count);
+  console.log('count stats', count);
 
   const playsCount = useMemo(() => {
     const count = plays?.filter((play) => play.component !== null);
@@ -59,18 +61,14 @@ const ContributorProfileMainContent = ({ plays }) => {
   const a11yProps = (index) => {
     return {
       id: `user-profile-tab-${index}`,
-      "aria-controls": `user-profile-tabpanel-${index}`,
+      'aria-controls': `user-profile-tabpanel-${index}`
     };
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs
-          value={value}
-          onChange={handleTabChange}
-          aria-label="User profile details"
-        >
+    <Box sx={{ width: '100%' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs value={value} onChange={handleTabChange} aria-label="User profile details">
           <Tab
             icon={<Badge count={playsCount} />}
             iconPosition="end"
@@ -82,11 +80,7 @@ const ContributorProfileMainContent = ({ plays }) => {
             iconPosition="end"
             {...a11yProps(1)}
           /> */}
-          <Tab
-            label="Contributions"
-            iconPosition="end"
-            {...a11yProps(2)}
-          />
+          <Tab label="Contributions" iconPosition="end" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -94,9 +88,9 @@ const ContributorProfileMainContent = ({ plays }) => {
           {plays?.map((play, index) => (
             <React.Fragment key={index}>
               {/* {console.log(play.component)} */}
-              {all_plays[
-                play.component ? play.component : toSanitized(play.title_name)
-              ] && <PlayThumbnail key={play.id} play={play} />}
+              {all_plays[play.component ? play.component : toSanitized(play.title_name)] && (
+                <PlayThumbnail key={play.id} play={play} />
+              )}
             </React.Fragment>
           ))}
         </ol>
