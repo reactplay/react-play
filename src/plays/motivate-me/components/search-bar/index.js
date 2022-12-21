@@ -8,7 +8,7 @@ export default function SearchBar({ Quotes, author, setAuthor }) {
           <label className="motivate-me-Dropdown_label">Author</label>
         </div>
         <button className="motivate-me-btn motivate-me-Dropdown_button">
-          <span>All</span>
+          <span>{author ? author : 'All'}</span>
           <i>
             <svg
               className="feather feather-chevron-down btn__icon"
