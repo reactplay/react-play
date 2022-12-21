@@ -11,22 +11,14 @@ import countByProp from 'common/utils/commonUtils';
 const Author = ({ user }) => {
   return (
     <div className="play-author flex items-center gap-2">
-    <div className="play-author flex items-center gap-2">
       <img
-        className="rounded-full border border-zink-400"
-        src={
-          user?.avatarUrl
-            ? !!user?.avatarUrl.length
-              ? user?.avatarUrl
-              : userImage
-            : userImage
-        }
-        loading="lazy"
-        width="25px"
-        height="25px"
         alt="avatar"
+        className="rounded-full border border-zink-400"
+        height="25px"
+        loading="lazy"
+        src={user?.avatarUrl ? (user?.avatarUrl.length ? user?.avatarUrl : userImage) : userImage}
+        width="25px"
       />
-      <div className="author-anchor">{user?.displayName}</div>
       <div className="author-anchor">{user?.displayName}</div>
     </div>
   );
@@ -79,31 +71,20 @@ const PlayThumbnail = ({ play }) => {
     <li>
       <Link to={`/plays/${encodeURI(play.github.toLowerCase())}/${play.slug}`}>
         <div className="play-thumb">
-      <Link to={`/plays/${encodeURI(play.github.toLowerCase())}/${play.slug}`}>
-        <div className="play-thumb">
           <Shimmer>
-            <img loading="lazy" src={cover} alt="" className="play-thumb-img" />
+            <img alt="" className="play-thumb-img" loading="lazy" src={cover} />
           </Shimmer>
         </div>
         <div className="play-header">
           <div className="play-title">{play.name}</div>
-        <div className="play-header">
-          <div className="play-title">{play.name}</div>
           {play.user && <Author user={play.user} />}
           <div className="play-actions mt-4">
-          <div className="play-actions mt-4">
             <div className="flex flex-row justify-between items-end">
-              <Like onLikeClick={null} likeObj={likeObject()} />
-              <div
-                className={`language language-${play.language || "js"}`}
-              ></div>
+              <Like likeObj={likeObject()} onLikeClick={null} />
+              <div className={`language language-${play.language || 'js'}`} />
             </div>
           </div>
         </div>
-        <div className="play-status">
-          <BsPlayCircleFill size="48px" />
-          <div className="default">Play now</div>
-          <div className="current">Playing..</div>
         <div className="play-status">
           <BsPlayCircleFill size="48px" />
           <div className="default">Play now</div>
