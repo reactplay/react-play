@@ -4,6 +4,7 @@ const allPlaysByUser = {
   function: "plays",
   return: [
     "created_at",
+    "slug",
     {
       user: ["avatarUrl", "displayName", "id", "email"],
     },
