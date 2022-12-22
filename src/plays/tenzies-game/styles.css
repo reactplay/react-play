@@ -1,4 +1,4 @@
-.main {
+.tenzies_main {
   width: 45vw;
   height: 100%;
   background-color: #f5f5f5;
@@ -9,7 +9,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.dice-container {
+.tenzies_dice_container {
   /* width: 100%; */
 
   display: grid;
@@ -17,21 +17,21 @@
   gap: 20px;
   margin-bottom: 35px;
 }
-.dice {
+.tenzies_dice {
   height: 60px;
   width: 60px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
   border-radius: 10px;
   cursor: pointer;
   background-color: white;
 }
-.die-num {
+.tenzies_die_num {
   font-size: 2rem;
 }
-.roll-btn {
+.tenzies_roll_btn {
   height: 50px;
   width: 150px;
   border: none;
@@ -42,15 +42,15 @@
   font-family: 'Karla', sans-serif;
   cursor: pointer;
 }
-.roll-btn:active {
+.tenzies_roll_btn:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
-.title {
+.tenzies_title {
   font-size: 40px;
   margin-bottom: 10px;
 }
 
-.instructions {
+.tenzies_instructions {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   margin-top: 0;

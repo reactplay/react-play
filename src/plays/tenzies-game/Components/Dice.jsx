@@ -6,8 +6,8 @@ const Dice = (props) => {
   };
 
   return (
-    <div className="dice" style={styles} onClick={props.toggle}>
-      <h2 className="die-num"> {props.value} </h2>
+    <div className="tenzies_dice" style={styles} onClick={props.toggle}>
+      <h2 className="tenzies_die_num"> {props.value} </h2>
     </div>
   );
 };

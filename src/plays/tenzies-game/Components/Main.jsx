@@ -38,7 +38,7 @@ const Main = () => {
     return elArr;
   }
 
-  function rollDice(e) {
+  function rollDice() {
     setDices(diceValues(dices));
     if (tenzies) {
       setDices(diceValues());
@@ -72,15 +72,15 @@ const Main = () => {
   });
 
   return (
-    <div className="main">
+    <div className="tenzies_main">
       {tenzies && <Confetti style={{ position: 'fixed' }} />}
-      <h1 className="title">Tenzies</h1>
-      <p className="instructions">
+      <h1 className="tenzies_title">Tenzies</h1>
+      <p className="tenzies_instructions">
         Roll until all dice are the same. Click each die to freeze it at its current value between
         rolls.
       </p>
-      <div className="dice-container">{diceEl}</div>
-      <button className="roll-btn" onClick={rollDice}>
+      <div className="tenzies_dice_container">{diceEl}</div>
+      <button className="tenzies_roll_btn" onClick={rollDice}>
         {tenzies ? 'New Game' : 'Roll'}
       </button>
     </div>
