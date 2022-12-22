@@ -89,7 +89,6 @@ const HeaderNav = ({ showBrowse }) => {
               >
                 <IoAddSharp className="icon" />
                 <span className="btn-label">Create</span>
-                <span className="create-button-badge">beta</span>
               </a>
             ) : (
               <a
