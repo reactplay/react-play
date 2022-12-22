@@ -27,6 +27,12 @@ export default function SearchBar({ Quotes, author, setAuthor }) {
           </i>
         </button>
         <ul className="motivate-me-Dropdown_items">
+          <li
+            className={`${author === '' && 'motivate-me-selected_author'}`}
+            onClick={() => setAuthor('')}
+          >
+            All
+          </li>
           {Object.keys(Quotes).map((name, index) => {
             return (
               <li
