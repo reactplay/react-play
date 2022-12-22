@@ -25,7 +25,7 @@ Welcome developers! We are as excited as you are to know that you are going to c
   You might check the [README](README.md) file for more details.
 
 - You should be able to access the application on http://localhost:3000
-- Click on `Create` button. Note, its a `beta` feature, feel free to [log issue](https://github.com/reactplay/react-play/issues) (if any)
+- Click on `Create` button.
 - The application will try to authenticate you
 - If you are NOT already logged in with [`NHost`](https://nhost.io), you will be prompted to give permission
   - Log in with your GitHub account
