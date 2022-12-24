@@ -10,6 +10,7 @@ import TechStack from './techstack/TechStacks';
 import ExtendedFooter from './footer/ExtendedFooter';
 import CreatePlay from './createplay/CreatePlay';
 import PlayCreated from './playcreated/PlayCreated';
+import LeaderBoard from "./playleaderboard/LeaderBoard";
 
 export {
   Header,
@@ -23,5 +24,6 @@ export {
   CreatePlay,
   PlayCreated,
   TechStack,
-  ExtendedFooter
+  ExtendedFooter,
+  LeaderBoard
 };

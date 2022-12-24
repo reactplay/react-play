@@ -1,0 +1,18 @@
+.table-cell {
+    padding: 6px !important;
+}
+
+.table-header {
+    font-weight: 700 !important;
+    font-family: var(--ff-accent) !important;
+}
+
+.heading {
+    font-family: var(--ff-accent);
+    font-size: 32px !important;
+}
+
+.text {
+    font-family: var(--ff-accent) !important;
+    font-size: var(--fs-md) !important;
+}
