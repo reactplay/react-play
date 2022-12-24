@@ -14,7 +14,7 @@ const LeaderBoard = () => {
   const { getAllPlaysByUser, getAllPlaysByUserByMonth } = FetchPlayCountByUser;
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const formatData = useCallback((data) => {
+  const formatData = useCallback((data, monthlyContribution = false) => {
     const formattedData = [];
     const finalData = [];
     const filteredData = data.filter((d) => publishedPlays.includes(d.slug));
@@ -30,10 +30,17 @@ const LeaderBoard = () => {
       finalData.push({
         displayName: v[0].displayName,
         avatarUrl: v.map((t) => t.avatarUrl)[0],
-        count: v.length
+        count: v.length,
+        created_at: v[0].created_at
       })
     );
-    return finalData.sort((a, b) => b.count - a.count);
+    const sortByCount = finalData.sort((a, b) => b.count - a.count);
+    if (monthlyContribution) {
+      // once the data being sorted based on created date, will pick the first one.
+      return sortByCount.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))[0];
+    }
+
+    return sortByCount.slice(0, 10);
   });
 
   useEffect(() => {
@@ -48,14 +55,14 @@ const LeaderBoard = () => {
   useEffect(() => {
     async function fetchTopContributors() {
       const data = await submit(getAllPlaysByUser());
-      updateTop10Contributors(formatData(data).slice(0, 10));
+      updateTop10Contributors(formatData(data));
     }
 
     async function fetchTopContributorOfTheMonth() {
       const firstDateOfMonth = format(new Date(), 'yyyy-MM-01');
       const lastDateOfMonth = format(lastDayOfMonth(new Date()), 'yyyy-MM-dd');
       const data = await submit(getAllPlaysByUserByMonth(firstDateOfMonth, lastDateOfMonth));
-      updateTopContributorOfTheMonth(formatData(data)[0]);
+      updateTopContributorOfTheMonth(formatData(data, true));
     }
 
     fetchTopContributors();
@@ -64,7 +71,7 @@ const LeaderBoard = () => {
 
   return (
     <main className="app-body  app-body-overflow-hidden">
-      { publishedPlays.length && ( topContributorOfTheMonth || top10Contributors) ? (
+      {publishedPlays.length && (topContributorOfTheMonth || top10Contributors) ? (
         <div className=" overflow-auto lg:flex flex-row justify-around ">
           {topContributorOfTheMonth && (
             <TopPlayCreatorOfTheMonth topPlayCreatorOfTheMonth={topContributorOfTheMonth} />
@@ -81,8 +88,15 @@ const LeaderBoard = () => {
           </div>
         </div>
       ) : (
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh"}}>
-           <Watch color="#0096AB" height="100" width="100" />
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100vh'
+          }}
+        >
+          <Watch color="#0096AB" height="100" width="100" />
         </div>
       )}
     </main>
