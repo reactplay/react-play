@@ -1,6 +1,5 @@
 import PlayHeader from 'common/playlists/PlayHeader';
 import App from './App';
-import { AppProvider } from './context/appContext';
 import './styles.css';
 
 // WARNING: Do not change the entry componenet name
@@ -13,9 +12,7 @@ function SmartTodoList(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <AppProvider>
-            <App />
-          </AppProvider>
+          <App />
           {/* Your Code Ends Here */}
         </div>
       </div>
