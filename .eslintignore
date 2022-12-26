@@ -1,0 +1,15 @@
+node_modules
+.github
+service-worker.js
+registerServiceWorker.js
+reportWebVitals.js
+setupTests.js
+.build;
+package-lock.json;
+package.json;
+yarn.lock;
+tailwind.config.js;
+tsconfig.json;
+postcss.config.js;
+Dockerfile.DEV;
+Dockerfile.PROD;

@@ -1,19 +1,19 @@
-import { useEffect, useState, useRef } from "react";
-import { VscRefresh } from "react-icons/vsc";
+import { useEffect, useState, useRef } from 'react';
+import { VscRefresh } from 'react-icons/vsc';
 
 // Project local imports
-import { generateText } from "../utils";
-import Stats from "./Stats";
-import Timer from "./Timer";
-import Word from "./Word";
-import ResultModal from "./ResultModal";
+import { generateText } from '../utils';
+import Stats from './Stats';
+import Timer from './Timer';
+import Word from './Word';
+import ResultModal from './ResultModal';
 
 const TypingTest = () => {
   const userInputRef = useRef(null);
-  const [text, setText] = useState("");
-  const [userInput, setUserInput] = useState("");
+  const [text, setText] = useState('');
+  const [userInput, setUserInput] = useState('');
   const [timer, setTimer] = useState(60);
-  const [status, setStatus] = useState("waiting");
+  const [status, setStatus] = useState('waiting');
   const [isTimerStart, setIsTimerStart] = useState(false);
   const [isResultModalOpen, setIsResultModalOpen] = useState(false);
   const [wordObj, setWordObj] = useState({
@@ -21,18 +21,18 @@ const TypingTest = () => {
     correctWords: 0,
     incorrectWords: 0,
     correctChars: 0,
-    typedWordsArray: [],
+    typedWordsArray: []
   });
   const [stats, setStats] = useState({
     wpm: 0,
     cpm: 0,
-    accuracy: 0,
+    accuracy: 0
   });
 
   const refreshState = () => {
     setText(generateText());
-    setUserInput("");
-    setStatus("waiting");
+    setUserInput('');
+    setStatus('waiting');
     setIsTimerStart(false);
     setTimer(60);
     userInputRef.current.focus();
@@ -41,12 +41,12 @@ const TypingTest = () => {
       correctWords: 0,
       incorrectWords: 0,
       correctChars: 0,
-      typedWordsArray: [],
+      typedWordsArray: []
     });
     setStats({
       wpm: 0,
       cpm: 0,
-      accuracy: 0,
+      accuracy: 0
     });
   };
 
@@ -57,7 +57,7 @@ const TypingTest = () => {
 
   const checkIsWordMatch = (value) => {
     // If it ends with space it means user has finished the word
-    setUserInput("");
+    setUserInput('');
 
     // To check each character and word
     const wordToCompare = text[wordObj.activeWordIndex];
@@ -66,19 +66,19 @@ const TypingTest = () => {
     setWordObj((prevObj) => ({
       ...prevObj,
       activeWordIndex: prevObj.activeWordIndex + 1,
-      typedWordsArray: [...prevObj.typedWordsArray, isWordMatch],
+      typedWordsArray: [...prevObj.typedWordsArray, isWordMatch]
     }));
 
     if (isWordMatch) {
       setWordObj((prevObj) => ({
         ...prevObj,
         correctWords: prevObj.correctWords + 1,
-        correctChars: prevObj.correctChars + value.trim().length,
+        correctChars: prevObj.correctChars + value.trim().length
       }));
     } else {
       setWordObj((prevObj) => ({
         ...prevObj,
-        incorrectWords: prevObj.incorrectWords + 1,
+        incorrectWords: prevObj.incorrectWords + 1
       }));
     }
   };
@@ -88,17 +88,17 @@ const TypingTest = () => {
     const { value } = e.target;
     if (!isTimerStart) {
       setIsTimerStart(true);
-      setStatus("started");
+      setStatus('started');
     }
 
     if (wordObj.activeWordIndex === text.length) return;
 
-    if (value.endsWith(" ")) {
+    if (value.endsWith(' ')) {
       checkIsWordMatch(value);
 
       // Check if length of activeWordIndex  === text - 1 then end the test
       if (wordObj.activeWordIndex === text.length - 1) {
-        setStatus("finished");
+        setStatus('finished');
         setTimer(60);
         setIsResultModalOpen(true);
       }
@@ -113,22 +113,20 @@ const TypingTest = () => {
       wpm: wordObj.correctWords,
       cpm: wordObj.correctChars,
       accuracy: Math.round(
-        (wordObj.correctWords /
-          (wordObj.correctWords + wordObj.incorrectWords)) *
-          100
-      ),
+        (wordObj.correctWords / (wordObj.correctWords + wordObj.incorrectWords)) * 100
+      )
     });
   }, [wordObj]);
 
   useEffect(() => {
     if (timer === 0) {
-      setStatus("finished");
+      setStatus('finished');
       setIsResultModalOpen(true);
     }
 
     // To start countdown
     const timerTimout = setTimeout(() => {
-      if (status === "started") {
+      if (status === 'started') {
         setTimer(timer - 1);
       }
     }, 1000);
@@ -150,9 +148,7 @@ const TypingTest = () => {
         <h2 className="text-[1.6rem] md:text-4xl  text-violet-600 font-bold">
           Typing Speed Test ⌨️🚀
         </h2>
-        <p className="text-base my-2 md:text-lg md:my-3 text-gray-600  ">
-          Test your typing skills
-        </p>
+        <p className="text-base my-2 md:text-lg md:my-3 text-gray-600  ">Test your typing skills</p>
 
         {/* Statistics & Timer */}
         <div className="flex flex-col justify-around items-center my-5 sm:flex-row md:my-6 md:mt-8 ">
@@ -164,10 +160,10 @@ const TypingTest = () => {
           {text.length ? (
             text.map((word, index) => (
               <Word
+                correct={wordObj.typedWordsArray[index]}
+                isActive={index === wordObj.activeWordIndex}
                 key={index}
                 text={word}
-                isActive={index === wordObj.activeWordIndex}
-                correct={wordObj.typedWordsArray[index]}
               />
             ))
           ) : (
@@ -177,30 +173,26 @@ const TypingTest = () => {
 
         <div className="flex items-center justify-center mt-8 space-x-7">
           <textarea
-            type="text"
-            ref={userInputRef}
-            disabled={status === "finished"}
             className="rounded-md border !border-violet-400 !p-3 w-[320px] outline-1 outline-violet-600"
+            disabled={status === 'finished'}
             placeholder="Start typing..."
-            value={status !== "finished" ? userInput : "Test Completed"}
+            ref={userInputRef}
+            type="text"
+            value={status !== 'finished' ? userInput : 'Test Completed'}
             onChange={handleUserInput}
           />
           <div
-            title="Refresh"
             className="border bg-violet-600 p-3 rounded-md cursor-pointer"
+            title="Refresh"
             onClick={refreshState}
           >
-            <VscRefresh fontSize={22} color="white" />
+            <VscRefresh color="white" fontSize={22} />
           </div>
         </div>
       </div>
 
       {isResultModalOpen && (
-        <ResultModal
-          open={isResultModalOpen}
-          handleModalClose={handleModalClose}
-          stats={stats}
-        />
+        <ResultModal handleModalClose={handleModalClose} open={isResultModalOpen} stats={stats} />
       )}
     </>
   );

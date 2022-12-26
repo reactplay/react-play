@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 const Posts = ({ posts }) => {
   const [displayPosts, setDisplayPosts] = useState([]);
@@ -9,8 +9,7 @@ const Posts = ({ posts }) => {
     const tempPosts = JSON.parse(JSON.stringify(posts));
     let start = pageNo * 20;
     let end = (pageNo + 1) * 20;
-    if (pageNo)
-      setDisplayPosts((prev) => [...prev, ...tempPosts.slice(start, end)]);
+    if (pageNo) setDisplayPosts((prev) => [...prev, ...tempPosts.slice(start, end)]);
     else setDisplayPosts(tempPosts.slice(start, end));
   };
 
@@ -52,11 +51,11 @@ const Posts = ({ posts }) => {
       <div className="infinite-scrolling__Container">
         {displayPosts.map((post, idx) => (
           <div
-            key={post.id}
             className="infinite-scrolling__Container__Post"
+            key={post.id}
             ref={idx === displayPosts.length - 1 ? setLastPost : null}
           >
-            <img src={post.url} alt={`Post No: ${idx + 1}`} />
+            <img alt={`Post No: ${idx + 1}`} src={post.url} />
             <h5>{post.title}</h5>
           </div>
         ))}

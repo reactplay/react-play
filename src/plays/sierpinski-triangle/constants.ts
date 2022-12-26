@@ -1,2 +1,2 @@
-export const level: number = 6;
-export const multiplier: number = 0.7;
+export const level = 6;
+export const multiplier = 0.7;

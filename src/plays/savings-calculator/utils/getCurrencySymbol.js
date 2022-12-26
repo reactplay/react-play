@@ -1,6 +1,6 @@
 const CURRENCY_SYMBOL_MAP = {
-  INR: "₹",
-  USD: "$",
+  INR: '₹',
+  USD: '$'
 };
 
 export const getCurrencySymbol = (currency) => {

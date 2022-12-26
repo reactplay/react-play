@@ -11,8 +11,8 @@ It is the responsive navbar made with tailwind
 
 - User: Shivam-Katare
 - Gihub Link: https://github.com/Shivam-Katare
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 

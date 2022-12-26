@@ -106,19 +106,19 @@
 
 /* Media Query */
 
-@media(max-width: 514px) {
+@media (max-width: 514px) {
   .create-note {
     width: 21rem;
   }
 }
 
-@media(max-width: 358px) {
+@media (max-width: 358px) {
   .create-note {
     width: 13rem;
   }
 }
 
-@media(max-width: 304px) {
+@media (max-width: 304px) {
   .create-note {
     width: 12rem;
   }
@@ -128,7 +128,7 @@
   }
 }
 
-@media(max-width: 269px) {
+@media (max-width: 269px) {
   .create-note {
     width: 11rem;
   }
@@ -138,7 +138,7 @@
   }
 }
 
-@media(max-width: 269px) {
+@media (max-width: 269px) {
   .create-note {
     width: 9rem;
   }

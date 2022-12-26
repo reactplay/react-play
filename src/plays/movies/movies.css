@@ -33,7 +33,5 @@ li {
 .movie img {
   max-width: unset;
   height: unset;
- align-self: center;
+  align-self: center;
 }
-
-
