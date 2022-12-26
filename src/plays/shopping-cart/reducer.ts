@@ -25,7 +25,6 @@ export default function reducer(state: InitialState, action: any) {
 
         return cartItem;
       });
-      console.log(increasedCart);
       return { ...state, cart: increasedCart };
 
     case REDUCER_ACTIONS.DECREASE_AMOUNT:
@@ -39,29 +38,27 @@ export default function reducer(state: InitialState, action: any) {
         })
         .filter((cartItem: CartItem) => cartItem.amount !== 0);
 
-      console.log(decreasedCart);
       return { ...state, cart: decreasedCart };
 
-    // case REDUCER_ACTIONS.GET_TOTALS:
-    //   let { total, amount } = state.cart.reduce(
-    //     (cartTotal: InitialState, cartItem: CartItem) => {
-    //       const { price, amount } = cartItem;
-    //       const itemTotal = price * amount;
+    case REDUCER_ACTIONS.GET_TOTALS:
+      let { total, amount } = state.cart.reduce(
+        (cartTotal: InitialState, cartItem: CartItem) => {
+          const { price, amount } = cartItem;
+          const itemTotal = price * amount;
 
-    //       cartTotal.total += itemTotal;
-    //       cartTotal.amount += amount;
+          cartTotal.total += itemTotal;
+          cartTotal.amount += amount;
 
-    //       return cartTotal;
-    //     },
-    //     {
-    //       total: 0,
-    //       amount: 0,
-    //     }
-    //   );
+          return cartTotal;
+        },
+        {
+          total: 0,
+          amount: 0,
+        }
+      );
 
-    //   total = parseFloat(total.toFixed(2));
-    //   console.log("reducer total: " + total);
-    //   return { ...state, total, amount };
+      total = parseFloat(total.toFixed(2));
+      return { ...state, total, amount };
 
     case REDUCER_ACTIONS.LOADING_ITEMS:
       return { ...state, loading: true };

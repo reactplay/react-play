@@ -27,7 +27,6 @@ const CartProvider = ({ children }: CartProviderProps) => {
   const removeItem = (id: number) =>
     dispatch({ type: "REMOVE_ITEM", payload: id });
   const increaseAmount = (id: number) => {
-    console.log("increase amount", id);
     dispatch({ type: "INCREASE_AMOUNT", payload: id });
   };
 
@@ -37,29 +36,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
     dispatch({ type: "RELOAD_CART", payload: CART_ITEMS });
 
   useEffect(() => {
-    const getTotal = () => {
-      let { total, amount } = state.cart.reduce(
-        (cartTotal: InitialState, cartItem: CartItem) => {
-          const { price, amount } = cartItem;
-          const itemTotal = price * amount;
-
-          cartTotal.total += itemTotal;
-          cartTotal.amount += amount;
-
-          return cartTotal;
-        },
-        {
-          total: 0,
-          amount: 0,
-        }
-      );
-
-      total = parseFloat(total.toFixed(2));
-      console.log("context total: " + total);
-      return { ...state, total, amount };
-    };
-
-    getTotal();
+    dispatch({ type: "GET_TOTALS" });
   }, [state.cart]);
 
   const value = {
