@@ -6,7 +6,7 @@ import {
   REDUCER_ACTIONS,
   InitialContextState,
   CartProviderProps,
-} from "ShoppingCartTypes";
+} from "./ShoppingCartTypes.interface";
 
 import reducer from "./reducer";
 import { CART_ITEMS } from "./data";
@@ -26,8 +26,11 @@ const CartProvider = ({ children }: CartProviderProps) => {
   const clearCart = () => dispatch({ type: "CLEAR_CART" });
   const removeItem = (id: number) =>
     dispatch({ type: "REMOVE_ITEM", payload: id });
-  const increaseAmount = (id: number) =>
+  const increaseAmount = (id: number) => {
+    console.log("increase amount", id);
     dispatch({ type: "INCREASE_AMOUNT", payload: id });
+  };
+
   const decreaseAmount = (id: number) =>
     dispatch({ type: "DECREASE_AMOUNT", payload: id });
   const reloadCart = () =>
@@ -39,8 +42,10 @@ const CartProvider = ({ children }: CartProviderProps) => {
         (cartTotal: InitialState, cartItem: CartItem) => {
           const { price, amount } = cartItem;
           const itemTotal = price * amount;
+
           cartTotal.total += itemTotal;
           cartTotal.amount += amount;
+
           return cartTotal;
         },
         {
@@ -48,8 +53,9 @@ const CartProvider = ({ children }: CartProviderProps) => {
           amount: 0,
         }
       );
-      total = parseFloat(total.toFixed(2));
 
+      total = parseFloat(total.toFixed(2));
+      console.log("context total: " + total);
       return { ...state, total, amount };
     };
 

@@ -1,4 +1,8 @@
-import { CartItem, InitialState, REDUCER_ACTIONS } from "ShoppingCartTypes";
+import {
+  CartItem,
+  InitialState,
+  REDUCER_ACTIONS,
+} from "./ShoppingCartTypes.interface";
 
 export default function reducer(state: InitialState, action: any) {
   switch (action.type) {
@@ -21,7 +25,7 @@ export default function reducer(state: InitialState, action: any) {
 
         return cartItem;
       });
-
+      console.log(increasedCart);
       return { ...state, cart: increasedCart };
 
     case REDUCER_ACTIONS.DECREASE_AMOUNT:
@@ -35,6 +39,7 @@ export default function reducer(state: InitialState, action: any) {
         })
         .filter((cartItem: CartItem) => cartItem.amount !== 0);
 
+      console.log(decreasedCart);
       return { ...state, cart: decreasedCart };
 
     // case REDUCER_ACTIONS.GET_TOTALS:
@@ -45,6 +50,7 @@ export default function reducer(state: InitialState, action: any) {
 
     //       cartTotal.total += itemTotal;
     //       cartTotal.amount += amount;
+
     //       return cartTotal;
     //     },
     //     {
@@ -52,7 +58,9 @@ export default function reducer(state: InitialState, action: any) {
     //       amount: 0,
     //     }
     //   );
+
     //   total = parseFloat(total.toFixed(2));
+    //   console.log("reducer total: " + total);
     //   return { ...state, total, amount };
 
     case REDUCER_ACTIONS.LOADING_ITEMS:
@@ -60,6 +68,7 @@ export default function reducer(state: InitialState, action: any) {
 
     case REDUCER_ACTIONS.RELOAD_CART:
       return { ...state, cart: action.payload };
+
     default:
       return state;
   }

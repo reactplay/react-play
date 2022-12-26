@@ -1,5 +1,5 @@
 import React from "react";
-import { CartItem as TCartItem } from "ShoppingCartTypes";
+import { CartItem as TCartItem } from "../ShoppingCartTypes.interface";
 import { useCartContext } from "../context";
 
 export default function CartItem(props: TCartItem) {

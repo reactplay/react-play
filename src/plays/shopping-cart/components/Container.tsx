@@ -14,7 +14,6 @@ export default function Container(props: any) {
       <div>
         {cart.length >= 1 ? (
           cart.map((item: any) => {
-            console.log(item);
             return <CartItem key={item.id} {...item} />;
           })
         ) : (
