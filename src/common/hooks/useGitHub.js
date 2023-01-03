@@ -10,7 +10,7 @@ const useGitHub = (github) => {
   const [data, setData] = useState();
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);

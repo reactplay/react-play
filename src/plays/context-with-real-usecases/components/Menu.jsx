@@ -1,15 +1,15 @@
-import CuisineContext from "../context/CuisineContext";
-import { useContext } from "react";
+import CuisineContext from '../context/CuisineContext';
+import { useContext } from 'react';
 const Menu = () => {
-  const { activeCuisine, activeCuisineHandler, uniqCuisines } =
-    useContext(CuisineContext);
+  const { activeCuisine, activeCuisineHandler, uniqCuisines } = useContext(CuisineContext);
+
   return (
     <div className="menu-container">
       {uniqCuisines.map((cuisine, index) => {
         return (
           <div
+            className={`menu-item ${cuisine === activeCuisine ? 'active' : ''}`}
             key={index}
-            className={`menu-item ${cuisine === activeCuisine ? "active" : ""}`}
             onClick={() => activeCuisineHandler(cuisine)}
           >
             {cuisine}

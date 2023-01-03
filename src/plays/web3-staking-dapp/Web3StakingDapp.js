@@ -1,11 +1,11 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import React, { useState, useEffect } from "react";
-import artifact from "./artifacts/contracts/Staking.sol/Staking.json";
-import { ethers } from "ethers";
-import Navbar from "./components/Navbar";
-import maticLogo from "./images/polygon-matic-logo.svg";
-import { FaRupeeSign } from "react-icons/fa";
-import { ContractAddress } from "./constant";
+import PlayHeader from 'common/playlists/PlayHeader';
+import React, { useState, useEffect } from 'react';
+import artifact from './artifacts/contracts/Staking.sol/Staking.json';
+import { ethers } from 'ethers';
+import Navbar from './components/Navbar';
+import maticLogo from './images/polygon-matic-logo.svg';
+import { FaRupeeSign } from 'react-icons/fa';
+import { ContractAddress } from './constant';
 
 // WARNING: Do not change the entry componenet name
 function Web3StakingDapp(props) {
@@ -15,10 +15,8 @@ function Web3StakingDapp(props) {
   const [provider, setProvider] = useState();
   const [account, setAccount] = useState();
   const [contract, setContract] = useState();
-  const [accountAddress, setAccountAddress] = useState();
 
   // assets
-  const [assetId, setAssetId] = useState([]);
   const [assets, setAssets] = useState([]);
 
   // staking
@@ -51,9 +49,7 @@ function Web3StakingDapp(props) {
   const isConnected = () => account !== undefined;
 
   const getAssetIds = async (address, account) => {
-    const assetIds = await contract
-      .connect(account)
-      .getStakerIdsByAddresses(address);
+    const assetIds = await contract.connect(account).getStakerIdsByAddresses(address);
 
     return assetIds;
   };
@@ -70,7 +66,7 @@ function Web3StakingDapp(props) {
         daysRemaining: daysRemaining(Number(asset.dateUnlocked)),
         maticInterest: toMatic(asset.interest),
         maticStaked: toMatic(asset.amountStaked),
-        open: asset.open,
+        open: asset.open
       };
 
       setAssets((prev) => [...prev, parsedAsset]);
@@ -78,9 +74,10 @@ function Web3StakingDapp(props) {
   };
 
   const getAccount = async () => {
-    await provider.send("eth_requestAccounts", []);
+    await provider.send('eth_requestAccounts', []);
 
     const account = provider.getSigner();
+
     return account;
   };
 
@@ -89,10 +86,7 @@ function Web3StakingDapp(props) {
     setAccount(account);
 
     const accountAddress = await account.getAddress();
-    setAccountAddress(accountAddress);
-
     const assetIds = await getAssetIds(accountAddress, account);
-    setAssetId(assetIds);
 
     getAssets(assetIds, account);
   };
@@ -130,21 +124,14 @@ function Web3StakingDapp(props) {
 
           <div>
             <div>
-              <Navbar
-                isConnected={isConnected}
-                connect={connectAndLoadWallet}
-              />
+              <Navbar connect={connectAndLoadWallet} isConnected={isConnected} />
             </div>
 
             <div className=" bg-white rounded-xl md:rounded-3xl my-8 max-w-5xl block m-auto border-[0.5px] border-solid border-[#00f1fe80]">
               <div className=" px-3 py-5 md:px-8 md:py-8">
                 <div className=" flex justify-center">
                   <span>
-                    <img
-                      src={maticLogo}
-                      alt="matic logo"
-                      className=" w-8 h-8 lg:w-12 lg:h-12"
-                    />
+                    <img alt="matic logo" className=" w-8 h-8 lg:w-12 lg:h-12" src={maticLogo} />
                   </span>
                   <span className=" text-3xl lg:text-5xl font-semibold px-4 text-[#010326]">
                     Matic Market
@@ -156,11 +143,11 @@ function Web3StakingDapp(props) {
                     <>
                       <div className=" flex">
                         <button
-                          type="submit"
                           className="bg-[#00f1fec5] hover:bg-[#00f1fe] px-2 rounded-lg"
-                          onClick={() => stakingModal(30, "7%")}
+                          type="submit"
+                          onClick={() => stakingModal(30, '7%')}
                         >
-                          <FaRupeeSign color="#010326" className="w-8" />
+                          <FaRupeeSign className="w-8" color="#010326" />
                         </button>
 
                         <div className="flex justify-center items-center flex-col-reverse font-bold px-2 text-[#010326]">
@@ -171,11 +158,11 @@ function Web3StakingDapp(props) {
 
                       <div className=" flex">
                         <button
-                          type="submit"
                           className="bg-[#00f1fec5] hover:bg-[#00f1fe] px-2 rounded-lg"
-                          onClick={() => stakingModal(90, "10%")}
+                          type="submit"
+                          onClick={() => stakingModal(90, '10%')}
                         >
-                          <FaRupeeSign color="#010326" className=" w-8" />
+                          <FaRupeeSign className=" w-8" color="#010326" />
                         </button>
 
                         <div className="flex justify-center items-center flex-col-reverse font-bold px-2">
@@ -186,11 +173,11 @@ function Web3StakingDapp(props) {
 
                       <div className=" flex">
                         <button
-                          type="submit"
                           className="bg-[#00f1fec5] hover:bg-[#00f1fe] px-2 rounded-lg"
-                          onClick={() => stakingModal(180, "14%")}
+                          type="submit"
+                          onClick={() => stakingModal(180, '14%')}
                         >
-                          <FaRupeeSign color="#010326" className=" w-8" />
+                          <FaRupeeSign className=" w-8" color="#010326" />
                         </button>
 
                         <div className="flex justify-center items-center flex-col-reverse font-bold px-2">
@@ -203,15 +190,13 @@ function Web3StakingDapp(props) {
                     <div className="flex flex-col justify-center items-center">
                       <div className="" onClick={(e) => e.stopPropagation()}>
                         <div className="">
-                          <h2 className="text-[#010326] font-medium text-3xl mb-2">
-                            Stake Matic
-                          </h2>
+                          <h2 className="text-[#010326] font-medium text-3xl mb-2">Stake Matic</h2>
                           <div className="flex items-center text-[#010326] font-medium text-2xl">
                             <div className="">
                               <input
                                 className=" bg-slate-300 outline-none rounded-lg px-4 py-2"
-                                type="number"
                                 placeholder="0.0"
+                                type="number"
                                 onChange={(e) => setAmount(e.target.value)}
                               />
                             </div>
@@ -229,8 +214,8 @@ function Web3StakingDapp(props) {
 
                           <div className="">
                             <button
-                              type="submit"
                               className="bg-[#00f1fec5] hover:bg-[#00f1fe] rounded-3xl px-2 py-1 text-base md:px-5 md:py-2 md:text-xl font-semibold text-[#010326]"
+                              type="submit"
                               onClick={() => stakeMatic(amount)}
                             >
                               Stake Matic
@@ -265,21 +250,18 @@ function Web3StakingDapp(props) {
 
               {assets.length > 0 &&
                 assets.map((asset, index) => (
-                  <div className="flex justify-between font-medium px-3 py-3 items-center">
-                    <div className="text-[#010326] text-center pl-4">
-                      {asset.maticStaked}
-                    </div>
-                    <div className="text-[#010326] text-center pl-2">
-                      {asset.percentInterest} %
-                    </div>
-                    <div className="text-[#010326] text-center pl-6">
-                      {asset.daysRemaining}
-                    </div>
+                  <div
+                    className="flex justify-between font-medium px-3 py-3 items-center"
+                    key={index}
+                  >
+                    <div className="text-[#010326] text-center pl-4">{asset.maticStaked}</div>
+                    <div className="text-[#010326] text-center pl-2">{asset.percentInterest} %</div>
+                    <div className="text-[#010326] text-center pl-6">{asset.daysRemaining}</div>
                     <div className="pl-6">
                       {asset.open ? (
                         <button
-                          type="submit"
                           className="bg-[#00f1fec5] hover:bg-[#00f1fe] rounded-2xl px-1 py-1 md:px-2 md:py-2 md:font-semibold text-[#010326]"
+                          type="submit"
                           onClick={() => withdraw(asset.stakersId)}
                         >
                           Withdraw

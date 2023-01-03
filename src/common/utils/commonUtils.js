@@ -5,14 +5,11 @@
  * @returns Boolean
  */
 export const compareTextValue = (optionText, searchText) => {
-  if (typeof optionText === "string") {
+  if (typeof optionText === 'string') {
     return optionText.toLowerCase().indexOf(searchText.toLowerCase()) > -1;
   }
-  return (
-    optionText?.props?.children[1]
-      .toLowerCase()
-      .indexOf(searchText.toLowerCase()) > -1
-  );
+
+  return optionText?.props?.children[1].toLowerCase().indexOf(searchText.toLowerCase()) > -1;
 };
 
 /**

@@ -6,7 +6,6 @@ import { ResultContextProvider } from './context/ResultContextProvider';
 
 // WARNING: Do not change the entry componenet name
 function GithubProfileSearch(props) {
-
   // Your Code Start below.
 
   return (
@@ -15,13 +14,11 @@ function GithubProfileSearch(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className='play-body nirban-github-profile-body'>
+          <div className="play-body nirban-github-profile-body">
             <ResultContextProvider>
-              <h1 className='play-heading nirban-github-profile-heading'>
-                Github Profile Search
-              </h1>
+              <h1 className="play-heading nirban-github-profile-heading">Github Profile Search</h1>
               <Input />
-              <div className='nirban-github-profile-result'>
+              <div className="nirban-github-profile-result">
                 <Results />
               </div>
             </ResultContextProvider>
