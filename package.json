@@ -32,7 +32,6 @@
     "lodash": "^4.17.21",
     "node-sass": "^8.0.0",
     "p5": "^0.9.0",
-    "node-sass": "^8.0.0",    
     "react": "^18.0.0",
     "react-codemirror2": "^7.2.1",
     "react-confetti": "^6.1.0",
