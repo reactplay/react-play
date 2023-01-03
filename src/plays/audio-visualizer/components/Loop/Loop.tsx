@@ -1,11 +1,14 @@
 import React from "react";
 
+type LoopProps = {
+  loop: boolean;
+  toggleLoop: () => void;
+  useMic: boolean;
+};
 
-
-const Loop = ({ loop, toggleLoop, useMic }: any) => {
+const Loop = ({ loop, toggleLoop, useMic }: LoopProps) => {
   return (
     <span
-
       onClick={toggleLoop}
       className={loop ? "loop svg-circle" : "svg-circle"}
       style={{ opacity: useMic ? 0.5 : 1 }}

@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 
-const SongInput = ({ updateSongFile, updateSongPath, songPath }: any) => {
+type SongInputProps = {
+  updateSongFile: (isFile?: boolean, url?: string) => void;
+  updateSongPath: (value: string) => void;
+  songPath: string;
+};
+
+const SongInput = ({
+  updateSongFile,
+  updateSongPath,
+  songPath,
+}: SongInputProps) => {
   const [showInput, setShowInput] = useState<boolean>(false);
 
   return (
     <div className={"song-input"}>
       <svg
-        onClick={(e) => {
+        onClick={(e: React.MouseEvent) => {
           e.preventDefault();
           (e.target as HTMLDivElement).parentElement.classList.toggle("show");
         }}

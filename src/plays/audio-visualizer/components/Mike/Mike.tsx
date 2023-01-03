@@ -1,13 +1,16 @@
 import React from "react";
 
+type MikeProps = {
+  toggleMic: () => void;
+  useMic: boolean;
+};
 
-
-export const Mike = ({ toggleMic, useMic }: any) => {
+export const Mike = ({ toggleMic, useMic }: MikeProps) => {
   return (
     <span className="svg-circle">
       {!useMic ? (
         <svg
-        className="aud-svg"
+          className="aud-svg"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -24,7 +27,6 @@ export const Mike = ({ toggleMic, useMic }: any) => {
       ) : (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}

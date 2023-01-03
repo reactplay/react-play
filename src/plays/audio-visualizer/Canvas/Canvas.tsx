@@ -11,10 +11,8 @@ import "p5/lib/addons/p5.sound.js";
 
 import { Mike, Loop, SongInput } from "../components/exports";
 
-
-
 const Canvas = () => {
-  const [useMic, setUseMic] = React.useState(false);
+  const [useMic, setUseMic] = React.useState<boolean>(false);
   let [mic, setMic] = React.useState<p5.AudioIn | undefined>();
   let [song, setSong] = React.useState<p5.MediaElement | undefined>();
   let [fft, setFFT] = React.useState<p5.FFT | undefined>();
@@ -66,7 +64,11 @@ const Canvas = () => {
 
     for (let i = 0; i < p.width; i++) {
       let x = p.map(i, 0, p.width / 2, 0, p.width);
-      let h = p.constrain(p.map(spectrum[i], 0, 255, 0, p.height), 0, p.height);
+      let h = p.constrain(
+        p.map(spectrum[i], 0, 255, 0, p.height),
+        0,
+        p.height
+      );
       p.stroke(`hsl(${spectrum[i]}, 100%, 50%)`);
       p.rect(x, p.height / 2, p.width / spectrum.length, h);
     }

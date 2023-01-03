@@ -3,7 +3,7 @@ import PlayHeader from "common/playlists/PlayHeader";
 import Canvas from "./Canvas/Canvas";
 import "./styles.css";
 
-const AudioVisualizer = (props: any) => {
+const AudioVisualizer = (props: React.ReactNode) => {
   return (
     <>
       <div className="play-details">
