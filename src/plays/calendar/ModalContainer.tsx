@@ -1,28 +1,23 @@
-import React, { useContext } from 'react'
-import { Context } from './Context'
+import React, { useContext } from 'react';
+import { Context } from './Context';
 
 const ModalContainer = () => {
-  const context = useContext(Context)
-  const { modalContent, modalTitle, hideModal } = context
-  
-  if (!modalContent) return null
+  const context = useContext(Context);
+  const { modalContent, modalTitle, hideModal } = context;
+
+  if (!modalContent) return null;
 
   return (
     <div className="calendar-play-modal">
-      <div
-        className="calendar-play-modal-content"
-        onClick={(ev) => ev.stopPropagation()}
-      >
+      <div className="calendar-play-modal-content" onClick={(ev) => ev.stopPropagation()}>
         <div>
-          {Boolean(modalTitle) && (
-            <span className="calendar-play-modal-title">{modalTitle}</span>
-          )}
+          {Boolean(modalTitle) && <span className="calendar-play-modal-title">{modalTitle}</span>}
           <span onClick={hideModal}>&#x2715;</span>
         </div>
         {modalContent}
       </div>
     </div>
   );
-}
+};
 
-export default ModalContainer
+export default ModalContainer;

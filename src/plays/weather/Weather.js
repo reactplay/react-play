@@ -1,14 +1,14 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import { useState } from "react";
-import CityInput from "./components/CityInput";
-import ForecastData from "./components/ForecastData";
-import WeatherOutput from "./components/WeatherOutput";
-import "./styles.scss";
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useState } from 'react';
+import CityInput from './components/CityInput';
+import ForecastData from './components/ForecastData';
+import WeatherOutput from './components/WeatherOutput';
+import './styles.scss';
 
 function Weather(props) {
   // Your Code Start below.
 
-  const [cityInput, setCityInput] = useState("");
+  const [cityInput, setCityInput] = useState('');
   const [weatherDetails, setWeatherDetails] = useState(null);
   const [forecastData, setForecastData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -24,19 +24,17 @@ function Weather(props) {
             <CityInput
               cityInput={cityInput}
               setCityInput={setCityInput}
-              setWeatherDetails={setWeatherDetails}
               setForecastData={setForecastData}
               setIsLoading={setIsLoading}
+              setWeatherDetails={setWeatherDetails}
             />
 
             {isLoading ? (
-              <p className="mt-8 text-sm text-neutral-200">
-                Getting weather details...
-              </p>
+              <p className="mt-8 text-sm text-neutral-200">Getting weather details...</p>
             ) : (
               weatherDetails &&
               // City not found
-              (weatherDetails.cod === "404" ? (
+              (weatherDetails.cod === '404' ? (
                 <p className="mt-8 text-neutral-200">City not found</p>
               ) : (
                 <>

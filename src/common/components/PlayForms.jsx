@@ -1,8 +1,8 @@
-import { useEffect, useState, useRef } from "react";
-import { TextField, FormControl, Autocomplete, Button } from "@mui/material";
-import * as _ from "lodash";
+import { useEffect, useState, useRef } from 'react';
+import { TextField, FormControl, Autocomplete, Button } from '@mui/material';
+import * as _ from 'lodash';
 
-const disabledFields = ["issue", "github"];
+const disabledFields = ['issue', 'github'];
 
 const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
   const [formData, setFormData] = useState({ ...formDataObj });
@@ -20,32 +20,35 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
 
   const renderField = (field) => {
     switch (field.type) {
-      case "input":
+      case 'input':
         return (
           <TextField
+            className="w-full"
+            disabled={checkDisabledInputs(field.datafield)}
             id={field.id}
             label={field.plaeholder}
+            size="small"
             value={formData[field.datafield]}
-            size='small'
-            className='w-full'
-            disabled={checkDisabledInputs(field.datafield)}
             {...field}
             onChange={(e) => handleChange(field.datafield, e.target.value)}
           />
         );
-      case "select":
+      case 'select':
         return (
           <Autocomplete
-            id={field.datafield}
-            size='small'
-            options={field.options || []}
-            getOptionLabel={(option) => option.name || option[field.fieldName] || option}
             filterSelectedOptions
-            multiple={field.multiple}
-            freeSolo={field.freeSolo}
             disabled={checkDisabledInputs(field.datafield)}
+            freeSolo={field.freeSolo}
+            getOptionLabel={(option) => option.name || option[field.fieldName] || option}
+            id={field.datafield}
+            multiple={field.multiple}
+            options={field.options || []}
+            renderInput={(params) => (
+              <TextField {...params} placeholder={field.placeholder} size="small" />
+            )}
+            size="small"
             value={
-              !formData[field.datafield] ? (field.multiple ? [] : "") : formData[field.datafield]
+              !formData[field.datafield] ? (field.multiple ? [] : '') : formData[field.datafield]
             }
             onChange={(e, newValue) => {
               let updatedval = newValue;
@@ -56,17 +59,14 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
                     updatedval.push(v);
                   } else {
                     updatedval.push({
-                      [field.fieldName || "name"]: v,
-                      [field.fieldValue || "value"]: "",
+                      [field.fieldName || 'name']: v,
+                      [field.fieldValue || 'value']: ''
                     });
                   }
                 });
               }
               handleChange(field.datafield, updatedval);
             }}
-            renderInput={(params) => (
-              <TextField {...params} size='small' placeholder={field.placeholder} />
-            )}
           />
         );
       default:
@@ -76,15 +76,15 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
 
   const renderForm = () => {
     return (
-      <FormControl className='w-full'>
+      <FormControl className="w-full">
         {fields.map((field, field_key) => {
           return (
-            <div className='flex p-2' key={field_key}>
-              <div className='flex-1'>
+            <div className="flex p-2" key={field_key}>
+              <div className="flex-1">
                 {field.display}
-                {field.required ? "*" : ""}
+                {field.required ? '*' : ''}
               </div>
-              <div className='flex-1'>{renderField(field)}</div>
+              <div className="flex-1">{renderField(field)}</div>
             </div>
           );
         })}
@@ -103,24 +103,25 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
         }
       }
     });
+
     return res;
   };
 
   return (
     <>
-      <div className='flex-1 px-10 py-8 overflow-auto'>
+      <div className="flex-1 px-10 py-8 overflow-auto">
         <form>{renderForm()}</form>
       </div>
-      <div className='h-14'>
+      <div className="h-14">
         <hr />
-        <div className='p-8 h-full flex items-center'>
+        <div className="p-8 h-full flex items-center">
           <Button
-            size='small'
-            variant='contained'
             disabled={isFieldsAreInValid()}
+            size="small"
+            variant="contained"
             onClick={onSubmit.bind(null, formData)}
           >
-            {!isEditPlay ? "Create the awesome" : "Edit Play"}
+            {!isEditPlay ? 'Create the awesome' : 'Edit Play'}
           </Button>
         </div>
       </div>

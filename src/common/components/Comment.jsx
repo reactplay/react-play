@@ -1,26 +1,24 @@
-import Giscus from "@giscus/react";
+import Giscus from '@giscus/react';
 
 const Comment = () => {
   const projectRepoId = process.env.REACT_APP_GISCUS_PROJECT_REPO_ID;
-  const discussionCategoryId =
-    process.env.REACT_APP_GISCUS_DISCUSSION_CATEGORY_ID;
-  const discussionCategoryName =
-    process.env.REACT_APP_GISCUS_DISCUSSION_CATEGORY_NAME;
+  const discussionCategoryId = process.env.REACT_APP_GISCUS_DISCUSSION_CATEGORY_ID;
+  const discussionCategoryName = process.env.REACT_APP_GISCUS_DISCUSSION_CATEGORY_NAME;
 
   return (
     <>
       <Giscus
-        repo="reactplay/react-play"
-        repoId={projectRepoId}
         category={discussionCategoryName}
         categoryId={discussionCategoryId}
-        mapping="pathname"
-        reactionsEnabled="0"
         emitMetadata="1"
         inputPosition="top"
-        theme="light"
         lang="en"
         loading="lazy"
+        mapping="pathname"
+        reactionsEnabled="0"
+        repo="reactplay/react-play"
+        repoId={projectRepoId}
+        theme="light"
       />
     </>
   );

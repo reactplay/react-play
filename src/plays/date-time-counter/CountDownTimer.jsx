@@ -1,6 +1,6 @@
-import "./datetime.css";
-import DateTimeDisplay from "./DateTimeDisplay";
-import useCountDown from "./hooks/useCountDown";
+import './datetime.css';
+import DateTimeDisplay from './DateTimeDisplay';
+import useCountDown from './hooks/useCountDown';
 
 const ExpiredNotice = () => {
   return (
@@ -15,18 +15,18 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
   return (
     <div className="show-counter">
       <a
-        href="https://tapasadhikary.com"
-        target="_blank"
-        rel="noopener noreferrer"
         className="countdown-link"
+        href="https://tapasadhikary.com"
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <DateTimeDisplay value={days} type={"Days"} isDanger={days <= 3} />
+        <DateTimeDisplay isDanger={days <= 3} type="Days" value={days} />
         <p>:</p>
-        <DateTimeDisplay value={hours} type={"Hours"} isDanger={false} />
+        <DateTimeDisplay isDanger={false} type="Hours" value={hours} />
         <p>:</p>
-        <DateTimeDisplay value={minutes} type={"Mins"} isDanger={false} />
+        <DateTimeDisplay isDanger={false} type="Mins" value={minutes} />
         <p>:</p>
-        <DateTimeDisplay value={seconds} type={"Seconds"} isDanger={false} />
+        <DateTimeDisplay isDanger={false} type="Seconds" value={seconds} />
       </a>
     </div>
   );
@@ -38,14 +38,7 @@ const CountDownTimer = ({ targetDate }) => {
   if (days + hours + minutes + seconds <= 0) {
     return <ExpiredNotice />;
   } else {
-    return (
-      <ShowCounter
-        days={days}
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-      />
-    );
+    return <ShowCounter days={days} hours={hours} minutes={minutes} seconds={seconds} />;
   }
 };
 

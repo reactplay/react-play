@@ -9,8 +9,7 @@ const Input = ({
   setStatus,
   isEditing,
   setIsEditing,
-  editId,
-  setEditId,
+  editId
 }) => {
   const inputHandler = (e) => {
     setInput(e.target.value);
@@ -19,24 +18,22 @@ const Input = ({
   const submitHandler = (e) => {
     e.preventDefault();
     if (!input) return;
-    //If editing, replace the old todo with the new one
+    // If editing, replace the old todo with the new one
     else if (input.length > 0 && isEditing === true) {
       setTodos(
         todos.map((item) => {
           if (item.id === editId) {
             return { ...item, text: input };
           }
+
           return item;
         })
       );
       setIsEditing(false);
       setInput('');
     } else {
-      //If not editing, add new todo to the list
-      setTodos([
-        ...todos,
-        { text: input, completed: false, id: Math.random() * 1000 },
-      ]);
+      // If not editing, add new todo to the list
+      setTodos([...todos, { text: input, completed: false, id: Math.random() * 1000 }]);
       setInput('');
     }
   };
@@ -46,27 +43,18 @@ const Input = ({
   };
 
   return (
-    <form className='react-todo-form'>
-      <div className='react-todo-input'>
-        <input
-          onChange={inputHandler}
-          value={input}
-          type='text'
-          className='todo-input'
-        />
-        <button onClick={submitHandler} className='todo-button' type='submit'>
+    <form className="react-todo-form">
+      <div className="react-todo-input">
+        <input className="todo-input" type="text" value={input} onChange={inputHandler} />
+        <button className="todo-button" type="submit" onClick={submitHandler}>
           <FaPlusSquare />
         </button>
       </div>
-      <div className='select-todo'>
-        <select
-          onChange={statusHandler}
-          name='todos'
-          className='filter-todo options'
-        >
-          <option value='all'>All</option>
-          <option value='completed'>Completed</option>
-          <option value='uncompleted'>Uncompleted</option>
+      <div className="select-todo">
+        <select className="filter-todo options" name="todos" onChange={statusHandler}>
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
         </select>
       </div>
     </form>

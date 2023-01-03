@@ -1,19 +1,19 @@
-import React from "react";
-import { ToastContainer } from "react-toastify";
+import React from 'react';
+import { ToastContainer } from 'react-toastify';
 
 function Notification() {
   return (
     <ToastContainer
-      position='top-right'
+      closeOnClick
+      draggable
+      pauseOnFocusLoss
+      pauseOnHover
       autoClose={5000}
       hideProgressBar={false}
       newestOnTop={false}
-      closeOnClick
+      position="top-right"
       rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme='light'
+      theme="light"
     />
   );
 }

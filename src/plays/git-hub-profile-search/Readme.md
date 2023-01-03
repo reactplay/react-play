@@ -16,7 +16,6 @@ The search result provides you with one user whose username matches with his/her
 - Blog: NA
 - Video: NA
 
-
 ## Resources
 
 [GitHub RESST API](https://docs.github.com/rest)
