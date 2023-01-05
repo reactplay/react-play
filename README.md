@@ -192,6 +192,8 @@ If you wish to contribute, you can,
 
 > Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
 
+🆕 New to Open Source? 💡 Follow this [guide](https://opensource.guide/how-to-contribute/) to jumpstart your Open Source journey 🚀.
+
 ## Launching reactplay Rewards
 
 Contributed to reactplay? Here is a big thank you from our community to you.
