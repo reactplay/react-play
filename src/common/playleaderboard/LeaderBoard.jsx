@@ -4,7 +4,7 @@ import { FetchPlayCountByUser } from 'common/services/request/query/fetch-leader
 import TopPlayCreatorOfTheMonth from './TopPlayCreatorOfTheMonth';
 import TopPlayCreators from './TopPlayCreators';
 import { Watch } from 'react-loader-spinner';
-import _ from 'lodash';
+import { groupBy } from 'lodash';
 import { format, lastDayOfMonth } from 'date-fns';
 
 const LeaderBoard = () => {
@@ -25,7 +25,7 @@ const LeaderBoard = () => {
         avatarUrl: d.user.avatarUrl
       });
     });
-    const groupByUser = _.groupBy(formattedData, 'displayName');
+    const groupByUser = groupBy(formattedData, 'displayName');
     Object.values(groupByUser).map((v) =>
       finalData.push({
         displayName: v[0].displayName,
@@ -79,7 +79,7 @@ const LeaderBoard = () => {
           <div className="flex flex-col m-4 items-center">
             {publishedPlays && top10Contributors && (
               <>
-                <div className="heading">Top play creators of all time</div>
+                <div className="leaderboard-heading">Top play creators of all time</div>
                 <div>
                   <TopPlayCreators topPlayCreators={top10Contributors} />
                 </div>
@@ -88,14 +88,7 @@ const LeaderBoard = () => {
           </div>
         </div>
       ) : (
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100vh'
-          }}
-        >
+        <div className="leaderboard-loader">
           <Watch color="#0096AB" height="100" width="100" />
         </div>
       )}

@@ -1,18 +1,25 @@
-.table-cell {
+.leaderboard-table-cell {
     padding: 6px !important;
 }
 
-.table-header {
+.leaderboard-table-header {
     font-weight: 700 !important;
     font-family: var(--ff-accent) !important;
 }
 
-.heading {
+.leaderboard-heading {
     font-family: var(--ff-accent);
     font-size: 32px !important;
 }
 
-.text {
+.leaderboard-text {
     font-family: var(--ff-accent) !important;
     font-size: var(--fs-md) !important;
+}
+
+.leaderboard-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }

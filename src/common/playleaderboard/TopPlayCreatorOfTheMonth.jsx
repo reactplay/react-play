@@ -16,7 +16,7 @@ const TopPlayCreatorOfTheMonth = ({ topPlayCreatorOfTheMonth }) => {
           />
         </div>
         <div className="flex flex-col m-8 items-center">
-          <div className="text">{topPlayCreatorOfTheMonth.displayName}</div>
+          <div className="leaderboard-text">{topPlayCreatorOfTheMonth.displayName}</div>
           <div className="flex flex-row gap-2 items-center">
             <div className="font-medium text-sm">Number of play(s) created:</div>
             <div className="font-medium text-sm">{topPlayCreatorOfTheMonth.count}</div>

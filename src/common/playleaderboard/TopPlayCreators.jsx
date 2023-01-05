@@ -16,7 +16,7 @@ const TopPlayCreators = ({ topPlayCreators }) => {
           src={avatarUrl}
           title={name}
         />
-        <div className="table-cell">{name}</div>
+        <div className="leaderboard-table-cell">{name}</div>
       </div>
     );
   };
@@ -26,10 +26,10 @@ const TopPlayCreators = ({ topPlayCreators }) => {
       <Table aria-label="leader board" sx={{ minWidth: 430 }}>
         <TableHead>
           <TableRow>
-            <TableCell align="left" className="table-header">
+            <TableCell align="left" className="leaderboard-table-header">
               Name
             </TableCell>
-            <TableCell align="center" className="table-header">
+            <TableCell align="center" className="leaderboard-table-header">
               Number of plays
             </TableCell>
           </TableRow>
@@ -37,10 +37,10 @@ const TopPlayCreators = ({ topPlayCreators }) => {
         <TableBody>
           {topPlayCreators.map((creator) => (
             <TableRow key={creator.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell align="left" className="table-cell" component="th" scope="row">
+              <TableCell align="left" className="leaderboard-table-cell" component="th" scope="row">
                 {profilePicture(creator.displayName, creator.avatarUrl)}
               </TableCell>
-              <TableCell align="center" className="table-cell">
+              <TableCell align="center" className="leaderboard-table-cell">
                 {creator.count}
               </TableCell>
             </TableRow>
