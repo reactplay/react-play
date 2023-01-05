@@ -16,7 +16,7 @@ const PageNotFound = ({ loading, msg, details, Image }) => {
     return () => {
       clearInterval(interval);
       if (timer === 0) {
-        return navigate('/plays');
+        return navigate('/');
       }
     };
   }, [timer]);
