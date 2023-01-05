@@ -105,9 +105,9 @@ const HeaderNav = ({ showBrowse }) => {
           </li>
           <li>
             <Link
-              to="/leaderboard"
               className="app-header-btn app-header-btn--default"
               data-testid="ideas-btn"
+              to="/leaderboard"
             >
               <BsTrophyFill className="icon" />
               <span className="btn-label">Leader Board</span>

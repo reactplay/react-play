@@ -45,12 +45,12 @@ const Header = () => {
         showBrowse: false,
         setHeaderStyle: true
       });
-    } else if (pathName.startsWith("/leaderboard")) {
+    } else if (pathName.startsWith('/leaderboard')) {
       setShowHideBits({
         showSearch: false,
         showBrowse: true,
-        setHeaderStyle: true,
-      })
+        setHeaderStyle: true
+      });
     }
   }, [pathName]);
 
