@@ -9,9 +9,9 @@ const Filter = () => {
   };
 
   return (
-    <div className="wa_filter">
-      <label htmlFor="wa_filter">Filter: </label>
-      <select id="wa_filter" name="filter" onChange={onFilterChange}>
+    <div className="wa__filter-area">
+      <label htmlFor="wa__filter">Filter: </label>
+      <select className="wa__filter" id="wa__filter" name="wa__filter" onChange={onFilterChange}>
         <option value="all">All</option>
         <option value="completed">Completed</option>
         <option value="uncompleted">Uncomplete</option>

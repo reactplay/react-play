@@ -1,20 +1,20 @@
-:root {
-  --clr-primary: #0ce7f3;
+.wa__todo-list {
+  --clr-primary: #0ca6f3;
   --clr-secondary: #010326;
-  --clr-light: #fff;
+  --clr-light: #ffffff;
   --clr-active: #33ae10;
   --clr-complete: #5454e8;
   --clr-update: #00d866;
   --clr-delete: #ff7849;
 }
-#wa_todo-list {
+.wa__todo-list {
   position: relative;
   max-width: 768px;
   margin: 0 auto;
   font-size: 14px;
 }
 
-.wrapper {
+.wa__wrapper {
   background: var(--clr-light);
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
   border-radius: 7px;
@@ -23,21 +23,22 @@
   height: calc(100vh - 215px);
 }
 
-.wa_btn {
+.wa__btn {
   transition: all 0.2s ease-in-out;
-}
-.wa_btn:hover {
-  transform: scale(0.95);
   opacity: 0.8;
 }
+.wa__btn:hover {
+  transform: scale(0.95);
+  opacity: 1;
+}
 
-.wa_btn:disabled {
+.wa__btn:disabled {
   cursor: not-allowed;
 }
 
 /* todo list header 
 -------------------------------- */
-.wa_header {
+.wa__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,7 +46,7 @@
   background: var(--clr-primary);
 }
 
-.wa_logo-area {
+.wa__logo-area {
   display: flex;
   width: 148px;
   gap: 7px;
@@ -53,49 +54,54 @@
 }
 
 /* Alert  */
-p.wa_alert {
+p.wa__alert {
   padding: 5px 15px;
   border-radius: 50px;
   color: var(--clr-light);
 }
-p.wa_alert.wa_alert-danger {
+p.wa__alert.wa__alert-danger {
   background: var(--clr-delete);
 }
 
-p.wa_alert.wa_alert-success {
+p.wa__alert.wa__alert-success {
   background: var(--clr-update);
 }
 
-p.wa_alert.wa_alert-complete {
+p.wa__alert.wa__alert-complete {
   background: var(--clr-complete);
 }
 
-p.wa_alert.wa_alert-warning {
+p.wa__alert.wa__alert-warning {
   background: var(--clr-delete);
 }
 
-select#wa_filter {
-  background: #08c5cf;
+select.wa__filter {
+  background: var(--clr-light);
   padding: 5px;
   border-radius: 50px;
   outline: none;
   cursor: pointer;
 }
+
+.wa__filter-area label {
+  color: var(--clr-light);
+  font-weight: 600;
+}
 /* todo list body 
 ------------------------------------ */
 
-.wa_body {
+.wa__body {
   flex-grow: 1;
   padding: 10px 20px;
 }
 
-p.empty {
+p.wa__empty {
   text-align: center;
 }
 
 /* Modal */
 
-.wa_warning {
+.wa__warning {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -109,7 +115,7 @@ p.empty {
   z-index: 9;
 }
 
-.wa_wrapper-modal {
+.wa__wrapper-modal {
   text-align: center;
   width: 250px;
   background: var(--clr-light);
@@ -117,7 +123,7 @@ p.empty {
   border-radius: 5px;
 }
 
-.wa_wrapper-modal span {
+.wa__wrapper-modal span {
   width: 50px;
   height: 50px;
   display: flex;
@@ -132,40 +138,40 @@ p.empty {
   margin-bottom: 10px;
 }
 
-.wa_wrapper-modal h3 {
+.wa__wrapper-modal h3 {
   font-size: 18px;
   font-weight: bold;
 }
 
-.wa_wrapper-modal p {
+.wa__wrapper-modal p {
   opacity: 0.6;
 }
 
-.wa_wrapper-modal .wa_buttons {
+.wa__wrapper-modal .wa__buttons {
   margin-top: 10px;
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-button.wa_warning-btn {
+button.wa__warning-btn {
   padding: 6px 14px;
   border-radius: 50px;
   color: var(--clr-light);
   font-size: 12px;
 }
 
-button.wa_warning-btn.yes {
+button.wa__warning-btn.yes {
   background: var(--clr-active);
 }
 
-button.wa_warning-btn.cancel {
+button.wa__warning-btn.cancel {
   background: var(--clr-delete);
 }
 
 /* Item table 
 ---------------------------------- */
-.wa_list-area {
+.wa__list-area {
   border-collapse: collapse;
   width: 100%;
   display: block;
@@ -173,49 +179,50 @@ button.wa_warning-btn.cancel {
   overflow: auto;
 }
 
-.wa_list-area::-webkit-scrollbar {
+.wa__list-area::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-.wa_list-area::-webkit-scrollbar-thumb {
+.wa__list-area::-webkit-scrollbar-thumb {
   background: #d8d8d8;
   border-radius: 30px;
 }
 
-.wa_list-area::-webkit-scrollbar-thumb:hover {
+.wa__list-area::-webkit-scrollbar-thumb:hover {
   background: #a2a2a2;
   visibility: visible;
 }
 
-.wa_list-area td,
-.wa_list-area th {
+.wa__list-area td,
+.wa__list-area th {
   padding: 5px 15px;
 }
 
-.wa_list-area tbody tr:nth-child(even) {
+.wa__list-area tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.wa_list-area tbody tr:hover {
+.wa__list-area tbody tr:hover {
   background-color: #ddd;
 }
 
-.wa_table-header {
+.wa__table-header {
   position: sticky;
   top: 0;
+  z-index: 9;
 }
 
-.wa_date {
+.wa__date {
   font-size: 12px;
   opacity: 0.7;
 }
 
-.wa_list-area tfoot {
+.wa__list-area tfoot {
   text-align: center;
 }
 
-p.wa_item.completed {
+p.wa__item.completed {
   text-decoration: line-through;
   opacity: 0.6;
 }
@@ -236,7 +243,7 @@ span.status.completed {
   opacity: 1;
 }
 
-.wa_list-area th {
+.wa__list-area th {
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: left;
@@ -244,7 +251,7 @@ span.status.completed {
   color: var(--clr-light);
 }
 
-button.wa_action-btn {
+button.wa__action-btn {
   padding: 6px;
   border-radius: 50%;
   width: 25px;
@@ -255,36 +262,36 @@ button.wa_action-btn {
   color: var(--clr-light);
 }
 
-.wa_action {
+.wa__action {
   display: flex;
   gap: 5px;
   justify-content: center;
   align-items: center;
 }
 
-.wa_complete-btn {
+.wa__complete-btn {
   background: var(--clr-primary);
 }
 
-.wa_complete-btn.wa_task-completed {
+.wa__complete-btn.wa__task-completed {
   background: var(--clr-complete);
 }
 
-.wa_update-btn {
+.wa__update-btn {
   background: var(--clr-update);
 }
 
-.wa_delete-btn {
+.wa__delete-btn {
   background: var(--clr-delete);
 }
 
-.wa_form-group {
+.wa__form-group {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.wa_delete-all {
+.wa__delete-all {
   background: var(--clr-delete);
   color: var(--clr-light);
   padding: 8px 20px;
@@ -294,7 +301,7 @@ button.wa_action-btn {
 /* todo list footer 
 ------------------------------- */
 
-input.wa_form-control {
+input.wa__form-control {
   flex-grow: 1;
   background: #013350;
   color: var(--clr-light) !important;
@@ -304,31 +311,26 @@ input.wa_form-control {
   padding: 7px 20px !important;
 }
 
-input.wa_form-control:focus {
+input.wa__form-control:focus {
   border-color: var(--clr-primary) !important;
 }
 
-.wa_logo-area h5 {
+.wa__logo-area h5 {
   font-size: 20px;
   font-weight: 700;
   color: #010326;
 }
 
-.wa_footer {
+.wa__footer {
   background: var(--clr-secondary);
   padding: 15px 20px;
 }
 
-.wa_form-group .wa_btn {
+.wa__form-group .wa__btn {
   background: var(--clr-primary);
   color: var(--clr-light);
   padding: 8px 20px;
   border-radius: 30px;
   font-weight: 500;
   font-size: 14px;
-}
-
-.wa_form-group .wa_btn:hover {
-  background: var(--clr-light);
-  color: var(--clr-secondary);
 }

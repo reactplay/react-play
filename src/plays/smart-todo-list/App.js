@@ -81,31 +81,31 @@ function App() {
   }, [isEditing]);
 
   return (
-    <section id="wa_todo-list">
+    <section className="wa__todo-list">
       {isModalOpen && <DeleteModal />}
-      <div className="wrapper">
-        <div className="wa_header">
-          <div className="wa_logo-area">
+      <div className="wa__wrapper">
+        <div className="wa__header">
+          <div className="wa__logo-area">
             <img alt="to do list" src={Logo} width="100%" />
           </div>
           {alert.show && <Alert {...alert} list={tasks} removeAlert={showAlert} />}
           <Filter />
         </div>
-        <div className="wa_body">
+        <div className="wa__body">
           {filterdTasks.length > 0 ? (
             <TodoList editHandler={editHandler} filterdTasks={filterdTasks} />
           ) : (
-            <p className="empty">No item found!</p>
+            <p className="wa__empty">No item found!</p>
           )}
         </div>
-        <div className="wa_footer">
+        <div className="wa__footer">
           <form onSubmit={submitHandler}>
-            <div className="wa_form-group">
+            <div className="wa__form-group">
               <span>
                 <BsPencil fill="#fff" />
               </span>
               <input
-                className="wa_form-control"
+                className="wa__form-control"
                 placeholder="Enter task"
                 ref={editRef}
                 type="text"
@@ -114,7 +114,7 @@ function App() {
                   setText(e.target.value);
                 }}
               />
-              <button className="wa_btn">{isEditing ? 'Update' : 'Add Item'}</button>
+              <button className="wa__btn">{isEditing ? 'Update' : 'Add Item'}</button>
             </div>
           </form>
         </div>

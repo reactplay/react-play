@@ -12,8 +12,8 @@ const Alert = ({ msg, type, removeAlert }) => {
   });
 
   return (
-    <div className="wa_alert">
-      <p className={`wa_alert wa_alert-${type}`}>{msg}</p>
+    <div className="wa__alert">
+      <p className={`wa__alert wa__alert-${type}`}>{msg}</p>
     </div>
   );
 };

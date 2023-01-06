@@ -10,8 +10,8 @@ const TodoList = ({ filterdTasks, editHandler }) => {
 
   return (
     <>
-      <table className="wa_list-area">
-        <thead className="wa_table-header">
+      <table className="wa__list-area">
+        <thead className="wa__table-header">
           <tr>
             <th>#</th>
             <th>Task</th>
@@ -29,10 +29,10 @@ const TodoList = ({ filterdTasks, editHandler }) => {
               <tr key={index}>
                 <td width="">{index === 0 ? 1 + '.' : index + 1 + '.'}</td>
                 <td width="100%">
-                  <p className={`wa_item ${complete ? 'completed' : ''}`}>{title}</p>
+                  <p className={`wa__item ${complete ? 'completed' : ''}`}>{title}</p>
                 </td>
                 <td>
-                  <p className="wa_date">{formatDate(createdAt)}</p>
+                  <p className="wa__date">{formatDate(createdAt)}</p>
                 </td>
                 <td>
                   {complete ? (
@@ -42,10 +42,10 @@ const TodoList = ({ filterdTasks, editHandler }) => {
                   )}
                 </td>
                 <td className="" width="">
-                  <div className="wa_action">
+                  <div className="wa__action">
                     <button
-                      className={`wa_btn wa_action-btn wa_complete-btn ${
-                        complete ? 'wa_task-completed' : ''
+                      className={`wa__btn wa__action-btn wa__complete-btn ${
+                        complete ? 'wa__task-completed' : ''
                       }`}
                       disabled={complete ? true : false}
                       title="Complete"
@@ -56,8 +56,8 @@ const TodoList = ({ filterdTasks, editHandler }) => {
                       {complete ? <BsCheckAll /> : <AiOutlineCheck />}
                     </button>
                     <button
-                      className="wa_btn wa_action-btn wa_update-btn"
-                      title="Update"
+                      className="wa__btn wa__action-btn wa__update-btn"
+                      title="Edit"
                       onClick={() => {
                         editHandler(id);
                       }}
@@ -65,7 +65,7 @@ const TodoList = ({ filterdTasks, editHandler }) => {
                       <BsPencilSquare />
                     </button>
                     <button
-                      className="wa_btn wa_action-btn wa_delete-btn"
+                      className="wa__btn wa__action-btn wa__delete-btn"
                       title="Delete"
                       onClick={() => {
                         setIsModalOpen(true);
@@ -85,7 +85,7 @@ const TodoList = ({ filterdTasks, editHandler }) => {
             <tr>
               <td colSpan={5}>
                 <button
-                  className="wa_btn wa_delete-all"
+                  className="wa__btn wa__delete-all"
                   onClick={() => {
                     setAllSelected(true);
                     setIsModalOpen(true);
