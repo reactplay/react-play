@@ -8,7 +8,8 @@ import {
   PlayIdeas,
   CreatePlay,
   PlayCreated,
-  TechStack
+  TechStack,
+  PageNotFound
 } from 'common';
 import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -41,6 +42,7 @@ const RouteDefs = () => {
           <Route element={<Home />} path="/" />
           <Route element={<TechStack />} path="/tech-stacks" />
           <Route element={<CreatePlay />} path="/editplay/:username/:playname" />
+          <Route element={<PageNotFound />} path="*" />
           <Route element={<App />} path="/plays">
             <Route index element={<PlayList />} />
             <Route exact element={<CreatePlay />} path="create" />
