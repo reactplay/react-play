@@ -3,8 +3,9 @@ import { format } from 'date-fns';
 const TopPlayCreatorOfTheMonth = ({ topPlayCreatorOfTheMonth }) => {
   return (
     <div className="m-4 text-center flex lg:flex flex-col gap-4 items-center">
-      <div className="heading flex lg:w-[600px] md:w-[600px]">
-        Top play creator of the month {format(new Date(), 'LLLL yyyy')}
+      <div className="flex flex-col lg:w-[600px] md:w-[600px]">
+        <div className="leaderboard-heading">Top play creator of the month</div>
+        <div className="leaderboard-heading">{format(new Date(), 'LLLL yyyy')}</div>
       </div>
       <div className="flex flex-col items-center m-1">
         <div>
