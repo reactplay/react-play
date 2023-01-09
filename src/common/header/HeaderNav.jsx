@@ -109,7 +109,7 @@ const HeaderNav = ({ showBrowse }) => {
               data-testid="ideas-btn"
               to="/leaderboard"
             >
-              <BsTrophyFill className="icon" />
+              <BsTrophyFill className="icon idea-icon" />
               <span className="btn-label">Leader Board</span>
             </Link>
           </li>

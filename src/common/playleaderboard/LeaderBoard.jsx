@@ -13,7 +13,6 @@ const LeaderBoard = () => {
   const [publishedPlays, updatePublishedPlays] = useState([]);
   const { getAllPlaysByUser, getAllPlaysByUserByMonth } = FetchPlayCountByUser;
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const formatData = useCallback((data, monthlyContribution = false) => {
     const formattedData = [];
     const finalData = [];
