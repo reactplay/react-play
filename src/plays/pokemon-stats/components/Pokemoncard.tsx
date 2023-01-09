@@ -1,14 +1,15 @@
-import React from "react";
-import { Props } from "../types";
-import "./pokecard.css";
+import React from 'react';
+import { Props } from '../types';
+import './pokecard.css';
 const Pokemoncard = (props: Props) => {
   const { pokemon, backToSearch } = props;
+
   return (
     <div className="poke-card-cont">
       <div className="wrapper">
         <div className="pokemon-card pokemon">
           <div className="pokemon-card__image pokemon-card__image--pokemon">
-            <img src={pokemon.sprites.front_default} alt="pokemon" />
+            <img alt="pokemon" src={pokemon.sprites.front_default} />
           </div>
           <div className="poke-name">{pokemon.species.name}</div>
 
@@ -34,7 +35,7 @@ const Pokemoncard = (props: Props) => {
             </div>
           </div>
 
-          <button type="button" className="poke-stats-back-btn" onClick={backToSearch}>
+          <button className="poke-stats-back-btn" type="button" onClick={backToSearch}>
             Back
           </button>
         </div>

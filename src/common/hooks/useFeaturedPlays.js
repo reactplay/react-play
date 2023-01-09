@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { submit } from "common/services/request";
-import { FetchPlaysFilter } from "common/services/request/query/fetch-plays-filter";
+import { useEffect, useState } from 'react';
+import { submit } from 'common/services/request';
+import { FetchPlaysFilter } from 'common/services/request/query/fetch-plays-filter';
 
 /**
  * run graphql query to retrive featured plays

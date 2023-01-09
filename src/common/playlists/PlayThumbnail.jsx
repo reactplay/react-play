@@ -1,29 +1,23 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { BsPlayCircleFill } from "react-icons/bs";
-import thumbPlay from "images/thumb-play.png";
-import Shimmer from "react-shimmer-effect";
-import userImage from "images/user.png";
-import Like from "common/components/Like/Like";
-import { useUserId, useAuthenticated } from "@nhost/react";
-import countByProp from "common/utils/commonUtils";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { BsPlayCircleFill } from 'react-icons/bs';
+import thumbPlay from 'images/thumb-play.png';
+import Shimmer from 'react-shimmer-effect';
+import userImage from 'images/user.png';
+import Like from 'common/components/Like/Like';
+import { useUserId, useAuthenticated } from '@nhost/react';
+import countByProp from 'common/utils/commonUtils';
 
 const Author = ({ user }) => {
   return (
     <div className="play-author flex items-center gap-2">
       <img
-        className="rounded-full border border-zink-400"
-        src={
-          user?.avatarUrl
-            ? !!user?.avatarUrl.length
-              ? user?.avatarUrl
-              : userImage
-            : userImage
-        }
-        loading="lazy"
-        width="25px"
-        height="25px"
         alt="avatar"
+        className="rounded-full border border-zink-400"
+        height="25px"
+        loading="lazy"
+        src={user?.avatarUrl ? (user?.avatarUrl.length ? user?.avatarUrl : userImage) : userImage}
+        width="25px"
       />
       <div className="author-anchor">{user?.displayName}</div>
     </div>
@@ -37,11 +31,13 @@ const PlayThumbnail = ({ play }) => {
 
   const likeObject = () => {
     const { play_like } = play;
-    const number = countByProp(play_like, "liked", true);
+    const number = countByProp(play_like, 'liked', true);
     if (isAuthenticated) {
       const liked = play_like.find((i) => i.user_id === userId)?.liked;
+
       return { liked, number };
     }
+
     return { liked: false, number };
   };
 
@@ -60,10 +56,13 @@ const PlayThumbnail = ({ play }) => {
         })
         .catch((err) => {
           // if there is no cover image, set a default image
-          console.warn(`Cover image not found for the play ${play.name}`);
-          console.info("Setting the default cover image...");
-
           setCover(thumbPlay);
+
+          return {
+            success: false,
+            error: err,
+            message: `Cover image not found for the play ${play.name}. Setting the default cover image...`
+          };
         });
     }
   }, [play]);
@@ -73,7 +72,7 @@ const PlayThumbnail = ({ play }) => {
       <Link to={`/plays/${encodeURI(play.github.toLowerCase())}/${play.slug}`}>
         <div className="play-thumb">
           <Shimmer>
-            <img loading="lazy" src={cover} alt="" className="play-thumb-img" />
+            <img alt="" className="play-thumb-img" loading="lazy" src={cover} />
           </Shimmer>
         </div>
         <div className="play-header">
@@ -81,10 +80,8 @@ const PlayThumbnail = ({ play }) => {
           {play.user && <Author user={play.user} />}
           <div className="play-actions mt-4">
             <div className="flex flex-row justify-between items-end">
-              <Like onLikeClick={null} likeObj={likeObject()} />
-              <div
-                className={`language language-${play.language || "js"}`}
-              ></div>
+              <Like likeObj={likeObject()} onLikeClick={null} />
+              <div className={`language language-${play.language || 'js'}`} />
             </div>
           </div>
         </div>

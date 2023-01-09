@@ -1,21 +1,21 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import { useState } from "react";
-import "./styles.css";
-import axios from "axios";
-import Pokemoncard from "./components/Pokemoncard";
-import Search from "./components/Search";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import React from "react";
-import { PlayRoot, Root } from "./types";
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useState } from 'react';
+import './styles.css';
+import axios from 'axios';
+import Pokemoncard from './components/Pokemoncard';
+import Search from './components/Search';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import React from 'react';
+import { PlayRoot, Root } from './types';
 
 // WARNING: Do not change the entry componenet name
 function PokemonStats(props: PlayRoot) {
   // Your Code Start below.
   const [pokemon, setPokemon] = useState<Root>();
-  const [name, onSetName] = useState<string>("");
+  const [name, onSetName] = useState<string>('');
   const handleSetName = (e: React.ChangeEvent<HTMLInputElement>) => {
-     onSetName(e.target.value);
+    onSetName(e.target.value);
   };
   const fetchPokemonDetails = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,15 +24,15 @@ function PokemonStats(props: PlayRoot) {
       .then((response) => {
         setPokemon(response.data);
       })
-      .catch((err) => {
-        toast.error("Pokemon you are searching is not found, try another.", {
-          position: "bottom-left",
+      .catch(() => {
+        toast.error('Pokemon you are searching is not found, try another.', {
+          position: 'bottom-left',
           autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
-          progress: undefined,
+          progress: undefined
         });
       });
   };
@@ -40,8 +40,8 @@ function PokemonStats(props: PlayRoot) {
   // Clear the Searched pokemon
   const clearSearchedPokemon = () => {
     setPokemon(undefined);
-    onSetName("");
-  }
+    onSetName('');
+  };
 
   return (
     <>
@@ -50,26 +50,26 @@ function PokemonStats(props: PlayRoot) {
         {/* Your Code Starts Here */}
         <div className="skeleton-pokemon-app">
           <ToastContainer
-            position="bottom-left"
+            closeOnClick
+            draggable
+            pauseOnFocusLoss
+            pauseOnHover
             autoClose={2000}
             hideProgressBar={false}
             newestOnTop={false}
-            closeOnClick
+            position="bottom-left"
             rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
           />
           {pokemon ? (
             <div className="poke-card-container">
-              <Pokemoncard pokemon={pokemon} backToSearch={clearSearchedPokemon}/>
+              <Pokemoncard backToSearch={clearSearchedPokemon} pokemon={pokemon} />
             </div>
           ) : (
             <div className="poke-search-container">
               <Search
-                onEventChange={handleSetName}
-                name={name}
                 fetchPokemonDetails={fetchPokemonDetails}
+                name={name}
+                onEventChange={handleSetName}
               />
             </div>
           )}

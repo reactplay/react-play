@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.3'
 
 networks:
   react-play-network:
@@ -17,6 +17,6 @@ services:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
     ports:
-      - "3000:3000"
+      - '3000:3000'
     networks:
       - react-play-network

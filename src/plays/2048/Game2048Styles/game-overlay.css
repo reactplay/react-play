@@ -60,24 +60,23 @@
   outline: none;
 }
 
-
-@media(max-width: 1352px) {
+@media (max-width: 1352px) {
   .game-overlay {
     left: 28rem;
   }
 }
 
-@media(max-width: 988px) {
+@media (max-width: 988px) {
   .game-overlay {
     left: 11rem;
     width: 376px;
-}
+  }
 }
 
-@media(max-width: 805px){
+@media (max-width: 805px) {
   .game-overlay {
     left: 6rem;
-}
+  }
 }
 
 @media (max-width: 593px) {
@@ -92,14 +91,14 @@
     height: 236px;
     width: 267px;
     top: 178px;
-}
+  }
 
   .game-overlay__message {
     margin-top: 127px;
   }
 }
 
-@media(max-width: 354px) {
+@media (max-width: 354px) {
   .game-overlay {
     left: 2.4rem;
     height: 263px;
