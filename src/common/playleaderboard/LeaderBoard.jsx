@@ -71,7 +71,7 @@ const LeaderBoard = () => {
   return (
     <main className="app-body  app-body-overflow-hidden">
       {publishedPlays.length && (topContributorOfTheMonth || top10Contributors) ? (
-        <div className=" overflow-auto lg:flex flex-row justify-around ">
+        <div className=" overflow-auto lg:flex flex-row justify-center">
           {topContributorOfTheMonth && (
             <TopPlayCreatorOfTheMonth topPlayCreatorOfTheMonth={topContributorOfTheMonth} />
           )}

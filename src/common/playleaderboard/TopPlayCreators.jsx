@@ -36,7 +36,10 @@ const TopPlayCreators = ({ topPlayCreators }) => {
         </TableHead>
         <TableBody>
           {topPlayCreators.map((creator) => (
-            <TableRow key={creator.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+            <TableRow
+              key={creator.displayName}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
               <TableCell align="left" className="leaderboard-table-cell" component="th" scope="row">
                 {profilePicture(creator.displayName, creator.avatarUrl)}
               </TableCell>
