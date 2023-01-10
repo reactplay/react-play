@@ -4,6 +4,7 @@ import { IoAddSharp } from 'react-icons/io5';
 import { RiChatNewLine } from 'react-icons/ri';
 import LevelBadge from 'common/components/LevelBadge';
 import './playIdeas.css';
+import useOpenAi from 'common/hooks/useOpenAI';
 
 const PlayIdeas = () => {
   const [ideas, setIdeas] = useState([]);
@@ -11,6 +12,11 @@ const PlayIdeas = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [filteredLevel, setFilteredLevel] = useState('');
+  const [randomIdeas, setRandomIdeas] = useState({
+    success: null,
+    ideas: []
+  });
+  const [hasRequestedIdeas, setHasRequestedIdeas] = useState(false);
 
   async function fetchData() {
     // TODO: The idea list has to come from the DB
@@ -20,6 +26,33 @@ const PlayIdeas = () => {
     setIdeas(json);
     setFilteredIdeas(json);
     setIsLoading(false);
+  }
+
+  function fetchNewIdeas() {
+    setHasRequestedIdeas(true);
+    setRandomIdeas([]);
+
+    async function asyncFetch() {
+      // eslint-disable-next-line no-console
+      // console.log('In fetchNewIdeas');
+      const response = await useOpenAi();
+
+      if (response.success) {
+        setRandomIdeas({
+          success: response.success,
+          ideas: [...response.ideas]
+        });
+      } else {
+        setRandomIdeas({
+          success: response.success,
+          ideas: []
+        });
+      }
+
+      // eslint-disable-next-line no-console
+      console.log('In fetchNewIdeas', ideas);
+    }
+    asyncFetch();
   }
 
   useEffect(() => {
@@ -123,6 +156,21 @@ const PlayIdeas = () => {
           </div>
         </div>
         <div className="playideas-body">
+          <div className="playideas-generate">
+            <button className="playideas-generate-btn" onClick={() => fetchNewIdeas()}>
+              Generate Ideas
+            </button>
+            <p>Not satisfied witht the ideas?, Generate new Ideas again</p>
+            <ul>
+              {hasRequestedIdeas && randomIdeas.length === 0 && <p>Fetching New Ideas . . .</p>}
+              {randomIdeas.success === true &&
+                randomIdeas.ideas.length !== 0 &&
+                randomIdeas.ideas.map((idea) => <li>• {idea}</li>)}
+              {randomIdeas.success === false && (
+                <p className="playideas-generate-error">Request Failed! Try again later . . .</p>
+              )}
+            </ul>
+          </div>
           <ul className="list-playideas">
             {filteredIdeas.map((idea) => (
               <li className="list-playideas-item" key={idea.id}>
