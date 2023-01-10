@@ -33,8 +33,6 @@ const PlayIdeas = () => {
     setRandomIdeas([]);
 
     async function asyncFetch() {
-      // eslint-disable-next-line no-console
-      // console.log('In fetchNewIdeas');
       const response = await useOpenAi();
 
       if (response.success) {
@@ -48,9 +46,6 @@ const PlayIdeas = () => {
           ideas: []
         });
       }
-
-      // eslint-disable-next-line no-console
-      console.log('In fetchNewIdeas', ideas);
     }
     asyncFetch();
   }
