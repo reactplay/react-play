@@ -23,7 +23,7 @@ const TopPlayCreators = ({ topPlayCreators }) => {
 
   return (
     <TableContainer>
-      <Table aria-label="leader board" sx={{ minWidth: 430 }}>
+      <Table aria-label="leader board">
         <TableHead>
           <TableRow>
             <TableCell align="left" className="leaderboard-table-header">
