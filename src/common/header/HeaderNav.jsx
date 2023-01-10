@@ -107,6 +107,7 @@ const HeaderNav = ({ showBrowse }) => {
             <Link
               className="app-header-btn app-header-btn--default"
               data-testid="leaderboard-btn"
+              title="Leader Board"
               to="/leaderboard"
             >
               <BsTrophyFill className="icon idea-icon" />
