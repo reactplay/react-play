@@ -125,12 +125,48 @@ Or
 ```bash
 yarn start
 ```
-  **Note**: The `start` script automatically invokes "linters" process. Should you need to run the app without `lint` the use `start:nolint` instead.
-  However make sure that you run `start` script at least once before committing your code. Code with linter error may not be reviewed.
+
+**Note**: The `start` script automatically invokes "linters" process. Should you need to run the app without `lint` the use `start:nolint` instead.
+However make sure that you run `start` script at least once before committing your code. Code with linter error may not be reviewed.
 
 It runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes. You may also see any lint errors in the console.
+
+### ✨ Format and lint the code
+
+Use the following command to format and lint the code:
+
+#### Format the code
+
+```bash
+npm run format
+
+#OR
+
+yarn run format
+```
+
+#### Lint the code
+
+```bash
+# to check the linting issue
+
+npm run lint
+
+#OR
+
+yarn run lint
+
+
+# to fix the linting issue
+
+npm run lint:fix
+
+#OR
+
+yarn run lint:fix
+```
 
 ### 🧱 Build the App for Production
 
@@ -191,6 +227,8 @@ If you wish to contribute, you can,
 - Create content about ReactPlay and share it with the world.
 
 > Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
+
+🆕 New to Open Source? 💡 Follow this [guide](https://opensource.guide/how-to-contribute/) to jumpstart your Open Source journey 🚀.
 
 ## Launching reactplay Rewards
 
