@@ -1,17 +1,17 @@
-import RouteDefs from "common/routing/RouteDefs";
-import { SearchContext } from "common/search/search-context";
-import "index.css";
-import React, { useState } from "react";
-import { createRoot } from "react-dom/client";
-import reportWebVitals from "reportWebVitals";
-import register from "./registerServiceWorker";
-import ErrorBoundry from "./ErrorBoundary/ErrorBoundary";
-import Notification from "common/components/Notification";
+import RouteDefs from 'common/routing/RouteDefs';
+import { SearchContextProvider } from 'common/search/search-context';
+import 'index.css';
+import React, { useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import reportWebVitals from 'reportWebVitals';
+import register from './registerServiceWorker';
+import ErrorBoundry from './ErrorBoundary/ErrorBoundary';
+import Notification from 'common/components/Notification';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 /** removing console statement in react prod build */
-if (process.env.NODE_ENV !== "development") {
+/* eslint-disable no-console */
+if (process.env.NODE_ENV !== 'development') {
   console.log = () => {};
   console.debug = () => {};
   console.info = () => {};
@@ -19,13 +19,13 @@ if (process.env.NODE_ENV !== "development") {
 }
 
 const Index = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [showShareModal, setShowShareModal] = useState(false);
   const [filterQuery, setFilterQuery] = useState({
-    level_id: "",
+    level_id: [],
     tags: [],
-    owner_user_id: "",
-    language: "",
+    owner_user_id: [],
+    language: []
   });
 
   const value = {
@@ -34,20 +34,21 @@ const Index = () => {
     filterQuery,
     setFilterQuery,
     showShareModal,
-    setShowShareModal,
+    setShowShareModal
   };
+
   return (
     // <React.StrictMode>
     <ErrorBoundry>
-      <SearchContext.Provider value={value}>
+      <SearchContextProvider value={value}>
         <RouteDefs />
         <Notification />
-      </SearchContext.Provider>
+      </SearchContextProvider>
     </ErrorBoundry>
     // </React.StrictMode>
   );
 };
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 createRoot(container).render(<Index />);
 
 // Makes the app to work offline and load faster

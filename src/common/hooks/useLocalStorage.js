@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 /**
- * 
+ *
  * @param {string} key localstorage key name
  * @param {*} initialValue any initial value to store
  * @returns [storedValue, setValue]
@@ -14,6 +14,7 @@ function useLocalStorage(key, initialValue) {
     try {
       // Get from local storage by key
       const item = localStorage.getItem(key);
+
       // Parse stored json or if none return initialValue
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
@@ -29,17 +30,17 @@ function useLocalStorage(key, initialValue) {
   const setValue = (value) => {
     try {
       // Allow value to be a function so we have same API as useState
-      const valueToStore =
-        value instanceof Function ? value(storedValue) : value;
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
       // Save state
       setStoredValue(valueToStore);
       // Save to local storage
       window.localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (error) {
+    } catch (_error) {
       // A more advanced implementation would handle the error case
-      console.log(error);
     }
   };
+
   return [storedValue, setValue];
 }
+
 export default useLocalStorage;

@@ -1,8 +1,8 @@
-import PlayHeader from "common/playlists/PlayHeader";
-import "./devJokes.css";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import Spinner from "./Spinner";
+import PlayHeader from 'common/playlists/PlayHeader';
+import './devJokes.css';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import Spinner from './Spinner';
 
 interface Jokes {
   punchline: string;
@@ -14,16 +14,15 @@ function DevJokes(props: any) {
   const [spinner, setspinner] = useState<boolean>(false);
   const fetch = () => {
     setspinner(true);
-    axios
-      .get("https://backend-omega-seven.vercel.app/api/getjoke")
-      .then((response) => {
-        setJokes(response.data);
-        setspinner(false);
-      });
+    axios.get('https://backend-omega-seven.vercel.app/api/getjoke').then((response) => {
+      setJokes(response.data);
+      setspinner(false);
+    });
   };
   useEffect(() => {
     fetch();
   }, []);
+
   return (
     <>
       <div className="play-details">
@@ -45,7 +44,7 @@ function DevJokes(props: any) {
               </div>
             )}
           </div>
-          <button onClick={fetch} className="dev-jokes-btn">
+          <button className="dev-jokes-btn" onClick={fetch}>
             Next joke
           </button>
         </div>

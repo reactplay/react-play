@@ -1,13 +1,13 @@
-$calendar-play-box-shadow-dark:rgba(0,0,0,0.1);
+$calendar-play-box-shadow-dark: rgba(0, 0, 0, 0.1);
 $calendar-play-box-shadow: 0px 0px 10px 5px $calendar-play-box-shadow-dark;
 
-$calendar-play-blue-500: #3182CE;
-$calendar-play-blue-400: #4299E1;
-$calendar-play-blue-300: #63B3ED;
+$calendar-play-blue-500: #3182ce;
+$calendar-play-blue-400: #4299e1;
+$calendar-play-blue-300: #63b3ed;
 
-$calendar-play-red-500: #E53E3E;
-$calendar-play-red-200: #FEB2B2;
-$calendar-play-red-100: #FED7D7;
+$calendar-play-red-500: #e53e3e;
+$calendar-play-red-200: #feb2b2;
+$calendar-play-red-100: #fed7d7;
 
 .calendar-play {
   background-color: white;
@@ -50,9 +50,9 @@ $calendar-play-red-100: #FED7D7;
   button,
   .calendar-play-navigation-arrow {
     &:hover {
-      background-color: rgba(0,0,0,0.05);
+      background-color: rgba(0, 0, 0, 0.05);
     }
-  
+
     &:active {
       background-color: darkgray;
     }
@@ -113,7 +113,7 @@ $calendar-play-red-100: #FED7D7;
   height: 100%;
   padding-top: 120px;
   z-index: 999;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 
   .calendar-play-modal-content {
     width: 500px;
@@ -128,7 +128,7 @@ $calendar-play-red-100: #FED7D7;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 20px;
-      
+
       span:last-of-type {
         cursor: pointer;
         margin-left: auto;
@@ -137,7 +137,7 @@ $calendar-play-red-100: #FED7D7;
 
     @media (max-width: 768px) {
       max-width: 90%;
-    } 
+    }
   }
 }
 
@@ -213,11 +213,11 @@ $calendar-play-red-100: #FED7D7;
         background-color: transparent;
 
         &:hover {
-          background-color: rgba(0,0,0,0.05);
+          background-color: rgba(0, 0, 0, 0.05);
         }
-        
+
         &:active {
-          background-color: rgba(0,0,0,0.2);
+          background-color: rgba(0, 0, 0, 0.2);
         }
       }
 
@@ -255,11 +255,11 @@ $calendar-play-red-100: #FED7D7;
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: rgba(0,0,0,0.1);
+        background-color: rgba(0, 0, 0, 0.1);
       }
 
       &:active {
-        background-color: rgba(0,0,0,0.2);
+        background-color: rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -275,9 +275,9 @@ $calendar-play-red-100: #FED7D7;
   display: block;
   cursor: pointer;
   position: relative;
-  
+
   &:hover {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   & > span {
@@ -342,7 +342,7 @@ $calendar-play-red-100: #FED7D7;
   transition-duration: 0.3s;
 
   &:hover {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   div {

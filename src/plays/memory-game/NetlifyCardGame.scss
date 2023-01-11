@@ -1,10 +1,10 @@
 $memory-game-box-width: 50%;
 
-$memory-game-single-item-img: url("./question.png");
+$memory-game-single-item-img: url('./question.png');
 $memory-game-single-item-bg: rgb(241, 239, 239);
 
 $memory-game-single-item-hover: rgba(59, 154, 156, 1);
-$memory-game-single-item-hover-bg: url("./question1.png");
+$memory-game-single-item-hover-bg: url('./question1.png');
 
 .memory-game .container {
   display: flex;
