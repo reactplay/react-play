@@ -11,7 +11,7 @@ const TopPlayCreatorOfTheMonth = ({ topPlayCreatorOfTheMonth }) => {
         <div>
           <img
             alt="profile pic"
-            className="rounded-full border-solid h-48 lg:h-80"
+            className="rounded-full border-solid h-48 lg:h-80 shadow-xl border-cyan-400 border-4"
             src={topPlayCreatorOfTheMonth.avatarUrl}
             title={topPlayCreatorOfTheMonth.displayName}
           />
