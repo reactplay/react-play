@@ -4,7 +4,7 @@
   align-content: center;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem
+  margin: 0.5rem;
 }
 
 .countdown-container > form {
@@ -74,7 +74,7 @@
 
 .show-counter .countdown > span {
   text-transform: uppercase;
-  font-size: 1.50rem;
+  font-size: 1.5rem;
   line-height: 2rem;
 }
 
@@ -84,7 +84,7 @@
     line-height: 1rem;
   }
 
-  .show-counter .countdown-link { 
+  .show-counter .countdown-link {
     font-size: 1.5rem;
   }
 }

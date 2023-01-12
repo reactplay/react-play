@@ -1,12 +1,12 @@
-import { render, screen } from "@testing-library/react";
-import Total from "../index";
+import { render, screen } from '@testing-library/react';
+import Total from '../index';
 
-describe("Total: Basic rendering", () => {
-  test("should display total amount sent in props", () => {
+describe('Total: Basic rendering', () => {
+  test('should display total amount sent in props', () => {
     const total = 2327.99;
-    const currency = "INR";
+    const currency = 'INR';
 
-    render(<Total total={total} currency={currency} />);
+    render(<Total currency={currency} total={total} />);
 
     const totalElement = screen.getByText(/₹/);
 

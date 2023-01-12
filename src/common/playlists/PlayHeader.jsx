@@ -1,6 +1,6 @@
-import React from "react";
-import PlayHeaderInfo from "./PlayHeaderInfo";
-import PlayHeaderActions from "./PlayHeaderActions";
+import React from 'react';
+import PlayHeaderInfo from './PlayHeaderInfo';
+import PlayHeaderActions from './PlayHeaderActions';
 
 const PlayHeader = ({ play }) => {
   return (

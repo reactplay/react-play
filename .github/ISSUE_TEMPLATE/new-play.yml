@@ -1,15 +1,14 @@
 name: New Play
 description: Add a New Play Request
-title: "[Add a Play]: "
-labels: ["play-request"]
-assignees: [""]
+title: '[Add a Play]: '
+labels: ['play-request']
+assignees: ['']
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time for creating a new play.
-        
-        
+
   - type: textarea
     id: about-play
     attributes:
@@ -17,7 +16,7 @@ body:
       description: Tell us in details about your play.
     validations:
       required: true
-        
+
   - type: textarea
     id: react-concepts
     attributes:
@@ -25,18 +24,18 @@ body:
       placeholder: Components, Hooks, React Router ...
     validations:
       required: true
-      
+
   - type: dropdown
     id: implementation
     attributes:
       label: Are you willing to take it up for implementation?
       multiple: false
       options:
-        - "Yes"
-        - "No"
+        - 'Yes'
+        - 'No'
     validations:
       required: true
-        
+
   - type: checkboxes
     id: terms
     attributes:

@@ -1,15 +1,16 @@
-import React from 'react'
-import Video from "../GameAudio/VideoMusic.mp4"
+import React from 'react';
+import Video from '../GameAudio/VideoMusic.mp4';
 
-function VideoMusic(props) {
+function VideoMusic() {
   return (
     <>
-      <div className='invisible'>
-        <video width="20" height="40" controls autoPlay="autoplay" loop>
+      <div className="invisible">
+        <video controls loop autoPlay="autoplay" height="40" width="20">
           <source src={Video} type="video/mp4" />
         </video>
       </div>
     </>
-  )
+  );
 }
-export default VideoMusic
+
+export default VideoMusic;

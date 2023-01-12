@@ -1,16 +1,13 @@
-import { useState, useEffect } from "react";
-import ToggleButton from "@mui/material/ToggleButton";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { categories } from "../countriesAndCategories";
+import { useState, useEffect } from 'react';
+import ToggleButton from '@mui/material/ToggleButton';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { categories } from '../countriesAndCategories';
 
-const CustomToggleButtonGroup = ({
-  selectedCategory,
-  handleCategoryChange,
-}) => {
+const CustomToggleButtonGroup = ({ selectedCategory, handleCategoryChange }) => {
   const [isDesktop, setDesktop] = useState(window.innerWidth > 650);
 
   const updateMedia = () => {
@@ -18,14 +15,15 @@ const CustomToggleButtonGroup = ({
   };
 
   useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
+    window.addEventListener('resize', updateMedia);
+
+    return () => window.removeEventListener('resize', updateMedia);
   });
 
   const control = {
     value: selectedCategory,
     onChange: handleCategoryChange,
-    exclusive: true,
+    exclusive: true
   };
 
   const renderCatogories = () => {
@@ -34,7 +32,7 @@ const CustomToggleButtonGroup = ({
         <div>
           <ToggleButtonGroup size="small" {...control} aria-label="Small sizes">
             {categories.sort().map((category) => (
-              <ToggleButton value={category} key={category}>
+              <ToggleButton key={category} value={category}>
                 {category}
               </ToggleButton>
             ))}
@@ -43,20 +41,20 @@ const CustomToggleButtonGroup = ({
       );
     } else {
       return (
-        <FormControl size="small" className="menu-form-control">
+        <FormControl className="menu-form-control" size="small">
           <InputLabel id="category-select-label">Category</InputLabel>
           <Select
-            labelId="categoryselect-label"
+            defaultValue="general"
             id="category-select"
-            defaultValue={"general"}
-            value={selectedCategory}
             label="Category"
+            labelId="categoryselect-label"
+            value={selectedCategory}
             onChange={(e) => {
               handleCategoryChange(e);
             }}
           >
             {categories.map((category) => (
-              <MenuItem value={category} key={category}>
+              <MenuItem key={category} value={category}>
                 {category}
               </MenuItem>
             ))}

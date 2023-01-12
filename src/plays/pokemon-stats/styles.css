@@ -1,14 +1,14 @@
 /* enter stlyes here */
-.poke-card-container{    
-    width: 100%;
-    height: 100%;
+.poke-card-container {
+  width: 100%;
+  height: 100%;
 }
-.poke-search-container{
-    width: 100%;
-    height: 100%;
+.poke-search-container {
+  width: 100%;
+  height: 100%;
 }
-.skeleton-pokemon-app{
-    background: url('./images/background.jpg');
-    background-size: cover;
-    height: 100%;
+.skeleton-pokemon-app {
+  background: url('./images/background.jpg');
+  background-size: cover;
+  height: 100%;
 }
