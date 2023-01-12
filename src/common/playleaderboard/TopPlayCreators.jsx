@@ -22,7 +22,7 @@ const TopPlayCreators = ({ topPlayCreators }) => {
   };
 
   return (
-    <TableContainer>
+    <TableContainer className="leaderboard-container">
       <Table aria-label="leader board">
         <TableHead>
           <TableRow>
