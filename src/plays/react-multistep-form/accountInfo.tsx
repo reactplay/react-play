@@ -1,5 +1,5 @@
-import React from "react";
-import { FormWrapper } from "./FormWrapper";
+import React from 'react';
+import { FormWrapper } from './FormWrapper';
 type AccountData = {
   email: string;
   password: string;
@@ -7,27 +7,24 @@ type AccountData = {
 type AccountFormProps = AccountData & {
   updateField: (fields: Partial<AccountData>) => void;
 };
-export default function accountInfo({
-  email,
-  password,
-  updateField,
-}: AccountFormProps) {
+
+export default function accountInfo({ email, password, updateField }: AccountFormProps) {
   return (
-    <FormWrapper title={"Account Information"}>
+    <FormWrapper title="Account Information">
       <label>
-        {" "}
+        {' '}
         Email address (*)
         <input
-          className='form-input-text'
           autoFocus
           required
-          pattern='[^ @]*@[^ @]*'
-          type='text'
+          className="form-input-text"
+          pattern="[^ @]*@[^ @]*"
+          placeholder="a@abc.com"
+          type="text"
           value={email}
-          placeholder='a@abc.com'
           onChange={(e) =>
             updateField({
-              email: e.target.value,
+              email: e.target.value
             })
           }
         />
@@ -35,13 +32,13 @@ export default function accountInfo({
       <label>
         Password (*)
         <input
-          className='form-input-text'
-          type='password'
+          className="form-input-text"
+          placeholder="Your password..."
+          type="password"
           value={password}
-          placeholder='Your password...'
           onChange={(e) =>
             updateField({
-              password: e.target.value,
+              password: e.target.value
             })
           }
         />
