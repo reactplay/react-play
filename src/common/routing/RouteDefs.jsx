@@ -9,6 +9,7 @@ import {
   CreatePlay,
   PlayCreated,
   TechStack,
+  LeaderBoard,
   PageNotFound
 } from 'common';
 import PlayList from 'common/playlists/PlayList';
@@ -29,7 +30,8 @@ const RouteDefs = () => {
     { path: '/plays', title: 'ReactPlay - Plays' },
     { path: '/ideas', title: 'ReactPlay - Ideas' },
     { path: '/tech-stacks', title: 'ReactPlay - Tech Stacks' },
-    { path: '/plays/create', title: 'ReactPlay - Create Play' }
+    { path: '/plays/create', title: 'ReactPlay - Create Play' },
+    { path: '/leaderboard', title: 'ReactPlay - Leader Board' }
   ];
 
   return (
@@ -66,6 +68,7 @@ const RouteDefs = () => {
             <Route index element={<PlayList />} />
           </Route>
           <Route element={<PlayIdeas />} path="/ideas" />
+          <Route element={<LeaderBoard />} path="/leaderboard" />
         </Routes>
         <Footer />
       </BrowserRouter>

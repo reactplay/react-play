@@ -18,6 +18,7 @@ describe('Test home page', () => {
     cy.get('[data-testid="github-btn"]').should('be.visible');
     cy.get('[data-testid="twitter-btn"]').should('be.visible');
     cy.get('[data-testid="share-btn"]').should('be.visible');
+    cy.get('[data-testid="leaderboard-btn"]').should('be.visible');
 
     cy.get('@browseBtn').click();
     cy.get('[data-testid="plays-search-box-container"]').should('be.visible');
