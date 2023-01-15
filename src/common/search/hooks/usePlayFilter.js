@@ -34,8 +34,7 @@ const useFetchFilterData = () => {
         setLoading(true);
         const isCachedResponse = getCacheResponse(FILTER_DATA_RESPONSE);
         if (isCachedResponse) {
-          setData(dataConstructor(isCachedResponse));
-          return;
+          return setData(dataConstructor(isCachedResponse));
         }
         const response = await submit_multi([getAllTags, getAllLevels, getAllUsers]);
         setCacheResponse(FILTER_DATA_RESPONSE, response);

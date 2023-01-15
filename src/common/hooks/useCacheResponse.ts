@@ -2,9 +2,11 @@ interface TcacheObject {
   [key: string]: any;
 }
 
+type TReturn = [(s: string) => any, (t: string, c: any) => void];
+
 const cacheObject: TcacheObject = new Object();
 
-const useCacheResponse = (): Function[] => {
+const useCacheResponse = (): TReturn => {
   const createCache = (cacheName: string, cacheData: any): any => {
     cacheObject[cacheName] = cacheData;
   };
