@@ -22,6 +22,7 @@ const INITIAL_DATA: FormData = {
 
 function ReactMultistepForm() {
   const [data, setData] = useState(INITIAL_DATA);
+  const [showReview, setShowReview] = useState(false);
 
   function updateFields(fields: Partial<FormData>) {
     setData((prev) => {
@@ -39,30 +40,57 @@ function ReactMultistepForm() {
     e.preventDefault();
     if (!isLastStep) return next();
 
-    alert(JSON.stringify(data));
+    setShowReview(true);
   };
 
   return (
     <>
-      <div className="container multistep-container">
-        <form onSubmit={handleSubmit}>
-          <div className="steps">
-            {currentStepIndex + 1}/{totalSteps}
-          </div>
-          {step}
-          <div className="form-steps">
-            {!isFirstStep && (
-              <button className="multistep-button" type="button" onClick={back}>
-                Back
-              </button>
-            )}
+      {!showReview && (
+        <div className="container multistep-container">
+          <form onSubmit={handleSubmit}>
+            <div className="steps">
+              {currentStepIndex + 1}/{totalSteps}
+            </div>
+            {step}
+            <div className="form-steps">
+              {!isFirstStep && (
+                <button className="multistep-button" type="button" onClick={back}>
+                  Back
+                </button>
+              )}
 
-            <button className="multistep-button" type="submit">
-              {isLastStep ? 'Finish' : 'Next'}
+              <button className="multistep-button" type="submit">
+                {isLastStep ? 'Finish' : 'Next'}
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+      {showReview && (
+        <div className="container multistep-container">
+          <div>
+            <h5>Thank you for submitting. Please review your details.</h5>
+            <p>First Name: {data.firstName}</p>
+            <p>Last Name: {data.lastName}</p>
+            <p>Address: {data.address}</p>
+            <p>Email: {data.email}</p>
+          </div>
+          <div className="form-steps">
+            <button
+              className="multistep-button"
+              type="button"
+              onClick={() => {
+                setShowReview(false);
+              }}
+            >
+              Back
             </button>
           </div>
-        </form>
-      </div>
+          <div>
+            <p>Please press Back button to edit your details.</p>
+          </div>
+        </div>
+      )}
     </>
   );
 }
