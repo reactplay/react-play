@@ -73,7 +73,7 @@ const NavListItems = () => {
           <ul className="pt-6 menu">
             {/* Item1 */}
             <li
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
+              className={`flex p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
 mt-2 menu-items`}
               onClick={() => filterResult('dashboard')}
             >
@@ -82,7 +82,7 @@ mt-2 menu-items`}
             </li>
             {/* Item2 */}
             <li
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
+              className={`flex  p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
  mt-2 menu-items`}
               onClick={() => filterResult('ideas')}
             >
@@ -91,7 +91,7 @@ mt-2 menu-items`}
             </li>
             {/* Item3 */}
             <li
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
+              className={`flex p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
  mt-2 menu-items`}
               onClick={() => filterResult('join')}
             >
@@ -100,7 +100,7 @@ mt-2 menu-items`}
             </li>
             {/* Item4 */}
             <li
-              className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
+              className={`flex p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
   mt-9 menu-items`}
               onClick={() => filterResult('build')}
             >
@@ -109,7 +109,7 @@ mt-2 menu-items`}
             </li>
             {/* Item5 */}
             <li
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
+              className={`flex  p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md
 mt-2  menu-items`}
               onClick={() => filterResult('search')}
             >
