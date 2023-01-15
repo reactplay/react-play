@@ -1,4 +1,4 @@
-.btn {
+.multistep-button {
   border-radius: 8px;
   border: 1px solid;
   padding: 0.2em 0.5em;
@@ -8,11 +8,11 @@
   cursor: pointer;
   transition: border-color 0.25s;
 }
-btn:hover {
+.multistep-button:hover {
   border-color: #646cff;
 }
-btn:focus,
-btn:focus-visible {
+.multistep-button:focus,
+.multistep-button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -33,7 +33,7 @@ btn:focus-visible {
   align-content: center;
 }
 
-.container {
+.multistep-container {
   border: 1px solid black;
   position: relative;
   background: white;

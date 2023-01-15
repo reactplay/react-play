@@ -44,7 +44,7 @@ function ReactMultistepForm() {
 
   return (
     <>
-      <div className="container">
+      <div className="container multistep-container">
         <form onSubmit={handleSubmit}>
           <div className="steps">
             {currentStepIndex + 1}/{totalSteps}
@@ -52,12 +52,12 @@ function ReactMultistepForm() {
           {step}
           <div className="form-steps">
             {!isFirstStep && (
-              <button className="btn" type="button" onClick={back}>
+              <button className="multistep-button" type="button" onClick={back}>
                 Back
               </button>
             )}
 
-            <button className="btn" type="submit">
+            <button className="multistep-button" type="submit">
               {isLastStep ? 'Finish' : 'Next'}
             </button>
           </div>
