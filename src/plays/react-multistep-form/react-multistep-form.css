@@ -42,7 +42,7 @@
   font-family: Arial;
   max-width: 500px;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 3%;
 }
 .steps {
   position: absolute;
@@ -59,4 +59,14 @@
   text-align: center;
   margin: 0;
   margin-bottom: 2 rem;
+}
+@media screen and (max-width: 480px) {
+  .form-wrapper-heading {
+    padding: 1rem;
+  }
+
+  .form-input-text {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
