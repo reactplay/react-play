@@ -1,6 +1,6 @@
 import PlayThumbnail from './PlayThumbnail';
 import { ReactComponent as ImageOops } from 'images/img-oops.svg';
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'common/spinner/spinner';
 import * as all_plays from 'plays';
@@ -8,9 +8,18 @@ import useGetPlays from 'common/hooks/useGetPlays';
 
 import './playlist.css';
 import { toSanitized } from 'common/services/string';
+import DynamicBanner from './DynamicBanner';
 
 const PlayList = () => {
+  const [randomPlay, setRandomPlay]=useState({})
   const [loading, error, plays] = useGetPlays();
+  useEffect(() => {
+    const filteredPlays=plays.filter(play=>play.dev_mode===true)
+    if (filteredPlays && filteredPlays.length > 0) {
+      const randomIndex = Math.floor(Math.random() * filteredPlays.length);
+      setRandomPlay(filteredPlays[randomIndex]);
+  }
+    }, [plays]);
 
   if (loading) {
     return <Loader />;
@@ -26,8 +35,11 @@ const PlayList = () => {
     );
   }
 
+
+
   return (
     <Fragment>
+      <DynamicBanner randomPlay={randomPlay} />
       <ol className="list-plays">
         {plays?.map((play, index) => (
           <React.Fragment key={index}>
