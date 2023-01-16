@@ -14,7 +14,7 @@ function createObjectPayload(items, key, ifTags) {
   if (items.length > 1) {
     obj.clause = {
       operator: 'or',
-      conditions: !env && !preview ? [defaultClause] : []
+      conditions: []
     };
     if (ifTags) {
       obj.clause.class = 'play_tags';
