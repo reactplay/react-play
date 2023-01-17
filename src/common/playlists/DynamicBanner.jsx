@@ -1,26 +1,22 @@
-/* eslint-disable no-console */
-/* eslint-disable prettier/prettier */
-import { toSanitized } from 'common/services/string';
+
 import React, { Fragment, useEffect, useState } from 'react';
 import thumbPlay from 'images/thumb-play.png';
 import { Link } from 'react-router-dom';
+import { MdArrowRightAlt } from 'react-icons/md'
 
 const DynamicBanner = ({ randomPlay }) => {
-  const [cover, setCover] = useState(null);
-  console.log(cover);
-  console.log(randomPlay);
+  const [coverImage, setCoverImage] = useState(null);
 
   useEffect(() => {
-   console.log(randomPlay)
     if (randomPlay && randomPlay.cover) {
-      setCover(randomPlay.cover);
+      setCoverImage(randomPlay.cover);
     } else {
       import(`plays/${randomPlay.slug}/cover.png`)
         .then((Cover) => {
-          setCover(Cover.default);
+          setCoverImage(Cover.default);
         })
         .catch((err) => {
-          setCover(thumbPlay);
+          setCoverImage(thumbPlay);
 
           return {
             success: false,
@@ -30,26 +26,21 @@ const DynamicBanner = ({ randomPlay }) => {
         })
     }
   }, [randomPlay]);
-
-
-
+  
   return (
     <Fragment>
-      {(randomPlay?.component ? randomPlay.component : toSanitized(randomPlay?.title_name)) && (
         <div
           className="dynamic-banner-container"
           style={{
-            background: `linear-gradient(rgba(0,0,0,0.5), #020808),url(${cover} )`,
-            backgroundSize: 'center',
-            backgroundRepeat: 'no-repeat',
+            background: `linear-gradient(rgba(0,0,0,0.5), #020808),url(${coverImage} ) center no-repeat`,
             minHeight: '70vh'
           }}
         >
           <div className="dynamic-banner-body">
-            <h1 className="text-white">{randomPlay.name}</h1>
-            <p className='text-gray-400 mt-2'>{randomPlay.description}</p>
-            <Link to={`/plays/${encodeURI(randomPlay.github.toLowerCase())}/${randomPlay.slug}`}>
-            <button className='banner-button'>Let's Play</button>
+            <h1 className="text-white text-3xl md:text-5xl">{randomPlay.name}</h1>
+            <p className='text-gray-400 mt-2 text-xs md:text-base truncate'>{randomPlay.description}</p>
+            <Link to={`/plays/${encodeURI(randomPlay?.github?.toLowerCase())}/${randomPlay.slug}`}>
+            <button className='banner-button rounded-full font-extrabold uppercase px-8 md:px-12 md:py-1'>Let's Play <MdArrowRightAlt className='right-arrow-icon' size={40}/></button>
             </Link>
            
             {/* <Link to={``}><button className='banner-button'>See Creator's profile</button></Link> */}
@@ -57,7 +48,7 @@ const DynamicBanner = ({ randomPlay }) => {
           </div>
           
         </div>
-      )}
+  
     </Fragment>
   );
 };

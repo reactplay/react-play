@@ -14,7 +14,7 @@ const PlayList = () => {
   const [randomPlay, setRandomPlay]=useState({})
   const [loading, error, plays] = useGetPlays();
   useEffect(() => {
-    const filteredPlays=plays.filter(play=>play.dev_mode===true)
+    const filteredPlays=plays.filter(play=>all_plays[play.component ? play.component : toSanitized(play.title_name)])
     if (filteredPlays && filteredPlays.length > 0) {
       const randomIndex = Math.floor(Math.random() * filteredPlays.length);
       setRandomPlay(filteredPlays[randomIndex]);

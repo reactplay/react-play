@@ -763,36 +763,41 @@
 
 /* dynamic banner */
 .dynamic-banner-container {
-  /* height: 1000px; */
+  height: 100%;
   object-fit: contain;
   color: white;
   position: relative;
   width: 100%;
 }
 .dynamic-banner-body {
-  padding-top: 180px;
-  padding-left: 30px;
+  padding: 180px 10px 10px 30px;
   font-weight: bold;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .banner-button{
   /* width: 8.3rem; */
   margin-right: 10px;
-  background-color: rgba(51,51,51, 0.5);
+  background-color: rgba(255, 255, 255, 0.947);
   border: none;
-  padding: 10px 18px;
+  /* padding: 6px 48px; */
   outline: none;
-  border-radius: 2px;
   transition-timing-function: 0.5s;
   transition: all;
   cursor: pointer;
-  color: #e6e6e6;
+  color: black;
   margin-top: 20px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 .banner-button:hover{
-  background-color: #e6e6e6;
+  background-color: #e6e6e6c3;
   color: black;
 
 }
+.right-arrow-icon {
+  color: #25A0A7;
+}
+
