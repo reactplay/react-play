@@ -11,15 +11,17 @@ import { toSanitized } from 'common/services/string';
 import DynamicBanner from './DynamicBanner';
 
 const PlayList = () => {
-  const [randomPlay, setRandomPlay]=useState({})
+  const [randomPlay, setRandomPlay] = useState({});
   const [loading, error, plays] = useGetPlays();
   useEffect(() => {
-    const filteredPlays=plays.filter(play=>all_plays[play.component ? play.component : toSanitized(play.title_name)])
+    const filteredPlays = plays.filter(
+      (play) => all_plays[play.component ? play.component : toSanitized(play.title_name)]
+    );
     if (filteredPlays && filteredPlays.length > 0) {
       const randomIndex = Math.floor(Math.random() * filteredPlays.length);
       setRandomPlay(filteredPlays[randomIndex]);
-  }
-    }, [plays]);
+    }
+  }, [plays]);
 
   if (loading) {
     return <Loader />;
@@ -34,8 +36,6 @@ const PlayList = () => {
       </div>
     );
   }
-
-
 
   return (
     <Fragment>
