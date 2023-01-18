@@ -8,7 +8,7 @@ export function FormWrapper({ title, children }: FormWrapperProps) {
   return (
     <>
       <h2 className="form-wrapper-heading">{title}</h2>
-      <div className="form-wrapper-content-grid">{children}</div>
+      <div className="form-wrapper-content">{children}</div>
     </>
   );
 }

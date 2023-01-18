@@ -49,14 +49,14 @@ function ReactMultistepForm(props: any) {
       <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body ">
-          {!showReview && (
-            <div className="container multistep-container">
-              <form onSubmit={handleSubmit}>
+          <div className="container multistep-play">
+            {!showReview && (
+              <form className="multistep-play-form" onSubmit={handleSubmit}>
                 <div className="steps">
                   {currentStepIndex + 1}/{totalSteps}
                 </div>
                 {step}
-                <div className="form-steps">
+                <div className="button-container">
                   {!isFirstStep && (
                     <button className="multistep-button" type="button" onClick={back}>
                       Back
@@ -68,33 +68,43 @@ function ReactMultistepForm(props: any) {
                   </button>
                 </div>
               </form>
-            </div>
-          )}
-          {showReview && (
-            <div className="container multistep-container">
-              <div>
-                <h5>Thank you for submitting. Please review your details.</h5>
-                <p>First Name: {data.firstName}</p>
-                <p>Last Name: {data.lastName}</p>
-                <p>Address: {data.address}</p>
-                <p>Email: {data.email}</p>
-              </div>
-              <div className="form-steps">
-                <button
-                  className="multistep-button"
-                  type="button"
-                  onClick={() => {
-                    setShowReview(false);
-                  }}
-                >
-                  Back
-                </button>
-              </div>
-              <div>
-                <p>Please press Back button to edit your details.</p>
-              </div>
-            </div>
-          )}
+            )}
+            {showReview && (
+              <>
+                <div className="review-container">
+                  <h5 className="message-heading">
+                    Thank you for submitting. Please review your details.
+                  </h5>
+                  <p className="user-info">
+                    First Name: <span className="user-info-value">{data.firstName}</span>
+                  </p>
+                  <p className="user-info">
+                    Last Name: <span className="user-info-value">{data.lastName}</span>
+                  </p>
+                  <p className="user-info">
+                    Address: <span className="user-info-value">{data.address}</span>
+                  </p>
+                  <p className="user-info">
+                    Email: <span className="user-info-value">{data.email}</span>
+                  </p>
+                </div>
+                <div className="button-container">
+                  <button
+                    className="multistep-button"
+                    type="button"
+                    onClick={() => {
+                      setShowReview(false);
+                    }}
+                  >
+                    Back
+                  </button>
+                </div>
+                <div className="press-back-button-message">
+                  <p>Please press Back button to edit your details.</p>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </>
