@@ -31,12 +31,12 @@ const DynamicBanner = ({ randomPlay }) => {
       <div
         className="dynamic-banner-container"
         style={{
-          background: `linear-gradient(rgba(0,0,0,0.5), #020808),url(${coverImage} ) center no-repeat`,
-          minHeight: '70vh'
+          background: `linear-gradient(rgba(0,0,0,0.5), #020808),url(${coverImage} ) center/cover no-repeat`,
+          minHeight: '50vh'
         }}
       >
-        <div className="dynamic-banner-body">
-          <h1 className="text-white text-3xl md:text-5xl">{randomPlay.name}</h1>
+        <div className="dynamic-banner-body md:pl-14 px-4">
+          <h1 className="text-white text-3xl md:text-4xl lg:text-5xl">{randomPlay.name}</h1>
           <p className="text-gray-400 mt-2 text-xs md:text-base truncate">
             {randomPlay.description}
           </p>

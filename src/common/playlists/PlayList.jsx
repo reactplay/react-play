@@ -17,7 +17,9 @@ const PlayList = () => {
     const filteredPlays = plays.filter(
       (play) => all_plays[play.component ? play.component : toSanitized(play.title_name)]
     );
+    // If the filtered array has at least one item, select a random play from the filtered array
     if (filteredPlays && filteredPlays.length > 0) {
+      // generate a random index to select a random play
       const randomIndex = Math.floor(Math.random() * filteredPlays.length);
       setRandomPlay(filteredPlays[randomIndex]);
     }

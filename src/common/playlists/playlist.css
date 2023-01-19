@@ -763,24 +763,25 @@
 
 /* dynamic banner */
 .dynamic-banner-container {
-  height: 100%;
-  object-fit: contain;
   color: white;
-  position: relative;
+  position: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
 .dynamic-banner-body {
-  padding: 180px 10px 10px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
   font-weight: bold;
   max-width: 600px;
 }
 
 .banner-button{
-  /* width: 8.3rem; */
   margin-right: 10px;
   background-color: rgba(255, 255, 255, 0.947);
   border: none;
-  /* padding: 6px 48px; */
   outline: none;
   transition-timing-function: 0.5s;
   transition: all;
