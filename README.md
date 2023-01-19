@@ -1,7 +1,7 @@
 # ReactPlay(Repo: `react-play`)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-60-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-61-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -340,6 +340,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/NagarjunShroff"><img src="https://avatars.githubusercontent.com/u/37444771?v=4?s=100" width="100px;" alt="NagarjunShroff"/><br /><sub><b>NagarjunShroff</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=NagarjunShroff" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/aks318"><img src="https://avatars.githubusercontent.com/u/41566374?v=4?s=100" width="100px;" alt="Aakash Vishwakarma"/><br /><sub><b>Aakash Vishwakarma</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=aks318" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ankitk26"><img src="https://avatars.githubusercontent.com/u/53444460?v=4?s=100" width="100px;" alt="Ankit Kumar"/><br /><sub><b>Ankit Kumar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ankitk26" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/samvardhan777"><img src="https://avatars.githubusercontent.com/u/69216650?v=4?s=100" width="100px;" alt="Sam"/><br /><sub><b>Sam</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=samvardhan777" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
