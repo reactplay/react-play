@@ -5,14 +5,19 @@ import { MdArrowRightAlt } from 'react-icons/md';
 
 const DynamicBanner = ({ randomPlay }) => {
   const [coverImage, setCoverImage] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (randomPlay && randomPlay.cover) {
+    setLoading(true);
+    if (loading && randomPlay && randomPlay.cover) {
       setCoverImage(randomPlay.cover);
+      setLoading(false);
     } else {
+      setLoading(true);
       import(`plays/${randomPlay.slug}/cover.png`)
         .then((Cover) => {
           setCoverImage(Cover.default);
+          setLoading(false);
         })
         .catch((err) => {
           setCoverImage(thumbPlay);
@@ -25,6 +30,8 @@ const DynamicBanner = ({ randomPlay }) => {
         });
     }
   }, [randomPlay]);
+
+  if (loading) return <p>loading...</p>;
 
   return (
     <Fragment>
