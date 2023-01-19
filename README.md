@@ -338,7 +338,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://olukaisaac.netlify.app/"><img src="https://avatars.githubusercontent.com/u/55724699?v=4?s=100" width="100px;" alt="Oluka Isaac"/><br /><sub><b>Oluka Isaac</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=tech-doctor" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/NagarjunShroff"><img src="https://avatars.githubusercontent.com/u/37444771?v=4?s=100" width="100px;" alt="NagarjunShroff"/><br /><sub><b>NagarjunShroff</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=NagarjunShroff" title="Code">💻</a></td>
+
       <td align="center" valign="top" width="14.28%"><a href="https://abhipatelportfolio.netlify.app/"><img src="https://avatars.githubusercontent.com/u/76242769?v=4?s=100" width="100px;" alt="Abhi Patel"/><br /><sub><b>Abhi Patel</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=AbhiPatel10" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/aks318"><img src="https://avatars.githubusercontent.com/u/41566374?v=4?s=100" width="100px;" alt="Aakash Vishwakarma"/><br /><sub><b>Aakash Vishwakarma</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=aks318" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
