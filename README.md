@@ -1,7 +1,9 @@
 # ReactPlay(Repo: `react-play`)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-60-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -340,6 +342,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/NagarjunShroff"><img src="https://avatars.githubusercontent.com/u/37444771?v=4?s=100" width="100px;" alt="NagarjunShroff"/><br /><sub><b>NagarjunShroff</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=NagarjunShroff" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/aks318"><img src="https://avatars.githubusercontent.com/u/41566374?v=4?s=100" width="100px;" alt="Aakash Vishwakarma"/><br /><sub><b>Aakash Vishwakarma</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=aks318" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ankitk26"><img src="https://avatars.githubusercontent.com/u/53444460?v=4?s=100" width="100px;" alt="Ankit Kumar"/><br /><sub><b>Ankit Kumar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=ankitk26" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/keerthivasand/"><img src="https://avatars.githubusercontent.com/u/64349912?v=4?s=100" width="100px;" alt="Keerthivasan D"/><br /><sub><b>Keerthivasan D</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=kd100100" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/bhtibrewal"><img src="https://avatars.githubusercontent.com/u/42600164?v=4?s=100" width="100px;" alt="Bhavika Tibrewal"/><br /><sub><b>Bhavika Tibrewal</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=bhtibrewal" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://abhipatelportfolio.netlify.app/"><img src="https://avatars.githubusercontent.com/u/76242769?v=4?s=100" width="100px;" alt="Abhi Patel"/><br /><sub><b>Abhi Patel</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=AbhiPatel10" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://aimun-nahar.vercel.app/"><img src="https://avatars.githubusercontent.com/u/96931784?v=4?s=100" width="100px;" alt="Aimun Nahar"/><br /><sub><b>Aimun Nahar</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=aimunhidden485" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/GodStarLord"><img src="https://avatars.githubusercontent.com/u/62302642?v=4?s=100" width="100px;" alt="GodStarLord"/><br /><sub><b>GodStarLord</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=GodStarLord" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/joeshajan"><img src="https://avatars.githubusercontent.com/u/69904519?v=4?s=100" width="100px;" alt="Joe Shajan"/><br /><sub><b>Joe Shajan</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=joeshajan" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/KMohZaid"><img src="https://avatars.githubusercontent.com/u/68484509?v=4?s=100" width="100px;" alt="MohZaid Kapadia"/><br /><sub><b>MohZaid Kapadia</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=KMohZaid" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/samvardhan777"><img src="https://avatars.githubusercontent.com/u/69216650?v=4?s=100" width="100px;" alt="Sam"/><br /><sub><b>Sam</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=samvardhan777" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
