@@ -526,6 +526,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "AbhiPatel10",
+      "name": "Abhi Patel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76242769?v=4",
+      "profile": "https://abhipatelportfolio.netlify.app/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
