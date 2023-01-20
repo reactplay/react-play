@@ -1,19 +1,8 @@
 import { IoMdArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import LevelBadge from 'common/components/LevelBadge';
-import { format } from 'date-fns';
-import * as allLocales from 'date-fns/locale';
 
-const Author = ({ user, githubUsername, playCreatedAt }) => {
-  function formatPlayDate() {
-    const locale = navigator.language.split('-').join('');
-    const dnsLocale = allLocales[locale] ?? allLocales.enUS;
-
-    return format(new Date(playCreatedAt), 'dd MMMM, yyyy', {
-      locale: dnsLocale
-    });
-  }
-
+const Author = ({ user, githubUsername }) => {
   return (
     <div className="flex items-center gap-2 header-author">
       <img alt="avatar" className="rounded-full" height="25px" src={user?.avatarUrl} width="25px" />
@@ -26,7 +15,6 @@ const Author = ({ user, githubUsername, playCreatedAt }) => {
         >
           <strong>{user?.displayName}</strong>
         </a>
-        <small className="header-desc">Created on {formatPlayDate()}</small>
       </div>
     </div>
   );
@@ -62,9 +50,7 @@ const PlayHeaderInfo = ({ play }) => {
           </div>
         </div>
         <div className="mt-1 header-secondary">
-          {play.user && (
-            <Author githubUsername={play.github} user={play.user} playCreatedAt={play.created_at} />
-          )}
+          {play.user && <Author githubUsername={play.github} user={play.user} />}
         </div>
       </div>
     </div>
