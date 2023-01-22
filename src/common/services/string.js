@@ -53,3 +53,11 @@ export const toSanitized = (str) => {
 
   return str;
 };
+
+export const email2Slug = (email) => {
+  return encodeURIComponent(email);
+};
+
+export const slug2Email = (email) => {
+  return decodeURIComponent(email);
+};
