@@ -7,7 +7,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 const PageNotFound = ({ loading, msg, details, Image }) => {
   const [timer, setTimer] = useState(5);
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState(true);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer(timer - 1);
@@ -34,7 +34,11 @@ const PageNotFound = ({ loading, msg, details, Image }) => {
       )}
       <p className="page-404-lead">{msg}</p>
       <p className="page-404-desc">
-        {details} <NavLink to="/">home</NavLink>. Redirecting in {timer} sec.
+        {details}{' '}
+        <NavLink className="link" to="/">
+          home
+        </NavLink>
+        . Redirecting in {timer} sec.
       </p>
     </main>
   );
