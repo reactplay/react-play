@@ -1,14 +1,23 @@
 import { IoMdArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import LevelBadge from 'common/components/LevelBadge';
+import { email2Slug } from 'common/services/string';
 
-const Author = ({ user, githubUsername }) => {
+const Author = ({ user }) => {
+  const getHostName = () => {
+    var url = window.location.href;
+    var arr = url.split('/');
+    var result = arr[0] + '//' + arr[2];
+
+    return result;
+  };
+
   return (
     <div className="header-author flex items-center gap-2">
       <img alt="avatar" className="rounded-full" height="25px" src={user?.avatarUrl} width="25px" />
       <Link
         className="play-anchor"
-        href={`https://github.com/${githubUsername}`}
+        href={`${getHostName()}/contributors/${email2Slug(user.email)}/badges`}
         rel="noopener noreferrer"
         target="_blank"
         to={`/contributor/${user.id}`}

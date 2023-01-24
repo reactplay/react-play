@@ -15,6 +15,7 @@ import {
 import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NhostClient, NhostReactProvider } from '@nhost/react';
+import BadgesDashboard from 'common/badges-dashboard';
 import { UserProfile } from 'common/contributor_profile';
 import { EditProfile } from 'common/edit-contributor_profile';
 
@@ -65,6 +66,11 @@ const RouteDefs = () => {
                       <Route exact path=":param2" element= {<PlayMeta />}/>
                       </Route>
                   </Route> */}
+          </Route>
+          <Route element={<App />} path="/contributors">
+            <Route element={<App />} path=":email">
+              <Route element={<BadgesDashboard />} path="badges" />
+            </Route>
           </Route>
           <Route element={<App />} path="/play">
             <Route index element={<PlayList />} />
