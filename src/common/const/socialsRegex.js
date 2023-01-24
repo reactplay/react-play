@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { BsGithub, BsTwitter, BsLinkedin } from 'react-icons/bs';
 
 export const socilsRegex = {

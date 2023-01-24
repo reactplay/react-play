@@ -31,7 +31,7 @@ const PlayThumbnail = ({ play }) => {
 
   const likeObject = () => {
     const { play_like } = play;
-    const number = countByProp(play_like, "liked", true);
+    const number = countByProp(play_like, 'liked', true);
     if (isAuthenticated) {
       const liked = play_like.find((i) => i.user_id === userId)?.liked;
 

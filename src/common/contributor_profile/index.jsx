@@ -40,8 +40,9 @@ export const UserProfile = () => {
       const { regex, Icon } = socilsRegex[entry];
       const link = social_links?.find((link) => link.match(regex));
       if (!link) return null;
+
       return (
-        <a key={index} href={link}>
+        <a href={link} key={index}>
           <Icon />
         </a>
       );
@@ -52,10 +53,11 @@ export const UserProfile = () => {
 
   if (dataLoading) return <LoadingSpinner />;
   if (isEmpty(contributor)) return <div>User not found</div>;
+
   return (
     <div className="app-body contributor_page ">
       <div className="left_section ">
-        <img src={photo_link || avatarUrl} alt="avatar" className="rounded-full w-28 -mt-20" />
+        <img alt="avatar" className="rounded-full w-28 -mt-20" src={photo_link || avatarUrl} />
         <h2 className="text-lg font-bold"> {displayName}</h2>
 
         {/* show only if current login user same as user whose profile we are on */}
@@ -73,16 +75,16 @@ export const UserProfile = () => {
         <Button className="rounded-md">
           <BsShare />
         </Button>
-        <a href={email} className="flex gap-1 items-center">
+        <a className="flex gap-1 items-center" href={email}>
           <MdEmail /> {email}
         </a>
         <div className="flex ">{socials()}</div>
         <p> {bio}</p>
-        <a href={website} target="_blank" rel="noreferrer">
+        <a href={website} rel="noreferrer" target="_blank">
           Website
         </a>
         {!isEmpty(resume_link) ? (
-          <a href={resume_link} target="_blank" rel="noreferrer">
+          <a href={resume_link} rel="noreferrer" target="_blank">
             Resume
           </a>
         ) : (

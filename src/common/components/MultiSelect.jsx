@@ -95,7 +95,9 @@ export default function MultipleSelectCheckmarks({
           input={<OutlinedInput label={label} />}
           labelId="demo-multiple-checkbox-label"
           renderValue={renderValueHandler}
-          value={filterQuery[filterKey]}
+          // MUI Select requires list as values,
+          // so, if no values are present we will assign empty list
+          value={filterQuery[filterKey] || []}
           onChange={handleChange}
           onClose={resetSearchText}
         >

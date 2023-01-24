@@ -8,7 +8,9 @@ import {
   PlayIdeas,
   CreatePlay,
   PlayCreated,
-  TechStack
+  TechStack,
+  LeaderBoard,
+  PageNotFound
 } from 'common';
 import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -30,7 +32,8 @@ const RouteDefs = () => {
     { path: '/plays', title: 'ReactPlay - Plays' },
     { path: '/ideas', title: 'ReactPlay - Ideas' },
     { path: '/tech-stacks', title: 'ReactPlay - Tech Stacks' },
-    { path: '/plays/create', title: 'ReactPlay - Create Play' }
+    { path: '/plays/create', title: 'ReactPlay - Create Play' },
+    { path: '/leaderboard', title: 'ReactPlay - Leader Board' }
   ];
 
   return (
@@ -42,6 +45,7 @@ const RouteDefs = () => {
           <Route element={<Home />} path="/" />
           <Route element={<TechStack />} path="/tech-stacks" />
           <Route element={<CreatePlay />} path="/editplay/:username/:playname" />
+          <Route element={<PageNotFound />} path="*" />
           <Route element={<App />} path="/plays">
             <Route index element={<PlayList />} />
             <Route exact element={<CreatePlay />} path="create" />
@@ -65,10 +69,11 @@ const RouteDefs = () => {
           <Route element={<App />} path="/play">
             <Route index element={<PlayList />} />
           </Route>
-          <Route path="/ideas" element={<PlayIdeas />} />
-          <Route path="/contributor/:id" element={<App />}>
+          <Route element={<PlayIdeas />} path="/ideas" />
+          <Route element={<LeaderBoard />} path="/leaderboard" />
+          <Route element={<App />} path="/contributor/:id">
             <Route index element={<UserProfile />} />
-            <Route exact path="edit" element={<EditProfile />} />
+            <Route exact element={<EditProfile />} path="edit" />
           </Route>
         </Routes>
         <Footer />

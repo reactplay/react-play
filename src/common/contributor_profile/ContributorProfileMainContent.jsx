@@ -32,10 +32,9 @@ const ContributorProfileMainContent = ({ plays }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log('count stats', count);
-
   const playsCount = useMemo(() => {
     const count = plays?.filter((play) => play.component !== null);
+
     return count?.length;
   }, [plays]);
 
@@ -45,12 +44,13 @@ const ContributorProfileMainContent = ({ plays }) => {
 
   const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
+
     return (
       <div
-        role="tabpanel"
+        aria-labelledby={`user-profile-tab-${index}`}
         hidden={value !== index}
         id={`user-profile-tabpanel-${index}`}
-        aria-labelledby={`user-profile-tab-${index}`}
+        role="tabpanel"
         {...other}
       >
         {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
@@ -68,7 +68,7 @@ const ContributorProfileMainContent = ({ plays }) => {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleTabChange} aria-label="User profile details">
+        <Tabs aria-label="User profile details" value={value} onChange={handleTabChange}>
           <Tab
             icon={<Badge count={playsCount} />}
             iconPosition="end"
@@ -80,10 +80,10 @@ const ContributorProfileMainContent = ({ plays }) => {
             iconPosition="end"
             {...a11yProps(1)}
           /> */}
-          <Tab label="Contributions" iconPosition="end" {...a11yProps(2)} />
+          <Tab iconPosition="end" label="Contributions" {...a11yProps(2)} />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
+      <TabPanel index={0} value={value}>
         <ol className="list-plays">
           {plays?.map((play, index) => (
             <React.Fragment key={index}>
@@ -99,7 +99,7 @@ const ContributorProfileMainContent = ({ plays }) => {
         {" "}
         Content{" "}
       </TabPanel> */}
-      <TabPanel value={value} index={1}>
+      <TabPanel index={1} value={value}>
         <Contributions count={count} />
       </TabPanel>
     </Box>

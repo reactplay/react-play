@@ -21,7 +21,6 @@ export const useSkillsList = () => {
     try {
       const res = await submitMutation(Skills.InsertSkill(skill));
       setLoading(false);
-      console.log(res);
     } catch (err) {
       console.error(err);
     }

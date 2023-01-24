@@ -54,6 +54,7 @@ function useGetContributorsDetails(userId) {
   useEffect(() => {
     fetchUser();
   }, []);
+
   return { contributor, skills, error, loading, addUserProfile, updateUserProfile };
 }
 

@@ -1,7 +1,7 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUserId, useAuthenticated } from '@nhost/react';
-import { BsTwitter, BsGithub } from 'react-icons/bs';
+import { BsTwitter, BsGithub, BsTrophyFill } from 'react-icons/bs';
 import { FaLightbulb, FaUserAlt } from 'react-icons/fa';
 import { BiMoney } from 'react-icons/bi';
 import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
@@ -10,7 +10,7 @@ import SocialShare from 'common/components/SocialShare';
 import { GoX } from 'react-icons/go';
 import { Modal, Box, Typography, Menu } from '@mui/material';
 import { useSearchContext } from 'common/search/search-context';
-import { SearchContext } from 'common/search/search-context';
+// import { SearchContext } from 'common/search/search-context';
 import { NHOST } from 'common/const';
 
 const HeaderNav = ({ showBrowse }) => {
@@ -106,7 +106,6 @@ const HeaderNav = ({ showBrowse }) => {
               >
                 <IoAddSharp className="icon" />
                 <span className="btn-label">Create</span>
-                <span className="create-button-badge">beta</span>
               </a>
             ) : (
               <a
@@ -120,6 +119,17 @@ const HeaderNav = ({ showBrowse }) => {
                 <span className="btn-label">Create</span>
               </a>
             )}
+          </li>
+          <li>
+            <Link
+              className="app-header-btn app-header-btn--default"
+              data-testid="leaderboard-btn"
+              title="Leader Board"
+              to="/leaderboard"
+            >
+              <BsTrophyFill className="icon idea-icon" />
+              <span className="btn-label">Leader Board</span>
+            </Link>
           </li>
           <li>
             <Link
@@ -171,10 +181,10 @@ const HeaderNav = ({ showBrowse }) => {
           </li>
           <li>
             <button
-              title="User Profile"
               className="app-header-btn app-header-btn--default"
-              onClick={handleUserProfileClick}
               data-testid="share-btn"
+              title="User Profile"
+              onClick={handleUserProfileClick}
             >
               <FaUserAlt className="icon twitter-icon" />
               <span className="btn-label">User Profile</span>

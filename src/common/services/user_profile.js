@@ -14,8 +14,10 @@ const FetchUserProfileById = (id) => {
       ]
     }
   };
+
   return payload;
 };
+
 export const InsertUserProfile = () => {
   return {
     display: 'Insert User Profile',

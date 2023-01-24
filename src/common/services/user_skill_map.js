@@ -13,6 +13,7 @@ const FetchUserSkillMapByUserId = (id) => {
       ]
     }
   };
+
   return payload;
 };
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import { Button, FormControl } from '@mui/material';
 import { useAccessToken } from '@nhost/react';
@@ -13,6 +15,7 @@ const CustomisedFormControl = styled(FormControl)`
   align-items: center;
   gap: 1rem;
 `;
+
 export const EditProfile = () => {
   const { id } = useParams();
   const accessToken = useAccessToken();
@@ -57,6 +60,7 @@ export const EditProfile = () => {
         bucketId: 'user_avatar'
       });
       console.log(result);
+
       return result;
     } catch (error) {
       console.log(error);
@@ -72,12 +76,14 @@ export const EditProfile = () => {
     setSkill((prev) => {
       const newArr = [...prev];
       newArr.at(-1).level = e.target.value;
+
       return newArr;
     });
   };
   // console.log(state);
 
   if (dataLoading) return <div>Loadings...</div>;
+
   return (
     <div className="p-5">
       <h1 className="section-title">Edit Profile</h1>
@@ -87,13 +93,13 @@ export const EditProfile = () => {
         <div className="flex gap-4 items-center">
           {imageUri && (
             <>
-              <img src={imageUri} alt="avatar" className="rounded-full w-28 " />
+              <img alt="avatar" className="rounded-full w-28 " src={imageUri} />
               <button onClick={uploadImage}>Upload</button>
             </>
           )}
           <input
-            type="file"
             accept="image/png, image/jpeg"
+            type="file"
             onChange={(e) => {
               setImageUri(e.target.files[0]);
               // const reader = new FileReader();
@@ -126,6 +132,7 @@ export const EditProfile = () => {
                   setState((prev) => {
                     const newArr = [...prev.social_links];
                     newArr[i] = e.target.value;
+
                     return {
                       ...prev,
                       social_links: newArr

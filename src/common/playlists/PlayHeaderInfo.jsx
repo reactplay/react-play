@@ -5,13 +5,13 @@ import LevelBadge from 'common/components/LevelBadge';
 const Author = ({ user, githubUsername }) => {
   return (
     <div className="header-author flex items-center gap-2">
-      <img className="rounded-full" src={user?.avatarUrl} width="25px" height="25px" alt="avatar" />
+      <img alt="avatar" className="rounded-full" height="25px" src={user?.avatarUrl} width="25px" />
       <Link
-        to={`/contributor/${user.id}`}
-        target="_blank"
         className="play-anchor"
         href={`https://github.com/${githubUsername}`}
         rel="noopener noreferrer"
+        target="_blank"
+        to={`/contributor/${user.id}`}
       >
         <strong>{user?.displayName}</strong>
       </Link>
