@@ -42,11 +42,9 @@ const DynamicBanner = ({ randomPlay }) => {
           minHeight: '50vh'
         }}
       >
-        <div className="dynamic-banner-body md:pl-14 px-4">
+        <div className="dynamic-banner-body md:pl-14 px-4 py-2 md:py-3">
           <h1 className="text-white text-3xl md:text-4xl lg:text-5xl">{randomPlay.name}</h1>
-          <p className="text-gray-400 mt-2 text-xs md:text-base truncate">
-            {randomPlay.description}
-          </p>
+          <p className="text-gray-400 mt-2 text-xs md:text-base ">{randomPlay.description}</p>
           <Link to={`/plays/${encodeURI(randomPlay?.github?.toLowerCase())}/${randomPlay.slug}`}>
             <button className="banner-button rounded-full font-extrabold uppercase px-8 md:px-12 md:py-1">
               Let's Play <MdArrowRightAlt className="right-arrow-icon" size={40} />
