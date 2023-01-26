@@ -4,9 +4,9 @@ import { FiStar } from 'react-icons/fi';
 import { IoIosRocket } from 'react-icons/io';
 import useFetch from 'common/hooks/useFetch';
 import { activities } from './activitiesConfig';
-import './hackathonBanner.css';
+import './activityBanner.css';
 
-function HackathonBanner({ currentActivity }) {
+function ActivityBanner({ currentActivity }) {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
 
   const activity = activities.filter((a) => a.id === currentActivity);
@@ -63,4 +63,4 @@ function HackathonBanner({ currentActivity }) {
   );
 }
 
-export default HackathonBanner;
+export default ActivityBanner;
