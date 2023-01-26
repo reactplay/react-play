@@ -58,7 +58,11 @@ const Home = () => {
           <Flower className="home-bg-graphics-lg" />
         </div>
         <div className="app-home-body-content">
-          {!process.env.REACT_APP_ACTIVITIES_ON ? <DefaultBanner /> : <HackathonBanner />}
+          {!process.env.REACT_APP_ACTIVITIES_ON ? (
+            <DefaultBanner />
+          ) : (
+            <HackathonBanner currentActivity={process.env.REACT_APP_ACTIVITY_ID} />
+          )}
         </div>
       </section>
       <section className="home-features">
