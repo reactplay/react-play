@@ -15,6 +15,6 @@ export const activities = [
     description:
       'ReactPlay brings you an opportunity to participate in the month-long drive to learn and contribute to Open Source. Join the #2PlaysAMonth and build two projects(plays) in the month of February. You will learn from expert code reviews while contributing to Open Source - you may also win some exciting prizes.',
     logo: './2playsamonth/BannerLogo.png',
-    heroImage: './2playsamonth/HeroCoders.svg'
+    heroImage: './2playsamonth/HeroCoders.png'
   }
 ];
