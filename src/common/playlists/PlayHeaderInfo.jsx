@@ -1,19 +1,33 @@
 import { IoMdArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import LevelBadge from 'common/components/LevelBadge';
+import { format } from 'date-fns';
+import * as allLocales from 'date-fns/locale';
+import { useState } from 'react';
 
-const Author = ({ user, githubUsername }) => {
+const Author = ({ user, githubUsername, playCreatedAt }) => {
+  const [formattedPlayDate, setFormattedPlayDate] = useState(() => {
+    const locale = navigator.language.split('-').join('');
+    const dnsLocale = allLocales[locale] ?? allLocales.enUS;
+
+    return format(new Date(playCreatedAt), 'MMM dd, yyyy', {
+      locale: dnsLocale
+    });
+  });
+
   return (
     <div className="flex items-center gap-2 header-author">
       <img alt="avatar" className="rounded-full" height="25px" src={user?.avatarUrl} width="25px" />
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div className="flex flex-col">
         <a
-          className="play-anchor"
+          className="flex gap-2"
           href={`https://github.com/${githubUsername}`}
           rel="noopener noreferrer"
           target="_blank"
         >
           <strong>{user?.displayName}</strong>
+          <span className="text-gray-400">&bull;</span>
+          <small className="m-0 font-medium text-left header-desc">{formattedPlayDate}</small>
         </a>
       </div>
     </div>
@@ -50,7 +64,9 @@ const PlayHeaderInfo = ({ play }) => {
           </div>
         </div>
         <div className="mt-1 header-secondary">
-          {play.user && <Author githubUsername={play.github} user={play.user} />}
+          {play.user && (
+            <Author githubUsername={play.github} user={play.user} playCreatedAt={play.created_at} />
+          )}
         </div>
       </div>
     </div>
