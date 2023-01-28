@@ -1,0 +1,75 @@
+.multistep-play {
+  border: 1px solid black;
+  position: relative;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-family: Arial;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 3%;
+}
+
+.multistep-play-form .steps {
+  position: absolute;
+  top: 2px;
+  right: 0.5rem;
+}
+.button-container .multistep-button {
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 0.2em 0.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.button-container .multistep-button:hover {
+  border-color: #646cff;
+}
+.button-container .multistep-button:focus,
+.button-container .multistep-button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.multistep-play-form .form-input-text {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  font-size: 0.75rem;
+}
+
+.multistep-play .button-container {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+.multistep-play-form .form-wrapper-heading {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.multistep-play .review-container .message-heading {
+  font-weight: bold;
+  padding: 4px 0 4px 0;
+}
+.multistep-play .review-container .user-info {
+  font-weight: 500;
+  padding: 2px 0 2px 0;
+}
+.multistep-play .review-container .user-info .user-info-value {
+  font-weight: normal;
+}
+
+.multistep-play .press-back-button-message {
+  font-weight: 300;
+  padding: 10px 0 5px 0;
+}
