@@ -56,7 +56,6 @@
     "remarkable": "^2.0.1",
     "reselect": "^4.1.5",
     "url": "^0.11.0",
-    "web-vitals": "^2.1.0",
     "workbox-cacheable-response": "^6.5.4",
     "workbox-core": "^6.5.4",
     "workbox-expiration": "^6.5.4",
