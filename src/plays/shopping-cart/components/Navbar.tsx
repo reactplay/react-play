@@ -1,6 +1,6 @@
-import React from "react";
-import { BsFillCartFill } from "react-icons/bs";
-import { useCartContext } from "../context";
+import React from 'react';
+import { BsFillCartFill } from 'react-icons/bs';
+import { useCartContext } from '../context';
 
 export default function Navbar(props: any) {
   const { amount } = useCartContext();

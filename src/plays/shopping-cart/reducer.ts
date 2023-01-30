@@ -1,8 +1,4 @@
-import {
-  CartItem,
-  InitialState,
-  REDUCER_ACTIONS,
-} from "./ShoppingCartTypes.interface";
+import { CartItem, InitialState, REDUCER_ACTIONS } from './ShoppingCartTypes.interface';
 
 export default function reducer(state: InitialState, action: any) {
   switch (action.type) {
@@ -12,9 +8,7 @@ export default function reducer(state: InitialState, action: any) {
     case REDUCER_ACTIONS.REMOVE_ITEM:
       return {
         ...state,
-        cart: state.cart.filter(
-          (cartItem: CartItem) => cartItem.id !== action.payload
-        ),
+        cart: state.cart.filter((cartItem: CartItem) => cartItem.id !== action.payload)
       };
 
     case REDUCER_ACTIONS.INCREASE_AMOUNT:
@@ -53,7 +47,7 @@ export default function reducer(state: InitialState, action: any) {
         },
         {
           total: 0,
-          amount: 0,
+          amount: 0
         }
       );
 

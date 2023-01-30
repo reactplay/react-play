@@ -1,8 +1,8 @@
-import React from "react";
-import PlayHeader from "common/playlists/PlayHeader";
-import { CartProvider } from "./context";
-import Navbar from "./components/Navbar";
-import Container from "./components/Container";
+import React from 'react';
+import PlayHeader from 'common/playlists/PlayHeader';
+import { CartProvider } from './context';
+import Navbar from './components/Navbar';
+import Container from './components/Container';
 
 function ShoppingCart(props: any) {
   return (

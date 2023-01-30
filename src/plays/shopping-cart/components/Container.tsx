@@ -1,6 +1,6 @@
-import React from "react";
-import { useCartContext } from "../context";
-import CartItem from "./CartItem";
+import React from 'react';
+import { useCartContext } from '../context';
+import CartItem from './CartItem';
 
 export default function Container(props: any) {
   const { cart, total, clearCart, reloadCart } = useCartContext();

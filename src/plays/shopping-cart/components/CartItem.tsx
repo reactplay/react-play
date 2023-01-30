@@ -1,6 +1,6 @@
-import React from "react";
-import { CartItem as TCartItem } from "../ShoppingCartTypes.interface";
-import { useCartContext } from "../context";
+import React from 'react';
+import { CartItem as TCartItem } from '../ShoppingCartTypes.interface';
+import { useCartContext } from '../context';
 
 export default function CartItem(props: TCartItem) {
   const { id, img, title, price, amount } = props;
