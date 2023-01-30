@@ -58,7 +58,7 @@ const Home = () => {
           <Flower className="home-bg-graphics-lg" />
         </div>
         <div className="app-home-body-content">
-          {!process.env.REACT_APP_ACTIVITIES_ON ? (
+          {process.env.REACT_APP_ACTIVITIES_ON === 'false' ? (
             <DefaultBanner />
           ) : (
             <ActivityBanner currentActivity={process.env.REACT_APP_ACTIVITY_ID} />
