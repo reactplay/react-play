@@ -53,6 +53,10 @@
     margin-right: 0;
     background-position: center center;
   }
+  .activity-timer-banner {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .navbar-toggler {
@@ -497,4 +501,5 @@
 .event-link {
   text-decoration: underline;
   margin-left: 5px;
+  cursor: pointer;
 }

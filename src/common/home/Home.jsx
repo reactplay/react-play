@@ -49,6 +49,9 @@ const Home = () => {
   // Function to handle the tweets loading state after tweets have been loaded.
   const tweetLoadHandler = () => setTweetsLoading(false);
 
+  // eslint-disable-next-line no-console
+  console.log('process.env.REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
+
   return (
     <main>
       <section className="app-home-body">
@@ -58,10 +61,10 @@ const Home = () => {
           <Flower className="home-bg-graphics-lg" />
         </div>
         <div className="app-home-body-content">
-          {process.env.REACT_APP_ACTIVITIES_ON === 'false' ? (
-            <DefaultBanner />
-          ) : (
+          {process.env.REACT_APP_ACTIVITIES_ON && process.env.REACT_APP_ACTIVITIES_ON === 'true' ? (
             <ActivityBanner currentActivity={process.env.REACT_APP_ACTIVITY_ID} />
+          ) : (
+            <DefaultBanner />
           )}
         </div>
       </section>
