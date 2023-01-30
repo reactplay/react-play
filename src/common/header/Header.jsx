@@ -63,6 +63,11 @@ const Header = () => {
 
   // Renderer callback with condition
   const activityTimerRenderer = ({ days, hours, minutes, seconds, completed }) => {
+    const paddedDays = days < 10 ? `0${days}` : days;
+    const paddedHours = hours < 10 ? `0${hours}` : hours;
+    const paddedMins = minutes < 10 ? `0${minutes}` : minutes;
+    const paddedSecs = seconds < 10 ? `0${seconds}` : seconds;
+
     if (completed) {
       return <Completionist />;
     } else {
@@ -70,7 +75,7 @@ const Header = () => {
         <div className="activity-timer-banner">
           #2PlaysAMonth event starts in{' '}
           <span style={{ minWidth: '72px', marginLeft: '4px' }}>
-            {days}:{hours}:{minutes}:{seconds}
+            {paddedDays}:{paddedHours}:{paddedMins}:{paddedSecs}
           </span>{' '}
           🚀.
           <a
