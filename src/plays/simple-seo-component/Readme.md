@@ -12,7 +12,7 @@ This tutorial explains how to create a reusable component for search engine opti
 - User: debjit
 - Gihub Link: https://github.com/debjit
 - Blog: https://medium.com/@debjit012/make-your-own-reusable-next-js-react-basic-seo-component-for-your-article-2c10d51d8fe6
-- Video: 
+- Video:
 
 ## Implementation Details
 

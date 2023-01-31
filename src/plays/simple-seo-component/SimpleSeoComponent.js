@@ -4,7 +4,6 @@ import blogImage from './blog.png';
 
 // WARNING: Do not change the entry componenet name
 function SimpleSeoComponent(props) {
-
   // Your Code Start below.
 
   return (
@@ -12,8 +11,8 @@ function SimpleSeoComponent(props) {
       <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body">
-        {/* Your Code Starts Here */}
-        <div className="max-w-7xl mx-auto">
+          {/* Your Code Starts Here */}
+          <div className="max-w-7xl mx-auto">
             <h1>Simple Article Seo Component</h1>
             <p className="text-2xl pt-8 font-bold">
               I originally built this example using the Next.js framework, but modified it to work
@@ -107,7 +106,7 @@ function SimpleSeoComponent(props) {
               </code>
             </pre>
           </div>
-        {/* Your Code Ends Here */}
+          {/* Your Code Ends Here */}
         </div>
       </div>
     </>
