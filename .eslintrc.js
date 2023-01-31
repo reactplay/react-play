@@ -73,7 +73,8 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: 'break' },
       { blankLine: 'always', prev: '*', next: 'continue' },
       { blankLine: 'always', prev: '*', next: 'throw' }
-    ]
+    ],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }]
   },
   settings: {
     react: {
