@@ -95,6 +95,7 @@ const CreatePlay = () => {
 
       Promise.all(promises)
         .then(async (res) => {
+          console.log(res[0])
           res.forEach((rApi, rApi_ind) => {
             const api_obj = all_apis[rApi_ind];
             storedData[api_obj.name] = rApi;
@@ -156,7 +157,7 @@ const CreatePlay = () => {
       const res = await Plays.createPlay(rest);
       navigate(`/plays/created/${res}`);
     } catch (err) {
-      alert(`Something Error Occured: ${err}`);
+      setState({ errorMessage: err });
     } finally {
       setState({ isDataLoading: false, loadingText: '' });
     }
