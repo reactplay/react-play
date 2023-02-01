@@ -1,0 +1,35 @@
+name: '🔥 #2PlaysAMonth Entry'
+description: 'Add a new Play entry for the #2PlaysAMonth event.'
+title: '[#2PlaysAMonth]: '
+labels: ['#2PlaysAMonth']
+assignees: ['']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time for creating a new play entry.
+
+  - type: textarea
+    id: about-play
+    attributes:
+      label: What's the Play about?
+      description: Tell us in details about your play.
+    validations:
+      required: true
+
+  - type: textarea
+    id: react-concepts
+    attributes:
+      label: What ReactJS concept will be used to create this play?
+      placeholder: Components, Hooks, React Router ...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/reactplay/react-play/blob/main/CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
