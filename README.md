@@ -97,30 +97,36 @@ Please change the directory after cloning the repository using the `cd <folder-n
 Next, install the dependencies by running the following command in the `react-play` repo:
 
 ```bash
-npm install
-```
-
-Or
-
-```bash
 yarn install
 ```
 
+if you donot have `yarn` installed on your pc follow to below steps to install it.
+
+**Windows**
+1. open your command promt as administrator.
+2. write `corepack enable` and hit enter.
+3. then `npm install --global yarn`
+
+**Linux**
+1. open terminal and hit `npm install --global yarn`
+
+**MacOS**
+1. open terminal and hit `npm install --global yarn`
+or
+`brew install yarn`
+
+**Or Download Package**
+
+if you are unable to install yarn following the above mention process then you can simply download the package and install it. Visit the official link of yarpkg there you can on the website just expand the `Alternative` section and it will ask for the version to download for windows/linux/mac.
+`https://classic.yarnpkg.com/en/docs/install#windows-stable`
+
+
 > **Note**: `ReactPlay` runs on React 18. However, some of our dependencies are yet to upgrade to version 18. So please use the following command when you face difficulties installing the dependencies. Also, ensure to use Node.js version >= 16.x
 
-```bash
-npm install --legacy-peer-deps
-```
 
 ### 🦄 Start the Development Mode
 
 Use the following command to start the app in the development mode:
-
-```bash
-npm start
-```
-
-Or
 
 ```bash
 yarn start
@@ -140,10 +146,6 @@ Use the following command to format and lint the code:
 #### Format the code
 
 ```bash
-npm run format
-
-#OR
-
 yarn run format
 ```
 
@@ -152,18 +154,12 @@ yarn run format
 ```bash
 # to check the linting issue
 
-npm run lint
-
-#OR
 
 yarn run lint
 
 
 # to fix the linting issue
 
-npm run lint:fix
-
-#OR
 
 yarn run lint:fix
 ```
@@ -171,12 +167,6 @@ yarn run lint:fix
 ### 🧱 Build the App for Production
 
 Use the following command to build the app for production:
-
-```bash
-npm run build
-```
-
-Or
 
 ```bash
 yarn build
@@ -187,12 +177,6 @@ It builds the app for production to the `build` folder. It correctly bundles Rea
 ### 🧪 Test App Locally (E2E with Cypress)
 
 Use the following command to run cypress locally:
-
-```bash
-npm run cypress:open
-```
-
-Or
 
 ```bash
 yarn cypress:open
