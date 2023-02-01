@@ -60,10 +60,12 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
                   } else {
                     const findEntry = _.find(field.options, function (opt) {
                       return opt.name.toLowerCase() === v.toLowerCase();
-                  })
+                    });
                     updatedval.push({
                       [field.fieldName || 'name']: v,
-                      [field.fieldValue || 'value']: findEntry?findEntry[field.fieldValue || 'value'] : ''
+                      [field.fieldValue || 'value']: findEntry
+                        ? findEntry[field.fieldValue || 'value']
+                        : ''
                     });
                   }
                 });
