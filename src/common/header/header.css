@@ -53,6 +53,10 @@
     margin-right: 0;
     background-position: center center;
   }
+  .activity-timer-banner {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .navbar-toggler {
@@ -480,4 +484,22 @@
   font-size: var(--fs-md);
   font-weight: var(--fw-bold);
   color: var(--color-neutral-90);
+}
+
+.activity-timer-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fad900;
+  min-height: 32px;
+  position: fixed;
+  z-index: 99;
+  margin-top: 56px;
+  width: 100%;
+}
+
+.event-link {
+  text-decoration: underline;
+  margin-left: 5px;
+  cursor: pointer;
 }
