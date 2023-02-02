@@ -43,7 +43,7 @@ const createPlay = (playObject) => {
 
       return res?.[0]?.id;
     })
-    .catch(() => Promise.reject(new Error('Error Updating play informations')));
+    .catch((err) => Promise.reject(new Error(`Error Updating play information: ${err}`)));
 };
 
 const associateTag = (tag, play) => {
