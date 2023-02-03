@@ -11,7 +11,7 @@ export default function reducer(state: InitialState, action: any) {
         cart: state.cart.filter((cartItem: CartItem) => cartItem.id !== action.payload)
       };
 
-    case REDUCER_ACTIONS.INCREASE_AMOUNT:
+    case REDUCER_ACTIONS.INCREASE_AMOUNT: {
       const increasedCart = state.cart.map((cartItem: CartItem) => {
         if (cartItem.id === action.payload) {
           return { ...cartItem, amount: cartItem.amount + 1 };
@@ -19,10 +19,12 @@ export default function reducer(state: InitialState, action: any) {
 
         return cartItem;
       });
-      return { ...state, cart: increasedCart };
 
-    case REDUCER_ACTIONS.DECREASE_AMOUNT:
-      let decreasedCart = state.cart
+      return { ...state, cart: increasedCart };
+    }
+
+    case REDUCER_ACTIONS.DECREASE_AMOUNT: {
+      const decreasedCart = state.cart
         .map((cartItem: CartItem) => {
           if (cartItem.id === action.payload) {
             return { ...cartItem, amount: cartItem.amount - 1 };
@@ -33,10 +35,11 @@ export default function reducer(state: InitialState, action: any) {
         .filter((cartItem: CartItem) => cartItem.amount !== 0);
 
       return { ...state, cart: decreasedCart };
+    }
 
-    case REDUCER_ACTIONS.GET_TOTALS:
+    case REDUCER_ACTIONS.GET_TOTALS: {
       let { total, amount } = state.cart.reduce(
-        (cartTotal: InitialState, cartItem: CartItem) => {
+        (cartTotal, cartItem) => {
           const { price, amount } = cartItem;
           const itemTotal = price * amount;
 
@@ -52,7 +55,9 @@ export default function reducer(state: InitialState, action: any) {
       );
 
       total = parseFloat(total.toFixed(2));
+
       return { ...state, total, amount };
+    }
 
     case REDUCER_ACTIONS.LOADING_ITEMS:
       return { ...state, loading: true };

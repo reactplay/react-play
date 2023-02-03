@@ -2,7 +2,7 @@ import React from 'react';
 import { useCartContext } from '../context';
 import CartItem from './CartItem';
 
-export default function Container(props: any) {
+export default function Container() {
   const { cart, total, clearCart, reloadCart } = useCartContext();
 
   return (

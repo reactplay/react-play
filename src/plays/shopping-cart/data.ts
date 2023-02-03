@@ -1,4 +1,5 @@
 import { CartItem } from './ShoppingCartTypes.interface';
+
 export const CART_ITEMS: CartItem[] = [
   {
     id: 1,

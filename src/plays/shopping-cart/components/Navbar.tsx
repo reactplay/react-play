@@ -2,8 +2,9 @@ import React from 'react';
 import { BsFillCartFill } from 'react-icons/bs';
 import { useCartContext } from '../context';
 
-export default function Navbar(props: any) {
+export default function Navbar() {
   const { amount } = useCartContext();
+
   return (
     <>
       <nav className="px-8 py-5 bg-cart-primary">

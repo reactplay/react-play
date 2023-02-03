@@ -1,12 +1,6 @@
 import React from 'react';
 import { useContext, useEffect, useReducer, createContext } from 'react';
-import {
-  CartItem,
-  InitialState,
-  REDUCER_ACTIONS,
-  InitialContextState,
-  CartProviderProps
-} from './ShoppingCartTypes.interface';
+import { InitialContextState, CartProviderProps } from './ShoppingCartTypes.interface';
 
 import reducer from './reducer';
 import { CART_ITEMS } from './data';
