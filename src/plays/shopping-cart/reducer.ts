@@ -38,6 +38,7 @@ export default function reducer(state: InitialState, action: any) {
     }
 
     case REDUCER_ACTIONS.GET_TOTALS: {
+      // eslint-disable-next-line prefer-const
       let { total, amount } = state.cart.reduce(
         (cartTotal, cartItem) => {
           const { price, amount } = cartItem;
