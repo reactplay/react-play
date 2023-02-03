@@ -156,7 +156,7 @@ const CreatePlay = () => {
       const res = await Plays.createPlay(rest);
       navigate(`/plays/created/${res}`);
     } catch (err) {
-      alert(`Something Error Occured: ${err}`);
+      setState({ errorMessage: err });
     } finally {
       setState({ isDataLoading: false, loadingText: '' });
     }
