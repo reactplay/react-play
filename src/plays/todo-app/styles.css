@@ -1,0 +1,23 @@
+/* enter stlyes here */
+.play-details-body{
+    width: 480px;
+    height: inherit;
+    margin: 20px;
+    margin-left: 30%;
+    border-radius: 10px;
+    /* background-color: #6d99dc; */
+    box-shadow: 0 4px 4.5px 1.9px #47B5FF, 0 0px 1px 3px #f7f3dc;
+    align-content: center;
+  }
+  
+  @media (max-width: 850px) {
+    .play-details-body {
+        margin-left: 15%;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .play-details-body {
+        margin-left: 0px;
+    }
+  }

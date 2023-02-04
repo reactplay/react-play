@@ -1,0 +1,90 @@
+.title{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 150;
+}
+
+.input-box{
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.input-box input{
+    outline: none;
+    width: 70%;
+    padding-left: 5px;
+    border-radius: 10px;
+    border-width: 1px;
+    font-size: medium;
+    color: #4b4542;
+}
+
+.input-box button{
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    margin-left: 10px;
+    background-color: #bdd3e2;
+    box-shadow: .5px .8px .5px white;
+    margin-top: 5px;
+}
+
+
+.reset-box{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.reset-box button{ 
+    background-color: #bdd3e2;
+    width: 88px;
+    height: 40px;
+    font-size: 0.8em;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+button:hover{
+    background-color: #4b4542;
+    color: white;
+}
+
+.tasks li{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;  
+    margin-bottom: 5px;
+    background-color: #bdd3e2;
+    margin-right:35px;
+    border-radius: 10px;
+}
+
+li p{
+    width: 77%;
+    color: #383433;
+    overflow: hidden;
+}
+
+
+.check{
+    position: absolute;
+    font-size: 1.5rem;
+    margin-right: 23rem;
+    cursor: pointer;
+}
+
+.del{
+    position: absolute;
+    font-size: 1.4rem;
+    margin-left: 23rem;   
+    cursor: pointer; 
+}
