@@ -12,7 +12,7 @@ Build a play for tracking expenses.
 - User: senali-d
 - Gihub Link: https://github.com/senali-d
 - Blog:
-- Video:
+- Video: https://www.stack-stream.com/v/2plays-a-month-expense-tracker-1
 
 ## Implementation Details
 
