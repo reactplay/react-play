@@ -5,7 +5,6 @@ import { AiOutlineDelete } from 'react-icons/ai';
 import PlayHeader from 'common/playlists/PlayHeader';
 import useLocalStorage from 'common/hooks/useLocalStorage';
 import Modal from './components/modal';
-import './styles.css';
 
 function ExpensesTracker(props: any) {
   const [localStoreExpenses, setLocalStoreExpenses] = useLocalStorage('et-expenses', []);

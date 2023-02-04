@@ -11,8 +11,8 @@ Build a play for tracking expenses.
 
 - User: senali-d
 - Gihub Link: https://github.com/senali-d
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 
