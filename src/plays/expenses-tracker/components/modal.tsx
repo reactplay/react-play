@@ -4,13 +4,22 @@ import { GrClose } from 'react-icons/gr';
 interface ModalProps {
   data: any;
   open: boolean;
+  isEdit: boolean;
   onClose: (e: any) => void;
   handleData: (e: any) => void;
   handleNewExpense: (e: any) => void;
   handleEdit: (e: any) => void;
 }
 
-function Modal({ data, open, onClose, handleData, handleNewExpense, handleEdit }: ModalProps) {
+function Modal({
+  data,
+  open,
+  isEdit,
+  onClose,
+  handleData,
+  handleNewExpense,
+  handleEdit
+}: ModalProps) {
   return (
     <div
       className={`fixed top-0 left-0 right-0 z-50 ${
@@ -80,20 +89,23 @@ function Modal({ data, open, onClose, handleData, handleNewExpense, handleEdit }
                 </div>
               </div>
               <div>
-                <button
-                  className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                  type="button"
-                  onClick={handleNewExpense}
-                >
-                  Save
-                </button>
-                <button
-                  className="focus:outline-none text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
-                  type="button"
-                  onClick={handleEdit}
-                >
-                  Update
-                </button>
+                {isEdit ? (
+                  <button
+                    className="focus:outline-none text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+                    type="button"
+                    onClick={handleEdit}
+                  >
+                    Update
+                  </button>
+                ) : (
+                  <button
+                    className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    type="button"
+                    onClick={handleNewExpense}
+                  >
+                    Save
+                  </button>
+                )}
               </div>
             </form>
           </div>

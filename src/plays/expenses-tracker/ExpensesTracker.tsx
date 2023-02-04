@@ -12,6 +12,7 @@ function ExpensesTracker(props: any) {
 
   const [open, setOpen] = useState(false);
   const [data, setData] = useState(null);
+  const [isEdit, setIsEdit] = useState(false);
 
   const handleData = (e: { target: { name: string; value: string } }) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -27,6 +28,7 @@ function ExpensesTracker(props: any) {
   };
 
   const openEditModal = (expenseEdit: any) => {
+    setIsEdit(true);
     setData(expenseEdit);
     setOpen(true);
   };
@@ -61,7 +63,10 @@ function ExpensesTracker(props: any) {
                   <button
                     className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                     type="button"
-                    onClick={() => setOpen(true)}
+                    onClick={() => {
+                      setOpen(true);
+                      setIsEdit(false);
+                    }}
                   >
                     Add Expense
                   </button>
@@ -119,7 +124,10 @@ function ExpensesTracker(props: any) {
                   <button
                     className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                     type="button"
-                    onClick={() => setOpen(true)}
+                    onClick={() => {
+                      setOpen(true);
+                      setIsEdit(false);
+                    }}
                   >
                     Add Expense
                   </button>
@@ -136,6 +144,7 @@ function ExpensesTracker(props: any) {
         handleNewExpense={handleNewExpense}
         handleEdit={handleEdit}
         onClose={() => setOpen(false)}
+        isEdit={isEdit}
       />
     </>
   );
