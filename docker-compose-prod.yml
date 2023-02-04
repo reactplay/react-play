@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.3'
 
 networks:
   react-play-network:
@@ -13,6 +13,6 @@ services:
     image: react-play-frontend-app-prod:v1
     restart: always
     ports:
-      - "80:80"
+      - '80:80'
     networks:
       - react-play-network

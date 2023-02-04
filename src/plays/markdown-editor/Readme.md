@@ -12,12 +12,12 @@ An app where you can write or test markdown-formatted texts.
 - User: EOEboh
 - Gihub Link: https://github.com/EOEboh
 
-
 ## Implementation Details
 
-This simple project covers how 
+This simple project covers how
+
 - to use the `useState` hook for mutable data
-- to use the `onChange` event handler to display input value 
+- to use the `onChange` event handler to display input value
 - passing the state as `props` to another element
 
 ## Consideration

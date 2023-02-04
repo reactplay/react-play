@@ -44,7 +44,7 @@
 }
 
 .flip-card .front {
-  background-image: url("https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2NlbmVyeXxlbnwwfHwwfHw%3D&w=1000&q=80");
+  background-image: url('https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2NlbmVyeXxlbnwwfHwwfHw%3D&w=1000&q=80');
   background-size: contain;
   z-index: 1;
   transform: rotateY(0deg);

@@ -1,7 +1,5 @@
-import {
-  submit as gsubmit,
-  submit_multi as gsubmit_multi,
-} from "json-graphql-parser/v2/index.js";
+import { submit as gsubmit, submit_multi as gsubmit_multi } from 'json-graphql-parser/v2/index.js';
+import axios from 'axios';
 
 const BACKEND_URL = `${process.env.REACT_APP_NHOST_BACKEND_URL}/${process.env.REACT_APP_NHOST_VERSION}/${process.env.REACT_APP_NHOST_ENDPOINT}`;
 
@@ -11,8 +9,8 @@ const BACKEND_URL = `${process.env.REACT_APP_NHOST_BACKEND_URL}/${process.env.RE
  * @param {string}           url Optional.
  * @param {object}           reqheder Optional.
  */
-export const submit_multi = (requests, url, reqheder) => {
-  return gsubmit_multi(requests, BACKEND_URL);
+export const submit_multi = (requests, url = BACKEND_URL, reqheder) => {
+  return gsubmit_multi(requests, url, reqheder);
 };
 
 /**
@@ -22,12 +20,17 @@ export const submit_multi = (requests, url, reqheder) => {
  * @param {object}           reqheder Optional.
  * @returns {Promise} single promise
  */
-export const submit = (request, url, reqheder) => {
-  return gsubmit(request, BACKEND_URL);
+export const submit = (request, url = BACKEND_URL, reqheder) => {
+  return gsubmit(request, url, reqheder);
 };
 
 export const submitMutation = (query, object) => {
   const mutationQuery = query;
   mutationQuery.object = object;
+
   return submit(mutationQuery);
+};
+
+export const submit_get = (url) => {
+  return axios.get(url);
 };
