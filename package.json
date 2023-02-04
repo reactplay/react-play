@@ -56,6 +56,10 @@
     "redux-persist": "^6.0.0",
     "remarkable": "^2.0.1",
     "reselect": "^4.1.5",
+<<<<<<< HEAD
+=======
+    "web-vitals": "^2.1.0",
+>>>>>>> 3da190ccef2fa8fb9806298a0f97070c227e5194
     "url": "^0.11.0",
     "web-vitals": "^2.1.0",
     "workbox-cacheable-response": "^6.5.4",
@@ -73,6 +77,10 @@
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+<<<<<<< HEAD
+=======
+    "create-play": "plop",
+>>>>>>> 3da190ccef2fa8fb9806298a0f97070c227e5194
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
