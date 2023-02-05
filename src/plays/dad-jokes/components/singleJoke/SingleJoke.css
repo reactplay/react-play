@@ -1,3 +1,4 @@
+/*----------------------------Single Joke Container----------------------------*/
 .singlejoke {
   display: flex;
   border-bottom: 2px solid #eeeeee;
@@ -7,6 +8,15 @@
   padding: 1rem;
 }
 
+/*----------------------------Single Joke Text----------------------------*/
+.singlejoke-text {
+  width: 75%;
+  font-size: 1.2rem;
+  word-break: break-word;
+  margin: 0 0.5rem;
+}
+
+/*----------------------------Single Joke Button Container for upvote, downvote & vote text----------------------------*/
 .singlejoke-buttons {
   display: flex;
   margin-right: 1rem;
@@ -15,13 +25,7 @@
   width: 15%;
 }
 
-.singlejoke-text {
-  width: 75%;
-  font-size: 1.2rem;
-  word-break: break-word;
-  margin: 0 0.5rem;
-}
-
+/*----------------------------Single Joke Vote Text----------------------------*/
 .singlejoke-buttons-votes p {
   width: 50px;
   height: 50px;
@@ -34,6 +38,7 @@
   box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
 }
 
+/*----------------------------Single Joke Upvote & Downvote Button----------------------------*/
 .singlejoke-buttons-upvote,
 .singlejoke-buttons-downvote {
   font-size: 1.5em;
@@ -56,6 +61,7 @@
   color: red;
 }
 
+/*----------------------------Single Joke Emoji----------------------------*/
 .singlejoke-emoji {
   font-size: 3rem;
   margin-left: auto;
@@ -72,6 +78,7 @@
   cursor: pointer;
 }
 
+/*----------------------------Animation for upvote----------------------------*/
 @keyframes move-up {
   0%,
   50%,
@@ -85,13 +92,7 @@
   }
 }
 
-.fa-arrow-down:hover {
-  animation-name: move-down;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-out;
-  color: #f44336;
-}
-
+/*----------------------------Animation for Downvote----------------------------*/
 @keyframes move-down {
   0%,
   50%,
@@ -105,6 +106,7 @@
   }
 }
 
+/*----------------------------Animation for Emojis----------------------------*/
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -127,6 +129,7 @@
   }
 }
 
+/*----------------------------Responsive Styles upto 1024px----------------------------*/
 @media screen and (max-width: 1024px) {
   .singlejoke {
     justify-content: unset;
@@ -163,6 +166,7 @@
   }
 }
 
+/*----------------------------Responsive Styles for 1024px to 1280px----------------------------*/
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   .singlejoke {
     padding: 0.75rem;
@@ -178,6 +182,7 @@
   }
 }
 
+/*----------------------------Responsive Styles for 640px to 1024px----------------------------*/
 @media screen and (min-width: 640px) and (max-width: 1024px) {
   .singlejoke-text {
     font-size: 1.2rem;

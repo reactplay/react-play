@@ -1,9 +1,11 @@
+/*----------------------------Joke List Container----------------------------*/
 .jokelist {
   display: flex;
   width: 80%;
   height: 80%;
 }
 
+/*----------------------------Sidebar----------------------------*/
 .jokelist-sidebar {
   background-color: #0d0d0d;
   display: flex;
@@ -15,6 +17,7 @@
   z-index: 2;
 }
 
+/*----------------------------Sidebar Title----------------------------*/
 .jokelist-sidebar-title h1 {
   font-size: 3.5rem;
   margin: 2rem;
@@ -28,6 +31,7 @@
   letter-spacing: 0;
 }
 
+/*----------------------------Sidebar Emoji Image----------------------------*/
 .jokelist-sidebar-emoji {
   display: flex;
   justify-content: center;
@@ -47,15 +51,7 @@
   animation-delay: 0s;
 }
 
-.jokelist-jokes {
-  height: 90%;
-  background: white;
-  align-self: center;
-  width: 70%;
-  overflow: scroll;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
-}
-
+/*----------------------------New Jokes Button----------------------------*/
 .jokelist-sidebar-getmore button {
   font-size: 1.25rem;
   border-radius: 2rem;
@@ -76,6 +72,17 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
+/*----------------------------Joke List----------------------------*/
+.jokelist-jokes {
+  height: 90%;
+  background: white;
+  align-self: center;
+  width: 70%;
+  overflow: scroll;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+/*----------------------------Responsive Styles upto 1024px----------------------------*/
 @media screen and (max-width: 1024px) {
   .jokelist {
     width: auto;
@@ -112,6 +119,7 @@
   }
 }
 
+/*----------------------------Responsive Styles for 1024px to 1280px----------------------------*/
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   .jokelist-sidebar-title h1 {
     font-size: 3rem;
@@ -122,6 +130,7 @@
   }
 }
 
+/*----------------------------Responsive Styles for 640px to 1024px----------------------------*/
 @media screen and (min-width: 640px) and (max-width: 1024px) {
   .jokelist-sidebar-title h1 {
     font-size: 1.6rem;
