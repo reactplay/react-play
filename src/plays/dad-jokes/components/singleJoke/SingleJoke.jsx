@@ -14,7 +14,7 @@ import './SingleJoke.css';
 // Emoji class given to all the emojis
 let emojiClass = 'singlejoke-emoji';
 
-const SingleJoke = ({ downvote, jokeText, upvote, vote }) => {
+const SingleJoke = ({ darktheme, downvote, jokeText, upvote, vote }) => {
   // Emoji state changing on the basis of votes
   const getColor = () => {
     if (vote >= 15) {
@@ -37,7 +37,7 @@ const SingleJoke = ({ downvote, jokeText, upvote, vote }) => {
   return (
     <>
       {/* -------------------------------------------Single Joke Container------------------------------------------------------*/}
-      <div className="singlejoke">
+      <div className={darktheme ? 'singlejoke dark' : 'singlejoke'}>
         {/* -------------------------------------------Single Joke Vote Buttons------------------------------------------------------*/}
         <div className="singlejoke-buttons">
           {/* -------------------------------------------Upvote Button------------------------------------------------------*/}

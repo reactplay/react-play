@@ -16,6 +16,10 @@
   margin: 0 0.5rem;
 }
 
+.dark .singlejoke-text {
+  color: #eee;
+}
+
 /*----------------------------Single Joke Button Container for upvote, downvote & vote text----------------------------*/
 .singlejoke-buttons {
   display: flex;
@@ -36,6 +40,11 @@
   font-weight: 300;
   border: 3px solid red;
   box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
+  color: #0d0d0d;
+}
+
+.dark .singlejoke-buttons-votes p {
+  color: darkgray;
 }
 
 /*----------------------------Single Joke Upvote & Downvote Button----------------------------*/
@@ -45,6 +54,12 @@
   margin: 10px;
   cursor: pointer;
   transition: all 0.3s;
+  color: #0d0d0d;
+}
+
+.dark .singlejoke-buttons-upvote,
+.dark .singlejoke-buttons-downvote {
+  color: darkgray;
 }
 
 .singlejoke-buttons-upvote:hover {
@@ -76,6 +91,10 @@
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
   cursor: pointer;
+}
+
+.dark .singlejoke-emoji {
+  color: darkgray;
 }
 
 /*----------------------------Animation for upvote----------------------------*/

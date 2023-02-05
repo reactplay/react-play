@@ -5,7 +5,7 @@ import './jokeList.css';
 import laughingImage from '../../laughing-emoji.gif';
 import CategoryModal from '../categoryModal/CategoryModal';
 
-const JokeList = () => {
+const JokeList = ({ darkTheme }) => {
   // Defining State variables
   const [jokeArray, setJokeArray] = useState([]);
   const [categoryModalToggle, setCategoryModalToggle] = useState(false);
@@ -49,7 +49,7 @@ const JokeList = () => {
       ) : (
         <>
           {/* -----------------------------------------------------------Joke List Container-------------------------------------------------------------------- */}
-          <div className="jokelist">
+          <div className={darkTheme ? 'jokelist dark' : 'jokelist'}>
             {/* -----------------------------------------------------------Joke List Sidebar-------------------------------------------------------------------- */}
             <div className="jokelist-sidebar">
               {/* -----------------------------------------------------------Sidebar Title-------------------------------------------------------------------- */}
@@ -87,6 +87,7 @@ const JokeList = () => {
           {/* -----------------------------------------------------------Category Modal Popup-------------------------------------------------------------------- */}
           <CategoryModal
             categoryModalToggle={categoryModalToggle}
+            darkTheme={darkTheme}
             fetchJokes={fetchJokes}
             setCategoryModalToggle={setCategoryModalToggle}
             setLoading={setLoading}
