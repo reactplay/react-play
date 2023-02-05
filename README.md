@@ -94,10 +94,15 @@ Please change the directory after cloning the repository using the `cd <folder-n
 
 ### ⬇️ Install Dependencies
 
-Next, install the dependencies by running the following command in the `react-play` repo:
+Next, install the dependencies by running the following command in the `react-play` repo. we recommand using `yarn` but you can install using `npm` too
 
 ```bash
 yarn install
+```
+
+Or
+```
+npm install
 ```
 
 if you donot have `yarn` installed on your pc follow to below steps to install it.
@@ -116,12 +121,15 @@ or
 `brew install yarn`
 
 **Or Download Package**
-
 if you are unable to install yarn following the above mention process then you can simply download the package and install it. Visit the official link of yarpkg there you can on the website just expand the `Alternative` section and it will ask for the version to download for windows/linux/mac.
 `https://classic.yarnpkg.com/en/docs/install#windows-stable`
 
 
 > **Note**: `ReactPlay` runs on React 18. However, some of our dependencies are yet to upgrade to version 18. So please use the following command when you face difficulties installing the dependencies. Also, ensure to use Node.js version >= 16.x
+
+```
+npm install --legacy-peer-deps
+```
 
 
 ### 🦄 Start the Development Mode
@@ -130,6 +138,11 @@ Use the following command to start the app in the development mode:
 
 ```bash
 yarn start
+```
+or if you installed dependencies using ``npm`` use bellow command
+
+```
+npm start
 ```
 
 **Note**: The `start` script automatically invokes "linters" process. Should you need to run the app without `lint` the use `start:nolint` instead.
@@ -147,6 +160,10 @@ Use the following command to format and lint the code:
 
 ```bash
 yarn run format
+
+#OR
+
+npm run format
 ```
 
 #### Lint the code
@@ -154,14 +171,15 @@ yarn run format
 ```bash
 # to check the linting issue
 
-
 yarn run lint
+#OR
+npm run lint
 
 
 # to fix the linting issue
-
-
 yarn run lint:fix
+#OR
+npm run lint:fix
 ```
 
 ### 🧱 Build the App for Production
@@ -170,6 +188,8 @@ Use the following command to build the app for production:
 
 ```bash
 yarn build
+#OR
+npm build
 ```
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
@@ -180,6 +200,8 @@ Use the following command to run cypress locally:
 
 ```bash
 yarn cypress:open
+#OR
+npm cypress:open
 ```
 
 It will open the cypress dashboard, through which you need to select `E2E Testing`.
