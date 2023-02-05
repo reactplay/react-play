@@ -4,16 +4,25 @@
 
 ## Features
 
-- ### **It is fully responsive across all the devices 💯**
+- ### **This app is fully responsive across all the devices 📱**
+- ### **This app has Dark Mode & Light Mode 💯**
 - ### **User can enjoy different categories of jokes like Coding, Miscellaneous, Puns & Random 🥳**
 - ### **User can upvote and downvote any joke 🚀**
-- ### **Each joke has a Emoticon, which changes on the basis of votes 🔥**
+- ### **Each joke has a Emoticon, changes on the basis of votes 🪄**
 - ### **Animations - Upvotes, Downvotes & Emojis have smooth animations ⚡**
 
 ## Play Screenshot
 
+- ### **Light Mode** 
+
 <div align="center">
-  <img src="https://i.postimg.cc/0jC3QJjN/SS1.png" alt="Dad Jokes Screenshot" width="100%" target="_blank" />
+  <img src="https://i.postimg.cc/0N2n74Bf/light-mode.png" alt="Dad Jokes Screenshot" width="100%" target="_blank" />
+  <br>
+</div>
+
+- ### **Dark Mode** 
+<div align="center">
+  <img src="https://i.postimg.cc/3JXFV7M1/dark-mode.png" alt="Dad Jokes Screenshot" width="100%" target="_blank" />
   <br>
 </div>
 
@@ -32,6 +41,7 @@
 - ### **[React Icons](https://react-icons.github.io/react-icons/)**
 
 ### **Happy Coding!** 🤩
+
 
 
 
