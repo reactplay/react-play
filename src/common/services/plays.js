@@ -2,6 +2,7 @@ import { submit, submitMutation } from './request';
 import { deleteATagQuery } from './request/query';
 import { associatePlayWithTagQuery, createPlayQuery } from './request/query/play';
 import { toKebabCase, toSlug } from './string';
+import { FetchPlaysByFilter } from 'common/services/request/query/fetch-plays';
 import { Tags } from './tags';
 
 // Create a play
@@ -129,6 +130,66 @@ export const deleteATag = (play_id, actualTags, newTags) => {
   });
 
   return toBeDeletedTags; // array of promises to be resolved or rejected
+};
+
+export const getPlaysByFilter = async (filter) => {
+  let filter_object = undefined;
+  // clause: {
+  //   operator: 'and',
+  //   conditions: [
+  //     {
+  //       field: 'slug',
+  //       operator: 'ilike',
+  //       value: playslug,
+  //       type: 'string'
+  //     },
+  //     {
+  //       field: 'github',
+  //       operator: 'ilike',
+  //       value: username,
+  //       type: 'string'
+  //     }
+  //   ]
+  // }
+
+  if (filter) {
+    Object.keys(filter).forEach((key) => {
+      const obj = filter[key];
+      if (obj) {
+        filter_object = filter_object || {
+          clause: {
+            operator: 'and',
+            conditions: []
+          }
+        };
+        if (Array.isArray(obj)) {
+          const local_cond_clause = {
+            operator: 'or',
+            conditions: []
+          };
+          obj.forEach((obj_local) => {
+            local_cond_clause.conditions.push({
+              field: key,
+              operator: 'eq',
+              value: obj_local
+            });
+          });
+
+          filter_object.clause.conditions.push({ clause: local_cond_clause });
+        } else {
+          filter_object.clause.conditions.push({
+            field: key,
+            operator: 'ilike',
+            value: obj
+          });
+        }
+      }
+    });
+  }
+
+  const payload = FetchPlaysByFilter(filter_object);
+  const res = await submit(payload);
+  return res;
 };
 
 export const Plays = {

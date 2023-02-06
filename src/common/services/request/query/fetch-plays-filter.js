@@ -108,17 +108,19 @@ export const FetchPlaysFilter = {
       conditions: !env && !preview ? [defaultClause] : []
     };
 
-    Object.keys(Obj).forEach((key) => {
-      const filterItem = Obj[key];
-      if (filterItem.length > 0 && filterItem[0] !== ' ') {
-        const ifTags = key === 'tags';
-        const prepareObject = createObjectPayload(filterItem, key, ifTags);
-        if (ifTags && filterItem.length === 1) {
-          prepareObject.class = 'play_tags';
+    if (Obj) {
+      Object.keys(Obj).forEach((key) => {
+        const filterItem = Obj[key];
+        if (filterItem.length > 0 && filterItem[0] !== ' ') {
+          const ifTags = key === 'tags';
+          const prepareObject = createObjectPayload(filterItem, key, ifTags);
+          if (ifTags && filterItem.length === 1) {
+            prepareObject.class = 'play_tags';
+          }
+          clause.conditions.push(prepareObject);
         }
-        clause.conditions.push(prepareObject);
-      }
-    });
+      });
+    }
 
     if (clause.conditions.length) {
       payload.where = payload.where || {};

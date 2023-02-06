@@ -18,73 +18,64 @@ const useStyles = makeStyles({
 });
 
 export default function MultipleSelectCheckmarks({
-  filterQuery,
-  setFilterQuery,
   options,
-  filterKey,
-  label
+  label,
+  loading
 }) {
   const classes = useStyles();
+  const [selectedData, setSelectedData] = useState([])
   const [searchText, setSearchText] = useState('');
+  const [compLoading, setCompLoading] = useState(true);
   const [filteredOptions, setFilteredOptions] = useState([]);
 
   useEffect(() => {
-    const updatedOptions = options.filter((option) => compareTextValue(option.label, searchText));
-    setFilteredOptions(updatedOptions);
-  }, [searchText, options.length]);
+    console.log(`XXX : Data from ${loading} FilterPlaysModalBody${JSON.stringify(options)}`)
+  }, [options.length]);
 
-  useEffect(() => {
-    if (
-      filterQuery[filterKey].length > 0 &&
-      filterQuery[filterKey].length === options.length - 1 &&
-      !filterQuery[filterKey].includes(' ')
-    ) {
-      setFilterQuery({ ...filterQuery, [filterKey]: [' '] });
-    }
-  }, [filterQuery, setFilterQuery, options.length, filterKey]);
-
+  
   const handleChange = (event) => {
-    const {
-      target: { value }
-    } = event;
-    if (value.length === 0) {
-      setFilterQuery({ ...filterQuery, [filterKey]: [] });
-    } else if (value.indexOf(' ') > -1) {
-      const updatedValues = value.filter((id) => id !== ' ');
-      if (updatedValues.length && value[value.length - 1] !== ' ') {
-        setFilterQuery({ ...filterQuery, [filterKey]: updatedValues });
-      } else {
-        setFilterQuery({ ...filterQuery, [filterKey]: [' '] });
-      }
-    } else {
-      const updatedValues = value.filter((id) => id !== ' ');
-      setFilterQuery({ ...filterQuery, [filterKey]: updatedValues });
-    }
+    // const {
+    //   target: { value }
+    // } = event;
+    // if (value.length === 0) {
+    //   setFilterQuery({ ...filterQuery, [filterKey]: [] });
+    // } else if (value.indexOf(' ') > -1) {
+    //   const updatedValues = value.filter((id) => id !== ' ');
+    //   if (updatedValues.length && value[value.length - 1] !== ' ') {
+    //     setFilterQuery({ ...filterQuery, [filterKey]: updatedValues });
+    //   } else {
+    //     setFilterQuery({ ...filterQuery, [filterKey]: [' '] });
+    //   }
+    // } else {
+    //   const updatedValues = value.filter((id) => id !== ' ');
+    //   setFilterQuery({ ...filterQuery, [filterKey]: updatedValues });
+    // }
   };
 
   const renderValueHandler = (value) => {
-    if (filterKey === 'owner_user_id') {
-      if (value[0] === ' ') {
-        return 'All';
-      }
+    // if (filterKey === 'owner_user_id') {
+    //   if (value[0] === ' ') {
+    //     return 'All';
+    //   }
 
-      return options
-        .filter((option) => value.includes(option.value))
-        .map((option) => option?.label?.props?.children[1])
-        .join(', ');
-    }
+    //   return options
+    //     .filter((option) => value.includes(option.value))
+    //     .map((option) => option?.label?.props?.children[1])
+    //     .join(', ');
+    // }
 
-    return options
-      .filter((option) => filterQuery[filterKey].includes(option.value))
-      .map((option) => option.label)
-      .join(', ');
+    // return options
+    //   .filter((option) => filterQuery[filterKey].includes(option.value))
+    //   .map((option) => option.label)
+    //   .join(', ');
   };
 
   const resetSearchText = () => setSearchText('');
 
   return (
+    
     <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      {loading || compLoading ? null : (<FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">{label}</InputLabel>
         <Select
           multiple
@@ -97,7 +88,7 @@ export default function MultipleSelectCheckmarks({
           renderValue={renderValueHandler}
           // MUI Select requires list as values,
           // so, if no values are present we will assign empty list
-          value={filterQuery[filterKey] || []}
+          value={selectedData}
           onChange={handleChange}
           onClose={resetSearchText}
         >
@@ -123,7 +114,7 @@ export default function MultipleSelectCheckmarks({
               }}
             />
           </ListSubheader>
-          {filteredOptions.map((option) => (
+          {options.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               <Checkbox
                 checked={
@@ -135,7 +126,8 @@ export default function MultipleSelectCheckmarks({
             </MenuItem>
           ))}
         </Select>
-      </FormControl>
+      </FormControl>)}
+      
     </div>
   );
 }
