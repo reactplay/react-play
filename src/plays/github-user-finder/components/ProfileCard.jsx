@@ -1,13 +1,18 @@
 import React from 'react';
 import { useResultContext } from '../context/ResultContext';
-import formatDate from '../utilities/formateDate';
+import { formatDate } from '../../../common/utils/commonUtils';
 
 const ProfileCard = () => {
   const { results } = useResultContext();
 
   return (
-    <div className="card m-auto p-8">
-      <img alt="User Image" className="avatar flex self-center" src={results.avatar_url} />
+    <div className="profile-card m-auto p-8">
+      {results.avatar_url ? (
+        <img alt="User Image" className="avatar flex self-center" src={results.avatar_url} />
+      ) : (
+        <p />
+      )}
+
       <h1 className="text-xl font-bold text-black name flex justify-center">{results.name}</h1>
       <h2 className="joined text-lg text-black">{formatDate(results.created_at)}</h2>
       <p className="para text-base">{results.bio}</p>

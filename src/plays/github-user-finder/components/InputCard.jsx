@@ -15,7 +15,7 @@ const InputCard = () => {
   return (
     <div className="flex justify-center input-card">
       <input
-        id="input"
+        id="guf"
         placeholder="Enter User Name"
         title="user-name"
         type="search"
