@@ -3,11 +3,11 @@ import { NavLink, useParams } from 'react-router-dom';
 
 function Navbar(props) {
   const { username, playname } = useParams();
-  const [mealTypes, activeMealHandler, activeMenu] = Object.values(props);
+  const [activeMenu,  activeMealHandler, mealTypes ] = Object.values(props);
 
   return (
     <div className="navbar">
-      {mealTypes.map((mealtype, index) => {
+      {mealTypes && mealTypes.map((mealtype, index) => {
         return (
           <NavLink
             className={`navbar-link ${mealtype === activeMenu ? 'active' : ''}`}
