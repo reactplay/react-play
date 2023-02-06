@@ -35,6 +35,10 @@
 
 - ### **Bobby Sadhwani** - **[Linkedin](https://www.linkedin.com/in/bobby-sadhwani)**, **[Twitter](https://twitter.com/BOBBY__SADHWANI)**, **[Github](https://github.com/Bobby-coder)**, **[Portfolio](https://bobby-sadhwani.netlify.app)**  
 
+## Video
+
+- ### **[stackstream](https://www.stack-stream.com/v/dad-jokes-app-12)**
+
 ## Resources
 
 - ### **[JokeAPI v2](https://rapidapi.com/Sv443/api/jokeapi-v2/)**
