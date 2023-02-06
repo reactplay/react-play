@@ -58,7 +58,16 @@ const Header = () => {
   }, [pathName]);
 
   const Completionist = () => (
-    <div className="activity-timer-banner">#2PlaysAMonth event has been started 🚀.</div>
+    <div className="activity-timer-banner">
+      #2PlaysAMonth event has been started 🚀.{' '}
+      <a
+        className="event-link"
+        href="https://www.stack-stream.com/case/reactplay-2playsamonth-event-launch"
+        target="_blank"
+      >
+        See the Launch Video
+      </a>
+    </div>
   );
 
   // Renderer callback with condition
