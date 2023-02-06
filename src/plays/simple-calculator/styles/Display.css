@@ -1,0 +1,44 @@
+.display {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-bottom: 20px;
+  background: linear-gradient(90deg, #06beb6, #48b1bf 100%);
+}
+
+.expression {
+  padding: 5px;
+  margin-bottom: 10px;
+  height: 50px;
+}
+
+.input,
+.value {
+  padding: 10px;
+  text-align: right;
+  background-color: transparent;
+  color: white;
+  border: 0px;
+  letter-spacing: 1.5px;
+}
+
+.input {
+  font-size: 35px;
+}
+
+.value {
+  font-size: 15px;
+}
+
+.input::placeholder,
+.value::placeholder {
+  color: white;
+}
+
+.input:focus-visible,
+.value:focus-visible {
+  outline-style: none;
+  outline-width: 0px;
+}
