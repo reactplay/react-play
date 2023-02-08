@@ -102,7 +102,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`app-header ${showHideBits.setHeaderStyle ? '' : ' app-header-home'}`}
+        className={`app-header ${showHideBits.setHeaderStyle ? '' : ' app-header-home app-header-home--promo '}`}
         data-testid="app-header"
       >
         <span>
