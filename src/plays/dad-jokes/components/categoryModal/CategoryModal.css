@@ -1,5 +1,5 @@
 /*----------------------------Category Modal Container----------------------------*/
-.category-modal-container {
+.dad-jokes-play .category-modal-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -15,12 +15,12 @@
   align-items: center;
 }
 
-.category-modal-container.hidden {
+.dad-jokes-play .category-modal-container.hidden {
   display: none;
 }
 
 /*----------------------------Category Modal----------------------------*/
-.category-modal {
+.dad-jokes-play .category-modal {
   width: 19rem;
   background-color: #0d0d0d;
   display: flex;
@@ -29,7 +29,7 @@
 }
 
 /*----------------------------Single Category----------------------------*/
-.single-category {
+.dad-jokes-play .single-category {
   display: flex;
   justify-content: center;
   align-items: center;

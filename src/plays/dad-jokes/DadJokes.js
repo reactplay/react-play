@@ -12,7 +12,7 @@ function DadJokes(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="play-details-body dad-jokes-play">
           {/* --------------------------------Dad Jokes Container-------------------------------- */}
           <div className={darkTheme ? 'dad-jokes dark' : 'dad-jokes'}>
             {/* --------------------------------Joke List Component-------------------------------- */}
