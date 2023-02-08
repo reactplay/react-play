@@ -18,11 +18,11 @@ const JokeList = ({ darkTheme }) => {
   // Fetching Jokes
   async function fetchJokes(category) {
     let { data } = await axios.get(
-      `https://jokeapi-v2.p.rapidapi.com/joke/${category}?type=single&amount=10&blacklistFlags=nsfw&safe-mode`,
+      `${process.env.REACT_APP_DADJOKES_URL}${category}?type=single&amount=10&blacklistFlags=nsfw&safe-mode`,
       {
         headers: {
-          'X-RapidAPI-Key': 'b71df95c75msha446fab91d0e935p1d0262jsn1d938cb85502',
-          'X-RapidAPI-Host': 'jokeapi-v2.p.rapidapi.com'
+          'X-RapidAPI-Key': process.env.REACT_APP_DADJOKES_APIKEY,
+          'X-RapidAPI-Host': process.env.REACT_APP_DADJOKES_APIHOST
         }
       }
     );
