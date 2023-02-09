@@ -11,7 +11,9 @@ function SimpleCalculator(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <Calculator />
+          <div className="suri-calci">
+            <Calculator />
+          </div>
           {/* Your Code Ends Here */}
         </div>
       </div>

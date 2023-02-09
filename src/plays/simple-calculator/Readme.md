@@ -1,6 +1,6 @@
 # Simple Calculator
 
-I will create a Calculator which can perform basic arithmetic operations.
+I will create a Calculator which can perform basic arithmetic operations. The application uses math.js library to perform the calculations.
 
 ## Play Demographic
 
@@ -11,8 +11,8 @@ I will create a Calculator which can perform basic arithmetic operations.
 
 - User: suryanshsoni120
 - Gihub Link: https://github.com/suryanshsoni120
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 

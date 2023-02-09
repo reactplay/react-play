@@ -11,7 +11,7 @@ const Buttons = ({ inputHandler, clearInput, backspace, changePlusMinus, calcula
   });
 
   return (
-    <div className="show-btn">
+    <div className="suri-calci-btn">
       <button className="btn exp" onClick={inputHandler}>
         ^
       </button>

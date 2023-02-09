@@ -12,12 +12,12 @@ const Display = ({ input, setInput, answer }) => {
 
   return (
     <>
-      <div className="display">
+      <div className="suri-calc-display">
         {answer === '' ? (
           <>
             <input
               autoComplete="off"
-              className="input"
+              className="suri-calc-input"
               maxLength={12}
               name="input"
               placeholder="0"
@@ -32,14 +32,14 @@ const Display = ({ input, setInput, answer }) => {
           <>
             <input
               disabled
-              className="value"
+              className="suri-calc-value"
               maxLength={12}
               name="input"
               placeholder="0"
               type="text"
               value={input}
             />
-            <input disabled className="input" name="value" type="text" value={answer} />
+            <input disabled className="suri-calc-input" name="value" type="text" value={answer} />
           </>
         )}
       </div>

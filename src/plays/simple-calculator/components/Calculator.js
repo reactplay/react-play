@@ -132,8 +132,9 @@ function Calculator() {
 
   return (
     <>
-      <div className="container">
-        <div className="main">
+      <h1 className="text-center my-4 py-4">Calculations Made Easy!!!</h1>
+      <div className="suri-calc-container">
+        <div className="suri-calc-main">
           <Display answer={answer} input={input} setInput={setInput} />
           <Buttons
             backspace={backspace}
