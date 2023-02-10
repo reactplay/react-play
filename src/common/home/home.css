@@ -466,8 +466,7 @@
 
 .list-contributors .contributor-anchor {
   display: block;
-  width: 160px;
-  height: 160px;
+  
   border-radius: 160px;
   overflow: hidden;
   transition: all 0.16s ease-in-out;
@@ -482,7 +481,7 @@
 }
 
 .list-contributors .contributor-anchor .contributor-thumb {
-  width: 160px;
+  /* width: 160px; */
   height: auto;
   filter: grayscale(100%);
 }
@@ -497,7 +496,7 @@
     grid-gap: 2rem;
   }
 
-  .list-contributors .contributor-anchor {
+  /* .list-contributors .contributor-anchor {
     width: 120px;
     height: 120px;
     border-radius: 120px;
@@ -505,7 +504,7 @@
 
   .list-contributors .contributor-anchor .contributor-thumb {
     width: 120px;
-  }
+  } */
 }
 
 @media screen and (max-width: 568px) {
