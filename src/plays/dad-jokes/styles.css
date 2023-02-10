@@ -1,0 +1,41 @@
+/*----------------------------Dad Jokes Container----------------------------*/
+.dad-jokes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #eee;
+  position: relative;
+}
+
+.dad-jokes.dark {
+  background-color: white;
+}
+
+/*----------------------------Theme Buttons Container----------------------------*/
+.theme-buttons {
+  display: flex;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+/*----------------------------Dark & Light Theme Buttons----------------------------*/
+.dark-theme-button,
+.light-theme-button {
+  transform: scale(2);
+  cursor: pointer;
+}
+
+.light-theme-button {
+  color: #ffc107;
+  display: none;
+}
+
+.dark .dark-theme-button {
+  display: none;
+}
+
+.dark .light-theme-button {
+  display: initial;
+}
