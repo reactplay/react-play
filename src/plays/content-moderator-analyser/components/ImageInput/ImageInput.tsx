@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import './ImageInput.css';
+import {
+  bucket,
+  detectImageModerationLabels,
+  uploadToS3
+} from 'plays/content-moderator-analyser/services/awsService';
 
-function processImage() {
-  console.log('processImage');
-}
-
-function getBinary(encodedFile: any) {
+export function getBinary(encodedFile: any) {
   const base64Image = encodedFile.replace(/^data:image\/(png|jpeg|jpg);base64,/, '');
   const binaryImg = atob(base64Image);
   const length = binaryImg.length;
@@ -24,6 +25,11 @@ function ImageInput() {
   const [name, setName] = useState('');
   const [binary, setBinary] = React.useState({});
 
+  function processImage() {
+    console.log('processImage');
+    detectImageModerationLabels(binary, name);
+  }
+
   const convertBinary = (e: any) => {
     console.log(e);
     if (e.target.files?.[0]) {
@@ -36,11 +42,15 @@ function ImageInput() {
     reader.onloadend = () => {
       const paramsModeration = {
         Image: {
-          Bytes: getBinary(reader.result)
+          S3Object: {
+            Bucket: bucket,
+            Name: file.name
+          }
         }
       };
       console.log('paramsModeration', paramsModeration);
       setBinary(paramsModeration);
+      uploadToS3(file);
     };
   };
 
