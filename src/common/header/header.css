@@ -24,6 +24,10 @@
   position: fixed;
 }
 
+.app-header-home.app-header-home--promo {
+  top: 32px;
+}
+
 .app-logo {
   display: block;
   width: 178px;
@@ -493,8 +497,9 @@
   background-color: #fad900;
   min-height: 32px;
   position: fixed;
-  z-index: 99;
-  margin-top: 56px;
+  font-size: var(--fs-sm);
+  line-height: var(--fs-sm);
+  z-index: 9;
   width: 100%;
 }
 
