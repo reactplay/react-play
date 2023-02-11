@@ -6,7 +6,8 @@ on:
     - cron: "0 12 * * *"
   workflow_dispatch:
 concurrency:
-  group: "ReactPlay"
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   stale:
     name: 🧹 Clean up stale issues and PRs

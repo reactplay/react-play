@@ -4,7 +4,8 @@ on:
     types:
       - closed
 concurrency:
-  group: "ReactPlay"
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   add-contributors:
     if: github.event.pull_request.merged == true
