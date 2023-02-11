@@ -519,9 +519,9 @@
     border-radius: 80px;
   }
 
-  .list-contributors .contributor-anchor .contributor-thumb {
+  /* .list-contributors .contributor-anchor .contributor-thumb {
     width: 80px;
-  }
+  } */
 }
 
 /* Pills */
