@@ -1,7 +1,8 @@
 name: Greetings
 
 on: [pull_request_target, issues]
-
+concurrency:
+  group: "ReactPlay"
 jobs:
   greeting:
     runs-on: ubuntu-latest

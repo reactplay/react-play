@@ -3,7 +3,8 @@ on:
   pull_request_target:
     types:
       - closed
-
+concurrency:
+  group: "ReactPlay"
 jobs:
   add-contributors:
     if: github.event.pull_request.merged == true
