@@ -16,9 +16,9 @@ import './TicTacToe.css';
 const gameArray = new Array(9).fill('');
 
 const Game = () => {
-  let [isCross, setIsCross] = useState(true);
-  let [isFinished, setIsFinished] = useState(false);
-  let [finalMessage, setFinalMessage] = useState('');
+  const [isCross, setIsCross] = useState(true);
+  const [isFinished, setIsFinished] = useState(false);
+  const [finalMessage, setFinalMessage] = useState('');
   let count = 0;
 
   // Game Logic
@@ -81,7 +81,7 @@ const Game = () => {
       gameArray[index] = isCross ? 'cross' : 'circle';
       setIsCross(!isCross);
     } else {
-      return toast('This place is already occupied!', { type: 'error' });
+      return toast('This place is already occupied! Hello', { type: 'error' });
     }
 
     findWinner();
@@ -116,9 +116,9 @@ const Game = () => {
             )}
 
             <div className="ttc_grid">
-              {gameArray.map((index) => (
-                <div className="game-card center" onClick={() => changeItem(index)}>
-                  <Icon choice={gameArray[index]} />
+              {gameArray.map((ele, i) => (
+                <div key={i} className="game-card center" onClick={() => changeItem(i)}>
+                  <Icon choice={gameArray[i]} />
                 </div>
               ))}
             </div>
