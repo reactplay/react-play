@@ -6,8 +6,8 @@ import * as allLocales from 'date-fns/locale';
 import { useState } from 'react';
 import { email2Slug } from 'common/services/string';
 
-const Author = ({ user, githubUsername, playCreatedAt }) => {
-  const [formattedPlayDate, setFormattedPlayDate] = useState(() => {
+const Author = ({ playCreatedAt, user }) => {
+  const [formattedPlayDate] = useState(() => {
     // Get the locale from the local browser
     const locale = navigator.language.split('-').join('');
 
@@ -80,7 +80,7 @@ const PlayHeaderInfo = ({ play }) => {
         </div>
         <div className="mt-1 header-secondary">
           {play.user && (
-            <Author githubUsername={play.github} user={play.user} playCreatedAt={play.created_at} />
+            <Author githubUsername={play.github} playCreatedAt={play.created_at} user={play.user} />
           )}
         </div>
       </div>
