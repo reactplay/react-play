@@ -8,9 +8,13 @@ import { email2Slug } from 'common/services/string';
 
 const Author = ({ user, githubUsername, playCreatedAt }) => {
   const [formattedPlayDate, setFormattedPlayDate] = useState(() => {
+    // Get the locale from the local browser
     const locale = navigator.language.split('-').join('');
+
+    // Get matching locale from date-fns
     const dnsLocale = allLocales[locale] ?? allLocales.enUS;
 
+    // Return formatted date with the browser locale
     return format(new Date(playCreatedAt), 'MMM dd, yyyy', {
       locale: dnsLocale
     });
@@ -36,6 +40,8 @@ const Author = ({ user, githubUsername, playCreatedAt }) => {
         >
           <strong>{user?.displayName}</strong>
           <span className="text-gray-400">&bull;</span>
+
+          {/* Formatted date goes here */}
           <small className="m-0 font-medium text-left header-desc">{formattedPlayDate}</small>
         </a>
       </div>
