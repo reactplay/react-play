@@ -108,7 +108,7 @@ npm install
 if you donot have `yarn` installed on your pc follow to below steps to install it.
 
 **Windows**
-1. open your command promt as administrator.
+1. open your command prompt as administrator.
 2. write `corepack enable` and hit enter.
 3. then `npm install --global yarn`
 
