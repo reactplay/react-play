@@ -11,7 +11,7 @@ const PlayHeader = ({ play }) => {
           <div className="header-actions">
             <PlayHeaderActions play={play} />
           </div>
-          {/* <small className="header-desc">{play.description}</small> */}
+          <small className="header-desc">{play.description}</small>
         </div>
       </div>
     </>
