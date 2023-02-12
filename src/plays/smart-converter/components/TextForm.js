@@ -40,20 +40,13 @@ export default function TextForm(props) {
   // setText("new text"); // Correct way to change the state
   return (
     <>
-      <div
-        className="Smart-converter-textformbox"
-        style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}
-      >
+      <div className="Smart-converter-textformbox">
         <h1 className="Smart-converter-Heading">{props.heading}</h1>
         <div className="mb-3">
           <textarea
             className="Smart-converter-textarea"
             id="myBox"
             rows="8"
-            style={{
-              backgroundColor: props.mode === 'dark' ? '#13466e' : 'white',
-              color: props.mode === 'dark' ? 'white' : '#042743'
-            }}
             value={text}
             onChange={handleOnChange}
           />
@@ -94,10 +87,7 @@ export default function TextForm(props) {
           Remove Extra Spaces
         </button>
       </div>
-      <div
-        className="container my-3"
-        style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}
-      >
+      <div className="my-3">
         <h2 className="Smart-converter-Header2">Your text summary</h2>
         <p>
           {
