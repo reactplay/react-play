@@ -4,6 +4,7 @@ import LevelBadge from 'common/components/LevelBadge';
 import { format } from 'date-fns';
 import * as allLocales from 'date-fns/locale';
 import { useState } from 'react';
+import { email2Slug } from 'common/services/string';
 
 const Author = ({ user, githubUsername, playCreatedAt }) => {
   const [formattedPlayDate, setFormattedPlayDate] = useState(() => {
@@ -15,13 +16,21 @@ const Author = ({ user, githubUsername, playCreatedAt }) => {
     });
   });
 
+  const getHostName = () => {
+    var url = window.location.href;
+    var arr = url.split('/');
+    var result = arr[0] + '//' + arr[2];
+
+    return result;
+  };
+
   return (
     <div className="flex items-center gap-2 header-author">
       <img alt="avatar" className="rounded-full" height="25px" src={user?.avatarUrl} width="25px" />
       <div className="flex flex-col">
         <a
           className="flex gap-2"
-          href={`https://github.com/${githubUsername}`}
+          href={`${getHostName()}/contributors/${email2Slug(user.email)}/badges`}
           rel="noopener noreferrer"
           target="_blank"
         >

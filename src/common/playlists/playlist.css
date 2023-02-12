@@ -762,3 +762,45 @@
     height: var(--play-thumb-size-h-mobile);
   }
 }
+
+/* dynamic banner */
+.dynamic-banner-container {
+  color: white;
+  position: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.dynamic-banner-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  font-weight: bold;
+  max-width: 600px;
+}
+
+.banner-button{
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.947);
+  border: none;
+  outline: none;
+  transition-timing-function: 0.5s;
+  transition: all;
+  cursor: pointer;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.banner-button:hover{
+  background-color: #e6e6e6c3;
+  color: black;
+
+}
+.right-arrow-icon {
+  color: #25A0A7;
+}
+
