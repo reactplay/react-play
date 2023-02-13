@@ -1,0 +1,6 @@
+/* enter stlyes here */
+body {
+    @apply bg-blue-50;
+    font-family: "Poppins", sans-serif;
+  }
+  
