@@ -1,6 +1,6 @@
 /* enter stlyes here */
 
-.profile-card {
+.guf .profile-card {
   display: grid;
   width: 45rem;
   gap: 0.5rem;
@@ -15,7 +15,7 @@
     'avatar temp button';
 }
 
-.avatar {
+.guf .avatar {
   grid-area: avatar;
   width: 150px;
   min-width: 150px;

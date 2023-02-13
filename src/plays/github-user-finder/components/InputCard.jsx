@@ -15,15 +15,15 @@ const InputCard = () => {
   return (
     <div className="flex justify-center input-card">
       <input
-        id="guf"
+        id="username"
         placeholder="Enter User Name"
         title="user-name"
         type="search"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <button className="text-black" onClick={handleClick}>
-        FIND
+      <button className="text-black search-btn" onClick={handleClick}>
+        <span className="text-black">Find</span>
         <div id="clip">
           <div className="corner" id="leftTop" />
           <div className="corner" id="rightBottom" />

@@ -1,4 +1,4 @@
-#guf {
+.guf #username {
   height: 4rem;
   width: 20rem;
   display: flex;
@@ -10,7 +10,7 @@
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 }
 
-button {
+.guf .search-btn {
   position: relative;
   width: 11em;
   height: 4em;
@@ -65,13 +65,13 @@ button {
   left: 102%;
 }
 
-button:hover #rightArrow {
+.search-btn:hover #rightArrow {
   background-color: #27c39f;
   left: -15%;
   animation: 0.6s ease-in-out both infinite alternate rightArrow8;
 }
 
-button:hover #leftArrow {
+.search-btn:hover #leftArrow {
   background-color: #27c39f;
   left: 103%;
   animation: 0.6s ease-in-out both infinite alternate leftArrow8;
@@ -107,27 +107,27 @@ button:hover #leftArrow {
   left: 88%;
 }
 
-button:hover #leftTop {
+.search-btn:hover #leftTop {
   animation: 0.1s ease-in-out 0.05s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
-button:hover #rightTop {
+.search-btn:hover #rightTop {
   animation: 0.1s ease-in-out 0.15s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
-button:hover #rightBottom {
+.search-btn:hover #rightBottom {
   animation: 0.1s ease-in-out 0.25s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
-button:hover #leftBottom {
+.search-btn:hover #leftBottom {
   animation: 0.1s ease-in-out 0.35s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
-button:hover .corner {
+.search-btn:hover .corner {
   transform: scale(1.25) rotate(45deg);
 }
 
-button:hover #clip {
+.search-btn:hover #clip {
   animation: 0.2s ease-in-out 0.55s both greenLight8;
   --color: #27c39f;
 }
