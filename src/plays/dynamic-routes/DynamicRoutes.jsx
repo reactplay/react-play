@@ -16,13 +16,13 @@ function DynamicRoutes(props) {
   const activeRecipes = data.filter((recipe) => {
     return recipe.mealtype === activeMenu; // filter reciepes based on active menu
   });
-  const mealType = [];
+  const mealTypes = [];
   data.map((recipe) => {
-    return mealType.push(recipe.mealtype); // push  meal categories to an array
+    return mealTypes.push(recipe.mealtype); // push  meal categories to an array
   });
 
   // eliminate duplicate categories so we can render a navbar of uniq categories
-  const uniqMealType = [...new Set(mealType)];
+  const uniqMealTypes = [...new Set(mealTypes)];
 
   const activeMenuHandler = (mealtype) => {
     setActiveMenu(mealtype);
@@ -44,7 +44,7 @@ function DynamicRoutes(props) {
               <Navbar // passing unique meal type to render on the navbar
                 activeMenu={activeMenu} // a clickhandler that will reset the active menu
                 activeMenuHandler={activeMenuHandler}
-                mealtype={uniqMealType}
+                mealtypes={uniqMealTypes}
               />
             </div>
 
