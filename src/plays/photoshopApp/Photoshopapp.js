@@ -83,7 +83,7 @@ function Photoshopapp(props) {
   // Your Code Start below.
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
-  const selectedOption = options[selectedOptionIndex];
+  const selectedOption = useMemo(()=>options[selectedOptionIndex],[options,selectedOptionIndex]);
 
   function handleSliderChange({ target }) {
     setOptions((prevOptions) => {
