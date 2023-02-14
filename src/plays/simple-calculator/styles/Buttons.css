@@ -6,12 +6,12 @@
   border-bottom-right-radius: 10px;
 }
 
-.equal {
+.suri-calci .equal {
   grid-column-start: 4;
   grid-column-end: 6;
 }
 
-.btn {
+.suri-calci .btn {
   width: 60px;
   height: 60px;
   margin: 6px auto;
@@ -23,7 +23,7 @@
   border: 0px;
 }
 
-.btn:last-child {
+.suri-calci .btn:last-child {
   font-weight: medium;
   font-size: 40px;
   width: 110px;
@@ -33,22 +33,22 @@
   background-color: #6dd5ed;
 }
 
-.btn:hover {
+.suri-calci .btn:hover {
   background-color: #6dd5ed;
   color: white;
   transition: background-color 0.3s ease;
 }
 
-.btn:active {
+.suri-calci .btn:active {
   background-color: #48b1bf;
   color: white;
   transition: background-color 0.3s ease;
 }
 
-.clr {
+.suri-calci .clr {
   color: #d66d75;
 }
 
-.exp {
+.suri-calci .exp {
   color: #06beb6;
 }

@@ -9,7 +9,7 @@ function SimpleCalculator(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="suri-calci">
+        <div className="play-details-body suri-calci">
           {/* Your Code Starts Here */}
           <Calculator />
           {/* Your Code Ends Here */}
