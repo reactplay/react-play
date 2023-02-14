@@ -77,16 +77,14 @@ function Calculator() {
     try {
       // check brackets are balanced or not
       if (!checkBracketBalanced(finalexpression)) {
-        const errorMessage = { message: 'Brackets are not balanced!' };
+        const errorMessage = { message: 'Unbalanced Brackets!' };
 
         throw errorMessage;
       }
       result = evaluate(finalexpression); // mathjs
     } catch (error) {
       result =
-        error.message === 'Brackets are not balanced!'
-          ? 'Brackets are not balanced!'
-          : 'Invalid Input!!'; // error.message;
+        error.message === 'Unbalanced Brackets!' ? 'Unbalanced Brackets!' : 'Invalid Input!!'; // error.message;
     }
     isNaN(result) ? setAnswer(result) : setAnswer(round(result, 3));
   };

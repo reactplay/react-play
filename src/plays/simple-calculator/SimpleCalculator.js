@@ -9,11 +9,9 @@ function SimpleCalculator(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="suri-calci">
           {/* Your Code Starts Here */}
-          <div className="suri-calci">
-            <Calculator />
-          </div>
+          <Calculator />
           {/* Your Code Ends Here */}
         </div>
       </div>
