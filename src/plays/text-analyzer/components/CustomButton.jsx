@@ -5,7 +5,7 @@ const CustomButton = ({ ButtonText  }) => {
   return (
     <>
       <div class="container">
-        <a href="#" class="btn">
+        <a className="btn">
           {ButtonText}
         </a>
       </div>

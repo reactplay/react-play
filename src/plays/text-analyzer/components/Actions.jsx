@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CustomButton from './CustomButton';
 import '../styles.css';
+import { getEntities, getSentiments, getSpellcheck } from '../requests/ApiRequests';
+import TextContext from '../context/playContext';
 
 const Actions = () => {
+  const { value } = useContext(TextContext);
   return (
-    <div className='btn-cont'>
-      <CustomButton ButtonText="Sentiment" />
-      <CustomButton ButtonText="Display Entities" />
-      <CustomButton ButtonText="WebPage Extractor" />
-      <CustomButton ButtonText="Text checking" />
+    <div>
+      <button className="button-58" onClick={() => getSentiments(value)}>
+        {' '}
+        Sentiment{' '}
+      </button>
+      <button className="button-58" onClick={() => getEntities(value)}>
+        Entities
+      </button>
+      <button className="button-58" onClick={() => getSpellcheck(value)}>
+        Spell check
+      </button>
     </div>
   );
 };
