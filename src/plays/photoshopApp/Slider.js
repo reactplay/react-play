@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-export default function Slider({ min, max, value, handleChange}) {
+export default function Slider({ min, max, value, handleChange }) {
   return (
     <div className="slider-container">
       <input
-        type="range"
         className="slider"
-        min={min}
         max={max}
+        min={min}
+        type="range"
         value={value}
         onChange={handleChange}
       />
     </div>
-  )
+  );
 }
