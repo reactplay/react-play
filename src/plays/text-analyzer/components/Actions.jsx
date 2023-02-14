@@ -1,13 +1,12 @@
 import React, { useCallback, useContext, useState } from 'react';
 import '../styles.css';
 import '../Button.css';
-import { Convert, getEntities, getSentiments, getSpellcheck } from '../requests/ApiRequests';
 import TextContext from '../context/playContext';
 import Dropzone from 'react-dropzone';
 
 const Actions = () => {
-  const { value } = useContext(TextContext);
-  const [files, setFiles] = useState([]);
+  const { value, setFiles, files, getEntities, getSentiments, getSpellcheck, ImageToText } =
+    useContext(TextContext);
 
   const onDrop = useCallback((acceptedFiles) => {
     setFiles(
@@ -18,6 +17,15 @@ const Actions = () => {
       )
     );
   }, []);
+
+  const Convert = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('Session', 'string');
+    formData.append('srcImg', files[0]);
+
+    ImageToText(formData);
+  };
   return (
     <div className="btn-cont">
       <div>
