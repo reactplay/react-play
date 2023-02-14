@@ -29,6 +29,17 @@
 }
 
 .btn-cont{
+  border:  1px solid white;
   display: flex;
   padding: 30px 30px;
+}
+
+.drop-zone-cont{
+   padding: 10px 10px;
+   border:  4px dashed blue;
+}
+
+.drop-form{
+   padding: 5px 5px;
+   
 }

@@ -1,15 +1,5 @@
 import axios from 'axios';
 
-// const options = {
-//   method: 'GET',
-//   url: 'https://textapis.p.rapidapi.com/sentiment',
-//   params: { text: 'I really hate this!' },
-//   headers: {
-//     'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
-//     'X-RapidAPI-Host': 'textapis.p.rapidapi.com'
-//   }
-// };
-
 export const getSentiments = (text) => {
   console.log('clicked');
   axios
@@ -70,6 +60,33 @@ export const getSpellcheck = (text) => {
   axios
     .request(options)
     .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+};
+
+export const Convert = (e) => {
+  e.preventDefault();
+  const formData = new FormData();
+  formData.append('Session', 'string');
+  formData.append('srcImg', files[0]);
+
+  const options = {
+    method: 'POST',
+    url: 'https://pen-to-print-handwriting-ocr.p.rapidapi.com/recognize/',
+    headers: {
+      'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
+      'X-RapidAPI-Host': 'pen-to-print-handwriting-ocr.p.rapidapi.com'
+    },
+    data: formData
+  };
+
+  axios
+    .request(options)
+    .then(function (response) {
+      setValue(response.data.value);
       console.log(response.data);
     })
     .catch(function (error) {

@@ -24,6 +24,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin: 15px 15px;
 }
 
 .button-58:focus {
