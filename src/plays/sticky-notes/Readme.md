@@ -12,7 +12,7 @@ Its a note taking app to take notes. so that you can use these notes to create c
 - User: coderamrin
 - Gihub Link: https://github.com/coderamrin
 - Blog: 
-- Video: 
+- Video: https://www.stack-stream.com/v/note-taking-app
 
 ## Implementation Details
 

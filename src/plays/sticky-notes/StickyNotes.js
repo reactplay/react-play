@@ -8,9 +8,9 @@ function StickyNotes(props) {
 
   return (
     <>
-      <div className="play-details stickyNotes-body ">
+      <div className="play-details  ">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="play-details-body stickyNotes-body">
           {/* Your Code Starts Here */}
           <App />
           {/* Your Code Ends Here */}
