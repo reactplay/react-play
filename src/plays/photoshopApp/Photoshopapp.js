@@ -8,11 +8,13 @@ import SidebarItem from './SidebarItem';
 
 
 
+
 function PhotoshopApp(props) {
   // Your Code Start below.
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
-  const selectedOption = useMemo(() => options[selectedOptionIndex], [options, selectedOptionIndex]);
+  const selectedOption = useMemo(()=>options[selectedOptionIndex],[options,selectedOptionIndex]);
+
 
   function handleSliderChange({ target }) {
     setOptions((prevOptions) => {
@@ -26,11 +28,11 @@ function PhotoshopApp(props) {
 
 
   const getImageStyle = useMemo(() => {
-    const filters = options.map((option) => {
+      const filters = options.map((option) => {
       return `${option.property}(${option.value}${option.unit})`;
     });
     return { filter: filters.join(' ') };
-  }, [options])
+  },[options])
 
   return (
     <>
