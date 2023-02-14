@@ -1,5 +1,5 @@
 /* enter stlyes here */
-body {
+.stickyNotes-body {
     @apply bg-blue-50;
     font-family: "Poppins", sans-serif;
   }
