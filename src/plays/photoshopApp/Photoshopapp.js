@@ -95,13 +95,13 @@ function Photoshopapp(props) {
     });
   }
 
-  function getImageStyle() {
+  const imageStyle = useMemo(()=>{
     const filters = options.map((option) => {
       return `${option.property}(${option.value}${option.unit})`;
     });
 
     return { filter: filters.join(' ') };
-  }
+  },[options])
 
   return (
     <>
