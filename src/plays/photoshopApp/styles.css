@@ -1,13 +1,7 @@
 /* enter stlyes here */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
+
   
-  body {
-    margin: 0;
-  }
-  
-  .container {
+  .photoshopApp-container {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr auto;
@@ -19,7 +13,7 @@
     background-color: #DADADA;
   }
   
-  .main-image {
+  .photoshopApp-main-image {
     grid-area: image;
     background-image: url("https://source.unsplash.com/EwKXn5CapA4");
     width: 100%;
@@ -29,7 +23,7 @@
     background-repeat: no-repeat;
   }
   
-  .sidebar {
+  .photoshopApp-sidebar {
     grid-area: sidebar;
     background-color: hsl(265, 100%, 86%);
     border-left: 1px solid hsl(265, 100%, 56%);
@@ -38,7 +32,7 @@
     align-items: stretch;
   }
   
-  .sidebar-item {
+  .photoshopApp-sidebar-item {
     cursor: pointer;
     border: none;
     outline: none;
@@ -48,15 +42,15 @@
     transition: background-color 150ms;
   }
   
-  .sidebar-item:hover, .sidebar-item:focus {
+  .photoshopApp-sidebar-item:hover, .sidebar-item:focus {
     background-color: hsl(265, 100%, 76%);
   }
   
-  .sidebar-item.active {
+  .photoshopApp-sidebar-item.active {
     background-color: hsl(265, 100%, 70%);
   }
   
-  .sidebar-item::after {
+  .photoshopApp-sidebar-item::after {
     content: '';
     position: absolute;
     width: 80%;
@@ -66,17 +60,17 @@
     background-color: hsl(265, 100%, 46%);
   }
   
-  .sidebar-item:last-child::after {
+  .photoshopApp-sidebar-item:last-child::after {
     display: none;
   }
   
-  .slider-container {
+  .photoshopApp-slider-container {
     grid-area: slider;
     margin-top: 2rem;
     padding: 2rem;
   }
   
-  .slider {
+  .photoshopApp-slider {
     width: 100%;
     cursor: pointer;
   }

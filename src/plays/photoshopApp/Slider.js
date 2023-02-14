@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function Slider({ min, max, value, handleChange }) {
   return (
-    <div className="slider-container">
+    <div className="photoshopApp-slider-container">
       <input
-        className="slider"
+        className="photoshopApp-slider"
         max={max}
         min={min}
         type="range"

@@ -1,89 +1,18 @@
 import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
 import React, { useState } from 'react';
-// import './App.css';
+import { DEFAULT_OPTIONS } from './Constants';
 import Slider from './Slider';
 import SidebarItem from './SidebarItem';
 // WARNING: Do not change the entry componenet name
 
-const DEFAULT_OPTIONS = [
-  {
-    name: 'Brightness',
-    property: 'brightness',
-    value: 100,
-    range: {
-      min: 0,
-      max: 200
-    },
-    unit: '%'
-  },
-  {
-    name: 'Contrast',
-    property: 'contrast',
-    value: 100,
-    range: {
-      min: 0,
-      max: 200
-    },
-    unit: '%'
-  },
-  {
-    name: 'Saturation',
-    property: 'saturate',
-    value: 100,
-    range: {
-      min: 0,
-      max: 200
-    },
-    unit: '%'
-  },
-  {
-    name: 'Grayscale',
-    property: 'grayscale',
-    value: 0,
-    range: {
-      min: 0,
-      max: 100
-    },
-    unit: '%'
-  },
-  {
-    name: 'Sepia',
-    property: 'sepia',
-    value: 0,
-    range: {
-      min: 0,
-      max: 100
-    },
-    unit: '%'
-  },
-  {
-    name: 'Hue Rotate',
-    property: 'hue-rotate',
-    value: 0,
-    range: {
-      min: 0,
-      max: 360
-    },
-    unit: 'deg'
-  },
-  {
-    name: 'Blur',
-    property: 'blur',
-    value: 0,
-    range: {
-      min: 0,
-      max: 20
-    },
-    unit: 'px'
-  }
-];
 
-function Photoshopapp(props) {
+
+function PhotoshopApp(props) {
   // Your Code Start below.
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
-  const selectedOption = options[selectedOptionIndex];
+  const selectedOption = useMemo(() => options[selectedOptionIndex], [options, selectedOptionIndex]);
 
   function handleSliderChange({ target }) {
     setOptions((prevOptions) => {
@@ -95,23 +24,23 @@ function Photoshopapp(props) {
     });
   }
 
-  function getImageStyle() {
+
+  const getImageStyle = useMemo(() => {
     const filters = options.map((option) => {
       return `${option.property}(${option.value}${option.unit})`;
     });
-
     return { filter: filters.join(' ') };
-  }
+  }, [options])
 
   return (
     <>
-      <div className="play-details">
+      <div className="photoshopApp-play-details">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="photoshopApp-play-details-body">
           {/* Your Code Starts Here */}
-          <div className="container">
-            <div className="main-image" style={getImageStyle()} />
-            <div className="sidebar">
+          <div className="photoshopApp-container">
+            <div className="photoshopApp-main-image" style={getImageStyle()} />
+            <div className="photoshopApp-sidebar">
               {options.map((option, index) => {
                 return (
                   <SidebarItem
@@ -123,12 +52,12 @@ function Photoshopapp(props) {
                 );
               })}
             </div>
-            <Slider
+            {selectedOption && <Slider
               handleChange={handleSliderChange}
               max={selectedOption.range.max}
               min={selectedOption.range.min}
               value={selectedOption.value}
-            />
+            />}
           </div>
           {/* Your Code Ends Here */}
         </div>
@@ -137,4 +66,4 @@ function Photoshopapp(props) {
   );
 }
 
-export default Photoshopapp;
+export default PhotoshopApp;
