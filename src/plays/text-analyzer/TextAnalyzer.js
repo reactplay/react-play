@@ -1,4 +1,5 @@
 import PlayHeader from 'common/playlists/PlayHeader';
+import Actions from './components/Actions';
 import TextArea from './components/TextArea';
 import { TextState } from './context/textStates';
 import './styles.css';
@@ -14,8 +15,13 @@ function TextAnalyzer(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <TextState>
-            <div className="Body">
-              <TextArea />
+            <div className="Play-container">
+              <div className='Text-cont'>
+                <TextArea />
+              </div>
+              <div className='Actions-cont'>
+                <Actions />
+              </div>
             </div>
           </TextState>
 

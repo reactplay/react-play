@@ -1,8 +1,34 @@
-.Body {
+.Play-container {
   background-color: black;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   height: 100%;
   padding: 5px 5px;
+  flex-direction: column;
+}
+
+.Text-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  padding: 13px 13px;
+  margin-bottom: 70px;
+  width: 100%;
+}
+
+.Actions-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-cont{
+  display: flex;
+  padding: 30px 30px;
 }
