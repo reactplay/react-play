@@ -1,7 +1,15 @@
-.imageInput{
-    width: 100%;
-    height: 100%;
-    border: 1px solid #271717;
-    border-radius: 4px;
-    padding: 2rem;
+.container {
+  border: 2px solid;
+  width: fit-content;
+}
+
+.modData {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem auto;
+  width: 50%;
+  height: 50%;
+  row-gap: 20px;
 }

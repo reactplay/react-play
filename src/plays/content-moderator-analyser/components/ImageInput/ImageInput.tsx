@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+import { Stack } from '@mui/system';
+import Chip from '@mui/material/Chip';
 import './ImageInput.css';
 import {
   bucket,
@@ -23,11 +25,17 @@ export function getBinary(encodedFile: any) {
 
 function ImageInput() {
   const [name, setName] = useState('');
-  const [binary, setBinary] = React.useState({});
+  const [binary, setBinary] = useState({});
+  const [moderationData, setModerationData] = useState(null);
 
-  function processImage() {
+  console.log('moderationData inside processImage', moderationData);
+
+  async function processImage() {
     console.log('processImage');
-    detectImageModerationLabels(binary, name);
+    const data = await detectImageModerationLabels(binary, name);
+    console.log('data inside processImage', data);
+    console.log(typeof data);
+    setModerationData(data);
   }
 
   const convertBinary = (e: any) => {
@@ -55,18 +63,24 @@ function ImageInput() {
   };
 
   return (
-    <div className="imageInput">
-      <input
-        accept=""
-        id="photoupload"
-        name="Upload Image"
-        placeholder="Upload Image here!"
-        type="file"
-        onChange={(e) => convertBinary(e)}
-      />
-      <Button variant="contained" onClick={processImage}>
-        Process Image
-      </Button>
+    <div className="container">
+      <Stack alignItems="center" direction="row" spacing={2}>
+        <Button component="label" variant="contained">
+          Upload
+          <input hidden multiple accept="image/*" type="file" onChange={(e) => convertBinary(e)} />
+        </Button>
+        <Button variant="contained" onClick={processImage}>
+          Process Image
+        </Button>
+      </Stack>
+
+      {moderationData && (
+        <div className="modData">
+          {moderationData.Labels.map((label: any) => (
+            <Chip color="info" key={label.Name} label={label.Name} variant="filled" />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

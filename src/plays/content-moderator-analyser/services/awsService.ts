@@ -40,19 +40,22 @@ export const uploadToS3 = (file: any) => {
   });
 };
 
-export function detectImageModerationLabels(paramsModeration: any, name: string) {
+export function detectImageModerationLabels(paramsModeration: any, name: string): Promise<any> {
   const rekognition = new AWS.Rekognition();
   console.log('Region: ', AWS.config.region);
   console.log('config', config);
   console.log('paramsModeration', paramsModeration);
   console.log('name', name);
-  rekognition.detectLabels(paramsModeration, function (err, data) {
-    if (err) {
-      alert('Error occured during Image Moderation');
-      console.log(err, data);
 
-      return;
-    }
-    console.log('success!', data);
+  return new Promise((resolve, reject) => {
+    rekognition.detectLabels(paramsModeration, function (err, data) {
+      if (err) {
+        alert('Error occured during Image Moderation');
+        console.log(err, data);
+        reject(err);
+      }
+      console.log('success!', data);
+      resolve(data);
+    });
   });
 }
