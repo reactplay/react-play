@@ -27,7 +27,7 @@ function PhotoshopApp(props) {
   }
 
 
-  const getImageStyle = useMemo(() => {
+  const imageStyle = useMemo(() => {
       const filters = options.map((option) => {
       return `${option.property}(${option.value}${option.unit})`;
     });
@@ -36,12 +36,12 @@ function PhotoshopApp(props) {
 
   return (
     <>
-      <div className="photoshopApp-play-details">
+      <div className="play-details">
         <PlayHeader play={props} />
-        <div className="photoshopApp-play-details-body">
+        <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="photoshopApp-container">
-            <div className="photoshopApp-main-image" style={getImageStyle()} />
+            <div className="photoshopApp-main-image" style={imageStyle} />
             <div className="photoshopApp-sidebar">
               {options.map((option, index) => {
                 return (
