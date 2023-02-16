@@ -24,7 +24,7 @@ Start by creating a form that takes the input and has a submit button.
 
 ### Create the section for images
 
-This is a simple project and it will need a section(portion on the webpage) where the images will be loaded after successfully fetching the unsplash api. 
+This is a simple project and it will need a section(portion on the webpage) where the images will be loaded after successfully fetching the unsplash api.
 
 ## Consideration
 
