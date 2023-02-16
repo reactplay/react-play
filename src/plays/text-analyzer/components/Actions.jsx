@@ -51,14 +51,14 @@ const Actions = () => {
               {({ getRootProps, getInputProps }) => (
                 <div {...getRootProps()}>
                   <input {...getInputProps()} name="picturePath" />
-                  <p>Add Scanned Images</p>
+                  <p style={{color: 'white' , cursor:'pointer'}}>Add Scanned Images</p>
                 </div>
               )}
             </Dropzone>
           </div>
           <div>
             <button type="sumbit" className="button-58">
-              Send req
+              Convert
             </button>
           </div>
         </form>
