@@ -19,7 +19,7 @@ function ShortestPathfindingVisualizer(props) {
       for (let j = 0; j < rows[i].getElementsByTagName('td').length; j++) {
         rows[i].getElementsByTagName('td')[
           j
-        ].innerHTML = `<button class="cell-btn" value = 500000></button>`;
+        ].innerHTML = `<button class="cell-btn" value = ${Number.POSITIVE_INFINITY}></button>`;
       }
     }
 
@@ -292,7 +292,6 @@ function ShortestPathfindingVisualizer(props) {
 
     visual_btn.addEventListener('click', function () {
       let opt = document.getElementsByTagName('select')[0].value;
-
       if (opt == 1) {
         // option 1
         // DFS
