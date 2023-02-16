@@ -26,10 +26,20 @@ Welcome developers! We are as excited as you are to know that you are going to c
 
 - You should be able to access the application on http://localhost:3000
 - Click on `Create` button.
+
+<p align="center">
+  <img src="https://res.cloudinary.com/atapas/image/upload/v1675171492/ReactPlay/Screenshot_2023-01-31_at_6.43.49_PM_bkcvkv.png" alt="create-play">
+</p>  
+
 - The application will try to authenticate you
 - If you are NOT already logged in with [`NHost`](https://nhost.io), you will be prompted to give permission
   - Log in with your GitHub account
 - Fill the information and submit.
+
+<p align="center">
+  <img src="https://res.cloudinary.com/atapas/image/upload/v1675171492/ReactPlay/Screenshot_2023-01-31_at_6.51.24_PM_ljc1hz.png" alt="create-play-fill-form">
+</p>  
+
   Parameter details
 
   | Field           | Mandatory? | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -46,6 +56,11 @@ Welcome developers! We are as excited as you are to know that you are going to c
   | Video           | NO         | If you have created a video tutorial about this play, please provide the link to your YouTube video.                                                                                                                                                                                                                                                                                                                      |
 
 - On successfull submission, you will be redirected to a page where it will prompt you with the `play_id`
+
+<p align="center">
+  <img src="https://res.cloudinary.com/atapas/image/upload/v1675172353/ReactPlay/Screenshot_2023-01-31_at_7.02.55_PM_k1tphu.png" alt="command">
+</p> 
+
 - Stop your application
 - Navigate to the root of the reactplay
 - Run following command
@@ -57,15 +72,31 @@ Welcome developers! We are as excited as you are to know that you are going to c
     ```bash
     npx create-react-play@latest -c <the_play_id>
     ```
-    
+<p align="center">
+  <img src="https://res.cloudinary.com/atapas/image/upload/v1675172352/ReactPlay/Screenshot_2023-01-31_at_7.06.07_PM_jhbcbl.png" alt="copy-command">
+</p> 
+
 - Start the application
   ```bash
   yarn start
   #OR
   npm run start
   ```
-- You should now see your play added to the [play list](http://localhost:3000/plays) page. You can click on the play thumbnail to see the details of the play.
+- You should now see your play added to the [play list](http://localhost:3000/plays) page.
+<p align="center">
+  <img src="https://res.cloudinary.com/atapas/image/upload/v1675172352/ReactPlay/Screenshot_2023-01-31_at_7.06.55_PM_gyck2r.png" alt="play">
+</p>
+
+- You can click on the play thumbnail to see the details of the play.
+<p align="center">
+  <img src="https://res.cloudinary.com/atapas/image/upload/v1675172353/ReactPlay/Screenshot_2023-01-31_at_7.07.19_PM_dnmcuu.png" alt="play-details">
+</p>
+
 - And you will notice a directory created for your play under `./src/plays/<your_play_name>`
+<p align="center">
+  <img src="https://res.cloudinary.com/atapas/image/upload/v1675172514/ReactPlay/Screenshot_2023-01-31_at_7.10.36_PM_uxjomi.png" alt="code">
+</p>
+
 - Continue developing your play. Happy coding.
 
 ## 👀 Submitting a Play for Review
