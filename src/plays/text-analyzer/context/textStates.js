@@ -32,6 +32,9 @@ const TextState = ({ children }) => {
       .request(options)
       .then(function (response) {
         setresultSentiments(response.data);
+        setresultEntities();
+        setresultparaphraser();
+        setTextfromImage();
         console.log(response.data);
       })
       .catch(function (error) {
@@ -57,6 +60,9 @@ const TextState = ({ children }) => {
       .request(options)
       .then(function (response) {
         setresultEntities(response.data);
+        setresultparaphraser();
+        setTextfromImage();
+        setresultSentiments();
         console.log(response.data);
       })
       .catch(function (error) {
@@ -84,6 +90,9 @@ const TextState = ({ children }) => {
       .request(options)
       .then(function (response) {
         setresultparaphraser(response.data);
+        setTextfromImage();
+        setresultSentiments();
+        setresultEntities();
         console.log(response.data);
       })
       .catch(function (error) {
@@ -104,6 +113,9 @@ const TextState = ({ children }) => {
       })
       .then(function (response) {
         setTextfromImage(response.data.value);
+        setresultSentiments();
+        setresultEntities();
+        setresultparaphraser();
         console.log(response.data);
       })
       .catch(function (error) {
