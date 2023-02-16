@@ -10,10 +10,11 @@ const Result = () => {
   const { TextfromImage, resultEntities, resultSentiments, resultparaphraser } =
     useContext(TextContext);
   return (
-    <div className="result-cont">
+    // <div className="result-cont">
+    <>
       {resultEntities || TextfromImage || resultSentiments || resultparaphraser ? (
         <>
-          <div>
+          <div className='result-cont'>
             {resultEntities && <Entities resultEntities={resultEntities} />}
             {resultparaphraser && <Paraphaser resultparaphraser={resultparaphraser} />}
             {resultSentiments && <Sentiments resultSentiments={resultSentiments} />}
@@ -25,7 +26,8 @@ const Result = () => {
           <div></div>
         </>
       )}
-    </div>
+    </>
+    // </div>
   );
 };
 

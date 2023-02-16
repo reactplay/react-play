@@ -31,6 +31,7 @@ const TextState = ({ children }) => {
     axios
       .request(options)
       .then(function (response) {
+        setresultSentiments(response.data);
         console.log(response.data);
       })
       .catch(function (error) {

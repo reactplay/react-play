@@ -22,13 +22,6 @@ function TextAnalyzer(props) {
             <div className="Play-container">
               <div className="Text-cont">
                 <TextArea />
-                {/* {result || TextfromImage ? (
-                  <>
-                    <Result />
-                  </>
-                ) : (
-                  <></>
-                )} */}
                 <Result />
               </div>
               <div className="Actions-cont">
