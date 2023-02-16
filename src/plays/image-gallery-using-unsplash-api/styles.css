@@ -55,7 +55,7 @@
 .submitButton{
     border: none;
     border-bottom: 0.1rem solid black;
-    transform: translate(-100%, 6.5%);
+    transform: translate(-102%, 6.5%);
     cursor:pointer;
     border-bottom-right-radius: 20%;
     border-top-right-radius: 20%;
