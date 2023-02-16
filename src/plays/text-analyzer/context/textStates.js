@@ -1,4 +1,5 @@
 import axios from 'axios';
+import data from 'plays/dynamic-routes/Data';
 import { useState } from 'react';
 import TextContext from './playContext';
 
@@ -6,6 +7,7 @@ const TextState = ({ children }) => {
   const [value, setvalue] = useState();
   const [files, setFiles] = useState([]);
   const [TextfromImage, setTextfromImage] = useState();
+  const [result, setresult] = useState();
 
   const getSentiments = (text) => {
     console.log('clicked');
@@ -20,6 +22,7 @@ const TextState = ({ children }) => {
         }
       })
       .then(function (response) {
+        setresult(response.data);
         console.log(response.data);
       })
       .catch(function (error) {
@@ -29,16 +32,20 @@ const TextState = ({ children }) => {
 
   const getEntities = (text) => {
     console.log('clicked');
+    const options = {
+      method: 'GET',
+      url: 'https://textapis.p.rapidapi.com/ner',
+      params: {
+        text
+      },
+      headers: {
+        'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
+        'X-RapidAPI-Host': 'textapis.p.rapidapi.com'
+      }
+    };
+
     axios
-      .request({
-        method: 'GET',
-        url: 'https://textapis.p.rapidapi.com/ner/display',
-        params: { text },
-        headers: {
-          'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
-          'X-RapidAPI-Host': 'textapis.p.rapidapi.com'
-        }
-      })
+      .request(options)
       .then(function (response) {
         console.log(response.data);
       })
@@ -47,21 +54,20 @@ const TextState = ({ children }) => {
       });
   };
 
-  const getSpellcheck = (text) => {
+  const  paraphraser = (text) => {
     console.log('clicked');
-    const encodedParams = new URLSearchParams();
-    encodedParams.append('text', text);
-    encodedParams.append('language', 'en-US');
-
+    const  dataobj = {
+      "input": text,
+    }
     const options = {
       method: 'POST',
-      url: 'https://dnaber-languagetool.p.rapidapi.com/v2/check',
+      url: 'https://paraphraser1.p.rapidapi.com/',
       headers: {
-        'content-type': 'application/x-www-form-urlencoded',
+        'content-type': 'application/json',
         'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
-        'X-RapidAPI-Host': 'dnaber-languagetool.p.rapidapi.com'
+        'X-RapidAPI-Host': 'paraphraser1.p.rapidapi.com'
       },
-      data: encodedParams
+      data: dataobj
     };
 
     axios
@@ -103,8 +109,11 @@ const TextState = ({ children }) => {
         setFiles,
         getSentiments,
         getEntities,
-        getSpellcheck,
-        ImageToText
+        paraphraser,
+        ImageToText,
+        result,
+        setresult,
+        TextfromImage
       }}
     >
       {children}

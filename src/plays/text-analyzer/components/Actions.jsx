@@ -5,7 +5,7 @@ import TextContext from '../context/playContext';
 import Dropzone from 'react-dropzone';
 
 const Actions = () => {
-  const { value, setFiles, files, getEntities, getSentiments, getSpellcheck, ImageToText } =
+  const { value, setFiles, files, getEntities, getSentiments, paraphraser, ImageToText } =
     useContext(TextContext);
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -40,8 +40,8 @@ const Actions = () => {
         </button>
       </div>
       <div>
-        <button className="button-58" onClick={() => getSpellcheck(value)}>
-          Spell check
+        <button className="button-58" onClick={() => paraphraser(value)}>
+          Paraphraser
         </button>
       </div>
       <div>

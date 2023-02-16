@@ -1,12 +1,16 @@
 import PlayHeader from 'common/playlists/PlayHeader';
+import { useContext } from 'react';
 import Actions from './components/Actions';
+import Result from './components/Result';
 import TextArea from './components/TextArea';
+import TextContext from './context/playContext';
 import { TextState } from './context/textStates';
 import './styles.css';
 
 // WARNING: Do not change the entry componenet name
 function TextAnalyzer(props) {
   // Your Code Start below.
+  // const { result, TextfromImage } = useContext(TextContext);
 
   return (
     <>
@@ -16,10 +20,18 @@ function TextAnalyzer(props) {
           {/* Your Code Starts Here */}
           <TextState>
             <div className="Play-container">
-              <div className='Text-cont'>
+              <div className="Text-cont">
                 <TextArea />
+                {/* {result || TextfromImage ? (
+                  <>
+                    <Result />
+                  </>
+                ) : (
+                  <></>
+                )} */}
+                <Result />
               </div>
-              <div className='Actions-cont'>
+              <div className="Actions-cont">
                 <Actions />
               </div>
             </div>
