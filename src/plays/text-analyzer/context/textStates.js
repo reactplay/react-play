@@ -7,22 +7,30 @@ const TextState = ({ children }) => {
   const [value, setvalue] = useState();
   const [files, setFiles] = useState([]);
   const [TextfromImage, setTextfromImage] = useState();
-  const [result, setresult] = useState();
+  const [resultSentiments, setresultSentiments] = useState();
+  const [resultEntities, setresultEntities] = useState();
+  const [resultparaphraser, setresultparaphraser] = useState();
 
   const getSentiments = (text) => {
     console.log('clicked');
+    const objdata = {
+      language: 'english',
+      text: text
+    };
+    const options = {
+      method: 'POST',
+      url: 'https://text-analysis12.p.rapidapi.com/sentiment-analysis/api/v1.1',
+      headers: {
+        'content-type': 'application/json',
+        'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
+        'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
+      },
+      data: objdata
+    };
+
     axios
-      .request({
-        method: 'GET',
-        url: 'https://textapis.p.rapidapi.com/sentiment',
-        params: { text },
-        headers: {
-          'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
-          'X-RapidAPI-Host': 'textapis.p.rapidapi.com'
-        }
-      })
+      .request(options)
       .then(function (response) {
-        setresult(response.data);
         console.log(response.data);
       })
       .catch(function (error) {
@@ -47,6 +55,7 @@ const TextState = ({ children }) => {
     axios
       .request(options)
       .then(function (response) {
+        setresultEntities(response.data);
         console.log(response.data);
       })
       .catch(function (error) {
@@ -54,11 +63,11 @@ const TextState = ({ children }) => {
       });
   };
 
-  const  paraphraser = (text) => {
+  const paraphraser = (text) => {
     console.log('clicked');
-    const  dataobj = {
-      "input": text,
-    }
+    const dataobj = {
+      input: text
+    };
     const options = {
       method: 'POST',
       url: 'https://paraphraser1.p.rapidapi.com/',
@@ -73,6 +82,7 @@ const TextState = ({ children }) => {
     axios
       .request(options)
       .then(function (response) {
+        setresultparaphraser(response.data);
         console.log(response.data);
       })
       .catch(function (error) {
@@ -111,9 +121,10 @@ const TextState = ({ children }) => {
         getEntities,
         paraphraser,
         ImageToText,
-        result,
-        setresult,
-        TextfromImage
+        TextfromImage,
+        resultEntities,
+        resultSentiments,
+        resultparaphraser
       }}
     >
       {children}
