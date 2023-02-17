@@ -25,7 +25,7 @@
   left: 1rem;
 }
 
-#clip {
+.guf #clip {
   --color: #2761c3;
   position: absolute;
   top: 0;
@@ -46,7 +46,7 @@
   );
 }
 
-.arrow {
+.guf .arrow {
   position: absolute;
   transition: 0.2s;
   background-color: #2761c3;
@@ -55,29 +55,29 @@
   height: 30%;
 }
 
-#leftArrow {
+.guf #leftArrow {
   left: -13.5%;
   -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
 }
 
-#rightArrow {
+.guf #rightArrow {
   -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
   left: 102%;
 }
 
-.search-btn:hover #rightArrow {
+.guf .search-btn:hover #rightArrow {
   background-color: #27c39f;
   left: -15%;
   animation: 0.6s ease-in-out both infinite alternate rightArrow8;
 }
 
-.search-btn:hover #leftArrow {
+.guf .search-btn:hover #leftArrow {
   background-color: #27c39f;
   left: 103%;
   animation: 0.6s ease-in-out both infinite alternate leftArrow8;
 }
 
-.corner {
+.guf .corner {
   position: absolute;
   width: 4em;
   height: 4em;
@@ -87,47 +87,47 @@
   transition: 0.2s;
 }
 
-#rightTop {
+.guf #rightTop {
   top: -1.98em;
   left: 91%;
 }
 
-#leftTop {
+.guf #leftTop {
   top: -1.96em;
   left: -3em;
 }
 
-#leftBottom {
+.guf #leftBottom {
   top: 2.1em;
   left: -2.15em;
 }
 
-#rightBottom {
+.guf #rightBottom {
   top: 45%;
   left: 88%;
 }
 
-.search-btn:hover #leftTop {
+.guf .search-btn:hover #leftTop {
   animation: 0.1s ease-in-out 0.05s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
-.search-btn:hover #rightTop {
+.guf .search-btn:hover #rightTop {
   animation: 0.1s ease-in-out 0.15s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
-.search-btn:hover #rightBottom {
+.guf .search-btn:hover #rightBottom {
   animation: 0.1s ease-in-out 0.25s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
-.search-btn:hover #leftBottom {
+.guf .search-btn:hover #leftBottom {
   animation: 0.1s ease-in-out 0.35s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
-.search-btn:hover .corner {
+.guf .search-btn:hover .corner {
   transform: scale(1.25) rotate(45deg);
 }
 
-.search-btn:hover #clip {
+.guf .search-btn:hover #clip {
   animation: 0.2s ease-in-out 0.55s both greenLight8;
   --color: #27c39f;
 }

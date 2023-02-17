@@ -10,12 +10,12 @@ function GithubUserFinder(props) {
 
   return (
     <>
-      <div className="play-details guf">
+      <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <ResultContextProvider>
-            <div className="flex justify-center flex-col p-8 m-8 App">
+            <div className="flex justify-center flex-col p-8 m-8 App guf">
               <InputCard />
               <ProfileCard />
             </div>
