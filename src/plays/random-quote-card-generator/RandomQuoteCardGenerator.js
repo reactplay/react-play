@@ -90,4 +90,3 @@ function RandomQuoteCardGenerator(props) {
 }
 
 export default RandomQuoteCardGenerator;
-
