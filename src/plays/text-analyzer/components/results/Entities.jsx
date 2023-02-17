@@ -6,9 +6,9 @@ const Entities = ({ resultEntities }) => {
       {resultEntities.spans.length === 0
         ? 'No Entities'
         : resultEntities.spans.map((item) => (
-            <>
-              <li key={item}>{item.text}</li>
-            </>
+            <li key={item.start} style={{ listStyle: 'square' }}>
+              {item.text}
+            </li>
           ))}
     </div>
   );
