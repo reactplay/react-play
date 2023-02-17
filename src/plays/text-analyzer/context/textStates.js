@@ -14,7 +14,7 @@ const TextState = ({ children }) => {
 
   const getSentiments = (text) => {
     setloading(true);
-    console.log('clicked');
+
     const objdata = {
       language: 'english',
       text: text
@@ -37,7 +37,7 @@ const TextState = ({ children }) => {
         setresultEntities();
         setresultparaphraser();
         setTextfromImage();
-        console.log(response.data);
+  
         setloading(false);
       })
       .catch(function (error) {
@@ -46,7 +46,7 @@ const TextState = ({ children }) => {
   };
 
   const getEntities = (text) => {
-    console.log('clicked');
+   
     setloading(true);
     const options = {
       method: 'GET',
@@ -67,7 +67,7 @@ const TextState = ({ children }) => {
         setresultparaphraser();
         setTextfromImage();
         setresultSentiments();
-        console.log(response.data);
+    
         setloading(false);
       })
       .catch(function (error) {
@@ -76,7 +76,7 @@ const TextState = ({ children }) => {
   };
 
   const paraphraser = (text) => {
-    console.log('clicked');
+    
     setloading(true);
     const dataobj = {
       input: text
@@ -99,7 +99,7 @@ const TextState = ({ children }) => {
         setTextfromImage();
         setresultSentiments();
         setresultEntities();
-        console.log(response.data);
+    
         setloading(false);
       })
       .catch(function (error) {
@@ -125,7 +125,7 @@ const TextState = ({ children }) => {
         setresultEntities();
         setresultparaphraser();
         setloading(false);
-        console.log(response.data);
+       
       })
       .catch(function (error) {
         console.error(error);

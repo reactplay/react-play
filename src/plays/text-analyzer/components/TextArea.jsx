@@ -8,7 +8,7 @@ const TextArea = () => {
     setvalue(e.target.value);
   };
 
-  console.log(value);
+
   return (
     <div>
       <textarea name="" id="" cols="55" rows="25" value={value} onChange={ontextchange} />

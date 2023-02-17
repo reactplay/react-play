@@ -10,7 +10,6 @@ import Spinner from '../components/Spinner';
 const Result = () => {
   const { TextfromImage, resultEntities, resultSentiments, resultparaphraser, loading } =
     useContext(TextContext);
-  console.log(loading);
   return (
     <>
       {resultEntities || TextfromImage || resultSentiments || resultparaphraser ? (
