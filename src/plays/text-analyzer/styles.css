@@ -3,6 +3,7 @@
   background-size: cover;
   display: flex;
   justify-content: flex-start;
+  border: 5px solid red;
   align-items: center;
   /* width: 100%; */
   height: 100%;
@@ -41,6 +42,10 @@
 }
 
 .drop-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 5px 5px;
 }
 
@@ -56,7 +61,6 @@
   height: 100%;
   border-radius: 8px;
 }
-
 
 textarea::placeholder {
   font-size: 1rem;
@@ -111,4 +115,78 @@ textarea {
   max-width: 900px;
   border-radius: 9px;
   padding: 5px 5px;
+}
+
+@media only screen and (max-width: 760px) {
+  .Play-container {
+    background: url('./images/background.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    border: 5px solid red;
+    align-items: center;
+    /* width: 100%; */
+    height: 1000px;
+    padding: 5px 5px;
+    flex-direction: column;
+  }
+
+  textarea {
+    width: 100%;
+    line-height: 1.5rem;
+    max-width: 300px;
+    border-radius: 9px;
+    padding: 5px 5px;
+    height: 300px;
+  }
+
+  .btn-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px;
+  }
+
+  .Actions-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+  }
+
+  .Text-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 15px 15px; */
+    /* border: 1px solid white; */
+    /* margin-bottom: 70px; */
+    width: 100%;
+    height: 60%;
+    border: 4px solid green;
+    overflow: auto;
+  }
+
+  .result-cont {
+    background-color: white;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
+    border-radius: 8px;
+    overflow: auto;
+  }
+
+  .result-cont h1 {
+    font-size: 20px;
+  }
 }
