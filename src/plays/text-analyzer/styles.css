@@ -119,48 +119,22 @@ textarea {
 
 @media only screen and (max-width: 760px) {
   .Play-container {
-    background: url('./images/background.jpg');
-    background-size: cover;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    /* width: 100%; */
     height: 1000px;
-    padding: 5px 5px;
-    flex-direction: column;
   }
 
   textarea {
     width: 100%;
-    line-height: 1.5rem;
-    width: 100%;
-    border-radius: 9px;
-    padding: 5px 5px;
     max-height: 340px;
     overflow: auto;
   }
 
   .btn-cont {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px 30px;
-  }
-
-  .Actions-cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
   }
 
   .Text-cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     padding: 30px 30px;
     /* margin-bottom: 70px; */
