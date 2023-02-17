@@ -24,7 +24,7 @@ const TextState = ({ children }) => {
       url: 'https://text-analysis12.p.rapidapi.com/sentiment-analysis/api/v1.1',
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
+        'X-RapidAPI-Key': '66e17f9775msh52ab94609039378p183539jsned52ecf69948',
         'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
       },
       data: objdata
@@ -55,7 +55,7 @@ const TextState = ({ children }) => {
         text
       },
       headers: {
-        'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
+        'X-RapidAPI-Key': '66e17f9775msh52ab94609039378p183539jsned52ecf69948',
         'X-RapidAPI-Host': 'textapis.p.rapidapi.com'
       }
     };
@@ -67,7 +67,6 @@ const TextState = ({ children }) => {
         setresultparaphraser();
         setTextfromImage();
         setresultSentiments();
-    
         setloading(false);
       })
       .catch(function (error) {
@@ -86,7 +85,7 @@ const TextState = ({ children }) => {
       url: 'https://paraphraser1.p.rapidapi.com/',
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
+        'X-RapidAPI-Key': '66e17f9775msh52ab94609039378p183539jsned52ecf69948',
         'X-RapidAPI-Host': 'paraphraser1.p.rapidapi.com'
       },
       data: dataobj
@@ -114,17 +113,17 @@ const TextState = ({ children }) => {
         method: 'POST',
         url: 'https://pen-to-print-handwriting-ocr.p.rapidapi.com/recognize/',
         headers: {
-          'X-RapidAPI-Key': '225e9d1661msh382ffaa868531a6p1d3efajsnb28de9f305f8',
+          'X-RapidAPI-Key': '66e17f9775msh52ab94609039378p183539jsned52ecf69948',
           'X-RapidAPI-Host': 'pen-to-print-handwriting-ocr.p.rapidapi.com'
         },
         data: formData
       })
       .then(function (response) {
         setTextfromImage(response.data.value);
+        setloading(false);
         setresultSentiments();
         setresultEntities();
         setresultparaphraser();
-        setloading(false);
        
       })
       .catch(function (error) {

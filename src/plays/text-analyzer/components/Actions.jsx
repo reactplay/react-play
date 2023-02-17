@@ -18,6 +18,8 @@ const Actions = () => {
     );
   }, []);
 
+  console.log(files[0]);
+
   const Convert = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -51,7 +53,9 @@ const Actions = () => {
               {({ getRootProps, getInputProps }) => (
                 <div {...getRootProps()}>
                   <input {...getInputProps()} name="picturePath" />
-                  <p style={{color: 'white' , cursor:'pointer'}}>Add Scanned Images</p>
+                  <p style={{ color: 'white', cursor: 'pointer' }}>
+                    {files[0] ? files[0].name : 'Add Scanned Image'}
+                  </p>
                 </div>
               )}
             </Dropzone>
