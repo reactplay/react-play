@@ -29,7 +29,7 @@ import {
 } from './game/gameLogic.js';
 
 // Audio imports
-import { shotSound, gameTrack, crowdCheering, crowdDisappointed } from './game/utils.js';
+import { shotSound, gameTrack, crowdCheering, crowdDisappointed, wicketHit } from './game/utils.js';
 
 // Get the level from user's local storage
 let keyName = 'cricket-game-user-level';
@@ -61,6 +61,7 @@ function CricketGame(props) {
   const matchInProgress = useRef(false);
   const batSwing = useRef(false);
   const ballEndLeftDirection = useRef(0);
+  const listenForBatSwing = useRef(false);
 
   const gameRef = useRef(
     new GameRef(currLevelInfo.totalBalls, currLevelInfo.totalWickets, currLevelInfo.target)
@@ -78,6 +79,7 @@ function CricketGame(props) {
   // For end game result
   const [resultTitle, setResultTitle] = useState('');
   const [resultDesc, setResultDesc] = useState('');
+  const [resultEnum, setResultEnum] = useState(Result.WON);
 
   function setEndScreen(result) {
     if (result === Result.WON) {
@@ -101,6 +103,7 @@ function CricketGame(props) {
       );
       crowdDisappointed.play();
     }
+    setResultEnum(result);
     endScreenRef.current.classList.remove('hidden');
   }
 
@@ -109,6 +112,8 @@ function CricketGame(props) {
     if (!matchInProgress.current) return;
 
     if (batSwing.current) return;
+
+    if (!listenForBatSwing.current) return;
 
     batSwing.current = true;
     const ballRect = ballRef.current.getBoundingClientRect();
@@ -140,6 +145,7 @@ function CricketGame(props) {
       if (ballEndLeftDirection.current >= 61) {
         wicketRef.current.src = hitWicketImg;
         incrementBall(gameState, setGameState, setCommentary, 0, 1, 'W');
+        wicketHit.play();
       } else {
         incrementBall(gameState, setGameState, setCommentary, 0, 0, '•');
       }
@@ -148,11 +154,13 @@ function CricketGame(props) {
 
   async function throwNextBall() {
     setCommentary('Incoming ball! 🔥');
+    listenForBatSwing.current = true;
 
     ballRef.current.classList.remove('invisible');
     ballRef.current.classList.add('throwit');
 
     await sleep(3 * 1000);
+    listenForBatSwing.current = false;
 
     ballRef.current.classList.add('invisible');
     ballRef.current.classList.remove('throwit');
@@ -161,6 +169,7 @@ function CricketGame(props) {
     if (!batSwing.current && ballEndLeftDirection.current >= 61) {
       wicketRef.current.src = hitWicketImg;
       incrementBall(gameRef.current, setGameState, setCommentary, 0, 1, 'W');
+      wicketHit.play();
     } else if (!batSwing.current) {
       incrementBall(gameRef.current, setGameState, setCommentary, 0, 0, '•');
     }
@@ -257,7 +266,7 @@ function CricketGame(props) {
 
             <EndGameScreen
               endScreenRef={endScreenRef}
-              result={Result.WON}
+              result={resultEnum}
               resultDesc={resultDesc}
               resultTitle={resultTitle}
             />

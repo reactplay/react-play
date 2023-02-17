@@ -32,31 +32,31 @@ export const LEVELS = {
   6: {
     level: 6,
     target: 75,
-    totalBalls: 30,
+    totalBalls: 36,
     totalWickets: 5
   },
   7: {
     level: 7,
     target: 85,
-    totalBalls: 30,
+    totalBalls: 36,
     totalWickets: 5
   },
   8: {
     level: 8,
     target: 90,
-    totalBalls: 30,
+    totalBalls: 36,
     totalWickets: 5
   },
   9: {
     level: 9,
     target: 97,
-    totalBalls: 30,
+    totalBalls: 36,
     totalWickets: 5
   },
   10: {
     level: 10,
     target: 104,
-    totalBalls: 30,
+    totalBalls: 36,
     totalWickets: 5
   },
   11: {
@@ -86,37 +86,37 @@ export const LEVELS = {
   15: {
     level: 15,
     target: 132,
-    totalBalls: 42,
+    totalBalls: 48,
     totalWickets: 5
   },
   16: {
     level: 16,
     target: 136,
-    totalBalls: 42,
+    totalBalls: 48,
     totalWickets: 5
   },
   17: {
     level: 17,
     target: 140,
-    totalBalls: 42,
+    totalBalls: 48,
     totalWickets: 5
   },
   18: {
     level: 18,
     target: 143,
-    totalBalls: 42,
+    totalBalls: 48,
     totalWickets: 5
   },
   19: {
     level: 19,
     target: 146,
-    totalBalls: 42,
+    totalBalls: 48,
     totalWickets: 5
   },
   20: {
     level: 20,
     target: 150,
-    totalBalls: 42,
+    totalBalls: 48,
     totalWickets: 5
   }
 };

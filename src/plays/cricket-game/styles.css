@@ -44,6 +44,7 @@ img {
 
 .help-tool-tip-btn:hover .help-tool-tip-content {
     opacity: 1;
+    visibility: visible;
 }
 
 .modal div, .modal button,
@@ -53,6 +54,10 @@ img {
 .end-screen-title, .end-screen-result,
 .top-bar-button, .help-tool-tip-content {
     font-family: "Signika Negative", Arial, Helvetica, sans-serif;
+}
+
+.top-bar-button, .start-match-button {
+    transition: all 200ms ease;
 }
 
 .end-game-screen-win {

@@ -25,3 +25,5 @@ Update all considerations(if any)
 ## Resources
 
 Update external resources(if any)
+
+- 🎵 Background Music Credit to: Good Vibes - MBB (https://www.youtube.com/watch?v=oeFXuzpJccQ)

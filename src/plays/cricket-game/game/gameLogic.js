@@ -1,4 +1,5 @@
-import { plural, sleep } from './utils.js';
+import { plural, sleep, randomChoice } from './utils.js';
+import { COMMENTARY } from './commentary.js';
 
 export class GameState {
   constructor(totalBalls, totalWickets, target) {
@@ -48,11 +49,11 @@ export function determineAndUpdateScore(shotGap) {
   const totalShotGap = Math.abs(shotGap[0]) + Math.abs(shotGap[1]);
   let runsMade;
 
-  if (0 <= totalShotGap && totalShotGap < 8) runsMade = 6;
-  else if (8 <= totalShotGap && totalShotGap < 16) runsMade = 4;
-  else if (16 <= totalShotGap && totalShotGap < 24) runsMade = 3;
-  else if (24 <= totalShotGap && totalShotGap < 32) runsMade = 2;
-  else if (32 <= totalShotGap && totalShotGap < 40) runsMade = 1;
+  if (0 <= totalShotGap && totalShotGap < 10) runsMade = 6;
+  else if (10 <= totalShotGap && totalShotGap < 18) runsMade = 4;
+  else if (18 <= totalShotGap && totalShotGap < 26) runsMade = 3;
+  else if (26 <= totalShotGap && totalShotGap < 34) runsMade = 2;
+  else if (34 <= totalShotGap && totalShotGap < 44) runsMade = 1;
   else runsMade = 0;
 
   return runsMade;
@@ -119,15 +120,13 @@ export function incrementBall(
 
   if (!runsMade && !wicket) {
     // It's a dot ball
-    setCommentary('Swings the bat but Batsman missed the shot!');
+    setCommentary(randomChoice(COMMENTARY.MISSED));
   } else if (runsMade && !wicket) {
     // Batsman scored runs
-    setCommentary(
-      runsMade > 0 ? `You scored ${runsMade} run${plural(runsMade)}!` : 'Alas! no runs in the ball!'
-    );
+    setCommentary(randomChoice(COMMENTARY.RUNS[runsMade]));
   } else if (!runsMade && wicket) {
     // It's a wicket
-    setCommentary('Sheeeesh! Ball hits the stumps! Samir is out!');
+    setCommentary(randomChoice(COMMENTARY.WICKET));
   }
 }
 
