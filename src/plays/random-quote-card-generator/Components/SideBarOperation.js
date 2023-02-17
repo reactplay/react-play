@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
-
 import { BsAspectRatio, BsDownload } from 'react-icons/bs';
 import { TbRectangleVertical, TbSquare } from 'react-icons/tb';
 import { VscSymbolColor } from 'react-icons/vsc';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { FiRepeat } from 'react-icons/fi';
+import { backupQuotes } from '../data';
 const SideBarOperation = ({
   regenerate,
   setRegenerate,
@@ -17,10 +17,14 @@ const SideBarOperation = ({
   gradients,
   setCardColor,
   setGradientColor,
-  gradientColor
+  gradientColor,
+  setBackupData,
+  apiStatus
 }) => {
   const [aspectRatioVisibility, setAspectRatioVisibility] = useState(false);
   const [colorBoxVisibility, setColorBoxVisibility] = useState(false);
+  const [regenerateAnimation, setRegenerateAnimation] = useState(false);
+  const [backgroundColorMobileActive, setBackgroundColorMobileActive] = useState(false);
   // Passing the selected aspect ration to the state
   const handleAspectRatioSelection = (aspectRationName) => {
     setAspectRatio(aspectRationName);
@@ -70,12 +74,29 @@ const SideBarOperation = ({
     }
   };
 
+  // Quote regeneration logic
+
+  function randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  const handleQuoteRegeneration = () => {
+    if (apiStatus) {
+      setRegenerate(!regenerate);
+    }
+    const randomId = randomInteger(1, backupQuotes.length);
+    const randomQuoteData = backupQuotes.filter((quoteData) => quoteData.id === randomId);
+    setBackupData(randomQuoteData);
+    setRegenerateAnimation(!regenerateAnimation);
+  };
+
   // Design tools in Bottom bar
 
   // 1. Background Color feature
 
   const HandleColorBoxVisibility = () => {
     setColorBoxVisibility(!colorBoxVisibility);
+    setBackgroundColorMobileActive(!backgroundColorMobileActive);
   };
 
   const handleGradientSelection = (selectedGradientColorId) => {
@@ -88,7 +109,7 @@ const SideBarOperation = ({
 
   // 2. Card Color Feature
 
-  const handleCardColor = () => {
+  const handleCardColor = (e) => {
     if (cardColor === 'Light') {
       setCardColor('Dark');
     } else {
@@ -126,7 +147,9 @@ const SideBarOperation = ({
         {/* Background Color Button Container */}
         <div className="flex flex-col justify-center items-center block sm:hidden">
           <button
-            className="mt-2 sm:mt-4 flex items-center justify-center rounded-lg bg-white px-4 py-3 shadow-[-2px_-2px_10px_rgba(255,255,255,1),3px_3px_10px_rgba(0,0,0,0.2)] active:shadow-[inset_-2px_-2px_5px_rgba(255,255,255,0.7),inset_3px_3px_5px_rgba(0,0,0,0.1)]"
+            className={`mt-2 sm:mt-4 flex items-center justify-center rounded-lg px-4 py-3 shadow-[-2px_-2px_10px_rgba(255,255,255,1),3px_3px_10px_rgba(0,0,0,0.2)] active:shadow-[inset_-2px_-2px_5px_rgba(255,255,255,0.7),inset_3px_3px_5px_rgba(0,0,0,0.1)] ${
+              backgroundColorMobileActive ? 'bg-black text-white' : 'bg-white text-black'
+            } `}
             onClick={() => HandleColorBoxVisibility()}
           >
             <VscSymbolColor />
@@ -135,7 +158,7 @@ const SideBarOperation = ({
         </div>
         {/* Background Color selection Button Container */}
         <div
-          className={`p-4 absolute -left-2 bottom-24 sm:right-32 sm:top-28 bg-white rounded-lg block sm:hidden ${
+          className={`p-4 absolute -left-2 bottom-[7rem] sm:right-32 sm:top-28 bg-white rounded-lg block sm:hidden ${
             colorBoxVisibility ? 'block' : 'hidden'
           }`}
         >
@@ -168,11 +191,11 @@ const SideBarOperation = ({
         <div className="flex flex-col justify-center items-center">
           <button
             className="mt-2 flex items-center justify-center rounded-lg bg-white px-4 py-3 shadow-[-2px_-2px_10px_rgba(255,255,255,1),3px_3px_10px_rgba(0,0,0,0.2)] active:shadow-[inset_-2px_-2px_5px_rgba(255,255,255,0.7),inset_3px_3px_5px_rgba(0,0,0,0.1)]"
-            onClick={() => setRegenerate(!regenerate)}
+            onClick={() => handleQuoteRegeneration()}
           >
             <FiRepeat
               className={`transition-transform ease-in duration-300 ${
-                regenerate ? 'rotate-90' : '-rotate-90'
+                regenerate || regenerateAnimation ? 'rotate-90' : '-rotate-90'
               }`}
             />
           </button>
@@ -182,7 +205,9 @@ const SideBarOperation = ({
         {/* Aspect Ratio Button Container */}
         <div className="flex flex-col justify-center items-center">
           <button
-            className="mt-2 sm:mt-6 transition-opacity flex items-center justify-center rounded-lg bg-white px-4 py-3 shadow-[-2px_-2px_10px_rgba(255,255,255,1),3px_3px_10px_rgba(0,0,0,0.2)] active:shadow-[inset_-2px_-2px_5px_rgba(255,255,255,0.7),inset_3px_3px_5px_rgba(0,0,0,0.1)]"
+            className={`mt-2 sm:mt-6 transition-opacity flex items-center justify-center rounded-lg  px-4 py-3 shadow-[-2px_-2px_10px_rgba(255,255,255,1),3px_3px_10px_rgba(0,0,0,0.2)] active:shadow-[inset_-2px_-2px_5px_rgba(255,255,255,0.7),inset_3px_3px_5px_rgba(0,0,0,0.1)] ${
+              aspectRatioVisibility ? 'bg-black text-white' : 'bg-white text-black'
+            } `}
             onClick={() => handleAspectRatioVisibility()}
           >
             <BsAspectRatio />
@@ -192,7 +217,7 @@ const SideBarOperation = ({
 
         {/* Aspect Ratio selection Button Container */}
         <div
-          className={`p-3 sm:p-4 absolute right-[3rem] bottom-24 sm:right-[5.5rem] sm:top-24 bg-white sm:bg-transparent rounded-lg  ${
+          className={`p-3 sm:p-4 absolute right-[3rem] bottom-[7rem] sm:right-[5.5rem] sm:top-24 bg-white sm:bg-transparent rounded-lg  ${
             aspectRatioVisibility ? 'block' : 'hidden'
           }`}
         >
