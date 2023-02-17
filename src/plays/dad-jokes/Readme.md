@@ -13,14 +13,14 @@
 
 ## Play Screenshot
 
-- ### **Light Mode** 
+- ### **Light Mode**
 
 <div align="center">
   <img src="https://i.postimg.cc/0N2n74Bf/light-mode.png" alt="Dad Jokes Screenshot" width="100%" target="_blank" />
   <br>
 </div>
 
-- ### **Dark Mode** 
+- ### **Dark Mode**
 <div align="center">
   <img src="https://i.postimg.cc/3JXFV7M1/dark-mode.png" alt="Dad Jokes Screenshot" width="100%" target="_blank" />
   <br>
@@ -33,7 +33,7 @@
 
 ## Creator Information
 
-- ### **Bobby Sadhwani** - **[Linkedin](https://www.linkedin.com/in/bobby-sadhwani)**, **[Twitter](https://twitter.com/BOBBY__SADHWANI)**, **[Github](https://github.com/Bobby-coder)**, **[Portfolio](https://bobby-sadhwani.netlify.app)**  
+- ### **Bobby Sadhwani** - **[Linkedin](https://www.linkedin.com/in/bobby-sadhwani)**, **[Twitter](https://twitter.com/BOBBY__SADHWANI)**, **[Github](https://github.com/Bobby-coder)**, **[Portfolio](https://bobby-sadhwani.netlify.app)**
 
 ## Video
 
@@ -45,8 +45,3 @@
 - ### **[React Icons](https://react-icons.github.io/react-icons/)**
 
 ### **Happy Coding!** 🤩
-
-
-
-
-

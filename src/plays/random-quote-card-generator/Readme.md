@@ -2,7 +2,6 @@
 
 - `Random Quote Card Generator` will generate random quotes on a customizable card, which can be downloaded.
 
-
 # Tool Features
 
 - This tool can be used in real life for social media posts/stories.
@@ -45,5 +44,6 @@
 ## Resources
 
 Have installed two node modules for implementing the download feature:
- - `DOM to IMAGE` module 
- - `File saver` module 
+
+- `DOM to IMAGE` module
+- `File saver` module
