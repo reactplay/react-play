@@ -52,7 +52,7 @@
 .result-cont {
   background-color: white;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   padding: 15px 15px;
@@ -146,7 +146,7 @@ textarea {
   .result-cont {
     background-color: white;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     padding: 15px 15px;

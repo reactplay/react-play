@@ -5,22 +5,32 @@ import Entities from './results/Entities';
 import Paraphaser from './results/Paraphaser';
 import Sentiments from './results/Sentiments';
 import TextImage from './results/TextImage';
+import Spinner from '../components/Spinner';
 
 const Result = () => {
-  const { TextfromImage, resultEntities, resultSentiments, resultparaphraser } =
+  const { TextfromImage, resultEntities, resultSentiments, resultparaphraser, loading } =
     useContext(TextContext);
+  console.log(loading);
   return (
     <>
       {resultEntities || TextfromImage || resultSentiments || resultparaphraser ? (
         <>
           <div className="result-cont">
-            <h1>Result</h1>
             <div>
-              {resultEntities && <Entities resultEntities={resultEntities} />}
-              {resultparaphraser && <Paraphaser resultparaphraser={resultparaphraser} />}
-              {resultSentiments && <Sentiments resultSentiments={resultSentiments} />}
-              {TextfromImage && <TextImage TextfromImage={TextfromImage} />}
+              <h1>Result</h1>
             </div>
+            {loading ? (
+              <div>
+                <Spinner />
+              </div>
+            ) : (
+              <div>
+                {resultEntities && <Entities resultEntities={resultEntities} />}
+                {resultparaphraser && <Paraphaser resultparaphraser={resultparaphraser} />}
+                {resultSentiments && <Sentiments resultSentiments={resultSentiments} />}
+                {TextfromImage && <TextImage TextfromImage={TextfromImage} />}
+              </div>
+            )}
           </div>
         </>
       ) : (

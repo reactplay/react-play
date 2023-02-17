@@ -10,8 +10,10 @@ const TextState = ({ children }) => {
   const [resultSentiments, setresultSentiments] = useState();
   const [resultEntities, setresultEntities] = useState();
   const [resultparaphraser, setresultparaphraser] = useState();
+  const [loading, setloading] = useState(false);
 
   const getSentiments = (text) => {
+    setloading(true);
     console.log('clicked');
     const objdata = {
       language: 'english',
@@ -36,6 +38,7 @@ const TextState = ({ children }) => {
         setresultparaphraser();
         setTextfromImage();
         console.log(response.data);
+        setloading(false);
       })
       .catch(function (error) {
         console.error(error);
@@ -44,6 +47,7 @@ const TextState = ({ children }) => {
 
   const getEntities = (text) => {
     console.log('clicked');
+    setloading(true);
     const options = {
       method: 'GET',
       url: 'https://textapis.p.rapidapi.com/ner',
@@ -64,6 +68,7 @@ const TextState = ({ children }) => {
         setTextfromImage();
         setresultSentiments();
         console.log(response.data);
+        setloading(false);
       })
       .catch(function (error) {
         console.error(error);
@@ -72,6 +77,7 @@ const TextState = ({ children }) => {
 
   const paraphraser = (text) => {
     console.log('clicked');
+    setloading(true);
     const dataobj = {
       input: text
     };
@@ -94,6 +100,7 @@ const TextState = ({ children }) => {
         setresultSentiments();
         setresultEntities();
         console.log(response.data);
+        setloading(false);
       })
       .catch(function (error) {
         console.error(error);
@@ -101,6 +108,7 @@ const TextState = ({ children }) => {
   };
 
   const ImageToText = (formData) => {
+    setloading(true);
     axios
       .request({
         method: 'POST',
@@ -116,6 +124,7 @@ const TextState = ({ children }) => {
         setresultSentiments();
         setresultEntities();
         setresultparaphraser();
+        setloading(false);
         console.log(response.data);
       })
       .catch(function (error) {
@@ -137,7 +146,8 @@ const TextState = ({ children }) => {
         TextfromImage,
         resultEntities,
         resultSentiments,
-        resultparaphraser
+        resultparaphraser,
+        loading
       }}
     >
       {children}
