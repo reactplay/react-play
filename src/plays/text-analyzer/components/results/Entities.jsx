@@ -7,7 +7,7 @@ const Entities = ({ resultEntities }) => {
         ? 'No Entities'
         : resultEntities.spans.map((item) => (
             <>
-              <li>{item.text}</li>
+              <li key={item}>{item.text}</li>
             </>
           ))}
     </div>
