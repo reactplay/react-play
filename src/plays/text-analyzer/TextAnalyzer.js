@@ -1,11 +1,9 @@
 import PlayHeader from 'common/playlists/PlayHeader';
-import { useContext } from 'react';
 import Actions from './components/Actions';
 import Result from './components/Result';
 import TextArea from './components/TextArea';
-import TextContext from './context/playContext';
 import { TextState } from './context/textStates';
-import './styles.css';
+import './styles/styles.css';
 
 // WARNING: Do not change the entry componenet name
 function TextAnalyzer(props) {

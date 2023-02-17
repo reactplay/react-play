@@ -1,5 +1,5 @@
 .Play-container {
-  background: url('./images/background.jpg');
+  background: url('../images/background.jpg');
   background-size: cover;
   display: flex;
   justify-content: flex-start;

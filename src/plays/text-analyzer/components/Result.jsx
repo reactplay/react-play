@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import TextContext from '../context/playContext';
-import '../styles.css';
+import '../styles/styles.css';
 import Entities from './results/Entities';
 import Paraphaser from './results/Paraphaser';
 import Sentiments from './results/Sentiments';

@@ -1,6 +1,6 @@
-import React, { useCallback, useContext, useState } from 'react';
-import '../styles.css';
-import '../Button.css';
+import React, { useCallback, useContext } from 'react';
+import '../styles/styles.css';
+import '../styles/Button.css';
 import TextContext from '../context/playContext';
 import Dropzone from 'react-dropzone';
 
