@@ -18,8 +18,6 @@ const Actions = () => {
     );
   }, []);
 
-  console.log(files[0]);
-
   const Convert = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -28,6 +26,7 @@ const Actions = () => {
 
     ImageToText(formData);
   };
+
   return (
     <div className="btn-cont">
       <div>
@@ -47,7 +46,7 @@ const Actions = () => {
         </button>
       </div>
       <div>
-        <form action="" onSubmit={Convert} className="drop-form">
+        <form action="" className="drop-form" onSubmit={Convert}>
           <div className="drop-zone-cont">
             <Dropzone acceptedFiles=".jpg,.jpeg,.png" multiple={false} onDrop={onDrop}>
               {({ getRootProps, getInputProps }) => (
@@ -61,7 +60,7 @@ const Actions = () => {
             </Dropzone>
           </div>
           <div>
-            <button type="sumbit" className="button-58">
+            <button className="button-58" type="sumbit">
               Convert
             </button>
           </div>

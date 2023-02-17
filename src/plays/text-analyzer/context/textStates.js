@@ -1,5 +1,4 @@
 import axios from 'axios';
-import data from 'plays/dynamic-routes/Data';
 import { useState } from 'react';
 import TextContext from './playContext';
 
@@ -37,7 +36,7 @@ const TextState = ({ children }) => {
         setresultEntities();
         setresultparaphraser();
         setTextfromImage();
-  
+
         setloading(false);
       })
       .catch(function (error) {
@@ -46,7 +45,6 @@ const TextState = ({ children }) => {
   };
 
   const getEntities = (text) => {
-   
     setloading(true);
     const options = {
       method: 'GET',
@@ -75,7 +73,6 @@ const TextState = ({ children }) => {
   };
 
   const paraphraser = (text) => {
-    
     setloading(true);
     const dataobj = {
       input: text
@@ -98,7 +95,7 @@ const TextState = ({ children }) => {
         setTextfromImage();
         setresultSentiments();
         setresultEntities();
-    
+
         setloading(false);
       })
       .catch(function (error) {
@@ -124,7 +121,6 @@ const TextState = ({ children }) => {
         setresultSentiments();
         setresultEntities();
         setresultparaphraser();
-       
       })
       .catch(function (error) {
         console.error(error);

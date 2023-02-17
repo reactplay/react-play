@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Paraphaser = ({resultparaphraser }) => {
+const Paraphaser = ({ resultparaphraser }) => {
   return (
-     <div  style={{margin: '25px 25px'}} className='paraphaser'>
-      {resultparaphraser.output} 
-     </div>
-  )
-}
+    <div className="paraphaser" style={{ margin: '25px 25px' }}>
+      {resultparaphraser.output}
+    </div>
+  );
+};
 
-export default Paraphaser
+export default Paraphaser;
