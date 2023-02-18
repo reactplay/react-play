@@ -4,7 +4,7 @@
 
 # Tenzies Game
 
-Tenzies is a dice roll game where you have to roll the dice until all dice are the same. You can click each die to freeze it at its current value, then you can roll other dice to match the same number on the frozen dice. If all frozen dices are same number then you  win the game. 
+Tenzies is a dice roll game where you have to roll the dice until all dice are the same. You can click each die to freeze it at its current value, then you can roll other dice to match the same number on the frozen dice. If all frozen dices are same number then you win the game.
 
 ## Play Demographic
 
@@ -26,7 +26,6 @@ Tenzies is a dice roll game where you have to roll the dice until all dice are t
 
   - `Dice`: As the name suggests it is 10 dice box components that shows the number Between `1` to `6`.
   - `Main`: It is responsible for rendering dice components and handle all function Which is use to run the Game.
-
 
 - `Main` component is used to render `Dice` component in the card format.
 
