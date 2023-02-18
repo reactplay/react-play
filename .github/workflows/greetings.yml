@@ -1,7 +1,9 @@
 name: Greetings
 
 on: [pull_request_target, issues]
-
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   greeting:
     runs-on: ubuntu-latest

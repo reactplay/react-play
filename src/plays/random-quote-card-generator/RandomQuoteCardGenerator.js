@@ -4,6 +4,7 @@ import CardContainer from './Components/CardContainer';
 import { useEffect, useState } from 'react';
 import SideBarOperation from './Components/SideBarOperation';
 
+
 const gradients = [
   { id: '1', gradient_color1: '#FF9966', gradient_color2: '#FF5E62' },
   { id: '2', gradient_color1: '#EC008C', gradient_color2: '#FC6767' },
@@ -16,6 +17,18 @@ const gradients = [
 ];
 
 function RandomQuoteCardGenerator(props) {
+
+import { gradients } from './data';
+
+function RandomQuoteCardGenerator(props) {
+  const initialQuoteData = [
+    {
+      quote: " The bad news is time flies. The good news is you're the pilot",
+      author: 'Michael Altshuler'
+    }
+  ];
+
+
   const [gradientColor, setGradientColor] = useState([gradients[0]]);
   const [quote, setQuote] = useState({});
   const [regenerate, setRegenerate] = useState(false);
@@ -23,12 +36,37 @@ function RandomQuoteCardGenerator(props) {
   const [cardColor, setCardColor] = useState('Light');
   const [domImg, setDomImg] = useState({});
 
+
   const apiUrl = 'https://api.quotable.io/random';
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
       .then((data) => setQuote(data))
       .catch((err) => console.error(err));
+
+  const [backupData, setBackupData] = useState(initialQuoteData);
+  const [apiStatus, setApiStatus] = useState(true);
+
+  const apiUrl = 'https://api.quotable.io/random';
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const response = await fetch(apiUrl);
+        if (response.ok) {
+          setApiStatus(true);
+          const json = await response.json();
+          setQuote(json);
+        } else {
+          setApiStatus(false);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    load();
+
   }, [regenerate]);
 
   return (
@@ -46,6 +84,11 @@ function RandomQuoteCardGenerator(props) {
             />
             <CardContainer
               AspectRatio={AspectRatio}
+
+
+              apiStatus={apiStatus}
+              backupData={backupData}
+
               cardColor={cardColor}
               domImg={domImg}
               gradientColor={gradientColor}
@@ -56,12 +99,20 @@ function RandomQuoteCardGenerator(props) {
             />
             <SideBarOperation
               AspectRatio={AspectRatio}
+
+
+              apiStatus={apiStatus}
+
               cardColor={cardColor}
               domImg={domImg}
               gradientColor={gradientColor}
               gradients={gradients}
               regenerate={regenerate}
               setAspectRatio={setAspectRatio}
+
+
+              setBackupData={setBackupData}
+
               setCardColor={setCardColor}
               setGradientColor={setGradientColor}
               setRegenerate={setRegenerate}
