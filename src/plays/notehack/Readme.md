@@ -33,6 +33,10 @@
 
 - ### **Bobby Sadhwani** - **[Linkedin](https://www.linkedin.com/in/bobby-sadhwani)**, **[Twitter](https://twitter.com/BOBBY__SADHWANI)**, **[Github](https://github.com/Bobby-coder)**, **[Portfolio](https://bobby-sadhwani.netlify.app)**  
 
+## Video
+
+- ### **[stackstream](https://www.stack-stream.com/v/notehack-3)**
+
 ## Resources
 
 - ### **[React Icons](https://react-icons.github.io/react-icons/)**
