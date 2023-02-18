@@ -1,5 +1,5 @@
 /* enter stlyes here */
-* {
+.body {
   padding: 0;
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
@@ -48,8 +48,7 @@ img {
 
 .submitButton {
   border: none;
-  border-bottom: 0.1rem solid black;
-  transform: translate(-102%, 6.5%);
+  transform: translate(-135%, -6%) scale(1.25);
   cursor: pointer;
   border-bottom-right-radius: 20%;
   border-top-right-radius: 20%;
