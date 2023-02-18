@@ -96,7 +96,7 @@ function ImageGalleryUsingUnsplashApi(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className="body">
+          <div className="unsplash-image-gallery-body">
             <section id="searchBar">
               <SearchBar setQuery={setQuery} onFormSubmit={handleFormSubmit} />
             </section>
