@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SidebarItem = ({ name, active, handleClick }) => {
-  const className = `sidebar-item ${active ? 'active' : ''}`;
+  const className = `photoshopApp-sidebar-item ${active ? 'active' : ''}`;
 
  
 
