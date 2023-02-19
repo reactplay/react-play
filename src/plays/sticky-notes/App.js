@@ -32,19 +32,17 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (note.note) {
-      
       const newNote = {
         ...note,
         id: Math.random() * 10
       };
-  
+
       setNotes([newNote, ...notes]);
       setNote({
         body: ''
       });
       setToggleForm(!toggleForm);
     }
-
   };
 
   const handleDelete = (id) => {
