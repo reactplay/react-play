@@ -31,16 +31,20 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newNote = {
-      ...note,
-      id: Math.random() * 10
-    };
+    if (note.note) {
+      
+      const newNote = {
+        ...note,
+        id: Math.random() * 10
+      };
+  
+      setNotes([newNote, ...notes]);
+      setNote({
+        body: ''
+      });
+      setToggleForm(!toggleForm);
+    }
 
-    setNotes([newNote, ...notes]);
-    setNote({
-      body: ''
-    });
-    setToggleForm(!toggleForm);
   };
 
   const handleDelete = (id) => {
