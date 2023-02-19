@@ -1,7 +1,5 @@
 /* enter stlyes here */
-
-  
-  .photoshopApp-container {
+.photoshopApp-container {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr auto;
@@ -15,7 +13,7 @@
   
   .photoshopApp-main-image {
     grid-area: image;
-    background-image: url("https://source.unsplash.com/EwKXn5CapA4");
+    background-image: url("https://images.unsplash.com/photo-1676676676239-5e4f826c6143?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80");
     width: 100%;
     height: 100%;
     background-position: top center;
@@ -30,6 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    
   }
   
   .photoshopApp-sidebar-item {
@@ -73,4 +72,7 @@
   .photoshopApp-slider {
     width: 100%;
     cursor: pointer;
+    
   }
+
+  

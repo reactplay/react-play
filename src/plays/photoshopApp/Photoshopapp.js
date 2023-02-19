@@ -1,20 +1,17 @@
 import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
-import React, { useState } from 'react';
+import React, { useState,useMemo } from 'react';
 import { DEFAULT_OPTIONS } from './Constants';
 import Slider from './Slider';
 import SidebarItem from './SidebarItem';
+
 // WARNING: Do not change the entry componenet name
+function Photoshopapp(props) {
 
-
-
-
-function PhotoshopApp(props) {
   // Your Code Start below.
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
   const selectedOption = useMemo(()=>options[selectedOptionIndex],[options,selectedOptionIndex]);
-
 
   function handleSliderChange({ target }) {
     setOptions((prevOptions) => {
@@ -25,22 +22,20 @@ function PhotoshopApp(props) {
       });
     });
   }
-
-
+  
   const imageStyle = useMemo(() => {
-      const filters = options.map((option) => {
-      return `${option.property}(${option.value}${option.unit})`;
-    });
-    return { filter: filters.join(' ') };
-  },[options])
-
+    const filters = options.map((option) => {
+    return `${option.property}(${option.value}${option.unit})`;
+  });
+  return { filter: filters.join(' ') };
+},[options])
   return (
     <>
       <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body">
-          {/* Your Code Starts Here */}
-          <div className="photoshopApp-container">
+        {/* Your Code Starts Here */}
+        <div className="photoshopApp-container">
             <div className="photoshopApp-main-image" style={imageStyle} />
             <div className="photoshopApp-sidebar">
               {options.map((option, index) => {
@@ -61,11 +56,11 @@ function PhotoshopApp(props) {
               value={selectedOption.value}
             />}
           </div>
-          {/* Your Code Ends Here */}
+        {/* Your Code Ends Here */}
         </div>
       </div>
     </>
   );
 }
 
-export default PhotoshopApp;
+export default Photoshopapp;
