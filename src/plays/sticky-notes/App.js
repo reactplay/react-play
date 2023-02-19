@@ -31,7 +31,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (note.note) {
+    if (note.body) {
       const newNote = {
         ...note,
         id: Math.random() * 10
