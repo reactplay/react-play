@@ -415,11 +415,13 @@
 
 .play-details .play-details-header .header-secondary .header-author a {
   color: var(--color-neutral-90);
+  border-bottom: 2px solid var(--color-neutral-10);
   text-decoration: none;
 }
 
 .play-details .play-details-header .header-secondary .header-author a:hover,
 .play-details .play-details-header .header-secondary .header-author a:focus {
+  border-bottom: 2px solid var(--color-brand-primary);
   color: var(--color-neutral-100);
 }
 
