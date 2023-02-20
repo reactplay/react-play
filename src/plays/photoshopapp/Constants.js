@@ -1,72 +1,72 @@
 export const DEFAULT_OPTIONS = [
-    {
-      name: 'Brightness',
-      property: 'brightness',
-      value: 100,
-      range: {
-        min: 0,
-        max: 200
-      },
-      unit: '%'
+  {
+    name: 'Brightness',
+    property: 'brightness',
+    value: 100,
+    range: {
+      min: 0,
+      max: 200
     },
-    {
-      name: 'Contrast',
-      property: 'contrast',
-      value: 100,
-      range: {
-        min: 0,
-        max: 200
-      },
-      unit: '%'
+    unit: '%'
+  },
+  {
+    name: 'Contrast',
+    property: 'contrast',
+    value: 100,
+    range: {
+      min: 0,
+      max: 200
     },
-    {
-      name: 'Saturation',
-      property: 'saturate',
-      value: 100,
-      range: {
-        min: 0,
-        max: 200
-      },
-      unit: '%'
+    unit: '%'
+  },
+  {
+    name: 'Saturation',
+    property: 'saturate',
+    value: 100,
+    range: {
+      min: 0,
+      max: 200
     },
-    {
-      name: 'Grayscale',
-      property: 'grayscale',
-      value: 0,
-      range: {
-        min: 0,
-        max: 100
-      },
-      unit: '%'
+    unit: '%'
+  },
+  {
+    name: 'Grayscale',
+    property: 'grayscale',
+    value: 0,
+    range: {
+      min: 0,
+      max: 100
     },
-    {
-      name: 'Sepia',
-      property: 'sepia',
-      value: 0,
-      range: {
-        min: 0,
-        max: 100
-      },
-      unit: '%'
+    unit: '%'
+  },
+  {
+    name: 'Sepia',
+    property: 'sepia',
+    value: 0,
+    range: {
+      min: 0,
+      max: 100
     },
-    {
-      name: 'Hue Rotate',
-      property: 'hue-rotate',
-      value: 0,
-      range: {
-        min: 0,
-        max: 360
-      },
-      unit: 'deg'
+    unit: '%'
+  },
+  {
+    name: 'Hue Rotate',
+    property: 'hue-rotate',
+    value: 0,
+    range: {
+      min: 0,
+      max: 360
     },
-    {
-      name: 'Blur',
-      property: 'blur',
-      value: 0,
-      range: {
-        min: 0,
-        max: 20
-      },
-      unit: 'px'
-    }
-  ];
+    unit: 'deg'
+  },
+  {
+    name: 'Blur',
+    property: 'blur',
+    value: 0,
+    range: {
+      min: 0,
+      max: 20
+    },
+    unit: 'px'
+  }
+];
