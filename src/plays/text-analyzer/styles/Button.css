@@ -1,5 +1,5 @@
 /* CSS */
-.button-58 {
+.Actions-button{
   align-items: center;
   background-color: #06f;
   color: white;
@@ -28,24 +28,24 @@
   margin: 15px 15px;
 }
 
-.button-58:focus {
+.Actions-button:focus {
   color: #171e29;
 }
 
-.button-58:hover {
+.Actions-button:hover {
   background-color: #3385ff;
   border-color: #3385ff;
   fill: #06f;
 }
 
-.button-58:active {
+.Actions-button:active {
   background-color: #3385ff;
   border-color: #3385ff;
   fill: #06f;
 }
 
 @media (min-width: 768px) {
-  .button-58 {
+  .Actions-button{
     min-width: 170px;
   }
 }

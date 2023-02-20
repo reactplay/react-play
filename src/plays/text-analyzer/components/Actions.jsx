@@ -30,18 +30,18 @@ const Actions = () => {
   return (
     <div className="btn-cont">
       <div>
-        <button className="button-58" onClick={() => getSentiments(value)}>
+        <button className="Actions-button" onClick={() => getSentiments(value)}>
           {' '}
           Sentiment{' '}
         </button>
       </div>
       <div>
-        <button className="button-58" onClick={() => getEntities(value)}>
+        <button className="Actions-button" onClick={() => getEntities(value)}>
           Entities
         </button>
       </div>
       <div>
-        <button className="button-58" onClick={() => paraphraser(value)}>
+        <button className="Actions-button" onClick={() => paraphraser(value)}>
           Paraphraser
         </button>
       </div>
@@ -60,7 +60,7 @@ const Actions = () => {
             </Dropzone>
           </div>
           <div>
-            <button className="button-58" type="sumbit">
+            <button className="Actions-button" type="sumbit">
               Convert
             </button>
           </div>
