@@ -2,8 +2,7 @@ import PlayHeader from 'common/playlists/PlayHeader';
 import { useState } from 'react';
 import './PlayDictionary.css';
 import { BiSearch } from 'react-icons/bi';
-
-const NOT_FOUND_MESSAGE = 'No Definitions Found';
+import * as C from './ThemeConstant.js';
 
 // WARNING: Do not change the entry componenet name
 function PlayDictionary(props) {
@@ -27,8 +26,6 @@ function PlayDictionary(props) {
         setIsWordFound(true);
         setFoundMeaning(json[0]);
       }
-    } else {
-      console.log('Please enter a word');
     }
   };
 
@@ -46,7 +43,7 @@ function PlayDictionary(props) {
               onChange={(e) => setSearchInput(e.target.value)}
             />
             <button className="search-icon-btn" onClick={getWordMeaning}>
-              <BiSearch className="search-icon" size="24px" />
+              <BiSearch className="search-icon" color={C.purple} size="24px" />
             </button>
           </div>
           {/* ------------------------------- OUTPUT PART --------------------------------- */}
@@ -55,11 +52,12 @@ function PlayDictionary(props) {
               <div className="meaning-found">
                 <div className="word-display">
                   <p>{foundMeaning.word}</p>
+                  <span style={{ color: C.purple }}>{foundMeaning.phonetic}</span>
                 </div>
               </div>
             ) : (
               <div className="meaning-not-found">
-                <p>{notFoundReponse.message ? notFoundReponse.message : ''}</p>
+                <p>{notFoundReponse.message && notFoundReponse.message}</p>
               </div>
             )}
           </div>
