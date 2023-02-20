@@ -10,7 +10,7 @@ Convert YouTube Music Videos to MP3 with Ease
 ## Creator Information
 
 - User: Shivam-Katare
-- Gihub Link: https://github.com/Shivam-Katare
+- Github Link: https://github.com/Shivam-Katare
 - Blog: 
 - Video: https://www.stack-stream.com/v/introducing-tube-2-tunes-for-2-plays-a-month-3
 
