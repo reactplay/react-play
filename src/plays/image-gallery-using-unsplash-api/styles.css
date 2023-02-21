@@ -22,13 +22,6 @@
   grid-auto-flow: dense;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-  display: inline-block;
-}
-
 .searchBar {
   display: flex;
   align-items: center;
