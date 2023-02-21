@@ -483,7 +483,6 @@
 
 .list-contributors .contributor-anchor {
   display: block;
-  
   border-radius: 160px;
   overflow: hidden;
   transition: all 0.16s ease-in-out;
@@ -498,7 +497,6 @@
 }
 
 .list-contributors .contributor-anchor .contributor-thumb {
-  /* width: 160px; */
   height: auto;
   filter: grayscale(100%);
 }
@@ -512,16 +510,6 @@
   .list-contributors {
     grid-gap: 2rem;
   }
-
-  /* .list-contributors .contributor-anchor {
-    width: 120px;
-    height: 120px;
-    border-radius: 120px;
-  }
-
-  .list-contributors .contributor-anchor .contributor-thumb {
-    width: 120px;
-  } */
 }
 
 @media screen and (max-width: 568px) {
@@ -529,9 +517,6 @@
     width: 90%;
     grid-gap: 1rem;
   }
-  /* .list-contributors .contributor-anchor .contributor-thumb {
-    width: 80px;
-  } */
 }
 
 /* Pills */
