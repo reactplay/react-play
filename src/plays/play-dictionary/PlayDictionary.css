@@ -7,7 +7,6 @@
 
 .main-container {
   width: 100%;
-  height: 100%;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -45,18 +44,10 @@
 }
 
 @media screen and (max-width: 480px) {
-  .container-input {
-    position: realtive;
-    padding: 30px 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
   .search-icon-btn {
     position: absolute;
     right: 20px;
     width: 40px;
-    /* background: #f00; */
   }
 }
 
@@ -69,14 +60,12 @@
 
 .meaning-found {
   width: 100%;
-  padding: 0 40px;
   display: flex;
   flex-direction: column;
 }
 
 .word-display {
-  border-bottom: 1px solid #000000;
-  padding: 20px 0 40px 0;
+  padding: 20px 40px 40px 40px;
 }
 
 .word-display p {
@@ -85,6 +74,59 @@
   text-transform: capitalize;
 }
 
+.meanings-display {
+  padding: 0 40px;
+}
+
+.meaning {
+  border-top: 1px solid #877a7a;
+  padding: 20px 0 40px 0;
+  /* background-color: #93c1e8; */
+}
+
+.meaning > span {
+  margin-top: 20px;
+}
+
+.partOfSpeech {
+  padding: 0 20px 0 0;
+  margin-top: -40px;
+  background-color: #fff;
+  width: fit-content;
+}
+
+.partOfSpeech span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.meaning > .definitions > ul {
+  padding: 20px 30px;
+}
+
+.meaning > .definitions > ul > li {
+  padding: 10px 0;
+  list-style-type: disc;
+}
+
+@media screen and (max-width: 480px) {
+  .container-input {
+    position: realtive;
+    padding: 30px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .meanings-display {
+    padding: 0 20px;
+  }
+
+  .word-display {
+    padding: 20px 20px 40px 20px;
+  }
+}
+
+/* ----------------------------- Meaning not found --------------------------------- */
 .meaning-not-found p {
   font-size: 18px;
   font-weight: 600;

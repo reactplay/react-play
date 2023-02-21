@@ -54,6 +54,11 @@ function PlayDictionary(props) {
                   <p>{foundMeaning.word}</p>
                   <span style={{ color: C.purple }}>{foundMeaning.phonetic}</span>
                 </div>
+                <div className="meanings-display">
+                  {foundMeaning.meanings.map(({ partOfSpeech, definitions }, index) => (
+                    <Meaning definitions={definitions} key={index} partOfSpeech={partOfSpeech} />
+                  ))}
+                </div>
               </div>
             ) : (
               <div className="meaning-not-found">
@@ -66,5 +71,23 @@ function PlayDictionary(props) {
     </>
   );
 }
+
+const Meaning = ({ partOfSpeech, definitions }) => {
+  return (
+    <div className="meaning">
+      <div className="partOfSpeech">
+        <span>{partOfSpeech}</span>
+      </div>
+      <span>Meaning</span>
+      <div className="definitions">
+        <ul>
+          {definitions?.map((definition, index) => (
+            <li key={index}>{definition.definition}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
 
 export default PlayDictionary;

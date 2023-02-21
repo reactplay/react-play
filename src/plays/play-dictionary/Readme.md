@@ -11,8 +11,8 @@ Its a Dictionary that you can play around with to understand meaning of new Engl
 
 - User: Abhishek-90
 - Gihub Link: https://github.com/Abhishek-90
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 
