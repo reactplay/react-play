@@ -42,7 +42,6 @@ const Contributors = () => {
               data-testid={`contributor-${contributor.id}`}
               key={contributor.id}
             >
-              {/* {console.log('contributioncircle', contributioncircle(contributor?.contributions))} */}
               <a
                 className={`contributor-anchor ${contributioncircle(contributor?.contributions)}`}
                 href={contributor.html_url}
