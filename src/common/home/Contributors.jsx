@@ -6,19 +6,19 @@ const Contributors = () => {
     var contributionCircle;
     switch (true) {
       case item >= 80:
-        contributionCircle = { height: '150px', width: '150px' };
+        contributionCircle = 'Contributior-circle-1';
 
         break;
       case item < 80 && item >= 50:
-        contributionCircle = { height: '130px', width: '130px' };
+        contributionCircle = 'Contributior-circle-2';
 
         break;
       case item < 50 && item >= 30:
-        contributionCircle = { height: '100px', width: '100px' };
+        contributionCircle = 'Contributior-circle-3';
 
         break;
       default:
-        contributionCircle = { height: '50px', width: '50px' };
+        contributionCircle = 'Contributior-circle-4';
     }
 
     return contributionCircle;
@@ -44,11 +44,9 @@ const Contributors = () => {
             >
               {/* {console.log('contributioncircle', contributioncircle(contributor?.contributions))} */}
               <a
-                className="contributor-anchor"
+                className={`contributor-anchor ${contributioncircle(contributor?.contributions)}`}
                 href={contributor.html_url}
                 rel="noopener noreferrer"
-                // style={{height: '50px', width: '50px'}}
-                style={contributioncircle(contributor?.contributions)}
                 target="_blank"
                 title={`${contributor.login}(${contributor.contributions} contributions)`}
               >
