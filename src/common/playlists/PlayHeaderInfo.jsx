@@ -31,19 +31,18 @@ const Author = ({ playCreatedAt, user }) => {
   return (
     <div className="flex items-center gap-2 header-author">
       <img alt="avatar" className="rounded-full" height="25px" src={user?.avatarUrl} width="25px" />
-      <div className="flex flex-col">
+      <div className="flex items-center gap-2">
         <a
-          className="flex gap-2"
           href={`${getHostName()}/contributors/${email2Slug(user.email)}/badges`}
           rel="noopener noreferrer"
           target="_blank"
         >
           <strong>{user?.displayName}</strong>
-          <span className="text-gray-400">&bull;</span>
-
-          {/* Formatted date goes here */}
-          <small className="m-0 font-medium text-left header-desc">{formattedPlayDate}</small>
         </a>
+        <span className="text-gray-400">&bull;</span>
+
+        {/* Formatted date goes here */}
+        <small className="m-0 font-medium text-left header-desc">{formattedPlayDate}</small>
       </div>
     </div>
   );
