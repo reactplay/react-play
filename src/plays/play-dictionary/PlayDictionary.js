@@ -86,7 +86,7 @@ const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
       <div className="partOfSpeech">
         <span>{partOfSpeech}</span>
       </div>
-      <span>Meaning</span>
+      <span style={{ fontSize: '20px' }}>Meaning</span>
       <div className="definitions">
         <ul>
           {definitions?.map((definition, index) => (
@@ -98,7 +98,7 @@ const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
       </div>
       {synonyms.length > 0 && (
         <div className="synonyms">
-          <span>Synonyms</span>
+          <span>Synonyms:</span>
           <span style={{ color: C.purple, fontSize: '18px', fontWeight: '600' }}>
             {synonyms[0]}
           </span>
@@ -106,8 +106,10 @@ const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
       )}
       {antonyms.length > 0 && (
         <div className="antonyms">
-          <span>Antonyms</span>
-          <span style={{ color: C.purple }}>{antonyms[0]}</span>
+          <span>Antonyms:</span>
+          <span style={{ color: C.purple, fontSize: '18px', fontWeight: '600' }}>
+            {antonyms[0]}
+          </span>
         </div>
       )}
     </div>
