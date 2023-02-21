@@ -105,7 +105,7 @@ Or
 npm install
 ```
 
-if you donot have `yarn` installed on your pc follow to below steps to install it.
+if you don't have `yarn` installed on your PC, follow the steps below to install it..
 
 **Windows**
 1. open your command prompt as administrator.
@@ -121,7 +121,7 @@ or
 `brew install yarn`
 
 **Or Download Package**
-if you are unable to install yarn following the above mention process then you can simply download the package and install it. Visit the official link of yarpkg there you can on the website just expand the `Alternative` section and it will ask for the version to download for windows/linux/mac.
+If you are unable to install yarn following the above-mentioned process, then you can simply download the package and install it. Visit the official website of Yarn; there you can just expand the "Alternative" section and it will ask for the version to download for Windows, Linux, or Mac.
 `https://classic.yarnpkg.com/en/docs/install#windows-stable`
 
 
@@ -160,25 +160,27 @@ Use the following command to format and lint the code:
 
 ```bash
 yarn run format
-
-#OR
-
+```
+OR
+```
 npm run format
 ```
 
 #### Lint the code
-
+*to check the linting issue*
 ```bash
-# to check the linting issue
-
 yarn run lint
-#OR
+```
+OR
+```
 npm run lint
-
-
-# to fix the linting issue
+```
+*to fix the linting issue*
+```bash
 yarn run lint:fix
-#OR
+```
+OR
+```
 npm run lint:fix
 ```
 
@@ -188,7 +190,9 @@ Use the following command to build the app for production:
 
 ```bash
 yarn build
-#OR
+```
+OR
+```
 npm build
 ```
 
@@ -200,7 +204,9 @@ Use the following command to run cypress locally:
 
 ```bash
 yarn cypress:open
-#OR
+```
+OR
+```
 npm cypress:open
 ```
 
