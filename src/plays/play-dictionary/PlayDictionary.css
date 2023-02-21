@@ -153,6 +153,11 @@ li > span {
 }
 
 /* ----------------------------- Meaning not found --------------------------------- */
+.meaning-not-found {
+  padding: 40px 40px;
+  text-align: center;
+}
+
 .meaning-not-found p {
   font-size: 18px;
   font-weight: 600;
