@@ -55,9 +55,17 @@ function PlayDictionary(props) {
                   <span style={{ color: C.purple }}>{foundMeaning.phonetic}</span>
                 </div>
                 <div className="meanings-display">
-                  {foundMeaning.meanings.map(({ partOfSpeech, definitions }, index) => (
-                    <Meaning definitions={definitions} key={index} partOfSpeech={partOfSpeech} />
-                  ))}
+                  {foundMeaning.meanings.map(
+                    ({ partOfSpeech, definitions, antonyms, synonyms }, index) => (
+                      <Meaning
+                        antonyms={antonyms}
+                        definitions={definitions}
+                        key={index}
+                        partOfSpeech={partOfSpeech}
+                        synonyms={synonyms}
+                      />
+                    )
+                  )}
                 </div>
               </div>
             ) : (
@@ -72,7 +80,7 @@ function PlayDictionary(props) {
   );
 }
 
-const Meaning = ({ partOfSpeech, definitions }) => {
+const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
   return (
     <div className="meaning">
       <div className="partOfSpeech">
@@ -82,10 +90,26 @@ const Meaning = ({ partOfSpeech, definitions }) => {
       <div className="definitions">
         <ul>
           {definitions?.map((definition, index) => (
-            <li key={index}>{definition.definition}</li>
+            <li key={index}>
+              <span>{definition.definition}</span>
+            </li>
           ))}
         </ul>
       </div>
+      {synonyms.length > 0 && (
+        <div className="synonyms">
+          <span>Synonyms</span>
+          <span style={{ color: C.purple, fontSize: '18px', fontWeight: '600' }}>
+            {synonyms[0]}
+          </span>
+        </div>
+      )}
+      {antonyms.length > 0 && (
+        <div className="antonyms">
+          <span>Antonyms</span>
+          <span style={{ color: C.purple }}>{antonyms[0]}</span>
+        </div>
+      )}
     </div>
   );
 };

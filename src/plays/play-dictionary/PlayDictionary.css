@@ -20,6 +20,7 @@
   display: flex;
   justify-content: center;
   position: relative;
+  border-bottom: 1px solid #000;
 }
 
 .input-dictionary {
@@ -107,6 +108,29 @@
 .meaning > .definitions > ul > li {
   padding: 10px 0;
   list-style-type: disc;
+}
+
+li {
+  color: #df37f2;
+}
+
+li > span {
+  color: #000;
+}
+
+.meaning > .synonyms,
+.meaning > .antonyms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.meaning > .synonyms > span,
+.meaning > .antonyms > span {
+  width: fit-content;
+  margin-right: 30px;
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 480px) {
