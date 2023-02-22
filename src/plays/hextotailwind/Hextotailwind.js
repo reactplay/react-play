@@ -2,12 +2,12 @@ import PlayHeader from 'common/playlists/PlayHeader';
 import { useRef, useState } from 'react';
 import './styles.css';
 import Tailwincolor from './Tailwincolor';
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>;
 
 // WARNING: Do not change the entry componenet name
 function Hextotailwind(props) {
   const textInput = useRef('');
-  const [twColor, setTwColor] = useState(null)
+  const [twColor, setTwColor] = useState(null);
   // Your Code Start below.
 
   function convertToTW(params) {

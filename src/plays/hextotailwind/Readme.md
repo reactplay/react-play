@@ -12,7 +12,7 @@ Hex to Tailwind css nearest color converter.
 - User: debjit
 - Gihub Link: https://github.com/debjit
 - Blog: https://debjit.in
-- Video: 
+- Video:
 
 ## Implementation Details
 
