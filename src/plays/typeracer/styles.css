@@ -1,0 +1,8 @@
+/* enter stlyes here */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.play-details-body{
+    @apply min-h-screen bg-slate-800 text-slate-50 grid place-items-center font-mono tracking-wider px-4;
+}
