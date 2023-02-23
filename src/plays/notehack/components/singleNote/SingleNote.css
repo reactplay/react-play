@@ -1,0 +1,50 @@
+.notehack-play .single-note-container {
+  padding: 15px 10px;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  width: 350px;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+  border-left: 5px solid #1365dfaf;
+  cursor: pointer;
+}
+
+.notehack-play .single-note-container:hover {
+  background-color: #f8f8f8;
+}
+
+.notehack-play .single-note-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  word-break: break-word;
+}
+
+.notehack-play .single-note-info .name {
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.notehack-play .single-note-info .date {
+  font-size: 12px;
+  color: #737373;
+}
+
+.notehack-play .single-note-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.notehack-play .single-note-buttons .edit {
+  font-size: 18px;
+  color: #1363df;
+  cursor: pointer;
+}
+
+.notehack-play .single-note-buttons .delete {
+  font-size: 18px;
+  color: #d82148;
+  cursor: pointer;
+}
