@@ -1,7 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
-
-const CardContainer = ({ gradientColor, quote, AspectRatio, cardColor, setDomImg, domImg }) => {
+import data from '../data';
+const CardContainer = ({
+  gradientColor,
+  quote,
+  AspectRatio,
+  cardColor,
+  setDomImg,
+  domImg,
+  backupData,
+  apiStatus
+}) => {
   const downloadImgRef = useRef();
   const targetEl = downloadImgRef.current;
 
@@ -32,11 +41,11 @@ const CardContainer = ({ gradientColor, quote, AspectRatio, cardColor, setDomImg
         >
           <FaQuoteLeft className="mb-8" size={28} />{' '}
           <p className="text-center text-sm sm:text-base">
-            {quote.content ? quote.content : 'Loading...'}
+            {apiStatus ? (quote.content ? quote.content : '...loading') : backupData[0].quote}
           </p>
           <p className="text-center  text-sm sm:text-base font-semibold mt-4">
             {' '}
-            - {quote.author ? quote.author : 'Loading...'}
+            - {apiStatus ? (quote.author ? quote.author : '...loading') : backupData[0].author}
           </p>
         </div>
       </div>
