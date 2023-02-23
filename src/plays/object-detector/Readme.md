@@ -11,8 +11,8 @@ Build a play for detect objects with ai model
 
 - User: senali-d
 - Gihub Link: https://github.com/senali-d
-- Blog: 
-- Video: 
+- Blog:
+- Video: https://www.stack-stream.com/v/object-detector-with-tenserflowjs
 
 ## Implementation Details
 
