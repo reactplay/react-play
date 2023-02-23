@@ -2,18 +2,6 @@
 
 /* enter styles here */
 
-* {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
-
-img {
-    pointer-events: none;
-    user-select: none;
-    cursor: none;
-}
-
 /* The main body of game */
 .cricket-home-body {
     background-image: url("./assets//cricket-ground.jpg");
@@ -21,14 +9,28 @@ img {
     0px 0px 7px 2px rgba(0, 0, 0, 0.2),
     0px 0px 7px 2px rgba(0, 0, 0, 0.2),
     0px 0px 7px 2px rgba(0, 0, 0, 0.2);
+
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.cricket-home-body img {
+    pointer-events: none;
+    user-select: none;
+    cursor: none;
+}
+
+.cricket-home-body * {
+    font-family: "Signika Negative", Arial, Helvetica, sans-serif;
 }
 
 /* Styles of other components */
-.modal {
+.cricket-home-body .modal {
     background: linear-gradient(to bottom, #0F6292, #243763, #0F6292)
 }
 
-.score-panel {
+.cricket-home-body .score-panel {
     background: linear-gradient(to bottom right, #3C79F5, #2DCDDF);
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
     animation: panel-fade-in 1.0s ease-out 0s 1 normal forwards;
@@ -45,15 +47,6 @@ img {
 .help-tool-tip-btn:hover .help-tool-tip-content {
     opacity: 1;
     visibility: visible;
-}
-
-.modal div, .modal button,
-.score, .info-box, .level-info, 
-.runs-wickets, .overs-counter, .overs-counter div,
-.commentary-and-timeline, .commentary, .timeline, .action, 
-.end-screen-title, .end-screen-result,
-.top-bar-button, .help-tool-tip-content {
-    font-family: "Signika Negative", Arial, Helvetica, sans-serif;
 }
 
 .top-bar-button, .start-match-button {
