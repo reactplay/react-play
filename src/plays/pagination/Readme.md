@@ -25,6 +25,7 @@ Fetch 100 github users using this API `https://api.github.com/users?per_page=100
 
 - useState
 - useEffect
+- custom hooks
 
 ## Resources
 
