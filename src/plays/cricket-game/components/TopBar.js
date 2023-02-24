@@ -20,7 +20,7 @@ export default function TopBar({ hitBoxRef, gameTrack }) {
       <div className="h-full flex items-center justify-evenly space-x-1 md:space-x-3">
         <button className="top-bar-button help-tool-tip-btn w-6 md:w-8 h-8 rounded-lg bg-orange-200 text-sm opacity-80 hover:opacity-90 active:opacity-100 relative">
           ❓
-          <p className="help-tool-tip-content absolute top-10 w-44 h-28 md:w-52 md:h-32 bg-slate-700 text-slate-100 rounded-lg font-light text-xs md:text-sm text-center flex items-center justify-center opacity-100 left-[-12px] md:left-0 invisible">
+          <p className="help-tool-tip-content absolute top-10 w-44 h-28 md:w-52 md:h-32 bg-slate-700 text-slate-100 rounded-lg font-light text-xs md:text-sm text-center flex items-center justify-center opacity-100 left-[-12px] md:left-0 invisible font-cricket-game">
             {helpContent}
           </p>
         </button>
@@ -31,7 +31,7 @@ export default function TopBar({ hitBoxRef, gameTrack }) {
           🎵
         </button>
         <button
-          className="top-bar-button w-24 md:w-28 h-8 rounded-lg bg-orange-200 text-[0.80rem] md:text-sm opacity-80 hover:opacity-90 active:opacity-100"
+          className="top-bar-button w-24 md:w-28 h-8 rounded-lg bg-orange-200 text-[0.80rem] md:text-sm opacity-80 hover:opacity-90 active:opacity-100 font-cricket-game"
           onClick={(event) => hitBoxRef.current.classList.toggle('hit-box-blink')}
         >
           Toggle Hit Box

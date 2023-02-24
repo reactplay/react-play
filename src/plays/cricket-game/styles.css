@@ -21,7 +21,7 @@
     cursor: none;
 }
 
-.cricket-home-body * {
+.font-cricket-game {
     font-family: "Signika Negative", Arial, Helvetica, sans-serif;
 }
 
@@ -33,7 +33,7 @@
 .cricket-home-body .score-panel {
     background: linear-gradient(to bottom right, #3C79F5, #2DCDDF);
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
-    animation: panel-fade-in 1.0s ease-out 0s 1 normal forwards;
+    animation: panel-fade-in 1.0s ease-out 2s 1 normal forwards;
 }
 
 .score, .info-box, .commentary-and-timeline {
@@ -41,7 +41,7 @@
 }
 
 .score, .info-box, .commentary-and-timeline, .level-info {
-    animation: panel-child-fade-in 0.5s ease-out 1s 1 normal forwards;
+    animation: panel-child-fade-in 0.5s ease-out 3s 1 normal forwards;
 }
 
 .help-tool-tip-btn:hover .help-tool-tip-content {
@@ -260,6 +260,7 @@
     }
     100% {
         width: 99%;
+        bottom: 4px;
     }
 }
 

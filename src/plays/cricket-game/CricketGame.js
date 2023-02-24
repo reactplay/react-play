@@ -261,7 +261,7 @@ function CricketGame(props) {
       <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body">
-          <div className="cricket-home-body w-full h-full bg-center bg-no-repeat bg-cover flex items-center justify-center overflow-y-visible md:overflow-y-hidden overflow-x-hidden">
+          <div className="cricket-home-body w-full h-full bg-center bg-no-repeat bg-cover flex items-center justify-center overflow-y-visible md:overflow-y-hidden overflow-x-hidden font-cricket-game">
             <TopBar gameTrack={gameTrack} hitBoxRef={hitBoxRef} />
 
             <EndGameScreen
