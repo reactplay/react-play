@@ -10,7 +10,7 @@ Object detection is a computer vision task in machine learning that involves ide
 There are several popular object detection algorithms, including YOLO (You Only Look Once), Faster R-CNN (Region-based Convolutional Neural Network), and SSD (Single Shot Detector). These algorithms have different strengths and weaknesses, and the choice of algorithm depends on the specific requirements of the application.
 
 #### How I build this object detector?
-Obvously this is a react play, means javascript project. So I use TensorFlow.js library. Tenseflow.js is a library for develop ML models in JavaScript, and use ML directly in the browser or in Node.js. There are already trained ML models. So here I use one ([tensorflow/tfjs-models](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)) of them to detect the objects using video of the object.
+Obvously this is a react play, means javascript project. So I use TensorFlow.js library. Tenseflow.js is a library for develop ML models in JavaScript, and use ML directly in the browser or in Node.js. There are already trained ML models. So here I use one ([@tensorflow-models/coco-ssd](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)) of them to detect the objects using video of the object.
 
 ## Play Demographic
 
