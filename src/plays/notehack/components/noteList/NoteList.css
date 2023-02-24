@@ -1,0 +1,53 @@
+.notehack-play .notelist-container {
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin: 20px auto;
+  box-shadow: var(--box-shadow);
+}
+
+.notehack-play .notelist-header {
+  padding: 10px 0px 20px 0px;
+  border-bottom: 1px solid #dfdfdf;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notehack-play .notelist-header .title {
+  font-size: 18px;
+  font-weight: 600;
+  user-select: none;
+}
+
+.notehack-play .notelist-header .count {
+  background-color: #dfdfdf;
+  color: #525252;
+  padding: 5px 10px;
+  border-radius: 50%;
+  margin-left: 10px;
+  user-select: none;
+}
+
+.notehack-play .notelist-header .clear-all button {
+  background-color: #0f6af3;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.notehack-play .notelist-header .clear-all button:hover {
+  background-color: #1061db;
+}
+
+.notehack-play .notelist-section {
+  margin: 30px 5px 20px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
