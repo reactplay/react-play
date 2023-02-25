@@ -12,7 +12,8 @@ Play Cricket and Bat against the computer to chase down the given target of runs
 - User: SamirMishra27
 - Gihub Link: https://github.com/SamirMishra27
 - Blog:      
-- Video: https://youtu.be/S7-eh87Nq7w & https://youtu.be/FtyrJrMVqac
+- Video: (Youtube) https://youtu.be/S7-eh87Nq7w & https://youtu.be/FtyrJrMVqac
+- Video: Stack Stream https://www.stack-stream.com/v/demo-of-react-play-project-cricket-game
 
 ## Implementation Details
 
