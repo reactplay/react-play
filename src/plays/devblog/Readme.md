@@ -12,7 +12,7 @@ a dev to client
 - User: coderamrin
 - Gihub Link: https://github.com/coderamrin
 - Blog: 
-- Video: 
+- Video: https://www.stack-stream.com/v/devblog-2nd-play
 
 ## Implementation Details
 
