@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { MapContainer, Popup, TileLayer, useMap, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-
+import '../styles.css';
 const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
   const GetCoordinates = () => {
     const map = useMap();
@@ -19,36 +19,38 @@ const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
   };
 
   return (
-    <MapContainer
-      center={[latitude, longitude]}
-      scrollWheelZoom={false}
-      style={{ height: '100%', width: '100%' }}
-      zoom={13}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+    <div className="leaflet-cont">
+      <MapContainer
+        center={[latitude, longitude]}
+        scrollWheelZoom={false}
+        style={{ height: '100%', width: '100%' }}
+        zoom={13}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
 
-      {resdata &&
-        resdata.data.map((item, i) => {
-          const position = [
-            Number(item.latitude ? item.latitude : ''),
-            Number(item.longitude ? item.longitude : '')
-          ];
+        {resdata &&
+          resdata.data.map((item, i) => {
+            const position = [
+              Number(item.latitude ? item.latitude : ''),
+              Number(item.longitude ? item.longitude : '')
+            ];
 
-          return (
-            <Marker key={i} position={position}>
-              <Popup>
-                {item.name}
-                <img src={item.photo ? item.photo.images.medium.url : ''} />
-              </Popup>
-            </Marker>
-          );
-        })}
+            return (
+              <Marker key={i} position={position}>
+                <Popup>
+                  {item.name}
+                  <img src={item.photo ? item.photo.images.medium.url : ''} />
+                </Popup>
+              </Marker>
+            );
+          })}
 
-      <GetCoordinates />
-    </MapContainer>
+        <GetCoordinates />
+      </MapContainer>
+    </div>
   );
 };
 

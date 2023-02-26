@@ -30,8 +30,8 @@ function TravelAdvisor(props) {
 
   useEffect(() => {
     getCoordinates(inputval).then((data) => {
-      setlatitude(data.data[0].lat);
-      setlongitude(data.data[0].lon);
+      setlatitude(data?.data[0].lat);
+      setlongitude(data?.data[0].lon);
     });
   }, [inputval]);
 
