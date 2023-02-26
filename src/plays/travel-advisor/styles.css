@@ -1,1 +1,9 @@
 /* enter stlyes here */
+
+.Main-Contanier {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 15px;
+}
