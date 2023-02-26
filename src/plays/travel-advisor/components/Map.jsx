@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer, useMap  } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
@@ -21,7 +21,6 @@ const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
       });
 
       map.on('click', (e) => {
-        // console.log(e);
         setlatitude(e.latlng.lat);
         setlongitude(e.latlng.lng);
       });
@@ -37,7 +36,7 @@ const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
       center={[latitude, longitude]}
       zoom={13}
       scrollWheelZoom={false}
-      style={{ height: '450px', width: '100%' }}
+      style={{ height: '100%', width: '100%' }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -50,9 +49,6 @@ const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
             Number(item.latitude ? item.latitude : ''),
             Number(item.longitude ? item.longitude : '')
           ];
-          const positions = [51.505, -0.09];
-
-          console.log(typeof positions, typeof position, position);
 
           return (
             <Marker position={position}>

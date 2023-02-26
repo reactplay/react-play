@@ -5,5 +5,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px 15px;
+  padding: 25px 25px;
+  background-image: linear-gradient(to left bottom, #051937, #00293c, #023537, #293f34, #44483a);
+  height: 100%;
+}
+
+.map-cont {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.input-select-cont {
+  display: flex;
+  padding: 30px 30px;
 }

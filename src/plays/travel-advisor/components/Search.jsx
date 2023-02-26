@@ -8,14 +8,11 @@ const Search = ({ inputval, setinputval }) => {
         type="text"
         class="form__input"
         id="name"
-        placeholder="Full name"
+        placeholder="Enter City name"
         required=""
         value={inputval}
         onChange={(e) => setinputval(e.target.value)}
       />
-      <label for="name" class="form__label">
-        Full Name
-      </label>
     </div>
   );
 };
