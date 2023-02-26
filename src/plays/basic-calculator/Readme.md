@@ -16,7 +16,7 @@ This is a Simple calculator where one can do addition, subtraction, multiplicati
 
 ## Implementation Details
 
-To make this basic calculator I have used React.js, I have used useReducer Hook to implement all the functionalities. I have not used any external libraries for this project.
+To make this basic calculator I have used React.js, I have used useReducer Hook to implement all the functionalities. I haven't used any external libraries for this project.
 
 ## Consideration
 
