@@ -1,0 +1,38 @@
+.notehack-play .header-container {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 70px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+.notehack-play .header-title h1 {
+  font-size: 22px;
+  margin-left: 7px;
+  cursor: pointer;
+  color: #525252;
+}
+
+.notehack-play .header-theme-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.notehack-play .header-theme-selector span {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #dfdfdf;
+}
+
+.notehack-play .header-theme-selector .active-theme {
+  height: 30px;
+  width: 30px;
+}
