@@ -12,7 +12,7 @@ You will be able to anaylze your text and make it more effective with features l
 - User: yung-coder
 - Gihub Link: https://github.com/yung-coder
 - Blog: 
-- Video: 
+- Video: https://www.stack-stream.com/v/react-play-2playsamonth-1
 
 ## Implementation Details
 
