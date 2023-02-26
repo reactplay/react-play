@@ -1,4 +1,3 @@
-import { input } from '@tensorflow/tfjs';
 import PlayHeader from 'common/playlists/PlayHeader';
 import { useEffect, useState } from 'react';
 import { getCoordinates, getPlacesData } from './api/travel_api';
@@ -27,7 +26,7 @@ function TravelAdvisor(props) {
     getPlacesData(latitude, longitude, type).then((data) => {
       setresdata(data);
     });
-  }, [latitude, longitude , type]);
+  }, [latitude, longitude, type]);
 
   useEffect(() => {
     getCoordinates(inputval).then((data) => {
@@ -43,7 +42,7 @@ function TravelAdvisor(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="Main-Contanier">
-            <div className='input-select-cont'>
+            <div className="input-select-cont">
               <Search inputval={inputval} setinputval={setinputval} />
               <DropDown setype={setype} type={type} />
             </div>

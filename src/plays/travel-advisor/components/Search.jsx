@@ -1,15 +1,15 @@
 import React from 'react';
-import './search.css';
+import '../styles/search.css';
 
 const Search = ({ inputval, setinputval }) => {
   return (
-    <div class="form__group">
+    <div className="form__group">
       <input
-        type="text"
-        class="form__input"
+        className="form__input"
         id="name"
         placeholder="Enter City name"
         required=""
+        type="text"
         value={inputval}
         onChange={(e) => setinputval(e.target.value)}
       />

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { MapContainer, Marker, Popup, TileLayer, useMap  } from 'react-leaflet';
+import { MapContainer, Popup, TileLayer, useMap, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
@@ -8,24 +8,11 @@ const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
 
     useEffect(() => {
       if (!map) return;
-      const info = L.DomUtil.create('div', 'legend');
-
-      const positon = L.Control.extend({
-        options: {
-          position: 'bottomleft'
-        },
-
-        onAdd: function () {
-          return info;
-        }
-      });
 
       map.on('click', (e) => {
         setlatitude(e.latlng.lat);
         setlongitude(e.latlng.lng);
       });
-
-      map.addControl(new positon());
     }, [map]);
 
     return null;
@@ -34,9 +21,9 @@ const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
   return (
     <MapContainer
       center={[latitude, longitude]}
-      zoom={13}
       scrollWheelZoom={false}
       style={{ height: '100%', width: '100%' }}
+      zoom={13}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -44,17 +31,17 @@ const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
       />
 
       {resdata &&
-        resdata.data.map((item) => {
+        resdata.data.map((item, i) => {
           const position = [
             Number(item.latitude ? item.latitude : ''),
             Number(item.longitude ? item.longitude : '')
           ];
 
           return (
-            <Marker position={position}>
+            <Marker key={i} position={position}>
               <Popup>
                 {item.name}
-                <img src={item.photo ? item.photo.images.medium.url : ''} alt="" />
+                <img src={item.photo ? item.photo.images.medium.url : ''} />
               </Popup>
             </Marker>
           );

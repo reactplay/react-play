@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getPlacesData = async (latitude, longitude , type) => {
+export const getPlacesData = async (latitude, longitude, type) => {
   try {
     const { data } = await axios.get(
       `https://travel-advisor.p.rapidapi.com/${type}/list-by-latlng`,
@@ -18,7 +18,7 @@ export const getPlacesData = async (latitude, longitude , type) => {
 
     return data;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 
@@ -30,6 +30,6 @@ export const getCoordinates = async (city) => {
 
     return data;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
