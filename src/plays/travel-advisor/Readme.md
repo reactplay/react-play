@@ -12,7 +12,7 @@ A travel advisor app where we can checkout locations on map by fetching restaura
 - User: yung-coder
 - Gihub Link: https://github.com/yung-coder
 - Blog: 
-- Video: https://www.stack-stream.com/v/react-play-2playsamonth-2
+- Video: https://www.stack-stream.com/v/react-play-twoplaysamonth
 
 ## Implementation Details
 
