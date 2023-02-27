@@ -1,0 +1,11 @@
+button.row {
+  width: 100%;
+  margin: 20px 0;
+  font-size: 256%;
+  text-align: center;
+  border-radius: 15px;
+  background-color: aliceblue;
+}
+button:hover {
+  background-color: rgb(242, 247, 189);
+}
