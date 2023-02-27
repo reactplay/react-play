@@ -1,4 +1,4 @@
-# Basic Calculator 
+# Basic Calculator
 
 This is a Simple calculator where one can do addition, subtraction, multiplication, division. All clear and delete facility is also there. No external library is used to make this play
 
@@ -11,8 +11,8 @@ This is a Simple calculator where one can do addition, subtraction, multiplicati
 
 - User: bahnisikhadhar
 - Gihub Link: https://github.com/bahnisikhadhar
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 
