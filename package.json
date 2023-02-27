@@ -35,6 +35,7 @@
     "json-graphql-parser": "^0.1.8",
     "jspdf": "^2.5.1",
     "lodash": "^4.17.21",
+    "mathjs": "^11.5.1",
     "node-sass": "^8.0.0",
     "p5": "^1.5.0",
     "react": "^18.0.0",
