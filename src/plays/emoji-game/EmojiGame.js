@@ -13,7 +13,7 @@ function EmojiGame(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="app">
           {/* Your Code Starts Here */}
           <div>
             <h1>Play Details - Guess The Emoji Game</h1>
