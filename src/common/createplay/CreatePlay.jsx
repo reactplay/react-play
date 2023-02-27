@@ -2,7 +2,7 @@
 import { useReducer, useEffect, useRef } from 'react';
 import { useAuthenticationStatus, useUserData } from '@nhost/react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 // COMPONENTS & FILES
 import PlayForm from 'common/components/PlayForms';
@@ -17,7 +17,10 @@ import { defaultInputFields, createStateObject, constructTagInfo } from './utils
 import { NHOST } from 'common/const';
 
 // SREVICES
-import { FetchPlaysBySlugAndUser } from 'common/services/request/query/fetch-plays';
+import {
+  FetchPlaysByName,
+  FetchPlaysBySlugAndUser
+} from 'common/services/request/query/fetch-plays';
 import { Tags, Levels, Issues } from 'common/services';
 import { Plays } from 'common/services/plays';
 import { submit } from 'common/services/request';
@@ -124,41 +127,65 @@ const CreatePlay = () => {
     ]).catch((err) => Promise.reject(err));
   };
 
+  const validateObjet = async (data) => {
+    // Checking name uniquness
+    const got_plays = await submit(FetchPlaysByName(data.name));
+    if (got_plays.length > 0 && got_plays[0].id !== data.id) {
+      return `A play with name with '${data.name}' already exists`;
+    }
+
+    return null;
+  };
+
   const onSubmit = async (formData) => {
     const { id, ...rest } = formData;
-    try {
-      if (isEditPlay) {
-        setState({ isDataLoading: true, loadingText: 'Please Wait' });
-        const prepareObj = { play_id: id, editObj: { ...rest } };
-        // TODO: Remove this temporary code
-        delete prepareObj.editObj.tags;
-        delete prepareObj.editObj.level;
-        delete prepareObj.editObj.language;
-        try {
-          const createAsyncReference = await editPlayPromises.bind(null, prepareObj, rest, id);
-          await toast.promise(createAsyncReference, {
-            pending: 'Updating Play Informations',
-            success: 'Play info successfully updated',
-            error: {
-              render({ data: err }) {
-                return err?.message;
+    const validation_result = await validateObjet(formData);
+    if (validation_result) {
+      toast.error(validation_result, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      });
+    } else {
+      try {
+        if (isEditPlay) {
+          setState({ isDataLoading: true, loadingText: 'Please Wait' });
+          const prepareObj = { play_id: id, editObj: { ...rest } };
+          // TODO: Remove this temporary code
+          delete prepareObj.editObj.tags;
+          delete prepareObj.editObj.level;
+          delete prepareObj.editObj.language;
+          try {
+            const createAsyncReference = await editPlayPromises.bind(null, prepareObj, rest, id);
+            await toast.promise(createAsyncReference, {
+              pending: 'Updating Play Informations',
+              success: 'Play info successfully updated',
+              error: {
+                render({ data: err }) {
+                  return err?.message;
+                }
               }
-            }
-          });
+            });
 
-          return navigate(`/plays/${username}/${playname}`, { replace: true });
-        } catch (err) {
-          return err;
+            return navigate(`/plays/${username}/${playname}`, { replace: true });
+          } catch (err) {
+            return err;
+          }
         }
+        setState({ loadingText: 'Creating Play', isDataLoading: true });
+        rest.owner_user_id = userData.id;
+        const res = await Plays.createPlay(rest);
+        navigate(`/plays/created/${res}`);
+      } catch (err) {
+        setState({ errorMessage: err });
+      } finally {
+        setState({ isDataLoading: false, loadingText: '' });
       }
-      setState({ loadingText: 'Creating Play', isDataLoading: true });
-      rest.owner_user_id = userData.id;
-      const res = await Plays.createPlay(rest);
-      navigate(`/plays/created/${res}`);
-    } catch (err) {
-      setState({ errorMessage: err });
-    } finally {
-      setState({ isDataLoading: false, loadingText: '' });
     }
   };
 
@@ -226,6 +253,7 @@ const CreatePlay = () => {
             isEditPlay={isEditPlay}
             onSubmit={onSubmit}
           />
+          <ToastContainer />
         </div>
       </div>
     </div>

@@ -84,3 +84,23 @@ export const DetailedFetchParam = {
     ]
   }
 };
+
+export const FetchPlaysByName = (name) => {
+  return {
+    display: 'get play by name',
+    name: 'Fetch_Plays',
+    function: 'plays',
+    where: {
+      clause: {
+        conditions: [
+          {
+            field: 'name',
+            operator: 'eq',
+            value: name
+          }
+        ]
+      }
+    },
+    return: ['id']
+  };
+};
