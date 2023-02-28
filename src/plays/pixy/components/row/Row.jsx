@@ -7,6 +7,7 @@ function Row({ width, selectedColor }) {
     for (let i = 0; i < width; i++) {
       pixels.push(<Pixel key={i} selectedColor={selectedColor} />);
     }
+
     return pixels;
   }
 

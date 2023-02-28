@@ -1,18 +1,17 @@
 import './DrawingPanel.css';
-import {useState} from 'react'; 
+import { useState } from 'react';
 import Row from '../row/Row';
 
 function DrawingPanel() {
-
   const [panelWidth, setPanelWidth] = useState(16);
   const [panelHeight, setPanelHeight] = useState(16);
-  const [selectedColor, setColor] = useState("#f44336");
+  const [selectedColor, setColor] = useState('#f44336');
 
-  function getRows(){
-    let rows = []
+  function getRows() {
+    let rows = [];
 
     for (let i = 0; i < panelHeight; i++) {
-        rows.push(<Row key={i} width={panelWidth} selectedColor={selectedColor} />);
+      rows.push(<Row key={i} selectedColor={selectedColor} width={panelWidth} />);
     }
 
     return rows;
@@ -20,10 +19,8 @@ function DrawingPanel() {
 
   return (
     <div className="drawingPanel">
-      <h3>Create Pixel Art</h3>
-      <div>
-        {getRows()}
-      </div>
+      <h2>Create Pixel Art</h2>
+      <div>{getRows()}</div>
     </div>
   );
 }
