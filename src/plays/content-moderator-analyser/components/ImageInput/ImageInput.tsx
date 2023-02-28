@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
 import { Stack } from '@mui/system';
-import Chip from '@mui/material/Chip';
+import { Alert, Button, Chip } from '@mui/material';
 import './ImageInput.css';
 import {
   bucket,
@@ -27,6 +26,7 @@ function ImageInput() {
   const [name, setName] = useState('');
   const [binary, setBinary] = useState({});
   const [moderationData, setModerationData] = useState(null);
+  const [ImageUploaded, setImageuploaded] = useState(false);
 
   console.log('moderationData inside processImage', moderationData);
 
@@ -59,6 +59,7 @@ function ImageInput() {
       console.log('paramsModeration', paramsModeration);
       setBinary(paramsModeration);
       uploadToS3(file);
+      setImageuploaded(true);
     };
   };
 
@@ -73,6 +74,9 @@ function ImageInput() {
           Process Image
         </Button>
       </Stack>
+      <div className="alertContainer">
+        {ImageUploaded && <Alert severity="success">Image uploaded successfully</Alert>}
+      </div>
 
       {moderationData && (
         <div className="modData">

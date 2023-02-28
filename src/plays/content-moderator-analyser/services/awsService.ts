@@ -22,7 +22,6 @@ export const getS3Instance = () => {
 
 export const uploadToS3 = (file: any) => {
   const s3 = getS3Instance();
-  console.log('uploadToS3');
   if (!file) {
     return console.log('Please choose a file to upload!');
   }
@@ -31,30 +30,22 @@ export const uploadToS3 = (file: any) => {
     Key: file.name,
     Body: file
   };
-  console.log('objectUploadToS3', objectUploadToS3.Key);
   s3.upload(objectUploadToS3, function (err: any, data: any) {
     if (err) {
-      return console.log('Error uploading image: ', err.message);
+      throw new Error('Error uploading image: ' + err.message);
     }
-    console.log('Successfully uploaded image.', file);
   });
 };
 
 export function detectImageModerationLabels(paramsModeration: any, name: string): Promise<any> {
   const rekognition = new AWS.Rekognition();
-  console.log('Region: ', AWS.config.region);
-  console.log('config', config);
-  console.log('paramsModeration', paramsModeration);
-  console.log('name', name);
 
   return new Promise((resolve, reject) => {
     rekognition.detectLabels(paramsModeration, function (err, data) {
       if (err) {
         alert('Error occured during Image Moderation');
-        console.log(err, data);
         reject(err);
       }
-      console.log('success!', data);
       resolve(data);
     });
   });

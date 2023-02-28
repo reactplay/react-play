@@ -1,15 +1,32 @@
 .container {
-  border: 2px solid;
+
   width: fit-content;
 }
 
+/* generate CSS to display alertContainer vertically */
+.alertContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
 .modData {
+
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   margin: 2rem auto;
   width: 50%;
-  height: 50%;
-  row-gap: 20px;
+  height: fit-content;
+  align-content: center;
+  flex-direction: row;
+  padding: 1rem;
+}
+
+.chipContainer{
+  border: 1px solid;
+  padding: 1rem;
 }
