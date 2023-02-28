@@ -8,7 +8,9 @@ const Header = () => {
       </Link>
 
       <nav>
-        <a href="https://amrin.onrender.com/">About me</a>
+        <a href="https://amrin.onrender.com/" target="_blank">
+          About me
+        </a>
       </nav>
     </header>
   );
