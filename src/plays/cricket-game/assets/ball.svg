@@ -1,0 +1,58 @@
+<svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512">
+  <g id="cricket">
+    <g>
+      <g>
+        <defs>
+          <path cx="256" cy="256" id="SVGID_1_" r="200" d="M456 256A200 200 0 0 1 256 456A200 200 0 0 1 56 256A200 200 0 0 1 456 256z"/>
+        </defs>
+        <use style="overflow:visible;fill:#E53935;" xlink:href="#SVGID_1_"/>
+        <clipPath id="SVGID_2_">
+          <use style="overflow:visible;" xlink:href="#SVGID_1_"/>
+        </clipPath>
+        <g style="clip-path:url(#SVGID_2_);">
+          <g>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" x1="293.5" x2="293.5" y1="64" y2="75" d="M293.499 64L293.499 75.003"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:23,12;" x1="293.5" x2="293.5" y1="87" y2="431" d="M293.499 87.003L293.499 431.003"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" x1="293.5" x2="293.5" y1="437" y2="448" d="M293.499 437.003L293.499 448"/>
+          </g>
+        </g>
+        <g style="clip-path:url(#SVGID_2_);">
+          <g>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" x1="307.5" x2="307.5" y1="64" y2="75" d="M307.499 64L307.499 75.003"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:23,12;" x1="307.5" x2="307.5" y1="87" y2="431" d="M307.499 87.003L307.499 431.003"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" x1="307.5" x2="307.5" y1="437" y2="448" d="M307.499 437.003L307.499 448"/>
+          </g>
+        </g>
+        <g style="clip-path:url(#SVGID_2_);">
+          <g>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" x1="204.5" x2="204.5" y1="64" y2="75" d="M204.501 64L204.501 75.003"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:23,12;" x1="204.5" x2="204.5" y1="87" y2="431" d="M204.501 87.003L204.501 431.003"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" x1="204.5" x2="204.5" y1="437" y2="448" d="M204.501 437.003L204.501 448"/>
+          </g>
+        </g>
+        <g style="clip-path:url(#SVGID_2_);">
+          <g>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" x1="218.5" x2="218.5" y1="64" y2="75" d="M218.501 64L218.501 75.003"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:23,12;" x1="218.5" x2="218.5" y1="87" y2="431" d="M218.501 87.003L218.501 431.003"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" x1="218.5" x2="218.5" y1="437" y2="448" d="M218.501 437.003L218.501 448"/>
+          </g>
+        </g>
+        <g style="clip-path:url(#SVGID_2_);">
+          <path height="413.494" style="fill:#C62828;" width="29.49" x="241.255" y="49.366" d="M241.253 49.365H270.747V462.859H241.253V49.365z"/>
+          <g>
+            <path points="270.745,451.445 270.745,462.86        259.33,462.86      " style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" d="M270.747 451.445L270.747 462.859L259.328 462.859"/>
+            <path points="252.67,462.86 241.255,462.86        241.255,451.445      " style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" d="M252.672 462.859L241.253 462.859L241.253 451.445"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:22.2659,12.145;" x1="241.255" x2="241.255" y1="439.3" y2="66.853" d="M241.253 439.301L241.253 66.853"/>
+            <path points="241.255,60.78 241.255,49.366        252.67,49.366      " style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" d="M241.253 60.779L241.253 49.365L252.672 49.365"/>
+            <path points="259.33,49.366 270.745,49.366        270.745,60.78      " style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;" d="M259.328 49.365L270.747 49.365L270.747 60.779"/>
+            <path style="fill:none;stroke:#FFECB3;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:22.2659,12.145;" x1="270.745" x2="270.745" y1="72.925" y2="445.373" d="M270.747 72.923L270.747 445.371"/>
+          </g>
+        </g>
+      </g>
+      <g id="XMLID_28_">
+        <path d="M256 70c49.685 0 96.389 19.349 131.52 54.48S442 206.315 442 256s-19.349 96.389 -54.48 131.52S305.685 442 256 442s-96.389 -19.349 -131.52 -54.48S70 305.685 70 256s19.349 -96.389 54.48 -131.52S206.315 70 256 70M256 56C145.541 56 56 145.541 56 256s89.541 200 200 200s200 -89.541 200 -200S366.459 56 256 56L256 56z" style="fill:#424242;"/>
+      </g>
+    </g>
+  </g>
+  <g id="Layer_1"/>
+</svg>

@@ -1,0 +1,75 @@
+/* enter stlyes here */
+
+.photoshopApp-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    'image sidebar'
+    'slider sidebar';
+  height: 100vh;
+  background-color: #dadada;
+}
+
+.photoshopApp-main-image {
+  grid-area: image;
+  background-image: url('https://images.unsplash.com/photo-1676676676239-5e4f826c6143?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80');
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.photoshopApp-sidebar {
+  grid-area: sidebar;
+  background-color: hsl(265, 100%, 86%);
+  border-left: 1px solid hsl(265, 100%, 56%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.photoshopApp-sidebar-item {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: hsl(265, 100%, 86%);
+  padding: 1rem;
+  position: relative;
+  transition: background-color 150ms;
+}
+
+.photoshopApp-sidebar-item:hover,
+.sidebar-item:focus {
+  background-color: hsl(265, 100%, 76%);
+}
+
+.photoshopApp-sidebar-item.active {
+  background-color: hsl(265, 100%, 70%);
+}
+
+.photoshopApp-sidebar-item::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 0;
+  height: 1px;
+  background-color: hsl(265, 100%, 46%);
+}
+
+.photoshopApp-sidebar-item:last-child::after {
+  display: none;
+}
+
+.photoshopApp-slider-container {
+  grid-area: slider;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.photoshopApp-slider {
+  width: 100%;
+  cursor: pointer;
+}
