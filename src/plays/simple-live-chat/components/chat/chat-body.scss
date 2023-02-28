@@ -1,9 +1,9 @@
-@import "../../variables";
+@import '../../variables';
 
 .simple-live-chat-body {
   padding-bottom: 0;
   margin-left: 0.5rem;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .simple-live-chat-message {
@@ -30,7 +30,6 @@
   color: $simple-button-background-color;
   margin-left: 2.5rem;
   word-wrap: break-word;
-  
 
   @media screen and (min-width: 640px) {
     width: auto;
@@ -75,13 +74,12 @@
 
 .simple-live-chat-message-context {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   width: auto;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   max-width: 300px;
   margin-right: 0px;
-  width: auto;
   border: 1px solid;
   word-wrap: break-word;
 

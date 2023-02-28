@@ -1,0 +1,35 @@
+.notehack-play .notehack-container-wrapper {
+  min-height: 100%;
+}
+
+.notehack-play .notehack-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 10px;
+}
+
+.notehack-play .gradient-one {
+  background: linear-gradient(90deg, hsla(191, 75%, 60%, 1) 0%, hsla(248, 87%, 36%, 1) 100%);
+}
+
+.notehack-play .gradient-two {
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+}
+
+.notehack-play .gradient-three {
+  background-color: #fa8bff;
+  background-image: linear-gradient(45deg, #fa8bff 0%, #2bd2ff 52%, #2bff88 90%);
+}
+
+.notehack-play .gradient-four {
+  background-image: linear-gradient(to bottom right, #ff512f, #dd2476);
+}
+.notehack-play .gradient-five {
+  background-image: linear-gradient(to bottom right, #fd8451, #ffbd6f);
+}
+
+.notehack-play .gradient-six {
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+}

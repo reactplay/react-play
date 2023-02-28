@@ -1,6 +1,5 @@
 @import './variables';
 
-
 .fun-quiz {
   &-screen {
     margin-top: 4rem;
@@ -9,7 +8,6 @@
     position: relative;
     color: $quiz-app-raw-black;
     display: block;
-    position: relative;
 
     @media screen and (max-width: 1366px) {
       .App {
@@ -21,7 +19,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
     }
 
     .timer {
@@ -31,7 +28,7 @@
       aspect-ratio: 1/1;
       display: grid;
       place-items: center;
-      font-family: "Russo One", sans-serif;
+      font-family: 'Russo One', sans-serif;
       font-size: 3rem;
       color: $quiz-app-black-color;
       margin-bottom: 2rem;
@@ -75,7 +72,6 @@
         border-radius: 20px;
         border: 1px solid $quiz-app-border-color;
 
-
         h1 {
           margin: 0.5rem 2rem;
           color: $quiz-app-text-color;
@@ -106,7 +102,7 @@
           min-height: 60px;
           font-size: 1rem;
           padding: 0.5rem 1.5rem;
-          background-color: rgba(234,227,227,1);
+          background-color: rgba(234, 227, 227, 1);
           border-radius: 40px;
           transition: 100ms ease-in-out;
           text-align: left;
@@ -156,7 +152,6 @@
         border: none;
         border-radius: 30px;
         color: $quiz-app-white-color;
-        color: $quiz-app-white-color;
         font-weight: 600;
 
         &:hover {
@@ -195,8 +190,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        
 
         .link {
           outline: none;

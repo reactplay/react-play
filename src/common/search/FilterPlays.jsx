@@ -1,38 +1,29 @@
-import { Modal } from "common";
-import { useContext, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { SearchContext } from "./search-context";
-import "./search.css";
+import { Modal } from 'common';
+import { useState, useEffect, useCallback } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useSearchContext } from './search-context';
+import './search.css';
 
-import { RiFilterFill } from "react-icons/ri";
-import useBackListener from "common/routing/hooks/useBackListener";
-import useFetchFilterData from "./hooks/usePlayFilter";
-import { FormControl, MenuItem, Select } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { RiFilterFill } from 'react-icons/ri';
+import useFetchFilterData from './hooks/usePlayFilter';
+import MultipleSelectCheckmarks from 'common/components/MultiSelect';
 
-const useStyles = makeStyles({
-  menuPaper: {
-    maxHeight: "250px !important",
-  },
-});
-
-const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
+const FilterPlaysModalBody = ({ filterQuery, setFilterQuery, onClearAppliedFilters }) => {
   const [loading, error, data] = useFetchFilterData();
   const { tags, levels, creators } = data;
 
-  const classes = useStyles();
-
-  const languages = ["js", "ts"];
+  const languages = ['js', 'ts'];
 
   if (error) {
-    return <p>{error?.message ?? "Something Went Wrong"}</p>;
+    return <p>{error?.message ?? 'Something Went Wrong'}</p>;
   }
 
   const defaultOption = {
-    value: " ",
-    label: "All",
+    value: ' ',
+    label: 'All'
   };
 
+  creators?.sort((a, b) => (a.user.displayName < b.user.displayName ? -1 : 1));
   const creatorOptions = [
     defaultOption,
     ...(creators?.map((creator) => ({
@@ -49,253 +40,186 @@ const FilterPlaysModalBody = ({ filterQuery, setFilterQuery }) => {
         </div>
       ) : (
         creator.user.displayName
-      ),
-    })) || []),
+      )
+    })) || [])
   ];
 
   const levelOptions = [
-    defaultOption,
     ...(levels?.map((level) => ({
       label: level.level.name,
-      value: level.level.id,
-    })) || []),
+      value: level.level.id
+    })) || [])
   ];
+  levelOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   const tagOptions = [
-    defaultOption,
     ...(tags?.map((tag) => ({
       label: tag.tag,
-      value: tag.id,
-    })) || []),
+      value: tag.id
+    })) || [])
   ];
+  tagOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   const languageOptions = [
-    defaultOption,
-    ...languages?.map((language) => ({
-      label: language === "ts" ? "TypeScript" : "JavaScript",
-      value: language,
-    })),
+    ...(languages?.map((language) => ({
+      label: language === 'ts' ? 'TypeScript' : 'JavaScript',
+      value: language
+    })) || [])
   ];
-
-  const renderCreator = (value) => {
-    const selectedCreator = creatorOptions.find(
-      (option) => option.value === value
-    );
-    return selectedCreator ? selectedCreator.label : "All";
-  };
+  languageOptions.sort((a, b) => (a.label < b.label ? -1 : 1));
 
   return (
     <>
       <div className="form-group">
-        {loading && "Loading Data"}
-        <label>Level</label>
-        <FormControl fullWidth>
-          <Select
-            value={filterQuery.level_id || " "}
-            onChange={(event) => {
-              const { value } = event.target;
-              setFilterQuery({
-                ...filterQuery,
-                level_id: defaultOption.value === value ? "" : value,
-              });
-            }}
-            MenuProps={{ classes: { paper: classes.menuPaper } }}
-          >
-            {levelOptions.map((option) => (
-              <MenuItem value={option.value} key={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        {loading && 'Loading Data'}
+        {/* Clear All filters button */}
+        <div className="modal-clear-filter">
+          <span className="clear-all-filter-btn" onClick={onClearAppliedFilters}>
+            Clear All
+          </span>
+        </div>
+        <MultipleSelectCheckmarks
+          filterKey="level_id"
+          filterQuery={filterQuery}
+          label="Level"
+          options={[defaultOption, ...levelOptions]}
+          setFilterQuery={setFilterQuery}
+        />
       </div>
       <div className="form-group">
-        <label>Tags</label>
-        <FormControl fullWidth>
-          <Select
-            value={filterQuery.tags[0] || " "}
-            onChange={(event) => {
-              const { value } = event.target;
-              setFilterQuery({
-                ...filterQuery,
-                tags: value !== defaultOption.value ? [value] : [],
-              });
-            }}
-            MenuProps={{ classes: { paper: classes.menuPaper } }}
-          >
-            {tagOptions.map((option) => (
-              <MenuItem value={option.value} key={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        <MultipleSelectCheckmarks
+          filterKey="tags"
+          filterQuery={filterQuery}
+          label="Tags"
+          options={[defaultOption, ...tagOptions]}
+          setFilterQuery={setFilterQuery}
+        />
       </div>
       <div className="form-group">
-        <label>Creator</label>
-        <FormControl fullWidth>
-          <Select
-            value={filterQuery.owner_user_id || " "}
-            onChange={(event) => {
-              const { value } = event.target;
-              setFilterQuery({
-                ...filterQuery,
-                owner_user_id: defaultOption.value === value ? "" : value,
-              });
-            }}
-            renderValue={renderCreator}
-            MenuProps={{ classes: { paper: classes.menuPaper } }}
-          >
-            {creatorOptions.map((option) => (
-              <MenuItem value={option.value} key={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        <MultipleSelectCheckmarks
+          filterKey="owner_user_id"
+          filterQuery={filterQuery}
+          label="Creator"
+          options={creatorOptions}
+          setFilterQuery={setFilterQuery}
+        />
       </div>
       <div className="form-group">
-        <label>Language</label>
-        <FormControl fullWidth>
-          <Select
-            value={filterQuery.language || " "}
-            onChange={(event) => {
-              const { value } = event.target;
-              setFilterQuery({
-                ...filterQuery,
-                language: defaultOption.value === value ? "" : value,
-              });
-            }}
-            MenuProps={{ classes: { paper: classes.menuPaper } }}
-          >
-            {languageOptions.map((option) => (
-              <MenuItem value={option.value} key={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        <MultipleSelectCheckmarks
+          filterKey="language"
+          filterQuery={filterQuery}
+          label="Language"
+          options={[defaultOption, ...languageOptions]}
+          setFilterQuery={setFilterQuery}
+        />
       </div>
     </>
   );
 };
 
 const getAppliedFilter = (filterObject) => {
-  //for single filter to check whether filter has been applied
-  const noOfLevelsApplied =
-    filterObject?.level_id !== undefined && filterObject.level_id.trim() !== ""
-      ? 1
-      : 0;
-  const noOfcreatorsApplied =
-    filterObject.owner_user_id !== undefined &&
-    filterObject.owner_user_id.trim() !== ""
-      ? 1
-      : 0;
-  const noOfLanguageApplied =
-    filterObject.language !== undefined && filterObject.language.trim() !== ""
-      ? 1
-      : 0;
-  const noOfTagsApplied = filterObject?.tags?.length
-    ? filterObject.tags.length
-    : 0;
-  let totalTags =
-    noOfLevelsApplied +
-    noOfcreatorsApplied +
-    noOfLanguageApplied +
-    noOfTagsApplied;
-
-  return totalTags;
+  return (
+    filterObject.level_id.length +
+    filterObject.owner_user_id.length +
+    filterObject.tags.length +
+    filterObject.language.length
+  );
 };
 
-const FilterPlays = () => {
+const filterObject = {
+  level_id: [],
+  tags: [],
+  owner_user_id: [],
+  language: []
+};
+
+const FilterPlays = ({ reset }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { setFilterQuery, filterQuery } = useContext(SearchContext);
+  const { filterQuery, setFilterQuery } = useSearchContext();
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
-    level_id: "",
-    tags: [],
-    owner_user_id: "",
-    language: "",
+    ...filterObject
   });
   const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
 
-  useBackListener(({ action }) => {
-    if (action === "POP") {
-      console.log("POP");
-      setModifiedFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setnoOfAppliedFilter(0);
-    }
-    if (action === "PUSH") {
-      console.log("PUSH");
-      setModifiedFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-      setFilterQuery({
-        level_id: "",
-        tags: [],
-        owner_user_id: "",
-        language: "",
-      });
-    }
+  const [isFilterApplied, setIsFilterApplied] = useState(false);
+
+  const resetFilter = useCallback(() => {
+    const filterObj = { ...filterObject };
+    setModifiedFilterQuery(filterObj);
+    setFilterQuery(filterObj);
     setnoOfAppliedFilter(0);
-  });
+  }, [setFilterQuery]);
+
+  useEffect(() => {
+    if (location.pathname !== '/plays') {
+      resetFilter();
+    }
+    if (reset.filter) {
+      resetFilter();
+    }
+  }, [location.pathname, resetFilter, reset.filter]);
+
   const handleFilter = (event) => {
     event.preventDefault();
-    console.log("filterQuery", filterQuery);
-    console.log("modifiedFilterQuery", modifiedFilterQuery);
+    // if Apply button on Filter Modal is clicked then set true
+    setIsFilterApplied(true);
+
     setFilterQuery(modifiedFilterQuery);
     setnoOfAppliedFilter(getAppliedFilter(modifiedFilterQuery));
-    if (location.pathname !== "/plays") {
-      navigate("/plays", { replace: true });
-    }
+    navigate('/plays', {
+      replace: true,
+      state: { search: true, filter: false }
+    });
     showModal && setShowModal(false);
+  };
+
+  const filterModalCloseBtnHandler = () => {
+    setShowModal(false);
+    const { level_id, tags, owner_user_id, language } = modifiedFilterQuery;
+    const isFilterEmpty =
+      level_id.length !== 0 ||
+      tags.length !== 0 ||
+      owner_user_id.length !== 0 ||
+      language.length !== 0;
+    // if user closes modal instead of clicking on Apply after clear All filters
+    if (!isFilterApplied && !isFilterEmpty) {
+      setModifiedFilterQuery({ ...filterQuery });
+      setnoOfAppliedFilter(getAppliedFilter(filterQuery));
+    }
   };
 
   return (
     <div className="search-filter">
       <Modal
-        title="Filter Plays By"
-        onClose={() => setShowModal(false)}
-        onSubmit={handleFilter}
-        show={showModal}
         cname="filter"
-        children={
-          <FilterPlaysModalBody
-            filterQuery={modifiedFilterQuery}
-            setFilterQuery={setModifiedFilterQuery}
-          />
-        }
-      />
+        show={showModal}
+        title="Filter Plays By"
+        onClose={filterModalCloseBtnHandler}
+        onSubmit={handleFilter}
+      >
+        <FilterPlaysModalBody
+          filterQuery={modifiedFilterQuery}
+          setFilterQuery={setModifiedFilterQuery}
+          onClearAppliedFilters={() => {
+            setModifiedFilterQuery({ ...filterObject });
+            setnoOfAppliedFilter(0);
+          }}
+        />
+      </Modal>
 
       <button
-        onClick={() => setShowModal(true)}
         className="btn-filter"
         title="Filter Plays"
+        onClick={() => {
+          setShowModal(true);
+          setIsFilterApplied(false);
+        }}
       >
-        {noOfAppliedFilter === 0 ? null : (
-          <div className="badge">{noOfAppliedFilter}</div>
-        )}
+        {noOfAppliedFilter === 0 ? null : <div className="badge">{noOfAppliedFilter}</div>}
 
-        <RiFilterFill
-          className="icon"
-          size="28px"
-          color="var(--color-neutral-30)"
-        />
+        <RiFilterFill className="icon" color="var(--color-neutral-30)" size="28px" />
       </button>
     </div>
   );

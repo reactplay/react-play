@@ -1,0 +1,22 @@
+.app-header-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 1px var(--color-brand-primary);
+  border-radius: 2rem;
+  grid-gap: 0.4rem;
+  padding: 0.4rem 1.2rem;
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  width: unset;
+  height: unset;
+  transition: all 0.12s ease-in-out;
+}
+
+.app-header-btn--primary {
+  border: solid 2px var(--color-brand-primary);
+  background-color: var(--color-brand-primary);
+  color: var(--color-neutral-80);
+  grid-gap: 0.3rem;
+  margin-left: 0.4rem;
+}

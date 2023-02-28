@@ -1,33 +1,38 @@
-import useContributors from "common/hooks/useContributors";
+import useContributors from 'common/hooks/useContributors';
 
 const Contributors = () => {
   const { data, error, isLoading } = useContributors(true);
 
   return (
     <>
-      <h3 className="title-primary">
+      <h2 className="title-primary">
         <strong>
           <span>Big Thanks</span>
         </strong>
         <br /> to All Contributors!
-      </h3>
+      </h2>
       <ul className="list-contributors">
         {isLoading && <li>Loading...</li>}
         {error && <li>Error: {error.message}</li>}
         {data &&
-          data.map((contributor, index) => (
-            <li key={contributor.id} className="contributor">
+          data.map((contributor) => (
+            <li
+              className="contributor"
+              data-testid={`contributor-${contributor.id}`}
+              key={contributor.id}
+            >
               <a
-                href={contributor.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="contributor-anchor"
+                href={contributor.html_url}
+                rel="noopener noreferrer"
+                target="_blank"
                 title={`${contributor.login}(${contributor.contributions} contributions)`}
               >
                 <img
-                  src={contributor.avatar_url}
                   alt={contributor.login}
                   className="contributor-thumb"
+                  loading="lazy"
+                  src={contributor.avatar_url}
                 />
               </a>
             </li>

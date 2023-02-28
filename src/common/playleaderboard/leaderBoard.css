@@ -1,0 +1,39 @@
+.leaderboard-container {
+  border: 0 solid black;
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 5px 2rem 1rem 2rem;
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+    var(--tw-shadow);
+}
+
+.leaderboard-table-cell {
+  padding: 6px !important;
+}
+
+.leaderboard-table-header {
+  font-weight: 700 !important;
+  font-family: var(--ff-accent) !important;
+}
+
+.leaderboard-heading {
+  font-family: var(--ff-accent);
+  font-size: 32px !important;
+}
+
+.leaderboard-text {
+  font-family: var(--ff-accent) !important;
+  font-size: var(--fs-md) !important;
+}
+
+.leaderboard-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

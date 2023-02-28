@@ -2,20 +2,18 @@ export const toKebabCase = (str) => {
   return str
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map((x) => x.toLowerCase())
-    .join("-");
+    .join('-');
 };
 
 export const toPascalcase = (str) => {
   let res = `${str}`
     .toLowerCase()
-    .replace(new RegExp(/[-_]+/, "g"), " ")
-    .replace(new RegExp(/[^\w\s]/, "g"), "")
-    .replace(
-      new RegExp(/\s+(.)(\w*)/, "g"),
-      ($1, $2, $3) => `${$2.toUpperCase() + $3}`
-    )
+    .replace(new RegExp(/[-_]+/, 'g'), ' ')
+    .replace(new RegExp(/[^\w\s]/, 'g'), '')
+    .replace(new RegExp(/\s+(.)(\w*)/, 'g'), ($1, $2, $3) => `${$2.toUpperCase() + $3}`)
     .replace(new RegExp(/\w/), (s) => s.toUpperCase());
   res = res.replace(/^./, str[0].toLowerCase());
+
   return res;
 };
 
@@ -26,14 +24,16 @@ export const toTitleCase = (str) => {
 };
 
 export const replaceAll = (str, replaceWhat, replaceTo) => {
-  replaceWhat = replaceWhat.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
-  var re = new RegExp(replaceWhat, "g");
+  replaceWhat = replaceWhat.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+  var re = new RegExp(replaceWhat, 'g');
+
   return str.replace(re, replaceTo);
 };
 
 export const toTitleCaseTrimmed = (str) => {
   const titleCse = toTitleCase(str);
-  return titleCse.replace(/\s/g, "");
+
+  return titleCse.replace(/\s/g, '');
 };
 
 export const toSlug = (str) => {
@@ -42,13 +42,24 @@ export const toSlug = (str) => {
 
 export const toSanitized = (str) => {
   if (!str) {
-    return "";
+    return '';
   }
-  //replace all special characters | symbols with a space
-  str = str.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, " ");
+  str = str.replace(/-/g, '');
+  // replace all special characters | symbols with a space
+  str = str.replace(/[`~!@#$%^&*()_\-+=[\]{};:'"\\|/,.<>?\s]/g, ' ');
   // trim spaces at start and end of string
-  str = str.replace(/^\s+|\s+$/gm, "");
+  str = str.replace(/^\s+|\s+$/gm, '');
+
   // replace space with dash/hyphen
-  str = str.replace(/\s+/g, "-");
+  str = str.replace(/\s+/g, '-');
+
   return str;
+};
+
+export const email2Slug = (email) => {
+  return encodeURIComponent(email);
+};
+
+export const slug2Email = (email) => {
+  return decodeURIComponent(email);
 };

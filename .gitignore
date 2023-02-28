@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+/cypress/screenshots
+/cypress/videos
 
 # production
 /build
@@ -31,3 +33,6 @@ yarn.lock
 
 # play index
 src/plays/index.js
+
+# vscode setting
+.vscode

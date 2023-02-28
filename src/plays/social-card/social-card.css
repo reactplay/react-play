@@ -7,8 +7,8 @@
 .social-card {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  padding: 1rem; 
+  justify-content: center;
+  padding: 1rem;
 }
 
 .social-card-form {
@@ -38,11 +38,11 @@
   box-shadow: none;
 }
 
-.social-card-form .form-group input[type="file"].form-control {
+.social-card-form .form-group input[type='file'].form-control {
   height: auto;
 }
 
-.card-details{
+.card-details {
   margin: 0 0 0 1rem;
 }
 
@@ -58,7 +58,7 @@
   width: 1.2rem;
   height: 1.2rem;
   margin: 0 0.3rem 0 0;
-  border-radius:5px;
+  border-radius: 5px;
 }
 
 .card-details-theme button.red {
@@ -124,13 +124,14 @@
   margin: 0;
 }
 
-.social-card-preview .card-header .card-header-image img{
+.social-card-preview .card-header .card-header-image img {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 120px;
-  height: 120px;
+  aspect-ratio: 1;
+  object-fit: cover;
   padding: 5px;
   border-radius: 50%;
 }
@@ -168,14 +169,12 @@
   padding: 5px;
 }
 
-
 @media only screen and (max-width: 760px) {
   .social-card {
     flex-direction: column;
   }
 
-  .card-details{
+  .card-details {
     margin: 1rem 0 0 0;
   }
 }
-

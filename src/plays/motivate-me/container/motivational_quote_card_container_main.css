@@ -1,0 +1,8 @@
+.card-main-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+  padding-top: 5%;
+  gap: 25px;
+  width: 60%;
+}

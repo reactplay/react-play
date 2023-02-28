@@ -1,0 +1,87 @@
+.twenty-forty-eight-active-modal {
+  overflow-y: hidden;
+}
+
+.twenty-forty-eight-btn-modal {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: black;
+  font-size: 47px;
+  position: absolute;
+  top: 7rem;
+}
+
+.twenty-forty-eight-modal,
+.twenty-forty-eight-overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.twenty-forty-eight-modal {
+  z-index: 1;
+}
+
+.twenty-forty-eight-overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.twenty-forty-eight-modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+  text-align: center;
+}
+
+.twenty-forty-eight-close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}
+
+@media (max-width: 593px) {
+  .twenty-forty-eight-btn-modal {
+    top: 6rem;
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 494px) {
+  .twenty-forty-eight-btn-modal {
+    top: 16rem;
+    font-size: 23px;
+    left: -8px;
+  }
+}
+
+@media (max-width: 424px) {
+  .twenty-forty-eight-btn-modal {
+    top: 27.1rem;
+    font-size: 23px;
+    left: 245px;
+  }
+}
+
+@media (max-width: 354px) {
+  .twenty-forty-eight-btn-modal {
+    top: 17rem;
+    font-size: 19px;
+    left: 0rem;
+  }
+}

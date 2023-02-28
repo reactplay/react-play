@@ -1,4 +1,4 @@
-.counter-container{
+.counter-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,10 +14,10 @@
   margin-bottom: 1rem;
 }
 
-.counter-desc{
+.counter-desc {
   text-align: center;
 }
-button:hover{
+button:hover {
   cursor: pointer;
 }
 
