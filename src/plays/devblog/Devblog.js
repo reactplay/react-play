@@ -10,7 +10,7 @@ function Devblog(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="play-details-body devBlog-body">
           {/* Your Code Starts Here */}
           <App />
           {/* Your Code Ends Here */}

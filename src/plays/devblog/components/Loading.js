@@ -4,7 +4,7 @@ const Loading = () => {
   return (
     <div className="h-screen flex justify-center items-center">
       <div className="w-[150px] h-[150px]">
-        <div className="loading loading--full-height" />
+        <div className="devBlog-loading loading--full-height" />
       </div>
     </div>
   );

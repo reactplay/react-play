@@ -48,7 +48,7 @@ const Article = () => {
               ))}
           </div>
 
-          <div className="mt-10 article" dangerouslySetInnerHTML={{ __html: article.body_html }} />
+          <div className="mt-10 devBlog-article" dangerouslySetInnerHTML={{ __html: article.body_html }} />
         </div>
       ) : (
         <Loading />
