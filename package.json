@@ -31,6 +31,7 @@
     "git-repo-api": "^0.0.17",
     "graphql": "^16.5.0",
     "hardhat": "^2.11.2",
+    "highlight.js": "^11.7.0",
     "html-to-image": "^1.9.0",
     "html2canvas": "^1.4.1",
     "json-graphql-parser": "^0.1.8",
