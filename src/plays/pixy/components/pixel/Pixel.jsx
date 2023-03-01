@@ -30,7 +30,7 @@ function Pixel({ selectedColor }) {
       onClick={applyColor}
       onMouseEnter={changeColorOnHover}
       onMouseLeave={resetColor}
-    ></div>
+    />
   );
 }
 
