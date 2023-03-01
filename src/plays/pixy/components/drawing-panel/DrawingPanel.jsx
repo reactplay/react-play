@@ -1,12 +1,12 @@
 import './DrawingPanel.css';
 import { useState, useRef } from 'react';
-import {CirclePicker} from "react-color";
+import { CirclePicker } from 'react-color';
 import html2canvas from 'html2canvas';
 import Row from '../row/Row';
 
 function DrawingPanel() {
-  const [panelWidth, setPanelWidth] = useState(16);
-  const [panelHeight, setPanelHeight] = useState(16);
+  const panelWidth = 16;
+  const panelHeight = 16;
   const [selectedColor, setColor] = useState('#4caf50');
   const [rowsKey, setRowsKey] = useState(0);
   const printRef = useRef();
@@ -25,7 +25,7 @@ function DrawingPanel() {
     return rows;
   }
 
-  async function handleDownloadImage(){
+  async function handleDownloadImage() {
     const element = printRef.current;
     const canvas = await html2canvas(element);
 
@@ -44,7 +44,7 @@ function DrawingPanel() {
     }
   }
 
-  function handleReset(){
+  function handleReset() {
     setRowsKey(rowsKey + 1);
   }
 
@@ -54,8 +54,12 @@ function DrawingPanel() {
       <CirclePicker color={selectedColor} onChangeComplete={changeColor} />
       <div ref={printRef}>{getRows()}</div>
       <div>
-        <button className="saveArt" type="button" onClick={handleReset}>Reset</button>
-        <button className="saveArt" type="button" onClick={handleDownloadImage}>Save</button>
+        <button className="saveArt" type="button" onClick={handleReset}>
+          Reset
+        </button>
+        <button className="saveArt" type="button" onClick={handleDownloadImage}>
+          Save
+        </button>
       </div>
     </div>
   );

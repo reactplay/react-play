@@ -2,7 +2,7 @@ import './Pixel.css';
 import { useState } from 'react';
 
 function Pixel({ selectedColor }) {
-  const [pixelColor, setPixelColor] = useState("#fff");
+  const [pixelColor, setPixelColor] = useState('#fff');
   const [oldColor, setOldColor] = useState(pixelColor);
   const [canChangeColor, setCanChangeColor] = useState(true);
 
@@ -18,7 +18,7 @@ function Pixel({ selectedColor }) {
 
   function resetColor() {
     if (canChangeColor) {
-    setPixelColor(oldColor);
+      setPixelColor(oldColor);
     }
     setCanChangeColor(true);
   }
@@ -26,12 +26,11 @@ function Pixel({ selectedColor }) {
   return (
     <div
       className="pixel"
+      style={{ backgroundColor: pixelColor }}
       onClick={applyColor}
       onMouseEnter={changeColorOnHover}
       onMouseLeave={resetColor}
-      style={{ backgroundColor: pixelColor }}
-    >
-    </div>
+    ></div>
   );
 }
 
