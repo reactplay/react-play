@@ -8,6 +8,7 @@ import register from './registerServiceWorker';
 import ErrorBoundry from './ErrorBoundary/ErrorBoundary';
 import Notification from 'common/components/Notification';
 import 'react-toastify/dist/ReactToastify.css';
+import * as registerServiceWorker from "./registerServiceWorker";
 
 /** removing console statement in react prod build */
 /* eslint-disable no-console */
