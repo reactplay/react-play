@@ -34,28 +34,46 @@ function PlayMeta() {
 
       return;
     }
-    try {
-      /**
-       * Try to Fetch the local cover image
-       */
-      const response = await import(`plays/${playObj.slug}/cover.png`);
-
-      metaImg = getProdUrl(response.default);
-      ogTagImg = getProdUrl(response.default);
-      setMetaImage(metaImg);
-      setOgTagImage(ogTagImg);
-      setLoading(false);
-    } catch (_error) {
-      /**
-       * On error set the default image
-       */
-
-      metaImg = thumbPlay;
-      ogTagImg = thumbPlay;
-      setMetaImage(metaImg);
-      setOgTagImage(ogTagImg);
-      setLoading(false);
-    }
+    // if it is not passed as a meta data
+    // check in the play folder for a cover image
+    // with the name cover, having the following accepted image formats
+    const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
+    const imgPromises = [];
+    acceptedImgExtensions.map((imgExtension) => {
+      imgPromises.push(import(`plays/${playObj.slug}/cover.${imgExtension}`));
+    });
+    Promise.allSettled(imgPromises)
+      .then((results) => {
+        const fulfilledResult = results.find(
+          (result) => result.status === 'fulfilled' && result.value.default
+        );
+        if (fulfilledResult) {
+          metaImg = getProdUrl(fulfilledResult.value.default);
+          ogTagImg = getProdUrl(fulfilledResult.value.default);
+          setMetaImage(metaImg);
+          setOgTagImage(ogTagImg);
+          setLoading(false);
+        } else {
+          console.error(
+            `Cover image not found for the play ${playObj.name}. Setting the default cover image...`
+          );
+          /**
+           * On error set the default image
+           */
+          metaImg = thumbPlay;
+          ogTagImg = thumbPlay;
+          setMetaImage(metaImg);
+          setOgTagImage(ogTagImg);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        return {
+          success: false,
+          error: err,
+          message: `An error occured while setting the cover image`
+        };
+      });
   }, []);
 
   useEffect(() => {

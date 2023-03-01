@@ -49,20 +49,30 @@ const PlayThumbnail = ({ play }) => {
     } else {
       // if it is not passed as a meta data
       // check in the play folder for a cover image
-      // with the name cover.png
-      import(`plays/${play.slug}/cover.png`)
-        .then((Cover) => {
-          setCover(Cover.default);
+      // with the name cover, having the following accepted image formats
+      const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
+      const imgPromises = [];
+      acceptedImgExtensions.map((imgExtension) => {
+        imgPromises.push(import(`plays/${play.slug}/cover.${imgExtension}`));
+      });
+      Promise.allSettled(imgPromises)
+        .then((results) => {
+          const fulfilledResult = results.find(
+            (result) => result.status === 'fulfilled' && result.value.default
+          );
+          if (fulfilledResult) {
+            setCover(fulfilledResult.value.default);
+          } else {
+            // if none of the images included, set default image
+            setCover(thumbPlay);
+
+            console.error(
+              `Cover image not found for the play ${play.name}. Setting the default cover image...`
+            );
+          }
         })
         .catch((err) => {
-          // if there is no cover image, set a default image
-          setCover(thumbPlay);
-
-          return {
-            success: false,
-            error: err,
-            message: `Cover image not found for the play ${play.name}. Setting the default cover image...`
-          };
+          console.error(err);
         });
     }
   }, [play]);
