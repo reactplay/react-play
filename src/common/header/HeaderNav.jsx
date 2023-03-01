@@ -67,6 +67,18 @@ const HeaderNav = ({ showBrowse }) => {
               <span className="sr-only">Close</span>
             </button>
           </li>
+          {showToggleMenu && (
+            <li>
+              <Link
+                className="app-header-btn app-header-btn--primary"
+                data-testid="browse-btn"
+                to="/plays"
+              >
+                <MdManageSearch className="icon" />
+                <span className="btn-label">Browse</span>
+              </Link>
+            </li>
+          )}
           {showBrowse && !showToggleMenu && (
             <li>
               <Link
