@@ -176,6 +176,22 @@ export const getPlaysByFilter = async (filter) => {
           });
 
           filter_object.clause.conditions.push({ clause: local_cond_clause });
+        } else if (key === 'text') {
+          const local_cond_clause = {
+            operator: 'or',
+            conditions: []
+          };
+          local_cond_clause.conditions.push({
+            field: 'name',
+            operator: 'ilike',
+            value: `%${obj}%`
+          });
+          local_cond_clause.conditions.push({
+            field: 'description',
+            operator: 'ilike',
+            value: `%${obj}%`
+          });
+          filter_object.clause.conditions.push({ clause: local_cond_clause });
         } else {
           filter_object.clause.conditions.push({
             field: key,
@@ -189,6 +205,7 @@ export const getPlaysByFilter = async (filter) => {
 
   const payload = FetchPlaysByFilter(filter_object);
   const res = await submit(payload);
+
   return res;
 };
 

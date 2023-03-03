@@ -1,4 +1,5 @@
 import { FIELD_TEMPLATE } from './filter-template';
+
 export const ParseQuery = (queryString) => {
   if (!queryString) {
     return undefined;
@@ -9,6 +10,7 @@ export const ParseQuery = (queryString) => {
     var pair = pairs[i].split('=');
     query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
   }
+
   return query;
 };
 
@@ -17,6 +19,7 @@ export const QueryExtractValue = (query) => {
   Object.keys(query).forEach((key) => {
     targetQuery[key] = query[key].split(',');
   });
+
   return targetQuery;
 };
 export const QueryDBTranslator = (query) => {
@@ -31,6 +34,9 @@ export const QueryDBTranslator = (query) => {
       }
     }
   });
+  if (query.text) {
+    res['text'] = extractedValue['text'][0];
+  }
 
   return res;
 };

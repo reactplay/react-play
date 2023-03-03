@@ -51,6 +51,7 @@ export function FetchPlaysByFilter(where_clause) {
   if (where_clause) {
     payload.where = where_clause;
   }
+
   return payload;
 }
 

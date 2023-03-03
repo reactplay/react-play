@@ -17,40 +17,38 @@ import { getPlaysByFilter } from 'common/services/plays';
 const PlayList = () => {
   const [randomPlay, setRandomPlay] = useState({});
   // const [loading, error, plays] = useGetPlays();
-  const [loading, setLoading] = useState()
-  const [error, setError] = useState()
-  const [plays, setPlays] = useState()
+  const [loading, setLoading] = useState();
+  const [error, setError] = useState();
+  const [plays, setPlays] = useState();
   const { setQuery } = useSearchContext();
+  const [isFiltered, setIsFiltered] = useState(false);
   let location = useLocation();
 
   useEffect(() => {
-
-    const getPlays = async() => {
-      const parsedQuery = ParseQuery(location.search)
-      let translatedQuery
-      if(parsedQuery) {
-        translatedQuery = QueryDBTranslator(parsedQuery)
+    const getPlays = async () => {
+      const parsedQuery = ParseQuery(location.search);
+      let translatedQuery;
+      if (parsedQuery) {
+        translatedQuery = QueryDBTranslator(parsedQuery);
       }
-      const res = await getPlaysByFilter(translatedQuery)
-      setPlays(res)
-      console.log(res)
-      if(!translatedQuery) {
-      const filteredPlays = res.filter(
-        (play) => all_plays[play.component ? play.component : toSanitized(play.title_name)]
-      );
-      // If the filtered array has at least one item, select a random play from the filtered array
-      if (filteredPlays && filteredPlays.length > 0) {
-        // generate a random index to select a random play
-        const randomIndex = Math.floor(Math.random() * filteredPlays.length);
-        setRandomPlay(filteredPlays[randomIndex]);
+      const res = await getPlaysByFilter(translatedQuery);
+      setPlays(res);
+      console.log(res);
+      if (!translatedQuery) {
+        const filteredPlays = res.filter(
+          (play) => all_plays[play.component ? play.component : toSanitized(play.title_name)]
+        );
+        // If the filtered array has at least one item, select a random play from the filtered array
+        if (filteredPlays && filteredPlays.length > 0) {
+          // generate a random index to select a random play
+          const randomIndex = Math.floor(Math.random() * filteredPlays.length);
+          setRandomPlay(filteredPlays[randomIndex]);
+        }
+      } else {
+        setIsFiltered(true);
       }
-
-
-      }
-    }
-    getPlays()
-
-    
+    };
+    getPlays();
   }, [location.search]);
 
   if (loading) {
@@ -62,14 +60,18 @@ const PlayList = () => {
       <div className="play-not-found">
         <ImageOops className="play-not-found-image" />
         <p className="page-404-lead">Play not found</p>
-        <p className="page-404-desc">Please change your search or adjust filters to find plays.</p>
+        {
+          location.search ? (<p className="page-404-desc">You migh want to adjust the search criteria or <a href="/plays" className='underline'>clear</a> it.</p>):(<p className="page-404-desc">Something went wrong</p>)
+        }
+        
       </div>
     );
   }
 
   return (
     <Fragment>
-      <DynamicBanner randomPlay={randomPlay} />
+      {isFiltered ? null : <DynamicBanner randomPlay={randomPlay} />}
+
       <ol className="list-plays">
         {plays?.map((play, index) => (
           <React.Fragment key={index}>

@@ -7,23 +7,22 @@ import { orderBy } from 'lodash';
 
 import { RiFilterFill } from 'react-icons/ri';
 import useFetchFilterData from './hooks/usePlayFilter';
-import { ParseQuery } from './search-helper';
+
 import { FIELD_TEMPLATE } from './filter-template';
 import { TextField, Checkbox, Autocomplete, Button } from '@mui/material';
 import { BiCheckbox, BiCheckboxChecked } from 'react-icons/bi';
+import { GoSettings } from 'react-icons/go';
 
 const icon = <BiCheckbox size={30} />;
 const checkedIcon = <BiCheckboxChecked size={30} />;
 
-const FilterPlays = ({ reset }) => {
+const FilterPlays = ({ reset, onChange, query }) => {
   const [loading, error, data] = useFetchFilterData();
-  const [loadedData, setLoadedData] = useState({})
-  const [formData, setFormData] = useState({  });
-  
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [filterObject, setFilterObject] = useState({})
-  const [parsedQuery, setParsedQuery] = useState({})
+  const [loadedData, setLoadedData] = useState({});
+  const [formData, setFormData] = useState({});
+
+  const [filterObject, setFilterObject] = useState({});
+  const [parsedQuery, setParsedQuery] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
     ...filterObject
@@ -33,98 +32,103 @@ const FilterPlays = ({ reset }) => {
   const [isFilterApplied, setIsFilterApplied] = useState(false);
 
   useEffect(() => {
-    if(!loading) {
-    const p_query =ParseQuery(location.search) 
-        data.languages = [{
-      name: 'JavaScript',
-      value: 'js',
-      icon: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1675411496/js_jjnhvy.png'
-    },{
-      name: 'TypeScript',
-      value: 'ts',
-      icon: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1675409456/ts_yrzjge.png'
-    }]
-    setLoadedData(data)
-    if(p_query) {
-      loadFilter(p_query, data)
+    if (!loading) {
+      data.languages = [
+        {
+          name: 'JavaScript',
+          value: 'js',
+          icon: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1675411496/js_jjnhvy.png'
+        },
+        {
+          name: 'TypeScript',
+          value: 'ts',
+          icon: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1675409456/ts_yrzjge.png'
+        }
+      ];
+      setLoadedData(data);
+      if (query) {
+        loadFilter(query, data);
+      }
     }
-
-    }
-
-  }, [location.pathname, location.search, loading]);
+  }, [query, loading]);
 
   const filterModalCloseBtnHandler = () => {
     setShowModal(false);
   };
 
   const loadFilter = (query, l_data) => {
-    const res = {}
-    const newFormData = {}
-    FIELD_TEMPLATE.forEach(template => {
-      if(query[template.datafield]) {
-        newFormData[template.datafield] = []
-        const splitData = query[template.datafield].split(',')
-        splitData.forEach(data => {
+    const res = {};
+    const newFormData = {};
+    FIELD_TEMPLATE.forEach((template) => {
+      if (query[template.datafield]) {
+        newFormData[template.datafield] = [];
+        const splitData = query[template.datafield].split(',');
+        splitData.forEach((data) => {
           const found = l_data[template.datafield].filter((d) => {
-            if(template.node) {
-              return d[template.node][template.fieldValue] === data
+            if (template.node) {
+              return d[template.node][template.fieldValue] === data;
             } else {
-              return d[template.fieldValue] === data
+              return d[template.fieldValue] === data;
             }
-          })[0]
-          if(found) {
-          newFormData[template.datafield].push(found)
+          })[0];
+          if (found) {
+            newFormData[template.datafield].push(found);
           }
-        })
+        });
       }
-    })
-    setFormData(newFormData)
-  }
+    });
+    setFormData(newFormData);
+  };
 
   const handleFilter = () => {
-    const res = {}
-    FIELD_TEMPLATE.forEach(template => {
-      if(formData[template.datafield]) {
-        res[template.datafield] = []
-        formData[template.datafield].forEach(data => {
-          res[template.datafield].push(template.node? data[template.node][template.fieldValue]: data[template.fieldValue])
-        })
+    const res = {};
+    FIELD_TEMPLATE.forEach((template) => {
+      if (formData[template.datafield]) {
+        res[template.datafield] = [];
+        formData[template.datafield].forEach((data) => {
+          res[template.datafield].push(
+            template.node ? data[template.node][template.fieldValue] : data[template.fieldValue]
+          );
+        });
       }
-    })
+    });
 
-    const finalQueryObject = {}
-    Object.keys(res).forEach (key => {
-      if(res[key] && res[key].length) {
-        finalQueryObject[key] = res[key]
+    const finalQueryObject = {};
+    Object.keys(res).forEach((key) => {
+      if (res[key] && res[key].length) {
+        finalQueryObject[key] = res[key];
       }
-    })
-    const query = new URLSearchParams(finalQueryObject).toString();
-    
-    if(query){
+    });
+    const final_query = { ...query, ...finalQueryObject };
+    const fianl_query_param = new URLSearchParams(finalQueryObject).toString();
+
+    if (fianl_query_param) {
       setIsFilterApplied(true);
-      navigate(`/plays?${query}`);
-      setShowModal(false)
-    } else{
-      setShowModal(true)
+
+      setShowModal(false);
+    } else {
+      setShowModal(true);
     }
-    
-    
-  }
+    if (onChange) {
+      onChange(final_query);
+    }
+  };
 
   const handleChange = (key, value) => {
     setFormData((pre) => ({ ...pre, [key]: value }));
   };
 
   if (loading) {
-    return <p>{'Loading all fields'}</p>;
+    return <p>Loading all fields</p>;
   }
 
   const getOptionNode = (field, option) => {
-    if(field.node) {
-      return option[field.node]
+    if (field.node) {
+      return option[field.node];
     }
-    return option
-  }
+
+    return option;
+  };
 
   return (
     <div className="search-filter">
@@ -135,18 +139,17 @@ const FilterPlays = ({ reset }) => {
         onClose={filterModalCloseBtnHandler}
         onSubmit={handleFilter}
       >
-        {
-          FIELD_TEMPLATE.map((field, field_i) => {
-            return (
-
-              <div className="flex p-2" key={field_i}>
+        {FIELD_TEMPLATE.map((field, field_i) => {
+          return (
+            <div className="flex p-2" key={field_i}>
               <div className="w-32">
                 {field.display}
                 {field.required ? '*' : ''}
               </div>
-              <div className="flex-1"><Autocomplete
+              <div className="flex-1">
+                <Autocomplete
+                  disableCloseOnSelect
             freeSolo={field.freeSolo}
-            disableCloseOnSelect
             getOptionLabel={(option) => field.node?  option[field.node][field.fieldName]: option[field.fieldName]}
             id={field.datafield}
             multiple={field.multiple}
@@ -194,13 +197,9 @@ const FilterPlays = ({ reset }) => {
             }}
           /></div>
             </div>
-
-
-              
-            )
-          })
-        }
-       
+             
+          );
+        })}
       </Modal>
 
       <button
@@ -211,9 +210,11 @@ const FilterPlays = ({ reset }) => {
           setIsFilterApplied(false);
         }}
       >
-        {noOfAppliedFilter === 0 ? null : <div className="badge">{noOfAppliedFilter}</div>}
+        {query && Object.keys(query).length > 0 ? (
+          <div className="badge">{Object.keys(query).length}</div>
+        ) : null}
 
-        <RiFilterFill className="icon" color="var(--color-neutral-30)" size="28px" />
+        <GoSettings className="icon" color="var(--color-neutral-30)" size="28px" />
       </button>
     </div>
   );
