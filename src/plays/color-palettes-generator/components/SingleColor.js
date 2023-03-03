@@ -1,34 +1,20 @@
-import { toast } from 'react-toastify';
+import { alertToast } from './utils';
 
-const SingleColor = ({ rgb, weight, index, hexColor }) => {
-  const bcg = rgb.join(',');
-  const hexValue = `#${hexColor}`;
-
-  const showAlert = (message) => {
-    toast.success(message, {
-      position: 'top-center',
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'light'
-    });
-  };
-
+const SingleColor = ({ index, hexColor }) => {
   return (
     <>
       <article
-        className={`color-palettes-generator-color ${index > 10 && 'color-light'}`}
-        style={{ backgroundColor: `rgb(${bcg})` }}
+        className={`color-palettes-generator-color ${
+          index > 10 && 'color-palettes-generator-color-light'
+        }`}
+        style={{ backgroundColor: `${hexColor}` }}
         onClick={() => {
-          navigator.clipboard.writeText(hexValue);
-          showAlert(`${hexValue} Copied!`);
+          navigator.clipboard.writeText(hexColor);
+          alertToast(`${hexColor} Copied!`);
         }}
       >
-        <p className="color-palettes-generator-percent-value">{weight}%</p>
-        <p className="color-palettes-generator-color-value">{hexValue}</p>
+        {/* <p className="color-palettes-generator-percent-value">{weight}%</p> */}
+        <p className="color-palettes-generator-color-value">{hexColor}</p>
       </article>
     </>
   );

@@ -69,7 +69,7 @@
   border: 2px solid var(--clr-red-dark);
 }
 .color-palettes-generator-colors {
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(223.33px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(96px, 1fr));
@@ -88,9 +88,9 @@
   color: var(--clr-grey-1);
   margin-bottom: 0;
 }
-.color-light .color-palettes-generator-color-value {
+.color-palettes-generator-color-light .color-palettes-generator-color-value {
   color: var(--clr-white);
 }
-.color-light .color-palettes-generator-percent-value {
+.color-palettes-generator-color-light .color-palettes-generator-percent-value {
   color: var(--clr-white);
 }

@@ -1,24 +1,39 @@
 import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SingleColor from './components/SingleColor';
-import Values from 'values.js';
+import { getcolorsarray, alertToast } from './components/utils';
 
 function ColorPalettesGenerator(props) {
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState('#e01017');
   const [error, setError] = useState(false);
-  const [colorlist, setColorList] = useState(new Values('#f15025').all(10));
+  const [colorlist, setColorList] = useState();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     try {
-      const colors = new Values(color).all(12);
-      setColorList(colors);
-      setError(false);
+      if (color.length == 7) {
+        // getcolorsarray function imported from Utils.js
+        let colors = getcolorsarray(color);
+        setColorList(colors);
+        setError(false);
+      } else {
+        setError(true);
+        // Imported from utils.js
+        alertToast('Please enter a valid hex code');
+      }
     } catch (error) {
       setError(true);
+      // Imported from utils.js
+      alertToast('Please enter a valid hex code');
     }
   };
+
+  useEffect(() => {
+    // getcolorsarray function imported from Utils.js
+    let colors = getcolorsarray(color);
+    setColorList(colors);
+  }, []);
 
   return (
     <div className="play-details">
@@ -43,7 +58,7 @@ function ColorPalettesGenerator(props) {
       <section className="color-palettes-generator-colors">
         {colorlist &&
           colorlist.map((color, index) => (
-            <SingleColor key={index} {...color} hexColor={color.hex} index={index} />
+            <SingleColor hexColor={color} index={index} key={index} />
           ))}
       </section>
     </div>
