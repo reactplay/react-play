@@ -39,41 +39,33 @@ function PlayMeta() {
     // with the name cover, having the following accepted image formats
     const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
     const imgPromises = [];
-    acceptedImgExtensions.map((imgExtension) => {
-      imgPromises.push(import(`plays/${playObj.slug}/cover.${imgExtension}`));
-    });
-    Promise.allSettled(imgPromises)
-      .then((results) => {
-        const fulfilledResult = results.find(
-          (result) => result.status === 'fulfilled' && result.value.default
-        );
-        if (fulfilledResult) {
-          metaImg = getProdUrl(fulfilledResult.value.default);
-          ogTagImg = getProdUrl(fulfilledResult.value.default);
-          setMetaImage(metaImg);
-          setOgTagImage(ogTagImg);
-          setLoading(false);
-        } else {
-          console.error(
-            `Cover image not found for the play ${playObj.name}. Setting the default cover image...`
-          );
-          /**
-           * On error set the default image
-           */
-          metaImg = thumbPlay;
-          ogTagImg = thumbPlay;
-          setMetaImage(metaImg);
-          setOgTagImage(ogTagImg);
-          setLoading(false);
-        }
-      })
-      .catch((err) => {
-        return {
-          success: false,
-          error: err,
-          message: `An error occured while setting the cover image`
-        };
-      });
+    acceptedImgExtensions.map((ext) =>
+      imgPromises.push(import(`plays/${playObj.slug}/cover.${ext}`))
+    );
+
+    const response = Promise.allSettled(imgPromises);
+    const fulfilledResult = response.find(
+      (result) => result.status === 'fulfilled' && result.value.default
+    );
+    if (fulfilledResult) {
+      metaImg = getProdUrl(fulfilledResult.value.default);
+      ogTagImg = getProdUrl(fulfilledResult.value.default);
+      setMetaImage(metaImg);
+      setOgTagImage(ogTagImg);
+      setLoading(false);
+    } else {
+      console.error(
+        `Cover image not found for the play ${playObj.name}. Setting the default cover image...`
+      );
+      /**
+       * On error set the default image
+       */
+      metaImg = thumbPlay;
+      ogTagImg = thumbPlay;
+      setMetaImage(metaImg);
+      setOgTagImage(ogTagImg);
+      setLoading(false);
+    }
   }, []);
 
   useEffect(() => {

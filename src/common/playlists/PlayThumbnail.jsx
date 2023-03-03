@@ -42,39 +42,41 @@ const PlayThumbnail = ({ play }) => {
   };
 
   useEffect(() => {
-    // Set the cover image
-    // if it is passed as a meta data
-    if (play.cover) {
-      setCover(play.cover);
-    } else {
-      // if it is not passed as a meta data
-      // check in the play folder for a cover image
-      // with the name cover, having the following accepted image formats
-      const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
-      const imgPromises = [];
-      acceptedImgExtensions.map((imgExtension) => {
-        imgPromises.push(import(`plays/${play.slug}/cover.${imgExtension}`));
-      });
-      Promise.allSettled(imgPromises)
-        .then((results) => {
-          const fulfilledResult = results.find(
-            (result) => result.status === 'fulfilled' && result.value.default
-          );
-          if (fulfilledResult) {
-            setCover(fulfilledResult.value.default);
-          } else {
-            // if none of the images included, set default image
-            setCover(thumbPlay);
+    async function setPlayCover() {
+      // Set the cover image
+      // if it is passed as a meta data
+      if (play.cover) {
+        setCover(play.cover);
+      } else {
+        // if it is not passed as a meta data
+        // check in the play folder for a cover image
+        // with the name cover, having the following accepted image formats
+        const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
+        const imgPromises = [];
+        acceptedImgExtensions.map((ext) =>
+          imgPromises.push(import(`plays/${play.slug}/cover.${ext}`))
+        );
 
-            console.error(
-              `Cover image not found for the play ${play.name}. Setting the default cover image...`
-            );
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+        const response = await Promise.allSettled(imgPromises);
+
+        const fulfilledResult = response.find(
+          (result) => result.status === 'fulfilled' && result.value.default
+        );
+
+        if (fulfilledResult) {
+          setCover(fulfilledResult.value.default);
+        } else {
+          // if none of the images included, set default image
+          setCover(thumbPlay);
+
+          console.error(
+            `Cover image not found for the play ${play.name}. Setting the default cover image...`
+          );
+        }
+      }
     }
+
+    setPlayCover();
   }, [play]);
 
   return (

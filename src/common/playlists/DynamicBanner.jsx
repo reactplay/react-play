@@ -9,44 +9,42 @@ const DynamicBanner = ({ randomPlay }) => {
 
   useEffect(() => {
     setLoading(true);
-    if (loading && randomPlay && randomPlay.cover) {
-      setCoverImage(randomPlay.cover);
-      setLoading(false);
-    } else {
-      setLoading(true);
-      // if it is not passed as a meta data
-      // check in the play folder for a cover image
-      // with the name cover, having the following accepted image formats
-      const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
-      const imgPromises = [];
-      acceptedImgExtensions.map((imgExtension) => {
-        imgPromises.push(import(`plays/${randomPlay.slug}/cover.${imgExtension}`));
-      });
-      Promise.allSettled(imgPromises)
-        .then((results) => {
-          const fulfilledResult = results.find(
-            (result) => result.status === 'fulfilled' && result.value.default
-          );
-          if (fulfilledResult) {
-            setCoverImage(fulfilledResult.value.default);
-            setLoading(false);
-          } else {
-            // if none of the images included, set default image
-            setCoverImage(thumbPlay);
 
-            console.error(
-              `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
-            );
-          }
-        })
-        .catch((err) => {
-          return {
-            success: false,
-            error: err,
-            message: `An error occured while setting the cover image`
-          };
-        });
+    async function setPlayCover() {
+      if (loading && randomPlay && randomPlay.cover) {
+        setCoverImage(randomPlay.cover);
+        setLoading(false);
+      } else {
+        setLoading(true);
+        // if it is not passed as a meta data
+        // check in the play folder for a cover image
+        // with the name cover, having the following accepted image formats
+        const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
+        const imgPromises = [];
+        acceptedImgExtensions.map((ext) =>
+          imgPromises.push(import(`plays/${randomPlay.slug}/cover.${ext}`))
+        );
+
+        const response = await Promise.allSettled(imgPromises);
+
+        const fulfilledResult = response.find(
+          (result) => result.status === 'fulfilled' && result.value.default
+        );
+        if (fulfilledResult) {
+          setCoverImage(fulfilledResult.value.default);
+          setLoading(false);
+        } else {
+          // if none of the images included, set default image
+          setCoverImage(thumbPlay);
+
+          console.error(
+            `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
+          );
+        }
+      }
     }
+
+    setPlayCover();
   }, [randomPlay]);
 
   if (loading) return <p>loading...</p>;
