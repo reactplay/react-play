@@ -13,6 +13,7 @@
     "@tensorflow/tfjs": "^4.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "@types/babel__generator": "^7.6.4",
     "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
@@ -107,6 +108,9 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@types/babel__core": "^7.20.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.41.0",
     "autoprefixer": "^10.4.7",
@@ -121,6 +125,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
     "postcss": "^8.4.13",
     "prettier": "^2.7.1",
     "puppeteer": "^13.7.0",
