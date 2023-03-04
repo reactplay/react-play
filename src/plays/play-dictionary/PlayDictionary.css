@@ -65,8 +65,27 @@
   flex-direction: column;
 }
 
-.word-display {
+.word-details {
+  /* background: orange; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.word-display,
+.pronunciation {
   padding: 20px 40px 40px 40px;
+}
+
+.pronunciation button {
+  /* border: 1px solid black; */
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: #df37f2;
+  opacity: 0.7;
 }
 
 .word-display p {

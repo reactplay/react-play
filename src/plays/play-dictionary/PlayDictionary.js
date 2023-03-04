@@ -1,30 +1,43 @@
 import PlayHeader from 'common/playlists/PlayHeader';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './PlayDictionary.css';
 import { BiSearch } from 'react-icons/bi';
+import { BsFillPlayFill } from 'react-icons/bs';
 import * as C from './ThemeConstant.js';
 
 // WARNING: Do not change the entry componenet name
 function PlayDictionary(props) {
   // Your Code Start below.
+  const audioControlRef = useRef(null);
   const [searchInput, setSearchInput] = useState('');
   const [isWordFound, setIsWordFound] = useState(false);
   const [foundMeaning, setFoundMeaning] = useState({});
   const [notFoundReponse, setNotFoundResponse] = useState({});
+  const [audioSource, setAudioSource] = useState('');
+  // audioControlRef?.current.play();
+
+  const getAudioSource = (data) => {
+    setAudioSource('');
+    data.forEach((item) => {
+      if (item.audio) {
+        setAudioSource(item.audio);
+        audioControlRef?.current?.load();
+      }
+    });
+  };
 
   const getWordMeaning = async () => {
     if (searchInput) {
-      const response = await fetch(
-        `https://api.dictionaryapi.dev/api/v2/entries/en/${searchInput}`
-      );
-      const json = await response.json();
-
-      if (response.status === 404) {
-        setIsWordFound(false);
-        setNotFoundResponse(json);
-      } else if (response.status === 200) {
+      let response, json;
+      try {
+        response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchInput}`);
+        json = await response.json();
         setIsWordFound(true);
         setFoundMeaning(json[0]);
+        getAudioSource(json[0].phonetics);
+      } catch (e) {
+        setIsWordFound(false);
+        setNotFoundResponse(json);
       }
     }
   };
@@ -50,9 +63,21 @@ function PlayDictionary(props) {
           <div className="container-output">
             {isWordFound ? (
               <div className="meaning-found">
-                <div className="word-display">
-                  <p>{foundMeaning.word}</p>
-                  <span style={{ color: C.purple }}>{foundMeaning.phonetic}</span>
+                <div className="word-details">
+                  <div className="word-display">
+                    <p>{foundMeaning.word}</p>
+                    <span style={{ color: C.purple }}>{foundMeaning.phonetic}</span>
+                  </div>
+                  {audioSource && (
+                    <div className="pronunciation">
+                      <audio controls ref={audioControlRef} style={{ display: 'none' }}>
+                        <source src={audioSource} type="audio/mpeg" />
+                      </audio>
+                      <button onClick={() => audioControlRef?.current.play()}>
+                        <BsFillPlayFill color="white" size="30px" />
+                      </button>
+                    </div>
+                  )}
                 </div>
                 <div className="meanings-display">
                   {foundMeaning.meanings.map(
