@@ -12,7 +12,7 @@ Its a Dictionary that you can play around with to understand meaning of new Engl
 - User: Abhishek-90
 - Gihub Link: https://github.com/Abhishek-90
 - Blog:
-- Video:
+- Video: https://www.stack-stream.com/v/dictionary-1
 
 ## Implementation Details
 
