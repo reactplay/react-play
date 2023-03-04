@@ -24,7 +24,7 @@ const Modal = ({ showModal, toggle }) => {
       info: 'In the 3rd and the last category, you will get on scrolling a bit. Here, you can listen to facts by different categories and you can listen to them by choosing different voices.'
     },
     {
-      info: 'There are infinite numbers present in the world, so there can be a possibility to not have a fact about it so for that, you can add facts about that number here -> http://numbersapi.com.'
+      info: 'There are infinite numbers present in the world, so there can be a possibility to not have a fact about it so for that, this app will roundd off that number and tells you the fact about that number.'
     },
     {
       info: 'Now, Enjoy our app!.'

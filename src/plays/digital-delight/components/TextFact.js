@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './TextFact.css';
+import axios from 'axios';
 
 const TextFact = () => {
   const [number, setNumber] = useState('');
@@ -10,10 +11,19 @@ const TextFact = () => {
   const handleClick = () => {
     if (/^[0-9]+$/.test(number)) {
       setLoading(true);
-      fetch(`http://numbersapi.com/${number}`)
-        .then((response) => response.text())
-        .then((data) => {
-          setFact(data);
+      const options = {
+        method: 'GET',
+        url: `https://numbersapi.p.rapidapi.com/${number}/trivia`,
+        params: { fragment: 'true', notfound: 'floor', json: 'true' },
+        headers: {
+          'X-RapidAPI-Key': process.env.REACT_APP_DIGITSDELIGHT_APIKEY,
+          'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
+        }
+      };
+      axios
+        .request(options)
+        .then((response) => {
+          setFact(response.data.number + ' is ' + response.data.text);
           setError('');
         })
         .catch((error) => {

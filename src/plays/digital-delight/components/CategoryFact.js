@@ -21,10 +21,21 @@ function CategoryFact() {
   };
 
   const getFact = async (type) => {
+    const options = {
+      method: 'GET',
+      url: `https://numbersapi.p.rapidapi.com/random/${type}`,
+      params: { fragment: 'true', json: 'true' },
+      headers: {
+        'X-RapidAPI-Key': process.env.REACT_APP_DIGITSDELIGHT_APIKEY,
+        'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
+      }
+    };
     try {
-      const response = await axios.get(`http://numbersapi.com/random/${type}`);
-      setFact(response.data);
-      speechHandler(new SpeechSynthesisUtterance(response.data));
+      const response = await axios.request(options);
+      setFact(response.data.number + ' is ' + response.data.text);
+      speechHandler(
+        new SpeechSynthesisUtterance(response.data.number + ' is ' + response.data.text)
+      );
       setShowSelecter(true);
     } catch (error) {
       console.error(error);

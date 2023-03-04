@@ -13,9 +13,18 @@ function Random() {
   async function fetchData() {
     setIsFactsLoading(true);
     const fetchedFacts = [];
+    const options = {
+      method: 'GET',
+      url: 'https://numbersapi.p.rapidapi.com/random/trivia',
+      params: { min: '1', max: '999', fragment: 'true', json: 'true' },
+      headers: {
+        'X-RapidAPI-Key': process.env.REACT_APP_DIGITSDELIGHT_APIKEY,
+        'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
+      }
+    };
     for (let i = 0; i < 3; i++) {
-      const response = await axios.get(`http://numbersapi.com/random/trivia`);
-      fetchedFacts.push(response.data);
+      const response = await axios.request(options);
+      fetchedFacts.push(response.data.number + ' is ' + response.data.text);
     }
     setFacts(fetchedFacts);
     setIsFactsLoading(false);
