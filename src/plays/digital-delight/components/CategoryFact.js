@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Math from '../components/images/math.png';
-import Year from '../components/images/year.png';
-import Date from '../components/images/date.png';
+import MathImage from '../components/images/math.png';
+import YearImage from '../components/images/year.png';
+import DateImage from '../components/images/date.png';
+import { CategoryFacts } from './DigitsDelightsConstant';
 import './Categoryfact.css';
 
 function CategoryFact() {
-  const [fact, setFact] = useState('Click on buttons below to get facts by category');
+  const [fact, setFact] = useState(CategoryFacts);
+  const [error, setError] = useState('');
   const [selectedVoice, setSelectedVoice] = useState('Zira');
   const [showSelecter, setShowSelecter] = useState(false);
   const speechHandler = (msg) => {
+    let voices = [];
+    window.speechSynthesis.onvoiceschanged = () => {
+      voices = window.speechSynthesis.getVoices();
+    };
     // This for loop helps to give the selected voice
-    for (let i = 0; i < window.speechSynthesis.getVoices().length; i++) {
-      if (window.speechSynthesis.getVoices()[i].name === selectedVoice) {
-        msg.voice = window.speechSynthesis.getVoices()[i];
+    for (let i = 0; i < voices.length; i++) {
+      if (voices[i].name === selectedVoice) {
+        msg.voice = voices[i];
       }
     }
     window.speechSynthesis.cancel();
@@ -31,24 +37,20 @@ function CategoryFact() {
       }
     };
     try {
-      const response = await axios.request(options);
-      setFact(response.data.number + ' is ' + response.data.text);
-      speechHandler(
-        new SpeechSynthesisUtterance(response.data.number + ' is ' + response.data.text)
-      );
+      const { data } = await axios.request(options);
+      setFact(data.number + ' is ' + data.text);
+      speechHandler(new SpeechSynthesisUtterance(data.number + ' is ' + data.text));
       setShowSelecter(true);
     } catch (error) {
-      console.error(error);
+      setError('Error fetching fact. Please try again later.');
     }
   };
 
-  const handleVoiceChange = (event) => {
-    setSelectedVoice(event.target.value);
-  };
+  const handleVoiceChange = ({ target }) => setSelectedVoice(target.value);
 
   return (
-    <>
-      <div className="digits-delight-voice-selection-container" style={{ marginBottom: '-25px' }}>
+    <div>
+      <div className="digits-delight-voice-selection-container" style={{ marginTop: '2px' }}>
         <select
           className={`digits-voice-select ${showSelecter ? 'opacity-1' : 'opacity-0'}`}
           placeholder="Select the voices"
@@ -74,7 +76,7 @@ function CategoryFact() {
               tooltip-text="Random Math Facts"
               onClick={() => getFact('math')}
             >
-              <img src={Math} />
+              <img src={MathImage} />
             </button>
           </li>
           <li>
@@ -83,7 +85,7 @@ function CategoryFact() {
               tooltip-text="Facts By Date"
               onClick={() => getFact('date')}
             >
-              <img src={Date} />
+              <img src={DateImage} />
             </button>
           </li>
           <li>
@@ -92,12 +94,12 @@ function CategoryFact() {
               tooltip-text="Facts By Year"
               onClick={() => getFact('year')}
             >
-              <img src={Year} />
+              <img src={YearImage} />
             </button>
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 

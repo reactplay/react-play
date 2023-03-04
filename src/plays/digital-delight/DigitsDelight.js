@@ -13,9 +13,7 @@ function DigitsDelight(props) {
 
   const [showModal, setShowModal] = useState(false);
 
-  const toggle = () => {
-    setShowModal(!showModal);
-  };
+  const toggle = () => setShowModal((prev) => !prev);
 
   return (
     <>

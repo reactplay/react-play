@@ -4,7 +4,7 @@ Get interesting facts about numbers.
 
 ## Play Demographic
 
-- Language: js
+- Language: JavaScript
 - Level: Intermidiate
 
 ## Creator Information

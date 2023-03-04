@@ -8,7 +8,7 @@ const TextFact = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (/^[0-9]+$/.test(number)) {
       setLoading(true);
       const options = {
@@ -20,17 +20,16 @@ const TextFact = () => {
           'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
         }
       };
-      axios
-        .request(options)
-        .then((response) => {
-          setFact(response.data.number + ' is ' + response.data.text);
-          setError('');
-        })
-        .catch((error) => {
-          setError(`Error: ${error.message}`);
-          setFact('');
-        })
-        .finally(() => setLoading(false));
+      try {
+        const response = await axios.request(options);
+        setFact(response.data.number + ' is ' + response.data.text);
+        setError('');
+      } catch (error) {
+        setError(`Error: ${error.message}`);
+        setFact('');
+      } finally {
+        setLoading(false);
+      }
     } else {
       setError('Please enter a valid number');
       setFact('');
