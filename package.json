@@ -11,6 +11,9 @@
     "@nhost/react": "^0.9.0",
     "@tensorflow-models/coco-ssd": "^2.2.2",
     "@tensorflow/tfjs": "^4.2.0",
+
+    "@reduxjs/toolkit": "^1.9.2",
+
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/lodash": "^4.14.182",
