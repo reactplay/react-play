@@ -1,5 +1,5 @@
 import PlayHeader from 'common/playlists/PlayHeader';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import './PlayDictionary.css';
 import { BiSearch } from 'react-icons/bi';
 import { BsFillPlayFill } from 'react-icons/bs';
