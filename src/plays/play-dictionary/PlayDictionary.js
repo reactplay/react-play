@@ -14,7 +14,6 @@ function PlayDictionary(props) {
   const [foundMeaning, setFoundMeaning] = useState({});
   const [notFoundReponse, setNotFoundResponse] = useState({});
   const [audioSource, setAudioSource] = useState('');
-  // audioControlRef?.current.play();
 
   const getAudioSource = (data) => {
     setAudioSource('');
