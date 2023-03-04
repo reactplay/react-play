@@ -1,24 +1,26 @@
 import { toast } from 'react-toastify';
 
+const COLOR_ARRAY_LENGTH = 100;
+const COLOR_INCREMENT = 3.33;
+
 export const getcolorsarray = (hash) => {
-  const arrraycolors = [];
+  const colorArray = [];
+  // Convert hex to RGB
+  const red = parseInt(hash.slice(1, 3), 16);
+  const green = parseInt(hash.slice(3, 5), 16);
+  const blue = parseInt(hash.slice(5, 7), 16);
 
-  for (let i = 100; i >= 0; i = i - 3.33) {
-    // Convert hex to RGB
-    const red = parseInt(hash.slice(1, 3), 16);
-    const green = parseInt(hash.slice(3, 5), 16);
-    const blue = parseInt(hash.slice(5, 7), 16);
-
+  for (let i = COLOR_ARRAY_LENGTH; i >= 0; i -= COLOR_INCREMENT) {
     // Convert RGB to HSLA
     const hsl = rgbToHsl(red, green, blue, i);
 
     // Convert HSLA to HEX
     const hexColor = hslaToHex(hsl.h, hsl.s, hsl.l);
     // Final Array
-    arrraycolors.push(hexColor);
+    colorArray.push(hexColor);
   }
 
-  return arrraycolors;
+  return colorArray;
 };
 
 export const rgbToHsl = (red, green, blue, lightessOfColor) => {
@@ -92,7 +94,7 @@ export const hslaToHex = (hue, saturation, lightness) => {
   return `#${hexR}${hexG}${hexB}`;
 };
 
-export const alertToast = (message) => {
+export const showToastMessage = (message) => {
   toast.success(message, {
     position: 'top-center',
     autoClose: 1000,
