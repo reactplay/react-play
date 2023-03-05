@@ -45,30 +45,30 @@ function PlayDictionary(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="main-container">
+        <div className="play-dict-main-container">
           {/* ---- Input part of the play --------- */}
-          <div className="container-input">
+          <div className="play-dict-container-input">
             <input
-              className="input-dictionary"
+              className="play-dict-input-dictionary"
               placeholder="Enter Word to search Meaning"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
-            <button className="search-icon-btn" onClick={getWordMeaning}>
+            <button className="play-dict-search-icon-btn" onClick={getWordMeaning}>
               <BiSearch className="search-icon" color={C.purple} size="24px" />
             </button>
           </div>
           {/* ------------------------------- OUTPUT PART --------------------------------- */}
-          <div className="container-output">
+          <div className="play-dict-container-output">
             {isWordFound ? (
-              <div className="meaning-found">
-                <div className="word-details">
-                  <div className="word-display">
+              <div className="play-dict-meaning-found">
+                <div className="play-dict-word-details">
+                  <div className="play-dict-word-display">
                     <p>{foundMeaning.word}</p>
                     <span style={{ color: C.purple }}>{foundMeaning.phonetic}</span>
                   </div>
                   {audioSource && (
-                    <div className="pronunciation">
+                    <div className="play-dict-pronunciation">
                       <audio controls ref={audioControlRef} style={{ display: 'none' }}>
                         <source src={audioSource} type="audio/mpeg" />
                       </audio>
@@ -78,7 +78,7 @@ function PlayDictionary(props) {
                     </div>
                   )}
                 </div>
-                <div className="meanings-display">
+                <div className="play-dict-meanings-display">
                   {foundMeaning.meanings.map(
                     ({ partOfSpeech, definitions, antonyms, synonyms }, index) => (
                       <Meaning
@@ -93,7 +93,7 @@ function PlayDictionary(props) {
                 </div>
               </div>
             ) : (
-              <div className="meaning-not-found">
+              <div className="play-dict-meaning-not-found">
                 <p>{notFoundReponse.message && notFoundReponse.message}</p>
               </div>
             )}
@@ -106,12 +106,12 @@ function PlayDictionary(props) {
 
 const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
   return (
-    <div className="meaning">
-      <div className="partOfSpeech">
+    <div className="play-dict-meaning">
+      <div className="play-dict-partOfSpeech">
         <span>{partOfSpeech}</span>
       </div>
       <span style={{ fontSize: '20px' }}>Meaning</span>
-      <div className="definitions">
+      <div className="play-dict-definitions">
         <ul>
           {definitions?.map((definition, index) => (
             <li key={index}>
@@ -121,7 +121,7 @@ const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
         </ul>
       </div>
       {synonyms.length > 0 && (
-        <div className="synonyms">
+        <div className="play-dict-synonyms">
           <span>Synonyms:</span>
           <span style={{ color: C.purple, fontSize: '18px', fontWeight: '600' }}>
             {synonyms[0]}
@@ -129,7 +129,7 @@ const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
         </div>
       )}
       {antonyms.length > 0 && (
-        <div className="antonyms">
+        <div className="play-dict-antonyms">
           <span>Antonyms:</span>
           <span style={{ color: C.purple, fontSize: '18px', fontWeight: '600' }}>
             {antonyms[0]}

@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-.main-container {
+.play-dict-main-container {
   width: 100%;
   background-color: #fff;
   display: flex;
@@ -13,7 +13,7 @@
   flex-direction: column;
 }
 
-.container-input {
+.play-dict-container-input {
   width: 100%;
   max-width: 700px;
   padding: 40px 40px 20px 40px;
@@ -23,7 +23,7 @@
   border-bottom: 1px solid #000;
 }
 
-.input-dictionary {
+.play-dict-input-dictionary {
   width: 100%;
   padding: 24px 15px;
   font-size: 16px;
@@ -34,7 +34,7 @@
   box-sizing: border-box;
 }
 
-.search-icon-btn {
+.play-dict-search-icon-btn {
   position: absolute;
   right: 40px;
   display: flex;
@@ -45,7 +45,7 @@
 }
 
 @media screen and (max-width: 480px) {
-  .search-icon-btn {
+  .play-dict-search-icon-btn {
     position: absolute;
     right: 20px;
     width: 40px;
@@ -54,29 +54,29 @@
 
 /* ------- Output from API css below ---------------- */
 
-.container-output {
+.play-dict-container-output {
   width: 100%;
   max-width: 700px;
 }
 
-.meaning-found {
+.play-dict-meaning-found {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.word-details {
+.play-dict-word-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.word-display,
-.pronunciation {
+.play-dict-word-display,
+.play-dict-pronunciation {
   padding: 20px 40px 40px 40px;
 }
 
-.pronunciation button {
+.play-dict-pronunciation button {
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -86,26 +86,26 @@
   opacity: 0.7;
 }
 
-.word-display p {
+.play-dict-word-display p {
   font-size: 32px;
   font-weight: bold;
   text-transform: capitalize;
 }
 
-.meanings-display {
+.play-dict-meanings-display {
   padding: 0 40px;
 }
 
-.meaning {
+.play-dict-meaning {
   border-top: 1px solid #877a7a;
   padding: 20px 0 40px 0;
 }
 
-.meaning > span {
+.play-dict-meaning > span {
   margin-top: 20px;
 }
 
-.partOfSpeech {
+.play-dict-partOfSpeech {
   padding: 0 20px 0 0;
   margin-top: -40px;
   margin-bottom: 30px;
@@ -113,16 +113,16 @@
   width: fit-content;
 }
 
-.partOfSpeech span {
+.play-dict-partOfSpeech span {
   font-size: 22px;
   font-weight: bold;
 }
 
-.meaning > .definitions > ul {
+.play-dict-meaning > .play-dict-definitions > ul {
   padding: 20px 30px;
 }
 
-.meaning > .definitions > ul > li {
+.play-dict-meaning > .play-dict-definitions > ul > li {
   padding: 10px 0;
   list-style-type: disc;
 }
@@ -135,8 +135,8 @@ li > span {
   color: #000;
 }
 
-.meaning > .synonyms,
-.meaning > .antonyms {
+.play-dict-meaning > .play-dict-synonyms,
+.play-dict-meaning > .play-dict-antonyms {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -144,8 +144,8 @@ li > span {
   margin-bottom: 10px;
 }
 
-.meaning > .synonyms > span,
-.meaning > .antonyms > span {
+.play-dict-meaning > .play-dict-synonyms > span,
+.play-dict-meaning > .play-dict-antonyms > span {
   width: fit-content;
   margin-right: 30px;
   vertical-align: middle;
@@ -153,29 +153,29 @@ li > span {
 }
 
 @media screen and (max-width: 480px) {
-  .container-input {
+  .play-dict-container-input {
     position: realtive;
     padding: 30px 20px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .meanings-display {
+  .play-dict-meanings-display {
     padding: 0 20px;
   }
 
-  .word-display {
+  .play-dict-word-display {
     padding: 20px 20px 40px 20px;
   }
 }
 
 /* ----------------------------- Meaning not found --------------------------------- */
-.meaning-not-found {
+.play-dict-meaning-not-found {
   padding: 40px 40px;
   text-align: center;
 }
 
-.meaning-not-found p {
+.play-dict-meaning-not-found p {
   font-size: 18px;
   font-weight: 600;
 }
