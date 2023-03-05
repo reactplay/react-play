@@ -7,18 +7,18 @@
 - ### **This app is fully responsive across all the devices 📱**
 - ### **This app has multiple themes 💯**
 - ### **User can add, update & delete the notes 🥳**
-- ### **This  app has localStorage feature. Notes & themes will be saved to local storage ⚡**
+- ### **This app has localStorage feature. Notes & themes will be saved to local storage ⚡**
 
 ## Project Screenshot
 
-- ### **Theme 1** 
+- ### **Theme 1**
 
 <div align="center">
   <img src="https://i.postimg.cc/MpR2510f/SS1.png" alt="NoteHack Screenshot" width="100%" target="_blank" />
   <br>
 </div>
 
-- ### **Theme 2** 
+- ### **Theme 2**
 <div align="center">
   <img src="https://i.postimg.cc/k5cHYs2G/SS2.png" alt="NoteHack Screenshot" width="100%" target="_blank" />
   <br>
@@ -31,7 +31,7 @@
 
 ## Creator Information
 
-- ### **Bobby Sadhwani** - **[Linkedin](https://www.linkedin.com/in/bobby-sadhwani)**, **[Twitter](https://twitter.com/BOBBY__SADHWANI)**, **[Github](https://github.com/Bobby-coder)**, **[Portfolio](https://bobby-sadhwani.netlify.app)**  
+- ### **Bobby Sadhwani** - **[Linkedin](https://www.linkedin.com/in/bobby-sadhwani)**, **[Twitter](https://twitter.com/BOBBY__SADHWANI)**, **[Github](https://github.com/Bobby-coder)**, **[Portfolio](https://bobby-sadhwani.netlify.app)**
 
 ## Video
 
