@@ -1,6 +1,7 @@
 import { AllTimeStats } from './types';
 
 export function createElement(tag: string, classes: string, innerText: string) {
+  // Utility function to create an error element
   const newElem = document.createElement(tag);
   const style = classes.split(' ');
 
@@ -10,10 +11,12 @@ export function createElement(tag: string, classes: string, innerText: string) {
   return newElem;
 }
 
+// An utility to asynchronously sleep
 export const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
+// Get wordle data of user from local storage and update accordingly
 export function setLocalData(result: 'WIN' | 'LOSS', attempt: number) {
   let allTimeStats: AllTimeStats;
 

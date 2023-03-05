@@ -1,7 +1,8 @@
-import WordleTile from './WordleTile';
-import { useEffect, useState } from 'react';
-import { TileRow, TileColor } from '../types';
 import React from 'react';
+import { useEffect, useState } from 'react';
+
+import WordleTile from './WordleTile';
+import { TileRow, TileColor } from '../types';
 
 export default function WordleRow(props: { tileRow: TileRow; wordleWord: string }) {
   const { tileRow, wordleWord } = props;

@@ -29,6 +29,7 @@
     color: black;
 }
 
+/* Background classes */
 .bg-default {
     background-color: var(--default);
 }
@@ -83,6 +84,7 @@
     animation: fade-out 200ms ease-in-out 2s 1 normal forwards;
 }
 
+/* Animation keyframes */
 @keyframes bounce {
     0%, 100% {
         transform: scale(1);

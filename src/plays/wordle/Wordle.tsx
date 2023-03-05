@@ -2,19 +2,21 @@ import React from 'react';
 import { useState, useEffect, useRef, MutableRefObject, MouseEvent } from 'react';
 import PlayHeader from 'common/playlists/PlayHeader';
 
+// Components
 import EndScreen from './components/EndScreen';
 import KeyboardKey from './components/KeyboardKey';
 import WordleRow from './components/WordleRow';
 
+// Utils and Types
 import { createElement, setLocalData } from './utils';
 import { AllTimeStats, TileRow, WordleAction } from './types';
 
+// Assets and style
 import './styles.css';
 import WORDLE_WORDS from './data/words';
 import backspace from './assets/backspace.svg';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-// const backspace = require('./assets/backspace.svg');
 
+// Get a random wordle word from data
 function getRandomWordleWord() {
   const randomWordIndex = Math.floor(Math.random() * WORDLE_WORDS.length);
   const wordleWordAns = WORDLE_WORDS[randomWordIndex].toUpperCase();
@@ -84,6 +86,7 @@ function Wordle(props: any): JSX.Element {
     }, ERR_EXP_AFTER);
   }
 
+  // Update the letter's formatting on keyboard
   function updateLetterStatus(tileRow: TileRow) {
     tileRow.row.forEach((letter, index) => {
       if (
@@ -203,12 +206,15 @@ function Wordle(props: any): JSX.Element {
     }
   }
 
+  // Physical keyboard event handler
   function handleKeyUpEvent(event: globalThis.KeyboardEvent) {
     handleGameAction(event.key as WordleAction);
   }
 
-  function onKeyClick(event: MouseEvent<HTMLButtonElement>) {
-    if (!(event.target instanceof HTMLButtonElement)) return;
+  // Virtual keyboard event handler
+  function onKeyClick(event: MouseEvent<HTMLButtonElement | HTMLImageElement>) {
+    if (!(event.target instanceof HTMLButtonElement) && !(event.target instanceof HTMLImageElement))
+      return;
     event.target.blur();
 
     handleGameAction(event.target.dataset.action as WordleAction);
@@ -226,7 +232,7 @@ function Wordle(props: any): JSX.Element {
         <PlayHeader play={props} />
         <div className="play-details-body">
           <div className="wordle-game-body font-wordle">
-            <div className="w-full h-[80vh] flex items-center justify-center relative overflow-hidden space-x-8">
+            <div className="w-full h-[80vh] flex flex-col lg:flex-row items-center justify-center relative overflow-hidden lg:space-x-8 space-y-4 lg:space-y-0">
               <div
                 className="error-slide w-48 bg-transparent absolute p-3 space-y-4 z-10 top-14 font-wordle"
                 ref={errorSlideRef}
@@ -234,7 +240,7 @@ function Wordle(props: any): JSX.Element {
 
               {allTimeStats && <EndScreen allTimeStats={allTimeStats} reset={reset} />}
 
-              <div className="wordle w-[20rem] h-[24rem] flex flex-col items-center justify-evenly">
+              <div className="wordle w-[21rem] lg:w-[20rem] h-[24rem] flex flex-col items-center justify-evenly">
                 <WordleRow tileRow={tiles[0]} wordleWord={wordleWord} />
                 <WordleRow tileRow={tiles[1]} wordleWord={wordleWord} />
                 <WordleRow tileRow={tiles[2]} wordleWord={wordleWord} />
@@ -243,7 +249,7 @@ function Wordle(props: any): JSX.Element {
                 <WordleRow tileRow={tiles[5]} wordleWord={wordleWord} />
               </div>
 
-              <div className="keyboard w-[30rem] h-[13rem] flex flex-col items-center justify-evenly">
+              <div className="keyboard w-[22rem] lg:w-[30rem] h-44 lg:h-[13rem] flex flex-col items-center justify-evenly">
                 <div className="keyboard-row w-full h-1/3 flex items-center justify-evenly">
                   {'QWERTYUIOP'.split('').map((alphabet) => (
                     <KeyboardKey
@@ -254,7 +260,7 @@ function Wordle(props: any): JSX.Element {
                   ))}
                 </div>
 
-                <div className="keyboard-row w-full h-1/3 flex items-center justify-evenly px-6">
+                <div className="keyboard-row w-full h-1/3 flex items-center justify-evenly px-3 lg:px-6">
                   {'ASDFGHJKL'.split('').map((alphabet) => (
                     <KeyboardKey
                       alphabet={alphabet}
@@ -266,9 +272,9 @@ function Wordle(props: any): JSX.Element {
 
                 <div className="keyboard-row w-full h-1/3 flex items-center justify-evenly">
                   <button
-                    className="w-16 h-16 bg-gray text-white text-sm font-semibold rounded-[4px] text-center flex items-center justify-center font-wordle"
+                    className="w-10 h-11 lg:w-16 lg:h-16 bg-gray text-white text-xs lg:text-sm font-semibold rounded-[4px] text-center flex items-center justify-center font-wordle"
                     data-action="Enter"
-                    onClick={(event) => {
+                    onMouseDown={(event) => {
                       onKeyClick(event);
                     }}
                   >
@@ -286,19 +292,20 @@ function Wordle(props: any): JSX.Element {
                   })}
 
                   <button
-                    className="w-14 h-16 bg-gray text-white text-sm font-semibold rounded-[4px] text-center flex items-center justify-center"
+                    className="w-10 h-11 lg:w-14 lg:h-16 bg-gray text-white text-sm font-semibold rounded-[4px] text-center flex items-center justify-center"
                     data-action="Backspace"
-                    onClick={(event) => {
+                    onMouseDown={(event) => {
                       onKeyClick(event);
                     }}
                   >
                     <img
                       alt="Backspace Key"
                       className="bg-transparent"
+                      data-action="Backspace"
                       src={backspace}
-                      onClick={(event) => {
+                      onMouseDown={(event) => {
                         const target = event.target as HTMLImageElement;
-                        target.parentElement?.click();
+                        target.parentElement.dispatchEvent(new Event('mousedown'));
                       }}
                     />
                   </button>

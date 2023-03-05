@@ -1,10 +1,10 @@
 import React from 'react';
-import { PointerEvent } from 'react';
+import { MouseEvent } from 'react';
 import { LetterStatus } from '../types';
 
 export default function KeyboardKey(props: {
   alphabet: string;
-  onKeyClick: (event: PointerEvent<HTMLButtonElement>) => void;
+  onKeyClick: (event: MouseEvent<HTMLButtonElement>) => void;
   letterStatus: LetterStatus;
 }) {
   const { alphabet, onKeyClick, letterStatus } = props;
@@ -18,14 +18,14 @@ export default function KeyboardKey(props: {
   return (
     <div
       className={
-        'w-10 h-16 to-white text-base font-semibold rounded-[4px] text-center items-center justify-center ' +
+        'w-8 h-11 lg:w-10 lg:h-16 to-white text-base font-semibold rounded-[4px] text-center items-center justify-center ' +
         bgColor
       }
     >
       <button
         className="w-full h-full font-wordle"
         data-action={alphabet}
-        onPointerDown={(event) => {
+        onMouseDown={(event) => {
           onKeyClick(event);
         }}
       >
