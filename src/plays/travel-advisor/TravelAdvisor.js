@@ -45,7 +45,7 @@ function TravelAdvisor(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className="Main-Contanier">
+          <div className="travel-advisor-main-Contanier">
             <div className="input-select-cont">
               <Search inputval={inputval} setinputval={setinputval} />
               <DropDown setype={setype} type={type} />

@@ -1,6 +1,6 @@
 /* enter stlyes here */
 
-.Main-Contanier {
+.travel-advisor-main-Contanier {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +22,7 @@
   padding: 30px 30px;
 }
 
-.leaflet-cont{
+.leaflet-cont {
   width: 100%;
   height: 100%;
   display: flex;

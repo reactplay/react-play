@@ -1,4 +1,4 @@
-select {
+.select {
   appearance: none;
   outline: 0;
   border: 0;
@@ -11,11 +11,11 @@ select {
   cursor: pointer;
 }
 
-select::-ms-expand {
+.select::-ms-expand {
   display: none;
 }
 
-.select {
+.select-cont {
   position: relative;
   display: flex;
   width: 20em;
@@ -24,7 +24,7 @@ select::-ms-expand {
   overflow: hidden;
 }
 
-.select::after {
+.select-cont::after {
   content: '\25BC';
   position: absolute;
   top: 0;
@@ -35,18 +35,6 @@ select::-ms-expand {
   pointer-events: none;
 }
 
-.select:hover::after {
+.select-cont:hover::after {
   color: #f39c12;
 }
-
-/* h1 {
-  margin: 0 0 0.25em;
-}
-a {
-  font-weight: bold;
-  color: var(--gray);
-  text-decoration: none;
-  padding: 0.25em;
-  border-radius: 0.25em;
-  background: white;
-} */
