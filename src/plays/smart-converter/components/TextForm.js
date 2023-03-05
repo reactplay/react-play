@@ -45,7 +45,7 @@ export default function TextForm(props) {
         <div className="mb-3">
           <textarea
             className="Smart-converter-textarea"
-            id="myBox"
+            id="Smart-converter-myBox-textarea"
             rows="8"
             value={text}
             onChange={handleOnChange}
