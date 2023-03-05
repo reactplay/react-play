@@ -2,7 +2,7 @@ import PlayHeader from 'common/playlists/PlayHeader';
 import { useRef, useState } from 'react';
 import './styles.css';
 import Tailwincolor from './Tailwincolor';
-<script src="https://cdn.tailwindcss.com"></script>;
+<script src="https://cdn.tailwindcss.com" />;
 
 // WARNING: Do not change the entry componenet name
 function Hextotailwind(props) {
@@ -11,8 +11,6 @@ function Hextotailwind(props) {
   // Your Code Start below.
 
   function convertToTW(params) {
-    console.log(isValidHexColorCode(textInput.current.value));
-
     if (!isValidHexColorCode(textInput.current.value)) {
       return alert('Please provide hex color only.');
     }
@@ -26,6 +24,7 @@ function Hextotailwind(props) {
   function isValidHexColorCode(colorCode) {
     // Regular expression to match a hexadecimal color code that starts with # and is 6 characters long
     const hexCodeRegex = /^#[0-9A-Fa-f]{6}$/;
+
     return hexCodeRegex.test(colorCode);
   }
 
@@ -44,12 +43,12 @@ function Hextotailwind(props) {
           <div className="my-4 mx-auto max-w-4xl rounded shadow-sm min-h-1/2 border border-black">
             <div className="flex items-center justify-center">
               <input
-                type="text"
-                name="colors"
-                id="colors"
                 className="block w-full bg-white shadow-xl max-w-md h-14 text-center rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 "
+                id="colors"
+                name="colors"
                 placeholder="#4d7c0f"
                 ref={textInput}
+                type="text"
               />
               {/* <p className="w-full text-center py-4">Please provide your Hex color here.</p> */}
               <button

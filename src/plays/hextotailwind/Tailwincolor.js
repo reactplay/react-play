@@ -3,6 +3,7 @@ import React from 'react';
 export default function Tailwincolor(hex) {
   result.hex = hex;
   hexToTailwindColor(hex);
+
   return result;
 }
 
@@ -16,6 +17,7 @@ function hexToTailwindColor(color, type = 'hex') {
   if (currentTailwindColorHexKey[color]) {
     result.tw = currentTailwindColorHexKey[color];
     result.twHex = result.hex;
+
     return currentTailwindColorHexKey[color];
   }
 
@@ -69,7 +71,9 @@ function hexToTailwindColor(color, type = 'hex') {
   }
   const nearestTailwindColor = `${closestColor}-${closestShade}`;
   result.tw = nearestTailwindColor;
-  result.twHex = currentTailwindColors[closestColor][closestShade];
+  // result.twHex = currentTailwindColors[closestColor][closestShade];
+  // Hes color is not doing anything so just sending #ffffff
+  result.twHex = '#FFFFFF';
 
   return nearestTailwindColor;
 }
