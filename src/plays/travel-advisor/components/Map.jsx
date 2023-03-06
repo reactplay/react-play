@@ -29,7 +29,7 @@ const Map = ({ latitude, longitude, resdata, setlatitude, setlongitude }) => {
   };
 
   return (
-    <div className="leaflet-cont">
+    <div className="travel-advisor-leaflet-cont">
       <MapContainer
         center={[latitude, longitude]}
         scrollWheelZoom={false}

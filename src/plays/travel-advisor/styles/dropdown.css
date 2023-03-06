@@ -1,4 +1,4 @@
-.select {
+.travel-advisor-select {
   appearance: none;
   outline: 0;
   border: 0;
@@ -11,11 +11,11 @@
   cursor: pointer;
 }
 
-.select::-ms-expand {
+.travel-advisor-select::-ms-expand {
   display: none;
 }
 
-.select-cont {
+.travel-advisor-select-cont {
   position: relative;
   display: flex;
   width: 20em;
@@ -24,7 +24,7 @@
   overflow: hidden;
 }
 
-.select-cont::after {
+.travel-advisor-select-cont::after {
   content: '\25BC';
   position: absolute;
   top: 0;
@@ -35,6 +35,6 @@
   pointer-events: none;
 }
 
-.select-cont:hover::after {
+.travel-advisor-select-cont:hover::after {
   color: #f39c12;
 }

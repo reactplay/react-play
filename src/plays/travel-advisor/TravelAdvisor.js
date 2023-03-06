@@ -46,11 +46,11 @@ function TravelAdvisor(props) {
         <div className="play-details-body">
           {/* Your Code Starts Here */}
           <div className="travel-advisor-main-Contanier">
-            <div className="input-select-cont">
+            <div className="travel-advisor-input-select-cont">
               <Search inputval={inputval} setinputval={setinputval} />
               <DropDown setype={setype} type={type} />
             </div>
-            <div className="map-cont">
+            <div className="travel-advisor-map-cont">
               {resdata && (
                 <Map
                   latitude={latitude}

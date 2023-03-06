@@ -10,19 +10,19 @@
   height: 100%;
 }
 
-.map-cont {
+.travel-advisor-map-cont {
   width: 100%;
   height: 100%;
   border-radius: 12px;
   margin-top: 20px;
 }
 
-.input-select-cont {
+.travel-advisor-input-select-cont {
   display: flex;
   padding: 30px 30px;
 }
 
-.leaflet-cont {
+.travel-advisor-leaflet-cont {
   width: 100%;
   height: 100%;
   display: flex;

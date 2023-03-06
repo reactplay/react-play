@@ -3,9 +3,9 @@ import '../styles/search.css';
 
 const Search = ({ inputval, setinputval }) => {
   return (
-    <div className="form__group">
+    <div className="travel-advisor-form__group">
       <input
-        className="form__input"
+        className="travel-advisor-form__input"
         id="name"
         placeholder="Enter City name"
         required=""

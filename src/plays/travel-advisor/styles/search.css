@@ -1,4 +1,4 @@
-.form__label {
+.travel-advisor-form__label {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   margin-left: 2rem;
@@ -8,7 +8,7 @@
   transform: translateY(0rem);
 }
 
-.form__input {
+.travel-advisor-form__input {
   font-family: 'Roboto', sans-serif;
   color: #333;
   font-size: 1.2rem;
