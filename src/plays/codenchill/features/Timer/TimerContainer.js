@@ -150,56 +150,57 @@ const TimerContainer = () => {
         </p>
       </div>
       {/* Timer setup section */}
-      <div>
-        <div>
-          <div className="timer__controls flex flex-wrap justify-center items-center px-8">
-            <button
-              className="bg-white px-6 py-2 w-[50%] rounded-tl-3xl border-b-2 border-r-2  border-slate-500 drop-shadow-2xl hover:opacity-80 focus:opacity-70"
-              onClick={() => startTimer('300')}
-            >
-              Rest 5
-            </button>
-            <button
-              className="bg-white px-6 py-2 w-[50%] rounded-tr-3xl border-b-2 border-l-2  border-slate-500 drop-shadow-2xl hover:opacity-80  focus:opacity-70"
-              onClick={() => startTimer('900')}
-            >
-              Quick 15
-            </button>
-            <button
-              className="bg-white px-6 py-2 w-[50%] rounded-bl-3xl border-t-2 border-r-2  border-slate-500  drop-shadow-2xl hover:opacity-80 focus:opacity-70"
-              onClick={() => startTimer('1500')}
-            >
-              Focus 25
-            </button>
+      <div className="flex flex-col items-center justify-center">
+        <div className="timer__controls flex flex-wrap justify-center items-center px-8">
+          <button
+            className="bg-white px-6 py-2 w-[50%] text-center rounded-tl-3xl border-b-2 border-r-2  border-slate-500 drop-shadow-2xl hover:opacity-80 focus:opacity-70"
+            onClick={() => startTimer('300')}
+          >
+            Rest 5
+          </button>
+          <button
+            className="bg-white px-6 py-2 w-[50%] rounded-tr-3xl border-b-2 border-l-2  border-slate-500 drop-shadow-2xl hover:opacity-80  focus:opacity-70"
+            onClick={() => startTimer('900')}
+          >
+            Quick 15
+          </button>
+          <button
+            className="bg-white px-6 py-2 w-[50%] rounded-bl-3xl border-t-2 border-r-2  border-slate-500  drop-shadow-2xl hover:opacity-80 focus:opacity-70"
+            onClick={() => startTimer('1500')}
+          >
+            Focus 25
+          </button>
 
-            <button
-              className="bg-white px-6 py-2  w-[50%] rounded-br-3xl border-t-2 border-l-2  border-slate-500 drop-shadow-2xl hover:opacity-80 "
-              ref={resetRef}
-              onClick={() => handleResetTimer()}
-            >
-              Reset
-            </button>
-          </div>
-
-          <form className="flex justify-center items-center pt-8" onSubmit={(e) => customTime(e)}>
-            <input
-              className="p-2 pl-4 rounded-l-3xl"
-              min={0}
-              name="minutes"
-              placeholder="Enter Minutes"
-              ref={inputRef}
-              type="number"
-              onChange={() => handleDisable()}
-            />
-            <button
-              className="bg-white rounded-r-3xl p-2 border-l-4 border-slate-500 hover:opacity-80 disabled:opacity-75"
-              disabled={disabled}
-              type="submit"
-            >
-              Enter
-            </button>
-          </form>
+          <button
+            className="bg-white px-6 py-2  w-[50%] rounded-br-3xl border-t-2 border-l-2  border-slate-500 drop-shadow-2xl hover:opacity-80 "
+            ref={resetRef}
+            onClick={() => handleResetTimer()}
+          >
+            Reset
+          </button>
         </div>
+
+        <form
+          className="flex justify-center items-center pt-8 w-[70%]"
+          onSubmit={(e) => customTime(e)}
+        >
+          <input
+            className="p-2 pl-4 rounded-l-3xl"
+            min={0}
+            name="minutes"
+            placeholder="Enter Minutes"
+            ref={inputRef}
+            type="number"
+            onChange={() => handleDisable()}
+          />
+          <button
+            className="bg-white rounded-r-3xl p-2 border-l-4 border-slate-500 hover:opacity-80 disabled:opacity-75"
+            disabled={disabled}
+            type="submit"
+          >
+            Enter
+          </button>
+        </form>
       </div>
     </div>
   );

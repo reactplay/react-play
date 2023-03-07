@@ -38,7 +38,7 @@ const TrackTile = ({ track, id }) => {
         <p>{track?.trackName}</p>
       </div>
 
-      <button
+      <div
         className="text-black "
         onClick={() => {
           dispatch(setTrackIndexAction(trackId));
@@ -53,7 +53,7 @@ const TrackTile = ({ track, id }) => {
         }}
       >
         {idplay && audioState ? <FaPauseCircle size={28} /> : <FaPlayCircle size={28} />}
-      </button>
+      </div>
     </div>
   );
 };

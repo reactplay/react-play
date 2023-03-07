@@ -35,14 +35,14 @@ const AudioplayerContainer = () => {
   return (
     <div className=" w-full sm:w-1/2 h-[50%]  sm:h-[100%] border-t-2 border-light-50 sm:border-transparent pt-6 sm:pt-0 flex flex-col justify-around ">
       <div className="shuffel w-full flex justify-center ">
-        <button
-          className="border bg-white rounded-full py-2 px-8 hover:opacity-100 sm:hover:opacity-60"
+        <div
+          className="border bg-white rounded-full py-2 px-8 hover:opacity-100 sm:hover:opacity-60 cursor-pointer"
           onClick={() => handleShuffel()}
         >
           <BiShuffle className="text-black hover:animate" />
-        </button>
+        </div>
       </div>
-      <div className="overflow-y-scroll h-[80%] flex flex-col  items-center">
+      <div className="overflow-y-scroll h-[80%] flex flex-col  items-center scrollbar scrollbar-rounded-full scrollbar-thin scrollbar-thumb-sky-700/80 scrollbar-corner-black scrollbar-track-white/60  ">
         {tracks.map((track) => {
           return <TrackTile id={track?.id} key={track?.id} track={track} />;
         })}

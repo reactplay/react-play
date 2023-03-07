@@ -151,19 +151,19 @@ const TrackControls = () => {
       <div className="controls relative flex justify-center items-center w-1/3">
         <div className="flex absolute justify-center gap-1 sm:gap-5 items-center">
           {' '}
-          <button className="text-white" onClick={() => handlePrevious()}>
+          <div className="text-white cursor-pointer" onClick={() => handlePrevious()}>
             <MdSkipPrevious className=" h-[28px] sm:h-[40px] w-[28px] sm:w-[40px]" />
-          </button>
-          <button className="text-white" onClick={() => handlePlayPause()}>
+          </div>
+          <div className="text-white cursor-pointer" onClick={() => handlePlayPause()}>
             {audioState ? (
               <FaPauseCircle className=" h-[28px] sm:h-[40px] w-[28px] sm:w-[40px]" />
             ) : (
               <FaPlayCircle className=" h-[28px] sm:h-[40px] w-[28px] sm:w-[40px]" />
             )}
-          </button>
-          <button className="text-white" onClick={() => handleNext()}>
+          </div>
+          <div className="text-white cursor-pointer" onClick={() => handleNext()}>
             <MdSkipNext className=" h-[28px] sm:h-[40px] w-[28px] sm:w-[40px]" />
-          </button>
+          </div>
         </div>
         <audio
           className="hidden"
@@ -177,18 +177,18 @@ const TrackControls = () => {
       {/* Volume */}
       <div className="volume w-1/3 flex justify-end items-center gap-2 sm:gap-7 sm:flex-row flex-col-reverse">
         <div className="flex gap-2 sm:gap-7 items-center ">
-          <span className="time current text-white text-[14px] sm:text-base">{`${formatTime(
+          <span className="time current text-white text-[14px] w-[75px] sm:w-[100px] sm:text-base">{`${formatTime(
             timeProgress
           )}/${formatTime(duration)}`}</span>
-          <button
-            className="text-white border p-2 rounded-full"
+          <div
+            className="text-white border p-2 rounded-full cursor-pointer"
             onClick={() => setMuteVolume(!muteVolume)}
           >
             {muteVolume ? <FaVolumeMute /> : <FaVolumeUp />}
-          </button>
+          </div>
         </div>
         <input
-          className="progress w-[80%]"
+          className="accent-[#ffcd70] w-[80%] cursor-pointer"
           max={100}
           min={0}
           type="range"
