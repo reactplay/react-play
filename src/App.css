@@ -540,7 +540,7 @@ small {
 .list-brand-tech-stack {
   --techstack-cardsize: 250px;
 
-  display: flex;
+  display: inline;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 1rem auto 2rem auto;
@@ -551,7 +551,7 @@ small {
 }
 
 .brand-tech-stack {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   grid-gap: 0.4rem;
   background-color: var(--color-neutral-10);

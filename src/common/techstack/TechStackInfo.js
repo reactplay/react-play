@@ -44,7 +44,7 @@ export const TechStackInfo = [
     text: 'Git',
     type: 'icon',
     link: 'https://git-scm.com',
-    category: 'DevOps'
+    category: 'Backend'
   },
   // {
   //   comp: SiMaterialui,
@@ -128,6 +128,6 @@ export const TechStackInfo = [
     text: 'Umami',
     type: 'image',
     link: 'https://umami.is/',
-    category: 'Analytics'
+    category: 'Backend'
   }
 ];

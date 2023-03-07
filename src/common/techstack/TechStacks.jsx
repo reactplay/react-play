@@ -6,23 +6,23 @@ const TechStackCategory = ({ category }) => {
   return (
     <div>
       <h2>{category}</h2>
-      <ul>
+        <ul>
         {filteredTechStack.map((item, idx) => (
-          <li key={idx}>
+          <li key={idx} className='list-brand-tech-stack'>
             {item.type === 'icon' ? (
-              <a href={item.link} target="_blank" rel="noreferrer">
-                <item.comp size="24" />
-                <span>{item.text}</span>
+              <a href={item.link} rel="noreferrer" target="_blank" className="brand-tech-stack">
+                <item.comp className="icon" size="80" />
+                <p>{item.text}</p>
               </a>
             ) : (
-              <a href={item.link} target="_blank" rel="noreferrer">
-                <img src={item.comp} alt={item.text} />
-                <span>{item.text}</span>
+              <a href={item.link} rel="noreferrer" target="_blank" className="brand-tech-stack" key={idx}>
+                <img alt={item.comp} className="image" src={item.comp} size="80"/>
+                <p className="text-center">{item.text}</p>
               </a>
             )}
           </li>
         ))}
-      </ul>
+        </ul>
     </div>
   );
 };
@@ -34,8 +34,6 @@ const TechStack = () => {
       <div className="list-brand-tech-stack">
         <TechStackCategory category="Frontend" />
         <TechStackCategory category="Backend" />
-        <TechStackCategory category="DevOps" />
-        <TechStackCategory category="Analytics" />
       </div>
     </main>
   );
