@@ -24,8 +24,13 @@ export const getPlacesData = async (latitude, longitude, type) => {
 
 export const getCoordinates = async (city) => {
   try {
-    const data = await axios.get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=9f66153982a275eb857428a4be592907`
+    const { data } = await axios.get(
+      `https://api.api-ninjas.com/v1/geocoding?city=${city}&country=india`,
+      {
+        headers: {
+          'X-Api-Key': 'Nqq/eOevhCmgOSmniHar7g==qtlAPLC2d3oWOiY3',
+        }
+      }
     );
 
     return data;

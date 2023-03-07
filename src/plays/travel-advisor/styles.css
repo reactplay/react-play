@@ -19,7 +19,10 @@
 
 .travel-advisor-input-select-cont {
   display: flex;
-  padding: 30px 30px;
+  padding: 40px 40px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .travel-advisor-leaflet-cont {

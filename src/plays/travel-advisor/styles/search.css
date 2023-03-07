@@ -12,7 +12,7 @@
   font-family: 'Roboto', sans-serif;
   color: #333;
   font-size: 1.2rem;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 1.5rem 2rem;
   border-radius: 0.2rem;
   background-color: rgb(255, 255, 255);
@@ -21,4 +21,14 @@
   display: block;
   border-bottom: 0.3rem solid transparent;
   transition: all 0.3s;
+}
+
+.travel-advisor-form{
+  display: flex;
+  padding: 15px;
+}
+
+.travel-advisor-form button {
+  padding: 6px;
+  border-left: 10px;
 }

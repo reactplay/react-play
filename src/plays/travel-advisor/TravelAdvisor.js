@@ -14,6 +14,7 @@ function TravelAdvisor(props) {
   const [resdata, setresdata] = useState();
   const [inputval, setinputval] = useState();
   const [type, setype] = useState('restaurants');
+  const [sumbit, setsumbit] = useState(false);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
@@ -30,14 +31,12 @@ function TravelAdvisor(props) {
 
   useEffect(() => {
     getCoordinates(inputval).then((data) => {
-      try {
-        setlatitude(data?.data[0].lat);
-        setlongitude(data?.data[0].lon);
-      } catch (error) {
-        return error;
+      if (data) {
+        setlatitude(data[0]?.latitude.toString());
+        setlongitude(data[0]?.longitude.toString());
       }
     });
-  }, [inputval]);
+  }, [sumbit]);
 
   return (
     <>
@@ -47,7 +46,7 @@ function TravelAdvisor(props) {
           {/* Your Code Starts Here */}
           <div className="travel-advisor-main-Contanier">
             <div className="travel-advisor-input-select-cont">
-              <Search inputval={inputval} setinputval={setinputval} />
+              <Search inputval={inputval} setinputval={setinputval} setsumbit={setsumbit} />
               <DropDown setype={setype} type={type} />
             </div>
             <div className="travel-advisor-map-cont">
