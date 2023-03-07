@@ -9,10 +9,10 @@ import './styles.css';
 // WARNING: Do not change the entry componenet name
 function TravelAdvisor(props) {
   // Your Code Start below.
-  const [latitude, setlatitude] = useState();
-  const [longitude, setlongitude] = useState();
+  const [latitude, setlatitude] = useState('');
+  const [longitude, setlongitude] = useState('');
   const [resdata, setresdata] = useState();
-  const [inputval, setinputval] = useState();
+  const [inputval, setinputval] = useState('');
   const [type, setype] = useState('restaurants');
   const [sumbit, setsumbit] = useState(false);
 

@@ -28,7 +28,7 @@ export const getCoordinates = async (city) => {
       `https://api.api-ninjas.com/v1/geocoding?city=${city}&country=india`,
       {
         headers: {
-          'X-Api-Key': 'Nqq/eOevhCmgOSmniHar7g==qtlAPLC2d3oWOiY3',
+          'X-Api-Key': 'Nqq/eOevhCmgOSmniHar7g==qtlAPLC2d3oWOiY3'
         }
       }
     );

@@ -7,9 +7,10 @@ const Search = ({ inputval, setinputval, setsumbit }) => {
     e.preventDefault();
     setsumbit(true);
   };
+
   return (
     <div className="travel-advisor-form__group">
-      <form action="" onSubmit={onSumbit} className='travel-advisor-form'>
+      <form action="" className="travel-advisor-form" onSubmit={onSumbit}>
         <input
           className="travel-advisor-form__input"
           id="name"
@@ -19,8 +20,8 @@ const Search = ({ inputval, setinputval, setsumbit }) => {
           value={inputval}
           onChange={(e) => setinputval(e.target.value)}
         />
-        <button type="submit" className="travel-advisor-btn">
-          <FcSearch size={27}/>
+        <button className="travel-advisor-btn" type="submit">
+          <FcSearch size={27} />
         </button>
       </form>
     </div>
