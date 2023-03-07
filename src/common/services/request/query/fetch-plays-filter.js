@@ -105,7 +105,7 @@ export const FetchPlaysFilter = {
 
     const clause = {
       operator: 'and',
-      conditions: !env && !preview ? [defaultClause] : []
+      conditions: []
     };
 
     if (Obj) {

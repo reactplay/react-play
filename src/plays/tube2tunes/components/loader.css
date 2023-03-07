@@ -1,0 +1,15 @@
+.tube-tunes-custom-loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f4f4f4;
+  -webkit-mask: radial-gradient(circle closest-side at 50% 40%, #0000 94%, #000);
+  transform-origin: 50% 40%;
+  animation: s5 1s infinite linear;
+}
+
+@keyframes s5 {
+  100% {
+    transform: rotate(1turn);
+  }
+}

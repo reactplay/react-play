@@ -414,10 +414,12 @@
 
 .play-details .play-details-header .header-secondary {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
+  flex-direction: column;
   flex-wrap: wrap;
   grid-gap: 0.2rem 0.6rem;
-  align-items: center;
+  /* align-items: center; */
+  align-items: start;
 }
 
 @media screen and (max-width: 768px) {
@@ -778,7 +780,7 @@
   max-width: 600px;
 }
 
-.banner-button{
+.banner-button {
   margin-right: 10px;
   background-color: rgba(255, 255, 255, 0.947);
   border: none;
@@ -793,12 +795,10 @@
   align-items: center;
   gap: 4px;
 }
-.banner-button:hover{
+.banner-button:hover {
   background-color: #e6e6e6c3;
   color: black;
-
 }
 .right-arrow-icon {
-  color: #25A0A7;
+  color: #25a0a7;
 }
-
