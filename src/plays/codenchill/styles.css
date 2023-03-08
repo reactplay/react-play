@@ -1,0 +1,48 @@
+/* Background color styling */
+.color-change-5x {
+  -webkit-animation: color-change-5x 10s linear infinite alternate both;
+  animation: color-change-5x 10s linear infinite alternate both;
+}
+
+@keyframes color-change-5x {
+  0% {
+    background: #90f4bd;
+  }
+  25% {
+    background: #fff494;
+  }
+  50% {
+    background: #ffbfe3;
+  }
+  75% {
+    background: #a6ddf3;
+  }
+  100% {
+    background: #f4cd9e;
+  }
+}
+
+/* Timer border styling */
+
+.timer_dial {
+  -webkit-animation: timer_dial 2s ease-in infinite alternate both;
+  animation: timer_dial 2s ease-in infinite alternate both;
+}
+
+@keyframes timer_dial {
+  0% {
+    border: 5px solid rgb(172, 95, 255);
+  }
+
+  33% {
+    border: 5px solid rgb(239, 104, 104);
+  }
+
+  66% {
+    border: 5px solid rgb(40, 112, 255);
+  }
+
+  100% {
+    border: 5px solid rgb(155, 245, 141);
+  }
+}
