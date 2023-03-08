@@ -124,7 +124,7 @@ const FilterPlays = ({ onChange, query }) => {
   };
 
   if (loading) {
-    return <p>Loading all fields</p>;
+    return <p></p>;
   }
 
   const getOptionNode = (field, option) => {
