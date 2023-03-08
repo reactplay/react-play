@@ -39,15 +39,6 @@ function Photoshopapp(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-<<<<<<< HEAD
-          <div>
-            <h1>Play Details - Photoshopapp</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu
-              tincidunt consectetur, nisi nunc ultricies nisi, eget consectetur nunc nisi euismod
-              nunc.
-            </p>
-=======
           <div className="photoshopApp-container">
             <div className="photoshopApp-main-image" style={imageStyle} />
             <div className="photoshopApp-sidebar">
@@ -70,7 +61,6 @@ function Photoshopapp(props) {
                 value={selectedOption.value}
               />
             )}
->>>>>>> 15649430fc4f8459cb99f78a4c63900172588c1a
           </div>
           {/* Your Code Ends Here */}
         </div>

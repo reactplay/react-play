@@ -1,12 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { useSearchContext } from './search-context';
 import './search.css';
-import { BiSearch } from 'react-icons/bi';
 
 const SearchPlays = ({ reset, query, onChange }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
   const { setSearchTerm } = useSearchContext();
   const [searchText, setSearchText] = useState('');
 
@@ -22,13 +18,13 @@ const SearchPlays = ({ reset, query, onChange }) => {
     if (reset.search) {
       resetSearchField();
     }
-    setSearchText(query.text);
-  }, [location.pathname, reset.search, resetSearchField]);
+    setSearchText(query?query.text: '');
+  }, [query]);
 
   const handleSearch = (event) => {
     event.preventDefault();
     if (event.key === 'Enter') {
-      query = query ||  {}
+      query = query || {};
       query.text = event.target.value;
       if (onChange) {
         onChange(query);

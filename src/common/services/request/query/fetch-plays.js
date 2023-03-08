@@ -47,7 +47,7 @@ export function FetchPlaysBySlugAndUser(playslug, username) {
 }
 
 export function FetchPlaysByFilter(where_clause) {
-  const payload = BasiFetchParam;
+  const payload = { ...BasiFetchParam };
   if (where_clause) {
     payload.where = where_clause;
   }
@@ -72,7 +72,8 @@ export const BasiFetchParam = {
     'name',
     'slug',
     { user: ['id', 'displayName', 'avatarUrl', 'email'] },
-    'created_at'
+    'created_at',
+    { play_tags: ['tag_id'] }
   ],
   orderBy: {
     created_at: 'desc'

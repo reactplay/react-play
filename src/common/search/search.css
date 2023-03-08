@@ -44,9 +44,9 @@
 
 .filter .search-input-text:focus,
 .filter .search-input-text:focus-visible {
-  border: solid 1px var(--color-neutral-50);
   box-shadow: none;
   outline: none;
+  border: none;
 }
 
 .filter .search-input-text::placeholder {

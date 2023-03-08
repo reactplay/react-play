@@ -1,5 +1,12 @@
 export const FIELD_TEMPLATE = [
   {
+    datafield: 'text',
+    type: 'text',
+    display: 'Text',
+    placeholder: 'Search by name or description',
+    dbfield: 'text'
+  },
+  {
     datafield: 'levels',
     type: 'select',
     display: 'Levels',

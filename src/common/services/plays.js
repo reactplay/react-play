@@ -155,49 +155,51 @@ export const getPlaysByFilter = async (filter) => {
   if (filter) {
     Object.keys(filter).forEach((key) => {
       const obj = filter[key];
-      if (obj) {
-        filter_object = filter_object || {
-          clause: {
-            operator: 'and',
-            conditions: []
-          }
-        };
-        if (Array.isArray(obj)) {
-          const local_cond_clause = {
-            operator: 'or',
-            conditions: []
+      if (key !== 'tags') {
+        if (obj) {
+          filter_object = filter_object || {
+            clause: {
+              operator: 'and',
+              conditions: []
+            }
           };
-          obj.forEach((obj_local) => {
-            local_cond_clause.conditions.push({
-              field: key,
-              operator: 'eq',
-              value: obj_local
+          if (Array.isArray(obj)) {
+            const local_cond_clause = {
+              operator: 'or',
+              conditions: []
+            };
+            obj.forEach((obj_local) => {
+              local_cond_clause.conditions.push({
+                field: key,
+                operator: 'eq',
+                value: obj_local
+              });
             });
-          });
 
-          filter_object.clause.conditions.push({ clause: local_cond_clause });
-        } else if (key === 'text') {
-          const local_cond_clause = {
-            operator: 'or',
-            conditions: []
-          };
-          local_cond_clause.conditions.push({
-            field: 'name',
-            operator: 'ilike',
-            value: `%${obj}%`
-          });
-          local_cond_clause.conditions.push({
-            field: 'description',
-            operator: 'ilike',
-            value: `%${obj}%`
-          });
-          filter_object.clause.conditions.push({ clause: local_cond_clause });
-        } else {
-          filter_object.clause.conditions.push({
-            field: key,
-            operator: 'ilike',
-            value: obj
-          });
+            filter_object.clause.conditions.push({ clause: local_cond_clause });
+          } else if (key === 'text') {
+            const local_cond_clause = {
+              operator: 'or',
+              conditions: []
+            };
+            local_cond_clause.conditions.push({
+              field: 'name',
+              operator: 'ilike',
+              value: `%${obj}%`
+            });
+            local_cond_clause.conditions.push({
+              field: 'description',
+              operator: 'ilike',
+              value: `%${obj}%`
+            });
+            filter_object.clause.conditions.push({ clause: local_cond_clause });
+          } else {
+            filter_object.clause.conditions.push({
+              field: key,
+              operator: 'ilike',
+              value: obj
+            });
+          }
         }
       }
     });
@@ -205,6 +207,26 @@ export const getPlaysByFilter = async (filter) => {
 
   const payload = FetchPlaysByFilter(filter_object);
   const res = await submit(payload);
+  if (filter && filter.tags) {
+    const res_tags_filters = res.filter((play) => {
+      return containTags(play, filter.tags);
+    });
+
+    return res_tags_filters;
+  }
+
+  return res;
+};
+
+const containTags = (play, tags) => {
+  let res = false;
+  for (var i = 0; i < play.play_tags.length; i++) {
+    if (tags.indexOf(play.play_tags[i].tag_id) > -1) {
+      res = true;
+
+      break;
+    }
+  }
 
   return res;
 };

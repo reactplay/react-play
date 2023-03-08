@@ -1,38 +1,28 @@
 import { Modal } from 'common';
-import { useState, useEffect, useCallback } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useSearchContext } from './search-context';
+import { useState, useEffect } from 'react';
 import './search.css';
 import { orderBy } from 'lodash';
 
-import { RiFilterFill } from 'react-icons/ri';
 import useFetchFilterData from './hooks/usePlayFilter';
 
 import { FIELD_TEMPLATE } from './filter-template';
-import { TextField, Checkbox, Autocomplete, Button } from '@mui/material';
+import { TextField, Checkbox, Autocomplete } from '@mui/material';
 import { BiCheckbox, BiCheckboxChecked } from 'react-icons/bi';
 import { GoSettings } from 'react-icons/go';
+import * as _ from 'lodash';
 
 const icon = <BiCheckbox size={30} />;
 const checkedIcon = <BiCheckboxChecked size={30} />;
 
-const FilterPlays = ({ reset, onChange, query }) => {
+const FilterPlays = ({ onChange, query }) => {
   const [loading, error, data] = useFetchFilterData();
   const [loadedData, setLoadedData] = useState({});
   const [formData, setFormData] = useState({});
 
-  const [filterObject, setFilterObject] = useState({});
-  const [parsedQuery, setParsedQuery] = useState({});
   const [showModal, setShowModal] = useState(false);
-  const [modifiedFilterQuery, setModifiedFilterQuery] = useState({
-    ...filterObject
-  });
-  const [noOfAppliedFilter, setnoOfAppliedFilter] = useState(0);
-
-  const [isFilterApplied, setIsFilterApplied] = useState(false);
 
   useEffect(() => {
-    if (!loading) {
+    if (!loading && !error) {
       data.languages = [
         {
           name: 'JavaScript',
@@ -46,50 +36,67 @@ const FilterPlays = ({ reset, onChange, query }) => {
         }
       ];
       setLoadedData(data);
-      if (query) {
-        loadFilter(query, data);
-      }
     }
-  }, [query, loading]);
+  }, [query, loading, showModal]);
 
   const filterModalCloseBtnHandler = () => {
     setShowModal(false);
   };
 
-  const loadFilter = (query, l_data) => {
-    const res = {};
+  const loadFilter = (l_data) => {
     const newFormData = {};
     FIELD_TEMPLATE.forEach((template) => {
-      if (query[template.datafield]) {
-        newFormData[template.datafield] = [];
-        const splitData = query[template.datafield].split(',');
-        splitData.forEach((data) => {
-          const found = l_data[template.datafield].filter((d) => {
-            if (template.node) {
-              return d[template.node][template.fieldValue] === data;
-            } else {
-              return d[template.fieldValue] === data;
+      if (template.datafield === 'text') {
+        newFormData['text'] = query.text;
+      } else {
+        if (query[template.datafield]) {
+          newFormData[template.datafield] = [];
+          const splitData = _.isArray(query[template.datafield])
+            ? query[template.datafield]
+            : query[template.datafield].split(',');
+          splitData.forEach((data) => {
+            const found =
+              l_data[template.datafield] &&
+              l_data[template.datafield].filter((d) => {
+                if (template.node) {
+                  return d[template.node][template.fieldValue] === data;
+                } else {
+                  return d[template.fieldValue] === data;
+                }
+              })[0];
+            if (found) {
+              newFormData[template.datafield].push(found);
             }
-          })[0];
-          if (found) {
-            newFormData[template.datafield].push(found);
-          }
-        });
+          });
+        }
       }
     });
     setFormData(newFormData);
   };
+
+  const showFilterModal = () => {
+    if(query){
+    loadFilter();
+    } else {
+      setFormData({})
+    }
+    setShowModal(true)
+  }
 
   const handleFilter = () => {
     const res = {};
     FIELD_TEMPLATE.forEach((template) => {
       if (formData[template.datafield]) {
         res[template.datafield] = [];
+        if(_.isArray(formData[template.datafield])) {
         formData[template.datafield].forEach((data) => {
           res[template.datafield].push(
             template.node ? data[template.node][template.fieldValue] : data[template.fieldValue]
           );
         });
+      } else {
+        res[template.datafield] = formData[template.datafield]
+      }
       }
     });
 
@@ -99,12 +106,10 @@ const FilterPlays = ({ reset, onChange, query }) => {
         finalQueryObject[key] = res[key];
       }
     });
-    const final_query = { ...query, ...finalQueryObject };
+    const final_query = { ...finalQueryObject };
     const fianl_query_param = new URLSearchParams(finalQueryObject).toString();
 
     if (fianl_query_param) {
-      setIsFilterApplied(true);
-
       setShowModal(false);
     } else {
       setShowModal(true);
@@ -130,48 +135,50 @@ const FilterPlays = ({ reset, onChange, query }) => {
     return option;
   };
 
-  return (
-    <div className="search-filter">
-      <Modal
-        cname="filter"
-        show={showModal}
-        title="Filter Plays By"
-        onClose={filterModalCloseBtnHandler}
-        onSubmit={handleFilter}
-      >
-        {FIELD_TEMPLATE.map((field, field_i) => {
-          return (
-            <div className="flex p-2" key={field_i}>
-              <div className="w-32">
-                {field.display}
-                {field.required ? '*' : ''}
-              </div>
-              <div className="flex-1">
-                <Autocomplete
-                  disableCloseOnSelect
+  const renderFiled = (field) => {
+    switch (field.type) {
+      case 'select':
+        return (
+          <Autocomplete
+            disableCloseOnSelect
             freeSolo={field.freeSolo}
-            getOptionLabel={(option) => field.node?  option[field.node][field.fieldName]: option[field.fieldName]}
+            getOptionLabel={(option) =>
+              field.node ? option[field.node][field.fieldName] : option[field.fieldName]
+            }
             id={field.datafield}
             multiple={field.multiple}
-            options={field.sorted ? orderBy(
-              loadedData[field.datafield], [field.fieldName], ['asc']
-            ): loadedData[field.datafield]}
+            options={
+              field.sorted
+                ? orderBy(loadedData[field.datafield], [field.fieldName], ['asc'])
+                : loadedData[field.datafield]
+            }
             renderInput={(params) => (
               <TextField {...params} placeholder={field.placeholder} size="small" />
             )}
             renderOption={(props, option, { selected }) => (
               <li {...props}>
                 <Checkbox
-                  icon={icon}
-                  checkedIcon={checkedIcon}
-                  style={{ marginRight: 8 }}
                   checked={selected}
+                  checkedIcon={checkedIcon}
+                  icon={icon}
+                  style={{ marginRight: 8 }}
                 />
-                <div className='flex'><span className='rounded-full'>{
-                  field.avatar && getOptionNode(field, option)[field.avatar] ? <span className='flex items-center justify-center h-12 w-16 mr-4'><img className='h-12 w-12 rounded-full' src={getOptionNode(field, option)[field.avatar]} alt='avatar'/></span>:null
-                }</span><span className='flex items-center'>{field.node?  option[field.node][field.fieldName]: option[field.fieldName]}</span></div>
-                
-                
+                <div className="flex">
+                  <span className="rounded-full">
+                    {field.avatar && getOptionNode(field, option)[field.avatar] ? (
+                      <span className="flex items-center justify-center h-12 w-16 mr-4">
+                        <img
+                          alt="avatar"
+                          className="h-12 w-12 rounded-full"
+                          src={getOptionNode(field, option)[field.avatar]}
+                        />
+                      </span>
+                    ) : null}
+                  </span>
+                  <span className="flex items-center">
+                    {field.node ? option[field.node][field.fieldName] : option[field.fieldName]}
+                  </span>
+                </div>
               </li>
             )}
             size="small"
@@ -195,9 +202,38 @@ const FilterPlays = ({ reset, onChange, query }) => {
               }
               handleChange(field.datafield, updatedval);
             }}
-          /></div>
+          />
+        );
+      case 'text':
+        return (
+          <TextField
+            size="small"
+            className='w-full'
+            value={formData[field.datafield]}
+            onChange={(e) => handleChange(field.datafield, e.target.value)}
+          />
+        );
+    }
+  };
+
+  return (
+    <div className="search-filter">
+      <Modal
+        cname="filter"
+        show={showModal}
+        title="Filter Plays By"
+        onClose={filterModalCloseBtnHandler}
+        onSubmit={handleFilter}
+      >
+        {FIELD_TEMPLATE.map((field, field_i) => {
+          return (
+            <div className="flex p-2" key={field_i}>
+              <div className="w-32">
+                {field.display}
+                {field.required ? '*' : ''}
+              </div>
+              <div className="flex-1">{renderFiled(field)}</div>
             </div>
-             
           );
         })}
       </Modal>
@@ -206,8 +242,7 @@ const FilterPlays = ({ reset, onChange, query }) => {
         className="btn-filter"
         title="Filter Plays"
         onClick={() => {
-          setShowModal(true);
-          setIsFilterApplied(false);
+          showFilterModal();
         }}
       >
         {query && Object.keys(query).length > 0 ? (
