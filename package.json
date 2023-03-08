@@ -9,6 +9,7 @@
     "@mui/material": "^5.9.1",
     "@mui/styles": "^5.9.3",
     "@nhost/react": "^0.9.0",
+    "@reduxjs/toolkit": "^1.9.2",
     "@tensorflow-models/coco-ssd": "^2.2.2",
     "@tensorflow/tfjs": "^4.2.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -127,6 +128,7 @@
     "prettier": "^2.7.1",
     "puppeteer": "^13.7.0",
     "react-snap": "^1.23.0",
+    "tailwind-scrollbar": "^2.1.0",
     "tailwindcss": "^3.0.24",
     "typescript": "*"
   }
