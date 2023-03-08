@@ -3,6 +3,7 @@ import { deleteATagQuery } from './request/query';
 import { associatePlayWithTagQuery, createPlayQuery } from './request/query/play';
 import { toKebabCase, toSlug } from './string';
 import { FetchPlaysByFilter } from 'common/services/request/query/fetch-plays';
+import { toTitleCaseTrimmed } from 'common/services/string';
 import { Tags } from './tags';
 
 // Create a play
@@ -134,24 +135,6 @@ export const deleteATag = (play_id, actualTags, newTags) => {
 
 export const getPlaysByFilter = async (filter) => {
   let filter_object = undefined;
-  // clause: {
-  //   operator: 'and',
-  //   conditions: [
-  //     {
-  //       field: 'slug',
-  //       operator: 'ilike',
-  //       value: playslug,
-  //       type: 'string'
-  //     },
-  //     {
-  //       field: 'github',
-  //       operator: 'ilike',
-  //       value: username,
-  //       type: 'string'
-  //     }
-  //   ]
-  // }
-
   if (filter) {
     Object.keys(filter).forEach((key) => {
       const obj = filter[key];
@@ -182,15 +165,17 @@ export const getPlaysByFilter = async (filter) => {
               operator: 'or',
               conditions: []
             };
+            const text = obj.split('+').join(' ');
+
             local_cond_clause.conditions.push({
               field: 'name',
               operator: 'ilike',
-              value: `%${obj}%`
+              value: `%${text}%`
             });
             local_cond_clause.conditions.push({
               field: 'description',
               operator: 'ilike',
-              value: `%${obj}%`
+              value: `%${text}%`
             });
             filter_object.clause.conditions.push({ clause: local_cond_clause });
           } else {
@@ -212,10 +197,10 @@ export const getPlaysByFilter = async (filter) => {
       return containTags(play, filter.tags);
     });
 
-    return res_tags_filters;
+    return processPlays(res_tags_filters);
   }
 
-  return res;
+  return processPlays(res);
 };
 
 const containTags = (play, tags) => {
@@ -231,6 +216,12 @@ const containTags = (play, tags) => {
   return res;
 };
 
+const processPlays = (plays) => {
+  plays.forEach((play) => {
+    play.title_name = toTitleCaseTrimmed(play.name);
+  });
+  return plays;
+};
 export const Plays = {
   createPlay,
   createAndRemoveTags

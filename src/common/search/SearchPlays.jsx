@@ -18,7 +18,9 @@ const SearchPlays = ({ reset, query, onChange }) => {
     if (reset.search) {
       resetSearchField();
     }
-    setSearchText(query ? query.text : '');
+    const text = query && query.text? query.text.split('+').join(' ') : '';
+
+    setSearchText(decodeURIComponent(text));
   }, [query]);
 
   const handleSearch = (event) => {

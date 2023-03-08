@@ -43,11 +43,13 @@ const FilterPlays = ({ onChange, query }) => {
     setShowModal(false);
   };
 
-  const loadFilter = (l_data) => {
+  const loadFilter = () => {
     const newFormData = {};
     FIELD_TEMPLATE.forEach((template) => {
       if (template.datafield === 'text') {
-        newFormData['text'] = query.text;
+        const text = query && query.text? query.text.split('+').join(' ') : '';
+
+        newFormData['text'] = decodeURIComponent(text);
       } else {
         if (query[template.datafield]) {
           newFormData[template.datafield] = [];
@@ -56,8 +58,8 @@ const FilterPlays = ({ onChange, query }) => {
             : query[template.datafield].split(',');
           splitData.forEach((data) => {
             const found =
-              l_data[template.datafield] &&
-              l_data[template.datafield].filter((d) => {
+            loadedData[template.datafield] &&
+            loadedData[template.datafield].filter((d) => {
                 if (template.node) {
                   return d[template.node][template.fieldValue] === data;
                 } else {
@@ -124,7 +126,7 @@ const FilterPlays = ({ onChange, query }) => {
   };
 
   if (loading) {
-    return <p></p>;
+    return <p />;
   }
 
   const getOptionNode = (field, option) => {
