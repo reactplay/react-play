@@ -75,28 +75,28 @@ const FilterPlays = ({ onChange, query }) => {
   };
 
   const showFilterModal = () => {
-    if(query){
-    loadFilter();
+    if (query) {
+      loadFilter();
     } else {
-      setFormData({})
+      setFormData({});
     }
-    setShowModal(true)
-  }
+    setShowModal(true);
+  };
 
   const handleFilter = () => {
     const res = {};
     FIELD_TEMPLATE.forEach((template) => {
       if (formData[template.datafield]) {
         res[template.datafield] = [];
-        if(_.isArray(formData[template.datafield])) {
-        formData[template.datafield].forEach((data) => {
-          res[template.datafield].push(
-            template.node ? data[template.node][template.fieldValue] : data[template.fieldValue]
-          );
-        });
-      } else {
-        res[template.datafield] = formData[template.datafield]
-      }
+        if (_.isArray(formData[template.datafield])) {
+          formData[template.datafield].forEach((data) => {
+            res[template.datafield].push(
+              template.node ? data[template.node][template.fieldValue] : data[template.fieldValue]
+            );
+          });
+        } else {
+          res[template.datafield] = formData[template.datafield];
+        }
       }
     });
 
@@ -207,8 +207,8 @@ const FilterPlays = ({ onChange, query }) => {
       case 'text':
         return (
           <TextField
+            className="w-full"
             size="small"
-            className='w-full'
             value={formData[field.datafield]}
             onChange={(e) => handleChange(field.datafield, e.target.value)}
           />

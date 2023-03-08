@@ -32,7 +32,7 @@ export const SearchBox = ({ reset }) => {
         className="flex flex-1 search-input items-center filter-area px-4"
         data-testid="plays-search-box-container"
       >
-        <BiSearch data-testid="plays-search-box-icon" size="24px" className='mr-2' />
+        <BiSearch className="mr-2" data-testid="plays-search-box-icon" size="24px" />
         <SearchPlays query={query} reset={reset} onChange={(q) => onChange(q)} />
         {query && Object.keys(query).length > 0 ? (
           <button
