@@ -103,7 +103,13 @@ const Header = () => {
     <>
       <header
         className={`app-header ${
-          showHideBits.setHeaderStyle ? '' : ' app-header-home app-header-home--promo '
+          showHideBits.setHeaderStyle
+            ? ''
+            : ` app-header-home ${
+                process.env.REACT_APP_ACTIVITIES_ON === 'true' && showHideBits.showActivityTimer
+                  ? 'app-header-home--promo'
+                  : null
+              } `
         }`}
         data-testid="app-header"
       >
