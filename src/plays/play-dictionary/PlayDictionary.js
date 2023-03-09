@@ -114,7 +114,7 @@ const Meaning = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
       <div className="play-dict-definitions">
         <ul>
           {definitions?.map((definition, index) => (
-            <li key={index}>
+            <li className="play-dict-definition-points" key={index}>
               <span>{definition.definition}</span>
             </li>
           ))}
