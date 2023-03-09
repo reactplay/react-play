@@ -113,11 +113,11 @@ function List() {
       <br />
 
       {!isResult ? (
-        <div className="play-area">
+        <div className="emoji-game-play-area">
           {!isGame && (
             <div className="play-false">
               <h1>Have you selected your emoji. ?</h1>
-              <button className="play-button" onClick={show}>
+              <button className="emoji-game-play-button" onClick={show}>
                 Yes! - let's Start
               </button>
             </div>
@@ -133,7 +133,7 @@ function List() {
           )}
         </div>
       ) : (
-        <div className="play-area">
+        <div className="emoji-game-play-area">
           <h1>
             <b>The emoji is : "{emoji[ind].emoji}"</b>
           </h1>
@@ -142,7 +142,7 @@ function List() {
           </h2>
           <p>{emoji[ind].meaning}</p>
           <button
-            className="play-button"
+            className="emoji-game-play-button"
             onClick={() => {
               setResult(false);
             }}

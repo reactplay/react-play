@@ -9,7 +9,7 @@ function Instruction() {
         guess it for you)
       </h2>
       {emoji.map((e) => {
-        return <div className="emoji">{e.emoji}</div>;
+        return <div className="emoji-game-emoji">{e.emoji}</div>;
       })}
       <h2>2) Now select the rows in which your emoji is situated</h2>
     </div>

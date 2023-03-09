@@ -1,5 +1,5 @@
 import PlayHeader from 'common/playlists/PlayHeader';
-import './styles.css';
+
 import './App.css';
 import Welcome from './components/welcome';
 import Instruction from './components/Instruction';
@@ -13,7 +13,7 @@ function EmojiGame(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="app">
+        <div className="emoji-game-app">
           {/* Your Code Starts Here */}
           <div>
             <h1>Play Details - Guess The Emoji Game</h1>
@@ -23,7 +23,7 @@ function EmojiGame(props) {
             </p>
           </div>
           <Welcome />
-          <div className="app">
+          <div className="emoji-game-app">
             <Instruction />
             <List />
           </div>
