@@ -52,7 +52,8 @@ const HeaderNav = ({ showBrowse }) => {
           </Box>
         </Box>
       </Modal>
-      <button className="navbar-toggler" type="button" onClick={() => setShowToggleMenu(true)}>
+      <button className="navbar-toggler" type="button" onClick={() => setShowToggleMenu(true)} 
+        aria-label="Toggle menu" aria-expanded={showToggleMenu}>
         <span className="navbar-toggler-icon" />
       </button>
       <div className={showToggleMenu ? 'navbar-collapse show' : 'navbar-collapse'}>
