@@ -1,7 +1,5 @@
 import { BasiFetchParam } from './fetch-plays';
 
-const env = process.env.NODE_ENV === 'development';
-const preview = process.env.REACT_APP_PREVIEW_MODE;
 const defaultClause = {
   field: 'dev_mode',
   operator: 'eq',
@@ -105,20 +103,22 @@ export const FetchPlaysFilter = {
 
     const clause = {
       operator: 'and',
-      conditions: !env && !preview ? [defaultClause] : []
+      conditions: []
     };
 
-    Object.keys(Obj).forEach((key) => {
-      const filterItem = Obj[key];
-      if (filterItem.length > 0 && filterItem[0] !== ' ') {
-        const ifTags = key === 'tags';
-        const prepareObject = createObjectPayload(filterItem, key, ifTags);
-        if (ifTags && filterItem.length === 1) {
-          prepareObject.class = 'play_tags';
+    if (Obj) {
+      Object.keys(Obj).forEach((key) => {
+        const filterItem = Obj[key];
+        if (filterItem.length > 0 && filterItem[0] !== ' ') {
+          const ifTags = key === 'tags';
+          const prepareObject = createObjectPayload(filterItem, key, ifTags);
+          if (ifTags && filterItem.length === 1) {
+            prepareObject.class = 'play_tags';
+          }
+          clause.conditions.push(prepareObject);
         }
-        clause.conditions.push(prepareObject);
-      }
-    });
+      });
+    }
 
     if (clause.conditions.length) {
       payload.where = payload.where || {};
