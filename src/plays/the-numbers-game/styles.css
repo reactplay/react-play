@@ -1,0 +1,66 @@
+/* enter stlyes here */
+.play-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border-width: 2px;
+  color: #100f0f;
+  border-radius: 14px;
+}
+input {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  text-align: right;
+  margin: 10px;
+  padding: 11px;
+  font-size: 27px;
+  border-width: 2px;
+  border-color: #271a1a;
+  background-color: #9a9aa4;
+  color: #100f0f;
+  border-style: solid;
+  border-radius: 14px;
+  box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.31);
+  text-shadow: 0px 0px 1px rgba(155, 195, 193, 0.83);
+}
+input::placeholder {
+  color: #817979;
+  font-style: italic;
+}
+input:focus {
+  outline: none;
+}
+
+Button {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin: 10px;
+  padding: 11px;
+  font-size: 27px;
+  border-width: 2px;
+  border-color: #271a1a;
+  background-color: #9a9aa4;
+  color: #100f0f;
+  border-style: solid;
+  border-radius: 14px;
+  box-shadow: 0px 0px 4px rgba(66, 66, 66, 0.31);
+  text-shadow: 0px 0px 1px rgba(155, 195, 193, 0.83);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.moves {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border-width: 2px;
+  color: #100f0f;
+  border-radius: 14px;
+}
