@@ -11,18 +11,6 @@ A Simple web app Where users can do a decent editing of pics
 
 - User: aghildev
 - Gihub Link: https://github.com/aghildev
-<<<<<<< HEAD
-- Blog: 
-- Video: https://www.stack-stream.com/v/mini-version-of-photoshop-app
-
-## Implementation Details
-
-Update your implementation idea and details here
-
-## Consideration
-
-Update all considerations(if any)
-=======
 - Blog:
 - Video:
 
@@ -33,7 +21,6 @@ This code imports a component named PlayHeader from the file common/playlists/Pl
 ## Consideration
 
 This code follows the React functional component pattern and utilizes React hooks to manage the state. It is recommended to keep the component structure as simple as possible to prevent performance issues. It also implements a clear and easy-to-understand UI design, making it easier for users to manipulate the image
->>>>>>> 15649430fc4f8459cb99f78a4c63900172588c1a
 
 ## Resources
 
