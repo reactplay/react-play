@@ -220,8 +220,10 @@ const processPlays = (plays) => {
   plays.forEach((play) => {
     play.title_name = toTitleCaseTrimmed(play.name);
   });
+
   return plays;
 };
+
 export const Plays = {
   createPlay,
   createAndRemoveTags

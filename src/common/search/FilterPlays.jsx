@@ -47,7 +47,7 @@ const FilterPlays = ({ onChange, query }) => {
     const newFormData = {};
     FIELD_TEMPLATE.forEach((template) => {
       if (template.datafield === 'text') {
-        const text = query && query.text? query.text.split('+').join(' ') : '';
+        const text = query && query.text ? query.text.split('+').join(' ') : '';
 
         newFormData['text'] = decodeURIComponent(text);
       } else {
@@ -58,8 +58,8 @@ const FilterPlays = ({ onChange, query }) => {
             : query[template.datafield].split(',');
           splitData.forEach((data) => {
             const found =
-            loadedData[template.datafield] &&
-            loadedData[template.datafield].filter((d) => {
+              loadedData[template.datafield] &&
+              loadedData[template.datafield].filter((d) => {
                 if (template.node) {
                   return d[template.node][template.fieldValue] === data;
                 } else {
