@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Signika+Negative:wght@300;400;500;600;700&display=swap');
+
+/* enter styles here */
+
+/* The main body of game */
+.cricket-home-body {
+  background-image: url('./assets//cricket-ground.jpg');
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.2), 0px 0px 7px 2px rgba(0, 0, 0, 0.2),
+    0px 0px 7px 2px rgba(0, 0, 0, 0.2), 0px 0px 7px 2px rgba(0, 0, 0, 0.2);
+
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.cricket-home-body img {
+  pointer-events: none;
+  user-select: none;
+  cursor: none;
+}
+
+.font-cricket-game {
+  font-family: 'Signika Negative', Arial, Helvetica, sans-serif;
+}
+
+/* Styles of other components */
+.cricket-home-body .modal {
+  background: linear-gradient(to bottom, #0f6292, #243763, #0f6292);
+}
+
+.cricket-home-body .score-panel {
+  background: linear-gradient(to bottom right, #3c79f5, #2dcddf);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
+  animation: panel-fade-in 1s ease-out 2s 1 normal forwards;
+}
+
+.score,
+.info-box,
+.commentary-and-timeline {
+  box-shadow: 5px 5px 5px rgba(38, 107, 245, 0.3), -5px -5px 5px rgba(114, 239, 253, 0.3);
+}
+
+.score,
+.info-box,
+.commentary-and-timeline,
+.level-info {
+  animation: panel-child-fade-in 0.5s ease-out 3s 1 normal forwards;
+}
+
+.help-tool-tip-btn:hover .help-tool-tip-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.top-bar-button,
+.start-match-button {
+  transition: all 200ms ease;
+}
+
+.end-game-screen-win {
+  background: linear-gradient(to bottom, #8edc8e, #3a9d3a, #8edc8e);
+}
+
+.end-game-screen-loss-tie {
+  background: linear-gradient(to bottom, #5a708e, #324054, #5a708e);
+}
+
+/* Buttons */
+.start-match-button {
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    to bottom right,
+    rgb(254, 200, 100) 0% 10%,
+    rgb(230, 150, 0) 40% 60%,
+    rgb(254, 200, 100) 100%
+  );
+}
+
+.start-match-button:hover {
+  background: linear-gradient(
+    to bottom right,
+    rgb(254, 200, 100) 0% 10%,
+    rgb(250, 167, 14) 40% 60%,
+    rgb(254, 200, 100) 100%
+  );
+  transition: all 0.1s ease-out;
+}
+
+.start-match-button:active {
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    to bottom right,
+    rgba(254, 200, 100, 0.8) 0% 10%,
+    rgba(230, 150, 0, 0.8) 40% 60%,
+    rgba(254, 200, 100, 0.8) 100%
+  );
+  transform: scale(0.95);
+}
+
+/* Attribute based styles */
+.action[data-action='1'] {
+  background-color: gray;
+}
+
+.action[data-action='2'] {
+  background-color: rgba(63, 81, 182, 255);
+}
+
+.action[data-action='3'] {
+  background-color: rgba(33, 150, 243, 255);
+}
+
+.action[data-action='4'] {
+  background-color: #03ab13;
+}
+
+.action[data-action='6'] {
+  background-color: rgb(171, 0, 171);
+}
+
+.action[data-action='0'] {
+  background-color: rgb(51, 65, 85);
+}
+
+.action[data-action='W'] {
+  background-color: rgb(223, 0, 0);
+}
+
+/* Shot name's classes */
+.uppercut {
+  animation: upper-cut-shot 0.2s linear 0s 1 normal forwards;
+}
+
+.legglance {
+  animation: leg-glance-shot 0.4s linear 0s 1 normal forwards;
+}
+
+.squarecut {
+  animation: square-cut-shot 0.2s linear 0s 1 normal forwards;
+}
+
+.sweep {
+  animation: sweep-shot 0.4s linear 0s 1 normal forwards;
+}
+
+.coverdrive {
+  animation: cover-drive-shot 0.4s linear 0s 1 normal forwards;
+}
+
+.ondrive {
+  animation: on-drive-shot 0.4s linear 0s 1 normal forwards;
+}
+
+.throwit {
+  animation: throw-ball 1.5s ease 2s 1 normal forwards;
+}
+
+.hit-box-blink {
+  animation: hit-box-blink-animation 1s ease 0s infinite normal none;
+}
+
+/* All animation keyframes of ball */
+@keyframes throw-ball {
+  20% {
+    left: 15%;
+    animation-timing-function: ease-in;
+    width: 22px;
+    height: 22px;
+  }
+
+  30% {
+    left: var(--bounce-left);
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    left: var(--end-left);
+    bottom: 115%;
+    transform: rotate(3600deg);
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@keyframes upper-cut-shot {
+  0% {
+    left: var(--shot-left);
+    top: var(--shot-top);
+  }
+  100% {
+    left: -200px;
+    top: -100px;
+  }
+}
+
+@keyframes leg-glance-shot {
+  0% {
+    left: var(--shot-left);
+    top: var(--shot-top);
+  }
+  100% {
+    left: 900px;
+    top: -100px;
+  }
+}
+
+@keyframes square-cut-shot {
+  0% {
+    left: var(--shot-left);
+    top: var(--shot-top);
+  }
+  100% {
+    left: -500px;
+    top: 100px;
+  }
+}
+
+@keyframes sweep-shot {
+  0% {
+    left: var(--shot-left);
+    top: var(--shot-top);
+  }
+  100% {
+    left: 1150px;
+    top: 140px;
+  }
+}
+
+@keyframes cover-drive-shot {
+  0% {
+    left: var(--shot-left);
+    top: var(--shot-top);
+  }
+  100% {
+    left: -250px;
+    top: 750px;
+  }
+}
+
+@keyframes on-drive-shot {
+  0% {
+    left: var(--shot-left);
+    top: var(--shot-top);
+  }
+  100% {
+    left: 900px;
+    top: 750px;
+  }
+}
+
+@keyframes panel-fade-in {
+  0% {
+    bottom: -20%;
+  }
+
+  40% {
+    bottom: 4px;
+    width: 1%;
+  }
+  100% {
+    width: 99%;
+    bottom: 4px;
+  }
+}
+
+@keyframes panel-child-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hit-box-blink-animation {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgb(245, 245, 245);
+  }
+
+  100% {
+    box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0);
+  }
+}

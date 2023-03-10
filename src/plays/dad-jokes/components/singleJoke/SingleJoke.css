@@ -1,0 +1,226 @@
+/*----------------------------Single Joke Container----------------------------*/
+.dad-jokes-play .singlejoke {
+  display: flex;
+  border-bottom: 2px solid #eeeeee;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  padding: 1rem;
+}
+
+/*----------------------------Single Joke Text----------------------------*/
+.dad-jokes-play .singlejoke-text {
+  width: 75%;
+  font-size: 1.2rem;
+  word-break: break-word;
+  margin: 0 0.5rem;
+}
+
+.dad-jokes-play .dark .singlejoke-text {
+  color: #eee;
+}
+
+/*----------------------------Single Joke Button Container for upvote, downvote & vote text----------------------------*/
+.dad-jokes-play .singlejoke-buttons {
+  display: flex;
+  margin-right: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+}
+
+/*----------------------------Single Joke Vote Text----------------------------*/
+.dad-jokes-play .singlejoke-buttons-votes p {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  border: 3px solid red;
+  box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
+  color: #0d0d0d;
+}
+
+.dad-jokes-play .dark .singlejoke-buttons-votes p {
+  color: darkgray;
+}
+
+/*----------------------------Single Joke Upvote & Downvote Button----------------------------*/
+.dad-jokes-play .singlejoke-buttons-upvote,
+.dad-jokes-play .singlejoke-buttons-downvote {
+  font-size: 1.5em;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #0d0d0d;
+}
+
+.dad-jokes-play .dark .singlejoke-buttons-upvote,
+.dad-jokes-play .dark .singlejoke-buttons-downvote {
+  color: darkgray;
+}
+
+.dad-jokes-play .singlejoke-buttons-upvote:hover {
+  animation-name: move-up;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out;
+  color: #8bc34a;
+}
+
+.dad-jokes-play .singlejoke-buttons-downvote:hover {
+  animation-name: move-down;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out;
+  color: red;
+}
+
+/*----------------------------Single Joke Emoji----------------------------*/
+.dad-jokes-play .singlejoke-emoji {
+  font-size: 3rem;
+  margin-left: auto;
+  border-radius: 50%;
+  box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
+  color: #ffc107;
+}
+
+.dad-jokes-play .singlejoke-emoji:hover {
+  animation-name: spin;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  cursor: pointer;
+}
+
+.dad-jokes-play .dark .singlejoke-emoji {
+  color: darkgray;
+}
+
+/*----------------------------Animation for upvote----------------------------*/
+@keyframes move-up {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25%,
+  75% {
+    transform: translateY(-3px);
+  }
+}
+
+/*----------------------------Animation for Downvote----------------------------*/
+@keyframes move-down {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25%,
+  75% {
+    transform: translateY(3px);
+  }
+}
+
+/*----------------------------Animation for Emojis----------------------------*/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  30% {
+    transform: rotate(20deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  80% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/*----------------------------Responsive Styles upto 1024px----------------------------*/
+@media screen and (max-width: 1024px) {
+  .dad-jokes-play .singlejoke {
+    justify-content: unset;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .dad-jokes-play .singlejoke-text {
+    font-size: 0.6rem;
+  }
+
+  .dad-jokes-play .singlejoke-buttons {
+    margin-right: 0;
+  }
+
+  .dad-jokes-play .singlejoke-buttons-votes p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .dad-jokes-play .singlejoke-buttons-upvote,
+  .dad-jokes-play .singlejoke-buttons-downvote {
+    font-size: 0.6rem;
+    margin: 0;
+  }
+
+  .dad-jokes-play .singlejoke-emoji {
+    font-size: 1rem;
+  }
+}
+
+/*----------------------------Responsive Styles for 1024px to 1280px----------------------------*/
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .dad-jokes-play .singlejoke {
+    padding: 0.75rem;
+  }
+
+  .dad-jokes-play .singlejoke-text {
+    font-size: 1rem;
+  }
+
+  .dad-jokes-play .singlejoke-buttons-upvote,
+  .dad-jokes-play .singlejoke-buttons-downvote {
+    margin: 2px;
+  }
+}
+
+/*----------------------------Responsive Styles for 640px to 1024px----------------------------*/
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .dad-jokes-play .singlejoke-text {
+    font-size: 1.2rem;
+  }
+
+  .dad-jokes-play .singlejoke-buttons-votes p {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+  }
+
+  .dad-jokes-play .singlejoke-buttons-upvote,
+  .dad-jokes-play .singlejoke-buttons-downvote {
+    font-size: 1rem;
+    margin: 5px;
+  }
+
+  .dad-jokes-play .singlejoke-emoji {
+    font-size: 1.5rem;
+  }
+}
