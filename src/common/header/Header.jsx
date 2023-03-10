@@ -1,10 +1,9 @@
-import FilterPlays from 'common/search/FilterPlays';
-import SearchPlays from 'common/search/SearchPlays';
 import HeaderNav from './HeaderNav';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Countdown from 'react-countdown';
 import './header.css';
+import { SearchBox } from 'common/search/SearchBox';
 
 const Header = () => {
   const location = useLocation();
@@ -119,12 +118,7 @@ const Header = () => {
           </Link>
         </span>
         <div className="app-header-search">
-          {showHideBits.showSearch && (
-            <>
-              <SearchPlays reset={reset} />
-              <FilterPlays reset={reset} />
-            </>
-          )}
+          {showHideBits.showSearch && <SearchBox reset={reset} />}
         </div>
         <HeaderNav showBrowse={showHideBits.showBrowse} />
       </header>
