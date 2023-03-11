@@ -53,16 +53,15 @@ function TheNumbersGame(props) {
 
       return;
     } else if (guess < target) {
-      toast.error(`Your guess is too low. The correct answer is ${target}`);
+      toast.error(`Your guess is too low.`);
     } else {
-      toast.error(`Your guess is too high. The correct answer is ${target}`);
+      toast.error(`Your guess is too high.`);
     }
   };
 
   const handleReset = () => {
     toast.info('The game has been reset');
     setGuess('');
-    // setMessage('Guess a number in the given range');
     setMoves(5);
     setMinimum('');
     setMaximum('');
