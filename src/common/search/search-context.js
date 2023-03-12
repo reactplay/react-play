@@ -1,14 +1,7 @@
 import React, { useContext } from 'react';
 
 const SearchContext = React.createContext({
-  searchTerm: '',
-  showShareModal: false,
-  filterQuery: {
-    level_id: [],
-    tags: [],
-    owner_user_id: [],
-    language: []
-  }
+  query: ''
 });
 
 export const SearchContextProvider = ({ value, children }) => {
