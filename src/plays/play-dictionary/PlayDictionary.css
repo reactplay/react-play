@@ -127,11 +127,11 @@
   list-style-type: disc;
 }
 
-li {
+.play-dict-definition-points {
   color: #df37f2;
 }
 
-li > span {
+.play-dict-definition-points > span {
   color: #000;
 }
 
