@@ -1,0 +1,11 @@
+.emoji-game-app {
+  margin: 10px 50px;
+  padding: 10px;
+}
+
+.emoji-game-emoji {
+  font-size: 100px;
+  margin: 10px;
+  display: inline-block;
+  border: solid 0.5px rgb(0, 0, 0);
+}
