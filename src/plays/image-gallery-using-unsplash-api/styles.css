@@ -1,0 +1,105 @@
+/* enter stlyes here */
+.unsplash-image-gallery-body {
+  padding: 0;
+  margin: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: whitesmoke;
+}
+
+.searchedPhotos > div > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.searchedPhotos {
+  display: grid;
+  margin: 2rem;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 600px;
+  grid-auto-flow: dense;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 50%;
+  left: 50%;
+  max-width: 50%;
+  justify-content: center;
+}
+
+.searchBarInput {
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 0.1rem solid black;
+  border-radius: 0.2rem;
+}
+
+.submitButton {
+  border: none;
+  transform: translate(-135%, -6%) scale(1.25);
+  cursor: pointer;
+  border-bottom-right-radius: 20%;
+  border-top-right-radius: 20%;
+}
+
+.photoGrid {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.photo-frame {
+  overflow-y: hidden;
+}
+
+.photo-info {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.5rem 1rem;
+  background-color: rgba(70, 70, 70, 0.5);
+  transition: all 0.3s ease;
+}
+
+.photo-info div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.photo-info div h4,
+.photo-info div h6,
+.photo-info div p {
+  background-color: transparent;
+  color: antiquewhite;
+  font-size: smaller;
+}
+
+.photo-info a {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.photo-info a img {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 0.25rem solid white;
+  transition: all ease 0.2s;
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.photo-info a img:hover {
+  transform: scale(105%);
+}
+
+.photo-frame:hover .photo-info {
+  transform: translateY(-100%);
+}

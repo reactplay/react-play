@@ -427,10 +427,12 @@
 
 .play-details .play-details-header .header-secondary {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
+  flex-direction: column;
   flex-wrap: wrap;
   grid-gap: 0.2rem 0.6rem;
-  align-items: center;
+  /* align-items: center; */
+  align-items: start;
 }
 
 @media screen and (max-width: 768px) {

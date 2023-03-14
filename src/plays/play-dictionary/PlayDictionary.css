@@ -1,0 +1,181 @@
+/* enter stlyes here */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.play-dict-main-container {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.play-dict-container-input {
+  width: 100%;
+  max-width: 700px;
+  padding: 40px 40px 20px 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #000;
+}
+
+.play-dict-input-dictionary {
+  width: 100%;
+  padding: 24px 15px;
+  font-size: 16px;
+  background-color: #f4f4f4;
+  color: #000;
+  border-radius: 10px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.play-dict-search-icon-btn {
+  position: absolute;
+  right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 480px) {
+  .play-dict-search-icon-btn {
+    position: absolute;
+    right: 20px;
+    width: 40px;
+  }
+}
+
+/* ------- Output from API css below ---------------- */
+
+.play-dict-container-output {
+  width: 100%;
+  max-width: 700px;
+}
+
+.play-dict-meaning-found {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.play-dict-word-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.play-dict-word-display,
+.play-dict-pronunciation {
+  padding: 20px 40px 40px 40px;
+}
+
+.play-dict-pronunciation button {
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: #df37f2;
+  opacity: 0.7;
+}
+
+.play-dict-word-display p {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.play-dict-meanings-display {
+  padding: 0 40px;
+}
+
+.play-dict-meaning {
+  border-top: 1px solid #877a7a;
+  padding: 20px 0 40px 0;
+}
+
+.play-dict-meaning > span {
+  margin-top: 20px;
+}
+
+.play-dict-partOfSpeech {
+  padding: 0 20px 0 0;
+  margin-top: -40px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  width: fit-content;
+}
+
+.play-dict-partOfSpeech span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.play-dict-meaning > .play-dict-definitions > ul {
+  padding: 20px 30px;
+}
+
+.play-dict-meaning > .play-dict-definitions > ul > li {
+  padding: 10px 0;
+  list-style-type: disc;
+}
+
+.play-dict-definition-points {
+  color: #df37f2;
+}
+
+.play-dict-definition-points > span {
+  color: #000;
+}
+
+.play-dict-meaning > .play-dict-synonyms,
+.play-dict-meaning > .play-dict-antonyms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.play-dict-meaning > .play-dict-synonyms > span,
+.play-dict-meaning > .play-dict-antonyms > span {
+  width: fit-content;
+  margin-right: 30px;
+  vertical-align: middle;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 480px) {
+  .play-dict-container-input {
+    position: realtive;
+    padding: 30px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .play-dict-meanings-display {
+    padding: 0 20px;
+  }
+
+  .play-dict-word-display {
+    padding: 20px 20px 40px 20px;
+  }
+}
+
+/* ----------------------------- Meaning not found --------------------------------- */
+.play-dict-meaning-not-found {
+  padding: 40px 40px;
+  text-align: center;
+}
+
+.play-dict-meaning-not-found p {
+  font-size: 18px;
+  font-weight: 600;
+}
