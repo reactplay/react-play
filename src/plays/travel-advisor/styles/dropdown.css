@@ -1,0 +1,41 @@
+.travel-advisor-select {
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  flex: 1;
+  padding: 0 1em;
+  color: black;
+  background-color: white;
+  background-image: none;
+  cursor: pointer;
+}
+
+.travel-advisor-select::-ms-expand {
+  display: none;
+}
+
+.travel-advisor-select-cont {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: 0.25em;
+  margin: 12px;
+  overflow: hidden;
+}
+
+.travel-advisor-select-cont::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+
+.travel-advisor-select-cont:hover::after {
+  color: #f39c12;
+}

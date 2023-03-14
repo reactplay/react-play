@@ -17,7 +17,7 @@
   z-index: 2;
 }
 
-.dad-jokes-play .dark .jokelist-sidebar{
+.dad-jokes-play .dark .jokelist-sidebar {
   background-color: #eee;
 }
 
@@ -35,7 +35,7 @@
   letter-spacing: 0;
 }
 
-.dad-jokes-play .dark .jokelist-sidebar-title h1{
+.dad-jokes-play .dark .jokelist-sidebar-title h1 {
   color: #0d0d0d;
 }
 
@@ -73,7 +73,7 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
-.dad-jokes-play .dark .jokelist-sidebar-getmore button{
+.dad-jokes-play .dark .jokelist-sidebar-getmore button {
   color: #eee;
   background-color: #0d0d0d;
 }
@@ -88,7 +88,7 @@
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
 }
 
-.dad-jokes-play .dark .jokelist-jokes{
+.dad-jokes-play .dark .jokelist-jokes {
   background-color: #0d0d0d;
 }
 
