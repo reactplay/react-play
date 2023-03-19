@@ -9,6 +9,7 @@ import { FetchPlaysBySlugAndUser } from 'common/services/request/query/fetch-pla
 import { PageNotFound } from 'common';
 import thumbPlay from 'images/thumb-play.png';
 import { getProdUrl } from 'common/utils/commonUtils';
+import { loadCoverImage } from 'common/utils/coverImageUtil';
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -36,24 +37,15 @@ function PlayMeta() {
     }
     // if it is not passed as a meta data
     // check in the play folder for a cover image
-    // with the name cover, having the following accepted image formats
-    const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
-    const imgPromises = [];
-    acceptedImgExtensions.map((ext) =>
-      imgPromises.push(import(`plays/${playObj.slug}/cover.${ext}`))
-    );
 
-    const response = Promise.allSettled(imgPromises);
-    const fulfilledResult = response.find(
-      (result) => result.status === 'fulfilled' && result.value.default
-    );
-    if (fulfilledResult) {
-      metaImg = getProdUrl(fulfilledResult.value.default);
-      ogTagImg = getProdUrl(fulfilledResult.value.default);
+    try {
+      const coverImage = await loadCoverImage(playObj.slug);
+      metaImg = getProdUrl(coverImage);
+      ogTagImg = getProdUrl(coverImage);
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
       setLoading(false);
-    } else {
+    } catch (error) {
       console.error(
         `Cover image not found for the play ${playObj.name}. Setting the default cover image...`
       );

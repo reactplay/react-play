@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import thumbPlay from 'images/thumb-play.png';
 import { Link } from 'react-router-dom';
 import { MdArrowRightAlt } from 'react-icons/md';
+import { loadCoverImage } from 'common/utils/coverImageUtil';
 
 const DynamicBanner = ({ randomPlay }) => {
   const [coverImage, setCoverImage] = useState(null);
@@ -17,24 +18,13 @@ const DynamicBanner = ({ randomPlay }) => {
       } else {
         setLoading(true);
         // if it is not passed as a meta data
-        // check in the play folder for a cover image
-        // with the name cover, having the following accepted image formats
-        const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
-        const imgPromises = [];
-        acceptedImgExtensions.map((ext) =>
-          imgPromises.push(import(`plays/${randomPlay.slug}/cover.${ext}`))
-        );
+        // check in the play folder for a cover image with the name cover
+        const coverImage = await loadCoverImage(randomPlay.slug);
 
-        const response = await Promise.allSettled(imgPromises);
-
-        const fulfilledResult = response.find(
-          (result) => result.status === 'fulfilled' && result.value.default
-        );
-        if (fulfilledResult) {
-          setCoverImage(fulfilledResult.value.default);
+        if (coverImage) {
+          setCoverImage(coverImage);
           setLoading(false);
         } else {
-          // if none of the images included, set default image
           setCoverImage(thumbPlay);
 
           console.error(

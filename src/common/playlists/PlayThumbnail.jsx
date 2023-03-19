@@ -7,6 +7,7 @@ import userImage from 'images/user.png';
 import Like from 'common/components/Like/Like';
 import { useUserId, useAuthenticated } from '@nhost/react';
 import countByProp from 'common/utils/commonUtils';
+import { loadCoverImage } from 'common/utils/coverImageUtil';
 
 const Author = ({ user }) => {
   return (
@@ -42,41 +43,19 @@ const PlayThumbnail = ({ play }) => {
   };
 
   useEffect(() => {
-    async function setPlayCover() {
-      // Set the cover image
-      // if it is passed as a meta data
-      if (play.cover) {
-        setCover(play.cover);
-      } else {
-        // if it is not passed as a meta data
-        // check in the play folder for a cover image
-        // with the name cover, having the following accepted image formats
-        const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
-        const imgPromises = [];
-        acceptedImgExtensions.map((ext) =>
-          imgPromises.push(import(`plays/${play.slug}/cover.${ext}`))
-        );
-
-        const response = await Promise.allSettled(imgPromises);
-
-        const fulfilledResult = response.find(
-          (result) => result.status === 'fulfilled' && result.value.default
-        );
-
-        if (fulfilledResult) {
-          setCover(fulfilledResult.value.default);
+    const loadCover = async () => {
+      try {
+        if (play.cover) {
+          setCover(play.cover);
         } else {
-          // if none of the images included, set default image
-          setCover(thumbPlay);
-
-          console.error(
-            `Cover image not found for the play ${play.name}. Setting the default cover image...`
-          );
+          const image = await loadCoverImage(play.slug);
+          setCover(image);
         }
+      } catch (error) {
+        console.error(error);
       }
-    }
-
-    setPlayCover();
+    };
+    loadCover();
   }, [play]);
 
   return (
