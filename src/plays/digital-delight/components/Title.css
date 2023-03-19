@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap');
+
+.digits-title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.digits-h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 56px;
+}
+
+.digits-description {
+  font-family: 'Hanalei Fill', cursive;
+}
