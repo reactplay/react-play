@@ -15,7 +15,7 @@ import './TicTacToe.css';
  */
 const gameArray = new Array(9).fill('');
 
-const Game = () => {
+export default function Game() {
   const [isCross, setIsCross] = useState(true);
   const [isFinished, setIsFinished] = useState(false);
   const [finalMessage, setFinalMessage] = useState('');
@@ -117,7 +117,7 @@ const Game = () => {
 
             <div className="ttc_grid">
               {gameArray.map((ele, i) => (
-                <div key={i} className="game-card center" onClick={() => changeItem(i)}>
+                <div className="game-card center" key={i} onClick={() => changeItem(i)}>
                   <Icon choice={gameArray[i]} />
                 </div>
               ))}
@@ -127,6 +127,4 @@ const Game = () => {
       </section>
     </>
   );
-};
-
-export default Game;
+}
