@@ -1,0 +1,154 @@
+.Play-container {
+  background: url('../images/background.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding: 3px 3px;
+  flex-direction: column;
+}
+
+.Text-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 13px;
+  width: 100%;
+}
+
+.Actions-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-cont {
+  display: flex;
+  padding: 4px 4px;
+}
+
+.drop-zone-cont {
+  padding: 10px 10px;
+  border: 4px dashed blue;
+}
+
+.drop-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 5px;
+}
+
+.result-cont {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 15px;
+  margin: 15px 15px;
+  width: 30%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+textarea::placeholder {
+  font-size: 1rem;
+  color: #9c9c9c;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea::-webkit-input-placeholder {
+  font-size: 1rem;
+  color: #9c9c9c;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea:-moz-placeholder {
+  font-size: 1rem;
+  color: #9c9c9c;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea::-moz-placeholder {
+  font-size: 1rem;
+  color: #9c9c9c;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea:-ms-input-placeholder {
+  font-size: 1rem;
+  color: #9c9c9c;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea::-ms-input-placeholder {
+  font-size: 1rem;
+  color: #9c9c9c;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea {
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-family: 'Roboto';
+  resize: horizontal;
+}
+
+textarea {
+  width: 100%;
+  height: 600px;
+  max-width: 900px;
+  border-radius: 9px;
+  padding: 5px 5px;
+}
+
+@media only screen and (max-width: 760px) {
+  .Play-container {
+    height: 1000px;
+  }
+
+  textarea {
+    width: 100%;
+    max-height: 340px;
+    overflow: auto;
+    resize: vertical;
+  }
+
+  .btn-cont {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Text-cont {
+    flex-direction: column;
+    padding: 30px 30px;
+    width: 100%;
+    height: 75%;
+    overflow: auto;
+  }
+
+  .result-cont {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
+    border-radius: 8px;
+    overflow: auto;
+  }
+
+  .result-cont h1 {
+    font-size: 20px;
+  }
+}

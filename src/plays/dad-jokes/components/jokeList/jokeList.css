@@ -1,0 +1,152 @@
+/*----------------------------Joke List Container----------------------------*/
+.dad-jokes-play .jokelist {
+  display: flex;
+  width: 80%;
+  height: 80%;
+}
+
+/*----------------------------Sidebar----------------------------*/
+.dad-jokes-play .jokelist-sidebar {
+  background-color: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  text-align: center;
+  z-index: 2;
+}
+
+.dad-jokes-play .dark .jokelist-sidebar {
+  background-color: #eee;
+}
+
+/*----------------------------Sidebar Title----------------------------*/
+.dad-jokes-play .jokelist-sidebar-title h1 {
+  font-size: 3.5rem;
+  margin: 2rem;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 0.6rem;
+}
+
+.dad-jokes-play .jokelist-sidebar-title h1 span {
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.dad-jokes-play .dark .jokelist-sidebar-title h1 {
+  color: #0d0d0d;
+}
+
+/*----------------------------Sidebar Emoji Image----------------------------*/
+.dad-jokes-play .jokelist-sidebar-emoji {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dad-jokes-play .jokelist-sidebar-emoji img {
+  width: 45%;
+  border-radius: 50%;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+/*----------------------------New Jokes Button----------------------------*/
+.dad-jokes-play .jokelist-sidebar-getmore button {
+  font-size: 1.25rem;
+  border-radius: 2rem;
+  padding: 1rem 1.6rem;
+  color: #0d0d0d;
+  font-weight: 700;
+  margin: 2rem;
+  border: none;
+  word-spacing: 0.2rem;
+  cursor: pointer;
+  transition: 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+  outline: none;
+  background-color: #eee;
+}
+
+.dad-jokes-play .jokelist-sidebar-getmore button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.dad-jokes-play .dark .jokelist-sidebar-getmore button {
+  color: #eee;
+  background-color: #0d0d0d;
+}
+
+/*----------------------------Joke List----------------------------*/
+.dad-jokes-play .jokelist-jokes {
+  height: 90%;
+  background: white;
+  align-self: center;
+  width: 70%;
+  overflow: scroll;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dad-jokes-play .dark .jokelist-jokes {
+  background-color: #0d0d0d;
+}
+
+/*----------------------------Responsive Styles upto 1024px----------------------------*/
+@media screen and (max-width: 1024px) {
+  .dad-jokes-play .jokelist {
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dad-jokes-play .jokelist-sidebar {
+    flex-direction: row;
+    width: 70%;
+    padding: 1rem 0.5rem;
+    justify-content: space-between;
+    box-shadow: none;
+  }
+
+  .dad-jokes-play .jokelist-sidebar-title h1 {
+    font-size: 0.8rem;
+    margin: 0;
+    letter-spacing: 0.6rem;
+  }
+
+  .dad-jokes-play .jokelist-sidebar-emoji {
+    display: none;
+  }
+
+  .dad-jokes-play .jokelist-sidebar-getmore button {
+    padding: 0.5rem;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  .dad-jokes-play .jokelist-jokes {
+    height: auto;
+  }
+}
+
+/*----------------------------Responsive Styles for 1024px to 1280px----------------------------*/
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .dad-jokes-play .jokelist-sidebar-title h1 {
+    font-size: 3rem;
+  }
+
+  .dad-jokes-play .jokelist-sidebar-getmore button {
+    font-size: 1.2rem;
+  }
+}
+
+/*----------------------------Responsive Styles for 640px to 1024px----------------------------*/
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .dad-jokes-play .jokelist-sidebar-title h1 {
+    font-size: 1.6rem;
+  }
+
+  .dad-jokes-play .jokelist-sidebar-getmore button {
+    font-size: 1rem;
+  }
+}

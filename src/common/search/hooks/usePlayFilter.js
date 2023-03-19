@@ -17,7 +17,7 @@ const useFetchFilterData = () => {
   const { getAllTags, getAllLevels, getAllUsers } = fetchFilterData;
   const [getCacheResponse, setCacheResponse] = useCacheResponse();
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
   const [error, setError] = useState(null);
 
