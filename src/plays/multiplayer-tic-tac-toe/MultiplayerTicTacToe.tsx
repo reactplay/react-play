@@ -9,11 +9,6 @@ import { FaTimes, FaRegCircle } from 'react-icons/fa';
 import PlayAgainButton from './PlayAgainButton';
 import Icon from './Icon';
 
-// import './TicTacToe.css';
-// import './Game.css';
-import './styles.css';
-// import './styles.{{style}}';
-
 const gameArray = new Array(9).fill('');
 
 function MultiplayerTicTacToe(props: any) {
@@ -98,39 +93,51 @@ function MultiplayerTicTacToe(props: any) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="flex justify-center play-details-body">
           {/* Your Code Starts Here */}
           <div>
-            <h1>Multiplayer Tic Tac Toe</h1>
-            <section className="button-group">
-              <button className="game-button" onClick={() => setIsCross(true)}>
+            <h1 className="text-2xl text-center md:text-3xl">Multiplayer Tic Tac Toe</h1>
+            <section className="flex justify-center">
+              <button
+                className="flex justify-center items-center w-28 h-16 m-3 cursor-pointer border rounded-lg bg-[#00f2fe] hover:border-black"
+                onClick={() => setIsCross(true)}
+              >
                 <span className="hidden">Cross</span>
-                <FaTimes className="icon" />
+                <FaTimes className="text-2xl font-extrabold text-red-500" />
               </button>
-              <button className="game-button" onClick={() => setIsCross(false)}>
+              <button
+                className="flex justify-center items-center w-28 h-16 m-3 cursor-pointer border rounded-lg bg-[#00f2fe] hover:border-black"
+                onClick={() => setIsCross(false)}
+              >
                 <span className="hidden">Circle</span>
-                <FaRegCircle className="icon" />
+                <FaRegCircle className="text-2xl font-extrabold text-red-500" />
               </button>
             </section>
 
-            <section className="center">
+            <section className="flex items-center justify-center">
               <ToastContainer />
               <main>
                 <div>
                   {finalMessage ? (
                     <div>
                       <h3 className="text-center">{finalMessage}</h3>
-                      <div className="center">
+                      <div className="flex justify-center">
                         <PlayAgainButton onClick={onPlayAgainClick} />
                       </div>
                     </div>
                   ) : (
-                    <h3>{isCross ? 'Turn : Cross' : 'Turn : Circle'}</h3>
+                    <h3 className="p-3 text-2xl font-bold text-center">
+                      {isCross ? 'Turn : Cross' : 'Turn : Circle'}
+                    </h3>
                   )}
 
-                  <div className="ttc_grid">
+                  <div className="grid grid-cols-3 gap-4">
                     {gameArray.map((ele, i) => (
-                      <div className="game-card center" key={i} onClick={() => changeItem(i)}>
+                      <div
+                        className="md:w-24 md:h-24 w-32 flex justify-center items-center h-32 bg-[#00f2f2] border-2 border-black rounded-lg cursor-pointer"
+                        key={i}
+                        onClick={() => changeItem(i)}
+                      >
                         <Icon choice={gameArray[i]} />
                       </div>
                     ))}
