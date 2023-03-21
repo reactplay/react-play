@@ -5,7 +5,12 @@ When contributing to this repository, please first discuss the change you wish t
 
 Please note we have a [Code of Conduct](https://github.com/reactplay/react-play/blob/main/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
-## Pull Request Process
+
+ - [Pull Request Process](#prp)
+ - [Code of Conduct](#coc)
+ - [Commit Message Format](#commit)
+
+## <a name="prp"></a> Pull Request Process
 
 1. Ensure any install or build dependencies are removed before the end of the layer when doing a
    build.
@@ -16,7 +21,7 @@ Please note we have a [Code of Conduct](https://github.com/reactplay/react-play/
 4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you
    do not have permission to do that, you may request the second reviewer to merge it for you.
 
-## Code of Conduct
+## <a name="coc"></a> Code of Conduct
 
 ### Our Pledge
 
