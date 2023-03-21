@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import PlayHeader from 'common/playlists/PlayHeader';
-
-// Importing data
-import { GAME_ARRAY } from './data';
 
 // React toastify
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { FaTimes, FaRegCircle } from 'react-icons/fa';
-import PlayAgainButton from './PlayAgainButton';
-import Icon from './Icon';
+// ReactPlay Imports
+import PlayHeader from 'common/playlists/PlayHeader';
+
+// Importing data
+import { GAME_ARRAY, WINNING_COMBINATION } from './data';
+
+// Components
+import PlayAgainButton from './components/PlayAgainButton';
+import ButtonGroup from './components/ButtonGroup';
+import FinalMessage from './components/FinalMessage';
+import GameGrid from './components/GameGrid';
 
 function MultiplayerTicTacToe(props: any) {
   const [isCross, setIsCross] = useState(true);
@@ -19,32 +23,20 @@ function MultiplayerTicTacToe(props: any) {
   let count = 0;
 
   // ! Game Logic
-  // const findWinner = () => {
-  //   const WINNING_COMBINATION = [
-  //     [0, 1, 2],
-  //     [3, 4, 5],
-  //     [6, 7, 8],
-  //     [0, 3, 6],
-  //     [1, 4, 7],
-  //     [2, 5, 8],
-  //     [0, 4, 8],
-  //     [2, 4, 6]
-  //   ];
+  const findWinner = () => {
+    WINNING_COMBINATION.forEach((combination) => {
+      if (
+        GAME_ARRAY[combination[0]] === GAME_ARRAY[combination[1]] &&
+        GAME_ARRAY[combination[1]] === GAME_ARRAY[combination[2]] &&
+        GAME_ARRAY[combination[0]] !== ''
+      ) {
+        setFinalMessage(GAME_ARRAY[combination[0]] + ' is the winner!');
+        setIsFinished(true);
+      }
+    });
+  };
 
-  //   WINNING_COMBINATION.forEach((combination) => {
-  //     if (
-  //       GAME_ARRAY[combination[0]] === GAME_ARRAY[combination[1]] &&
-  //       GAME_ARRAY[combination[1]] === GAME_ARRAY[combination[2]] &&
-  //       GAME_ARRAY[combination[0]] !== ''
-  //     ) {
-  //       setFinalMessage(GAME_ARRAY[combination[0]] + ' is the winner!');
-  //       setIsFinished(true);
-  //     }
-  //   });
-  // };
-
-  // Play Again button click event
-
+  // ! Play Again button click event
   const onPlayAgainClick = () => {
     setIsCross(true);
     setFinalMessage('');
@@ -53,41 +45,41 @@ function MultiplayerTicTacToe(props: any) {
   };
 
   // ! Draw
-  // const checkDraw = () => {
-  //   GAME_ARRAY.forEach((pos) => {
-  //     if (pos === 'cross' || pos === 'circle') {
-  //       count++;
-  //     }
-  //     if (GAME_ARRAY.length === 9 && GAME_ARRAY.indexOf('') < 0) {
-  //       setFinalMessage('Game Draw!');
-  //       setIsFinished(true);
-  //     }
-  //   });
+  const checkDraw = () => {
+    GAME_ARRAY.forEach((pos) => {
+      if (pos === 'cross' || pos === 'circle') {
+        count++;
+      }
+      if (GAME_ARRAY.length === 9 && GAME_ARRAY.indexOf('') < 0) {
+        setFinalMessage('Game Draw!');
+        setIsFinished(true);
+      }
+    });
 
-  //   <div className="center">
-  //     <PlayAgainButton onClick={onPlayAgainClick} />
-  //   </div>;
-  // };
+    <div className="center">
+      <PlayAgainButton onClick={onPlayAgainClick} />
+    </div>;
+  };
 
   // ! Card on click
-  // const changeItem = (index: number) => {
-  //   if (isFinished) {
-  //     return toast('Game is already finished!', { position: 'bottom-center', type: 'success' });
-  //   }
+  const changeItem = (index: number) => {
+    if (isFinished) {
+      return toast('Game is already finished!', { position: 'bottom-center', type: 'success' });
+    }
 
-  //   if (GAME_ARRAY[index] === '') {
-  //     GAME_ARRAY[index] = isCross ? 'cross' : 'circle';
-  //     setIsCross(!isCross);
-  //   } else {
-  //     return toast('This place is already occupied! Hello', {
-  //       position: 'bottom-center',
-  //       type: 'error'
-  //     });
-  //   }
+    if (GAME_ARRAY[index] === '') {
+      GAME_ARRAY[index] = isCross ? 'cross' : 'circle';
+      setIsCross(!isCross);
+    } else {
+      return toast('This place is already occupied! Hello', {
+        position: 'bottom-center',
+        type: 'error'
+      });
+    }
 
-  //   findWinner();
-  //   checkDraw();
-  // };
+    findWinner();
+    checkDraw();
+  };
 
   return (
     <>
@@ -97,51 +89,19 @@ function MultiplayerTicTacToe(props: any) {
           {/* Your Code Starts Here */}
           <div>
             <h1 className="text-2xl text-center md:text-3xl">Multiplayer Tic Tac Toe</h1>
-            <section className="flex justify-center">
-              <button
-                className="flex justify-center items-center w-28 h-16 m-3 cursor-pointer border rounded-lg bg-[#00f2fe] hover:border-black"
-                onClick={() => setIsCross(true)}
-              >
-                <span className="hidden">Cross</span>
-                <FaTimes className="text-2xl font-extrabold text-red-500" />
-              </button>
-              <button
-                className="flex justify-center items-center w-28 h-16 m-3 cursor-pointer border rounded-lg bg-[#00f2fe] hover:border-black"
-                onClick={() => setIsCross(false)}
-              >
-                <span className="hidden">Circle</span>
-                <FaRegCircle className="text-2xl font-extrabold text-red-500" />
-              </button>
-            </section>
+            <ButtonGroup setIsCross={setIsCross} />
 
             <section className="flex items-center justify-center">
               <ToastContainer />
               <main>
                 <div>
-                  {finalMessage ? (
-                    <div>
-                      <h3 className="text-center">{finalMessage}</h3>
-                      <div className="flex justify-center">
-                        <PlayAgainButton onClick={onPlayAgainClick} />
-                      </div>
-                    </div>
-                  ) : (
-                    <h3 className="p-3 text-2xl font-bold text-center">
-                      {isCross ? 'Turn : Cross' : 'Turn : Circle'}
-                    </h3>
-                  )}
+                  <FinalMessage
+                    finalMessage={finalMessage}
+                    onPlayAgainClick={onPlayAgainClick}
+                    isCross={isCross}
+                  />
 
-                  <div className="grid grid-cols-3 gap-4">
-                    {GAME_ARRAY.map((ele, i) => (
-                      <div
-                        className="md:w-24 md:h-24 w-32 flex justify-center items-center h-32 bg-[#00f2f2] border-2 border-black rounded-lg cursor-pointer"
-                        key={i}
-                        onClick={() => changeItem(i)}
-                      >
-                        <Icon choice={GAME_ARRAY[i]} />
-                      </div>
-                    ))}
-                  </div>
+                  <GameGrid changeItem={changeItem} />
                 </div>
               </main>
             </section>
