@@ -25,7 +25,7 @@ const DynamicBanner = ({ randomPlay }) => {
           };
         });
     }
-  }, [JSON.stringify(randomPlay)]);
+  }, [randomPlay]);
 
   return (
     <Fragment>
