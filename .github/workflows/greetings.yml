@@ -19,7 +19,7 @@ jobs:
           issue-message: '<h3>Hey! contributor, thank you for opening an Issue 🎉.</h3>'
           pr-message: '<h3>Hey! contributor, thank you for opening a Pull Request 🎉.</h3>'
           footer: | 
-          @reactplay/maintainers will review your submission soon and give you helpful feedback. 
-          If you're interested in continuing your contributions to open source and want to be a part of a welcoming and fantastic community, we invite you to join our [ReactPlay Discord Community](https://discord.gg/vrTxWUP8Am). 
-          Show your support by <b>starring ⭐</b> this repository. Thank you and we appreciate your contribution to <b>open source!</b> 
-          **Stale Marking** : **After 30 days of inactivity this issue/PR will be marked as stale issue/PR and it will be closed and locked in 7 days if no further activity occurs.**
+           @reactplay/maintainers will review your submission soon and give you helpful feedback. 
+           If you're interested in continuing your contributions to open source and want to be a part of a welcoming and fantastic community, we invite you to join our [ReactPlay Discord Community](https://discord.gg/vrTxWUP8Am). 
+           Show your support by <b>starring ⭐</b> this repository. Thank you and we appreciate your contribution to <b>open source!</b> 
+           **Stale Marking** : **After 30 days of inactivity this issue/PR will be marked as stale issue/PR and it will be closed and locked in 7 days if no further activity occurs.**
