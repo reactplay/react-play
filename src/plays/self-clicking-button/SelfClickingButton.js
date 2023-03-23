@@ -18,10 +18,12 @@ function SelfClickingButton(props) {
     const interval = setInterval(() => {
       buttonRef.current.click();
     }, 2000);
+    
     return () => {
       clearInterval(interval);
     };
   }, []);
+
   return (
     <>
       <div className="play-details">
