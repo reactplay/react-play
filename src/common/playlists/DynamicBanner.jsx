@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import thumbPlay from 'images/thumb-play.png';
 import { Link } from 'react-router-dom';
 import { MdArrowRightAlt } from 'react-icons/md';
-
+import Loader from "../spinner/spinner"
 const DynamicBanner = ({ randomPlay }) => {
   const [coverImage, setCoverImage] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -28,13 +28,15 @@ const DynamicBanner = ({ randomPlay }) => {
             message: `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
           };
         });
+        setLoading(false);
     }
   }, [randomPlay]);
 
-  if (loading) return <p>loading...</p>;
+
 
   return (
     <Fragment>
+    {loading === true ? <Loader/> :  (
       <div
         className="dynamic-banner-container"
         style={{
@@ -54,6 +56,8 @@ const DynamicBanner = ({ randomPlay }) => {
           {/* <Link to={``}><button className='banner-button'>See Creator's profile</button></Link> */}
         </div>
       </div>
+    )}
+      
     </Fragment>
   );
 };
