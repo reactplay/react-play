@@ -1,6 +1,7 @@
 import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
 import { useState, useEffect, useRef } from 'react';
+import { format } from 'date-fns';
 
 // WARNING: Do not change the entry componenet name
 function SelfClickingButton(props) {
@@ -23,6 +24,8 @@ function SelfClickingButton(props) {
       clearInterval(interval);
     };
   }, []);
+  const currentTime = new Date();
+  const formattedTime = format(currentTime, 'HH:mm:ss');
 
   return (
     <>
@@ -33,15 +36,7 @@ function SelfClickingButton(props) {
           <div className="self-click">
             <button ref={buttonRef}> Self Click Button</button>
             <p className="output">
-              At{' '}
-              <u>
-                {new Date().getHours() +
-                  ':' +
-                  new Date().getMinutes() +
-                  ':' +
-                  new Date().getSeconds()}
-              </u>{' '}
-              clicked <u>{counter}</u> times
+              At <mark>{formattedTime}</mark> clicked <mark>{counter}</mark> times
             </p>
           </div>
           {/* Your Code Ends Here */}

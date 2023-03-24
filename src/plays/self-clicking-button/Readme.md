@@ -1,6 +1,6 @@
 # Self Clicking Button
 
-It is be a simple play where a button is programmatically clicked every 2 minutes.
+It is be a simple play where a button is programmatically clicked every 2 seconds.
 
 ## Play Demographic
 
