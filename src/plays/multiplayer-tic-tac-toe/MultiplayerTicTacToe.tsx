@@ -97,8 +97,8 @@ function MultiplayerTicTacToe(props: any) {
                 <div>
                   <FinalMessage
                     finalMessage={finalMessage}
-                    onPlayAgainClick={onPlayAgainClick}
                     isCross={isCross}
+                    onPlayAgainClick={onPlayAgainClick}
                   />
 
                   <GameGrid changeItem={changeItem} />
