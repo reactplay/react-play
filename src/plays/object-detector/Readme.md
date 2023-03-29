@@ -23,7 +23,7 @@ Obvously this is a react play, means javascript project. So I use TensorFlow.js 
 
 - User: senali-d
 - Gihub Link: https://github.com/senali-d
-- Blog:
+- Blog:  https://reactplay.io/plays/senali-d/object-detector/
 - Video: https://www.stack-stream.com/v/object-detector-with-tenserflowjs
 
 ## Implementation Details
