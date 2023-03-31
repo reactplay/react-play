@@ -7,7 +7,7 @@ import Loader from './components/Loader';
 import TubeTunesLogo from './components/tubeTuneLogo.svg';
 
 // WARNING: Do not change the entry componenet name
-function Tube2tunes(props) {
+function Tube2Tunes(props) {
   // Your Code Start below.
 
   const inputUrlRef = useRef();
@@ -154,4 +154,4 @@ function Tube2tunes(props) {
   );
 }
 
-export default Tube2tunes;
+export default Tube2Tunes;
