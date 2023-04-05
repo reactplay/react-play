@@ -90,40 +90,59 @@ Once forked, you can clone the repo by clicking the `Clone or Download` button o
 
 Please change the directory after cloning the repository using the `cd <folder-name>` command.
 
-> **Note:** Please do not remove the `.env.development` file from the root folder. It contains all the evironment variables required for development.
+> **Note:** Please do not remove the `.env.development` file from the root folder. It contains all the environment variables required for development.
 
 ### ⬇️ Install Dependencies
 
-Next, install the dependencies by running the following command in the `react-play` repo:
-
-```bash
-npm install
-```
-
-Or
+Next, install the dependencies by running the following command in the `react-play` repo. we recommend using `yarn` but you can install using `npm` too
 
 ```bash
 yarn install
 ```
 
+Or
+```
+npm install
+```
+
+if you don't have `yarn` installed on your PC, follow the steps below to install it..
+
+**Windows**
+1. open your command prompt as administrator.
+2. write `corepack enable` and hit enter.
+3. then `npm install --global yarn`
+
+**Linux**
+1. open terminal and hit `npm install --global yarn`
+
+**MacOS**
+1. open terminal and hit `npm install --global yarn`
+or
+`brew install yarn`
+
+**Or Download Package**
+If you are unable to install yarn following the above-mentioned process, then you can simply download the package and install it. Visit the official website of Yarn; there you can just expand the "Alternative" section and it will ask for the version to download for Windows, Linux, or Mac.
+`https://classic.yarnpkg.com/en/docs/install#windows-stable`
+
+
 > **Note**: `ReactPlay` runs on React 18. However, some of our dependencies are yet to upgrade to version 18. So please use the following command when you face difficulties installing the dependencies. Also, ensure to use Node.js version >= 16.x
 
-```bash
+```
 npm install --legacy-peer-deps
 ```
+
 
 ### 🦄 Start the Development Mode
 
 Use the following command to start the app in the development mode:
 
 ```bash
-npm start
-```
-
-Or
-
-```bash
 yarn start
+```
+or if you installed dependencies using ``npm`` use below command
+
+```
+npm start
 ```
 
 **Note**: The `start` script automatically invokes "linters" process. Should you need to run the app without `lint` the use `start:nolint` instead.
@@ -140,32 +159,29 @@ Use the following command to format and lint the code:
 #### Format the code
 
 ```bash
-npm run format
-
-#OR
-
 yarn run format
+```
+OR
+```
+npm run format
 ```
 
 #### Lint the code
-
+*to check the linting issue*
 ```bash
-# to check the linting issue
-
-npm run lint
-
-#OR
-
 yarn run lint
-
-
-# to fix the linting issue
-
-npm run lint:fix
-
-#OR
-
+```
+OR
+```
+npm run lint
+```
+*to fix the linting issue*
+```bash
 yarn run lint:fix
+```
+OR
+```
+npm run lint:fix
 ```
 
 ### 🧱 Build the App for Production
@@ -173,13 +189,11 @@ yarn run lint:fix
 Use the following command to build the app for production:
 
 ```bash
-npm run build
-```
-
-Or
-
-```bash
 yarn build
+```
+OR
+```
+npm build
 ```
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
@@ -189,13 +203,11 @@ It builds the app for production to the `build` folder. It correctly bundles Rea
 Use the following command to run cypress locally:
 
 ```bash
-npm run cypress:open
-```
-
-Or
-
-```bash
 yarn cypress:open
+```
+OR
+```
+npm run cypress:open
 ```
 
 It will open the cypress dashboard, through which you need to select `E2E Testing`.
