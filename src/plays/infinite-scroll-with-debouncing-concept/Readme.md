@@ -1,6 +1,6 @@
 # Infinite Scroll with Debouncing Concept
 
-Debouncing added to increase performance by decreasing number of api calls.    Used useEffect hook for api calls and added return inside it to cleanup timers.
+Debouncing added to increase performance by decreasing number of api calls. Used useEffect hook for api calls and added return inside it to cleanup timers.
 
 ## Play Demographic
 
@@ -11,8 +11,8 @@ Debouncing added to increase performance by decreasing number of api calls.    U
 
 - User: whynotsantosh
 - Gihub Link: https://github.com/whynotsantosh
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 

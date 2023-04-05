@@ -18,9 +18,9 @@ function InfiniteScrollWithDebouncingConcept(props) {
   const renderItem = ({ title, key }, ref) => {
     return (
       <div
+        className="text-lg text-cyan-800 box-border flex-wrap w-54 p-4 border-4 rounded-md border-orange-300 overflow-x-auto"
         key={key + '_' + title}
         ref={ref}
-        className="text-lg text-cyan-800 box-border flex-wrap w-54 p-4 border-4 rounded-md border-orange-300 overflow-x-auto"
       >
         {title}
       </div>
@@ -49,6 +49,7 @@ function InfiniteScrollWithDebouncingConcept(props) {
       }
     });
   };
+
   return (
     <>
       <div className="play-details">
@@ -58,18 +59,18 @@ function InfiniteScrollWithDebouncingConcept(props) {
           <div>
             <h1 className="m-2 text-gray-800 text-lg font-bold">Welcome to Infinite Scrolling</h1>
             <input
-              type="text"
+              className="border-solid border-2 border-black rounded-md m-2"
               placeholder=" Start typing..."
+              type="text"
               value={apiQuery}
               onChange={handleSearchInput}
-              className="border-solid border-2 border-black rounded-md m-2"
             />
             {apiQuery !== '' && (
               <InfiniteScroll
-                renderListItem={renderItem}
+                apiQuery={apiQuery}
                 getData={getData}
                 listData={data}
-                apiQuery={apiQuery}
+                renderListItem={renderItem}
               />
             )}
           </div>

@@ -11,9 +11,8 @@
 /* Filter*/
 .filter {
   width: 100%;
-  padding: .5rem 1.6rem;
+  padding: 0.5rem 1.6rem;
   height: 100%;
-
 }
 
 .filter .filter-area {
@@ -25,11 +24,9 @@
   height: 100%;
 }
 
-.filter button{
+.filter button {
   color: var(--color-neutral-20);
 }
-
-
 
 .search-input .search-input-text {
   box-sizing: border-box;
