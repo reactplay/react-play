@@ -4,7 +4,7 @@ import { IoAddSharp } from 'react-icons/io5';
 import { RiChatNewLine } from 'react-icons/ri';
 import LevelBadge from 'common/components/LevelBadge';
 import './playIdeas.css';
-import { createPlayDocsLink } from 'constants';
+import { CREATE_PLAY_DOC_LINK } from 'constants';
 
 const PlayIdeas = () => {
   const [ideas, setIdeas] = useState([]);
@@ -145,7 +145,7 @@ const PlayIdeas = () => {
                   ) : (
                     <a
                       className="btn-primary action-btn"
-                      href={createPlayDocsLink}
+                      href={CREATE_PLAY_DOC_LINK}
                       rel="noopener noreferrer"
                       target="_blank"
                     >

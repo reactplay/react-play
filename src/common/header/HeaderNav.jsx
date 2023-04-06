@@ -9,7 +9,7 @@ import SocialShare from 'common/components/SocialShare';
 import { GoX } from 'react-icons/go';
 import { Modal, Box, Typography, Menu } from '@mui/material';
 import { useSearchContext } from 'common/search/search-context';
-import { createPlayDocsLink } from 'constants';
+import { CREATE_PLAY_DOC_LINK } from 'constants';
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useSearchContext();
@@ -95,7 +95,7 @@ const HeaderNav = ({ showBrowse }) => {
               <a
                 className="app-header-btn app-header-btn--primary umami--click--create-play"
                 data-testid="create-btn"
-                href={createPlayDocsLink}
+                href={CREATE_PLAY_DOC_LINK}
                 rel="noopener noreferrer"
                 target="_blank"
               >

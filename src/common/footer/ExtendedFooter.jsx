@@ -5,7 +5,7 @@ import { FaDiscord } from 'react-icons/fa';
 import { BsTwitter, BsGithub } from 'react-icons/bs';
 import LogoLight from 'images/img-logo-light.svg';
 import { useSearchContext } from 'common/search/search-context';
-import { createPlayDocsLink } from 'constants';
+import { CREATE_PLAY_DOC_LINK } from 'constants';
 
 const ExtendedFooter = () => {
   const { showShareModal, setShowShareModal } = useSearchContext();
@@ -121,7 +121,7 @@ const ExtendedFooter = () => {
           <div className="flex flex-wrap gap-1">
             <a
               className="btn-primary mr-2"
-              href={createPlayDocsLink}
+              href={CREATE_PLAY_DOC_LINK}
               rel="noopener noreferrer"
               target="_blank"
             >
