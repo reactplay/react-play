@@ -4,6 +4,7 @@ import { toKebabCase } from 'common/services/string';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './play-created.scss';
+import { createPlayDocsLink } from 'constants';
 
 const PlayCreated = () => {
   const { playid } = useParams();
@@ -94,7 +95,7 @@ const PlayCreated = () => {
             Refer{' '}
             <a
               className="play-create-anchor"
-              href="https://docs.reactplay.io/How-To-Guides/how-to-create-play"
+              href={createPlayDocsLink}
               rel="noopener noreferrer"
               target="_blank"
             >

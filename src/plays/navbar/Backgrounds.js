@@ -3,6 +3,7 @@ import ideas from './backgroundImages/bg_ideas.png';
 import join from './backgroundImages/bg_join.png';
 import create from './backgroundImages/bg_create.png';
 import search from './backgroundImages/bg_search.png';
+import { createPlayDocsLink } from 'constants';
 const Backgrounds = [
   {
     id: 1,
@@ -39,7 +40,7 @@ const Backgrounds = [
     discription: 'Ready to create a new play? It is super easy, click down below to get started.',
     statement: 'Create Now',
     image: create,
-    url: 'https://docs.reactplay.io/How-To-Guides/how-to-create-play'
+    url: createPlayDocsLink
   },
   {
     id: 5,
