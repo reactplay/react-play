@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ReactComponent as Image404 } from 'images/img-404.svg';
 import './404.css';
 import Loader from 'common/spinner/spinner';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const PageNotFound = ({ loading, msg, details, Image }) => {
   const [timer, setTimer] = useState(5);
@@ -16,7 +16,7 @@ const PageNotFound = ({ loading, msg, details, Image }) => {
     return () => {
       clearInterval(interval);
       if (timer === 0) {
-        return navigate('/');
+        return navigate('/plays');
       }
     };
   }, [timer]);
@@ -34,11 +34,7 @@ const PageNotFound = ({ loading, msg, details, Image }) => {
       )}
       <p className="page-404-lead">{msg}</p>
       <p className="page-404-desc">
-        {details}{' '}
-        <NavLink className="link" to="/">
-          home
-        </NavLink>
-        . Redirecting in {timer} sec.
+        {details}. Redirecting in {timer} sec.
       </p>
     </main>
   );
@@ -46,7 +42,7 @@ const PageNotFound = ({ loading, msg, details, Image }) => {
 
 PageNotFound.defaultProps = {
   msg: 'Looks like you are lost',
-  details: "Why don't you go back to",
+  details: "Why don't you go back to home.",
   Image: null
 };
 

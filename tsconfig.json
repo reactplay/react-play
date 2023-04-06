@@ -1,17 +1,32 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "baseUrl": "src",
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "es6",
-    "lib": ["es2022", "ES6", "DOM"],
-    "target": "es6",
-    "allowJs": true,
+    "target": "ES6",
+    "baseUrl": ".",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
     "moduleResolution": "node",
-    "suppressImplicitAnyIndexErrors": false,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": ["vite/client", "node"],
+        "paths": {
+        "@/*": ["./src/*"],
+        "common":  ["./src/common/*"],
+        "ErrorBondary":  ["./src/ErrorBondary/*"],
+        "images":  ["./src/images/*"],
+        "meta":  ["./src/meta/*"],
+        "plays":  ["./src/plays/*"]
+      },
   },
-  "include": ["src/**/*", "public/serviceWorker.js", "src/globals.d.ts"]
+  "include": ["src/**/*", "vite.config.ts", "public/serviceWorker.js", "src/globals.d.ts"],
+  "exclude": ["node_modules", "dist"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

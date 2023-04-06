@@ -1,0 +1,28 @@
+/* enter stlyes here */
+$weather_white: #fff;
+$weather_gray: #cdcdcd;
+$container_bg: url('https://images.unsplash.com/photo-1566352207769-3a591a2c9567?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+
+.weather-container {
+  background-image: $container_bg;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.weather-report {
+  svg {
+    font-size: 1.35rem;
+  }
+
+  div {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    align-items: center;
+
+    strong {
+      font-size: 1.1rem;
+      color: $weather_white;
+    }
+  }
+}

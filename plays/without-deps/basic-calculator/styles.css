@@ -1,0 +1,51 @@
+/* enter stlyes here */
+.calculator_grid_container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, yellow, green, yellow);
+  display: grid;
+  place-items: center;
+}
+.calculator_grid {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+.calculator_grid > button {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+.calculator_grid > button:hover,
+.calculator_grid > button:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.calculator_grid .span_two {
+  grid-column: span 2;
+}
+.calculator_grid .output {
+  grid-column: 1/ -1;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.calculator_grid .output .previous_operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+.calculator_grid .output .current_operand {
+  color: white;
+  font-size: 2.5rem;
+}
