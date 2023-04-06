@@ -94,7 +94,7 @@ const HeaderNav = ({ showBrowse }) => {
               <a
                 className="app-header-btn app-header-btn--primary umami--click--create-play"
                 data-testid="create-btn"
-                href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
+                href="https://docs.reactplay.io/How-To-Guides/how-to-create-play"
                 rel="noopener noreferrer"
                 target="_blank"
               >

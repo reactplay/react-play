@@ -144,7 +144,7 @@ const PlayIdeas = () => {
                   ) : (
                     <a
                       className="btn-primary action-btn"
-                      href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
+                      href="https://docs.reactplay.io/How-To-Guides/how-to-create-play"
                       rel="noopener noreferrer"
                       target="_blank"
                     >

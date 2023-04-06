@@ -39,7 +39,7 @@ const Backgrounds = [
     discription: 'Ready to create a new play? It is super easy, click down below to get started.',
     statement: 'Create Now',
     image: create,
-    url: 'https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md'
+    url: 'https://docs.reactplay.io/How-To-Guides/how-to-create-play'
   },
   {
     id: 5,

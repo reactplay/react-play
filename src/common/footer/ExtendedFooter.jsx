@@ -120,7 +120,7 @@ const ExtendedFooter = () => {
           <div className="flex flex-wrap gap-1">
             <a
               className="btn-primary mr-2"
-              href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
+              href="https://docs.reactplay.io/How-To-Guides/how-to-create-play"
               rel="noopener noreferrer"
               target="_blank"
             >
