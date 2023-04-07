@@ -163,21 +163,21 @@ const FilterPlays = ({ onChange, query }) => {
                   checked={selected}
                   checkedIcon={checkedIcon}
                   icon={icon}
-                  style={{ marginRight: 8 }}
+                  style={{ padding: 0 }}
                 />
-                <div className="flex">
+                <div className="flex md-ml-8 min-w-0 ml-2 items-center">
                   <span className="rounded-full">
                     {field.avatar && getOptionNode(field, option)[field.avatar] ? (
-                      <span className="flex items-center justify-center h-12 w-16 mr-4">
+                      <span className="flex items-center justify-center md-h-12 h-8 md-w-16 w-8 mr-4">
                         <img
                           alt="avatar"
-                          className="h-12 w-12 rounded-full"
+                          className="md-h-12 w-8 md-w-12 h-8 rounded-full"
                           src={getOptionNode(field, option)[field.avatar]}
                         />
                       </span>
                     ) : null}
                   </span>
-                  <span className="flex items-center">
+                  <span className="break-words min-w-0">
                     {field.node ? option[field.node][field.fieldName] : option[field.fieldName]}
                   </span>
                 </div>
@@ -229,7 +229,7 @@ const FilterPlays = ({ onChange, query }) => {
       >
         {FIELD_TEMPLATE.map((field, field_i) => {
           return (
-            <div className="flex p-2" key={field_i}>
+            <div className="flex flex-col md:flex-row p-2" key={field_i}>
               <div className="w-32">
                 {field.display}
                 {field.required ? '*' : ''}
