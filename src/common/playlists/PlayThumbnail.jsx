@@ -50,7 +50,7 @@ const PlayThumbnail = ({ play }) => {
       // if it is not passed as a meta data
       // check in the play folder for a cover image
       // with the name cover.png
-      import(`plays/${play.slug}/cover.png`)
+      import(`../../plays/${play.slug}/cover.png`)
         .then((Cover) => {
           setCover(Cover.default);
         })

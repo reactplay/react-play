@@ -1,5 +1,5 @@
-import { plural, sleep, randomChoice } from './utils';
-import { COMMENTARY } from './commentary';
+import { plural, sleep, randomChoice } from './utils.js';
+import { COMMENTARY } from './commentary.js';
 
 export class GameState {
   constructor(totalBalls, totalWickets, target) {

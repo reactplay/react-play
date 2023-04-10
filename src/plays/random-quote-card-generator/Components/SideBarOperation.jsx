@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
-import { BsAspectRatio, BsDownload, BsTablet, BsSquare } from 'react-icons/bs';
-//import { BsAspectRatio, BsDownload } from 'react-icons/bs';
-//import { TbRectangleVertical, TbSquare } from 'react-icons/tb';
+import { BsAspectRatio, BsDownload } from 'react-icons/bs';
+import { TbRectangleVertical, TbSquare } from 'react-icons/tb';
 import { VscSymbolColor } from 'react-icons/vsc';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { FiRepeat } from 'react-icons/fi';
@@ -228,7 +227,7 @@ const SideBarOperation = ({
             } `}
             onClick={() => handleAspectRatioSelection('Rectangle')}
           >
-            <BsTablet />
+            <TbRectangleVertical />
             <p className="text-xs sm:text-base">(9:16)</p>
           </div>
           <div
@@ -237,7 +236,7 @@ const SideBarOperation = ({
             } `}
             onClick={() => handleAspectRatioSelection('Square')}
           >
-            <BsSquare /> <p className="text-xs sm:text-base">(1:1)</p>
+            <TbSquare /> <p className="text-xs sm:text-base">(1:1)</p>
           </div>
         </div>
 

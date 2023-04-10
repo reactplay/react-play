@@ -14,7 +14,7 @@ const DynamicBanner = ({ randomPlay }) => {
       setLoading(false);
     } else {
       setLoading(true);
-      import(`plays/${randomPlay.slug}/cover.png`)
+      import(`../../plays/${randomPlay.slug}/cover.png`)
         .then((Cover) => {
           setCoverImage(Cover.default);
           setLoading(false);

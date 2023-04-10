@@ -38,7 +38,7 @@ function PlayMeta() {
       /**
        * Try to Fetch the local cover image
        */
-      const response = await import(`plays/${playObj.slug}/cover.png`);
+      const response = await import(`../../plays/${playObj.slug}/cover.png`);
 
       metaImg = getProdUrl(response.default);
       ogTagImg = getProdUrl(response.default);

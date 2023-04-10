@@ -37,7 +37,7 @@ function Tube2tunes(props) {
       method: 'get',
       url: 'https://youtube-mp36.p.rapidapi.com/dl',
       headers: {
-        'X-RapidAPI-Key': process.env.VITE_TUBETUNES_APIKEY,
+        'X-RapidAPI-Key': process.env.REACT_APP_TUBETUNES_APIKEY,
         'X-RapidAPI-Host': 'youtube-mp36.p.rapidapi.com'
       },
       params: {
