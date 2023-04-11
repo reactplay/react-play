@@ -29,21 +29,22 @@ function InfiniteScrollWithDebouncingConcept(props) {
 
   // Function to fetch the data from api
   const getData = (apiQuery, pageNumber) => {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve, reject) => {
       if (apiQuery) {
         try {
-          const promise = await fetch(
+          const promise = fetch(
             'https://openlibrary.org/search.json?' +
               new URLSearchParams({
                 q: apiQuery,
                 page: pageNumber
               })
-          );
-          const data = await promise.json();
-          resolve();
-          setData((prevData) => [...prevData, ...data.docs]);
+          ).then((res) => {
+            const data = res.json().then((data) => {
+              resolve();
+              setData((prevData) => [...prevData, ...data.docs]);
+            });
+          });
         } catch (err) {
-          console.log('Error fetching data', err);
           reject();
         }
       }
