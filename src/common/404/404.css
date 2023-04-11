@@ -68,3 +68,7 @@
   bottom: 0;
   /* background-color: var(--color-neutral-90); */
 }
+
+.link {
+  text-decoration: underline;
+}
