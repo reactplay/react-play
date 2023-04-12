@@ -101,10 +101,10 @@ const Header = () => {
   return (
     <>
       <header
-        className={`app-header ${
+        className={`app-header app-header-home ${
           showHideBits.setHeaderStyle
             ? ''
-            : ` app-header-home ${
+            : `${
                 process.env.REACT_APP_ACTIVITIES_ON === 'true' && showHideBits.showActivityTimer
                   ? 'app-header-home--promo'
                   : null
