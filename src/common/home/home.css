@@ -170,6 +170,11 @@
     flex-direction: column;
     width: 80%;
   }
+
+  .app-home-body .body-c2a .body-c2a-btn {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /* Video */
