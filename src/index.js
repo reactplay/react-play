@@ -1,13 +1,16 @@
-import RouteDefs from 'common/routing/RouteDefs';
-import { SearchContextProvider } from 'common/search/search-context';
-import 'index.css';
+// Library imports
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import reportWebVitals from 'reportWebVitals';
-import register from './registerServiceWorker';
+import 'react-toastify/dist/ReactToastify.css';
+
+// Local imports
+import RouteDefs from 'common/routing/RouteDefs';
+import { SearchContextProvider } from 'common/search/search-context';
 import ErrorBoundry from './ErrorBoundary/ErrorBoundary';
 import Notification from 'common/components/Notification';
-import 'react-toastify/dist/ReactToastify.css';
+import register from './registerServiceWorker';
+import reportWebVitals from 'reportWebVitals';
+import 'index.css';
 
 /** removing console statement in react prod build */
 /* eslint-disable no-console */
