@@ -28,6 +28,7 @@ jobs:
             npm install --legacy-peer-deps
           start: npm start
           wait-on: "http://localhost:3000"
+          wait-on-timeout: 180
           browser: chrome
         env:
           # pass GitHub token to detect new build vs re-run build
