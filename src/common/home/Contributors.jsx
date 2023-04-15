@@ -1,7 +1,13 @@
 import useContributors from 'common/hooks/useContributors';
+import { useNavigate } from 'react-router-dom';
 
 const Contributors = () => {
   const { data, error, isLoading } = useContributors(true);
+  const navigate = useNavigate(null);
+  const handleSeeAllContributors = () => {
+    console.log('clicked');
+    navigate('/allcontributors');
+  };
 
   return (
     <>
@@ -38,6 +44,7 @@ const Contributors = () => {
             </li>
           ))}
       </ul>
+      <button onClick={() => handleSeeAllContributors()}>See All</button>
     </>
   );
 };

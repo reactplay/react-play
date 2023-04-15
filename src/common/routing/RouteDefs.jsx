@@ -12,6 +12,7 @@ import {
   LeaderBoard,
   PageNotFound
 } from 'common';
+import AllContributors from 'common/home/AllContributors';
 import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NhostClient, NhostReactProvider } from '@nhost/react';
@@ -28,6 +29,7 @@ const RouteDefs = () => {
       path: '/',
       title: 'ReactPlay - One app to learn, create, and share ReactJS projects.'
     },
+    { path: '/allcontributors', title: ' All Contributorss' },
     { path: '/plays', title: 'ReactPlay - Plays' },
     { path: '/ideas', title: 'ReactPlay - Ideas' },
     { path: '/tech-stacks', title: 'ReactPlay - Tech Stacks' },
@@ -65,6 +67,7 @@ const RouteDefs = () => {
                       </Route>
                   </Route> */}
           </Route>
+          <Route element={<AllContributors />} path="/allcontributors" />
           <Route element={<App />} path="/contributors">
             <Route element={<App />} path=":email">
               <Route element={<BadgesDashboard />} path="badges" />
