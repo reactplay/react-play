@@ -106,7 +106,7 @@ const ExtendedFooter = () => {
               {' '}
               <img
                 alt="Deploys by Netlify"
-                src="https://www.netlify.com/v3/img/components/netlify-light.svg"
+                src="https://www.netlify.com/v3/img/global/badges/netlify-color-accent.svg"
               />{' '}
             </a>
           </p>
