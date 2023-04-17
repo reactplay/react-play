@@ -13,6 +13,9 @@
 # production
 /build
 
+# development
+/dev-dist
+
 # misc
 .env
 .DS_Store

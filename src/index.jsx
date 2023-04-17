@@ -4,7 +4,6 @@ import './index.css';
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import register from './registerServiceWorker';
 import ErrorBoundry from './ErrorBoundary/ErrorBoundary';
 import Notification from 'common/components/Notification';
 import 'react-toastify/dist/ReactToastify.css';
@@ -54,8 +53,6 @@ const Index = () => {
 const container = document.getElementById('root');
 createRoot(container).render(<Index />);
 
-// Makes the app to work offline and load faster
-register();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -23,7 +23,7 @@ export default function CityInput({
       setIsLoading(true);
 
       const res = await fetch(
-        `${WEATHER_API_BASE_URL}/weather?q=${cityInput}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+        `${WEATHER_API_BASE_URL}/weather?q=${cityInput}&appid=${process.env.VITE_WEATHER_API_KEY}&units=metric`
       );
       const json = await res.json();
 

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { MdManageSearch } from 'react-icons/md';
 
 const DefaultBanner = () => {
-  const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
+  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
 
   return (
     <div>

@@ -193,42 +193,15 @@ dependencies:
   url:
     specifier: ^0.11.0
     version: 0.11.0
-  vite-plugin-env-compatible:
-    specifier: ^1.1.1
-    version: 1.1.1
   vite-plugin-environment:
     specifier: ^1.1.3
     version: 1.1.3(vite@4.2.1)
-  vite-plugin-html-env:
-    specifier: ^1.2.7
-    version: 1.2.7(vite@4.2.1)
   vite-plugin-pwa:
     specifier: ^0.14.7
     version: 0.14.7(vite@4.2.1)(workbox-build@6.5.4)(workbox-window@6.5.4)
   web-vitals:
     specifier: ^2.1.0
     version: 2.1.0
-  workbox-cacheable-response:
-    specifier: ^6.5.4
-    version: 6.5.4
-  workbox-core:
-    specifier: ^6.5.4
-    version: 6.5.4
-  workbox-expiration:
-    specifier: ^6.5.4
-    version: 6.5.4
-  workbox-precaching:
-    specifier: ^6.5.4
-    version: 6.5.4
-  workbox-routing:
-    specifier: ^6.5.4
-    version: 6.5.4
-  workbox-strategies:
-    specifier: ^6.5.4
-    version: 6.5.4
-  workbox-window:
-    specifier: ^6.5.4
-    version: 6.5.4
 
 devDependencies:
   '@testing-library/jest-dom':
@@ -330,6 +303,45 @@ devDependencies:
   vite-tsconfig-paths:
     specifier: ^4.0.7
     version: 4.0.7(typescript@5.0.3)(vite@4.2.1)
+  workbox-background-sync:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-broadcast-update:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-cacheable-response:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-core:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-expiration:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-google-analytics:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-navigation-preload:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-precaching:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-range-requests:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-routing:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-strategies:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-streams:
+    specifier: ^6.5.4
+    version: 6.5.4
+  workbox-window:
+    specifier: ^6.5.4
+    version: 6.5.4
 
 packages:
 
@@ -4157,7 +4169,6 @@ packages:
 
   /@types/trusted-types@2.0.3:
     resolution: {integrity: sha512-NfQ4gyz38SL8sDNrSixxU2Os1a5xcdFxipAFxYEuLUlvU2uDwS4NUpsImcf1//SlWItCVMMLiylsxbmNMToV/g==}
-    dev: false
 
   /@types/use-sync-external-store@0.0.3:
     resolution: {integrity: sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==}
@@ -7631,7 +7642,6 @@ packages:
 
   /idb@7.1.1:
     resolution: {integrity: sha512-gchesWBzyvGHRO9W8tzUWFDycow5gwjvFKfyV9FF32Y7F50yZMp7mP+T2mJIWFx49zicqyC4uefHM17o6xKIVQ==}
-    dev: false
 
   /ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
@@ -11413,23 +11423,10 @@ packages:
       vite: 4.2.1(sass@1.60.0)(terser@5.16.8)
     dev: true
 
-  /vite-plugin-env-compatible@1.1.1:
-    resolution: {integrity: sha512-4lqhBWhOzP+SaCPoCVdmpM5cXzjKQV5jgFauxea488oOeElXo/kw6bXkMIooZhrh9q7gclTl8en6N9NmnqUwRQ==}
-    dev: false
-
   /vite-plugin-environment@1.1.3(vite@4.2.1):
     resolution: {integrity: sha512-9LBhB0lx+2lXVBEWxFZC+WO7PKEyE/ykJ7EPWCq95NEcCpblxamTbs5Dm3DLBGzwODpJMEnzQywJU8fw6XGGGA==}
     peerDependencies:
       vite: '>= 2.7'
-    dependencies:
-      vite: 4.2.1(sass@1.60.0)(terser@5.16.8)
-    dev: false
-
-  /vite-plugin-html-env@1.2.7(vite@4.2.1):
-    resolution: {integrity: sha512-vdTnKtuBeB8Zp93DCbN0Qjf4odW2msVRq45r7lGKA6nwQGJFj6YemU54u3xPPkvDeZhG8DEEU64xbLwzVEBilQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      vite: '*'
     dependencies:
       vite: 4.2.1(sass@1.60.0)(terser@5.16.8)
     dev: false
@@ -11621,13 +11618,11 @@ packages:
     dependencies:
       idb: 7.1.1
       workbox-core: 6.5.4
-    dev: false
 
   /workbox-broadcast-update@6.5.4:
     resolution: {integrity: sha512-I/lBERoH1u3zyBosnpPEtcAVe5lwykx9Yg1k6f8/BGEPGaMMgZrwVrqL1uA9QZ1NGGFoyE6t9i7lBjOlDhFEEw==}
     dependencies:
       workbox-core: 6.5.4
-    dev: false
 
   /workbox-build@6.5.4:
     resolution: {integrity: sha512-kgRevLXEYvUW9WS4XoziYqZ8Q9j/2ziJYEtTrjdz5/L/cTUa2XfyMP2i7c3p34lgqJ03+mTiz13SdFef2POwbA==}
@@ -11679,18 +11674,15 @@ packages:
     resolution: {integrity: sha512-DCR9uD0Fqj8oB2TSWQEm1hbFs/85hXXoayVwFKLVuIuxwJaihBsLsp4y7J9bvZbqtPJ1KlCkmYVGQKrBU4KAug==}
     dependencies:
       workbox-core: 6.5.4
-    dev: false
 
   /workbox-core@6.5.4:
     resolution: {integrity: sha512-OXYb+m9wZm8GrORlV2vBbE5EC1FKu71GGp0H4rjmxmF4/HLbMCoTFws87M3dFwgpmg0v00K++PImpNQ6J5NQ6Q==}
-    dev: false
 
   /workbox-expiration@6.5.4:
     resolution: {integrity: sha512-jUP5qPOpH1nXtjGGh1fRBa1wJL2QlIb5mGpct3NzepjGG2uFFBn4iiEBiI9GUmfAFR2ApuRhDydjcRmYXddiEQ==}
     dependencies:
       idb: 7.1.1
       workbox-core: 6.5.4
-    dev: false
 
   /workbox-google-analytics@6.5.4:
     resolution: {integrity: sha512-8AU1WuaXsD49249Wq0B2zn4a/vvFfHkpcFfqAFHNHwln3jK9QUYmzdkKXGIZl9wyKNP+RRX30vcgcyWMcZ9VAg==}
@@ -11699,13 +11691,11 @@ packages:
       workbox-core: 6.5.4
       workbox-routing: 6.5.4
       workbox-strategies: 6.5.4
-    dev: false
 
   /workbox-navigation-preload@6.5.4:
     resolution: {integrity: sha512-IIwf80eO3cr8h6XSQJF+Hxj26rg2RPFVUmJLUlM0+A2GzB4HFbQyKkrgD5y2d84g2IbJzP4B4j5dPBRzamHrng==}
     dependencies:
       workbox-core: 6.5.4
-    dev: false
 
   /workbox-precaching@6.5.4:
     resolution: {integrity: sha512-hSMezMsW6btKnxHB4bFy2Qfwey/8SYdGWvVIKFaUm8vJ4E53JAY+U2JwLTRD8wbLWoP6OVUdFlXsTdKu9yoLTg==}
@@ -11713,13 +11703,11 @@ packages:
       workbox-core: 6.5.4
       workbox-routing: 6.5.4
       workbox-strategies: 6.5.4
-    dev: false
 
   /workbox-range-requests@6.5.4:
     resolution: {integrity: sha512-Je2qR1NXCFC8xVJ/Lux6saH6IrQGhMpDrPXWZWWS8n/RD+WZfKa6dSZwU+/QksfEadJEr/NfY+aP/CXFFK5JFg==}
     dependencies:
       workbox-core: 6.5.4
-    dev: false
 
   /workbox-recipes@6.5.4:
     resolution: {integrity: sha512-QZNO8Ez708NNwzLNEXTG4QYSKQ1ochzEtRLGaq+mr2PyoEIC1xFW7MrWxrONUxBFOByksds9Z4//lKAX8tHyUA==}
@@ -11736,20 +11724,17 @@ packages:
     resolution: {integrity: sha512-apQswLsbrrOsBUWtr9Lf80F+P1sHnQdYodRo32SjiByYi36IDyL2r7BH1lJtFX8fwNHDa1QOVY74WKLLS6o5Pg==}
     dependencies:
       workbox-core: 6.5.4
-    dev: false
 
   /workbox-strategies@6.5.4:
     resolution: {integrity: sha512-DEtsxhx0LIYWkJBTQolRxG4EI0setTJkqR4m7r4YpBdxtWJH1Mbg01Cj8ZjNOO8etqfA3IZaOPHUxCs8cBsKLw==}
     dependencies:
       workbox-core: 6.5.4
-    dev: false
 
   /workbox-streams@6.5.4:
     resolution: {integrity: sha512-FXKVh87d2RFXkliAIheBojBELIPnWbQdyDvsH3t74Cwhg0fDheL1T8BqSM86hZvC0ZESLsznSYWw+Va+KVbUzg==}
     dependencies:
       workbox-core: 6.5.4
       workbox-routing: 6.5.4
-    dev: false
 
   /workbox-sw@6.5.4:
     resolution: {integrity: sha512-vo2RQo7DILVRoH5LjGqw3nphavEjK4Qk+FenXeUsknKn14eCNedHOXWbmnvP4ipKhlE35pvJ4yl4YYf6YsJArA==}
@@ -11760,7 +11745,6 @@ packages:
     dependencies:
       '@types/trusted-types': 2.0.3
       workbox-core: 6.5.4
-    dev: false
 
   /workerpool@6.2.1:
     resolution: {integrity: sha512-ILEIE97kDZvF9Wb9f6h5aXK4swSlKGUcOEGiIYb2OOu/IrDU9iwj0fD//SsA6E5ibwJxpEvhullJY4Sl4GcpAw==}
