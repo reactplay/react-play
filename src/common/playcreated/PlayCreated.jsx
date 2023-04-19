@@ -24,7 +24,7 @@ const PlayCreated = () => {
   }
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center create-plays-wrapper">
+    <div className="w-full flex flex-col items-center create-plays-wrapper">
       <div>
         <span className="title-primary">
           <strong>{play.name}</strong> Created
