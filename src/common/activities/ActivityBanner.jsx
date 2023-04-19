@@ -7,9 +7,13 @@ import { activities } from './activitiesConfig';
 import './activityBanner.css';
 
 function ActivityBanner({ currentActivity }) {
-  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
+  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}`);
   const activity = activities.filter((a) => a.id === currentActivity);
   const { name, subtitle, description, logo, heroImage } = activity[0];
+
+  function getImageUrl(name) {
+        return new URL(name, import.meta.url).href
+  }
 
   return (
     <div className="flex flex-col lg:flex-row justify-between w-[98%]  max-w-[600px]  md:max-w-[992px] lg:max-w-[1200px] mt-16 m-auto text-white">
@@ -20,7 +24,7 @@ function ActivityBanner({ currentActivity }) {
           <img
             alt="HRP Logo"
             className="w-10/12 md:w-64 lg:w-auto ml-auto mr-auto lg:ml-0 lg:mr-0 lg:inline-block"
-            src={require(`${logo}`)}
+            src={getImageUrl(logo)}
           />
         </h1>
         <div className="my-2 md:my-4 md:text-xl">
@@ -48,7 +52,7 @@ function ActivityBanner({ currentActivity }) {
               <span className="btn-label">
                 GitHub{' '}
                 <div className="label-info-more">
-                  <FiStar /> <div className="more-label">{data.stargazers_count}</div>
+                  <FiStar /> <div className="more-label">{data.stargazers_count || 0}</div>
                 </div>{' '}
               </span>
             </a>
@@ -56,7 +60,7 @@ function ActivityBanner({ currentActivity }) {
         </div>
       </div>
       <div>
-        <img alt="" className="hackathon-banner-image" src={require(`${heroImage}`)} />
+        <img alt="" className="hackathon-banner-image" src={getImageUrl(heroImage)} />
       </div>
     </div>
   );
