@@ -14,6 +14,9 @@ import { Tweet } from 'react-twitter-widgets';
 import Spinner from '../spinner/spinner';
 import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
+import TestimonialCard from 'common/Testimonial/TestimonialCard';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const Home = () => {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
@@ -129,26 +132,30 @@ const Home = () => {
           </strong>{' '}
           Says!
         </h2>
-
-        {isTweetsLoading && <Spinner />}
-        <div
-          className={isTweetsLoading ? 'tweets-container' : 'tweets-container active'}
-          data-testid="tweet-container"
-        >
-          {tweetIdArray.map((id) => (
-            <Tweet
-              key={id}
-              options={{
-                width: '310',
-                conversation: 'none',
-                cards: 'hidden',
-                align: 'center'
-              }}
-              tweetId={id}
-              onLoad={tweetLoadHandler}
-            />
-          ))}
-        </div>
+        <Carousel autoPlay={true} showStatus={false}>
+          <div>
+            <TestimonialCard />
+          </div>
+          <div>
+            <TestimonialCard />
+          </div>
+          <div>
+            <TestimonialCard />
+          </div>
+          <div>
+            <TestimonialCard />
+          </div>
+          <div>
+            <TestimonialCard />
+          </div>
+          <div>
+            <TestimonialCard />
+          </div>
+          <div>
+            <TestimonialCard />
+          </div>
+          
+        </Carousel>
       </section>
       <section className="home-contributors" data-testid="contributors-section">
         <Contributors />
