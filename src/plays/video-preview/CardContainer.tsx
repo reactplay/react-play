@@ -6,6 +6,8 @@ interface IProps {
 }
 
 const CardContainer = ({ content }: IProps) => {
+  if (!content) return <h1 className="text-2xl text-center">No Videos to Preview</h1>;
+
   return (
     <>
       {content?.map((data) => {

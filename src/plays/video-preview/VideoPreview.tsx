@@ -34,7 +34,7 @@ function VideoPreview(props: any) {
           <div className="flex flex-row justify-center align-middle p-10 relative">
             <input
               className="rounded-r-full p-2 w-[50%]"
-              placeholder="Type here to search...."
+              placeholder="Type the name of the video to search..."
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
             />
