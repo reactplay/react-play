@@ -86,7 +86,8 @@ export const FIELD_TEMPLATE = [
     datafield: 'cover',
     type: 'input',
     display: 'Cover Image URL',
-    placeholder: "Alternatively you can add a 'cover.png' in your play directory"
+    placeholder:
+      "Alternatively you can add a 'cover.png' / 'cover.jpg' / 'cover.jpeg' in your play directory"
   },
   {
     datafield: 'blog',
