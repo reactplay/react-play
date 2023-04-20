@@ -1,7 +1,6 @@
 import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
 import InfiniteScroll from './components/InfiniteScroll';
 
 // WARNING: Do not change the entry componenet name
@@ -9,7 +8,10 @@ function InfiniteScrollWithDebouncingConcept(props) {
   // Your Code Start below.
   const [apiQuery, setApiQuery] = useState('');
   const [data, setData] = useState([]);
+  const [noData, setNoData] = useState(false);
   const handleSearchInput = (e) => {
+    setData([]);
+    setNoData(false);
     setApiQuery(e.target.value);
     if (e.target.value.length === 0) {
       setData([]);
@@ -17,13 +19,7 @@ function InfiniteScrollWithDebouncingConcept(props) {
   };
   const renderItem = ({ title, key }, ref) => {
     return (
-      <div
-        className="text-lg text-cyan-800 box-border flex-wrap w-54 p-4 border-4 rounded-md border-orange-300 overflow-x-auto"
-        key={key + '_' + title}
-        ref={ref}
-      >
-        {title}
-      </div>
+      <div key={key + "_" + title} ref={ref} className="text-sm text-cyan-800 box-border flex-wrap p-4 border-4 rounded-md border-orange-300 break-words">{title}</div>
     );
   };
 
@@ -41,6 +37,9 @@ function InfiniteScrollWithDebouncingConcept(props) {
           ).then((res) => {
             const data = res.json().then((data) => {
               resolve();
+              if(data.docs.length === 0){
+                setNoData(true);
+              }
               setData((prevData) => [...prevData, ...data.docs]);
             });
           });
@@ -72,6 +71,7 @@ function InfiniteScrollWithDebouncingConcept(props) {
                 getData={getData}
                 listData={data}
                 renderListItem={renderItem}
+                noData={noData}
               />
             )}
           </div>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import logo from '../assets/loading-loader.gif';
 const InfiniteScroll = (props) => {
-  const { renderListItem, getData, listData, apiQuery } = props;
+  const { renderListItem, getData, listData, apiQuery, noData } = props;
   const pageNumber = useRef(1);
   const [loading, setLoading] = useState(false);
   const observer = useRef(null);
@@ -24,6 +24,9 @@ const InfiniteScroll = (props) => {
   };
 
   const renderList = () => {
+    if (noData) {
+      return <span className="m-auto col-span-4 font-bold text-xl text-red-700">No such results found.</span>;
+    }
     return listData.map((item, index) => {
       if (index === listData.length - 1) {
         return renderListItem(item, lastElementOberver);
