@@ -57,6 +57,10 @@ function VideoPreview(props: any) {
               🔍
             </button>
           </div>
+          <p className="text-center font-bold mb-2">
+            Type name of the video you want to search and then hover over the video to see the
+            preview
+          </p>
           <CardContainer content={videos} />
         </div>
       </div>
