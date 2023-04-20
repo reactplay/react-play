@@ -207,7 +207,7 @@ yarn cypress:open
 ```
 OR
 ```
-npm cypress:open
+npm run cypress:open
 ```
 
 It will open the cypress dashboard, through which you need to select `E2E Testing`.
