@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import thumbPlay from 'images/thumb-play.png';
 import { Link } from 'react-router-dom';
 import { MdArrowRightAlt } from 'react-icons/md';
+import { loadCoverImage } from 'common/utils/coverImageUtil';
 
 const DynamicBanner = ({ randomPlay = null }) => {
   const [coverImage, setCoverImage] = useState(null);
@@ -33,6 +34,7 @@ const DynamicBanner = ({ randomPlay = null }) => {
       }
     }
   }, []);
+
 
   if (loading) return <p>loading...</p>;
   else {
