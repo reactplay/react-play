@@ -8,8 +8,7 @@ import ErrorBoundry from './ErrorBoundary/ErrorBoundary';
 import Notification from 'common/components/Notification';
 import 'react-toastify/dist/ReactToastify.css';
 
-//inside your starter code, do this
-
+// inside your starter code, do this
 
 /** removing console statement in react prod build */
 /* eslint-disable no-console */
@@ -52,7 +51,6 @@ const Index = () => {
 };
 const container = document.getElementById('root');
 createRoot(container).render(<Index />);
-
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

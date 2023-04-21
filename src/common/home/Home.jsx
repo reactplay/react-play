@@ -50,8 +50,7 @@ const Home = () => {
   const tweetLoadHandler = () => setTweetsLoading(false);
 
   // eslint-disable-next-line no-console
-//  console.log('REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
-    console.log('REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
+  console.log('REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
 
   return (
     <main>

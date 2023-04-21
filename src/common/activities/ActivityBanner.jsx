@@ -12,7 +12,7 @@ function ActivityBanner({ currentActivity }) {
   const { name, subtitle, description, logo, heroImage } = activity[0];
 
   function getImageUrl(name) {
-        return new URL(name, import.meta.url).href
+    return new URL(name, import.meta.url).href;
   }
 
   return (
