@@ -25,8 +25,13 @@ const InfiniteScroll = (props) => {
 
   const renderList = () => {
     if (noData) {
-      return <span className="m-auto col-span-4 font-bold text-xl text-red-700">No such results found.</span>;
+      return (
+        <span className="m-auto col-span-4 font-bold text-xl text-red-700">
+          No such results found.
+        </span>
+      );
     }
+
     return listData.map((item, index) => {
       if (index === listData.length - 1) {
         return renderListItem(item, lastElementOberver);

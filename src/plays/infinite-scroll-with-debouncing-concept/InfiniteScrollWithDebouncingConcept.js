@@ -19,7 +19,13 @@ function InfiniteScrollWithDebouncingConcept(props) {
   };
   const renderItem = ({ title, key }, ref) => {
     return (
-      <div key={key + "_" + title} ref={ref} className="text-sm text-cyan-800 box-border flex-wrap p-4 border-4 rounded-md border-orange-300 break-words">{title}</div>
+      <div
+        className="text-sm text-cyan-800 box-border flex-wrap p-4 border-4 rounded-md border-orange-300 break-words"
+        key={key + '_' + title}
+        ref={ref}
+      >
+        {title}
+      </div>
     );
   };
 
@@ -37,7 +43,7 @@ function InfiniteScrollWithDebouncingConcept(props) {
           ).then((res) => {
             const data = res.json().then((data) => {
               resolve();
-              if(data.docs.length === 0){
+              if (data.docs.length === 0) {
                 setNoData(true);
               }
               setData((prevData) => [...prevData, ...data.docs]);
@@ -70,8 +76,8 @@ function InfiniteScrollWithDebouncingConcept(props) {
                 apiQuery={apiQuery}
                 getData={getData}
                 listData={data}
-                renderListItem={renderItem}
                 noData={noData}
+                renderListItem={renderItem}
               />
             )}
           </div>
