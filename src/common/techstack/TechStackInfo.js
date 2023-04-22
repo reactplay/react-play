@@ -2,7 +2,7 @@ import {
   SiReact,
   SiRedux,
   SiGit,
-  // SiMaterialui,
+  SiMui,
   SiTailwindcss,
   SiJavascript,
   SiFirebase,
@@ -42,12 +42,12 @@ export const TechStackInfo = [
     type: 'icon',
     link: 'https://git-scm.com'
   },
-  // {
-  //   comp: SiMaterialui,
-  //   text: 'Material UI',
-  //   type: 'icon',
-  //   link: 'https://mui.com'
-  // },
+  {
+    comp: SiMui,
+    text: 'Material UI',
+    type: 'icon',
+    link: 'https://mui.com'
+  },
   {
     comp: SiTailwindcss,
     text: 'Tailwind',

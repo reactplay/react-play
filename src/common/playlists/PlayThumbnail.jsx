@@ -7,6 +7,7 @@ import userImage from 'images/user.png';
 import Like from 'common/components/Like/Like';
 import { useUserId, useAuthenticated } from '@nhost/react';
 import countByProp from 'common/utils/commonUtils';
+import { loadCoverImage } from 'common/utils/coverImageUtil';
 
 const Author = ({ user }) => {
   return (
@@ -42,29 +43,32 @@ const PlayThumbnail = ({ play }) => {
   };
 
   useEffect(() => {
+	  const loadCover = async () => {
     // Set the cover image
     // if it is passed as a meta data
-    if (play.cover) {
-      setCover(play.cover);
-    } else {
-      // if it is not passed as a meta data
-      // check in the play folder for a cover image
-      // with the name cover.png
-      import(`../../plays/${play.slug}/cover.png`)
-        .then((Cover) => {
-          setCover(Cover.default);
-        })
-        .catch((err) => {
-          // if there is no cover image, set a default image
-          setCover(thumbPlay);
+		if (play.cover) {
+		  setCover(play.cover);
+		} else {
+		  // if it is not passed as a meta data
+		  // check in the play folder for a cover image
+		  // with the name cover.png
+		  import(`../../plays/${play.slug}/cover.png`)
+			.then((Cover) => {
+			  setCover(Cover.default);
+			})
+			.catch((err) => {
+			  // if there is no cover image, set a default image
+			  setCover(thumbPlay);
 
-          return {
-            success: false,
-            error: err,
-            message: `Cover image not found for the play ${play.name}. Setting the default cover image...`
-          };
-        });
-    }
+			  return {
+				success: false,
+				error: err,
+				message: `Cover image not found for the play ${play.name}. Setting the default cover image...`
+			  };
+			});
+		}
+	};
+    loadCover();
   }, [play]);
 
   return (
