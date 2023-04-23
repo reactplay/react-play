@@ -1,7 +1,6 @@
 import App from 'App';
 import {
   Footer,
-  Header,
   Home,
   PlayMeta,
   DefMeta,
@@ -38,7 +37,6 @@ const RouteDefs = () => {
   return (
     <NhostReactProvider nhost={nhost}>
       <BrowserRouter>
-        <Header />
         <DefMeta routes={routes} />
         <Routes>
           <Route element={<Home />} path="/" />

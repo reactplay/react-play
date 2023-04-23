@@ -1,11 +1,15 @@
 import 'App.css';
+import { HeaderForPlaysPage } from 'common/header/DynamicHeader';
 import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <main className="app-body">
-      <Outlet />
-    </main>
+    <>
+      <HeaderForPlaysPage />
+      <main className="app-body">
+        <Outlet />
+      </main>
+    </>
   );
 }
 

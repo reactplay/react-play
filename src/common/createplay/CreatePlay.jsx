@@ -200,7 +200,7 @@ const CreatePlay = () => {
   }
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center create-plays-wrapper">
+    <div className="w-full mt-10 h-full flex flex-col justify-center items-center create-plays-wrapper">
       <div>
         <span className="title-primary">
           {!isEditPlay ? (

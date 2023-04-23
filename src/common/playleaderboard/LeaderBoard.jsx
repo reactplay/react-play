@@ -6,6 +6,7 @@ import TopPlayCreators from './TopPlayCreators';
 import { Watch } from 'react-loader-spinner';
 import { groupBy } from 'lodash';
 import { format, lastDayOfMonth } from 'date-fns';
+import { HeaderWithBrowseAndNav } from 'common/header/DynamicHeader';
 
 const LeaderBoard = () => {
   const [top10Contributors, updateTop10Contributors] = useState([]);
@@ -69,29 +70,32 @@ const LeaderBoard = () => {
   }, [publishedPlays]);
 
   return (
-    <main className="app-body  app-body-overflow-hidden">
-      {publishedPlays.length && (topContributorOfTheMonth || top10Contributors) ? (
-        <div className=" overflow-auto lg:flex flex-row justify-center">
-          {topContributorOfTheMonth && (
-            <TopPlayCreatorOfTheMonth topPlayCreatorOfTheMonth={topContributorOfTheMonth} />
-          )}
-          <div className="flex flex-col m-4 items-center">
-            {publishedPlays && top10Contributors && (
-              <>
-                <div className="leaderboard-heading">Top play creators of all time</div>
-                <div>
-                  <TopPlayCreators topPlayCreators={top10Contributors} />
-                </div>
-              </>
+    <>
+      <HeaderWithBrowseAndNav />
+      <main className="app-body  app-body-overflow-hidden">
+        {publishedPlays.length && (topContributorOfTheMonth || top10Contributors) ? (
+          <div className=" overflow-auto lg:flex flex-row justify-center">
+            {topContributorOfTheMonth && (
+              <TopPlayCreatorOfTheMonth topPlayCreatorOfTheMonth={topContributorOfTheMonth} />
             )}
+            <div className="flex flex-col m-4 items-center">
+              {publishedPlays && top10Contributors && (
+                <>
+                  <div className="leaderboard-heading">Top play creators of all time</div>
+                  <div>
+                    <TopPlayCreators topPlayCreators={top10Contributors} />
+                  </div>
+                </>
+              )}
+            </div>
           </div>
-        </div>
-      ) : (
-        <div className="leaderboard-loader">
-          <Watch color="#0096AB" height="100" width="100" />
-        </div>
-      )}
-    </main>
+        ) : (
+          <div className="leaderboard-loader">
+            <Watch color="#0096AB" height="100" width="100" />
+          </div>
+        )}
+      </main>
+    </>
   );
 };
 

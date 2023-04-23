@@ -14,6 +14,7 @@ import { Tweet } from 'react-twitter-widgets';
 import Spinner from '../spinner/spinner';
 import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
+import { HeaderForHomePage } from 'common/header/DynamicHeader';
 
 const Home = () => {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
@@ -53,108 +54,112 @@ const Home = () => {
   console.log('process.env.REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
 
   return (
-    <main>
-      <section className="app-home-body">
-        <div className="home-bg-graphics">
-          <Flower className="home-bg-graphics-sm" />
-          <Flower className="home-bg-graphics-rg" />
-          <Flower className="home-bg-graphics-lg" />
-        </div>
-        <div className="app-home-body-content">
-          {process.env.REACT_APP_ACTIVITIES_ON && process.env.REACT_APP_ACTIVITIES_ON === 'true' ? (
-            <ActivityBanner currentActivity={process.env.REACT_APP_ACTIVITY_ID} />
-          ) : (
-            <DefaultBanner />
-          )}
-        </div>
-      </section>
-      <section className="home-features">
-        <ul className="list-home-features">
-          <li className="home-features-item">
-            <div className="item-icon">
-              <RiSlideshow4Line className="icon" color="var(--color-neutral-90)" />
-            </div>
-            <h2 className="item-title">Learn </h2>
-            <p className="item-desc">
-              Learn how to "Think in React" and build applications inspired by several plays(source
-              code & demos). Get to the source code of it, find related article, or even a YouTube
-              video. Learn from the expert code reviews.
-            </p>
-          </li>
-          <li className="home-features-item">
-            <div className="item-icon">
-              <BiAddToQueue className="icon" color="var(--color-neutral-90)" />
-            </div>
-            <h2 className="item-title">Create </h2>
-            <p className="item-desc">
-              Create your own plays and own them by following a few simple steps. Learned something
-              new? Perfect to present as a play. You can also contribute to the existing plays. Your
-              play will be reviewed by the experts before being made public.
-            </p>
-          </li>
-          <li className="home-features-item">
-            <div className="item-icon">
-              <BiShareAlt className="icon" color="var(--color-neutral-90)" />
-            </div>
-            <h2 className="item-title">Socialize </h2>
-            <p className="item-desc">
-              Share your plays with the community. The best way of building in public is by sharing
-              the learning. You can share your plays on social media platforms like Facebook,
-              Twitter, LinkedIn, to name a few, just with a single click.
-            </p>
-          </li>
-        </ul>
-        <div className="home-ideas">
-          <FaLightbulb className="icon" color="var(--color-brand-primary)" size="48px" />
-          <p className="ideas-lead">Not sure how to get started?</p>
-          <p className="ideas-title">We have got lot of ideas</p>
-          <Link className="home-anchor" to="/ideas">
-            <span className="text">Get started with some ideas</span>
-          </Link>
-        </div>
-      </section>
-      <section className="home-plays">
-        <FeaturedPlays />
-        <div className="home-plays-footer">
-          <Link className="home-anchor" to="/plays">
-            <span className="text">View all Plays</span>
-          </Link>
-        </div>
-      </section>
-      <section className="home-tweets">
-        <h2 className="title-primary">
-          What Our{' '}
-          <strong>
-            <span>Community</span>
-          </strong>{' '}
-          Says!
-        </h2>
+    <>
+      <HeaderForHomePage />
+      <main>
+        <section className="app-home-body">
+          <div className="home-bg-graphics">
+            <Flower className="home-bg-graphics-sm" />
+            <Flower className="home-bg-graphics-rg" />
+            <Flower className="home-bg-graphics-lg" />
+          </div>
+          <div className="app-home-body-content">
+            {process.env.REACT_APP_ACTIVITIES_ON &&
+            process.env.REACT_APP_ACTIVITIES_ON === 'true' ? (
+              <ActivityBanner currentActivity={process.env.REACT_APP_ACTIVITY_ID} />
+            ) : (
+              <DefaultBanner />
+            )}
+          </div>
+        </section>
+        <section className="home-features">
+          <ul className="list-home-features">
+            <li className="home-features-item">
+              <div className="item-icon">
+                <RiSlideshow4Line className="icon" color="var(--color-neutral-90)" />
+              </div>
+              <h2 className="item-title">Learn </h2>
+              <p className="item-desc">
+                Learn how to "Think in React" and build applications inspired by several
+                plays(source code & demos). Get to the source code of it, find related article, or
+                even a YouTube video. Learn from the expert code reviews.
+              </p>
+            </li>
+            <li className="home-features-item">
+              <div className="item-icon">
+                <BiAddToQueue className="icon" color="var(--color-neutral-90)" />
+              </div>
+              <h2 className="item-title">Create </h2>
+              <p className="item-desc">
+                Create your own plays and own them by following a few simple steps. Learned
+                something new? Perfect to present as a play. You can also contribute to the existing
+                plays. Your play will be reviewed by the experts before being made public.
+              </p>
+            </li>
+            <li className="home-features-item">
+              <div className="item-icon">
+                <BiShareAlt className="icon" color="var(--color-neutral-90)" />
+              </div>
+              <h2 className="item-title">Socialize </h2>
+              <p className="item-desc">
+                Share your plays with the community. The best way of building in public is by
+                sharing the learning. You can share your plays on social media platforms like
+                Facebook, Twitter, LinkedIn, to name a few, just with a single click.
+              </p>
+            </li>
+          </ul>
+          <div className="home-ideas">
+            <FaLightbulb className="icon" color="var(--color-brand-primary)" size="48px" />
+            <p className="ideas-lead">Not sure how to get started?</p>
+            <p className="ideas-title">We have got lot of ideas</p>
+            <Link className="home-anchor" to="/ideas">
+              <span className="text">Get started with some ideas</span>
+            </Link>
+          </div>
+        </section>
+        <section className="home-plays">
+          <FeaturedPlays />
+          <div className="home-plays-footer">
+            <Link className="home-anchor" to="/plays">
+              <span className="text">View all Plays</span>
+            </Link>
+          </div>
+        </section>
+        <section className="home-tweets">
+          <h2 className="title-primary">
+            What Our{' '}
+            <strong>
+              <span>Community</span>
+            </strong>{' '}
+            Says!
+          </h2>
 
-        {isTweetsLoading && <Spinner />}
-        <div
-          className={isTweetsLoading ? 'tweets-container' : 'tweets-container active'}
-          data-testid="tweet-container"
-        >
-          {tweetIdArray.map((id) => (
-            <Tweet
-              key={id}
-              options={{
-                width: '310',
-                conversation: 'none',
-                cards: 'hidden',
-                align: 'center'
-              }}
-              tweetId={id}
-              onLoad={tweetLoadHandler}
-            />
-          ))}
-        </div>
-      </section>
-      <section className="home-contributors" data-testid="contributors-section">
-        <Contributors />
-      </section>
-      <ExtendedFooter />
-    </main>
+          {isTweetsLoading && <Spinner />}
+          <div
+            className={isTweetsLoading ? 'tweets-container' : 'tweets-container active'}
+            data-testid="tweet-container"
+          >
+            {tweetIdArray.map((id) => (
+              <Tweet
+                key={id}
+                options={{
+                  width: '310',
+                  conversation: 'none',
+                  cards: 'hidden',
+                  align: 'center'
+                }}
+                tweetId={id}
+                onLoad={tweetLoadHandler}
+              />
+            ))}
+          </div>
+        </section>
+        <section className="home-contributors" data-testid="contributors-section">
+          <Contributors />
+        </section>
+        <ExtendedFooter />
+      </main>
+    </>
   );
 };
 
