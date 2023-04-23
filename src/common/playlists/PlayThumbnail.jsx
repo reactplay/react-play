@@ -42,32 +42,20 @@ const PlayThumbnail = ({ play }) => {
     return { liked: false, number };
   };
 
-  useEffect(() => {
-	  const loadCover = async () => {
-    // Set the cover image
-    // if it is passed as a meta data
-		if (play.cover) {
-		  setCover(play.cover);
-		} else {
-		  // if it is not passed as a meta data
-		  // check in the play folder for a cover image
-		  // with the name cover.png
-		  import(`../../plays/${play.slug}/cover.png`)
-			.then((Cover) => {
-			  setCover(Cover.default);
-			})
-			.catch((err) => {
-			  // if there is no cover image, set a default image
-			  setCover(thumbPlay);
-
-			  return {
-				success: false,
-				error: err,
-				message: `Cover image not found for the play ${play.name}. Setting the default cover image...`
-			  };
-			});
-		}
-	};
+   useEffect(() => {
+    const loadCover = async () => {
+      try {
+        if (play.cover) {
+          setCover(play.cover);
+        } else {
+          const image = await loadCoverImage(play.slug);
+          setCover(image);
+        }
+      } catch (error) {
+		setCover(thumbPlay);
+        console.error(error);
+      }
+    };
     loadCover();
   }, [play]);
 

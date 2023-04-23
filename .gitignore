@@ -12,6 +12,7 @@
 
 # production
 /build
+/dist 
 
 # development
 /dev-dist

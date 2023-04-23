@@ -8,31 +8,29 @@ const DynamicBanner = ({ randomPlay }) => {
   const [coverImage, setCoverImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
-      useEffect(() => {
+    useEffect(() => {
     setLoading(true);
 
     async function setPlayCover() {
 		if (loading && randomPlay && randomPlay.cover) {
         setCoverImage(randomPlay.cover);
-        setLoading(false);
       } else {
         // if it is not passed as a meta data
         // check in the play folder for a cover image with the name cover
-		await import(`../../plays/${randomPlay.slug}/cover.png`)
+		await loadCoverImage(randomPlay.slug)
         .then((Cover) => {
-          setCoverImage(Cover.default);
-          setLoading(false);
+          setCoverImage(Cover);
         })
         .catch((err) => {
           setCoverImage(thumbPlay);
 
-          return {
-            success: false,
-            error: err,
-            message: `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
-          };
-        });
+          console.error(
+            `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
+          );
+
+        })
       }
+      setLoading(false);
     }
 
     setPlayCover();
