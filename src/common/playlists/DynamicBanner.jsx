@@ -16,15 +16,16 @@ const DynamicBanner = ({ randomPlay }) => {
           setCoverImage(Cover.default);
         })
         .catch((err) => {
-          setCoverImage(thumbPlay);
+         setCoverImage(thumbPlay);
 
-          return {
-            success: false,
-            error: err,
-            message: `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
-          };
-        });
+          console.error(
+            `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
+          );
+        }
+      }
     }
+
+    setPlayCover();
   }, [randomPlay]);
 
   return (
