@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BsTwitter, BsGithub } from 'react-icons/bs';
+import { BsTwitter, BsGithub, BsTrophyFill } from 'react-icons/bs';
 import { FaLightbulb } from 'react-icons/fa';
 import { BiMoney } from 'react-icons/bi';
 import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
@@ -52,7 +52,13 @@ const HeaderNav = ({ showBrowse }) => {
           </Box>
         </Box>
       </Modal>
-      <button className="navbar-toggler" type="button" onClick={() => setShowToggleMenu(true)}>
+      <button
+        aria-expanded={showToggleMenu}
+        aria-label="Toggle menu"
+        className="navbar-toggler"
+        type="button"
+        onClick={() => setShowToggleMenu(true)}
+      >
         <span className="navbar-toggler-icon" />
       </button>
       <div className={showToggleMenu ? 'navbar-collapse show' : 'navbar-collapse'}>
@@ -89,7 +95,6 @@ const HeaderNav = ({ showBrowse }) => {
               >
                 <IoAddSharp className="icon" />
                 <span className="btn-label">Create</span>
-                <span className="create-button-badge">beta</span>
               </a>
             ) : (
               <a
@@ -103,6 +108,17 @@ const HeaderNav = ({ showBrowse }) => {
                 <span className="btn-label">Create</span>
               </a>
             )}
+          </li>
+          <li>
+            <Link
+              className="app-header-btn app-header-btn--default"
+              data-testid="leaderboard-btn"
+              title="Leader Board"
+              to="/leaderboard"
+            >
+              <BsTrophyFill className="icon idea-icon" />
+              <span className="btn-label">Leader Board</span>
+            </Link>
           </li>
           <li>
             <Link

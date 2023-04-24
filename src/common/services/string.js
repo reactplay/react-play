@@ -44,12 +44,22 @@ export const toSanitized = (str) => {
   if (!str) {
     return '';
   }
+  str = str.replace(/-/g, '');
   // replace all special characters | symbols with a space
   str = str.replace(/[`~!@#$%^&*()_\-+=[\]{};:'"\\|/,.<>?\s]/g, ' ');
   // trim spaces at start and end of string
   str = str.replace(/^\s+|\s+$/gm, '');
+
   // replace space with dash/hyphen
   str = str.replace(/\s+/g, '-');
 
   return str;
+};
+
+export const email2Slug = (email) => {
+  return encodeURIComponent(email);
+};
+
+export const slug2Email = (email) => {
+  return decodeURIComponent(email);
 };

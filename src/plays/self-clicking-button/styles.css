@@ -1,0 +1,23 @@
+/* enter stlyes here */
+
+.self-click {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.self-click button {
+  background-color: #172c44;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.self-click .output {
+  font-size: 3rem;
+  text-align: center;
+  margin: 5px;
+}

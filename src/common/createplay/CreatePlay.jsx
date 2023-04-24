@@ -156,7 +156,7 @@ const CreatePlay = () => {
       const res = await Plays.createPlay(rest);
       navigate(`/plays/created/${res}`);
     } catch (err) {
-      alert(`Something Error Occured: ${err}`);
+      setState({ errorMessage: err });
     } finally {
       setState({ isDataLoading: false, loadingText: '' });
     }
@@ -214,7 +214,7 @@ const CreatePlay = () => {
           )}
         </span>
       </div>
-      <div className="w-full h-full max-w-6xl flex bg-white shadow-md rounded mb-6">
+      <div className="w-full max-w-6xl flex bg-white shadow-md rounded mb-6">
         <div className="flex flex-col flex-1">
           <div className="h-14 p-8">
             Welcome <strong>{userData.displayName}</strong>, {!isEditPlay ? 'create' : 'edit'} your

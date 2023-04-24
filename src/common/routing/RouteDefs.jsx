@@ -8,11 +8,14 @@ import {
   PlayIdeas,
   CreatePlay,
   PlayCreated,
-  TechStack
+  TechStack,
+  LeaderBoard,
+  PageNotFound
 } from 'common';
 import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NhostClient, NhostReactProvider } from '@nhost/react';
+import BadgesDashboard from 'common/badges-dashboard';
 
 const nhost = new NhostClient({
   backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || ''
@@ -28,7 +31,8 @@ const RouteDefs = () => {
     { path: '/plays', title: 'ReactPlay - Plays' },
     { path: '/ideas', title: 'ReactPlay - Ideas' },
     { path: '/tech-stacks', title: 'ReactPlay - Tech Stacks' },
-    { path: '/plays/create', title: 'ReactPlay - Create Play' }
+    { path: '/plays/create', title: 'ReactPlay - Create Play' },
+    { path: '/leaderboard', title: 'ReactPlay - Leader Board' }
   ];
 
   return (
@@ -40,6 +44,7 @@ const RouteDefs = () => {
           <Route element={<Home />} path="/" />
           <Route element={<TechStack />} path="/tech-stacks" />
           <Route element={<CreatePlay />} path="/editplay/:username/:playname" />
+          <Route element={<PageNotFound />} path="*" />
           <Route element={<App />} path="/plays">
             <Route index element={<PlayList />} />
             <Route exact element={<CreatePlay />} path="create" />
@@ -60,10 +65,16 @@ const RouteDefs = () => {
                       </Route>
                   </Route> */}
           </Route>
+          <Route element={<App />} path="/contributors">
+            <Route element={<App />} path=":email">
+              <Route element={<BadgesDashboard />} path="badges" />
+            </Route>
+          </Route>
           <Route element={<App />} path="/play">
             <Route index element={<PlayList />} />
           </Route>
           <Route element={<PlayIdeas />} path="/ideas" />
+          <Route element={<LeaderBoard />} path="/leaderboard" />
         </Routes>
         <Footer />
       </BrowserRouter>
