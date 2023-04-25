@@ -9,6 +9,7 @@ import { FetchPlaysBySlugAndUser } from 'common/services/request/query/fetch-pla
 import { PageNotFound } from 'common/index';
 import thumbPlay from 'images/thumb-play.png';
 import { getProdUrl } from 'common/utils/commonUtils';
+import { loadCoverImage } from 'common/utils/coverImageUtil';
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -34,22 +35,24 @@ function PlayMeta() {
 
       return;
     }
+
     try {
       /**
        * Try to Fetch the local cover image
        */
-      const response = await import(`../../plays/${playObj.slug}/cover.png`);
-
-      metaImg = getProdUrl(response.default);
-      ogTagImg = getProdUrl(response.default);
+      const coverImage = await loadCoverImage(playObj.slug);
+      metaImg = getProdUrl(coverImage);
+      ogTagImg = getProdUrl(coverImage);
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
       setLoading(false);
-    } catch (_error) {
+    } catch (error) {
+      console.error(
+        `Cover image not found for the play ${playObj.name}. Setting the default cover image...`
+      );
       /**
        * On error set the default image
        */
-
       metaImg = thumbPlay;
       ogTagImg = thumbPlay;
       setMetaImage(metaImg);

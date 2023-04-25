@@ -13,7 +13,11 @@
 
 # production
 /build
+<<<<<<< HEAD
 /dist
+=======
+/dist 
+>>>>>>> 4718e886262468614b9ff13c1ccaf4228d1e9d68
 
 # development
 /dev-dist
