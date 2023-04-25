@@ -18,11 +18,11 @@ const JokeList = ({ darkTheme }) => {
   // Fetching Jokes
   async function fetchJokes(category) {
     let { data } = await axios.get(
-      `${process.env.REACT_APP_DADJOKES_URL}${category}?type=single&amount=10&blacklistFlags=nsfw&safe-mode`,
+      `${process.env.VITE_DADJOKES_URL}${category}?type=single&amount=10&blacklistFlags=nsfw&safe-mode`,
       {
         headers: {
-          'X-RapidAPI-Key': process.env.REACT_APP_DADJOKES_APIKEY,
-          'X-RapidAPI-Host': process.env.REACT_APP_DADJOKES_APIHOST
+          'X-RapidAPI-Key': process.env.VITE_DADJOKES_APIKEY,
+          'X-RapidAPI-Host': process.env.VITE_DADJOKES_APIHOST
         }
       }
     );

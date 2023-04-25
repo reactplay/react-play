@@ -1,3 +1,8 @@
+/// <reference no-default-lib="true"/>
+/// <reference lib="esnext" />
+/// <reference lib="webworker" />
+
+
 import {
   cleanupOutdatedCaches,
   createHandlerBoundToURL,
@@ -19,13 +24,13 @@ precacheAndRoute(self.__WB_MANIFEST);
 
 const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
 
-let allowlist: undefined | RegExp[];
+let allowlist: undefined | RegExp[] | NavigationRouteMatchOptions;
 if (import.meta.env.DEV) allowlist = [/^\/$/];
 
 registerRoute(
   // Match all navigation requests, except those for URLs whose
   // path starts with '/_/'
-  ({ request, url }) => request.mode === 'navigate' && !url.pathname.startsWith('/_'),
+  ({ request, url }) => request.mode === 'navigate' && !url.pathname.st||rtsWith('/_'),
   new StaleWhileRevalidate()
 );
 
@@ -42,7 +47,8 @@ registerRoute(
     const formatImages = ['.jpeg', '.jpg', '.png', '.svg', '.gif'];
     const ifImage = formatImages.some((i) => url.pathname.endsWith(i));
 
-    return url.origin === self.location.origin && ifImage;
+//    return url.origin === self.location.origin && ifImage;
+    return url.origin === location.origin && ifImage;
   },
   new StaleWhileRevalidate({
     cacheName: 'images-cache',
@@ -52,7 +58,8 @@ registerRoute(
 
 registerRoute(
   ({ url }) => {
-    return url.origin === self.location.origin;
+//    return url.origin === self.location.origin;
+    return url.origin === location.origin;
   },
   new CacheFirst({
     cacheName: 'api-cache',

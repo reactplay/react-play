@@ -16,7 +16,7 @@ const TextFact = () => {
         url: `https://numbersapi.p.rapidapi.com/${number}/trivia`,
         params: { fragment: 'true', notfound: 'floor', json: 'true' },
         headers: {
-          'X-RapidAPI-Key': process.env.REACT_APP_DIGITSDELIGHT_APIKEY,
+          'X-RapidAPI-Key': process.env.VITE_DIGITSDELIGHT_APIKEY,
           'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
         }
       };

@@ -1,5 +1,9 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  purge: [
+    './src/**/*.tsx',
+    './src/**/*.jsx',
+  ],
   theme: {
     screens: {
       xs: { min: '310px' },

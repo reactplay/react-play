@@ -6,7 +6,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -18,13 +18,16 @@
     "noEmit": true,
     "jsx": "react-jsx",
 	"types": ["vite/client", "node","vite-plugin-pwa/client"],
+	"plugins": [
+		{ "name": "typescript-plugin-css-modules" },
+	],
         "paths": {
         "@/*": ["./src/*"],
-        "common":  ["./src/common/*"],
-        "ErrorBondary":  ["./src/ErrorBondary/*"],
-        "images":  ["./src/images/*"],
-        "meta":  ["./src/meta/*"],
-        "plays":  ["./src/plays/*"]
+        "common/*":  ["./src/common/*"],
+        "ErrorBondary/*":  ["./src/ErrorBondary/*"],
+        "images/*":  ["./src/images/*"],
+        "meta/*":  ["./src/meta/*"],
+        "plays/*":  ["./src/plays/*"]
       },
   },
   "include": ["src/**/*", "vite.config.ts", "public/serviceWorker.js", "src/globals.d.ts"],

@@ -7,7 +7,7 @@ import { activities } from './activitiesConfig';
 import './activityBanner.css';
 
 function ActivityBanner({ currentActivity }) {
-  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}`);
+  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
   const activity = activities.filter((a) => a.id === currentActivity);
   const { name, subtitle, description, logo, heroImage } = activity[0];
 

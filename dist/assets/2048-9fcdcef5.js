@@ -1,0 +1,1 @@
+const a="/assets/gameOver-3adc06a4.wav",s="/assets/gameWin-9cdd2d1e.wav",o="/assets/VideoMusic-25d11cf0.mp4",e="/assets/cover-a48da15d.png",t=Object.freeze(Object.defineProperty({__proto__:null,default:e},Symbol.toStringTag,{value:"Module"}));export{o as V,s as a,t as c,a as g};

@@ -3,7 +3,7 @@ import { ReactComponent as ImageOops } from 'images/img-oops.svg';
 import React, { Fragment, useEffect, useState } from 'react';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'common/spinner/spinner';
-import * as all_plays from 'plays';
+import * as all_plays from 'plays/index';
 
 import './playlist.css';
 import { toSanitized } from 'common/services/string';

@@ -1,12 +1,12 @@
 import { useEffect, useState, Suspense, useCallback } from 'react';
 import { Helmet } from 'react-helmet';
-import * as plays from 'plays';
+import * as plays from 'plays/index';
 import { useParams } from 'react-router-dom';
 import { submit } from 'common/services/request';
 import Loader from 'common/spinner/spinner';
 import { toSanitized, toTitleCaseTrimmed } from 'common/services/string';
 import { FetchPlaysBySlugAndUser } from 'common/services/request/query/fetch-plays';
-import { PageNotFound } from 'common';
+import { PageNotFound } from 'common/index';
 import thumbPlay from 'images/thumb-play.png';
 import { getProdUrl } from 'common/utils/commonUtils';
 

@@ -15,7 +15,7 @@ function Random() {
       url: 'https://numbersapi.p.rapidapi.com/random/trivia',
       params: { min: '1', max: '999', fragment: 'true', json: 'true' },
       headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_DIGITSDELIGHT_APIKEY,
+        'X-RapidAPI-Key': process.env.VITE_DIGITSDELIGHT_APIKEY,
         'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
       }
     };

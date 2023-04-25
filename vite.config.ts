@@ -10,10 +10,34 @@ import EnvironmentPlugin from 'vite-plugin-environment'
 import {
 	chunkSplitPlugin
 } from 'vite-plugin-chunk-split';
-import { VitePWA } from 'vite-plugin-pwa'
+import {
+	VitePWA
+} from 'vite-plugin-pwa'
 import {
 	resolve
 } from "path";
+
+import viteImagemin from 'vite-plugin-imagemin'
+
+import {
+	dependencies
+} from './package.json';
+
+
+
+const renderChunks = (deps) => {
+	let chunks = [];
+	Object.keys(deps).forEach((key) => {
+		// console.dir(key);
+		chunks.push(key);
+	});
+
+	while (a.length > 0)
+		arrays.push(a.splice(0, nb_split));
+
+};
+
+let arrFiles = [];
 
 const manifestForPlugin = {
 	srcDir: 'src',
@@ -83,7 +107,7 @@ const manifestForPlugin = {
 			}
 		],
 		"theme_color": "#000000",
-		"background_color":"#FFFFFF",
+		"background_color": "#FFFFFF",
 		"display": "standalone",
 		"base": "/",
 		"scope": "/",
@@ -97,51 +121,6 @@ const manifestForPlugin = {
 		type: 'module',
 		navigateFallback: 'index.html',
 	},
-	// workbox: {
-	// globPatterns: ['**/*.{js,css,html}', '**/*.{svg,png,jpg,gif}'],
-	// runtimeCaching: [
-	// {
-	// urlPattern: ({ url }) => {
-	// return url.pathname.startsWith("/api");
-	// },
-	// handler: "CacheFirst" as const,
-	// options: {
-	// cacheName: "api-cache",
-	// cacheableResponse: {
-	// statuses: [0, 200],
-	// },
-	// },
-	// },
-	// {
-	// urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-	// handler: 'CacheFirst',
-	// options: {
-	// cacheName: 'google-fonts-cache',
-	// expiration: {
-	// maxEntries: 10,
-	// maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
-	// },
-	// cacheableResponse: {
-	// statuses: [0, 200]
-	// }
-	// }
-	// },
-	// {
-	// urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-	// handler: 'CacheFirst',
-	// options: {
-	// cacheName: 'gstatic-fonts-cache',
-	// expiration: {
-	// maxEntries: 10,
-	// maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
-	// },
-	// cacheableResponse: {
-	// statuses: [0, 200]
-	// },
-	// }
-	// }
-	// ],
-	// },
 }
 
 
@@ -169,6 +148,22 @@ export default defineConfig(({
 		};
 	};
 
+	const getVendorName = (id, nameStart = '', it = 0, lenMax = 3, prefix = 'vendor') => {
+		let i = 65;
+		while (i <= 90) {
+			let letter = String.fromCharCode(i);
+			if (id[it].toUpperCase() === letter) {
+				return `${prefix}_${nameStart}_${letter}`;
+			}
+			i++;
+		}
+		if (it < lenMax) {
+			nameStart += id[it].toUpperCase();
+			it++;
+			return getVendorName(id, nameStart, it, lenMax);
+		}
+		return prefix;
+	}
 
 	return {
 		plugins: [
@@ -178,15 +173,89 @@ export default defineConfig(({
 				prefix: 'REACT_APP_'
 			}),
 			react(),
+			viteImagemin({
+				gifsicle: {
+					optimizationLevel: 7,
+					interlaced: false,
+				},
+				optipng: {
+					optimizationLevel: 7,
+				},
+				mozjpeg: {
+					quality: 20,
+				},
+				pngquant: {
+					quality: [0.8, 0.9],
+					speed: 4,
+				},
+				svgo: {
+					plugins: [{
+							name: 'removeViewBox',
+						},
+						{
+							name: 'removeEmptyAttrs',
+							active: false,
+						},
+					],
+				},
+			}),
 			viteTsconfigPaths(),
 			svgrPlugin(),
-			splitVendorChunkPlugin(),
+			//		splitVendorChunkPlugin(),
 			chunkSplitPlugin({
-				// strategy: 'unbundle',
-				// 	customSplitting: {
-				// 		// All files in `src/container` will be merged together in `container` chunk
-				// 		'plays': [/src\/playsr/]
-				// 	}
+				strategy: 'unbundle',
+				customSplitting: {
+					'common': [/src\/common/, /src\/meta/, /src\/ErrorBoundary/],
+				},
+				customChunk: (args) => {
+					//	files into pages directory is export in single files
+					let {
+						file,
+						id,
+						moduleId,
+						root
+					} = args;
+					if (file.startsWith('src/plays/')) {
+						file = file.substring(10);
+						let ext = '';
+						if (file.endsWith('.css') || file.endsWith('.scss')) {
+							ext = 'css';
+						} else if (file.endsWith('.js') ||
+							file.endsWith('.jsx') ||
+							file.endsWith('.ts') ||
+							file.endsWith('.tsx')
+						) {
+							ext = 'js';
+						}
+						file = file.replace(/\.[^.$]+$/, '').split('/')[0];
+						return ext ? getVendorName(file, '', 0, 3, ext) : file;
+					}
+
+					if (id.includes('node_modules/')) {
+						// let namedId = '';
+						let nameId = (id.includes('node_modules/.pnpm')) ?
+							id.toString().split('node_modules/.pnpm/')[1].split('/')[0].toString() :
+							id.toString().split('node_modules/')[1].split('/')[0].toString();
+
+						//	return nameId;
+						if (nameId.includes('@tensorflow')) return nameId;
+						if (nameId.includes('@tensorflow/tfjs')) return 'vendor_tensorflowTjs'
+						if (nameId.includes('@tensorflow')) return 'vendor_tensorflow'
+						if (nameId.includes('mathjs')) return 'vendor_mathjs'
+						if (nameId.includes('jspdf')) return 'vendor_jspdf'
+						if (nameId.includes('date-fns')) return 'vendor_date-fns'
+						if (nameId.includes('react-p5')) return 'vendor_react-p5'
+						if (nameId.includes('highlight.js')) return 'vendor_highlightJs'
+						//		if(nameId.includes('redux')) return 'vendor_redux';
+
+						if (nameId.includes('react@') ||
+							nameId.includes('react-dom')
+						) return 'vendor_react';
+
+						return getVendorName(nameId, '', 0, 3);
+					}
+					return 'vendor'; // all other package goes here
+				},
 			})
 		],
 		resolve: {
@@ -212,12 +281,14 @@ export default defineConfig(({
 		//  envPrefix: 'VITE_',
 		build: {
 			chunkSizeWarningLimit: 1600,
+			sourcemap: false,
+			cssCodeSplit: true,
 		},
+
 		css: {
 			modules: {
 				generateScopedName: isDevelopment ?
-					"[name]__[local]__[hash:base64:5]" :
-					"[hash:base64:5]",
+					"[name]__[local]__[hash:base64:5]" : "[hash:base64:5]",
 			},
 		},
 	}

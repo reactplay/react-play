@@ -11,7 +11,7 @@ import {
   TechStack,
   LeaderBoard,
   PageNotFound
-} from 'common';
+} from 'common/index';
 import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NhostClient, NhostReactProvider } from '@nhost/react';

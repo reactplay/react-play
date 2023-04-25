@@ -1,0 +1,16 @@
+{
+  "name": "random-quote-card-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dom-to-image": "^2.6.0",
+    "file-saver": "^2.0.5"
+  }
+}
