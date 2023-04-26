@@ -3,41 +3,55 @@ import thumbPlay from 'images/thumb-play.png';
 import { Link } from 'react-router-dom';
 import { MdArrowRightAlt } from 'react-icons/md';
 import { loadCoverImage } from 'common/utils/coverImageUtil';
+import Loader from 'common/spinner/spinner';
 
 const DynamicBanner = ({ randomPlay }) => {
   const [coverImage, setCoverImage] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-
     async function setPlayCover() {
-      if (loading && randomPlay && randomPlay.cover) {
-        setCoverImage(randomPlay.cover);
-        setLoading(false);
-      } else {
-        setLoading(true);
-        // if it is not passed as a meta data
-        // check in the play folder for a cover image with the name cover
-        const coverImage = await loadCoverImage(randomPlay.slug);
-
-        if (coverImage) {
-          setCoverImage(coverImage);
-          setLoading(false);
+      try {
+        if (loading && randomPlay && randomPlay.cover) {
+          setCoverImage(randomPlay.cover);
         } else {
-          setCoverImage(thumbPlay);
+          // if it is not passed as a meta data
+          // check in the play folder for a cover image with the name cover
+          const coverImage = await loadCoverImage(randomPlay.slug);
 
-          console.error(
-            `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
-          );
+          if (coverImage) {
+            setCoverImage(coverImage);
+          } else {
+            setCoverImage(thumbPlay);
+
+            console.error(
+              `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
+            );
+          }
         }
+      } catch (error) {
+        console.error(`Error setting play cover: ${error}`);
+      } finally {
+        setLoading(false);
       }
     }
 
     setPlayCover();
   }, [randomPlay]);
 
-  if (loading) return <p>loading...</p>;
+  if (loading) {
+    return (
+      <div
+        className="dynamic-banner-container"
+        style={{
+          background: `linear-gradient(rgba(0,0,0,0.5), #020808), center/cover no-repeat`,
+          minHeight: '50vh'
+        }}
+      >
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <Fragment>
