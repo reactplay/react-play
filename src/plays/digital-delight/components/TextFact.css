@@ -40,7 +40,7 @@
   border: 2px solid rgb(124, 138, 255);
 }
 
-@media (max-width: 420px) {
+@media(max-width: 420px) {
   .digits-question {
     width: 13rem;
   }

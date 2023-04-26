@@ -1,8 +1,8 @@
 .pixel {
-  width: 1.5rem;
-  height: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
-.pixel:hover {
-  cursor: pointer;
+.pixel:hover{
+    cursor: pointer;
 }

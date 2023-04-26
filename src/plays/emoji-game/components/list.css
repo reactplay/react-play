@@ -1,9 +1,10 @@
 .emoji-game-play-area {
   background-color: rgb(228, 237, 133);
   padding: 50px;
-
+  
   border-radius: 15px;
   font-family: 'Julee', cursive;
+  
 }
 
 .emoji-game-play-button {

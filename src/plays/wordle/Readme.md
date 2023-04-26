@@ -11,7 +11,7 @@ Guess the 5-letter word in 6 attempts! A fun word guessing puzzle.
 
 - User: SamirMishra27
 - Gihub Link: https://github.com/SamirMishra27
-- Blog:
+- Blog: 
 - Video: https://www.stack-stream.com/v/making-a-wordle-clone-in-react-and-typescript-for-react-plays-2playsamonth-hackathon-challenge-submission
 
 ## Implementation Details
