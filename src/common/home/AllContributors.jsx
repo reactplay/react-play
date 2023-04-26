@@ -23,7 +23,7 @@ function AllContributors() {
             >
               <a
                 className="contributor-anchor"
-                href={contributor.html_url}
+                href={`/allcontributors/${contributor.login}`}
                 rel="noopener noreferrer"
                 target="_blank"
                 title={`${contributor.login}(${contributor.contributions} contributions)`}
