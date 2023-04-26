@@ -5,7 +5,6 @@ const Contributors = () => {
   const { data, error, isLoading } = useContributors(true);
   const navigate = useNavigate(null);
   const handleSeeAllContributors = () => {
-    console.log('clicked');
     navigate('/allcontributors');
   };
 
