@@ -1,0 +1,11 @@
+.list-tab {
+  margin: 0 20%;
+  padding: 1.6rem 2rem;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-gap: 10%;
+  justify-content: center;
+  cursor: pointer;
+}

@@ -13,6 +13,7 @@ import {
   PageNotFound
 } from 'common';
 import AllContributors from 'common/home/AllContributors';
+import ContributorDashboard from 'common/contributor-dashboard/index';
 import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NhostClient, NhostReactProvider } from '@nhost/react';
@@ -68,6 +69,9 @@ const RouteDefs = () => {
                   </Route> */}
           </Route>
           <Route element={<AllContributors />} path="/allcontributors" />
+          <Route element={<App />} path="/allcontributors">
+            <Route element={<ContributorDashboard />} path=":id" />
+          </Route>
           <Route element={<App />} path="/contributors">
             <Route element={<App />} path=":email">
               <Route element={<BadgesDashboard />} path="badges" />
