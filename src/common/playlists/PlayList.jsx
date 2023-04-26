@@ -14,14 +14,13 @@ import { getPlaysByFilter } from 'common/services/plays';
 
 const PlayList = () => {
   const [randomPlay, setRandomPlay] = useState({});
-  const [loading, setLoading] = useState();
-  const [plays, setPlays] = useState();
+  const [loading, setLoading] = useState(true);
+  const [plays, setPlays] = useState([]);
   const [isFiltered, setIsFiltered] = useState(false);
   let location = useLocation();
 
   useEffect(() => {
     const getPlays = async () => {
-      setLoading(true);
       const parsedQuery = ParseQuery(location.search);
       let translatedQuery;
       if (parsedQuery) {
@@ -58,7 +57,7 @@ const PlayList = () => {
     return <Loader />;
   }
 
-  if (plays?.length === 0) {
+  if (plays.length === 0) {
     return (
       <div className="play-not-found">
         <ImageOops className="play-not-found-image" />
@@ -83,7 +82,7 @@ const PlayList = () => {
       {isFiltered ? null : <DynamicBanner randomPlay={randomPlay} />}
 
       <ol className="list-plays">
-        {plays?.map((play, index) => (
+        {plays.map((play, index) => (
           <React.Fragment key={index}>
             <PlayThumbnail key={play.id} play={play} />
           </React.Fragment>
