@@ -1,6 +1,18 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { submit } from 'common/services/request';
+import {
+  FetchtestiPaginated,
+  Fetchtestimonials
+} from 'common/services/request/query/fetch-testimonials';
 const TestimonialCard = () => {
+  const fetchnow = async () => {
+    const res = await submit(Fetchtestimonials());
+    console.log(res)
+  };
+
+  useEffect(() => {
+    fetchnow();
+  }, []);
   return (
     <div class="flex h-screen flex-col justify-center">
       <div class="relative mx-auto flex max-w-xs flex-col space-y-3 rounded-xl border border-gray-300 bg-white p-2 shadow-lg md:max-w-3xl md:space-y-8">
