@@ -99,7 +99,8 @@ const HeaderNav = ({ showBrowse }) => {
               </a>
             ) : (
               <a
-                className="app-header-btn app-header-btn--primary umami--click--create-play"
+                className="app-header-btn app-header-btn--primary"
+                data-umami-event="create-play"
                 data-testid="create-btn"
                 href={CREATE_PLAY_DOC_LINK}
                 rel="noopener noreferrer"
@@ -134,7 +135,8 @@ const HeaderNav = ({ showBrowse }) => {
           </li>
           <li>
             <a
-              className="app-header-btn app-header-btn--default umami--click--github"
+              className="app-header-btn app-header-btn--default"
+              data-umami-event="github-repo-link"
               data-testid="github-btn"
               href="https://github.com/reactplay/react-play"
               rel="noopener noreferrer"

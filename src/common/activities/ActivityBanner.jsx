@@ -39,7 +39,8 @@ function ActivityBanner({ currentActivity }) {
               <span className="btn-label">Get started</span>
             </a>
             <a
-              className="body-c2a-btn umami--click--github"
+              className="body-c2a-btn "
+              data-umami-event="gitub-repo-link"
               href="https://github.com/reactplay/react-play"
               rel="noopener noreferrer"
               target="_blank"
