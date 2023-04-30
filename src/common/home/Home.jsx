@@ -16,7 +16,7 @@ import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
 import TestimonialCard from 'common/Testimonial/TestimonialCard';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import TestimonialSection from 'common/Testimonial/TestimonialSection';
 
 const Home = () => {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
@@ -132,30 +132,7 @@ const Home = () => {
           </strong>{' '}
           Says!
         </h2>
-        <Carousel autoPlay={true} showStatus={false}>
-          <div>
-            <TestimonialCard />
-          </div>
-          <div>
-            <TestimonialCard />
-          </div>
-          <div>
-            <TestimonialCard />
-          </div>
-          <div>
-            <TestimonialCard />
-          </div>
-          <div>
-            <TestimonialCard />
-          </div>
-          <div>
-            <TestimonialCard />
-          </div>
-          <div>
-            <TestimonialCard />
-          </div>
-          
-        </Carousel>
+        <TestimonialSection />
       </section>
       <section className="home-contributors" data-testid="contributors-section">
         <Contributors />
