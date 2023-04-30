@@ -5,6 +5,7 @@ import { IoIosRocket } from 'react-icons/io';
 import useFetch from 'common/hooks/useFetch';
 import { activities } from './activitiesConfig';
 import './activityBanner.css';
+import { UMAMI_EVENTS } from 'constants';
 
 function ActivityBanner({ currentActivity }) {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
@@ -40,7 +41,7 @@ function ActivityBanner({ currentActivity }) {
             </a>
             <a
               className="body-c2a-btn "
-              data-umami-event="github-button"
+              data-umami-event={UMAMI_EVENTS.GITHUB_BUTTON}
               href="https://github.com/reactplay/react-play"
               rel="noopener noreferrer"
               target="_blank"
