@@ -40,7 +40,7 @@ function ActivityBanner({ currentActivity }) {
             </a>
             <a
               className="body-c2a-btn "
-              data-umami-event="gitub-repo-link"
+              data-umami-event="gitub-button"
               href="https://github.com/reactplay/react-play"
               rel="noopener noreferrer"
               target="_blank"

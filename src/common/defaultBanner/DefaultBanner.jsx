@@ -25,7 +25,7 @@ const DefaultBanner = () => {
         </Link>
         <a
           className="body-c2a-btn"
-          data-umami-event="github-repo-link"
+          data-umami-event="github-button"
           href="https://github.com/reactplay/react-play"
           rel="noopener noreferrer"
           target="_blank"
