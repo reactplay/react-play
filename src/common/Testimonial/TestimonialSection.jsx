@@ -1,19 +1,19 @@
-import { Fetchtestimonials } from 'common/services/request/query/fetch-testimonials';
 import React, { useEffect, useState } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { submit } from 'common/services/request';
 import { Carousel } from 'react-responsive-carousel';
+import { FetchtestimonialsHomePage } from 'common/services/request/query/fetch-testimonials';
+import { Link } from 'react-router-dom';
 
 const TestimonialSection = () => {
   const [testimonials, setestimonials] = useState([]);
-  const fetchnow = async () => {
-    const res = await submit(Fetchtestimonials());
+  const fetchtestimonials = async () => {
+    const res = await submit(FetchtestimonialsHomePage());
     setestimonials(res);
-    console.log(res);
   };
 
   useEffect(() => {
-    fetchnow();
+    fetchtestimonials();
   }, []);
 
   return (
@@ -30,6 +30,11 @@ const TestimonialSection = () => {
           />
         ))}
       </Carousel>
+      <div className="flex justify-center items-center ">
+        <button className="text-blue-500 underline underline-offset-1">
+          <Link to="/testimonials">show all testimonials</Link>
+        </button>
+      </div>
     </>
   );
 };
