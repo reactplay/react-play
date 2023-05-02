@@ -5,6 +5,7 @@ import { FaDiscord } from 'react-icons/fa';
 import { BsTwitter, BsGithub } from 'react-icons/bs';
 import LogoLight from 'images/img-logo-light.svg';
 import { useSearchContext } from 'common/search/search-context';
+import { CREATE_PLAY_DOC_LINK } from 'constants';
 
 const ExtendedFooter = () => {
   const { showShareModal, setShowShareModal } = useSearchContext();
@@ -95,7 +96,7 @@ const ExtendedFooter = () => {
               {' '}
               <img
                 alt="Deploys by Netlify"
-                src="https://www.netlify.com/v3/img/components/netlify-light.svg"
+                src="https://www.netlify.com/v3/img/global/badges/netlify-color-accent.svg"
               />{' '}
             </a>
           </p>
@@ -109,7 +110,7 @@ const ExtendedFooter = () => {
           <div className="flex flex-wrap gap-1">
             <a
               className="btn-primary mr-2"
-              href="https://docs.reactplay.io/How-To-Guides/how-to-create-play"
+              href={CREATE_PLAY_DOC_LINK}
               rel="noopener noreferrer"
               target="_blank"
             >
