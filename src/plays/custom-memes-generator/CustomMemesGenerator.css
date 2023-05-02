@@ -47,7 +47,7 @@
   }
 }
 
-.troll-logo {
+.cmg-header-troll-logo {
   height: 100%;
   margin-right: 6px;
 }
@@ -75,26 +75,26 @@
   flex-direction: column;
 }
 
-.main-form {
+.cmg-meme-main-form {
   display: flex;
   flex-direction: column;
 }
 
-.main-form-input-div {
+.cmg-meme-main-form-input-div {
   display: flex;
   justify-content: space-around;
   margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 400px) {
-  .main-form-input-div {
+  .cmg-meme-main-form-input-div {
     display: flex;
     flex-direction: column;
     margin-bottom: 0;
   }
 }
 
-.main-form-input {
+.cmg-meme-main-form-input {
   height: 30px;
   margin-left: 10px;
   margin-right: 10px;
@@ -106,13 +106,13 @@
 }
 
 @media screen and (max-width: 400px) {
-  .main-form-input {
+  .cmg-meme-main-form-input {
     margin-bottom: 1rem;
     font-size: 13px;
   }
 }
 
-.main-form-button {
+.cmg-meme-main-form-button {
   margin-left: 20px;
   margin-right: 20px;
   grid-column: 1 / -1;
@@ -128,13 +128,17 @@
 }
 
 @media screen and (max-width: 400px) {
-  .main-form-button {
+  .cmg-meme-main-form-button {
     margin-top: 0;
     font-size: 12px;
   }
 }
 
-.main-meme-image-container {
+.cmg-meme-main-error{
+  font-family: 'Karla', sans-serif ;
+}
+
+.cmg-meme-main-image-container {
   margin-top: 1rem !important;
   margin: auto;
   position: relative;
@@ -146,14 +150,14 @@
   align-items: center;
 }
 
-.main-meme-image {
+.cmg-meme-main-image {
   width: 100%;
   height: auto;
   padding: 5px;
   border-radius: 20px;
 }
 
-.meme--text {
+.cmg-meme-main-memeText {
   position: absolute;
   width: 80%;
   text-align: center;
@@ -171,15 +175,15 @@
 }
 
 @media screen and (max-width: 400px) {
-  .meme--text {
+  .cmg-meme-main-memeText {
     font-size: 1em;
   }
 }
 
-.text-bottom {
+.cmg-meme-main-memeText-bottom {
   bottom: 0;
 }
 
-.text-top {
+.cmg-meme-main-memeText-top {
   top: 0;
 }
