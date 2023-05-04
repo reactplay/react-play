@@ -3,7 +3,7 @@ import SideBarDesign from './Components/SideBarDesign';
 import CardContainer from './Components/CardContainer';
 import { useEffect, useState } from 'react';
 import SideBarOperation from './Components/SideBarOperation';
-import { backupQuotes } from './data';
+import { gradients } from './data';
 
 function RandomQuoteCardGenerator(props) {
   const initialQuoteData = [
@@ -13,7 +13,7 @@ function RandomQuoteCardGenerator(props) {
     }
   ];
 
-  const [gradientColor, setGradientColor] = useState([]);
+  const [gradientColor, setGradientColor] = useState([gradients[0]]);
   const [quote, setQuote] = useState({});
   const [regenerate, setRegenerate] = useState(false);
   const [AspectRatio, setAspectRatio] = useState('Square');

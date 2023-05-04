@@ -1,0 +1,15 @@
+{
+  "name": "code-editor",
+  "version": "1.0.0",
+  "description": "It is a code editor for html ,css and js inspired from codepen made using codemirror and react-codemirror2 for writing and executing the code at same time !",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "codemirror": "^5.31.0",
+    "react-codemirror2": "^3.0.7"
+  }
+}

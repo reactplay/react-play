@@ -1,1 +1,0 @@
-const o="/assets/laughing-emoji-b78eb21c.gif",e="/assets/cover-abedd781.png",t=Object.freeze(Object.defineProperty({__proto__:null,default:e},Symbol.toStringTag,{value:"Module"}));export{t as c,o as l};

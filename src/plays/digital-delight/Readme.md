@@ -11,8 +11,8 @@ Get interesting facts about numbers.
 
 - User: Shivam-Katare
 - Gihub Link: https://github.com/Shivam-Katare
-- Blog:
-- Video:
+- Blog: 
+- Video: 
 
 ## Implementation Details
 
@@ -20,7 +20,7 @@ Number Facts is a React app that uses an API to get random facts about numbers. 
 
 ## Consideration
 
-This app is designed for educational purposes.
+This app is designed for educational purposes. 
 
 ## Resources
 

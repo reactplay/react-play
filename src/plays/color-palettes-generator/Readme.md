@@ -17,7 +17,7 @@ Color palette generator is a web application built using React.js that allows us
 
 ## Implementation Details
 
-### Introduction
+### Introduction 
 
 Color palettes generator project is a web application that allows users to generate different color palettes based on their preferences. The application is built using React.js and uses various React concepts like useState, try-catch, props, arrow functions, and more.
 
@@ -27,6 +27,7 @@ Color palettes generator project is a web application that allows users to gener
     - User can select the color format in HEX
     - User can copy the color codes of the generated palette to their clipboard
     - User Can Search Color and generate color palette according to that color
+
 
 ### Implementation
 
@@ -39,4 +40,6 @@ Color palettes generator project is a web application that allows users to gener
     - The application uses React Fragments to group a list of children without adding extra nodes to the DOM.
     - The application uses React Suspense to display a fallback while waiting for a component to load.
     - The application give alert after copied color from palette
-    - The application search method help user to make a color palette according to their choice
+    - The application search method help user to make a color palette according to their choice    
+
+

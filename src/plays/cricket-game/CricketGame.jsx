@@ -29,7 +29,7 @@ import {
 } from './game/gameLogic';
 
 // Audio imports
-import { shotSound, gameTrack, crowdCheering, crowdDisappointed, wicketHit } from './game/utils';
+import { shotSound, gameTrack, crowdCheering, crowdDisappointed, wicketHit } from './game/utils.js';
 
 // Get the level from user's local storage
 let keyName = 'cricket-game-user-level';

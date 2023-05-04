@@ -7,7 +7,9 @@ import {
 import react from 'vite-plugin-react-esbuild';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 import svgrPlugin from 'vite-plugin-svgr';
-import EnvironmentPlugin from 'vite-plugin-environment'
+import EnvironmentPlugin from 'vite-plugin-environment';
+
+
 import {
 	chunkSplitPlugin
 } from 'vite-plugin-chunk-split';
@@ -18,13 +20,16 @@ import {
 	resolve
 } from "path";
 
+
 import viteImagemin from 'vite-plugin-imagemin'
 
 import {
 	dependencies
 } from './package.json';
 
+const devPort = 4000;
 
+const moduleScript = new RegExp('<!-- daScript -->');
 
 const renderChunks = (deps) => {
 	let chunks = [];
@@ -134,7 +139,7 @@ export default defineConfig(({
 	// Load app-level env vars to node-level env vars.
 	const localEnv = loadEnv(mode, process.cwd(), '')
 	const {
-		DEV_PORT = 3000
+		DEV_PORT = devPort
 	} = localEnv;
 	const isDevelopment = mode === "development";
 
@@ -145,6 +150,11 @@ export default defineConfig(({
 				return html.replace(/%(.*?)%/g, function(match, p1) {
 					return localEnv[p1];
 				});
+				
+				return html.replace(moduleScript, function(match, p1) {
+					return '<script type="module" src="src/index.jsx"></script>';
+				});
+				
 			},
 		};
 	};
@@ -171,7 +181,7 @@ export default defineConfig(({
 			globals: true,
 		},
 		plugins: [
-			VitePWA(manifestForPlugin),			
+			VitePWA(manifestForPlugin),
 			EnvironmentPlugin('all', {
 				prefix: 'REACT_APP_'
 			}),
@@ -263,6 +273,9 @@ export default defineConfig(({
 			}),
 
 		],
+		optimizeDeps: {
+			entries : resolve(__dirname,'src/index.jsx'),
+		},
 		resolve: {
 			alias: {
 				// "@": resolve(__dirname, "src"),
@@ -283,6 +296,7 @@ export default defineConfig(({
 			port: DEV_PORT,
 		},
 		build: {
+			outDir: resolve(__dirname, 'build'),
 			chunkSizeWarningLimit: 1600,
 			sourcemap: false,
 			cssCodeSplit: true

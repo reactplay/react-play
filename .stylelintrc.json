@@ -1,6 +1,7 @@
 {
   "extends": [
-  ]
+	  "stylelint-config-standard-scss"
+  ],
   "rules": {
     "declaration-colon-newline-after": "always-multi-line",
     "property-no-unknown": [ true, {

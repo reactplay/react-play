@@ -1,8 +1,5 @@
 const path = require('path');
-
 const CracoEsbuildPlugin = require('craco-esbuild');
-const { whenProd } = require('@craco/craco');
-const { ProvidePlugin } = require('webpack');
 const externalWebpackConfig = require('./webpack.config.js');
 
 const {

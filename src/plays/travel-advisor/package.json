@@ -1,0 +1,16 @@
+{
+  "name": "travel-advisor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.9.3",
+    "react-leaflet": "^4.2.1"
+  }
+}
