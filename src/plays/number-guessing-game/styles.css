@@ -1,0 +1,54 @@
+/* enter stlyes here */
+  
+  
+  .container{
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  #guessedNumber{
+    width: 140px;
+    height: 60px;
+    text-align: center;
+    margin: 20px;
+    font-size: 35px;
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+  
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn{
+    margin: 20px;
+    width: 140px;
+    height: 60px;
+    border-radius: 5px;
+    border: none;
+    background-color: grey;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  h1{
+    font-size: 70px;
+  }
+  
+  h2{
+    font-size: 45px;
+  }
+  
+  h3{
+    font-size: 30px;
+  }
