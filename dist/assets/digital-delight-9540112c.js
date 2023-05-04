@@ -1,0 +1,1 @@
+const a="/assets/math-ce7babd2.png",s="/assets/year-0feb0196.png",t="/assets/date-8f9a95e4.png",e="/assets/cover-df14e38a.png",o=Object.freeze(Object.defineProperty({__proto__:null,default:e},Symbol.toStringTag,{value:"Module"}));export{t as D,a as M,s as Y,o as c};

@@ -176,7 +176,7 @@ pre {
 }
 .cuisine-modal .modal-container .btn-group {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .cuisine-modal .modal-container .btn-group .btn-close {
   background-color: rgb(234, 231, 231);

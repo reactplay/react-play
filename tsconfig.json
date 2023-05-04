@@ -2,16 +2,30 @@
   "compilerOptions": {
     "jsx": "react",
     "baseUrl": "src",
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "es6",
-    "lib": ["es2022", "ES6", "DOM"],
-    "target": "es6",
-    "allowJs": true,
+    "module": "ESNext",
     "moduleResolution": "node",
+    "outDir": "./dist/",
+    "lib": ["es2022", "ESNext", "DOM"],
+    "target": "ESNext",
+    "allowJs": true,
+	"noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": false,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+	"strictFunctionTypes": "false",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+	"noEmit": true,
+    "paths": {
+	  "*": ["*"],
+	  "app/*": ["./app/*"],
+      "common/*": ["./common/*"],
+      "constants/*": ["./constants/*"],
+      "ErrorBoundary/*": ["./ErrorBoundary/*"],
+      "images/*": ["./images/*"],
+      "meta/*": ["./meta/*"],
+      "plays/*": ["./plays/*"]
+    }
   },
-  "include": ["src/**/*", "public/serviceWorker.js", "src/globals.d.ts"]
+  "include": ["src/**/*", "public/serviceWorker.js", "globals.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }

@@ -11,12 +11,12 @@ import Contributors from './Contributors';
 import ExtendedFooter from 'common/footer/ExtendedFooter';
 import { useSearchContext } from 'common/search/search-context';
 import { Tweet } from 'react-twitter-widgets';
-import Spinner from '../spinner/spinner';
+import Spinner from 'common/spinner/spinner';
 import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
 
 const Home = () => {
-  const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
+  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
   const { setSearchTerm, searchTerm, setFilterQuery } = useSearchContext();
   useEffect(() => {
     setSearchTerm('');
@@ -50,7 +50,7 @@ const Home = () => {
   const tweetLoadHandler = () => setTweetsLoading(false);
 
   // eslint-disable-next-line no-console
-  console.log('process.env.REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
+  console.log('REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
 
   return (
     <main>

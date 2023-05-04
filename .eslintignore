@@ -13,3 +13,6 @@ tsconfig.json;
 postcss.config.js;
 Dockerfile.DEV;
 Dockerfile.PROD;
+build
+coverage
+dist

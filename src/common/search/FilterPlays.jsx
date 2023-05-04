@@ -1,5 +1,5 @@
 import { Modal } from 'common';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './search.css';
 import { orderBy } from 'lodash';
 
