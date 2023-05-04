@@ -2,9 +2,8 @@
   "name": "react-play",
   "version": "1.0.0",
   "private": true,
-  "main": "src/index.jsx",
   "scripts": {
-    "start:lint": "npm run lint && react-scripts start",
+	  "start:lint": "npm run lint && react-scripts start",
     "vite:build": "vite build --mode production",
     "vite:start": "npx kill-port 3000 && clear && vite --mode development --host --force --config vite.config.ts",
     "vite:prod": "tsc && vite build --mode production --host",
@@ -90,6 +89,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.16.3",
     "@types/react": "^18.0.6",
@@ -140,15 +140,14 @@
     "{src,test}/**/*.{css,scss,json,jsx,js,ts,tsx}": [
       "prettier --write -u"
     ],
-	"{src,test}/**/*.{jsx,js,ts,tsx}": [
+    "{src,test}/**/*.{jsx,js,ts,tsx}": [
       "eslint --fix"
     ]
-
   },
   "pnpm": {
     "overrides": {
       "redux": "$redux",
-	  "date-fns": "$date-fns",
+      "date-fns": "$date-fns",
       "react-scripts": "$react-scripts",
       "webpack": "$webpack",
       "webpack-merge": "$webpack-merge"

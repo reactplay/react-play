@@ -3,8 +3,8 @@ import {
 	loadEnv,
 	splitVendorChunkPlugin
 } from 'vite'
-//import react from '@vitejs/plugin-react';
-import react from 'vite-plugin-react-esbuild';
+import react from '@vitejs/plugin-react';
+//import react from 'vite-plugin-react-esbuild';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 import svgrPlugin from 'vite-plugin-svgr';
 import EnvironmentPlugin from 'vite-plugin-environment';
@@ -151,9 +151,9 @@ export default defineConfig(({
 					return localEnv[p1];
 				});
 				
-				return html.replace(moduleScript, function(match, p1) {
-					return '<script type="module" src="src/index.jsx"></script>';
-				});
+				// return html.replace(moduleScript, function(match, p1) {
+					// return '<script type="module" src="src/index.jsx"></script>';
+				// });
 				
 			},
 		};
@@ -273,9 +273,6 @@ export default defineConfig(({
 			}),
 
 		],
-		optimizeDeps: {
-			entries : resolve(__dirname,'src/index.jsx'),
-		},
 		resolve: {
 			alias: {
 				// "@": resolve(__dirname, "src"),

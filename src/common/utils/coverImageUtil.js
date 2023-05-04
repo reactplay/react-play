@@ -1,6 +1,8 @@
 export async function loadCoverImage(playSlug) {
   const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
-  const imgPromises = acceptedImgExtensions.map((ext) => import(`../../plays/${playSlug}/cover.${ext}`));
+  const imgPromises = acceptedImgExtensions.map((ext) =>
+    import(`../../plays/${playSlug}/cover.${ext}`)
+  );
 
   const response = await Promise.allSettled(imgPromises);
 

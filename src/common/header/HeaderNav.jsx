@@ -7,6 +7,7 @@ import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
 import { MdManageSearch, MdClose } from 'react-icons/md';
 import SocialShare from 'common/components/SocialShare';
 import { GoX } from 'react-icons/go';
+import CssBaseline from '@mui/material/CssBaseline';
 import { Modal, Box, Typography, Menu } from '@mui/material';
 import { useSearchContext } from 'common/search/search-context';
 import { CREATE_PLAY_DOC_LINK } from 'constants';

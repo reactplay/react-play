@@ -3,5 +3,6 @@
   "tabWidth": 2,
   "printWidth": 100,
   "singleQuote": true,
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "importOrder": ["^[react*]", "^@mui/(.*)$", "<THIRD_PARTY_MODULES>", "^[./]"]
 }
