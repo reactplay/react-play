@@ -61,7 +61,7 @@ function InfiniteScrollWithDebouncingConcept(props) {
       <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body">
-          {/* Your Code Starts Here */}
+          {/* Your Code Starts Here - Infinity Scroll */}
           <div>
             <h1 className="m-2 text-gray-800 text-lg font-bold">Welcome to Infinite Scrolling</h1>
             <input
@@ -81,7 +81,7 @@ function InfiniteScrollWithDebouncingConcept(props) {
               />
             )}
           </div>
-          {/* Your Code Ends Here */}
+          {/* Your Code Ends Here - Infinity Scroll */}
         </div>
       </div>
     </>
