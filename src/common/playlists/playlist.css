@@ -802,3 +802,7 @@
 .right-arrow-icon {
   color: #25a0a7;
 }
+.banner-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #020808), center/cover no-repeat;
+  min-height: 50vh;
+}
