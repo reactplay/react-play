@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { MdArrowRightAlt } from 'react-icons/md';
 import { loadCoverImage } from 'common/utils/coverImageUtil';
 import Loader from 'common/spinner/spinner';
+import { toast } from 'react-toastify';
 
 const DynamicBanner = ({ randomPlay }) => {
   const [coverImage, setCoverImage] = useState(null);
@@ -22,6 +23,7 @@ const DynamicBanner = ({ randomPlay }) => {
           if (coverImage) {
             setCoverImage(coverImage);
           } else {
+            toast.warning('Unable to find banner default set');
             setCoverImage(thumbPlay);
 
             console.error(
@@ -30,6 +32,7 @@ const DynamicBanner = ({ randomPlay }) => {
           }
         }
       } catch (error) {
+        toast.error('Something went wrong while loading the banner');
         console.error(`Error setting play cover: ${error}`);
       } finally {
         setLoading(false);
@@ -41,13 +44,7 @@ const DynamicBanner = ({ randomPlay }) => {
 
   if (loading) {
     return (
-      <div
-        className="dynamic-banner-container"
-        style={{
-          background: `linear-gradient(rgba(0,0,0,0.5), #020808), center/cover no-repeat`,
-          minHeight: '50vh'
-        }}
-      >
+      <div className="dynamic-banner-container banner-bg">
         <Loader />
       </div>
     );
@@ -56,10 +53,9 @@ const DynamicBanner = ({ randomPlay }) => {
   return (
     <Fragment>
       <div
-        className="dynamic-banner-container"
+        className="dynamic-banner-container banner-bg"
         style={{
-          background: `linear-gradient(rgba(0,0,0,0.5), #020808),url(${coverImage} ) center/cover no-repeat`,
-          minHeight: '50vh'
+          background: `linear-gradient(rgba(0,0,0,0.5), #020808),url(${coverImage} ) center/cover no-repeat`
         }}
       >
         <div className="dynamic-banner-body md:pl-14 px-4 py-2 md:py-3">
