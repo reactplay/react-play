@@ -4,6 +4,7 @@ import { BsGithub } from 'react-icons/bs';
 import { FiStar } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { MdManageSearch } from 'react-icons/md';
+import { UMAMI_EVENTS } from 'constants';
 
 const DefaultBanner = () => {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
@@ -24,7 +25,8 @@ const DefaultBanner = () => {
           <span className="btn-label">Browse</span>
         </Link>
         <a
-          className="body-c2a-btn umami--click--github"
+          className="body-c2a-btn"
+          data-umami-event={UMAMI_EVENTS.GITHUB_BUTTON}
           href="https://github.com/reactplay/react-play"
           rel="noopener noreferrer"
           target="_blank"
