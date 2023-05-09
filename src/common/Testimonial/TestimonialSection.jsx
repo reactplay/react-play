@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { submit } from 'common/services/request';
 import { Carousel } from 'react-responsive-carousel';
-import { FetchtestimonialsHomePage } from 'common/services/request/query/fetch-testimonials';
+import { FetchtestimonialsHomePage, insert_testimonial_submission, testi } from 'common/services/request/query/fetch-testimonials';
 import { Link } from 'react-router-dom';
 import { useAuthenticated, useUserData } from '@nhost/react';
 import { NHOST } from 'common/const';
@@ -28,8 +28,12 @@ const TestimonialSection = () => {
 
     if(!isAuthenticated) return handleLogin('github');
 
+    return await Promise.all([
+      submit(insert_testimonial_submission()),
+    ]).catch((err) => Promise.reject(err));
   } 
 
+  
   useEffect(() => {
     fetchtestimonials();
   }, []);
