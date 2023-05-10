@@ -32,12 +32,12 @@ const InfiniteScroll = (props) => {
       );
     }
 
-    return listData.map((item, index) => {
+    return listData.map((currentItem, index) => {
       if (index === listData.length - 1) {
-        return renderListItem(item, lastElementOberver);
+        return renderListItem(currentItem, lastElementOberver);
       }
 
-      return renderListItem(item, null);
+      return renderListItem(currentItem, null);
     });
   };
   const fetchData = () => {
