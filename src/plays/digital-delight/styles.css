@@ -1,6 +1,5 @@
 /* enter stlyes here */
 
-
 .digits-facts-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -55,7 +54,7 @@
   padding: 12px 16px;
   text-decoration: none;
   text-overflow: ellipsis;
-  transition: all .14s ease-out;
+  transition: all 0.14s ease-out;
   white-space: nowrap;
 }
 
@@ -70,7 +69,7 @@
 
 /* Media Queries */
 
-@media(max-width: 1057px) {
+@media (max-width: 1057px) {
   .digits-facts-container {
     display: grid;
     grid-template-columns: 1fr;
