@@ -10,9 +10,8 @@ export const FetchFiltered = {
     'id',
     'quote',
     'title',
-    'user',
-    { user_id_map: ['avatarUrl', 'displayName'] },
-    { event_map: ['code_name', 'name', 'description'] }
+    { user_id_map: ['avatarUrl', 'id', 'displayName'] },
+    { testimonials_event: ['id', 'name', 'description'] }
   ]
 };
 
@@ -25,9 +24,8 @@ export const FetchALL = {
     'id',
     'quote',
     'title',
-    'user',
-    { user_id_map: ['avatarUrl', 'displayName'] },
-    { event_map: ['code_name', 'name', 'description'] }
+    { user_id_map: ['avatarUrl', 'id', 'displayName'] },
+    { testimonials_event: ['id', 'name', 'description'] }
   ]
 };
 

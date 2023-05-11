@@ -24,7 +24,7 @@ const Testimonials = () => {
           title={testimonial.title}
           name={testimonial.user_id_map.displayName}
           avatarUrl={testimonial.user_id_map.avatarUrl}
-          codeName={testimonial.event_map.name}
+          codeName={testimonial.testimonials_event.name}
         />
       ))}
     </div>

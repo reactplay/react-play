@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { submit } from 'common/services/request';
 import { Carousel } from 'react-responsive-carousel';
-import { FetchtestimonialsHomePage, insert_testimonial_submission} from 'common/services/request/query/fetch-testimonials';
+import {
+  FetchtestimonialsHomePage,
+  insert_testimonial_submission
+} from 'common/services/request/query/fetch-testimonials';
 import { Link } from 'react-router-dom';
 import { useAuthenticated, useUserData } from '@nhost/react';
 import { NHOST } from 'common/const';
@@ -10,7 +13,7 @@ import TestimonialModal from './TestimonialModal';
 
 const TestimonialSection = () => {
   const [testimonials, setestimonials] = useState([]);
-  const [isOpen , setisOpen] = useState(false);
+  const [isOpen, setisOpen] = useState(false);
   const isAuthenticated = useAuthenticated();
   console.log(isAuthenticated);
   const user = useUserData();
@@ -22,23 +25,22 @@ const TestimonialSection = () => {
   };
 
   const handleLogin = (value) => {
-       return (window.location = NHOST.AUTH_URL(window.location.href, value));
+    return (window.location = NHOST.AUTH_URL(window.location.href, value));
   };
 
-  const  onAddTestimonial = async () => {
+  const onAddTestimonial = async () => {
     console.log('clicked');
 
-    if(!isAuthenticated) return handleLogin('github');
+    if (!isAuthenticated) return handleLogin('github');
     setisOpen(!isOpen);
 
     /* return await Promise.all([
       submit(insert_testimonial_submission()),
     ]).catch((err) => Promise.reject(err)); */
-  } 
+  };
 
   console.log(testimonials);
 
-  
   useEffect(() => {
     fetchtestimonials();
   }, []);
@@ -46,13 +48,11 @@ const TestimonialSection = () => {
   return (
     <>
       <div>
-         <button type="" onClick={onAddTestimonial}>Add Testimonial</button>
+        <button type="" onClick={onAddTestimonial}>
+          Add Testimonial
+        </button>
       </div>
-      <div>
-        {isOpen && (
-           <TestimonialModal  isOpen={isOpen} setisOpen={setisOpen}/> 
-        )}   
-      </div>
+      <div>{isOpen && <TestimonialModal isOpen={isOpen} setisOpen={setisOpen} />}</div>
       <Carousel autoPlay={true}>
         {testimonials.map((testimonial) => (
           <TestimonialCard
@@ -61,7 +61,7 @@ const TestimonialSection = () => {
             title={testimonial.title}
             name={testimonial.user_id_map.displayName}
             avatarUrl={testimonial.user_id_map.avatarUrl}
-            codeName={testimonial.event_map.name}
+            codeName={testimonial.testimonials_event.name}
           />
         ))}
       </Carousel>
