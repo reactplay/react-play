@@ -3,7 +3,7 @@ import Modal from "@mui/joy/Modal";
 import ModalClose from "@mui/joy/ModalClose";
 import Typography from "@mui/joy/Typography";
 import Sheet from "@mui/joy/Sheet";
-import { useUserDisplayName } from "@nhost/react";
+import { useUserDisplayName, useUserId } from "@nhost/react";
 import { Box, TextField } from "@mui/material";
 import Button from "@mui/joy/Button";
 import { Textarea } from "@mui/joy";
@@ -11,17 +11,20 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { FetchALlEvents } from "common/services/request/query/fetch-testimonials";
+import { FetchALlEvents, insert_testimonial_submission } from "common/services/request/query/fetch-testimonials";
 import { submit } from "common/services/request";
 
 export default function TestmonialModal({ isOpen, setisOpen }) {
   const userDisplayName = useUserDisplayName();
-  const [age, setAge] = React.useState("");
-  const [Events, setEvents] = useState([]);
+  const userId = useUserId();
+  const [testimonialData, settestimonialData] = useState({
+    quote: "",
+    title: "",
+    event: "",
+    id: userId,
+  });
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+  const [Events, setEvents] = useState([]);
 
   const fetchtestevents = async () => {
     const res = await submit(FetchALlEvents());
@@ -31,6 +34,22 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
   useEffect(() => {
     fetchtestevents();
   }, []);
+
+  const updateData = (e) => {
+    const fieldName = e.target.name;
+    settestimonialData((prev) => ({
+      ...prev,
+      [fieldName]: e.target.value,
+    }));
+  };
+
+  const AddTestimonial = async () => {
+    return await Promise.all([
+      submit(insert_testimonial_submission(testimonialData)),
+    ]).catch((err) => Promise.reject(err));
+  };
+
+  console.log(testimonialData);
 
   return (
     <React.Fragment>
@@ -81,12 +100,20 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
               <Box component="div" sx={{ display: "flex", mb: 3 }}>
                 <TextField
                   id="standard-basic"
+                  name="title"
                   label="Title"
                   variant="standard"
+                  onChange={updateData}
                 />
               </Box>
               <Typography fontWeight="md">Enter your testimonial:</Typography>
-              <Textarea size="sm" name="Size" minRows={8} maxRows={40} />
+              <Textarea
+                size="sm"
+                name="quote"
+                minRows={8}
+                maxRows={40}
+                onChange={updateData}
+              />
               <Box />
               <Box
                 sx={{
@@ -103,18 +130,19 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
                     <Select
                       labelId="demo-simple-select-filled-label"
                       id="demo-simple-select-filled"
-                      value={age}
-                      onChange={handleChange}
+                      value={testimonialData.event}
+                      name="event"
+                      onChange={updateData}
                     >
                       {Events.map((category) => (
                         <MenuItem value={category.testimonials_event.id}>
                           {category.testimonials_event.name}
                         </MenuItem>
-                      ))}  
+                      ))}
                     </Select>
                   </FormControl>
                 </Box>
-                <Button>ADD</Button>
+                <Button onClick={AddTestimonial}>ADD</Button>
               </Box>
             </Box>
           </Box>

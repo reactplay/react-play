@@ -15,6 +15,8 @@ const Testimonials = () => {
     fetchtestimonials();
   }, []);
 
+  console.log(testimonials);
+
   return (
     <div className="flex flex-wrap p-8  items-center justify-center border space-x-7">
       {testimonials.map((testimonial) => (

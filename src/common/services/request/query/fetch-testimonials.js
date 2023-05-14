@@ -8,9 +8,8 @@ export const FetchFiltered = {
     "id",
     "quote",
     "title",
-    "created_at",
     { user_id_map: ["avatarUrl", "id", "displayName"] },
-    { testimonials_event: ["id", "name", "description"] },
+    { testimonials_event: ["id", "name", "description" ,  "created_at"] },
   ],
 };
 
@@ -24,7 +23,7 @@ export const FetchALL = {
     "quote",
     "title",
     { user_id_map: ["avatarUrl", "id", "displayName"] },
-    { testimonials_event: ["id", "name", "description"] },
+    { testimonials_event: ["id", "name", "description" ,  "created_at"] },
   ],
 };
 
@@ -51,17 +50,17 @@ export function FetchALlEvents() {
   return { ...FetchEvents };
 }
 
-export const insert_testimonial_submission = () => {
+export const insert_testimonial_submission = (testimonialData) => {
   return {
     display: "insert_testimonials_one",
     name: "insert_testimonials_one",
     function: "insert_testimonials_one",
     write: true,
     object: {
-      event: "95063183-6a29-4c34-b08e-10cb306ea29c",
-      quote: "Trying To add a new one",
-      title: "Test",
-      user: "16b4be58-d2d5-4ae5-aea0-c439475bb3db",
+      event: testimonialData.event,
+      quote:  testimonialData.quote,
+      title: testimonialData.title,
+      user: testimonialData.id,
     },
     return: ["id"],
   };
