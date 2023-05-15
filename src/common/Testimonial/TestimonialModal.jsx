@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from "react";
-import Modal from "@mui/joy/Modal";
-import ModalClose from "@mui/joy/ModalClose";
-import Typography from "@mui/joy/Typography";
-import Sheet from "@mui/joy/Sheet";
-import { useUserDisplayName, useUserId } from "@nhost/react";
-import { Box, TextField } from "@mui/material";
-import Button from "@mui/joy/Button";
-import { Textarea } from "@mui/joy";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import { FetchALlEvents, insert_testimonial_submission } from "common/services/request/query/fetch-testimonials";
-import { submit } from "common/services/request";
+import React, { useEffect, useState } from 'react';
+import Modal from '@mui/joy/Modal';
+import ModalClose from '@mui/joy/ModalClose';
+import Typography from '@mui/joy/Typography';
+import Sheet from '@mui/joy/Sheet';
+import { useUserDisplayName, useUserId } from '@nhost/react';
+import { Box, TextField } from '@mui/material';
+import Button from '@mui/joy/Button';
+import { Textarea } from '@mui/joy';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import {
+  FetchALlEvents,
+  insert_testimonial_submission
+} from 'common/services/request/query/fetch-testimonials';
+import { submit } from 'common/services/request';
 
 export default function TestmonialModal({ isOpen, setisOpen }) {
   const userDisplayName = useUserDisplayName();
   const userId = useUserId();
   const [testimonialData, settestimonialData] = useState({
-    quote: "",
-    title: "",
-    event: "",
-    id: userId,
+    quote: '',
+    title: '',
+    event: '',
+    id: userId
   });
 
   const [Events, setEvents] = useState([]);
@@ -39,14 +42,14 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
     const fieldName = e.target.name;
     settestimonialData((prev) => ({
       ...prev,
-      [fieldName]: e.target.value,
+      [fieldName]: e.target.value
     }));
   };
 
   const AddTestimonial = async () => {
-    return await Promise.all([
-      submit(insert_testimonial_submission(testimonialData)),
-    ]).catch((err) => Promise.reject(err));
+    return await Promise.all([submit(insert_testimonial_submission(testimonialData))]).catch(
+      (err) => Promise.reject(err)
+    );
   };
 
   console.log(testimonialData);
@@ -58,25 +61,25 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
         aria-describedby="modal-desc"
         open={isOpen}
         onClose={() => setisOpen(false)}
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
       >
         <Sheet
           variant="outlined"
           sx={{
             maxWidth: 500,
-            borderRadius: "md",
+            borderRadius: 'md',
             p: 3,
-            boxShadow: "lg",
+            boxShadow: 'lg'
           }}
         >
           <ModalClose
             variant="outlined"
             sx={{
-              top: "calc(-1/4 * var(--IconButton-size))",
-              right: "calc(-1/4 * var(--IconButton-size))",
-              boxShadow: "0 2px 12px 0 rgba(0 0 0 / 0.2)",
-              borderRadius: "50%",
-              bgcolor: "background.body",
+              top: 'calc(-1/4 * var(--IconButton-size))',
+              right: 'calc(-1/4 * var(--IconButton-size))',
+              boxShadow: '0 2px 12px 0 rgba(0 0 0 / 0.2)',
+              borderRadius: '50%',
+              bgcolor: 'background.body'
             }}
           />
           <Typography
@@ -89,15 +92,9 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
           >
             Thank You, {userDisplayName} !
           </Typography>
-          <Box
-            component="div"
-            sx={{ display: "flex", p: "4px 0px", flexDirection: "column" }}
-          >
-            <Box
-              component="div"
-              sx={{ display: "flex", p: "5px 5px", flexDirection: "column" }}
-            >
-              <Box component="div" sx={{ display: "flex", mb: 3 }}>
+          <Box component="div" sx={{ display: 'flex', p: '4px 0px', flexDirection: 'column' }}>
+            <Box component="div" sx={{ display: 'flex', p: '5px 5px', flexDirection: 'column' }}>
+              <Box component="div" sx={{ display: 'flex', mb: 3 }}>
                 <TextField
                   id="standard-basic"
                   name="title"
@@ -107,26 +104,18 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
                 />
               </Box>
               <Typography fontWeight="md">Enter your testimonial:</Typography>
-              <Textarea
-                size="sm"
-                name="quote"
-                minRows={8}
-                maxRows={40}
-                onChange={updateData}
-              />
+              <Textarea size="sm" name="quote" minRows={8} maxRows={40} onChange={updateData} />
               <Box />
               <Box
                 sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  p: "17px 4px",
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  p: '17px 4px'
                 }}
               >
                 <Box>
                   <FormControl variant="filled" sx={{ minWidth: 110 }}>
-                    <InputLabel id="demo-simple-select-filled-label">
-                      Category
-                    </InputLabel>
+                    <InputLabel id="demo-simple-select-filled-label">Category</InputLabel>
                     <Select
                       labelId="demo-simple-select-filled-label"
                       id="demo-simple-select-filled"

@@ -1,7 +1,7 @@
-import { FetchALLtestimonials } from "common/services/request/query/fetch-testimonials";
-import React, { useEffect, useState } from "react";
-import TestimonialCard from "./TestimonialCard";
-import { submit } from "common/services/request";
+import { FetchALLtestimonials } from 'common/services/request/query/fetch-testimonials';
+import React, { useEffect, useState } from 'react';
+import TestimonialCard from './TestimonialCard';
+import { submit } from 'common/services/request';
 
 const Testimonials = () => {
   const [testimonials, setestimonials] = useState([]);
