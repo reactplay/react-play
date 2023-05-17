@@ -78,7 +78,7 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
               top: 'calc(-1/4 * var(--IconButton-size))',
               right: 'calc(-1/4 * var(--IconButton-size))',
               boxShadow: '0 2px 12px 0 rgba(0 0 0 / 0.2)',
-              borderRadius: '50%',
+              borderRadius: '40%',
               bgcolor: 'background.body'
             }}
           />
@@ -100,28 +100,40 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
                   name="title"
                   label="Title"
                   variant="standard"
+                  fullWidth
                   onChange={updateData}
                 />
               </Box>
               <Typography fontWeight="md">Enter your testimonial:</Typography>
-              <Textarea size="sm" name="quote" minRows={8} maxRows={40} onChange={updateData} />
+              <Textarea
+                size="sm"
+                name="quote"
+                minRows={8}
+                maxRows={40}
+                onChange={updateData}
+                color="neutral"
+                sx={{ borderRadius: '1%' }}
+              />
               <Box />
               <Box
                 sx={{
                   display: 'flex',
                   justifyContent: 'space-between',
-                  p: '17px 4px'
+                  alignItems: 'center',
+                  p: '10px 10px',
+                  marginTop: '5px'
                 }}
               >
                 <Box>
-                  <FormControl variant="filled" sx={{ minWidth: 110 }}>
-                    <InputLabel id="demo-simple-select-filled-label">Category</InputLabel>
+                  <FormControl variant="standard" sx={{ minWidth: 110 }}>
+                    <InputLabel id="demo-simple-select-standard-lable">Category</InputLabel>
                     <Select
-                      labelId="demo-simple-select-filled-label"
-                      id="demo-simple-select-filled"
+                      labelId="demo-simple-select-standard-label"
+                      id="demo-simple-select-standard"
                       value={testimonialData.event}
                       name="event"
                       onChange={updateData}
+                      sx={{}}
                     >
                       {Events.map((category) => (
                         <MenuItem value={category.testimonials_event.id}>
@@ -131,7 +143,14 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
                     </Select>
                   </FormControl>
                 </Box>
-                <Button onClick={AddTestimonial}>ADD</Button>
+                <Box
+                  sx={{
+                    p: 2,
+                    marginTop: '3px'
+                  }}
+                >
+                  <Button onClick={AddTestimonial}>ADD</Button>
+                </Box>
               </Box>
             </Box>
           </Box>

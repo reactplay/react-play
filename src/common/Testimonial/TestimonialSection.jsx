@@ -4,18 +4,13 @@ import { submit } from 'common/services/request';
 import { Carousel } from 'react-responsive-carousel';
 import {
   FetchALlEvents,
-  FetchtestimonialsHomePage,
+  FetchtestimonialsHomePage
 } from 'common/services/request/query/fetch-testimonials';
 import { Link } from 'react-router-dom';
-import { useAuthenticated, useUserData } from '@nhost/react';
-import { NHOST } from 'common/const';
-import TestimonialModal from './TestimonialModal';
+import './Testimonial.css';
 
 const TestimonialSection = () => {
   const [testimonials, setestimonials] = useState([]);
-  const [isOpen, setisOpen] = useState(false);
-  const isAuthenticated = useAuthenticated();
-  const user = useUserData();
 
   const fetchtestimonials = async () => {
     const res = await submit(FetchtestimonialsHomePage());
@@ -27,33 +22,14 @@ const TestimonialSection = () => {
     console.log(res, 'events');
   };
 
-  const handleLogin = (value) => {
-    return (window.location = NHOST.AUTH_URL(window.location.href, value));
-  };
-
-  const onAddTestimonial = async () => {
-    console.log('clicked');
-
-    if (!isAuthenticated) return handleLogin('github');
-    setisOpen(!isOpen);
-  };
-
   useEffect(() => {
     fetchtestimonials();
     fetchtestevents();
   }, []);
 
-  console.log(testimonials);
-
   return (
     <>
-      <div>
-        <button type="" onClick={onAddTestimonial}>
-          Add Testimonial
-        </button>
-      </div>
-      <div>{isOpen && <TestimonialModal isOpen={isOpen} setisOpen={setisOpen} />}</div>
-      <Carousel autoPlay={true}>
+      <Carousel autoPlay={true} showArrows={true} showStatus={false}>
         {testimonials.map((testimonial) => (
           <TestimonialCard
             key={testimonial.id}
@@ -65,10 +41,10 @@ const TestimonialSection = () => {
           />
         ))}
       </Carousel>
-      <div className="flex justify-center items-center ">
-        <button className="text-blue-500 underline underline-offset-1">
-          <Link to="/testimonials">show all testimonials</Link>
-        </button>
+      <div className="home-plays-footer">
+        <Link className="home-anchor" to="/testimonials">
+          <span className="text">View all Testimonials</span>
+        </Link>
       </div>
     </>
   );

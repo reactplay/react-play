@@ -124,7 +124,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section className="home-tweets">
+      <section className="home-plays">
         <h2 className="title-primary">
           What Our{' '}
           <strong>
