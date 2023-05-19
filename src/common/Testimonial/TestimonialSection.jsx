@@ -8,6 +8,7 @@ import {
 } from 'common/services/request/query/fetch-testimonials';
 import { Link } from 'react-router-dom';
 import './Testimonial.css';
+import { div } from '@tensorflow/tfjs';
 
 const TestimonialSection = () => {
   const [testimonials, setestimonials] = useState([]);
@@ -31,7 +32,7 @@ const TestimonialSection = () => {
 
   return (
     <>
-      <Carousel autoPlay={true} showArrows={true} showStatus={false}  showThumbs={false}>
+      <Carousel autoPlay={true} showArrows={true} showStatus={false} showThumbs={false}>
         {testimonials.map((testimonial) => (
           <TestimonialCard
             key={testimonial.id}
