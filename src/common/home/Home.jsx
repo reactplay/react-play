@@ -124,7 +124,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section className="home-plays">
+      <section>
         <h2 className="title-primary">
           What Our{' '}
           <strong>

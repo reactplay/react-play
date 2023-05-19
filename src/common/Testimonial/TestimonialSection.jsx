@@ -27,9 +27,11 @@ const TestimonialSection = () => {
     fetchtestevents();
   }, []);
 
+  console.log(testimonials);
+
   return (
     <>
-      <Carousel autoPlay={true} showArrows={true} showStatus={false}>
+      <Carousel autoPlay={true} showArrows={true} showStatus={false}  showThumbs={false}>
         {testimonials.map((testimonial) => (
           <TestimonialCard
             key={testimonial.id}
@@ -38,6 +40,7 @@ const TestimonialSection = () => {
             name={testimonial.user_id_map.displayName}
             avatarUrl={testimonial.user_id_map.avatarUrl}
             codeName={testimonial.testimonials_event.name}
+            created_at={testimonial.created_at}
           />
         ))}
       </Carousel>

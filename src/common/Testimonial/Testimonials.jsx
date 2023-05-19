@@ -67,6 +67,7 @@ const Testimonials = () => {
             name={testimonial.user_id_map.displayName}
             avatarUrl={testimonial.user_id_map.avatarUrl}
             codeName={testimonial.testimonials_event.name}
+            created_at={testimonial.created_at}
           />
         ))}
       </div>

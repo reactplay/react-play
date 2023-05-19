@@ -5,6 +5,11 @@
   background-color: black;
 }
 
+.carousel.carousel.carousel-slider {
+  height: 75vh;
+  padding: 0px 0px;
+}
+
 .home-plays {
   position: relative;
   padding: 5rem 0 6rem 0;
@@ -121,4 +126,12 @@
   font-family: var(--ff-accent);
   position: relative;
   color: var(--color-neutral-90);
+}
+
+
+@media screen and (max-width: 768px) {
+  .carousel.carousel.carousel-slider {
+    height: 90vh;
+    padding: 0px 0px;
+  }
 }
