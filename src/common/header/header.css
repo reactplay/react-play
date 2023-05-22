@@ -286,12 +286,34 @@
 .header-links > li > .app-header-btn.app-header-btn--secondary {
   border: solid 1px var(--color-neutral-60);
   border-radius: 2rem;
+  margin-left: 0.4rem;
 }
 
 .header-links > li > .app-header-btn.app-header-btn--secondary:hover,
 .header-links > li > .app-header-btn.app-header-btn--secondary:focus {
   background-color: rgba(var(--color-neutral-10-rgb), 0.1);
 }
+
+
+.header-links > li > .app-header-btn.app-header-btn--highlight:hover,
+.header-links > li > .app-header-btn.app-header-btn--highlight:focus {
+  border-color: var(--color-brand-primary);
+  background-color: var(--color-brand-primary);
+  
+}
+
+.header-links > li > .app-header-btn.app-header-btn--highlight {
+  border: solid 1px var(--color-brand-primary);
+  border-radius: 2rem;
+  margin-left: 0.4rem;
+}
+
+.header-links > li > .app-header-btn.app-header-btn--highlight:hover,
+.header-links > li > .app-header-btn.app-header-btn--highlight:focus {
+  background-color: rgba(var(--color-brand-primary-rgb), 0.25);
+}
+
+
 
 .navbar-collapse.show .header-links > li > .app-header-btn--default {
   width: 100%;

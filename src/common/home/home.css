@@ -769,6 +769,10 @@
   font-family: var(--ff-accent);
 }
 
+.home-anchor .text-secondary {
+  color: var(--color-neutral-40);
+}
+
 .home-anchor:hover .text,
 .home-anchor:focus .text {
   color: var(--color-neutral-90);
