@@ -74,7 +74,7 @@ const HeaderNav = ({ showBrowse }) => {
               <span className="sr-only">Close</span>
             </button>
           </li>
-        
+
           {showBrowse && !showToggleMenu && (
             <li>
               <Link
@@ -88,16 +88,16 @@ const HeaderNav = ({ showBrowse }) => {
             </li>
           )}
           <li>
-              <Link
-                className="app-header-btn app-header-btn--highlight"
-                data-testid="events-btn"
-                target='_blank'
-                to="https://hustles.reactplay.io/"
-              >
-                <MdEvent className="icon" />
-                <span className="btn-label">Events</span>
-              </Link>
-            </li>     
+            <Link
+              className="app-header-btn app-header-btn--highlight"
+              data-testid="events-btn"
+              target="_blank"
+              to="https://hustles.reactplay.io/"
+            >
+              <MdEvent className="icon" />
+              <span className="btn-label">Events</span>
+            </Link>
+          </li>
           <li className="menu-spacer">
             {process.env.NODE_ENV === 'development' ? (
               <a
