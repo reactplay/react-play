@@ -89,7 +89,7 @@ const HeaderNav = ({ showBrowse }) => {
           )}
           <li>
             <Link
-              className="app-header-btn app-header-btn--highlight"
+              className="app-header-btn app-header-btn--secondary"
               data-testid="events-btn"
               target="_blank"
               to="https://hustles.reactplay.io/"
