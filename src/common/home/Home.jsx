@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import useFetch from 'common/hooks/useFetch';
 import { Link } from 'react-router-dom';
 import './home.css';
@@ -10,11 +10,8 @@ import FeaturedPlays from 'common/playlists/FeaturedPlays';
 import Contributors from './Contributors';
 import ExtendedFooter from 'common/footer/ExtendedFooter';
 import { useSearchContext } from 'common/search/search-context';
-import { Tweet } from 'react-twitter-widgets';
-import Spinner from '../spinner/spinner';
 import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
-import TestimonialCard from 'common/Testimonial/TestimonialCard';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import TestimonialSection from 'common/Testimonial/TestimonialSection';
 
@@ -30,27 +27,6 @@ const Home = () => {
       language: ''
     });
   }, [data, setSearchTerm, searchTerm, setFilterQuery]);
-
-  // array of tweet IDs to show on the home page
-  const tweetIdArray = [
-    '1586967659622572032',
-    '1588544417425928192',
-    '1588540468362874880',
-    '1592818641225097217',
-    '1585216106876502017',
-    '1588542228829704192',
-    '1597979662852182016',
-    '1597969995761614849',
-    '1597193263642857474',
-    '1586951630435495936',
-    '1591622673700098049'
-  ];
-
-  // set the state for loading
-  const [isTweetsLoading, setTweetsLoading] = useState(true);
-
-  // Function to handle the tweets loading state after tweets have been loaded.
-  const tweetLoadHandler = () => setTweetsLoading(false);
 
   // eslint-disable-next-line no-console
   console.log('process.env.REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
@@ -124,7 +100,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section>
+      <section className='bg-[#f6f6f9]'>
         <h2 className="title-primary">
           What Our{' '}
           <strong>

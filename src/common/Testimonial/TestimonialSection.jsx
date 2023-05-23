@@ -8,7 +8,6 @@ import {
 } from 'common/services/request/query/fetch-testimonials';
 import { Link } from 'react-router-dom';
 import './Testimonial.css';
-import { div } from '@tensorflow/tfjs';
 
 const TestimonialSection = () => {
   const [testimonials, setestimonials] = useState([]);
@@ -20,15 +19,12 @@ const TestimonialSection = () => {
 
   const fetchtestevents = async () => {
     const res = await submit(FetchALlEvents());
-    console.log(res, 'events');
   };
 
   useEffect(() => {
     fetchtestimonials();
     fetchtestevents();
   }, []);
-
-  console.log(testimonials);
 
   return (
     <>
@@ -45,8 +41,8 @@ const TestimonialSection = () => {
           />
         ))}
       </Carousel>
-      <div className="home-plays-footer">
-        <Link className="home-anchor" to="/testimonials">
+      <div className="testimonial-footer">
+        <Link className="testimonial-anchor" to="/testimonials">
           <span className="text">View all Testimonials</span>
         </Link>
       </div>

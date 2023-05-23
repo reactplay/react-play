@@ -10,31 +10,13 @@
   padding: 0px 0px;
 }
 
-.home-plays {
-  position: relative;
-  padding: 5rem 0 6rem 0;
-  background: rgba(var(--color-brand-primary-rgb), 0.1);
-}
-
-.home-plays:before {
-  content: ' ';
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  background-image: url('../../images/bg-spikes.webp');
-  mix-blend-mode: overlay;
-}
-
-.home-plays-footer {
+.testimonial-footer {
   margin: 4rem 0 0 0;
   text-align: center;
+  padding: 9px 9px;
 }
 
-.home-anchor {
+.testimonial-anchor {
   position: relative;
   font-family: var(--ff-accent);
   font-size: var(--fs-md);
@@ -44,19 +26,19 @@
   transition: all 0.12s ease-in-out;
 }
 
-.home-anchor .text {
+.testimonial-anchor .text {
   position: relative;
   z-index: 1;
   color: var(--color-neutral-80);
   font-family: var(--ff-accent);
 }
 
-.home-anchor:hover .text,
-.home-anchor:focus .text {
+.testimonial-anchor:hover .text,
+.testimonial-anchor:focus .text {
   color: var(--color-neutral-90);
 }
 
-.home-anchor:before {
+.testimonial-anchor:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -67,14 +49,14 @@
   transition: all 0.12s ease-in-out;
 }
 
-.home-anchor:hover:before,
-.home-anchor:focus:before {
+.testimonial-anchor:hover:before,
+.testimonial-anchor:focus:before {
   background-color: var(--color-brand-primary);
   height: 4px;
   bottom: -2px;
 }
 
-.home-anchor:after {
+.testimonial-anchor:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -87,33 +69,33 @@
   transition: all 0.12s ease-in-out;
 }
 
-.home-anchor:hover:after,
-.home-anchor:focus:after {
+.testimonial-anchor:hover:after,
+.testimonial-anchor:focus:after {
   right: -0.4rem;
 }
 
-.home-anchor.home-anchor-sm {
+.testimonial-anchor.testimonial-anchor-sm {
   font-size: calc(var(--fs-rg) * 1.2);
   line-height: 1.2;
 }
 
-.home-anchor.home-anchor-sm:before {
+.testimonial-anchor.testimonial-anchor-sm:before {
   bottom: -1px;
   height: 2px;
 }
 
-.home-anchor.home-anchor-sm:hover:before,
-.home-anchor.home-anchor-sm:focus:before {
+.testimonial-anchor.testimonial-anchor-sm:hover:before,
+.testimonial-anchor.testimonial-anchor-sm:focus:before {
   bottom: -2px;
   height: 3px;
 }
 
-.home-anchor.home-anchor-sm:after {
+.testimonial-anchor.testimonial-anchor-sm:after {
   width: 16px;
   background-size: contain;
 }
 
-.plays-title-primary {
+.testimonial-title-primary {
   position: relative;
   margin-top: 3px;
   font-family: var(--ff-accent);
@@ -122,12 +104,11 @@
   color: var(--color-neutral-80);
 }
 
-.plays-title-primary strong {
+.testimonial-title-primary strong {
   font-family: var(--ff-accent);
   position: relative;
   color: var(--color-neutral-90);
 }
-
 
 @media screen and (max-width: 768px) {
   .carousel.carousel.carousel-slider {

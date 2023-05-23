@@ -33,12 +33,11 @@ export const FetchALL = {
 };
 
 export const FetchEvents = {
-  disply: 'testimonials',
+  disply: 'hackathon_events',
   name: 'test',
-  function: 'testimonials',
+  function: 'hackathon_events',
   write: false,
-  return: [{ testimonials_event: ['id', 'name'] }],
-  distinct: 'event'
+  return: ['name', 'id']
 };
 
 export function FetchtestimonialsHomePage() {
