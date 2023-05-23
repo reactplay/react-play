@@ -20,8 +20,8 @@ const TestimonialCard = ({ quote, title, name, avatarUrl, codeName, created_at }
               <p className="text-base text-left text-gray-500 overflow-scroll max-h-40">{quote}</p>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row md:space-x-24 items-center p-5 mx-auto">
-            <div className='flex items-center space-x-2'>
+          <div className="flex flex-col md:flex-row md:space-x-24  items-center  p-5">
+            <div className="flex items-center space-x-2">
               <div className="overflow-hidden  rounded-full w-20 h-20  bg-gray-50 border border-gray-200">
                 <img src={avatarUrl} alt="" />
               </div>
@@ -32,7 +32,7 @@ const TestimonialCard = ({ quote, title, name, avatarUrl, codeName, created_at }
                 <h3 className="text-base">on {formattedDate}</h3>
               </div>
             </div>
-            <div>
+            <div className="ml-14 md:ml-0">
               <span className="rounded-full bg-green-300 px-2 py-1 text-xs text-gray-800">
                 {codeName}
               </span>

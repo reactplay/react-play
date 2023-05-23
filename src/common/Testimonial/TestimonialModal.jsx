@@ -1,4 +1,4 @@
-import React, { useEffect,  useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
 import Typography from '@mui/joy/Typography';
@@ -47,10 +47,7 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
       [fieldName]: e.target.value
     }));
 
-    if (
-      testimonialData.title.length != 0 &&
-      testimonialData.quote.length != 0 
-    ) {
+    if (testimonialData.title.length != 0 && testimonialData.quote.length != 0) {
       setbtndisabled(false);
     }
   };
@@ -93,7 +90,12 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
         aria-describedby="modal-desc"
         open={isOpen}
         onClose={() => setisOpen(false)}
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '20px 20px'
+        }}
       >
         <Sheet
           variant="outlined"
@@ -166,7 +168,9 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
                       sx={{}}
                     >
                       {Events.map((category) => (
-                        <MenuItem  key={category.id} value={category.id}>{category.name}</MenuItem>
+                        <MenuItem key={category.id} value={category.id}>
+                          {category.name}
+                        </MenuItem>
                       ))}
                     </Select>
                   </FormControl>

@@ -6,6 +6,7 @@ import './Testimonial.css';
 import { IoAddSharp } from 'react-icons/io5';
 import { useAuthenticated } from '@nhost/react';
 import TestimonialModal from './TestimonialModal';
+import { NHOST } from 'common/const';
 
 const Testimonials = () => {
   const [testimonials, setestimonials] = useState([]);
@@ -52,7 +53,7 @@ const Testimonials = () => {
         </button>
       </div>
       <div>{isOpen && <TestimonialModal isOpen={isOpen} setisOpen={setisOpen} />}</div>
-      <div className="flex flex-wrap p-8  items-center justify-center space-x-7">
+      <div className="flex  p-8  flex-wrap justify-center items-center md:space-x-7">
         {testimonials.map((testimonial) => (
           <TestimonialCard
             key={testimonial.id}
