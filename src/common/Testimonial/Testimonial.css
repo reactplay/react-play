@@ -110,6 +110,8 @@
   color: var(--color-neutral-90);
 }
 
+.bar::-webkit-scrollbar { width: 0 !important }
+
 @media screen and (max-width: 768px) {
   .carousel.carousel.carousel-slider {
     height: 90vh;
