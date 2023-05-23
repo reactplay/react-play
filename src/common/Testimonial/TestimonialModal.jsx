@@ -74,7 +74,7 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -166,7 +166,7 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
                       sx={{}}
                     >
                       {Events.map((category) => (
-                        <MenuItem value={category.id}>{category.name}</MenuItem>
+                        <MenuItem  key={category.id} value={category.id}>{category.name}</MenuItem>
                       ))}
                     </Select>
                   </FormControl>
@@ -186,6 +186,6 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
           </Box>
         </Sheet>
       </Modal>
-    </React.Fragment>
+    </>
   );
 }

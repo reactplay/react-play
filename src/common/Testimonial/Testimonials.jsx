@@ -44,11 +44,11 @@ const Testimonials = () => {
       <div className="flex p-3 justify-end">
         <button
           type="button"
-          class="px-4 py-3  bg-[#00f2fe] rounded-lg text-black outline-none  shadow-lg transform   mx-5 flex justify-center items-center"
+          className="px-4 py-3  bg-[#00f2fe] rounded-lg text-black outline-none  shadow-lg transform   mx-5 flex justify-center items-center"
           onClick={onAddTestimonial}
         >
           <IoAddSharp className="icon" />
-          <span class="ml-2">Add Testimonial</span>
+          <span className="ml-2">Add Testimonial</span>
         </button>
       </div>
       <div>{isOpen && <TestimonialModal isOpen={isOpen} setisOpen={setisOpen} />}</div>
