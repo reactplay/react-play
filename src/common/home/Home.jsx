@@ -100,7 +100,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section className='bg-[#f6f6f9]'>
+      <section className="bg-[#f6f6f9]">
         <h2 className="title-primary">
           What Our{' '}
           <strong>

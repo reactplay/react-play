@@ -11,7 +11,7 @@ import {
   TechStack,
   LeaderBoard,
   PageNotFound,
-  Testimonials,
+  Testimonials
 } from 'common';
 import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
