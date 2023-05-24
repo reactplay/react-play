@@ -18,44 +18,44 @@ import { submit } from 'common/services/request';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function TestmonialModal({ isOpen, setisOpen }) {
+export default function TestimonialModal({ isOpen, setIsOpen }) {
   const userDisplayName = useUserDisplayName();
   const userId = useUserId();
-  const [testimonialData, settestimonialData] = useState({
+  const [testimonialData, setTestimonialData] = useState({
     quote: '',
     title: '',
     event: '',
     id: userId
   });
-  const [btndisabled, setbtndisabled] = useState(true);
+  const [btnDisabled, setBtnDisabled] = useState(true);
 
   const [Events, setEvents] = useState([]);
 
-  const fetchtestevents = async () => {
+  const fetchTestEvents = async () => {
     const res = await submit(FetchALlEvents());
     setEvents(res);
   };
 
   useEffect(() => {
-    fetchtestevents();
+    fetchTestEvents();
   }, []);
 
   const updateData = (e) => {
     const fieldName = e.target.name;
-    settestimonialData((prev) => ({
+    setTestimonialData((prev) => ({
       ...prev,
       [fieldName]: e.target.value
     }));
 
     if (testimonialData.title.length != 0 && testimonialData.quote.length != 0) {
-      setbtndisabled(false);
+      setBtnDisabled(false);
     }
   };
 
   const AddTestimonial = async () => {
     try {
       let response = await submit(insert_testimonial_submission(testimonialData));
-      setisOpen(false);
+      setIsOpen(false);
       toast.success('Testimonial added', {
         position: 'top-right',
         autoClose: 5000,
@@ -66,48 +66,50 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
         progress: undefined,
         theme: 'light'
       });
+
       return response;
-    } catch (error) {}
+    } catch (error) {
+      // empty
+    }
   };
 
   return (
     <>
       <ToastContainer
-        position="top-right"
+        closeOnClick
+        draggable
+        pauseOnFocusLoss
+        pauseOnHover
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
-        closeOnClick
+        position="top-right"
         rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
         theme="light"
       />
       <ToastContainer />
       <Modal
-        aria-labelledby="modal-title"
         aria-describedby="modal-desc"
+        aria-labelledby="modal-title"
         open={isOpen}
-        onClose={() => setisOpen(false)}
         sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           padding: '20px 20px'
         }}
+        onClose={() => setIsOpen(false)}
       >
         <Sheet
-          variant="outlined"
           sx={{
             maxWidth: 500,
             borderRadius: 'md',
             p: 3,
             boxShadow: 'lg'
           }}
+          variant="outlined"
         >
           <ModalClose
-            variant="outlined"
             sx={{
               top: 'calc(-1/4 * var(--IconButton-size))',
               right: 'calc(-1/4 * var(--IconButton-size))',
@@ -115,14 +117,15 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
               borderRadius: '40%',
               bgcolor: 'background.body'
             }}
+            variant="outlined"
           />
           <Typography
             component="h2"
+            fontWeight="lg"
             id="modal-title"
             level="h4"
-            textColor="inherit"
-            fontWeight="lg"
             mb={1}
+            textColor="inherit"
           >
             Thank You, {userDisplayName} !
           </Typography>
@@ -130,21 +133,21 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
             <Box component="div" sx={{ display: 'flex', p: '5px 5px', flexDirection: 'column' }}>
               <Box component="div" sx={{ display: 'flex', mb: 3 }}>
                 <TextField
-                  id="standard-basic"
-                  name="title"
-                  label="Title"
-                  variant="standard"
                   fullWidth
+                  id="standard-basic"
+                  label="Title"
+                  name="title"
+                  variant="standard"
                   onChange={updateData}
                 />
               </Box>
               <Typography fontWeight="md">Enter your testimonial:</Typography>
               <textarea
-                name="quote"
-                onChange={updateData}
-                rows="4"
-                cols=""
                 className="max-h-[150px] overflow-y-scroll rounded-md  resize-none border border-gray-400 p-1"
+                cols=""
+                name="quote"
+                rows="4"
+                onChange={updateData}
               />
               <Box />
               <Box
@@ -157,15 +160,15 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
                 }}
               >
                 <Box>
-                  <FormControl variant="standard" sx={{ minWidth: 110 }}>
+                  <FormControl sx={{ minWidth: 110 }} variant="standard">
                     <InputLabel id="demo-simple-select-standard-lable">Category</InputLabel>
                     <Select
-                      labelId="demo-simple-select-standard-label"
                       id="demo-simple-select-standard"
-                      value={testimonialData.event}
+                      labelId="demo-simple-select-standard-label"
                       name="event"
-                      onChange={updateData}
                       sx={{}}
+                      value={testimonialData.event}
+                      onChange={updateData}
                     >
                       {Events.map((category) => (
                         <MenuItem key={category.id} value={category.id}>
@@ -181,7 +184,7 @@ export default function TestmonialModal({ isOpen, setisOpen }) {
                     marginTop: '3px'
                   }}
                 >
-                  <Button onClick={AddTestimonial} disabled={btndisabled}>
+                  <Button disabled={btnDisabled} onClick={AddTestimonial}>
                     ADD
                   </Button>
                 </Box>

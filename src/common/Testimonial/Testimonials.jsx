@@ -44,8 +44,8 @@ const Testimonials = () => {
       </div>
       <div className="flex p-3 justify-end">
         <button
+          className="px-4 py-3 bg-[#00f2fe] rounded-lg text-black outline-none  shadow-lg transform   mx-5 flex justify-center items-center"
           type="button"
-          className="px-4 py-3  bg-[#00f2fe] rounded-lg text-black outline-none  shadow-lg transform   mx-5 flex justify-center items-center"
           onClick={onAddTestimonial}
         >
           <IoAddSharp className="icon" />
@@ -56,13 +56,13 @@ const Testimonials = () => {
       <div className="flex  p-8  flex-wrap justify-center items-center md:space-x-7">
         {testimonials.map((testimonial) => (
           <TestimonialCard
-            key={testimonial.id}
-            quote={testimonial.quote}
-            title={testimonial.title}
-            name={testimonial.user_id_map.displayName}
             avatarUrl={testimonial.user_id_map.avatarUrl}
             codeName={testimonial.testimonials_event.name}
             created_at={testimonial.created_at}
+            key={testimonial.id}
+            name={testimonial.user_id_map.displayName}
+            quote={testimonial.quote}
+            title={testimonial.title}
           />
         ))}
       </div>

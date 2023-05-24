@@ -7,10 +7,12 @@ const TestimonialCard = ({ quote, title, name, avatarUrl, codeName, created_at }
   const [formattedDate] = useState(() => {
     const locale = navigator.language.split('-').join('');
     const dnsLocale = allLocales[locale] ?? allLocales.enUS;
+
     return format(new Date(created_at), 'MMM dd, yyyy', {
       locale: dnsLocale
     });
   });
+
   return (
     <div className="flex h-[700px] md:h-[500px] justify-center items-center">
       <div className="relative mx-auto  flex  w-[300px] md:w-[500px]  flex-col space-y-3 rounded-xl border border-gray-300 bg-white p-2  shadow-lg ">
@@ -26,7 +28,7 @@ const TestimonialCard = ({ quote, title, name, avatarUrl, codeName, created_at }
           <div className="flex flex-col md:flex-row md:space-x-24  items-center  p-5">
             <div className="flex items-center space-x-2">
               <div className="overflow-hidden  rounded-full w-20 h-20  bg-gray-50 border border-gray-200">
-                <img src={avatarUrl} alt="" />
+                <img alt="" src={avatarUrl} />
               </div>
               <div className="flex flex-col space-y-2 justify-start items-start">
                 <div className="flex flex-col space-y-1 md:flex-row md:space-x-2 justify-center items-center md:space-y-0">
