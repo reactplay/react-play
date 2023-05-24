@@ -40,7 +40,7 @@ export const FetchEvents = {
   return: ['name', 'id']
 };
 
-export function FetchtestimonialsHomePage() {
+export function FetchTestimonialsHomePage() {
   return { ...FetchFiltered };
 }
 
