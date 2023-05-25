@@ -1,0 +1,23 @@
+.popup-page{
+    text-align: center;
+    margin: 0 auto;
+}
+.popup{
+    margin:10px 0 0 -20px;
+    /* your custom styling for popup */
+}
+.popup .just_a_btn{
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-right:4px;
+}
+
+.just_a_btn:nth-child(1){
+    background-color: salmon;
+}
+
+.just_a_btn:nth-child(2){
+    background-color: slateblue;
+}
