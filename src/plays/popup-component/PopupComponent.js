@@ -1,7 +1,7 @@
-import PlayHeader from 'common/playlists/PlayHeader';
 import React from 'react';
+import PlayHeader from 'common/playlists/PlayHeader';
+import PopupCard from './components/PopupCard';
 import './styles.css';
-import PopupCard from './components/popupCard';
 
 // WARNING: Do not change the entry componenet name
 function PopupComponent(props) {
@@ -19,9 +19,9 @@ function PopupComponent(props) {
                   <h3>Do you like this popup?</h3>
                   <h5>Click on the button below to close the modal.</h5>
                   <p>Add anything as a component inside PopupCard</p>
-                  <span className="buttons">
-                    <button className="just_a_btn">Button 1</button>
-                    <button className="just_a_btn">Button 2</button>
+                  <span className="btn-inside-popup">
+                    <button className="just-a-btn">Button 1</button>
+                    <button className="just-a-btn">Button 2</button>
                   </span>
                 </div>
               </PopupCard>

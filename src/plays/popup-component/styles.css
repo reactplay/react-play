@@ -6,7 +6,7 @@
     margin:10px 0 0 -20px;
     /* your custom styling for popup */
 }
-.popup .just_a_btn{
+.popup .just-a-btn{
     padding: 7px 20px;
     border-radius: 5px;
     color: white;
@@ -14,10 +14,10 @@
     margin-right:4px;
 }
 
-.just_a_btn:nth-child(1){
+.just-a-btn:nth-child(1){
     background-color: salmon;
 }
 
-.just_a_btn:nth-child(2){
+.just-a-btn:nth-child(2){
     background-color: slateblue;
 }

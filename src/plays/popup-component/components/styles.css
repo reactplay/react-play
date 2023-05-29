@@ -1,5 +1,5 @@
 /* enter stlyes here */
-.overlay {
+.popup-bg-overlay {
     background-color: #00000090;
     height: 100vh;
     width: 100vw;
@@ -21,7 +21,7 @@
     position: absolute;
     /* font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif; */
 }
-.modal_content {
+.popup-content-wrapper {
     background-color: white;
     height: auto;
     position: absolute;
@@ -37,7 +37,7 @@
     z-index: 99999;
 }
 @media screen and (max-width: 600px) {
-    .modal_content {
+    .popup-content-wrapper {
         max-width: 100%;
         min-width: 99%;
     }
@@ -58,6 +58,6 @@
     padding:2px;
     border-radius: 4px;
 }
-.modal_content > iframe{
+.popup-content-wrapper > iframe{
     border-radius: 8px;
 }

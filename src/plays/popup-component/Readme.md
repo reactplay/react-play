@@ -9,7 +9,7 @@ A simple popup/modal without libraries, packages, that can display texts, forms,
 
 ## Play Demographic
 
-- Language: js
+- Language: JavaScript
 - Level: Intermediate
 
 ## Creator Information
@@ -28,5 +28,8 @@ Update your implementation idea and details here
 Update all considerations(if any)
 
 ## Resources
+
+- React
+- CSS
 
 Update external resources(if any)

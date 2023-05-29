@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 
-function popupCard({ children, popTitle, btnStyle }) {
+function PopupCard({ children, popTitle, btnStyle }) {
   const [toggle, setToggle] = useState(false);
   const toggleModal = () => {
     setToggle(!toggle);
@@ -12,19 +12,19 @@ function popupCard({ children, popTitle, btnStyle }) {
       <button className="modal__btn" style={btnStyle} onClick={toggleModal}>
         {popTitle}
       </button>
-      {toggle && (
+      {toggle ? (
         <div>
-          <div className="overlay" onClick={toggleModal} />
-          <div className="modal_content">
+          <div className="popup-bg-overlay" onClick={toggleModal} />
+          <div className="popup-content-wrapper">
             {children}
             <button className="close_modal" onClick={toggleModal}>
               X
             </button>
           </div>
         </div>
-      )}
+      ) : null}
     </>
   );
 }
 
-export default popupCard;
+export default PopupCard;
