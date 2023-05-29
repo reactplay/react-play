@@ -9,7 +9,7 @@
     right: 0;
     position: fixed;
 }
-.modal__btn{
+.modal-btn{
     background-color: slateblue;
     padding: 4px 10px;
     border-radius: 4px;
