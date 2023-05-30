@@ -1,0 +1,14 @@
+/* enter stlyes here */
+.feature-area {
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.container {
+  margin-top: 5rem;
+}
