@@ -26,11 +26,11 @@ const TestimonialSection = () => {
             avatarUrl={testimonial.user_id_map.avatarUrl}
             codeName={testimonial.testimonials_event.name}
             created_at={testimonial.created_at}
+            email={testimonial.user_id_map.email}
             key={testimonial.id}
             name={testimonial.user_id_map.displayName}
             quote={testimonial.quote}
             title={testimonial.title}
-            email={testimonial.user_id_map.email}
           />
         ))}
       </Carousel>

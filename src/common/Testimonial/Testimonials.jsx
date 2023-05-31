@@ -31,8 +31,6 @@ const Testimonials = () => {
     fetchtestimonials();
   }, [!isOpen]);
 
-  console.log(testimonials);
-
   return (
     <div className="flex flex-col space-y-5">
       <div className="flex justify-center items-center h-52">
@@ -61,11 +59,11 @@ const Testimonials = () => {
             avatarUrl={testimonial.user_id_map.avatarUrl}
             codeName={testimonial.testimonials_event.name}
             created_at={testimonial.created_at}
+            email={testimonial.user_id_map.email}
             key={testimonial.id}
             name={testimonial.user_id_map.displayName}
             quote={testimonial.quote}
             title={testimonial.title}
-            email={testimonial.user_id_map.email}
           />
         ))}
       </div>
