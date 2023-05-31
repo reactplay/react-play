@@ -1,46 +1,46 @@
 export const FetchFiltered = {
-  display: "testimonials",
-  name: "test",
-  function: "testimonials",
+  display: 'testimonials',
+  name: 'test',
+  function: 'testimonials',
   write: false,
   limit: 4,
   return: [
-    "id",
-    "quote",
-    "title",
-    "created_at",
-    { user_id_map: ["avatarUrl", "id", "displayName", "email"] },
-    { testimonials_event: ["id", "name", "description"] },
+    'id',
+    'quote',
+    'title',
+    'created_at',
+    { user_id_map: ['avatarUrl', 'id', 'displayName', 'email'] },
+    { testimonials_event: ['id', 'name', 'description'] }
   ],
   orderBy: {
-    created_at: "desc",
-  },
+    created_at: 'desc'
+  }
 };
 
 export const FetchALL = {
-  display: "testimonials",
-  name: "test",
-  function: "testimonials",
+  display: 'testimonials',
+  name: 'test',
+  function: 'testimonials',
   write: false,
   return: [
-    "id",
-    "quote",
-    "title",
-    "created_at",
-    { user_id_map: ["avatarUrl", "id", "displayName", "email"] },
-    { testimonials_event: ["id", "name", "description"] },
+    'id',
+    'quote',
+    'title',
+    'created_at',
+    { user_id_map: ['avatarUrl', 'id', 'displayName', 'email'] },
+    { testimonials_event: ['id', 'name', 'description'] }
   ],
   orderBy: {
-    created_at: "desc",
-  },
+    created_at: 'desc'
+  }
 };
 
 export const FetchEvents = {
-  disply: "hackathon_events",
-  name: "test",
-  function: "hackathon_events",
+  disply: 'hackathon_events',
+  name: 'test',
+  function: 'hackathon_events',
   write: false,
-  return: ["name", "id"],
+  return: ['name', 'id']
 };
 
 export function FetchTestimonialsHomePage() {
@@ -57,16 +57,16 @@ export function FetchALlEvents() {
 
 export const insert_testimonial_submission = (testimonialData) => {
   return {
-    display: "insert_testimonials_one",
-    name: "insert_testimonials_one",
-    function: "insert_testimonials_one",
+    display: 'insert_testimonials_one',
+    name: 'insert_testimonials_one',
+    function: 'insert_testimonials_one',
     write: true,
     object: {
       event: testimonialData.event,
       quote: testimonialData.quote,
       title: testimonialData.title,
-      user: testimonialData.id,
+      user: testimonialData.id
     },
-    return: ["id"],
+    return: ['id']
   };
 };
