@@ -15,21 +15,11 @@ A simple popup/modal without libraries, packages, that can display texts, forms,
 ## Creator Information
 
 - User: lifeofsoumya
-- Gihub Link: https://github.com/lifeofsoumya
+- Github Link: https://github.com/lifeofsoumya
 - Blog: https://turbohosty.com/blog/create-a-popup-in-wordpress-without-plugin/
 - Video: 
-
-## Implementation Details
-
-Update your implementation idea and details here
-
-## Consideration
-
-Update all considerations(if any)
 
 ## Resources
 
 - React
 - CSS
-
-Update external resources(if any)
