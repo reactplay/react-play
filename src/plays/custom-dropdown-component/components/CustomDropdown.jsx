@@ -105,7 +105,7 @@ const CustomDropdown = ({ placeholder, options, isMulti, isSearchable, onChange 
   // see if current option is already selected
   const isSelected = (option) => {
     if (isMulti) {
-      return selectedValue.filter((o) => o.value === option.value).length > 0;
+      return selectedValue?.filter((o) => o.value === option.value).length > 0;
     }
     if (!selectedValue) {
       return false;
