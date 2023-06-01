@@ -1,5 +1,5 @@
 /* enter stlyes here */
-.feature-area {
+.custom-dd-component .feature-area {
   max-width: 400px;
   margin: auto;
   margin-bottom: 15px;
@@ -9,6 +9,6 @@
   justify-content: flex-end;
 }
 
-.container {
+.custom-dd-component .container {
   margin-top: 5rem;
 }
