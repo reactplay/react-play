@@ -184,8 +184,10 @@ function CricketGame(props) {
 
     ballEndLeftDirection.current = endLeft;
 
-    ballRef.current.style.setProperty('--bounce-left', bounceLeft + '%');
-    ballRef.current.style.setProperty('--end-left', endLeft + '%');
+    if (ballRef.current) {
+      ballRef.current.style.setProperty('--bounce-left', bounceLeft + '%');
+      ballRef.current.style.setProperty('--end-left', endLeft + '%');
+    }
   }
 
   async function startGame() {
@@ -221,7 +223,9 @@ function CricketGame(props) {
       prepareNextBall();
       throwNextBall();
       await sleep(10 * 1000);
-      wicketRef.current.src = wicketImg;
+      if (wicketRef.current) {
+        wicketRef.current.src = wicketImg;
+      }
     }
   }
 
@@ -253,8 +257,14 @@ function CricketGame(props) {
   useEffect(() => {
     gameTrack.loop = true;
     gameTrack.autoplay = true;
-    gameTrack.play();
+    // gameTrack.play();
   });
+
+  useEffect(() => {
+    return () => {
+      gameTrack.pause();
+    };
+  }, []);
 
   return (
     <>
