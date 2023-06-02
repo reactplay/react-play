@@ -1,27 +1,10 @@
-# Random-Background-Generator
+# Random Background Generator
 
-This play will visualize a random background of blocks on click.
+This play will generate random backgrund.
 
-## Play Demographic
-
-- Language: js
-- Level: Beginner
-
-## Creator Information
-
-- User: dev-shabbir
-- Gihub Link: https://github.com/dev-shabbir
-- Blog: 
-- Video: 
-
-## Implementation Details
-
-Update your implementation idea and details here
-
-## Consideration
-
-Update all considerations(if any)
+## You will learn
+This play will help you to learn some usefull basics of dom and some usefull usecase. 
 
 ## Resources
 
-Update external resources(if any)
+I used anime.js for the animation and transitions.

@@ -12,6 +12,7 @@ function Randombackgroundgenerator(props) {
   const blocks = [...Array(amount + 1).keys()].slice(1);
 
   const animate = () => {
+    // using built in animejs function
     anime({
       targets: '.block',
       translateX: () => anime.random(-900, 900),
@@ -27,6 +28,7 @@ function Randombackgroundgenerator(props) {
   useEffect(() => {
     animate();
   });
+  // Shabbir's code end here
 
   return (
     <>
