@@ -260,6 +260,7 @@ function CricketGame(props) {
     // gameTrack.play();
   });
 
+  // stop the gameTrack when quitting the game.
   useEffect(() => {
     return () => {
       gameTrack.pause();
