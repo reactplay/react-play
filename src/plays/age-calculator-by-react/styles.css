@@ -180,6 +180,18 @@ button {
   font-size: 17px;
   cursor: pointer;
 }
+
+#btn
+ {
+  height: 50px;
+  background: #ffffff;
+  color: #080808;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 36em) {
   input,
   button {
