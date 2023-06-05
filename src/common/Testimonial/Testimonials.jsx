@@ -1,44 +1,72 @@
-import { FetchALLtestimonials } from 'common/services/request/query/fetch-testimonials';
-import React, { useEffect, useState } from 'react';
-import TestimonialCard from './TestimonialCard';
-import { submit } from 'common/services/request';
-import './Testimonial.css';
-import { IoAddSharp } from 'react-icons/io5';
-import { useAuthenticated } from '@nhost/react';
-import TestimonialModal from './TestimonialModal';
-import { NHOST } from 'common/const';
+import {
+  FetchALLtestimonials,
+  FetchALLtestimonialsWithLimit,
+} from "common/services/request/query/fetch-testimonials";
+import React, { useEffect, useState } from "react";
+import TestimonialCard from "./TestimonialCard";
+import { submit } from "common/services/request";
+import "./Testimonial.css";
+import { IoAddSharp } from "react-icons/io5";
+import { useAuthenticated } from "@nhost/react";
+import TestimonialModal from "./TestimonialModal";
+import { NHOST } from "common/const";
+
+import useInfiniteScroll from "react-infinite-scroll-hook";
 
 const Testimonials = () => {
   const [testimonials, setestimonials] = useState([]);
   const [isOpen, setisOpen] = useState(false);
+  const [testimonialength, setestimonialength] = useState(0);
+
   const isAuthenticated = useAuthenticated();
+  const [loading, setloading] = useState(false);
+
+  const [hasNextPage, sethasNextPage] = useState(true);
 
   const fetchtestimonials = async () => {
     const res = await submit(FetchALLtestimonials());
-    setestimonials(res);
+    setestimonialength(res.length);
   };
 
+  const fetchwithlimit = async () => {
+    const res = await submit(
+      FetchALLtestimonialsWithLimit(testimonials.length + 1),
+    );
+    setestimonials(res);
+    if (testimonials.length == testimonialength) {
+      setloading(false);
+      sethasNextPage(false);
+    }
+  };
   const handleLogin = (value) => {
     return (window.location = NHOST.AUTH_URL(window.location.href, value));
   };
 
   const onAddTestimonial = async () => {
-    if (!isAuthenticated) return handleLogin('github');
+    if (!isAuthenticated) return handleLogin("github");
     setisOpen(!isOpen);
   };
 
+  const [sentryRef, { rootRef }] = useInfiniteScroll({
+    loading,
+    hasNextPage,
+    onLoadMore: fetchwithlimit,
+    rootMargin: "0px 0px 400px 0px",
+  });
+
   useEffect(() => {
     fetchtestimonials();
+    fetchwithlimit();
   }, [!isOpen]);
 
   return (
     <div className="flex flex-col space-y-5">
       <div className="flex justify-center items-center h-52">
         <h2 className="testimonial-title-primary">
-          What Our{' '}
+          What Our{" "}
           <strong>
             <span>Community</span>
-          </strong>{' '}
+          </strong>{" "}
           Says!
         </h2>
       </div>
@@ -52,8 +80,13 @@ const Testimonials = () => {
           <span className="ml-2">Add Testimonial</span>
         </button>
       </div>
-      <div>{isOpen && <TestimonialModal isOpen={isOpen} setisOpen={setisOpen} />}</div>
-      <div className="flex  p-8  flex-wrap justify-center items-center md:space-x-7">
+      <div>
+        {isOpen && <TestimonialModal isOpen={isOpen} setIsOpen={setisOpen} />}
+      </div>
+      <div
+        ref={rootRef}
+        className="h-screen overflow-scroll"
+      >
         {testimonials.map((testimonial) => (
           <TestimonialCard
             avatarUrl={testimonial.user_id_map.avatarUrl}
@@ -66,6 +99,11 @@ const Testimonials = () => {
             title={testimonial.title}
           />
         ))}
+        {(loading || hasNextPage) && (
+          <div ref={sentryRef}>
+            <p>Loading....</p>
+          </div>
+        )}
       </div>
     </div>
   );

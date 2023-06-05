@@ -23,7 +23,7 @@ const TestimonialCard = ({ quote, title, name, avatarUrl, codeName, created_at, 
   };
 
   return (
-    <div className="flex h-[700px] md:h-[500px] justify-center items-center">
+    <div className="flex h-[700px] md:h-[500px] justify-center items-center min-h-[500px]">
       <div className="relative mx-auto  flex  w-[300px] md:w-[500px]  flex-col space-y-3 rounded-xl border border-gray-300 bg-white p-2  shadow-lg ">
         <div className="flex flex-col">
           <div className="flex justify-start items-start ">
