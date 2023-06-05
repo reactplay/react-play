@@ -24,7 +24,7 @@ const TestimonialCard = ({ quote, title, name, avatarUrl, codeName, created_at, 
 
   return (
     <div className="flex h-[700px] md:h-[500px] justify-center items-center min-h-[500px]">
-      <div className="relative mx-auto  flex  w-[300px] md:w-[500px]  flex-col space-y-3 rounded-xl border border-gray-300 bg-white p-2  shadow-lg ">
+      <div className="relative mx-auto  flex  w-[300px] md:w-[550px] md:max-w-[550px]  flex-col space-y-3 rounded-xl border border-gray-300 bg-white p-2  shadow-lg ">
         <div className="flex flex-col">
           <div className="flex justify-start items-start ">
             <div className="flex w-[100%] flex-col justify-start items-start space-y-4 bg-white  p-6">
@@ -37,7 +37,13 @@ const TestimonialCard = ({ quote, title, name, avatarUrl, codeName, created_at, 
           <div className="flex flex-col md:flex-row md:space-x-24  items-center  p-5">
             <div className="flex items-center space-x-2">
               <div className="w-20 h-20">
-                <img alt="" className="rounded-full w-20 h-auto overflow-hidden" src={avatarUrl} />
+                <a href={`${getHostName()}/contributors/${email2Slug(email)}/badges`}>
+                  <img
+                    alt=""
+                    className="rounded-full w-20 h-auto overflow-hidden"
+                    src={avatarUrl}
+                  />
+                </a>
               </div>
               <div className="flex flex-col space-y-2 justify-start items-start">
                 <div className="flex flex-col space-y-1 md:flex-row md:space-x-2 justify-center items-center md:space-y-0">
@@ -46,7 +52,7 @@ const TestimonialCard = ({ quote, title, name, avatarUrl, codeName, created_at, 
                 <h3 className="text-base">on {formattedDate}</h3>
               </div>
             </div>
-            <div className="ml-14 md:ml-0">
+            <div className="ml-12 md:ml-0">
               <span className="rounded-full bg-green-300 px-2 py-1 text-xs text-gray-800">
                 {codeName}
               </span>

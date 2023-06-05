@@ -1,17 +1,17 @@
 import {
   FetchALLtestimonials,
-  FetchALLtestimonialsWithLimit,
-} from "common/services/request/query/fetch-testimonials";
-import React, { useEffect, useState } from "react";
-import TestimonialCard from "./TestimonialCard";
-import { submit } from "common/services/request";
-import "./Testimonial.css";
-import { IoAddSharp } from "react-icons/io5";
-import { useAuthenticated } from "@nhost/react";
-import TestimonialModal from "./TestimonialModal";
-import { NHOST } from "common/const";
+  FetchALLtestimonialsWithLimit
+} from 'common/services/request/query/fetch-testimonials';
+import React, { useEffect, useState } from 'react';
+import TestimonialCard from './TestimonialCard';
+import { submit } from 'common/services/request';
+import './Testimonial.css';
+import { IoAddSharp } from 'react-icons/io5';
+import { useAuthenticated } from '@nhost/react';
+import TestimonialModal from './TestimonialModal';
+import { NHOST } from 'common/const';
 
-import useInfiniteScroll from "react-infinite-scroll-hook";
+import useInfiniteScroll from 'react-infinite-scroll-hook';
 
 const Testimonials = () => {
   const [testimonials, setestimonials] = useState([]);
@@ -29,9 +29,7 @@ const Testimonials = () => {
   };
 
   const fetchwithlimit = async () => {
-    const res = await submit(
-      FetchALLtestimonialsWithLimit(testimonials.length + 1),
-    );
+    const res = await submit(FetchALLtestimonialsWithLimit(testimonials.length + 1));
     setestimonials(res);
     if (testimonials.length == testimonialength) {
       setloading(false);
@@ -43,7 +41,7 @@ const Testimonials = () => {
   };
 
   const onAddTestimonial = async () => {
-    if (!isAuthenticated) return handleLogin("github");
+    if (!isAuthenticated) return handleLogin('github');
     setisOpen(!isOpen);
   };
 
@@ -51,22 +49,21 @@ const Testimonials = () => {
     loading,
     hasNextPage,
     onLoadMore: fetchwithlimit,
-    rootMargin: "0px 0px 400px 0px",
+    rootMargin: '0px 0px 400px 0px'
   });
 
   useEffect(() => {
     fetchtestimonials();
-    fetchwithlimit();
-  }, [!isOpen]);
+  }, []);
 
   return (
     <div className="flex flex-col space-y-5">
       <div className="flex justify-center items-center h-52">
         <h2 className="testimonial-title-primary">
-          What Our{" "}
+          What Our{' '}
           <strong>
             <span>Community</span>
-          </strong>{" "}
+          </strong>{' '}
           Says!
         </h2>
       </div>
@@ -80,13 +77,8 @@ const Testimonials = () => {
           <span className="ml-2">Add Testimonial</span>
         </button>
       </div>
-      <div>
-        {isOpen && <TestimonialModal isOpen={isOpen} setIsOpen={setisOpen} />}
-      </div>
-      <div
-        ref={rootRef}
-        className="h-screen overflow-scroll"
-      >
+      <div>{isOpen && <TestimonialModal isOpen={isOpen} setIsOpen={setisOpen} />}</div>
+      <div className="h-screen overflow-y-scroll overflow-x-hidden" ref={rootRef}>
         {testimonials.map((testimonial) => (
           <TestimonialCard
             avatarUrl={testimonial.user_id_map.avatarUrl}
