@@ -33,7 +33,38 @@ export default function TextForm(props) {
     setText(newText.join(' '));
     props.showAlert('Extra spaces removed!', 'success');
   };
+  // To extract the words from the text.
+  const handletextExtract = () => {
+    const words = text.match(/[a-zA-Z]+/g);
+    if (words !== null) {
+      const res = words.join(' ');
+      setText(res);
+      props.showAlert('Extracted the words from the text', 'success');
+    } else {
+      props.showAlert('No words found in the text', 'warning');
+    }
+  };
+  // To extract the number from the text.
+  const handleNumExtract = () => {
+    const digits = text.match(/[0-9]/g);
+    if (digits != null) {
+      const res = digits.join(' ');
+      setText(res);
+      props.showAlert('Extracted the Numbers from the text', 'success');
+    } else {
+      props.showAlert('No number found', 'warning');
+    }
+  };
 
+  // To Reverse Text
+  function handleRevClick() {
+    if (text.length > 0) {
+      setText(text.split(' ').reverse().join(''));
+      props.showAlert('Reversed Text', 'success');
+    } else {
+      props.showAlert('No text to reverse', 'warning');
+    }
+  }
   const [text, setText] = useState('');
 
   // text = "new text"; // Wrong way to change the state
@@ -85,6 +116,27 @@ export default function TextForm(props) {
           onClick={handleExtraSpaces}
         >
           Remove Extra Spaces
+        </button>
+        <button
+          className="Smart-converter-btn btn-primary mx-1 my-1"
+          disabled={text.length === 0}
+          onClick={handletextExtract}
+        >
+          Extract Text
+        </button>
+        <button
+          className="Smart-converter-btn btn-primary mx-1 my-1"
+          disabled={text.length === 0}
+          onClick={handleNumExtract}
+        >
+          Extract Number
+        </button>
+        <button
+          className="Smart-converter-btn btn-primary mx-1 my-1"
+          disabled={text.length === 0}
+          onClick={handleRevClick}
+        >
+          Reverse Text
         </button>
       </div>
       <div className="my-3">
