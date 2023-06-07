@@ -24,7 +24,7 @@ function CustomDropdownComponent(props) {
     <div className="play-details">
       <PlayHeader play={props} />
       <div className="play-details-body custom-dd-component">
-        <div className="container">
+        <div className="main-content">
           <div className="feature-area">
             <label htmlFor="searchable">
               isSearchable
