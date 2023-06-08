@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import {
-  FetchALlEvents,
+  fetchAllEvents,
   insert_testimonial_submission
 } from 'common/services/request/query/fetch-testimonials';
 import { submit } from 'common/services/request';
@@ -32,7 +32,7 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
   const [Events, setEvents] = useState([]);
 
   const fetchTestEvents = async () => {
-    const res = await submit(FetchALlEvents());
+    const res = await submit(fetchAllEvents());
     setEvents(res);
   };
 

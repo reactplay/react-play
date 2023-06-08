@@ -12,7 +12,6 @@ import ExtendedFooter from 'common/footer/ExtendedFooter';
 import { useSearchContext } from 'common/search/search-context';
 import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import TestimonialSection from 'common/Testimonial/TestimonialSection';
 
 const Home = () => {
@@ -100,7 +99,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section className="bg-[#f6f6f9]">
+      <section className="testimonials">
         <h2 className="title-primary">
           What Our{' '}
           <strong>
@@ -108,7 +107,13 @@ const Home = () => {
           </strong>{' '}
           Says!
         </h2>
+
         <TestimonialSection />
+        <div className="mt-16 text-center">
+          <Link className="home-anchor" to="/testimonials">
+            <span className="text">View all Testimonials</span>
+          </Link>
+        </div>
       </section>
       <section className="home-contributors" data-testid="contributors-section">
         <Contributors />

@@ -76,7 +76,7 @@ const RouteDefs = () => {
           </Route>
           <Route element={<PlayIdeas />} path="/ideas" />
           <Route element={<LeaderBoard />} path="/leaderboard" />
-          <Route element={<Testimonials />} path="/testimonials" />
+          <Route element={<Testimonials />} path="/Testimonials" />
         </Routes>
         <Footer />
       </BrowserRouter>

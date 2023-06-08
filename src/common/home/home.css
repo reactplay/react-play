@@ -380,43 +380,18 @@
   text-align: center;
 }
 
-/* Tweet section */
+/* Testimonials section */
 
-.home-tweets {
+.testimonials {
   position: relative;
   padding: 5rem 0 6rem 0;
 
   background-color: var(--color-neutral-20);
 }
 
-.home-tweets .title-primary {
+.testimonials .title-primary {
   text-align: center;
   margin-top: 1.5rem !important;
-}
-
-.tweets-container.active {
-  width: 90.5%;
-  margin: 0 auto;
-  margin-top: 4.5em;
-  display: flex;
-  /* grid-template-columns: repeat(auto-fit,370px);
-    grid-template-rows: repeat(auto-fill,400px);
-    grid-auto-rows:auto;
-    grid-auto-columns: auto;
-    grid-row-gap:1em; */
-  justify-content: center;
-  align-items: center;
-  /* row-gap: 1.3em; */
-  flex-wrap: wrap;
-  gap: 1em;
-  margin-bottom: 2em;
-}
-
-.tweets-container > div {
-  /* height: fit-content; */
-  width: clamp(5em, 320px, 44em);
-  /* max-width: 410px; */
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.097));
 }
 
 /* Home Contributors */
@@ -427,7 +402,7 @@
 }
 
 .home-contributors .title-primary,
-.home-tweets .title-primary {
+.testimonials .title-primary {
   position: relative;
   margin: 0 0 3rem 0;
   font-family: var(--ff-accent);
@@ -438,19 +413,19 @@
 }
 
 .home-contributors .title-primary strong,
-.home-tweets .title-primary strong {
+.testimonials .title-primary strong {
   position: relative;
   font-family: var(--ff-accent);
 }
 
 .home-contributors .title-primary strong span,
-.home-tweets .title-primary strong span {
+.testimonials .title-primary strong span {
   position: relative;
   font-family: var(--ff-accent);
 }
 
 .home-contributors .title-primary strong:before,
-.home-tweets .title-primary strong:before {
+.testimonials .title-primary strong:before {
   content: '';
   position: absolute;
   height: 4px;
@@ -769,9 +744,18 @@
   font-family: var(--ff-accent);
 }
 
+.home-anchor .text-secondary {
+  color: var(--color-neutral-40);
+}
+
 .home-anchor:hover .text,
 .home-anchor:focus .text {
   color: var(--color-neutral-90);
+}
+
+.home-anchor:hover .text-secondary,
+.home-anchor:focus .text-secondary {
+  color: var(--color-neutral-20);
 }
 
 .home-anchor:before {

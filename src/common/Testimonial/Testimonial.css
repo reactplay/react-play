@@ -1,15 +1,3 @@
-.carousel.carousel-slider .control-arrow {
-  background-color: black;
-}
-.carousel .control-dots .dot {
-  background-color: black;
-}
-
-.carousel.carousel.carousel-slider {
-  height: 75vh;
-  padding: 0px 0px;
-}
-
 .testimonial-footer {
   margin: 4rem 0 0 0;
   text-align: center;
@@ -112,11 +100,4 @@
 
 .bar::-webkit-scrollbar {
   width: 0 !important;
-}
-
-@media screen and (max-width: 768px) {
-  .carousel.carousel.carousel-slider {
-    height: 90vh;
-    padding: 0px 0px;
-  }
 }

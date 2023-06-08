@@ -1,9 +1,9 @@
-export const FetchFiltered = {
+export const fetchFiltered = {
   display: 'testimonials',
   name: 'test',
   function: 'testimonials',
   write: false,
-  limit: 4,
+  limit: 9,
   return: [
     'id',
     'quote',
@@ -17,7 +17,11 @@ export const FetchFiltered = {
   }
 };
 
-export const FetchALL = {
+export function fetchTestimonialsHomePage() {
+  return { ...fetchFiltered };
+}
+
+export const fetchAll = {
   display: 'testimonials',
   name: 'test',
   function: 'testimonials',
@@ -35,7 +39,11 @@ export const FetchALL = {
   }
 };
 
-export const FetchALLWithLimit = (limit) => {
+export function fetchAllTestimonials() {
+  return { ...fetchAll };
+}
+
+export const fetchAllWithLimit = (limit) => {
   return {
     display: 'testimonials',
     name: 'test',
@@ -57,7 +65,11 @@ export const FetchALLWithLimit = (limit) => {
   };
 };
 
-export const FetchEvents = {
+export function FetchALLtestimonialsWithLimit(limit) {
+  return { ...fetchAllWithLimit(limit) };
+}
+
+export const fetchEvents = {
   disply: 'hackathon_events',
   name: 'test',
   function: 'hackathon_events',
@@ -65,20 +77,8 @@ export const FetchEvents = {
   return: ['name', 'id']
 };
 
-export function FetchTestimonialsHomePage() {
-  return { ...FetchFiltered };
-}
-
-export function FetchALLtestimonialsWithLimit(limit) {
-  return { ...FetchALLWithLimit(limit) };
-}
-
-export function FetchALlEvents() {
-  return { ...FetchEvents };
-}
-
-export function FetchALLtestimonials() {
-  return { ...FetchALL };
+export function fetchAllEvents() {
+  return { ...fetchEvents };
 }
 
 export const insert_testimonial_submission = (testimonialData) => {
