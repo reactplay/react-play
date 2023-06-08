@@ -30,7 +30,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     fetchTestimonials();
-  }, []);
+  }, [!isOpen]);
 
   return (
     <section className="mt-24">
