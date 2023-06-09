@@ -57,22 +57,20 @@ function TestimonialSection() {
         >
           {testimonials &&
             testimonials.map((testimonial) => (
-              <div key={testimonial.id}>
-                <SwiperSlide>
-                  <div className="flex rounded-lg border-2 border-gray-400 shadow-lg">
-                    <TestimonialCard
-                      home
-                      avatarUrl={testimonial.user_id_map.avatarUrl}
-                      category={testimonial.testimonials_event.name}
-                      created_at={testimonial.created_at}
-                      email={testimonial.user_id_map.email}
-                      name={testimonial.user_id_map.displayName}
-                      quote={testimonial.quote}
-                      title={testimonial.title}
-                    />
-                  </div>
-                </SwiperSlide>
-              </div>
+              <SwiperSlide key={testimonial.id}>
+                <div className="flex rounded-lg border-2 border-gray-400 shadow-lg">
+                  <TestimonialCard
+                    home
+                    avatarUrl={testimonial.user_id_map.avatarUrl}
+                    category={testimonial.testimonials_event.name}
+                    created_at={testimonial.created_at}
+                    email={testimonial.user_id_map.email}
+                    name={testimonial.user_id_map.displayName}
+                    quote={testimonial.quote}
+                    title={testimonial.title}
+                  />
+                </div>
+              </SwiperSlide>
             ))}
         </Swiper>
       </div>
