@@ -69,16 +69,16 @@ export function FetchALLtestimonialsWithLimit(limit) {
   return { ...fetchAllWithLimit(limit) };
 }
 
-export const fetchEvents = {
-  disply: 'hackathon_events',
+export const fetchCategories = {
+  display: 'hackathon_events',
   name: 'test',
   function: 'hackathon_events',
   write: false,
   return: ['name', 'id']
 };
 
-export function fetchAllEvents() {
-  return { ...fetchEvents };
+export function fetchAllCategories() {
+  return { ...fetchCategories };
 }
 
 export const insert_testimonial_submission = (testimonialData) => {

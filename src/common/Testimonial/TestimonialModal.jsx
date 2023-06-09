@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import {
-  fetchAllEvents,
+  fetchAllCategories,
   insert_testimonial_submission
 } from 'common/services/request/query/fetch-testimonials';
 import { submit } from 'common/services/request';
@@ -29,15 +29,15 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
   });
   const [btnDisabled, setBtnDisabled] = useState(true);
 
-  const [Events, setEvents] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-  const fetchTestEvents = async () => {
-    const res = await submit(fetchAllEvents());
-    setEvents(res);
+  const fetchCategories = async () => {
+    const res = await submit(fetchAllCategories());
+    setCategories(res);
   };
 
   useEffect(() => {
-    fetchTestEvents();
+    fetchCategories();
   }, []);
 
   const updateData = (e) => {
@@ -52,7 +52,7 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
     }
   };
 
-  const AddTestimonial = async () => {
+  const addTestimonial = async () => {
     try {
       let response = await submit(insert_testimonial_submission(testimonialData));
       setIsOpen(false);
@@ -161,7 +161,7 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
               >
                 <Box>
                   <FormControl sx={{ minWidth: 110 }} variant="standard">
-                    <InputLabel id="demo-simple-select-standard-lable">Category</InputLabel>
+                    <InputLabel id="demo-simple-select-standard-label">Category</InputLabel>
                     <Select
                       id="demo-simple-select-standard"
                       labelId="demo-simple-select-standard-label"
@@ -170,7 +170,7 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
                       value={testimonialData.event}
                       onChange={updateData}
                     >
-                      {Events.map((category) => (
+                      {categories.map((category) => (
                         <MenuItem key={category.id} value={category.id}>
                           {category.name}
                         </MenuItem>
@@ -184,7 +184,7 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
                     marginTop: '3px'
                   }}
                 >
-                  <Button disabled={btnDisabled} onClick={AddTestimonial}>
+                  <Button disabled={btnDisabled} onClick={addTestimonial}>
                     ADD
                   </Button>
                 </Box>
