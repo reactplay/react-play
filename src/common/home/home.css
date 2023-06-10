@@ -639,6 +639,7 @@
           display: inline-flex;
           justify-content: center;
           align-items: center;
+          text-align: center;
 
           .handshake {
             opacity: 0;
@@ -715,7 +716,7 @@
         cursor: pointer;
       }
       .prime-sponsors-cta {
-        width: 100%;
+        width: 18%;
         height: 5rem;
         background-color: rgba(var(--color-brand-primary-rgb), 1);
         padding: 1rem 1rem;
@@ -734,7 +735,7 @@
         position: relative;
         text-align: center;
 
-        .sponsor-tier {
+        .heart-handshake {
           opacity: 0;
           transition: all 0.2s ease-in-out;
           position: absolute;
@@ -745,7 +746,7 @@
       .prime-sponsors-cta:hover {
         background-color: white;
 
-        .sponsor-tier {
+        .heart-handshake {
           opacity: 1;
           margin-left: 1rem;
         }
@@ -844,6 +845,118 @@
         }
         .heart-add {
           opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .home-sponsors {
+    padding: 3rem;
+
+    .event-partners-sponsors-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .event-partners-sponsors {
+        width: 100%;
+        margin-bottom: 4rem;
+
+        .content {
+          width: 100%;
+
+          .partners-sponsors-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+      }
+    }
+    .prime-sponsors-container {
+      margin-top: 3rem;
+      & > span {
+        width: 95%;
+      }
+      .prime-sponsors-grid {
+        grid-template-columns: repeat(3, 1fr);
+
+        .prime-sponsors-cta {
+          width: 80%;
+        }
+        .prime-sponsors-cta:focus,
+        .prime-sponsors-cta:hover {
+          .heart-handshake {
+            display: none;
+          }
+        }
+      }
+    }
+    .backers-container {
+      margin-top: 0px;
+      .backers-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .home-sponsors {
+    padding: 3rem;
+
+    .event-partners-sponsors-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .event-partners-sponsors {
+        width: 100%;
+        margin-bottom: 4rem;
+
+        .content {
+          width: 100%;
+
+          .partners-sponsors-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+      }
+    }
+    .prime-sponsors-container {
+      margin-top: 3rem;
+      & > span {
+        width: 95%;
+      }
+      .prime-sponsors-grid {
+        grid-template-columns: repeat(3, 1fr);
+
+        .prime-sponsors-cta {
+          width: 80%;
+        }
+        .prime-sponsors-cta:focus,
+        .prime-sponsors-cta:hover {
+          .heart-handshake {
+            display: none;
+          }
+        }
+      }
+    }
+    .backers-container {
+      margin-top: 0px;
+      .backers-grid {
+        grid-template-columns: repeat(4, 1fr);
+        & > a {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+        .backers-cta {
+          width: 3.5rem;
+          height: 3.5rem;
         }
       }
     }
