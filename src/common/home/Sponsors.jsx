@@ -1,4 +1,5 @@
 import { FaHandshake } from 'react-icons/fa';
+import { TbHeartHandshake } from 'react-icons/tb';
 
 const Sponsors = () => {
   const eventSponsors = [
@@ -25,6 +26,8 @@ const Sponsors = () => {
       logo: '/sponsors-partners/react-summit.png'
     }
   ];
+
+  const primeSponsors = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
     <>
@@ -73,6 +76,19 @@ const Sponsors = () => {
               Sponsor an Event <FaHandshake className="handshake" size={28} />
             </button>
           </div>
+        </div>
+      </div>
+      <div className="prime-sponsors-container">
+        <h3>Prime Sponsors</h3>
+        <div className="prime-sponsors-grid">
+          {primeSponsors.map((p) => (
+            <a className="prime-sponsors-grid-item" rel="noreferrer" target="_blank">
+              abcd
+            </a>
+          ))}
+          <button className="prime-sponsors-cta">
+            Become a Prime Sponsor <TbHeartHandshake className="sponsor-tier" size={28} />
+          </button>
         </div>
       </div>
     </>
