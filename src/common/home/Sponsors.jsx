@@ -3,31 +3,26 @@ import { FaHandshake } from 'react-icons/fa';
 const Sponsors = () => {
   const eventSponsors = [
     {
-      name: '',
-      website: '',
-      logo: ''
+      name: 'Nhost',
+      website: 'https://nhost.io',
+      logo: '/sponsors-partners/nhost.png'
     },
     {
-      name: '',
-      website: '',
-      logo: ''
+      name: 'stackstream',
+      website: 'https://stack-stream.com',
+      logo: '/sponsors-partners/stackstream.png'
     }
   ];
   const eventPartners = [
     {
-      name: '',
-      website: '',
-      logo: ''
+      name: 'React Nexus',
+      website: 'https://reactnexus.com',
+      logo: '/sponsors-partners/react-nexus.png'
     },
     {
-      name: '',
-      website: '',
-      logo: ''
-    },
-    {
-      name: '',
-      website: '',
-      logo: ''
+      name: 'React Summit',
+      website: 'https://reactsummit.com/',
+      logo: '/sponsors-partners/react-summit.png'
     }
   ];
 
@@ -43,8 +38,15 @@ const Sponsors = () => {
           <h3>Event Partners</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventPartners.map((e) => (
-                <a className="partners-sponsors-grid-item">abcd</a>
+              {eventPartners.map((p) => (
+                <a
+                  className="partners-sponsors-grid-item"
+                  href={p.website}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <img alt={p.name} src={p.logo} />
+                </a>
               ))}
             </div>
             <button className="partners-sponsors-cta">
@@ -56,8 +58,15 @@ const Sponsors = () => {
           <h3>Event Sponsors</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventSponsors.map((e) => (
-                <a className="partners-sponsors-grid-item">abcd</a>
+              {eventSponsors.map((s) => (
+                <a
+                  className="partners-sponsors-grid-item"
+                  href={s.website}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <img alt={s.name} src={s.logo} />
+                </a>
               ))}
             </div>
             <button className="partners-sponsors-cta">
