@@ -41,6 +41,7 @@ const Sponsors = () => {
       <div className="event-partners-sponsors-container">
         <div className="event-partners-sponsors">
           <h3>Event Partners</h3>
+          <span>(Lorem ipsum dolor sit)</span>
           <div className="content">
             <div className="partners-sponsors-grid">
               {eventPartners.map((p) => (
@@ -61,6 +62,7 @@ const Sponsors = () => {
         </div>
         <div className="event-partners-sponsors">
           <h3>Event Sponsors</h3>
+          <span>(Lorem ipsum dolor sit)</span>
           <div className="content">
             <div className="partners-sponsors-grid">
               {eventSponsors.map((s) => (
@@ -82,6 +84,7 @@ const Sponsors = () => {
       </div>
       <div className="prime-sponsors-container">
         <h3>Prime Sponsors</h3>
+        <span>(Lorem ipsum dolor sit)</span>
         <div className="prime-sponsors-grid">
           {primeSponsors.map((p) => (
             <a className="prime-sponsors-grid-item" rel="noreferrer" target="_blank">
@@ -95,6 +98,7 @@ const Sponsors = () => {
       </div>
       <div className="backers-container">
         <h3>Backers</h3>
+        <span>(Lorem ipsum dolor sit)</span>
         <div className="backers-grid">
           {backers.map((b) => (
             <a className="backers-grid-item" rel="noreferrer" target="_blank">

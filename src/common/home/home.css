@@ -573,6 +573,12 @@
         line-height: 1;
         font-weight: 600;
       }
+      & > span {
+        font-family: var(--ff-accent);
+        text-align: center;
+        color: var(--color-neutral-60);
+        font-weight: 500;
+      }
 
       .content {
         width: 80%;
@@ -673,6 +679,12 @@
       line-height: 1;
       font-weight: 600;
     }
+    & > span {
+      font-family: var(--ff-accent);
+      text-align: center;
+      color: var(--color-neutral-60);
+      font-weight: 500;
+    }
     .prime-sponsors-grid {
       width: 70%;
           display: grid;
@@ -760,6 +772,12 @@
       color: var(--color-neutral-80);
       line-height: 1;
       font-weight: 600;
+    }
+    & > span {
+      font-family: var(--ff-accent);
+      text-align: center;
+      color: var(--color-neutral-60);
+      font-weight: 500;
     }
     .backers-grid {
       width: 60%;
