@@ -28,9 +28,6 @@ const Sponsors = () => {
     }
   ];
 
-  const primeSponsors = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const backers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
   return (
     <>
       <h2 className="title-primary">
@@ -41,7 +38,6 @@ const Sponsors = () => {
       <div className="event-partners-sponsors-container">
         <div className="event-partners-sponsors">
           <h3>Event Partners</h3>
-          <span>(Lorem ipsum dolor sit)</span>
           <div className="content">
             <div className="partners-sponsors-grid">
               {eventPartners.map((p) => (
@@ -62,7 +58,6 @@ const Sponsors = () => {
         </div>
         <div className="event-partners-sponsors">
           <h3>Event Sponsors</h3>
-          <span>(Lorem ipsum dolor sit)</span>
           <div className="content">
             <div className="partners-sponsors-grid">
               {eventSponsors.map((s) => (
@@ -82,33 +77,67 @@ const Sponsors = () => {
           </div>
         </div>
       </div>
-      <div className="prime-sponsors-container">
-        <h3>Prime Sponsors</h3>
-        <span>(Lorem ipsum dolor sit)</span>
-        <div className="prime-sponsors-grid">
-          {primeSponsors.map((p) => (
-            <a className="prime-sponsors-grid-item" rel="noreferrer" target="_blank">
-              abcd
-            </a>
-          ))}
-          <button className="prime-sponsors-cta">
-            Become a Prime Sponsor <TbHeartHandshake className="sponsor-tier" size={28} />
-          </button>
-        </div>
-      </div>
+      {/* NOTE: In the following two sections, there are inline styles to override the custom css classes. These are being used for the time being, until data for the sections are available. */}
       <div className="backers-container">
         <h3>Backers</h3>
-        <span>(Lorem ipsum dolor sit)</span>
-        <div className="backers-grid">
-          {backers.map((b) => (
+        <span>
+          Support us with any monthly sponsorship. Your help means a lot to us.
+          <br /> We will give you a shoutout and add you here.
+        </span>
+        <div
+          className="backers-grid"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'start',
+            alignItems: 'center'
+          }}
+        >
+          {/* {backers.map((b) => (
             <a className="backers-grid-item" rel="noreferrer" target="_blank">
               abcd
             </a>
-          ))}
-          <button className="backers-cta">
+          ))} */}
+          <a
+            className="backers-cta"
+            href="https://github.com/sponsors/reactplay"
+            rel="noreferrer"
+            target="_blank"
+          >
             <RiHeartFill className="heart" size={28} />
             <RiHeartAddFill className="heart-add" size={28} />
-          </button>
+          </a>
+        </div>
+      </div>
+      <div className="prime-sponsors-container">
+        <h3>Prime Sponsors</h3>
+        <span>
+          Be a prime sponsor of ReactPlay. <br />
+          Your sponsorship will go a long way, and we will place you in our internal events,
+          newsletters and here on the homepage.
+        </span>
+        <div
+          className="prime-sponsors-grid"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'start',
+            alignItems: 'center'
+          }}
+        >
+          {/* {primeSponsors.map((p) => (
+            <a className="prime-sponsors-grid-item" rel="noreferrer" target="_blank">
+              abcd
+            </a>
+          ))} */}
+          <a
+            className="prime-sponsors-cta"
+            href="https://github.com/sponsors/reactplay"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Become a Prime Sponsor <TbHeartHandshake className="heart-handshake" size={28} />
+          </a>
         </div>
       </div>
     </>
