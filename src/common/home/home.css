@@ -546,7 +546,7 @@
   width: 100%;
   position: relative;
   padding: 5rem 7rem 6rem 7rem;
-  background-color: var(--color-neutral-10);
+  background-color: var(--color-neutral-20);
   display: flex;
   flex-direction: column;
   justify-content: start;
