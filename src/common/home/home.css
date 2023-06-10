@@ -427,7 +427,8 @@
 }
 
 .home-contributors .title-primary,
-.home-tweets .title-primary {
+.home-tweets .title-primary,
+.home-sponsors .title-primary {
   position: relative;
   margin: 0 0 3rem 0;
   font-family: var(--ff-accent);
@@ -438,19 +439,22 @@
 }
 
 .home-contributors .title-primary strong,
-.home-tweets .title-primary strong {
+.home-tweets .title-primary strong,
+.home-sponsors .title-primary strong {
   position: relative;
   font-family: var(--ff-accent);
 }
 
 .home-contributors .title-primary strong span,
-.home-tweets .title-primary strong span {
+.home-tweets .title-primary strong span,
+.home-sponsors .title-primary strong span {
   position: relative;
   font-family: var(--ff-accent);
 }
 
 .home-contributors .title-primary strong:before,
-.home-tweets .title-primary strong:before {
+.home-tweets .title-primary strong:before,
+.home-sponsors .title-primary strong:before {
   content: '';
   position: absolute;
   height: 4px;
@@ -536,6 +540,120 @@
   }
 }
 
+/* Home Sponsors */
+
+.home-sponsors {
+  width: 100%;
+  position: relative;
+  padding: 5rem 7rem 6rem 7rem;
+  background-color: var(--color-neutral-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  .event-partners-sponsors-container {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: start;
+    
+    .event-partners-sponsors {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+
+      & > h3 {
+        font-family: var(--ff-accent);
+        font-size: var(--fs-xl);
+        text-align: center;
+        color: var(--color-neutral-80);
+        line-height: 1;
+        font-weight: 600;
+      }
+
+      .content {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+
+        .partners-sponsors-grid {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+          margin-top: 1.8rem;
+          margin-left: auto;
+          margin-right: auto;
+          column-gap: 1.8rem;
+    
+         & > a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 1.2rem 1rem;
+            border-bottom-left-radius: 0.7rem;
+            border-bottom-right-radius: 0.7rem;
+            border-top: 3px rgba(var(--color-brand-primary-rgb), 1) solid;
+            box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.07);
+            -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.07);
+            -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.07);
+            transition: all 0.3s ease-in-out;
+          }
+          & > a:hover {
+            background-color: rgba(var(--color-brand-primary-rgb), 1);
+            cursor: pointer;
+          }
+        }
+      & > button {
+        width: 100%;
+        background-color: rgba(var(--color-brand-primary-rgb), 1);
+        padding: 1rem 1rem;
+        border-bottom-left-radius: 0.7rem;
+        border-bottom-right-radius: 0.7rem;
+        margin-top: 2rem;
+        font-weight: 500;
+        font-size: var(--fs-md);
+        border-top: 3px rgba(var(--color-brand-primary-rgb), 1) solid;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.07);
+        -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.07);
+        -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.07);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        .handshake {
+          opacity: 0;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+      & > button:hover {
+        background-color: white;
+
+        .handshake {
+          opacity: 1;
+          margin-left: 1rem;
+        }
+      }
+      }
+
+      
+    
+    }
+    
+
+
+  }
+}
+
+
 /* Pills */
 
 .pills-category {
@@ -558,6 +676,7 @@
   display: inline-block;
   padding: 0.6rem 2.4rem;
   border-radius: 3px;
+  
   font-weight: var(--fw-bold);
   text-decoration: none;
   color: rgba(var(--color-neutral-90-rgb), 0.6);
