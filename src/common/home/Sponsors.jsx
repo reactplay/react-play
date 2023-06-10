@@ -1,5 +1,6 @@
 import { FaHandshake } from 'react-icons/fa';
 import { TbHeartHandshake } from 'react-icons/tb';
+import { RiHeartFill, RiHeartAddFill } from 'react-icons/ri';
 
 const Sponsors = () => {
   const eventSponsors = [
@@ -28,6 +29,7 @@ const Sponsors = () => {
   ];
 
   const primeSponsors = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const backers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
     <>
@@ -88,6 +90,20 @@ const Sponsors = () => {
           ))}
           <button className="prime-sponsors-cta">
             Become a Prime Sponsor <TbHeartHandshake className="sponsor-tier" size={28} />
+          </button>
+        </div>
+      </div>
+      <div className="backers-container">
+        <h3>Backers</h3>
+        <div className="backers-grid">
+          {backers.map((b) => (
+            <a className="backers-grid-item" rel="noreferrer" target="_blank">
+              abcd
+            </a>
+          ))}
+          <button className="backers-cta">
+            <RiHeartFill className="heart" size={28} />
+            <RiHeartAddFill className="heart-add" size={28} />
           </button>
         </div>
       </div>
