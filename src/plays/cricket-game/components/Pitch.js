@@ -25,7 +25,8 @@ export default function Pitch(props) {
       />
 
       <div
-        className="hit-box w-[35%] h-[12%] absolute top-[8%] md:top-[6%] left-[16%] rounded-[10px] z-30"
+        // className="hit-box w-[35%] h-[12%] absolute top-[8%] md:top-[6%] left-[16%] rounded-[10px] z-30"
+        className="hit-box w-[35%] h-[15%] absolute top-[8%] md:top-[6%] left-[16%] rounded-[10px] z-30"
         ref={hitBoxRef}
         onMouseDown={(e) => onBatSwing(e)}
       />
