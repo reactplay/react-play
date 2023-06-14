@@ -13,7 +13,7 @@ import Select from '@mui/material/Select';
 import {
   fetchAllCategories,
   insert_testimonial_submission
-} from 'common/services/request/query/fetch-testimonials';
+} from 'common/services/request/query/testimonials';
 import { submit } from 'common/services/request';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

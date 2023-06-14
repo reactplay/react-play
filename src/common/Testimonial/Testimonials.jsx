@@ -1,4 +1,4 @@
-import { fetchAllTestimonials } from 'common/services/request/query/fetch-testimonials';
+import { fetchAllTestimonials } from 'common/services/request/query/testimonials';
 import React, { useEffect, useState } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { submit } from 'common/services/request';

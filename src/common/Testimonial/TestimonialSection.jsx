@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import TestimonialCard from './TestimonialCard';
-import { fetchTestimonialsHomePage } from 'common/services/request/query/fetch-testimonials';
+import { fetchTestimonialsHomePage } from 'common/services/request/query/testimonials';
 import { submit } from 'common/services/request';
 
 // Import Swiper React components
@@ -28,7 +28,7 @@ function TestimonialSection() {
 
   return (
     <>
-      <div className="mx-10 lg:mx-20 mt-16 sm:mt-20">
+      <div className="mx-5  lg:mx-20 h-[380px]  mt-16 sm:mt-20">
         <Swiper
           rewind
           autoplay={{
@@ -45,11 +45,13 @@ function TestimonialSection() {
               spaceBetween: 30
             }
           }}
+          className="h-full"
           keyboard={{
             enabled: true
           }}
           modules={[Keyboard, Autoplay, Navigation, Pagination]}
           pagination={{
+            dynamicBullets: false,
             clickable: true
           }}
           slidesPerView={1}
