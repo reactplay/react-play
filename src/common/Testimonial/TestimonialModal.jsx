@@ -46,11 +46,19 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
       ...prev,
       [fieldName]: e.target.value
     }));
-
-    if (testimonialData.title.length != 0 && testimonialData.quote.length != 0) {
-      setBtnDisabled(false);
-    }
   };
+
+  useEffect(() => {
+    if (
+      testimonialData.title.length != 0 &&
+      testimonialData.quote.length != 0 &&
+      testimonialData.event != 0
+    ) {
+      setBtnDisabled(false);
+    } else {
+      setBtnDisabled(true);
+    }
+  }, [testimonialData]);
 
   const addTestimonial = async () => {
     try {
