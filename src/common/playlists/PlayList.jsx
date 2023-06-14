@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'common/spinner/spinner';
 import * as all_plays from 'plays';
-
+import { randomizeArray } from 'common/helpers/randomizeArray';
 import './playlist.css';
 import { toSanitized } from 'common/services/string';
 import DynamicBanner from './DynamicBanner';
@@ -37,7 +37,7 @@ const PlayList = () => {
             found_plays.push(res_play);
           }
         });
-        setPlays(found_plays);
+        setPlays(randomizeArray(found_plays));
       }
       if (!translatedQuery) {
         // If the filtered array has at least one item, select a random play from the filtered array
