@@ -88,7 +88,7 @@ const HeaderNav = ({ showBrowse }) => {
             </li>
           )}
           <li>
-            <Link
+            <a
               className="app-header-btn app-header-btn--secondary"
               data-testid="events-btn"
               target="_blank"
@@ -96,7 +96,7 @@ const HeaderNav = ({ showBrowse }) => {
             >
               <MdEvent className="icon" />
               <span className="btn-label">Events</span>
-            </Link>
+            </a>
           </li>
           <li className="menu-spacer">
             {process.env.NODE_ENV === 'development' ? (
