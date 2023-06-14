@@ -91,8 +91,8 @@ const HeaderNav = ({ showBrowse }) => {
             <a
               className="app-header-btn app-header-btn--secondary"
               data-testid="events-btn"
+              href="https://hustles.reactplay.io/"
               target="_blank"
-              to="https://hustles.reactplay.io/"
             >
               <MdEvent className="icon" />
               <span className="btn-label">Events</span>
