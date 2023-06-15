@@ -622,7 +622,7 @@
             cursor: pointer;
           }
         }
-        & > button {
+        .partners-sponsors-cta {
           width: 100%;
           background-color: rgba(var(--color-brand-primary-rgb), 1);
           padding: 1rem 1rem;
@@ -646,7 +646,7 @@
             transition: all 0.2s ease-in-out;
           }
         }
-        & > button:hover {
+        .partners-sponsors-cta:hover {
           background-color: white;
 
           .handshake {

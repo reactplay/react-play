@@ -51,9 +51,14 @@ const Sponsors = () => {
                 </a>
               ))}
             </div>
-            <button className="partners-sponsors-cta">
+            <a
+              className="partners-sponsors-cta"
+              href="https://forms.gle/19KTxhzp4aiTJ4kMA"
+              rel="noreferrer"
+              target="_blank"
+            >
               Partner an Event <FaHandshake className="handshake" size={28} />
-            </button>
+            </a>
           </div>
         </div>
         <div className="event-partners-sponsors">
@@ -71,9 +76,14 @@ const Sponsors = () => {
                 </a>
               ))}
             </div>
-            <button className="partners-sponsors-cta">
+            <a
+              className="partners-sponsors-cta"
+              href="https://forms.gle/19KTxhzp4aiTJ4kMA"
+              rel="noreferrer"
+              target="_blank"
+            >
               Sponsor an Event <FaHandshake className="handshake" size={28} />
-            </button>
+            </a>
           </div>
         </div>
       </div>
