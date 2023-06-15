@@ -56,7 +56,7 @@ const Testimonials = () => {
       <div>{isOpen && <TestimonialModal isOpen={isOpen} setIsOpen={setIsOpen} />}</div>
 
       <div className="mx-auto max-w-[1600px] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="[column-fill:_balance] sm:columns-2 sm:gap-4 lg:columns-3 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6">
           {testimonials &&
             testimonials.map((testimonial) => (
               <div className="mb-6 sm:break-inside-avoid border rounded-lg" key={testimonial.id}>

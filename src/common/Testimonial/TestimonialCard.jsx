@@ -25,7 +25,7 @@ const TestimonialCard = ({ home, quote, title, name, avatarUrl, category, create
     <div className={`${home && 'flex-1'}`}>
       <div>
         <h2 className="px-6 py-4 text-xl font-semibold">{title}</h2>
-        <blockquote className={`${home ? 'h-28 sm:h-36' : 'max-h-36'} px-6 overflow-y-auto`}>
+        <blockquote className={`${home ? 'h-28 sm:h-36' : 'max-h-32'} px-6 overflow-y-auto`}>
           <p className="leading-relaxed text-gray-700">{quote}</p>
         </blockquote>
       </div>
