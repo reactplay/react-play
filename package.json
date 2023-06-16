@@ -37,6 +37,7 @@
     "jspdf": "^2.5.1",
     "leaflet": "^1.9.3",
     "lodash": "^4.17.21",
+    "lodash.memoize": "^4.1.2",
     "mathjs": "^11.5.1",
     "node-sass": "^8.0.0",
     "p5": "^1.5.0",
@@ -50,7 +51,7 @@
     "react-error-boundary": "^3.1.4",
     "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.3.0",
-    "react-icons": "^4.3.1",
+    "react-icons": "^4.8.0",
     "react-leaflet": "^4.2.0",
     "react-loader-spinner": "~5.1.5",
     "react-organizational-chart": "^2.1.1",
@@ -110,8 +111,11 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.41.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/node": "^20.3.1",
+    "@types/p5": "^1.6.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
     "autoprefixer": "^10.4.7",
     "cypress": "^10.6.0",
     "eslint": "^8.0.1",
@@ -130,6 +134,6 @@
     "react-snap": "^1.23.0",
     "tailwind-scrollbar": "^2.1.0",
     "tailwindcss": "^3.0.24",
-    "typescript": "*"
+    "typescript": "5.0"
   }
 }
