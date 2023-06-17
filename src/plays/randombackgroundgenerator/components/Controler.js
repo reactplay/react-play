@@ -9,4 +9,4 @@ export const Controler = ({animate, shapeChange, downloadBg, setContent}) => {
         <input type="text" onBlur={(event)=>setContent(event.target.value)} placeholder='type your name' />
     </div>
   )
-}
+} 
