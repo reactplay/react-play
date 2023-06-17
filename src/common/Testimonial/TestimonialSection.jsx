@@ -28,7 +28,7 @@ function TestimonialSection() {
 
   return (
     <>
-      <div className="mx-5  lg:mx-20 h-[380px]  mt-16 sm:mt-20">
+      <div className="mx-5 lg:mx-20 h-72 mt-16 sm:mt-20">
         <Swiper
           rewind
           autoplay={{
@@ -60,7 +60,7 @@ function TestimonialSection() {
           {testimonials &&
             testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id}>
-                <div className="flex rounded-lg border-2 border-gray-400 shadow-lg">
+                <div className="rounded-lg border-2 border-gray-400 shadow-lg">
                   <TestimonialCard
                     home
                     avatarUrl={testimonial.user_id_map.avatarUrl}

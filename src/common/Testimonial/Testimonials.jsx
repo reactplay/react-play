@@ -42,24 +42,24 @@ const Testimonials = () => {
         Says!
       </h2>
 
-      <div className="flex p-3 justify-end">
+      <div className="flex p-3 justify-end max-w-[1600px] mx-auto">
         <button
-          className="px-4 py-3 bg-[#00f2fe] rounded-lg text-black outline-none  shadow-lg transform   mx-5 flex justify-center items-center"
+          className="px-2.5 py-2 sm:px-4 sm:py-3 bg-[#00f2fe] rounded-lg text-black outline-none  shadow-lg transform mx-5 flex justify-center items-center"
           type="button"
           onClick={onAddTestimonial}
         >
-          <IoAddSharp className="icon" />
-          <span className="ml-2">Add Testimonial</span>
+          <IoAddSharp className="icon h-5 w-5 sm:h-6 sm:w-6" />
+          <span className="ml-1 sm:ml-2 md:text-lg">Testimonial</span>
         </button>
       </div>
 
       <div>{isOpen && <TestimonialModal isOpen={isOpen} setIsOpen={setIsOpen} />}</div>
 
       <div className="mx-auto max-w-[1600px] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6">
           {testimonials &&
             testimonials.map((testimonial) => (
-              <div className="mb-6 sm:break-inside-avoid border rounded-lg" key={testimonial.id}>
+              <div className="border rounded-lg" key={testimonial.id}>
                 <TestimonialCard
                   avatarUrl={testimonial.user_id_map.avatarUrl}
                   category={testimonial.testimonials_event.name}
@@ -67,7 +67,6 @@ const Testimonials = () => {
                   email={testimonial.user_id_map.email}
                   name={testimonial.user_id_map.displayName}
                   quote={testimonial.quote}
-                  title={testimonial.title}
                 />
               </div>
             ))}

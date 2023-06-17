@@ -7,7 +7,6 @@ export const fetchFiltered = {
   return: [
     'id',
     'quote',
-    'title',
     'created_at',
     { user_id_map: ['avatarUrl', 'id', 'displayName', 'email'] },
     { testimonials_event: ['id', 'name', 'description'] }

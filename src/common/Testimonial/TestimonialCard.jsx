@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import * as allLocales from 'date-fns/locale';
 import { email2Slug } from 'common/services/string';
 
-const TestimonialCard = ({ home, quote, title, name, avatarUrl, category, created_at, email }) => {
+const TestimonialCard = ({ home, quote, name, avatarUrl, category, created_at, email }) => {
   const [formattedDate] = useState(() => {
     const locale = navigator.language.split('-').join('');
     const dnsLocale = allLocales[locale] ?? allLocales.enUS;
@@ -22,14 +22,8 @@ const TestimonialCard = ({ home, quote, title, name, avatarUrl, category, create
   };
 
   return (
-    <div className={`${home && 'flex-1'}`}>
-      <div>
-        <h2 className="px-6 py-4 text-xl font-semibold">{title}</h2>
-        <blockquote className={`${home ? 'h-28 sm:h-36' : 'max-h-32'} px-6 overflow-y-auto`}>
-          <p className="leading-relaxed text-gray-700">{quote}</p>
-        </blockquote>
-      </div>
-      <div className={`${home ? 'mb-6 mt-4 px-6' : 'm-4'} flex items-center gap-4`}>
+    <div className="py-4">
+      <div className="flex items-center gap-4 px-6 sm:h-16">
         <a href={`${getHostName()}/contributors/${email2Slug(email)}/badges`}>
           <img
             alt="Profile Picture"
@@ -47,9 +41,15 @@ const TestimonialCard = ({ home, quote, title, name, avatarUrl, category, create
           </a>
           <p className="mt-0.5">{formattedDate}</p>
         </div>
-        <span className="text-xs font-bold tracking-wider uppercase bg-green-200 text-green-900 rounded-full px-2 py-1">
+        <span className="text-xs font-semibold tracking-wide uppercase bg-green-200 text-green-900 rounded-full px-2 py-1">
           {category}
         </span>
+      </div>
+
+      <div className="mx-2 mt-4">
+        <blockquote className={`${home && 'h-32'} max-h-32 px-6 overflow-y-auto`}>
+          <p className="leading-relaxed text-gray-700">{quote}</p>
+        </blockquote>
       </div>
     </div>
   );
