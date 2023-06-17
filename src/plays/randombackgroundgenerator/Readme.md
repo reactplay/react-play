@@ -1,10 +1,19 @@
 # Random Background Generator
 
-This play will generate random backgrund.
+## What is it about?
 
-## You will learn
-This play will help you to learn some usefull basics of dom and some usefull usecase. 
+This play is about generating and downloading random background.
 
-## Resources
+## How I created it-
 
-I used anime.js for the animation and transitions.
+I've got the idea from an vanilla javascript project from youtube. My goal was to convert it from vanilla to react. It was hard to start but easy to finish.
+
+## Libraries used-
+
+-> "animejs" for the animation and transition you see.
+-> "html2canvas" to convert the background html div to canvas element.
+
+## Challenges faced-
+
+-> Positioning the blocks was a challange for me.
+-> Another challange was to work with huge node_modules. The overall work environment slowed down for the big dipendency tree.
