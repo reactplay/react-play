@@ -26,7 +26,7 @@ export default function WordleRow(props: { tileRow: TileRow; wordleWord: string 
                   roll
                   correct={isCorrect}
                   index={index}
-                  key={`${index}-${letter}`}
+                  key={crypto.randomUUID()}
                   style={TileColor.CORRECT}
                   tile={letter}
                 />
@@ -40,7 +40,7 @@ export default function WordleRow(props: { tileRow: TileRow; wordleWord: string 
                   roll
                   correct={isCorrect}
                   index={index}
-                  key={`${index}-${letter}`}
+                  key={crypto.randomUUID()}
                   style={TileColor.MISPLACED}
                   tile={letter}
                 />
@@ -51,7 +51,7 @@ export default function WordleRow(props: { tileRow: TileRow; wordleWord: string 
                   roll
                   correct={isCorrect}
                   index={index}
-                  key={`${index}-${letter}`}
+                  key={crypto.randomUUID()}
                   style={TileColor.WRONG}
                   tile={letter}
                 />
@@ -63,7 +63,7 @@ export default function WordleRow(props: { tileRow: TileRow; wordleWord: string 
               <WordleTile
                 correct={isCorrect}
                 index={index}
-                key={`${index}-${letter}`}
+                key={crypto.randomUUID()}
                 roll={false}
                 style={TileColor.MISPLACED}
                 tile={letter}
