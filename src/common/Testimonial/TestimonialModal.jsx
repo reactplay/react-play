@@ -17,6 +17,8 @@ import {
 import { submit } from 'common/services/request';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import * as DOMPurify from 'dompurify';
+import ReactHtmlParser from 'react-html-parser';
 
 export default function TestimonialModal({ isOpen, setIsOpen }) {
   const userDisplayName = useUserDisplayName();
@@ -42,9 +44,14 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
 
   const updateData = (e) => {
     const fieldName = e.target.name;
+    let value = e.target.value;
+    const htmlregex =  /<(\"[^\"]*\"|'[^']*'|[^'\">])*>/;
+    if(value.match(htmlregex)) {
+       value  =  ReactHtmlParser(DOMPurify.sanitize(value))[0].props.children[0]; 
+    }
     setTestimonialData((prev) => ({
       ...prev,
-      [fieldName]: e.target.value
+      [fieldName]: value
     }));
   };
 
@@ -80,6 +87,8 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
       // empty
     }
   };
+
+  console.log(testimonialData);
 
   return (
     <>
