@@ -427,8 +427,7 @@
 }
 
 .home-contributors .title-primary,
-.home-tweets .title-primary,
-.home-sponsors .title-primary {
+.home-tweets .title-primary {
   position: relative;
   margin: 0 0 3rem 0;
   font-family: var(--ff-accent);
@@ -439,22 +438,19 @@
 }
 
 .home-contributors .title-primary strong,
-.home-tweets .title-primary strong,
-.home-sponsors .title-primary strong {
+.home-tweets .title-primary strong {
   position: relative;
   font-family: var(--ff-accent);
 }
 
 .home-contributors .title-primary strong span,
-.home-tweets .title-primary strong span,
-.home-sponsors .title-primary strong span {
+.home-tweets .title-primary strong span {
   position: relative;
   font-family: var(--ff-accent);
 }
 
 .home-contributors .title-primary strong:before,
-.home-tweets .title-primary strong:before,
-.home-sponsors .title-primary strong:before {
+.home-tweets .title-primary strong:before {
   content: '';
   position: absolute;
   height: 4px;
@@ -542,6 +538,23 @@
 
 /* Home Sponsors */
 
+/* Note:- The decoration style for this heading is different from the other strong headers due to this heading being long and spanning into multiple lines in mobile, which breaks responsiveness*/
+.home-sponsors .title-primary {
+  position: relative;
+  margin: 0 0 3rem 0;
+  font-family: var(--ff-accent);
+  font-size: var(--fs-xxl);
+  text-align: center;
+  color: var(--color-neutral-80);
+  line-height: 1.2;
+  display: inline-block;
+  padding-bottom: 0.4rem; /* Adjust as needed */
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--color-brand-primary-rgb), 1);
+  text-decoration-thickness: 4px;
+}
+
+
 .home-sponsors {
   width: 100%;
   position: relative;
@@ -551,6 +564,7 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
+
 
   .event-partners-sponsors-container {
     width: 100%;
