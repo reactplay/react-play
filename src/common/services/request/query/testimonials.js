@@ -28,7 +28,6 @@ export const fetchAll = {
   return: [
     'id',
     'quote',
-    'title',
     'created_at',
     { user_id_map: ['avatarUrl', 'id', 'displayName', 'email'] },
     { testimonials_event: ['id', 'name', 'description'] }
@@ -51,7 +50,6 @@ export const fetchAllWithLimit = (limit) => {
     return: [
       'id',
       'quote',
-      'title',
       'created_at',
       { user_id_map: ['avatarUrl', 'id', 'displayName', 'email'] },
       { testimonials_event: ['id', 'name', 'description'] }
@@ -89,7 +87,6 @@ export const insert_testimonial_submission = (testimonialData) => {
     object: {
       event: testimonialData.event,
       quote: testimonialData.quote,
-      title: testimonialData.title,
       user: testimonialData.id
     },
     return: ['id']

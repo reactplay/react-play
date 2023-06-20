@@ -4,7 +4,7 @@ import ModalClose from '@mui/joy/ModalClose';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 import { useUserDisplayName, useUserId } from '@nhost/react';
-import { Box, TextField } from '@mui/material';
+import { Box } from '@mui/material';
 import Button from '@mui/joy/Button';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -17,15 +17,13 @@ import {
 import { submit } from 'common/services/request';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import * as DOMPurify from 'dompurify';
-import ReactHtmlParser from 'react-html-parser';
+import DOMPurify from 'dompurify';
 
 export default function TestimonialModal({ isOpen, setIsOpen }) {
   const userDisplayName = useUserDisplayName();
   const userId = useUserId();
   const [testimonialData, setTestimonialData] = useState({
     quote: '',
-    title: '',
     event: '',
     id: userId
   });
@@ -45,9 +43,9 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
   const updateData = (e) => {
     const fieldName = e.target.name;
     let value = e.target.value;
-    const htmlregex =  /<(\"[^\"]*\"|'[^']*'|[^'\">])*>/;
-    if(value.match(htmlregex)) {
-       value  =  ReactHtmlParser(DOMPurify.sanitize(value))[0].props.children[0]; 
+    let regex = /<("[^"]*"|'[^']*'|[^'">])*>/;
+    if (value.match(regex)) {
+      value = DOMPurify.sanitize(value);
     }
     setTestimonialData((prev) => ({
       ...prev,
@@ -56,11 +54,7 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
   };
 
   useEffect(() => {
-    if (
-      testimonialData.title.length != 0 &&
-      testimonialData.quote.length != 0 &&
-      testimonialData.event != 0
-    ) {
+    if (testimonialData.quote.length != 0 && testimonialData.event != 0) {
       setBtnDisabled(false);
     } else {
       setBtnDisabled(true);
@@ -84,11 +78,18 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
 
       return response;
     } catch (error) {
-      // empty
+      toast.error('Error', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      });
     }
   };
-
-  console.log(testimonialData);
 
   return (
     <>
@@ -148,16 +149,6 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
           </Typography>
           <Box component="div" sx={{ display: 'flex', p: '4px 0px', flexDirection: 'column' }}>
             <Box component="div" sx={{ display: 'flex', p: '5px 5px', flexDirection: 'column' }}>
-              <Box component="div" sx={{ display: 'flex', mb: 3 }}>
-                <TextField
-                  fullWidth
-                  id="standard-basic"
-                  label="Title"
-                  name="title"
-                  variant="standard"
-                  onChange={updateData}
-                />
-              </Box>
               <Typography fontWeight="md">Enter your testimonial:</Typography>
               <textarea
                 className="max-h-[150px] overflow-y-scroll rounded-md  resize-none border border-gray-400 p-1"
