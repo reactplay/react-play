@@ -71,6 +71,7 @@ function Wordle(props: any): JSX.Element {
     // This method removes all children from element node
     errorSlideRef.current.replaceChildren();
     setStats(null);
+    setGameOver(false);
   }
 
   function pushError(string: string) {
@@ -254,6 +255,7 @@ function Wordle(props: any): JSX.Element {
                   {'QWERTYUIOP'.split('').map((alphabet) => (
                     <KeyboardKey
                       alphabet={alphabet}
+                      key={alphabet}
                       letterStatus={letterStatus}
                       onKeyClick={onKeyClick}
                     />
@@ -264,6 +266,7 @@ function Wordle(props: any): JSX.Element {
                   {'ASDFGHJKL'.split('').map((alphabet) => (
                     <KeyboardKey
                       alphabet={alphabet}
+                      key={alphabet}
                       letterStatus={letterStatus}
                       onKeyClick={onKeyClick}
                     />
@@ -285,6 +288,7 @@ function Wordle(props: any): JSX.Element {
                     return (
                       <KeyboardKey
                         alphabet={alphabet}
+                        key={alphabet}
                         letterStatus={letterStatus}
                         onKeyClick={onKeyClick}
                       />
