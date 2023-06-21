@@ -14,6 +14,7 @@ import { Tweet } from 'react-twitter-widgets';
 import Spinner from '../spinner/spinner';
 import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
+import Sponsors from './Sponsors';
 
 const Home = () => {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
@@ -152,6 +153,9 @@ const Home = () => {
       </section>
       <section className="home-contributors" data-testid="contributors-section">
         <Contributors />
+      </section>
+      <section className="home-sponsors" data-testid="sponsors-section">
+        <Sponsors />
       </section>
       <ExtendedFooter />
     </main>
