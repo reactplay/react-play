@@ -31,8 +31,10 @@ const Sponsors = () => {
   return (
     <>
       <h2 className="title-primary">
+        Our
+        <br />
         <strong>
-          <span>Our Partners & Sponsors</span>
+          <span>Partners & Sponsors</span>
         </strong>
       </h2>
       <div className="event-partners-sponsors-container">

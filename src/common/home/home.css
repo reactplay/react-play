@@ -549,9 +549,12 @@
   line-height: 1.2;
   display: inline-block;
   padding-bottom: 0.4rem; /* Adjust as needed */
-  text-decoration: underline;
-  text-decoration-color: rgba(var(--color-brand-primary-rgb), 1);
-  text-decoration-thickness: 4px;
+
+  & > strong span {
+    text-decoration: underline;
+    text-decoration-color: rgba(var(--color-brand-primary-rgb), 1);
+    text-decoration-thickness: 4px;
+  }
 }
 
 
