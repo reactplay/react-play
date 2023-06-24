@@ -1,7 +1,9 @@
 import { submit as gsubmit, submit_multi as gsubmit_multi } from 'json-graphql-parser/v2/index.js';
 import axios from 'axios';
 
-const BACKEND_URL = `${process.env.REACT_APP_NHOST_BACKEND_URL}/${process.env.REACT_APP_NHOST_VERSION}/${process.env.REACT_APP_NHOST_ENDPOINT}`;
+const BACKEND_URL = `${import.meta.env.VITE_NHOST_BACKEND_URL}/${
+  import.meta.env.VITE_NHOST_VERSION
+}/${import.meta.env.VITE_NHOST_ENDPOINT}`;
 
 /**
  * Run GraphQL queries using Axios using multiple  JSON object

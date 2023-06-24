@@ -105,7 +105,7 @@ const Header = () => {
           showHideBits.setHeaderStyle
             ? ''
             : ` app-header-home ${
-                process.env.REACT_APP_ACTIVITIES_ON === 'true' && showHideBits.showActivityTimer
+                import.meta.env.VITE_ACTIVITIES_ON === 'true' && showHideBits.showActivityTimer
                   ? 'app-header-home--promo'
                   : null
               } `
@@ -122,7 +122,7 @@ const Header = () => {
         </div>
         <HeaderNav showBrowse={showHideBits.showBrowse} />
       </header>
-      {process.env.REACT_APP_ACTIVITIES_ON === 'true' && showHideBits.showActivityTimer && (
+      {import.meta.env.VITE_ACTIVITIES_ON === 'true' && showHideBits.showActivityTimer && (
         <Countdown date={new Date(1675209600000)} renderer={activityTimerRenderer} />
       )}
     </>

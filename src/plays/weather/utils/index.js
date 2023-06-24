@@ -23,7 +23,9 @@ export const WEATHER_API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 export const fetchForecast = async (lat, long, setForecastData) => {
   try {
     const res = await fetch(
-      `${WEATHER_API_BASE_URL}/forecast?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+      `${WEATHER_API_BASE_URL}/forecast?lat=${lat}&lon=${long}&appid=${
+        import.meta.env.VITE_WEATHER_API_KEY
+      }&units=metric`
     );
     const data = await res.json();
     setForecastData(data);

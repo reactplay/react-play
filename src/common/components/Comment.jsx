@@ -1,9 +1,9 @@
 import Giscus from '@giscus/react';
 
 const Comment = () => {
-  const projectRepoId = process.env.REACT_APP_GISCUS_PROJECT_REPO_ID;
-  const discussionCategoryId = process.env.REACT_APP_GISCUS_DISCUSSION_CATEGORY_ID;
-  const discussionCategoryName = process.env.REACT_APP_GISCUS_DISCUSSION_CATEGORY_NAME;
+  const projectRepoId = import.meta.env.VITE_GISCUS_PROJECT_REPO_ID;
+  const discussionCategoryId = import.meta.env.VITE_GISCUS_DISCUSSION_CATEGORY_ID;
+  const discussionCategoryName = import.meta.env.VITE_GISCUS_DISCUSSION_CATEGORY_NAME;
 
   return (
     <>

@@ -21,7 +21,7 @@ In the application, the user enters the city or region's name. The weather data 
 ## Consideration
 
 The OpenWeather API requires an API key which can be generated from [this link](https://home.openweathermap.org/api_keys).
-Set the environment variable REACT_APP_WEATHER_API_KEY equal to the API key generated from the OpenWeather site.
+Set the environment variable VITE_WEATHER_API_KEY equal to the API key generated from the OpenWeather site.
 
 ## Resources
 

@@ -51,7 +51,7 @@ const Home = () => {
   const tweetLoadHandler = () => setTweetsLoading(false);
 
   // eslint-disable-next-line no-console
-  console.log('process.env.REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
+  console.log('import.meta.env.VITE_ACTIVITIES_ON', import.meta.env.VITE_ACTIVITIES_ON);
 
   return (
     <main>
@@ -62,8 +62,8 @@ const Home = () => {
           <Flower className="home-bg-graphics-lg" />
         </div>
         <div className="app-home-body-content">
-          {process.env.REACT_APP_ACTIVITIES_ON && process.env.REACT_APP_ACTIVITIES_ON === 'true' ? (
-            <ActivityBanner currentActivity={process.env.REACT_APP_ACTIVITY_ID} />
+          {import.meta.env.VITE_ACTIVITIES_ON && import.meta.env.VITE_ACTIVITIES_ON === 'true' ? (
+            <ActivityBanner currentActivity={import.meta.env.VITE_ACTIVITY_ID} />
           ) : (
             <DefaultBanner />
           )}

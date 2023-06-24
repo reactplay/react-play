@@ -32,7 +32,7 @@ function CategoryFact() {
       url: `https://numbersapi.p.rapidapi.com/random/${type}`,
       params: { fragment: 'true', json: 'true' },
       headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_DIGITSDELIGHT_APIKEY,
+        'X-RapidAPI-Key': import.meta.env.VITE_DIGITSDELIGHT_APIKEY,
         'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com'
       }
     };

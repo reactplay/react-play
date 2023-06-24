@@ -99,7 +99,7 @@ const HeaderNav = ({ showBrowse }) => {
             </a>
           </li>
           <li className="menu-spacer">
-            {process.env.NODE_ENV === 'development' ? (
+            {import.meta.env.NODE_ENV === 'development' ? (
               <a
                 className="app-header-btn app-header-btn--primary"
                 data-testid="create-btn"

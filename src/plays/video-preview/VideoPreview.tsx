@@ -16,7 +16,7 @@ function VideoPreview(props: any) {
       params: ALL_PARAMS,
       headers: HEADERS
     };
-    const { data } = await axios.get(process.env.REACT_APP_SEARCH_URL, OPTIONS);
+    const { data } = await axios.get(import.meta.env.VITE_SEARCH_URL, OPTIONS);
 
     return data;
   };

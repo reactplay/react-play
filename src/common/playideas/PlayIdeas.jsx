@@ -133,7 +133,7 @@ const PlayIdeas = () => {
                   <LevelBadge level={idea.level} />
                 </p>
                 <div className="idea-actions">
-                  {process.env.NODE_ENV === 'development' ? (
+                  {import.meta.env.NODE_ENV === 'development' ? (
                     <a
                       className="btn-primary action-btn"
                       href="/plays/create"

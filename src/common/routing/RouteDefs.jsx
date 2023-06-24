@@ -18,7 +18,7 @@ import { NhostClient, NhostReactProvider } from '@nhost/react';
 import BadgesDashboard from 'common/badges-dashboard';
 
 const nhost = new NhostClient({
-  backendUrl: process.env.REACT_APP_NHOST_BACKEND_URL || ''
+  backendUrl: import.meta.env.VITE_NHOST_BACKEND_URL || ''
 });
 
 const RouteDefs = () => {
@@ -48,7 +48,7 @@ const RouteDefs = () => {
           <Route element={<App />} path="/plays">
             <Route index element={<PlayList />} />
             <Route exact element={<CreatePlay />} path="create" />
-            {process.env.NODE_ENV === 'development' && (
+            {import.meta.env.NODE_ENV === 'development' && (
               <Route exact element={<PlayCreated />} path="created/:playid" />
             )}
             <Route exact idex element={<PlayMeta />} path=":username">

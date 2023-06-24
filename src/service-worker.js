@@ -24,7 +24,7 @@ registerRoute(({ request, url }) => {
   }
 
   return true;
-}, createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html'));
+}, createHandlerBoundToURL(import.meta.env.PUBLIC_URL + '/index.html'));
 
 registerRoute(
   ({ url }) => {

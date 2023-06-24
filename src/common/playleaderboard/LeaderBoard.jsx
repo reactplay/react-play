@@ -44,7 +44,7 @@ const LeaderBoard = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch(`${process.env.REACT_APP_PLAY_WEB_SVC}/api/plays/published`);
+      const res = await fetch(`${import.meta.env.VITE_PLAY_WEB_SVC}/api/plays/published`);
       const data = await res.json();
       updatePublishedPlays(data);
     }

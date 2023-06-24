@@ -1,6 +1,6 @@
 export const HEADERS: { 'X-RapidAPI-Key': string; 'X-RapidAPI-Host': string } = {
-  'X-RapidAPI-Key': process.env.REACT_APP_SEARCH_APIKEY,
-  'X-RapidAPI-Host': process.env.REACT_APP_SEARCH_APIHOST
+  'X-RapidAPI-Key': import.meta.env.VITE_SEARCH_APIKEY,
+  'X-RapidAPI-Host': import.meta.env.VITE_SEARCH_APIHOST
 };
 
 export const PARAMS: { hl: string; gl: string } = {
