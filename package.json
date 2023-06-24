@@ -58,7 +58,6 @@
     "react-qr-code": "^2.0.7",
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.4.0",
-    "react-scripts": "5.0.0",
     "react-shimmer-effect": "^1.0.9",
     "react-simple-maps": "^2.3.0",
     "react-toastify": "^9.0.8",
@@ -79,12 +78,10 @@
     "workbox-window": "^6.5.4"
   },
   "scripts": {
-    "start:nolint": "npx --yes create-react-play@latest -p && react-scripts start",
-    "start": "npx --yes create-react-play@latest -p && npm run lint && react-scripts start",
-    "build": "npx --yes create-react-play@latest -p && react-scripts build",
+    "start:nolint": "npx --yes create-react-play@latest -p && vite",
+    "start": "npx --yes create-react-play@latest -p && npm run lint && vite",
+    "build": "npx --yes create-react-play@latest -p && tsc && vite build",
     "snap": "react-snap",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
