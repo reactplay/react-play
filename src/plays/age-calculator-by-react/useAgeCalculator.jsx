@@ -1,32 +1,33 @@
-import { useState } from 'react';
+import useState from 'react';
 
-const useAge = () => {
+const useAgeCalculator = () => {
   const [message, setMessage] = useState('');
   const [year, setYear] = useState('-');
-  const [month, setMonth] = useState('-');
+  const [daysInMonth, setdaysInMonth] = useState('-');
   const [day, setDay] = useState('-');
   const [birthday, setBirthday] = useState('');
 
-  const reset = (e) => {
-    e.preventDefault();
+  const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  const today = new Date();
+
+  const reset = (event) => {
+    event.preventDefault();
     setMessage('Input your birthday');
     setYear('-');
-    setMonth('-');
+    setdaysInMonth('-');
     setDay('-');
     setBirthday('');
   };
 
-  const change = (e) => {
-    const { value } = e.target;
+  const change = (event) => {
+    const { value } = event.target;
     setBirthday(new Date(value));
   };
 
-  const onSubmit = (e) => {
-    const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  const onSubmit = (event) => {
     if (birthday === '') {
       setMessage('Input your birthday');
     } else {
-      const today = new Date();
       const inputDate = new Date(birthday);
       let birthMonth;
       let birthDate;
@@ -51,9 +52,9 @@ const useAge = () => {
         (birthDetails.date > currentDate && birthDetails.year === currentYear)
       ) {
         setMessage('You are not born yet');
-        e.preventDefault();
+        event.preventDefault();
         setYear('-');
-        setMonth('-');
+        setdaysInMonth('-');
         setDay('-');
         reset();
       } else {
@@ -78,16 +79,16 @@ const useAge = () => {
             birthYear -= 1;
           }
         }
-        e.preventDefault();
+        event.preventDefault();
         setYear(birthYear);
-        setMonth(birthMonth);
+        setdaysInMonth(birthMonth);
         setDay(birthDate);
         setMessage(`You're ${birthYear} years, ${birthMonth} months, ${birthDate} days old`);
       }
     }
   };
 
-  return { message, day, month, year, change, reset, onSubmit };
+  return { message, day, daysInMonth, year, change, reset, onSubmit };
 };
 
-export default useAge;
+export default useAgeCalculator;

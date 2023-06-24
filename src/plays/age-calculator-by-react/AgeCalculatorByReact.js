@@ -1,6 +1,6 @@
 import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
-import Calculator from './Calculator';
+import Calculator from './CalculatorHeader';
 
 // WARNING: Do not change the entry componenet name
 function AgeCalculatorByReact(props) {
