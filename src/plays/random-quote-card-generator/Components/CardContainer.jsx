@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
-import data from '../data';
 const CardContainer = ({
   gradientColor,
   quote,
