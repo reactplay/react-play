@@ -2,16 +2,19 @@
   "compilerOptions": {
     "jsx": "react",
     "baseUrl": "src",
-    "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "es6",
-    "lib": ["es2022", "ES6", "DOM"],
-    "target": "es6",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "target": "ESNext",
     "allowJs": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "suppressImplicitAnyIndexErrors": false,
     "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*", "public/serviceWorker.js", "src/globals.d.ts"]
+  "include": ["src/**/*", "public/serviceWorker.js", "src/globals.d.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
