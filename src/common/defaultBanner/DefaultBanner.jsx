@@ -19,6 +19,7 @@ const DefaultBanner = () => {
         ReactPlay is an open-source platform to learn, create and share ReactJS projects with the
         developer community. Start by browsing the plays or exploring the source code.
       </p>
+
       <div className="body-c2a">
         <Link className="body-c2a-btn body-c2a-btn--primary" to="/plays">
           <MdManageSearch className="icon" />
@@ -39,6 +40,12 @@ const DefaultBanner = () => {
             </div>{' '}
           </span>
         </a>
+      </div>
+      <div className="body-desc">
+        Check out our bouquet of events{' '}
+        <Link className="home-anchor" target="_blank" to="https://hustles.reactplay.io/">
+          <span className="text text-secondary">here</span>
+        </Link>
       </div>
     </div>
   );
