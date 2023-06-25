@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .bgContainer {
   width: 100vw;
   height: 100vh;
@@ -63,3 +64,70 @@
 .bgContainer .block:nth-child(3n + 3) {
   background: #b3fcfc;
 }
+=======
+.bgContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.controler {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.background {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bgContainer .block {
+  position: absolute;
+  box-shadow: 6px 6px 26px #00000080;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80%;
+}
+
+.bgContainer.circle .block {
+  border-radius: 50%;
+}
+
+.controler button {
+  margin: 10px;
+  border: 1px solid #020202;
+  padding: 0 5px;
+  border-radius: 12px;
+}
+
+.controler input {
+  margin: 10px;
+  height: 30px;
+}
+
+.bgContainer .block:nth-child(3n + 1) {
+  background: #093d53;
+}
+
+.bgContainer .block:nth-child(3n + 2) {
+  background: #8b0785;
+}
+
+.bgContainer .block:nth-child(3n + 3) {
+  background: #b3fcfc;
+}
+>>>>>>> 159752471e4b3d28f28b49756fac9ca735eaaf63
