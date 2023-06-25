@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { BsTwitter, BsGithub, BsTrophyFill } from 'react-icons/bs';
-import { FaLightbulb } from 'react-icons/fa';
-import { BiMoney } from 'react-icons/bi';
-import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
-import { MdManageSearch, MdClose } from 'react-icons/md';
+import { Box, Menu, Modal, Typography } from '@mui/material';
 import SocialShare from 'common/components/SocialShare';
-import { GoX } from 'react-icons/go';
-import { Modal, Box, Typography, Menu } from '@mui/material';
 import { useSearchContext } from 'common/search/search-context';
 import { CREATE_PLAY_DOC_LINK, UMAMI_EVENTS } from 'constants';
+import { useState } from 'react';
+import { BiMoney } from 'react-icons/bi';
+import { BsGithub, BsTrophyFill, BsTwitter } from 'react-icons/bs';
+import { FaLightbulb } from 'react-icons/fa';
+import { GoX } from 'react-icons/go';
+import { IoAddSharp, IoHeartSharp, IoShareSocial } from 'react-icons/io5';
+import { MdClose, MdEvent, MdManageSearch } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useSearchContext();
@@ -74,6 +74,7 @@ const HeaderNav = ({ showBrowse }) => {
               <span className="sr-only">Close</span>
             </button>
           </li>
+
           {showBrowse && !showToggleMenu && (
             <li>
               <Link
@@ -86,6 +87,17 @@ const HeaderNav = ({ showBrowse }) => {
               </Link>
             </li>
           )}
+          <li>
+            <Link
+              className="app-header-btn app-header-btn--secondary"
+              data-testid="events-btn"
+              target="_blank"
+              to="https://hustles.reactplay.io/"
+            >
+              <MdEvent className="icon" />
+              <span className="btn-label">Events</span>
+            </Link>
+          </li>
           <li className="menu-spacer">
             {process.env.NODE_ENV === 'development' ? (
               <a

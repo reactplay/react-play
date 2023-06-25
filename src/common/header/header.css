@@ -286,6 +286,7 @@
 .header-links > li > .app-header-btn.app-header-btn--secondary {
   border: solid 1px var(--color-neutral-60);
   border-radius: 2rem;
+  margin-left: 0.4rem;
 }
 
 .header-links > li > .app-header-btn.app-header-btn--secondary:hover,

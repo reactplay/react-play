@@ -1,10 +1,10 @@
 import useFetch from 'common/hooks/useFetch';
+import { UMAMI_EVENTS } from 'constants';
 import React from 'react';
 import { BsGithub } from 'react-icons/bs';
 import { FiStar } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
 import { MdManageSearch } from 'react-icons/md';
-import { UMAMI_EVENTS } from 'constants';
+import { Link } from 'react-router-dom';
 
 const DefaultBanner = () => {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
@@ -19,6 +19,7 @@ const DefaultBanner = () => {
         ReactPlay is an open-source platform to learn, create and share ReactJS projects with the
         developer community. Start by browsing the plays or exploring the source code.
       </p>
+
       <div className="body-c2a">
         <Link className="body-c2a-btn body-c2a-btn--primary" to="/plays">
           <MdManageSearch className="icon" />
@@ -39,6 +40,12 @@ const DefaultBanner = () => {
             </div>{' '}
           </span>
         </a>
+      </div>
+      <div className="body-desc">
+        Check out our bouquet of events{' '}
+        <Link className="home-anchor" target="_blank" to="https://hustles.reactplay.io/">
+          <span className="text text-secondary">here</span>
+        </Link>
       </div>
     </div>
   );

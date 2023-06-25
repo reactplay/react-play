@@ -54,10 +54,10 @@ function Randombackgroundgenerator(props) {
           {/* Shabbir's Code Starts Here */}
             <div className={`bgContainer ${circle ? "circle" : ""}`}>
               <Controler 
-              animate={animate} 
-              shapeChange={shapeChange}
-              downloadBg={downloadBg}
-              setContent={setContent}
+                animate={animate} 
+                shapeChange={shapeChange}
+                downloadBg={downloadBg}
+                setContent={setContent}
               />
               <div className="background" >
                   {blocks?.map((id) => (
