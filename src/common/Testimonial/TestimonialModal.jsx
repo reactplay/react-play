@@ -40,8 +40,7 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
     fetchCategories();
   }, []);
 
-
-function escapeNewLinesAndQuotes(inputString) {
+  function escapeNewLinesAndQuotes(inputString) {
     const regex = /[\n\r"']/g;
     const escapeMap = {
       '\n': '\\n',
@@ -62,7 +61,6 @@ function escapeNewLinesAndQuotes(inputString) {
     }
 
     value = escapeNewLinesAndQuotes(value);
-    console.log(value);
 
     setTestimonialData((prev) => ({
       ...prev,
@@ -82,7 +80,6 @@ function escapeNewLinesAndQuotes(inputString) {
     }
   }, [testimonialData]);
 
-   
   const addTestimonial = async () => {
     try {
       let response = await submit(insert_testimonial_submission(testimonialData));
