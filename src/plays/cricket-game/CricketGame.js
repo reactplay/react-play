@@ -254,6 +254,10 @@ function CricketGame(props) {
     gameTrack.loop = true;
     gameTrack.autoplay = true;
     gameTrack.play();
+
+    // The audio will stop playing
+    // once the component is unmounted
+    return () => gameTrack.pause();
   });
 
   return (

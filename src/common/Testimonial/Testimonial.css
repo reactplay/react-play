@@ -1,0 +1,103 @@
+.testimonial-footer {
+  margin: 4rem 0 0 0;
+  text-align: center;
+  padding: 9px 9px;
+}
+
+.testimonial-anchor {
+  position: relative;
+  font-family: var(--ff-accent);
+  font-size: var(--fs-md);
+  color: var(--color-neutral-90);
+  text-decoration: none;
+  padding-right: 1.4rem;
+  transition: all 0.12s ease-in-out;
+}
+
+.testimonial-anchor .text {
+  position: relative;
+  z-index: 1;
+  color: var(--color-neutral-80);
+  font-family: var(--ff-accent);
+}
+
+.testimonial-anchor:hover .text,
+.testimonial-anchor:focus .text {
+  color: var(--color-neutral-90);
+}
+
+.testimonial-anchor:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 1.6rem;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-brand-primary);
+  transition: all 0.12s ease-in-out;
+}
+
+.testimonial-anchor:hover:before,
+.testimonial-anchor:focus:before {
+  background-color: var(--color-brand-primary);
+  height: 4px;
+  bottom: -2px;
+}
+
+.testimonial-anchor:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16.187' height='7.957' viewBox='0 0 16.187 7.957'%3E%3Cpath id='Icon_awesome-long-arrow-alt-right' data-name='Icon awesome-long-arrow-alt-right' d='M11.343 12.791H.434A.434.434 0 0 0 0 13.225v2.023a.434.434 0 0 0 .434.434h10.91v1.664a.867.867 0 0 0 1.48.613l3.109-3.109a.867.867 0 0 0 0-1.226l-3.109-3.109a.867.867 0 0 0-1.48.613Z' transform='translate(0 -10.258)' fill='%2300f2fe'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  transition: all 0.12s ease-in-out;
+}
+
+.testimonial-anchor:hover:after,
+.testimonial-anchor:focus:after {
+  right: -0.4rem;
+}
+
+.testimonial-anchor.testimonial-anchor-sm {
+  font-size: calc(var(--fs-rg) * 1.2);
+  line-height: 1.2;
+}
+
+.testimonial-anchor.testimonial-anchor-sm:before {
+  bottom: -1px;
+  height: 2px;
+}
+
+.testimonial-anchor.testimonial-anchor-sm:hover:before,
+.testimonial-anchor.testimonial-anchor-sm:focus:before {
+  bottom: -2px;
+  height: 3px;
+}
+
+.testimonial-anchor.testimonial-anchor-sm:after {
+  width: 16px;
+  background-size: contain;
+}
+
+.testimonial-title-primary {
+  position: relative;
+  margin-top: 3px;
+  font-family: var(--ff-accent);
+  font-size: var(--fs-xxl);
+  text-align: center;
+  color: var(--color-neutral-80);
+}
+
+.testimonial-title-primary strong {
+  font-family: var(--ff-accent);
+  position: relative;
+  color: var(--color-neutral-90);
+}
+
+.bar::-webkit-scrollbar {
+  width: 0 !important;
+}
