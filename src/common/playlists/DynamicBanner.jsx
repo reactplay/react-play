@@ -41,7 +41,7 @@ const DynamicBanner = ({ randomPlay }) => {
 
     setPlayCover();
   }, [randomPlay]);
-
+  
   if (loading) {
     return (
       <div className="dynamic-banner-container banner-bg">

@@ -10,7 +10,8 @@ import {
   PlayCreated,
   TechStack,
   LeaderBoard,
-  PageNotFound
+  PageNotFound,
+  Testimonials
 } from 'common';
 import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -75,6 +76,7 @@ const RouteDefs = () => {
           </Route>
           <Route element={<PlayIdeas />} path="/ideas" />
           <Route element={<LeaderBoard />} path="/leaderboard" />
+          <Route element={<Testimonials />} path="/Testimonials" />
         </Routes>
         <Footer />
       </BrowserRouter>

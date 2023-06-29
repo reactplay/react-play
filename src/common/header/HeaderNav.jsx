@@ -4,7 +4,7 @@ import { BsTwitter, BsGithub, BsTrophyFill } from 'react-icons/bs';
 import { FaLightbulb } from 'react-icons/fa';
 import { BiMoney } from 'react-icons/bi';
 import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
-import { MdManageSearch, MdClose } from 'react-icons/md';
+import { MdManageSearch, MdClose, MdEvent } from 'react-icons/md';
 import SocialShare from 'common/components/SocialShare';
 import { GoX } from 'react-icons/go';
 import { Modal, Box, Typography, Menu } from '@mui/material';
@@ -74,6 +74,7 @@ const HeaderNav = ({ showBrowse }) => {
               <span className="sr-only">Close</span>
             </button>
           </li>
+
           {showBrowse && !showToggleMenu && (
             <li>
               <Link
@@ -86,6 +87,17 @@ const HeaderNav = ({ showBrowse }) => {
               </Link>
             </li>
           )}
+          <li>
+            <a
+              className="app-header-btn app-header-btn--secondary"
+              data-testid="events-btn"
+              href="https://hustles.reactplay.io/"
+              target="_blank"
+            >
+              <MdEvent className="icon" />
+              <span className="btn-label">Events</span>
+            </a>
+          </li>
           <li className="menu-spacer">
             {process.env.NODE_ENV === 'development' ? (
               <a
