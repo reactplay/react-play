@@ -11,6 +11,7 @@ import ExtendedFooter from './footer/ExtendedFooter';
 import CreatePlay from './createplay/CreatePlay';
 import PlayCreated from './playcreated/PlayCreated';
 import LeaderBoard from './playleaderboard/LeaderBoard';
+import Testimonials from './Testimonial/Testimonials';
 
 export {
   Header,
@@ -25,5 +26,6 @@ export {
   PlayCreated,
   TechStack,
   ExtendedFooter,
-  LeaderBoard
+  LeaderBoard,
+  Testimonials
 };
