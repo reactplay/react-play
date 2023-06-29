@@ -4,11 +4,12 @@ import { BsTwitter, BsGithub, BsTrophyFill } from 'react-icons/bs';
 import { FaLightbulb } from 'react-icons/fa';
 import { BiMoney } from 'react-icons/bi';
 import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
-import { MdManageSearch, MdClose } from 'react-icons/md';
+import { MdManageSearch, MdClose, MdEvent } from 'react-icons/md';
 import SocialShare from 'common/components/SocialShare';
 import { GoX } from 'react-icons/go';
 import { Modal, Box, Typography, Menu } from '@mui/material';
 import { useSearchContext } from 'common/search/search-context';
+import { CREATE_PLAY_DOC_LINK, UMAMI_EVENTS } from 'constants';
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useSearchContext();
@@ -73,6 +74,7 @@ const HeaderNav = ({ showBrowse }) => {
               <span className="sr-only">Close</span>
             </button>
           </li>
+
           {showBrowse && !showToggleMenu && (
             <li>
               <Link
@@ -85,6 +87,17 @@ const HeaderNav = ({ showBrowse }) => {
               </Link>
             </li>
           )}
+          <li>
+            <a
+              className="app-header-btn app-header-btn--secondary"
+              data-testid="events-btn"
+              href="https://hustles.reactplay.io/"
+              target="_blank"
+            >
+              <MdEvent className="icon" />
+              <span className="btn-label">Events</span>
+            </a>
+          </li>
           <li className="menu-spacer">
             {process.env.NODE_ENV === 'development' ? (
               <a
@@ -98,9 +111,10 @@ const HeaderNav = ({ showBrowse }) => {
               </a>
             ) : (
               <a
-                className="app-header-btn app-header-btn--primary umami--click--create-play"
+                className="app-header-btn app-header-btn--primary"
                 data-testid="create-btn"
-                href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
+                data-umami-event={UMAMI_EVENTS.CREATE_PLAY_BUTTON}
+                href={CREATE_PLAY_DOC_LINK}
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -133,8 +147,9 @@ const HeaderNav = ({ showBrowse }) => {
           </li>
           <li>
             <a
-              className="app-header-btn app-header-btn--default umami--click--github"
+              className="app-header-btn app-header-btn--default"
               data-testid="github-btn"
+              data-umami-event="github-button"
               href="https://github.com/reactplay/react-play"
               rel="noopener noreferrer"
               target="_blank"

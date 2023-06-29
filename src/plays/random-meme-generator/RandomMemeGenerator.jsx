@@ -13,7 +13,7 @@ function RandomMemeGenerator(props) {
 
   const getMeme = useCallback(() => {
     setIsLoading(true);
-    fetch('https://meme-api.herokuapp.com/gimme')
+    fetch('https://meme-api.com/gimme')
       .then((res) => {
         return res.json();
       })
