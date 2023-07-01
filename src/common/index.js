@@ -1,31 +1,14 @@
-import PageNotFound from './404/PageNotFound';
-import Footer from './footer/Footer';
-import Header from './header/Header';
-import Home from './home/Home';
-import Modal from './modal';
-import DefMeta from 'meta/DefMeta';
-import PlayMeta from './playlists/PlayMeta';
-import PlayIdeas from './playideas/PlayIdeas';
-import TechStack from './techstack/TechStacks';
-import ExtendedFooter from './footer/ExtendedFooter';
-import CreatePlay from './createplay/CreatePlay';
-import PlayCreated from './playcreated/PlayCreated';
-import LeaderBoard from './playleaderboard/LeaderBoard';
-import Testimonials from './Testimonial/Testimonials';
-
-export {
-  Header,
-  Footer,
-  Home,
-  PageNotFound,
-  Modal,
-  PlayMeta,
-  DefMeta,
-  PlayIdeas,
-  CreatePlay,
-  PlayCreated,
-  TechStack,
-  ExtendedFooter,
-  LeaderBoard,
-  Testimonials
-};
+export { default as PageNotFound } from './404/PageNotFound';
+export { default as Footer } from './footer/Footer';
+export { default as Header } from './header/Header';
+export { default as Home } from './home/Home';
+export { default as Modal } from './modal';
+export { default as DefMeta } from 'meta/DefMeta';
+export { default as PlayMeta } from './playlists/PlayMeta';
+export { default as PlayIdeas } from './playideas/PlayIdeas';
+export { default as TechStack } from './techstack/TechStacks';
+export { default as ExtendedFooter } from './footer/ExtendedFooter';
+export { default as CreatePlay } from './createplay/CreatePlay';
+export { default as PlayCreated } from './playcreated/PlayCreated';
+export { default as LeaderBoard } from './playleaderboard/LeaderBoard';
+export { default as Testimonials } from './Testimonial/Testimonials';
