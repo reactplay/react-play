@@ -40,6 +40,18 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
     fetchCategories();
   }, []);
 
+  function escapeNewLinesAndQuotes(inputString) {
+    const regex = /[\n\r"']/g;
+    const escapeMap = {
+      '\n': '\\n',
+      '\r': '\\r',
+      '"': '""',
+      "'": "'"
+    };
+
+    return inputString.replace(regex, (match) => escapeMap[match]);
+  }
+
   const updateData = (e) => {
     const fieldName = e.target.name;
     let value = e.target.value;
@@ -47,6 +59,9 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
     if (value.match(regex)) {
       value = DOMPurify.sanitize(value);
     }
+
+    value = escapeNewLinesAndQuotes(value);
+
     setTestimonialData((prev) => ({
       ...prev,
       [fieldName]: value
@@ -54,7 +69,11 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
   };
 
   useEffect(() => {
-    if (testimonialData.quote.length != 0 && testimonialData.event != 0) {
+    if (
+      testimonialData.quote.length != 0 &&
+      testimonialData.event != 0 &&
+      testimonialData.quote.length <= 1024
+    ) {
       setBtnDisabled(false);
     } else {
       setBtnDisabled(true);
