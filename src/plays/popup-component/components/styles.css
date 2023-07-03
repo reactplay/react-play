@@ -9,7 +9,7 @@
     right: 0;
     position: fixed;
 }
-.modal-btn{
+.modal-toggle-btn{
     background-color: slateblue;
     padding: 4px 10px;
     border-radius: 4px;
@@ -21,7 +21,7 @@
     position: absolute;
     /* font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif; */
 }
-.popup-content-wrapper {
+.popup-container {
     background-color: white;
     height: auto;
     position: absolute;
@@ -37,13 +37,13 @@
     z-index: 99999;
 }
 @media screen and (max-width: 600px) {
-    .popup-content-wrapper {
+    .popup-container {
         max-width: 100%;
         min-width: 99%;
     }
 }
 
-.close_modal {
+.close_popup {
     background-color: #f1f1f1;
     color:gray;
     width: auto;
@@ -58,6 +58,6 @@
     padding:2px;
     border-radius: 4px;
 }
-.popup-content-wrapper > iframe{
+.popup-container > iframe{
     border-radius: 8px;
 }

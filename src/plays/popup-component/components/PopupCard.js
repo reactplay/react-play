@@ -9,15 +9,15 @@ function PopupCard({ children, popTitle, btnStyle }) {
 
   return (
     <>
-      <button className="modal-btn" style={btnStyle} onClick={toggleModal}>
+      <button className="modal-toggle-btn" style={btnStyle} onClick={toggleModal}>
         {popTitle}
       </button>
       {toggle ? (
         <div>
           <div className="popup-bg-overlay" onClick={toggleModal} />
-          <div className="popup-content-wrapper">
+          <div className="popup-container">
             {children}
-            <button className="close_modal" onClick={toggleModal}>
+            <button className="close_popup" onClick={toggleModal}>
               X
             </button>
           </div>
