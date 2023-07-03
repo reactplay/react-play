@@ -28,6 +28,7 @@
     "dom-to-image": "^2.6.0",
     "dompurify": "^3.0.3",
     "downloadjs": "^1.4.7",
+    "extendable-media-recorder": "^7.1.20",
     "file-saver": "^2.0.5",
     "firebase": "9.9.0",
     "git-repo-api": "^0.0.17",
