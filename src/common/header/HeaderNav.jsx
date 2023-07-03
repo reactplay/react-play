@@ -88,15 +88,15 @@ const HeaderNav = ({ showBrowse }) => {
             </li>
           )}
           <li>
-            <Link
+            <a
               className="app-header-btn app-header-btn--secondary"
               data-testid="events-btn"
+              href="https://hustles.reactplay.io/"
               target="_blank"
-              to="https://hustles.reactplay.io/"
             >
               <MdEvent className="icon" />
               <span className="btn-label">Events</span>
-            </Link>
+            </a>
           </li>
           <li className="menu-spacer">
             {process.env.NODE_ENV === 'development' ? (
