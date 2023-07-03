@@ -21,6 +21,10 @@ const TestimonialCard = ({ home, quote, name, avatarUrl, category, created_at, e
     return result;
   };
 
+  function replaceWithBr() {
+    return quote.replace(/nn+/g, '<br />');
+  }
+
   return (
     <div className="py-4">
       <div className="flex items-center gap-4 px-6 sm:h-16">
@@ -48,7 +52,10 @@ const TestimonialCard = ({ home, quote, name, avatarUrl, category, created_at, e
 
       <div className="mx-2 mt-4">
         <blockquote className={`${home && 'h-32'} max-h-32 px-6 overflow-y-auto`}>
-          <p className="leading-relaxed text-gray-700">{quote}</p>
+          <p
+            className="leading-relaxed text-gray-700"
+            dangerouslySetInnerHTML={{ __html: replaceWithBr() }}
+          />
         </blockquote>
       </div>
     </div>
