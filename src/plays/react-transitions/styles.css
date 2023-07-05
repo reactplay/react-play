@@ -1,4 +1,21 @@
 /* enter stlyes here */
+.react-transition .modes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.react-transition .modes input[type="radio"] {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.react-transition .modes label {
+  font-size: 20px;
+  margin-left: 2px;
+}
+
 .react-transition .user-container {
   display: flex;
   flex-direction: column;
