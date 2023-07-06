@@ -31,7 +31,7 @@ function ReactTransitions(props) {
               type="radio"
               value="priority"
               onChange={onValueChange}
-              />
+            />
             <label htmlFor="priority-id">Priority</label>
             <input
               checked={transitionOn === true}
@@ -40,7 +40,7 @@ function ReactTransitions(props) {
               type="radio"
               value="transition"
               onChange={onValueChange}
-              />
+            />
             <label htmlFor="priority-id">Transition</label>
           </div>
           {transitionOn ? <TrainsitionSearch users={users} /> : <PrioritySearch users={users} />}

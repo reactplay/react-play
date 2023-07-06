@@ -29,7 +29,7 @@ export default function TrainsitionSearch({ users }) {
         )}
       </div>
 
-      <input value={searchTerm} type="text" placeholder="Type a name" onChange={handleChange} />
+      <input placeholder="Type a name" type="text" value={searchTerm} onChange={handleChange} />
 
       {isPending ? (
         <div>Loading...</div>

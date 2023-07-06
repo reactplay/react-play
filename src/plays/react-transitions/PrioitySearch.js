@@ -16,7 +16,7 @@ export default function PrioritySearch({ users }) {
     <div className="user-container">
       <h1>User Finder - Priority</h1>
       <div>{users.length !== filtered.length ? `${filtered.length} matches` : null}</div>
-      <input value={searchTerm} type="text" placeholder="Type a name" onChange={handleChange} />
+      <input placeholder="Type a name" type="text" value={searchTerm} onChange={handleChange} />
       <div className="user-cards">
         {filtered.length > 0 ? (
           filtered.map((user) => (
