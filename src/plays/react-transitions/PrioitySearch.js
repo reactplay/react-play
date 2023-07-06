@@ -16,13 +16,13 @@ export default function PrioritySearch({ users }) {
     <div className="user-container">
       <h1>User Finder - Priority</h1>
       <div>{users.length !== filtered.length ? `${filtered.length} matches` : null}</div>
-      <input onChange={handleChange} value={searchTerm} type="text" placeholder="Type a name" />
+      <input value={searchTerm} type="text" placeholder="Type a name" onChange={handleChange} />
       <div className="user-cards">
         {filtered.length > 0 ? (
           filtered.map((user) => (
             <div class="card">
               <div>
-                <img src={user.avatar} alt={`Avatar image of ${user.name}`} />
+                <img alt={`Avatar image of ${user.name}`} src={user.avatar} />
               </div>
               <div>
                 <strong>{user.name}</strong>

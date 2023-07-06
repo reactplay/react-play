@@ -29,7 +29,7 @@ export default function TrainsitionSearch({ users }) {
         )}
       </div>
 
-      <input onChange={handleChange} value={searchTerm} type="text" placeholder="Type a name" />
+      <input value={searchTerm} type="text" placeholder="Type a name" onChange={handleChange} />
 
       {isPending ? (
         <div>Loading...</div>
@@ -39,7 +39,7 @@ export default function TrainsitionSearch({ users }) {
             filtered.map((user) => (
               <div class="card">
                 <div>
-                  <img src={user.avatar} alt={`Avatar image of ${user.name}`} />
+                  <img alt={`Avatar image of ${user.name}`} src={user.avatar} />
                 </div>
                 <div>
                   <strong>{user.name}</strong>
