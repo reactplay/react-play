@@ -532,7 +532,6 @@
   }
 }
 
-
 .home-sponsors {
   width: 100%;
   position: relative;
@@ -542,7 +541,6 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
-
 
   .event-partners-sponsors-container {
     width: 100%;
