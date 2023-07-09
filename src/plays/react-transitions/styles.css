@@ -1,0 +1,62 @@
+/* enter stlyes here */
+.react-transition .modes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.react-transition .modes input[type='radio'] {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.react-transition .modes label {
+  font-size: 20px;
+  margin-left: 2px;
+}
+
+.react-transition .user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-transition .user-container input[type='text'] {
+  margin: 10px;
+  width: 80%;
+  height: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.react-transition .user-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-transition .card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  align-items: center;
+  box-shadow: none;
+  height: auto;
+  width: auto;
+}
+
+.react-transition .card IMG {
+  height: 128px;
+  width: 128px;
+}
+
+.react-transition .nomatch {
+  font-size: 60px;
+}
