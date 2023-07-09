@@ -1,19 +1,31 @@
 export const fetchFiltered = {
-  display: 'testimonials',
-  name: 'test',
-  function: 'testimonials',
+  display: "testimonials",
+  name: "test",
+  function: "testimonials",
   write: false,
   limit: 9,
+  where: {
+    clause: {
+      conditions: [
+        {
+          field: "moderated",
+          operator: "eq",
+          value: true,
+          type: "boolean",
+        },
+      ],
+    },
+  },
   return: [
-    'id',
-    'quote',
-    'created_at',
-    { user_id_map: ['avatarUrl', 'id', 'displayName', 'email'] },
-    { testimonials_event: ['id', 'name', 'description'] }
+    "id",
+    "quote",
+    "created_at",
+    { user_id_map: ["avatarUrl", "id", "displayName", "email"] },
+    { testimonials_event: ["id", "name", "description"] },
   ],
   orderBy: {
-    created_at: 'desc'
-  }
+    created_at: "desc",
+  },
 };
 
 export function fetchTestimonialsHomePage() {
@@ -21,20 +33,33 @@ export function fetchTestimonialsHomePage() {
 }
 
 export const fetchAll = {
-  display: 'testimonials',
-  name: 'test',
-  function: 'testimonials',
+  display: "testimonials",
+  name: "test",
+  function: "testimonials",
   write: false,
+  where: {
+    clause: {
+      conditions: [
+        {
+          field: "moderated",
+          operator: "eq",
+          value: true,
+          type: "boolean",
+        },
+      ],
+    },
+  },
+
   return: [
-    'id',
-    'quote',
-    'created_at',
-    { user_id_map: ['avatarUrl', 'id', 'displayName', 'email'] },
-    { testimonials_event: ['id', 'name', 'description'] }
+    "id",
+    "quote",
+    "created_at",
+    { user_id_map: ["avatarUrl", "id", "displayName", "email"] },
+    { testimonials_event: ["id", "name", "description"] },
   ],
   orderBy: {
-    created_at: 'desc'
-  }
+    created_at: "desc",
+  },
 };
 
 export function fetchAllTestimonials() {
@@ -43,22 +68,22 @@ export function fetchAllTestimonials() {
 
 export const fetchAllWithLimit = (limit) => {
   return {
-    display: 'testimonials',
-    name: 'test',
-    function: 'testimonials',
+    display: "testimonials",
+    name: "test",
+    function: "testimonials",
     write: false,
     return: [
-      'id',
-      'quote',
-      'created_at',
-      { user_id_map: ['avatarUrl', 'id', 'displayName', 'email'] },
-      { testimonials_event: ['id', 'name', 'description'] }
+      "id",
+      "quote",
+      "created_at",
+      { user_id_map: ["avatarUrl", "id", "displayName", "email"] },
+      { testimonials_event: ["id", "name", "description"] },
     ],
     orderBy: {
-      created_at: 'desc'
+      created_at: "desc",
     },
     offset: 0,
-    limit: limit
+    limit: limit,
   };
 };
 
@@ -67,11 +92,11 @@ export function FetchALLtestimonialsWithLimit(limit) {
 }
 
 export const fetchCategories = {
-  display: 'hackathon_events',
-  name: 'test',
-  function: 'hackathon_events',
+  display: "hackathon_events",
+  name: "test",
+  function: "hackathon_events",
   write: false,
-  return: ['name', 'id']
+  return: ["name", "id"],
 };
 
 export function fetchAllCategories() {
@@ -80,15 +105,16 @@ export function fetchAllCategories() {
 
 export const insert_testimonial_submission = (testimonialData) => {
   return {
-    display: 'insert_testimonials_one',
-    name: 'insert_testimonials_one',
-    function: 'insert_testimonials_one',
+    display: "insert_testimonials_one",
+    name: "insert_testimonials_one",
+    function: "insert_testimonials_one",
     write: true,
     object: {
       event: testimonialData.event,
       quote: testimonialData.quote,
-      user: testimonialData.id
+      user: testimonialData.id,
+      moderated: false,
     },
-    return: ['id']
+    return: ["id"],
   };
 };

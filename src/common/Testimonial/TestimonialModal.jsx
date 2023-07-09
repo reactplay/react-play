@@ -84,7 +84,7 @@ export default function TestimonialModal({ isOpen, setIsOpen }) {
     try {
       let response = await submit(insert_testimonial_submission(testimonialData));
       setIsOpen(false);
-      toast.success('Testimonial added', {
+      toast.success('Thank you! Your Testimonial has been submitted for review and we will publish it soon', {
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
