@@ -8,7 +8,7 @@ import useFetchFilterData from './hooks/usePlayFilter';
 import { FIELD_TEMPLATE } from './filter-template';
 import { TextField, Checkbox, Autocomplete } from '@mui/material';
 import { BiCheckbox, BiCheckboxChecked } from 'react-icons/bi';
-import { GoSettings } from 'react-icons/go';
+import { GiSettingsKnobs } from 'react-icons/gi';
 import * as _ from 'lodash';
 
 const icon = <BiCheckbox size={30} />;
@@ -251,7 +251,7 @@ const FilterPlays = ({ onChange, query }) => {
           <div className="badge">{Object.keys(query).length}</div>
         ) : null}
 
-        <GoSettings className="icon" color="var(--color-neutral-30)" size="28px" />
+        <GiSettingsKnobs className="icon" color="var(--color-neutral-30)" size="28px" />
       </button>
     </div>
   );
