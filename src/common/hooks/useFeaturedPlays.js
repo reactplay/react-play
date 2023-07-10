@@ -1,33 +1,33 @@
 import { useEffect, useState } from 'react';
-import { submit } from 'common/services/request';
-import { FetchPlaysFilter } from 'common/services/request/query/fetch-plays-filter';
+import { fetchPlays } from 'common/playlists/FeaturedPlaysFetcher/PlayFetcher';
 
 /**
- * run graphql query to retrive featured plays
- * @returns [loading, error, data]
+ * Custom hook to fetch and manage featured plays data
+ * @param {string} search - Search criteria
+ * @returns [loading, error, plays]
  */
-
-const useFeaturedPlays = () => {
-  const { getAllFeaturedPlays } = FetchPlaysFilter;
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
+const useFeaturedPlays = (search) => {
   const [loading, setLoading] = useState(false);
+  const [plays, setPlays] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    (async () => {
+    const getPlaysData = async () => {
+      setLoading(true);
       try {
-        setLoading(true);
-        const res = await submit(getAllFeaturedPlays());
-        setData(res);
-      } catch (err) {
-        setError(err?.[0]);
+        const fetchedPlays = await fetchPlays(search);
+        setPlays(fetchedPlays);
+      } catch (error) {
+        setError(error);
       } finally {
         setLoading(false);
       }
-    })();
-  }, [getAllFeaturedPlays]);
+    };
 
-  return [loading, error, data];
+    getPlaysData();
+  }, [search]);
+
+  return [loading, error, plays];
 };
 
 export default useFeaturedPlays;

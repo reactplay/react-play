@@ -1,37 +1,21 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment } from 'react';
 import PlayThumbnail from './PlayThumbnail';
 import { ReactComponent as ImageOops } from 'images/img-oops.svg';
 import Loader from 'common/spinner/spinner';
 import './playlist.css';
 import { useLocation } from 'react-router-dom';
-import { fetchPlays } from './FeaturedPlaysFetcher/PlayFetcher';
+import useFeaturedPlays from 'common/hooks/useFeaturedPlays';
 
 const FeaturedPlays = () => {
-  const [loading, setLoading] = useState(false);
-  const [plays, setPlays] = useState([]);
   const location = useLocation();
-
-  useEffect(() => {
-    const getPlaysData = async () => {
-      setLoading(true);
-      try {
-        const fetchedPlays = await fetchPlays(location.search);
-        setPlays(fetchedPlays);
-      } catch (error) {
-        console.error('Error fetching plays:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getPlaysData();
-  }, [location.search]);
+  const search = location.search;
+  const [loading, error, plays] = useFeaturedPlays(search);
 
   if (loading) {
     return <Loader />;
   }
 
-  if (plays.length === 0) {
+  if (error || !plays.length) {
     return (
       <div className="play-not-found">
         <ImageOops className="play-not-found-image" />
@@ -51,13 +35,13 @@ const FeaturedPlays = () => {
     );
   }
 
-  // Sort the plays by number of likes in descending order, and if likes are equal, sort by latest creation
   const sortedPlays = [...plays].sort((playA, playB) => {
-    if (playA.play_like.length === playB.play_like.length) {
+    const likesComparison = playB.play_like.length - playA.play_like.length;
+    if (likesComparison === 0) {
       return new Date(playB.created_at) - new Date(playA.created_at);
     }
 
-    return playB.play_like.length - playA.play_like.length;
+    return likesComparison;
   });
 
   const topPlays = sortedPlays.slice(0, 4);
