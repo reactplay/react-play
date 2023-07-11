@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // import required modules
-import { Keyboard, Autoplay, Navigation, Pagination } from 'swiper';
+import { Keyboard, Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 function TestimonialSection() {
   const [testimonials, setTestimonials] = useState([]);
