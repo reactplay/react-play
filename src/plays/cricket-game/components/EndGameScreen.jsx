@@ -1,4 +1,4 @@
-import { Result } from '../game/gameLogic.js';
+import { Result } from '../game/gameLogic';
 
 export default function EndGameScreen({ endScreenRef, resultTitle, resultDesc, result }) {
   return (

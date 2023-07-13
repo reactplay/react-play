@@ -8,15 +8,15 @@ import wicketImg from './assets/wicket.svg';
 import hitWicketImg from './assets/hitwicket.svg';
 
 // Component imports
-import Modal from './components/Modal.js';
-import Pitch from './components/Pitch.js';
-import ScorePanel from './components/ScorePanel.js';
-import TopBar from './components/TopBar.js';
-import EndGameScreen from './components/EndGameScreen.js';
+import Modal from './components/Modal';
+import Pitch from './components/Pitch';
+import ScorePanel from './components/ScorePanel';
+import TopBar from './components/TopBar';
+import EndGameScreen from './components/EndGameScreen';
 
 // Game logic imports
-import { LEVELS } from './game/levels.js';
-import { sleep } from './game/utils.js';
+import { LEVELS } from './game/levels';
+import { sleep } from './game/utils';
 import {
   GameRef,
   GameState,
