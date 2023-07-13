@@ -419,7 +419,7 @@
   flex-wrap: wrap;
   grid-gap: 0.2rem 0.6rem;
   /* align-items: center; */
-  align-items: start;
+  align-items: flex-start;
 }
 
 @media screen and (max-width: 768px) {

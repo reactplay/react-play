@@ -95,7 +95,7 @@
 }
 
 .app-home-body .body-c2a.c2a-left {
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .app-home-body .body-c2a .body-c2a-btn {
@@ -539,20 +539,20 @@
   background-color: var(--color-neutral-20);
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 
   .event-partners-sponsors-container {
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
 
     .event-partners-sponsors {
       width: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: center;
 
       & > h3 {
@@ -574,7 +574,7 @@
         width: 80%;
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
 
         .partners-sponsors-grid {
@@ -652,7 +652,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 4rem;
 
@@ -748,7 +748,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 4rem;
 
