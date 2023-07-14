@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import memoize from 'lodash.memoize';
+import { memoize } from 'lodash';
 
 const selectMovie = (state) => state.movie;
 
