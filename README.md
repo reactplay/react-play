@@ -76,7 +76,7 @@ Please support the work by giving the repository a ⭐, contributing to it, and/
 
 You may want to set up the `react-play` repo for the following reasons:
 
-- You want to create a new play (A play is a React project) or want to edit an existing play as a contributor. Please check the [Create a Play Guide](./CREATE-PLAY.md) for more details. Also, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
+- You want to create a new play (A play is a React project) or want to edit an existing play as a contributor. Please check the [Create a Play Guide](https://docs.reactplay.io/How-To-Guides/how-to-create-play) for more details. Also, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
 - You want to contribute to the `react-play` repo in general. Please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
@@ -90,11 +90,11 @@ Once forked, you can clone the repo by clicking the `Clone or Download` button o
 
 Please change the directory after cloning the repository using the `cd <folder-name>` command.
 
-> **Note:** Please do not remove the `.env.development` file from the root folder. It contains all the evironment variables required for development.
+> **Note:** Please do not remove the `.env.development` file from the root folder. It contains all the environment variables required for development.
 
 ### ⬇️ Install Dependencies
 
-Next, install the dependencies by running the following command in the `react-play` repo. we recommand using `yarn` but you can install using `npm` too
+Next, install the dependencies by running the following command in the `react-play` repo. we recommend using `yarn` but you can install using `npm` too
 
 ```bash
 yarn install
@@ -139,7 +139,7 @@ Use the following command to start the app in the development mode:
 ```bash
 yarn start
 ```
-or if you installed dependencies using ``npm`` use bellow command
+or if you installed dependencies using ``npm`` use below command
 
 ```
 npm start
@@ -207,7 +207,7 @@ yarn cypress:open
 ```
 OR
 ```
-npm cypress:open
+npm run cypress:open
 ```
 
 It will open the cypress dashboard, through which you need to select `E2E Testing`.

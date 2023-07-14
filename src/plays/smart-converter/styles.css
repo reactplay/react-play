@@ -13,9 +13,10 @@
   font-size: 25px;
   font-weight: 600;
 }
-.Smart-converter-textarea {
+#Smart-converter-myBox-textarea {
   width: 100%;
-  margin: auto;
+  max-width: 100%;
+  height: auto;
   border: 1px solid rgb(150, 150, 150);
 }
 .Smart-converter-btn {

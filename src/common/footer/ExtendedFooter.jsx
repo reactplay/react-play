@@ -5,6 +5,7 @@ import { FaDiscord } from 'react-icons/fa';
 import { BsTwitter, BsGithub } from 'react-icons/bs';
 import LogoLight from 'images/img-logo-light.svg';
 import { useSearchContext } from 'common/search/search-context';
+import { CREATE_PLAY_DOC_LINK } from 'constants';
 
 const ExtendedFooter = () => {
   const { showShareModal, setShowShareModal } = useSearchContext();
@@ -17,18 +18,7 @@ const ExtendedFooter = () => {
             <span className="sr-only">ReactPlay</span>
             <img alt="Logo of ReactPlay" src={LogoLight} />
           </h3>
-          <p className="p-lg">
-            An open-source project made with ❤️ by{' '}
-            <a
-              className="text-link-default"
-              href="https://tapasadhikary.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Tapas Adhikary
-            </a>{' '}
-            and friends.
-          </p>
+          <p className="p-lg">An open-source project made with ❤️ by team ReactPlay.</p>
           <div>
             <p>
               <small>Connect with us</small>
@@ -106,7 +96,7 @@ const ExtendedFooter = () => {
               {' '}
               <img
                 alt="Deploys by Netlify"
-                src="https://www.netlify.com/v3/img/components/netlify-light.svg"
+                src="https://www.netlify.com/v3/img/global/badges/netlify-color-accent.svg"
               />{' '}
             </a>
           </p>
@@ -120,7 +110,7 @@ const ExtendedFooter = () => {
           <div className="flex flex-wrap gap-1">
             <a
               className="btn-primary mr-2"
-              href="https://github.com/reactplay/react-play/blob/main/CREATE-PLAY.md"
+              href={CREATE_PLAY_DOC_LINK}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -139,9 +129,14 @@ const ExtendedFooter = () => {
             </p>
             <div className="mt-2">
               <p>
-                <Link className="home-anchor home-anchor-sm" to="/ideas">
+                <a
+                  className="home-anchor home-anchor-sm"
+                  href="https://docs.reactplay.io/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   <span className="text">Get started</span>
-                </Link>
+                </a>
               </p>
             </div>
             <div className="mt-2">

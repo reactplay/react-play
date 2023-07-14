@@ -79,7 +79,7 @@
   filter: brightness(0.8);
 }
 
-@media(max-width: 612px) {
+@media (max-width: 612px) {
   .digits-random-facts-btn {
     margin-top: 9rem;
   }
