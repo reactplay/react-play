@@ -24,7 +24,7 @@
 
 @media screen and (min-width: 992px) {
   .app-home-body .body-c2a.body-c2a-hackathon {
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 }
