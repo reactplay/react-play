@@ -21,6 +21,7 @@ function TestimonialSection() {
     const res = await submit(fetchTestimonialsHomePage());
     setTestimonials(res);
   };
+
   useEffect(() => {
     fetchTestimonials();
   }, []);
