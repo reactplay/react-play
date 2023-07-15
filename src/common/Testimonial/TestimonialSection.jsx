@@ -5,6 +5,7 @@ import { submit } from 'common/services/request';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore from 'swiper/core';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -13,6 +14,10 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Keyboard, Autoplay, Navigation, Pagination } from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([Keyboard, Autoplay, Navigation, Pagination]);
+
 
 function TestimonialSection() {
   const [testimonials, setTestimonials] = useState([]);
