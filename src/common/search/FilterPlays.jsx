@@ -152,7 +152,7 @@ const FilterPlays = ({ onChange, query }) => {
             options={
               field.sorted
                 ? orderBy(loadedData[field.datafield], [field.fieldName], ['asc'])
-                : loadedData[field.datafield]
+                : (loadedData[field.datafield] || [])
             }
             renderInput={(params) => (
               <TextField {...params} placeholder={field.placeholder} size="small" />
