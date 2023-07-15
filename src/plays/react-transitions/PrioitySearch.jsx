@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { nanoid } from 'nanoid'
 
 export default function PrioritySearch({ users }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -20,7 +21,7 @@ export default function PrioritySearch({ users }) {
       <div className="user-cards">
         {filtered.length > 0 ? (
           filtered.map((user) => (
-            <div className="card">
+            <div className="card" key={nanoid()}>
               <div>
                 <img alt={`Avatar image of ${user?.person}`} src={user?.avatar} />
               </div>
