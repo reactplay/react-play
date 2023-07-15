@@ -4,17 +4,22 @@ export default function MusicCard({ song }) {
     <div
       style={{
         padding: '0.5rem',
-        transitionProperty:
-          'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
-        transitionDuration: '300ms',
-        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
         boxShadow: '5px 5px',
         borderRadius: '0.375rem',
         borderWidth: '2px',
-        borderColor: '#000000'
+        borderColor: '#000000',
+        margin: '10px'
       }}
     >
-      <div style={{ display: 'flex', margin: '0.5rem', gap: '0.75rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          margin: '0.5rem',
+          gap: '0.75rem',
+          flexWrap: 'wrap',
+          justifyContent: 'center'
+        }}
+      >
         <div
           style={{
             backgroundImage: `url(${song?.cover_art})`,
