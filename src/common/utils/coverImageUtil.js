@@ -1,4 +1,4 @@
-export async function loadCoverImage(playSlug) {
+export const  loadCoverImage = async (playSlug) => {
   const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
   const imgPromises = acceptedImgExtensions.map((ext) => import(/* @vite-ignore */ `plays/${playSlug}/cover.${ext}`));
 

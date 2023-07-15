@@ -79,7 +79,7 @@ const PlayList = () => {
 
   return (
     <Fragment>
-      {isFiltered ? null : <DynamicBanner randomPlay={randomPlay} />}
+      {isFiltered & randomPlay ? null : <DynamicBanner randomPlay={randomPlay} />}
 
       <ol className="list-plays">
         {plays?.map((play, index) => (

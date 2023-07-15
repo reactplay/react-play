@@ -173,7 +173,7 @@ const CreatePlay = () => {
 
   if (!isAuthenticated && !isEditPlay) {
     window.location = NHOST.AUTH_URL(
-      `http://localhost:${process.env.REACT_APP_DEV_PORT ?? '3000'}/plays/create`
+      `http://localhost:${process.env.REACT_APP_DEV_PORT || 3000}/plays/create`
     );
 
     return null;
