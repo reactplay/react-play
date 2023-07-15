@@ -20,7 +20,7 @@ export default function PrioritySearch({ users }) {
       <div className="user-cards">
         {filtered.length > 0 ? (
           filtered.map((user) => (
-            <div class="card">
+            <div className="card">
               <div>
                 <img alt={`Avatar image of ${user?.name}`} src={user?.avatar} />
               </div>
