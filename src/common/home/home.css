@@ -106,7 +106,7 @@
   align-items: center;
   grid-gap: 0.4rem;
   padding: 1rem 2rem;
-  font-size: var(--fs-rg) * 1.2;
+  font-size: calc(var(--fs-rg) * 1.2);
   font-weight: var(--fw-bold);
   text-decoration: none;
   width: unset;
