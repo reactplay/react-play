@@ -1,6 +1,7 @@
 import { FaHandshake } from 'react-icons/fa';
 import { TbHeartHandshake } from 'react-icons/tb';
 import { RiHeartFill, RiHeartAddFill } from 'react-icons/ri';
+import { nanoid } from 'nanoid';
 
 const Sponsors = () => {
   const eventSponsors = [
@@ -42,11 +43,11 @@ const Sponsors = () => {
           <h3>Event Partners</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventPartners.map((p,index) => (
+              {eventPartners.map((p, index) => (
                 <a
                   className="partners-sponsors-grid-item"
                   href={p.website}
-                  key={p.website + index}
+                  key={nanoid()}
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -72,7 +73,7 @@ const Sponsors = () => {
                 <a
                   className="partners-sponsors-grid-item"
                   href={s.website}
-                  key={s.website + index}
+                  key={nanoid()}
                   rel="noreferrer"
                   target="_blank"
                 >
