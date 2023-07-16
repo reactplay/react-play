@@ -47,7 +47,7 @@ const Card = ({ video }: IProps) => {
   };
 
   React.useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: null | ReturnType<typeof setTimeout> = null;
     if (isMouseOverVideo) {
       timeoutId = setTimeout(() => {
         setIsThumbnailMoving(true);
