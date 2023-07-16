@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+*/node_modules
 /.pnp
 .pnp.js
 
@@ -39,6 +40,7 @@ pnpm-lock.yaml
 
 # play index
 src/plays/index.js
+src/plays/index.json
 
 # vscode setting
 .vscode
