@@ -14,7 +14,7 @@ export default function TrainsitionSearch({ users }) {
     // Execute Non-Urgent Code
     startTransition(() => {
       // Filter the user list based on the search term
-      setFiltered(users.filter((item) => item?.person.includes(value)));
+      setFiltered(users.filter((item) => item?.name.includes(value)));
     });
   };
 
@@ -39,10 +39,10 @@ export default function TrainsitionSearch({ users }) {
             filtered.map((user) => (
               <div class="card">
                 <div>
-                  <img alt={`Avatar image of ${user?.person}`} src={user?.avatar} />
+                  <img alt={`Avatar image of ${user?.name}`} src={user?.avatar} />
                 </div>
                 <div>
-                  <strong>{user?.person}</strong>
+                  <strong>{user?.name}</strong>
                 </div>
               </div>
             ))

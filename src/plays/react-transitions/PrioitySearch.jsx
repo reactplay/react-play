@@ -10,7 +10,7 @@ export default function PrioritySearch({ users }) {
     setSearchTerm(value);
 
     // Filter the user list based on the search term
-    setFiltered(users.filter((item) => item?.person.includes(value)));
+    setFiltered(users.filter((item) => item?.name.includes(value)));
   };
 
   return (
@@ -23,10 +23,10 @@ export default function PrioritySearch({ users }) {
           filtered.map((user) => (
             <div className="card" key={nanoid()}>
               <div>
-                <img alt={`Avatar image of ${user?.person}`} src={user?.avatar} />
+                <img alt={`Avatar image of ${user?.name}`} src={user?.avatar} />
               </div>
               <div>
-                <strong>{user?.person}</strong>
+                <strong>{user?.name}</strong>
               </div>
             </div>
           ))
