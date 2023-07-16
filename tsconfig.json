@@ -9,9 +9,11 @@
     "target": "es6",
     "allowJs": true,
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "suppressImplicitAnyIndexErrors": false,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"]
   },
   "include": ["src/**/*", "public/serviceWorker.js", "src/globals.d.ts"]
 }
