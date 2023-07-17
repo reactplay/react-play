@@ -14,17 +14,25 @@ const useFetch = (url, options) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      let abortController = new AbortController();
       try {
-        const response = await fetch(url, options);
+        const response = await fetch(url, {
+          ...options,
+          signal: abortController.signal,
+        });
         const json = await response.json();
         setData(json);
         setLoading(false);
       } catch (error) {
+        if (error?.name === "AbortError") {
         setError(error);
         setLoading(false);
       }
     };
     fetchData();
+    return () => {
+      abortController.abort();
+    };
   }, [url, options]);
 
   return { data, loading, error };
