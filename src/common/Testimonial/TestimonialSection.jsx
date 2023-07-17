@@ -3,6 +3,9 @@ import TestimonialCard from './TestimonialCard';
 import { fetchTestimonialsHomePage } from 'common/services/request/query/testimonials';
 import { submit } from 'common/services/request';
 
+// import required modules
+import { Keyboard, Autoplay, Navigation, Pagination } from 'swiper/modules';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper/core';
@@ -12,12 +15,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// import required modules
-import { Keyboard, Autoplay, Navigation, Pagination } from 'swiper/modules';
-
 // install Swiper modules
 SwiperCore.use([Keyboard, Autoplay, Navigation, Pagination]);
-
 
 function TestimonialSection() {
   const [testimonials, setTestimonials] = useState([]);

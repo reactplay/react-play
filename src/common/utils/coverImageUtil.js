@@ -1,6 +1,8 @@
-export const  loadCoverImage = async (playSlug) => {
+export const loadCoverImage = async (playSlug) => {
   const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
-  const imgPromises = acceptedImgExtensions.map((ext) => import(/* @vite-ignore */ `plays/${playSlug}/cover.${ext}`));
+  const imgPromises = acceptedImgExtensions.map((ext) =>
+    import(/* @vite-ignore */ `plays/${playSlug}/cover.${ext}`)
+  );
 
   const response = await Promise.allSettled(imgPromises);
 
@@ -9,4 +11,4 @@ export const  loadCoverImage = async (playSlug) => {
   );
 
   return fulfilledResult?.value.default;
-}
+};

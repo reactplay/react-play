@@ -43,7 +43,7 @@ const Sponsors = () => {
           <h3>Event Partners</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventPartners.map((p, index) => (
+              {eventPartners.map((p) => (
                 <a
                   className="partners-sponsors-grid-item"
                   href={p.website}
@@ -69,7 +69,7 @@ const Sponsors = () => {
           <h3>Event Sponsors</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventSponsors.map((s, index) => (
+              {eventSponsors.map((s) => (
                 <a
                   className="partners-sponsors-grid-item"
                   href={s.website}

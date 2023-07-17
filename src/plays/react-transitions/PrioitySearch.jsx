@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 
 export default function PrioritySearch({ users }) {
   const [searchTerm, setSearchTerm] = useState('');
