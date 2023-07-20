@@ -96,7 +96,7 @@
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
     "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc",
-    "prepare": "husky install",
+    "prepare": "husky install && chmod +x .husky/*",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
