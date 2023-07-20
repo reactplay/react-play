@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+chmod +x ".husky/*"
+
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn pre-commit
