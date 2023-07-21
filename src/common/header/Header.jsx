@@ -59,11 +59,7 @@ const Header = () => {
   const Completionist = () => (
     <div className="activity-timer-banner">
       Hack-R-Play 2.0 registration has been started 🚀.{' '}
-      <a
-        className="event-link"
-        href="https://www.youtube.com/watch?v=ZBNCsvOrRPY"
-        target="_blank"
-      >
+      <a className="event-link" href="https://www.youtube.com/watch?v=ZBNCsvOrRPY" target="_blank">
         See the Launch Video
       </a>
     </div>
