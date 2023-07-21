@@ -1,11 +1,11 @@
 export const activities = [
   {
     id: 'hackrplay',
-    name: 'HACK-R-PLAY',
+    name: 'HACK-R-PLAY 2.0',
     subtitle: 'Developers and Hacking are inseparable!',
     description:
-      'ReactPlay brings you the opportunity to take part in the Hackathon and learn from it. Showcase your mindblowing ideas, build projects, and create content - there are also chances to win exciting prizes.',
-    logo: './hackathon/Logo.png',
+      'ReactPlay brings you the opportunity to take part in the Hackathon and learn from it. Showcase your mindblowing ideas, collaborate, and build projects - there are also chances to win exciting prizes.',
+    logo: './hackathon/Logo.svg',
     heroImage: './hackathon/img-hero-coders.png'
   },
   {
