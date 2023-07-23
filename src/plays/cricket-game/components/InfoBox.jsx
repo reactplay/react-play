@@ -1,4 +1,4 @@
-import { plural } from '../game/utils.js';
+import { plural } from '../game/utils';
 
 export default function InfoBox({ matchInProgress, gameState }) {
   const { runs, balls, wickets, totalBalls, totalWickets, target } = gameState;

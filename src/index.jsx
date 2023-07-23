@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 /** removing console statement in react prod build */
 /* eslint-disable no-console */
 if (import.meta.env.NODE_ENV !== 'development') {
+
   console.log = () => {};
   console.debug = () => {};
   console.info = () => {};
