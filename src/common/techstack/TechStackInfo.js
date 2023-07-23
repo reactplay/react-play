@@ -11,7 +11,8 @@ import {
   SiHasura,
   SiPostgresql,
   SiPython,
-  SiNodedotjs
+  SiNodedotjs,
+  SiVite
 } from 'react-icons/si';
 import NHost from 'images/nhost.svg';
 import Umami from 'images/umami.svg';
@@ -106,5 +107,11 @@ export const TechStackInfo = [
     text: 'Umami',
     type: 'image',
     link: 'https://umami.is/'
+  },
+  {
+    comp: SiVite,
+    text: 'Vite',
+    type: 'icon',
+    link: 'https://vitejs.dev/'
   }
 ];

@@ -4,7 +4,6 @@ import ModalClose from '@mui/joy/ModalClose';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 import { useUserDisplayName, useUserId } from '@nhost/react';
-import { Box } from '@mui/material';
 import Button from '@mui/joy/Button';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -18,6 +17,7 @@ import { submit } from 'common/services/request';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DOMPurify from 'dompurify';
+import Box from '@mui/material/Box';
 
 export default function TestimonialModal({ isOpen, setIsOpen }) {
   const userDisplayName = useUserDisplayName();

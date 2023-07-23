@@ -3,7 +3,6 @@ import Score from './Score.jsx';
 import InfoBox from './InfoBox.jsx';
 import CommentaryTimeline from './CommentaryTimeline.jsx';
 
-
 export default function ScorePanel(props) {
   const { userLevel, gameState, matchInProgress, commentary } = props;
 

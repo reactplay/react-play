@@ -7,9 +7,10 @@ import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
 import { MdManageSearch, MdClose, MdEvent } from 'react-icons/md';
 import SocialShare from 'common/components/SocialShare';
 import { GoX } from 'react-icons/go';
-import { Modal, Box, Typography, Menu } from '@mui/material';
+import { Modal, Typography, Menu } from '@mui/material';
 import { useSearchContext } from 'common/search/search-context';
 import { CREATE_PLAY_DOC_LINK, UMAMI_EVENTS } from 'constants';
+import Box from '@mui/material/Box';
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useSearchContext();
