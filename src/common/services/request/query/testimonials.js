@@ -4,6 +4,18 @@ export const fetchFiltered = {
   function: 'testimonials',
   write: false,
   limit: 9,
+  where: {
+    clause: {
+      conditions: [
+        {
+          field: 'moderated',
+          operator: 'eq',
+          value: true,
+          type: 'boolean'
+        }
+      ]
+    }
+  },
   return: [
     'id',
     'quote',
@@ -25,6 +37,19 @@ export const fetchAll = {
   name: 'test',
   function: 'testimonials',
   write: false,
+  where: {
+    clause: {
+      conditions: [
+        {
+          field: 'moderated',
+          operator: 'eq',
+          value: true,
+          type: 'boolean'
+        }
+      ]
+    }
+  },
+
   return: [
     'id',
     'quote',
@@ -87,7 +112,8 @@ export const insert_testimonial_submission = (testimonialData) => {
     object: {
       event: testimonialData.event,
       quote: testimonialData.quote,
-      user: testimonialData.id
+      user: testimonialData.id,
+      moderated: false
     },
     return: ['id']
   };

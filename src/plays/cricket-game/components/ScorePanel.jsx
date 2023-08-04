@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import Score from './Score.js';
-import InfoBox from './InfoBox.js';
-import CommentaryTimeline from './CommentaryTimeline.js';
+import Score from './Score';
+import InfoBox from './InfoBox';
+import CommentaryTimeline from './CommentaryTimeline';
 
 export default function ScorePanel(props) {
   const { userLevel, gameState, matchInProgress, commentary } = props;
