@@ -349,6 +349,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .header-links > li > .app-header-btn.app-header-btn--secondary {
+    color: var(--color-neutral-80);
+  }
 }
 
 @media screen and (max-width: 576px) {
