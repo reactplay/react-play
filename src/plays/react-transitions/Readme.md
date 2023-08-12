@@ -3,7 +3,7 @@
 A Play to explain the Transitions in React using the useTransition Hook in React 18.
 
 By default, all the sttate updates are Urgent and High-Priority in React. This
-may cause issues when your application state is dealing with a huge list of 
+may cause issues when your application state is dealing with a huge list of
 data. Some state updates can be marked as non-urgent and that's where the Transition comes in.
 
 ## Play Demographic
@@ -18,6 +18,7 @@ data. Some state updates can be marked as non-urgent and that's where the Transi
 - Video: https://www.youtube.com/watch?v=UspVJPxYnQM
 
 ## Implementation Details
+
 In this play, I've shown two modes of the same application.
 
 The first mode is the regular one without any transition and the second mode
