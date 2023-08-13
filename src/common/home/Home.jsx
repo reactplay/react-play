@@ -55,9 +55,7 @@ const Home = () => {
             </div>
             <h2 className="item-title">Learn </h2>
             <p className="item-desc">
-              Learn how to "Think in React" and build applications inspired by several plays(source
-              code & demos). Get to the source code of it, find related article, or even a YouTube
-              video. Learn from the expert code reviews.
+            Learn how to 'Think in React' and build applications inspired by various plays (source code & demos). Access the source code, find related articles, or even watch a YouTube video about it. Benefit from expert code reviews to enhance your learning.
             </p>
           </li>
           <li className="home-features-item">
@@ -66,9 +64,7 @@ const Home = () => {
             </div>
             <h2 className="item-title">Create </h2>
             <p className="item-desc">
-              Create your own plays and own them by following a few simple steps. Learned something
-              new? Perfect to present as a play. You can also contribute to the existing plays. Your
-              play will be reviewed by the experts before being made public.
+            Create your own plays and take ownership of them by following a few simple steps. Have you learned something new? It's perfect to present it as a play. Additionally, you can contribute to existing plays. Your play will be reviewed by experts before being made public.
             </p>
           </li>
           <li className="home-features-item">
@@ -77,9 +73,7 @@ const Home = () => {
             </div>
             <h2 className="item-title">Socialize </h2>
             <p className="item-desc">
-              Share your plays with the community. The best way of building in public is by sharing
-              the learning. You can share your plays on social media platforms like Facebook,
-              Twitter, LinkedIn, to name a few, just with a single click.
+            Share your plays with the community. The best way to build in public is by sharing your experiences. You can easily share your plays on social media platforms such as Facebook, Twitter, and LinkedIn with just a single click.
             </p>
           </li>
         </ul>
