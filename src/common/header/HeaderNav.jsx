@@ -75,7 +75,7 @@ const HeaderNav = ({ showBrowse }) => {
             </button>
           </li>
 
-          {showBrowse && !showToggleMenu && (
+          {showBrowse && (
             <li>
               <Link
                 className="app-header-btn app-header-btn--secondary"
@@ -87,7 +87,7 @@ const HeaderNav = ({ showBrowse }) => {
               </Link>
             </li>
           )}
-          <li>
+          <li className="menu-events">
             <a
               className="app-header-btn app-header-btn--secondary"
               data-testid="events-btn"
