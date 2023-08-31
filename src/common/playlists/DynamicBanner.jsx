@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import thumbPlay from 'images/thumb-play.png';
 import { Link } from 'react-router-dom';
 import { MdArrowRightAlt } from 'react-icons/md';
 import { loadCoverImage } from 'common/utils/coverImageUtil';
 import Loader from 'common/spinner/spinner';
+import thumbPlay from 'images/thumb-play.png';
 import { toast } from 'react-toastify';
 
 const DynamicBanner = ({ randomPlay }) => {
@@ -24,11 +24,10 @@ const DynamicBanner = ({ randomPlay }) => {
             setCoverImage(coverImage);
           } else {
             toast.warning('Unable to find banner default set');
-            setCoverImage(thumbPlay);
-
             console.error(
               `Cover image not found for the play ${randomPlay.name}. Setting the default cover image...`
-            );
+              );
+            setCoverImage(thumbPlay);
           }
         }
       } catch (error) {
