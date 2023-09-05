@@ -19,14 +19,14 @@ function CalculatorByTea(props: any) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className="calculator">
-            <div className="calculator-body">
-              <div className="calculator-display-block">
+          <div className="calculatorByTea__calculator">
+            <div className="calculatorByTea__calculator-body">
+              <div className="calculatorByTea__calculator-display-block">
                 {calculationHistory.map((expression) => {
-                  return <p className="calculator-history-text">{expression}</p>;
+                  return <p className="calculatorByTea__calculator-history-text">{expression}</p>;
                 })}
                 <input
-                  className="calculator-input-box"
+                  className="calculatorByTea__calculator-input-box"
                   type="text"
                   value={calculationExpression}
                   onChange={(e) => {
@@ -34,12 +34,14 @@ function CalculatorByTea(props: any) {
                   }}
                 />
               </div>
-              <div className="calculator-input-block">
-                <div className="calculator-value-block">
+              <div className="calculatorByTea__calculator-input-block">
+                <div className="calculatorByTea__calculator-value-block">
                   {calculatorValues.map((value) => {
                     return (
                       <button
-                        className={`calculator-button ${buttonClasses(value.type)}`}
+                        className={`calculatorByTea__calculator-button ${buttonClasses(
+                          value.type
+                        )}`}
                         key={value.data}
                         onClick={() => {
                           handleButtonClick(value);

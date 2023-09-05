@@ -52,9 +52,9 @@ const useCalcalulatorByTeaHook = () => {
       case 'NUMBER':
         return;
       case 'OPERATOR':
-        return 'calculator-operator-button';
+        return 'calculatorByTea__calculator-operator-button';
       case 'ACTION':
-        return 'calculator-result-button';
+        return 'calculatorByTea__calculator-result-button';
     }
   }
 

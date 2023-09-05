@@ -1,16 +1,16 @@
 /* enter styles here */
-.calculator {
+.calculatorByTea__calculator {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.calculator-body {
+.calculatorByTea__calculator-body {
   background-color: #22252d;
   border-radius: 20px;
 }
 
-.calculator-display-block {
+.calculatorByTea__calculator-display-block {
   color: #fff;
   height: 150px;
   display: flex;
@@ -20,21 +20,21 @@
   padding: 20px 10px;
 }
 
-.calculator-history-text {
+.calculatorByTea__calculator-history-text {
   font-size: 14px;
   color: #fff;
   opacity: 0.8;
 }
 
-.calculator-input-box {
+.play-details .play-details-body input[type='text'][class='calculatorByTea__calculator-input-box'] {
   background-color: transparent;
-  border: 0px !important;
+  border: 0px;
   outline: none;
   color: #fff;
   text-align: right;
 }
 
-.calculator-value-block {
+.calculatorByTea__calculator-value-block {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
@@ -44,7 +44,7 @@
   border-radius: 20px;
 }
 
-.calculator-button {
+.calculatorByTea__calculator-button {
   font-size: 20px;
   font-weight: 600;
   color: #fff;
@@ -52,10 +52,10 @@
   padding: 20px;
 }
 
-.calculator-operator-button {
+.calculatorByTea__calculator-operator-button {
   color: #f37a79;
 }
 
-.calculator-result-button {
+.calculatorByTea__calculator-result-button {
   color: #26f6d1;
 }
