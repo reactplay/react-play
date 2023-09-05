@@ -3,7 +3,6 @@ import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
 import { calculatorValues } from './CalculatorByTeaButtons';
 import useCalcalulatorByTeaHook from './useCalcalulatorByTeaHook';
-import { expression } from 'mathjs';
 
 function CalculatorByTea(props: any) {
   const {
