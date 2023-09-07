@@ -46,10 +46,16 @@ export function FetchPlaysBySlugAndUser(playslug, username) {
   return payload;
 }
 
-export function FetchPlaysByFilter(where_clause) {
+export function FetchPlaysByFilter(where_clause, sortBy) {
   const payload = { ...BasiFetchParam };
   if (where_clause) {
     payload.where = where_clause;
+  }
+
+  if (sortBy === 'Newest') {
+    payload.orderBy.created_at = 'desc';
+  } else {
+    payload.orderBy.created_at = 'asc';
   }
 
   return payload;

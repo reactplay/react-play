@@ -12,12 +12,21 @@ import { useLocation } from 'react-router-dom';
 import { ParseQuery, QueryDBTranslator } from 'common/search/search-helper';
 import { getPlaysByFilter } from 'common/services/plays';
 
+const SORT_BY = ['Newest', 'Oldest', 'Most Liked', 'Random'];
+
 const PlayList = () => {
   const [randomPlay, setRandomPlay] = useState({});
   const [loading, setLoading] = useState();
   const [plays, setPlays] = useState();
   const [isFiltered, setIsFiltered] = useState(false);
+  const [sortBy, setSortBy] = useState(localStorage.getItem('sortByPlay') || 'Newest');
   let location = useLocation();
+
+  const onChange = (e) => {
+    const { value } = e.target;
+    setSortBy(value);
+    localStorage.setItem('sortByPlay', value);
+  };
 
   useEffect(() => {
     const getPlays = async () => {
@@ -27,7 +36,7 @@ const PlayList = () => {
       if (parsedQuery) {
         translatedQuery = QueryDBTranslator(parsedQuery);
       }
-      const res = await getPlaysByFilter(translatedQuery);
+      const res = await getPlaysByFilter(translatedQuery, sortBy);
       const found_plays = [];
       if (res) {
         res.forEach((res_play) => {
@@ -37,7 +46,17 @@ const PlayList = () => {
             found_plays.push(res_play);
           }
         });
-        setPlays(found_plays);
+        if (sortBy === 'Random') {
+          const random_plays = found_plays.sort(() => Math.random() - 0.5);
+          setPlays(random_plays);
+        } else if (sortBy === 'Most Liked') {
+          const most_liked_plays = found_plays.sort(
+            (play1, play2) => play2.play_like.length - play1.play_like.length
+          );
+          setPlays(most_liked_plays);
+        } else {
+          setPlays(found_plays);
+        }
       }
       if (!translatedQuery) {
         // If the filtered array has at least one item, select a random play from the filtered array
@@ -52,7 +71,7 @@ const PlayList = () => {
       setLoading(false);
     };
     getPlays();
-  }, [location.search]);
+  }, [location.search, sortBy]);
 
   if (loading) {
     return <Loader />;
@@ -81,7 +100,16 @@ const PlayList = () => {
   return (
     <Fragment>
       {isFiltered ? null : <DynamicBanner randomPlay={randomPlay} />}
-
+      <div className="sort-by-plays-wrapper">
+        Sort By :
+        <select name="sort-by-plays" id="sort-by-plays" value={sortBy} onChange={onChange}>
+          {SORT_BY.map((name, i) => (
+            <option value={name} key={i}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
       <ol className="list-plays">
         {plays?.map((play, index) => (
           <React.Fragment key={index}>
