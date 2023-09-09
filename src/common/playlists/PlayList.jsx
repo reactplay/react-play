@@ -47,11 +47,6 @@ const PlayList = () => {
         if (sortBy === 'Random') {
           const random_plays = found_plays.sort(() => Math.random() - 0.5);
           setPlays(random_plays);
-        } else if (sortBy === 'Most Liked') {
-          const most_liked_plays = found_plays.sort(
-            (play1, play2) => play2.play_like.length - play1.play_like.length
-          );
-          setPlays(most_liked_plays);
         } else {
           setPlays(found_plays);
         }

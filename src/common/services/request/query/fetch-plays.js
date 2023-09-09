@@ -53,9 +53,13 @@ export function FetchPlaysByFilter(where_clause, sortBy) {
   }
 
   if (sortBy === 'Newest') {
-    payload.orderBy.created_at = 'desc';
+    payload.orderBy = { created_at: 'desc' };
+  } else if (sortBy === 'Oldest') {
+    payload.orderBy = { created_at: 'asc' };
+  } else if (sortBy === 'Most Liked') {
+    payload.orderBy = { play_like_aggregate: { count: 'desc' } };
   } else {
-    payload.orderBy.created_at = 'asc';
+    payload.orderBy = { description: 'desc' };
   }
 
   return payload;
