@@ -4,15 +4,13 @@ import React, { Fragment, useEffect, useState } from 'react';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'common/spinner/spinner';
 import * as all_plays from 'plays';
-
+import { SORT_BY } from 'constants';
 import './playlist.css';
 import { toSanitized } from 'common/services/string';
 import DynamicBanner from './DynamicBanner';
 import { useLocation } from 'react-router-dom';
 import { ParseQuery, QueryDBTranslator } from 'common/search/search-helper';
 import { getPlaysByFilter } from 'common/services/plays';
-
-const SORT_BY = ['Newest', 'Oldest', 'Most Liked', 'Random'];
 
 const PlayList = () => {
   const [randomPlay, setRandomPlay] = useState({});
