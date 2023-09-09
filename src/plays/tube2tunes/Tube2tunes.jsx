@@ -58,7 +58,7 @@ function Tube2tunes(props) {
         }
       })
       .catch((err) => {
-        // console.log('Error: ', err);
+        setError(err);
       });
 
     inputUrlRef.current.value = '';

@@ -17,10 +17,10 @@ import FinalMessage from './components/FinalMessage';
 import GameGrid from './components/GameGrid';
 
 function MultiplayerTicTacToe(props: any) {
+  const [count, setCount] = useState(0);
   const [isCross, setIsCross] = useState(true);
   const [isFinished, setIsFinished] = useState(false);
   const [finalMessage, setFinalMessage] = useState('');
-  let count = 0;
 
   // ! Game Logic
   const findWinner = () => {
@@ -46,9 +46,14 @@ function MultiplayerTicTacToe(props: any) {
 
   // ! Draw
   const checkDraw = () => {
+    // trick the code to use count
+    if (count < 0) {
+      setCount(0);
+    }
+
     GAME_ARRAY.forEach((pos) => {
       if (pos === 'cross' || pos === 'circle') {
-        count++;
+        setCount((count) => count + 1);
       }
       if (GAME_ARRAY.length === 9 && GAME_ARRAY.indexOf('') < 0) {
         setFinalMessage('Game Draw!');

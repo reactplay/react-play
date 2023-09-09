@@ -7,7 +7,7 @@ import { MdClose } from 'react-icons/md';
 
 const Modal = ({ showModal, toggle }) => {
   const [currState, setCurrentState] = useState(0);
-  const data = structuringData[currState];
+  // const data = structuringData[currState];
 
   useEffect(() => {
     setCurrentState(0);
