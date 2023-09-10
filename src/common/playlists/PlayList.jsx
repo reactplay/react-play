@@ -95,9 +95,9 @@ const PlayList = () => {
       {isFiltered ? null : <DynamicBanner randomPlay={randomPlay} />}
       <div className="sort-by-plays-wrapper">
         Sort By :
-        <select name="sort-by-plays" id="sort-by-plays" value={sortBy} onChange={onChange}>
+        <select id="sort-by-plays" name="sort-by-plays" onChange={onChange} value={sortBy}>
           {SORT_BY.map((name, i) => (
-            <option value={name} key={i}>
+            <option key={i} value={name}>
               {name}
             </option>
           ))}
