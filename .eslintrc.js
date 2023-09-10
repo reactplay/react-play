@@ -18,11 +18,20 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react-hooks', 'react', '@typescript-eslint', 'prettier'],
+  plugins: [
+	  'react-hooks',
+	  'react',
+	  '@typescript-eslint',
+	  'prettier'
+  ],
   ignorePatterns: ['**/plays/index.js'],
 
   rules: {
-    'import/extensions': 0,
+    // Note: you must disable the base rule as it can report incorrect errors
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+	
+	'import/extensions': 0,
 
     'import/no-named-as-default-member': 0,
     'react/prop-types': 0,
