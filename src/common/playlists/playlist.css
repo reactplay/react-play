@@ -806,7 +806,7 @@
 .sort-by-plays-wrapper {
   padding: 1.6rem 2rem 0rem 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 12px;
 }
