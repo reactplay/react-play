@@ -155,7 +155,7 @@
 }
 
 .list-playideas .list-playideas-item .idea-desc {
-    flex-grow: 1;
+  flex-grow: 1;
   flex-shrink: 0;
   margin: 0.8rem 0;
   font-size: var(--fs-sm);
@@ -164,7 +164,7 @@
 }
 
 .list-playideas .list-playideas-item .idea-level {
-    flex-grow: 0;
+  flex-grow: 0;
   flex-shrink: 0;
   margin: 1rem 0 0 0;
 }
