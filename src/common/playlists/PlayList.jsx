@@ -35,28 +35,28 @@ const PlayList = () => {
         translatedQuery = QueryDBTranslator(parsedQuery);
       }
       const res = await getPlaysByFilter(translatedQuery, sortBy);
-      const found_plays = [];
+      const foundPlays = [];
       if (res) {
         res.forEach((res_play) => {
           if (
             all_plays[res_play.component ? res_play.component : toSanitized(res_play.title_name)]
           ) {
-            found_plays.push(res_play);
+            foundPlays.push(res_play);
           }
         });
         if (sortBy === 'Random') {
-          const random_plays = found_plays.sort(() => Math.random() - 0.5);
-          setPlays(random_plays);
+          const randomPlays = foundPlays.sort(() => Math.random() - 0.5);
+          setPlays(randomPlays);
         } else {
-          setPlays(found_plays);
+          setPlays(foundPlays);
         }
       }
       if (!translatedQuery) {
         // If the filtered array has at least one item, select a random play from the filtered array
-        if (found_plays && found_plays.length > 0) {
+        if (foundPlays && foundPlays.length > 0) {
           // generate a random index to select a random play
-          const randomIndex = Math.floor(Math.random() * found_plays.length);
-          setRandomPlay(found_plays[randomIndex]);
+          const randomIndex = Math.floor(Math.random() * foundPlays.length);
+          setRandomPlay(foundPlays[randomIndex]);
         }
       } else {
         setIsFiltered(true);
