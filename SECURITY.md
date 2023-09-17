@@ -1,4 +1,4 @@
-** Reporting Security Issues**
+## Reporting Security Issues
 
 We want everyone who uses or helps with the project to tell us quickly if they find a problem that could make the project less safe. If you see something like this or think there's a problem related to safety, please do these things:
 
