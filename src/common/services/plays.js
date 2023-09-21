@@ -133,7 +133,7 @@ export const deleteATag = (play_id, actualTags, newTags) => {
   return toBeDeletedTags; // array of promises to be resolved or rejected
 };
 
-export const getPlaysByFilter = async (filter) => {
+export const getPlaysByFilter = async (filter, sortBy) => {
   let filter_object = undefined;
   if (filter) {
     Object.keys(filter).forEach((key) => {
@@ -190,7 +190,7 @@ export const getPlaysByFilter = async (filter) => {
     });
   }
 
-  const payload = FetchPlaysByFilter(filter_object);
+  const payload = FetchPlaysByFilter(filter_object, sortBy);
   const res = await submit(payload);
   if (filter && filter.tags) {
     const res_tags_filters = res.filter((play) => {
