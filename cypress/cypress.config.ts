@@ -8,6 +8,7 @@ export default defineConfig({
     baseUrl: 'http://localhost:3000',
     watchForFileChanges: false,
 	pageLoadTimeout=100000,
-	responseTimeout=100000
+	responseTimeout=100000,
+	
   }
 });
