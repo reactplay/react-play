@@ -802,3 +802,18 @@
 .right-arrow-icon {
   color: #25a0a7;
 }
+
+.sort-by-plays-wrapper {
+  padding: 1.6rem 2rem 0rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+#sort-by-plays {
+  width: 150px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid grey;
+}
