@@ -1,0 +1,11 @@
+{
+  "name": "NewsFeedApplication",
+  "version": "1.0.0",
+  "description": "News feed based on the country and categories.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "NagarjunShroff",
+  "license": "MIT"
+}

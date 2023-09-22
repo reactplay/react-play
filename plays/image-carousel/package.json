@@ -1,0 +1,11 @@
+{
+  "name": "ImageCarousel",
+  "version": "1.0.0",
+  "description": "Image Carousel that has click navigation for desktop and touch(swipe) navigation for mobile",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "harshsinghatz",
+  "license": "MIT"
+}

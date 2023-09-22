@@ -1,0 +1,11 @@
+{
+  "name": "DevJokes",
+  "version": "1.0.0",
+  "description": "Developer jokes is a app where a random developer joke pops up every time you open it  or  click next joke",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "yung-coder",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "DadJokes",
+  "version": "1.0.0",
+  "description": "A web app where you can enjoy the funny Dad Jokes.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Bobby-coder",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "VideoPreview",
+  "version": "1.0.0",
+  "description": "User will search a video and when the user hovers over the video thumbnail for 2-5 seconds then user will see a preview of the video",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "guptaanshik1",
+  "license": "MIT"
+}

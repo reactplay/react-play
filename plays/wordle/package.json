@@ -1,0 +1,11 @@
+{
+  "name": "Wordle",
+  "version": "1.0.0",
+  "description": "Guess the 5-letter word in 6 attempts! A fun word guessing puzzle.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "SamirMishra27",
+  "license": "MIT"
+}

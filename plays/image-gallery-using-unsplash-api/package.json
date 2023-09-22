@@ -1,0 +1,11 @@
+{
+  "name": "ImageGalleryUsingUnsplashApi",
+  "version": "1.0.0",
+  "description": "A responsive image gallery by using the free Unsplash API",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "siddhantsiddh15",
+  "license": "MIT"
+}

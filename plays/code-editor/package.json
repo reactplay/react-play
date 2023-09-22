@@ -1,0 +1,11 @@
+{
+  "name": "CodeEditor",
+  "version": "1.0.0",
+  "description": "It is a code editor for html css and javascript it is like a clone of codepen !",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "yung-coder",
+  "license": "MIT"
+}

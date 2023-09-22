@@ -1,0 +1,11 @@
+{
+  "name": "TypingSpeedTest",
+  "version": "1.0.0",
+  "description": "Its a typing test application in ReactJS where users can test their typing speed and accuracy.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "makdoom",
+  "license": "MIT"
+}

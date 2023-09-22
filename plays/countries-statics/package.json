@@ -1,0 +1,11 @@
+{
+  "name": "GeographyNow",
+  "version": "1.0.0",
+  "description": "Fetch the country demographics with single click on map.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "deepak8717",
+  "license": "MIT"
+}

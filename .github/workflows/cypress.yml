@@ -12,23 +12,27 @@ concurrency:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install Packages
-        run: |
-          npm install --legacy-peer-deps
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
         with:
           install-command: |
-            npm install --legacy-peer-deps
-          start: npm start
+            pnpm install --frozen-lockfile
+          start: pnpm start
           wait-on: "http://localhost:3000"
           browser: chrome
+          config: timeout=100000
+          config-file: cypress/cypress.config.ts
         env:
           # pass GitHub token to detect new build vs re-run build
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

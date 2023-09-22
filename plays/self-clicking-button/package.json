@@ -1,0 +1,11 @@
+{
+  "name": "SelfClickingButton",
+  "version": "1.0.0",
+  "description": "It is a simple play where a button is programmatically clicked every 2 seconds.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "atapas",
+  "license": "MIT"
+}

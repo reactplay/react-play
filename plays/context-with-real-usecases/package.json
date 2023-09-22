@@ -1,0 +1,11 @@
+{
+  "name": "Context-with-real-usecases",
+  "version": "1.0.0",
+  "description": "context-with-real-usecases is a recipe app that lists the recipes by cuisine type. Based on the selected cuisine app shows the list of recipes, the selected cusine and the cusine fact.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Deepak8717",
+  "license": "MIT"
+}

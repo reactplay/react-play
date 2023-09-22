@@ -1,0 +1,383 @@
+{
+	"#playsUpwardPath": "../../../",
+	"code-editor/CodeEditor": [
+		"yung-coder/code-editor",
+		"png"
+	],
+	"date-time-counter/CdTimerComp": [
+		"atapas/date-time-counter",
+		"png"
+	],
+	"analog-clock/AnalogClock": [
+		"deepak8717/analog-clock",
+		"png"
+	],
+	"registration-form/RegistrationForm": [
+		"deepak8717/registration-form",
+		"png"
+	],
+	"tic-tac-toe-game/TicTacToeGame": [
+		"tejinder-sharma/tic-tac-toe-game",
+		"png"
+	],
+	"memory-game/NetlifyCardGame": [
+		"angryman18/memory-game",
+		"jpg"
+	],
+	"flip-card-effect/FlipCardEffect": [
+		"deepak8717/flip-card-effect",
+		"png"
+	],
+	"dynamic-routes/DynamicRoutes": [
+		"deepak8717/dynamic-routes",
+		"png"
+	],
+	"org-tree/BasicTree": [
+		"green-roots/org-tree",
+		"png"
+	],
+	"calendar/Calendar": [
+		"vincentbcp/calendar",
+		"png"
+	],
+	"quote-generator/QuoteGenerator": [
+		"abhishek-90/quote-generator",
+		"png"
+	],
+	"states/States": [
+		"abhishek-90/states",
+		"png"
+	],
+	"clock/CurrentTimer": [
+		"atapas/clock",
+		"png"
+	],
+	"movies/MovieContainer": [
+		"atapas/movies",
+		"png"
+	],
+	"social-card/SocialCard": [
+		"atapas/social-card",
+		"png"
+	],
+	"counter/CounterApp": [
+		"murtuzaalisurti/counter",
+		"png"
+	],
+	"random-meme-generator/RandomMemeGenerator": [
+		"murtuzaalisurti/random-meme-generator",
+		"png"
+	],
+	"quizeo/Quizeo": [
+		"vasantisuthar/quizeo",
+		"png"
+	],
+	"image-carousel/ImageCarousel": [
+		"harshsinghatz/image-carousel",
+		"png"
+	],
+	"react-todo-app/ReactTodoApp": [
+		"nirban256/react-todo-app",
+		"png"
+	],
+	"keeper/Keeper": [
+		"shivam-katare/keeper",
+		"png"
+	],
+	"image-gallery/Imagegallery": [
+		"shivam-katare/image-gallery",
+		"png"
+	],
+	"navbar/NavBar": [
+		"shivam-katare/navbar",
+		"png"
+	],
+	"react-gradients/ReactGradients": [
+		"ammaaraslam/react-gradients",
+		"png"
+	],
+	"markdown-editor/MarkdownEditor": [
+		"eoeboh/markdown-editor",
+		"png"
+	],
+	"star-rating/StarRating": [
+		"frankiefab100/star-rating",
+		"png"
+	],
+	"why-react/WhyReact": [
+		"atapas/why-react",
+		"png"
+	],
+	"countries-statics/CountriesStatics": [
+		"deepak8717/countries-statics",
+		"png"
+	],
+	"expanding-cards/ExpandingCards": [
+		"deepak8717/expanding-cards",
+		"png"
+	],
+	"github-user-search/GitHubUserSearch": [
+		"tejasshekar/github-user-search",
+		"png"
+	],
+	"context-with-real-usecases/ContextWithRealUsecases": [
+		"deepak8717/context-with-real-usecases",
+		"png"
+	],
+	"qr-code-generator/QrCodeGenerator": [
+		"murtuzaalisurti/qr-code-generator",
+		"png"
+	],
+	"dev-jokes/DevJokes": [
+		"yung-coder/dev-jokes",
+		"png"
+	],
+	"git-hub-profile-search/GithubProfileSearch": [
+		"nirban256/git-hub-profile-search",
+		"png"
+	],
+	"personal-profile-card/PersonalProfileCard": [
+		"senali-d/personal-profile-card",
+		"png"
+	],
+	"inspirational-quotes/InspirationalQuotes": [
+		"muzaffar640/inspirational-quotes",
+		"png"
+	],
+	"typing-speed-test/TypingSpeedTest": [
+		"makdoom/typing-speed-test",
+		"png"
+	],
+	"image-collector/ImageCollector": [
+		"ahnafahamed/image-collector",
+		"png"
+	],
+	"text-avatar/TextAvatar": [
+		"hiimnhan/text-avatar",
+		"jpg"
+	],
+	"news-feed-application/NewsFeedApplication": [
+		"nagarjunshroff/news-feed-application",
+		"png"
+	],
+	"2048/TwentyFourtyEight": [
+		"shivam-katare/2048",
+		"png"
+	],
+	"emojipedia/Emojipedia": [
+		"makdoom/emojipedia",
+		"png"
+	],
+	"download-fetch-response/DownloadFetchResponse": [
+		"abhi-works/download-fetch-response",
+		"png"
+	],
+	"pokemon-stats/PokemonStats": [
+		"yung-coder/pokemon-stats",
+		"png"
+	],
+	"weather/Weather": [
+		"ankitk26/weather",
+		"jpg"
+	],
+	"simple-live-chat/SimpleLiveChat": [
+		"angryman18/simple-live-chat",
+		"jpg"
+	],
+	"quiz-app/QuizApp": [
+		"senali-d/quiz-app",
+		"png"
+	],
+	"multiselect-component/MultiselectComponent": [
+		"abrar0204/multiselect-component",
+		"png"
+	],
+	"play-fair-cipher/PlayFairCipher": [
+		"kmohzaid/play-fair-cipher",
+		"png"
+	],
+	"motivate-me/MotivateMe": [
+		"hat52/motivate-me",
+		"png"
+	],
+	"savings-calculator/SavingsCalculator": [
+		"kd100100/savings-calculator",
+		"png"
+	],
+	"image-compressor/ImageCompressor": [
+		"aks318/image-compressor",
+		"jpg"
+	],
+	"shopping-cart/ShoppingCart": [
+		"joshi-kaushal/shopping-cart",
+		"png"
+	],
+	"infinite-scrolling/InfiniteScrolling": [
+		"aks318/infinite-scrolling",
+		"jpg"
+	],
+	"sierpinski-triangle/SierpinskiTriangle": [
+		"bhtibrewal/sierpinski-triangle",
+		"png"
+	],
+	"fun-quiz/FunQuiz": [
+		"angryman18/fun-quiz",
+		"jpg"
+	],
+	"react-multistep-form/ReactMultistepForm": [
+		"abhishek%20maharjan/react-multistep-form",
+		"png"
+	],
+	"password-generator/PasswordGenerator": [
+		"angryman18/password-generator",
+		"jpg"
+	],
+	"simple-seo-component/SimpleSeoComponent": [
+		"debjit/simple-seo-component",
+		"webp"
+	],
+	"why-typescript/WhyTypescript": [
+		"koustov/why-typescript",
+		"png"
+	],
+	"tenzies-game/TenziesGame": [
+		"abhipatel10/tenzies-game",
+		"png"
+	],
+	"smart-todo-list/SmartTodoList": [
+		"wyarejali/smart-todo-list",
+		"png"
+	],
+	"expenses-tracker/ExpensesTracker": [
+		"senali-d/expenses-tracker",
+		"png"
+	],
+	"dad-jokes/DadJokes": [
+		"bobby-coder/dad-jokes",
+		"png"
+	],
+	"image-gallery-using-unsplash-api/ImageGalleryUsingUnsplashApi": [
+		"siddhantsiddh15/image-gallery-using-unsplash-api",
+		"jpg"
+	],
+	"simple-calculator/SimpleCalculator": [
+		"suryanshsoni120/simple-calculator",
+		"png"
+	],
+	"text-analyzer/TextAnalyzer": [
+		"yung-coder/text-analyzer",
+		"png"
+	],
+	"pagination/Pagination": [
+		"wyarejali/pagination",
+		"png"
+	],
+	"sticky-notes/StickyNotes": [
+		"coderamrin/sticky-notes",
+		"png"
+	],
+	"github-user-finder/GithubUserFinder": [
+		"ankit9761/github-user-finder",
+		"jpg"
+	],
+	"notehack/Notehack": [
+		"bobby-coder/notehack",
+		"png"
+	],
+	"pixy/Pixy": [
+		"raibove/pixy",
+		"png"
+	],
+	"tube2tunes/Tube2tunes": [
+		"shivam-katare/tube2tunes",
+		"png"
+	],
+	"random-quote-card-generator/RandomQuoteCardGenerator": [
+		"priteshkiri/random-quote-card-generator",
+		"png"
+	],
+	"devblog/Devblog": [
+		"coderamrin/devblog",
+		"png"
+	],
+	"object-detector/ObjectDetector": [
+		"senali-d/object-detector",
+		"png"
+	],
+	"cricket-game/CricketGame": [
+		"samirmishra27/cricket-game",
+		"webp"
+	],
+	"photoshopapp/Photoshopapp": [
+		"aghildev/photoshopapp",
+		"png"
+	],
+	"roll-the-dice/RollTheDice": [
+		"wyarejali/roll-the-dice",
+		"png"
+	],
+	"digital-delight/DigitsDelight": [
+		"shivam-katare/digital-delight",
+		"png"
+	],
+	"basic-calculator/BasicCalculator": [
+		"bahnisikhadhar/basic-calculator",
+		"png"
+	],
+	"travel-advisor/TravelAdvisor": [
+		"yung-coder/travel-advisor",
+		"jpg"
+	],
+	"color-palettes-generator/ColorPalettesGenerator": [
+		"abhipatel10/color-palettes-generator",
+		"png"
+	],
+	"emoji-game/EmojiGame": [
+		"rashy10/emoji-game",
+		"png"
+	],
+	"play-dictionary/PlayDictionary": [
+		"abhishek-90/play-dictionary",
+		"png"
+	],
+	"self-clicking-button/SelfClickingButton": [
+		"atapas/self-clicking-button",
+		"png"
+	],
+	"smart-converter/SmartConverter": [
+		"abhipatel10/smart-converter",
+		"png"
+	],
+	"wordle/Wordle": [
+		"samirmishra27/wordle",
+		"png"
+	],
+	"multiplayer-tic-tac-toe/MultiplayerTicTacToe": [
+		"joshi-kaushal/multiplayer-tic-tac-toe",
+		"png"
+	],
+	"codenchill/Codenchill": [
+		"priteshkiri/codenchill",
+		"png"
+	],
+	"video-preview/VideoPreview": [
+		"guptaanshik1/video-preview",
+		"png"
+	],
+	"infinite-scroll-with-debouncing-concept/InfiniteScrollWithDebouncingConcept": [
+		"whynotsantosh/infinite-scroll-with-debouncing-concept",
+		"png"
+	],
+	"custommemesgenerator/Custommemesgenerator": [
+		"amanaakash/custommemesgenerator",
+		"png"
+	],
+	"react-transitions/ReactTransitions": [
+		"atapas/react-transitions",
+		"png"
+	],
+	"calculator-by-tea/CalculatorByTea": [
+		"mrtea7171/calculator-by-tea",
+		"png"
+	]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "SmartConverter",
+  "version": "1.0.0",
+  "description": "Smart Converter is a place where we convert text into different types and also count words and characters in written texts.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "AbhiPatel10",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Photoshopapp",
+  "version": "1.0.0",
+  "description": "A Simple web app Where users can do a decent editing of pics",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "aghildev",
+  "license": "MIT"
+}

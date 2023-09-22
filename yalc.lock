@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "create-react-play": {
+      "signature": "f9f8ee7b9fb10be45e4a8dd6fe4845b1",
+      "file": true
+    }
+  }
+}
