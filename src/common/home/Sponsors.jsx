@@ -47,11 +47,11 @@ const Sponsors = () => {
           <h3>Event Partners</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventPartners.map((p,index) => (
+              {eventPartners.map((p, index) => (
                 <a
                   className="partners-sponsors-grid-item"
                   href={p.website}
-				  key={index}
+                  key={index}
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -73,12 +73,12 @@ const Sponsors = () => {
           <h3>Event Sponsors</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventSponsors.map((s,index) => (
+              {eventSponsors.map((s, index) => (
                 <a
                   className="partners-sponsors-grid-item"
                   href={s.website}
                   key={index}
-				  rel="noreferrer"
+                  rel="noreferrer"
                   target="_blank"
                 >
                   <img alt={s.name} src={s.logo} />
