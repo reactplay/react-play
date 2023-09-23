@@ -3,3 +3,5 @@ export const UMAMI_EVENTS = {
   GITHUB_BUTTON: 'github-button',
   CREATE_PLAY_BUTTON: 'create-play-button'
 };
+
+export const SORT_BY = ['Newest', 'Oldest', 'Most Liked', 'Random'];
