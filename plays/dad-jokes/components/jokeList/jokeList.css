@@ -49,7 +49,9 @@
 .dad-jokes-play .jokelist-sidebar-emoji img {
   width: 45%;
   border-radius: 50%;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.1);
 }
 
 /*----------------------------New Jokes Button----------------------------*/
@@ -85,7 +87,9 @@
   align-self: center;
   width: 70%;
   overflow: scroll;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.1);
 }
 
 .dad-jokes-play .dark .jokelist-jokes {

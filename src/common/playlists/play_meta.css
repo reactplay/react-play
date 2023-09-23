@@ -1,17 +1,17 @@
 .meta-link {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    align-items: center;
-    height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+  height: 60px;
 }
 
 .meta-link a {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    border: 1px solid #000;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
 }

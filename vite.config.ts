@@ -73,8 +73,20 @@ export default defineConfig(({ command, mode }) => {
       EnvironmentPlugin({ REACT_APP_DEV_PORT: DEV_PORT }),
       EnvironmentPlugin('all', { prefix: 'REACT_APP_' }),
       VitePWA({
+        registerType: 'autoUpdate',
+        strategies: 'injectManifest',
+        srcDir: 'src',
+        filename: 'service-worker.js',
+        // add this to cache all the imports
         workbox: {
-          importScripts: ['src/service-worker.js']
+          globPatterns: ['**/*']
+        },
+        // add this to cache all the
+        // static assets in the public folder
+        includeAssets: ['**/*'],
+        devOptions: {
+          enabled: true
+          /* other options */
         }
       })
     ],

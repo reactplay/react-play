@@ -7,5 +7,10 @@
   },
   "keywords": [],
   "author": "senali-d",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow/tfjs": "^4.11.0",
+    "react-webcam": "^7.1.1"
+  }
 }

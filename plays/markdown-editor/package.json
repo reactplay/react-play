@@ -7,5 +7,9 @@
   },
   "keywords": [],
   "author": "EOEboh",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jspdf": "^2.5.1",
+    "remarkable": "^2.0.1"
+  }
 }

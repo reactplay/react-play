@@ -7,5 +7,8 @@
   },
   "keywords": [],
   "author": "Angryman18",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^10.4.0"
+  }
 }

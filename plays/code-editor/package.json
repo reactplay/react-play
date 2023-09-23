@@ -7,5 +7,9 @@
   },
   "keywords": [],
   "author": "yung-coder",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "codemirror": "^5.65.7",
+    "react-codemirror2": "^7.2.1"
+  }
 }

@@ -32,7 +32,7 @@ jobs:
           wait-on: "http://localhost:3000"
           browser: chrome
           config: timeout=100000
-          config-file: cypress/cypress.config.ts
+          config-file: cypress.config.ts
         env:
           # pass GitHub token to detect new build vs re-run build
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

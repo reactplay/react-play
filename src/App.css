@@ -5,7 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .text-center {
   text-align: center;
 }

@@ -7,5 +7,8 @@
   },
   "keywords": [],
   "author": "yung-coder",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react-dropzone": "^14.2.3"
+  }
 }

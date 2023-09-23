@@ -1,0 +1,42 @@
+/* source for shimmer : https://codepen.io/andru255/pen/wvBdxbb */
+.loader-shimmer {
+  position: relative;
+  -webkit-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 6px;
+  height: 500px;
+  overflow: hidden;
+}
+.shimmer {
+  animation-duration: 2.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: #ddd;
+  background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
+  background-size: 1200px 100%;
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1200px 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+.media {
+  height: 200px;
+}

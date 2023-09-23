@@ -1,30 +1,40 @@
 /* eslint-disable no-restricted-globals */
 
-import { createHandlerBoundToURL, precacheAndRoute } from 'workbox-precaching';
+import {
+  cleanupOutdatedCaches,
+  createHandlerBoundToURL,
+  precacheAndRoute
+} from 'workbox-precaching';
 import { clientsClaim } from 'workbox-core';
 import { registerRoute } from 'workbox-routing';
 import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 
+cleanupOutdatedCaches();
+
+self.skipWaiting();
 clientsClaim();
 
 precacheAndRoute(self.__WB_MANIFEST);
 
 const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
-registerRoute(({ request, url }) => {
-  if (request.mode !== 'navigate') {
-    return false;
-  }
-  if (url.pathname.startsWith('/_')) {
-    return false;
-  }
-  if (url.pathname.match(fileExtensionRegexp)) {
-    return false;
-  }
+registerRoute(
+  ({ request, url }) => {
+    if (request.mode !== 'navigate') {
+      return false;
+    }
+    if (url.pathname.startsWith('/_')) {
+      return false;
+    }
+    if (url.pathname.match(fileExtensionRegexp)) {
+      return false;
+    }
 
-  return true;
-}, createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html'));
+    return true;
+  },
+  createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
+);
 
 registerRoute(
   ({ url }) => {

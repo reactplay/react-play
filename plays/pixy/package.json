@@ -7,5 +7,9 @@
   },
   "keywords": [],
   "author": "raibove",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "react-color": "^2.19.3"
+  }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { BsGithub } from 'react-icons/bs';
 import { FiStar } from 'react-icons/fi';
 import { IoIosRocket } from 'react-icons/io';

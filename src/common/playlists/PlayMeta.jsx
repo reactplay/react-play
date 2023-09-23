@@ -27,10 +27,15 @@ function PlayMeta() {
   const [navigation, setNavigation] = useLocalStorage('plays_navigation');
   const [previousPlay, setPreviousPlay] = useState(null);
   const [nextPlay, setNextPlay] = useState(null);
+  const [currentPosition, setCurrentPosition] = useState(null);
 
   // const [localImage, setLocalImage] = useState(thumbPlay);
 
   const all_plays = new Map(Object.entries(playsJson));
+
+  const handleCurrentPosition = (position, total) => {
+    setCurrentPosition(`${position} / ${total}`);
+  };
 
   const handlePlayNavigation = (position, type) => {
     const current = navigation[position];
@@ -137,6 +142,8 @@ function PlayMeta() {
         let next = currentPos === navigation.length - 1 ? 0 : currentPos + 1;
         handlePlayNavigation(previous, 'prev');
         handlePlayNavigation(next, 'next');
+        let position = next + 1;
+        handleCurrentPosition(position, navigation.length);
       }
     }
   }, [navigation, play]);
@@ -172,7 +179,7 @@ function PlayMeta() {
                   <MdOutlineNavigateBefore />
                 </Link>
               )}
-
+              <>{currentPosition}</>
               {nextPlay && (
                 <Link to={nextPlay}>
                   <MdOutlineNavigateNext />

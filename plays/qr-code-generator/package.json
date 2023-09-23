@@ -7,5 +7,10 @@
   },
   "keywords": [],
   "author": "murtuzaalisurti",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "downloadjs": "^1.4.7",
+    "html-to-image": "^1.11.11",
+    "react-qr-code": "^2.0.12"
+  }
 }
