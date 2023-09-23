@@ -1,0 +1,11 @@
+{
+  "name": "ReactTransitions",
+  "version": "1.0.0",
+  "description": "A Play to explain the Transitions in React using the useTransition Hook in React 18",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "atapas",
+  "license": "MIT"
+}

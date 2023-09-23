@@ -1,0 +1,14 @@
+.drawingPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.saveArt {
+  padding: 3px 5px;
+  border-radius: 3px;
+  background-color: rgba(var(--color-play-level-1), 0.12);
+  color: rgba(var(--color-play-level-1), 1);
+  margin: 0 10px;
+}

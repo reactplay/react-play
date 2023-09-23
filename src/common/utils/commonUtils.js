@@ -42,3 +42,13 @@ export function formatDate(data) {
 
   return `Joined ${day} ${datemonth[1]} ${year}`;
 }
+
+export function getPlayPath(all_plays, play) {
+  const fileName = all_plays.has(play?.component) ? play?.component : play?.title_name;
+
+  return `${play.slug}/${fileName}`;
+}
+
+export function getPlayLink(play) {
+  return `/plays/${encodeURI(play.github.toLowerCase())}/${play.slug}`;
+}

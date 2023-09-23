@@ -1,0 +1,11 @@
+{
+  "name": "Emojipedia",
+  "version": "1.0.0",
+  "description": "Its a fun play where user can search for any emojis and can copy it or use it anywhere.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "makdoom",
+  "license": "MIT"
+}

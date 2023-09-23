@@ -1,0 +1,111 @@
+.poke-card-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+.pokemon-card {
+  width: 300px;
+  display: inline-block;
+  margin: auto;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  z-index: 9999;
+  backdrop-filter: blur(20px);
+}
+.pokemon-card:hover {
+  transform: scale(1.01);
+}
+
+.pokemon-card__image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+.poke-name {
+  font-weight: 900;
+  font-size: 25px;
+  font-style: italic;
+  color: white;
+}
+.pokemon-card__image--pokemon img {
+  width: 150px;
+  position: absolute;
+}
+
+.pokemon-card__level {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.pokemon-card__level--pokemon {
+  color: #ec9b3b;
+}
+
+.pokemon-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px;
+  flex-direction: column;
+}
+
+.one-third {
+  display: flex;
+  color: white;
+  font-family: serif;
+  font-style: oblique;
+  padding: 5px 5px;
+}
+
+.poke-stats-back-btn {
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+  display: inline-flex;
+  font-family: 'JetBrains Mono', monospace;
+  height: 35px;
+  justify-content: center;
+  line-height: 1;
+  padding: 0px 16px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.stat-value {
+  margin-left: 6px;
+}
+
+@media (max-width: 764px) {
+  .pokemon-stats {
+    padding: 3px 3px;
+  }
+
+  .one-third {
+    padding: 2px 2px;
+  }
+}

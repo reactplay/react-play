@@ -1,0 +1,91 @@
+:root {
+  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --radius: 0.25rem;
+}
+
+/*
+  =============== 
+  Color Generator
+  ===============
+  */
+
+.color-palettes-generator-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 1rem 3rem 1rem 3rem;
+  background-color: rgb(162, 162, 162);
+}
+.color-palettes-generator-heading {
+  margin-bottom: 0;
+  margin-right: 2rem;
+  font-size: 30px;
+}
+
+.color-palettes-generator-input {
+  border-color: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+.color-palettes-generator-btn {
+  background: var(--clr-primary-5);
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-color: transparent;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  text-transform: capitalize;
+  color: var(--clr-white);
+  cursor: pointer;
+}
+.color-palettes-generator-input-error {
+  border: 2px solid var(--clr-red-dark);
+}
+.color-palettes-generator-colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(223.33px, 1fr));
+  grid-auto-rows: 110px;
+}
+.color-palettes-generator-color {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: none;
+}
+.color-palettes-generator-percent-value {
+  margin-bottom: 0;
+  color: var(--clr-grey-1);
+}
+.color-palettes-generator-color-value {
+  color: var(--clr-grey-1);
+  margin-bottom: 0;
+}
+.color-palettes-generator-color-light .color-palettes-generator-color-value {
+  color: var(--clr-white);
+}
+.color-palettes-generator-color-light .color-palettes-generator-percent-value {
+  color: var(--clr-white);
+}
+@media screen and (max-width: 576px) {
+  .color-palettes-generator-input,
+  .color-palettes-generator-btn {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .color-palettes-generator-container {
+    flex-direction: column;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  .color-palettes-generator-heading {
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+
+.thumb {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.thumb li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.thumb li:hover {
+  transform: translateY(-15px);
+}
+
+.thumb li img {
+  max-width: 60px;
+}
+
+.randomButton {
+  background: transparent;
+  border: none;
+}
+
+.randomFacts-div {
+  position: relative;
+  left: -25rem;
+  top: 10rem;
+}
+
+.digits-category-facts {
+  margin-top: 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.digits-delight-voice-selection-container {
+  transition: 0.5s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  user-select: none;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.digits-voice-select {
+  border: 2px solid black;
+  border-radius: 3px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  position: relative;
+  padding: 10px;
+  border: none;
+  border-right: 10px solid #fff;
+  outline: none;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.get-digits-facts {
+  padding: 1px 23px;
+  text-align: center;
+  width: 45rem;
+  font-family: 'Golos Text', sans-serif;
+}
+
+.tooltip {
+  position: relative;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgb(106, 101, 94);
+  font-size: 18px;
+  padding: 5px;
+  color: rgb(0, 0, 0);
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.tooltip::before {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  min-width: max-content;
+  background: rgb(27, 25, 25);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 15px;
+  content: attr(tooltip-text);
+  transition: all 0.3s ease;
+}
+
+.tooltip.math::before {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip.date::before {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip.year::before {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 487px) {
+  .tooltip.year::before {
+    left: 30%;
+    transform: translateX(-59%);
+    transform: translate3d(-40px, -61px, 10px);
+  }
+
+  .tooltip.math::before {
+    right: -40%;
+    top: 3%;
+    transform: translateY(-50%);
+  }
+}

@@ -1,17 +1,31 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "baseUrl": "src",
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "es6",
-    "lib": ["es2022", "ES6", "DOM"],
-    "target": "es6",
-    "allowJs": true,
+    "target": "ESNext",
+    "baseUrl": ".",
+    "lib": ["DOM", "DOM.Iterable", "ESNext", "WebWorker"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
     "moduleResolution": "node",
-    "suppressImplicitAnyIndexErrors": false,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "isolatedModules": true,
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "types": ["vite/client", "vite-plugin-svgr/client","vite-plugin-pwa/client"],
+    "paths": {
+        "@/*": ["./src/*"],
+        "common":  ["./src/common/*"],
+        "constants":["./src/constants/*"],
+		"ErrorBondary":  ["./src/ErrorBondary/*"],
+        "images":  ["./src/images/*"],
+        "meta":  ["./src/meta/*"],
+        "plays":  ["./plays/*"]
+      },	  
   },
   "include": ["src/**/*", "public/serviceWorker.js", "src/globals.d.ts"]
 }

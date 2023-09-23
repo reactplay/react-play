@@ -1,0 +1,11 @@
+{
+  "name": "Flip-card-effect",
+  "version": "1.0.0",
+  "description": "A play that flips the card on y axis when clicked on",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Deepak8717",
+  "license": "MIT"
+}

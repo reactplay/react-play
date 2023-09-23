@@ -1,0 +1,11 @@
+{
+  "name": "Quizeo",
+  "version": "1.0.0",
+  "description": "Quizeo is a react app to play quiz about your favourite movies and series.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "vasantisuthar",
+  "license": "MIT"
+}

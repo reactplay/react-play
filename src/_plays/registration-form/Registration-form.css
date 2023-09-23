@@ -1,0 +1,96 @@
+.registration-form-heading {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+}
+.registration-form.container {
+  max-width: unset;
+}
+.registration-form .container {
+  width: 90%;
+  margin: auto;
+  max-width: 700px;
+  text-align: center;
+}
+.registration-form .form-inside {
+  max-width: 400px;
+  margin: auto;
+  text-align: left;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 2px 2px 11px 1px #ccc, -2px -2px 16px 1px #ccc;
+  border-radius: 10px;
+}
+.registration-form .user-input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+}
+.registration-form .user-label {
+  text-transform: capitalize;
+  margin: 2px 0;
+}
+.registration-form .user-input .registration-input {
+  padding: 5px;
+}
+.registration-form .user-btn {
+  text-align: center;
+  margin: 25px auto 0;
+}
+.registration-form .user-btn .btn {
+  width: 100px;
+  background: blueviolet;
+  padding: 5px;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.registration-form .hidden {
+  display: none;
+}
+.registration-form .error {
+  color: red;
+}
+.registration-form .input-error {
+  border: 1px solid red;
+}
+.registration-form .entered-value-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.registration-form .entered-value-container .success {
+  margin: 50px auto 10px;
+  font-size: 1.5em;
+  color: rgb(43, 227, 43);
+}
+.registration-form .entered-value-container .entered-value-inner {
+  display: flex;
+  width: 80%;
+  max-width: 700px;
+  justify-content: center;
+}
+.entered-value-row {
+  width: 100%;
+  margin: 5px;
+  text-align: center;
+}
+
+.registration-form .entered-value-row .heading {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 1em;
+}
+@media screen and (max-width: 768px) {
+  .registration-form .entered-value-container .entered-value-inner {
+    flex-direction: column;
+    width: 90%;
+  }
+  .registration-form .entered-value-container .success {
+    margin: 10px auto;
+  }
+}

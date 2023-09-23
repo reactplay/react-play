@@ -1,0 +1,11 @@
+{
+  "name": "SimpleCalculator",
+  "version": "1.0.0",
+  "description": "A Calculator which can perform basic arithmetic operations.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "suryanshsoni120",
+  "license": "MIT"
+}

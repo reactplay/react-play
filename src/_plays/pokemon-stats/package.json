@@ -1,0 +1,11 @@
+{
+  "name": "PokemonStats",
+  "version": "1.0.0",
+  "description": "So , its kinda fun type app it will give details of a specific pokemon on search like its hp, moves and etc....",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "yung-coder",
+  "license": "MIT"
+}

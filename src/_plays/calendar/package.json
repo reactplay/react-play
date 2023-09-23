@@ -1,0 +1,11 @@
+{
+  "name": "Calendar",
+  "version": "1.0.0",
+  "description": "Simple calendar app to manage events",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "vincentBCP",
+  "license": "MIT"
+}

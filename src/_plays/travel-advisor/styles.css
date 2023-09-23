@@ -1,0 +1,33 @@
+/* enter stlyes here */
+
+.travel-advisor-main-Contanier {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 25px;
+  background-image: linear-gradient(to left bottom, #051937, #00293c, #023537, #293f34, #44483a);
+  height: 100%;
+}
+
+.travel-advisor-map-cont {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.travel-advisor-input-select-cont {
+  display: flex;
+  padding: 40px 40px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.travel-advisor-leaflet-cont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}

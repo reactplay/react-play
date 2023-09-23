@@ -21,7 +21,7 @@ function ActivityBanner({ currentActivity }) {
           <img
             alt="HRP Logo"
             className="w-10/12 md:w-64 lg:w-auto ml-auto mr-auto lg:ml-0 lg:mr-0 lg:inline-block"
-            src={require(`${logo}`)}
+            src={logo}
           />
         </h1>
         <div className="my-2 md:my-4 md:text-xl">
@@ -58,7 +58,7 @@ function ActivityBanner({ currentActivity }) {
         </div>
       </div>
       <div>
-        <img alt="" className="hackathon-banner-image" src={require(`${heroImage}`)} />
+        <img alt="" className="hackathon-banner-image" src={heroImage} />
       </div>
     </div>
   );

@@ -1,0 +1,11 @@
+{
+  "name": "TextAnalyzer",
+  "version": "1.0.0",
+  "description": "You will be able to anaylze your text and make it more effective with features like text extraction from image and a lots more.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "yung-coder",
+  "license": "MIT"
+}

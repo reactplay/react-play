@@ -1,0 +1,47 @@
+.digits-number-fact {
+  margin-top: 3rem;
+}
+
+.digits-button {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 2px solid #ff4742;
+  color: #ff4742;
+  background: 0 0;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+  font-weight: 800;
+  font-size: 16px;
+  height: 42px;
+}
+
+.digits-button:hover {
+  background-color: #ff4742;
+  color: #fff;
+}
+
+.digits-question {
+  width: 25rem;
+  color: rgb(36, 35, 42);
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 28px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  background: rgb(251, 251, 251);
+  transition: all 0.1s ease 0s;
+}
+
+.digits-question :focus {
+  border: 2px solid rgb(124, 138, 255);
+}
+
+@media (max-width: 420px) {
+  .digits-question {
+    width: 13rem;
+  }
+}

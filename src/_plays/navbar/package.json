@@ -1,0 +1,11 @@
+{
+  "name": "Navbar",
+  "version": "1.0.0",
+  "description": "It is the responsive navbar made with tailwind",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Shivam-Katare",
+  "license": "MIT"
+}

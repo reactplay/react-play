@@ -1,0 +1,11 @@
+{
+  "name": "InfiniteScrolling",
+  "version": "1.0.0",
+  "description": "An app, where user will scroll through the posts. on scrolling when user sees the last post, play will add more 20 posts to list.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "aks318",
+  "license": "MIT"
+}

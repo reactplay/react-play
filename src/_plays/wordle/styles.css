@@ -1,0 +1,160 @@
+/* enter stlyes here */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.wordle-game-body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #0b0b0b;
+  user-select: none;
+  --default: #121213;
+  --correct: #538d4e;
+  --misplaced: #b59f3b;
+  --wrong: #3a3a3c;
+  --gray: #818384;
+  --filled-border: 2px solid #565758;
+  --unfilled-border: 2px solid var(--wrong);
+}
+
+.font-wordle {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.error-slide > div {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+/* Background classes */
+.bg-default {
+  background-color: var(--default);
+}
+
+.bg-correct {
+  background-color: var(--correct);
+}
+
+.bg-misplaced {
+  background-color: var(--misplaced);
+}
+
+.bg-wrong {
+  background-color: var(--wrong);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.border-correct {
+  border-color: var(--correct);
+}
+
+.end-screen {
+  animation: end-screen-appear 600ms ease-in-out 0s 1 normal forwards;
+}
+
+.filled {
+  animation: bounce 115ms ease-in-out 0s 1 normal forwards;
+  border: var(--filled-border);
+}
+
+.filled.border-correct {
+  border: 2px solid var(--correct);
+}
+
+.wordle-tile:not(.filled) {
+  animation: drop 115ms ease-in-out 0s 1 normal forwards;
+  border: var(--unfilled-border);
+}
+
+.roll-tile {
+  animation: roll 600ms linear calc(var(--index) * 0.25) 1 normal forwards;
+}
+
+.jump {
+  animation: jump-anim 200ms ease-in-out calc((var(--index) * 0.15) + 0.8s) 1 normal forwards;
+}
+
+.delete-after {
+  animation: fade-out 200ms ease-in-out 2s 1 normal forwards;
+}
+
+/* Animation keyframes */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes drop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes jump-anim {
+  0%,
+  100% {
+    transform: translateY(0rem);
+    border: 2px solid var(--color);
+  }
+  50% {
+    transform: translateY(-2rem);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  50.01% {
+    transform: rotateX(270deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+  0%,
+  50% {
+    background-color: var(--default);
+    border: var(--filled-border);
+  }
+  50.01%,
+  100% {
+    background-color: var(--color);
+    border: 2px solid var(--color);
+  }
+}
+
+@keyframes end-screen-appear {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "MultiselectComponent",
+  "version": "1.0.0",
+  "description": "A Select component that allows the users to choose multiple values.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Abrar0204",
+  "license": "MIT"
+}

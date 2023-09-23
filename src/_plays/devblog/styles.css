@@ -1,0 +1,29 @@
+/* enter stlyes here */
+.devBlog-article p {
+  @apply mb-3 text-xl;
+  line-height: 1.5 !important;
+}
+.devBlog-article h2 {
+  @apply text-3xl font-bold mb-5 mt-16;
+}
+
+.devBlog-loading {
+  display: flex;
+  justify-content: center;
+}
+
+.devBlog-loading::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border: 5px solid #dddddd;
+  border-top-color: #161616;
+  border-radius: 50%;
+  animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(1turn);
+  }
+}

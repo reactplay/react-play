@@ -1,0 +1,108 @@
+.game-overlay {
+  position: absolute;
+  display: none;
+  left: 40rem;
+  width: 395px;
+  height: 405px;
+  z-index: 100;
+  background: rgb(211 229 237 / 50%);
+  text-align: center;
+  top: 10rem;
+  left: 35rem;
+}
+
+.game-overlay.active {
+  display: block;
+}
+
+.game-overlay--won {
+  background: rgba(237, 194, 46, 0.5);
+  color: #f9f6f2;
+  z-index: 1;
+}
+
+.game-overlay__message {
+  margin-top: 215px;
+  font-size: 45px;
+  font-family: fantasy;
+  word-spacing: 26px;
+}
+
+.game-overlay__keep-going {
+  margin-right: 9px;
+}
+
+.game-overlay__keep-going,
+.game-overlay__try-again {
+  background: #ffffff;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: black;
+  height: 40px;
+  font-size: 21px;
+  line-height: 42px;
+  text-align: center;
+  transform: translateX(-1px);
+  transform: translateY(-7px);
+  transform: translate(-6px, -187px);
+  margin-top: 13px;
+}
+
+.game-overlay__keep-going:focus,
+.game-overlay__keep-going:active,
+.game-overlay__keep-going,
+.game-overlay__try-again:focus,
+.game-overlay__try-again:active,
+.game-overlay__try-again {
+  border: none;
+  border-style: none;
+  outline: none;
+}
+
+@media (max-width: 1352px) {
+  .game-overlay {
+    left: 28rem;
+  }
+}
+
+@media (max-width: 988px) {
+  .game-overlay {
+    left: 11rem;
+    width: 376px;
+  }
+}
+
+@media (max-width: 805px) {
+  .game-overlay {
+    left: 6rem;
+  }
+}
+
+@media (max-width: 593px) {
+  .game-overlay {
+    left: 3rem;
+  }
+}
+
+@media (max-width: 424px) {
+  .game-overlay {
+    left: 3.4rem;
+    height: 236px;
+    width: 267px;
+    top: 178px;
+  }
+
+  .game-overlay__message {
+    margin-top: 127px;
+  }
+}
+
+@media (max-width: 354px) {
+  .game-overlay {
+    left: 2.4rem;
+    height: 263px;
+    width: 267px;
+    top: 15rem;
+  }
+}

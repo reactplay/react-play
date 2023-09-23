@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ReactComponent as Image404 } from 'images/img-404.svg';
+import Image404 from 'images/img-404.svg';
 import './404.css';
 import Loader from 'common/spinner/spinner';
 import { useNavigate, NavLink } from 'react-router-dom';

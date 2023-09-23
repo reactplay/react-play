@@ -1,0 +1,11 @@
+{
+  "name": "MultiplayerTicTacToe",
+  "version": "1.0.0",
+  "description": "A two-player tic tac toe game built using React.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "joshi-kaushal",
+  "license": "MIT"
+}

@@ -172,9 +172,7 @@ const CreatePlay = () => {
   }
 
   if (!isAuthenticated && !isEditPlay) {
-    window.location = NHOST.AUTH_URL(
-      `http://localhost:${process.env.RAECT_APP_DEV_PORT ?? '3000'}/plays/create`
-    );
+    window.location = NHOST.AUTH_URL(`http://localhost:${window.location.port}/plays/create`);
 
     return null;
   } else if (!isAuthenticated && isEditPlay) {

@@ -1,0 +1,11 @@
+{
+  "name": "GithubProfileSearch",
+  "version": "1.0.0",
+  "description": "A play in which when you type someone's github username it displays there public github profile.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "nirban256",
+  "license": "MIT"
+}

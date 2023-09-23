@@ -1,0 +1,11 @@
+{
+  "name": "Custommemesgenerator",
+  "version": "1.0.0",
+  "description": "It is a react app which generates meme templates and lets you write over it to make a custom meme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "amanaakash",
+  "license": "MIT"
+}

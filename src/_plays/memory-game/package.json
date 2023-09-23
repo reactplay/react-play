@@ -1,0 +1,11 @@
+{
+  "name": "MemoryGame",
+  "version": "1.0.0",
+  "description": "simple memory game or memory testing game build with ReactJS",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Angryman18",
+  "license": "MIT"
+}

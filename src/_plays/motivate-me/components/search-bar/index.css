@@ -1,0 +1,104 @@
+/* search bar */
+.motivate-me-search_bar {
+  /* background-color:yellow; */
+  /* height: 20px; */
+  position: relative;
+  width: 100%;
+}
+.motivate-me-Dropdown_items {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #51526f;
+  line-height: 1.6;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  background: #fff;
+  top: 100%;
+  visibility: hidden;
+  box-shadow: 0 16px 24px -4px rgba(0, 32, 128, 0.2);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  border: 1px solid #c8cbf2;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: transform 0.2s, opacity 0.2s, visibility 0.2s;
+  opacity: 0;
+  transform: rotateX(-20deg) scale(0.97);
+  will-change: transform;
+  transform-origin: top left;
+}
+
+.motivate-me-Dropdown_items {
+  tab-size: 4;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #51526f;
+  line-height: 1.6;
+  visibility: hidden;
+  list-style-type: none;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.motivate-me-Dropdown_button {
+  padding: 12px 15px;
+  border-radius: 0 0 4px 4px;
+  border-top: none;
+  font-size: 15px;
+  width: 100%;
+  transition: box-shadow 0.12s;
+}
+.motivate-me-btn {
+  background: #fff;
+  border: none;
+  color: #8385aa;
+  border: 1px solid #c8cbf2;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 8px 16px;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+  outline: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.motivate-me-Dropdown_label {
+  display: block;
+  font-weight: 700;
+  background: linear-gradient(170deg, #92bbff, #4485f1);
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+  font-size: 15px;
+}
+.motivate-me-Dropdown:hover .motivate-me-Dropdown_items {
+  visibility: visible;
+  opacity: 1;
+  transform: rotateX(0) scale(1);
+}
+.motivate-me-Dropdown {
+  position: relative;
+  perspective: 600px;
+  z-index: 2;
+  min-height: 90px;
+  width: 20%;
+}
+.motivate-me-Dropdown_items li {
+  padding: 12px 0;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  color: inherit;
+  transition: background 0.1s, color 0.1s;
+}
+.motivate-me-Dropdown_items li:hover {
+  background: linear-gradient(130deg, #fdc5b8, #fdc5b8);
+  color: #fff;
+}
+
+.motivate-me-selected_author {
+  background: linear-gradient(130deg, #45ccdf, #45ccdf);
+  color: #fff !important;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ImageCollector",
+  "version": "1.0.0",
+  "description": "Users can collect images in a grid by submitting image URLs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "AhnafAhamed",
+  "license": "MIT"
+}

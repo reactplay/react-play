@@ -1,0 +1,11 @@
+{
+  "name": "ColorPalettesGenerator",
+  "version": "1.0.0",
+  "description": "Color palette generator is a web application built using React.js that allows users to generate a customized color palette for their projects. With this tool, users can easily create a color scheme that suits their needs and preferences.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "AbhiPatel10",
+  "license": "MIT"
+}

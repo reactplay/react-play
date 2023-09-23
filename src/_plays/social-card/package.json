@@ -1,0 +1,11 @@
+{
+  "name": "SocialCard",
+  "version": "1.0.0",
+  "description": "The Social Card helps you telling who you are using photo, name, and other social footprints.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "atapas",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Notehack",
+  "version": "1.0.0",
+  "description": "NoteHack is a fully functional note taking react app where a user can add, update & delete notes 🚀",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Bobby-coder",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ImageCompressor",
+  "version": "1.0.0",
+  "description": "App, where user will upload large image size and it will compress it down to small size.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "aks318",
+  "license": "MIT"
+}

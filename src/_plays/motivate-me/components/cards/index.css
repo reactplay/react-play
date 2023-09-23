@@ -1,0 +1,41 @@
+.card-container-main {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  border-radius: 15px;
+  box-shadow: 0 0.4rem 0.8rem -0.1rem rgb(0 32 128 / 10%), 0 0 0 1px #f0f2f7;
+  padding: 0 48px;
+  overflow: hidden;
+  padding-bottom: 0;
+  padding-top: 15px;
+}
+.motivate-me-question__tag {
+  position: absolute;
+  top: 0;
+  right: -65px;
+  transform: rotate(45deg);
+  color: #fff;
+  width: 125px;
+  height: 40px;
+}
+.motivate-me-even_div {
+  background: linear-gradient(130deg, #fdc5b8, #fdc5b8);
+}
+.motivate-me-odd_div {
+  background: linear-gradient(130deg, #45ccdf, #45ccdf);
+}
+.motivate-me-quote {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
+  text-align: center;
+}
+.motivate-me-author-name {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  color: #45ccdf;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-style: italic;
+}

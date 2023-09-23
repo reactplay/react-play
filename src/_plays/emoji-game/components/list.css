@@ -1,0 +1,20 @@
+.emoji-game-play-area {
+  background-color: rgb(228, 237, 133);
+  padding: 50px;
+
+  border-radius: 15px;
+  font-family: 'Julee', cursive;
+}
+
+.emoji-game-play-button {
+  width: 100%;
+  margin: 20px 0;
+  font-size: 200%;
+  text-align: center;
+  border-radius: 15px;
+  background-color: aliceblue;
+}
+
+.emoji-game-play-area p {
+  font-size: 30px;
+}

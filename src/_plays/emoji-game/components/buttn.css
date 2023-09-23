@@ -1,0 +1,12 @@
+.emoji-game-row {
+  width: 100%;
+  margin: 20px 0;
+  font-size: 256%;
+  text-align: center;
+  border-radius: 50px;
+  background-color: aliceblue;
+  letter-spacing: 0.5em;
+}
+.emoji-game-row:hover {
+  background-color: rgb(242, 247, 189);
+}

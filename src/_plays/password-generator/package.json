@@ -1,0 +1,11 @@
+{
+  "name": "PasswordGenerator",
+  "version": "1.0.0",
+  "description": "Users can generate password and customize their requirements in choosing characters and number.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Angryman18",
+  "license": "MIT"
+}

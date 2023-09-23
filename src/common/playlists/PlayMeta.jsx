@@ -1,15 +1,21 @@
-import { useEffect, useState, Suspense, useCallback } from 'react';
+import { memo, useEffect, useState, Suspense, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import * as plays from 'plays';
 import { useParams } from 'react-router-dom';
 import { submit } from 'common/services/request';
 import Loader from 'common/spinner/spinner';
-import { toSanitized, toTitleCaseTrimmed } from 'common/services/string';
+import { toSanitized } from 'common/services/string';
+import { toTitleCaseTrimmed } from 'common/services/string';
 import { FetchPlaysBySlugAndUser } from 'common/services/request/query/fetch-plays';
 import { PageNotFound } from 'common';
 import thumbPlay from 'images/thumb-play.png';
-import { getProdUrl } from 'common/utils/commonUtils';
-import { loadCoverImage } from 'common/utils/coverImageUtil';
+import { getPlayLink, getProdUrl } from 'common/utils/commonUtils';
+import { lazy } from 'react';
+import playsJson from 'plays/index.json';
+import useLocalStorage from 'common/hooks/useLocalStorage';
+import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from 'react-icons/md';
+
+import './play_meta.css';
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -18,7 +24,53 @@ function PlayMeta() {
   let { playname, username } = useParams(); // return the parameter of url
   const [metaImage, setMetaImage] = useState();
   const [ogTagImage, setOgTagImage] = useState();
+  const [navigation, setNavigation] = useLocalStorage('plays_navigation');
+  const [previousPlay, setPreviousPlay] = useState(null);
+  const [nextPlay, setNextPlay] = useState(null);
+
   // const [localImage, setLocalImage] = useState(thumbPlay);
+
+  const all_plays = new Map(Object.entries(playsJson));
+
+  const handlePlayNavigation = (position, type) => {
+    const current = navigation[position];
+    type === 'prev' ? setPreviousPlay(current) : setNextPlay(current);
+  };
+
+  const renderPlayComponent = () => {
+    // component can have a totally differnt name compared to the component
+    const playName = play?.component
+      ? play?.component
+      : toSanitized(play?.title_name ?? play?.name);
+
+    if (all_plays.has(`${play.slug}/${playName}`)) {
+      const ext = play.language === 'js' ? 'jsx' : 'tsx';
+
+      const element = `${all_plays.get('#playsUpwardPath')}plays/${play.slug}/${playName}`;
+
+      const Comp = lazy(() =>
+        import(
+          /* @vite-ignore */ `${all_plays.get('#playsUpwardPath')}plays/${
+            play.slug
+          }/${playName}.${ext}`
+        )
+      );
+
+      return (
+        <Suspense
+          fallback={
+            <div className="play-details">
+              <Loader />
+            </div>
+          }
+        >
+          <Comp {...play} />
+        </Suspense>
+      );
+    }
+
+    return <PageNotFound />;
+  };
 
   /**
    * Fetch local playImage
@@ -35,23 +87,22 @@ function PlayMeta() {
 
       return;
     }
-    // if it is not passed as a meta data
-    // check in the play folder for a cover image
-
     try {
-      const coverImage = await loadCoverImage(playObj.slug);
-      metaImg = getProdUrl(coverImage);
-      ogTagImg = getProdUrl(coverImage);
+      /**
+       * Try to Fetch the local cover image
+       */
+      const response = await import(/* @vite-ignore */ `../../../plays/${playObj.slug}/cover.png`);
+
+      metaImg = getProdUrl(response.default);
+      ogTagImg = getProdUrl(response.default);
       setMetaImage(metaImg);
       setOgTagImage(ogTagImg);
       setLoading(false);
-    } catch (error) {
-      console.error(
-        `Cover image not found for the play ${playObj.name}. Setting the default cover image...`
-      );
+    } catch (_error) {
       /**
        * On error set the default image
        */
+
       metaImg = thumbPlay;
       ogTagImg = thumbPlay;
       setMetaImage(metaImg);
@@ -77,18 +128,26 @@ function PlayMeta() {
       });
   }, [playname, username]);
 
+  useEffect(() => {
+    if (navigation?.length && Object.keys(play).length !== 0) {
+      const playLink = getPlayLink(play);
+      const currentPos = navigation.indexOf(playLink);
+      if (currentPos !== -1) {
+        let previous = currentPos === 0 ? navigation.length - 1 : currentPos - 1;
+        let next = currentPos === navigation.length - 1 ? 0 : currentPos + 1;
+        handlePlayNavigation(previous, 'prev');
+        handlePlayNavigation(next, 'next');
+      }
+    }
+  }, [navigation, play]);
+
   if (loading) {
     return <Loader />;
   }
-  if (isError || !play) {
+
+  if (!loading && (isError || !play)) {
     return <PageNotFound />;
   }
-
-  const renderPlayComponent = () => {
-    const Comp = plays[play.component || toSanitized(play.title_name)];
-
-    return <Comp {...play} />;
-  };
 
   return (
     <>
@@ -103,9 +162,28 @@ function PlayMeta() {
         <meta content={play.description} data-react-helmet="true" name="twitter:description" />
         <meta content={ogTagImage} data-react-helmet="true" name="twitter:image" />
       </Helmet>
-      <Suspense fallback={<Loader />}>{renderPlayComponent()}</Suspense>
+      <Suspense fallback={<Loader />}>
+        <>
+          {renderPlayComponent()}
+          {(previousPlay || nextPlay) && (
+            <div className="play-footer meta-link">
+              {previousPlay && (
+                <Link to={previousPlay}>
+                  <MdOutlineNavigateBefore />
+                </Link>
+              )}
+
+              {nextPlay && (
+                <Link to={nextPlay}>
+                  <MdOutlineNavigateNext />
+                </Link>
+              )}
+            </div>
+          )}
+        </>
+      </Suspense>
     </>
   );
 }
 
-export default PlayMeta;
+export default memo(PlayMeta);

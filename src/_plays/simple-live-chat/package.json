@@ -1,0 +1,11 @@
+{
+  "name": "SimpleLiveChat",
+  "version": "1.0.0",
+  "description": "Its a very simple live chat which is build using reactjs and firebase firestore",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Angryman18",
+  "license": "MIT"
+}

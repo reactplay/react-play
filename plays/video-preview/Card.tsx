@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatDurationCount, formatViewCount } from '../../common/utils/formatCount';
+import { formatDurationCount, formatViewCount } from 'common/utils/formatCount';
 import { GoVerified } from 'react-icons/go';
 import { VERIFIED_CHANNEL } from './utils/constants';
 
