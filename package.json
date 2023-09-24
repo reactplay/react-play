@@ -21,7 +21,7 @@
     "lint:fix:src": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
     "lint:plays": "eslint src/**/*.{js,jsx,ts,tsx}",
     "lint:fix:plays": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
-    "lint-test": "pnpm test && pnpm cypress:run && pnpm lint",
+    "all-test": "pnpm test && pnpm cypress:run",
     "format": "pnpm format:src && pnpm format:plays",
     "format:src": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc",
     "format:plays": "prettier --write \"./plays/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc",
@@ -72,9 +72,11 @@
     "workbox-window": "^7.0.0"
   },
   "lint-staged": {
-    "*.+(js|jsx|ts|tsx)": [
-      "eslint --fix",
-      "prettier --write"
+    "*.{js, jsx,ts,tsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,js,ts,jsx,tsx,html}": [
+      "prettier --write --ignore-unknown"
     ]
   },
   "reactSnap": {
@@ -143,6 +145,7 @@
     "vite-plugin-environment": "^1.1.3",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-svgr": "^4.0.0",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "^0.34.5"
   }
 }
