@@ -1,4 +1,5 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 import SavingOptions from '../index';
 
 describe('Saving Options: Basic rendering and functionality', () => {
@@ -21,7 +22,7 @@ describe('Saving Options: Basic rendering and functionality', () => {
   });
 
   test('should be able to change currency', () => {
-    const changeCurrency = jest.fn();
+    const changeCurrency = vi.fn();
 
     render(<SavingOptions currency="INR" setCurrency={changeCurrency} />);
 

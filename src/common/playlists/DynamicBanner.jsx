@@ -5,7 +5,7 @@ import { MdArrowRightAlt } from 'react-icons/md';
 
 import useCoverImage from 'common/hooks/useCoverImage';
 const DynamicBanner = ({ randomPlay }) => {
-  const [coverImage, loadingCoverImage] = useCoverImage(randomPlay);
+  const [coverImage, loadingCoverImage, isProvider] = useCoverImage(randomPlay);
 
   return (
     <Fragment>

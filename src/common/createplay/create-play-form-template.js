@@ -1,10 +1,14 @@
+const pattern = '^(((?!_)[A-z0-9À-ž ])+){2,}$';
+
 export const FIELD_TEMPLATE = [
   {
     datafield: 'name',
     type: 'input',
     display: 'Name',
     placeholder: 'Play Name',
-    required: true
+    pattern: pattern,
+    required: true,
+    inputProps: { pattern: pattern }
   },
   {
     datafield: 'description',

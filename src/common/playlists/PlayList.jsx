@@ -44,11 +44,6 @@ const PlayList = () => {
   const [navigation, setNavigation] = useLocalStorage('plays_navigation', []);
   let location = useLocation();
 
-  function handleNavUpdate(play) {
-    const playPath = getPlayPath(all_plays, play);
-    setNav((prev) => [...prev, playPath]);
-  }
-
   useEffect(() => {
     const getPlays = async () => {
       setLoading(true);
@@ -68,7 +63,8 @@ const PlayList = () => {
               ? res_play?.component
               : toSanitized(res_play?.title_name ?? res_play?.name);
             if (all_plays.has(`${res_play.slug}/${playName}`)) {
-              handleNavUpdate(res_play);
+              res_play.coverExt = all_plays.get(`${res_play.slug}/${playName}`)[1] || null;
+              res_play.playName = playName;
               arr.push(res_play);
               nav.push(getPlayPath(all_plays, res_play));
             }

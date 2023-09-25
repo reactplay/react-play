@@ -100,7 +100,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section className="testimonials">
+      <section className="testimonials" data-testid="testimonials-section">
         <h2 className="title-primary">
           What Our{' '}
           <strong>

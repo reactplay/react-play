@@ -6,31 +6,44 @@ const all_plays = new Map(Object.entries(playsJson));
 
 const useCoverImage = (play) => {
   const [coverImage, setCoverImage] = useState(null);
-  const [loadingCover, setLoadingCover] = useState(true);
+  const [loading, setLoading] = useState(null);
+  let isProvider = false;
 
   const loadCover = useCallback(async () => {
-    setLoadingCover(true);
+    setLoading(true);
+    isProvider = false;
     // Todo
     const playName = play?.component
       ? play?.component
       : toSanitized(play?.title_name ?? play?.name);
-    let coverInfo = all_plays.get(`${play.slug}/${playName}`)[1];
-    if (!coverInfo) {
-      coverInfo = 'images/thumb-play.png';
-    }
-    if (coverInfo === 'images/thumb-play.png') {
-      setCoverImage(coverInfo);
+
+    // we are using relative import if we don't have an extension to look into
+    if (play.coverExt) {
+      setCoverImage(`plays/${play.slug}/cover.*${play.coverExt}`);
     } else {
-      setCoverImage(await loadCoverImage(play.slug, coverInfo));
+      // look for a cover image in the folder if we already have one
+      let upPath = all_plays.get('#playsUpwardPath');
+      const image = await loadCoverImage(upPath, `${play.slug}`);
+      if (image !== null) {
+        setCoverImage(image);
+        setLoading(false);
+      } else if (play.cover) {
+        isProvider = true;
+        setCoverImage(play.cover);
+        setLoading(false);
+      } else {
+        setCoverImage('images/thumb-play.png');
+        setLoading(false);
+      }
     }
-    setTimeout(() => setLoadingCover(false), 1);
+    setTimeout(() => setLoading(false));
   }, [play.cover]);
 
   useEffect(() => {
     loadCover(play);
   }, [play]);
 
-  return [coverImage, loadingCover];
+  return [coverImage, loading, isProvider];
 };
 
 export default useCoverImage;

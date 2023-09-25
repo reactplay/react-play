@@ -16,16 +16,16 @@
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "jsx": "react-jsx",
-    "types": ["vite/client", "vite-plugin-svgr/client","vite-plugin-pwa/client"],
+    "types": ["vitest/globals", "vite/client", "vite-plugin-svgr/client", "vite-plugin-pwa/client"],
     "paths": {
-        "@/*": ["./src/*"],
-        "common":  ["./src/common/*"],
-        "constants":["./src/constants/*"],
-		"ErrorBondary":  ["./src/ErrorBondary/*"],
-        "images":  ["./src/images/*"],
-        "meta":  ["./src/meta/*"],
-        "plays":  ["./plays/*"]
-      },	  
+      "@/*": ["./src/*"],
+      "common": ["./src/common/*"],
+      "constants": ["./src/constants/*"],
+      "ErrorBondary": ["./src/ErrorBondary/*"],
+      "images": ["./src/images/*"],
+      "meta": ["./src/meta/*"],
+      "plays": ["./plays/*"]
+    }
   },
   "include": ["src/**/*", "public/serviceWorker.js", "src/globals.d.ts"]
 }

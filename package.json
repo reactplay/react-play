@@ -4,27 +4,31 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "init-plays": "npx run --yes create-react-play -p",
+    "init-plays": "npx --yes create-react-play -p",
     "start:lint": "pnpm lint && vite",
-    "start": "vite",
+    "start": "npx kill-port 3000 && pnpm init-plays && vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "snap": "react-snap",
     "dev": "vite dev",
-    "test": "vitest",
+    "test": "vitest --dom",
     "test:coverage": "vitest run --coverage --watch=false",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "lint": "pnpm lint:fix:src && pnpm lint:fix:plays",
-    "lint:fix": "pnpm lint . --fix",
-    "lint:src": "eslint src/**/*.{js,jsx,ts,tsx}",
-    "lint:fix:src": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
-    "lint:plays": "eslint src/**/*.{js,jsx,ts,tsx}",
-    "lint:fix:plays": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
+    "fl": "pnpm format && pnpm lint:fix",
+    "lint": "pnpm lint:fix",
+    "lint:fix": "pnpm lint:fix:src && pnpm lint:fix:plays",
+    "lint:plays": "eslint plays/**/*.{js,json,jsx,ts,tsx}",
+    "lint:src": "eslint src/**/*.{js,json,jsx,ts,tsx}",
+    "lint:scm": "pnpm lint:scm:plays && pnpm lint:scm:src",
+    "lint:scm:plays": "eslint plays/**/*.{scss,css,md}",
+    "lint:scm:src": "eslint src/**/*.{scss,css,md}",
+    "lint:fix:src": "eslint --fix src/**/*.{js,json,jsx,ts,tsx}",
+    "lint:fix:plays": "eslint --fix src/**/*.{js,json,jsx,ts,tsx}",
     "all-test": "pnpm test && pnpm cypress:run",
     "format": "pnpm format:src && pnpm format:plays",
-    "format:src": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc",
-    "format:plays": "prettier --write \"./plays/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc",
+    "format:src": "prettier --write \"./src/**/*.{js,json,jsx,ts,tsx,scss,css,md}\" --config ./.prettierrc",
+    "format:plays": "prettier --write \"./plays/**/*.{js,json,jsx,ts,tsx,scss,css,md}\" --config ./.prettierrc",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
@@ -62,20 +66,13 @@
     "redux-persist": "^6.0.0",
     "swiper": "^10.3.0",
     "vite-plugin-pwa": "^0.16.5",
-    "web-vitals": "^3.4.0",
-    "workbox-cacheable-response": "^7.0.0",
-    "workbox-core": "^7.0.0",
-    "workbox-expiration": "^7.0.0",
-    "workbox-precaching": "^7.0.0",
-    "workbox-routing": "^7.0.0",
-    "workbox-strategies": "^7.0.0",
-    "workbox-window": "^7.0.0"
+    "web-vitals": "^3.4.0"
   },
   "lint-staged": {
-    "*.{js, jsx,ts,tsx}": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --quiet --fix"
     ],
-    "*.{json,js,ts,jsx,tsx,html}": [
+    "*.{js,json,jsx,ts,tsx,scss,css,md,html}": [
       "prettier --write --ignore-unknown"
     ]
   },
@@ -130,6 +127,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unicorn": "^48.0.1",
+    "happy-dom": "^12.1.6",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "postcss": "^8.4.29",
@@ -146,6 +144,13 @@
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-svgr": "^4.0.0",
     "vite-tsconfig-paths": "^4.2.1",
-    "vitest": "^0.34.5"
+    "vitest": "^0.34.5",
+    "workbox-cacheable-response": "^7.0.0",
+    "workbox-core": "^7.0.0",
+    "workbox-expiration": "^7.0.0",
+    "workbox-precaching": "^7.0.0",
+    "workbox-routing": "^7.0.0",
+    "workbox-strategies": "^7.0.0",
+    "workbox-window": "^7.0.0"
   }
 }

@@ -1,8 +1,11 @@
+// / <reference types="vitest" />
+
 import { defineConfig, loadEnv } from 'vite';
 import { splitVendorChunkPlugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'node:path';
 import svgr from '@svgr/rollup';
+// import svgr from 'vite-plugin-svgr'
 import url from '@rollup/plugin-url';
 import EnvironmentPlugin from 'vite-plugin-environment';
 import { createHtmlPlugin } from 'vite-plugin-html';
@@ -93,14 +96,24 @@ export default defineConfig(({ command, mode }) => {
 
     test: {
       globals: true,
-      environment: 'jsdom',
-      setupFiles: './src/setupTests.ts',
+      environment: 'happy-dom',
+      setupFiles: './src/setupTests.js',
       css: true,
       reporters: ['verbose'],
       coverage: {
         reporter: ['text', 'json', 'html'],
-        include: ['src/**/*'],
-        exclude: []
+        include: [
+          `./src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}`,
+          `./plays/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}`
+        ],
+        exclude: [
+          '**/node_modules/**',
+          '**/build/**',
+          '**/dist/**',
+          '**/cypress/**',
+          '**/.{idea,git,cache,output,temp}/**',
+          '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*'
+        ]
       }
     },
     build: {

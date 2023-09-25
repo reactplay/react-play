@@ -13,6 +13,10 @@ node_modules
 # production
 /build
 
+# development
+/dev-dist
+
+
 # misc
 .env
 .DS_Store
@@ -35,6 +39,9 @@ yarn.lock
 
 # play index
 src/plays/index.js
+
+# play test
+cypress/e2e/play.cy.ts
 
 # vscode setting
 .vscode

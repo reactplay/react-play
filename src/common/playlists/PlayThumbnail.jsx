@@ -26,11 +26,10 @@ const Author = ({ user }) => {
   );
 };
 
-const PlayThumbnail = ({ play, position }) => {
-  const [coverImage] = useCoverImage(play);
+const PlayThumbnail = ({ play }) => {
+  const [coverImage, loading, isProvider] = useCoverImage(play);
   const isAuthenticated = useAuthenticated();
   const userId = useUserId();
-
   const likeObject = () => {
     const { play_like } = play;
     const number = countByProp(play_like, 'liked', true);
@@ -43,34 +42,54 @@ const PlayThumbnail = ({ play, position }) => {
     return { liked: false, number };
   };
 
+  const DisplayThumb = () => {
+    if (isProvider)
+      return <img alt="" className="play-thumb-img" loading="lazy" src={coverImage} />;
+    if (!isProvider) {
+      return (
+        <ImageWithFallback
+          isThumbnail
+          alt={`${play.playName}`}
+          classname="play-thumb-img shimmer media"
+          src={coverImage}
+        />
+      );
+    }
+  };
+
+  const ThumbHeader = () => {
+    return (
+      <div className="play-header">
+        <div className="play-title">{play.name}</div>
+        {play.user && <Author user={play.user} />}
+        <div className="play-actions mt-4">
+          <div className="flex flex-row justify-between items-end">
+            <Like likeObj={likeObject()} onLikeClick={null} />
+            <div className={`language language-${play.language || 'js'}`} />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const ThumbStatus = () => {
+    return (
+      <div className="play-status">
+        <BsPlayCircleFill size="48px" />
+        <div className="default">Play now</div>
+        <div className="current">Playing..</div>
+      </div>
+    );
+  };
+
   return (
     <li>
       <Link to={`/plays/${encodeURI(play.github.toLowerCase())}/${play.slug}`}>
-        <div className="play-thumb loader-shimmer">
-          {coverImage !== null && (
-            <ImageWithFallback
-              isThumbnail
-              alt=""
-              classname="play-thumb-img shimmer media"
-              src={coverImage}
-            />
-          )}
+        <div className={loading ? 'play-thumb loader-shimmer shimmer' : 'play-thumb'}>
+          {!loading && coverImage && <DisplayThumb />}
         </div>
-        <div className="play-header">
-          <div className="play-title">{play.name}</div>
-          {play.user && <Author user={play.user} />}
-          <div className="play-actions mt-4">
-            <div className="flex flex-row justify-between items-end">
-              <Like likeObj={likeObject()} onLikeClick={null} />
-              <div className={`language language-${play.language || 'js'}`} />
-            </div>
-          </div>
-        </div>
-        <div className="play-status">
-          <BsPlayCircleFill size="48px" />
-          <div className="default">Play now</div>
-          <div className="current">Playing..</div>
-        </div>
+        <ThumbHeader />
+        <ThumbStatus />
       </Link>
     </li>
   );

@@ -14,6 +14,13 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
     setFormData((pre) => ({ ...pre, [key]: value }));
   };
 
+  const checkIsValid = (pattern, value) => {
+    const patternRegex = new RegExp(pattern);
+
+    // Here you probably what to check this to some regex validation
+    return patternRegex.test(value);
+  };
+
   useEffect(() => {
     setFormData({ ...formDataReference.current });
   }, []);
@@ -25,8 +32,11 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
           <TextField
             className="w-full"
             disabled={checkDisabledInputs(field.datafield)}
+            error={field.pattern ? !checkIsValid(field.pattern, formData[field.datafield]) : false}
             id={field.id}
-            label={field.plaeholder}
+            label={field.placeholder}
+            name={field.id}
+            // if it's valid, we need to use the inverse of the respose as true means you will display an error
             size="small"
             value={formData[field.datafield]}
             {...field}

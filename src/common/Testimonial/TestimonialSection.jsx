@@ -28,7 +28,7 @@ function TestimonialSection() {
 
   return (
     <>
-      <div className="mx-5 lg:mx-20 h-72 mt-16 sm:mt-20">
+      <div className="mx-5 lg:mx-20 h-72 mt-16 sm:mt-20" data-testid="testimonials-swiper">
         <Swiper
           rewind
           autoplay={{

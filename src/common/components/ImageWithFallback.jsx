@@ -1,19 +1,14 @@
-const ImageWithFallback = ({
-  isThumbnail = true,
-  src = '',
-  relativePath = '../../',
-  alt = '',
-  classname = ''
-}) => {
+const ImageWithFallback = ({ isThumbnail = true, src = '', alt = '', classname = '' }) => {
   let srcsetWithoutExt = '';
-  if (!src || src === 'images/thumb-play.png') {
-    srcsetWithoutExt = '/images/thumb-play';
-    relativePath = '';
-  } else {
-    srcsetWithoutExt = relativePath + src.split('.').slice(0, -1).join('.');
-  }
+  srcsetWithoutExt = src.split('.').slice(0, -1).join('.');
 
-  const srcset = isThumbnail ? srcsetWithoutExt + '_small' : srcsetWithoutExt;
+  let srcset = srcsetWithoutExt;
+  if (isThumbnail) {
+    srcset = srcsetWithoutExt.replace('.', '_small.');
+
+    // little hack in case of
+    srcset = srcset.replace('@fs/', '');
+  }
 
   // const WebpImg = loadable(() => import(/* @vite-ignore */ c))
   // const PngImg = loadable(() => import(/* @vite-ignore */ '../../../' + srcset + '.png'))
