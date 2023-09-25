@@ -73,17 +73,6 @@ body:
       render: shell
 
   - type: checkboxes
-    id: record
-    attributes:
-      label: Record
-      options:
-        - label: I have checked the existing [issues](https://github.com/reactplay/react-play/issues)
-          required: true
-        - label: I have read the [Contributing Guidelines](https://github.com/reactplay/react-play/blob/main/CONTRIBUTING.md)
-          required: true
-        - label: I want to work on this issue
-
-  - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
