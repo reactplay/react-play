@@ -1,0 +1,11 @@
+{
+  "name": "Test-cy-tictactooe3",
+  "version": "1.0.0",
+  "description": "Just testing creation of cypress test",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Parlier Thierry",
+  "license": "MIT"
+}
