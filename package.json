@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "npx -y only-allow pnpm",
     "init-plays": "npx --yes create-react-play -p",
     "start:lint": "pnpm lint && vite",
     "start": "npx kill-port 3000 && pnpm init-plays && vite",
