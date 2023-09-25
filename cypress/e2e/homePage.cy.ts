@@ -24,9 +24,9 @@ describe('Test home page', () => {
 
   it('Contributors section should render with all contributors', () => {
     cy.get('[data-testid="contributors-section"]').scrollIntoView().should('be.visible');
-    cy.get('[data-testid="contributors-section"] [data-testid*="contributor-"]').should(
-      'have.length',
-      CONTRIBUTORS_COUNT
-    );
+    cy.wait(3000);
+    cy.get('[data-testid="contributors-section"] [data-testid*="contributor-"]')
+      .scrollIntoView()
+      .should('have.length', CONTRIBUTORS_COUNT);
   });
 });
