@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { IoAddSharp, IoLogoRss } from 'react-icons/io5';
 import { MdManageSearch } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
-import { BsTwitter, BsGithub } from 'react-icons/bs';
+import { BsGithub } from 'react-icons/bs';
+import { FaXTwitter } from 'react-icons/fa6';
+
 import LogoLight from 'images/img-logo-light.svg';
 import { useSearchContext } from 'common/search/search-context';
 import { CREATE_PLAY_DOC_LINK } from 'constants';
@@ -13,7 +15,7 @@ const ExtendedFooter = () => {
     {
       name: 'Twitter',
       url: 'https://twitter.com/reactplayio',
-      icon: <BsTwitter className="icon" />,
+      icon: <FaXTwitter className="icon" />,
       title: 'Twitter page'
     },
     {
