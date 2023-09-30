@@ -25,16 +25,16 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: implementation
+  - type: checkboxes
+    id: record
     attributes:
-      label: Are you willing to take it up for implementation?
-      multiple: false
+      label: Record
       options:
-        - 'Yes'
-        - 'No'
-    validations:
-      required: true
+        - label: I have checked the existing [issues](https://github.com/reactplay/react-play/issues)
+          required: true
+        - label: I have read the [Contributing Guidelines](https://github.com/reactplay/react-play/blob/main/CONTRIBUTING.md)
+          required: true
+        - label: I want to work on this issue
 
   - type: checkboxes
     id: terms
