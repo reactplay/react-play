@@ -47,6 +47,7 @@
     "react-codemirror2": "^7.2.1",
     "react-color": "^2.19.3",
     "react-confetti": "^6.1.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.0.0",
     "react-dropzone": "^14.2.3",
