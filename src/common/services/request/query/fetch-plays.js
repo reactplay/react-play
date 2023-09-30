@@ -46,10 +46,20 @@ export function FetchPlaysBySlugAndUser(playslug, username) {
   return payload;
 }
 
-export function FetchPlaysByFilter(where_clause) {
+export function FetchPlaysByFilter(where_clause, sortBy) {
   const payload = { ...BasiFetchParam };
   if (where_clause) {
     payload.where = where_clause;
+  }
+
+  if (sortBy === 'Newest') {
+    payload.orderBy = { created_at: 'desc' };
+  } else if (sortBy === 'Oldest') {
+    payload.orderBy = { created_at: 'asc' };
+  } else if (sortBy === 'Most Liked') {
+    payload.orderBy = { play_like_aggregate: { count: 'desc' } };
+  } else {
+    payload.orderBy = { description: 'desc' };
   }
 
   return payload;

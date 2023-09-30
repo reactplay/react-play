@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@faker-js/faker": "^8.0.2",
     "@giscus/react": "^2.0.3",
     "@mui/icons-material": "^5.11.9",
     "@mui/joy": "^5.0.0-alpha.79",
@@ -95,7 +96,15 @@
     "cypress:run": "cypress run",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
     "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc"
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.+(js|jsx|ts|tsx)": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "reactSnap": {
     "puppeteerArgs": [
@@ -131,6 +140,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "postcss": "^8.4.13",
     "prettier": "^2.7.1",
     "puppeteer": "^13.7.0",

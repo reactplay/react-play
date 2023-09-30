@@ -13,6 +13,11 @@ const Sponsors = () => {
       name: 'stackstream',
       website: 'https://stack-stream.com',
       logo: '/sponsors-partners/stackstream.png'
+    },
+    {
+      name: 'Bugfender',
+      website: 'https://bugfender.com',
+      logo: '/sponsors-partners/bugfender.png'
     }
   ];
   const eventPartners = [
