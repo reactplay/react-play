@@ -11,7 +11,6 @@ export function SearchBar({ getWeatherData }) {
 
   function inputChangeHandler(e) {
     setSearchText(e.target.value);
-    // console.log(searchText);
   }
   useEffect(
     function getWeatherDataFromAPI() {
@@ -19,7 +18,6 @@ export function SearchBar({ getWeatherData }) {
         fetch(WEATHER_API_URL + searchText)
           .then((response) => response.json())
           .then((respJson) => {
-            // console.log("respJson: ", respJson);
             if (respJson && !respJson['error']) {
               getWeatherData(respJson?.location?.name, respJson);
               setErrorText('');

@@ -3,20 +3,20 @@ import { DayForecastItem } from './DayForecastItem';
 import { Card, CardBody, CardHeader } from '@material-tailwind/react';
 
 const days = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday'
+  'Sun',
+  'Mon',
+  'Tue',
+  'Wed',
+  'Thu',
+  'Fri',
+  'Sat',
+  'Sun',
+  'Mon',
+  'Tue',
+  'Wed',
+  'Thu',
+  'Fri',
+  'Sat'
 ];
 
 const API_KEY = '7c2e570aa4d54b9ab9290109232809';
@@ -27,7 +27,6 @@ export function SevenDayForecast({ city }) {
     fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7`)
       .then((response) => response.json())
       .then((responseJson) => {
-        // console.log('weeklyForecast: ', responseJson);
         setWeeklyForecastData(responseJson);
       });
   }, []);
@@ -58,7 +57,7 @@ export function SevenDayForecast({ city }) {
           <div className="p-4">Seven Day Forecast</div>
         </CardHeader>
         <CardBody className="p-0">
-          <div className="xl:flex xl:flex-col md:grid md:grid-cols-2  gap-4 p-4  bg-gray-900 rounded-lg ">
+          <div className="xl:flex xl:flex-col  lg:grid-cols-2 grid grid-cols-1 gap-4 p-4  bg-gray-900 rounded-lg ">
             {forecastData.map((forecast, idx) => (
               <DayForecastItem
                 day={sevenDays[idx]}

@@ -4,7 +4,6 @@ import { TodaysTemperature } from './TodaysTemperature';
 import { TodaysWeather } from './TodaysWeather';
 
 export function MainSection({ weatherData }) {
-  // console.log(weatherData);
   return (
     <div className=" xl:w-[60vw] flex flex-col gap-8 p-4">
       {weatherData?.location && (

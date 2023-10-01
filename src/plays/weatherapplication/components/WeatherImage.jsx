@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function WeatherImage({ url, size }) {
-  var csshw = 'w-[50px] h-[50px]';
+  let csshw = 'w-[50px] h-[50px]';
   if (size == 'large') {
     csshw = 'w-[100px] h-[100px]';
   } else if (size == 'medium') {

@@ -2,7 +2,6 @@ import React from 'react';
 import { WeatherImage } from './WeatherImage';
 
 export function HourlyTemperatureCard({ time, icon, temperature }) {
-  // console.log("hourly: ", time, icon, temperature);
   return (
     <div className="flex flex-col bg-gradient-to-tr from-[#3961c3] to-[#212b50]  text-white py-4 px-8 rounded-lg justify-center items-center">
       <div className="pb-4 text-xl ">{hourToNumber(time) < 1200 ? time + ' AM' : time + ' PM'}</div>
@@ -14,10 +13,8 @@ export function HourlyTemperatureCard({ time, icon, temperature }) {
   );
 
   function hourToNumber(hour) {
-    // console.log("hour: ", hour);
     let res = Number(hour.replace(':', ''));
 
-    // console.log(res);
     return res;
   }
 }

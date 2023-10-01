@@ -16,12 +16,12 @@ export function HomePage() {
 
   return (
     <div>
-      <div className="flex flex-row gap-12 items-center ">
-        <div className="p-4 flex flex-row gap-4 items-center">
-          <img alt="Weather App" className="w-16 h-16 rounded-full" src={logo} />
+      <div className="lg:flex lg:flex-row lg:gap-12 lg:items-center  text-center">
+        <div className="px-14 py-4 flex flex-row gap-4 items-center justify-center">
+          <img alt="Weather App" className="w-16 h-16 rounded-full " src={logo} />
           <div className="text-white text-[2rem] ">The Weather App</div>
         </div>
-        <div className="">
+        <div className="flex justify-center items-center">
           <SearchBar getWeatherData={getWData} />
         </div>
       </div>

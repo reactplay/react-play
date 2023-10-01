@@ -3,7 +3,6 @@ import React from 'react';
 import { TodaysForecastItem } from './TodaysForecastItem';
 
 export function TodaysWeather({ data }) {
-  // console.log(data);
   return (
     <div>
       <Card className="bg-gray-900">
@@ -11,7 +10,7 @@ export function TodaysWeather({ data }) {
           <h1 className="text-[1.5rem] py-4 px-8">Today's Forecast</h1>
         </CardHeader>
         <CardBody>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="md:grid-cols-2 grid grid-cols-1  gap-4">
             <TodaysForecastItem data={data} parameter="maxwind_kph" />
             <TodaysForecastItem data={data} parameter="daily_chance_of_rain" />
             <TodaysForecastItem data={data} parameter="totalprecip_mm" />
