@@ -255,6 +255,7 @@
   grid-gap: 3rem;
   width: 80%;
   max-width: var(--screen-lg-max);
+  overflow-y: hidden;
 }
 
 @media screen and (max-width: 1024px) {

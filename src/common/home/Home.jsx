@@ -14,6 +14,9 @@ import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
 import TestimonialSection from 'common/Testimonial/TestimonialSection';
 import Sponsors from './Sponsors';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
@@ -27,6 +30,54 @@ const Home = () => {
       language: ''
     });
   }, [data, setSearchTerm, searchTerm, setFilterQuery]);
+
+  useEffect(() => {
+    const animations = [];
+
+    const featuresAnimation = gsap.fromTo(
+      '.home-features-item',
+      { y: 200, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: '.list-home-features',
+          scrub: 0.5,
+          start: 'top bottom',
+          end: 'bottom center'
+        }
+      }
+    );
+
+    const titleAnimation = gsap.fromTo(
+      '.ideas-title>span',
+      {
+        opacity: 0,
+        y: 100
+      },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 1,
+        scrollTrigger: {
+          trigger: '.ideas-title>span',
+          start: 'top 90%',
+          end: 'bottom 60%',
+          scrub: 0.5
+        }
+      }
+    );
+
+    animations.push(featuresAnimation, titleAnimation);
+
+    return () => {
+      animations.forEach((animation) => {
+        animation.kill();
+      });
+    };
+  }, []);
 
   // eslint-disable-next-line no-console
   console.log('process.env.REACT_APP_ACTIVITIES_ON', process.env.REACT_APP_ACTIVITIES_ON);
@@ -86,7 +137,22 @@ const Home = () => {
         <div className="home-ideas">
           <FaLightbulb className="icon" color="var(--color-brand-primary)" size="48px" />
           <p className="ideas-lead">Not sure how to get started?</p>
-          <p className="ideas-title">We have got lot of ideas</p>
+          <p className="ideas-title">
+            <span>W</span>
+            <span>e</span> <span>h</span>
+            <span>a</span>
+            <span>v</span>
+            <span>e</span> <span>g</span>
+            <span>o</span>
+            <span>t</span> <span>l</span>
+            <span>o</span>
+            <span>t</span> <span>o</span>
+            <span>f</span> <span>i</span>
+            <span>d</span>
+            <span>e</span>
+            <span>a</span>
+            <span>s</span>
+          </p>
           <Link className="home-anchor" to="/ideas">
             <span className="text">Get started with some ideas</span>
           </Link>

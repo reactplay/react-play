@@ -8,6 +8,9 @@ import Like from 'common/components/Like/Like';
 import { useUserId, useAuthenticated } from '@nhost/react';
 import countByProp from 'common/utils/commonUtils';
 import { loadCoverImage } from 'common/utils/coverImageUtil';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Author = ({ user }) => {
   return (
@@ -58,8 +61,30 @@ const PlayThumbnail = ({ play }) => {
     loadCover();
   }, [play]);
 
+  useEffect(() => {
+    const playAnimation = gsap.fromTo(
+      '.unordered-list',
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: '.list-plays',
+          start: 'top bottom',
+          end: 'bottom 80%',
+          scrub: 0.3
+        }
+      }
+    );
+
+    return () => {
+      playAnimation.kill();
+    };
+  }, []);
+
   return (
-    <li>
+    <li className="unordered-list">
       <Link to={`/plays/${encodeURI(play.github.toLowerCase())}/${play.slug}`}>
         <div className="play-thumb">
           <Shimmer>

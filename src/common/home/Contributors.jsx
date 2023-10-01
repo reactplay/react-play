@@ -1,7 +1,31 @@
+import { useEffect } from 'react';
 import useContributors from 'common/hooks/useContributors';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Contributors = () => {
   const { data, error, isLoading } = useContributors(true);
+
+  useEffect(() => {
+    const contributorAnimation = gsap.fromTo(
+      '.list-contributors',
+      { y: 150 },
+      {
+        y: 0,
+        scrollTrigger: {
+          trigger: '.list-contributors',
+          scrub: 0.3,
+          start: 'top bottom',
+          end: 'bottom center'
+        }
+      }
+    );
+
+    return () => {
+      contributorAnimation.kill();
+    };
+  }, []);
 
   return (
     <>

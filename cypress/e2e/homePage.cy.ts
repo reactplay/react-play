@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+// / <reference types="cypress" />
 
 import { CONTRIBUTORS_COUNT, TWEET_COUNT } from '../support/constant';
 
