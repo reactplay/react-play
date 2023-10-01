@@ -1,29 +1,21 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import PlayHeader from 'common/playlists/PlayHeader';
-import './styles.css';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useState } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import axios from 'axios';
 
-// WARNING: Do not change the entry componenet name
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function UrlShortner(props) {
   // Your Code Start below.
   const [userInput, setUserInput] = useState('');
   const [shortenedLink, setShortenedLink] = useState('');
 
   const handleSubmit = async () => {
-    // eslint-disable-next-line no-console
-    // console.log('hii', userInput);
     try {
       const response = await axios(`https://api.shrtco.de/v2/shorten?url=${userInput}`);
       setShortenedLink(response.data.result.full_short_link);
-      // eslint-disable-next-line no-console
-      console.log(response.data.result.full_short_link);
     } catch (e) {
       // eslint-disable-next-line no-console
-      console.log(e);
+      // console.log(e);
     }
   };
 
