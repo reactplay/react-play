@@ -1,0 +1,61 @@
+/* enter styles here */
+.calculatorByTea__calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculatorByTea__calculator-body {
+  background-color: #22252d;
+  border-radius: 20px;
+}
+
+.calculatorByTea__calculator-display-block {
+  color: #fff;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  padding: 20px 10px;
+}
+
+.calculatorByTea__calculator-history-text {
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.play-details .play-details-body input[type='text'][class='calculatorByTea__calculator-input-box'] {
+  background-color: transparent;
+  border: 0px;
+  outline: none;
+  color: #fff;
+  text-align: right;
+}
+
+.calculatorByTea__calculator-value-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  background-color: #292d36;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.calculatorByTea__calculator-button {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  outline: none;
+  padding: 20px;
+}
+
+.calculatorByTea__calculator-operator-button {
+  color: #f37a79;
+}
+
+.calculatorByTea__calculator-result-button {
+  color: #26f6d1;
+}
