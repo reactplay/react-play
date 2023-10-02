@@ -11,6 +11,18 @@ function Faisalplay(props) {
 
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
 
+  // useEffect(() => {
+  //   const checkInternetConnectivity = async () => {
+  //     try {
+  //       await fetch('https://www.google.com'); // Make a test request to google.com
+  //     } catch (networkError) {
+  //       setError('No Internet Connection');
+  //       return;
+  //     }
+  //   };
+  //   checkInternetConnectivity();
+  // }, []); // Run this effect only once on component mount
+
   const handleClick = (e) => {
     e.preventDefault();
     setError(null);
