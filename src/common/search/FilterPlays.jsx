@@ -109,9 +109,9 @@ const FilterPlays = ({ onChange, query }) => {
       }
     });
     const final_query = { ...finalQueryObject };
-    const fianl_query_param = new URLSearchParams(finalQueryObject).toString();
+    const final_query_param = new URLSearchParams(finalQueryObject).toString();
 
-    if (fianl_query_param) {
+    if (final_query_param) {
       setShowModal(false);
     } else {
       setShowModal(true);
