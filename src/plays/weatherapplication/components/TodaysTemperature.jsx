@@ -25,7 +25,7 @@ export function TodaysTemperature({ hourlyData }) {
   }
 
   useEffect(
-    function updateWidth() {
+    function setCurrentWidth() {
       function updateWidth() {
         setWidthScreen(getCurrentWidth());
       }
