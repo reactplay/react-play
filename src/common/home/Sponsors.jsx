@@ -47,10 +47,11 @@ const Sponsors = () => {
           <h3>Event Partners</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventPartners.map((p) => (
+              {eventPartners.map((p, index) => (
                 <a
                   className="partners-sponsors-grid-item"
                   href={p.website}
+                  key={index}
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -72,14 +73,15 @@ const Sponsors = () => {
           <h3>Event Sponsors</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventSponsors.map((s) => (
+              {eventPartners.map((p, index) => (
                 <a
                   className="partners-sponsors-grid-item"
-                  href={s.website}
+                  href={p.website}
+                  key={index}
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <img alt={s.name} src={s.logo} />
+                  <img alt={p.name} src={p.logo} />
                 </a>
               ))}
             </div>
@@ -110,11 +112,6 @@ const Sponsors = () => {
             alignItems: 'center'
           }}
         >
-          {/* {backers.map((b) => (
-            <a className="backers-grid-item" rel="noreferrer" target="_blank">
-              abcd
-            </a>
-          ))} */}
           <a
             className="backers-cta"
             href="https://github.com/sponsors/reactplay"
