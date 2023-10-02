@@ -108,17 +108,8 @@ const FilterPlays = ({ onChange, query }) => {
         finalQueryObject[key] = res[key];
       }
     });
-    const final_query = { ...finalQueryObject };
-    const final_query_param = new URLSearchParams(finalQueryObject).toString();
-
-    if (final_query_param) {
-      setShowModal(false);
-    } else {
-      setShowModal(true);
-    }
-    if (onChange) {
-      onChange(final_query);
-    }
+    setShowModal(false);
+    onChange({ ...finalQueryObject });
   };
 
   const handleChange = (key, value) => {
