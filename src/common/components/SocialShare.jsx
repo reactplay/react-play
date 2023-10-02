@@ -1,4 +1,5 @@
-import { IoLogoFacebook, IoLogoTwitter, IoLogoLinkedin, IoLogoReddit } from 'react-icons/io5';
+import { IoLogoFacebook, IoLogoLinkedin, IoLogoReddit } from 'react-icons/io5';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const SocialShare = ({ showTwitter, showLinkedin, showFB, showReddit, msg }) => {
   const URL = window.location.href;
@@ -48,7 +49,7 @@ const SocialShare = ({ showTwitter, showLinkedin, showFB, showReddit, msg }) => 
             rel="noopener noreferrer"
             target="_blank"
           >
-            <IoLogoTwitter className="icon" size={48} />
+            <FaXTwitter className="icon" size={45} />
           </a>
         )}
         {showLinkedin && (
