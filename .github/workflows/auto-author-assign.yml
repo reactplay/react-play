@@ -11,4 +11,5 @@ jobs:
   add-contributor:
     name: add author to pr
     runs-on: ubuntu-latest
-    uses: toshimaru/auto-author-assign@v2.0.0
+    steps:
+      -uses: toshimaru/auto-author-assign@v2.0.0
