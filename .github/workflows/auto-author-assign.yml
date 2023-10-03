@@ -1,10 +1,12 @@
 name: Auto Author Assign on PR
+
 on:
   pull_request:
     types:
       - opened
     branches:
       - main
+
 jobs:
   add-contributor:
     name: add author to pr
