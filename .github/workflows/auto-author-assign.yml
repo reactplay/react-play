@@ -1,12 +1,15 @@
 name: Auto Author Assign on PR
+
 on:
   pull_request:
     types:
       - opened
     branches:
       - main
+
 jobs:
   add-contributor:
     name: add author to pr
     runs-on: ubuntu-latest
-    uses: toshimaru/auto-author-assign@v2.0.0
+    steps:
+      -uses: toshimaru/auto-author-assign@v2.0.0
