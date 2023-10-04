@@ -1019,11 +1019,23 @@
   .list-apps {
     grid-template-columns: repeat(3, minmax(200px, 300px));
   }
+  .prime-sponsors-cta:focus,
+  .prime-sponsors-cta:hover {
+    .heart-handshake {
+      display: none;
+    }
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .list-apps {
     grid-template-columns: repeat(2, minmax(200px, 300px));
+  }
+  .prime-sponsors-cta:focus,
+  .prime-sponsors-cta:hover {
+    .heart-handshake {
+      display: none;
+    }
   }
 }
 
@@ -1031,6 +1043,27 @@
   .list-apps {
     margin: 1rem auto;
     grid-template-columns: repeat(1, minmax(240px, 300px));
+  }
+}
+
+@media screen and (max-width: 1334px) {
+  .prime-sponsors-cta:focus,
+  .prime-sponsors-cta:hover {
+    .heart-handshake {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1438px) {
+  .prime-sponsors-cta {
+    .heart-handshake {
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+      position: absolute;
+      right: 6px !important;
+      bottom: 35px !important;
+    }
   }
 }
 
