@@ -1,5 +1,7 @@
 import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
+import { Canvas } from '@react-three/fiber';
+import { Experience } from './components/Experience';
 
 // WARNING: Do not change the entry componenet name
 function AnimatedCardsReactFiber(props) {
@@ -11,14 +13,10 @@ function AnimatedCardsReactFiber(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div>
-            <h1>Play Details - Animated Cards React Fiber</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu
-              tincidunt consectetur, nisi nunc ultricies nisi, eget consectetur nunc nisi euismod
-              nunc.
-            </p>
-          </div>
+          <Canvas shadows camera={{ position: [0, 0, 8], fov: 42 }}>
+            <color args={['#ececec']} attach="background" />
+            <Experience />
+          </Canvas>
           {/* Your Code Ends Here */}
         </div>
       </div>

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "9.75.0",
+    "@react-three/fiber": "8.13.3",
+    "@types/three": "0.152.1",
+    "three": "0.153.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@faker-js/faker": "^8.0.2",
