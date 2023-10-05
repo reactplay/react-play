@@ -1,9 +1,12 @@
 import React from 'react';
-import spinner from '../img/spinner.gif';
 
 const Spinner = () => {
   return (
-    <img alt="Loading" src={spinner} style={{ width: '200px', margin: 'auto', display: 'block' }} />
+    <img
+      alt="Loading"
+      src="https://res.cloudinary.com/dxkxvfo2o/image/upload/v1696518917/img/spinner_vmx4xq.gif"
+      style={{ width: '200px', margin: 'auto', display: 'block' }}
+    />
   );
 };
 

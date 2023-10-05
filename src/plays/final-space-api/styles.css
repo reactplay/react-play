@@ -7,7 +7,7 @@
   
   html,
   body {
-    background: #000 url('img/bg.jpg') no-repeat center center/cover;
+    background: #000 url('https://res.cloudinary.com/dxkxvfo2o/image/upload/v1696518917/img/bg_erhuht.jpg') no-repeat center center/cover;
     height: 100vh;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
