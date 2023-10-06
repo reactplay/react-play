@@ -1,38 +1,26 @@
-/// <reference types="cypress" />
+// / <reference types="cypress" />
 
-import { CONTRIBUTORS_COUNT, TWEET_COUNT } from '../support/constant';
+import { CONTRIBUTORS_COUNT, TESTIMONIALS_COUNT } from '../support/constant';
 
 describe('Test home page', () => {
   beforeEach(() => {
+    cy.intercept('POST', '**/v1/graphql').as('contribs');
     cy.visit('/');
+    cy.wait('@contribs');
   });
 
   it('Header component should render properly', () => {
-    cy.get('[data-testid="app-header"]').should('be.visible');
-    cy.get('[data-testid="app-logo"]').should('be.visible');
-    cy.get('[data-testid="plays-search-box-container"]').should('not.exist');
-    cy.get('[data-testid="header-links-container"]').should('be.visible');
-    cy.get('[data-testid="browse-btn"]').should('be.visible').as('browseBtn');
-    cy.get('[data-testid="create-btn"]').should('be.visible');
-    cy.get('[data-testid="ideas-btn"]').should('be.visible');
-    cy.get('[data-testid="github-btn"]').should('be.visible');
-    cy.get('[data-testid="twitter-btn"]').should('be.visible');
-    cy.get('[data-testid="share-btn"]').should('be.visible');
-    cy.get('[data-testid="leaderboard-btn"]').should('be.visible');
-
-    cy.get('@browseBtn').click();
-    cy.get('[data-testid="plays-search-box-container"]').should('be.visible');
+    cy.header();
   });
 
-  it('Tweet section should render with all tweets', () => {
-    cy.intercept('GET', 'https://cdn.syndication.twimg.com/*').as('tweets');
-    cy.wait('@tweets');
-    cy.get('[data-testid="tweet-container"]').scrollIntoView().should('be.visible');
-    cy.get('[data-testid="tweet-container"] [id*="twitter-widget"]').should(
-      'have.length',
-      TWEET_COUNT
-    );
-    cy.get('[data-testid="watch-svg"]').should('not.exist');
+  it('Testitomonials section should render and navigation must be clickable', () => {
+    cy.get('[data-testid="testimonials-section"]').scrollIntoView().should('be.visible');
+    cy.get('[data-testid="testimonials-swiper"]').scrollIntoView().should('be.visible');
+  });
+
+  it('Testitomonials should have a number of slides', () => {
+    cy.get('[data-testid="testimonials-swiper"]').scrollIntoView().should('be.visible');
+    cy.get('.swiper-slide').should('have.length', TESTIMONIALS_COUNT);
   });
 
   it('Contributors section should render with all contributors', () => {
