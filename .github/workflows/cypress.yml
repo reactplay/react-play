@@ -12,6 +12,7 @@ concurrency:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    if: github.repository == 'reactplay/react-play'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,7 +28,7 @@ jobs:
           install-command: |
             npm install --legacy-peer-deps
           start: npm start
-          wait-on: "http://localhost:3000"
+          wait-on: 'http://localhost:3000'
           browser: chrome
         env:
           # pass GitHub token to detect new build vs re-run build
