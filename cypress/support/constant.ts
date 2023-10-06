@@ -1,2 +1,2 @@
-export const TWEET_COUNT = 11;
+export const TESTIMONIALS_COUNT = 9;
 export const CONTRIBUTORS_COUNT = 29;

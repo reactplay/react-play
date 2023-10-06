@@ -1,9 +1,9 @@
 import RouteDefs from 'common/routing/RouteDefs';
 import { SearchContextProvider } from 'common/search/search-context';
-import 'index.css';
+import './index.css';
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import reportWebVitals from 'reportWebVitals';
+import reportWebVitals from './reportWebVitals';
 import register from './registerServiceWorker';
 import ErrorBoundry from './ErrorBoundary/ErrorBoundary';
 import Notification from 'common/components/Notification';
