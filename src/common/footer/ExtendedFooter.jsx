@@ -2,13 +2,40 @@ import { Link } from 'react-router-dom';
 import { IoAddSharp, IoLogoRss } from 'react-icons/io5';
 import { MdManageSearch } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
-import { BsTwitter, BsGithub } from 'react-icons/bs';
+import { BsGithub } from 'react-icons/bs';
+import { FaXTwitter } from 'react-icons/fa6';
 import LogoLight from 'images/img-logo-light.svg';
 import { useSearchContext } from 'common/search/search-context';
 import { CREATE_PLAY_DOC_LINK } from 'constants';
 
 const ExtendedFooter = () => {
   const { showShareModal, setShowShareModal } = useSearchContext();
+  const navLinks = [
+    {
+      name: 'Twitter',
+      url: 'https://twitter.com/reactplayio',
+      icon: <FaXTwitter className="icon" />,
+      title: 'Twitter page'
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/reactplay',
+      icon: <BsGithub className="icon" />,
+      title: 'GitHub page'
+    },
+    {
+      name: 'Discord',
+      url: 'https://discord.gg/vrTxWUP8Am',
+      icon: <FaDiscord className="icon" />,
+      title: 'Discord Channel'
+    },
+    {
+      name: 'Discord',
+      url: 'https://blog.reactplay.io/',
+      icon: <IoLogoRss className="icon" />,
+      title: 'Blog Page'
+    }
+  ];
 
   return (
     <div className="app-footer--home app-footer">
@@ -24,54 +51,20 @@ const ExtendedFooter = () => {
               <small>Connect with us</small>
             </p>
             <ul className="social-links">
-              <li>
-                <a
-                  className="social-link"
-                  href="https://twitter.com/reactplayio"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Twitter page"
-                >
-                  <BsTwitter className="icon" />
-                  <span className="sr-only">Twitter</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="social-link"
-                  href="https://github.com/reactplay"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="GitHub Page"
-                >
-                  <BsGithub className="icon" />
-                  <span className="sr-only">Github</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="social-link"
-                  href="https://discord.gg/vrTxWUP8Am"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Discord Channel"
-                >
-                  <FaDiscord className="icon" />
-                  <span className="sr-only">Discord</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="social-link"
-                  href="https://blog.reactplay.io/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Blog Page"
-                >
-                  <IoLogoRss className="icon" />
-                  <span className="sr-only">BlogPost</span>
-                </a>
-              </li>
+              {navLinks.map((link, idx) => (
+                <li key={idx}>
+                  <a
+                    className="social-link"
+                    href={link.url}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title={link.title}
+                  >
+                    {link.icon}
+                    <span className="sr-only">{link.name}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <div>

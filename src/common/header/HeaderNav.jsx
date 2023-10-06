@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BsTwitter, BsGithub, BsTrophyFill } from 'react-icons/bs';
+import { BsGithub, BsTrophyFill } from 'react-icons/bs';
 import { FaLightbulb } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { BiMoney } from 'react-icons/bi';
 import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
 import { MdManageSearch, MdClose, MdEvent } from 'react-icons/md';
@@ -169,7 +170,7 @@ const HeaderNav = ({ showBrowse }) => {
               target="_blank"
               title="Twitter Page"
             >
-              <BsTwitter className="icon twitter-icon" />
+              <FaXTwitter className="icon twitter-icon" />
               <span className="btn-label">Twitter</span>
             </a>
           </li>

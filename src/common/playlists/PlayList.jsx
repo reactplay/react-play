@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'common/spinner/spinner';
 import * as all_plays from 'plays';
-
+import { SORT_BY } from 'constants';
 import './playlist.css';
 import { toSanitized } from 'common/services/string';
 import DynamicBanner from './DynamicBanner';
@@ -17,7 +17,14 @@ const PlayList = () => {
   const [loading, setLoading] = useState();
   const [plays, setPlays] = useState();
   const [isFiltered, setIsFiltered] = useState(false);
+  const [sortBy, setSortBy] = useState(localStorage.getItem('sortByPlay') || 'Newest');
   let location = useLocation();
+
+  const onChange = (e) => {
+    const { value } = e.target;
+    setSortBy(value);
+    localStorage.setItem('sortByPlay', value);
+  };
 
   useEffect(() => {
     const getPlays = async () => {
@@ -27,24 +34,29 @@ const PlayList = () => {
       if (parsedQuery) {
         translatedQuery = QueryDBTranslator(parsedQuery);
       }
-      const res = await getPlaysByFilter(translatedQuery);
-      const found_plays = [];
+      const res = await getPlaysByFilter(translatedQuery, sortBy);
+      const foundPlays = [];
       if (res) {
         res.forEach((res_play) => {
           if (
             all_plays[res_play.component ? res_play.component : toSanitized(res_play.title_name)]
           ) {
-            found_plays.push(res_play);
+            foundPlays.push(res_play);
           }
         });
-        setPlays(found_plays);
+        if (sortBy === 'Random') {
+          const randomPlays = foundPlays.sort(() => Math.random() - 0.5);
+          setPlays(randomPlays);
+        } else {
+          setPlays(foundPlays);
+        }
       }
       if (!translatedQuery) {
         // If the filtered array has at least one item, select a random play from the filtered array
-        if (found_plays && found_plays.length > 0) {
+        if (foundPlays && foundPlays.length > 0) {
           // generate a random index to select a random play
-          const randomIndex = Math.floor(Math.random() * found_plays.length);
-          setRandomPlay(found_plays[randomIndex]);
+          const randomIndex = Math.floor(Math.random() * foundPlays.length);
+          setRandomPlay(foundPlays[randomIndex]);
         }
       } else {
         setIsFiltered(true);
@@ -52,7 +64,7 @@ const PlayList = () => {
       setLoading(false);
     };
     getPlays();
-  }, [location.search]);
+  }, [location.search, sortBy]);
 
   if (loading) {
     return <Loader />;
@@ -81,7 +93,16 @@ const PlayList = () => {
   return (
     <Fragment>
       {isFiltered ? null : <DynamicBanner randomPlay={randomPlay} />}
-
+      <div className="sort-by-plays-wrapper">
+        Sort By :
+        <select id="sort-by-plays" name="sort-by-plays" value={sortBy} onChange={onChange}>
+          {SORT_BY.map((name, i) => (
+            <option key={i} value={name}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
       <ol className="list-plays">
         {plays?.map((play, index) => (
           <React.Fragment key={index}>
