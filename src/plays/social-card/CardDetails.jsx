@@ -1,8 +1,9 @@
 import { useState, useContext, useEffect } from 'react';
 import { SocialContext } from './context/SocialContext';
-import { BsGithub, BsTwitter, BsLinkedin } from 'react-icons/bs';
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { CgWebsite } from 'react-icons/cg';
 import { AiOutlineMail } from 'react-icons/ai';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const CardDetails = () => {
   // Get the user-filled values from the context
@@ -127,7 +128,7 @@ const CardDetails = () => {
                   style={{ color: cardTheme.link }}
                   target="_blank"
                 >
-                  <BsTwitter size="24px" />
+                  <FaXTwitter size="24px" />
                 </a>
               </div>
             )}
