@@ -29,7 +29,7 @@ export const KEYS = [
   'z'
 ];
 
-export const tryAgainIcon = (
+export const TRY_AGAIN_ICON = (
   <svg
     height="1em"
     preserveAspectRatio="xMidYMid meet"

@@ -3,8 +3,16 @@ import Drawing from './Drawing';
 import words from '../constants/wordList.json';
 import Keyboard from './Keyboard';
 import Word from './Word';
-import { tryAgainIcon } from '../constants/constants';
-import { BigContainer, Container, EndGame, Title, TryAgainButton } from '../styled-components';
+import { TRY_AGAIN_ICON } from '../constants/constants';
+import {
+  BigContainer,
+  Container,
+  EndGame,
+  P,
+  Span,
+  Title,
+  TryAgainButton
+} from '../styled-components';
 
 function getRandomWord(arr: { [key: string]: string }[]) {
   const obj = arr[Math.floor(Math.random() * arr.length)];
@@ -22,6 +30,7 @@ export default function App() {
 
   const isLoser = incorrectLetters.length >= 6;
   const isWinner = wordToGuess.split('').every((letter) => guessedLetters.includes(letter));
+  const isGameCompleted = isWinner || isLoser;
 
   const addGuessedLetter = (letter: string) => {
     if (!guessedLetters.includes(letter)) {
@@ -46,7 +55,7 @@ export default function App() {
       <Container>
         <Title>Hangman</Title>
 
-        {!(isWinner || isLoser) ? (
+        {!isGameCompleted ? (
           <Drawing numberOfGuesses={incorrectLetters.length} />
         ) : (
           <EndGame isWinner={isWinner}>
@@ -54,21 +63,14 @@ export default function App() {
             {isLoser && 'Nice try...'}
           </EndGame>
         )}
-        {!(isWinner || isLoser) && (
-          <p
-            style={{
-              marginBottom: '-20px',
-              fontSize: '20px'
-            }}
-          >
-            <span style={{ fontWeight: 'bold' }}>Question: {hintToGuess} </span>
-          </p>
+        {!isGameCompleted && (
+          <P>
+            <Span>Question: {hintToGuess} </Span>
+          </P>
         )}
         <Word guessedLetters={guessedLetters} reveal={isLoser} wordToGuess={wordToGuess} />
 
-        {(isWinner || isLoser) && (
-          <TryAgainButton onClick={restartGame}>{tryAgainIcon}</TryAgainButton>
-        )}
+        {isGameCompleted && <TryAgainButton onClick={restartGame}>{TRY_AGAIN_ICON}</TryAgainButton>}
 
         <Keyboard
           addGuessedLetter={addGuessedLetter}

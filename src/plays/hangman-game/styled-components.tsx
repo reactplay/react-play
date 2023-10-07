@@ -26,6 +26,15 @@ export const Container = styled.div`
   }
 `;
 
+export const P = styled.p`
+  margin-bottom: -20px;
+  font-size: 20px;
+`;
+
+export const Span = styled.span`
+  font-weight: bold;
+`;
+
 export const Title = styled.h1`
   padding: 15px;
 `;
