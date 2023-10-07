@@ -1,35 +1,8 @@
 import { useEffect } from 'react';
 import React from 'react';
 import styled from 'styled-components';
-
-const KEYS = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  'i',
-  'j',
-  'k',
-  'l',
-  'm',
-  'n',
-  'o',
-  'p',
-  'q',
-  'r',
-  's',
-  't',
-  'u',
-  'v',
-  'w',
-  'x',
-  'y',
-  'z'
-];
+import { KEYS } from '../constants/constants';
+import { Key, KeyboardGrid, KeyContainer } from '../styled-components';
 
 interface KeyboardProps {
   correctLetters: string[];
@@ -87,47 +60,3 @@ export default function Keyboard({
     </KeyContainer>
   );
 }
-
-const KeyContainer = styled.div`
-  align-self: stretch;
-`;
-
-const KeyboardGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  gap: 0.5rem;
-  width: 100%;
-`;
-
-interface KeyProps {
-  active: boolean;
-  inActive: boolean;
-}
-
-const Key = styled.button<KeyProps>`
-  aspect-ratio: 1/1;
-  width: 100%;
-  border: 3px solid black;
-  border-radius: 1rem;
-  font-size: 2rem;
-  font-family: monospace;
-  text-transform: uppercase;
-  font-weight: bold;
-  background: ${({ active }) => (active ? '#16A085' : 'none')};
-  color: ${({ active }) => (active ? 'white' : 'black')};
-  opacity: ${({ inActive }) => (inActive ? '0.3' : '1')};
-  cursor: pointer;
-
-  &:hover:not(:disabled),
-  &:focus:not(:disabled) {
-    background-color: #f4d03f;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 2.3rem;
-  }
-`;
