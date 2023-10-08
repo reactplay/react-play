@@ -1,6 +1,6 @@
 # Stopwatch
 
-great play lovely play enjoy play
+Stopwatch application
 
 ## Play Demographic
 
@@ -14,12 +14,15 @@ great play lovely play enjoy play
 
 ## Implementation Details
 
-Update your implementation idea and details here
+
+This app covers very basic functionailty of react...hooks like useState and useEffect and by setInternval functionailty 
+this app includes features like START to start timer and RESET to set timer to zero...it is a stopwatch
 
 ## Consideration
 
-Update all considerations(if any)
+Hooks - useState and useEffect
+
 
 ## Resources
 
-Update external resources(if any)
+NA
