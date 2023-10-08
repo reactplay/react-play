@@ -8,6 +8,7 @@ on:
 jobs:
   assign-author:
     runs-on: ubuntu-latest
+    if: github.repository == 'reactplay/react-play'
     steps:
       - uses: toshimaru/auto-author-assign
         with:
