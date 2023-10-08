@@ -10,6 +10,7 @@ permissions:
 jobs:
   action:
     runs-on: ubuntu-latest
+    if: github.repository == 'reactplay/react-play'
     steps:
       - uses: dessant/repo-lockdown@v3
         with:
