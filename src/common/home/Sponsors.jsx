@@ -47,10 +47,11 @@ const Sponsors = () => {
           <h3>Event Partners</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventPartners.map((p) => (
+              {eventPartners.map((p, index) => (
                 <a
                   className="partners-sponsors-grid-item"
                   href={p.website}
+                  key={index}
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -72,10 +73,11 @@ const Sponsors = () => {
           <h3>Event Sponsors</h3>
           <div className="content">
             <div className="partners-sponsors-grid">
-              {eventSponsors.map((s) => (
+              {eventSponsors.map((s, index) => (
                 <a
                   className="partners-sponsors-grid-item"
                   href={s.website}
+                  key={index}
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -142,7 +144,7 @@ const Sponsors = () => {
             alignItems: 'center'
           }}
         >
-          {/* {primeSponsors.map((p) => (
+          {/* {primeSponsors.map((p,index) => (
             <a className="prime-sponsors-grid-item" rel="noreferrer" target="_blank">
               abcd
             </a>
