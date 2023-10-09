@@ -615,8 +615,9 @@ small {
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
+  height: 100px;
 }
 
 ::-webkit-scrollbar {
-  width: 23px;
+  width: 25px;
 }
