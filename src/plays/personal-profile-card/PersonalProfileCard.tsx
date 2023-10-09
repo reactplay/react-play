@@ -1,7 +1,7 @@
 import PlayHeader from 'common/playlists/PlayHeader';
 import React, { useState, ChangeEvent, useEffect } from 'react';
 
-import useLocalStorage from '../../common/hooks/useLocalStorage';
+import useLocalStorage from 'common/hooks/useLocalStorage';
 import ProfileType from './types';
 import ProfileCard from './components/profile-card';
 import ProfileForm from './components/profile-form';
