@@ -1,8 +1,7 @@
 name: New Play
 description: Add a New Play Request
 title: '[Add a Play]: '
-labels: ['play-request']
-assignees: ['']
+labels: ["play request","🚦status: awaiting triage", "💻 aspect: code" ]
 body:
   - type: markdown
     attributes:
@@ -35,6 +34,8 @@ body:
         - label: I have read the [Contributing Guidelines](https://github.com/reactplay/react-play/blob/main/CONTRIBUTING.md)
           required: true
         - label: I want to work on this issue
+        - label: I am in Hacktoberfest
+          required: true
 
   - type: checkboxes
     id: terms
