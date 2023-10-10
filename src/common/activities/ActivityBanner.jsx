@@ -8,7 +8,7 @@ import './activityBanner.css';
 import { UMAMI_EVENTS } from 'constants';
 
 function ActivityBanner({ currentActivity }) {
-  const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
+  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
   const activity = activities.filter((a) => a.id === currentActivity);
   const { name, subtitle, description, logo, heroImage } = activity[0];
 
