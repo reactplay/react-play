@@ -11,11 +11,13 @@ const TechStack = () => {
   ];
 
   return (
-    <main className="app-body">
-      <h1 className="text-center pt-16 pb-8">ReactPlay is proudly powered by</h1>
-      {TechStackCategories.map((category) => (
-        <TechStackCategory {...category} key={category.categoryID} />
-      ))}
+    <main className="app-body items-center">
+      <h1 className="heading lg:text-5xl text-3xl">ReactPlay is proudly powered by</h1>
+      <div>
+        {TechStackCategories.map((category) => (
+          <TechStackCategory {...category} key={category.categoryID} />
+        ))}
+      </div>
     </main>
   );
 };
@@ -28,8 +30,8 @@ const TechStackCategory = ({ categoryName, categoryID }) => {
   );
 
   return (
-    <>
-      <h1 className="section-title text-center pt-8 mt-48">{categoryName}</h1>
+    <div className="row">
+      <h1 className="section-title text-center pt-4 mt-48 tech-brand-name">{categoryName}</h1>
       <div className="list-brand-tech-stack">
         {filteredTechStackInfo.map((Item, idx) => {
           const Icon = Item.comp;
@@ -67,6 +69,6 @@ const TechStackCategory = ({ categoryName, categoryID }) => {
           }
         })}
       </div>
-    </>
+    </div>
   );
 };
