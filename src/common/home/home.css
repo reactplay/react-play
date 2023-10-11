@@ -293,6 +293,7 @@
 
 .list-home-features .home-features-item .item-icon:hover{
   background-color: white;
+  cursor: pointer;
 }
 
 .list-home-features .home-features-item .item-icon .icon {
