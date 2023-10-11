@@ -652,6 +652,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "freemrl",
+      "name": "Jannik Schmidtke",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66525499?v=4",
+      "profile": "https://github.com/FreemRL",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

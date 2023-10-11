@@ -8,6 +8,7 @@ import { UMAMI_EVENTS } from 'constants';
 
 const DefaultBanner = () => {
   const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
+  const formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
   return (
     <div>
@@ -36,7 +37,7 @@ const DefaultBanner = () => {
           <span className="btn-label">
             GitHub{' '}
             <div className="label-info-more">
-              <FiStar /> <div className="more-label">{data.stargazers_count}</div>
+              <FiStar /> <div className="more-label">{formatter.format(data.stargazers_count)}</div>
             </div>{' '}
           </span>
         </a>
