@@ -137,7 +137,7 @@ export const Head = styled.div`
   border: 10px solid black;
   position: absolute;
   top: 40px;
-  right: -29px;
+  right: -20px;
 
   @media (min-width: 768px) {
     top: 50px;
@@ -154,7 +154,7 @@ export const Body = styled.div`
 
   @media (min-width: 768px) {
     height: 100px;
-    top: 119px;
+    top: 90px;
   }
 `;
 
@@ -203,7 +203,7 @@ export const RightLeg = styled.div`
 
   @media (min-width: 768px) {
     width: 100px;
-    top: 209px;
+    top: 180px;
     right: -90px;
   }
 `;
@@ -220,7 +220,7 @@ export const LeftLeg = styled.div`
 
   @media (min-width: 768px) {
     width: 100px;
-    top: 209px;
+    top: 180px;
   }
 `;
 

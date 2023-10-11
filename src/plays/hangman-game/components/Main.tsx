@@ -3,7 +3,6 @@ import Drawing from './Drawing';
 import words from '../constants/wordList.json';
 import Keyboard from './Keyboard';
 import Word from './Word';
-import { TRY_AGAIN_ICON } from '../constants/constants';
 import {
   BigContainer,
   Container,
@@ -13,6 +12,7 @@ import {
   Title,
   TryAgainButton
 } from '../styled-components';
+import { VscDebugRestart } from 'react-icons/vsc';
 
 function getRandomWord(arr: { [key: string]: string }[]) {
   const obj = arr[Math.floor(Math.random() * arr.length)];
@@ -70,7 +70,11 @@ export default function App() {
         )}
         <Word guessedLetters={guessedLetters} reveal={isLoser} wordToGuess={wordToGuess} />
 
-        {isGameCompleted && <TryAgainButton onClick={restartGame}>{TRY_AGAIN_ICON}</TryAgainButton>}
+        {isGameCompleted && (
+          <TryAgainButton onClick={restartGame}>
+            <VscDebugRestart />
+          </TryAgainButton>
+        )}
 
         <Keyboard
           addGuessedLetter={addGuessedLetter}
