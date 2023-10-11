@@ -25,15 +25,14 @@ const SearchPlays = ({ reset, query, onChange }) => {
 
   const handleSearch = (event) => {
     event.preventDefault();
+    setSearchText(event.target.value);
     const { value } = event.target;
-    if (event.key === 'Enter') {
-      if (value) {
-        query.text = value;
-      } else {
-        delete query.text;
-      }
-      onChange(query);
+    if (value) {
+      query.text = value;
+    } else {
+      delete query.text;
     }
+    onChange(query);
   };
 
   return (
@@ -44,8 +43,7 @@ const SearchPlays = ({ reset, query, onChange }) => {
       type="text"
       value={searchText}
       // ref={inputRef}
-      onChange={(e) => setSearchText(e.target.value)}
-      onKeyUp={handleSearch}
+      onChange={handleSearch}
     />
   );
 };
