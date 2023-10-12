@@ -16,7 +16,7 @@ const useContributors = (sorted) => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://api.github.com/repos/reactplay/react-play/contributors`
+          `${process.env.REACT_APP_PLAY_API_URL}/react-play/contributors`
         );
         const responseData = await response.json();
 
