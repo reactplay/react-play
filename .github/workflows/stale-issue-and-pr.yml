@@ -12,6 +12,7 @@ jobs:
   stale:
     name: 🧹 Clean up stale issues and PRs
     runs-on: ubuntu-latest
+    if: github.repository == 'reactplay/react-play'
     steps:
       - name: 🚀 Stale Issue And PR
         uses: actions/stale@v8
