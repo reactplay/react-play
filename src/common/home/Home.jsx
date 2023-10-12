@@ -66,7 +66,7 @@ const Home = () => {
             </p>
           </li>
           <li className="home-features-item">
-            <Link to={CREATE_PLAY_DOC_LINK} target="_blank">
+            <Link to={CREATE_PLAY_DOC_LINK}>
               <div className="item-icon">
                 <BiAddToQueue className="icon" color="var(--color-neutral-90)" />
               </div>
