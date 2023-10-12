@@ -14,8 +14,11 @@ import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
 import TestimonialSection from 'common/Testimonial/TestimonialSection';
 import Sponsors from './Sponsors';
+import { CREATE_PLAY_DOC_LINK } from 'constants';
+import { useSearchContext } from 'common/search/search-context';
 
 const Home = () => {
+  const { showShareModal, setShowShareModal } = useSearchContext();
   const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
   const { setSearchTerm, searchTerm, setFilterQuery } = useSearchContext();
   useEffect(() => {
@@ -50,9 +53,11 @@ const Home = () => {
       <section className="home-features">
         <ul className="list-home-features">
           <li className="home-features-item">
-            <div className="item-icon">
-              <RiSlideshow4Line className="icon" color="var(--color-neutral-90)" />
-            </div>
+            <Link to="/plays">
+              <div className="item-icon">
+                <RiSlideshow4Line className="icon" color="var(--color-neutral-90)" />
+              </div>
+            </Link>
             <h2 className="item-title">Learn </h2>
             <p className="item-desc">
               Learn how to "Think in React" and build applications inspired by several plays(source
@@ -61,9 +66,11 @@ const Home = () => {
             </p>
           </li>
           <li className="home-features-item">
-            <div className="item-icon">
-              <BiAddToQueue className="icon" color="var(--color-neutral-90)" />
-            </div>
+            <Link to={CREATE_PLAY_DOC_LINK} target="_blank">
+              <div className="item-icon">
+                <BiAddToQueue className="icon" color="var(--color-neutral-90)" />
+              </div>
+            </Link>
             <h2 className="item-title">Create </h2>
             <p className="item-desc">
               Create your own plays and own them by following a few simple steps. Learned something
@@ -72,7 +79,7 @@ const Home = () => {
             </p>
           </li>
           <li className="home-features-item">
-            <div className="item-icon">
+            <div className="item-icon" onClick={() => setShowShareModal(!showShareModal)}>
               <BiShareAlt className="icon" color="var(--color-neutral-90)" />
             </div>
             <h2 className="item-title">Socialize </h2>
