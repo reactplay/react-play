@@ -706,7 +706,7 @@
         cursor: pointer;
       }
       .prime-sponsors-cta {
-        width: 18%;
+        width: 18rem;
         height: 5rem;
         background-color: rgba(var(--color-brand-primary-rgb), 1);
         padding: 1rem 1rem;
@@ -728,9 +728,8 @@
         .heart-handshake {
           opacity: 0;
           transition: all 0.2s ease-in-out;
-          position: absolute;
-          right: 15px;
-          bottom: 13px;
+          position: absolute; 
+          left: 15.3rem;
         }
       }
       .prime-sponsors-cta:hover {
@@ -738,7 +737,6 @@
 
         .heart-handshake {
           opacity: 1;
-          margin-left: 1rem;
         }
       }
     }
