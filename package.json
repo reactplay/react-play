@@ -126,6 +126,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.22.11",
     "@types/dompurify": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "6.4.0",
