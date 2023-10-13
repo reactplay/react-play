@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './Title.css';
 
 function RealTitle() {

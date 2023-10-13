@@ -20,7 +20,6 @@ function MultiplayerTicTacToe(props: any) {
   const [isCross, setIsCross] = useState(true);
   const [isFinished, setIsFinished] = useState(false);
   const [finalMessage, setFinalMessage] = useState('');
-  let count = 0;
 
   // ! Game Logic
   const findWinner = () => {
