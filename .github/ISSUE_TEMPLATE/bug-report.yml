@@ -1,8 +1,7 @@
 name: "\U0001F41B [Bug report]:"
 description: Create a report to help us improve
 title: "\U0001F41B [Bug report]: "
-labels: ['bug']
-assignees: ['']
+labels: ["bug","🛠 goal: fix", "🚦status: awaiting triage", "💻 aspect: code"]
 body:
   - type: markdown
     attributes:
@@ -70,7 +69,21 @@ body:
     attributes:
       label: Relevant log output
       description: Add any other context about the problem here.
-      render: shell
+      
+
+  - type: checkboxes
+    id: record
+    attributes:
+      label: Record
+      options:
+        - label: I have checked the existing [issues](https://github.com/reactplay/react-play/issues)
+          required: true
+        - label: I have read the [Contributing Guidelines](https://github.com/reactplay/react-play/blob/main/CONTRIBUTING.md)
+          required: true
+        - label: I want to work on this issue
+        - label: I am in Hacktoberfest
+          required: true
+
 
   - type: checkboxes
     id: terms

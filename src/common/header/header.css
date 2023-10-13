@@ -264,7 +264,7 @@
 }
 
 .header-links > li > .app-header-btn:hover .twitter-icon {
-  fill: #00acee;
+  fill: #ffffff;
 }
 
 .header-links > li > .app-header-btn .btn-label {
@@ -349,6 +349,12 @@
 }
 
 @media screen and (max-width: 768px) {
+  .header-links > li > .app-header-btn.app-header-btn--secondary {
+    color: var(--color-neutral-80);
+  }
+  .menu-events {
+    margin: 0.4rem 0 0rem 0;
+  }
 }
 
 @media screen and (max-width: 576px) {

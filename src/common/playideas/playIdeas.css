@@ -121,6 +121,8 @@
 }
 
 .list-playideas .list-playideas-item {
+  display: flex;
+  flex-direction: column;
   position: relative;
   border-radius: 4px;
   padding: 1.6rem;
@@ -139,6 +141,8 @@
 }
 
 .list-playideas .list-playideas-item .idea-title {
+  flex-grow: 0;
+  flex-shrink: 0;
   margin: 0 0 0.2rem 0;
   position: relative;
   margin-bottom: 0.3rem;
@@ -151,6 +155,8 @@
 }
 
 .list-playideas .list-playideas-item .idea-desc {
+  flex-grow: 1;
+  flex-shrink: 0;
   margin: 0.8rem 0;
   font-size: var(--fs-sm);
   font-weight: var(--fw-light);
@@ -158,6 +164,8 @@
 }
 
 .list-playideas .list-playideas-item .idea-level {
+  flex-grow: 0;
+  flex-shrink: 0;
   margin: 1rem 0 0 0;
 }
 
