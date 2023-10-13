@@ -10,7 +10,6 @@ import {
   SiDocker,
   SiHasura,
   SiPostgresql,
-  SiPython,
   SiNodedotjs
 } from 'react-icons/si';
 import NHost from 'images/nhost.svg';
@@ -107,13 +106,6 @@ export const TechStackInfo = [
     type: 'icon',
     link: 'https://nodejs.org/en',
     categoryID: 'backend'
-  },
-  {
-    comp: SiPython,
-    text: 'Python',
-    type: 'icon',
-    link: 'https://www.python.org',
-    categoryID: 'programmingLanguage'
   },
   {
     comp: Umami,
