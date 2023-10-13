@@ -11,7 +11,7 @@ export const SearchBox = ({ reset }) => {
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
-    const p_query = ParseQuery(location.search);
+    const p_query = ParseQuery(location.search) || {};
     setQuery(p_query);
   }, [location.pathname, location.search]);
 
@@ -22,7 +22,7 @@ export const SearchBox = ({ reset }) => {
   };
 
   const onClearFilter = () => {
-    setQuery(undefined);
+    setQuery({});
     navigate(`/plays`);
   };
 

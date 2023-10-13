@@ -1,6 +1,6 @@
 import React from 'react';
 import { useResultContext } from '../context/ResultContext';
-import { formatDate } from '../../../common/utils/commonUtils';
+import { formatDate } from 'common/utils/commonUtils';
 
 const ProfileCard = () => {
   const { results } = useResultContext();
