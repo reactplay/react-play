@@ -8,7 +8,8 @@ import './activityBanner.css';
 import { UMAMI_EVENTS } from 'constants';
 
 function ActivityBanner({ currentActivity }) {
-  const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
+  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
+  const formatter = Intl.NumberFormat('en', { notation: 'compact' });
   const activity = activities.filter((a) => a.id === currentActivity);
   const { name, subtitle, description, logo, heroImage } = activity[0];
 
@@ -50,7 +51,8 @@ function ActivityBanner({ currentActivity }) {
               <span className="btn-label">
                 GitHub{' '}
                 <div className="label-info-more">
-                  <FiStar /> <div className="more-label">{data.stargazers_count}</div>
+                  <FiStar />{' '}
+                  <div className="more-label">{formatter.format(data.stargazers_count)}</div>
                 </div>{' '}
               </span>
             </a>
