@@ -1,0 +1,94 @@
+/* CSS for the translator container */
+.translator-container {
+  width: 900px; /* Increase the width as needed */
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  height: 60vh;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Style for the input field */
+.translator-input {
+  width: 100%; /* Make the input field fill the container width */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.translated-lang {
+  margin-top: 20px; /* You can adjust the margin size as needed */
+}
+
+/* Style for the translated text box */
+.translated-text {
+  width: 100%; /* Make the text container fill the container width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  min-height: 100px; /* Adjust the minimum height as needed */
+  overflow-y: auto;
+}
+
+/* Style for the result text */
+.result-text {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Style for the Translate button */
+.translate-button {
+  width: 15%;
+  padding: 10px 20px;
+  background-color: #007bff; /* Default background color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for the hover effect */
+}
+
+/* Hover effect for the Translate button */
+.translate-button:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}
+/* Style for the select element */
+.select-language {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+  color: #333; /* Text color */
+  cursor: pointer;
+}
+
+/* Additional styles for the select element on hover and focus */
+.select-language:hover,
+.select-language:focus {
+  border-color: #007bff; /* Change border color on hover/focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box-shadow */
+}
+
+@media (max-width: 768px) {
+  .translator-container {
+    width: 100%; /* Full width on mobile */
+    padding: 10px; /* Reduced padding */
+  }
+
+  .translated-text {
+    min-height: 80px; /* Adjusted minimum height */
+  }
+
+  /* Style for the Translate button on mobile */
+  .translate-button {
+    width: 100%; /* Full width on mobile */
+  }
+}

@@ -14,14 +14,12 @@ Stopwatch application
 
 ## Implementation Details
 
-
-This app covers very basic functionailty of react...hooks like useState and useEffect and by setInternval functionailty 
+This app covers very basic functionailty of react...hooks like useState and useEffect and by setInternval functionailty
 this app includes features like START to start timer and RESET to set timer to zero...it is a stopwatch
 
 ## Consideration
 
 Hooks - useState and useEffect
-
 
 ## Resources
 

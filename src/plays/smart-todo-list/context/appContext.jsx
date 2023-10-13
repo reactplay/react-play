@@ -11,6 +11,7 @@ const getLocalStorage = () => {
     return [];
   }
 };
+
 const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tasks, setTasks] = useState(getLocalStorage());
