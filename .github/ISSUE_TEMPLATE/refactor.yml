@@ -1,0 +1,39 @@
+name: Refactor Code 🔧
+description: Use this label for code refactoring tasks.
+title: "[Refactor] <write what you want to add>"
+labels: ["🛠 goal: refactor", "🚦status: awaiting triage","💻 aspect: code"]
+body:
+  - type: input
+    id: refactor_input
+    attributes:
+      label: File Name
+      description: "Enter the file that you want to refactor in the codebase."
+      placeholder: "For example - src/common"
+    validations:
+      required: true
+  - type: textarea
+    id: refactor_description
+    attributes:
+      label: "Reason for Refactoring the Code"
+      description: "Describe what improvements can be made in the codebase without introducing breaking changes."
+    validations:
+      required: true
+  - type: checkboxes
+    id: refactor_terms
+    attributes:
+      label: "Record"
+      options:
+        - label: I have checked the existing [issues](https://github.com/reactplay/react-play/issues)
+          required: true
+
+        - label: I have read the [Contributing Guidelines](https://github.com/reactplay/react-play/blob/main/CONTRIBUTING.md)
+          required: true
+
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/reactplay/react-play/blob/main/CODE_OF_CONDUCT.md)
+          required: true
+          
+        - label: I am in Hacktoberfest
+          required: true
+        
+
+        - label: I want to work on this issue
