@@ -12,6 +12,7 @@ concurrency:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    if: github.repository == 'reactplay/react-play'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
