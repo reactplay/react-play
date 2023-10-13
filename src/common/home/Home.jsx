@@ -15,10 +15,9 @@ import DefaultBanner from 'common/defaultBanner/DefaultBanner';
 import TestimonialSection from 'common/Testimonial/TestimonialSection';
 import Sponsors from './Sponsors';
 import { CREATE_PLAY_DOC_LINK } from 'constants';
-import { useSearchContext } from 'common/search/search-context';
 
 const Home = () => {
-  const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
+  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
   const { showShareModal, setShowShareModal,setSearchTerm, searchTerm, setFilterQuery } = useSearchContext();
   useEffect(() => {
     setSearchTerm('');
