@@ -2,7 +2,6 @@ name: '🔥 #2PlaysAMonth Entry'
 description: 'Add a new Play entry for the #2PlaysAMonth event.'
 title: '[#2PlaysAMonth]: '
 labels: ['#2PlaysAMonth']
-assignees: ['']
 body:
   - type: markdown
     attributes:
