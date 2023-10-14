@@ -10,9 +10,15 @@ function UrlShortner(props) {
   const [error, setError] = useState(null);
   const handleSubmit = async () => {
     try {
-      const response = await axios(`https://api.shrtco.de/v2/shorten?url=${userInput}`);
-      if (response.data.ok) {
-        setShortenedLink(response.data.result.full_short_link);
+      setShortenedLink('');
+      const response = await axios.get(`https://tinyurl.com/api-create.php?url=${userInput}`);
+      if (response.data) {
+        toast('URL Shortened successfully!', {
+          position: 'top-center',
+          type: 'success',
+          autoClose: 1500
+        });
+        setShortenedLink(response.data);
         setError(null);
       } else {
         setError(response.data.error);
@@ -33,7 +39,11 @@ function UrlShortner(props) {
 
     try {
       document.execCommand('copy');
-      toast('Link Copied To Clipboard', { position: 'top-center', type: 'success' });
+      toast('Link Copied To Clipboard', {
+        position: 'top-center',
+        type: 'success',
+        autoClose: 2000
+      });
     } catch (err) {
       setError('Failed to copy text: ', err);
     } finally {
