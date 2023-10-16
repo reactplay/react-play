@@ -39,7 +39,9 @@
   font-size: 20px;
   font-weight: 300;
   border: 3px solid red;
-  box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 10px 38px rgba(0, 0, 0, 0.2),
+    0 10px 12px rgba(0, 0, 0, 0.1);
   color: #0d0d0d;
 }
 
@@ -81,7 +83,9 @@
   font-size: 3rem;
   margin-left: auto;
   border-radius: 50%;
-  box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 10px 38px rgba(0, 0, 0, 0.2),
+    0 10px 12px rgba(0, 0, 0, 0.1);
   color: #ffc107;
 }
 

@@ -33,6 +33,14 @@ yarn.lock
 
 # play index
 src/plays/index.js
+plays/index.js
+src/plays/index.json
+plays/index.json
+
+
+# play test
+cypress/e2e/play.cy.ts
+
 
 # vscode setting
 .vscode
