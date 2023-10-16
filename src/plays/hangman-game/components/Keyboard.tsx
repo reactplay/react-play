@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import React from 'react';
-import styled from 'styled-components';
 import { KEYS } from '../constants/constants';
 import { Key, KeyboardGrid, KeyContainer } from '../styled-components';
 
