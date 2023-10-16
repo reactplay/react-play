@@ -93,7 +93,7 @@
     "cypress:run": "cypress run",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
     "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc",
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,scss,md}\" --config ./.prettierrc",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },

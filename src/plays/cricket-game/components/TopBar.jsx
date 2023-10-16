@@ -26,13 +26,13 @@ export default function TopBar({ hitBoxRef, gameTrack }) {
         </button>
         <button
           className="top-bar-button w-6 md:w-8 h-8 rounded-lg bg-orange-200 text-sm opacity-80 hover:opacity-90 active:opacity-100"
-          onClick={(event) => toggleMusicPlay()}
+          onClick={() => toggleMusicPlay()}
         >
           🎵
         </button>
         <button
           className="top-bar-button w-24 md:w-28 h-8 rounded-lg bg-orange-200 text-[0.80rem] md:text-sm opacity-80 hover:opacity-90 active:opacity-100 font-cricket-game"
-          onClick={(event) => hitBoxRef.current.classList.toggle('hit-box-blink')}
+          onClick={() => hitBoxRef.current.classList.toggle('hit-box-blink')}
         >
           Toggle Hit Box
         </button>
