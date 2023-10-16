@@ -50,9 +50,10 @@ function MultiplayerTicTacToe(props: any) {
       if (pos === 'cross' || pos === 'circle') {
         count++;
       }
-      if (GAME_ARRAY.length === 9 && GAME_ARRAY.indexOf('') < 0) {
+      if (count > 9 || (GAME_ARRAY.length === 9 && GAME_ARRAY.indexOf('')) < 0) {
         setFinalMessage('Game Draw!');
         setIsFinished(true);
+        count = 0;
       }
     });
 

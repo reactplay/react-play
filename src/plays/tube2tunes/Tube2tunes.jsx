@@ -57,7 +57,7 @@ function Tube2tunes(props) {
           setLoading(false);
         }
       })
-      .catch((err) => {
+      .catch(() => {
         // console.log('Error: ', err);
       });
 

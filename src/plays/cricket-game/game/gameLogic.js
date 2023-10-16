@@ -1,4 +1,4 @@
-import { plural, sleep, randomChoice } from './utils.js';
+import { sleep, randomChoice } from './utils.js';
 import { COMMENTARY } from './commentary.js';
 
 export class GameState {
@@ -87,7 +87,7 @@ export function hitTheBall(event, ballCentre, shotBallRef) {
   shotBallRef.current.classList.add(shotName);
 
   // Reset shot ball's position now
-  sleep(1 * 1000).then((resp) => {
+  sleep(1 * 1000).then(() => {
     shotBallRef.current.classList.add('invisible');
     shotBallRef.current.classList.remove(shotName);
 
