@@ -16,7 +16,7 @@ export default function EndGameScreen({ endScreenRef, resultTitle, resultDesc, r
 
       <button
         className="start-match-button w-32 h-8 md:w-40 md:h-10 rounded-full font-semibold text-base md:text-xl font-cricket-game"
-        onClick={(event) => {
+        onClick={() => {
           window.location.reload();
         }}
       >
