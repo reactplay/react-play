@@ -15,7 +15,7 @@ export default function Modal({ userLevel, levelInfo, startGame, modalRef }) {
 
       <button
         className="start-match-button w-32 h-8 md:w-40 md:h-10 rounded-full font-semibold text-lg md:text-xl font-cricket-game"
-        onClick={(event) => startGame()}
+        onClick={() => startGame()}
       >
         START!
       </button>
