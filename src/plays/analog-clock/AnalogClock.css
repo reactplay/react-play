@@ -12,7 +12,10 @@
   border-radius: 50%;
   position: relative;
   background-color: #3d3d3d;
-  box-shadow: inset 0px 6px 0px 2px #646262, -4px 4px 1px 0px #959393, 0px 0px 1px 2px #959393,
+  box-shadow:
+    inset 0px 6px 0px 2px #646262,
+    -4px 4px 1px 0px #959393,
+    0px 0px 1px 2px #959393,
     -4px 4px 7px 1px #434343;
 }
 .clock::after {
@@ -24,7 +27,9 @@
   top: 49%;
   left: 49%;
   border-radius: 50%;
-  box-shadow: 0px 0px 0px 4px #a3a1a1, 0px 0px 0px 5px #9d9d9d;
+  box-shadow:
+    0px 0px 0px 4px #a3a1a1,
+    0px 0px 0px 5px #9d9d9d;
 }
 .hour-hand {
   width: 10px;

@@ -12,19 +12,22 @@ clientsClaim();
 precacheAndRoute(self.__WB_MANIFEST);
 
 const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
-registerRoute(({ request, url }) => {
-  if (request.mode !== 'navigate') {
-    return false;
-  }
-  if (url.pathname.startsWith('/_')) {
-    return false;
-  }
-  if (url.pathname.match(fileExtensionRegexp)) {
-    return false;
-  }
+registerRoute(
+  ({ request, url }) => {
+    if (request.mode !== 'navigate') {
+      return false;
+    }
+    if (url.pathname.startsWith('/_')) {
+      return false;
+    }
+    if (url.pathname.match(fileExtensionRegexp)) {
+      return false;
+    }
 
-  return true;
-}, createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html'));
+    return true;
+  },
+  createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
+);
 
 registerRoute(
   ({ url }) => {
