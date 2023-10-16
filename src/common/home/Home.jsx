@@ -18,7 +18,7 @@ import { CREATE_PLAY_DOC_LINK } from 'constants';
 
 const Home = () => {
   const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
-  const { setSearchTerm, searchTerm, setFilterQuery, showShareModal, setShowShareModal } = 
+  const { setSearchTerm, searchTerm, setFilterQuery, showShareModal, setShowShareModal } =
   useSearchContext();
 
   useEffect(() => {
