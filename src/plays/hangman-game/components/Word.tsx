@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Border, LetterComponent, WordContainer } from '../styled-components';
 
 interface WordProps {
