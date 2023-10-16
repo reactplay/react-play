@@ -6,7 +6,14 @@
   width: 100%;
 }
 .motivate-me-Dropdown_items {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   color: #51526f;
   line-height: 1.6;
   box-sizing: inherit;
@@ -23,7 +30,10 @@
   border: 1px solid #c8cbf2;
   overflow: hidden;
   border-radius: 4px;
-  transition: transform 0.2s, opacity 0.2s, visibility 0.2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s,
+    visibility 0.2s;
   opacity: 0;
   transform: rotateX(-20deg) scale(0.97);
   will-change: transform;
@@ -32,7 +42,14 @@
 
 .motivate-me-Dropdown_items {
   tab-size: 4;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   color: #51526f;
   line-height: 1.6;
   visibility: hidden;
@@ -56,7 +73,10 @@
   font-weight: 700;
   font-size: 17px;
   padding: 8px 16px;
-  transition: background 0.12s, color 0.12s, border-color 0.12s;
+  transition:
+    background 0.12s,
+    color 0.12s,
+    border-color 0.12s;
   outline: 0;
   cursor: pointer;
   display: flex;
@@ -91,7 +111,9 @@
   font-size: 18px;
   cursor: pointer;
   color: inherit;
-  transition: background 0.1s, color 0.1s;
+  transition:
+    background 0.1s,
+    color 0.1s;
 }
 .motivate-me-Dropdown_items li:hover {
   background: linear-gradient(130deg, #fdc5b8, #fdc5b8);
