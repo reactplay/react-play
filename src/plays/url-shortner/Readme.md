@@ -1,6 +1,6 @@
 # URL Shortner 
 
-In some cases you might have to send a URL to a few group, and this URL might have extra boundaries, which will in general make it very lengthy. This can be immediately settled utilizing URL shorteners. URL shorteners are instruments used to make a novel URL that will divert a client to a predetermined URL. This new URL is more limited and contains the URL shorteners site address with a mix of irregular characters.
+URL shortener will takes a long URL and generates a shorter, more manageable version of it.
 
 ## Play Demographic
 
@@ -10,7 +10,7 @@ In some cases you might have to send a URL to a few group, and this URL might ha
 ## Creator Information
 
 - User: alaminrifat
-- Gihub Link: https://github.com/alaminrifat
+- Github Link: https://github.com/alaminrifat
 - LinkedIn Link: https://www.linkedin.com/in/alaminrifat
 - Blog: https://medium.com/@alaminrifat
 - Video: 
@@ -25,4 +25,4 @@ Update all considerations(if any)
 
 ## Resources
 
-Update external resources(if any)
+[Tiny URL API](https://tinyurl.com/app/dev)
