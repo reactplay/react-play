@@ -1,0 +1,103 @@
+.conatiner {
+  display: 'flex';
+  flex-direction: 'column';
+  width: 'inherit';
+}
+
+.heading {
+  text-align: center;
+  font-size: 3rem;
+  padding: 3rem 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.list-brand-tech-stack {
+  --techstack-cardsize: 150px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 1rem auto 4rem auto;
+  max-width: 1280px;
+  box-sizing: border-box;
+  grid-gap: 2rem;
+  justify-content: left;
+  flex: 2;
+}
+
+.brand-tech-stack {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.4rem;
+  background-color: var(--color-neutral-10);
+  justify-content: center;
+  align-items: center;
+  width: var(--techstack-cardsize);
+  height: var(--techstack-cardsize);
+  padding: 0.5rem 0.5rem;
+  border-radius: 1rem;
+  border: solid 0.2rem var(--color-neutral-30);
+  box-sizing: border-box;
+  transition: all 0.16s ease-in-out;
+}
+
+.tech-brand-name {
+  flex: 1;
+  text-align: left;
+}
+
+.brand-tech-stack .icon {
+  fill: var(--color-neutral-50);
+  padding: 0.5rem;
+}
+
+.brand-tech-stack .image {
+  filter: invert(60%) sepia(12%) saturate(186%) hue-rotate(151deg) brightness(86%) contrast(84%);
+  object-fit: contain;
+  max-height: 6rem;
+  max-width: 6rem;
+  padding: 0.5rem;
+}
+
+.brand-tech-stack:hover,
+.brand-tech-stack:focus {
+  border: solid 0.2rem rgba(var(--color-brand-primary-dark), 60%);
+  transform: scale(1.1);
+  box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.12);
+  -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.12);
+  -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.12);
+}
+
+.brand-tech-stack:hover .icon,
+.brand-tech-stack:focus .icon {
+  fill: var(--color-neutral-90);
+}
+
+.brand-tech-stack:hover .image,
+.brand-tech-stack:focus .image {
+  filter: invert(7%) sepia(35%) saturate(2866%) hue-rotate(212deg) brightness(95%) contrast(115%);
+}
+
+@media screen and (max-width: 640px) {
+  .heading {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+  .list-brand-tech-stack {
+    --techstack-cardsize: 120px;
+    flex: 1;
+  }
+
+  .brand-tech-stack .image {
+    object-fit: contain;
+    max-height: 4rem;
+    max-width: 4rem;
+  }
+}
