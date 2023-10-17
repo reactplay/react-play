@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
 
-import PrioritySearch from './PrioitySearch';
+import PrioritySearch from './PrioritySearch';
 import TrainsitionSearch from './TransitionSearch';
 
 import { users } from 'common/utils/fakeUser';

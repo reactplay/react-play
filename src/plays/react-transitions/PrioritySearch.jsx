@@ -19,8 +19,8 @@ export default function PrioritySearch({ users }) {
       <input placeholder="Type a name" type="text" value={searchTerm} onChange={handleChange} />
       <div className="user-cards">
         {filtered.length > 0 ? (
-          filtered.map((user) => (
-            <div class="card">
+          filtered.map((user, index) => (
+            <div className="card" key={index}>
               <div>
                 <img alt={`Avatar image of ${user?.name}`} src={user?.avatar} />
               </div>
