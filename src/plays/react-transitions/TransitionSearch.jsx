@@ -36,8 +36,8 @@ export default function TrainsitionSearch({ users }) {
       ) : (
         <div className="user-cards">
           {filtered.length > 0 ? (
-            filtered.map((user) => (
-              <div class="card">
+            filtered.map((user, index) => (
+              <div class="card" key={index}>
                 <div>
                   <img alt={`Avatar image of ${user?.name}`} src={user?.avatar} />
                 </div>
