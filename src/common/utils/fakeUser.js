@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-const THRESHOLD = 10000;
+const THRESHOLD = 100;
 
 export const users = Array.from(Array(THRESHOLD), () => {
   return {
