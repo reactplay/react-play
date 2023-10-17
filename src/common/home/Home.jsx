@@ -19,7 +19,6 @@ import { CREATE_PLAY_DOC_LINK } from 'constants';
 const Home = () => {
   const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
   const { setSearchTerm, searchTerm, setFilterQuery } = useSearchContext();
-  const { showShareModal, setShowShareModal } = useSearchContext();
   useEffect(() => {
     setSearchTerm('');
     setFilterQuery({
@@ -78,7 +77,7 @@ const Home = () => {
             </p>
           </li>
           <li className="home-features-item">
-            <div className="item-icon" onClick={() => setShowShareModal(!showShareModal)}>
+            <div className="item-icon">
               <BiShareAlt className="icon" color="var(--color-neutral-90)" />
             </div>
             <h2 className="item-title">Socialize </h2>
