@@ -18,6 +18,7 @@ const PlayList = () => {
   const [plays, setPlays] = useState();
   const [isFiltered, setIsFiltered] = useState(false);
   const [sortBy, setSortBy] = useState(localStorage.getItem('sortByPlay') || 'Newest');
+  const [getSearchTerm, setGetSearchTerm] = useState();
   let location = useLocation();
 
   const onChange = (e) => {
@@ -62,6 +63,9 @@ const PlayList = () => {
         setIsFiltered(true);
       }
       setLoading(false);
+
+      // gets Search Term from url to display in the search summary
+      setGetSearchTerm(new URLSearchParams(location.search).get('text'));
     };
     getPlays();
   }, [location.search, sortBy]);
@@ -93,6 +97,14 @@ const PlayList = () => {
   return (
     <Fragment>
       {isFiltered ? null : <DynamicBanner randomPlay={randomPlay} />}
+      {location.search ? (
+        <div className="search-summary">
+          <b>{plays?.length}</b>&nbsp;results for plays matching&nbsp;<b>{getSearchTerm}</b>
+          &nbsp;sorted by&nbsp;<b>{sortBy}</b>
+        </div>
+      ) : (
+        ''
+      )}
       <div className="sort-by-plays-wrapper">
         Sort By :
         <select id="sort-by-plays" name="sort-by-plays" value={sortBy} onChange={onChange}>
