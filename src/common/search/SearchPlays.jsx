@@ -18,19 +18,21 @@ const SearchPlays = ({ reset, query, onChange }) => {
     if (reset.search) {
       resetSearchField();
     }
-    const text = query && query.text ? query.text.split('+').join(' ') : '';
+    const text = query && query?.text ? query.text.split('+').join(' ') : '';
 
     setSearchText(decodeURIComponent(text));
   }, [query]);
 
   const handleSearch = (event) => {
     event.preventDefault();
+    const { value } = event.target;
     if (event.key === 'Enter') {
-      query = query || {};
-      query.text = event.target.value;
-      if (onChange) {
-        onChange(query);
+      if (value) {
+        query.text = value;
+      } else {
+        delete query.text;
       }
+      onChange(query);
     }
   };
 
