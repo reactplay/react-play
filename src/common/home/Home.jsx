@@ -14,6 +14,7 @@ import ActivityBanner from 'common/activities/ActivityBanner';
 import DefaultBanner from 'common/defaultBanner/DefaultBanner';
 import TestimonialSection from 'common/Testimonial/TestimonialSection';
 import Sponsors from './Sponsors';
+import { CREATE_PLAY_DOC_LINK } from 'constants';
 
 const Home = () => {
   const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
@@ -50,9 +51,11 @@ const Home = () => {
       <section className="home-features">
         <ul className="list-home-features">
           <li className="home-features-item">
-            <div className="item-icon">
-              <RiSlideshow4Line className="icon" color="var(--color-neutral-90)" />
-            </div>
+            <Link to="/plays">
+              <div className="item-icon">
+                <RiSlideshow4Line className="icon" color="var(--color-neutral-90)" />
+              </div>
+            </Link>
             <h2 className="item-title">Learn </h2>
             <p className="item-desc">
               Learn how to "Think in React" and build applications inspired by several plays(source
@@ -61,9 +64,11 @@ const Home = () => {
             </p>
           </li>
           <li className="home-features-item">
-            <div className="item-icon">
-              <BiAddToQueue className="icon" color="var(--color-neutral-90)" />
-            </div>
+            <Link to={CREATE_PLAY_DOC_LINK}>
+              <div className="item-icon">
+                <BiAddToQueue className="icon" color="var(--color-neutral-90)" />
+              </div>
+            </Link>
             <h2 className="item-title">Create </h2>
             <p className="item-desc">
               Create your own plays and own them by following a few simple steps. Learned something
