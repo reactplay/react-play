@@ -293,6 +293,7 @@
 
 .list-home-features .home-features-item:hover .item-icon{
   background-color: white;
+  text-align: center;
 }
 
 .list-home-features .home-features-item .item-icon .icon {
