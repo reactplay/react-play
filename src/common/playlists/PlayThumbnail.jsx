@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BsPlayCircleFill } from 'react-icons/bs';
-import thumbPlay from 'images/thumb-play.png';
 import Shimmer from 'react-shimmer-effect';
 import userImage from 'images/user.png';
 import Like from 'common/components/Like/Like';

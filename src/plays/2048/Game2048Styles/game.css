@@ -6,9 +6,13 @@
   position: absolute;
   left: 36rem;
   top: 11rem;
-  box-shadow: 1.9px 2.6px 9.6px rgb(0 0 0 / 7%), 4.6px 6.3px 18.2px rgb(0 0 0 / 10%),
-    8.6px 11.8px 25.8px rgb(0 0 0 / 12%), 15.4px 21px 32.8px rgb(0 0 0 / 14%),
-    28.8px 39.3px 41.4px rgb(0 0 0 / 17%), 69px 94px 80px rgb(0 0 0 / 24%);
+  box-shadow:
+    1.9px 2.6px 9.6px rgb(0 0 0 / 7%),
+    4.6px 6.3px 18.2px rgb(0 0 0 / 10%),
+    8.6px 11.8px 25.8px rgb(0 0 0 / 12%),
+    15.4px 21px 32.8px rgb(0 0 0 / 14%),
+    28.8px 39.3px 41.4px rgb(0 0 0 / 17%),
+    69px 94px 80px rgb(0 0 0 / 24%);
 }
 
 .twenty-forty-eight-row {

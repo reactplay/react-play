@@ -17,7 +17,9 @@
   border: 0;
   outline: 0;
   border-radius: 10px;
-  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    -8px -8px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.2);
   background: white;
 }
 .calculator_grid > button:hover,

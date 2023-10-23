@@ -26,7 +26,7 @@ const PlayForm = ({ fields, formDataObj, onSubmit, isEditPlay }) => {
             className="w-full"
             disabled={checkDisabledInputs(field.datafield)}
             id={field.id}
-            label={field.plaeholder}
+            label={field.placeholder}
             size="small"
             value={formData[field.datafield]}
             {...field}
