@@ -242,12 +242,12 @@ function Wordle(props: any): JSX.Element {
               {allTimeStats && <EndScreen allTimeStats={allTimeStats} reset={reset} />}
 
               <div className="wordle w-[21rem] lg:w-[20rem] h-[24rem] flex flex-col items-center justify-evenly">
-                <WordleRow tileRow={tiles[0]} wordleWord={wordleWord} />
-                <WordleRow tileRow={tiles[1]} wordleWord={wordleWord} />
-                <WordleRow tileRow={tiles[2]} wordleWord={wordleWord} />
-                <WordleRow tileRow={tiles[3]} wordleWord={wordleWord} />
-                <WordleRow tileRow={tiles[4]} wordleWord={wordleWord} />
-                <WordleRow tileRow={tiles[5]} wordleWord={wordleWord} />
+                <WordleRow rowNo={0} tileRow={tiles[0]} wordleWord={wordleWord} />
+                <WordleRow rowNo={1} tileRow={tiles[1]} wordleWord={wordleWord} />
+                <WordleRow rowNo={2} tileRow={tiles[2]} wordleWord={wordleWord} />
+                <WordleRow rowNo={3} tileRow={tiles[3]} wordleWord={wordleWord} />
+                <WordleRow rowNo={4} tileRow={tiles[4]} wordleWord={wordleWord} />
+                <WordleRow rowNo={5} tileRow={tiles[5]} wordleWord={wordleWord} />
               </div>
 
               <div className="keyboard w-[22rem] lg:w-[30rem] h-44 lg:h-[13rem] flex flex-col items-center justify-evenly">
