@@ -23,6 +23,7 @@ export default function WordleRow(props: { rowNo: number; tileRow: TileRow; word
             if (wordleWord.includes(letter) && wordleWord.slice(index, index + 1) === letter) {
               return (
                 <WordleTile
+                  guessed
                   roll
                   correct={isCorrect}
                   index={index}
@@ -37,6 +38,7 @@ export default function WordleRow(props: { rowNo: number; tileRow: TileRow; word
             ) {
               return (
                 <WordleTile
+                  guessed
                   roll
                   correct={isCorrect}
                   index={index}
@@ -48,6 +50,7 @@ export default function WordleRow(props: { rowNo: number; tileRow: TileRow; word
             } else {
               return (
                 <WordleTile
+                  guessed
                   roll
                   correct={isCorrect}
                   index={index}
@@ -62,6 +65,7 @@ export default function WordleRow(props: { rowNo: number; tileRow: TileRow; word
             return (
               <WordleTile
                 correct={isCorrect}
+                guessed={false}
                 index={index}
                 key={`tile-${rowNo}-${index}`}
                 roll={false}
