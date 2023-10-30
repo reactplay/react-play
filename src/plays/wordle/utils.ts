@@ -53,3 +53,6 @@ export function setLocalData(result: 'WIN' | 'LOSS', attempt: number) {
 
   return allTimeStats;
 }
+
+// Return milliseconds as seconds
+export const seconds = (s: number) => s * 1000;
