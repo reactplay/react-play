@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, MutableRefObject, MouseEvent } from 'react
 import PlayHeader from 'common/playlists/PlayHeader';
 
 // Components
+import ClipboardModal from './components/ClipboardModal';
 import EndScreen from './components/EndScreen';
 import KeyboardKey from './components/KeyboardKey';
 import WordleRow from './components/WordleRow';
@@ -15,6 +16,7 @@ import { AllTimeStats, TileRow, WordleAction } from './types';
 import './styles.css';
 import WORDLE_WORDS from './data/words';
 import backspace from './assets/backspace.svg';
+import share from './assets/share.svg';
 
 // Get a random wordle word from data
 function getRandomWordleWord() {
@@ -47,9 +49,14 @@ function Wordle(props: any): JSX.Element {
     correct: Array<string>()
   });
 
-  const errorSlideRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const notifSlideRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const wordleRef = useRef() as MutableRefObject<HTMLDivElement>;
+
   const [allTimeStats, setStats] = useState<AllTimeStats | null>(null);
+  const [wordleCopy, setWordleCopy] = useState<Node | null>(null);
+
   const [gameOver, setGameOver] = useState(false);
+  const removeCopy = () => setWordleCopy(null);
 
   function reset() {
     // Reset and start a new game!
@@ -63,27 +70,28 @@ function Wordle(props: any): JSX.Element {
 
     setRow(0);
     setIndex(0);
+    // Resetting letter status to remove keyboard formatting
     setLetterStatus({
       wrong: Array<string>(),
       misplaced: Array<string>(),
       correct: Array<string>()
     });
     // This method removes all children from element node
-    errorSlideRef.current.replaceChildren();
+    notifSlideRef.current.replaceChildren();
     setStats(null);
     setGameOver(false);
   }
 
-  function pushError(string: string) {
+  function pushNotif(string: string) {
     const errorMsg = createElement(
       'div',
       'bg-slate-200 p-2 text-center font-semibold rounded-lg delete-after',
       string
     );
-    errorSlideRef.current.insertBefore(errorMsg, errorSlideRef.current.firstChild);
+    notifSlideRef.current.insertBefore(errorMsg, notifSlideRef.current.firstChild);
 
     setTimeout(() => {
-      errorSlideRef.current.removeChild(errorMsg);
+      notifSlideRef.current.removeChild(errorMsg);
     }, ERR_EXP_AFTER);
   }
 
@@ -119,7 +127,7 @@ function Wordle(props: any): JSX.Element {
 
   function evaluateRow() {
     if (currIndex !== 5) {
-      return pushError('Not enough words');
+      return pushNotif('Not enough words');
     }
 
     const tileRow = tiles[currRow];
@@ -127,7 +135,7 @@ function Wordle(props: any): JSX.Element {
 
     // If the word is not in global list
     if (!WORDLE_WORDS.includes(currGuess.toLowerCase())) {
-      return pushError('Not in word list');
+      return pushNotif('Not in word list');
     }
 
     // If the guess is correct
@@ -141,7 +149,7 @@ function Wordle(props: any): JSX.Element {
           'bg-slate-200 p-2 text-center font-semibold rounded-lg text-lg',
           'Well Done!'
         );
-        errorSlideRef.current.insertBefore(answerElem, errorSlideRef.current.firstChild);
+        notifSlideRef.current.insertBefore(answerElem, notifSlideRef.current.firstChild);
       }, 2.5 * 1000);
 
       updateLetterStatus(tileRow);
@@ -162,7 +170,7 @@ function Wordle(props: any): JSX.Element {
           'bg-slate-200 p-2 text-center font-semibold rounded-lg text-lg font-wordle text-black',
           wordleWord.toUpperCase()
         );
-        errorSlideRef.current.insertBefore(answerElem, errorSlideRef.current.firstChild);
+        notifSlideRef.current.insertBefore(answerElem, notifSlideRef.current.firstChild);
 
         setTimeout(() => {
           const updatedStats = setLocalData('LOSS', currRow);
@@ -236,12 +244,39 @@ function Wordle(props: any): JSX.Element {
             <div className="w-full h-[80vh] flex flex-col lg:flex-row items-center justify-center relative overflow-hidden lg:space-x-8 space-y-4 lg:space-y-0">
               <div
                 className="error-slide w-48 bg-transparent absolute p-3 space-y-4 z-10 top-14 font-wordle"
-                ref={errorSlideRef}
+                ref={notifSlideRef}
               />
 
-              {allTimeStats && <EndScreen allTimeStats={allTimeStats} reset={reset} />}
+              <button
+                className={
+                  'copy-button w-12 sm:w-16 h-8 sm:h-10 bg-correct absolute top-0 sm:top-4 right-2 sm:right-6 rounded-2xl p-px ' +
+                  'text-white text-sm font-medium ' +
+                  'hover:bg-[#60a25a] transition active:bg-correct mt-4 outline-transparent'
+                }
+                data-action="Copy"
+                title="Copy Current Tiles"
+                onClick={() => setWordleCopy(wordleRef.current.cloneNode(true))}
+              >
+                <img
+                  alt="Copy Current Tiles"
+                  className="bg-transparent w-6 sm:w-8 h-auto m-auto"
+                  src={share}
+                />
+              </button>
 
-              <div className="wordle w-[21rem] lg:w-[20rem] h-[24rem] flex flex-col items-center justify-evenly">
+              {allTimeStats && <EndScreen allTimeStats={allTimeStats} reset={reset} />}
+              {wordleCopy && (
+                <ClipboardModal
+                  pushNotif={pushNotif}
+                  removeCopy={removeCopy}
+                  wordleCopy={wordleCopy}
+                />
+              )}
+
+              <div
+                className="wordle w-[21rem] lg:w-[20rem] h-[24rem] flex flex-col items-center justify-evenly"
+                ref={wordleRef}
+              >
                 <WordleRow rowNo={0} tileRow={tiles[0]} wordleWord={wordleWord} />
                 <WordleRow rowNo={1} tileRow={tiles[1]} wordleWord={wordleWord} />
                 <WordleRow rowNo={2} tileRow={tiles[2]} wordleWord={wordleWord} />
