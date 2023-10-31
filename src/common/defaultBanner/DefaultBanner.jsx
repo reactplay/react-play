@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { MdManageSearch } from 'react-icons/md';
 import { UMAMI_EVENTS } from 'constants';
 
+import QR from 'images/QR.png';
+
 const DefaultBanner = () => {
   const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
   const formatter = Intl.NumberFormat('en', { notation: 'compact' });
@@ -47,6 +49,9 @@ const DefaultBanner = () => {
         <Link className="home-anchor" target="_blank" to="https://hustles.reactplay.io/">
           <span className="text text-secondary">here</span>
         </Link>
+      </div>
+      <div className="qr-code">
+        <img alt="QR" src={QR} />
       </div>
     </div>
   );

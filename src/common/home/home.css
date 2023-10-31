@@ -85,6 +85,11 @@
   max-width: var(--screen-lg-max);
 }
 
+.app-home-body .qr-code{
+  display: flex;
+  justify-content: center;
+}
+
 .app-home-body .body-c2a {
   position: relative;
   display: flex;
