@@ -1,8 +1,7 @@
 name: '✨ [Feature request]:'
 description: Suggest an idea for this project
 title: '✨ [Feature request]: '
-labels: []
-assignees: ['']
+labels: ["🚦status: awaiting triage", "💻 aspect: code", "⭐ goal: addition"]
 body:
   - type: markdown
     attributes:
@@ -55,6 +54,8 @@ body:
         - label: I have read the [Contributing Guidelines](https://github.com/reactplay/react-play/blob/main/CONTRIBUTING.md)
           required: true
         - label: I want to work on this issue
+        - label: I am in Hacktoberfest
+          required: true
 
   - type: checkboxes
     id: terms

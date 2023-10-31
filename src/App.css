@@ -536,63 +536,6 @@ small {
   height: var(--navbar-icon-size-sm);
 }
 
-/* Tech Stack */
-.list-brand-tech-stack {
-  --techstack-cardsize: 250px;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 1rem auto 2rem auto;
-  max-width: 1280px;
-  box-sizing: border-box;
-  grid-gap: 0.4rem;
-  justify-content: center;
-}
-
-.brand-tech-stack {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 0.4rem;
-  background-color: var(--color-neutral-10);
-  justify-content: center;
-  align-items: center;
-  width: var(--techstack-cardsize);
-  height: var(--techstack-cardsize);
-  padding: 1rem 2rem;
-  border-radius: 0.2rem;
-  /* border: solid 1px var(--color-neutral-30); */
-  box-sizing: border-box;
-  transition: all 0.16s ease-in-out;
-}
-
-.brand-tech-stack .icon {
-  fill: var(--color-neutral-50);
-}
-
-.brand-tech-stack .image {
-  filter: invert(60%) sepia(12%) saturate(186%) hue-rotate(151deg) brightness(86%) contrast(84%);
-}
-
-.brand-tech-stack:hover,
-.brand-tech-stack:focus {
-  border: solid 2px rgba(var(--color-brand-primary-rgb), 60%);
-  transform: scale(1.1);
-  box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.12);
-  -webkit-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.12);
-  -moz-box-shadow: 0px 0 12px 0px rgba(var(--color-neutral-90-rgb), 0.12);
-}
-
-.brand-tech-stack:hover .icon,
-.brand-tech-stack:focus .icon {
-  fill: var(--color-brand-primary);
-}
-
-.brand-tech-stack:hover .image,
-.brand-tech-stack:focus .image {
-  filter: invert(75%) sepia(58%) saturate(2245%) hue-rotate(131deg) brightness(102%) contrast(103%);
-}
-
 .create-button-badge {
   background-color: var(--color-neutral-60);
   border-radius: 0px 6px 6px 0px;
@@ -603,4 +546,21 @@ small {
   transform: skew(170deg);
   font-size: var(--fs-xxs);
   text-transform: uppercase;
+}
+
+/* Scroll-bar */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00f2fe;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+  height: 100px;
+}
+
+::-webkit-scrollbar {
+  width: 25px;
 }

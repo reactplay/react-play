@@ -291,6 +291,11 @@
     -moz-box-shadow: 0px -1px 26px 0px rgba(0,14,17,0.59); */
 }
 
+.list-home-features .home-features-item .item-icon:hover{
+  background-color: white;
+  transition: .4s;
+}
+
 .list-home-features .home-features-item .item-icon .icon {
   width: 48px;
   height: 48px;
@@ -706,7 +711,7 @@
         cursor: pointer;
       }
       .prime-sponsors-cta {
-        width: 18%;
+        width: 18rem;
         height: 5rem;
         background-color: rgba(var(--color-brand-primary-rgb), 1);
         padding: 1rem 1rem;
@@ -729,8 +734,7 @@
           opacity: 0;
           transition: all 0.2s ease-in-out;
           position: absolute;
-          right: 15px;
-          bottom: 13px;
+          left: 15rem;
         }
       }
       .prime-sponsors-cta:hover {
@@ -738,7 +742,6 @@
 
         .heart-handshake {
           opacity: 1;
-          margin-left: 1rem;
         }
       }
     }

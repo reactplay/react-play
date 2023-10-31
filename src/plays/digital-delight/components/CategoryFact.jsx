@@ -8,7 +8,7 @@ import './Categoryfact.css';
 
 function CategoryFact() {
   const [fact, setFact] = useState(CategoryFacts);
-  const [error, setError] = useState('');
+  //  const [error, setError] = useState('');
   const [selectedVoice, setSelectedVoice] = useState('Zira');
   const [showSelecter, setShowSelecter] = useState(false);
   const speechHandler = (msg) => {
@@ -42,7 +42,7 @@ function CategoryFact() {
       speechHandler(new SpeechSynthesisUtterance(data.number + ' is ' + data.text));
       setShowSelecter(true);
     } catch (error) {
-      setError('Error fetching fact. Please try again later.');
+      //    setError('Error fetching fact. Please try again later.');
     }
   };
 
