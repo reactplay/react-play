@@ -210,14 +210,20 @@ pre {
   padding: 2px 10px;
   text-transform: capitalize;
   color: #fff;
-  box-shadow: 1px 1px rgb(123, 123, 123), 2px 2px 5px rgb(173, 173, 173),
-    5px 5px 10px 0px rgb(134, 134, 134), 7px 7px 15px #ccc;
+  box-shadow:
+    1px 1px rgb(123, 123, 123),
+    2px 2px 5px rgb(173, 173, 173),
+    5px 5px 10px 0px rgb(134, 134, 134),
+    7px 7px 15px #ccc;
   margin: 15px;
 }
 .context-with-real-usecases .btn-cuisine-modal:active {
   transform: translateY(1px);
-  box-shadow: 1px 1px rgb(123, 123, 123), 2px 2px 3px rgb(173, 173, 173),
-    3px 3px 5px 0px rgb(134, 134, 134), 4px 4px 10px #ccc;
+  box-shadow:
+    1px 1px rgb(123, 123, 123),
+    2px 2px 3px rgb(173, 173, 173),
+    3px 3px 5px 0px rgb(134, 134, 134),
+    4px 4px 10px #ccc;
 }
 
 @media screen and (max-width: 915px) {

@@ -6,7 +6,9 @@
   gap: 0.5rem;
   border-radius: 20px;
   background: #ffffff;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  box-shadow:
+    20px 20px 60px #d9d9d9,
+    -20px -20px 60px #ffffff;
   grid-template-columns: repeat(3, auto);
   grid-template-areas:
     'avatar name joined'
@@ -37,7 +39,9 @@
   grid-area: data;
   border-radius: 20px;
   background: #ffffff;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  box-shadow:
+    20px 20px 60px #d9d9d9,
+    -20px -20px 60px #ffffff;
 }
 
 /* click-btn */

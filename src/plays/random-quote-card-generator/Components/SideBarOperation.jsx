@@ -109,7 +109,7 @@ const SideBarOperation = ({
 
   // 2. Card Color Feature
 
-  const handleCardColor = (e) => {
+  const handleCardColor = () => {
     if (cardColor === 'Light') {
       setCardColor('Dark');
     } else {

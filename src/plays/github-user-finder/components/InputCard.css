@@ -7,7 +7,9 @@
   outline: none;
   border-radius: 20px;
   background: #ffffff;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  box-shadow:
+    20px 20px 60px #d9d9d9,
+    -20px -20px 60px #ffffff;
 }
 
 .guf .search-btn {
@@ -108,19 +110,27 @@
 }
 
 .guf .search-btn:hover #leftTop {
-  animation: 0.1s ease-in-out 0.05s both changeColor8, 0.2s linear 0.4s both lightEffect8;
+  animation:
+    0.1s ease-in-out 0.05s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
 }
 
 .guf .search-btn:hover #rightTop {
-  animation: 0.1s ease-in-out 0.15s both changeColor8, 0.2s linear 0.4s both lightEffect8;
+  animation:
+    0.1s ease-in-out 0.15s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
 }
 
 .guf .search-btn:hover #rightBottom {
-  animation: 0.1s ease-in-out 0.25s both changeColor8, 0.2s linear 0.4s both lightEffect8;
+  animation:
+    0.1s ease-in-out 0.25s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
 }
 
 .guf .search-btn:hover #leftBottom {
-  animation: 0.1s ease-in-out 0.35s both changeColor8, 0.2s linear 0.4s both lightEffect8;
+  animation:
+    0.1s ease-in-out 0.35s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
 }
 
 .guf .search-btn:hover .corner {
