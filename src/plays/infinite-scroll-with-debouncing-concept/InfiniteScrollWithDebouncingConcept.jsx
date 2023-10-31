@@ -34,14 +34,14 @@ function InfiniteScrollWithDebouncingConcept(props) {
     return new Promise((resolve, reject) => {
       if (apiQuery) {
         try {
-          const promise = fetch(
+          fetch(
             'https://openlibrary.org/search.json?' +
               new URLSearchParams({
                 q: apiQuery,
                 page: pageNumber
               })
           ).then((res) => {
-            const data = res.json().then((data) => {
+            res.json().then((data) => {
               resolve();
               if (data.docs.length === 0) {
                 setNoData(true);

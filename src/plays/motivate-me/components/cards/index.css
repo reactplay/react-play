@@ -3,7 +3,9 @@
   width: 100%;
   min-height: 100px;
   border-radius: 15px;
-  box-shadow: 0 0.4rem 0.8rem -0.1rem rgb(0 32 128 / 10%), 0 0 0 1px #f0f2f7;
+  box-shadow:
+    0 0.4rem 0.8rem -0.1rem rgb(0 32 128 / 10%),
+    0 0 0 1px #f0f2f7;
   padding: 0 48px;
   overflow: hidden;
   padding-bottom: 0;

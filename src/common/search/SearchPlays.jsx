@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSearchContext } from './search-context';
 import './search.css';
+import { debounce } from 'lodash';
 
 const SearchPlays = ({ reset, query, onChange }) => {
   const { setSearchTerm } = useSearchContext();
@@ -23,17 +24,21 @@ const SearchPlays = ({ reset, query, onChange }) => {
     setSearchText(decodeURIComponent(text));
   }, [query]);
 
-  const handleSearch = (event) => {
+  // handleSearch function that passes the event handler into lodash's debounce function to add a delay of 500s after change in searchbar value and display search results.
+  const handleSearch = debounce((event) => {
     event.preventDefault();
     const { value } = event.target;
-    if (event.key === 'Enter') {
-      if (value) {
-        query.text = value;
-      } else {
-        delete query.text;
-      }
-      onChange(query);
+    if (value) {
+      query.text = value;
+    } else {
+      delete query.text;
     }
+    onChange(query);
+  }, 500);
+
+  const handleChange = (event) => {
+    handleSearch(event);
+    setSearchText(event.target.value);
   };
 
   return (
@@ -44,8 +49,7 @@ const SearchPlays = ({ reset, query, onChange }) => {
       type="text"
       value={searchText}
       // ref={inputRef}
-      onChange={(e) => setSearchText(e.target.value)}
-      onKeyUp={handleSearch}
+      onChange={handleChange}
     />
   );
 };

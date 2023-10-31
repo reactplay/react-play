@@ -8,7 +8,9 @@
   text-align: center;
   background: #242625;
   border-radius: 10px;
-  box-shadow: 25px 25px 50px #1b1c1b, -25px -25px 50px #2d302f;
+  box-shadow:
+    25px 25px 50px #1b1c1b,
+    -25px -25px 50px #2d302f;
 }
 .card__content {
   width: 90%;
@@ -21,7 +23,9 @@
   margin: 10px auto;
   border-radius: 5px;
   padding: 20px;
-  box-shadow: 16px 16px 44px #0a0a0a, -16px -16px 44px #282a28;
+  box-shadow:
+    16px 16px 44px #0a0a0a,
+    -16px -16px 44px #282a28;
   transition: 0.3s all ease-in-out;
 }
 .card__content:hover {

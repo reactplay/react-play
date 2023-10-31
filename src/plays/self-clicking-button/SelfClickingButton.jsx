@@ -9,7 +9,7 @@ function SelfClickingButton(props) {
   const buttonRef = useRef(null);
   const [counter, setCounter] = useState(0);
 
-  function clickHandler(event) {
+  function clickHandler() {
     setCounter((prev) => prev + 1);
   }
 
