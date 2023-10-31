@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import WordleTile from './WordleTile';
 import { TileRow, TileColor } from '../types';
 
-export default function WordleRow(props: { tileRow: TileRow; wordleWord: string }) {
-  const { tileRow, wordleWord } = props;
+export default function WordleRow(props: { rowNo: number; tileRow: TileRow; wordleWord: string }) {
+  const { rowNo, tileRow, wordleWord } = props;
   const [isCorrect, setCorrect] = useState(false);
 
   useEffect(() => {
@@ -23,10 +23,11 @@ export default function WordleRow(props: { tileRow: TileRow; wordleWord: string 
             if (wordleWord.includes(letter) && wordleWord.slice(index, index + 1) === letter) {
               return (
                 <WordleTile
+                  guessed
                   roll
                   correct={isCorrect}
                   index={index}
-                  key={crypto.randomUUID()}
+                  key={`tile-${rowNo}-${index}`}
                   style={TileColor.CORRECT}
                   tile={letter}
                 />
@@ -37,10 +38,11 @@ export default function WordleRow(props: { tileRow: TileRow; wordleWord: string 
             ) {
               return (
                 <WordleTile
+                  guessed
                   roll
                   correct={isCorrect}
                   index={index}
-                  key={crypto.randomUUID()}
+                  key={`tile-${rowNo}-${index}`}
                   style={TileColor.MISPLACED}
                   tile={letter}
                 />
@@ -48,10 +50,11 @@ export default function WordleRow(props: { tileRow: TileRow; wordleWord: string 
             } else {
               return (
                 <WordleTile
+                  guessed
                   roll
                   correct={isCorrect}
                   index={index}
-                  key={crypto.randomUUID()}
+                  key={`tile-${rowNo}-${index}`}
                   style={TileColor.WRONG}
                   tile={letter}
                 />
@@ -62,8 +65,9 @@ export default function WordleRow(props: { tileRow: TileRow; wordleWord: string 
             return (
               <WordleTile
                 correct={isCorrect}
+                guessed={false}
                 index={index}
-                key={crypto.randomUUID()}
+                key={`tile-${rowNo}-${index}`}
                 roll={false}
                 style={TileColor.MISPLACED}
                 tile={letter}

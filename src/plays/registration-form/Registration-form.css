@@ -19,7 +19,9 @@
   text-align: left;
   background: #fff;
   padding: 30px;
-  box-shadow: 2px 2px 11px 1px #ccc, -2px -2px 16px 1px #ccc;
+  box-shadow:
+    2px 2px 11px 1px #ccc,
+    -2px -2px 16px 1px #ccc;
   border-radius: 10px;
 }
 .registration-form .user-input {

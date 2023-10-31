@@ -16,7 +16,7 @@ import TestimonialSection from 'common/Testimonial/TestimonialSection';
 import Sponsors from './Sponsors';
 
 const Home = () => {
-  const { data } = useFetch('https://api.github.com/repos/reactplay/react-play');
+  const { data } = useFetch(`${process.env.REACT_APP_PLAY_API_URL}/react-play`);
   const { setSearchTerm, searchTerm, setFilterQuery } = useSearchContext();
   useEffect(() => {
     setSearchTerm('');
