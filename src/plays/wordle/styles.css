@@ -1,4 +1,11 @@
-/* enter stlyes here */
+@tailwind base;
+@layer base {
+  img {
+    @apply inline-block
+  }
+}
+
+/* enter styles here */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .wordle-game-body {
@@ -51,6 +58,15 @@
   border-color: var(--correct);
 }
 
+/* Main styles */
+.clipboard-modal.appear {
+    animation: copy-modal-appear 600ms ease-in-out 0s 1 normal forwards;
+}
+
+.clipboard-modal:not(.appear) {
+    animation: copy-modal-disappear 600ms ease-in-out 0s 1 normal forwards;
+}
+
 .end-screen {
   animation: end-screen-appear 600ms ease-in-out 0s 1 normal forwards;
 }
@@ -62,6 +78,10 @@
 
 .filled.border-correct {
   border: 2px solid var(--correct);
+}
+
+.filled.guessed {
+  border: 2px solid var(--color);
 }
 
 .wordle-tile:not(.filled) {
@@ -157,4 +177,26 @@
     transform: translateY(0px);
     opacity: 1;
   }
+}
+
+@keyframes copy-modal-appear {
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes copy-modal-disappear {
+    from {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
 }
