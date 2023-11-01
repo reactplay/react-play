@@ -8,7 +8,7 @@ import { SORT_BY } from 'constants';
 import './playlist.css';
 import { toSanitized } from 'common/services/string';
 import DynamicBanner from './DynamicBanner';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { ParseQuery, QueryDBTranslator } from 'common/search/search-helper';
 import { getPlaysByFilter } from 'common/services/plays';
 
@@ -18,7 +18,10 @@ const PlayList = () => {
   const [plays, setPlays] = useState();
   const [isFiltered, setIsFiltered] = useState(false);
   const [sortBy, setSortBy] = useState(localStorage.getItem('sortByPlay') || 'Newest');
-  let location = useLocation();
+  const [searchTerm, setSearchTerm] = useState('');
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const text = searchParams.get('text');
 
   const onChange = (e) => {
     const { value } = e.target;
@@ -62,9 +65,12 @@ const PlayList = () => {
         setIsFiltered(true);
       }
       setLoading(false);
+
+      // gets Search Term from url to display in the search summary
+      setSearchTerm(text);
     };
     getPlays();
-  }, [location.search, sortBy]);
+  }, [location.search, sortBy, text]);
 
   if (loading) {
     return <Loader />;
@@ -93,6 +99,14 @@ const PlayList = () => {
   return (
     <Fragment>
       {isFiltered ? null : <DynamicBanner randomPlay={randomPlay} />}
+      {searchTerm ? (
+        <div className="search-summary">
+          <b>{plays?.length}</b>&nbsp;results for plays matching&nbsp;<b>{searchTerm}</b>
+          &nbsp;sorted by&nbsp;<b>{sortBy}</b>
+        </div>
+      ) : (
+        ''
+      )}
       <div className="sort-by-plays-wrapper">
         Sort By :
         <select id="sort-by-plays" name="sort-by-plays" value={sortBy} onChange={onChange}>
