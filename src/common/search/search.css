@@ -8,6 +8,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 576px) {
+  .app-header-search {
+    width: 70%;
+  }
+}
+
 /* Filter*/
 .filter {
   width: 100%;
@@ -63,6 +69,9 @@
 }
 
 @media screen and (max-width: 576px) {
+  .filter {
+    padding: 0.5rem 0;
+  }
   .filter .search-input-icon {
     left: 0.6rem;
     width: 20px;
@@ -118,6 +127,7 @@
 
 @media screen and (max-width: 576px) {
   .btn-filter {
+    padding: 0 0.2rem;
   }
   .btn-filter .icon {
     width: 24px;
