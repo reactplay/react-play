@@ -2,16 +2,12 @@ import katieZaferesImg from '../assets/images/katie-zaferes.png';
 import weddingImage from '../assets/images/wedding-photography.png';
 import mountainBikeImage from '../assets/images/mountain-bike.png';
 import starImage from '../assets/images/star.png';
-import { useState } from 'react';
 
 export default function Card(props) {
-  const [openSpots, setOpenSpots] = useState(props.openSpots);
-  const [location, setLocation] = useState(props.location);
-
   let badgeText;
-  if (openSpots === 0) {
+  if (props.openSpots === 0) {
     badgeText = 'SOLD OUT';
-  } else if (location === 'Online') {
+  } else if (props.location === 'Online') {
     badgeText = 'ONLINE';
   }
 
