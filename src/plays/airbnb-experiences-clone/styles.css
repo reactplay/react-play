@@ -2,12 +2,12 @@
   box-sizing: border-box;
 }
 
-body {
+.play-details-body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
 
-nav {
+.nav {
   height: 70px;
   display: flex;
   padding: 20px 36px;
@@ -26,7 +26,7 @@ nav {
   max-width: 100px;
 }
 
-section {
+.hero {
   padding: 20px;
 }
 
