@@ -803,6 +803,14 @@
   color: #25a0a7;
 }
 
+.search-summary{
+  padding: 1.6rem 2rem 0rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .sort-by-plays-wrapper {
   padding: 1.6rem 2rem 0rem 2rem;
   display: flex;
