@@ -16,7 +16,10 @@ A typing speed test game in which you have to write a given paragraph and will g
 
 ## Implementation Details
 
-Update your implementation idea and details here
+A single component to manage all functionalities-
+
+1. Typing_test.js
+   Single file with all the required code regarding the speed test box having a start button to start speed test and a meter to show current typing speed in wpm(words per minute) and timer to specify the time elapsed.
 
 ## Consideration
 
