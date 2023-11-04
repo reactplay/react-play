@@ -134,13 +134,24 @@ class Typingtest extends Component {
 
     if (completed) {
       return (
-        <div className="container">
-          <h2>
-            Your WPM is <strong>{wpm}</strong>
-          </h2>
-          <button className="start-btn" onClick={this.startGame}>
-            Play again
-          </button>
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            'flex-direction': 'column',
+            'justify-items': 'center',
+            'align-items': 'center'
+          }}
+        >
+          <div className="container">
+            <h2>
+              Your WPM is <strong>{wpm}</strong>
+            </h2>
+            <button className="start-btn" onClick={this.startGame}>
+              Play again
+            </button>
+          </div>
         </div>
       );
     }
