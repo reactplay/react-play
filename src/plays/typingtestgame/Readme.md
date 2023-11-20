@@ -11,8 +11,6 @@ A typing speed test game in which you have to write a given paragraph and will g
 
 - User: neelesh133
 - Gihub Link: https://github.com/neelesh133
-- Blog: 
-- Video: 
 
 ## Implementation Details
 
