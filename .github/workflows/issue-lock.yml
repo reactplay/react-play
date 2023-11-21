@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'reactplay/react-play'
     steps:
-      - uses: dessant/repo-lockdown@v3
+      - uses: dessant/repo-lockdown@v4
         with:
           close-issue: false
           exclude-issue-labels: '🏁 status: ready for dev'
