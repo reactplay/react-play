@@ -1,0 +1,54 @@
+.button-container {
+  width: 20%;
+  height: 80px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  margin: 10px 2%;
+  padding: 2px;
+  overflow: hidden;
+}
+
+.button-text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60px;
+  font-size: 20px;
+}
+
+.button-container:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
+}
+
+.soundboard-container {
+  margin: auto;
+  width: 70%;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #1f1f1f;
+  flex-wrap: wrap;
+}
+
+.volume-container {
+  margin: auto;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+.volume {
+  width: 50%;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.volume-text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 40px;
+  font-size: 16px;
+}
