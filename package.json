@@ -84,8 +84,8 @@
   },
   "scripts": {
     "start:nolint": "npx --yes create-react-play@latest -p && react-scripts start",
-    "start": "npx --yes create-react-play@latest -p && npm run lint && react-scripts start --max_old_space_size=6144",
-    "build": "npx --yes create-react-play@latest -p && react-scripts build --max_old_space_size=6144",
+    "start": "npx --yes create-react-play@latest -p && npm run lint && react-scripts start",
+    "build": "npx --yes create-react-play@latest -p && react-scripts build",
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
