@@ -32,13 +32,25 @@ export default function countByProp(obj, key, value) {
   return obj.reduce((acc, item) => (item?.[key] === value ? ++acc : acc), 0);
 }
 
-export function formatDate(data) {
-  if (data === undefined) return '';
-  const dataarr = data.split('T')[0].split('-');
-  const day = dataarr[2];
-  const month = dataarr[1];
-  const year = dataarr[0];
-  const datemonth = Date(year, month, day).split(' ');
+/**
+ * Formats a date string in ISO 8601 format to the following format:
+ * `Joined {day} {month} {year}`
+ *
+ * @param {string} dateString A date string in ISO 8601 format.
+ * @returns {string} A formatted date string.
+ */
+export function formatDate(dateString) {
+  if (!dateString) {
+    return '';
+  }
 
-  return `Joined ${day} ${datemonth[1]} ${year}`;
+  const [datePart] = dateString.split('T');
+  const [year, month, day] = datePart.split('-');
+
+  // Convert the month number to the month name
+  const monthName = Date(year, month, day).split(' ');
+
+  const formattedDate = `Joined ${day} ${monthName[1]} ${year}`;
+
+  return formattedDate;
 }
