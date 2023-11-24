@@ -17,8 +17,10 @@ const Home = () => {
         <HomeBanner />
         <HomeContent />
       </section>
-      <HomeFeatures />
-      <HomeIdeas />
+      <section className="home-features">
+        <HomeFeatures />
+        <HomeIdeas />
+      </section>
       <HomePlays />
       <HomeTestimonials />
       <HomeContributors />
