@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import useFetch from 'common/hooks/useFetch';
+import { useSearchContext } from 'common/search/search-context';
 import './home.css';
 import HomeBanner from './HomeBanner';
 import HomeContent from './HomeContent';
