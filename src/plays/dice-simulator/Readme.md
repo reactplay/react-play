@@ -20,8 +20,8 @@ A plataform where you can simulate dice so that you can play RPGs or other games
 
 ## Consideration
 
-Update all considerations(if any)
+This tool is made with the intention to learn react, and with DnD in mind
 
 ## Resources
 
-Update external resources(if any)
+This tool is made with styled components
