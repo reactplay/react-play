@@ -16,7 +16,6 @@ function Reactinstants(props) {
       <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body">
-          {/* Your Code Starts Here */}
           <div>
             <div className="volume-container">
               <span className="volume-text">Volume:</span>
@@ -33,7 +32,6 @@ function Reactinstants(props) {
               })}
             </div>
           </div>
-          {/* Your Code Ends Here */}
         </div>
       </div>
     </>
