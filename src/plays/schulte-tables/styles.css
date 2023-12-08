@@ -1,0 +1,69 @@
+/* enter stlyes here */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+.game-title {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    border: 2px solid grey;
+    margin-top: 1rem;
+}
+
+.btn {
+    height: 60px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    width: 300px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.start-btn {
+    background: #278383;
+    padding: .6rem 3rem;
+    font-size: 18px;
+    border: 1px solid #062c2c;
+    outline: none;
+    color: aliceblue;
+    border-radius: 50px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.result-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hints {
+    margin: 1rem;
+}
+.description{
+    max-width: 500px;
+    text-align: center;
+    margin: 2rem auto;
+}
