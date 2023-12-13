@@ -15,7 +15,7 @@ jobs:
     if: github.repository == 'reactplay/react-play'
     steps:
       - name: 🚀 Stale Issue And PR
-        uses: actions/stale@v8
+        uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           days-before-stale: 30
