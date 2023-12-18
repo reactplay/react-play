@@ -1,18 +1,18 @@
 'use client';
-import React, { useState, useEffect } from 'react';
 import PlayHeader from 'common/playlists/PlayHeader';
-import './styles.css';
+import React, { useEffect, useState } from 'react';
 import BillAmount from './components/BillAmount';
-import TipAmount from './components/TipAmount';
-import PeopleAmount from './components/PeopleAmount';
 import DisplayCard from './components/DisplayCard';
+import PeopleAmount from './components/PeopleAmount';
+import TipAmount from './components/TipAmount';
+import './styles.css';
 
 // WARNING: Do not change the entry componenet name
 
 function TipCalculator(props) {
   // Your Code Start below.
 
-  const [bill, setBill] = useState();
+  const [bill, setBill] = useState(0);
   const [tip, setTip] = useState(0);
   const [people, setPeople] = useState(0);
 

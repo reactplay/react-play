@@ -1,1 +1,12 @@
 /* enter stlyes here */
+
+.flex {
+  display: flex;
+  width: 100% !important;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+button.bg-cyan-600.text-white.hover\:bg-cyan-500.w-full.rounded-md.px-3\.5.py-2\.5.shadow-sm.file\:font-medium.focus-visible\:outline.focus-visible\:outline-2.focus-visible\:outline-offset-2.focus-visible\:outline-cyan-600 {
+  border: 1px solid #ddd;
+  color: #000;
+}
