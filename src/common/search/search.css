@@ -218,6 +218,13 @@
   font-size: var(--fs-rg);
 }
 
+.flex-filter-modal {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
 /* CSS attributes for clear All button */
 
 .modal-clear-filter {
