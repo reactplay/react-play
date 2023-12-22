@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './home.css';
 import HomeBanner from './HomeBanner';
 import HomeContent from './HomeContent';
