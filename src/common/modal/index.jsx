@@ -10,11 +10,10 @@ const Modal = ({ title, show, onClose, onSubmit, children, cname }) => {
   useEffect(() => {
     if (show) {
       const modalChildElements = modalChildrenRef.current;
-      const focusableElements = modalChildElements.querySelectorAll(
+      const focusableElements = modalChildElements?.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
-      const firstFocusableElement = focusableElements[0];
-      firstFocusableElement.focus();
+      focusableElements?.[0]?.focus();
     }
   }, [show]);
 
