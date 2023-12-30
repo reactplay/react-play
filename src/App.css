@@ -106,7 +106,7 @@ textarea {
 
 html,
 body {
-  height: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
   font-family: var(--ff-default);
