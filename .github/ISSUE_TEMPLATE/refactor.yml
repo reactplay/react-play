@@ -31,9 +31,5 @@ body:
 
         - label: I agree to follow this project's [Code of Conduct](https://github.com/reactplay/react-play/blob/main/CODE_OF_CONDUCT.md)
           required: true
-          
-        - label: I am in Hacktoberfest
-          required: true
         
-
         - label: I want to work on this issue
