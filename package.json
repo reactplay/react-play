@@ -83,6 +83,7 @@
     "workbox-window": "^7.0.0"
   },
   "scripts": {
+    "dev": "react-scripts start",
     "start:nolint": "npx --yes create-react-play@latest -p && react-scripts start",
     "start": "npx --yes create-react-play@latest -p && npm run lint && react-scripts start",
     "build": "npx --yes create-react-play@latest -p && react-scripts build",
