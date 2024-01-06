@@ -12,20 +12,24 @@ export default function Card(props) {
   }
 
   let cardImg;
+  let altText;
   if (props.coverImg === 'katie-zaferes.png') {
     cardImg = katieZaferesImg;
+    altText = 'Katie Zaferes';
   } else if (props.coverImg === 'wedding-photography.png') {
     cardImg = weddingImage;
+    altText = 'Woman wearing a white gown';
   } else if (props.coverImg === 'mountain-bike.png') {
     cardImg = mountainBikeImage;
+    altText = 'Mountain bike';
   }
 
   return (
     <div className="card">
       {badgeText && <div className="card--badge">{badgeText}</div>}
-      <img className="card--image" src={cardImg} />
+      <img alt={altText} className="card--image" src={cardImg} />
       <div className="card--stats">
-        <img className="card--star" src={starImage} />
+        <img alt="Star image" className="card--star" src={starImage} />
         <span>{props.stats.rating}</span>
         <span className="gray">({props.stats.reviewCount}) • </span>
         <span className="gray">{props.location}</span>

@@ -1,4 +1,4 @@
-* {
+.play-details-body > * {
   box-sizing: border-box;
 }
 
@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.nav {
+.airbnb-nav {
   height: 70px;
   display: flex;
   padding: 20px 36px;
@@ -22,15 +22,12 @@
   color: #918e9b;
 }
 
-.nav--logo {
+.airbnb-nav--logo {
   max-width: 100px;
 }
 
-.hero {
+.airbnb-hero {
   padding: 20px;
-}
-
-.hero {
   display: flex;
   flex-direction: column;
 }
