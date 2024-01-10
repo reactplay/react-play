@@ -1,28 +1,43 @@
+import { useMemo } from 'react';
 import katieZaferesImg from '../assets/images/katie-zaferes.png';
 import weddingImage from '../assets/images/wedding-photography.png';
 import mountainBikeImage from '../assets/images/mountain-bike.png';
 import starImage from '../assets/images/star.png';
 
 export default function Card(props) {
-  let badgeText;
-  if (props.openSpots === 0) {
-    badgeText = 'SOLD OUT';
-  } else if (props.location === 'Online') {
-    badgeText = 'ONLINE';
-  }
+  const badgeText = useMemo(() => {
+    if (props.openSpots === 0) {
+      return 'SOLD OUT';
+    } else if (props.location === 'Online') {
+      return 'ONLINE';
+    }
 
-  let cardImg;
-  let altText;
-  if (props.coverImg === 'katie-zaferes.png') {
-    cardImg = katieZaferesImg;
-    altText = 'Katie Zaferes';
-  } else if (props.coverImg === 'wedding-photography.png') {
-    cardImg = weddingImage;
-    altText = 'Woman wearing a white gown';
-  } else if (props.coverImg === 'mountain-bike.png') {
-    cardImg = mountainBikeImage;
-    altText = 'Mountain bike';
-  }
+    return null;
+  }, [props.openSpots, props.location]);
+
+  const cardImg = useMemo(() => {
+    if (props.coverImg === 'katie-zaferes.png') {
+      return katieZaferesImg;
+    } else if (props.coverImg === 'wedding-photography.png') {
+      return weddingImage;
+    } else if (props.coverImg === 'mountain-bike.png') {
+      return mountainBikeImage;
+    }
+
+    return null;
+  }, [props.coverImg]);
+
+  const altText = useMemo(() => {
+    if (props.coverImg === 'katie-zaferes.png') {
+      return 'Katie Zaferes';
+    } else if (props.coverImg === 'wedding-photography.png') {
+      return 'Woman wearing a white gown';
+    } else if (props.coverImg === 'mountain-bike.png') {
+      return 'Mountain bike';
+    }
+
+    return null;
+  }, [props.coverImg]);
 
   return (
     <div className="card">

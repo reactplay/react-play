@@ -7,14 +7,12 @@ function AirbnbExperiencesClone(props) {
   // Your Code Start below.
 
   return (
-    <>
-      <div className="play-details">
-        <PlayHeader play={props} />
-        <div className="play-details-body">
-          <App />
-        </div>
+    <div className="play-details">
+      <PlayHeader play={props} />
+      <div className="play-details-body">
+        <App />
       </div>
-    </>
+    </div>
   );
 }
 
