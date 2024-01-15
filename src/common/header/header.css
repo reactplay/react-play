@@ -21,7 +21,7 @@
 }
 
 .app-header-home {
-  position: fixed;
+  position: sticky;
 }
 
 .app-header-home.app-header-home--promo {
@@ -503,7 +503,8 @@
   justify-content: center;
   background-color: #fad900;
   min-height: 32px;
-  position: fixed;
+  position: sticky;
+  top: 0;
   font-size: var(--fs-sm);
   line-height: var(--fs-sm);
   z-index: 9;
