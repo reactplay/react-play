@@ -356,6 +356,10 @@ small {
   }
 }
 
+.app-footer-text {
+  color: var(--color-neutral-80);
+}
+
 /* Buttons */
 .btn-default {
   border: solid 1px var(--color-neutral-60);
