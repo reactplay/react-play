@@ -9,10 +9,6 @@
     flex-direction: column;
 }
 
-h1 {
-    text-align: center;
-}
-
 .game-title {
     text-align: center;
     font-size: 4rem;

@@ -96,6 +96,9 @@ const Header = () => {
 
   return (
     <>
+      {process.env.REACT_APP_ACTIVITIES_ON === 'true' && showHideBits.showActivityTimer && (
+        <Countdown date={new Date(1675209600000)} renderer={activityTimerRenderer} />
+      )}
       <header
         className={`app-header ${
           showHideBits.setHeaderStyle
@@ -116,11 +119,9 @@ const Header = () => {
         <div className="app-header-search">
           {showHideBits.showSearch && <SearchBox reset={reset} />}
         </div>
+
         <HeaderNav showBrowse={showHideBits.showBrowse} />
       </header>
-      {process.env.REACT_APP_ACTIVITIES_ON === 'true' && showHideBits.showActivityTimer && (
-        <Countdown date={new Date(1675209600000)} renderer={activityTimerRenderer} />
-      )}
     </>
   );
 };
