@@ -1,10 +1,10 @@
-import { useEffect, useState, useRef, useTransition } from 'react';
+import { useEffect, useRef, useState, useTransition } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { FiSearch } from 'react-icons/fi';
 
 // Project local imports
-import PlayHeader from 'common/playlists/PlayHeader';
 import useFetch from 'common/hooks/useFetch';
+import PlayHeader from 'common/playlists/PlayHeader';
 import EmojiCard from './components/EmojiCard';
 import SkeletonCard from './components/SkeletonCard';
 import { API_BASE_URL } from './config';
@@ -85,10 +85,10 @@ function Emojipedia(props) {
               {loading
                 ? Array.from(Array(25).keys()).map((_, index) => <SkeletonCard key={index} />)
                 : isPending
-                ? Array.from(Array(25).keys()).map((_, index) => <SkeletonCard key={index} />)
-                : emojisList?.map((emoji, index) => (
-                    <EmojiCard emoji={emoji} handleCopyEmoji={handleCopyEmoji} key={index} />
-                  ))}
+                  ? Array.from(Array(25).keys()).map((_, index) => <SkeletonCard key={index} />)
+                  : emojisList?.map((emoji, index) => (
+                      <EmojiCard emoji={emoji} handleCopyEmoji={handleCopyEmoji} key={index} />
+                    ))}
             </div>
 
             {emojisList?.length === 0 &&
