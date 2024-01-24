@@ -1,7 +1,7 @@
 import PlayThumbnail from './PlayThumbnail';
 import { ReactComponent as ImageOops } from 'images/img-oops.svg';
 import React, { Fragment, useEffect, useState } from 'react';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'common/spinner/spinner';
 import * as all_plays from 'plays';
 import { SORT_BY } from 'constants';
