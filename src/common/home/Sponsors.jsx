@@ -123,6 +123,7 @@ const Sponsors = () => {
             </a>
           ))} */}
           <a
+            aria-label="Sponsor"
             className="backers-cta"
             href="https://github.com/sponsors/reactplay"
             rel="noreferrer"

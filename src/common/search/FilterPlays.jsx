@@ -39,6 +39,14 @@ const FilterPlays = ({ onChange, query }) => {
     }
   }, [query, loading, showModal]);
 
+  // This useEffect ensures that once the filter plays modal is closed, the focus is returned back to the filter plays button
+  useEffect(() => {
+    const filterPlaysBtn = document.getElementById('filterPlaysBtn');
+    if (!showModal && filterPlaysBtn) {
+      filterPlaysBtn.focus();
+    }
+  }, [showModal]);
+
   const filterModalCloseBtnHandler = () => {
     setShowModal(false);
   };
@@ -233,6 +241,7 @@ const FilterPlays = ({ onChange, query }) => {
 
       <button
         className="btn-filter"
+        id="filterPlaysBtn"
         title="Filter Plays"
         onClick={() => {
           showFilterModal();
