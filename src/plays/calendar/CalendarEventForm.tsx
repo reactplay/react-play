@@ -1,5 +1,4 @@
-import { isBefore } from 'date-fns';
-import { format } from 'date-fns/esm';
+import { format, isBefore } from 'date-fns';
 import { isEqual } from 'lodash';
 import React, { useState, useContext, useEffect } from 'react';
 import CalendarEventInfo from './CalendarEventInfo';

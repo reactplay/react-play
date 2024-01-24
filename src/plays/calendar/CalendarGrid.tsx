@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import CalendarNavigation from './CalendarNavigation';
 import CalendarDayTile from './CalendarDayTile';
-import { endOfMonth, format, startOfMonth, startOfWeek } from 'date-fns';
-import { addDays, endOfWeek } from 'date-fns/esm';
+import { endOfMonth, format, startOfMonth, startOfWeek, endOfWeek, addDays } from 'date-fns';
 
 const WEEK_STARTS_ON = 0; // Sunday
 
