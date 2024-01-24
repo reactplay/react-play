@@ -2,17 +2,14 @@ import React, { useEffect, useState } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { fetchTestimonialsHomePage } from 'common/services/request/query/testimonials';
 import { submit } from 'common/services/request';
-
 // Import Swiper React components
+import { Keyboard, Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-// import required modules
-import { Keyboard, Autoplay, Navigation, Pagination } from 'swiper';
 
 function TestimonialSection() {
   const [testimonials, setTestimonials] = useState([]);
