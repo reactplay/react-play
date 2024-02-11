@@ -36,7 +36,7 @@ body:
     id: screenshot
     attributes:
       label: Screenshot / Screenshare
-      description: Please add screenshot or screenshare if that healps to describe the feature.
+      description: Please add screenshot or screenshare if that helps to describe the feature.
 
   - type: textarea
     id: additional-context
