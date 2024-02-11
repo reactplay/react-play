@@ -38,7 +38,6 @@
     "lodash.memoize": "^4.1.2",
     "mathjs": "^11.11.2",
     "p5": "^1.7.0",
-    "plays": "^0.7.0",
     "react": "^18.2.0",
     "react-codemirror2": "^7.3.0",
     "react-color": "^2.19.3",
