@@ -267,6 +267,10 @@
   fill: #ffffff;
 }
 
+.header-links > li > .app-header-btn:hover .discord-icon {
+  fill: #ffffff;
+}
+
 .header-links > li > .app-header-btn .btn-label {
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);

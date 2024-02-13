@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsGithub, BsTrophyFill } from 'react-icons/bs';
 import { FaLightbulb } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaXTwitter, FaDiscord } from 'react-icons/fa6';
 import { BiMoney } from 'react-icons/bi';
 import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
 import { MdManageSearch, MdClose, MdEvent } from 'react-icons/md';
@@ -183,6 +183,19 @@ const HeaderNav = ({ showBrowse }) => {
               <IoHeartSharp className="icon share-icon" />
               <span className="btn-label">Share</span>
             </button>
+          </li>
+          <li>
+            <a
+              className="app-header-btn app-header-btn--default"
+              data-testid="discord-btn"
+              href="https://discord.gg/9nFHKdfWMx"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="Discord Page"
+            >
+              <FaDiscord className="icon discord-icon" />
+              <span className="btn-label">Discord</span>
+            </a>
           </li>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <Box sx={{ p: 4, pt: 2, borderRadius: 2, width: '360px' }}>
