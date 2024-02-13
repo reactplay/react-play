@@ -1,7 +1,7 @@
 # ReactPlay(Repo: `react-play`)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-74-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-75-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -370,6 +370,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/nrshnaik"><img src="https://avatars.githubusercontent.com/u/25747434?v=4?s=100" width="100px;" alt="nrshnaik"/><br /><sub><b>nrshnaik</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=nrshnaik" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/FreemRL"><img src="https://avatars.githubusercontent.com/u/66525499?v=4?s=100" width="100px;" alt="Jannik Schmidtke"/><br /><sub><b>Jannik Schmidtke</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=freemrl" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/saddam-selise"><img src="https://avatars.githubusercontent.com/u/113901460?v=4?s=100" width="100px;" alt="Md. Saddam Hossain"/><br /><sub><b>Md. Saddam Hossain</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=saddam-selise" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://clevercoderjoy.bio.link"><img src="https://avatars.githubusercontent.com/u/74505057?v=4?s=100" width="100px;" alt="clevercoderjoy"/><br /><sub><b>clevercoderjoy</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=clevercoderjoy" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
