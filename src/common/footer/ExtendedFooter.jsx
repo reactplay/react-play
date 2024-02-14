@@ -4,6 +4,8 @@ import { MdManageSearch } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
 import { BsGithub } from 'react-icons/bs';
 import { FaXTwitter } from 'react-icons/fa6';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa6';
 import LogoLight from 'images/img-logo-light.svg';
 import { useSearchContext } from 'common/search/search-context';
 import { CREATE_PLAY_DOC_LINK } from 'constants';
@@ -34,6 +36,18 @@ const ExtendedFooter = () => {
       url: 'https://blog.reactplay.io/',
       icon: <IoLogoRss className="icon" />,
       title: 'Blog Page'
+    },
+    {
+      name: 'Linkedin',
+      url: 'https://www.linkedin.com/company/reactplay/',
+      icon: <FaLinkedin className="icon" />,
+      title: 'Linkedin Page'
+    },
+    {
+      name: 'Instagram',
+      url: 'https://www.instagram.com/reactplayio/',
+      icon: <FaInstagram className="icon" />,
+      title: 'Instagram Page'
     }
   ];
 
