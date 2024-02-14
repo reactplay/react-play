@@ -174,17 +174,6 @@ const HeaderNav = ({ showBrowse }) => {
             </a>
           </li>
           <li>
-            <button
-              className="app-header-btn app-header-btn--default"
-              data-testid="share-btn"
-              title="Show love"
-              onClick={handleClick}
-            >
-              <IoHeartSharp className="icon share-icon" />
-              <span className="btn-label">Share</span>
-            </button>
-          </li>
-          <li>
             <a
               className="app-header-btn app-header-btn--default"
               data-testid="discord-btn"
@@ -196,6 +185,17 @@ const HeaderNav = ({ showBrowse }) => {
               <FaDiscord className="icon discord-icon" />
               <span className="btn-label">Discord</span>
             </a>
+          </li>
+          <li>
+            <button
+              className="app-header-btn app-header-btn--default"
+              data-testid="share-btn"
+              title="Show love"
+              onClick={handleClick}
+            >
+              <IoHeartSharp className="icon share-icon" />
+              <span className="btn-label">Share</span>
+            </button>
           </li>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <Box sx={{ p: 4, pt: 2, borderRadius: 2, width: '360px' }}>
