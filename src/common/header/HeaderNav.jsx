@@ -30,6 +30,55 @@ const HeaderNav = ({ showBrowse }) => {
 
   const modalClose = () => setShowShareModal(!showShareModal);
 
+  const NavLinks = [
+    {
+      type: 'Link',
+      testId: 'leaderboard-btn',
+      title: 'Leader Board',
+      to: '/leaderboard',
+      icon: BsTrophyFill,
+      iconClass: 'icon idea-icon',
+      label: 'Leader Board'
+    },
+    {
+      type: 'Link',
+      testId: 'ideas-btn',
+      title: 'Play Ideas',
+      to: '/ideas',
+      icon: FaLightbulb,
+      iconClass: 'icon idea-icon',
+      label: 'Idea'
+    },
+    {
+      type: 'a',
+      testId: 'github-btn',
+      event: 'github-button',
+      href: 'https://github.com/reactplay/react-play',
+      title: 'GitHub page',
+      icon: BsGithub,
+      iconClass: 'icon github-icon',
+      label: 'GitHub'
+    },
+    {
+      type: 'a',
+      testId: 'twitter-btn',
+      href: 'https://twitter.com/reactplayio',
+      title: 'Twitter Page',
+      icon: FaXTwitter,
+      iconClass: 'icon twitter-icon',
+      label: 'Twitter'
+    },
+    {
+      type: 'button',
+      testId: 'share-btn',
+      title: 'Show love',
+      onClick: handleClick,
+      icon: IoHeartSharp,
+      iconClass: 'icon share-icon',
+      label: 'Share'
+    }
+  ];
+
   return (
     <nav>
       <Modal open={showShareModal} onClose={modalClose}>
@@ -92,7 +141,7 @@ const HeaderNav = ({ showBrowse }) => {
             <a
               className="app-header-btn app-header-btn--secondary"
               data-testid="events-btn"
-              href="https://hustles.reactplay.io/"
+              href="https://www.meetup.com/reactplay-bengaluru/events/"
               target="_blank"
             >
               <MdEvent className="icon" />
@@ -124,66 +173,29 @@ const HeaderNav = ({ showBrowse }) => {
               </a>
             )}
           </li>
-          <li>
-            <Link
-              className="app-header-btn app-header-btn--default"
-              data-testid="leaderboard-btn"
-              title="Leader Board"
-              to="/leaderboard"
-            >
-              <BsTrophyFill className="icon idea-icon" />
-              <span className="btn-label">Leader Board</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="app-header-btn app-header-btn--default"
-              data-testid="ideas-btn"
-              title="Play Ideas"
-              to="/ideas"
-            >
-              <FaLightbulb className="icon idea-icon" />
-              <span className="btn-label">Idea</span>
-            </Link>
-          </li>
-          <li>
-            <a
-              className="app-header-btn app-header-btn--default"
-              data-testid="github-btn"
-              data-umami-event="github-button"
-              href="https://github.com/reactplay/react-play"
-              rel="noopener noreferrer"
-              target="_blank"
-              title="GitHub page"
-            >
-              <BsGithub className="icon github-icon" />
-              <span className="btn-label">GitHub</span>
-            </a>
-          </li>
-          <li>
-            <a
-              className="app-header-btn app-header-btn--default"
-              data-testid="twitter-btn"
-              href="https://twitter.com/reactplayio"
-              rel="noopener noreferrer"
-              target="_blank"
-              title="Twitter Page"
-            >
-              <FaXTwitter className="icon twitter-icon" />
-              <span className="btn-label">Twitter</span>
-            </a>
-          </li>
-          <li>
-            <button
-              className="app-header-btn app-header-btn--default"
-              data-testid="share-btn"
-              title="Show love"
-              onClick={handleClick}
-            >
-              <IoHeartSharp className="icon share-icon" />
-              <span className="btn-label">Share</span>
-            </button>
-          </li>
+          {NavLinks.map((restNavLink, index) => {
+            const { icon: Icon, ...NavLink } = restNavLink;
+            const Component = NavLink.type === 'Link' ? Link : NavLink.type;
+
+            return (
+              <li key={index}>
+                <Component
+                  className="app-header-btn app-header-btn--default"
+                  data-testid={NavLink.testId}
+                  data-umami-event={NavLink.event}
+                  href={NavLink.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title={NavLink.title}
+                  to={NavLink.to}
+                  onClick={NavLink.onClick}
+                >
+                  <Icon className={NavLink.iconClass} />
+                  <span className="btn-label">{NavLink.label}</span>
+                </Component>
+              </li>
+            );
+          })}
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <Box sx={{ p: 4, pt: 2, borderRadius: 2, width: '360px' }}>
               <h3 className="section-title">Show Love</h3>
