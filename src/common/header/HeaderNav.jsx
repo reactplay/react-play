@@ -76,7 +76,7 @@ const HeaderNav = ({ showBrowse }) => {
       icon: FaDiscord,
       iconClass: 'icon discord-icon',
       label: 'Discord'
-    }
+    },
     {
       type: 'button',
       testId: 'share-btn',
