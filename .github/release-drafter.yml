@@ -4,6 +4,7 @@ categories:
   - title: '🚀 Features'
     labels:
       - '✨ goal: improvement'
+      - '⭐ goal: addition'
   - title: '🐛 Bug Fixes'
     labels:
       - '🛠 goal: fix'
