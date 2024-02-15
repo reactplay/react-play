@@ -141,7 +141,7 @@ const HeaderNav = ({ showBrowse }) => {
             <a
               className="app-header-btn app-header-btn--secondary"
               data-testid="events-btn"
-              href="https://hustles.reactplay.io/"
+              href="https://www.meetup.com/reactplay-bengaluru/events/"
               target="_blank"
             >
               <MdEvent className="icon" />
