@@ -30,7 +30,7 @@ const HeaderNav = ({ showBrowse }) => {
 
   const modalClose = () => setShowShareModal(!showShareModal);
 
-  const links = [
+  const NavLinks = [
     {
       type: 'Link',
       testId: 'leaderboard-btn',
@@ -173,24 +173,25 @@ const HeaderNav = ({ showBrowse }) => {
               </a>
             )}
           </li>
-          {links.map((link, index) => {
-            const Component = link.type === 'Link' ? Link : link.type;
+          {NavLinks.map((restNavLink, index) => {
+            const { icon: Icon, ...NavLink } = restNavLink;
+            const Component = NavLink.type === 'Link' ? Link : NavLink.type;
 
             return (
               <li key={index}>
                 <Component
                   className="app-header-btn app-header-btn--default"
-                  data-testid={link.testId}
-                  data-umami-event={link.event}
-                  href={link.href}
+                  data-testid={NavLink.testId}
+                  data-umami-event={NavLink.event}
+                  href={NavLink.href}
                   rel="noopener noreferrer"
                   target="_blank"
-                  title={link.title}
-                  to={link.to}
-                  onClick={link.onClick}
+                  title={NavLink.title}
+                  to={NavLink.to}
+                  onClick={NavLink.onClick}
                 >
-                  <link.icon className={link.iconClass} />
-                  <span className="btn-label">{link.label}</span>
+                  <Icon className={NavLink.iconClass} />
+                  <span className="btn-label">{NavLink.label}</span>
                 </Component>
               </li>
             );
