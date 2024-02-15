@@ -670,6 +670,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "clevercoderjoy",
+      "name": "clevercoderjoy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74505057?v=4",
+      "profile": "http://clevercoderjoy.bio.link",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "priyankarpal",
+      "name": "Priyankar Pal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88102392?v=4",
+      "profile": "http://priyank.live",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
