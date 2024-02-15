@@ -27,7 +27,7 @@ const TestimonialCard = ({ home, quote, name, avatarUrl, category, created_at, e
 
   return (
     <div className="py-4">
-      <div className="flex items-center gap-4 px-6 sm:h-16">
+      <div className="flex items-center gap-4 justify-between sm:h-16">
         <a href={`${getHostName()}/contributors/${email2Slug(email)}/badges`}>
           <img
             alt="Profile Picture"
