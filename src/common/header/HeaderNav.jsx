@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsGithub, BsTrophyFill } from 'react-icons/bs';
 import { FaLightbulb } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaXTwitter, FaDiscord } from 'react-icons/fa6';
 import { BiMoney } from 'react-icons/bi';
 import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
 import { MdManageSearch, MdClose, MdEvent } from 'react-icons/md';
@@ -67,6 +67,15 @@ const HeaderNav = ({ showBrowse }) => {
       icon: FaXTwitter,
       iconClass: 'icon twitter-icon',
       label: 'Twitter'
+    },
+    {
+      type: 'a',
+      testId: 'discord-btn',
+      href: 'https://discord.gg/9nFHKdfWMx',
+      title: 'Discord',
+      icon: FaDiscord,
+      iconClass: 'icon discord-icon',
+      label: 'Discord'
     },
     {
       type: 'button',
