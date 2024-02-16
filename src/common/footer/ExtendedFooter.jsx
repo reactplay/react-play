@@ -2,8 +2,8 @@ import { useSearchContext } from 'common/search/search-context';
 import { CREATE_PLAY_DOC_LINK } from 'constants';
 import LogoLight from 'images/img-logo-light.svg';
 import { BsGithub } from 'react-icons/bs';
-import { FaDiscord, FaLinkedin } from 'react-icons/fa';
-import { FaInstagram, FaMeetup, FaXTwitter } from 'react-icons/fa6';
+import { FaDiscord, FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import { IoAddSharp, IoLogoRss } from 'react-icons/io5';
 import { MdManageSearch } from 'react-icons/md';
 import { Link } from 'react-router-dom';
@@ -36,10 +36,10 @@ const ExtendedFooter = () => {
       title: 'Blog Page'
     },
     {
-      name: 'Meetup',
-      url: 'https://www.meetup.com/reactplay-bengaluru/',
-      icon: <FaMeetup className="icon" />,
-      title: 'Meetup Page'
+      name: 'Email',
+      url: 'mailto:contact@reactplay.io',
+      icon: <FaEnvelope className="icon" />,
+      title: 'Email'
     },
     {
       name: 'Linkedin',

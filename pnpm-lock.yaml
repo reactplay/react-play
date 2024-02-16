@@ -239,6 +239,9 @@ dependencies:
   workbox-window:
     specifier: ^7.0.0
     version: 7.0.0
+  yarn:
+    specifier: ^1.22.21
+    version: 1.22.21
 
 devDependencies:
   '@babel/plugin-transform-private-property-in-object':
@@ -15519,6 +15522,13 @@ packages:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
+
+  /yarn@1.22.21:
+    resolution: {integrity: sha512-ynXaJsADJ9JiZ84zU25XkPGOvVMmZ5b7tmTSpKURYwgELdjucAOydqIOrOfTxVYcNXe91xvLZwcRh68SR3liCg==}
+    engines: {node: '>=4.0.0'}
+    hasBin: true
+    requiresBuild: true
+    dev: false
 
   /yauzl@2.10.0:
     resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
