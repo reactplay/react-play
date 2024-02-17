@@ -21,7 +21,7 @@
 }
 
 .app-header-home {
-  position: fixed;
+  position: sticky;
 }
 
 .app-header-home.app-header-home--promo {
@@ -267,6 +267,10 @@
   fill: #ffffff;
 }
 
+.header-links > li > .app-header-btn:hover .discord-icon {
+  fill: #7289da;
+}
+
 .header-links > li > .app-header-btn .btn-label {
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
@@ -503,7 +507,8 @@
   justify-content: center;
   background-color: #fad900;
   min-height: 32px;
-  position: fixed;
+  position: sticky;
+  top: 0;
   font-size: var(--fs-sm);
   line-height: var(--fs-sm);
   z-index: 9;

@@ -29,7 +29,7 @@ export const SearchBox = ({ reset }) => {
   return (
     <div className="filter">
       <div
-        className="flex flex-1 search-input items-center filter-area px-4"
+        className="flex flex-1 search-input items-center filter-area pl-4 pr-2"
         data-testid="plays-search-box-container"
       >
         <BiSearch className="mr-2" data-testid="plays-search-box-icon" size="24px" />

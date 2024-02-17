@@ -39,6 +39,14 @@ const FilterPlays = ({ onChange, query }) => {
     }
   }, [query, loading, showModal]);
 
+  // This useEffect ensures that once the filter plays modal is closed, the focus is returned back to the filter plays button
+  useEffect(() => {
+    const filterPlaysBtn = document.getElementById('filterPlaysBtn');
+    if (!showModal && filterPlaysBtn) {
+      filterPlaysBtn.focus();
+    }
+  }, [showModal]);
+
   const filterModalCloseBtnHandler = () => {
     setShowModal(false);
   };
@@ -220,7 +228,7 @@ const FilterPlays = ({ onChange, query }) => {
       >
         {FIELD_TEMPLATE.map((field, field_i) => {
           return (
-            <div className="flex flex-col md:flex-row p-2" key={field_i}>
+            <div className="flex-filter-modal flex-col md:flex-row p-2" key={field_i}>
               <div className="w-32">
                 {field.display}
                 {field.required ? '*' : ''}
@@ -233,6 +241,7 @@ const FilterPlays = ({ onChange, query }) => {
 
       <button
         className="btn-filter"
+        id="filterPlaysBtn"
         title="Filter Plays"
         onClick={() => {
           showFilterModal();
