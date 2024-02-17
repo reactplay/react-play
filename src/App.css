@@ -106,7 +106,7 @@ textarea {
 
 html,
 body {
-  height: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
   font-family: var(--ff-default);
@@ -354,6 +354,10 @@ small {
   .app-footer--home .app-footer-body .body-tertiary {
     width: 100%;
   }
+}
+
+.app-footer-text {
+  color: var(--color-neutral-80);
 }
 
 /* Buttons */
