@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsPlayCircleFill } from 'react-icons/bs';
-import { BiLogoTypescript } from 'react-icons/bi';
-import { BiLogoJavascript } from 'react-icons/bi';
+import { BiLogoTypescript, BiLogoJavascript } from 'react-icons/bi';
 
 import Shimmer from 'react-shimmer-effect';
 import Like from 'common/components/Like/Like';
@@ -44,9 +43,9 @@ function PlayCard({ play, cover, likeObject }) {
           <div className="like-container">
             <Like likeObj={likeObject()} onLikeClick={null} />
             {play.language === 'ts' ? (
-              <BiLogoTypescript size={25} />
+              <BiLogoTypescript className="lang-icon" color="#007acc" size={25} />
             ) : (
-              <BiLogoJavascript size={25} />
+              <BiLogoJavascript className="lang-icon" color="#F0DB4F" size={25} />
             )}
           </div>
         </div>

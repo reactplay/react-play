@@ -933,3 +933,11 @@
 .play-card-container:hover .play-icon {
   opacity: 1;
 }
+
+.lang-icon {
+  filter: grayscale(100%);
+}
+
+.play-card-container:hover .lang-icon {
+  filter: none;
+}
