@@ -1,18 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300;400;500;600;700&display=swap');
-
 .play-details-body {
   text-align: center;
   background-color: #283149;
 }
 
-h1 {
+.heading {
   font-size: 5rem;
   color: #dbedf3;
   font-family: 'Arvo', cursive;
   text-shadow: 3px 0 #da0463;
 }
 
-footer {
+.footer {
   color: #dbedf3;
   font-family: sans-serif;
 }
