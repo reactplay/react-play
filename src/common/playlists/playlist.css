@@ -829,12 +829,12 @@
 .play-card-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ddd; /* Add a border for visual separation, adjust as needed */
-  border-radius: 8px; /* Add rounded corners, adjust as needed */
-  overflow: hidden; /* Prevent content from overflowing */
-  transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
-  width: 300px; /* Adjust the max-width as needed */
-  height: 100%; /* Ensure the card container fills its parent */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  width: 300px;
+  height: 100%;
   padding: 12px;
 }
 
@@ -847,14 +847,14 @@
   display: flex;
   align-items: center;
   margin-top: 10px;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .card-cover {
-  width: 100%; /* Set the width to fill its container */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Rounded corners, adjust as needed */
-  object-fit: cover; /* Scale the image to cover the entire box */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .author-name {
@@ -863,8 +863,9 @@
   font-weight: 200;
 }
 .card-header {
-  font-size: 18px; /* Example font size, adjust as needed */
-  padding: 10px; /* Example padding, adjust as needed */
+  font-size: 18px;
+  padding: 10px;
+  text-align: center;
 }
 
 .img {
@@ -910,14 +911,14 @@
   overflow: hidden;
 }
 
-.play-thumb-img {
+.play-card-thumb-img {
   width: 100%;
-  height: auto;
+  height: 146px;
   object-fit: cover;
   transition: filter 0.3s ease-in-out;
 }
 
-.play-card-container:hover .play-thumb-img {
+.play-card-container:hover .play-card-thumb-img {
   filter: blur(3px) brightness(0.7) saturate(50%);
 }
 

@@ -13,7 +13,7 @@ function PlayCard({ play, cover, likeObject }) {
       <div className="play-card-container">
         <div className="play-thumb-container">
           <Shimmer>
-            <img alt="Dummy Image" className="play-thumb-img" src={cover} />
+            <img alt="" className="play-card-thumb-img" src={cover} />
           </Shimmer>
           <BsPlayCircleFill className="play-icon" color="white" size={80} />
         </div>
