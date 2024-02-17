@@ -213,9 +213,9 @@ function QuizApp(props: any) {
                     isWin === false && index + 1 === questions[question].answer && isFlipped
                       ? ' border-red-600'
                       : index + 1 === questions[question].answer &&
-                          questions[question].qStatus === 1
-                        ? 'border-[#021C1E]'
-                        : 'border-b-0'
+                        questions[question].qStatus === 1
+                      ? 'border-[#021C1E]'
+                      : 'border-b-0'
                   } ${selectedAns === index ? 'text-blue-700' : ''}`}
                   disabled={questions[question].qStatus === 1 ? true : false}
                   key={index}
