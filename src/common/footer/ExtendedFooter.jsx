@@ -85,6 +85,23 @@ const ExtendedFooter = () => {
               ))}
             </ul>
           </div>
+          <div className="mt-4">
+            <p>
+              <small>Email us</small>
+            </p>{' '}
+            <div>
+              <p>
+                <a
+                  className="text-link-default"
+                  href="mailto:contact@reactplay.io"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  contact@reactplay.io
+                </a>
+              </p>
+            </div>
+          </div>
           <div className="my-4 py-4 mx-auto">
             <a
               className="btn-primary mr-2 mb-2"
