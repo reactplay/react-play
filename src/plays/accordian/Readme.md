@@ -11,4 +11,3 @@ When you click on a section, it opens up to show more details, and when you clic
 
 - User: clavy123
 - Gihub Link: https://github.com/clavy123
-

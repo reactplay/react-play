@@ -259,11 +259,11 @@ small {
 .app-footer-body .p-lg {
   margin: 0;
   font-size: var(--fs-md);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .app-footer-body .social-links {
-  margin: 0.6rem 0 2rem 0;
+  margin: 0.6rem 0 0 0;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -273,8 +273,8 @@ small {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 48px;
   background-color: rgba(var(--color-neutral-100-rgb), 0.08);
   transition: all 0.12s ease-in-out;
