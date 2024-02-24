@@ -676,10 +676,10 @@
       "name": "Janvi Bajoria",
       "avatar_url": "https://avatars.githubusercontent.com/u/34344234?v=4",
       "profile": "https://github.com/janvi01",
-       "contributions": [
+      "contributions": [
         "code"
       ]
-      },
+    },
     {
       "login": "chhakuli123",
       "name": "Chhakuli Zingare",
@@ -703,6 +703,15 @@
       "name": "Priyankar Pal",
       "avatar_url": "https://avatars.githubusercontent.com/u/88102392?v=4",
       "profile": "http://priyank.live",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Akshaygore1",
+      "name": "Akshay Gore",
+      "avatar_url": "https://avatars.githubusercontent.com/u/92959398?v=4",
+      "profile": "https://github.com/Akshaygore1",
       "contributions": [
         "code"
       ]
