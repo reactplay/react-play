@@ -1,4 +1,4 @@
-# URL Shortner 
+# URL Shortner
 
 URL shortener will takes a long URL and generates a shorter, more manageable version of it.
 
@@ -13,7 +13,7 @@ URL shortener will takes a long URL and generates a shorter, more manageable ver
 - Github Link: https://github.com/alaminrifat
 - LinkedIn Link: https://www.linkedin.com/in/alaminrifat
 - Blog: https://medium.com/@alaminrifat
-- Video: 
+- Video:
 
 ## Implementation Details
 

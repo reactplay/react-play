@@ -23,7 +23,8 @@
     }
 
     .savingOptions__currencies {
-      box-shadow: inset 3px 3px 3px 2px rgba(0, 0, 0, 0.1),
+      box-shadow:
+        inset 3px 3px 3px 2px rgba(0, 0, 0, 0.1),
         inset -5px -5px 3px 2px rgba(255, 255, 255, 0.868);
       border-radius: 10px;
       padding: 10px 15px;
@@ -49,7 +50,8 @@
 
     .savingOptions__inputGroup {
       display: flex;
-      box-shadow: inset 3px 3px 3px 2px rgba(0, 0, 0, 0.1),
+      box-shadow:
+        inset 3px 3px 3px 2px rgba(0, 0, 0, 0.1),
         inset -5px -5px 3px 2px rgba(255, 255, 255, 0.868);
       border-radius: 10px;
       padding: 10px 15px;
@@ -118,7 +120,9 @@
         top: 0;
         width: 18px;
         height: 18px;
-        box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.1), -3px -3px 2px 2px rgba(255, 255, 255, 0.868);
+        box-shadow:
+          3px 3px 2px 2px rgba(0, 0, 0, 0.1),
+          -3px -3px 2px 2px rgba(255, 255, 255, 0.868);
         border-radius: 100%;
         background: #fff;
       }
