@@ -1,6 +1,5 @@
 import RouteDefs from 'common/routing/RouteDefs';
 import { SearchContextProvider } from 'common/search/search-context';
-import './index.css';
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
