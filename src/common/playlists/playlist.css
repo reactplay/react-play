@@ -765,10 +765,10 @@
 
 /* dynamic banner */
 .dynamic-banner-container {
+  display: flex;
   color: white;
-  position: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }
 .dynamic-banner-body {
