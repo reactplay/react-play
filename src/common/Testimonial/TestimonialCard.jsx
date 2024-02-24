@@ -27,27 +27,29 @@ const TestimonialCard = ({ home, quote, name, avatarUrl, category, created_at, e
 
   return (
     <div className="py-4">
-      <div className="flex items-center gap-4 px-6 sm:h-16">
-        <a href={`${getHostName()}/contributors/${email2Slug(email)}/badges`}>
-          <img
-            alt="Profile Picture"
-            className="h-12 w-12 rounded-full object-cover"
-            src={avatarUrl}
-          />
-        </a>
-
-        <div className="text-sm flex-1">
-          <a
-            className="font-medium"
-            href={`${getHostName()}/contributors/${email2Slug(email)}/badges`}
-          >
-            {name}
+      <div className="flex justify-between items-center min-w-full gap-4 px-6 sm:h-16">
+        <div className="!m-0 flex items-center gap-4">
+          <a href={`${getHostName()}/contributors/${email2Slug(email)}/badges`}>
+            <img
+              alt="Profile Picture"
+              className="h-12 w-12 rounded-full object-cover"
+              src={avatarUrl}
+            />
           </a>
-          <p className="mt-0.5">{formattedDate}</p>
+
+          <div className="text-sm flex-1">
+            <a
+              className="font-medium"
+              href={`${getHostName()}/contributors/${email2Slug(email)}/badges`}
+            >
+              {name}
+            </a>
+            <p className="mt-0.5">{formattedDate}</p>
+          </div>
         </div>
-        <span className="text-xs font-semibold tracking-wide uppercase bg-green-200 text-green-900 rounded-full px-2 py-1">
-          {category}
-        </span>
+        <div className="text-xs font-semibold tracking-wide uppercase bg-green-200 text-green-900 rounded-full px-2 py-1">
+          <span className="">{category}</span>
+        </div>
       </div>
 
       <div className="mx-2 mt-4">

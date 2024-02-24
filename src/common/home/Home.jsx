@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
-import './home.css';
+import ExtendedFooter from 'common/footer/ExtendedFooter';
+import React from 'react';
 import HomeBanner from './HomeBanner';
 import HomeContent from './HomeContent';
+import HomeContributors from './HomeContributors';
 import HomeFeatures from './HomeFeatures';
 import HomeIdeas from './HomeIdeas';
 import HomePlays from './HomePlays';
-import HomeTestimonials from './HomeTestimonials';
-import HomeContributors from './HomeContributors';
 import HomeSponsors from './HomeSponsors';
-import ExtendedFooter from 'common/footer/ExtendedFooter';
+import HomeTestimonials from './HomeTestimonials';
+import './home.css';
 
 const Home = () => {
   return (

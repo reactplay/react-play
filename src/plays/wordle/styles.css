@@ -1,7 +1,7 @@
 @tailwind base;
 @layer base {
   img {
-    @apply inline-block
+    @apply inline-block;
   }
 }
 
@@ -60,11 +60,11 @@
 
 /* Main styles */
 .clipboard-modal.appear {
-    animation: copy-modal-appear 600ms ease-in-out 0s 1 normal forwards;
+  animation: copy-modal-appear 600ms ease-in-out 0s 1 normal forwards;
 }
 
 .clipboard-modal:not(.appear) {
-    animation: copy-modal-disappear 600ms ease-in-out 0s 1 normal forwards;
+  animation: copy-modal-disappear 600ms ease-in-out 0s 1 normal forwards;
 }
 
 .end-screen {
@@ -180,23 +180,23 @@
 }
 
 @keyframes copy-modal-appear {
-    from {
-        transform: translateY(-40px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0px);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 @keyframes copy-modal-disappear {
-    from {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-40px);
-        opacity: 0;
-    }
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
 }
