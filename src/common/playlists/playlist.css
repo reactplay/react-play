@@ -765,10 +765,10 @@
 
 /* dynamic banner */
 .dynamic-banner-container {
+  display: flex;
   color: white;
-  position: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }
 .dynamic-banner-body {
@@ -803,7 +803,7 @@
   color: #25a0a7;
 }
 
-.search-summary{
+.search-summary {
   padding: 1.6rem 2rem 0rem 2rem;
   display: flex;
   flex-wrap: wrap;
