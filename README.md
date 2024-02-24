@@ -1,7 +1,7 @@
 # ReactPlay(Repo: `react-play`)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-76-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-79-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -369,11 +369,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/zulalnb"><img src="https://avatars.githubusercontent.com/u/33003721?v=4?s=100" width="100px;" alt="Zülal Nebin"/><br /><sub><b>Zülal Nebin</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=zulalnb" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/nrshnaik"><img src="https://avatars.githubusercontent.com/u/25747434?v=4?s=100" width="100px;" alt="nrshnaik"/><br /><sub><b>nrshnaik</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=nrshnaik" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/FreemRL"><img src="https://avatars.githubusercontent.com/u/66525499?v=4?s=100" width="100px;" alt="Jannik Schmidtke"/><br /><sub><b>Jannik Schmidtke</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=freemrl" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/saddam-selise"><img src="https://avatars.githubusercontent.com/u/113901460?v=4?s=100" width="100px;" alt="Md. Saddam Hossain"/><br /><sub><b>Md. Saddam Hossain</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=saddam-selise" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/janvi01"><img src="https://avatars.githubusercontent.com/u/34344234?v=4?s=100" width="100px;" alt="Janvi Bajoria"/><br /><sub><b>Janvi Bajoria</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=janvi01" title="Code">💻</a></td>
-      <td align="center" valign="top" width="1a href="https://github.com/saddam-selise"><img src="https://avatars.githubusercontent.com/u/113901460?v=4?s=100" width="100px;" alt="Md. Saddam Hossain"/><br /><sub><b>Md. Saddam Hossain</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=saddam-selise" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://chhakuli-zingare.netlify.app/"><img src="https://avatars.githubusercontent.com/u/103095813?v=4?s=100" width="100px;" alt4.28%"><="Chhakuli Zingare"/><br /><sub><b>Chhakuli Zingare</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=chhakuli123" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://chhakuli-zingare.netlify.app/"><img src="https://avatars.githubusercontent.com/u/103095813?v=4?s=100" width="100px;" alt="Chhakuli Zingare"/><br /><sub><b>Chhakuli Zingare</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=chhakuli123" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://clevercoderjoy.bio.link"><img src="https://avatars.githubusercontent.com/u/74505057?v=4?s=100" width="100px;" alt="clevercoderjoy"/><br /><sub><b>clevercoderjoy</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=clevercoderjoy" title="Code">💻</a></td>
+    </tr>
+    <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://priyank.live"><img src="https://avatars.githubusercontent.com/u/88102392?v=4?s=100" width="100px;" alt="Priyankar Pal"/><br /><sub><b>Priyankar Pal</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=priyankarpal" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Akshaygore1"><img src="https://avatars.githubusercontent.com/u/92959398?v=4?s=100" width="100px;" alt="Akshay Gore"/><br /><sub><b>Akshay Gore</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Akshaygore1" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
