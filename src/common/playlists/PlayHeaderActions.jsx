@@ -103,8 +103,6 @@ const PlayHeaderActions = ({ play }) => {
           className="action"
           href={`https://github.com/reactplay/react-play/tree/main/src${play.path}`}
           rel="noopener noreferrer"
-          rel="noopener noreferrer"
-          target="_blank"
           target="_blank"
         >
           <BsGithub className="icon" size="24px" />
