@@ -111,12 +111,12 @@ const Header = () => {
         }`}
         data-testid="app-header"
       >
-        <span>
+        <span className="pl-0 md:pl-[50px]">
           <Link className="app-logo" data-testid="app-logo" to="/">
             <span className="sr-only">React Play</span>
           </Link>
         </span>
-        <div className="app-header-search">
+        <div className="app-header-search pl-0 xl:pl-[130px]">
           {showHideBits.showSearch && <SearchBox reset={reset} />}
         </div>
 

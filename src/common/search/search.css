@@ -68,10 +68,14 @@
   color: var(--color-neutral-10);
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1217px) {
   .filter {
-    padding: 0.5rem 0;
+    display: grid;
+    justify-content: start;
   }
+}
+
+@media screen and (max-width: 576px) {
   .filter .search-input-icon {
     left: 0.6rem;
     width: 20px;
@@ -132,6 +136,19 @@
   .btn-filter .icon {
     width: 24px;
     height: 24px;
+  }
+}
+
+@media screen and (max-width:494px) {
+  .filter {
+    display: grid;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 408px) {
+  .filter .filter-area {
+    width: 198px;
   }
 }
 
