@@ -829,13 +829,18 @@
 .play-card-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ddd;
+  border: 2px solid #757575;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   width: 300px;
   height: 100%;
   padding: 12px;
+}
+
+.play-card-container:hover {
+  transform: scale(105%);
+  transition: transform 0.2s ease-in-out;
 }
 
 .border {
