@@ -16,7 +16,7 @@
     "@tensorflow-models/coco-ssd": "^2.2.3",
     "@tensorflow/tfjs": "^4.16.0",
     "add": "^2.0.6",
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
     "browser-image-compression": "^2.0.2",
     "classnames": "^2.5.1",
     "codemirror": "^5.65.16",
