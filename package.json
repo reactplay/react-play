@@ -91,7 +91,7 @@
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "e2e": "npx playwright test --reporter=html --retries=2",
+    "e2e": "npx playwright test --reporter=html,list --retries=2",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
     "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,scss,md}\" --config ./.prettierrc",
