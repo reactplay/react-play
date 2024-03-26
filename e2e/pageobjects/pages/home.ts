@@ -3,7 +3,7 @@ import { Locator, Page, expect } from '@playwright/test';
 export class Home {
   header: Locator;
   appLogo: Locator;
-  browseBth: Locator;
+  browseBtn: Locator;
   createBtn: Locator;
   eventBtn: Locator;
   leaderboardBtn: Locator;
@@ -45,7 +45,7 @@ export class Home {
   constructor(page: Page) {
     this.header = page.locator('[data-testid="app-header"]');
     this.appLogo = this.header.getByTestId('app-logo');
-    this.browseBth = this.header.getByTestId('browse-btn');
+    this.browseBtn = this.header.getByTestId('browse-btn');
     this.eventBtn = this.header.getByTestId('events-btn');
     this.createBtn = this.header.getByTestId('create-btn');
     this.leaderboardBtn = this.header.getByTestId('leaderboard-btn');
@@ -97,7 +97,7 @@ export class Home {
   async headerVisibleClickable() {
     await expect(this.appLogo).toBeVisible();
     // assertion of header static informations
-    await expect(this.browseBth).toHaveText('Browse');
+    await expect(this.browseBtn).toHaveText('Browse');
     await expect(this.eventBtn).toBeEditable();
     await expect(this.createBtn).toBeEditable();
     await expect(this.leaderboardBtn).toBeEditable();
