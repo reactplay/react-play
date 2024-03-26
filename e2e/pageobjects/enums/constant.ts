@@ -1,0 +1,4 @@
+export enum Constant {
+  TRENDING_PLAYS_CARD_COUNT = 5,
+  PARTNERS_SPONSERS_LINKS_COUNT = 10
+}

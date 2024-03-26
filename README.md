@@ -196,21 +196,34 @@ npm build
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
-### 🧪 Test App Locally (E2E with Cypress)
+--------------------------------------------------------------
 
-Use the following command to run cypress locally:
+### 🧪 Test App Locally (E2E with Playwright)
 
+Use the following command to install browser(s) binaries to test locally:
 ```bash
-yarn cypress:open
+yarn install playwright
 ```
 OR
 ```
-npm run cypress:open
+npm install playwright
 ```
 
-It will open the cypress dashboard, through which you need to select `E2E Testing`.
-Once you are done with the selection you will get options to choose your preferred browser in which you want to run the test.!
-Once you select the browser you need to click on `Start E2E Testing in <SELECTED_BROWSER_NAME>.` The chosen browser will pop up you can see a list of cypress tests, click on the test to start testing.!
+Use the following command to run Playwright tests:
+
+```bash
+yarn e2e
+```
+OR
+```
+npm run e2e
+```
+👀 Read more about testing in [react-play](../react-play/e2e/README.md)
+
+👀 Read more about playwright: https://playwright.dev/
+
+--------------------------------------------------------------
+
 
 ### 🚀 Deploy
 
