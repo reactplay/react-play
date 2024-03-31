@@ -150,7 +150,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.3.0",
-    "postcss": "^8.4.37",
+    "postcss": "^8.4.38",
     "postcss-import": "^15.1.0",
     "prettier": "^3.2.4",
     "puppeteer": "^21.9.0",
