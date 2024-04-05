@@ -1,0 +1,135 @@
+/* enter stlyes here */
+:root {
+  --white: white;
+}
+
+.play-details-body {
+  background-image: url('./icons/hero_img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Language-Translator_container {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.Language-Translator_sourceLang,
+.Language-Translator_targetLang {
+  backdrop-filter: blur(25px) saturate(120%);
+  -webkit-backdrop-filter: blur(25px) saturate(120%);
+  background-color: rgba(24, 66, 142, 0.43);
+  border-radius: 20px;
+  border: 1px solid rgba(120, 5, 5, 0.271);
+  width: 40vw;
+  height: 50%;
+  padding: 1rem;
+}
+
+.Language-Translator_languages {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.Language-Translator_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.Language-Translator_textarea {
+  margin-bottom: 1rem;
+}
+
+.Language-Translator_translateBtn {
+  padding: 5px 10px;
+  background-color: #0b78b6;
+  border-radius: 5px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.Language-Translator_wordCount {
+  color: var(--white);
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Language-Translator_imgBtns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+textarea {
+  resize: none;
+  background: none;
+  padding: 5px;
+  color: var(--white);
+  height: 85%;
+  scrollbar-width: none;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #0b78b6;
+  border-radius: 7px;
+}
+
+select {
+  background: none;
+  width: 100px;
+}
+
+select,
+button {
+  border-radius: 10px;
+  padding: 0 5px;
+  color: var(--white);
+}
+
+.selected {
+  background-color: #5b60ab;
+}
+
+select:hover,
+button:hover,
+select:focus {
+  background-color: #5b60ab;
+}
+
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+img:hover,
+.Language-Translator_translateBtn:hover {
+  opacity: 1;
+  background-color: #0916d3;
+}
+
+@media (max-width: 1024px) {
+    .play-details-body{
+        font-size: small;
+    }
+    .Language-Translator_container{
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    .Language-Translator_sourceLang, .Language-Translator_targetLang{
+        width: 80vw;
+        height: 60%;
+    }
+}
