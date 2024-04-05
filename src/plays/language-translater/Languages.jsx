@@ -1,3 +1,4 @@
+// initializing a array of languages and their respective language_codes
 const languages = [
   { code: 'af-ZA', name: 'Afrikaans' },
   { code: 'sq-AL', name: 'Albanian' },

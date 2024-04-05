@@ -9,15 +9,17 @@ import switchLang from './icons/Horizontal_top_left_main.svg';
 
 // WARNING: Do not change the entry componenet name
 function LanguageTranslater(props) {
-  const [inputText, setInputText] = useState('Hello, How are you?');
+  const [inputText, setInputText] = useState('Hello, How are you?'); // set input text for initial render
   const [translatedText, setTranslatedText] = useState('');
-  const [sourceLang, setSourceLang] = useState('Autodetect');
-  const [targetLang, setTargetLang] = useState('fr');
+  const [sourceLang, setSourceLang] = useState('Autodetect'); // set initial sourceLang to Autodetect
+  const [targetLang, setTargetLang] = useState('fr'); // set initial targetLang to french
 
+  // used useEffect to translation during initial render
   useEffect(() => {
     translate();
   }, []);
 
+  // fetching the data from API
   const translate = async () => {
     try {
       const response = await fetch(
@@ -30,12 +32,15 @@ function LanguageTranslater(props) {
     }
   };
 
+  // used debounce for limiting the rate at which the translation function is called
   const debouncedTranslate = debounce(translate, 300);
 
+  // function for initializing translation
   const handleTranslate = () => {
     debouncedTranslate();
   };
 
+  // function to switch source and target languages
   const switchLanguage = () => {
     if (sourceLang !== 'Autodetect') {
       const temp = sourceLang;
@@ -46,10 +51,12 @@ function LanguageTranslater(props) {
     }
   };
 
+  // clipboard copy function
   const handleCopy = (text) => {
     navigator.clipboard.writeText(text);
   };
 
+  // text to speech function
   const handleListen = async (text, language) => {
     try {
       const utterence = new SpeechSynthesisUtterance(text);
