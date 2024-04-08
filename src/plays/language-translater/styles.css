@@ -1,9 +1,5 @@
 /* enter stlyes here */
-:root {
-  --white: white;
-}
-
-.play-details-body {
+.Language-Translator_body {
   background-image: url('./icons/hero_img.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -40,7 +36,7 @@
   margin-bottom: 1rem;
 }
 
-.Language-Translator_textarea {
+.Language-Translator_textbox {
   margin-bottom: 1rem;
 }
 
@@ -48,12 +44,12 @@
   padding: 5px 10px;
   background-color: #0b78b6;
   border-radius: 5px;
-  color: var(--white);
+  color: #ffffff;
   cursor: pointer;
 }
 
 .Language-Translator_wordCount {
-  color: var(--white);
+  color: #ffffff;
   display: flex;
   justify-content: flex-end;
   font-size: 12px;
@@ -67,16 +63,16 @@
   gap: 10px;
 }
 
-textarea {
+.Language-Translator_textarea {
   resize: none;
   background: none;
   padding: 5px;
-  color: var(--white);
+  color: #ffffff;
   height: 85%;
   scrollbar-width: none;
 }
 
-img {
+.Language-Translator_img {
   width: 30px;
   height: 30px;
   padding: 5px;
@@ -85,41 +81,41 @@ img {
   border-radius: 7px;
 }
 
-select {
+.Language-Translator_langSelectBtn {
   background: none;
   width: 100px;
 }
 
-select,
-button {
+.Language-Translator_langSelectBtn,
+.Language-Translator_langButtons {
   border-radius: 10px;
   padding: 0 5px;
-  color: var(--white);
+  color: #ffffff;
 }
 
 .selected {
   background-color: #5b60ab;
 }
 
-select:hover,
-button:hover,
-select:focus {
+.Language-Translator_langSelectBtn:hover,
+.Language-Translator_langButtons:hover,
+.Language-Translator_langSelectBtn:focus {
   background-color: #5b60ab;
 }
 
-textarea:focus,
-button:focus {
+.Language-Translator_textarea:focus,
+.Language-Translator_langButtons:focus {
   outline: none;
 }
 
-img:hover,
+.Language-Translator_img:hover,
 .Language-Translator_translateBtn:hover {
   opacity: 1;
   background-color: #0916d3;
 }
 
 @media (max-width: 1024px) {
-    .play-details-body{
+    .Language-Translator_body{
         font-size: small;
     }
     .Language-Translator_container{

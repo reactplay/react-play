@@ -71,34 +71,35 @@ function LanguageTranslater(props) {
     <>
       <div className="play-details">
         <PlayHeader play={props} />
-        <div className="play-details-body">
+        <div className="play-details-body Language-Translator_body">
           {/* Your Code Starts Here */}
           <div>
             <div className="Language-Translator_container">
               <div className="Language-Translator_sourceLang">
                 <section className="Language-Translator_languages">
                   <button
-                    className={sourceLang === 'Autodetect' ? 'selected' : ''}
+                    className={`Language-Translator_langButtons ${sourceLang === 'Autodetect' ? 'selected' : ''}`}
                     value="Autodetect"
                     onClick={(e) => setSourceLang(e.target.value)}
                   >
                     Detect Language
                   </button>
                   <button
-                    className={sourceLang === 'en' ? 'selected' : ''}
+                    className={`Language-Translator_langButtons ${sourceLang === 'en' ? 'selected' : ''}`}
                     value="en"
                     onClick={(e) => setSourceLang(e.target.value)}
                   >
                     English
                   </button>
                   <button
-                    className={sourceLang === 'fr' ? 'selected' : ''}
+                    className={`Language-Translator_langButtons ${sourceLang === 'fr' ? 'selected' : ''}`}
                     value="fr"
                     onClick={(e) => setSourceLang(e.target.value)}
                   >
                     French
                   </button>
                   <select
+                    className="Language-Translator_langSelectBtn"
                     name="languages"
                     value={sourceLang}
                     onChange={(e) => setSourceLang(e.target.value)}
@@ -110,8 +111,9 @@ function LanguageTranslater(props) {
                     ))}
                   </select>
                 </section>
-                <section className="Language-Translator_textarea">
+                <section className="Language-Translator_textbox">
                   <textarea
+                    className="Language-Translator_textarea"
                     maxLength={500}
                     rows={10}
                     value={inputText}
@@ -121,9 +123,15 @@ function LanguageTranslater(props) {
                 </section>
                 <section className="Language-Translator_buttons">
                   <div className="Language-Translator_imgBtns">
-                    <img alt="copy svg" src={copy} onClick={() => handleCopy(inputText)} />
+                    <img
+                      alt="copy svg"
+                      className="Language-Translator_img"
+                      src={copy}
+                      onClick={() => handleCopy(inputText)}
+                    />
                     <img
                       alt="sound svg"
+                      className="Language-Translator_img"
                       src={sound}
                       onClick={() => handleListen(inputText, sourceLang)}
                     />
@@ -136,20 +144,21 @@ function LanguageTranslater(props) {
               <div className="Language-Translator_targetLang">
                 <section className="Language-Translator_languages">
                   <button
-                    className={targetLang === 'en' ? 'selected' : ''}
+                    className={`Language-Translator_langButtons ${targetLang === 'en' ? 'selected' : ''}`}
                     value="en"
                     onClick={(e) => setTargetLang(e.target.value)}
                   >
                     English
                   </button>
                   <button
-                    className={targetLang === 'fr' ? 'selected' : ''}
+                    className={`Language-Translator_langButtons ${targetLang === 'fr' ? 'selected' : ''}`}
                     value="fr"
                     onClick={(e) => setTargetLang(e.target.value)}
                   >
                     French
                   </button>
                   <select
+                    className="Language-Translator_langSelectBtn"
                     name="languages"
                     value={targetLang}
                     onChange={(e) => setTargetLang(e.target.value)}
@@ -160,17 +169,34 @@ function LanguageTranslater(props) {
                       </option>
                     ))}
                   </select>
-                  <img alt="switch Btn" src={switchLang} onClick={switchLanguage} />
+                  <img
+                    alt="switch Btn"
+                    className="Language-Translator_img"
+                    src={switchLang}
+                    onClick={switchLanguage}
+                  />
                 </section>
-                <section className="Language-Translator_textarea">
-                  <textarea readOnly maxLength={500} rows={10} value={translatedText} />
+                <section className="Language-Translator_textbox">
+                  <textarea
+                    readOnly
+                    className="Language-Translator_textarea"
+                    maxLength={500}
+                    rows={10}
+                    value={translatedText}
+                  />
                   <div className="Language-Translator_wordCount">{translatedText.length}/500</div>
                 </section>
                 <section className="Language-Translator_buttons">
                   <div className="Language-Translator_imgBtns">
-                    <img alt="copy svg" src={copy} onClick={() => handleCopy(translatedText)} />
+                    <img
+                      alt="copy svg"
+                      className="Language-Translator_img"
+                      src={copy}
+                      onClick={() => handleCopy(translatedText)}
+                    />
                     <img
                       alt="sound svg"
+                      className="Language-Translator_img"
                       src={sound}
                       onClick={() => handleListen(translatedText, targetLang)}
                     />
