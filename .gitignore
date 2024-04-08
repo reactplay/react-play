@@ -44,3 +44,7 @@ cypress/e2e/play.cy.ts
 
 # vscode setting
 .vscode
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
