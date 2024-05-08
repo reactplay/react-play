@@ -115,17 +115,18 @@
 }
 
 @media (max-width: 1024px) {
-    .Language-Translator_body{
-        font-size: small;
-    }
-    .Language-Translator_container{
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-    }
+  .Language-Translator_body {
+    font-size: small;
+  }
+  .Language-Translator_container {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
 
-    .Language-Translator_sourceLang, .Language-Translator_targetLang{
-        width: 80vw;
-        height: 60%;
-    }
+  .Language-Translator_sourceLang,
+  .Language-Translator_targetLang {
+    width: 80vw;
+    height: 60%;
+  }
 }

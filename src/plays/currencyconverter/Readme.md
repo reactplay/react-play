@@ -11,8 +11,8 @@ Develop a web-based currency converter. Users input an amount and select currenc
 
 - User: sabbir2809
 - Gihub Link: https://github.com/sabbir2809
-- Blog: N/A
-- Video: N/A
+- Blog:
+- Video:
 
 ## Implementation Details
 
@@ -25,8 +25,6 @@ Develop a web-based currency converter. Users input an amount and select currenc
 - Custom Hooks: Reuse code for common tasks like fetching data.
 
 ## Consideration
-
-N/A
 
 ## Resources
 
