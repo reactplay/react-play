@@ -11,8 +11,8 @@ Language Translator is a web application built with React.js that allows users t
 
 - User: Venkat-3010
 - Gihub Link: https://github.com/Venkat-3010
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 
@@ -31,7 +31,7 @@ The `Language Translator` is implemented with below steps.
 - Translate button: Initiates the translation using `Fetch API`.
 - Copy button: uses `clipboard` to copy the input and translated text.
 - Listen button: Reads out the the input and translated text using `SpeechSynthesisUtterance`.
-- Language Switch: Allows users to swap the source and target languages. 
+- Language Switch: Allows users to swap the source and target languages.
 
 ## Consideration
 
