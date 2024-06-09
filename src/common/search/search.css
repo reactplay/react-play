@@ -85,6 +85,12 @@
   .filter.search-input-text {
     padding: 0.6rem 1.2rem 0.6rem 2rem;
   }
+    .flex-filter-modal{
+    width: 100% !important;
+  }
+  .modal-filter .modal-filter-header {
+    padding: 0rem 1.6rem 1.6rem 1.4rem !important;
+  }
 }
 
 /* Filter */
