@@ -1,3 +1,5 @@
+import FallbackImage from 'images/play-fallback-cover.png';
+
 export async function loadCoverImage(playSlug) {
   const acceptedImgExtensions = [`png`, `jpg`, `jpeg`];
   const imgPromises = acceptedImgExtensions.map((ext) => import(`plays/${playSlug}/cover.${ext}`));
@@ -8,5 +10,5 @@ export async function loadCoverImage(playSlug) {
     (result) => result.status === 'fulfilled' && result.value.default
   );
 
-  return fulfilledResult?.value.default;
+  return fulfilledResult?.value.default || FallbackImage;
 }
