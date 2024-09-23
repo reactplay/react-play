@@ -35,7 +35,6 @@ body:
           required: true
         - label: I want to work on this issue
         - label: I am a Hacktoberfest contributor
-          required: true
 
   - type: checkboxes
     id: terms
