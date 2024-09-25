@@ -38,7 +38,7 @@ function ZoomSupport({ close, closeHandle, isModalOpen, closeSupportModal }) {
             </div>
           </div>
         )}
-        <div className="flex flex-col h-[96px] p-3  border-b border-gray ">
+        <div className="flex flex-col h-[96px] p-3 border-b border-gray ">
           <div className="flex justify-end">
             <div className="flex mx-2 gap-3">
               <button onClick={closeHandle}>
@@ -150,8 +150,3 @@ function ZoomSupport({ close, closeHandle, isModalOpen, closeSupportModal }) {
 }
 
 export default ZoomSupport;
-
-/**
- * click start a new chat -> change the bottom layout to chat input area
- * click buttons -> same as sending a message, messaging depth 2 levels only
- */

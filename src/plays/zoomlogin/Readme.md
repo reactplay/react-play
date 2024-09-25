@@ -16,7 +16,10 @@ Clone project for the zoom login page and the help chatbot
 
 ## Implementation Details
 
-Update your implementation idea and details here
+- Login form validation
+- Help chatbot, customizing the React-Chatbot-Library
+- Responsive design to display ads or Zoom images based on screen size
+- Accessibility features, including form submission via Enter key, alt attributes, aria-labels, and button hover saturation changes
 
 ## Consideration
 

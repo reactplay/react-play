@@ -33,7 +33,6 @@ function ZoomHeader() {
             Sign Up Free
           </button>
         </div>
-
         <div className="mr-10 hidden sm:inline-flex">
           <button
             className="hover:text-[#0956b5] hover:underline underline-offset-2"

@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import './App.css';
 import CopyText from './CopyText';
 import Footer from './Footer';
@@ -12,14 +10,12 @@ function App() {
     <>
       <div className=" sticky top-0 h-[120px] sm:h-20 bg-blue-900 text-white font-semibold text-3xl z-50 shadow-lg">
         <div className="flex items-center justify-between py-3 px-3 sm:px-5 h-[120px] sm:h-20">
-          <Link to="/">
-            <div className="flex justify-center ml-4">
-              <p className="font-mono">
-                Clone Coding
-                <p className="text-sm text-gray-300">Login form pages</p>
-              </p>
-            </div>
-          </Link>
+          <div className="flex justify-center ml-4">
+            <p className="font-mono">
+              Clone Coding
+              <p className="text-sm text-gray-300">Login form pages</p>
+            </p>
+          </div>
           <div>
             <div className="relative">
               <p className="text-sm text-gray-300">Test credentials</p>
