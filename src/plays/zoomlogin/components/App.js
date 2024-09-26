@@ -29,9 +29,13 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="text-lg absolute top-3 right-[200px] p-2 px-4 bg-white border-red-500 text-red-600 border-4 font-bold rounded-md">
-            Click "Help" button and the icon <img className="w-8 inline-block" src={zoomhelpaf} />{' '}
-            in the bottom right corner for the chatbot!
+          <div className="text-base absolute top-3 right-[200px] p-2 px-4 bg-white border-red-500 text-red-600 border-4 font-bold rounded-md">
+            <p>
+              {' '}
+              Chatbot: Click the "Help" button and the icon{' '}
+              <img className="w-8 inline-block" src={zoomhelpaf} /> in the bottom right corner.
+            </p>
+            <p> Test by typing "password reset", and "easter egg dog pic" etc. </p>
           </div>
         </div>
       </div>

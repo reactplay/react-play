@@ -2,14 +2,15 @@ import { useState } from 'react';
 
 import ZoomSpinner from './ZoomSpinner';
 
-import applelogo from '../../assets/apple-logo.svg';
 import info from '../../assets/circle-information-svgrepo-com.svg';
 import passwordHide from '../../assets/eye-password-hide-svgrepo-com.svg';
 import passwordShow from '../../assets/eye-password-show-svgrepo-com.svg';
-import facebooklogo from '../../assets/facebook-logo.svg';
-import googlelogo from '../../assets/google-logo.svg';
 import ssologo from '../../assets/sso-logo.svg';
 import openwindow from '../../assets/window-open.png';
+
+const applelogo = 'https://cdn.simpleicons.org/apple';
+const facebooklogo = 'https://cdn.simpleicons.org/facebook';
+const googlelogo = 'https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png';
 
 const INITIAL_VALUES = { zoomemail: '', zoompassword: '' };
 const ERROR_VALUES = {
@@ -342,7 +343,7 @@ function ZoomSignin({ helpHandle }) {
                 <div className="relative w-[85px] h-[86px] hover:text-black">
                   <button
                     aria-label="appe login"
-                    className="border m-2 pl-3 pt-3 pb-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+                    className="border m-2 p-3 pt-3 pb-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
                     id="apple"
                     name="apple"
                     onClick={handleSSOClick}
