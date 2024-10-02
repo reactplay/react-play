@@ -1,0 +1,58 @@
+name: Unassign inactive issues and add comment
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs once daily
+  workflow_dispatch:
+
+jobs:
+  unassign_inactive_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Find inactive issues
+        id: find_inactive
+        uses: dessant/issue-activity@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 7 # Set to 7 days of inactivity
+          stale-issue-message: 'This issue has been marked as inactive due to lack of activity.'
+          stale-pr-message: ''
+          exempt-issue-labels: ''
+          only-issue-labels: 'hacktoberfest' # Only check issues with 'hacktoberfest' label
+          operations-per-run: 100
+
+      - name: Add comment to inactive issues
+        if: steps.find_inactive.outputs.stale-issues != ''
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issues = ${{ steps.find_inactive.outputs.stale-issues }};
+            const issueNumbers = issues.split(',');
+            for (const issueNumber of issueNumbers) {
+              const issue = await github.rest.issues.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+              });
+
+              if (issue.data.assignee) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issueNumber,
+                  body: `This issue has been inactive for 7 days and has been unassigned.`
+                });
+              }
+            }
+
+      # Step 4: Unassign inactive issues
+      - name: Unassign inactive issues
+        if: steps.find_inactive.outputs.stale-issues != ''
+        uses: andymckay/assign@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ steps.find_inactive.outputs.stale-issues }}
+          assignees: ''
