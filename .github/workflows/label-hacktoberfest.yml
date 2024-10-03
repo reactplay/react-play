@@ -6,8 +6,8 @@ on:
 
 permissions:
   pull-requests: write
-  issues: read
-  contents: read
+  issues: write
+  contents: write
 
 jobs:
   label-hacktoberfest:
