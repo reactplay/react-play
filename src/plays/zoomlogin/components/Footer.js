@@ -13,7 +13,7 @@ function Footer() {
           <img alt="GitHub Logo" src="https://cdn.simpleicons.org/github" width="30" />
         </a>
       </div>
-      <div className="flex items-center justify-center gap-1 p-2">
+      <div className="flex items-center justify-center gap-1 p-2 text-sm sm:text-base">
         <span> &copy; 2024 all rights reserved | day-lee</span>
       </div>
     </div>

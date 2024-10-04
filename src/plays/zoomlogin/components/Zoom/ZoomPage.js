@@ -84,7 +84,7 @@ function ZoomPage() {
         </div>
         <button
           aria-label="help button"
-          className="fixed bottom-10 right-10 z-10"
+          className="fixed bottom-14 right-10 z-10"
           onClick={handleChatbotModal}
           onMouseEnter={handleHover}
           onMouseLeave={handleHover}
