@@ -1,8 +1,6 @@
-import PlayHeader from 'common/playlists/PlayHeader';
-import './styles.css';
 import React, { useState } from 'react';
+import PlayHeader from '../../common/playlists/PlayHeader';
 
-// WARNING: Do not change the entry component name
 function Cheesylines(props) {
   const cheesylines = [
     'Are you French? Because Eiffel for you.',
@@ -334,26 +332,27 @@ function Cheesylines(props) {
 
   const handleClick = () => {
     const randomLine = cheesylines[Math.floor(Math.random() * cheesylines.length)];
-    setLine(randomLine);
+    setLine(randomLine); // Ensure no extra space or newline here
   };
 
   return (
     <>
-      <div className="play-details">
+      <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
         <PlayHeader play={props} />
-        <div className="project-header">
-          <h1>Cheesy Pick-up Lines</h1>
+        <div className="text-center py-6">
+          <h1 className="text-4xl font-bold text-black mb-4">Cheesy Pick-up Lines</h1>
         </div>
-        <div className="play-details-body">
-          {/* Your Code Starts Here */}
-          <div className="container">
-            <div className="box">
-              <h2>Love at First Line!</h2>
-              {line && <p className="text-background">{line}</p>}
-            </div>
-            <button onClick={handleClick}>Get Cheesy Line</button>
+        <div className="w-full flex flex-col items-center">
+          <div className="border-2 border-green-500 p-12 rounded-lg shadow-lg bg-gray-200 max-w-3xl w-11/12 flex flex-col justify-center items-center">
+            <h2 className="text-3xl text-green-600 mb-6 text-center">Love at First Line!</h2>
+            {line && <p className="text-xl text-gray-700 mt-4 text-center">{line}</p>}
           </div>
-          {/* Your Code Ends Here */}
+          <button
+            className="mt-8 py-3 px-8 text-xl font-semibold bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            onClick={handleClick}
+          >
+            Get Cheesy Line
+          </button>
         </div>
       </div>
     </>
