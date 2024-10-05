@@ -6,7 +6,7 @@ import zoomsupport from '../../assets/zoomsupport.png';
 
 const Header = ({ isChatbotHeaderClose, handleChatbotModal, toggleHeaderActionMenuModal }) => {
   return (
-    <div className="relative w-[428px] h-[96px] bg-white rounded-t-3xl">
+    <div className="relative w-[380px] sm:w-[428px] h-[96px] bg-white rounded-t-3xl">
       {isChatbotHeaderClose && (
         <div className="absolute top-10 rounded-lg right-3 border-2 border-gray text-[13px] py-2 bg-white w-[222px] z-10">
           <div className="flex items-center h-[44px] py-2 gap-4 hover:bg-[#0e72ed] cursor-not-allowed">

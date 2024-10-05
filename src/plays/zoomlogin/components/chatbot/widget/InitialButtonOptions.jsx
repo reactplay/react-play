@@ -9,10 +9,10 @@ const InitialButtonOptions = (props) => {
   };
 
   return (
-    <div className="text-[#0e72ed] ml-[4rem] font-extrabold text-[14px]">
+    <div className="text-[#0e72ed] ml-[4rem] font-extrabold text-[13px] sm:text-[14px]">
       <button
         aria-label="My Account is Locked"
-        className="inline-block border border-[#0e72ed] rounded-3xl px-4 py-1.5 m-1 hover:bg-[#0e72ed] hover:text-white hover:cursor-pointer"
+        className="inline-block border border-[#0e72ed] rounded-3xl px-4 py-1.5 m-1 hover:bg-[#0e72ed] hover:text-white hover:cursor-not-allowed"
         title="My Account is Locked"
         onClick={() => handleAccountLockedClick('My Account is Locked')}
       >
@@ -28,7 +28,7 @@ const InitialButtonOptions = (props) => {
       </button>
       <button
         aria-label="Not Receiving Emails from Zoom"
-        className="inline-block border border-[#0e72ed] rounded-3xl px-4 py-1.5 m-1 hover:bg-[#0e72ed] hover:text-white hover:cursor-not-allowed"
+        className="block border border-[#0e72ed] rounded-3xl px-4 py-1.5 m-1 hover:bg-[#0e72ed] hover:text-white hover:cursor-not-allowed"
         title="Not Receiving Emails from Zoom"
       >
         Not Receiving Emails from Zoom
