@@ -15,7 +15,7 @@ function ZoomHeader() {
 
   return (
     <div className="flex justify-between relative bg-white text-[#0956b5] font-semibold text-[14px] border-b-2">
-      <div className="ml-10 py-4">
+      <div className="ml-4 sm:ml-10 py-4">
         <img alt="zoomlogo" className="bg-white w-[110px] h-[25px]" src={zoomLogo} />
       </div>
       <div className="flex absolute right-0 pt-4">
