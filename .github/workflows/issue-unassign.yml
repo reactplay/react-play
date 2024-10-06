@@ -2,7 +2,7 @@ name: Unassign inactive issues and add comment
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs once daily
+    - cron: '0 * * * *' # Runs once daily
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
         uses: dessant/issue-activity@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          days-before-stale: 7 # Set to 7 days of inactivity
+          days-before-stale: 0.04 # Set to 7 days of inactivity
           stale-issue-message: 'This issue has been marked as inactive due to lack of activity.'
           stale-pr-message: ''
           exempt-issue-labels: ''
@@ -29,9 +29,10 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            const issueNumber = 1526;
             const issues = ${{ steps.find_inactive.outputs.stale-issues }};
             const issueNumbers = issues.split(',');
-            for (const issueNumber of issueNumbers) {
+            if (issueNumbers.includes(String(issueNumber))) {
               const issue = await github.rest.issues.get({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -43,7 +44,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issueNumber,
-                  body: `This issue has been inactive for 7 days and has been unassigned.`
+                  body: `This issue has been inactive for 1 hour and will be unassigned.`
                 });
               }
             }
