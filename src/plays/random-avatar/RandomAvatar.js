@@ -1,9 +1,36 @@
 import PlayHeader from 'common/playlists/PlayHeader';
+import { useState } from 'react';
 import './styles.css';
 
-// WARNING: Do not change the entry componenet name
+// WARNING: Do not change the entry component name
 function RandomAvatar(props) {
   // Your Code Start below.
+  const getRandomCharacter = () => {
+    const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 4; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+
+    return result;
+  };
+
+  const getRandomGender = () => {
+    return Math.random() < 0.5 ? 'boy' : 'girl';
+  };
+
+  function generateAvatar() {
+    const gender = getRandomGender();
+    const username = getRandomCharacter();
+
+    return `https://avatar.iran.liara.run/public/${gender}?username=${username}`;
+  }
+
+  const [avatarUrl, setAvatarUrl] = useState(generateAvatar());
+
+  const handleClick = () => {
+    setAvatarUrl(generateAvatar());
+  };
 
   return (
     <>
@@ -11,13 +38,22 @@ function RandomAvatar(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div>
-            <h1>Play Details - Random Avatar</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu
-              tincidunt consectetur, nisi nunc ultricies nisi, eget consectetur nunc nisi euismod
-              nunc.
-            </p>
+          <div className="super-body super-selection">
+            <div className="super-container">
+              <main className="main">
+                <h1 className="fancy-heading">Random Avatar</h1>
+                <img alt="Random Avatar" className="circle" src={avatarUrl} />
+              </main>
+              <div>
+                <button
+                  aria-label="Re-generate random avatar"
+                  className="button-89"
+                  onClick={handleClick}
+                >
+                  Re-Generate
+                </button>
+              </div>
+            </div>
           </div>
           {/* Your Code Ends Here */}
         </div>

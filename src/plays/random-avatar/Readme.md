@@ -11,8 +11,8 @@ A play to generate random avatars while clicking the Regenerate button
 
 - User: hamzathul
 - Gihub Link: https://github.com/hamzathul
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 

@@ -1,1 +1,126 @@
 /* enter stlyes here */
+/* Dark Mode Styles */
+.super-body {
+  background: #121212;
+  color: #e0e0e0;
+  font-family: 'PT Serif', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.super-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  background: rgba(33, 33, 33, 0.9);
+  color: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
+.fancy-heading {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 4vw; /* Responsive size based on viewport width */
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.fancy-heading::before {
+  content: '';
+  background: #444;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+}
+
+.fancy-heading::after {
+  content: '';
+  background: #222;
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  left: 20%;
+  top: 0;
+  z-index: -1;
+}
+
+.circle {
+  display: inline-block;
+  margin: 10px;
+  border: 4px solid rgba(200, 200, 200, 0.4);
+  border-radius: 50%;
+  transition: border 0.25s linear;
+  width: 40vw;
+  height: 40vw; /* Responsive size based on viewport width */
+  max-width: 228px;
+  max-height: 228px;
+}
+
+.circle img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.circle:hover {
+  border: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+.button-89 {
+  --b: 3px;
+  --s: 0.45em;
+  --color: #e0e0e0;
+  --hover-color: #bb86fc;
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  background: conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p)
+    var(--_p) / calc(100% - var(--b) - 2 * var(--_p)) calc(100% - var(--b) - 2 * var(--_p));
+  transition:
+    background-color 0.3s linear,
+    color 0.3s;
+  outline: var(--b) solid transparent;
+  outline-offset: 0.6em;
+  font-size: 16px;
+  background-color: #333;
+  border: 0;
+  user-select: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+  background-color: var(--hover-color);
+  color: #ffffff;
+}
+
+.button-89:active {
+  background-color: #6200ee;
+}
+
+/* Selection color */
+.super-selection ::-moz-selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.super-selection ::selection {
+  background: rgba(255, 255, 255, 0.1);
+}
