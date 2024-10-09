@@ -10,7 +10,7 @@ const SchulteTable = ({ nextNumber, setNextNumber, data, setStart, start, setRes
 
   return (
     <section>
-      <div className="flex">
+      <div className="schulte-table-flex">
         <h1>
           Time:{' '}
           <Timer nextNumber={nextNumber} setResult={setResult} setStart={setStart} start={start} />
