@@ -1,0 +1,46 @@
+/* enter stlyes here */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.play-details .play-details-body * {
+  font-family:
+    -apple-system,
+    Helvetica Neue,
+    sans-serif;
+}
+
+.play-details .play-details-body p .zoomlink {
+  color: #033a7d;
+}
+
+.play-details .play-details-body .zoominput {
+  border-width: 1px;
+  width: 100%;
+  margin: 0 0 12px 0;
+  border: 1px solid rgb(189 183 183);
+  padding: 0 0.5rem;
+}
+
+.react-chatbot-kit-chat-message-container .border {
+  border-color: #0e72ed;
+  border-style: solid;
+  margin: 4px;
+  padding: 6px 16px;
+}
+
+.react-chatbot-kit-chat-container ::-webkit-scrollbar-thumb {
+  background-color: #edeef0;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  height: 100px;
+}
+.react-chatbot-kit-chat-container ::-webkit-scrollbar {
+  width: 12px;
+}
+
+#zoomSignIn {
+  margin: 0;
+  border: none;
+}
