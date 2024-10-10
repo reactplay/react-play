@@ -11,7 +11,7 @@ const Note = ({ note, handleDelete, handleEdit }) => {
       <p className="text-white capitalize text-lg pt-2">{note.body}</p>
       <a
         className="pt-5 mt-auto block text-blue-900"
-        href={`https://twitter.com/intent/tweet?text="${note.body}`}
+        href={`https://twitter.com/intent/tweet?text="${encodeURIComponent(note.body)}`}
         rel="noreferrer"
         target="_blank"
       >
