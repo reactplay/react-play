@@ -38,7 +38,7 @@ const useCalcalulatorByTeaHook = () => {
           return prevHistory;
         });
 
-        return String(eval(prevExpression.replace('%', '*100/')));
+        return String(eval(prevExpression.replace(/%/g, '*100/')));
       });
     } else if (action === 'C') {
       setCalculationExpression((prev) => {
