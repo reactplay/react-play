@@ -14,11 +14,14 @@ const TestimonialCard = ({ home, quote, name, avatarUrl, category, created_at, e
   });
 
   const getHostName = () => {
-    var url = window.location.href;
-    var arr = url.split('/');
-    var result = arr[0] + '//' + arr[2];
-
-    return result;
+    const allowedHostnames = ['example.com', 'another-example.com'];
+    const url = new URL(window.location.href);
+    if (allowedHostnames.includes(url.hostname)) {
+      return `${url.protocol}//${url.hostname}`;
+    } else {
+      console.error('Hostname not allowed:', url.hostname);
+      return 'https://example.com'; // Safe default value
+    }
   };
 
   function replaceWithBr() {
