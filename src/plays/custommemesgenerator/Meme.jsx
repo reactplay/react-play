@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import DOMPurify from 'dompurify';
 
 export default function Meme() {
   const [memesData, setMemesData] = useState([]);
@@ -27,6 +28,7 @@ export default function Meme() {
     const memesArray = memesData;
     let randomIndex = Math.floor(Math.random() * memesArray.length);
     let newUrl = memesArray[randomIndex].url;
+    newUrl = DOMPurify.sanitize(newUrl);
 
     setMeme((prevMeme) => ({
       ...prevMeme,
