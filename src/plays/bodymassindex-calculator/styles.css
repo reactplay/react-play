@@ -1,0 +1,124 @@
+/* Centered container for the BMI calculator */
+.bmi-container {
+    max-width: 500px;  /* Increased box width */
+    background-color: #ffffff; /* Light box background */
+    border-radius: 12px;
+    padding: 30px; /* Increased padding */
+    margin: 20px auto;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    position: relative; /* To position content inside the box */
+  }
+
+  .bmi-container h1{
+    font-size: 40px;
+  }
+  
+  /* Common styling for input fields, buttons, and results */
+  .bmi-input input,
+  .bmi-input select {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    margin: 12px 0; /* Increased margin */
+    border: 2px solid #f8b400; /* Using a warm yellow color */
+    border-radius: 6px; /* Slightly larger border-radius */
+    font-size: 1.1rem; /* Larger font size */
+  }
+  
+  /* Button styling */
+  .bmi-input button {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    background-color: #f8b400; /* Using a warm yellow color */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Slightly larger border-radius */
+    font-size: 1.1rem; /* Larger font size */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition effect */
+
+  }
+  
+  .bmi-input button:hover {
+    background-color: #e0a500; /* Darker shade on hover */
+  }
+  
+  /* BMI result styling */
+  .bmi-result {
+    margin-top: 20px;
+    background-color: #f8b400; /* Using a warm yellow color */
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .bmi-result button {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    margin-top: 10px;
+    background-color: #f8b400; /* Using a warm yellow color */
+    color: white;
+    border: 2px solid white;
+    border-radius: 6px; /* Slightly larger border-radius */
+    cursor: pointer;
+  }
+  
+  .bmi-result h2 {
+    font-size: 1.8rem; /* Larger font size for result heading */
+    font-weight: bold; /* Bold heading */
+  }
+  
+  .bmi-result p {
+    font-size: 1.1rem; /* Larger font size */
+    font-weight: bold;
+  }
+  
+  /* Dark mode toggle button */
+  .toggle-dark-mode {
+    margin-top: 20px;
+    padding: 12px; /* Increased padding */
+    background-color: #1f1f38; /* Dark button background */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Slightly larger border-radius */
+    cursor: pointer;
+  }
+  
+  .toggle-dark-mode:hover {
+    background-color: #4db5ff; /* Lighter shade on hover */
+  }
+  
+  /* Dark mode styling */
+  .dark-mode {
+    background-color: #1e1e1e; /* Dark background for the outer area */
+    color: white;
+  }
+  
+  .dark-mode .bmi-container {
+    background-color: #2c2c6c; /* Dark box background */
+  }
+  
+  .dark-mode input,
+  .dark-mode select {
+    background-color: #3a3a3a; /* Darker input fields */
+    color: white;
+    border-color: #f8b400; /* Using warm yellow for dark mode */
+  }
+  
+  .dark-mode .bmi-result {
+    background-color: #3a3a3a; /* Darker result background */
+  }
+  
+  .dark-mode .toggle-dark-mode {
+    background-color: #4db5ff; /* Lighter button in dark mode */
+    color: #1f1f38;
+  }
+  
+  /* Background styling for the full page */
+  body {
+    background-color: #f8f9fa; /* Light background for outer area */
+  }
+  
+  .dark-mode body {
+    background-color: #1e1e1e; /* Dark background for outer area */
+  }
+  
