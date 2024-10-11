@@ -1,6 +1,6 @@
 /* enter stlyes here */
 /* Dark Mode Styles */
-.super-body {
+.avatar-body {
   background: #121212;
   color: #e0e0e0;
   font-family: 'PT Serif', sans-serif;
@@ -12,13 +12,13 @@
   justify-content: center;
 }
 
-.super-container {
+.avatar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main {
+.avatar {
   background: rgba(33, 33, 33, 0.9);
   color: #e0e0e0;
   padding: 20px;
@@ -61,7 +61,7 @@
   z-index: -1;
 }
 
-.circle {
+.avatar-image {
   display: inline-block;
   margin: 10px;
   border: 4px solid rgba(200, 200, 200, 0.4);
@@ -73,13 +73,13 @@
   max-height: 228px;
 }
 
-.circle img {
+.avatar-image img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
 }
 
-.circle:hover {
+.avatar-image:hover {
   border: 4px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -117,10 +117,10 @@
 }
 
 /* Selection color */
-.super-selection ::-moz-selection {
+.avatar-selection ::-moz-selection {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.super-selection ::selection {
+.avatar-selection ::selection {
   background: rgba(255, 255, 255, 0.1);
 }

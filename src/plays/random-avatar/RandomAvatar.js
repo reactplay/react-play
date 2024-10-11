@@ -38,11 +38,11 @@ function RandomAvatar(props) {
         <PlayHeader play={props} />
         <div className="play-details-body">
           {/* Your Code Starts Here */}
-          <div className="super-body super-selection">
-            <div className="super-container">
-              <main className="main">
+          <div className="avatar-body avatar-selection">
+            <div className="avatar-container">
+              <main className="avatar">
                 <h1 className="fancy-heading">Random Avatar</h1>
-                <img alt="Random Avatar" className="circle" src={avatarUrl} />
+                <img alt="Random Avatar" className="avatar-image" src={avatarUrl} />
               </main>
               <div>
                 <button
