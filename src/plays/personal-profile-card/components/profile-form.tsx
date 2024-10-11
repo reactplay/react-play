@@ -1,4 +1,5 @@
 import React from 'react';
+import DOMPurify from 'dompurify';
 
 import ProfileType from '../types';
 import placeholder_cover from '../images/placeholder_cover.jpg';
@@ -27,7 +28,7 @@ const ProfileForm = ({ value, profile, onChange, onClick, onUpload, onClear }: P
         <img
           alt={value.cover === '' ? 'placeholder cover' : 'cover'}
           className="w-full md:w-[600px] h-[150px] sm:h-[200px] rounded-3xl"
-          src={value.cover === '' ? placeholder_cover : value.cover}
+          src={value.cover === '' ? placeholder_cover : DOMPurify.sanitize(value.cover)}
         />
         <input
           accept="image/*"
