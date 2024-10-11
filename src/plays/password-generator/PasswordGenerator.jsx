@@ -23,12 +23,12 @@ function PasswordGenerator(props) {
 
   // generate a random number within limit which is provided
   const randomNumberGenerator = (limit) => {
+    const array = new Uint32Array(1);
     let result = 0;
     while (limit) {
-      result = Math.floor(Math.random() * Math.floor(Math.random() * 100));
+      window.crypto.getRandomValues(array);
+      result = array[0] % limit;
       if (result < limit) return result;
-
-      continue;
     }
   };
 
