@@ -11,17 +11,3 @@ The BMI Calculator play is an interactive web component that enables users to ca
 
 - User: Adil-Khan-N
 - Gihub Link: https://github.com/Adil-Khan-N
-- Blog: N/A
-- Video: N/A
-
-## Implementation Details
-
-Update your implementation idea and details here
-
-## Consideration
-
-Update all considerations(if any)
-
-## Resources
-
-Update external resources(if any)

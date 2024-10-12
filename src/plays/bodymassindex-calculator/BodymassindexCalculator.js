@@ -56,29 +56,37 @@ function BodymassindexCalculator(props) {
           <h1>Body Mass Index Calculator</h1>
           <div className="bmi-input">
             <input
+              className="bmi-input-field"
               placeholder="Enter name"
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <input
+              className="bmi-input-field"
               placeholder="Enter age"
               type="number"
               value={age}
               onChange={(e) => setAge(e.target.value)}
             />
-            <select value={gender} onChange={(e) => setGender(e.target.value)}>
+            <select
+              className="bmi-select-field"
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            >
               <option value="">Select gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
             <input
+              className="bmi-input-field"
               placeholder="Enter weight in kg"
               type="number"
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
             />
             <input
+              className="bmi-input-field"
               placeholder="Enter height in cm"
               type="number"
               value={height}
