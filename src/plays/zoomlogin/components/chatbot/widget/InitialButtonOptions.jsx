@@ -12,7 +12,7 @@ const InitialButtonOptions = (props) => {
     <div className="text-[#0e72ed] ml-[4rem] font-extrabold text-[14px]">
       <button
         aria-label="My Account is Locked"
-        className="inline-block border border-[#0e72ed] rounded-3xl px-4 py-1.5 m-1 hover:bg-[#0e72ed] hover:text-white hover:cursor-pointer"
+        className="inline-block border border-[#0e72ed] rounded-3xl px-4 py-1.5 m-1 hover:bg-[#0e72ed] hover:text-white  hover:cursor-pointer"
         title="My Account is Locked"
         onClick={() => handleAccountLockedClick('My Account is Locked')}
       >
