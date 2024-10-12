@@ -2,14 +2,15 @@ import { useState } from 'react';
 
 import ZoomSpinner from './ZoomSpinner';
 
-import applelogo from '../../assets/apple-logo.svg';
 import info from '../../assets/circle-information-svgrepo-com.svg';
 import passwordHide from '../../assets/eye-password-hide-svgrepo-com.svg';
 import passwordShow from '../../assets/eye-password-show-svgrepo-com.svg';
-import facebooklogo from '../../assets/facebook-logo.svg';
-import googlelogo from '../../assets/google-logo.svg';
 import ssologo from '../../assets/sso-logo.svg';
 import openwindow from '../../assets/window-open.png';
+
+const applelogo = 'https://cdn.simpleicons.org/apple';
+const facebooklogo = 'https://cdn.simpleicons.org/facebook';
+const googlelogo = 'https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png';
 
 const INITIAL_VALUES = { zoomemail: '', zoompassword: '' };
 const ERROR_VALUES = {
@@ -215,7 +216,6 @@ function ZoomSignin({ helpHandle }) {
                   </label>
                 )}
                 <input
-                  s
                   className={`zoominput w-full h-12 rounded-lg px-2 mb-4 placeholer:pt-0 placeholder:text-slate-500 
                     focus:placeholder-transparent focus:pt-4 ${
                       !error ? 'border border-[#6e7680]' : 'mb-0 border  border-red-500'
@@ -230,7 +230,7 @@ function ZoomSignin({ helpHandle }) {
                   onFocus={() => setIsPasswordFocused(true)}
                   onKeyDown={handleKeyDown}
                 />
-                <div className="absolute flex items-center top-4 right-3  ">
+                <div className="absolute flex items-center top-4 right-3">
                   <button
                     aria-label={isVisible ? 'Hide password' : 'Show password'}
                     className="w-4 h-4"
@@ -260,7 +260,7 @@ function ZoomSignin({ helpHandle }) {
               <button
                 aria-label="help"
                 className="flex text-[#0956b5] font-semibold text-sm py-2 hover:text-zoomhoverblue 
-                 hover:underline underline-offset-2 border-4 rounded-full px-2 border-red-400 border-"
+                 hover:underline underline-offset-2 border-4 rounded-full px-2 border-red-400"
                 name="zoomHelp"
               >
                 Help
@@ -343,7 +343,7 @@ function ZoomSignin({ helpHandle }) {
                 <div className="relative w-[85px] h-[86px] hover:text-black">
                   <button
                     aria-label="appe login"
-                    className="border m-2 pl-3 pt-3 pb-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
+                    className="border m-2 p-3 pt-3 pb-3 w-[48px] h-[48px] rounded-2xl hover:bg-[#F0F0F0]"
                     id="apple"
                     name="apple"
                     onClick={handleSSOClick}
@@ -380,7 +380,7 @@ function ZoomSignin({ helpHandle }) {
               <div className="mt-[32px] text-[#6e7680] ">
                 Zoom is protected by reCAPTCHA and the{' '}
                 <a
-                  className="text-[#0956b5]  hover:underline underline-offset-2"
+                  className="text-[#0956b5] hover:underline underline-offset-2"
                   href={googlePrivacyLink}
                   rel="noreferrer"
                   target="_blank"

@@ -1,7 +1,3 @@
-import copyright from '../assets/copyright.svg';
-import linkedin from '../assets/linkedin.svg';
-import github from '../assets/github.svg';
-
 function Footer() {
   return (
     <div className="flex-col bg-grey h-[140px] p-10">
@@ -11,15 +7,14 @@ function Footer() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <img alt="linkedin" className="w-10" src={linkedin} />
+          <img alt="LinkedIn Logo" src="https://cdn.simpleicons.org/linkedin" width="30" />
         </a>
         <a href="https://github.com/day-lee/" rel="noopener noreferrer" target="_blank">
-          <img alt="github" className="w-10" src={github} />
+          <img alt="GitHub Logo" src="https://cdn.simpleicons.org/github" width="30" />
         </a>
       </div>
-      <div className="flex items-center justify-center gap-1 p-2">
-        <img alt="Copyright" className="w-4 h-4" src={copyright} />
-        <span>2024 all rights reserved | day-lee</span>
+      <div className="flex items-center justify-center gap-1 p-2 text-sm sm:text-base">
+        <span> &copy; 2024 all rights reserved | day-lee</span>
       </div>
     </div>
   );

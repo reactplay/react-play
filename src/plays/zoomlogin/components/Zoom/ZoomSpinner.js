@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ZoomSpinner = () => {
   return (
     <div className="flex justify-center items-center h-[6px]">

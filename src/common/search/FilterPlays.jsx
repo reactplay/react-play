@@ -164,8 +164,12 @@ const FilterPlays = ({ onChange, query }) => {
                   icon={icon}
                   style={{ padding: 0 }}
                 />
-                <div className="flex md-ml-8 min-w-0 ml-2 items-center">
-                  <span className="rounded-full">
+                <div
+                  className={`flex md-ml-8 min-w-0 ml-2 ${field.datafield == 'creators' ? '!justify-start w-full' : null} items-center`}
+                >
+                  <span
+                    className={`${field.datafield == 'creators' ? 'ml-4 mr-3' : null} rounded-full`}
+                  >
                     {field.avatar && getOptionNode(field, option)[field.avatar] ? (
                       <span className="flex items-center justify-center md-h-12 h-8 md-w-16 w-8 mr-4">
                         <img
@@ -176,7 +180,14 @@ const FilterPlays = ({ onChange, query }) => {
                       </span>
                     ) : null}
                   </span>
-                  <span className="break-words min-w-0">
+                  <span
+                    className={`break-words min-w-0 ${field.datafield == 'creators' ? 'truncate' : null}`}
+                    title={
+                      field.datafield == 'creators' && field.node
+                        ? option[field.node][field.fieldName]
+                        : ''
+                    }
+                  >
                     {field.node ? option[field.node][field.fieldName] : option[field.fieldName]}
                   </span>
                 </div>

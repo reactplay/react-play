@@ -28,7 +28,7 @@ const InitialButtonOptions = (props) => {
       </button>
       <button
         aria-label="Not Receiving Emails from Zoom"
-        className="inline-block border border-[#0e72ed] rounded-3xl px-4 py-1.5 m-1 hover:bg-[#0e72ed] hover:text-white hover:cursor-not-allowed"
+        className="block border border-[#0e72ed] rounded-3xl px-4 py-1.5 m-1 hover:bg-[#0e72ed] hover:text-white hover:cursor-not-allowed"
         title="Not Receiving Emails from Zoom"
       >
         Not Receiving Emails from Zoom

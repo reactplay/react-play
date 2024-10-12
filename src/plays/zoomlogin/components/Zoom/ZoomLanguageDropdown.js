@@ -24,7 +24,7 @@ function ZoomLanguageDropdown() {
             <option value="polski">polski </option>
             <option value="Türkçe"> Türkçe</option>
             <option value="Bahasa Indonesia">Bahasa Indonesia </option>
-            <option value="Nederlands"> ederlands</option>
+            <option value="Nederlands"> Nederlands</option>
             <option value="Svenska"> Svenska</option>
           </select>
         </form>
