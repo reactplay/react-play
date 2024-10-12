@@ -43,9 +43,13 @@ const DefaultBanner = () => {
         </a>
       </div>
       <div className="body-desc">
-        Check out our bouquet of events{' '}
-        <Link className="home-anchor" target="_blank" to="https://hustles.reactplay.io/">
-          <span className="text text-secondary">here</span>
+        Check out our bouquet of{' '}
+        <Link
+          className="home-anchor"
+          target="_blank"
+          to="https://www.meetup.com/reactplay-bengaluru/events/"
+        >
+          <span className="text text-secondary">events</span>
         </Link>
       </div>
     </div>

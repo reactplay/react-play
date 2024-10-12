@@ -8,6 +8,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 576px) {
+  .app-header-search {
+    width: 70%;
+  }
+}
+
 /* Filter*/
 .filter {
   width: 100%;
@@ -62,6 +68,13 @@
   color: var(--color-neutral-10);
 }
 
+@media screen and (max-width: 1217px) {
+  .filter {
+    display: grid;
+    justify-content: start;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .filter .search-input-icon {
     left: 0.6rem;
@@ -71,6 +84,12 @@
 
   .filter.search-input-text {
     padding: 0.6rem 1.2rem 0.6rem 2rem;
+  }
+    .flex-filter-modal{
+    width: 100% !important;
+  }
+  .modal-filter .modal-filter-header {
+    padding: 0rem 1.6rem 1.6rem 1.4rem !important;
   }
 }
 
@@ -118,10 +137,24 @@
 
 @media screen and (max-width: 576px) {
   .btn-filter {
+    padding: 0 0.2rem;
   }
   .btn-filter .icon {
     width: 24px;
     height: 24px;
+  }
+}
+
+@media screen and (max-width: 494px) {
+  .filter {
+    display: grid;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 408px) {
+  .filter .filter-area {
+    width: 198px;
   }
 }
 
@@ -206,6 +239,13 @@
 .modal-filter .form-group .form-control option {
   padding: 1.6rem;
   font-size: var(--fs-rg);
+}
+
+.flex-filter-modal {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 
 /* CSS attributes for clear All button */

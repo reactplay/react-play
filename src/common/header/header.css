@@ -21,7 +21,7 @@
 }
 
 .app-header-home {
-  position: fixed;
+  position: sticky;
 }
 
 .app-header-home.app-header-home--promo {
@@ -101,7 +101,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1217px) {
   .navbar-toggler {
     display: none;
   }
@@ -175,7 +175,7 @@
   margin-right: 1rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1217px) {
   .navbar-collapse.show {
     display: block;
     position: fixed;
@@ -265,6 +265,10 @@
 
 .header-links > li > .app-header-btn:hover .twitter-icon {
   fill: #ffffff;
+}
+
+.header-links > li > .app-header-btn:hover .discord-icon {
+  fill: #7289da;
 }
 
 .header-links > li > .app-header-btn .btn-label {
@@ -365,6 +369,15 @@
   .header-links > li:last-child > .app-header-btn {
     margin-left: -.2rem;
   } */
+}
+
+@media screen and (max-width: 1217px) {
+  .header-links > li > .app-header-btn.app-header-btn--secondary {
+    color: var(--color-neutral-80);
+  }
+  .menu-events {
+    margin: 0.4rem 0 0rem 0;
+  }
 }
 
 /* searchs Modal */
@@ -503,7 +516,8 @@
   justify-content: center;
   background-color: #fad900;
   min-height: 32px;
-  position: fixed;
+  position: sticky;
+  top: 0;
   font-size: var(--fs-sm);
   line-height: var(--fs-sm);
   z-index: 9;

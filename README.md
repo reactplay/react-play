@@ -1,7 +1,7 @@
 # ReactPlay(Repo: `react-play`)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-74-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-79-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -196,21 +196,34 @@ npm build
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
-### 🧪 Test App Locally (E2E with Cypress)
+--------------------------------------------------------------
 
-Use the following command to run cypress locally:
+### 🧪 Test App Locally (E2E with Playwright)
 
+Use the following command to install browser(s) binaries to test locally:
 ```bash
-yarn cypress:open
+yarn install playwright
 ```
 OR
 ```
-npm run cypress:open
+npm install playwright
 ```
 
-It will open the cypress dashboard, through which you need to select `E2E Testing`.
-Once you are done with the selection you will get options to choose your preferred browser in which you want to run the test.!
-Once you select the browser you need to click on `Start E2E Testing in <SELECTED_BROWSER_NAME>.` The chosen browser will pop up you can see a list of cypress tests, click on the test to start testing.!
+Use the following command to run Playwright tests:
+
+```bash
+yarn e2e
+```
+OR
+```
+npm run e2e
+```
+👀 Read more about testing in [react-play](../react-play/e2e/README.md)
+
+👀 Read more about playwright: https://playwright.dev/
+
+--------------------------------------------------------------
+
 
 ### 🚀 Deploy
 
@@ -370,6 +383,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/nrshnaik"><img src="https://avatars.githubusercontent.com/u/25747434?v=4?s=100" width="100px;" alt="nrshnaik"/><br /><sub><b>nrshnaik</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=nrshnaik" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/FreemRL"><img src="https://avatars.githubusercontent.com/u/66525499?v=4?s=100" width="100px;" alt="Jannik Schmidtke"/><br /><sub><b>Jannik Schmidtke</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=freemrl" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/saddam-selise"><img src="https://avatars.githubusercontent.com/u/113901460?v=4?s=100" width="100px;" alt="Md. Saddam Hossain"/><br /><sub><b>Md. Saddam Hossain</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=saddam-selise" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/janvi01"><img src="https://avatars.githubusercontent.com/u/34344234?v=4?s=100" width="100px;" alt="Janvi Bajoria"/><br /><sub><b>Janvi Bajoria</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=janvi01" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://chhakuli-zingare.netlify.app/"><img src="https://avatars.githubusercontent.com/u/103095813?v=4?s=100" width="100px;" alt="Chhakuli Zingare"/><br /><sub><b>Chhakuli Zingare</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=chhakuli123" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://clevercoderjoy.bio.link"><img src="https://avatars.githubusercontent.com/u/74505057?v=4?s=100" width="100px;" alt="clevercoderjoy"/><br /><sub><b>clevercoderjoy</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=clevercoderjoy" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://priyank.live"><img src="https://avatars.githubusercontent.com/u/88102392?v=4?s=100" width="100px;" alt="Priyankar Pal"/><br /><sub><b>Priyankar Pal</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=priyankarpal" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Akshaygore1"><img src="https://avatars.githubusercontent.com/u/92959398?v=4?s=100" width="100px;" alt="Akshay Gore"/><br /><sub><b>Akshay Gore</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Akshaygore1" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
