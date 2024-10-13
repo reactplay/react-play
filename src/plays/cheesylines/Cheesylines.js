@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import PlayHeader from '../../common/playlists/PlayHeader';
+import PlayHeader from 'common/playlists/PlayHeader';
+import { useState } from 'react';
 
+// WARNING: Do not change the entry component name
 function Cheesylines(props) {
   const cheesylines = [
     'Are you French? Because Eiffel for you.',
@@ -332,12 +333,12 @@ function Cheesylines(props) {
 
   const handleClick = () => {
     const randomLine = cheesylines[Math.floor(Math.random() * cheesylines.length)];
-    setLine(randomLine); // Ensure no extra space or newline here
+    setLine(randomLine);
   };
 
   return (
     <>
-      <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
+      <div className="play-details">
         <PlayHeader play={props} />
         <div className="text-center py-6">
           <h1 className="text-4xl font-bold text-black mb-4">Cheesy Pick-up Lines</h1>
