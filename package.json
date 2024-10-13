@@ -39,6 +39,7 @@
     "mathjs": "^11.12.0",
     "p5": "^1.9.0",
     "react": "^18.2.0",
+    "react-chatbot-kit": "^2.2.2",
     "react-codemirror2": "^7.3.0",
     "react-color": "^2.19.3",
     "react-confetti": "^6.1.0",
