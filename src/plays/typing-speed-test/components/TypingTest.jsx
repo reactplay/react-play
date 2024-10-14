@@ -1,200 +1,202 @@
-import { useEffect, useState, useRef } from 'react';
-import { VscRefresh } from 'react-icons/vsc';
-
-// Project local imports
-import { generateText } from '../utils';
-import Stats from './Stats';
-import Timer from './Timer';
-import Word from './Word';
+import React, { useState, useEffect } from 'react';
+import { useTypingTest } from '../context/TypingTestContext';
+import Statistics from './Statistics';
 import ResultModal from './ResultModal';
+import { generateText } from '../utils';
 
 const TypingTest = () => {
-  const userInputRef = useRef(null);
-  const [text, setText] = useState('');
-  const [userInput, setUserInput] = useState('');
-  const [timer, setTimer] = useState(60);
-  const [status, setStatus] = useState('waiting');
-  const [isTimerStart, setIsTimerStart] = useState(false);
-  const [isResultModalOpen, setIsResultModalOpen] = useState(false);
-  const [wordObj, setWordObj] = useState({
-    activeWordIndex: 0,
-    correctWords: 0,
-    incorrectWords: 0,
-    correctChars: 0,
-    typedWordsArray: []
-  });
-  const [stats, setStats] = useState({
-    wpm: 0,
-    cpm: 0,
-    accuracy: 0
-  });
+  const { wpm, setWPM, cpm, setCPM, accuracy, setAccuracy, maxWPM, setMaxWPM, setModalStats } =
+    useTypingTest();
 
-  const refreshState = () => {
-    setText(generateText());
-    setUserInput('');
-    setStatus('waiting');
-    setIsTimerStart(false);
-    setTimer(60);
-    userInputRef.current.focus();
-    setWordObj({
-      activeWordIndex: 0,
-      correctWords: 0,
-      incorrectWords: 0,
-      correctChars: 0,
-      typedWordsArray: []
-    });
-    setStats({
-      wpm: 0,
-      cpm: 0,
-      accuracy: 0
-    });
-  };
-
-  const handleModalClose = () => {
-    refreshState();
-    setIsResultModalOpen(false);
-  };
-
-  const checkIsWordMatch = (value) => {
-    // If it ends with space it means user has finished the word
-    setUserInput('');
-
-    // To check each character and word
-    const wordToCompare = text[wordObj.activeWordIndex];
-    const isWordMatch = wordToCompare === value.trim();
-
-    setWordObj((prevObj) => ({
-      ...prevObj,
-      activeWordIndex: prevObj.activeWordIndex + 1,
-      typedWordsArray: [...prevObj.typedWordsArray, isWordMatch]
-    }));
-
-    if (isWordMatch) {
-      setWordObj((prevObj) => ({
-        ...prevObj,
-        correctWords: prevObj.correctWords + 1,
-        correctChars: prevObj.correctChars + value.trim().length
-      }));
-    } else {
-      setWordObj((prevObj) => ({
-        ...prevObj,
-        incorrectWords: prevObj.incorrectWords + 1
-      }));
-    }
-  };
-
-  // Hanlde user input
-  const handleUserInput = (e) => {
-    const { value } = e.target;
-    if (!isTimerStart) {
-      setIsTimerStart(true);
-      setStatus('started');
-    }
-
-    if (wordObj.activeWordIndex === text.length) return;
-
-    if (value.endsWith(' ')) {
-      checkIsWordMatch(value);
-
-      // Check if length of activeWordIndex  === text - 1 then end the test
-      if (wordObj.activeWordIndex === text.length - 1) {
-        setStatus('finished');
-        setTimer(60);
-        setIsResultModalOpen(true);
-      }
-    } else {
-      setUserInput(value);
-    }
-  };
+  const [text, setText] = useState(generateText());
+  const [, setUserInput] = useState('');
+  const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const [correctChars, setCorrectChars] = useState(0);
+  const [incorrectChars, setIncorrectChars] = useState(0);
+  const [startTime, setStartTime] = useState(null);
+  const [isTestOver, setIsTestOver] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(120);
+  const [characterStatus, setCharacterStatus] = useState(Array(text.length).fill(null));
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
-    // Set stats object
-    setStats({
-      wpm: wordObj.correctWords,
-      cpm: wordObj.correctChars,
-      accuracy: Math.round(
-        (wordObj.correctWords / (wordObj.correctWords + wordObj.incorrectWords)) * 100
-      )
-    });
-  }, [wordObj]);
+    const handleKeyDown = (e) => {
+      if (isTestOver || currentCharIndex >= text.length) return;
 
-  useEffect(() => {
-    if (timer === 0) {
-      setStatus('finished');
-      setIsResultModalOpen(true);
-    }
-
-    // To start countdown
-    const timerTimout = setTimeout(() => {
-      if (status === 'started') {
-        setTimer(timer - 1);
+      if (!startTime) {
+        setStartTime(Date.now());
+        startTimer();
       }
+
+      const keyPressed = e.key.toLowerCase();
+      if (keyPressed === text[currentCharIndex]) {
+        setCorrectChars((prev) => prev + 1);
+        setCharacterStatus((prev) => {
+          const newStatus = [...prev];
+          newStatus[currentCharIndex] = 'correct';
+
+          return newStatus;
+        });
+      } else {
+        setIncorrectChars((prev) => prev + 1);
+        setCharacterStatus((prev) => {
+          const newStatus = [...prev];
+          newStatus[currentCharIndex] = 'incorrect';
+
+          return newStatus;
+        });
+      }
+
+      setUserInput((prev) => prev + keyPressed);
+      setCurrentCharIndex((prev) => prev + 1);
+
+      const currentWPM = calculateWPM();
+      const currentCPM = calculateCPM();
+      const currentAccuracy = calculateAccuracy();
+      setWPM(currentWPM);
+      setCPM(currentCPM);
+      setAccuracy(currentAccuracy);
+
+      if (currentWPM > maxWPM) {
+        setMaxWPM(currentWPM);
+      }
+
+      if (currentCharIndex + 1 === text.length) {
+        endTest();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [
+    currentCharIndex,
+    correctChars,
+    incorrectChars,
+    isTestOver,
+    startTime,
+    text,
+    maxWPM,
+    setWPM,
+    setCPM,
+    setAccuracy,
+    setMaxWPM
+  ]);
+
+  const startTimer = () => {
+    const timerInterval = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(timerInterval);
+          endTest();
+
+          return 0;
+        }
+
+        return prevTime - 1;
+      });
     }, 1000);
+  };
 
-    return () => clearTimeout(timerTimout);
-  }, [timer, status]);
+  const endTest = () => {
+    setIsTestOver(true);
 
-  useEffect(() => {
-    // Setting typing text
+    const finalWPM = calculateWPM();
+    const finalCPM = calculateCPM();
+    const finalAccuracy = calculateAccuracy();
+
+    setModalStats({
+      wpm: finalWPM,
+      cpm: finalCPM,
+      accuracy: finalAccuracy,
+      maxWpm: Math.max(maxWPM, finalWPM)
+    });
+
+    setOpenModal(true);
+  };
+
+  const calculateWPM = () => {
+    if (!startTime) return 0;
+    const timeElapsed = (Date.now() - startTime) / 60000;
+
+    return timeElapsed > 0 ? correctChars / 5 / timeElapsed : 0;
+  };
+
+  const calculateCPM = () => {
+    if (!startTime) return 0;
+    const timeElapsed = (Date.now() - startTime) / 60000;
+
+    return timeElapsed > 0 ? (correctChars + incorrectChars) / timeElapsed : 0;
+  };
+
+  const calculateAccuracy = () => {
+    return (correctChars / (correctChars + incorrectChars)) * 100 || 0;
+  };
+
+  const renderText = () => {
+    return text.split('').map((char, index) => {
+      let className = '';
+      if (characterStatus[index] === 'correct') {
+        className = 'text-green-500';
+      } else if (characterStatus[index] === 'incorrect') {
+        className = 'text-red-500';
+      }
+
+      return (
+        <span className={className} key={index}>
+          {char}
+        </span>
+      );
+    });
+  };
+
+  const resetTest = () => {
+    setOpenModal(false);
+    setUserInput('');
+    setCurrentCharIndex(0);
+    setCorrectChars(0);
+    setIncorrectChars(0);
+    setStartTime(null);
+    setIsTestOver(false);
+    setTimeLeft(120);
     setText(generateText());
-
-    // Setting focus on input
-    userInputRef.current.focus();
-  }, []);
+    setCharacterStatus(Array(text.length).fill(null));
+    setMaxWPM(0);
+    setWPM(0);
+    setCPM(0);
+    setAccuracy(0);
+  };
 
   return (
-    <>
-      <div className=" max-w-3xl text-center my-8 mx-auto flex flex-col justify-center">
-        <h2 className="text-[1.6rem] md:text-4xl  text-violet-600 font-bold">
-          Typing Speed Test ⌨️🚀
-        </h2>
-        <p className="text-base my-2 md:text-lg md:my-3 text-gray-600  ">Test your typing skills</p>
-
-        {/* Statistics & Timer */}
-        <div className="flex flex-col justify-around items-center my-5 sm:flex-row md:my-6 md:mt-8 ">
-          <Timer timer={timer} />
-          <Stats stats={stats} />
+    <div className="typing-test lg:w-3/5 w-full mx-auto">
+      <h3
+        className="uppercase tracking-widest mt-12 md:mt-20 text-center"
+        style={{ color: '1px solid var(--color-neutral-90-rgb)' }}
+      >
+        Typing Speed Test
+      </h3>
+      <div className="space-y-4 md:space-y-6 lg:space-y-8 md:mt-4">
+        <h1 className="text-3xl md:text-[50px] lg:text-[60px] font-bold text-[#7c3aed] text-center">
+          Test your typing skills
+        </h1>
+        {!isTestOver && <Statistics accuracy={accuracy} cpm={cpm} timeLeft={timeLeft} wpm={wpm} />}
+        <div className="text-display flex-wrap  text-start p-4 bg-white md:h-40 shadow-md rounded-sm text-2xl">
+          {renderText()}
         </div>
-
-        <div className="max-w-3xl my-6 mx-auto leading-9 text-justify md:leading-10 tracking-wide">
-          {text.length ? (
-            text.map((word, index) => (
-              <Word
-                correct={wordObj.typedWordsArray[index]}
-                isActive={index === wordObj.activeWordIndex}
-                key={index}
-                text={word}
-              />
-            ))
-          ) : (
-            <p>Text loading please wait ...</p>
-          )}
-        </div>
-
-        <div className="flex items-center justify-center mt-8 space-x-7">
-          <textarea
-            className="rounded-md border !border-violet-400 !p-3 w-[320px] outline-1 outline-violet-600"
-            disabled={status === 'finished'}
-            placeholder="Start typing..."
-            ref={userInputRef}
-            type="text"
-            value={status !== 'finished' ? userInput : 'Test Completed'}
-            onChange={handleUserInput}
-          />
-          <div
-            className="border bg-violet-600 p-3 rounded-md cursor-pointer"
-            title="Refresh"
-            onClick={refreshState}
-          >
-            <VscRefresh color="white" fontSize={22} />
-          </div>
-        </div>
+        <ResultModal
+          handleModalClose={resetTest}
+          open={openModal}
+          results={{
+            wpm,
+            cpm,
+            accuracy,
+            maxWPM
+          }}
+        />
       </div>
-
-      {isResultModalOpen && (
-        <ResultModal handleModalClose={handleModalClose} open={isResultModalOpen} stats={stats} />
-      )}
-    </>
+    </div>
   );
 };
 
