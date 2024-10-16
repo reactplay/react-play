@@ -1,22 +1,36 @@
+import { BILLION, MILLION, SECONDS_IN_HOUR, SECONDS_IN_MINUTE, THOUSAND } from './utilsConstants';
+
+/**
+ * Formats a duration in seconds into a string representation of hours, minutes, and seconds.
+ *
+ * @param {number} duration - The duration in seconds to format.
+ * @returns {string} - The formatted duration as a string in the format "HH:MM:SS" or "MM:SS".
+ */
 export const formatDurationCount = (duration: number): string => {
-  const hours = Math.floor(duration / 3600);
-  const minutes = Math.floor((duration % 3600) / 60);
+  const hours = Math.floor(duration / SECONDS_IN_HOUR);
+  const minutes = Math.floor((duration % SECONDS_IN_HOUR) / SECONDS_IN_MINUTE);
   const seconds = Math.floor(duration % 60);
 
-  let time = '';
-  if (hours > 0) {
-    time += `${hours}:`;
-  }
-  if (hours > 0 || minutes > 0) {
-    time += (minutes < 10 ? '0' + minutes : minutes) + ':';
-  }
-  time += seconds < 10 ? '0' + seconds : seconds;
+  const formattedMinutes = minutes.toString().padStart(2, '0');
+  const formattedSeconds = seconds.toString().padStart(2, '0');
 
-  return time;
+  return hours > 0
+    ? `${hours}:${formattedMinutes}:${formattedSeconds}`
+    : `${formattedMinutes}:${formattedSeconds}`;
 };
 
-export const formatViewCount = (viewCount: string) => {
-  if (parseInt(viewCount) >= 1000000000) return (parseInt(viewCount) / 1000000000).toFixed(1) + 'B';
-  if (parseInt(viewCount) >= 1000000) return (parseInt(viewCount) / 1000000).toFixed(1) + 'M';
-  if (parseInt(viewCount) >= 1000) return (parseInt(viewCount) / 1000).toFixed(1) + 'K';
+/**
+ * Formats the view count into a more readable string representation with suffixes.
+ *
+ * @param {string} viewCount - The view count as a string.
+ * @returns {string} - The formatted view count with appropriate suffix (B, M, K) or the original count if below 1000.
+ */
+export const formatViewCount = (viewCount: string): string => {
+  const count = parseInt(viewCount);
+
+  if (count >= BILLION) return (count / BILLION).toFixed(1) + 'B';
+  if (count >= MILLION) return (count / MILLION).toFixed(1) + 'M';
+  if (count >= THOUSAND) return (count / THOUSAND).toFixed(1) + 'K';
+
+  return viewCount; // Return the original count if below 1000
 };
