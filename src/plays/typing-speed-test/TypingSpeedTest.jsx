@@ -1,20 +1,18 @@
+import React from 'react';
 import PlayHeader from 'common/playlists/PlayHeader';
 import TypingTest from './components/TypingTest';
+import { TypingTestProvider } from './context/TypingTestContext';
 
 function TypingSpeedTest(props) {
-  // Your Code Start below.
-
   return (
-    <>
+    <TypingTestProvider>
       <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body">
-          {/* Your Code Starts Here */}
           <TypingTest />
-          {/* Your Code Ends Here */}
         </div>
       </div>
-    </>
+    </TypingTestProvider>
   );
 }
 
