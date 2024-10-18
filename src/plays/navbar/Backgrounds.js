@@ -3,7 +3,7 @@ import ideas from './backgroundImages/bg_ideas.png';
 import join from './backgroundImages/bg_join.png';
 import create from './backgroundImages/bg_create.png';
 import search from './backgroundImages/bg_search.png';
-import { CREATE_PLAY_DOC_LINK } from 'constants';
+import { PLAY_DOC_LINK } from 'constants';
 const Backgrounds = [
   {
     id: 1,
@@ -40,7 +40,7 @@ const Backgrounds = [
     discription: 'Ready to create a new play? It is super easy, click down below to get started.',
     statement: 'Create Now',
     image: create,
-    url: CREATE_PLAY_DOC_LINK
+    url: PLAY_DOC_LINK
   },
   {
     id: 5,
