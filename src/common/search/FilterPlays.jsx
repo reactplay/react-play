@@ -23,19 +23,22 @@ const FilterPlays = ({ onChange, query }) => {
 
   useEffect(() => {
     if (!loading && !error) {
-      data.languages = [
-        {
-          name: 'JavaScript',
-          value: 'js',
-          icon: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1675411496/js_jjnhvy.png'
-        },
-        {
-          name: 'TypeScript',
-          value: 'ts',
-          icon: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1675409456/ts_yrzjge.png'
-        }
-      ];
-      setLoadedData(data);
+      const updatedData = {
+        ...data,
+        languages: [
+          {
+            name: 'JavaScript',
+            value: 'js',
+            icon: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1675411496/js_jjnhvy.png'
+          },
+          {
+            name: 'TypeScript',
+            value: 'ts',
+            icon: 'https://res.cloudinary.com/dgtdljyul/image/upload/v1675409456/ts_yrzjge.png'
+          }
+        ]
+      };
+      setLoadedData(updatedData);
     }
   }, [query, loading, showModal]);
 
