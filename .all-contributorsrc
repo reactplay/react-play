@@ -715,6 +715,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "saddamhr",
+      "name": "Md. Saddam Hossain",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44530098?v=4",
+      "profile": "https://medium.com/@saddamhr",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
