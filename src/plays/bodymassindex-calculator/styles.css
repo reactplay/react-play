@@ -1,6 +1,6 @@
 /* Centered container for the BMI calculator */
 .bmi-container {
-  max-width: 500px;  /* Increased box width */
+  max-width: 500px; /* Increased box width */
   background-color: #ffffff; /* Light box background */
   border-radius: 12px;
   padding: 30px; /* Increased padding */
@@ -87,7 +87,6 @@
   border-color: white; /* Change border color on hover */
 }
 
-
 /* Dark mode styling */
 .dark-mode {
   background-color: #1e1e1e; /* Dark background for the outer area */
@@ -122,4 +121,3 @@
 .dark-mode .play-details {
   background-color: #1e1e1e; /* Dark background for outer area */
 }
-

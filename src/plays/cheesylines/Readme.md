@@ -11,7 +11,6 @@ The Cheesy Lines Web App is designed to entertain users by providing a collectio
 
 - User: karna0005
 - Gihub Link: https://github.com/karna0005
- 
 
 ## Implementation Details
 
@@ -25,35 +24,27 @@ Run the app:
 npm start
 Open your browser and go to http://localhost:3000.
 
-
 ## Resources
 
 1. React Documentation
-React Official Docs
+   React Official Docs
 2. State Management
-useState & useEffect
-useReducer Hook
+   useState & useEffect
+   useReducer Hook
 3. Component Design
-Atomic Design Principles
+   Atomic Design Principles
 4. Random Data Generation
-Lodash - Random
+   Lodash - Random
 5. CSS & Styling
-Responsive Web Design
-Styled Components
+   Responsive Web Design
+   Styled Components
 6. Testing
-React Testing Library
-Jest Documentation
+   React Testing Library
+   Jest Documentation
 7. Error Handling
-Error Boundaries
+   Error Boundaries
 8. Performance Optimization
-useCallback & useMemo
+   useCallback & useMemo
 9. Fun APIs
-JokeAPI
-These links will guide you through building and optimizing your project efficiently.
-
-
-
-
-
-
-
+   JokeAPI
+   These links will guide you through building and optimizing your project efficiently.
