@@ -1,5 +1,5 @@
 import { useSearchContext } from 'common/search/search-context';
-import { CREATE_PLAY_DOC_LINK } from 'constants';
+import { PLAY_DOC_LINK } from 'constants';
 import LogoLight from 'images/img-logo-light.svg';
 import { BsGithub } from 'react-icons/bs';
 import { FaDiscord, FaLinkedin, FaMeetup } from 'react-icons/fa';
@@ -105,7 +105,7 @@ const ExtendedFooter = () => {
           <div className="my-4 py-4 mx-auto">
             <a
               className="btn-primary mr-2 mb-2"
-              href={CREATE_PLAY_DOC_LINK}
+              href={PLAY_DOC_LINK}
               rel="noopener noreferrer"
               target="_blank"
             >
