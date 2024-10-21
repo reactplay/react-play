@@ -69,14 +69,14 @@ function SelectionSortVisualizer() {
   };
 
   return (
-    <div>
-      <section className="head">Selection Sort</section>
+    <div className="visualizer-body">
+      <section className="visualizer-head">Selection Sort</section>
       <div id="input-visualizer">
         {arr.map((value, index) => (
           <div key={index}>{value}</div>
         ))}
       </div>
-      <div className="container">
+      <div className="visualizer-input-container">
         <input
           type="number"
           className="input-field"
