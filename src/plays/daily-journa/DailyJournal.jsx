@@ -28,6 +28,8 @@ function DailyJournal(props) {
 
   const goBack = () => setSelectedEntry(null);
 
+  const onDelete = () => setEntries([]);
+
   return (
     <>
       <div className="play-details">
@@ -36,10 +38,12 @@ function DailyJournal(props) {
           {/* Your Code Starts Here */}
           <div>
             <div className="min-h-screen flex flex-col">
+              <h1 className="text-3xl font-semibold mb-3 text-center ">Daily Journal</h1>
+              <p className="mb-6 text-gray-600 text-center">
+                Your daily companion that you can share your thoughts and feelings with.{' '}
+              </p>
               <div className="flex flex-grow p-4">
                 <div className="w-full md:w-2/3 lg:w-2/4 p-4">
-                  <h1 className="text-2xl font-bold mb-4">Daily Journal</h1>
-                  <p className="mb-6 text-gray-600">Write your thoughts and feelings here.</p>
                   <JournalEntryForm onSubmit={addEntry} />
                 </div>
                 <div className="w-full md:w-1/3 lg:w-2/4 p-4">
@@ -47,8 +51,7 @@ function DailyJournal(props) {
                     <EntryDetails entry={selectedEntry} onBack={goBack} />
                   ) : (
                     <>
-                      <h2 className="text-xl font-semibold mb-4">Entries</h2>
-                      <EntryList entries={entries} onSelect={viewEntry} />
+                      <EntryList entries={entries} onDelete={onDelete} onSelect={viewEntry} />
                     </>
                   )}
                 </div>

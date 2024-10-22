@@ -21,26 +21,30 @@ const JournalEntryForm = ({ onSubmit }) => {
   };
 
   return (
-    <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+    <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 " onSubmit={handleSubmit}>
       <textarea
-        placeholder="Write your journal entry here..."
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 "
+        placeholder="How was your day like? "
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <select value={mood} onChange={(e) => setMood(e.target.value)}>
-        <option value="happy">Happy</option>
-        <option value="sad">Sad</option>
-        <option value="excited">Excited</option>
-        <option value="anxious">Anxious</option>
-      </select>
-      <input
-        placeholder="Add tags (comma-separated)"
-        type="text"
-        value={tags}
-        onChange={(e) => setTags(e.target.value)}
-      />
+      <div className="flex flex-raw ">
+        <select className="mr-5" value={mood} onChange={(e) => setMood(e.target.value)}>
+          <option value="happy">Happy</option>
+          <option value="sad">Sad</option>
+          <option value="excited">Excited</option>
+          <option value="anxious">Anxious</option>
+        </select>
+        <input
+          className=""
+          placeholder="Tags: Home Family ..."
+          type="text"
+          value={tags}
+          onChange={(e) => setTags(e.target.value)}
+        />
+      </div>
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded mt-6"
         type="submit"
       >
         Add Entry
