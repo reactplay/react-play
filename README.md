@@ -1,7 +1,7 @@
 # ReactPlay(Repo: `react-play`)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-79-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-80-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -390,6 +390,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://priyank.live"><img src="https://avatars.githubusercontent.com/u/88102392?v=4?s=100" width="100px;" alt="Priyankar Pal"/><br /><sub><b>Priyankar Pal</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=priyankarpal" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Akshaygore1"><img src="https://avatars.githubusercontent.com/u/92959398?v=4?s=100" width="100px;" alt="Akshay Gore"/><br /><sub><b>Akshay Gore</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=Akshaygore1" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://medium.com/@saddamhr"><img src="https://avatars.githubusercontent.com/u/44530098?v=4?s=100" width="100px;" alt="Md. Saddam Hossain"/><br /><sub><b>Md. Saddam Hossain</b></sub></a><br /><a href="https://github.com/reactplay/react-play/commits?author=saddamhr" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

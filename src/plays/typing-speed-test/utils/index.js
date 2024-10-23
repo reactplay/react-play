@@ -15,13 +15,14 @@ pedestrian profession atmosphere calculator footballer windscreen facilities
 definitely strawberry themselves sweatshirt electronic difficulty sunglasses laboratory
 bloodsport ingredient graduation toothbrush marvellous`;
 
-// Return array of 60 random words
+// Function to generate a random text for the typing test
 export const generateText = () => {
   return words
     .toLowerCase()
     .split(' ')
     .sort(() => Math.random() - 0.5)
-    .splice(0, 60);
+    .splice(0, 25)
+    .join(' '); // Join words back into a string
 };
 
 // Return evaluation text based on input

@@ -12,7 +12,6 @@ A play to generate random avatars while clicking the Regenerate button.
 - User: hamzathul
 - GitHub Link: https://github.com/hamzathul
 
-
 ## Implementation Details
 
 This play demonstrates the use of state management with React’s `useState` hook to generate random avatars. Users can regenerate avatars by clicking a button, which dynamically updates the displayed avatar. The avatars represent different genders and ages, adding variety to the output.

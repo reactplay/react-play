@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Loader from 'common/spinner/spinner';
 import * as all_plays from 'plays';
-import { SORT_BY } from 'constants';
+import { SORT_OPTIONS } from 'constants';
 import './playlist.css';
 import { toSanitized } from 'common/services/string';
 import DynamicBanner from './DynamicBanner';
@@ -110,7 +110,7 @@ const PlayList = () => {
       <div className="sort-by-plays-wrapper">
         Sort By :
         <select id="sort-by-plays" name="sort-by-plays" value={sortBy} onChange={onChange}>
-          {SORT_BY.map((name, i) => (
+          {SORT_OPTIONS.map((name, i) => (
             <option key={i} value={name}>
               {name}
             </option>

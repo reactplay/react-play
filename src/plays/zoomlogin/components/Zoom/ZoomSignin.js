@@ -184,7 +184,7 @@ function ZoomSignin({ helpHandle }) {
                 {isEmailFocused && (
                   <label
                     className="absolute text-slate-500 pt-1 pb-2 left-0 top-0 text-xs mb-1 px-2"
-                    htmlFor="email"
+                    htmlFor="zoomemail"
                   >
                     Email Address
                   </label>
@@ -210,7 +210,7 @@ function ZoomSignin({ helpHandle }) {
                 {isPasswordFocused && (
                   <label
                     className="absolute text-slate-500 pt-1 pb-2 left-0 top-0 text-xs mb-1 px-2"
-                    htmlFor="email"
+                    htmlFor="zoompassword"
                   >
                     Password
                   </label>

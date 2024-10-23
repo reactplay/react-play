@@ -10,7 +10,7 @@ import SocialShare from 'common/components/SocialShare';
 import { GoX } from 'react-icons/go';
 import { Modal, Box, Typography, Menu } from '@mui/material';
 import { useSearchContext } from 'common/search/search-context';
-import { CREATE_PLAY_DOC_LINK, UMAMI_EVENTS } from 'constants';
+import { PLAY_DOC_LINK, UMAMI_EVENTS } from 'constants';
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useSearchContext();
@@ -173,7 +173,7 @@ const HeaderNav = ({ showBrowse }) => {
                 className="app-header-btn app-header-btn--primary"
                 data-testid="create-btn"
                 data-umami-event={UMAMI_EVENTS.CREATE_PLAY_BUTTON}
-                href={CREATE_PLAY_DOC_LINK}
+                href={PLAY_DOC_LINK}
                 rel="noopener noreferrer"
                 target="_blank"
               >
