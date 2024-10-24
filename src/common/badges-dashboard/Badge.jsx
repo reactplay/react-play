@@ -11,7 +11,7 @@ const Badge = ({ badge, selectionChanged, readonly = false, showtext = true }) =
           />
         </div>
       ) : (
-        <div class="p-4 w-full">
+        <div class="p-4 max-w-72">
           <div>
             <div class="relative group ">
               <div>
@@ -20,8 +20,8 @@ const Badge = ({ badge, selectionChanged, readonly = false, showtext = true }) =
                   class="relative px-2 py-4 rounded-lg leading-none flex items-center divide-x divide-gray-600 w-full transition duration-1000  group-hover:shadow-md group-hover:drop-shadow-xl"
                   onClick={() => selectionChanged()}
                 >
-                  <div class="flex flex-row lg:flex-col items-center space-x-5  w-full justify-center">
-                    <div className="py-8 flex justify-center items-center">
+                  <div class="flex flex-row lg:flex-col items-center space-x-5  w-full justify-evenly">
+                    <div className="w-2/5 py-8 flex justify-center items-center">
                       <div
                         className="bg-cover bg-center h-28 w-28 group-hover:scale-125 ease-in duration-300"
                         style={{
@@ -29,8 +29,9 @@ const Badge = ({ badge, selectionChanged, readonly = false, showtext = true }) =
                         }}
                       />
                     </div>
-
-                    {showtext && <div class="pr-6 text-gray-800 text-sm h-8">{badge.level}</div>}
+                    <div class="w-3/5 flex justify-center flex-wrap">
+                      {showtext && <div class="pr-6 text-gray-800 text-sm">{badge.level}</div>}
+                    </div>
                   </div>
                 </button>
               </div>
