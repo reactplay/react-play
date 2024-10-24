@@ -2,6 +2,16 @@ import Badge from './Badge';
 import './badge.css';
 
 const BadgeDetails = ({ badge, onClose }) => {
+  const makeClickableLinks = (badge) => {
+    const linkPattern = /(\w+)\s?\((https?:\/\/[^)]+)\)/g;
+
+    const descriptionWithLinks = badge.description.replace(linkPattern, (match, name, url) => {
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">${name}</a>`;
+    });
+
+    return <span dangerouslySetInnerHTML={{ __html: descriptionWithLinks }} />;
+  };
+
   return (
     <div
       aria-hidden="true"
@@ -49,7 +59,7 @@ const BadgeDetails = ({ badge, onClose }) => {
               </div>
               <div className="flex-1 flex justify-center items-center">
                 <p class="text-base leading-relaxed text-gray-500 dark:text-gray-600">
-                  {badge.description}
+                  {makeClickableLinks(badge)}
                 </p>
               </div>
             </div>
