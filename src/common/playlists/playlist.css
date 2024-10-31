@@ -344,11 +344,14 @@
 
 @media screen and (max-width: 480px) {
   .play-details .play-details-header .header-rightcol {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     align-items: flex-start;
     border-top: solid 1px var(--color-neutral-30);
     margin-top: 0.4rem;
     padding-top: 0.4rem;
+  }
+  .header-rightcol{
+    max-width: 95%;
   }
 
   .play-details .play-details-header .header-rightcol .header-desc {
