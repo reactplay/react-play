@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import LevelBadge from 'common/components/LevelBadge';
 import { format } from 'date-fns';
 import * as allLocales from 'date-fns/locale';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { email2Slug } from 'common/services/string';
+import { CollapseContext } from './PlayHeader';
 
 const Author = ({ playCreatedAt, user }) => {
   const [formattedPlayDate] = useState(() => {
@@ -61,6 +62,8 @@ const Tags = ({ tags }) => {
 };
 
 const PlayHeaderInfo = ({ play }) => {
+  const collapse = useContext(CollapseContext);
+
   return (
     <div className="overflow-hidden header-leftcol">
       <div className="header-leftcol-action">
@@ -72,16 +75,24 @@ const PlayHeaderInfo = ({ play }) => {
       <div className="header-leftcol-contents">
         <div className="header-primary">
           <h3 className="header-title">{play.name}</h3>
-          <div className="header-title-tags">
-            <LevelBadge level={play.level.name} />{' '}
-            {!!play.play_tags.length && <Tags tags={play.play_tags} />}
-          </div>
-        </div>
-        <div className="mt-1 header-secondary">
-          {play.user && (
-            <Author githubUsername={play.github} playCreatedAt={play.created_at} user={play.user} />
+          {collapse && (
+            <div className="header-title-tags">
+              <LevelBadge level={play.level.name} />{' '}
+              {!!play.play_tags.length && <Tags tags={play.play_tags} />}
+            </div>
           )}
         </div>
+        {collapse && (
+          <div className="mt-1 header-secondary">
+            {play.user && (
+              <Author
+                githubUsername={play.github}
+                playCreatedAt={play.created_at}
+                user={play.user}
+              />
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

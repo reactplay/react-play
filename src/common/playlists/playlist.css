@@ -326,6 +326,14 @@
   padding-top: 0.4rem;
 }
 
+.header-rightcol {
+  max-width: 70%;
+}
+
+.collapse-btn {
+  background-color: #010326;
+}
+
 .play-details .play-details-header .header-primary {
   display: flex;
   flex-direction: row;
