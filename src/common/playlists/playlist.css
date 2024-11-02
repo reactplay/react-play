@@ -331,7 +331,8 @@
 }
 
 .collapse-btn {
-  background-color: #010326;
+  border: 1px solid #010326;
+  color: #010326;
 }
 
 .play-details .play-details-header .header-primary {
