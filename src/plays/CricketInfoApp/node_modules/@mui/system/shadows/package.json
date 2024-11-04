@@ -1,0 +1,6 @@
+{
+  "sideEffects": false,
+  "module": "./index.js",
+  "main": "../node/shadows/index.js",
+  "types": "./index.d.ts"
+}

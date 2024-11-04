@@ -1,0 +1,42 @@
+{
+  "name": "@rushstack/eslint-patch",
+  "version": "1.10.4",
+  "description": "Enhance ESLint with better support for large scale monorepos",
+  "main": "lib/usage.js",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/microsoft/rushstack.git",
+    "type": "git",
+    "directory": "eslint/eslint-patch"
+  },
+  "homepage": "https://rushstack.io",
+  "keywords": [
+    "eslintrc",
+    "config",
+    "module",
+    "resolve",
+    "resolver",
+    "plugin",
+    "relative",
+    "package",
+    "bulk",
+    "suppressions",
+    "monorepo",
+    "monkey",
+    "patch"
+  ],
+  "devDependencies": {
+    "@rushstack/heft": "0.66.17",
+    "@rushstack/heft-node-rig": "2.6.15",
+    "@types/eslint": "8.2.0",
+    "@types/node": "18.17.15",
+    "@typescript-eslint/types": "~5.59.2",
+    "eslint": "~8.57.0",
+    "eslint-plugin-header": "~3.1.1",
+    "typescript": "~5.4.2"
+  },
+  "scripts": {
+    "build": "heft build --clean",
+    "_phase:build": "heft run --only build -- --clean"
+  }
+}

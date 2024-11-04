@@ -1,0 +1,6 @@
+{
+  "sideEffects": false,
+  "module": "./index.js",
+  "main": "../node/spacing/index.js",
+  "types": "./index.d.ts"
+}

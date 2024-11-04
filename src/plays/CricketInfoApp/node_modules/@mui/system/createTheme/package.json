@@ -1,0 +1,6 @@
+{
+  "sideEffects": false,
+  "module": "./index.js",
+  "main": "../node/createTheme/index.js",
+  "types": "./index.d.ts"
+}
