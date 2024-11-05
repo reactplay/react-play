@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'IBM Plex Mono', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.bio-card_name {
+  font-size: 2rem;
+  margin: 1rem auto 2rem auto;
+  text-align: center;
+}
+
+.bio-card_card {
+  max-width: 450px;
+  margin: 40px auto;
+  border: 4px solid #222;
+}
+
+.bio-card_card::after {
+  content: '';
+  display: block;
+}
+
+.bio-card_profile-picture {
+  width: 100%;
+  display: block;
+  background: none;
+}
+
+.bio-card_data {
+  padding: 32px;
+  padding-top: 24px;
+}
+
+.bio-card_person-bio {
+  text-align: center;
+}
+
+.bio-card_skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.bio-card_skill {
+  padding: 2px 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+@media (max-width: 425px) {
+  .bio-card_data {
+    padding: 1rem 0.5rem;
+    padding-top: 0;
+  }
+
+  .bio-card_name {
+    font-size: 1.5rem;
+    margin: 1rem auto;
+  }
+}
