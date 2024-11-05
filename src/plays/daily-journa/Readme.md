@@ -11,8 +11,8 @@ This play is about writing daily entries, categorising them by mood or topic, an
 
 - User: GhadaRV
 - Gihub Link: https://github.com/GhadaRV
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 

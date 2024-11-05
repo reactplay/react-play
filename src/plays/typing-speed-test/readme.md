@@ -39,6 +39,7 @@ The implementation of the Typing Speed Test project is quite simple.
 - The `generateText()` function in `utils/index.js` is responsible for generating the typing text. Whenever it gets called, it returns a paragraph of 60 random words, so when the `TypingTest` component is rendered on the UI, it calls the `generateText()` function.
 
 - There are two other components in `TypingTest`:
+
   - **Timer**: As the name suggests, it is responsible for a 60-second countdown. It accepts a single prop to control the timer functionality.
   - **Stats**: The stats component is responsible for rendering WPM (Words Per Minute), CPM (Characters Per Minute), and accuracy statistics.
 
@@ -51,7 +52,6 @@ The implementation of the Typing Speed Test project is quite simple.
 - In the `TypingTest` component, there is also a refresh button beside the input. On clicking this button, it resets the state of the `TypingTest` component, including generating new typing text, resetting the timer, and resetting the word count.
 
 - Additionally, there is a `ResultModal` component that opens when the time is up or the user finishes typing all the words. This modal renders the statistics of the typing session, providing a summary of the user’s performance.
-
 
 ## Contributing
 

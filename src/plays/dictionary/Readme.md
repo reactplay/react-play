@@ -14,7 +14,7 @@ Display the definition, pronunciation, antonyms and synonyms of the word
 
 ## Implementation Details
 
-This implenmetation uses axios to call a remote API. The remote API returns the meaning as well as synonyms and antonyms of the word entered by the user, which is rendered. 
+This implenmetation uses axios to call a remote API. The remote API returns the meaning as well as synonyms and antonyms of the word entered by the user, which is rendered.
 
 ## Consideration
 
