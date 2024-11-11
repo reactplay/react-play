@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .steps {
   width: 600px;
   background-color: #f7f7f7;
@@ -67,7 +63,7 @@
   line-height: 1;
 }
 
-h3 {
+.steps_message h3 {
   margin: 0;
   text-transform: uppercase;
 }
