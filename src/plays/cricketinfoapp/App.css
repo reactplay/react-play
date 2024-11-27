@@ -1,0 +1,63 @@
+.App {
+  background-color: black;
+}
+html,
+body,
+#root {
+  background-color: rgb(0, 0, 0);
+}
+.upperStyling{
+  text-align: center;
+
+}
+.searchbar{
+  position: relative;
+  left:595px
+}
+
+.buttonStyle{
+  position: relative;
+  left:1175px
+}
+
+
+
+.flex-containerL{
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+
+  flex-direction: row;
+  display: flex;
+  flex-shrink: 0;  
+  flex-wrap: wrap;
+
+}
+
+
+.flex-itemL{
+
+  text-align: center;
+
+  width:350px;
+  padding-left: 25px;
+  padding-top: 20px;
+  background-color: #ffffff;
+  height:220px;
+  text-align: center;
+}
+
+grid-container{
+  z-index: 1000;
+  display:grid;
+  grid-template-columns: repeat(2, 300px);
+  justify-content:start;
+}
+grid-item{
+  display: flex;
+  flex-direction: row;
+
+}
+.card{
+  width:25%;
+  padding-top: 10px;
+}
