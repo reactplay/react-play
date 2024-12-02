@@ -10,6 +10,15 @@ function UrlShortner(props) {
   const [error, setError] = useState(null);
   const handleSubmit = async () => {
     try {
+      if (!userInput.trim()) {
+        toast('Please enter a valid URL.', {
+          position: 'top-center',
+          type: 'error',
+          autoClose: 1500
+        });
+
+        return;
+      }
       setShortenedLink('');
       const response = await axios.get(`https://tinyurl.com/api-create.php?url=${userInput}`);
       if (response.data) {
@@ -62,9 +71,10 @@ function UrlShortner(props) {
               <h1 className=" text-2xl font-medium text-blue-500 mb-4">
                 React <span className=" text-purple-600 font-bold">URL Shortener</span>
               </h1>
-              <div>
+              <div className="w-full flex flex-col max-w-md mx-auto items-center">
                 <input
-                  className="outline-none border-2 border-blue-500 rounded-md backdrop-blur-xl bg-white/20 shadow-md px-3 py-3"
+                  required
+                  className="outline-none border-2 border-blue-500 rounded-md backdrop-blur-xl bg-white/20 shadow-md px-3 py-2.5 leading-[1.5] placeholder:text-gray-400 w-full"
                   placeholder="Enter link to be shortened"
                   type="text"
                   value={userInput}
@@ -73,25 +83,32 @@ function UrlShortner(props) {
                   }}
                 />
                 <button
-                  class="ms-4 group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow"
+                  class="ms-4 group mt-4 relative h-12 px-6 overflow-hidden rounded-lg bg-white text-lg shadow"
                   onClick={handleSubmit}
                 >
                   <div class="absolute inset-0 w-3 bg-[#0087fe] transition-all duration-[250ms] ease-out group-hover:w-full" />
-                  <span class="relative text-black group-hover:text-white">Shorten This Link</span>
+                  <span class="relative text-black group-hover:text-white">Short URL</span>
                 </button>
               </div>
-              <div className="mt-5">
-                {error && <div className="text-red-500 mb-2">{error}</div>}
-                <div className="relative px-4 py-2 bg-white shadow-lg rounded-xl  bg-clip-padding bg-opacity-60 border border-gray-200 text-slate-500">
-                  {shortenedLink ? shortenedLink : 'Shorten An URL First'}
+              {error && <div className="text-red-500 mt-5">{error}</div>}
+              {shortenedLink && (
+                <div className="mt-5">
+                  <p>Here's your shortened URL:</p>
+
+                  <div className="flex justify-center items-center">
+                    <div className="relative px-4 py-2 bg-white shadow-lg rounded-xl  bg-clip-padding bg-opacity-60 border border-gray-200 text-slate-500">
+                      {shortenedLink ? shortenedLink : 'Shorten An URL First'}
+                    </div>
+                    <button
+                      className="border-2 px-5 py-2 ml-4 rounded-md font-medium 'border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white cursor-pointer"
+                      disabled={!shortenedLink}
+                      onClick={() => copyTextToClipboard(shortenedLink)}
+                    >
+                      Copy
+                    </button>
+                  </div>
                 </div>
-                <button
-                  className="mt-5 border-2 border-blue-500 text-blue-500 font-medium px-5 py-2 ml-4 rounded-md hover:bg-blue-500 hover:text-white"
-                  onClick={() => copyTextToClipboard(shortenedLink)}
-                >
-                  Copy URL to Clipboard
-                </button>
-              </div>
+              )}
             </div>
           </div>
         </div>
