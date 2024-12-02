@@ -87,7 +87,7 @@ function UrlShortner(props) {
                   onClick={handleSubmit}
                 >
                   <div class="absolute inset-0 w-3 bg-[#0087fe] transition-all duration-[250ms] ease-out group-hover:w-full" />
-                  <span class="relative text-black group-hover:text-white">Short URL</span>
+                  <span class="relative text-black group-hover:text-white">Shorten URL</span>
                 </button>
               </div>
               {error && <div className="text-red-500 mt-5">{error}</div>}
@@ -97,11 +97,10 @@ function UrlShortner(props) {
 
                   <div className="flex justify-center items-center">
                     <div className="relative px-4 py-2 bg-white shadow-lg rounded-xl  bg-clip-padding bg-opacity-60 border border-gray-200 text-slate-500">
-                      {shortenedLink ? shortenedLink : 'Shorten An URL First'}
+                      {shortenedLink}
                     </div>
                     <button
                       className="border-2 px-5 py-2 ml-4 rounded-md font-medium 'border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white cursor-pointer"
-                      disabled={!shortenedLink}
                       onClick={() => copyTextToClipboard(shortenedLink)}
                     >
                       Copy
