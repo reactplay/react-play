@@ -20,9 +20,14 @@ function ExpensesTracker(props: any) {
 
   const handleNewExpense = () => {
     const expense = localStoreExpenses[localStoreExpenses.length - 1];
-    data['id'] = expense !== undefined ? parseInt(expense.id) + 1 : 1;
-    setLocalStoreExpenses([...localStoreExpenses, data]);
-    setLocalStoreTotal(parseFloat(localStoreTotal) + parseFloat(data.amount));
+    // Ensure `amount` has a default value of 0 if not present
+    const sanitizedData = {
+      ...data,
+      amount: data.amount || 0
+    };
+    sanitizedData['id'] = expense !== undefined ? parseInt(expense.id) + 1 : 1;
+    setLocalStoreExpenses([...localStoreExpenses, sanitizedData]);
+    setLocalStoreTotal(parseFloat(localStoreTotal) + parseFloat(sanitizedData.amount));
     setOpen(false);
     setData(null);
   };
@@ -97,14 +102,14 @@ function ExpensesTracker(props: any) {
                             <td className="p-1 text-center">{expense.date}</td>
                             <td className="p-1 text-center">{expense.amount}</td>
                             <td className="p-1 flex justify-center space-x-2">
-                              <div className="bg-green-500 rounded-full p-[6px]">
+                              <div className="bg-green-500 cursor-pointer  rounded-full p-[6px]">
                                 <FiEdit
                                   className="text-white"
                                   size={16}
                                   onClick={() => openEditModal(expense)}
                                 />
                               </div>
-                              <div className="bg-red-500 rounded-full p-[6px]">
+                              <div className="bg-red-500 cursor-pointer rounded-full p-[6px]">
                                 <AiOutlineDelete
                                   className="text-white"
                                   size={16}
