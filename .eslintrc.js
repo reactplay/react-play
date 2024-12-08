@@ -22,9 +22,9 @@ module.exports = {
   ignorePatterns: ['**/plays/index.js'],
 
   rules: {
-      // Note: you must disable the base rule as it can report incorrect errors
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "warn",
+    // Note: you must disable the base rule as it can report incorrect errors
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
 
     'import/extensions': 0,
 
