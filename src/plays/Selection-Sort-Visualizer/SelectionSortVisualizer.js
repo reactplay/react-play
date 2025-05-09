@@ -78,16 +78,22 @@ function SelectionSortVisualizer() {
       </div>
       <div className="visualizer-input-container">
         <input
-          type="number"
           className="input-field"
+          type="number"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button className="button-green" onClick={handleAdd}>Add</button>
-        <button className="button-blue" onClick={handleSort}>Sort</button>
-        <button className="button-blue" onClick={handleReset}>Reset</button>
+        <button className="button-green" onClick={handleAdd}>
+          Add
+        </button>
+        <button className="button-blue" onClick={handleSort}>
+          Sort
+        </button>
+        <button className="button-blue" onClick={handleReset}>
+          Reset
+        </button>
       </div>
-      <div id="output-visualizer"></div>
+      <div id="output-visualizer" />
     </div>
   );
 }

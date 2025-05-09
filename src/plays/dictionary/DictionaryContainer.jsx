@@ -18,7 +18,7 @@ const DictionaryContainer = ({ data }) => {
           onClick={() => handlePronunciation(data)}
         />
       </span>
-      {data[0]['meanings'].map((item, index) => {
+      {data[0]['meanings'].map((item) => {
         return (
           <div className="bg-blue-200 p-3 rounded-md mt-2 mb-2" key={item}>
             <h2 className="text-gray-500 font-bold">{item['partOfSpeech']}</h2>
@@ -31,7 +31,7 @@ const DictionaryContainer = ({ data }) => {
             })}
             <h2>Synonyms: </h2>
             {item['synonyms'] &&
-              item['synonyms'].map((syn, index) => {
+              item['synonyms'].map((syn) => {
                 return (
                   <span className="mx-2" key={syn}>
                     {syn}
@@ -40,7 +40,7 @@ const DictionaryContainer = ({ data }) => {
               })}
             <h2>Antonyms: </h2>
             {item['antonyms'] &&
-              item['antonyms'].map((ant, index) => {
+              item['antonyms'].map((ant) => {
                 return (
                   <span className="mx-2" key={ant}>
                     {ant}
