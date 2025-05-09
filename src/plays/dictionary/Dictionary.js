@@ -1,5 +1,5 @@
 import PlayHeader from 'common/playlists/PlayHeader';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import DictionaryContainer from './DictionaryContainer';
 
