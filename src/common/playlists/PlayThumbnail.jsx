@@ -25,13 +25,27 @@ const PlayThumbnail = ({ play }) => {
     const loadCover = async () => {
       try {
         if (play.cover) {
-          setCover(play.cover);
+          const img = new Image();
+          img.onload = () => {
+            setCover(play.cover);
+          };
+          img.onerror = async () => {
+            const image = await loadCoverImage(play.slug);
+            setCover(image);
+          };
+          img.src = play.cover;
         } else {
           const image = await loadCoverImage(play.slug);
           setCover(image);
         }
       } catch (error) {
         console.error(error);
+        try {
+          const image = await loadCoverImage(play.slug);
+          setCover(image);
+        } catch (fallbackError) {
+          console.error('Failed to load both external and local images:', fallbackError);
+        }
       }
     };
     loadCover();
