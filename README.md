@@ -395,6 +395,37 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tbody>
 </table>
 
+
+---
+
+## 🌗 Dark/Light Theme Toggle
+
+We’ve added a dark/light theme toggle to enhance user experience.
+
+### 🔧 How It Works
+
+- A toggle button (☀️/🌙) is available in the **NavBar**.
+- Clicking it switches between **light** and **dark** mode.
+- Theme preference is saved in `localStorage` so it persists across sessions.
+- Tailwind CSS uses `darkMode: 'class'` (configured in `tailwind.config.js`).
+- A custom `useDarkMode` hook manages toggling logic and class updates.
+
+### 📂 Files Modified
+
+- `src/common/NavBar.jsx` → Added toggle button
+- `src/hooks/useDarkMode.js` → Custom hook for managing theme
+- `src/index.jsx` → Ensures correct theme on initial load
+- `tailwind.config.js` → Enabled `darkMode: 'class'`
+
+### 📸 Preview
+
+| Light Mode ☀️ | Dark Mode 🌙 |
+|---------------|--------------|
+| ![Light](https://dummyimage.com/300x150/ffffff/000000&text=Light+Mode) | ![Dark](https://dummyimage.com/300x150/000000/ffffff&text=Dark+Mode) |
+
+---
+
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 

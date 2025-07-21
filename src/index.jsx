@@ -1,6 +1,6 @@
 import RouteDefs from 'common/routing/RouteDefs';
 import { SearchContextProvider } from 'common/search/search-context';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import register from './registerServiceWorker';
@@ -27,33 +27,47 @@ const Index = () => {
     language: []
   });
 
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  // Effect to apply theme
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   const value = {
     searchTerm,
     setSearchTerm,
     filterQuery,
     setFilterQuery,
     showShareModal,
-    setShowShareModal
+    setShowShareModal,
+    toggleTheme, // add toggle function to context if needed in NavBar
+    theme
   };
 
   return (
-    // <React.StrictMode>
     <ErrorBoundry>
       <SearchContextProvider value={value}>
         <RouteDefs />
         <Notification />
       </SearchContextProvider>
     </ErrorBoundry>
-    // </React.StrictMode>
   );
 };
+
 const container = document.getElementById('root');
 createRoot(container).render(<Index />);
 
 // Makes the app to work offline and load faster
 register();
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
