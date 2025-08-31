@@ -568,3 +568,19 @@ small {
 ::-webkit-scrollbar {
   width: 25px;
 }
+.glass-card {
+  background: #c1bfbf25; 
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(182, 180, 180, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #3e5156;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
+}
+

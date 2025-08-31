@@ -8,7 +8,7 @@ const Like = ({ onLikeClick, likeObj }) => {
   };
 
   return (
-    <button className="action counted -mr-0.5" onClick={likeClickHandler}>
+    <button className="flex items-center justify-center action counted -mr-0.5" onClick={likeClickHandler}>
       <AiOutlineLike className={liked ? 'hidden' : 'icon'} size="24px" />
       <AiFillLike className={liked ? 'icon' : 'hidden'} size="24px" />
       {number > 0 ? <div className="count-value">{number}</div> : <div />}
