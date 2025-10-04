@@ -92,16 +92,11 @@ Please change the directory after cloning the repository using the `cd <folder-n
 
 ### ⬇️ Install Dependencies
 
-Next, install the dependencies by running the following command in the `react-play` repo. we recommend using `yarn` but you can install using `npm` too
+Next, install all dependencies using **pnpm**.  
+Make sure you have `pnpm` installed globally before proceeding.
 
 ```bash
-yarn install
-```
-
-Or
-```
-npm install
-```
+pnpm install
 
 if you don't have `yarn` installed on your PC, follow the steps below to install it..
 
