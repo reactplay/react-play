@@ -115,7 +115,7 @@ function PlayShare({ cover, link }) {
           setShowModal(true);
         }}
       >
-        <IoShareOutline className="mx-2" />
+        <IoShareOutline className="mx-2 w-6 h-6" />
       </button>
     </div>
   );
