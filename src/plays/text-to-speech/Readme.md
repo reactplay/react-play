@@ -1,27 +1,36 @@
 # Text To Speech
 
-text to speech
+Convert text input into spoken audio directly in the browser using the Web Speech API.
 
-## Play Demographic
+## Key Concepts Demonstrated
 
-- Language: js
-- Level: Intermediate
+1. State & Event Handling in React (or Vanilla JS)
+2. Web Speech API (`speechSynthesis` and `SpeechSynthesisUtterance`)
+3. Conditional Rendering & UI updates
+4. Responsive layout with Flexbox and media queries
 
-## Creator Information
+## How It Works
 
-- User: Ritesh381
-- Gihub Link: https://github.com/Ritesh381
-- Blog: 
-- Video: 
+- User types text into the input box.
+- Click **Play** to convert the text into speech.
+- Click **Stop** to cancel speech playback.
+- Works completely offline (runs client-side).
+- Responsive design for different screen sizes.
 
-## Implementation Details
+## Tech Stack
 
-Update your implementation idea and details here
+- React (or Vanilla JS)
+- CSS
+- Web Speech API
 
-## Consideration
+## Notes
 
-Update all considerations(if any)
+- Best supported in Chrome, Edge, and Safari; limited support in Firefox.
+- Voices vary depending on browser and device.
+- Future enhancements: control rate, pitch, and volume.
 
 ## Resources
 
-Update external resources(if any)
+- [MDN – Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+- [CSS Tricks – Using the Speech Synthesis API](https://css-tricks.com/using-the-speech-synthesis-api/)
+- [W3C Web Speech API Specification](https://www.w3.org/TR/speech-synthesis/)

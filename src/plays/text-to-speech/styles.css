@@ -149,3 +149,21 @@
     padding: 12px;
   }
 }
+
+.tts-sliders {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.tts-sliders div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tts-sliders input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}

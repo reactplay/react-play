@@ -3,11 +3,12 @@ import { FaVolumeUp, FaStop } from 'react-icons/fa';
 import PlayHeader from 'common/playlists/PlayHeader';
 import './styles.css';
 
-// WARNING: Do not change the entry component name
 function TextToSpeech(props) {
   const [inputText, setInputText] = useState('');
   const [convertedText, setConvertedText] = useState('');
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [rate, setRate] = useState(1);
+  const [pitch, setPitch] = useState(1);
   const utteranceRef = useRef(null);
 
   const stopSpeech = () => {
@@ -23,14 +24,12 @@ function TextToSpeech(props) {
 
       return;
     }
-
     if (!convertedText.trim()) return;
 
     const utterance = new SpeechSynthesisUtterance(convertedText);
     utterance.lang = 'en-US';
-    utterance.rate = 1;
-    utterance.pitch = 1;
-
+    utterance.rate = rate;
+    utterance.pitch = pitch;
     utterance.onend = () => setIsSpeaking(false);
 
     utteranceRef.current = utterance;
@@ -43,7 +42,6 @@ function TextToSpeech(props) {
     setConvertedText(inputText.trim());
   };
 
-  // stop on unmount / tab close
   useEffect(() => {
     const handleBeforeUnload = () => stopSpeech();
     window.addEventListener('beforeunload', handleBeforeUnload);
@@ -59,9 +57,8 @@ function TextToSpeech(props) {
       <div className="play-details">
         <PlayHeader play={props} />
         <div className="play-details-body">
-          {/* Your Code Starts Here */}
           <div className="tts-wrapper">
-            {/* Left side: textarea + button */}
+            {/* Left side */}
             <div className="tts-input-box">
               <textarea
                 className="tts-textarea"
@@ -69,12 +66,36 @@ function TextToSpeech(props) {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
               />
+              <div className="tts-sliders">
+                <div>
+                  <label>Rate: {rate.toFixed(1)}</label>
+                  <input
+                    max="2"
+                    min="0.5"
+                    step="0.1"
+                    type="range"
+                    value={rate}
+                    onChange={(e) => setRate(Number(e.target.value))}
+                  />
+                </div>
+                <div>
+                  <label>Pitch: {pitch.toFixed(1)}</label>
+                  <input
+                    max="2"
+                    min="0"
+                    step="0.1"
+                    type="range"
+                    value={pitch}
+                    onChange={(e) => setPitch(Number(e.target.value))}
+                  />
+                </div>
+              </div>
               <button className="tts-convert-btn" onClick={handleConvert}>
                 Convert
               </button>
             </div>
 
-            {/* Right side: converted text + speaker */}
+            {/* Right side */}
             <div className="tts-output-box">
               {convertedText ? (
                 <>
@@ -88,7 +109,6 @@ function TextToSpeech(props) {
               )}
             </div>
           </div>
-          {/* Your Code Ends Here */}
         </div>
       </div>
     </>
