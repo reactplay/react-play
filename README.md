@@ -97,32 +97,30 @@ Make sure you have `pnpm` installed globally before proceeding.
 
 ```bash
 pnpm install
-
-if you don't have `yarn` installed on your PC, follow the steps below to install it..
-
-**Windows**
-1. open your command prompt as administrator.
-2. write `corepack enable` and hit enter.
-3. then `npm install --global yarn`
-
-**Linux**
-1. open terminal and hit `npm install --global yarn`
-
-**MacOS**
-1. open terminal and hit `npm install --global yarn`
-or
-`brew install yarn`
-
-**Or Download Package**
-If you are unable to install yarn following the above-mentioned process, then you can simply download the package and install it. Visit the official website of Yarn; there you can just expand the "Alternative" section and it will ask for the version to download for Windows, Linux, or Mac.
-`https://classic.yarnpkg.com/en/docs/install#windows-stable`
-
-
-> **Note**: `ReactPlay` runs on React 18. However, some of our dependencies are yet to upgrade to version 18. So please use the following command when you face difficulties installing the dependencies. Also, ensure to use Node.js version >= 16.x
-
 ```
-npm install --legacy-peer-deps
-```
+
+If you don't have `pnpm` installed on your PC, follow the steps below to install it:
+
+**Windows / Linux / macOS**
+
+1. Open your terminal or command prompt.
+2. Run the following command to install `pnpm` globally:
+
+   ```bash
+   npm install -g pnpm
+   ```
+
+
+**Or Download Package**  
+If you are unable to install `pnpm` following the above-mentioned process, you can simply download the package and install it. Visit the official website of `pnpm`; there you can find instructions for Windows, Linux, or macOS.  
+[https://pnpm.io/installation](https://pnpm.io/installation)
+
+> **Note**: `ReactPlay` runs on React 18. However, some of our dependencies are yet to upgrade to version 18. So please use the following command if you face difficulties installing the dependencies. Also, ensure you are using Node.js version >= 16.x.
+
+```bash
+pnpm install --legacy-peer-deps
+ ```
+
 
 
 ### 🦄 Start the Development Mode
@@ -130,13 +128,9 @@ npm install --legacy-peer-deps
 Use the following command to start the app in the development mode:
 
 ```bash
-yarn start
+pnpm start
 ```
-or if you installed dependencies using ``npm`` use below command
 
-```
-npm start
-```
 
 **Note**: The `start` script automatically invokes "linters" process. Should you need to run the app without `lint` the use `start:nolint` instead.
 However make sure that you run `start` script at least once before committing your code. Code with linter error may not be reviewed.
@@ -152,42 +146,30 @@ Use the following command to format and lint the code:
 #### Format the code
 
 ```bash
-yarn run format
+pnpm run format
 ```
-OR
-```
-npm run format
-```
+
 
 #### Lint the code
 *to check the linting issue*
 ```bash
-yarn run lint
+pnpm run lint
 ```
-OR
-```
-npm run lint
-```
+
 *to fix the linting issue*
 ```bash
-yarn run lint:fix
+pnpm run lint:fix
 ```
-OR
-```
-npm run lint:fix
-```
+
 
 ### 🧱 Build the App for Production
 
 Use the following command to build the app for production:
 
 ```bash
-yarn build
+pnpm build
 ```
-OR
-```
-npm build
-```
+
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
@@ -197,22 +179,15 @@ It builds the app for production to the `build` folder. It correctly bundles Rea
 
 Use the following command to install browser(s) binaries to test locally:
 ```bash
-yarn install playwright
-```
-OR
-```
-npm install playwright
+pnpm install playwright
 ```
 
 Use the following command to run Playwright tests:
 
 ```bash
-yarn e2e
+pnpm run e2e
 ```
-OR
-```
-npm run e2e
-```
+
 👀 Read more about testing in [react-play](../react-play/e2e/README.md)
 
 👀 Read more about playwright: https://playwright.dev/
