@@ -137,6 +137,7 @@
     "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "6.4.0",
     "@typescript-eslint/parser": "^6.19.1",
+    "ajv": "^8.17.1",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
