@@ -3,10 +3,20 @@ description: Suggest an idea for this project
 title: '✨ [Feature request]: '
 labels: ["🚦status: awaiting triage", "💻 aspect: code", "⭐ goal: addition"]
 body:
+  - type: checkboxes
+    id: read-guidelines
+    attributes:
+      label: Contributor Guidelines
+      description: Please confirm that you have read the [Contributor Guidelines and Discussion](https://github.com/reactplay/react-play/discussions/1598) before submitting this issue or PR.
+      options:
+        - label: I have read the guidelines and discussion
+          required: true
+
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time for issuing a feature request!
+
   - type: textarea
     id: feature-reason
     attributes:
@@ -55,7 +65,6 @@ body:
           required: true
         - label: I want to work on this issue
         - label: I am a Hacktoberfest contributor
-
 
   - type: checkboxes
     id: terms
