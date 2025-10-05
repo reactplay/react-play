@@ -1,3 +1,10 @@
+> **Before creating this PR, please confirm the following:**
+> - I have read the [ReactPlay Contributor Guidelines and Discussion](https://github.com/reactplay/react-play/discussions/1598)
+> - I have reviewed the [ReactPlay Code Review Checklist](https://github.com/reactplay/react-play/wiki/ReactPlay-Code-Review-Checklist)
+> - I have tested my changes locally and verified there are no new warnings or errors
+
+---
+
 > First thing, PLEASE READ THIS: [ReactPlay Code Review Checklist](https://github.com/reactplay/react-play/wiki/ReactPlay-Code-Review-Checklist)
 
 # Description
