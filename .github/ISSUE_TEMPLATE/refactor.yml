@@ -1,8 +1,17 @@
 name: Refactor Code 🔧
 description: Use this label for code refactoring tasks.
 title: "[Refactor] <write what you want to add>"
-labels: ["🛠 goal: refactor", "🚦status: awaiting triage","💻 aspect: code"]
+labels: ["🛠 goal: refactor", "🚦status: awaiting triage", "💻 aspect: code"]
 body:
+  - type: checkboxes
+    id: read-guidelines
+    attributes:
+      label: Contributor Guidelines
+      description: Please confirm that you have read the [Contributor Guidelines and Discussion](https://github.com/reactplay/react-play/discussions/1598) before submitting this issue or PR.
+      options:
+        - label: I have read the guidelines and discussion
+          required: true
+
   - type: input
     id: refactor_input
     attributes:
@@ -11,6 +20,7 @@ body:
       placeholder: "For example - src/common"
     validations:
       required: true
+
   - type: textarea
     id: refactor_description
     attributes:
@@ -18,6 +28,7 @@ body:
       description: "Describe what improvements can be made in the codebase without introducing breaking changes."
     validations:
       required: true
+
   - type: checkboxes
     id: refactor_terms
     attributes:
