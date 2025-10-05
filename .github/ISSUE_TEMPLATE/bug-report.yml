@@ -1,8 +1,17 @@
-name: "\U0001F41B [Bug report]:"
+name: "🐛 [Bug report]:"
 description: Create a report to help us improve
-title: "\U0001F41B [Bug report]: "
-labels: ["bug","🛠 goal: fix", "🚦status: awaiting triage", "💻 aspect: code"]
+title: "🐛 [Bug report]: "
+labels: ["bug", "🛠 goal: fix", "🚦status: awaiting triage", "💻 aspect: code"]
 body:
+  - type: checkboxes
+    id: read-guidelines
+    attributes:
+      label: Contributor Guidelines
+      description: Please confirm that you have read the [Contributor Guidelines and Discussion](https://github.com/reactplay/react-play/discussions/1598) before submitting this issue or PR.
+      options:
+        - label: I have read the guidelines and discussion
+          required: true
+
   - type: markdown
     attributes:
       value: |
@@ -15,6 +24,7 @@ body:
       description: Tell us what you see!
     validations:
       required: true
+
   - type: textarea
     id: reproduce-step
     attributes:
@@ -54,10 +64,11 @@ body:
       label: Mobile (Please provide your device information)
       description: |
         examples:
-           - **Device**: [e.g. iPhone6]
-           - **OS**: [e.g. iOS8.1]
-           - **Browser** [e.g. stock browser, safari]
-           - **Version** [e.g. 22]
+          - **Device**: [e.g. iPhone6]
+          - **OS**: [e.g. iOS8.1]
+          - **Browser** [e.g. stock browser, safari]
+          - **Version** [e.g. 22]
+
   - type: textarea
     id: screenshot
     attributes:
@@ -69,7 +80,6 @@ body:
     attributes:
       label: Relevant log output
       description: Add any other context about the problem here.
-      
 
   - type: checkboxes
     id: record
@@ -82,8 +92,6 @@ body:
           required: true
         - label: I want to work on this issue
         - label: I am a Hacktoberfest contributor
-
-
 
   - type: checkboxes
     id: terms

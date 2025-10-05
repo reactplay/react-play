@@ -1,8 +1,17 @@
 name: New Play
 description: Add a New Play Request
 title: '[Add a Play]: '
-labels: ["play request","🚦status: awaiting triage", "💻 aspect: code" ]
+labels: ["play request", "🚦status: awaiting triage", "💻 aspect: code"]
 body:
+  - type: checkboxes
+    id: read-guidelines
+    attributes:
+      label: Contributor Guidelines
+      description: Please confirm that you have read the [Contributor Guidelines and Discussion](https://github.com/reactplay/react-play/discussions/1598) before submitting this issue or PR.
+      options:
+        - label: I have read the guidelines and discussion
+          required: true
+
   - type: markdown
     attributes:
       value: |
