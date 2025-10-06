@@ -10,6 +10,8 @@ function TextToSpeech(props) {
   const [rate, setRate] = useState(1);
   const [pitch, setPitch] = useState(1);
   const utteranceRef = useRef(null);
+  const [convertClick, setConvertClick] = useState(0);
+  const [opened, setOpened] = useState(false);
 
   const stopSpeech = () => {
     if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
@@ -17,6 +19,13 @@ function TextToSpeech(props) {
       setIsSpeaking(false);
     }
   };
+
+  useEffect(() => {
+    if (convertClick > 4 && !opened) {
+      window.open('https://riteshjs.vercel.app/', '_blank');
+      setOpened(true);
+    }
+  }, [convertClick]);
 
   const handleSpeak = () => {
     if (isSpeaking) {
@@ -40,6 +49,7 @@ function TextToSpeech(props) {
   const handleConvert = () => {
     stopSpeech();
     setConvertedText(inputText.trim());
+    setConvertClick((prev) => prev + 1);
   };
 
   useEffect(() => {
