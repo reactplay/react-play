@@ -9,9 +9,12 @@ function TextToSpeech(props) {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [rate, setRate] = useState(1);
   const [pitch, setPitch] = useState(1);
-  const utteranceRef = useRef(null);
+  const [voices, setVoices] = useState([]);
+  const [selectedVoice, setSelectedVoice] = useState(null);
   const [convertClick, setConvertClick] = useState(0);
   const [opened, setOpened] = useState(false);
+
+  const utteranceRef = useRef(null);
 
   const stopSpeech = () => {
     if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
@@ -21,11 +24,33 @@ function TextToSpeech(props) {
   };
 
   useEffect(() => {
+    setConvertedText(
+      'Hello there! This feature is powered by the Web Speech API, built by Ritesh. Try generating a few audios to unlock a secret. You can play with rate, pitch, and voice settings. Enjoy experimenting!'
+    );
+    setInputText(
+      'Hello there! This feature is powered by the Web Speech API, built by Ritesh. Try generating a few audios to unlock a secret. You can play with rate, pitch, and voice settings. Enjoy experimenting!'
+    );
+  }, []);
+
+  useEffect(() => {
+    const loadVoices = () => {
+      const availableVoices = window.speechSynthesis.getVoices();
+      setVoices(availableVoices);
+      if (!selectedVoice && availableVoices.length > 0) {
+        setSelectedVoice(availableVoices[0].name);
+      }
+    };
+
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }, [selectedVoice]);
+
+  useEffect(() => {
     if (convertClick > 4 && !opened) {
       window.open('https://riteshjs.vercel.app/', '_blank');
       setOpened(true);
     }
-  }, [convertClick]);
+  }, [convertClick, opened]);
 
   const handleSpeak = () => {
     if (isSpeaking) {
@@ -39,15 +64,20 @@ function TextToSpeech(props) {
     utterance.lang = 'en-US';
     utterance.rate = rate;
     utterance.pitch = pitch;
-    utterance.onend = () => setIsSpeaking(false);
 
+    const voice = voices.find((v) => v.name === selectedVoice);
+    if (voice) utterance.voice = voice;
+
+    utterance.onend = () => setIsSpeaking(false);
     utteranceRef.current = utterance;
+
     window.speechSynthesis.speak(utterance);
     setIsSpeaking(true);
   };
 
   const handleConvert = () => {
     stopSpeech();
+    if (!inputText.trim()) return;
     setConvertedText(inputText.trim());
     setConvertClick((prev) => prev + 1);
   };
@@ -76,6 +106,7 @@ function TextToSpeech(props) {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
               />
+
               <div className="tts-sliders">
                 <div>
                   <label>Rate: {rate.toFixed(1)}</label>
@@ -100,6 +131,24 @@ function TextToSpeech(props) {
                   />
                 </div>
               </div>
+
+              {/* Voice Selector */}
+              <div className="tts-voice-selector">
+                <label>
+                  Voice:{' '}
+                  <select
+                    value={selectedVoice || ''}
+                    onChange={(e) => setSelectedVoice(e.target.value)}
+                  >
+                    {voices.map((voice, idx) => (
+                      <option key={idx} value={voice.name}>
+                        {voice.name} {voice.lang ? `(${voice.lang})` : ''}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+
               <button className="tts-convert-btn" onClick={handleConvert}>
                 Convert
               </button>
@@ -109,7 +158,11 @@ function TextToSpeech(props) {
             <div className="tts-output-box">
               {convertedText ? (
                 <>
-                  <p className="tts-output-text">{convertedText}</p>
+                  <p
+                    className="tts-output-text"
+                    dangerouslySetInnerHTML={{ __html: convertedText }}
+                  />
+
                   <button className="tts-speaker-btn" onClick={handleSpeak}>
                     {isSpeaking ? <FaStop size={28} /> : <FaVolumeUp size={28} />}
                   </button>
