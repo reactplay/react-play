@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './select.css';
 import SelectionSortVisualizer from './SelectionSortVisualizer';
 
 function App() {
