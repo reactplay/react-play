@@ -1,8 +1,8 @@
 name: Label Hacktoberfest PRs
 
 on:
-  pull_request_target:
-    types: [opened, reopened, edited]
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
 
 permissions:
   pull-requests: write
@@ -14,10 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out PR code (safe)
+      - name: Check out the repository
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Get linked issue number from PR body
         id: issue-number
