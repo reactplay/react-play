@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './components/App';
-import HomePage from './components/HomePage';
+import HomePage from './components/MainPage';
 import LinkedinPage from './components/Linkedin/LinkedinPage';
 import ZoomPage from './components/Zoom/ZoomPage';
 
