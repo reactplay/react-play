@@ -842,17 +842,18 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 2px solid #757575;
+  border: 2px solid #efefef;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
-  width: 300px;
-  height: 100%;
+  width: 350px;
+  /* height: 100%; */
   padding: 12px;
 }
 
 .play-card-container:hover {
-  transform: scale(105%);
+  transform: scale(103%);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -881,9 +882,9 @@
   font-weight: 200;
 }
 .card-header {
-  font-size: 18px;
-  padding: 10px;
-  text-align: center;
+  font-size: 15px;
+  padding: 10px 0px;
+  text-align: start;
 }
 
 .img {
@@ -959,4 +960,13 @@
 
 .play-card-container:hover .lang-icon {
   filter: none;
+}
+
+/* Line clamp utility for text truncation */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

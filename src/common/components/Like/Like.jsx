@@ -8,10 +8,14 @@ const Like = ({ onLikeClick, likeObj }) => {
   };
 
   return (
-    <button className="action counted -mr-0.5" onClick={likeClickHandler}>
-      <AiOutlineLike className={liked ? 'hidden' : 'icon'} size="24px" />
-      <AiFillLike className={liked ? 'icon' : 'hidden'} size="24px" />
-      {number > 0 ? <div className="count-value">{number}</div> : <div />}
+    <button
+      className="inline-flex items-center gap-1 -mr-0.5"
+      type="button"
+      onClick={likeClickHandler}
+    >
+      <AiOutlineLike className={liked ? 'hidden' : 'icon'} size={24} />
+      <AiFillLike className={liked ? 'icon' : 'hidden'} size={24} />
+      {number > 0 && <span className="text-sm leading-none align-middle">{number}</span>}
     </button>
   );
 };
