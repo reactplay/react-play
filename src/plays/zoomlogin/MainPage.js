@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './components/App';
-import HomePage from '../../common/home/Home';
+import HomePage from './components/MainPage'; 
 import ZoomPage from './components/Zoom/ZoomPage';
 
 export function MainPage() {
