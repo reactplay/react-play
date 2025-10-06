@@ -59,7 +59,7 @@ const useCalcalulatorByTeaHook = () => {
   }
 
   function onInputRecived(expression: string) {
-    if (expression.match(/^(?:[0-9]+[-+*/]?)*[0-9]*$/)) {
+    if (expression.match(/^(?:[0-9]+[-+*/])*[0-9]*$/)) {
       setCalculationExpression(expression);
     }
   }
