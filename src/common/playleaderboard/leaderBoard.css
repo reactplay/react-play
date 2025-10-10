@@ -5,11 +5,12 @@
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 5px 2rem 1rem 2rem;
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
     0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
-    var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .leaderboard-table-cell {
@@ -24,6 +25,8 @@
 .leaderboard-heading {
   font-family: var(--ff-accent);
   font-size: 32px !important;
+  text-align: center;
+  margin-bottom: 12px;
 }
 
 .leaderboard-text {
@@ -36,4 +39,41 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+/* Trophy colors */
+.gold-trophy {
+  color: #ffd700;
+}
+.silver-trophy {
+  color: #c0c0c0;
+}
+.bronze-trophy {
+  color: #cd7f32;
+}
+
+/* Highlight top 3 rows */
+.rank-1 {
+  background: rgba(255, 215, 0, 0.15);
+  font-weight: bold;
+}
+.rank-2 {
+  background: rgba(192, 192, 192, 0.15);
+}
+.rank-3 {
+  background: rgba(205, 127, 50, 0.15);
+}
+
+/* Avatar borders */
+.rank-avatar {
+  border: 2px solid transparent;
+}
+.rank-1 .rank-avatar {
+  border-color: #ffd700;
+}
+.rank-2 .rank-avatar {
+  border-color: #c0c0c0;
+}
+.rank-3 .rank-avatar {
+  border-color: #cd7f32;
 }
