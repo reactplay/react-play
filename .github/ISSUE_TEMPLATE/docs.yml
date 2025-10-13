@@ -9,14 +9,24 @@ labels:
     "good first issue"
   ]
 body:
+  - type: checkboxes
+    id: read-guidelines
+    attributes:
+      label: Contributor Guidelines
+      description: Please confirm that you have read the [Contributor Guidelines and Discussion](https://github.com/reactplay/react-play/discussions/1598) before submitting this issue or PR.
+      options:
+        - label: I have read the guidelines and discussion
+          required: true
+
   - type: textarea
     id: improve-docs
     attributes:
-      label: what's wrong with the documentation?
-      description: which things do we need to add?
+      label: What's wrong with the documentation?
+      description: Which things do we need to add?
       placeholder: Add description
     validations:
       required: true
+
   - type: textarea
     id: screenshots
     attributes:
@@ -25,6 +35,7 @@ body:
       placeholder: Add screenshots
     validations:
       required: true
+
   - type: checkboxes
     id: terms
     attributes:
