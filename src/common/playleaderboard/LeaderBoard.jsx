@@ -78,7 +78,6 @@ const LeaderBoard = () => {
           <div className="flex flex-col m-4 items-center">
             {publishedPlays && top10Contributors && (
               <>
-                <div className="leaderboard-heading">Top play creators of all time</div>
                 <div>
                   <TopPlayCreators topPlayCreators={top10Contributors} />
                 </div>
