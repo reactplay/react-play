@@ -1,0 +1,8 @@
+/* DJ Motion Card styles */
+
+/* Tailwind classes handle most of the styling. */
+
+.backface-hidden {
+  backface-visibility: hidden !important;
+  transform-style: preserve-3d;
+}

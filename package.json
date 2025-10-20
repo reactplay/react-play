@@ -26,6 +26,7 @@
     "downloadjs": "^1.4.7",
     "file-saver": "^2.0.5",
     "firebase": "9.9.0",
+    "framer-motion": "^11.18.2",
     "git-repo-api": "^0.0.17",
     "graphql": "^16.8.1",
     "highlight.js": "^11.9.0",
