@@ -1,7 +1,7 @@
-.conatiner {
-  display: 'flex';
-  flex-direction: 'column';
-  width: 'inherit';
+.container {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
 }
 
 .heading {
@@ -12,10 +12,12 @@
 
 .row {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 2rem;
-  justify-content: space-between;
   padding: 0 2rem;
   width: 100%;
+  margin-top: 4rem;
 }
 
 .list-brand-tech-stack {
@@ -23,24 +25,24 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 1rem auto 4rem auto;
+  margin: 0;
   max-width: 1280px;
   box-sizing: border-box;
-  grid-gap: 2rem;
-  justify-content: left;
-  flex: 2;
+  gap: 2rem;
+  justify-content: flex-start;
+  flex: 3;
 }
 
 .brand-tech-stack {
   display: flex;
   flex-direction: column;
-  grid-gap: 0.4rem;
+  gap: 0.4rem;
   background-color: var(--color-neutral-10);
   justify-content: center;
   align-items: center;
   width: var(--techstack-cardsize);
   height: var(--techstack-cardsize);
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   border: solid 0.2rem var(--color-neutral-30);
   box-sizing: border-box;
@@ -50,6 +52,9 @@
 .tech-brand-name {
   flex: 1;
   text-align: left;
+  margin: 0;
+  min-width: 200px;
+  font-size: 2rem;
 }
 
 .brand-tech-stack .icon {
@@ -84,20 +89,95 @@
   filter: invert(7%) sepia(35%) saturate(2866%) hue-rotate(212deg) brightness(95%) contrast(115%);
 }
 
+@media screen and (max-width: 1024px) {
+  .heading {
+    font-size: 2.5rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .row {
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .list-brand-tech-stack {
+    --techstack-cardsize: 140px;
+    gap: 1.5rem;
+  }
+
+  .brand-tech-stack {
+    padding: 0.4rem;
+  }
+
+  .brand-tech-stack .image {
+    max-height: 5rem;
+    max-width: 5rem;
+    padding: 0.4rem;
+  }
+
+  .tech-brand-name {
+    min-width: 180px;
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 0 1rem;
+    margin-top: 2rem;
+  }
+
+  .tech-brand-name {
+    text-align: center;
+    min-width: auto;
+    margin-bottom: 1rem;
+  }
+
+  .list-brand-tech-stack {
+    --techstack-cardsize: 130px;
+    justify-content: center;
+    gap: 1.5rem;
+    flex: none;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .heading {
     font-size: 2rem;
-    padding: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .row {
+    padding: 0 0.5rem;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
   }
 
   .list-brand-tech-stack {
     --techstack-cardsize: 120px;
-    flex: 1;
+    gap: 1rem;
+  }
+
+  .brand-tech-stack {
+    padding: 0.3rem;
+    gap: 0.3rem;
+  }
+
+  .brand-tech-stack .icon {
+    padding: 0.3rem;
   }
 
   .brand-tech-stack .image {
-    object-fit: contain;
     max-height: 4rem;
     max-width: 4rem;
+    padding: 0.3rem;
+  }
+
+  .tech-brand-name {
+    font-size: 1.5rem;
   }
 }
