@@ -90,20 +90,16 @@ Please change the directory after cloning the repository using the `cd <folder-n
 
 > **Note:** Please do not remove the `.env.development` file from the root folder. It contains all the environment variables required for development.
 
+
 ### ⬇️ Install Dependencies
 
 Next, install the dependencies by running the following command in the `react-play` repo. we recommend using `yarn` but you can install using `npm` too
 
 ```bash
-yarn install
-```
+yarn install    
+pnpm install    # Recommanded for 
 
-Or
-```
-npm install
-```
 
-if you don't have `yarn` installed on your PC, follow the steps below to install it..
 
 **Windows**
 1. open your command prompt as administrator.
