@@ -9,7 +9,6 @@
 - It comes with a bunch of features with a seamless User Experience and an elegant design for both mobile and desktop.
 
 - The following are the features of the tool:
-
   - You can easily play, pause , and shuffle your lo-fi tracks, and adjust the volume or mute the audio with just one click.
 
   - You can set the timer in three fixed tabs - Rest, Work and Focus , or even set a custom timer to fit your specific needs. Once you turn on the timer, you can see it in the title of your browser tab.
@@ -48,5 +47,4 @@
 ## Resources
 
 - Have installed one node module for implementing the download feature:
-
   - `redux-toolkit` module

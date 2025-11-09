@@ -283,8 +283,8 @@
 
 .header-links > li > .app-header-btn.app-header-btn--secondary:hover,
 .header-links > li > .app-header-btn.app-header-btn--secondary:focus {
-border-color: var(--color-brand-primary);
-background-color: var(--color-neutral-10);
+  border-color: var(--color-brand-primary);
+  background-color: var(--color-neutral-10);
 }
 
 .header-links > li > .app-header-btn.app-header-btn--secondary {

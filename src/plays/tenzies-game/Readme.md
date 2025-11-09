@@ -23,7 +23,6 @@ Tenzies is a dice roll game where you have to roll the dice until all dice are t
 - The implementation is quite simple. In this project, I use simple react concepts like `useState`, `useEffect`, `onClick` etc...
 
 - There are basically two main components:
-
   - `Dice`: As the name suggests it is 10 dice box components that shows the number Between `1` to `6`.
   - `Main`: It is responsible for rendering dice components and handle all function Which is use to run the Game.
 

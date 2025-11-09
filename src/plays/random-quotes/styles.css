@@ -1,0 +1,152 @@
+/* General layout */
+.rq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.rq-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  color: #f9fafb;
+}
+
+/* Control section */
+.rq-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.rq-select {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.rq-select:hover {
+  background: #f8fafc;
+}
+
+.rq-btn {
+  background: #ffffff;
+  color: #333;
+  padding: 0.7rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.rq-btn:hover {
+  background: #4f46e5;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.rq-speak {
+  background: #22c55e;
+  color: #fff;
+}
+
+.rq-speak:hover {
+  background: #16a34a;
+}
+
+/* Quote display */
+.rq-quote-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.6s ease;
+}
+
+.rq-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #fefefe;
+  transition: 0.3s;
+}
+
+.rq-author {
+  font-size: 1.1rem;
+  color: #d1d5db;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Loading text */
+.rq-loading {
+  font-size: 1.2rem;
+  color: #f9fafb;
+  font-style: italic;
+}
+
+/* Subtle fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .rq-container {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .rq-title {
+    font-size: 1.6rem;
+  }
+
+  .rq-text {
+    font-size: 1.1rem;
+  }
+
+  .rq-controls {
+    flex-direction: column;
+  }
+
+  .rq-btn,
+  .rq-select {
+    width: 100%;
+    text-align: center;
+  }
+}

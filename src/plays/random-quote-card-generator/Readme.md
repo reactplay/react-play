@@ -7,7 +7,6 @@
 - This tool can be used in real life for social media posts/stories.
 
 - Customizations available:
-
   - Editing the background color of container from the available gradients
   - Editing the Quote Card color (Dark/Light)
   - Changing the aspect ratio ( 2 options available):

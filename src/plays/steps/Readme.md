@@ -12,7 +12,7 @@ A web app with “next” and “previous” navigation buttons, where the “ne
 - User: aaqib605
 - Gihub Link: https://github.com/aaqib605
 - Blog: https://hashnode.com/@aaqib605
-- Video: 
+- Video:
 
 ## Implementation Details
 

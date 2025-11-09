@@ -13,8 +13,8 @@
   gap: 0.75rem;
   margin-bottom: 1.25rem;
 }
-.play-description{
-    text-align: center;
+.play-description {
+  text-align: center;
 }
 
 .todo-form input {
@@ -24,7 +24,9 @@
   border: 1px solid #cbd5f5;
   border-radius: 12px;
   background: #ffffff;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .todo-form input:focus {
@@ -41,7 +43,9 @@
   background: #6366f1;
   color: #f8fafc;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
 }
 
 .todo-form button:hover {
@@ -99,7 +103,10 @@
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border 0.2s ease;
 }
 
 .todo-filters button.active {
@@ -144,7 +151,9 @@
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 4px 15px -12px rgba(15, 23, 42, 0.5);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .todo-item:hover {
@@ -192,7 +201,10 @@
   cursor: pointer;
   padding: 0.35rem 0.65rem;
   border-radius: 8px;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
 }
 
 .todo-item-actions button:hover {
@@ -211,7 +223,9 @@
   border: 1px solid #cbd5f5;
   background: #ffffff;
   font-size: 0.95rem;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .todo-edit-input:focus {
@@ -221,7 +235,8 @@
 }
 
 .todo-item.editing {
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.18),
+  box-shadow:
+    0 0 0 2px rgba(99, 102, 241, 0.18),
     0 18px 30px -22px rgba(15, 23, 42, 0.55);
 }
 

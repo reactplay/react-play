@@ -11,8 +11,8 @@ A productivity-focused Todo app built with React + TypeScript. Capture tasks, ke
 
 - User: efebaslilar
 - Gihub Link: https://github.com/efebaslilar
-- Blog: 
-- Video: 
+- Blog:
+- Video:
 
 ## Implementation Details
 

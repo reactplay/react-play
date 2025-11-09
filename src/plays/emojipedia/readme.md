@@ -26,7 +26,6 @@ Emojipedia is a fun project play where users can search for any emojis and can c
 - The implementation is quite simple. In this project, I've used [Open Emoji API](https://emoji-api.com/).
 
 - There are basically three main components:
-
   - `Emojipedia`: As the name suggests it is an entry point of the project.
   - `EmojiCard`: It is responsible for rendering Emoji characters and their Unicode name in the card format.
   - `SkeletonCard`: This component is an animated placeholder that simulates the layout of a page while data is being loaded.

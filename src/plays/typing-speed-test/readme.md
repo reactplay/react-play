@@ -52,7 +52,6 @@ The implementation of the Typing Speed Test project is quite simple.
 
 - Additionally, there is a `ResultModal` component that opens when the time is up or the user finishes typing all the words. This modal renders the statistics of the typing session, providing a summary of the user’s performance.
 
-
 ## Contributing
 
 First of all thanks for wanting to contribute! To start contributing to this play, please go through the [Contribution guidelines of ReactPlay](https://github.com/reactplay/react-play/blob/main/CONTRIBUTING.md).
