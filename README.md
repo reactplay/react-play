@@ -92,7 +92,7 @@ Please change the directory after cloning the repository using the `cd <folder-n
 
 ### ⬇️ Install Dependencies
 
-Next, install the dependencies by running the following command in the `react-play` repo. we recommend using `yarn` but you can install using `npm` too
+Next, install the dependencies by running the following command in the `react-play` repo. We recommend using `yarn`, but you can install using `npm` too.
 
 ```bash
 yarn install
@@ -103,7 +103,7 @@ Or
 npm install
 ```
 
-if you don't have `yarn` installed on your PC, follow the steps below to install it..
+If you don't have `yarn` installed on your PC, follow the steps below to install it.
 
 **Windows**
 1. open your command prompt as administrator.
@@ -191,7 +191,7 @@ yarn build
 ```
 OR
 ```
-npm build
+npm run build
 ```
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
