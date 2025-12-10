@@ -3,7 +3,7 @@
 // The "list" slice is handled by the default export from ../reducer/index.jsx
 
 import { configureStore } from '@reduxjs/toolkit';
-import index from '../reducer/index.jsx';
+import index from '../Reducer/index.jsx';
 
 export const store = configureStore({
   reducer: {

@@ -23,9 +23,6 @@ const reduxReducer = createSlice({
 
       // Spread the payload into state (works if payload is an array).
       state.push(...item);
-
-      // Persist basket items to localStorage so they survive page reloads.
-      localStorage.setItem('BasketItems', JSON.stringify(state));
     },
 
     // removeItem: removes an item by id.
