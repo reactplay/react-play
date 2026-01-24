@@ -9,7 +9,7 @@ import userImage from 'images/user.png';
 const formatDate = (dateString) => dateString || '';
 
 function PlayCard({ play, cover, likeObject }) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded] = useState(false);
   if (!play || !play.github || !play.slug) return null;
 
   const avatarSrc =

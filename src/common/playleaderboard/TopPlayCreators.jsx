@@ -14,7 +14,7 @@ const TopPlayCreators = ({ topPlayCreators }) => {
   const secondPlace = topPlayCreators.length > 1 ? topPlayCreators[1] : null;
   const thirdPlace = topPlayCreators.length > 2 ? topPlayCreators[2] : null;
 
-  const renderRankIcon = (rank) => {
+  const renderRankIcon = () => {
     return <TagRoundedIcon className="rank-icon rank-same" />;
   };
 
