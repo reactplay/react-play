@@ -31,7 +31,7 @@
 </p>
 
 <p align="center">
-    <a href="https://reactplay.io" target="blank">View Demo</a>
+    <a href="https://reactplay.io" target="blank"> View Demo </a>
     ·
     <a href="https://github.com/reactplay/react-play/issues/new/choose">Report Bug</a>
     ·
