@@ -4,7 +4,6 @@ import RequestPanel from './components/RequestPanel';
 import ResponsePanel from './components/ResponsePanel';
 import HistoryPanel from './components/HistoryPanel';
 import './styles.css';
-
 function ApiRequestBuilder(props) {
   const [method, setMethod] = useState('GET');
   const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/posts/1');
