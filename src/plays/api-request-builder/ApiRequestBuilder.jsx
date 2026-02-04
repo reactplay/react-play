@@ -102,7 +102,7 @@ function ApiRequestBuilder(props) {
 
       let responseData;
       const contentType = response.headers.get('content-type');
-      
+
       if (contentType && contentType.includes('application/json')) {
         responseData = await response.json();
       } else {
