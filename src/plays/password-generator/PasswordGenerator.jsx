@@ -72,7 +72,11 @@ function PasswordGenerator(props) {
   const onCopyClick = (e) => {
     e.preventDefault();
     navigator.clipboard.writeText(password.password);
-    setPassword({ ...password, status: true });
+    setPassword((prev) => ({ ...prev, status: true }));
+
+    setTimeout(() => {
+      setPassword((prev) => ({ ...prev, status: false }));
+    }, 1500);
   };
 
   const ErrorBox = () => {
@@ -109,8 +113,14 @@ function PasswordGenerator(props) {
           <h1 className="title">Password Generator</h1>
           {error && <ErrorBox />}
           <div className="inputfield">
-            <input disabled readOnly className="text" type="text" value={password.password} />
-            <button className="copy copybtn" onClick={onCopyClick}>
+            <input
+              disabled
+              readOnly
+              className={`text ${password.status ? 'copied' : ''}`}
+              type="text"
+              value={password.password}
+            />
+            <button className="copy copybtn" disabled={password.status} onClick={onCopyClick}>
               {password?.status ? 'Copied' : 'Copy'}
             </button>
           </div>
