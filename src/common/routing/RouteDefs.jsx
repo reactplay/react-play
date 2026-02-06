@@ -17,6 +17,7 @@ import PlayList from 'common/playlists/PlayList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NhostClient, NhostReactProvider } from '@nhost/react';
 import BadgesDashboard from 'common/badges-dashboard';
+import { SvgOptimizer } from 'plays';
 
 const nhost = new NhostClient({
   subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN || '',
@@ -52,6 +53,9 @@ const RouteDefs = () => {
             <Route exact element={<CreatePlay />} path="create" />
             {process.env.NODE_ENV === 'development' && (
               <Route exact element={<PlayCreated />} path="created/:playid" />
+            )}
+            {process.env.NODE_ENV === 'development' && (
+              <Route exact element={<SvgOptimizer />} path="svg-optimizer" />
             )}
             <Route exact idex element={<PlayMeta />} path=":username">
               <Route exact element={<PlayMeta />} path=":playname">

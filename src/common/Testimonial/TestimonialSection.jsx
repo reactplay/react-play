@@ -18,8 +18,14 @@ function TestimonialSection() {
   const [testimonials, setTestimonials] = useState([]);
 
   const fetchTestimonials = async () => {
-    const res = await submit(fetchTestimonialsHomePage());
-    setTestimonials(res);
+    try {
+      const res = await submit(fetchTestimonialsHomePage());
+      setTestimonials(res);
+    } catch (error) {
+      console.warn('Failed to load testimonials:', error);
+      // Set empty array as fallback
+      setTestimonials([]);
+    }
   };
 
   useEffect(() => {
@@ -58,16 +64,18 @@ function TestimonialSection() {
           spaceBetween={10}
         >
           {testimonials &&
+            Array.isArray(testimonials) &&
+            testimonials.length > 0 &&
             testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id}>
                 <div className="rounded-lg border-2 border-gray-400 shadow-lg">
                   <TestimonialCard
                     home
-                    avatarUrl={testimonial.user_id_map.avatarUrl}
-                    category={testimonial.testimonials_event.name}
+                    avatarUrl={testimonial.user_id_map?.avatarUrl}
+                    category={testimonial.testimonials_event?.name}
                     created_at={testimonial.created_at}
-                    email={testimonial.user_id_map.email}
-                    name={testimonial.user_id_map.displayName}
+                    email={testimonial.user_id_map?.email}
+                    name={testimonial.user_id_map?.displayName}
                     quote={testimonial.quote}
                     title={testimonial.title}
                   />
