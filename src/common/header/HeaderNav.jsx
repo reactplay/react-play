@@ -121,8 +121,16 @@ const HeaderNav = ({ showBrowse }) => {
       >
         <span className="navbar-toggler-icon" />
       </button>
-      <div className={showToggleMenu ? 'navbar-collapse show' : 'navbar-collapse'}>
-        <ul className="header-links" data-testid="header-links-container">
+      <div
+        className={showToggleMenu ? 'navbar-collapse show' : 'navbar-collapse'}
+        role="presentation"
+        onClick={() => setShowToggleMenu(false)}
+      >
+        <ul
+          className="header-links"
+          data-testid="header-links-container"
+          onClick={(e) => e.stopPropagation()}
+        >
           <li className="menu-closer">
             <button
               className="navbar-closer"
