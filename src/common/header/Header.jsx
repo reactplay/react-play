@@ -1,5 +1,5 @@
 import HeaderNav from './HeaderNav';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Countdown from 'react-countdown';
 import './header.css';
@@ -10,6 +10,34 @@ const Header = () => {
   const pathName = location.pathname;
 
   const [reset, setReset] = useState({ search: false, filter: false });
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const current = window.scrollY;
+
+      const hero = document.getElementById('hero');
+      const heroHeight = hero ? hero.offsetHeight : 0;
+
+      // if inside hero → always visible
+      if (current < heroHeight) {
+        setVisible(true);
+      } else {
+        if (current > lastScrollY.current) {
+          setVisible(false); // down
+        } else {
+          setVisible(true); // up
+        }
+      }
+
+      lastScrollY.current = current;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (location.state) {
@@ -100,7 +128,7 @@ const Header = () => {
         <Countdown date={new Date(1675209600000)} renderer={activityTimerRenderer} />
       )}
       <header
-        className={`app-header ${
+        className={`app-header ${visible ? 'nav-visible' : 'nav-hidden'} ${
           showHideBits.setHeaderStyle
             ? ''
             : ` app-header-home ${
