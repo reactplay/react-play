@@ -1,3 +1,12 @@
+[build]
+command = "npm run build"
+publish = "build"
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

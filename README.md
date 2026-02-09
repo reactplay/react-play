@@ -88,7 +88,7 @@ Once forked, you can clone the repo by clicking the `Clone or Download` button o
 
 Please change the directory after cloning the repository using the `cd <folder-name>` command.
 
-> **Note:** Please do not remove the `.env.development` file from the root folder. It contains all the environment variables required for development.
+> **Note:** Copy `.env.example` to `.env.development` and add your API keys. The `.env.development` file is git-ignored to keep secrets secure.
 
 ### ⬇️ Install Dependencies
 

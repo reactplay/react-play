@@ -1,5 +1,5 @@
 import HeaderNav from './HeaderNav';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Countdown from 'react-countdown';
 import './header.css';
@@ -10,6 +10,50 @@ const Header = () => {
   const pathName = location.pathname;
 
   const [reset, setReset] = useState({ search: false, filter: false });
+  const [showNav, setShowNav] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const current = window.scrollY;
+
+      const hero = document.getElementById('hero');
+
+      if (hero) {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        const headerHeight = 64; // your navbar height
+
+        const banner = document.querySelector('.activity-timer-banner');
+        const bannerHeight = banner?.offsetHeight || 0;
+
+        if (heroBottom > headerHeight + bannerHeight) {
+          setShowNav(true);
+          lastScrollY.current = current;
+
+          return;
+        }
+      }
+
+      // after hero → direction based (with threshold)
+      const SCROLL_THRESHOLD = 20;
+      const diff = Math.abs(current - lastScrollY.current);
+
+      // ignore tiny scrolls
+      if (diff < SCROLL_THRESHOLD) return;
+
+      if (current > lastScrollY.current) {
+        setShowNav(false); // down
+      } else {
+        setShowNav(true); // up
+      }
+
+      lastScrollY.current = current;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (location.state) {
@@ -95,7 +139,7 @@ const Header = () => {
   };
 
   return (
-    <>
+    <div className={`nav-wrapper ${showNav ? 'nav--visible' : 'nav--hidden'}`}>
       {process.env.REACT_APP_ACTIVITIES_ON === 'true' && showHideBits.showActivityTimer && (
         <Countdown date={new Date(1675209600000)} renderer={activityTimerRenderer} />
       )}
@@ -122,7 +166,7 @@ const Header = () => {
 
         <HeaderNav showBrowse={showHideBits.showBrowse} />
       </header>
-    </>
+    </div>
   );
 };
 
