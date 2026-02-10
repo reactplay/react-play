@@ -12,7 +12,7 @@ import DefaultBanner from 'common/defaultBanner/DefaultBanner';
 const Home = () => {
   return (
     <main>
-      <section className="app-home-body">
+      <section className="app-home-body" id="hero">
         <DefaultBanner />
       </section>
       <section className="home-features">
