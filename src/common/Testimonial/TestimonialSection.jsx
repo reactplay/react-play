@@ -31,6 +31,7 @@ function TestimonialSection() {
       <div className="mx-5 lg:mx-20 h-72 mt-16 sm:mt-20">
         <Swiper
           rewind
+          grabCursor
           autoplay={{
             delay: 2500,
             disableOnInteraction: false
@@ -56,6 +57,7 @@ function TestimonialSection() {
           }}
           slidesPerView={1}
           spaceBetween={10}
+          touchEventsTarget="container"
         >
           {testimonials &&
             testimonials.map((testimonial) => (
