@@ -29,7 +29,12 @@
 }
 
 .nav--visible {
-  transform: translateY(0);
+  transform: none;
+}
+
+/* Push page content below the fixed header, but not the footer */
+.nav-wrapper ~ *:not(footer) {
+  padding-top: 64px;
 }
 
 
