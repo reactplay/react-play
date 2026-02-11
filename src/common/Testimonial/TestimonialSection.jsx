@@ -18,8 +18,13 @@ function TestimonialSection() {
   const [testimonials, setTestimonials] = useState([]);
 
   const fetchTestimonials = async () => {
-    const res = await submit(fetchTestimonialsHomePage());
-    setTestimonials(res);
+    try {
+      const res = await submit(fetchTestimonialsHomePage());
+      setTestimonials(res || []);
+    } catch (error) {
+      console.warn('Failed to fetch testimonials:', error.message);
+      setTestimonials([]);
+    }
   };
 
   useEffect(() => {
@@ -30,8 +35,8 @@ function TestimonialSection() {
     <>
       <div className="mx-5 lg:mx-20 h-72 mt-16 sm:mt-20">
         <Swiper
-          rewind
           grabCursor
+          rewind
           autoplay={{
             delay: 2500,
             disableOnInteraction: false
