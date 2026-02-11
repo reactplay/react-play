@@ -16,8 +16,8 @@ function OptimizationPanel({ options, onChange }) {
         <label className="svg-option-item">
           <input
             checked={options.removeComments}
-            onChange={() => handleToggle('removeComments')}
             type="checkbox"
+            onChange={() => handleToggle('removeComments')}
           />
           <span>Remove Comments</span>
         </label>
@@ -25,8 +25,8 @@ function OptimizationPanel({ options, onChange }) {
         <label className="svg-option-item">
           <input
             checked={options.removeMetadata}
-            onChange={() => handleToggle('removeMetadata')}
             type="checkbox"
+            onChange={() => handleToggle('removeMetadata')}
           />
           <span>Remove Metadata</span>
         </label>
@@ -34,8 +34,8 @@ function OptimizationPanel({ options, onChange }) {
         <label className="svg-option-item">
           <input
             checked={options.removeHiddenElements}
-            onChange={() => handleToggle('removeHiddenElements')}
             type="checkbox"
+            onChange={() => handleToggle('removeHiddenElements')}
           />
           <span>Remove Hidden Elements</span>
         </label>
@@ -43,8 +43,8 @@ function OptimizationPanel({ options, onChange }) {
         <label className="svg-option-item">
           <input
             checked={options.removeEmptyAttributes}
-            onChange={() => handleToggle('removeEmptyAttributes')}
             type="checkbox"
+            onChange={() => handleToggle('removeEmptyAttributes')}
           />
           <span>Remove Empty Attributes</span>
         </label>
@@ -52,8 +52,8 @@ function OptimizationPanel({ options, onChange }) {
         <label className="svg-option-item">
           <input
             checked={options.minifyColors}
-            onChange={() => handleToggle('minifyColors')}
             type="checkbox"
+            onChange={() => handleToggle('minifyColors')}
           />
           <span>Minify Colors</span>
         </label>
@@ -61,8 +61,8 @@ function OptimizationPanel({ options, onChange }) {
         <label className="svg-option-item">
           <input
             checked={options.removeDefaultAttributes}
-            onChange={() => handleToggle('removeDefaultAttributes')}
             type="checkbox"
+            onChange={() => handleToggle('removeDefaultAttributes')}
           />
           <span>Remove Default Values</span>
         </label>
@@ -70,8 +70,8 @@ function OptimizationPanel({ options, onChange }) {
         <label className="svg-option-item">
           <input
             checked={options.removeXMLNS}
-            onChange={() => handleToggle('removeXMLNS')}
             type="checkbox"
+            onChange={() => handleToggle('removeXMLNS')}
           />
           <span>Remove XMLNS</span>
         </label>
@@ -79,8 +79,8 @@ function OptimizationPanel({ options, onChange }) {
         <label className="svg-option-item">
           <input
             checked={options.prettify}
-            onChange={() => handleToggle('prettify')}
             type="checkbox"
+            onChange={() => handleToggle('prettify')}
           />
           <span>Prettify Output</span>
         </label>

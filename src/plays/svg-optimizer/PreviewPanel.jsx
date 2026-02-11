@@ -22,22 +22,22 @@ function PreviewPanel({ originalSvg, optimizedSvg }) {
         <div className="svg-preview-tabs">
           <button
             className={`svg-tab-btn ${activePreview === 'original' ? 'active' : ''}`}
-            onClick={() => setActivePreview('original')}
             type="button"
+            onClick={() => setActivePreview('original')}
           >
             Original
           </button>
           <button
             className={`svg-tab-btn ${activePreview === 'optimized' ? 'active' : ''}`}
-            onClick={() => setActivePreview('optimized')}
             type="button"
+            onClick={() => setActivePreview('optimized')}
           >
             Optimized
           </button>
           <button
             className={`svg-tab-btn ${activePreview === 'comparison' ? 'active' : ''}`}
-            onClick={() => setActivePreview('comparison')}
             type="button"
+            onClick={() => setActivePreview('comparison')}
           >
             Side by Side
           </button>

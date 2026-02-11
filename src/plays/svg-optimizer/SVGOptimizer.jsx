@@ -57,24 +57,29 @@ function SVGOptimizer(props) {
     return new Blob([str]).size;
   };
 
+
   const getPercentageReduction = () => {
     if (originalSize === 0) return 0;
+
     return (((originalSize - optimizedSize) / originalSize) * 100).toFixed(2);
   };
 
   const optimizeSVG = () => {
     try {
       setError('');
+
       let svg = svgInput.trim();
 
       if (!svg) {
         setOptimizedSvg('');
+
         return;
       }
 
       // Check if it's valid SVG
       if (!svg.includes('<svg')) {
         setError('Invalid SVG: Must contain an <svg> element');
+
         return;
       }
 
@@ -160,6 +165,7 @@ function SVGOptimizer(props) {
                 indentLevel++;
               }
             }
+
             return indented;
           })
           .join('\n');
@@ -186,6 +192,7 @@ function SVGOptimizer(props) {
       reader.onerror = () => {
         setError('Error reading file');
       };
+
       reader.readAsText(file);
     }
   };
@@ -237,28 +244,25 @@ function SVGOptimizer(props) {
             {error && <div className="svg-error-message">{error}</div>}
 
             <div className="svg-action-buttons">
-              <label htmlFor="file-upload" className="svg-btn svg-btn-secondary">
+              <label className="svg-btn svg-btn-secondary" htmlFor="file-upload">
                 <input
                   accept=".svg,image/svg+xml"
                   id="file-upload"
-                  onChange={handleFileUpload}
                   style={{ display: 'none' }}
                   type="file"
+                  onChange={handleFileUpload}
                 />
                 📁 Upload SVG
               </label>
-              <button className="svg-btn svg-btn-secondary" onClick={loadSample} type="button">
+              <button className="svg-btn svg-btn-secondary" type="button" onClick={loadSample}>
                 📋 Load Sample
               </button>
-              <button className="svg-btn svg-btn-secondary" onClick={clearAll} type="button">
+              <button className="svg-btn svg-btn-secondary" type="button" onClick={clearAll}>
                 🗑️ Clear All
               </button>
             </div>
 
-            <OptimizationPanel
-              onChange={setOptimizationOptions}
-              options={optimizationOptions}
-            />
+            <OptimizationPanel options={optimizationOptions} onChange={setOptimizationOptions} />
 
             <div className="svg-editor-grid">
               <div className="svg-editor-panel">
@@ -268,9 +272,9 @@ function SVGOptimizer(props) {
                 </div>
                 <textarea
                   className="svg-code-editor"
-                  onChange={(e) => setSvgInput(e.target.value)}
                   placeholder="Paste your SVG code here..."
                   value={svgInput}
+                  onChange={(e) => setSvgInput(e.target.value)}
                 />
               </div>
 
@@ -285,25 +289,25 @@ function SVGOptimizer(props) {
                   </span>
                 </div>
                 <textarea
-                  readOnly
                   className="svg-code-editor"
                   placeholder="Optimized SVG will appear here..."
+                  readOnly
                   value={optimizedSvg}
                 />
                 <div className="svg-output-actions">
                   <button
                     className="svg-btn svg-btn-primary"
                     disabled={!optimizedSvg}
-                    onClick={handleCopy}
                     type="button"
+                    onClick={handleCopy}
                   >
                     📋 Copy
                   </button>
                   <button
                     className="svg-btn svg-btn-primary"
                     disabled={!optimizedSvg}
-                    onClick={handleDownload}
                     type="button"
+                    onClick={handleDownload}
                   >
                     💾 Download
                   </button>
@@ -311,7 +315,7 @@ function SVGOptimizer(props) {
               </div>
             </div>
 
-            <PreviewPanel originalSvg={svgInput} optimizedSvg={optimizedSvg} />
+            <PreviewPanel optimizedSvg={optimizedSvg} originalSvg={svgInput} />
           </div>
         </div>
       </div>
