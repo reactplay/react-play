@@ -6,6 +6,7 @@ import TopPlayCreators from './TopPlayCreators';
 import { Watch } from 'react-loader-spinner';
 import { groupBy } from 'lodash';
 import { format, lastDayOfMonth } from 'date-fns';
+import './leaderBoard.css';
 
 const LeaderBoard = () => {
   const [top10Contributors, updateTop10Contributors] = useState([]);
@@ -69,7 +70,7 @@ const LeaderBoard = () => {
   }, [publishedPlays]);
 
   return (
-    <main className="app-body  app-body-overflow-hidden">
+    <main className="app-body">
       {publishedPlays.length && (topContributorOfTheMonth || top10Contributors) ? (
         <div className=" overflow-auto lg:flex flex-row justify-center">
           {topContributorOfTheMonth && (

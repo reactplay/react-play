@@ -38,6 +38,13 @@
     height: 100vh;
   } */
   
+.leaderboard-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 160px);
+}
+
 .leaderboard-wrapper {
     background-color: #ffffff;
     border-radius: 16px;

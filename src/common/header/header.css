@@ -1,8 +1,9 @@
 .app-header {
-  position: relative;
+  /* position: fixed;
   top: 0;
   right: 0;
-  left: 0;
+  left: 0; */
+  transition: transform 0.3s ease;
   z-index: 10;
   display: flex;
   justify-content: space-between;
@@ -14,6 +15,30 @@
   padding: 0 1rem 0 0.6rem;
 }
 
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.nav--hidden {
+  transform: translateY(-100%);
+}
+
+.nav--visible {
+  transform: none;
+}
+
+/* Push page content below the fixed header, but not the footer */
+.nav-wrapper ~ *:not(footer) {
+  padding-top: 64px;
+}
+
+
+
 @media screen and (max-width: 768px) {
   .app-header {
     padding: 0 1rem 0 0.2rem;
@@ -21,7 +46,7 @@
 }
 
 .app-header-home {
-  position: sticky;
+  /* position: sticky; */
 }
 
 .app-header-home.app-header-home--promo {

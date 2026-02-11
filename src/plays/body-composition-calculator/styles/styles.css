@@ -1,0 +1,107 @@
+/* Container for the entire calculator */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Heading */
+.container h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Form layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Labels */
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 4px;
+}
+
+/* Inputes and selects */
+.form input,
+.form select {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Focus state */
+.form input:focus,
+.form select:focus {
+  border-color: #007bff;
+}
+
+/* Result Container */
+.result-container {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+}
+
+/* Individual result rows */
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+/* Labels */
+.result-item .value {
+  font-weight: 600;
+}
+
+/* Values */
+.result-item .value {
+  font-weight: 600;
+}
+
+/* Hint Text */
+.hint {
+  font-size: 13px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.calculator-summary {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 18px;
+  line-height: 1.6;
+  background: #f4f7ff;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.calculator-title {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  cursor: default;
+  transition: all 0.25s ease;
+}
+
+.calculator-title:hover {
+  color: #2563eb;
+  transform: scale(1.03);
+}
