@@ -105,6 +105,11 @@
       "prettier --write"
     ]
   },
+  "pnpm": {
+    "overrides": {
+      "json-graphql-parser@0.1.9>axios": "^0.27.2"
+    }
+  },
   "reactSnap": {
     "puppeteerArgs": [
       "--no-sandbox",

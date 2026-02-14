@@ -1,0 +1,313 @@
+.svg-optimizer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    sans-serif;
+}
+
+.svg-optimizer-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.svg-optimizer-header h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.svg-optimizer-header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.svg-error-message {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  border-radius: 6px;
+  color: #c33;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.svg-action-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.svg-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.svg-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.svg-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.svg-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.svg-btn-secondary {
+  background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
+  color: #495057;
+}
+
+.svg-btn-secondary:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.svg-optimization-panel {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.svg-optimization-panel h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.svg-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.svg-option-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.svg-option-item:hover {
+  background: #e9ecef;
+}
+
+.svg-option-item input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.svg-option-item span {
+  font-size: 0.95rem;
+  color: #495057;
+}
+
+.svg-editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 968px) {
+  .svg-editor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.svg-editor-panel {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.svg-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.svg-panel-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.svg-size-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.svg-reduction {
+  color: #4ade80;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.svg-code-editor {
+  flex: 1;
+  min-height: 300px;
+  padding: 16px;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  resize: vertical;
+  background: #fafafa;
+  color: #2c3e50;
+}
+
+.svg-code-editor:focus {
+  outline: none;
+  background: white;
+}
+
+.svg-code-editor::placeholder {
+  color: #adb5bd;
+}
+
+.svg-output-actions {
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.svg-preview-section {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.svg-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.svg-preview-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.svg-preview-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.svg-tab-btn {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.svg-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.svg-tab-btn.active {
+  background: white;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.svg-preview-content {
+  padding: 20px;
+  min-height: 200px;
+  background: #fafafa;
+}
+
+.svg-preview-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  background: white;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.svg-preview-box h4 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.svg-preview-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .svg-preview-comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+.svg-preview-box > div {
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.svg-preview-box svg {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+}
+
+.svg-preview-placeholder {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+.svg-preview-error {
+  color: #e74c3c;
+  font-weight: 500;
+}
