@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function OptimizationPanel({ options, onChange }) {
   const handleToggle = (optionKey) => {
     onChange({

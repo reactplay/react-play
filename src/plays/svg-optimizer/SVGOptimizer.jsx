@@ -57,7 +57,6 @@ function SVGOptimizer(props) {
     return new Blob([str]).size;
   };
 
-
   const getPercentageReduction = () => {
     if (originalSize === 0) return 0;
 
@@ -183,6 +182,7 @@ function SVGOptimizer(props) {
     if (file) {
       if (file.type !== 'image/svg+xml' && !file.name.endsWith('.svg')) {
         setError('Please upload a valid SVG file');
+
         return;
       }
       const reader = new FileReader();
@@ -289,9 +289,9 @@ function SVGOptimizer(props) {
                   </span>
                 </div>
                 <textarea
+                  readOnly
                   className="svg-code-editor"
                   placeholder="Optimized SVG will appear here..."
-                  readOnly
                   value={optimizedSvg}
                 />
                 <div className="svg-output-actions">
