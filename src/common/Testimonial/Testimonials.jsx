@@ -15,8 +15,13 @@ const Testimonials = () => {
   const isAuthenticated = useAuthenticated();
 
   const fetchTestimonials = async () => {
-    const res = await submit(fetchAllTestimonials());
-    setTestimonials(res);
+    try {
+      const res = await submit(fetchAllTestimonials());
+      setTestimonials(res || []);
+    } catch (error) {
+      console.warn('Failed to fetch testimonials:', error.message);
+      setTestimonials([]);
+    }
   };
 
   const handleLogin = (value) => {

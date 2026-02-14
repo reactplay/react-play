@@ -13,6 +13,7 @@
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
+  padding-top: 32px; /* extra offset for activity banner on home page */
 }
 
 .app-home-body .app-home-body-content {
