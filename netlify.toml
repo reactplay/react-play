@@ -2,6 +2,9 @@
 command = "npm run build"
 publish = "build"
 
+[build.environment]
+NODE_OPTIONS = "--max-old-space-size=4096"
+
 [[headers]]
 for = "/*"
 [headers.values]

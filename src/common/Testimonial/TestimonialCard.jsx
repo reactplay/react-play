@@ -53,7 +53,10 @@ const TestimonialCard = ({ home, quote, name, avatarUrl, category, created_at, e
       </div>
 
       <div className="mx-2 mt-4">
-        <blockquote className={`${home && 'h-32'} max-h-32 px-6 overflow-y-auto`}>
+        <blockquote
+          className={`${home ? 'h-32' : ''} max-h-32 px-6 overflow-y-auto`}
+          style={{ touchAction: 'pan-y' }}
+        >
           <p
             className="leading-relaxed text-gray-700"
             dangerouslySetInnerHTML={{ __html: replaceWithBr() }}

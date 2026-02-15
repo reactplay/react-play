@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { BsGithub, BsTrophyFill } from 'react-icons/bs';
 import { FaLightbulb } from 'react-icons/fa';
@@ -16,6 +16,26 @@ const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useSearchContext();
 
   const [showToggleMenu, setShowToggleMenu] = useState(false);
+  const menuRef = useRef(null);
+
+  // Close drawer when clicking outside the menu panel
+  useEffect(() => {
+    if (!showToggleMenu) return;
+
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowToggleMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [showToggleMenu]);
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -121,8 +141,17 @@ const HeaderNav = ({ showBrowse }) => {
       >
         <span className="navbar-toggler-icon" />
       </button>
-      <div className={showToggleMenu ? 'navbar-collapse show' : 'navbar-collapse'}>
-        <ul className="header-links" data-testid="header-links-container">
+      <div
+        className={showToggleMenu ? 'navbar-collapse show' : 'navbar-collapse'}
+        role="presentation"
+        onClick={() => setShowToggleMenu(false)}
+      >
+        <ul
+          className="header-links"
+          data-testid="header-links-container"
+          ref={menuRef}
+          onClick={(e) => e.stopPropagation()}
+        >
           <li className="menu-closer">
             <button
               className="navbar-closer"
