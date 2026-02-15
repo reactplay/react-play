@@ -1,0 +1,13 @@
+{
+  "id": "character-counter",
+  "name": "Character Counter",
+  "description": "A clean tool to calculate character and word count in real-time.",
+  "language": "js",
+  "level": "Beginner",
+  "tags": "useState, Regex",
+  "author": "IamAnkit19",
+  "github_id": "IamAnkit19",
+  "cover": "https://placehold.co/600x400?text=Character+Counter",
+  "blog": "",
+  "video": ""
+}
