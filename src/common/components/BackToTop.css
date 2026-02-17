@@ -1,0 +1,144 @@
+.back-to-top {
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+  left: auto;
+  transform: none;
+  z-index: 98;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-brand-primary);
+  border: 3px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(0, 242, 254, 0.35), inset 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: slideUpButton 0.4s ease-out;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+}
+
+/* Footer variant - inline button */
+.back-to-top--footer {
+  position: static;
+  bottom: auto;
+  right: auto;
+  width: 52px;
+  height: 52px;
+  margin: 0 0 0 auto;
+  animation: none;
+}
+
+@keyframes slideUpButton {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.back-to-top:hover {
+  background: var(--color-brand-primary);
+  box-shadow: 0 12px 32px rgba(0, 242, 254, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-6px) scale(1.08);
+  border-color: #00f2fe;
+}
+
+.back-to-top--footer:hover {
+  transform: scale(1.08);
+}
+
+.back-to-top:active {
+  transform: translateY(-2px) scale(0.96);
+  box-shadow: 0 4px 16px rgba(0, 242, 254, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Footer back-to-top container */
+.footer-back-to-top {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* Arrow icon — perfectly centered inside the circle */
+.back-to-top-icon {
+  width: 24px;
+  height: 24px;
+  stroke-width: 3;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Home Page Specific Styles */
+body.home-page .back-to-top {
+  background: rgba(0, 242, 254, 0.95);
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+}
+
+body.home-page .back-to-top:hover {
+  background: var(--color-brand-primary);
+  box-shadow: 0 10px 28px rgba(0, 242, 254, 0.55);
+}
+
+@media screen and (max-width: 768px) {
+  .back-to-top {
+    bottom: 2.5rem;
+    right: 1.5rem;
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+  }
+
+  .footer-back-to-top {
+    padding: 0 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .back-to-top {
+    bottom: 2rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+    border: 2px solid #fff;
+  }
+
+  .back-to-top--footer {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer-back-to-top {
+    padding: 0;
+    flex: 1;
+    text-align: right;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .back-to-top {
+    bottom: 2rem;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .back-to-top {
+    bottom: 1.5rem;
+  }
+}
