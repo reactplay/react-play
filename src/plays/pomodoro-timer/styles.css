@@ -1,0 +1,142 @@
+/* Main container */
+.play-details-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+/* Card */
+.pomodoro-card {
+  background: #0f172a;
+  padding: 30px;
+  border-radius: 16px;
+  width: 340px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Title */
+.pomodoro-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Session selector */
+.session-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.session-btn {
+  flex: 1;
+  margin: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #1e293b;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.session-btn.active {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Session label */
+.session-label {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #94a3b8;
+}
+
+/* Timer display */
+.timer-display {
+  margin: 20px 0;
+}
+
+/* Big time text */
+.timer-time.big {
+  font-size: 52px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Wheel container */
+.time-wheel-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Dual wheel */
+.dual-wheel {
+  display: flex;
+  gap: 10px;
+}
+
+/* Wheel column */
+.wheel-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Wheel item */
+.wheel-item {
+  font-size: 28px;
+  padding: 6px 0;
+  transition: 0.2s;
+}
+
+/* Center active item */
+.wheel-item.active {
+  font-size: 42px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Top/bottom faded items */
+.wheel-item.faded {
+  font-size: 20px;
+  opacity: 0.35;
+  cursor: pointer;
+}
+
+/* Controls */
+.timer-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.control-btn {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.control-btn.start {
+  background: #22c55e;
+  color: white;
+}
+
+.control-btn.pause {
+  background: #f59e0b;
+  color: white;
+}
+
+.control-btn.reset {
+  background: #ef4444;
+  color: white;
+}
