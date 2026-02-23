@@ -5,6 +5,7 @@ import { RiChatNewLine } from 'react-icons/ri';
 import LevelBadge from 'common/components/LevelBadge';
 import './playIdeas.css';
 import { PLAY_DOC_LINK } from 'constants';
+import BackToTop from 'common/components/BackToTop';
 
 const PlayIdeas = () => {
   const [ideas, setIdeas] = useState([]);
@@ -57,6 +58,7 @@ const PlayIdeas = () => {
     <main className="app-body app-body-overflow-hidden">
       <div className="playideas-container">
         <div className="playideas-header">
+          <BackToTop />
           <div>
             <h1 className="header-title">
               Play Ideas

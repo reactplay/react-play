@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import BackToTop from 'common/components/BackToTop';
 
 const Footer = () => {
   return (
@@ -15,9 +14,6 @@ const Footer = () => {
             </Link>
             .
           </p>
-          <div className="footer-back-to-top">
-            <BackToTop isInFooter />
-          </div>
         </div>
       </div>
     </footer>
