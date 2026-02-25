@@ -7,6 +7,7 @@ import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import { IoAddSharp, IoLogoRss } from 'react-icons/io5';
 import { MdManageSearch } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import BackToTop from 'common/components/BackToTop';
 
 const ExtendedFooter = () => {
   const { showShareModal, setShowShareModal } = useSearchContext();
@@ -58,6 +59,7 @@ const ExtendedFooter = () => {
   return (
     <div className="app-footer--home app-footer">
       <div className="app-footer-body">
+        <BackToTop />
         <div className="body-primary">
           <h3>
             <span className="sr-only">ReactPlay</span>
