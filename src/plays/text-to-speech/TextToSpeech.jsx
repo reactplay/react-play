@@ -158,10 +158,7 @@ function TextToSpeech(props) {
             <div className="tts-output-box">
               {convertedText ? (
                 <>
-                  <p
-                    className="tts-output-text"
-                    dangerouslySetInnerHTML={{ __html: convertedText }}
-                  />
+                  <p className="tts-output-text">{convertedText}</p>
 
                   <button className="tts-speaker-btn" onClick={handleSpeak}>
                     {isSpeaking ? <FaStop size={28} /> : <FaVolumeUp size={28} />}

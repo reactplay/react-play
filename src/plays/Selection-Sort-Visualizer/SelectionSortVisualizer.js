@@ -23,6 +23,8 @@ function SelectionSortVisualizer() {
   const handleSort = async () => {
     const arrCopy = [...arr];
     const outputElements = document.getElementById('output-visualizer');
+    // Safe: clears the container to empty string (no user data injected).
+    // All subsequent DOM mutations use createElement/createTextNode (XSS-safe).
     outputElements.innerHTML = '';
 
     for (let i = 0; i < arrCopy.length - 1; i++) {

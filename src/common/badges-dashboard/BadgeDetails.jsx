@@ -1,4 +1,5 @@
 import Badge from './Badge';
+import sanitizeHTML from 'common/utils/sanitizeHTML';
 import './badge.css';
 
 const BadgeDetails = ({ badge, onClose }) => {
@@ -9,7 +10,7 @@ const BadgeDetails = ({ badge, onClose }) => {
       return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">${name}</a>`;
     });
 
-    return <span dangerouslySetInnerHTML={{ __html: descriptionWithLinks }} />;
+    return <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(descriptionWithLinks) }} />;
   };
 
   return (

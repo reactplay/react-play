@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import sanitizeHTML from 'common/utils/sanitizeHTML';
 import Loading from '../components/Loading';
 
 const Article = () => {
@@ -50,7 +51,7 @@ const Article = () => {
 
           <div
             className="mt-10 devBlog-article"
-            dangerouslySetInnerHTML={{ __html: article.body_html }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.body_html) }}
           />
         </div>
       ) : (
