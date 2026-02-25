@@ -1,6 +1,5 @@
 // vendors
 import { Fragment, useState } from 'react';
-import sanitizeHTML from 'common/utils/sanitizeHTML';
 
 // css
 import './FrontScreen.scss';
@@ -17,17 +16,17 @@ const EndScreen = ({ quizSummary, redirectHome }) => {
         <div className="question-number">Question: {currentQuestion?.qNo}</div>
         <li
           dangerouslySetInnerHTML={{
-            __html: sanitizeHTML(`${currentQuestion?.question}`)
+            __html: `${currentQuestion?.question}`
           }}
         />
         <span
           dangerouslySetInnerHTML={{
-            __html: sanitizeHTML(`<br/><b>Ans</b>: ${currentQuestion?.correct_answer}<br/>`)
+            __html: `<br/><b>Ans</b>: ${currentQuestion?.correct_answer}<br/>`
           }}
         />
         <span
           dangerouslySetInnerHTML={{
-            __html: sanitizeHTML(`<b>Your Answer</b>: ${currentQuestion?.your_answer}`)
+            __html: `<b>Your Answer</b>: ${currentQuestion?.your_answer}`
           }}
         />
       </div>

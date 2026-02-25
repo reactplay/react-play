@@ -49,21 +49,16 @@ function Tube2tunes(props) {
       .then((res) => {
         if (res.data.status === 'processing') {
           setProcessingMsg(true);
-          setLoading(false);
         } else if (res.data.status === 'fail') {
           setFailedMsg(true);
-          setLoading(false);
         } else {
           setUrlResult(res.data.link);
           setTitle(res.data.title);
           setLoading(false);
         }
       })
-      .catch((err) => {
-        setError(true);
-        setLoading(false);
-        // eslint-disable-next-line no-console
-        console.error('Error: ', err);
+      .catch(() => {
+        // console.log('Error: ', err);
       });
 
     inputUrlRef.current.value = '';

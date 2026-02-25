@@ -1,5 +1,4 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
-import sanitizeHTML from 'common/utils/sanitizeHTML';
 
 import './QuizScreen.scss';
 
@@ -150,7 +149,7 @@ function QuizScreen({ category, getQuizSummary }) {
           <div className={`timer ${timer <= 5 && 'caution'}`}>{timer}</div>
           <div className="question-info">Question: {questionNumber + 1}</div>
           <div className="question">
-            <h1 dangerouslySetInnerHTML={{ __html: sanitizeHTML(currentQuestion?.question) }} />
+            <h1 dangerouslySetInnerHTML={{ __html: currentQuestion?.question }} />
           </div>
           <div className="options">
             {currentQuestion?.options?.map((option, index) => {
@@ -158,7 +157,7 @@ function QuizScreen({ category, getQuizSummary }) {
                 <div className="single-opt" key={index}>
                   <div
                     className={itemClassDisplayController(option)}
-                    dangerouslySetInnerHTML={{ __html: sanitizeHTML(option) }}
+                    dangerouslySetInnerHTML={{ __html: option }}
                     onClick={handleAnswerClick(option)}
                   />
                 </div>

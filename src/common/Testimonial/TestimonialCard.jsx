@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { format } from 'date-fns';
 import * as allLocales from 'date-fns/locale';
 import { email2Slug } from 'common/services/string';
-import sanitizeHTML from 'common/utils/sanitizeHTML';
 
 const TestimonialCard = ({ home, quote, name, avatarUrl, category, created_at, email }) => {
   const [formattedDate] = useState(() => {
@@ -60,7 +59,7 @@ const TestimonialCard = ({ home, quote, name, avatarUrl, category, created_at, e
         >
           <p
             className="leading-relaxed text-gray-700"
-            dangerouslySetInnerHTML={{ __html: sanitizeHTML(replaceWithBr()) }}
+            dangerouslySetInnerHTML={{ __html: replaceWithBr() }}
           />
         </blockquote>
       </div>
