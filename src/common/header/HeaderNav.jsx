@@ -6,6 +6,7 @@ import { FaXTwitter, FaDiscord } from 'react-icons/fa6';
 import { BiMoney } from 'react-icons/bi';
 import { IoAddSharp, IoShareSocial, IoHeartSharp } from 'react-icons/io5';
 import { MdManageSearch, MdClose, MdEvent } from 'react-icons/md';
+import { AiOutlineHome } from 'react-icons/ai';
 import SocialShare from 'common/components/SocialShare';
 import { GoX } from 'react-icons/go';
 import { Modal, Box, Typography, Menu } from '@mui/material';
@@ -51,6 +52,15 @@ const HeaderNav = ({ showBrowse }) => {
   const modalClose = () => setShowShareModal(!showShareModal);
 
   const NavLinks = [
+    {
+      type: 'Link',
+      testId: 'home-btn',
+      title: 'Home',
+      to: '/',
+      icon: AiOutlineHome,
+      iconClass: 'icon home-icon',
+      label: 'Home'
+    },
     {
       type: 'Link',
       testId: 'leaderboard-btn',
