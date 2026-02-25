@@ -14,6 +14,7 @@ import {
   Testimonials
 } from 'common';
 import PlayList from 'common/playlists/PlayList';
+import BackToTop from 'common/components/BackToTop';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NhostClient, NhostReactProvider } from '@nhost/react';
 import BadgesDashboard from 'common/badges-dashboard';
