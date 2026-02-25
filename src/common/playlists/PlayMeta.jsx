@@ -10,6 +10,7 @@ import { PageNotFound } from 'common';
 import thumbPlay from 'images/thumb-play.png';
 import { getProdUrl } from 'common/utils/commonUtils';
 import { loadCoverImage } from 'common/utils/coverImageUtil';
+import PlayErrorBoundary from 'common/playlists/PlayErrorBoundary';
 
 function PlayMeta() {
   const [loading, setLoading] = useState(true);
@@ -87,6 +88,10 @@ function PlayMeta() {
   const renderPlayComponent = () => {
     const Comp = plays[play.component || toSanitized(play.title_name)];
 
+    if (!Comp) {
+      return <PageNotFound />;
+    }
+
     return <Comp {...play} />;
   };
 
@@ -103,7 +108,11 @@ function PlayMeta() {
         <meta content={play.description} data-react-helmet="true" name="twitter:description" />
         <meta content={ogTagImage} data-react-helmet="true" name="twitter:image" />
       </Helmet>
-      <Suspense fallback={<Loader />}>{renderPlayComponent()}</Suspense>
+      <Suspense
+        fallback={<Loader subtitle="Please wait while the play loads" title="Loading Play..." />}
+      >
+        <PlayErrorBoundary playName={play.name}>{renderPlayComponent()}</PlayErrorBoundary>
+      </Suspense>
     </>
   );
 }
