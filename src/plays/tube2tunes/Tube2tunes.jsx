@@ -57,8 +57,11 @@ function Tube2tunes(props) {
           setLoading(false);
         }
       })
-      .catch(() => {
-        // console.log('Error: ', err);
+      .catch((err) => {
+        setError(true);
+        setLoading(false);
+        // Optional: log error for debugging
+        console.error('Error fetching YouTube audio:', err);
       });
 
     inputUrlRef.current.value = '';
