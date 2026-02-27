@@ -49,8 +49,10 @@ function Tube2tunes(props) {
       .then((res) => {
         if (res.data.status === 'processing') {
           setProcessingMsg(true);
+          setLoading(false);
         } else if (res.data.status === 'fail') {
           setFailedMsg(true);
+          setLoading(false);
         } else {
           setUrlResult(res.data.link);
           setTitle(res.data.title);
