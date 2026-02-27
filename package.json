@@ -86,9 +86,9 @@
   },
   "scripts": {
     "dev": "react-scripts start",
-    "start:nolint": "npx --yes create-react-play@latest -p && react-scripts start",
-    "start": "npx --yes create-react-play@latest -p && npm run lint && react-scripts start",
-    "build": "npx --yes create-react-play@latest -p && react-scripts build",
+    "start:nolint": "npx --yes create-react-play@latest -p && node scripts/sanitize-play-exports.cjs && react-scripts start",
+    "start": "npx --yes create-react-play@latest -p && node scripts/sanitize-play-exports.cjs && npm run lint && react-scripts start",
+    "build": "npx --yes create-react-play@latest -p && node scripts/sanitize-play-exports.cjs && react-scripts build",
     "snap": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
