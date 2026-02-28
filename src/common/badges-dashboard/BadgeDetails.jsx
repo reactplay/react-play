@@ -1,6 +1,6 @@
 import Badge from './Badge';
-import sanitizeHTML from 'common/utils/sanitizeHTML';
 import './badge.css';
+import sanitizeHTML from 'common/utils/sanitizeHTML';
 
 const BadgeDetails = ({ badge, onClose }) => {
   const makeClickableLinks = (badge) => {

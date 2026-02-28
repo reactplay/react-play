@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import sanitizeHTML from 'common/utils/sanitizeHTML';
 import Loading from '../components/Loading';
+import sanitizeHTML from 'common/utils/sanitizeHTML';
 
 const Article = () => {
   const [article, setArticle] = useState({});

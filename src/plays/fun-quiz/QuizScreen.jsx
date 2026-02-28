@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
-import sanitizeHTML from 'common/utils/sanitizeHTML';
 
+import sanitizeHTML from 'common/utils/sanitizeHTML';
 import './QuizScreen.scss';
 
 // assets

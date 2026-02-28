@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaVolumeUp, FaStop } from 'react-icons/fa';
 import PlayHeader from 'common/playlists/PlayHeader';
+import sanitizeHTML from 'common/utils/sanitizeHTML';
 import './styles.css';
 
 function TextToSpeech(props) {
@@ -158,7 +159,10 @@ function TextToSpeech(props) {
             <div className="tts-output-box">
               {convertedText ? (
                 <>
-                  <p className="tts-output-text">{convertedText}</p>
+                  <p
+                    className="tts-output-text"
+                    dangerouslySetInnerHTML={{ __html: sanitizeHTML(convertedText) }}
+                  />
 
                   <button className="tts-speaker-btn" onClick={handleSpeak}>
                     {isSpeaking ? <FaStop size={28} /> : <FaVolumeUp size={28} />}

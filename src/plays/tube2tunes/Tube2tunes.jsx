@@ -62,8 +62,8 @@ function Tube2tunes(props) {
       .catch((err) => {
         setError(true);
         setLoading(false);
-        // eslint-disable-next-line no-console
-        console.error('Error: ', err);
+        // Optional: log error for debugging
+        console.error('Error fetching YouTube audio:', err);
       });
 
     inputUrlRef.current.value = '';
