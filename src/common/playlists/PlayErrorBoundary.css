@@ -1,0 +1,60 @@
+.play-error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    min-height: 50vh;
+}
+
+.play-error-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.play-error-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 0.75rem;
+}
+
+.play-error-message {
+    font-size: 1rem;
+    color: #666;
+    max-width: 500px;
+    line-height: 1.5;
+    margin: 0 0 1.5rem;
+}
+
+.play-error-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.play-error-retry-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #00f2fe;
+    color: #fff;
+    transition: opacity 0.2s;
+}
+
+.play-error-back-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 2px solid #00f2fe;
+    border-radius: 6px;
+    cursor: pointer;
+    background: transparent;
+    color: #00f2fe;
+    transition: opacity 0.2s;
+}
