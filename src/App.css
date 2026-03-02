@@ -34,7 +34,10 @@ textarea {
   --color-brand-primary-rgb: 0, 244, 252;
   --color-brand-primary-alt: #61dafb;
   --color-brand-primary-dark: #00aada;
-
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --header-bg: #1e1e1e;
+  --border-color: #444444;
   /* Neutral */
   --color-neutral-10: #ffffff;
   --color-neutral-20: #f6f6f9;
@@ -104,11 +107,16 @@ textarea {
   --color-play-level-3: 229, 57, 53;
 }
 
+[data-theme='dark'] {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --header-bg: #f8f9fa;
+  --border-color: #dddddd;
+}
+
 html,
 body {
   height: auto;
-  padding: 0;
-  margin: 0;
   font-family: var(--ff-default);
   line-height: 1.6;
   font-size: 16px;
@@ -117,9 +125,38 @@ body {
   scroll-behavior: smooth;
 }
 
+html, body, #root {
+  overflow-x: hidden; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body * {
   box-sizing: border-box;
   font-family: var(--ff-default);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
 
 .app-container {

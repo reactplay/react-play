@@ -1,14 +1,15 @@
 import HeaderNav from './HeaderNav';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Countdown from 'react-countdown';
 import './header.css';
 import { SearchBox } from 'common/search/SearchBox';
+import { ThemeContext } from 'common/theme/ThemeContext';
 
 const Header = () => {
   const location = useLocation();
   const pathName = location.pathname;
-
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const [reset, setReset] = useState({ search: false, filter: false });
   const [showNav, setShowNav] = useState(true);
   const lastScrollY = useRef(0);
@@ -163,7 +164,11 @@ const Header = () => {
         <div className="app-header-search pl-0 xl:pl-[130px]">
           {showHideBits.showSearch && <SearchBox reset={reset} />}
         </div>
-
+        <div className="header-actions">
+          <button aria-label="Toggle Theme" className="theme-toggle-btn" onClick={toggleTheme}>
+            {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+          </button>
+        </div>
         <HeaderNav showBrowse={showHideBits.showBrowse} />
       </header>
     </div>
