@@ -107,7 +107,7 @@ textarea {
   --color-play-level-3: 229, 57, 53;
 }
 
-[data-theme='dark'] {
+[data-theme='light'] {
   --bg-color: #ffffff;
   --text-color: #333333;
   --header-bg: #f8f9fa;
