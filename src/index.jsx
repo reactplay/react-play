@@ -7,6 +7,7 @@ import register from './registerServiceWorker';
 import ErrorBoundry from './ErrorBoundary/ErrorBoundary';
 import Notification from 'common/components/Notification';
 import 'react-toastify/dist/ReactToastify.css';
+import { ThemeProvider } from 'common/theme/ThemeContext';
 
 /** removing console statement in react prod build */
 /* eslint-disable no-console */
@@ -37,14 +38,16 @@ const Index = () => {
   };
 
   return (
-    // <React.StrictMode>
-    <ErrorBoundry>
-      <SearchContextProvider value={value}>
-        <RouteDefs />
-        <Notification />
-      </SearchContextProvider>
-    </ErrorBoundry>
-    // </React.StrictMode>
+    <ThemeProvider>
+      {/* <React.StrictMode> */}
+      <ErrorBoundry>
+        <SearchContextProvider value={value}>
+          <RouteDefs />
+          <Notification />
+        </SearchContextProvider>
+      </ErrorBoundry>
+      {/* </React.StrictMode> */}
+    </ThemeProvider>
   );
 };
 const container = document.getElementById('root');
