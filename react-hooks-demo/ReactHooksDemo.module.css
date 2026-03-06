@@ -1,0 +1,9 @@
+.container {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+button {
+  margin-right: 10px;
+  margin-top: 10px;
+}
