@@ -46,10 +46,10 @@
 }
 
 .leaderboard-wrapper {
-    background-color: #ffffff;
+    background-color: var(--color-neutral-10);
     border-radius: 16px;
     padding: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(var(--color-neutral-90-rgb), 0.05);
     font-family: 'Inter', sans-serif;
     max-width: 800px;
     margin: 20px auto;
@@ -58,7 +58,7 @@
   .leaderboard-title {
     font-size: 24px;
     font-weight: 600;
-    color: #1a202c;
+    color: var(--color-neutral-90);
     margin-bottom: 24px;
   }
   
@@ -78,8 +78,8 @@
     padding: 16px;
     border-radius: 12px;
     width: 120px;
-    color: #4a5568;
-    border: 1px solid #e2e8f0;
+    color: var(--color-neutral-60);
+    border: 1px solid var(--color-neutral-30);
     transition: transform 0.2s ease-in-out;
   }
   
@@ -91,15 +91,15 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 3px solid var(--color-neutral-10);
+    box-shadow: 0 2px 4px rgba(var(--color-neutral-90-rgb), 0.1);
     margin-bottom: 8px;
   }
   
   .podium-name {
     font-weight: 600;
     font-size: 14px;
-    color: #2d3748;
+    color: var(--color-neutral-80);
   }
   
   .podium-rank {
@@ -111,31 +111,31 @@
   .podium-points {
     font-weight: 700;
     font-size: 14px;
-    color: #1a202c;
+    color: var(--color-neutral-90);
   }
   
   .podium-second {
-    background-color: #f7fafc;
+    background-color: var(--color-neutral-20);
     height: 170px;
     order: 1;
   }
   
   .podium-first {
-    background-color: #fffbef; 
+    background-color: rgba(246, 224, 94, 0.15);
     height: 200px;
-    border-color: #f6e05e; 
+    border-color: #f6e05e;
     order: 2;
   }
   
   .podium-third {
-    background-color: #fdf5f2;
+    background-color: rgba(237, 137, 54, 0.1);
     height: 150px;
     order: 3;
   }
   
   .winner-announcement {
     text-align: center;
-    color: #4a5568;
+    color: var(--color-neutral-60);
     font-size: 14px;
     margin-bottom: 32px;
     line-height: 1.5;
@@ -144,23 +144,23 @@
 
   .leaderboard-table-container {
     box-shadow: none !important;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-neutral-30);
     border-radius: 12px !important;
   }
   
   .leaderboard-table-header {
     font-weight: 600 !important;
     font-size: 12px !important;
-    color: #718096 !important;
+    color: var(--color-neutral-50) !important;
     text-transform: uppercase;
-    background-color: #f7fafc !important;
-    border-bottom: 1px solid #e2e8f0 !important;
+    background-color: var(--color-neutral-20) !important;
+    border-bottom: 1px solid var(--color-neutral-30) !important;
   }
   
   .leaderboard-table-cell {
     font-size: 14px !important;
-    color: #2d3748 !important;
-    border-bottom: 1px solid #e2e8f0 !important;
+    color: var(--color-neutral-80) !important;
+    border-bottom: 1px solid var(--color-neutral-30) !important;
   }
   
   .user-profile {

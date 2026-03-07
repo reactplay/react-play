@@ -51,6 +51,10 @@ textarea {
   --color-neutral-10-rgb: 255, 255, 255;
   --color-neutral-100-rgb: 0, 0, 0;
 
+  --scrollbar-size: 12px;
+  --scrollbar-track: rgba(var(--color-neutral-10-rgb), 0.08);
+  --scrollbar-thumb: var(--color-brand-primary);
+
   /* Font Family */
   --ff-default: Poppins, -apple-system, Roboto, Helvetica Neue, sans-serif;
   --ff-accent: Raleway, Inter, -apple-system, Roboto, Helvetica Neue, sans-serif;
@@ -104,6 +108,30 @@ textarea {
   --color-play-level-3: 229, 57, 53;
 }
 
+/* Dark theme overrides — invert the neutral scale */
+html[data-theme='dark'] {
+  --color-neutral-10: #0b1120;
+  --color-neutral-20: #111827;
+  --color-neutral-30: #1e293b;
+  --color-neutral-40: #334155;
+  --color-neutral-50: #64748b;
+  --color-neutral-60: #94a3b8;
+  --color-neutral-70: #cbd5e1;
+  --color-neutral-80: #e2e8f0;
+  --color-neutral-90: #f1f5f9;
+  --color-neutral-100: #ffffff;
+
+  --color-neutral-90-rgb: 241, 245, 249;
+  --color-neutral-10-rgb: 11, 17, 32;
+  --color-neutral-100-rgb: 255, 255, 255;
+
+  --color-brand-primary: #22d3ee;
+  --color-brand-primary-rgb: 34, 211, 238;
+  --color-brand-primary-alt: #67e8f9;
+  --color-brand-primary-dark: #06b6d4;
+}
+
+
 html,
 body {
   height: auto;
@@ -115,6 +143,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: clip;
+  background-color: var(--color-neutral-20);
+  color: var(--color-neutral-80);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100%;
 }
 
 body * {
@@ -558,13 +594,17 @@ small {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #00f2fe;
+  background-color: var(--color-brand-primary);
   border-radius: 20px;
-  border: 6px solid transparent;
+  border: 3px solid transparent;
   background-clip: content-box;
-  height: 100px;
 }
 
 ::-webkit-scrollbar {
-  width: 25px;
+  width: var(--scrollbar-size);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand-primary) transparent;
 }

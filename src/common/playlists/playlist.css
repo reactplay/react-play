@@ -331,8 +331,8 @@
 }
 
 .collapse-btn {
-  border: 1px solid #010326;
-  color: #010326;
+  border: 1px solid var(--color-neutral-90);
+  color: var(--color-neutral-90);
 }
 
 .play-details .play-details-header .header-primary {
@@ -527,7 +527,7 @@
 } */
 
 .play-details .play-details-body p a {
-  color: blue;
+  color: var(--color-brand-primary-dark);
   text-decoration: underline;
 }
 
@@ -794,13 +794,13 @@
 
 .banner-button {
   margin-right: 10px;
-  background-color: rgba(255, 255, 255, 0.947);
+  background-color: rgba(var(--color-neutral-10-rgb), 0.95);
   border: none;
   outline: none;
   transition-timing-function: 0.5s;
   transition: all;
   cursor: pointer;
-  color: black;
+  color: var(--color-neutral-90);
   margin-top: 20px;
   margin-bottom: 10px;
   display: flex;
@@ -808,11 +808,11 @@
   gap: 4px;
 }
 .banner-button:hover {
-  background-color: #e6e6e6c3;
-  color: black;
+  background-color: var(--color-neutral-30);
+  color: var(--color-neutral-90);
 }
 .right-arrow-icon {
-  color: #25a0a7;
+  color: var(--color-brand-primary-dark);
 }
 
 .search-summary {
@@ -842,23 +842,24 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 2px solid #efefef;
+  border: 2px solid var(--color-neutral-30);
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   width: 350px;
   /* height: 100%; */
   padding: 12px;
+  background-color: var(--color-neutral-10);
 }
 
 .play-card-container:hover {
   transform: scale(103%);
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 6px rgba(var(--color-neutral-90-rgb), 0.2);
   transition: transform 0.2s ease-in-out;
 }
 
 .border {
-  border: 1px solid rgb(189 183 183);
+  border: 1px solid var(--color-neutral-40);
   margin: 8px;
   /* padding: 20px; */
 }
@@ -873,7 +874,7 @@
   height: auto;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(var(--color-neutral-90-rgb), 0.1);
 }
 
 .author-name {
@@ -902,14 +903,14 @@
 .lng-btn {
   padding: 10px 20px;
   border-radius: 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--color-brand-primary);
+  color: var(--color-neutral-90);
   cursor: pointer;
   transition: background-color 0.3s;
 }
 .like-btn:hover,
 .lng-btn:hover {
-  background-color: #0056b3;
+  background-color: var(--color-brand-primary-dark);
 }
 
 .like-container {

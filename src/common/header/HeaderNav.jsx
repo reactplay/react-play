@@ -12,9 +12,12 @@ import { GoX } from 'react-icons/go';
 import { Modal, Box, Typography, Menu } from '@mui/material';
 import { useSearchContext } from 'common/search/search-context';
 import { PLAY_DOC_LINK, UMAMI_EVENTS } from 'constants';
+import { useThemeMode } from 'common/theme/theme-context';
+import { BsMoonStarsFill, BsSunFill } from 'react-icons/bs';
 
 const HeaderNav = ({ showBrowse }) => {
   const { showShareModal, setShowShareModal } = useSearchContext();
+  const { theme, toggleTheme } = useThemeMode();
 
   const [showToggleMenu, setShowToggleMenu] = useState(false);
   const menuRef = useRef(null);
@@ -185,6 +188,23 @@ const HeaderNav = ({ showBrowse }) => {
               </Link>
             </li>
           )}
+          <li>
+            <button
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              className="app-header-btn app-header-btn--secondary app-header-btn--theme"
+              data-testid="theme-toggle-btn"
+              onClick={toggleTheme}
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              type="button"
+            >
+              {theme === 'dark' ? (
+                <BsSunFill className="icon" />
+              ) : (
+                <BsMoonStarsFill className="icon" />
+              )}
+              <span className="btn-label">{theme === 'dark' ? 'Light' : 'Dark'}</span>
+            </button>
+          </li>
           <li className="menu-events">
             <a
               className="app-header-btn app-header-btn--secondary"

@@ -10,10 +10,10 @@ const useStyle = makeStyles({
     fontWeight: 600
   },
   Button: {
-    background: '#00f2fe',
+    background: 'var(--color-brand-primary)',
     color: '#ffffff',
     '&:hover': {
-      background: '#00f2fe',
+      background: 'var(--color-brand-primary)',
       color: '#ffffff'
     }
   }

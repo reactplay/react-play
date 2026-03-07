@@ -13,7 +13,9 @@ const Home = () => {
   return (
     <main>
       <section className="app-home-body" id="hero">
-        <DefaultBanner />
+        <div className="app-home-body-content">
+          <DefaultBanner />
+        </div>
       </section>
       <section className="home-features">
         <HomeFeatures />
