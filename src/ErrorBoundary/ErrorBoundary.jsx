@@ -1,8 +1,8 @@
 import React from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
 import ErrorFallback from './ErrorFallback';
 
-const ErrorBoundry = ({ children }) => {
+const ErrorBoundary = ({ children }) => {
   const onErrorReset = () => {
     /**
      * Had to do this because we have placed the ErrorBoundary at the top level
@@ -12,10 +12,10 @@ const ErrorBoundry = ({ children }) => {
   };
 
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback} onReset={onErrorReset}>
+    <ReactErrorBoundary FallbackComponent={ErrorFallback} onReset={onErrorReset}>
       {children}
-    </ErrorBoundary>
+    </ReactErrorBoundary>
   );
 };
 
-export default ErrorBoundry;
+export default ErrorBoundary;
