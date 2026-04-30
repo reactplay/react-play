@@ -143,6 +143,36 @@
       "title": "Color Guess Game",
       "description": "Build a Color Guess Game that you can give the user a color and he will choose from 6 squares + there are two levels Hard and Easy, Easy has 3 squares and hard has 6 squares.",
       "level": "Intermediate"
+    },
+    {
+      "id": "idea-25",
+      "title": "Expense Tracker",
+      "description": "A simple expense tracker app that allows you to add, delete and categorize your daily expenses. It shows a summary of total spending with a visual chart breakdown by category.",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-26",
+      "title": "Markdown Previewer",
+      "description": "A real-time markdown editor where you type markdown syntax on the left panel and instantly see the rendered HTML output on the right panel.",
+      "level": "Beginner"
+    },
+    {
+      "id": "idea-27",
+      "title": "Quiz App",
+      "description": "A multi-question quiz app with a timer, score tracking, and a results screen at the end. Fetches questions from the Open Trivia Database API.",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-28",
+      "title": "GitHub Profile Finder",
+      "description": "Search any GitHub username and display their profile information including avatar, bio, repositories count, followers and following using the GitHub public API.",
+      "level": "Intermediate"
+    },
+    {
+      "id": "idea-29",
+      "title": "Pomodoro Timer",
+      "description": "A productivity timer based on the Pomodoro technique with 25 minute work sessions and 5 minute breaks. Includes session counter, custom time settings and sound notifications.",
+      "level": "Beginner"
     }
   ]
 }
