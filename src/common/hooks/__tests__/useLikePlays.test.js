@@ -53,4 +53,31 @@ describe('useLikePlays', () => {
 
     await expect(result.current.unLikePlay({ play_id: 'abc' })).rejects.toThrow('Delete failed');
   });
+
+  it('likePlay calls likeIndividualPlay with correct argument', async () => {
+    const { likeIndividualPlay } = jest.requireMock('common/services/request/query/like-play');
+    submit.mockResolvedValueOnce({});
+
+    const { result } = renderHook(() => useLikePlays());
+    await result.current.likePlay({ play_id: 'abc' });
+
+    expect(likeIndividualPlay).toHaveBeenCalledWith({ play_id: 'abc' });
+  });
+
+  it('unLikePlay calls unlikeIndividualPlay with correct argument', async () => {
+    const { unlikeIndividualPlay } = jest.requireMock('common/services/request/query/like-play');
+    submit.mockResolvedValueOnce({});
+
+    const { result } = renderHook(() => useLikePlays());
+    await result.current.unLikePlay({ play_id: 'xyz' });
+
+    expect(unlikeIndividualPlay).toHaveBeenCalledWith({ play_id: 'xyz' });
+  });
+
+  it('hook returns likePlay and unLikePlay functions', () => {
+    const { result } = renderHook(() => useLikePlays());
+
+    expect(typeof result.current.likePlay).toBe('function');
+    expect(typeof result.current.unLikePlay).toBe('function');
+  });
 });
