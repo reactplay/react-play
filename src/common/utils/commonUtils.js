@@ -48,7 +48,7 @@ export function formatDate(dateString) {
   const [year, month, day] = datePart.split('-');
 
   // Convert the month number to the month name
-  const monthName = Date(year, month, day).split(' ');
+  const monthName = new Date(year, month - 1, day).toLocaleString('default', { month: 'short' });
 
   const formattedDate = `Joined ${day} ${monthName[1]} ${year}`;
 
