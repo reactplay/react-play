@@ -232,6 +232,8 @@ You can deploy the app to `Vercel` or `Netlify` with a single click.
 <a href="https://vercel.com/new/project?template=https://github.com/reactplay/react-play">
 <img src="https://vercel.com/button" height="37.5px" />
 </a>
+[![Deploy to PandaStack](https://dashboard.pandastack.io/deploy-button.svg)](https://dashboard.pandastack.io/deploy?repo=reactplay/react-play&type=static&buildCmd=npm+run+build&outputDir=dist)
+[![Deploy to PandaStack](https://dashboard.pandastack.io/deploy-button.svg)](https://dashboard.pandastack.io/deploy?repo=reactplay/react-play&type=static&buildCmd=npm+run+build&outputDir=dist)
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/reactplay/react-play">
 <img src="https://www.netlify.com/img/deploy/button.svg" height="37.5px" />
 </a>
