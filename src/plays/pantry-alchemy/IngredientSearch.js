@@ -10,8 +10,8 @@ export default function IngredientAutocomplete({ onSubmit }) {
   const [loading, setLoading] = useState(false);
   const [recipeLoading, setRecipeLoading] = useState(false);
   const [recipes, setRecipes] = useState([]);
-  const appId = '65a07d9b';
-  const appKey = '614cce709d8bbd26d92c35013e5d7861';
+  const appId = process.env.REACT_APP_APP_EDAMAM_ID;
+  const appKey = process.env.REACT_APP_APP_EDAMAM_KEY;
 
   async function searchRecipe(ingredientsArray) {
     // Join array of ingredients: ['chicken', 'garlic', 'spinach'] -> "chicken garlic spinach"
