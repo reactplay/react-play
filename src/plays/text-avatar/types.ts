@@ -28,9 +28,7 @@ export type ActionRequestReturnType = ActionReturnType<undefined>;
 export type ActionFailureReturnType = ActionReturnType<any>;
 
 export type ActionsReturnType =
-  | ActionRequestReturnType
-  | ActionSuccessReturnType
-  | ActionFailureReturnType;
+  ActionRequestReturnType | ActionSuccessReturnType | ActionFailureReturnType;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Arguments = {

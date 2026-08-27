@@ -4,7 +4,7 @@ import TimerDisplay from './components/TimerDisplay';
 import TimerControls from './components/TimerControls';
 import SessionSelector from './components/SessionSelector';
 
-import { usePomodoroTimer, SessionType } from './hooks/usePomodoroTimer';
+import { usePomodoroTimer } from './hooks/usePomodoroTimer';
 
 import './styles.css';
 
